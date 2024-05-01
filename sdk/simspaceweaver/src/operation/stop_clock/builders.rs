@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::stop
     }
 }
 impl StopClockFluentBuilder {
-    /// Creates a new `StopClock`.
+    /// Creates a new `StopClockFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl StartMigrationFluentBuilder {
-    /// Creates a new `StartMigration`.
+    /// Creates a new `StartMigrationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

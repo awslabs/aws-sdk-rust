@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetEBSVolumeRecommendationsFluentBuilder {
-    /// Creates a new `GetEBSVolumeRecommendations`.
+    /// Creates a new `GetEBSVolumeRecommendationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

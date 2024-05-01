@@ -59,7 +59,7 @@ impl
     }
 }
 impl TransactGetItemsFluentBuilder {
-    /// Creates a new `TransactGetItems`.
+    /// Creates a new `TransactGetItemsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

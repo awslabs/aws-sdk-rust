@@ -48,7 +48,7 @@ impl
     }
 }
 impl TerminateJobFluentBuilder {
-    /// Creates a new `TerminateJob`.
+    /// Creates a new `TerminateJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

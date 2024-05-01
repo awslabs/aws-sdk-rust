@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateSuiteDefinitionFluentBuilder {
-    /// Creates a new `CreateSuiteDefinition`.
+    /// Creates a new `CreateSuiteDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

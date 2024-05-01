@@ -73,7 +73,7 @@ impl
     }
 }
 impl PutBucketMetricsConfigurationFluentBuilder {
-    /// Creates a new `PutBucketMetricsConfiguration`.
+    /// Creates a new `PutBucketMetricsConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListJournalS3ExportsForLedgerFluentBuilder {
-    /// Creates a new `ListJournalS3ExportsForLedger`.
+    /// Creates a new `ListJournalS3ExportsForLedgerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

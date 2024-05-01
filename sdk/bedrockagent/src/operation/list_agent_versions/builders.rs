@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAgentVersionsFluentBuilder {
-    /// Creates a new `ListAgentVersions`.
+    /// Creates a new `ListAgentVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

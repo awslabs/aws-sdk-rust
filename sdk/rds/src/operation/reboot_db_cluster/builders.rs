@@ -51,7 +51,7 @@ impl
     }
 }
 impl RebootDBClusterFluentBuilder {
-    /// Creates a new `RebootDBCluster`.
+    /// Creates a new `RebootDBClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

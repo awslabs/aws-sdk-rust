@@ -49,7 +49,7 @@ impl
     }
 }
 impl BatchStartRecommendationsFluentBuilder {
-    /// Creates a new `BatchStartRecommendations`.
+    /// Creates a new `BatchStartRecommendationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

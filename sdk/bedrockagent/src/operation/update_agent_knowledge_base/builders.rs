@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateAgentKnowledgeBaseFluentBuilder {
-    /// Creates a new `UpdateAgentKnowledgeBase`.
+    /// Creates a new `UpdateAgentKnowledgeBaseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

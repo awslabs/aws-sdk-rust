@@ -51,7 +51,7 @@ impl
     }
 }
 impl RetrieveTapeRecoveryPointFluentBuilder {
-    /// Creates a new `RetrieveTapeRecoveryPoint`.
+    /// Creates a new `RetrieveTapeRecoveryPointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

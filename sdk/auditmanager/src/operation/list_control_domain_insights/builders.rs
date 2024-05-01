@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListControlDomainInsightsFluentBuilder {
-    /// Creates a new `ListControlDomainInsights`.
+    /// Creates a new `ListControlDomainInsightsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

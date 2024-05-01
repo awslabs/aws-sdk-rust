@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartInputDeviceMaintenanceWindowFluentBuilder {
-    /// Creates a new `StartInputDeviceMaintenanceWindow`.
+    /// Creates a new `StartInputDeviceMaintenanceWindowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

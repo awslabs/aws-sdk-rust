@@ -61,7 +61,7 @@ impl
     }
 }
 impl DescribeEventsForOrganizationFluentBuilder {
-    /// Creates a new `DescribeEventsForOrganization`.
+    /// Creates a new `DescribeEventsForOrganizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

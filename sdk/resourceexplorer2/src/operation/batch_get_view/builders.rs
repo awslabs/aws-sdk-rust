@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetViewFluentBuilder {
-    /// Creates a new `BatchGetView`.
+    /// Creates a new `BatchGetViewFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

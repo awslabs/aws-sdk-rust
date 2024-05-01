@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteReadinessCheckFluentBuilder {
-    /// Creates a new `DeleteReadinessCheck`.
+    /// Creates a new `DeleteReadinessCheckFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

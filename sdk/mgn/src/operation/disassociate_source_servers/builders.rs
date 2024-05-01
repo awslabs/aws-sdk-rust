@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateSourceServersFluentBuilder {
-    /// Creates a new `DisassociateSourceServers`.
+    /// Creates a new `DisassociateSourceServersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteReferenceStoreFluentBuilder {
-    /// Creates a new `DeleteReferenceStore`.
+    /// Creates a new `DeleteReferenceStoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

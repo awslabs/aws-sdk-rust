@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteStorageVirtualMachineFluentBuilder {
-    /// Creates a new `DeleteStorageVirtualMachine`.
+    /// Creates a new `DeleteStorageVirtualMachineFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

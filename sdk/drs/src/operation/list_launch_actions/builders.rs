@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListLaunchActionsFluentBuilder {
-    /// Creates a new `ListLaunchActions`.
+    /// Creates a new `ListLaunchActionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

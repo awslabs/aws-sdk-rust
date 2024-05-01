@@ -58,7 +58,7 @@ impl
     }
 }
 impl RefreshTrustedAdvisorCheckFluentBuilder {
-    /// Creates a new `RefreshTrustedAdvisorCheck`.
+    /// Creates a new `RefreshTrustedAdvisorCheckFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

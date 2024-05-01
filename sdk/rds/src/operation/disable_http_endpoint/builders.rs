@@ -51,7 +51,7 @@ impl
     }
 }
 impl DisableHttpEndpointFluentBuilder {
-    /// Creates a new `DisableHttpEndpoint`.
+    /// Creates a new `DisableHttpEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

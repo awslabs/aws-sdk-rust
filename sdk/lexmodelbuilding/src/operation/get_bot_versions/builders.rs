@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetBotVersionsFluentBuilder {
-    /// Creates a new `GetBotVersions`.
+    /// Creates a new `GetBotVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteStorageProfileFluentBuilder {
-    /// Creates a new `DeleteStorageProfile`.
+    /// Creates a new `DeleteStorageProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

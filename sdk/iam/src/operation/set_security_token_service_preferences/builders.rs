@@ -51,7 +51,7 @@ impl
     }
 }
 impl SetSecurityTokenServicePreferencesFluentBuilder {
-    /// Creates a new `SetSecurityTokenServicePreferences`.
+    /// Creates a new `SetSecurityTokenServicePreferencesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

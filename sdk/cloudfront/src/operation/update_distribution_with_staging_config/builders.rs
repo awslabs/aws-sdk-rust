@@ -56,7 +56,7 @@ impl
     }
 }
 impl UpdateDistributionWithStagingConfigFluentBuilder {
-    /// Creates a new `UpdateDistributionWithStagingConfig`.
+    /// Creates a new `UpdateDistributionWithStagingConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

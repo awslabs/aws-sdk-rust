@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteModelPackageFluentBuilder {
-    /// Creates a new `DeleteModelPackage`.
+    /// Creates a new `DeleteModelPackageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

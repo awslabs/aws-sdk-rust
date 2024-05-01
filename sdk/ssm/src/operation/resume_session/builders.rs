@@ -50,7 +50,7 @@ impl
     }
 }
 impl ResumeSessionFluentBuilder {
-    /// Creates a new `ResumeSession`.
+    /// Creates a new `ResumeSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

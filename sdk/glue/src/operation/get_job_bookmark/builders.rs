@@ -57,7 +57,7 @@ impl
     }
 }
 impl GetJobBookmarkFluentBuilder {
-    /// Creates a new `GetJobBookmark`.
+    /// Creates a new `GetJobBookmarkFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

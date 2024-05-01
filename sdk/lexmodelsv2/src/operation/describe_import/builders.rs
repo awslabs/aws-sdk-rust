@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeImportFluentBuilder {
-    /// Creates a new `DescribeImport`.
+    /// Creates a new `DescribeImportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

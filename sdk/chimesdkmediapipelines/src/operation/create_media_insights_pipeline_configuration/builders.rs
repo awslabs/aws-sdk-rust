@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateMediaInsightsPipelineConfigurationFluentBuilder {
-    /// Creates a new `CreateMediaInsightsPipelineConfiguration`.
+    /// Creates a new `CreateMediaInsightsPipelineConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -124,7 +124,7 @@ impl
     }
 }
 impl HeadObjectFluentBuilder {
-    /// Creates a new `HeadObject`.
+    /// Creates a new `HeadObjectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

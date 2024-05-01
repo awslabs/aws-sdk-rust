@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteLakeFormationOptInFluentBuilder {
-    /// Creates a new `DeleteLakeFormationOptIn`.
+    /// Creates a new `DeleteLakeFormationOptInFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteDeliveryStreamFluentBuilder {
-    /// Creates a new `DeleteDeliveryStream`.
+    /// Creates a new `DeleteDeliveryStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -78,7 +78,7 @@ impl
     }
 }
 impl TerminateInstancesFluentBuilder {
-    /// Creates a new `TerminateInstances`.
+    /// Creates a new `TerminateInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

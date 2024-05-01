@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeJournalS3ExportFluentBuilder {
-    /// Creates a new `DescribeJournalS3Export`.
+    /// Creates a new `DescribeJournalS3ExportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

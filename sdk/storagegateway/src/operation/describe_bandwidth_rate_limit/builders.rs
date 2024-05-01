@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeBandwidthRateLimitFluentBuilder {
-    /// Creates a new `DescribeBandwidthRateLimit`.
+    /// Creates a new `DescribeBandwidthRateLimitFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListGitHubAccountTokenNamesFluentBuilder {
-    /// Creates a new `ListGitHubAccountTokenNames`.
+    /// Creates a new `ListGitHubAccountTokenNamesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

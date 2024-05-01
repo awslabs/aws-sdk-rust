@@ -49,7 +49,7 @@ impl
     }
 }
 impl UndeploySystemInstanceFluentBuilder {
-    /// Creates a new `UndeploySystemInstance`.
+    /// Creates a new `UndeploySystemInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

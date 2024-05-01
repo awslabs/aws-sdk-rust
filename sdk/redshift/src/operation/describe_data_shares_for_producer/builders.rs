@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDataSharesForProducerFluentBuilder {
-    /// Creates a new `DescribeDataSharesForProducer`.
+    /// Creates a new `DescribeDataSharesForProducerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

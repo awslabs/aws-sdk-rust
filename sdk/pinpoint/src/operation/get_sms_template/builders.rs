@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSmsTemplateFluentBuilder {
-    /// Creates a new `GetSmsTemplate`.
+    /// Creates a new `GetSmsTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

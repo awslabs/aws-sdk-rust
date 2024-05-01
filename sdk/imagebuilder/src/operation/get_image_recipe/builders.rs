@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetImageRecipeFluentBuilder {
-    /// Creates a new `GetImageRecipe`.
+    /// Creates a new `GetImageRecipeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

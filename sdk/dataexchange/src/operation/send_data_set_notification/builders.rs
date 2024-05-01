@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendDataSetNotificationFluentBuilder {
-    /// Creates a new `SendDataSetNotification`.
+    /// Creates a new `SendDataSetNotificationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDiscoveredSchemaFluentBuilder {
-    /// Creates a new `GetDiscoveredSchema`.
+    /// Creates a new `GetDiscoveredSchemaFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

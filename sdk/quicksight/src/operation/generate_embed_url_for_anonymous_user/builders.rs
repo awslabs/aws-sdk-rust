@@ -59,7 +59,7 @@ impl
     }
 }
 impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
-    /// Creates a new `GenerateEmbedUrlForAnonymousUser`.
+    /// Creates a new `GenerateEmbedUrlForAnonymousUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

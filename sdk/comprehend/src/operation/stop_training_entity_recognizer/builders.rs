@@ -49,7 +49,7 @@ impl
     }
 }
 impl StopTrainingEntityRecognizerFluentBuilder {
-    /// Creates a new `StopTrainingEntityRecognizer`.
+    /// Creates a new `StopTrainingEntityRecognizerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

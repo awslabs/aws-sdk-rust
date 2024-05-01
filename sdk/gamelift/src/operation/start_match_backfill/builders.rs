@@ -56,7 +56,7 @@ impl
     }
 }
 impl StartMatchBackfillFluentBuilder {
-    /// Creates a new `StartMatchBackfill`.
+    /// Creates a new `StartMatchBackfillFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

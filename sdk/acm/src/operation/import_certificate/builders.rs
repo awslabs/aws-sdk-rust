@@ -80,7 +80,7 @@ impl
     }
 }
 impl ImportCertificateFluentBuilder {
-    /// Creates a new `ImportCertificate`.
+    /// Creates a new `ImportCertificateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

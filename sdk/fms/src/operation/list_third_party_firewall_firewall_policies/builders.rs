@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListThirdPartyFirewallFirewallPoliciesFluentBuilder {
-    /// Creates a new `ListThirdPartyFirewallFirewallPolicies`.
+    /// Creates a new `ListThirdPartyFirewallFirewallPoliciesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

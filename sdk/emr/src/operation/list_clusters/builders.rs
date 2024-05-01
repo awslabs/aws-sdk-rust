@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListClustersFluentBuilder {
-    /// Creates a new `ListClusters`.
+    /// Creates a new `ListClustersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

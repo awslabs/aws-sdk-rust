@@ -70,7 +70,7 @@ impl
     }
 }
 impl ListIdentityPoolUsageFluentBuilder {
-    /// Creates a new `ListIdentityPoolUsage`.
+    /// Creates a new `ListIdentityPoolUsageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

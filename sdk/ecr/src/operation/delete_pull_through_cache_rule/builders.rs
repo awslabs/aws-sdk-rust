@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePullThroughCacheRuleFluentBuilder {
-    /// Creates a new `DeletePullThroughCacheRule`.
+    /// Creates a new `DeletePullThroughCacheRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

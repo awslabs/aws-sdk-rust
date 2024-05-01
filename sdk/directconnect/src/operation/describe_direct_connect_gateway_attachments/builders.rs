@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDirectConnectGatewayAttachmentsFluentBuilder {
-    /// Creates a new `DescribeDirectConnectGatewayAttachments`.
+    /// Creates a new `DescribeDirectConnectGatewayAttachmentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

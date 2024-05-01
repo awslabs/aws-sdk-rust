@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeLiveSourceFluentBuilder {
-    /// Creates a new `DescribeLiveSource`.
+    /// Creates a new `DescribeLiveSourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

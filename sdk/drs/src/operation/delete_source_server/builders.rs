@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSourceServerFluentBuilder {
-    /// Creates a new `DeleteSourceServer`.
+    /// Creates a new `DeleteSourceServerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

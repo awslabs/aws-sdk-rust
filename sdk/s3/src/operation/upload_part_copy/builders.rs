@@ -146,7 +146,7 @@ impl
     }
 }
 impl UploadPartCopyFluentBuilder {
-    /// Creates a new `UploadPartCopy`.
+    /// Creates a new `UploadPartCopyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

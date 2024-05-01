@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListOrganizationPortfolioAccessFluentBuilder {
-    /// Creates a new `ListOrganizationPortfolioAccess`.
+    /// Creates a new `ListOrganizationPortfolioAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

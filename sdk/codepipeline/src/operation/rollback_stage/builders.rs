@@ -48,7 +48,7 @@ impl
     }
 }
 impl RollbackStageFluentBuilder {
-    /// Creates a new `RollbackStage`.
+    /// Creates a new `RollbackStageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

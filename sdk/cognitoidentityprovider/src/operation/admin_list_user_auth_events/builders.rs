@@ -57,7 +57,7 @@ impl
     }
 }
 impl AdminListUserAuthEventsFluentBuilder {
-    /// Creates a new `AdminListUserAuthEvents`.
+    /// Creates a new `AdminListUserAuthEventsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

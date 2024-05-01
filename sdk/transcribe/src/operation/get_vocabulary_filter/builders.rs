@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetVocabularyFilterFluentBuilder {
-    /// Creates a new `GetVocabularyFilter`.
+    /// Creates a new `GetVocabularyFilterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

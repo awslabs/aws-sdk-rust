@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListDecoderManifestSignalsFluentBuilder {
-    /// Creates a new `ListDecoderManifestSignals`.
+    /// Creates a new `ListDecoderManifestSignalsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

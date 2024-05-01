@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetManagedResourceFluentBuilder {
-    /// Creates a new `GetManagedResource`.
+    /// Creates a new `GetManagedResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

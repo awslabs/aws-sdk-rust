@@ -48,7 +48,7 @@ impl
     }
 }
 impl RefreshSchemasFluentBuilder {
-    /// Creates a new `RefreshSchemas`.
+    /// Creates a new `RefreshSchemasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

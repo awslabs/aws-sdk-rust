@@ -48,7 +48,7 @@ impl
     }
 }
 impl AcceptPortfolioShareFluentBuilder {
-    /// Creates a new `AcceptPortfolioShare`.
+    /// Creates a new `AcceptPortfolioShareFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMulticastGroupFluentBuilder {
-    /// Creates a new `DeleteMulticastGroup`.
+    /// Creates a new `DeleteMulticastGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

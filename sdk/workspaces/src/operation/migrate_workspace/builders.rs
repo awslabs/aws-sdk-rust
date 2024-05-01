@@ -50,7 +50,7 @@ impl
     }
 }
 impl MigrateWorkspaceFluentBuilder {
-    /// Creates a new `MigrateWorkspace`.
+    /// Creates a new `MigrateWorkspaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

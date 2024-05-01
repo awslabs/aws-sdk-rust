@@ -48,7 +48,7 @@ impl
     }
 }
 impl NotifyProvisionProductEngineWorkflowResultFluentBuilder {
-    /// Creates a new `NotifyProvisionProductEngineWorkflowResult`.
+    /// Creates a new `NotifyProvisionProductEngineWorkflowResultFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

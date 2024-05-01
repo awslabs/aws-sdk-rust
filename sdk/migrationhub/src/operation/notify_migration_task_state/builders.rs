@@ -56,7 +56,7 @@ impl
     }
 }
 impl NotifyMigrationTaskStateFluentBuilder {
-    /// Creates a new `NotifyMigrationTaskState`.
+    /// Creates a new `NotifyMigrationTaskStateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListVerifiedEmailAddressesFluentBuilder {
-    /// Creates a new `ListVerifiedEmailAddresses`.
+    /// Creates a new `ListVerifiedEmailAddressesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

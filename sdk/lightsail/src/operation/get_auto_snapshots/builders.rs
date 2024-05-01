@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAutoSnapshotsFluentBuilder {
-    /// Creates a new `GetAutoSnapshots`.
+    /// Creates a new `GetAutoSnapshotsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

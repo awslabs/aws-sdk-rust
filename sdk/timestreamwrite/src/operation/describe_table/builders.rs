@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTableFluentBuilder {
-    /// Creates a new `DescribeTable`.
+    /// Creates a new `DescribeTableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

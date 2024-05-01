@@ -53,7 +53,7 @@ impl
     }
 }
 impl AssociateAddressFluentBuilder {
-    /// Creates a new `AssociateAddress`.
+    /// Creates a new `AssociateAddressFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

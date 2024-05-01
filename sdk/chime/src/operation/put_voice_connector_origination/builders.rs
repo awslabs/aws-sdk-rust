@@ -54,7 +54,7 @@ impl
     }
 }
 impl PutVoiceConnectorOriginationFluentBuilder {
-    /// Creates a new `PutVoiceConnectorOrigination`.
+    /// Creates a new `PutVoiceConnectorOriginationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

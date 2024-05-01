@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateTemplateGroupAccessControlEntryFluentBuilder {
-    /// Creates a new `CreateTemplateGroupAccessControlEntry`.
+    /// Creates a new `CreateTemplateGroupAccessControlEntryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

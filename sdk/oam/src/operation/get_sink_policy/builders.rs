@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSinkPolicyFluentBuilder {
-    /// Creates a new `GetSinkPolicy`.
+    /// Creates a new `GetSinkPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

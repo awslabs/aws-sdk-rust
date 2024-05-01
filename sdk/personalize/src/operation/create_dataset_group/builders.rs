@@ -90,7 +90,7 @@ impl
     }
 }
 impl CreateDatasetGroupFluentBuilder {
-    /// Creates a new `CreateDatasetGroup`.
+    /// Creates a new `CreateDatasetGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

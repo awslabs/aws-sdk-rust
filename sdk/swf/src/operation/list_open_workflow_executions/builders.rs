@@ -69,7 +69,7 @@ impl
     }
 }
 impl ListOpenWorkflowExecutionsFluentBuilder {
-    /// Creates a new `ListOpenWorkflowExecutions`.
+    /// Creates a new `ListOpenWorkflowExecutionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

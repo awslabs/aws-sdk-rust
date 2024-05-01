@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateImageSetMetadataFluentBuilder {
-    /// Creates a new `UpdateImageSetMetadata`.
+    /// Creates a new `UpdateImageSetMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

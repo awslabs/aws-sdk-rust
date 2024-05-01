@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAllowListFluentBuilder {
-    /// Creates a new `DeleteAllowList`.
+    /// Creates a new `DeleteAllowListFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

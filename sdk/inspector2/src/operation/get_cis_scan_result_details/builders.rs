@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCisScanResultDetailsFluentBuilder {
-    /// Creates a new `GetCisScanResultDetails`.
+    /// Creates a new `GetCisScanResultDetailsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

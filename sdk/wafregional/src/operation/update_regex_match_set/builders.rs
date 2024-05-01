@@ -73,7 +73,7 @@ impl
     }
 }
 impl UpdateRegexMatchSetFluentBuilder {
-    /// Creates a new `UpdateRegexMatchSet`.
+    /// Creates a new `UpdateRegexMatchSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

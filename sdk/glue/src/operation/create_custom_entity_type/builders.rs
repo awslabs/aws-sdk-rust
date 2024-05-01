@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateCustomEntityTypeFluentBuilder {
-    /// Creates a new `CreateCustomEntityType`.
+    /// Creates a new `CreateCustomEntityTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

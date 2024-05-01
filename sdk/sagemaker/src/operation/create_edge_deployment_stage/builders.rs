@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateEdgeDeploymentStageFluentBuilder {
-    /// Creates a new `CreateEdgeDeploymentStage`.
+    /// Creates a new `CreateEdgeDeploymentStageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

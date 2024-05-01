@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListConnectorEntitiesFluentBuilder {
-    /// Creates a new `ListConnectorEntities`.
+    /// Creates a new `ListConnectorEntitiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

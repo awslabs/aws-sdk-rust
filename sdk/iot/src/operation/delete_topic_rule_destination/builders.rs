@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteTopicRuleDestinationFluentBuilder {
-    /// Creates a new `DeleteTopicRuleDestination`.
+    /// Creates a new `DeleteTopicRuleDestinationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

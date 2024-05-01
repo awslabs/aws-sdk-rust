@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetWorkspaceFluentBuilder {
-    /// Creates a new `GetWorkspace`.
+    /// Creates a new `GetWorkspaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

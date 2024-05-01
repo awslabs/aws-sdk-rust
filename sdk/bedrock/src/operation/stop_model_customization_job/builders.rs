@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopModelCustomizationJobFluentBuilder {
-    /// Creates a new `StopModelCustomizationJob`.
+    /// Creates a new `StopModelCustomizationJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

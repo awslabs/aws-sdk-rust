@@ -64,7 +64,7 @@ impl
     }
 }
 impl RestoreTableFromBackupFluentBuilder {
-    /// Creates a new `RestoreTableFromBackup`.
+    /// Creates a new `RestoreTableFromBackupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

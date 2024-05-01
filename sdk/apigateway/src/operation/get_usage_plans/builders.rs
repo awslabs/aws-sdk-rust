@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetUsagePlansFluentBuilder {
-    /// Creates a new `GetUsagePlans`.
+    /// Creates a new `GetUsagePlansFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

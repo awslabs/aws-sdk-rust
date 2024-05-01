@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListEventDataStoresFluentBuilder {
-    /// Creates a new `ListEventDataStores`.
+    /// Creates a new `ListEventDataStoresFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

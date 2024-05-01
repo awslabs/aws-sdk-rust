@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListMedicalTranscriptionJobsFluentBuilder {
-    /// Creates a new `ListMedicalTranscriptionJobs`.
+    /// Creates a new `ListMedicalTranscriptionJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

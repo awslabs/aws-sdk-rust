@@ -47,7 +47,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::list
     }
 }
 impl ListRootsFluentBuilder {
-    /// Creates a new `ListRoots`.
+    /// Creates a new `ListRootsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

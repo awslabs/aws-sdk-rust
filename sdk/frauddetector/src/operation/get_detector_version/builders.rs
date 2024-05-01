@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDetectorVersionFluentBuilder {
-    /// Creates a new `GetDetectorVersion`.
+    /// Creates a new `GetDetectorVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl CompleteAttachmentUploadFluentBuilder {
-    /// Creates a new `CompleteAttachmentUpload`.
+    /// Creates a new `CompleteAttachmentUploadFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

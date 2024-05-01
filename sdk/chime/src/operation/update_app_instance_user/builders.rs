@@ -52,7 +52,7 @@ impl
     }
 }
 impl UpdateAppInstanceUserFluentBuilder {
-    /// Creates a new `UpdateAppInstanceUser`.
+    /// Creates a new `UpdateAppInstanceUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

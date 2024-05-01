@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeEventAggregatesFluentBuilder {
-    /// Creates a new `DescribeEventAggregates`.
+    /// Creates a new `DescribeEventAggregatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCostEstimateFluentBuilder {
-    /// Creates a new `GetCostEstimate`.
+    /// Creates a new `GetCostEstimateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

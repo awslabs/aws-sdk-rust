@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDetectorsFluentBuilder {
-    /// Creates a new `GetDetectors`.
+    /// Creates a new `GetDetectorsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

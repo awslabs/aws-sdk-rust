@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetFunctionFluentBuilder {
-    /// Creates a new `GetFunction`.
+    /// Creates a new `GetFunctionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

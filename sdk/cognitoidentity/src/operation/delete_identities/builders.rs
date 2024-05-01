@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteIdentitiesFluentBuilder {
-    /// Creates a new `DeleteIdentities`.
+    /// Creates a new `DeleteIdentitiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl FailoverShardFluentBuilder {
-    /// Creates a new `FailoverShard`.
+    /// Creates a new `FailoverShardFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

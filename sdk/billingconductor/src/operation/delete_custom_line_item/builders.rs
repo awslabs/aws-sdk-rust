@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCustomLineItemFluentBuilder {
-    /// Creates a new `DeleteCustomLineItem`.
+    /// Creates a new `DeleteCustomLineItemFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

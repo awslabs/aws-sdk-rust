@@ -75,7 +75,7 @@ impl
     }
 }
 impl ReplicateKeyFluentBuilder {
-    /// Creates a new `ReplicateKey`.
+    /// Creates a new `ReplicateKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

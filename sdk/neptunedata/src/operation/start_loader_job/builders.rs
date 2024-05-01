@@ -49,7 +49,7 @@ impl
     }
 }
 impl StartLoaderJobFluentBuilder {
-    /// Creates a new `StartLoaderJob`.
+    /// Creates a new `StartLoaderJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

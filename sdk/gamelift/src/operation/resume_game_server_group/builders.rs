@@ -52,7 +52,7 @@ impl
     }
 }
 impl ResumeGameServerGroupFluentBuilder {
-    /// Creates a new `ResumeGameServerGroup`.
+    /// Creates a new `ResumeGameServerGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

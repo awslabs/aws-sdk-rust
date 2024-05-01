@@ -51,7 +51,7 @@ impl
     }
 }
 impl RegisterAgentFluentBuilder {
-    /// Creates a new `RegisterAgent`.
+    /// Creates a new `RegisterAgentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

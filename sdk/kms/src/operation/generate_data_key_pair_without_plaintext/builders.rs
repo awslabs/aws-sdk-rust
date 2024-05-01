@@ -70,7 +70,7 @@ impl
     }
 }
 impl GenerateDataKeyPairWithoutPlaintextFluentBuilder {
-    /// Creates a new `GenerateDataKeyPairWithoutPlaintext`.
+    /// Creates a new `GenerateDataKeyPairWithoutPlaintextFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl RegisterCACertificateFluentBuilder {
-    /// Creates a new `RegisterCACertificate`.
+    /// Creates a new `RegisterCACertificateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

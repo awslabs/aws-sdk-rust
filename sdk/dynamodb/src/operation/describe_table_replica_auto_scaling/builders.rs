@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeTableReplicaAutoScalingFluentBuilder {
-    /// Creates a new `DescribeTableReplicaAutoScaling`.
+    /// Creates a new `DescribeTableReplicaAutoScalingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

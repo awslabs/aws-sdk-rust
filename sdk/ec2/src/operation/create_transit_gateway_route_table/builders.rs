@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateTransitGatewayRouteTableFluentBuilder {
-    /// Creates a new `CreateTransitGatewayRouteTable`.
+    /// Creates a new `CreateTransitGatewayRouteTableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

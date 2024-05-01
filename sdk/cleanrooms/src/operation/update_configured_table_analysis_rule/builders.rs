@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateConfiguredTableAnalysisRuleFluentBuilder {
-    /// Creates a new `UpdateConfiguredTableAnalysisRule`.
+    /// Creates a new `UpdateConfiguredTableAnalysisRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

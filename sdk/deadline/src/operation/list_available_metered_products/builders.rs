@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAvailableMeteredProductsFluentBuilder {
-    /// Creates a new `ListAvailableMeteredProducts`.
+    /// Creates a new `ListAvailableMeteredProductsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

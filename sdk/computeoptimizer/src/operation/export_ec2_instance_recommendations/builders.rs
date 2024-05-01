@@ -50,7 +50,7 @@ impl
     }
 }
 impl ExportEC2InstanceRecommendationsFluentBuilder {
-    /// Creates a new `ExportEC2InstanceRecommendations`.
+    /// Creates a new `ExportEC2InstanceRecommendationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMedicalVocabularyFluentBuilder {
-    /// Creates a new `DeleteMedicalVocabulary`.
+    /// Creates a new `DeleteMedicalVocabularyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteHypervisorFluentBuilder {
-    /// Creates a new `DeleteHypervisor`.
+    /// Creates a new `DeleteHypervisorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

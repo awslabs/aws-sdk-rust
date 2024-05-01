@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateServiceQuotaTemplateFluentBuilder {
-    /// Creates a new `DisassociateServiceQuotaTemplate`.
+    /// Creates a new `DisassociateServiceQuotaTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

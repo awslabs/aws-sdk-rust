@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteVirtualMFADeviceFluentBuilder {
-    /// Creates a new `DeleteVirtualMFADevice`.
+    /// Creates a new `DeleteVirtualMFADeviceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -74,7 +74,7 @@ impl
     }
 }
 impl CreateAccessGrantsLocationFluentBuilder {
-    /// Creates a new `CreateAccessGrantsLocation`.
+    /// Creates a new `CreateAccessGrantsLocationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

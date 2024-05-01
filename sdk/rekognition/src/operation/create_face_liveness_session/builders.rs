@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateFaceLivenessSessionFluentBuilder {
-    /// Creates a new `CreateFaceLivenessSession`.
+    /// Creates a new `CreateFaceLivenessSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

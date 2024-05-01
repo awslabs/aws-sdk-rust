@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePerformanceAnalysisReportFluentBuilder {
-    /// Creates a new `DeletePerformanceAnalysisReport`.
+    /// Creates a new `DeletePerformanceAnalysisReportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

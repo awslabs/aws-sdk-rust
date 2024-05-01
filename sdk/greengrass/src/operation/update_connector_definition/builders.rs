@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateConnectorDefinitionFluentBuilder {
-    /// Creates a new `UpdateConnectorDefinition`.
+    /// Creates a new `UpdateConnectorDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

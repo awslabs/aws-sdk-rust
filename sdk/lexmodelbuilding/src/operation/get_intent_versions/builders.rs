@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetIntentVersionsFluentBuilder {
-    /// Creates a new `GetIntentVersions`.
+    /// Creates a new `GetIntentVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

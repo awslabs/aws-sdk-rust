@@ -49,7 +49,7 @@ impl
     }
 }
 impl ExtendTransactionFluentBuilder {
-    /// Creates a new `ExtendTransaction`.
+    /// Creates a new `ExtendTransactionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

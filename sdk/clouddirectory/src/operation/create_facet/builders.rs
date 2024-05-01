@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateFacetFluentBuilder {
-    /// Creates a new `CreateFacet`.
+    /// Creates a new `CreateFacetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

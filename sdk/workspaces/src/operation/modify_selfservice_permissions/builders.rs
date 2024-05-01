@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifySelfservicePermissionsFluentBuilder {
-    /// Creates a new `ModifySelfservicePermissions`.
+    /// Creates a new `ModifySelfservicePermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,56 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait for `addon_active`
+    fn wait_until_addon_active(&self) -> crate::waiters::addon_active::AddonActiveFluentBuilder;
+    /// Wait for `addon_deleted`
+    fn wait_until_addon_deleted(&self) -> crate::waiters::addon_deleted::AddonDeletedFluentBuilder;
+    /// Wait for `cluster_active`
+    fn wait_until_cluster_active(&self) -> crate::waiters::cluster_active::ClusterActiveFluentBuilder;
+    /// Wait for `cluster_deleted`
+    fn wait_until_cluster_deleted(&self) -> crate::waiters::cluster_deleted::ClusterDeletedFluentBuilder;
+    /// Wait for `fargate_profile_active`
+    fn wait_until_fargate_profile_active(&self) -> crate::waiters::fargate_profile_active::FargateProfileActiveFluentBuilder;
+    /// Wait for `fargate_profile_deleted`
+    fn wait_until_fargate_profile_deleted(&self) -> crate::waiters::fargate_profile_deleted::FargateProfileDeletedFluentBuilder;
+    /// Wait for `nodegroup_active`
+    fn wait_until_nodegroup_active(&self) -> crate::waiters::nodegroup_active::NodegroupActiveFluentBuilder;
+    /// Wait for `nodegroup_deleted`
+    fn wait_until_nodegroup_deleted(&self) -> crate::waiters::nodegroup_deleted::NodegroupDeletedFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_addon_active(&self) -> crate::waiters::addon_active::AddonActiveFluentBuilder {
+        crate::waiters::addon_active::AddonActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_addon_deleted(&self) -> crate::waiters::addon_deleted::AddonDeletedFluentBuilder {
+        crate::waiters::addon_deleted::AddonDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_cluster_active(&self) -> crate::waiters::cluster_active::ClusterActiveFluentBuilder {
+        crate::waiters::cluster_active::ClusterActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_cluster_deleted(&self) -> crate::waiters::cluster_deleted::ClusterDeletedFluentBuilder {
+        crate::waiters::cluster_deleted::ClusterDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_fargate_profile_active(&self) -> crate::waiters::fargate_profile_active::FargateProfileActiveFluentBuilder {
+        crate::waiters::fargate_profile_active::FargateProfileActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_fargate_profile_deleted(&self) -> crate::waiters::fargate_profile_deleted::FargateProfileDeletedFluentBuilder {
+        crate::waiters::fargate_profile_deleted::FargateProfileDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_nodegroup_active(&self) -> crate::waiters::nodegroup_active::NodegroupActiveFluentBuilder {
+        crate::waiters::nodegroup_active::NodegroupActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_nodegroup_deleted(&self) -> crate::waiters::nodegroup_deleted::NodegroupDeletedFluentBuilder {
+        crate::waiters::nodegroup_deleted::NodegroupDeletedFluentBuilder::new(self.handle.clone())
     }
 }
 

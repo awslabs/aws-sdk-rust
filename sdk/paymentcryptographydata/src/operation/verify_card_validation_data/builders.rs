@@ -60,7 +60,7 @@ impl
     }
 }
 impl VerifyCardValidationDataFluentBuilder {
-    /// Creates a new `VerifyCardValidationData`.
+    /// Creates a new `VerifyCardValidationDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

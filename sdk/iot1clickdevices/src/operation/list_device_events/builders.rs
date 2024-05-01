@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDeviceEventsFluentBuilder {
-    /// Creates a new `ListDeviceEvents`.
+    /// Creates a new `ListDeviceEventsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

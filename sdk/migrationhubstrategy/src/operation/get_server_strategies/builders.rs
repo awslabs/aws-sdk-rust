@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetServerStrategiesFluentBuilder {
-    /// Creates a new `GetServerStrategies`.
+    /// Creates a new `GetServerStrategiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

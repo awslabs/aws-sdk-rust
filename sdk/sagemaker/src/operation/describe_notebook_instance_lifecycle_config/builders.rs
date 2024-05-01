@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeNotebookInstanceLifecycleConfigFluentBuilder {
-    /// Creates a new `DescribeNotebookInstanceLifecycleConfig`.
+    /// Creates a new `DescribeNotebookInstanceLifecycleConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

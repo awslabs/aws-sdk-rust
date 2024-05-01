@@ -49,7 +49,7 @@ impl
     }
 }
 impl DetachVpnGatewayFluentBuilder {
-    /// Creates a new `DetachVpnGateway`.
+    /// Creates a new `DetachVpnGatewayFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

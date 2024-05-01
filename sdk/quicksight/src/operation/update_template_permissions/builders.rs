@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateTemplatePermissionsFluentBuilder {
-    /// Creates a new `UpdateTemplatePermissions`.
+    /// Creates a new `UpdateTemplatePermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeLocationFsxOntapFluentBuilder {
-    /// Creates a new `DescribeLocationFsxOntap`.
+    /// Creates a new `DescribeLocationFsxOntapFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

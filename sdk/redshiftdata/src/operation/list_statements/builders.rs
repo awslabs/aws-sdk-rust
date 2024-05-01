@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListStatementsFluentBuilder {
-    /// Creates a new `ListStatements`.
+    /// Creates a new `ListStatementsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

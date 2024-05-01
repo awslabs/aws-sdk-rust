@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListKeywordsForDataSourceFluentBuilder {
-    /// Creates a new `ListKeywordsForDataSource`.
+    /// Creates a new `ListKeywordsForDataSourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

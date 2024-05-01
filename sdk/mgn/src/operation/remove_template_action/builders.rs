@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveTemplateActionFluentBuilder {
-    /// Creates a new `RemoveTemplateAction`.
+    /// Creates a new `RemoveTemplateActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

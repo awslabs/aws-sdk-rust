@@ -2150,11 +2150,11 @@ impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            crate::error::sealed_unhandled::Unhandled {
-                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                                                source: err.into(),
-                                            }
-                                        ),
+                                        crate::error::sealed_unhandled::Unhandled {
+                                            meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                            source: err.into(),
+                                        }
+                                    ),
         }
     }
 }
@@ -4080,11 +4080,11 @@ impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            crate::error::sealed_unhandled::Unhandled {
-                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                                                source: err.into(),
-                                            }
-                                        ),
+                                        crate::error::sealed_unhandled::Unhandled {
+                                            meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                            source: err.into(),
+                                        }
+                                    ),
         }
     }
 }
@@ -7365,11 +7365,11 @@ impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            crate::error::sealed_unhandled::Unhandled {
-                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                                                source: err.into(),
-                                            }
-                                        ),
+                                        crate::error::sealed_unhandled::Unhandled {
+                                            meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                            source: err.into(),
+                                        }
+                                    ),
         }
     }
 }
@@ -16430,6 +16430,18 @@ impl From<crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrError> for Err
         match err {
             crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrError::Unhandled(inner) => Error::Unhandled(inner),
         }
+    }
+}
+impl<O, E> ::std::convert::From<::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>> for Error
+where
+    O: ::std::fmt::Debug + ::std::marker::Send + ::std::marker::Sync + 'static,
+    E: ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>) -> Self {
+        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            meta: ::std::default::Default::default(),
+            source: err.into(),
+        })
     }
 }
 impl ::std::error::Error for Error {

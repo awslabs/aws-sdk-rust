@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDatasetExportJobFluentBuilder {
-    /// Creates a new `DescribeDatasetExportJob`.
+    /// Creates a new `DescribeDatasetExportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

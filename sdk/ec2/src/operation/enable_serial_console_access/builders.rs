@@ -48,7 +48,7 @@ impl
     }
 }
 impl EnableSerialConsoleAccessFluentBuilder {
-    /// Creates a new `EnableSerialConsoleAccess`.
+    /// Creates a new `EnableSerialConsoleAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

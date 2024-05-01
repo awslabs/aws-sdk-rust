@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListCustomMetricsFluentBuilder {
-    /// Creates a new `ListCustomMetrics`.
+    /// Creates a new `ListCustomMetricsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

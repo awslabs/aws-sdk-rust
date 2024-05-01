@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListProvisioningTemplatesFluentBuilder {
-    /// Creates a new `ListProvisioningTemplates`.
+    /// Creates a new `ListProvisioningTemplatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

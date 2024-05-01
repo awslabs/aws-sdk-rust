@@ -55,7 +55,7 @@ impl
     }
 }
 impl DetectTextFluentBuilder {
-    /// Creates a new `DetectText`.
+    /// Creates a new `DetectTextFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

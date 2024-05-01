@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetControlOperationFluentBuilder {
-    /// Creates a new `GetControlOperation`.
+    /// Creates a new `GetControlOperationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

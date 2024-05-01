@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchCreateRoomMembershipFluentBuilder {
-    /// Creates a new `BatchCreateRoomMembership`.
+    /// Creates a new `BatchCreateRoomMembershipFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

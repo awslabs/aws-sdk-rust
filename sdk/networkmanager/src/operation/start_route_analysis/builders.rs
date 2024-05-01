@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartRouteAnalysisFluentBuilder {
-    /// Creates a new `StartRouteAnalysis`.
+    /// Creates a new `StartRouteAnalysisFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

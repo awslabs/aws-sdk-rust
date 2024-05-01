@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListApplicationDPUSizesFluentBuilder {
-    /// Creates a new `ListApplicationDPUSizes`.
+    /// Creates a new `ListApplicationDPUSizesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

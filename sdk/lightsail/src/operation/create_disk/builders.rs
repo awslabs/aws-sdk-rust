@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateDiskFluentBuilder {
-    /// Creates a new `CreateDisk`.
+    /// Creates a new `CreateDiskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl PutRuleGroupsNamespaceFluentBuilder {
-    /// Creates a new `PutRuleGroupsNamespace`.
+    /// Creates a new `PutRuleGroupsNamespaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

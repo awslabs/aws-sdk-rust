@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteKeyspaceFluentBuilder {
-    /// Creates a new `DeleteKeyspace`.
+    /// Creates a new `DeleteKeyspaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

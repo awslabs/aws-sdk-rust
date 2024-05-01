@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateDocumentationVersionFluentBuilder {
-    /// Creates a new `CreateDocumentationVersion`.
+    /// Creates a new `CreateDocumentationVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

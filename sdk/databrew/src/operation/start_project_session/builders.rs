@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartProjectSessionFluentBuilder {
-    /// Creates a new `StartProjectSession`.
+    /// Creates a new `StartProjectSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteV2LoggingLevelFluentBuilder {
-    /// Creates a new `DeleteV2LoggingLevel`.
+    /// Creates a new `DeleteV2LoggingLevelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

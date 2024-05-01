@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeNodegroupFluentBuilder {
-    /// Creates a new `DescribeNodegroup`.
+    /// Creates a new `DescribeNodegroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

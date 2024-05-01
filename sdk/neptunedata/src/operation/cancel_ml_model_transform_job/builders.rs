@@ -49,7 +49,7 @@ impl
     }
 }
 impl CancelMLModelTransformJobFluentBuilder {
-    /// Creates a new `CancelMLModelTransformJob`.
+    /// Creates a new `CancelMLModelTransformJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

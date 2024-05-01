@@ -174,7 +174,7 @@ impl
     }
 }
 impl PutBucketAclFluentBuilder {
-    /// Creates a new `PutBucketAcl`.
+    /// Creates a new `PutBucketAclFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

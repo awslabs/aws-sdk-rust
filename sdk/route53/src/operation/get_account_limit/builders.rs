@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetAccountLimitFluentBuilder {
-    /// Creates a new `GetAccountLimit`.
+    /// Creates a new `GetAccountLimitFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

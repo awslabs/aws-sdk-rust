@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetIdentityMailFromDomainAttributesFluentBuilder {
-    /// Creates a new `GetIdentityMailFromDomainAttributes`.
+    /// Creates a new `GetIdentityMailFromDomainAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

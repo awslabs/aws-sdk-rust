@@ -89,7 +89,7 @@ impl
     }
 }
 impl ImportKeyMaterialFluentBuilder {
-    /// Creates a new `ImportKeyMaterial`.
+    /// Creates a new `ImportKeyMaterialFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

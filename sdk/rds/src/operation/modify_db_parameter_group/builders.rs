@@ -50,7 +50,7 @@ impl
     }
 }
 impl ModifyDBParameterGroupFluentBuilder {
-    /// Creates a new `ModifyDBParameterGroup`.
+    /// Creates a new `ModifyDBParameterGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl AttachInternetGatewayFluentBuilder {
-    /// Creates a new `AttachInternetGateway`.
+    /// Creates a new `AttachInternetGatewayFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

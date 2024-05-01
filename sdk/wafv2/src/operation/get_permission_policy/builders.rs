@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetPermissionPolicyFluentBuilder {
-    /// Creates a new `GetPermissionPolicy`.
+    /// Creates a new `GetPermissionPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -53,7 +53,7 @@ impl
     }
 }
 impl RegisterRobotFluentBuilder {
-    /// Creates a new `RegisterRobot`.
+    /// Creates a new `RegisterRobotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

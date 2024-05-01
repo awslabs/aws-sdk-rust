@@ -60,7 +60,7 @@ impl
     }
 }
 impl GetFlowLogsIntegrationTemplateFluentBuilder {
-    /// Creates a new `GetFlowLogsIntegrationTemplate`.
+    /// Creates a new `GetFlowLogsIntegrationTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

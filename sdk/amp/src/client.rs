@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,36 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait until a scraper reaches ACTIVE status
+    fn wait_until_scraper_active(&self) -> crate::waiters::scraper_active::ScraperActiveFluentBuilder;
+    /// Wait until a scraper reaches DELETED status
+    fn wait_until_scraper_deleted(&self) -> crate::waiters::scraper_deleted::ScraperDeletedFluentBuilder;
+    /// Wait until a workspace reaches ACTIVE status
+    fn wait_until_workspace_active(&self) -> crate::waiters::workspace_active::WorkspaceActiveFluentBuilder;
+    /// Wait until a workspace reaches DELETED status
+    fn wait_until_workspace_deleted(&self) -> crate::waiters::workspace_deleted::WorkspaceDeletedFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_scraper_active(&self) -> crate::waiters::scraper_active::ScraperActiveFluentBuilder {
+        crate::waiters::scraper_active::ScraperActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_scraper_deleted(&self) -> crate::waiters::scraper_deleted::ScraperDeletedFluentBuilder {
+        crate::waiters::scraper_deleted::ScraperDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_workspace_active(&self) -> crate::waiters::workspace_active::WorkspaceActiveFluentBuilder {
+        crate::waiters::workspace_active::WorkspaceActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_workspace_deleted(&self) -> crate::waiters::workspace_deleted::WorkspaceDeletedFluentBuilder {
+        crate::waiters::workspace_deleted::WorkspaceDeletedFluentBuilder::new(self.handle.clone())
     }
 }
 

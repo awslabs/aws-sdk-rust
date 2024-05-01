@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateStorageFluentBuilder {
-    /// Creates a new `UpdateStorage`.
+    /// Creates a new `UpdateStorageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

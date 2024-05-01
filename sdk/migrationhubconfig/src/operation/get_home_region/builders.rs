@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetHomeRegionFluentBuilder {
-    /// Creates a new `GetHomeRegion`.
+    /// Creates a new `GetHomeRegionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

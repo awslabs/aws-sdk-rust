@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCisScanResultsAggregatedByTargetResourceFluentBuilder {
-    /// Creates a new `ListCisScanResultsAggregatedByTargetResource`.
+    /// Creates a new `ListCisScanResultsAggregatedByTargetResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

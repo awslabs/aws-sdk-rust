@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeregisterInstanceFluentBuilder {
-    /// Creates a new `DeregisterInstance`.
+    /// Creates a new `DeregisterInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

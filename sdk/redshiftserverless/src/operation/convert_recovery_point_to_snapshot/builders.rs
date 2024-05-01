@@ -48,7 +48,7 @@ impl
     }
 }
 impl ConvertRecoveryPointToSnapshotFluentBuilder {
-    /// Creates a new `ConvertRecoveryPointToSnapshot`.
+    /// Creates a new `ConvertRecoveryPointToSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetMapStyleDescriptorFluentBuilder {
-    /// Creates a new `GetMapStyleDescriptor`.
+    /// Creates a new `GetMapStyleDescriptorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

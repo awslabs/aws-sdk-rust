@@ -65,7 +65,7 @@ impl
     }
 }
 impl UpdateTagsForResourceFluentBuilder {
-    /// Creates a new `UpdateTagsForResource`.
+    /// Creates a new `UpdateTagsForResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

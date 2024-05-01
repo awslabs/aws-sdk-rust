@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeCopyProductStatusFluentBuilder {
-    /// Creates a new `DescribeCopyProductStatus`.
+    /// Creates a new `DescribeCopyProductStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

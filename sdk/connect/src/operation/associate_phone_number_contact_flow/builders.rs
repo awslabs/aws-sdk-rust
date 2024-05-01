@@ -50,7 +50,7 @@ impl
     }
 }
 impl AssociatePhoneNumberContactFlowFluentBuilder {
-    /// Creates a new `AssociatePhoneNumberContactFlow`.
+    /// Creates a new `AssociatePhoneNumberContactFlowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

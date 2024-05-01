@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDescribeModelPackageFluentBuilder {
-    /// Creates a new `BatchDescribeModelPackage`.
+    /// Creates a new `BatchDescribeModelPackageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

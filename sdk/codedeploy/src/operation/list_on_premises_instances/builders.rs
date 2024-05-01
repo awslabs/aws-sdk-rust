@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListOnPremisesInstancesFluentBuilder {
-    /// Creates a new `ListOnPremisesInstances`.
+    /// Creates a new `ListOnPremisesInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

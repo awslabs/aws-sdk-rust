@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteWebExperienceFluentBuilder {
-    /// Creates a new `DeleteWebExperience`.
+    /// Creates a new `DeleteWebExperienceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

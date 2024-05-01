@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribePrefixListsFluentBuilder {
-    /// Creates a new `DescribePrefixLists`.
+    /// Creates a new `DescribePrefixListsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

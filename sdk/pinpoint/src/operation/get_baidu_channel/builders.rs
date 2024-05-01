@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetBaiduChannelFluentBuilder {
-    /// Creates a new `GetBaiduChannel`.
+    /// Creates a new `GetBaiduChannelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

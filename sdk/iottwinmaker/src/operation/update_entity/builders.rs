@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateEntityFluentBuilder {
-    /// Creates a new `UpdateEntity`.
+    /// Creates a new `UpdateEntityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

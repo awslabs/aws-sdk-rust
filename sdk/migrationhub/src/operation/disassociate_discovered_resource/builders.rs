@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateDiscoveredResourceFluentBuilder {
-    /// Creates a new `DisassociateDiscoveredResource`.
+    /// Creates a new `DisassociateDiscoveredResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

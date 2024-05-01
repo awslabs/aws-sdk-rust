@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartDocumentClassificationJobFluentBuilder {
-    /// Creates a new `StartDocumentClassificationJob`.
+    /// Creates a new `StartDocumentClassificationJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

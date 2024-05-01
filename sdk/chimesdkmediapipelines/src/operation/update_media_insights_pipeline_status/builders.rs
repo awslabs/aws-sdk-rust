@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateMediaInsightsPipelineStatusFluentBuilder {
-    /// Creates a new `UpdateMediaInsightsPipelineStatus`.
+    /// Creates a new `UpdateMediaInsightsPipelineStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

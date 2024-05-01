@@ -48,7 +48,7 @@ impl
     }
 }
 impl ImportBackendStorageFluentBuilder {
-    /// Creates a new `ImportBackendStorage`.
+    /// Creates a new `ImportBackendStorageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

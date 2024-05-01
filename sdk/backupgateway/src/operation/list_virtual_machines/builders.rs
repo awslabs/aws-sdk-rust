@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListVirtualMachinesFluentBuilder {
-    /// Creates a new `ListVirtualMachines`.
+    /// Creates a new `ListVirtualMachinesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

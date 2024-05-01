@@ -56,7 +56,7 @@ impl
     }
 }
 impl DeleteSecretFluentBuilder {
-    /// Creates a new `DeleteSecret`.
+    /// Creates a new `DeleteSecretFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

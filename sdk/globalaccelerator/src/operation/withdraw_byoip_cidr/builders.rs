@@ -50,7 +50,7 @@ impl
     }
 }
 impl WithdrawByoipCidrFluentBuilder {
-    /// Creates a new `WithdrawByoipCidr`.
+    /// Creates a new `WithdrawByoipCidrFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

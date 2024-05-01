@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateVoiceTemplateFluentBuilder {
-    /// Creates a new `UpdateVoiceTemplate`.
+    /// Creates a new `UpdateVoiceTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

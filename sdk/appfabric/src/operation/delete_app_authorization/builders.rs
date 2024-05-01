@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAppAuthorizationFluentBuilder {
-    /// Creates a new `DeleteAppAuthorization`.
+    /// Creates a new `DeleteAppAuthorizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

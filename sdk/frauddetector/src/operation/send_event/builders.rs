@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::send
     }
 }
 impl SendEventFluentBuilder {
-    /// Creates a new `SendEvent`.
+    /// Creates a new `SendEventFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

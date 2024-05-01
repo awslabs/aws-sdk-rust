@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCloudFrontOriginAccessIdentityFluentBuilder {
-    /// Creates a new `DeleteCloudFrontOriginAccessIdentity`.
+    /// Creates a new `DeleteCloudFrontOriginAccessIdentityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

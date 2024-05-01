@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListFileSharesFluentBuilder {
-    /// Creates a new `ListFileShares`.
+    /// Creates a new `ListFileSharesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

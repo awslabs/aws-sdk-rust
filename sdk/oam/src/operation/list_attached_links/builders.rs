@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListAttachedLinksFluentBuilder {
-    /// Creates a new `ListAttachedLinks`.
+    /// Creates a new `ListAttachedLinksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

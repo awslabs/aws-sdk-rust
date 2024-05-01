@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateAuditSuppressionFluentBuilder {
-    /// Creates a new `UpdateAuditSuppression`.
+    /// Creates a new `UpdateAuditSuppressionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateUsageLimitFluentBuilder {
-    /// Creates a new `CreateUsageLimit`.
+    /// Creates a new `CreateUsageLimitFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisableApplicationLayerAutomaticResponseFluentBuilder {
-    /// Creates a new `DisableApplicationLayerAutomaticResponse`.
+    /// Creates a new `DisableApplicationLayerAutomaticResponseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

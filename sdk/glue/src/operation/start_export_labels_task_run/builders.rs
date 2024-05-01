@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartExportLabelsTaskRunFluentBuilder {
-    /// Creates a new `StartExportLabelsTaskRun`.
+    /// Creates a new `StartExportLabelsTaskRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

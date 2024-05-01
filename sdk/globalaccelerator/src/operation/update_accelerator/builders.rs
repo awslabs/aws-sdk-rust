@@ -61,7 +61,7 @@ impl
     }
 }
 impl UpdateAcceleratorFluentBuilder {
-    /// Creates a new `UpdateAccelerator`.
+    /// Creates a new `UpdateAcceleratorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

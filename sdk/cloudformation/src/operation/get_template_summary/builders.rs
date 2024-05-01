@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetTemplateSummaryFluentBuilder {
-    /// Creates a new `GetTemplateSummary`.
+    /// Creates a new `GetTemplateSummaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

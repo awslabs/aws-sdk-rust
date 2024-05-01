@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeEnvironmentResourcesFluentBuilder {
-    /// Creates a new `DescribeEnvironmentResources`.
+    /// Creates a new `DescribeEnvironmentResourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

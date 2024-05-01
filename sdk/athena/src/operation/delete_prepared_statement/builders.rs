@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePreparedStatementFluentBuilder {
-    /// Creates a new `DeletePreparedStatement`.
+    /// Creates a new `DeletePreparedStatementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

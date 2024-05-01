@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAssistantAssociationFluentBuilder {
-    /// Creates a new `CreateAssistantAssociation`.
+    /// Creates a new `CreateAssistantAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

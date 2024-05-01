@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAssetModelCompositeModelFluentBuilder {
-    /// Creates a new `DescribeAssetModelCompositeModel`.
+    /// Creates a new `DescribeAssetModelCompositeModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

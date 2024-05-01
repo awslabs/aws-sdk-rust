@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeNFSFileSharesFluentBuilder {
-    /// Creates a new `DescribeNFSFileShares`.
+    /// Creates a new `DescribeNFSFileSharesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

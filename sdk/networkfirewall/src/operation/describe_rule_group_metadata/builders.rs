@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeRuleGroupMetadataFluentBuilder {
-    /// Creates a new `DescribeRuleGroupMetadata`.
+    /// Creates a new `DescribeRuleGroupMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

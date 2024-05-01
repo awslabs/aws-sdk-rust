@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetProgrammaticAccessCredentialsFluentBuilder {
-    /// Creates a new `GetProgrammaticAccessCredentials`.
+    /// Creates a new `GetProgrammaticAccessCredentialsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl SetUnhealthyNodeReplacementFluentBuilder {
-    /// Creates a new `SetUnhealthyNodeReplacement`.
+    /// Creates a new `SetUnhealthyNodeReplacementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

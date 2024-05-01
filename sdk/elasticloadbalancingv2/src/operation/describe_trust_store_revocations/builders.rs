@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTrustStoreRevocationsFluentBuilder {
-    /// Creates a new `DescribeTrustStoreRevocations`.
+    /// Creates a new `DescribeTrustStoreRevocationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -63,7 +63,7 @@ impl
     }
 }
 impl ReEncryptDataFluentBuilder {
-    /// Creates a new `ReEncryptData`.
+    /// Creates a new `ReEncryptDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

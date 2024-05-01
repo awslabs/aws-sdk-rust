@@ -49,7 +49,7 @@ impl
     }
 }
 impl VerifyEmailIdentityFluentBuilder {
-    /// Creates a new `VerifyEmailIdentity`.
+    /// Creates a new `VerifyEmailIdentityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

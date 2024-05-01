@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListImportTasksFluentBuilder {
-    /// Creates a new `ListImportTasks`.
+    /// Creates a new `ListImportTasksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

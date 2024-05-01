@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDataSourceFluentBuilder {
-    /// Creates a new `DeleteDataSource`.
+    /// Creates a new `DeleteDataSourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

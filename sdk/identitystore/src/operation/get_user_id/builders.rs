@@ -47,7 +47,7 @@ impl
     }
 }
 impl GetUserIdFluentBuilder {
-    /// Creates a new `GetUserId`.
+    /// Creates a new `GetUserIdFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -63,7 +63,7 @@ impl
     }
 }
 impl RespondActivityTaskCanceledFluentBuilder {
-    /// Creates a new `RespondActivityTaskCanceled`.
+    /// Creates a new `RespondActivityTaskCanceledFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

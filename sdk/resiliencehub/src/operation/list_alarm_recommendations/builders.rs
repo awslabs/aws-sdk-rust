@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAlarmRecommendationsFluentBuilder {
-    /// Creates a new `ListAlarmRecommendations`.
+    /// Creates a new `ListAlarmRecommendationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

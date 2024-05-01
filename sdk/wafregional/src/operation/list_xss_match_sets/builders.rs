@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListXssMatchSetsFluentBuilder {
-    /// Creates a new `ListXssMatchSets`.
+    /// Creates a new `ListXssMatchSetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

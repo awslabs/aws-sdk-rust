@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeAssetBundleImportJobFluentBuilder {
-    /// Creates a new `DescribeAssetBundleImportJob`.
+    /// Creates a new `DescribeAssetBundleImportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

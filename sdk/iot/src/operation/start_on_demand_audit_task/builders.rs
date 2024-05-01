@@ -49,7 +49,7 @@ impl
     }
 }
 impl StartOnDemandAuditTaskFluentBuilder {
-    /// Creates a new `StartOnDemandAuditTask`.
+    /// Creates a new `StartOnDemandAuditTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

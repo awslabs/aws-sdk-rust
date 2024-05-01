@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteFeatureGroupFluentBuilder {
-    /// Creates a new `DeleteFeatureGroup`.
+    /// Creates a new `DeleteFeatureGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

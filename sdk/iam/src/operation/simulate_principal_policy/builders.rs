@@ -56,7 +56,7 @@ impl
     }
 }
 impl SimulatePrincipalPolicyFluentBuilder {
-    /// Creates a new `SimulatePrincipalPolicy`.
+    /// Creates a new `SimulatePrincipalPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

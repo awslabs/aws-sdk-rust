@@ -49,7 +49,7 @@ impl
     }
 }
 impl BulkPublishFluentBuilder {
-    /// Creates a new `BulkPublish`.
+    /// Creates a new `BulkPublishFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

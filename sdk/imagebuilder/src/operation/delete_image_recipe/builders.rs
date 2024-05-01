@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteImageRecipeFluentBuilder {
-    /// Creates a new `DeleteImageRecipe`.
+    /// Creates a new `DeleteImageRecipeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

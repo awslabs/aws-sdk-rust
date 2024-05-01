@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListOpenIDConnectProviderTagsFluentBuilder {
-    /// Creates a new `ListOpenIDConnectProviderTags`.
+    /// Creates a new `ListOpenIDConnectProviderTagsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

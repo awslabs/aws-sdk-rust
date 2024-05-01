@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::get_
     }
 }
 impl GetPluginFluentBuilder {
-    /// Creates a new `GetPlugin`.
+    /// Creates a new `GetPluginFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

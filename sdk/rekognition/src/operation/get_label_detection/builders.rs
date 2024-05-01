@@ -73,7 +73,7 @@ impl
     }
 }
 impl GetLabelDetectionFluentBuilder {
-    /// Creates a new `GetLabelDetection`.
+    /// Creates a new `GetLabelDetectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

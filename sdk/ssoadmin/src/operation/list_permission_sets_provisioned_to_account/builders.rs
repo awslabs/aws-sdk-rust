@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPermissionSetsProvisionedToAccountFluentBuilder {
-    /// Creates a new `ListPermissionSetsProvisionedToAccount`.
+    /// Creates a new `ListPermissionSetsProvisionedToAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

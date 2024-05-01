@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteAccessEntryFluentBuilder {
-    /// Creates a new `DeleteAccessEntry`.
+    /// Creates a new `DeleteAccessEntryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

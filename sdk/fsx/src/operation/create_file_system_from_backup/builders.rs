@@ -59,7 +59,7 @@ impl
     }
 }
 impl CreateFileSystemFromBackupFluentBuilder {
-    /// Creates a new `CreateFileSystemFromBackup`.
+    /// Creates a new `CreateFileSystemFromBackupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

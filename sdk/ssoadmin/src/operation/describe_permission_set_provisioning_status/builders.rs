@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribePermissionSetProvisioningStatusFluentBuilder {
-    /// Creates a new `DescribePermissionSetProvisioningStatus`.
+    /// Creates a new `DescribePermissionSetProvisioningStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

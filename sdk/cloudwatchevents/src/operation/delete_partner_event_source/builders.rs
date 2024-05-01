@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeletePartnerEventSourceFluentBuilder {
-    /// Creates a new `DeletePartnerEventSource`.
+    /// Creates a new `DeletePartnerEventSourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl ModifyImageAttributeFluentBuilder {
-    /// Creates a new `ModifyImageAttribute`.
+    /// Creates a new `ModifyImageAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

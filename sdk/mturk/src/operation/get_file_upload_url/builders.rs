@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetFileUploadURLFluentBuilder {
-    /// Creates a new `GetFileUploadURL`.
+    /// Creates a new `GetFileUploadURLFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

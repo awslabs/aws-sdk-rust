@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdatePhoneNumberFluentBuilder {
-    /// Creates a new `UpdatePhoneNumber`.
+    /// Creates a new `UpdatePhoneNumberFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

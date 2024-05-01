@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateRadiusFluentBuilder {
-    /// Creates a new `UpdateRadius`.
+    /// Creates a new `UpdateRadiusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

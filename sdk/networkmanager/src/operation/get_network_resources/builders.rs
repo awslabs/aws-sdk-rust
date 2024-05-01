@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetNetworkResourcesFluentBuilder {
-    /// Creates a new `GetNetworkResources`.
+    /// Creates a new `GetNetworkResourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

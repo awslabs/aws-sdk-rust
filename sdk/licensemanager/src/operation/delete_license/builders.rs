@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteLicenseFluentBuilder {
-    /// Creates a new `DeleteLicense`.
+    /// Creates a new `DeleteLicenseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

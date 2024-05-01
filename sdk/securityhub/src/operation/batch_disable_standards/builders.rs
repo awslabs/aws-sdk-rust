@@ -49,7 +49,7 @@ impl
     }
 }
 impl BatchDisableStandardsFluentBuilder {
-    /// Creates a new `BatchDisableStandards`.
+    /// Creates a new `BatchDisableStandardsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

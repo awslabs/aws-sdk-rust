@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::get_
     }
 }
 impl GetSchemaFluentBuilder {
-    /// Creates a new `GetSchema`.
+    /// Creates a new `GetSchemaFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

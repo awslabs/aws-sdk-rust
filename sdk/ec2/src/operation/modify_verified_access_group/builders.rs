@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyVerifiedAccessGroupFluentBuilder {
-    /// Creates a new `ModifyVerifiedAccessGroup`.
+    /// Creates a new `ModifyVerifiedAccessGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

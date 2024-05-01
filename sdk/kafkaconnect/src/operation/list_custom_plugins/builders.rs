@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCustomPluginsFluentBuilder {
-    /// Creates a new `ListCustomPlugins`.
+    /// Creates a new `ListCustomPluginsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

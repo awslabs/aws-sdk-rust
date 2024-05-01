@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateQueueFleetAssociationFluentBuilder {
-    /// Creates a new `CreateQueueFleetAssociation`.
+    /// Creates a new `CreateQueueFleetAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

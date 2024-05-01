@@ -50,7 +50,7 @@ impl
     }
 }
 impl ImportHubContentFluentBuilder {
-    /// Creates a new `ImportHubContent`.
+    /// Creates a new `ImportHubContentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

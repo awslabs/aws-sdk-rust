@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTemplateAliasFluentBuilder {
-    /// Creates a new `DescribeTemplateAlias`.
+    /// Creates a new `DescribeTemplateAliasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

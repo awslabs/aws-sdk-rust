@@ -48,7 +48,7 @@ impl
     }
 }
 impl RebalanceSlotsInGlobalReplicationGroupFluentBuilder {
-    /// Creates a new `RebalanceSlotsInGlobalReplicationGroup`.
+    /// Creates a new `RebalanceSlotsInGlobalReplicationGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

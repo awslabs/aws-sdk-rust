@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMediaPipelineFluentBuilder {
-    /// Creates a new `DeleteMediaPipeline`.
+    /// Creates a new `DeleteMediaPipelineFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl SearchPlaceIndexForPositionFluentBuilder {
-    /// Creates a new `SearchPlaceIndexForPosition`.
+    /// Creates a new `SearchPlaceIndexForPositionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAccountRolesFluentBuilder {
-    /// Creates a new `ListAccountRoles`.
+    /// Creates a new `ListAccountRolesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

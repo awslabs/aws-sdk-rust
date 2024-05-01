@@ -51,7 +51,7 @@ impl
     }
 }
 impl SwitchoverGlobalClusterFluentBuilder {
-    /// Creates a new `SwitchoverGlobalCluster`.
+    /// Creates a new `SwitchoverGlobalClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

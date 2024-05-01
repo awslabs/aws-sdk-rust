@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeDefaultClusterParametersFluentBuilder {
-    /// Creates a new `DescribeDefaultClusterParameters`.
+    /// Creates a new `DescribeDefaultClusterParametersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

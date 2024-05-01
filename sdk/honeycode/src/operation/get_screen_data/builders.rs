@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetScreenDataFluentBuilder {
-    /// Creates a new `GetScreenData`.
+    /// Creates a new `GetScreenDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

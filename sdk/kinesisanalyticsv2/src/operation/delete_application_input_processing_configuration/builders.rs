@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteApplicationInputProcessingConfigurationFluentBuilder {
-    /// Creates a new `DeleteApplicationInputProcessingConfiguration`.
+    /// Creates a new `DeleteApplicationInputProcessingConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

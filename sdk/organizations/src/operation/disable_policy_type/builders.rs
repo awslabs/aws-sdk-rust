@@ -51,7 +51,7 @@ impl
     }
 }
 impl DisablePolicyTypeFluentBuilder {
-    /// Creates a new `DisablePolicyType`.
+    /// Creates a new `DisablePolicyTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

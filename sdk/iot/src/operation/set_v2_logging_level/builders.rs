@@ -49,7 +49,7 @@ impl
     }
 }
 impl SetV2LoggingLevelFluentBuilder {
-    /// Creates a new `SetV2LoggingLevel`.
+    /// Creates a new `SetV2LoggingLevelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

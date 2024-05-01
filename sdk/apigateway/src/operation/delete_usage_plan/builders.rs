@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteUsagePlanFluentBuilder {
-    /// Creates a new `DeleteUsagePlan`.
+    /// Creates a new `DeleteUsagePlanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

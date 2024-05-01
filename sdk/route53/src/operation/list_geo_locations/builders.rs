@@ -51,7 +51,7 @@ impl
     }
 }
 impl ListGeoLocationsFluentBuilder {
-    /// Creates a new `ListGeoLocations`.
+    /// Creates a new `ListGeoLocationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

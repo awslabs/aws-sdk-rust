@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListRelatedItemsFluentBuilder {
-    /// Creates a new `ListRelatedItems`.
+    /// Creates a new `ListRelatedItemsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

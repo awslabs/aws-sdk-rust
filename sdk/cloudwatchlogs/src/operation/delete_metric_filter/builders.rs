@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMetricFilterFluentBuilder {
-    /// Creates a new `DeleteMetricFilter`.
+    /// Creates a new `DeleteMetricFilterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

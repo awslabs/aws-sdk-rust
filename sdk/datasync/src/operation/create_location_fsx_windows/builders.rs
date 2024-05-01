@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateLocationFsxWindowsFluentBuilder {
-    /// Creates a new `CreateLocationFsxWindows`.
+    /// Creates a new `CreateLocationFsxWindowsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

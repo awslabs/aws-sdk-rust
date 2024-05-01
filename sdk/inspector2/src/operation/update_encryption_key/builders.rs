@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateEncryptionKeyFluentBuilder {
-    /// Creates a new `UpdateEncryptionKey`.
+    /// Creates a new `UpdateEncryptionKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

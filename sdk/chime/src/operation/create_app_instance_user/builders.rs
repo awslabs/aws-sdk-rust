@@ -52,7 +52,7 @@ impl
     }
 }
 impl CreateAppInstanceUserFluentBuilder {
-    /// Creates a new `CreateAppInstanceUser`.
+    /// Creates a new `CreateAppInstanceUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

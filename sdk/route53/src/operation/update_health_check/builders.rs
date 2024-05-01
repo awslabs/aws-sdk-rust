@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateHealthCheckFluentBuilder {
-    /// Creates a new `UpdateHealthCheck`.
+    /// Creates a new `UpdateHealthCheckFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

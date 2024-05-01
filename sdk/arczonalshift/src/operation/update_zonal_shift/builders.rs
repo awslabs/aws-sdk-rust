@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateZonalShiftFluentBuilder {
-    /// Creates a new `UpdateZonalShift`.
+    /// Creates a new `UpdateZonalShiftFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

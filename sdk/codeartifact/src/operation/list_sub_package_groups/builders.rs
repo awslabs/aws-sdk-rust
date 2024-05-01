@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListSubPackageGroupsFluentBuilder {
-    /// Creates a new `ListSubPackageGroups`.
+    /// Creates a new `ListSubPackageGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

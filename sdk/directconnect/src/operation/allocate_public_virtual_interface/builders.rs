@@ -51,7 +51,7 @@ impl
     }
 }
 impl AllocatePublicVirtualInterfaceFluentBuilder {
-    /// Creates a new `AllocatePublicVirtualInterface`.
+    /// Creates a new `AllocatePublicVirtualInterfaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

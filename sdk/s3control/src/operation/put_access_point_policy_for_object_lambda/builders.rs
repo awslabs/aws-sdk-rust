@@ -58,7 +58,7 @@ impl
     }
 }
 impl PutAccessPointPolicyForObjectLambdaFluentBuilder {
-    /// Creates a new `PutAccessPointPolicyForObjectLambda`.
+    /// Creates a new `PutAccessPointPolicyForObjectLambdaFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTableObjectsFluentBuilder {
-    /// Creates a new `GetTableObjects`.
+    /// Creates a new `GetTableObjectsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

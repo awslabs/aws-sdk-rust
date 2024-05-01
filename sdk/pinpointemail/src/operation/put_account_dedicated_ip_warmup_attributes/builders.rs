@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutAccountDedicatedIpWarmupAttributesFluentBuilder {
-    /// Creates a new `PutAccountDedicatedIpWarmupAttributes`.
+    /// Creates a new `PutAccountDedicatedIpWarmupAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

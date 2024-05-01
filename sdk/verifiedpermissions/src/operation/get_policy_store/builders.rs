@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetPolicyStoreFluentBuilder {
-    /// Creates a new `GetPolicyStore`.
+    /// Creates a new `GetPolicyStoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

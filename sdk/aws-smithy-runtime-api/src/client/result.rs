@@ -170,7 +170,7 @@ pub mod builders {
 /// Error context for [`SdkError::ConstructionFailure`]
 #[derive(Debug)]
 pub struct ConstructionFailure {
-    source: BoxError,
+    pub(crate) source: BoxError,
 }
 
 impl ConstructionFailure {

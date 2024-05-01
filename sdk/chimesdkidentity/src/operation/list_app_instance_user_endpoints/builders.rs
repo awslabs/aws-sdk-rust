@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAppInstanceUserEndpointsFluentBuilder {
-    /// Creates a new `ListAppInstanceUserEndpoints`.
+    /// Creates a new `ListAppInstanceUserEndpointsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

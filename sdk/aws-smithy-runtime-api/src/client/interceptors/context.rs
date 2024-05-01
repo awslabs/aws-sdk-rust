@@ -239,6 +239,13 @@ impl<I, O, E> InterceptorContext<I, O, E> {
         self.output_or_error.as_mut()
     }
 
+    /// Grants ownership of the deserialized output/error.
+    ///
+    /// Note: This method is intended for internal use only.
+    pub fn take_output_or_error(&mut self) -> Option<Result<O, OrchestratorError<E>>> {
+        self.output_or_error.take()
+    }
+
     /// Return `true` if this context's `output_or_error` is an error. Otherwise, return `false`.
     ///
     /// Note: This method is intended for internal use only.
@@ -409,16 +416,23 @@ where
     /// Convert this context into the final operation result that is returned in client's the public API.
     ///
     /// Note: This method is intended for internal use only.
-    pub fn finalize(self) -> Result<O, SdkError<E, HttpResponse>> {
-        let Self {
-            output_or_error,
-            response,
-            phase,
-            ..
-        } = self;
-        output_or_error
-            .expect("output_or_error must always be set before finalize is called.")
-            .map_err(|error| OrchestratorError::into_sdk_error(error, &phase, response))
+    pub fn finalize(mut self) -> Result<O, SdkError<E, HttpResponse>> {
+        let output_or_error = self
+            .output_or_error
+            .take()
+            .expect("output_or_error must always be set before finalize is called.");
+        self.finalize_result(output_or_error)
+    }
+
+    /// Convert the given output/error into a final operation result that is returned in the client's public API.
+    ///
+    /// Note: This method is intended for internal use only.
+    pub fn finalize_result(
+        &mut self,
+        result: Result<O, OrchestratorError<E>>,
+    ) -> Result<O, SdkError<E, HttpResponse>> {
+        let response = self.response.take();
+        result.map_err(|error| OrchestratorError::into_sdk_error(error, &self.phase, response))
     }
 
     /// Mark this context as failed due to errors during the operation. Any errors already contained

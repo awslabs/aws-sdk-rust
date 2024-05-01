@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyDBRecommendationFluentBuilder {
-    /// Creates a new `ModifyDBRecommendation`.
+    /// Creates a new `ModifyDBRecommendationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

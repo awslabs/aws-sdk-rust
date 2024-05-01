@@ -75,7 +75,7 @@ impl
     }
 }
 impl LeaveOrganizationFluentBuilder {
-    /// Creates a new `LeaveOrganization`.
+    /// Creates a new `LeaveOrganizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTaskProtectionFluentBuilder {
-    /// Creates a new `GetTaskProtection`.
+    /// Creates a new `GetTaskProtectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

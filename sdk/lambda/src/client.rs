@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,46 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Waits for the function's State to be Active. This waiter uses GetFunction API. This should be used after new function creation.
+    fn wait_until_function_active_v2(&self) -> crate::waiters::function_active_v2::FunctionActiveV2FluentBuilder;
+    /// Wait for `function_exists`
+    fn wait_until_function_exists(&self) -> crate::waiters::function_exists::FunctionExistsFluentBuilder;
+    /// Waits for the function's LastUpdateStatus to be Successful. This waiter uses GetFunction API. This should be used after function updates.
+    fn wait_until_function_updated_v2(&self) -> crate::waiters::function_updated_v2::FunctionUpdatedV2FluentBuilder;
+    /// Waits for the function's State to be Active. This waiter uses GetFunctionConfiguration API. This should be used after new function creation.
+    fn wait_until_function_active(&self) -> crate::waiters::function_active::FunctionActiveFluentBuilder;
+    /// Waits for the function's LastUpdateStatus to be Successful. This waiter uses GetFunctionConfiguration API. This should be used after function updates.
+    fn wait_until_function_updated(&self) -> crate::waiters::function_updated::FunctionUpdatedFluentBuilder;
+    /// Waits for the published version's State to be Active. This waiter uses GetFunctionConfiguration API. This should be used after new version is published.
+    fn wait_until_published_version_active(&self) -> crate::waiters::published_version_active::PublishedVersionActiveFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_function_active_v2(&self) -> crate::waiters::function_active_v2::FunctionActiveV2FluentBuilder {
+        crate::waiters::function_active_v2::FunctionActiveV2FluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_function_exists(&self) -> crate::waiters::function_exists::FunctionExistsFluentBuilder {
+        crate::waiters::function_exists::FunctionExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_function_updated_v2(&self) -> crate::waiters::function_updated_v2::FunctionUpdatedV2FluentBuilder {
+        crate::waiters::function_updated_v2::FunctionUpdatedV2FluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_function_active(&self) -> crate::waiters::function_active::FunctionActiveFluentBuilder {
+        crate::waiters::function_active::FunctionActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_function_updated(&self) -> crate::waiters::function_updated::FunctionUpdatedFluentBuilder {
+        crate::waiters::function_updated::FunctionUpdatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_published_version_active(&self) -> crate::waiters::published_version_active::PublishedVersionActiveFluentBuilder {
+        crate::waiters::published_version_active::PublishedVersionActiveFluentBuilder::new(self.handle.clone())
     }
 }
 

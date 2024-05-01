@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateRealtimeEndpointFluentBuilder {
-    /// Creates a new `CreateRealtimeEndpoint`.
+    /// Creates a new `CreateRealtimeEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

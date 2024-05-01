@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartRecoveryFluentBuilder {
-    /// Creates a new `StartRecovery`.
+    /// Creates a new `StartRecoveryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

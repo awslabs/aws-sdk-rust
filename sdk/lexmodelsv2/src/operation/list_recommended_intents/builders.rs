@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListRecommendedIntentsFluentBuilder {
-    /// Creates a new `ListRecommendedIntents`.
+    /// Creates a new `ListRecommendedIntentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

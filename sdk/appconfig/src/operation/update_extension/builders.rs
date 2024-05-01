@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateExtensionFluentBuilder {
-    /// Creates a new `UpdateExtension`.
+    /// Creates a new `UpdateExtensionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

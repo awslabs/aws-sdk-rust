@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateRegionSettingsFluentBuilder {
-    /// Creates a new `UpdateRegionSettings`.
+    /// Creates a new `UpdateRegionSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

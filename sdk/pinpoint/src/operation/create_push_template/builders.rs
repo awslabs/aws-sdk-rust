@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreatePushTemplateFluentBuilder {
-    /// Creates a new `CreatePushTemplate`.
+    /// Creates a new `CreatePushTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

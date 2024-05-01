@@ -53,7 +53,7 @@ impl
     }
 }
 impl DeleteAutoScalingGroupFluentBuilder {
-    /// Creates a new `DeleteAutoScalingGroup`.
+    /// Creates a new `DeleteAutoScalingGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

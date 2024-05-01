@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListTapePoolsFluentBuilder {
-    /// Creates a new `ListTapePools`.
+    /// Creates a new `ListTapePoolsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

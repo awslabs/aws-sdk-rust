@@ -51,7 +51,7 @@ impl
     }
 }
 impl ConfirmDeviceFluentBuilder {
-    /// Creates a new `ConfirmDevice`.
+    /// Creates a new `ConfirmDeviceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

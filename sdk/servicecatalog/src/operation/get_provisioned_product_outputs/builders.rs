@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetProvisionedProductOutputsFluentBuilder {
-    /// Creates a new `GetProvisionedProductOutputs`.
+    /// Creates a new `GetProvisionedProductOutputsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

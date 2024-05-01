@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutApprovalResultFluentBuilder {
-    /// Creates a new `PutApprovalResult`.
+    /// Creates a new `PutApprovalResultFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

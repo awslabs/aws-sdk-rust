@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListAggregateDiscoveredResourcesFluentBuilder {
-    /// Creates a new `ListAggregateDiscoveredResources`.
+    /// Creates a new `ListAggregateDiscoveredResourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

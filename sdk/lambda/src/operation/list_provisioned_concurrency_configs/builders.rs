@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListProvisionedConcurrencyConfigsFluentBuilder {
-    /// Creates a new `ListProvisionedConcurrencyConfigs`.
+    /// Creates a new `ListProvisionedConcurrencyConfigsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

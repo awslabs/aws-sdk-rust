@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSnapshotCopyGrantFluentBuilder {
-    /// Creates a new `DeleteSnapshotCopyGrant`.
+    /// Creates a new `DeleteSnapshotCopyGrantFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

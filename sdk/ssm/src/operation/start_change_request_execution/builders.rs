@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartChangeRequestExecutionFluentBuilder {
-    /// Creates a new `StartChangeRequestExecution`.
+    /// Creates a new `StartChangeRequestExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

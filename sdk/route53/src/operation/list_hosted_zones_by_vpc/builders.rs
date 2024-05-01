@@ -66,7 +66,7 @@ impl
     }
 }
 impl ListHostedZonesByVPCFluentBuilder {
-    /// Creates a new `ListHostedZonesByVPC`.
+    /// Creates a new `ListHostedZonesByVPCFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

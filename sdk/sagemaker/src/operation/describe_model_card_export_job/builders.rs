@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeModelCardExportJobFluentBuilder {
-    /// Creates a new `DescribeModelCardExportJob`.
+    /// Creates a new `DescribeModelCardExportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetQueryStateFluentBuilder {
-    /// Creates a new `GetQueryState`.
+    /// Creates a new `GetQueryStateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetFrameMetricDataFluentBuilder {
-    /// Creates a new `BatchGetFrameMetricData`.
+    /// Creates a new `BatchGetFrameMetricDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -44,7 +44,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::subs
     }
 }
 impl SubscribeFluentBuilder {
-    /// Creates a new `Subscribe`.
+    /// Creates a new `SubscribeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

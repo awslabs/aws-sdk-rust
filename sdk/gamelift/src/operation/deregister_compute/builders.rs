@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeregisterComputeFluentBuilder {
-    /// Creates a new `DeregisterCompute`.
+    /// Creates a new `DeregisterComputeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

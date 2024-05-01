@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListTargetsForSecurityProfileFluentBuilder {
-    /// Creates a new `ListTargetsForSecurityProfile`.
+    /// Creates a new `ListTargetsForSecurityProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

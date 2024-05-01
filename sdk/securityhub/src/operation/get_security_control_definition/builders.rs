@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSecurityControlDefinitionFluentBuilder {
-    /// Creates a new `GetSecurityControlDefinition`.
+    /// Creates a new `GetSecurityControlDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

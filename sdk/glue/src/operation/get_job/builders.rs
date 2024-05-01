@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::get_
     }
 }
 impl GetJobFluentBuilder {
-    /// Creates a new `GetJob`.
+    /// Creates a new `GetJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

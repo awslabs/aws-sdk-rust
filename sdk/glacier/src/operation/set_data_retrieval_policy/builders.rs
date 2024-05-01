@@ -49,7 +49,7 @@ impl
     }
 }
 impl SetDataRetrievalPolicyFluentBuilder {
-    /// Creates a new `SetDataRetrievalPolicy`.
+    /// Creates a new `SetDataRetrievalPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

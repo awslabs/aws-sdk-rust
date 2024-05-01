@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateCoipCidrFluentBuilder {
-    /// Creates a new `CreateCoipCidr`.
+    /// Creates a new `CreateCoipCidrFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

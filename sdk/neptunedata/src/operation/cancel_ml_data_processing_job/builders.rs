@@ -49,7 +49,7 @@ impl
     }
 }
 impl CancelMLDataProcessingJobFluentBuilder {
-    /// Creates a new `CancelMLDataProcessingJob`.
+    /// Creates a new `CancelMLDataProcessingJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

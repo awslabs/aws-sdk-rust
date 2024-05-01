@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateLocationFsxOpenZfsFluentBuilder {
-    /// Creates a new `CreateLocationFsxOpenZfs`.
+    /// Creates a new `CreateLocationFsxOpenZfsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

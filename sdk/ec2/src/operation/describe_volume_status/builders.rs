@@ -55,7 +55,7 @@ impl
     }
 }
 impl DescribeVolumeStatusFluentBuilder {
-    /// Creates a new `DescribeVolumeStatus`.
+    /// Creates a new `DescribeVolumeStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

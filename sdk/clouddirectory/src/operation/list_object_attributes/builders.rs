@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListObjectAttributesFluentBuilder {
-    /// Creates a new `ListObjectAttributes`.
+    /// Creates a new `ListObjectAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

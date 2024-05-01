@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchCreateCustomVocabularyItemFluentBuilder {
-    /// Creates a new `BatchCreateCustomVocabularyItem`.
+    /// Creates a new `BatchCreateCustomVocabularyItemFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelMulticastGroupSessionFluentBuilder {
-    /// Creates a new `CancelMulticastGroupSession`.
+    /// Creates a new `CancelMulticastGroupSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

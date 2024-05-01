@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeCrossAccountAccessRoleFluentBuilder {
-    /// Creates a new `DescribeCrossAccountAccessRole`.
+    /// Creates a new `DescribeCrossAccountAccessRoleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -91,7 +91,7 @@ impl
     }
 }
 impl TestFailoverFluentBuilder {
-    /// Creates a new `TestFailover`.
+    /// Creates a new `TestFailoverFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

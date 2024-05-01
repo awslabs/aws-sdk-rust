@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePushTemplateFluentBuilder {
-    /// Creates a new `DeletePushTemplate`.
+    /// Creates a new `DeletePushTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

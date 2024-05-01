@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAttachedIndicesFluentBuilder {
-    /// Creates a new `ListAttachedIndices`.
+    /// Creates a new `ListAttachedIndicesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

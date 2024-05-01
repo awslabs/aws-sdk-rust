@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeLocationHdfsFluentBuilder {
-    /// Creates a new `DescribeLocationHdfs`.
+    /// Creates a new `DescribeLocationHdfsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreatePromptFluentBuilder {
-    /// Creates a new `CreatePrompt`.
+    /// Creates a new `CreatePromptFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

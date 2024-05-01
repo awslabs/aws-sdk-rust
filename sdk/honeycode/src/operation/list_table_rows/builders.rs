@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTableRowsFluentBuilder {
-    /// Creates a new `ListTableRows`.
+    /// Creates a new `ListTableRowsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

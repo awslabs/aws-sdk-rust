@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPagesByContactFluentBuilder {
-    /// Creates a new `ListPagesByContact`.
+    /// Creates a new `ListPagesByContactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

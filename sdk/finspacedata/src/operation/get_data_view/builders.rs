@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetDataViewFluentBuilder {
-    /// Creates a new `GetDataView`.
+    /// Creates a new `GetDataViewFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

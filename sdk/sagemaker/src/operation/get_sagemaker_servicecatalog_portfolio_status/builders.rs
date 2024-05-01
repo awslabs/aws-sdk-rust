@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSagemakerServicecatalogPortfolioStatusFluentBuilder {
-    /// Creates a new `GetSagemakerServicecatalogPortfolioStatus`.
+    /// Creates a new `GetSagemakerServicecatalogPortfolioStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

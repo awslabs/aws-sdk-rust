@@ -72,7 +72,7 @@ impl
     }
 }
 impl GetFederationTokenFluentBuilder {
-    /// Creates a new `GetFederationToken`.
+    /// Creates a new `GetFederationTokenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

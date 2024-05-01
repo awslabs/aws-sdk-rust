@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetQueryRuntimeStatisticsFluentBuilder {
-    /// Creates a new `GetQueryRuntimeStatistics`.
+    /// Creates a new `GetQueryRuntimeStatisticsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

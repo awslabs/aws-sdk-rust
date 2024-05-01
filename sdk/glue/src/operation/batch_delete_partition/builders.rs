@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDeletePartitionFluentBuilder {
-    /// Creates a new `BatchDeletePartition`.
+    /// Creates a new `BatchDeletePartitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

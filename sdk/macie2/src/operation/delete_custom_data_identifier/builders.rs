@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCustomDataIdentifierFluentBuilder {
-    /// Creates a new `DeleteCustomDataIdentifier`.
+    /// Creates a new `DeleteCustomDataIdentifierFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

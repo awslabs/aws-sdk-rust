@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetOpsMetadataFluentBuilder {
-    /// Creates a new `GetOpsMetadata`.
+    /// Creates a new `GetOpsMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

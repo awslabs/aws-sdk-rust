@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListWorkloadDeploymentPatternsFluentBuilder {
-    /// Creates a new `ListWorkloadDeploymentPatterns`.
+    /// Creates a new `ListWorkloadDeploymentPatternsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

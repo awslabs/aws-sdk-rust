@@ -46,7 +46,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::get_
     }
 }
 impl GetRuleFluentBuilder {
-    /// Creates a new `GetRule`.
+    /// Creates a new `GetRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

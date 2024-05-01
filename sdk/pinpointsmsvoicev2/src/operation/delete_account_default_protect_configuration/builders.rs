@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAccountDefaultProtectConfigurationFluentBuilder {
-    /// Creates a new `DeleteAccountDefaultProtectConfiguration`.
+    /// Creates a new `DeleteAccountDefaultProtectConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

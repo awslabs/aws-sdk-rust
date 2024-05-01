@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListAllowedNodeTypeModificationsFluentBuilder {
-    /// Creates a new `ListAllowedNodeTypeModifications`.
+    /// Creates a new `ListAllowedNodeTypeModificationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

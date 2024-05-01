@@ -50,7 +50,7 @@ impl
     }
 }
 impl AssociateMacSecKeyFluentBuilder {
-    /// Creates a new `AssociateMacSecKey`.
+    /// Creates a new `AssociateMacSecKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

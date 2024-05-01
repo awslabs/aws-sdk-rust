@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetOrganizationsAccessReportFluentBuilder {
-    /// Creates a new `GetOrganizationsAccessReport`.
+    /// Creates a new `GetOrganizationsAccessReportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetBrowserSettingsFluentBuilder {
-    /// Creates a new `GetBrowserSettings`.
+    /// Creates a new `GetBrowserSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

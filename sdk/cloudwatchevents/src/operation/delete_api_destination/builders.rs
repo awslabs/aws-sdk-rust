@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteApiDestinationFluentBuilder {
-    /// Creates a new `DeleteApiDestination`.
+    /// Creates a new `DeleteApiDestinationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

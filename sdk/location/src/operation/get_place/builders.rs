@@ -52,7 +52,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::get_
     }
 }
 impl GetPlaceFluentBuilder {
-    /// Creates a new `GetPlace`.
+    /// Creates a new `GetPlaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

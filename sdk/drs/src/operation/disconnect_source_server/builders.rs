@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisconnectSourceServerFluentBuilder {
-    /// Creates a new `DisconnectSourceServer`.
+    /// Creates a new `DisconnectSourceServerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateServerEngineAttributesFluentBuilder {
-    /// Creates a new `UpdateServerEngineAttributes`.
+    /// Creates a new `UpdateServerEngineAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl RemovePermissionFluentBuilder {
-    /// Creates a new `RemovePermission`.
+    /// Creates a new `RemovePermissionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

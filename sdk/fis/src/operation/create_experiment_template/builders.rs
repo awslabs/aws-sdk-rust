@@ -58,7 +58,7 @@ impl
     }
 }
 impl CreateExperimentTemplateFluentBuilder {
-    /// Creates a new `CreateExperimentTemplate`.
+    /// Creates a new `CreateExperimentTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

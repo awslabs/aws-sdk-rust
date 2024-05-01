@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateResourceSetFluentBuilder {
-    /// Creates a new `CreateResourceSet`.
+    /// Creates a new `CreateResourceSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

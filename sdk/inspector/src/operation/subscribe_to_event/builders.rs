@@ -48,7 +48,7 @@ impl
     }
 }
 impl SubscribeToEventFluentBuilder {
-    /// Creates a new `SubscribeToEvent`.
+    /// Creates a new `SubscribeToEventFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

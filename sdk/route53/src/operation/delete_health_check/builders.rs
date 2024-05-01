@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteHealthCheckFluentBuilder {
-    /// Creates a new `DeleteHealthCheck`.
+    /// Creates a new `DeleteHealthCheckFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

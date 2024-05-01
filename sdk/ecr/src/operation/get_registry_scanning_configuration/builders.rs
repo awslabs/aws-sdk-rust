@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRegistryScanningConfigurationFluentBuilder {
-    /// Creates a new `GetRegistryScanningConfiguration`.
+    /// Creates a new `GetRegistryScanningConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

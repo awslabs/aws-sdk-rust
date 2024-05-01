@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeRulesetFluentBuilder {
-    /// Creates a new `DescribeRuleset`.
+    /// Creates a new `DescribeRulesetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListBrowserSettingsFluentBuilder {
-    /// Creates a new `ListBrowserSettings`.
+    /// Creates a new `ListBrowserSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

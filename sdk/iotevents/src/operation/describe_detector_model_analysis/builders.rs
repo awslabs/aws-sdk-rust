@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeDetectorModelAnalysisFluentBuilder {
-    /// Creates a new `DescribeDetectorModelAnalysis`.
+    /// Creates a new `DescribeDetectorModelAnalysisFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

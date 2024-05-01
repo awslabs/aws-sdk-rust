@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeSubnetGroupsFluentBuilder {
-    /// Creates a new `DescribeSubnetGroups`.
+    /// Creates a new `DescribeSubnetGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

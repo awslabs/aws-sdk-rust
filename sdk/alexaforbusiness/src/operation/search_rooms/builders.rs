@@ -49,7 +49,7 @@ impl
     }
 }
 impl SearchRoomsFluentBuilder {
-    /// Creates a new `SearchRooms`.
+    /// Creates a new `SearchRoomsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

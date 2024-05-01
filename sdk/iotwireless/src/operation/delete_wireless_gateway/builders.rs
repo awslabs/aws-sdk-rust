@@ -57,7 +57,7 @@ impl
     }
 }
 impl DeleteWirelessGatewayFluentBuilder {
-    /// Creates a new `DeleteWirelessGateway`.
+    /// Creates a new `DeleteWirelessGatewayFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

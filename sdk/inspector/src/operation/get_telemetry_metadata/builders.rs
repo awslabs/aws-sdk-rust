@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTelemetryMetadataFluentBuilder {
-    /// Creates a new `GetTelemetryMetadata`.
+    /// Creates a new `GetTelemetryMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

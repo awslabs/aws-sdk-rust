@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::impo
     }
 }
 impl ImportApiFluentBuilder {
-    /// Creates a new `ImportApi`.
+    /// Creates a new `ImportApiFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

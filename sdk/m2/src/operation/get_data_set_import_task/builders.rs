@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDataSetImportTaskFluentBuilder {
-    /// Creates a new `GetDataSetImportTask`.
+    /// Creates a new `GetDataSetImportTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

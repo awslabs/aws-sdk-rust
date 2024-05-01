@@ -65,7 +65,7 @@ impl
     }
 }
 impl StartAssessmentFrameworkShareFluentBuilder {
-    /// Creates a new `StartAssessmentFrameworkShare`.
+    /// Creates a new `StartAssessmentFrameworkShareFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl ModifyReplicationTaskFluentBuilder {
-    /// Creates a new `ModifyReplicationTask`.
+    /// Creates a new `ModifyReplicationTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

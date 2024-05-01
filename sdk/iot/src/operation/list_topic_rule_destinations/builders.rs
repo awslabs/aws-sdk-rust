@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListTopicRuleDestinationsFluentBuilder {
-    /// Creates a new `ListTopicRuleDestinations`.
+    /// Creates a new `ListTopicRuleDestinationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

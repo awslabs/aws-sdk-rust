@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutPermissionsBoundaryToPermissionSetFluentBuilder {
-    /// Creates a new `PutPermissionsBoundaryToPermissionSet`.
+    /// Creates a new `PutPermissionsBoundaryToPermissionSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

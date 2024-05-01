@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateWirelessDeviceFromMulticastGroupFluentBuilder {
-    /// Creates a new `DisassociateWirelessDeviceFromMulticastGroup`.
+    /// Creates a new `DisassociateWirelessDeviceFromMulticastGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

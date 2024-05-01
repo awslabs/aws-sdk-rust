@@ -58,7 +58,7 @@ impl
     }
 }
 impl VerifyAuthRequestCryptogramFluentBuilder {
-    /// Creates a new `VerifyAuthRequestCryptogram`.
+    /// Creates a new `VerifyAuthRequestCryptogramFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

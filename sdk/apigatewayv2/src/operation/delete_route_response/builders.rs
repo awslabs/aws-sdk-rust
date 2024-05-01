@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRouteResponseFluentBuilder {
-    /// Creates a new `DeleteRouteResponse`.
+    /// Creates a new `DeleteRouteResponseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

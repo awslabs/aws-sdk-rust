@@ -54,7 +54,7 @@ impl
     }
 }
 impl UpdateFunctionCodeFluentBuilder {
-    /// Creates a new `UpdateFunctionCode`.
+    /// Creates a new `UpdateFunctionCodeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

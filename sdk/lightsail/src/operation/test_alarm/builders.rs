@@ -43,7 +43,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::test
     }
 }
 impl TestAlarmFluentBuilder {
-    /// Creates a new `TestAlarm`.
+    /// Creates a new `TestAlarmFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

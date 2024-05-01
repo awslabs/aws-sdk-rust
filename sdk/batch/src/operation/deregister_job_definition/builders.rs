@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeregisterJobDefinitionFluentBuilder {
-    /// Creates a new `DeregisterJobDefinition`.
+    /// Creates a new `DeregisterJobDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

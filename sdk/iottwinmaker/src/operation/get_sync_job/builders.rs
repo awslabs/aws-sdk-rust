@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSyncJobFluentBuilder {
-    /// Creates a new `GetSyncJob`.
+    /// Creates a new `GetSyncJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

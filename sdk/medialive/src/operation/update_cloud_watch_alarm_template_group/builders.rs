@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateCloudWatchAlarmTemplateGroupFluentBuilder {
-    /// Creates a new `UpdateCloudWatchAlarmTemplateGroup`.
+    /// Creates a new `UpdateCloudWatchAlarmTemplateGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

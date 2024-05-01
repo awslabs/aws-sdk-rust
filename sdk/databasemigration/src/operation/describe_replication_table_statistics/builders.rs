@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeReplicationTableStatisticsFluentBuilder {
-    /// Creates a new `DescribeReplicationTableStatistics`.
+    /// Creates a new `DescribeReplicationTableStatisticsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeNotebookInstanceFluentBuilder {
-    /// Creates a new `DescribeNotebookInstance`.
+    /// Creates a new `DescribeNotebookInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

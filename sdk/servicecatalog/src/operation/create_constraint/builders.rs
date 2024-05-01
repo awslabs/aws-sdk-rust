@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateConstraintFluentBuilder {
-    /// Creates a new `CreateConstraint`.
+    /// Creates a new `CreateConstraintFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

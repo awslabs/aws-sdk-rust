@@ -51,7 +51,7 @@ impl
     }
 }
 impl ModifyEbsDefaultKmsKeyIdFluentBuilder {
-    /// Creates a new `ModifyEbsDefaultKmsKeyId`.
+    /// Creates a new `ModifyEbsDefaultKmsKeyIdFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateRoleFromGroupFluentBuilder {
-    /// Creates a new `DisassociateRoleFromGroup`.
+    /// Creates a new `DisassociateRoleFromGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTestGridSessionsFluentBuilder {
-    /// Creates a new `ListTestGridSessions`.
+    /// Creates a new `ListTestGridSessionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

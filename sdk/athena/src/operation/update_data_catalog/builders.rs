@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateDataCatalogFluentBuilder {
-    /// Creates a new `UpdateDataCatalog`.
+    /// Creates a new `UpdateDataCatalogFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

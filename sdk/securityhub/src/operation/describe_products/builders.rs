@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeProductsFluentBuilder {
-    /// Creates a new `DescribeProducts`.
+    /// Creates a new `DescribeProductsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

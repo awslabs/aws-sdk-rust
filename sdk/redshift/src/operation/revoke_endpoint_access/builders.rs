@@ -48,7 +48,7 @@ impl
     }
 }
 impl RevokeEndpointAccessFluentBuilder {
-    /// Creates a new `RevokeEndpointAccess`.
+    /// Creates a new `RevokeEndpointAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

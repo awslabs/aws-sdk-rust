@@ -64,7 +64,7 @@ impl
     }
 }
 impl CreateLogGroupFluentBuilder {
-    /// Creates a new `CreateLogGroup`.
+    /// Creates a new `CreateLogGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

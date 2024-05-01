@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetUsageForecastFluentBuilder {
-    /// Creates a new `GetUsageForecast`.
+    /// Creates a new `GetUsageForecastFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

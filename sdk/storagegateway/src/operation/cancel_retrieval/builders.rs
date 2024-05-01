@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelRetrievalFluentBuilder {
-    /// Creates a new `CancelRetrieval`.
+    /// Creates a new `CancelRetrievalFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateUserHierarchyGroupNameFluentBuilder {
-    /// Creates a new `UpdateUserHierarchyGroupName`.
+    /// Creates a new `UpdateUserHierarchyGroupNameFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

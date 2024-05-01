@@ -67,7 +67,7 @@ impl
     }
 }
 impl TestIdentityProviderFluentBuilder {
-    /// Creates a new `TestIdentityProvider`.
+    /// Creates a new `TestIdentityProviderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

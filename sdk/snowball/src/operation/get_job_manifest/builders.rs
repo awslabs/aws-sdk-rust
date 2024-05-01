@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetJobManifestFluentBuilder {
-    /// Creates a new `GetJobManifest`.
+    /// Creates a new `GetJobManifestFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

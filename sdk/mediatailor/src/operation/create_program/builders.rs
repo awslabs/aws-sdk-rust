@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateProgramFluentBuilder {
-    /// Creates a new `CreateProgram`.
+    /// Creates a new `CreateProgramFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

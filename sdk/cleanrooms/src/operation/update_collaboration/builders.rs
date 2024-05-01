@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateCollaborationFluentBuilder {
-    /// Creates a new `UpdateCollaboration`.
+    /// Creates a new `UpdateCollaborationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListRecoveryPointsByResourceFluentBuilder {
-    /// Creates a new `ListRecoveryPointsByResource`.
+    /// Creates a new `ListRecoveryPointsByResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

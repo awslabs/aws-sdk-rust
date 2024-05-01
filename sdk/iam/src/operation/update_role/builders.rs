@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateRoleFluentBuilder {
-    /// Creates a new `UpdateRole`.
+    /// Creates a new `UpdateRoleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

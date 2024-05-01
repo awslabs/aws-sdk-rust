@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeFirewallPolicyFluentBuilder {
-    /// Creates a new `DescribeFirewallPolicy`.
+    /// Creates a new `DescribeFirewallPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

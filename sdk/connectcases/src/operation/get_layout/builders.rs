@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::get_
     }
 }
 impl GetLayoutFluentBuilder {
-    /// Creates a new `GetLayout`.
+    /// Creates a new `GetLayoutFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

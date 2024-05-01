@@ -49,7 +49,7 @@ impl
     }
 }
 impl ImportApplicationUsageFluentBuilder {
-    /// Creates a new `ImportApplicationUsage`.
+    /// Creates a new `ImportApplicationUsageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

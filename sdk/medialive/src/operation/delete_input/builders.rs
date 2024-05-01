@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteInputFluentBuilder {
-    /// Creates a new `DeleteInput`.
+    /// Creates a new `DeleteInputFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

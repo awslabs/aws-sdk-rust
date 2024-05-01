@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteStreamProcessorFluentBuilder {
-    /// Creates a new `DeleteStreamProcessor`.
+    /// Creates a new `DeleteStreamProcessorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeInstanceEventWindowsFluentBuilder {
-    /// Creates a new `DescribeInstanceEventWindows`.
+    /// Creates a new `DescribeInstanceEventWindowsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

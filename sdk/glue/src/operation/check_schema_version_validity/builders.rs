@@ -48,7 +48,7 @@ impl
     }
 }
 impl CheckSchemaVersionValidityFluentBuilder {
-    /// Creates a new `CheckSchemaVersionValidity`.
+    /// Creates a new `CheckSchemaVersionValidityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

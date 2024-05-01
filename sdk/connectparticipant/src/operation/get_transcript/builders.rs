@@ -64,7 +64,7 @@ impl
     }
 }
 impl GetTranscriptFluentBuilder {
-    /// Creates a new `GetTranscript`.
+    /// Creates a new `GetTranscriptFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

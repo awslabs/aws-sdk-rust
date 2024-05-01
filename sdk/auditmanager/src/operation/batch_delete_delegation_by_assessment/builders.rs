@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDeleteDelegationByAssessmentFluentBuilder {
-    /// Creates a new `BatchDeleteDelegationByAssessment`.
+    /// Creates a new `BatchDeleteDelegationByAssessmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

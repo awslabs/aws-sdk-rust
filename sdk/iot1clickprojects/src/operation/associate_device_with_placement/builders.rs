@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateDeviceWithPlacementFluentBuilder {
-    /// Creates a new `AssociateDeviceWithPlacement`.
+    /// Creates a new `AssociateDeviceWithPlacementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

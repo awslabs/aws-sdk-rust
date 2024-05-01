@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteInboundConnectionFluentBuilder {
-    /// Creates a new `DeleteInboundConnection`.
+    /// Creates a new `DeleteInboundConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

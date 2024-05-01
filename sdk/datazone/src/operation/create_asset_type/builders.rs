@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAssetTypeFluentBuilder {
-    /// Creates a new `CreateAssetType`.
+    /// Creates a new `CreateAssetTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateLabelsFluentBuilder {
-    /// Creates a new `CreateLabels`.
+    /// Creates a new `CreateLabelsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

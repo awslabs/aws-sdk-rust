@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopProductSubscriptionFluentBuilder {
-    /// Creates a new `StopProductSubscription`.
+    /// Creates a new `StopProductSubscriptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

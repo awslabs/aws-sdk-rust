@@ -53,7 +53,7 @@ impl
     }
 }
 impl AssociatePrincipalWithPortfolioFluentBuilder {
-    /// Creates a new `AssociatePrincipalWithPortfolio`.
+    /// Creates a new `AssociatePrincipalWithPortfolioFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartNotebookExecutionFluentBuilder {
-    /// Creates a new `StartNotebookExecution`.
+    /// Creates a new `StartNotebookExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

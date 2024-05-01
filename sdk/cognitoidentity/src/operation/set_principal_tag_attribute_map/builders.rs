@@ -48,7 +48,7 @@ impl
     }
 }
 impl SetPrincipalTagAttributeMapFluentBuilder {
-    /// Creates a new `SetPrincipalTagAttributeMap`.
+    /// Creates a new `SetPrincipalTagAttributeMapFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

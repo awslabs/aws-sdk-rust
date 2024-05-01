@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateBasePathMappingFluentBuilder {
-    /// Creates a new `UpdateBasePathMapping`.
+    /// Creates a new `UpdateBasePathMappingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

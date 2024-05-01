@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateDefaultVocabularyFluentBuilder {
-    /// Creates a new `AssociateDefaultVocabulary`.
+    /// Creates a new `AssociateDefaultVocabularyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

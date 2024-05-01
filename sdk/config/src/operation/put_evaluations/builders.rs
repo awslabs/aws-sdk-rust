@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutEvaluationsFluentBuilder {
-    /// Creates a new `PutEvaluations`.
+    /// Creates a new `PutEvaluationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

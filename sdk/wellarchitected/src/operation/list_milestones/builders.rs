@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListMilestonesFluentBuilder {
-    /// Creates a new `ListMilestones`.
+    /// Creates a new `ListMilestonesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

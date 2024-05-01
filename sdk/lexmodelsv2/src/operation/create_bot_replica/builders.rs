@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateBotReplicaFluentBuilder {
-    /// Creates a new `CreateBotReplica`.
+    /// Creates a new `CreateBotReplicaFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

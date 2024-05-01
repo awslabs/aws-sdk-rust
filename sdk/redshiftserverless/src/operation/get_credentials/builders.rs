@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetCredentialsFluentBuilder {
-    /// Creates a new `GetCredentials`.
+    /// Creates a new `GetCredentialsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

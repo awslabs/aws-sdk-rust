@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDataQualityRulesetFluentBuilder {
-    /// Creates a new `DeleteDataQualityRuleset`.
+    /// Creates a new `DeleteDataQualityRulesetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAssessmentTemplatesFluentBuilder {
-    /// Creates a new `DescribeAssessmentTemplates`.
+    /// Creates a new `DescribeAssessmentTemplatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ExportImageFluentBuilder {
-    /// Creates a new `ExportImage`.
+    /// Creates a new `ExportImageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

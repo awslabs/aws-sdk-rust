@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateSolFunctionPackageFluentBuilder {
-    /// Creates a new `CreateSolFunctionPackage`.
+    /// Creates a new `CreateSolFunctionPackageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

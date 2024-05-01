@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateTagsForDomainFluentBuilder {
-    /// Creates a new `UpdateTagsForDomain`.
+    /// Creates a new `UpdateTagsForDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

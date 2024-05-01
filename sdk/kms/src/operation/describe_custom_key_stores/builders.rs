@@ -69,7 +69,7 @@ impl
     }
 }
 impl DescribeCustomKeyStoresFluentBuilder {
-    /// Creates a new `DescribeCustomKeyStores`.
+    /// Creates a new `DescribeCustomKeyStoresFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

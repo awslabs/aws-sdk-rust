@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeCampaignFluentBuilder {
-    /// Creates a new `DescribeCampaign`.
+    /// Creates a new `DescribeCampaignFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

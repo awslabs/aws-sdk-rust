@@ -48,7 +48,7 @@ impl
     }
 }
 impl UnassignIpv6AddressesFluentBuilder {
-    /// Creates a new `UnassignIpv6Addresses`.
+    /// Creates a new `UnassignIpv6AddressesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

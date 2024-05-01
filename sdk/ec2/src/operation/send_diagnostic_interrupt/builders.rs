@@ -51,7 +51,7 @@ impl
     }
 }
 impl SendDiagnosticInterruptFluentBuilder {
-    /// Creates a new `SendDiagnosticInterrupt`.
+    /// Creates a new `SendDiagnosticInterruptFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

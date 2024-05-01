@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCustomRoutingAcceleratorsFluentBuilder {
-    /// Creates a new `ListCustomRoutingAccelerators`.
+    /// Creates a new `ListCustomRoutingAcceleratorsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMicrosoftTeamsConfiguredTeamFluentBuilder {
-    /// Creates a new `DeleteMicrosoftTeamsConfiguredTeam`.
+    /// Creates a new `DeleteMicrosoftTeamsConfiguredTeamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

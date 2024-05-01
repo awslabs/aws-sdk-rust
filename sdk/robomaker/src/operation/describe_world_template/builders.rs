@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeWorldTemplateFluentBuilder {
-    /// Creates a new `DescribeWorldTemplate`.
+    /// Creates a new `DescribeWorldTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

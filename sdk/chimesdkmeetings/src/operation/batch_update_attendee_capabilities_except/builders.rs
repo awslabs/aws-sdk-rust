@@ -63,7 +63,7 @@ impl
     }
 }
 impl BatchUpdateAttendeeCapabilitiesExceptFluentBuilder {
-    /// Creates a new `BatchUpdateAttendeeCapabilitiesExcept`.
+    /// Creates a new `BatchUpdateAttendeeCapabilitiesExceptFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

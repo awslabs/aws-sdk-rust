@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteNetworkAnalyzerConfigurationFluentBuilder {
-    /// Creates a new `DeleteNetworkAnalyzerConfiguration`.
+    /// Creates a new `DeleteNetworkAnalyzerConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

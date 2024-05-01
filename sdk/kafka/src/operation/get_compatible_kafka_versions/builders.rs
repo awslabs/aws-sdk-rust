@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCompatibleKafkaVersionsFluentBuilder {
-    /// Creates a new `GetCompatibleKafkaVersions`.
+    /// Creates a new `GetCompatibleKafkaVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

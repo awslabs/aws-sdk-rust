@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCalculatedAttributeDefinitionFluentBuilder {
-    /// Creates a new `DeleteCalculatedAttributeDefinition`.
+    /// Creates a new `DeleteCalculatedAttributeDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

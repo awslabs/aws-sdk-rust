@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRemoteAccessSessionFluentBuilder {
-    /// Creates a new `DeleteRemoteAccessSession`.
+    /// Creates a new `DeleteRemoteAccessSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

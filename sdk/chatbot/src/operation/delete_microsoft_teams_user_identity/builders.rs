@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMicrosoftTeamsUserIdentityFluentBuilder {
-    /// Creates a new `DeleteMicrosoftTeamsUserIdentity`.
+    /// Creates a new `DeleteMicrosoftTeamsUserIdentityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

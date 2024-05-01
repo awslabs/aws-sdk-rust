@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateConfigurationSetSendingEnabledFluentBuilder {
-    /// Creates a new `UpdateConfigurationSetSendingEnabled`.
+    /// Creates a new `UpdateConfigurationSetSendingEnabledFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

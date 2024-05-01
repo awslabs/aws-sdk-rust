@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSearchSuggestionsFluentBuilder {
-    /// Creates a new `GetSearchSuggestions`.
+    /// Creates a new `GetSearchSuggestionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateWorldTemplateFluentBuilder {
-    /// Creates a new `CreateWorldTemplate`.
+    /// Creates a new `CreateWorldTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

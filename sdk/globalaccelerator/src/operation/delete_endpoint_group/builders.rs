@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteEndpointGroupFluentBuilder {
-    /// Creates a new `DeleteEndpointGroup`.
+    /// Creates a new `DeleteEndpointGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

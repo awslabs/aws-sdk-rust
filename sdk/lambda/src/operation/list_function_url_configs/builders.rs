@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListFunctionUrlConfigsFluentBuilder {
-    /// Creates a new `ListFunctionUrlConfigs`.
+    /// Creates a new `ListFunctionUrlConfigsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

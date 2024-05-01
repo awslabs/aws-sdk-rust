@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisableKinesisStreamingDestinationFluentBuilder {
-    /// Creates a new `DisableKinesisStreamingDestination`.
+    /// Creates a new `DisableKinesisStreamingDestinationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetRegisterAccountStatusFluentBuilder {
-    /// Creates a new `GetRegisterAccountStatus`.
+    /// Creates a new `GetRegisterAccountStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

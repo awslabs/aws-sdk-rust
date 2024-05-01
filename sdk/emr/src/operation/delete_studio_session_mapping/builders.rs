@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteStudioSessionMappingFluentBuilder {
-    /// Creates a new `DeleteStudioSessionMapping`.
+    /// Creates a new `DeleteStudioSessionMappingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

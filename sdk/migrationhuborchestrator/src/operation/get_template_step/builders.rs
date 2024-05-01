@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTemplateStepFluentBuilder {
-    /// Creates a new `GetTemplateStep`.
+    /// Creates a new `GetTemplateStepFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

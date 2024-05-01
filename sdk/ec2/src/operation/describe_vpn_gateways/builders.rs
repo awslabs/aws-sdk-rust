@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeVpnGatewaysFluentBuilder {
-    /// Creates a new `DescribeVpnGateways`.
+    /// Creates a new `DescribeVpnGatewaysFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

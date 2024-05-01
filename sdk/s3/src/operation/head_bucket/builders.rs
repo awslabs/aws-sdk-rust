@@ -80,7 +80,7 @@ impl
     }
 }
 impl HeadBucketFluentBuilder {
-    /// Creates a new `HeadBucket`.
+    /// Creates a new `HeadBucketFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

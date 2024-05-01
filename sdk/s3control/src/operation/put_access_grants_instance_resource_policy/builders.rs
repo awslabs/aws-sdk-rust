@@ -56,7 +56,7 @@ impl
     }
 }
 impl PutAccessGrantsInstanceResourcePolicyFluentBuilder {
-    /// Creates a new `PutAccessGrantsInstanceResourcePolicy`.
+    /// Creates a new `PutAccessGrantsInstanceResourcePolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

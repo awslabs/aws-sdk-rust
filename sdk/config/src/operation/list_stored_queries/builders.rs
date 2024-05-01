@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListStoredQueriesFluentBuilder {
-    /// Creates a new `ListStoredQueries`.
+    /// Creates a new `ListStoredQueriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePublicIpv4PoolFluentBuilder {
-    /// Creates a new `DeletePublicIpv4Pool`.
+    /// Creates a new `DeletePublicIpv4PoolFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

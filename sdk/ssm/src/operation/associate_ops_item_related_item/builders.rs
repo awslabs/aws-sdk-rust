@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateOpsItemRelatedItemFluentBuilder {
-    /// Creates a new `AssociateOpsItemRelatedItem`.
+    /// Creates a new `AssociateOpsItemRelatedItemFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

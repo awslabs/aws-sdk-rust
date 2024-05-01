@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutWebhookFluentBuilder {
-    /// Creates a new `PutWebhook`.
+    /// Creates a new `PutWebhookFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

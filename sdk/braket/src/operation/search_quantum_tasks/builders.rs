@@ -48,7 +48,7 @@ impl
     }
 }
 impl SearchQuantumTasksFluentBuilder {
-    /// Creates a new `SearchQuantumTasks`.
+    /// Creates a new `SearchQuantumTasksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

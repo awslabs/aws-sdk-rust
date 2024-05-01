@@ -49,7 +49,7 @@ impl
     }
 }
 impl TestInvokeAuthorizerFluentBuilder {
-    /// Creates a new `TestInvokeAuthorizer`.
+    /// Creates a new `TestInvokeAuthorizerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

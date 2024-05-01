@@ -48,7 +48,7 @@ impl
     }
 }
 impl RetryStageExecutionFluentBuilder {
-    /// Creates a new `RetryStageExecution`.
+    /// Creates a new `RetryStageExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

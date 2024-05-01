@@ -61,7 +61,7 @@ impl
     }
 }
 impl PollForActivityTaskFluentBuilder {
-    /// Creates a new `PollForActivityTask`.
+    /// Creates a new `PollForActivityTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

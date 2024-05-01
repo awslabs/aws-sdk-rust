@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListStackInstancesForProvisionedProductFluentBuilder {
-    /// Creates a new `ListStackInstancesForProvisionedProduct`.
+    /// Creates a new `ListStackInstancesForProvisionedProductFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

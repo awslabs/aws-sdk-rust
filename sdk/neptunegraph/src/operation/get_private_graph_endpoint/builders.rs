@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetPrivateGraphEndpointFluentBuilder {
-    /// Creates a new `GetPrivateGraphEndpoint`.
+    /// Creates a new `GetPrivateGraphEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

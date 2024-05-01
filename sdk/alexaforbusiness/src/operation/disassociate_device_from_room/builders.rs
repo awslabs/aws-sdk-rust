@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateDeviceFromRoomFluentBuilder {
-    /// Creates a new `DisassociateDeviceFromRoom`.
+    /// Creates a new `DisassociateDeviceFromRoomFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

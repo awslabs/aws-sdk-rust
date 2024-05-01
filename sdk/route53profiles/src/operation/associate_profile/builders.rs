@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateProfileFluentBuilder {
-    /// Creates a new `AssociateProfile`.
+    /// Creates a new `AssociateProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

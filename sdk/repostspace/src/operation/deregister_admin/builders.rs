@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeregisterAdminFluentBuilder {
-    /// Creates a new `DeregisterAdmin`.
+    /// Creates a new `DeregisterAdminFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

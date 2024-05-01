@@ -57,7 +57,7 @@ impl
     }
 }
 impl AdminDisableUserFluentBuilder {
-    /// Creates a new `AdminDisableUser`.
+    /// Creates a new `AdminDisableUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

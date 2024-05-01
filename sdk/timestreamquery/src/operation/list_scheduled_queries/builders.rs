@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListScheduledQueriesFluentBuilder {
-    /// Creates a new `ListScheduledQueries`.
+    /// Creates a new `ListScheduledQueriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

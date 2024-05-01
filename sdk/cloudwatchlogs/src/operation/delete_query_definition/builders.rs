@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteQueryDefinitionFluentBuilder {
-    /// Creates a new `DeleteQueryDefinition`.
+    /// Creates a new `DeleteQueryDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

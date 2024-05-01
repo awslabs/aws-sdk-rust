@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateInvitationsFluentBuilder {
-    /// Creates a new `CreateInvitations`.
+    /// Creates a new `CreateInvitationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdatePackagingGroupFluentBuilder {
-    /// Creates a new `UpdatePackagingGroup`.
+    /// Creates a new `UpdatePackagingGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

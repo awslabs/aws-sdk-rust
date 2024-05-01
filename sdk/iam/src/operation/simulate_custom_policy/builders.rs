@@ -54,7 +54,7 @@ impl
     }
 }
 impl SimulateCustomPolicyFluentBuilder {
-    /// Creates a new `SimulateCustomPolicy`.
+    /// Creates a new `SimulateCustomPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

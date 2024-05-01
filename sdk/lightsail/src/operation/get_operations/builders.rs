@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetOperationsFluentBuilder {
-    /// Creates a new `GetOperations`.
+    /// Creates a new `GetOperationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl RequestUploadCredentialsFluentBuilder {
-    /// Creates a new `RequestUploadCredentials`.
+    /// Creates a new `RequestUploadCredentialsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

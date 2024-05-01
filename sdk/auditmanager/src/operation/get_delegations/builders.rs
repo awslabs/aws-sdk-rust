@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDelegationsFluentBuilder {
-    /// Creates a new `GetDelegations`.
+    /// Creates a new `GetDelegationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

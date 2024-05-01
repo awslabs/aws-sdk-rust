@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListRateBasedRulesFluentBuilder {
-    /// Creates a new `ListRateBasedRules`.
+    /// Creates a new `ListRateBasedRulesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

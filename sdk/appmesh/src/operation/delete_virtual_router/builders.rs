@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteVirtualRouterFluentBuilder {
-    /// Creates a new `DeleteVirtualRouter`.
+    /// Creates a new `DeleteVirtualRouterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

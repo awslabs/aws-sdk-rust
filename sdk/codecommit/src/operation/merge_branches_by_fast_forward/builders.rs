@@ -48,7 +48,7 @@ impl
     }
 }
 impl MergeBranchesByFastForwardFluentBuilder {
-    /// Creates a new `MergeBranchesByFastForward`.
+    /// Creates a new `MergeBranchesByFastForwardFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ApplySchemaFluentBuilder {
-    /// Creates a new `ApplySchema`.
+    /// Creates a new `ApplySchemaFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

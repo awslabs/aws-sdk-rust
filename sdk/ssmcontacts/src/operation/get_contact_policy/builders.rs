@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetContactPolicyFluentBuilder {
-    /// Creates a new `GetContactPolicy`.
+    /// Creates a new `GetContactPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

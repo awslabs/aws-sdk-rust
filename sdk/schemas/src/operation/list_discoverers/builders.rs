@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDiscoverersFluentBuilder {
-    /// Creates a new `ListDiscoverers`.
+    /// Creates a new `ListDiscoverersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

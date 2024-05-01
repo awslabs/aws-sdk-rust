@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::list
     }
 }
 impl ListSinksFluentBuilder {
-    /// Creates a new `ListSinks`.
+    /// Creates a new `ListSinksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

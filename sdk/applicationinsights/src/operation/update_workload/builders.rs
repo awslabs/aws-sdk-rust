@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateWorkloadFluentBuilder {
-    /// Creates a new `UpdateWorkload`.
+    /// Creates a new `UpdateWorkloadFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetWirelessGatewayFirmwareInformationFluentBuilder {
-    /// Creates a new `GetWirelessGatewayFirmwareInformation`.
+    /// Creates a new `GetWirelessGatewayFirmwareInformationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

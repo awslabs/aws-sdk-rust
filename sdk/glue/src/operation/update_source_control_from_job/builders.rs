@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateSourceControlFromJobFluentBuilder {
-    /// Creates a new `UpdateSourceControlFromJob`.
+    /// Creates a new `UpdateSourceControlFromJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

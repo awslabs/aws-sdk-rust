@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMetadataGenerationRunFluentBuilder {
-    /// Creates a new `GetMetadataGenerationRun`.
+    /// Creates a new `GetMetadataGenerationRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

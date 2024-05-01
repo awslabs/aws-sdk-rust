@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRegionsFluentBuilder {
-    /// Creates a new `GetRegions`.
+    /// Creates a new `GetRegionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

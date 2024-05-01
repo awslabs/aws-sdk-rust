@@ -63,7 +63,7 @@ impl
     }
 }
 impl ListBucketInventoryConfigurationsFluentBuilder {
-    /// Creates a new `ListBucketInventoryConfigurations`.
+    /// Creates a new `ListBucketInventoryConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

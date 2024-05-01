@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteConfiguredTableAssociationFluentBuilder {
-    /// Creates a new `DeleteConfiguredTableAssociation`.
+    /// Creates a new `DeleteConfiguredTableAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

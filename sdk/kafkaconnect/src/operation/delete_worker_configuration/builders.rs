@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteWorkerConfigurationFluentBuilder {
-    /// Creates a new `DeleteWorkerConfiguration`.
+    /// Creates a new `DeleteWorkerConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

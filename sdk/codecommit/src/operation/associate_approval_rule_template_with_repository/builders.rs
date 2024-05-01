@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateApprovalRuleTemplateWithRepositoryFluentBuilder {
-    /// Creates a new `AssociateApprovalRuleTemplateWithRepository`.
+    /// Creates a new `AssociateApprovalRuleTemplateWithRepositoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -57,7 +57,7 @@ impl
     }
 }
 impl DeleteAppVersionResourceFluentBuilder {
-    /// Creates a new `DeleteAppVersionResource`.
+    /// Creates a new `DeleteAppVersionResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

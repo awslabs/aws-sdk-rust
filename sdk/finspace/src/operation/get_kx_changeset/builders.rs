@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetKxChangesetFluentBuilder {
-    /// Creates a new `GetKxChangeset`.
+    /// Creates a new `GetKxChangesetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeExclusionsFluentBuilder {
-    /// Creates a new `DescribeExclusions`.
+    /// Creates a new `DescribeExclusionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

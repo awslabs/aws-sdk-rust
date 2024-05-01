@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateLinkAttributesFluentBuilder {
-    /// Creates a new `UpdateLinkAttributes`.
+    /// Creates a new `UpdateLinkAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

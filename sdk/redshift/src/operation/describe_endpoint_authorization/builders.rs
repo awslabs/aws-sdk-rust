@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeEndpointAuthorizationFluentBuilder {
-    /// Creates a new `DescribeEndpointAuthorization`.
+    /// Creates a new `DescribeEndpointAuthorizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateLicenseConversionTaskForResourceFluentBuilder {
-    /// Creates a new `CreateLicenseConversionTaskForResource`.
+    /// Creates a new `CreateLicenseConversionTaskForResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

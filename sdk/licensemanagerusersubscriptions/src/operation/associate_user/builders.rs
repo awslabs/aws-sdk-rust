@@ -50,7 +50,7 @@ impl
     }
 }
 impl AssociateUserFluentBuilder {
-    /// Creates a new `AssociateUser`.
+    /// Creates a new `AssociateUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

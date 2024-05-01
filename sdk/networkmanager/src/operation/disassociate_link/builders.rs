@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateLinkFluentBuilder {
-    /// Creates a new `DisassociateLink`.
+    /// Creates a new `DisassociateLinkFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

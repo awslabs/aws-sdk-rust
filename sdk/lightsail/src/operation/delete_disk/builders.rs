@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteDiskFluentBuilder {
-    /// Creates a new `DeleteDisk`.
+    /// Creates a new `DeleteDiskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

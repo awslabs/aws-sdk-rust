@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRegistrationFieldValueFluentBuilder {
-    /// Creates a new `DeleteRegistrationFieldValue`.
+    /// Creates a new `DeleteRegistrationFieldValueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

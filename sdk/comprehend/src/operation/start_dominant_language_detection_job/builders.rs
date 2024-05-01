@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartDominantLanguageDetectionJobFluentBuilder {
-    /// Creates a new `StartDominantLanguageDetectionJob`.
+    /// Creates a new `StartDominantLanguageDetectionJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

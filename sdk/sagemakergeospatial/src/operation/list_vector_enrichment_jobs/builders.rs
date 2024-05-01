@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListVectorEnrichmentJobsFluentBuilder {
-    /// Creates a new `ListVectorEnrichmentJobs`.
+    /// Creates a new `ListVectorEnrichmentJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

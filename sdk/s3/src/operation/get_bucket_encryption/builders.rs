@@ -59,7 +59,7 @@ impl
     }
 }
 impl GetBucketEncryptionFluentBuilder {
-    /// Creates a new `GetBucketEncryption`.
+    /// Creates a new `GetBucketEncryptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

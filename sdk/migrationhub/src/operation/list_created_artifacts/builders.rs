@@ -56,7 +56,7 @@ impl
     }
 }
 impl ListCreatedArtifactsFluentBuilder {
-    /// Creates a new `ListCreatedArtifacts`.
+    /// Creates a new `ListCreatedArtifactsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

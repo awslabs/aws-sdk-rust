@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateReferenceStoreFluentBuilder {
-    /// Creates a new `CreateReferenceStore`.
+    /// Creates a new `CreateReferenceStoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

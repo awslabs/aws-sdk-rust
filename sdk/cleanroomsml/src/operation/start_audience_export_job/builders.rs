@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartAudienceExportJobFluentBuilder {
-    /// Creates a new `StartAudienceExportJob`.
+    /// Creates a new `StartAudienceExportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

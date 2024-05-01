@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateTaskTemplateFluentBuilder {
-    /// Creates a new `UpdateTaskTemplate`.
+    /// Creates a new `UpdateTaskTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeConfigurationAggregatorsFluentBuilder {
-    /// Creates a new `DescribeConfigurationAggregators`.
+    /// Creates a new `DescribeConfigurationAggregatorsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

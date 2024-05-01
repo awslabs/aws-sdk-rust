@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListMediaCapturePipelinesFluentBuilder {
-    /// Creates a new `ListMediaCapturePipelines`.
+    /// Creates a new `ListMediaCapturePipelinesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

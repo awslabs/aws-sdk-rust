@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAppInstanceUserEndpointFluentBuilder {
-    /// Creates a new `DescribeAppInstanceUserEndpoint`.
+    /// Creates a new `DescribeAppInstanceUserEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

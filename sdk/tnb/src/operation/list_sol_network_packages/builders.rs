@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListSolNetworkPackagesFluentBuilder {
-    /// Creates a new `ListSolNetworkPackages`.
+    /// Creates a new `ListSolNetworkPackagesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

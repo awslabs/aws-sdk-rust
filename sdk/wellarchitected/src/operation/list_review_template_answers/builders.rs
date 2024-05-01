@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListReviewTemplateAnswersFluentBuilder {
-    /// Creates a new `ListReviewTemplateAnswers`.
+    /// Creates a new `ListReviewTemplateAnswersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifySnapshotTierFluentBuilder {
-    /// Creates a new `ModifySnapshotTier`.
+    /// Creates a new `ModifySnapshotTierFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

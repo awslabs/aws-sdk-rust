@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateStoreImageTaskFluentBuilder {
-    /// Creates a new `CreateStoreImageTask`.
+    /// Creates a new `CreateStoreImageTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

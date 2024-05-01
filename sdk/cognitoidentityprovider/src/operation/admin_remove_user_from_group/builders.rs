@@ -57,7 +57,7 @@ impl
     }
 }
 impl AdminRemoveUserFromGroupFluentBuilder {
-    /// Creates a new `AdminRemoveUserFromGroup`.
+    /// Creates a new `AdminRemoveUserFromGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

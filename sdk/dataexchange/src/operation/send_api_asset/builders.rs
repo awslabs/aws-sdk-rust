@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendApiAssetFluentBuilder {
-    /// Creates a new `SendApiAsset`.
+    /// Creates a new `SendApiAssetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

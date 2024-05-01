@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSupportedInstanceTypesFluentBuilder {
-    /// Creates a new `ListSupportedInstanceTypes`.
+    /// Creates a new `ListSupportedInstanceTypesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

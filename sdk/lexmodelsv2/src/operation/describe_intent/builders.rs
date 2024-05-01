@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeIntentFluentBuilder {
-    /// Creates a new `DescribeIntent`.
+    /// Creates a new `DescribeIntentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

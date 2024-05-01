@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateSinkFluentBuilder {
-    /// Creates a new `CreateSink`.
+    /// Creates a new `CreateSinkFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

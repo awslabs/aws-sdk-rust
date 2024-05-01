@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListVoiceConnectorTerminationCredentialsFluentBuilder {
-    /// Creates a new `ListVoiceConnectorTerminationCredentials`.
+    /// Creates a new `ListVoiceConnectorTerminationCredentialsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

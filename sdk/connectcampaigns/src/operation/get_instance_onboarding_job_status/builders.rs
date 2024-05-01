@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetInstanceOnboardingJobStatusFluentBuilder {
-    /// Creates a new `GetInstanceOnboardingJobStatus`.
+    /// Creates a new `GetInstanceOnboardingJobStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

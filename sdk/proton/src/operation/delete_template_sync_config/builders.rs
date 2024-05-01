@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteTemplateSyncConfigFluentBuilder {
-    /// Creates a new `DeleteTemplateSyncConfig`.
+    /// Creates a new `DeleteTemplateSyncConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

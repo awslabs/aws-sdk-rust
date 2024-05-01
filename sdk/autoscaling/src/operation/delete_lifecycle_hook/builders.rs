@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteLifecycleHookFluentBuilder {
-    /// Creates a new `DeleteLifecycleHook`.
+    /// Creates a new `DeleteLifecycleHookFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

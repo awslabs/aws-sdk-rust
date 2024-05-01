@@ -56,7 +56,7 @@ impl
     }
 }
 impl UpdateMediaStorageConfigurationFluentBuilder {
-    /// Creates a new `UpdateMediaStorageConfiguration`.
+    /// Creates a new `UpdateMediaStorageConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

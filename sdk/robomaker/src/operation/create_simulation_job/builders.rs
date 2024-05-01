@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateSimulationJobFluentBuilder {
-    /// Creates a new `CreateSimulationJob`.
+    /// Creates a new `CreateSimulationJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

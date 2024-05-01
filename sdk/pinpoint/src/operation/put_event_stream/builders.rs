@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutEventStreamFluentBuilder {
-    /// Creates a new `PutEventStream`.
+    /// Creates a new `PutEventStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

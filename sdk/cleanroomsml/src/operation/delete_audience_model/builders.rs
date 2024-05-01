@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAudienceModelFluentBuilder {
-    /// Creates a new `DeleteAudienceModel`.
+    /// Creates a new `DeleteAudienceModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

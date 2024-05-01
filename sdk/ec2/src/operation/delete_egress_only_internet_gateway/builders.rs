@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteEgressOnlyInternetGatewayFluentBuilder {
-    /// Creates a new `DeleteEgressOnlyInternetGateway`.
+    /// Creates a new `DeleteEgressOnlyInternetGatewayFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

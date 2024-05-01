@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteServiceQuotaIncreaseRequestFromTemplateFluentBuilder {
-    /// Creates a new `DeleteServiceQuotaIncreaseRequestFromTemplate`.
+    /// Creates a new `DeleteServiceQuotaIncreaseRequestFromTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

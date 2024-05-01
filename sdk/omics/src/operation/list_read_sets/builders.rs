@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListReadSetsFluentBuilder {
-    /// Creates a new `ListReadSets`.
+    /// Creates a new `ListReadSetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

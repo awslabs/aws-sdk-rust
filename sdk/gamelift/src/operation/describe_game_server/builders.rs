@@ -52,7 +52,7 @@ impl
     }
 }
 impl DescribeGameServerFluentBuilder {
-    /// Creates a new `DescribeGameServer`.
+    /// Creates a new `DescribeGameServerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

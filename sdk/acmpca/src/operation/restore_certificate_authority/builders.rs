@@ -48,7 +48,7 @@ impl
     }
 }
 impl RestoreCertificateAuthorityFluentBuilder {
-    /// Creates a new `RestoreCertificateAuthority`.
+    /// Creates a new `RestoreCertificateAuthorityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateWebExperienceFluentBuilder {
-    /// Creates a new `UpdateWebExperience`.
+    /// Creates a new `UpdateWebExperienceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

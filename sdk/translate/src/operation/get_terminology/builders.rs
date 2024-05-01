@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTerminologyFluentBuilder {
-    /// Creates a new `GetTerminology`.
+    /// Creates a new `GetTerminologyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

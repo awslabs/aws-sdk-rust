@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListProposalVotesFluentBuilder {
-    /// Creates a new `ListProposalVotes`.
+    /// Creates a new `ListProposalVotesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

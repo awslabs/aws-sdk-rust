@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListResourcePoliciesFluentBuilder {
-    /// Creates a new `ListResourcePolicies`.
+    /// Creates a new `ListResourcePoliciesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

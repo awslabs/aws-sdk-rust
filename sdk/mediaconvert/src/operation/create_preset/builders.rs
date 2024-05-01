@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreatePresetFluentBuilder {
-    /// Creates a new `CreatePreset`.
+    /// Creates a new `CreatePresetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

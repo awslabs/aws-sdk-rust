@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDimensionValuesFluentBuilder {
-    /// Creates a new `GetDimensionValues`.
+    /// Creates a new `GetDimensionValuesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

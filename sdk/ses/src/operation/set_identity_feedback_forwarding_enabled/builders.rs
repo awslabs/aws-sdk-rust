@@ -52,7 +52,7 @@ impl
     }
 }
 impl SetIdentityFeedbackForwardingEnabledFluentBuilder {
-    /// Creates a new `SetIdentityFeedbackForwardingEnabled`.
+    /// Creates a new `SetIdentityFeedbackForwardingEnabledFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

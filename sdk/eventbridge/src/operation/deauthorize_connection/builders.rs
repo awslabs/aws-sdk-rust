@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeauthorizeConnectionFluentBuilder {
-    /// Creates a new `DeauthorizeConnection`.
+    /// Creates a new `DeauthorizeConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

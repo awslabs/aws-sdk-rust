@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutAppLaunchConfigurationFluentBuilder {
-    /// Creates a new `PutAppLaunchConfiguration`.
+    /// Creates a new `PutAppLaunchConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateNetworkSettingsFluentBuilder {
-    /// Creates a new `UpdateNetworkSettings`.
+    /// Creates a new `UpdateNetworkSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

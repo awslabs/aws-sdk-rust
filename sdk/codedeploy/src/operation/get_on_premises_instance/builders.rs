@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetOnPremisesInstanceFluentBuilder {
-    /// Creates a new `GetOnPremisesInstance`.
+    /// Creates a new `GetOnPremisesInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

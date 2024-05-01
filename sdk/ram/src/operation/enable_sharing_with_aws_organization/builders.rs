@@ -50,7 +50,7 @@ impl
     }
 }
 impl EnableSharingWithAwsOrganizationFluentBuilder {
-    /// Creates a new `EnableSharingWithAwsOrganization`.
+    /// Creates a new `EnableSharingWithAwsOrganizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

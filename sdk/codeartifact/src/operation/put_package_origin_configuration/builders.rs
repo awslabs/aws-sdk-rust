@@ -50,7 +50,7 @@ impl
     }
 }
 impl PutPackageOriginConfigurationFluentBuilder {
-    /// Creates a new `PutPackageOriginConfiguration`.
+    /// Creates a new `PutPackageOriginConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

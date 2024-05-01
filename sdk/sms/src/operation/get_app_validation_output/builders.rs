@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAppValidationOutputFluentBuilder {
-    /// Creates a new `GetAppValidationOutput`.
+    /// Creates a new `GetAppValidationOutputFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

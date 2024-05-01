@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutLoggingOptionsFluentBuilder {
-    /// Creates a new `PutLoggingOptions`.
+    /// Creates a new `PutLoggingOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

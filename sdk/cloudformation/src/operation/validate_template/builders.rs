@@ -48,7 +48,7 @@ impl
     }
 }
 impl ValidateTemplateFluentBuilder {
-    /// Creates a new `ValidateTemplate`.
+    /// Creates a new `ValidateTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

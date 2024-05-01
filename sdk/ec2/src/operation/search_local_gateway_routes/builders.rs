@@ -48,7 +48,7 @@ impl
     }
 }
 impl SearchLocalGatewayRoutesFluentBuilder {
-    /// Creates a new `SearchLocalGatewayRoutes`.
+    /// Creates a new `SearchLocalGatewayRoutesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

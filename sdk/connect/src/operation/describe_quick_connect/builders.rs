@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeQuickConnectFluentBuilder {
-    /// Creates a new `DescribeQuickConnect`.
+    /// Creates a new `DescribeQuickConnectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

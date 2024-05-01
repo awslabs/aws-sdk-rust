@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateConstraintFluentBuilder {
-    /// Creates a new `UpdateConstraint`.
+    /// Creates a new `UpdateConstraintFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

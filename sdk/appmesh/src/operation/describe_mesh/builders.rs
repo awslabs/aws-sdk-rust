@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeMeshFluentBuilder {
-    /// Creates a new `DescribeMesh`.
+    /// Creates a new `DescribeMeshFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

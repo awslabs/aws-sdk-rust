@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetStreamKeyFluentBuilder {
-    /// Creates a new `BatchGetStreamKey`.
+    /// Creates a new `BatchGetStreamKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

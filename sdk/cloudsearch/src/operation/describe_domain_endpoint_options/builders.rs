@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDomainEndpointOptionsFluentBuilder {
-    /// Creates a new `DescribeDomainEndpointOptions`.
+    /// Creates a new `DescribeDomainEndpointOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

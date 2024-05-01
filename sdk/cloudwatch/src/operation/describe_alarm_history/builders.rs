@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeAlarmHistoryFluentBuilder {
-    /// Creates a new `DescribeAlarmHistory`.
+    /// Creates a new `DescribeAlarmHistoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

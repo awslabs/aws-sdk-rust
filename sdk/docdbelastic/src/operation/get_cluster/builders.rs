@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetClusterFluentBuilder {
-    /// Creates a new `GetCluster`.
+    /// Creates a new `GetClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeMetadataModelImportsFluentBuilder {
-    /// Creates a new `DescribeMetadataModelImports`.
+    /// Creates a new `DescribeMetadataModelImportsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSourceCredentialsFluentBuilder {
-    /// Creates a new `DeleteSourceCredentials`.
+    /// Creates a new `DeleteSourceCredentialsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

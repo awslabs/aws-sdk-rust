@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateRoutingControlFluentBuilder {
-    /// Creates a new `UpdateRoutingControl`.
+    /// Creates a new `UpdateRoutingControlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

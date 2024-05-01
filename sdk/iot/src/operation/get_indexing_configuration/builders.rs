@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetIndexingConfigurationFluentBuilder {
-    /// Creates a new `GetIndexingConfiguration`.
+    /// Creates a new `GetIndexingConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

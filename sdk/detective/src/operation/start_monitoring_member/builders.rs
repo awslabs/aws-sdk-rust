@@ -55,7 +55,7 @@ impl
     }
 }
 impl StartMonitoringMemberFluentBuilder {
-    /// Creates a new `StartMonitoringMember`.
+    /// Creates a new `StartMonitoringMemberFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

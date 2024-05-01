@@ -48,7 +48,7 @@ impl
     }
 }
 impl IncreaseReplicationFactorFluentBuilder {
-    /// Creates a new `IncreaseReplicationFactor`.
+    /// Creates a new `IncreaseReplicationFactorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

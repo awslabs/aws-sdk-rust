@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDocumentVersionFluentBuilder {
-    /// Creates a new `GetDocumentVersion`.
+    /// Creates a new `GetDocumentVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

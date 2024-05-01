@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteVpcEndpointsFluentBuilder {
-    /// Creates a new `DeleteVpcEndpoints`.
+    /// Creates a new `DeleteVpcEndpointsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

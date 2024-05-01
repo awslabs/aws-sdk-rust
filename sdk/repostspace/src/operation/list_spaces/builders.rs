@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSpacesFluentBuilder {
-    /// Creates a new `ListSpaces`.
+    /// Creates a new `ListSpacesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

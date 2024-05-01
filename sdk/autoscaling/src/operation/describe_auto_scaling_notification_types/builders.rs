@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAutoScalingNotificationTypesFluentBuilder {
-    /// Creates a new `DescribeAutoScalingNotificationTypes`.
+    /// Creates a new `DescribeAutoScalingNotificationTypesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

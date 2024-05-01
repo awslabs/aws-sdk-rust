@@ -61,7 +61,7 @@ impl
     }
 }
 impl PutRecordBatchFluentBuilder {
-    /// Creates a new `PutRecordBatch`.
+    /// Creates a new `PutRecordBatchFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

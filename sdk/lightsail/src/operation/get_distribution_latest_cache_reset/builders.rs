@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDistributionLatestCacheResetFluentBuilder {
-    /// Creates a new `GetDistributionLatestCacheReset`.
+    /// Creates a new `GetDistributionLatestCacheResetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

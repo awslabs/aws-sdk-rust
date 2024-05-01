@@ -51,7 +51,7 @@ impl
     }
 }
 impl CancelDomainTransferToAnotherAwsAccountFluentBuilder {
-    /// Creates a new `CancelDomainTransferToAnotherAwsAccount`.
+    /// Creates a new `CancelDomainTransferToAnotherAwsAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

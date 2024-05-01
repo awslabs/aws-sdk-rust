@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateLaunchTemplateVersionFluentBuilder {
-    /// Creates a new `CreateLaunchTemplateVersion`.
+    /// Creates a new `CreateLaunchTemplateVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

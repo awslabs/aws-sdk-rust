@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateProvisionedProductFluentBuilder {
-    /// Creates a new `UpdateProvisionedProduct`.
+    /// Creates a new `UpdateProvisionedProductFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

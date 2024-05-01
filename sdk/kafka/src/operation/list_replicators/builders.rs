@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListReplicatorsFluentBuilder {
-    /// Creates a new `ListReplicators`.
+    /// Creates a new `ListReplicatorsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

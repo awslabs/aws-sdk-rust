@@ -61,7 +61,7 @@ impl
     }
 }
 impl DeleteBucketLifecycleFluentBuilder {
-    /// Creates a new `DeleteBucketLifecycle`.
+    /// Creates a new `DeleteBucketLifecycleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

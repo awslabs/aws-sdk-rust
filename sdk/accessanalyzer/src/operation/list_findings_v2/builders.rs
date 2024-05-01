@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListFindingsV2FluentBuilder {
-    /// Creates a new `ListFindingsV2`.
+    /// Creates a new `ListFindingsV2FluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

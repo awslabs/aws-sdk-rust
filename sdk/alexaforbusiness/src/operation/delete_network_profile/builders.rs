@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteNetworkProfileFluentBuilder {
-    /// Creates a new `DeleteNetworkProfile`.
+    /// Creates a new `DeleteNetworkProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

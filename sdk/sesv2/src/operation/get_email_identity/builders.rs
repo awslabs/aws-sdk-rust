@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetEmailIdentityFluentBuilder {
-    /// Creates a new `GetEmailIdentity`.
+    /// Creates a new `GetEmailIdentityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

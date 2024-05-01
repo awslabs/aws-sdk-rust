@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateUserSettingsFluentBuilder {
-    /// Creates a new `UpdateUserSettings`.
+    /// Creates a new `UpdateUserSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

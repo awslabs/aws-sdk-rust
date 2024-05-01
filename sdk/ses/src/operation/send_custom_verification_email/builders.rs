@@ -50,7 +50,7 @@ impl
     }
 }
 impl SendCustomVerificationEmailFluentBuilder {
-    /// Creates a new `SendCustomVerificationEmail`.
+    /// Creates a new `SendCustomVerificationEmailFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

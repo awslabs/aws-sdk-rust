@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListMLTransformsFluentBuilder {
-    /// Creates a new `ListMLTransforms`.
+    /// Creates a new `ListMLTransformsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

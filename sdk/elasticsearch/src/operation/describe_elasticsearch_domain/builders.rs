@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeElasticsearchDomainFluentBuilder {
-    /// Creates a new `DescribeElasticsearchDomain`.
+    /// Creates a new `DescribeElasticsearchDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

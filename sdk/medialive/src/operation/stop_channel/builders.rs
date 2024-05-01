@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopChannelFluentBuilder {
-    /// Creates a new `StopChannel`.
+    /// Creates a new `StopChannelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

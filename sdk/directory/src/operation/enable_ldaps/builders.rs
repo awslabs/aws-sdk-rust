@@ -48,7 +48,7 @@ impl
     }
 }
 impl EnableLDAPSFluentBuilder {
-    /// Creates a new `EnableLDAPS`.
+    /// Creates a new `EnableLDAPSFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateDataCatalogFluentBuilder {
-    /// Creates a new `CreateDataCatalog`.
+    /// Creates a new `CreateDataCatalogFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

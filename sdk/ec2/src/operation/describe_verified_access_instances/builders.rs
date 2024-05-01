@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeVerifiedAccessInstancesFluentBuilder {
-    /// Creates a new `DescribeVerifiedAccessInstances`.
+    /// Creates a new `DescribeVerifiedAccessInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

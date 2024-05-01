@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateUnreferencedMergeCommitFluentBuilder {
-    /// Creates a new `CreateUnreferencedMergeCommit`.
+    /// Creates a new `CreateUnreferencedMergeCommitFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

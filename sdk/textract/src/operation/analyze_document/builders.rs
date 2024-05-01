@@ -68,7 +68,7 @@ impl
     }
 }
 impl AnalyzeDocumentFluentBuilder {
-    /// Creates a new `AnalyzeDocument`.
+    /// Creates a new `AnalyzeDocumentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,56 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait until change set status is CREATE_COMPLETE.
+    fn wait_until_change_set_create_complete(&self) -> crate::waiters::change_set_create_complete::ChangeSetCreateCompleteFluentBuilder;
+    /// Wait until stack status is CREATE_COMPLETE.
+    fn wait_until_stack_create_complete(&self) -> crate::waiters::stack_create_complete::StackCreateCompleteFluentBuilder;
+    /// Wait until stack status is DELETE_COMPLETE.
+    fn wait_until_stack_delete_complete(&self) -> crate::waiters::stack_delete_complete::StackDeleteCompleteFluentBuilder;
+    /// Wait for `stack_exists`
+    fn wait_until_stack_exists(&self) -> crate::waiters::stack_exists::StackExistsFluentBuilder;
+    /// Wait until stack status is IMPORT_COMPLETE.
+    fn wait_until_stack_import_complete(&self) -> crate::waiters::stack_import_complete::StackImportCompleteFluentBuilder;
+    /// Wait until stack status is UPDATE_ROLLBACK_COMPLETE.
+    fn wait_until_stack_rollback_complete(&self) -> crate::waiters::stack_rollback_complete::StackRollbackCompleteFluentBuilder;
+    /// Wait until stack status is UPDATE_COMPLETE.
+    fn wait_until_stack_update_complete(&self) -> crate::waiters::stack_update_complete::StackUpdateCompleteFluentBuilder;
+    /// Wait until type registration is COMPLETE.
+    fn wait_until_type_registration_complete(&self) -> crate::waiters::type_registration_complete::TypeRegistrationCompleteFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_change_set_create_complete(&self) -> crate::waiters::change_set_create_complete::ChangeSetCreateCompleteFluentBuilder {
+        crate::waiters::change_set_create_complete::ChangeSetCreateCompleteFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_stack_create_complete(&self) -> crate::waiters::stack_create_complete::StackCreateCompleteFluentBuilder {
+        crate::waiters::stack_create_complete::StackCreateCompleteFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_stack_delete_complete(&self) -> crate::waiters::stack_delete_complete::StackDeleteCompleteFluentBuilder {
+        crate::waiters::stack_delete_complete::StackDeleteCompleteFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_stack_exists(&self) -> crate::waiters::stack_exists::StackExistsFluentBuilder {
+        crate::waiters::stack_exists::StackExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_stack_import_complete(&self) -> crate::waiters::stack_import_complete::StackImportCompleteFluentBuilder {
+        crate::waiters::stack_import_complete::StackImportCompleteFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_stack_rollback_complete(&self) -> crate::waiters::stack_rollback_complete::StackRollbackCompleteFluentBuilder {
+        crate::waiters::stack_rollback_complete::StackRollbackCompleteFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_stack_update_complete(&self) -> crate::waiters::stack_update_complete::StackUpdateCompleteFluentBuilder {
+        crate::waiters::stack_update_complete::StackUpdateCompleteFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_type_registration_complete(&self) -> crate::waiters::type_registration_complete::TypeRegistrationCompleteFluentBuilder {
+        crate::waiters::type_registration_complete::TypeRegistrationCompleteFluentBuilder::new(self.handle.clone())
     }
 }
 

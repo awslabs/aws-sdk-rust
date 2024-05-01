@@ -52,7 +52,7 @@ impl
     }
 }
 impl PutObjectLegalHoldFluentBuilder {
-    /// Creates a new `PutObjectLegalHold`.
+    /// Creates a new `PutObjectLegalHoldFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

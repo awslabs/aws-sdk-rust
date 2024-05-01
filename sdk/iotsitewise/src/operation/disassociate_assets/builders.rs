@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateAssetsFluentBuilder {
-    /// Creates a new `DisassociateAssets`.
+    /// Creates a new `DisassociateAssetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartViewerSessionRevocationFluentBuilder {
-    /// Creates a new `StartViewerSessionRevocation`.
+    /// Creates a new `StartViewerSessionRevocationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

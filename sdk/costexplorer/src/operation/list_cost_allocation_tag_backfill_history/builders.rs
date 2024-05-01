@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCostAllocationTagBackfillHistoryFluentBuilder {
-    /// Creates a new `ListCostAllocationTagBackfillHistory`.
+    /// Creates a new `ListCostAllocationTagBackfillHistoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutGeofenceFluentBuilder {
-    /// Creates a new `PutGeofence`.
+    /// Creates a new `PutGeofenceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

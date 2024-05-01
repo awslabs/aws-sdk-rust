@@ -49,7 +49,7 @@ impl
     }
 }
 impl ModifyVpcPeeringConnectionOptionsFluentBuilder {
-    /// Creates a new `ModifyVpcPeeringConnectionOptions`.
+    /// Creates a new `ModifyVpcPeeringConnectionOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

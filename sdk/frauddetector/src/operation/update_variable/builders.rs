@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateVariableFluentBuilder {
-    /// Creates a new `UpdateVariable`.
+    /// Creates a new `UpdateVariableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

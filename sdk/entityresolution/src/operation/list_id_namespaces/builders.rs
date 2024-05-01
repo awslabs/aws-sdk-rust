@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListIdNamespacesFluentBuilder {
-    /// Creates a new `ListIdNamespaces`.
+    /// Creates a new `ListIdNamespacesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

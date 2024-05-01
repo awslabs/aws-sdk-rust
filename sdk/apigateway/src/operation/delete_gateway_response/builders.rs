@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteGatewayResponseFluentBuilder {
-    /// Creates a new `DeleteGatewayResponse`.
+    /// Creates a new `DeleteGatewayResponseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

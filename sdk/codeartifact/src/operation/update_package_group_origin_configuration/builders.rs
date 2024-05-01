@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdatePackageGroupOriginConfigurationFluentBuilder {
-    /// Creates a new `UpdatePackageGroupOriginConfiguration`.
+    /// Creates a new `UpdatePackageGroupOriginConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

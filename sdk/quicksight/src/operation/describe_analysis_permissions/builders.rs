@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAnalysisPermissionsFluentBuilder {
-    /// Creates a new `DescribeAnalysisPermissions`.
+    /// Creates a new `DescribeAnalysisPermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

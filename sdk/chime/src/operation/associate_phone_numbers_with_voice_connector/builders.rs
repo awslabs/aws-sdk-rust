@@ -52,7 +52,7 @@ impl
     }
 }
 impl AssociatePhoneNumbersWithVoiceConnectorFluentBuilder {
-    /// Creates a new `AssociatePhoneNumbersWithVoiceConnector`.
+    /// Creates a new `AssociatePhoneNumbersWithVoiceConnectorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

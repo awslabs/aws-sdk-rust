@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateDataSourcePermissionsFluentBuilder {
-    /// Creates a new `UpdateDataSourcePermissions`.
+    /// Creates a new `UpdateDataSourcePermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

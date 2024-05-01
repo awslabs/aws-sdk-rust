@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateTransitGatewayConnectPeerFluentBuilder {
-    /// Creates a new `DisassociateTransitGatewayConnectPeer`.
+    /// Creates a new `DisassociateTransitGatewayConnectPeerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

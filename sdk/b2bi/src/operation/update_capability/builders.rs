@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateCapabilityFluentBuilder {
-    /// Creates a new `UpdateCapability`.
+    /// Creates a new `UpdateCapabilityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

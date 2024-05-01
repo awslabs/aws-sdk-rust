@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteResourcePermissionFluentBuilder {
-    /// Creates a new `DeleteResourcePermission`.
+    /// Creates a new `DeleteResourcePermissionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl SetSubnetsFluentBuilder {
-    /// Creates a new `SetSubnets`.
+    /// Creates a new `SetSubnetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

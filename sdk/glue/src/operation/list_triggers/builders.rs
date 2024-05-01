@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListTriggersFluentBuilder {
-    /// Creates a new `ListTriggers`.
+    /// Creates a new `ListTriggersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

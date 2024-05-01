@@ -75,7 +75,7 @@ impl
     }
 }
 impl UpdateByteMatchSetFluentBuilder {
-    /// Creates a new `UpdateByteMatchSet`.
+    /// Creates a new `UpdateByteMatchSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

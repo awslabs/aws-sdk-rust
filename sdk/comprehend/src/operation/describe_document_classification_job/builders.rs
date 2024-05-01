@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDocumentClassificationJobFluentBuilder {
-    /// Creates a new `DescribeDocumentClassificationJob`.
+    /// Creates a new `DescribeDocumentClassificationJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

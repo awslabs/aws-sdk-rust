@@ -48,7 +48,7 @@ impl
     }
 }
 impl UntagMFADeviceFluentBuilder {
-    /// Creates a new `UntagMFADevice`.
+    /// Creates a new `UntagMFADeviceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

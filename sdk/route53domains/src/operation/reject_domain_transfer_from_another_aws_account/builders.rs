@@ -49,7 +49,7 @@ impl
     }
 }
 impl RejectDomainTransferFromAnotherAwsAccountFluentBuilder {
-    /// Creates a new `RejectDomainTransferFromAnotherAwsAccount`.
+    /// Creates a new `RejectDomainTransferFromAnotherAwsAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

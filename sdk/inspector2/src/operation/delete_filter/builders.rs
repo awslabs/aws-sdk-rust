@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteFilterFluentBuilder {
-    /// Creates a new `DeleteFilter`.
+    /// Creates a new `DeleteFilterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

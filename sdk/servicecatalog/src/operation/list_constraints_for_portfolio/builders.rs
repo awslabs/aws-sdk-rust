@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListConstraintsForPortfolioFluentBuilder {
-    /// Creates a new `ListConstraintsForPortfolio`.
+    /// Creates a new `ListConstraintsForPortfolioFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

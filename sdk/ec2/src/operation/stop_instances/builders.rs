@@ -54,7 +54,7 @@ impl
     }
 }
 impl StopInstancesFluentBuilder {
-    /// Creates a new `StopInstances`.
+    /// Creates a new `StopInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

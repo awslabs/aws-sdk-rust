@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyClusterSubnetGroupFluentBuilder {
-    /// Creates a new `ModifyClusterSubnetGroup`.
+    /// Creates a new `ModifyClusterSubnetGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteInterconnectFluentBuilder {
-    /// Creates a new `DeleteInterconnect`.
+    /// Creates a new `DeleteInterconnectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

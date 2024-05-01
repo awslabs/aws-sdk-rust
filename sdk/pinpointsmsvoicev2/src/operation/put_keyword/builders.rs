@@ -50,7 +50,7 @@ impl
     }
 }
 impl PutKeywordFluentBuilder {
-    /// Creates a new `PutKeyword`.
+    /// Creates a new `PutKeywordFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

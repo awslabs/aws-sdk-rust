@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDBShardGroupFluentBuilder {
-    /// Creates a new `DeleteDBShardGroup`.
+    /// Creates a new `DeleteDBShardGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

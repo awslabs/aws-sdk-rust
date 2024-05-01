@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeByoipCidrsFluentBuilder {
-    /// Creates a new `DescribeByoipCidrs`.
+    /// Creates a new `DescribeByoipCidrsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

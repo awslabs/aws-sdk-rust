@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeThemeFluentBuilder {
-    /// Creates a new `DescribeTheme`.
+    /// Creates a new `DescribeThemeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

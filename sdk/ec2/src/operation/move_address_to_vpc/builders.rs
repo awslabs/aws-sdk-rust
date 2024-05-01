@@ -51,7 +51,7 @@ impl
     }
 }
 impl MoveAddressToVpcFluentBuilder {
-    /// Creates a new `MoveAddressToVpc`.
+    /// Creates a new `MoveAddressToVpcFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

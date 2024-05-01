@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteSigningCertificateFluentBuilder {
-    /// Creates a new `DeleteSigningCertificate`.
+    /// Creates a new `DeleteSigningCertificateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

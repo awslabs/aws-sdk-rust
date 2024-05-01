@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetDashboardFluentBuilder {
-    /// Creates a new `GetDashboard`.
+    /// Creates a new `GetDashboardFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

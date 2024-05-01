@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeImportSnapshotTasksFluentBuilder {
-    /// Creates a new `DescribeImportSnapshotTasks`.
+    /// Creates a new `DescribeImportSnapshotTasksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteNodegroupFluentBuilder {
-    /// Creates a new `DeleteNodegroup`.
+    /// Creates a new `DeleteNodegroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

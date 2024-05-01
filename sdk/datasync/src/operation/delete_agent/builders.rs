@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteAgentFluentBuilder {
-    /// Creates a new `DeleteAgent`.
+    /// Creates a new `DeleteAgentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

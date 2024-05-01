@@ -48,7 +48,7 @@ impl
     }
 }
 impl RevokeSignatureFluentBuilder {
-    /// Creates a new `RevokeSignature`.
+    /// Creates a new `RevokeSignatureFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

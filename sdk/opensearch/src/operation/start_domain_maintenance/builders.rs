@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartDomainMaintenanceFluentBuilder {
-    /// Creates a new `StartDomainMaintenance`.
+    /// Creates a new `StartDomainMaintenanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

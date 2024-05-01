@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociatePricingRulesFluentBuilder {
-    /// Creates a new `AssociatePricingRules`.
+    /// Creates a new `AssociatePricingRulesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

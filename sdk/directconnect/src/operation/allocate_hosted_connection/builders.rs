@@ -51,7 +51,7 @@ impl
     }
 }
 impl AllocateHostedConnectionFluentBuilder {
-    /// Creates a new `AllocateHostedConnection`.
+    /// Creates a new `AllocateHostedConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

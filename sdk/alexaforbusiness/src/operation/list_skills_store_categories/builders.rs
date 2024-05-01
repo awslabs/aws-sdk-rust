@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListSkillsStoreCategoriesFluentBuilder {
-    /// Creates a new `ListSkillsStoreCategories`.
+    /// Creates a new `ListSkillsStoreCategoriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartReadSetExportJobFluentBuilder {
-    /// Creates a new `StartReadSetExportJob`.
+    /// Creates a new `StartReadSetExportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

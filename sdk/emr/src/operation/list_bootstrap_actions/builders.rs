@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListBootstrapActionsFluentBuilder {
-    /// Creates a new `ListBootstrapActions`.
+    /// Creates a new `ListBootstrapActionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

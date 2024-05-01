@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetCardinalityFluentBuilder {
-    /// Creates a new `GetCardinality`.
+    /// Creates a new `GetCardinalityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

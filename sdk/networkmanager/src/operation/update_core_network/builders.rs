@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateCoreNetworkFluentBuilder {
-    /// Creates a new `UpdateCoreNetwork`.
+    /// Creates a new `UpdateCoreNetworkFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

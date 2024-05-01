@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListAvailableManagementCidrRangesFluentBuilder {
-    /// Creates a new `ListAvailableManagementCidrRanges`.
+    /// Creates a new `ListAvailableManagementCidrRangesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

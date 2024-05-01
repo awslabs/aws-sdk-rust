@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeChannelModeratedByAppInstanceUserFluentBuilder {
-    /// Creates a new `DescribeChannelModeratedByAppInstanceUser`.
+    /// Creates a new `DescribeChannelModeratedByAppInstanceUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

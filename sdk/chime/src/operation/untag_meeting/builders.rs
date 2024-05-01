@@ -52,7 +52,7 @@ impl
     }
 }
 impl UntagMeetingFluentBuilder {
-    /// Creates a new `UntagMeeting`.
+    /// Creates a new `UntagMeetingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

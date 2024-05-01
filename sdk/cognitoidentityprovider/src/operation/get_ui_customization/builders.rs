@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetUICustomizationFluentBuilder {
-    /// Creates a new `GetUICustomization`.
+    /// Creates a new `GetUICustomizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

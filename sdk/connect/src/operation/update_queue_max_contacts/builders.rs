@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateQueueMaxContactsFluentBuilder {
-    /// Creates a new `UpdateQueueMaxContacts`.
+    /// Creates a new `UpdateQueueMaxContactsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

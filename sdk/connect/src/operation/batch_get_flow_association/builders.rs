@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetFlowAssociationFluentBuilder {
-    /// Creates a new `BatchGetFlowAssociation`.
+    /// Creates a new `BatchGetFlowAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutProtocolsListFluentBuilder {
-    /// Creates a new `PutProtocolsList`.
+    /// Creates a new `PutProtocolsListFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

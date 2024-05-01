@@ -29,7 +29,7 @@ impl
 pub struct DescribeMaintenanceWindowExecutionTaskInvocationsFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_maintenance_window_execution_task_invocations::builders::DescribeMaintenanceWindowExecutionTaskInvocationsInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeMaintenanceWindowExecutionTaskInvocationsFluentBuilder {
-    /// Creates a new `DescribeMaintenanceWindowExecutionTaskInvocations`.
+    /// Creates a new `DescribeMaintenanceWindowExecutionTaskInvocationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

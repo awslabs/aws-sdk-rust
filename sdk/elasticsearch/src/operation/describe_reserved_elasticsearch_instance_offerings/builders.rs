@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeReservedElasticsearchInstanceOfferingsFluentBuilder {
-    /// Creates a new `DescribeReservedElasticsearchInstanceOfferings`.
+    /// Creates a new `DescribeReservedElasticsearchInstanceOfferingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

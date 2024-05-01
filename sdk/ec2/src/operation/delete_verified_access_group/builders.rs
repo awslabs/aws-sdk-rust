@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteVerifiedAccessGroupFluentBuilder {
-    /// Creates a new `DeleteVerifiedAccessGroup`.
+    /// Creates a new `DeleteVerifiedAccessGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

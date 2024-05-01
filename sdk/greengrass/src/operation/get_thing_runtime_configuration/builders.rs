@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetThingRuntimeConfigurationFluentBuilder {
-    /// Creates a new `GetThingRuntimeConfiguration`.
+    /// Creates a new `GetThingRuntimeConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutResourcePermissionFluentBuilder {
-    /// Creates a new `PutResourcePermission`.
+    /// Creates a new `PutResourcePermissionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

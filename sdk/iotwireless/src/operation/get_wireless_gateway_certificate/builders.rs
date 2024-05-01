@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetWirelessGatewayCertificateFluentBuilder {
-    /// Creates a new `GetWirelessGatewayCertificate`.
+    /// Creates a new `GetWirelessGatewayCertificateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

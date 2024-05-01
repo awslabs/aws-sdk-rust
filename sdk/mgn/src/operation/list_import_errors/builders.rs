@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListImportErrorsFluentBuilder {
-    /// Creates a new `ListImportErrors`.
+    /// Creates a new `ListImportErrorsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

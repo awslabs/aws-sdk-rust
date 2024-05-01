@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDefaultRetentionPolicyFluentBuilder {
-    /// Creates a new `GetDefaultRetentionPolicy`.
+    /// Creates a new `GetDefaultRetentionPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

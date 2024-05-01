@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSecurityControlDefinitionsFluentBuilder {
-    /// Creates a new `ListSecurityControlDefinitions`.
+    /// Creates a new `ListSecurityControlDefinitionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

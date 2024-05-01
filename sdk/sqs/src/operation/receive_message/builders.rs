@@ -69,7 +69,7 @@ impl
     }
 }
 impl ReceiveMessageFluentBuilder {
-    /// Creates a new `ReceiveMessage`.
+    /// Creates a new `ReceiveMessageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -53,7 +53,7 @@ impl
     }
 }
 impl GetStorageLensConfigurationTaggingFluentBuilder {
-    /// Creates a new `GetStorageLensConfigurationTagging`.
+    /// Creates a new `GetStorageLensConfigurationTaggingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateCommentFluentBuilder {
-    /// Creates a new `CreateComment`.
+    /// Creates a new `CreateCommentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

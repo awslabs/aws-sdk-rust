@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateTransformerFluentBuilder {
-    /// Creates a new `UpdateTransformer`.
+    /// Creates a new `UpdateTransformerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

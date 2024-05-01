@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateQueueFluentBuilder {
-    /// Creates a new `UpdateQueue`.
+    /// Creates a new `UpdateQueueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

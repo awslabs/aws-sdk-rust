@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopAutoMLJobFluentBuilder {
-    /// Creates a new `StopAutoMLJob`.
+    /// Creates a new `StopAutoMLJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

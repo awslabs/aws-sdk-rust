@@ -56,7 +56,7 @@ impl
     }
 }
 impl DescribePublisherFluentBuilder {
-    /// Creates a new `DescribePublisher`.
+    /// Creates a new `DescribePublisherFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

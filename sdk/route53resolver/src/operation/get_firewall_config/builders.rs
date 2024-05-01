@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetFirewallConfigFluentBuilder {
-    /// Creates a new `GetFirewallConfig`.
+    /// Creates a new `GetFirewallConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

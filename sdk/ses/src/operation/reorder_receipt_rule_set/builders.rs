@@ -52,7 +52,7 @@ impl
     }
 }
 impl ReorderReceiptRuleSetFluentBuilder {
-    /// Creates a new `ReorderReceiptRuleSet`.
+    /// Creates a new `ReorderReceiptRuleSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListStreamingDistributionsFluentBuilder {
-    /// Creates a new `ListStreamingDistributions`.
+    /// Creates a new `ListStreamingDistributionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

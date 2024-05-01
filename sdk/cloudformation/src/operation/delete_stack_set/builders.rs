@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteStackSetFluentBuilder {
-    /// Creates a new `DeleteStackSet`.
+    /// Creates a new `DeleteStackSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

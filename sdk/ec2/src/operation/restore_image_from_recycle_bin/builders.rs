@@ -48,7 +48,7 @@ impl
     }
 }
 impl RestoreImageFromRecycleBinFluentBuilder {
-    /// Creates a new `RestoreImageFromRecycleBin`.
+    /// Creates a new `RestoreImageFromRecycleBinFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteLaunchActionFluentBuilder {
-    /// Creates a new `DeleteLaunchAction`.
+    /// Creates a new `DeleteLaunchActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

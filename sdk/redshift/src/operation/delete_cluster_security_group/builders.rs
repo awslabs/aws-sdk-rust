@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteClusterSecurityGroupFluentBuilder {
-    /// Creates a new `DeleteClusterSecurityGroup`.
+    /// Creates a new `DeleteClusterSecurityGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetExternalModelsFluentBuilder {
-    /// Creates a new `GetExternalModels`.
+    /// Creates a new `GetExternalModelsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

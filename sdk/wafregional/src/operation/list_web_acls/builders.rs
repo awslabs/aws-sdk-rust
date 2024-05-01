@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListWebACLsFluentBuilder {
-    /// Creates a new `ListWebACLs`.
+    /// Creates a new `ListWebACLsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

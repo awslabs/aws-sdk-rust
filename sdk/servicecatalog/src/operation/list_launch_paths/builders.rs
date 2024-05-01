@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListLaunchPathsFluentBuilder {
-    /// Creates a new `ListLaunchPaths`.
+    /// Creates a new `ListLaunchPathsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

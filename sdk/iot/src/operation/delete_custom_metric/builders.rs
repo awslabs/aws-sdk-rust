@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteCustomMetricFluentBuilder {
-    /// Creates a new `DeleteCustomMetric`.
+    /// Creates a new `DeleteCustomMetricFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

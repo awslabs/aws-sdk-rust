@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeReplicationTaskIndividualAssessmentsFluentBuilder {
-    /// Creates a new `DescribeReplicationTaskIndividualAssessments`.
+    /// Creates a new `DescribeReplicationTaskIndividualAssessmentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCustomModelFluentBuilder {
-    /// Creates a new `DeleteCustomModel`.
+    /// Creates a new `DeleteCustomModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

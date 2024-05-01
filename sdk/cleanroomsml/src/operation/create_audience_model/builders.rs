@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAudienceModelFluentBuilder {
-    /// Creates a new `CreateAudienceModel`.
+    /// Creates a new `CreateAudienceModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

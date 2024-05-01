@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeRootFoldersFluentBuilder {
-    /// Creates a new `DescribeRootFolders`.
+    /// Creates a new `DescribeRootFoldersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

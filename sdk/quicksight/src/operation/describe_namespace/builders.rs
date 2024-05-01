@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeNamespaceFluentBuilder {
-    /// Creates a new `DescribeNamespace`.
+    /// Creates a new `DescribeNamespaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

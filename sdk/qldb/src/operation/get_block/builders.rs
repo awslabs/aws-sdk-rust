@@ -46,7 +46,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::get_
     }
 }
 impl GetBlockFluentBuilder {
-    /// Creates a new `GetBlock`.
+    /// Creates a new `GetBlockFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

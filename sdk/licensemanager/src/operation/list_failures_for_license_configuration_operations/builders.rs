@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListFailuresForLicenseConfigurationOperationsFluentBuilder {
-    /// Creates a new `ListFailuresForLicenseConfigurationOperations`.
+    /// Creates a new `ListFailuresForLicenseConfigurationOperationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

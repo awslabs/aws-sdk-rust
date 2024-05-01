@@ -52,7 +52,7 @@ impl
     }
 }
 impl DeleteSessionFluentBuilder {
-    /// Creates a new `DeleteSession`.
+    /// Creates a new `DeleteSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

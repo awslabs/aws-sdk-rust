@@ -51,7 +51,7 @@ impl
     }
 }
 impl ListOrganizationalUnitsForParentFluentBuilder {
-    /// Creates a new `ListOrganizationalUnitsForParent`.
+    /// Creates a new `ListOrganizationalUnitsForParentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

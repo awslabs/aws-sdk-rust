@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateAnalysisFluentBuilder {
-    /// Creates a new `UpdateAnalysis`.
+    /// Creates a new `UpdateAnalysisFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

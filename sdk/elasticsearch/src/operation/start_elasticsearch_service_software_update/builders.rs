@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartElasticsearchServiceSoftwareUpdateFluentBuilder {
-    /// Creates a new `StartElasticsearchServiceSoftwareUpdate`.
+    /// Creates a new `StartElasticsearchServiceSoftwareUpdateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetSnapshotBlockPublicAccessStateFluentBuilder {
-    /// Creates a new `GetSnapshotBlockPublicAccessState`.
+    /// Creates a new `GetSnapshotBlockPublicAccessStateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

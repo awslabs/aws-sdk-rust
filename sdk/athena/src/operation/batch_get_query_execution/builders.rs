@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetQueryExecutionFluentBuilder {
-    /// Creates a new `BatchGetQueryExecution`.
+    /// Creates a new `BatchGetQueryExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

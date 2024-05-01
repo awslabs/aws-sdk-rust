@@ -48,7 +48,7 @@ impl
     }
 }
 impl UnmonitorInstancesFluentBuilder {
-    /// Creates a new `UnmonitorInstances`.
+    /// Creates a new `UnmonitorInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

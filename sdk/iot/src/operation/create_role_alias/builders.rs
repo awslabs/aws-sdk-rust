@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateRoleAliasFluentBuilder {
-    /// Creates a new `CreateRoleAlias`.
+    /// Creates a new `CreateRoleAliasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ClaimDevicesByClaimCodeFluentBuilder {
-    /// Creates a new `ClaimDevicesByClaimCode`.
+    /// Creates a new `ClaimDevicesByClaimCodeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

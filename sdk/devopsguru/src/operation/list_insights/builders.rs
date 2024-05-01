@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListInsightsFluentBuilder {
-    /// Creates a new `ListInsights`.
+    /// Creates a new `ListInsightsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetWorldTemplateBodyFluentBuilder {
-    /// Creates a new `GetWorldTemplateBody`.
+    /// Creates a new `GetWorldTemplateBodyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

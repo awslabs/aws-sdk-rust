@@ -63,7 +63,7 @@ impl
     }
 }
 impl CreateTransformJobFluentBuilder {
-    /// Creates a new `CreateTransformJob`.
+    /// Creates a new `CreateTransformJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

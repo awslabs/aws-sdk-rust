@@ -44,7 +44,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::test
     }
 }
 impl TestRoleFluentBuilder {
-    /// Creates a new `TestRole`.
+    /// Creates a new `TestRoleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

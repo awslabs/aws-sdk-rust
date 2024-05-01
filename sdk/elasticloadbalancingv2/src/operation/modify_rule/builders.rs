@@ -49,7 +49,7 @@ impl
     }
 }
 impl ModifyRuleFluentBuilder {
-    /// Creates a new `ModifyRule`.
+    /// Creates a new `ModifyRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

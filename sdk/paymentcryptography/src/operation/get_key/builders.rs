@@ -52,7 +52,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::get_
     }
 }
 impl GetKeyFluentBuilder {
-    /// Creates a new `GetKey`.
+    /// Creates a new `GetKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

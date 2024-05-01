@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAppBundleFluentBuilder {
-    /// Creates a new `GetAppBundle`.
+    /// Creates a new `GetAppBundleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

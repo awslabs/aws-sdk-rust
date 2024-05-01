@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeregisterInstancesFromLoadBalancerFluentBuilder {
-    /// Creates a new `DeregisterInstancesFromLoadBalancer`.
+    /// Creates a new `DeregisterInstancesFromLoadBalancerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

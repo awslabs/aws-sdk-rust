@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteQuerySuggestionsBlockListFluentBuilder {
-    /// Creates a new `DeleteQuerySuggestionsBlockList`.
+    /// Creates a new `DeleteQuerySuggestionsBlockListFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

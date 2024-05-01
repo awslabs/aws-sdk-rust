@@ -48,7 +48,7 @@ impl
     }
 }
 impl EvaluateCodeFluentBuilder {
-    /// Creates a new `EvaluateCode`.
+    /// Creates a new `EvaluateCodeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

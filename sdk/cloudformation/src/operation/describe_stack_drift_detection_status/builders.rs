@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeStackDriftDetectionStatusFluentBuilder {
-    /// Creates a new `DescribeStackDriftDetectionStatus`.
+    /// Creates a new `DescribeStackDriftDetectionStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

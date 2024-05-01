@@ -51,7 +51,7 @@ impl
     }
 }
 impl ListSecretVersionIdsFluentBuilder {
-    /// Creates a new `ListSecretVersionIds`.
+    /// Creates a new `ListSecretVersionIdsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

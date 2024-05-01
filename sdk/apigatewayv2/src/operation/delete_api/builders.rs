@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::dele
     }
 }
 impl DeleteApiFluentBuilder {
-    /// Creates a new `DeleteApi`.
+    /// Creates a new `DeleteApiFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

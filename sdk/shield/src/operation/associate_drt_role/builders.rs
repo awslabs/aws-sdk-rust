@@ -53,7 +53,7 @@ impl
     }
 }
 impl AssociateDRTRoleFluentBuilder {
-    /// Creates a new `AssociateDRTRole`.
+    /// Creates a new `AssociateDRTRoleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

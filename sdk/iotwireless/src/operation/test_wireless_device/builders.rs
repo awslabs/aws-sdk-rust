@@ -48,7 +48,7 @@ impl
     }
 }
 impl TestWirelessDeviceFluentBuilder {
-    /// Creates a new `TestWirelessDevice`.
+    /// Creates a new `TestWirelessDeviceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutAccessControlRuleFluentBuilder {
-    /// Creates a new `PutAccessControlRule`.
+    /// Creates a new `PutAccessControlRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

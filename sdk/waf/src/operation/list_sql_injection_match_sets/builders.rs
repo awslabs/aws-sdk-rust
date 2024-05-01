@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListSqlInjectionMatchSetsFluentBuilder {
-    /// Creates a new `ListSqlInjectionMatchSets`.
+    /// Creates a new `ListSqlInjectionMatchSetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

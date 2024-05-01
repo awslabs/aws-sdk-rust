@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateBlueprintFluentBuilder {
-    /// Creates a new `UpdateBlueprint`.
+    /// Creates a new `UpdateBlueprintFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

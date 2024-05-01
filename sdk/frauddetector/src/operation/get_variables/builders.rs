@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetVariablesFluentBuilder {
-    /// Creates a new `GetVariables`.
+    /// Creates a new `GetVariablesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

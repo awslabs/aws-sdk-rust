@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetFindingsReportAccountSummaryFluentBuilder {
-    /// Creates a new `GetFindingsReportAccountSummary`.
+    /// Creates a new `GetFindingsReportAccountSummaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

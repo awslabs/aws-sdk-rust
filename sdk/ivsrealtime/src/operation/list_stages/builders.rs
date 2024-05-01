@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListStagesFluentBuilder {
-    /// Creates a new `ListStages`.
+    /// Creates a new `ListStagesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

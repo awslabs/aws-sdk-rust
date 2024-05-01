@@ -61,7 +61,7 @@ impl
     }
 }
 impl DeleteTimeSeriesFluentBuilder {
-    /// Creates a new `DeleteTimeSeries`.
+    /// Creates a new `DeleteTimeSeriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

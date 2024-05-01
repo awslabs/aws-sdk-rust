@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteVerifiedAccessInstanceFluentBuilder {
-    /// Creates a new `DeleteVerifiedAccessInstance`.
+    /// Creates a new `DeleteVerifiedAccessInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -56,7 +56,7 @@ impl
     }
 }
 impl ListTrialComponentsFluentBuilder {
-    /// Creates a new `ListTrialComponents`.
+    /// Creates a new `ListTrialComponentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

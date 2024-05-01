@@ -52,7 +52,7 @@ impl
     }
 }
 impl DescribeContactFluentBuilder {
-    /// Creates a new `DescribeContact`.
+    /// Creates a new `DescribeContactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

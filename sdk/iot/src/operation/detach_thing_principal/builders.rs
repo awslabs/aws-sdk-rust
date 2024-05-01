@@ -51,7 +51,7 @@ impl
     }
 }
 impl DetachThingPrincipalFluentBuilder {
-    /// Creates a new `DetachThingPrincipal`.
+    /// Creates a new `DetachThingPrincipalFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

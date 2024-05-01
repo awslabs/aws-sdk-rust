@@ -49,7 +49,7 @@ impl
     }
 }
 impl ModifyInstanceCreditSpecificationFluentBuilder {
-    /// Creates a new `ModifyInstanceCreditSpecification`.
+    /// Creates a new `ModifyInstanceCreditSpecificationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

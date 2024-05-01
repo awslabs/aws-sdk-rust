@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCrawlerFluentBuilder {
-    /// Creates a new `DeleteCrawler`.
+    /// Creates a new `DeleteCrawlerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

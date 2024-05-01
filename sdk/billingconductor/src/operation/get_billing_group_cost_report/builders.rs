@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetBillingGroupCostReportFluentBuilder {
-    /// Creates a new `GetBillingGroupCostReport`.
+    /// Creates a new `GetBillingGroupCostReportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

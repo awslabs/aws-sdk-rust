@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetSavingsPlansUtilizationDetailsFluentBuilder {
-    /// Creates a new `GetSavingsPlansUtilizationDetails`.
+    /// Creates a new `GetSavingsPlansUtilizationDetailsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

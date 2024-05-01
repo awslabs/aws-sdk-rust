@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteTemplateShareFluentBuilder {
-    /// Creates a new `DeleteTemplateShare`.
+    /// Creates a new `DeleteTemplateShareFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

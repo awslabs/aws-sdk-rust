@@ -43,7 +43,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::get_
     }
 }
 impl GetBotFluentBuilder {
-    /// Creates a new `GetBot`.
+    /// Creates a new `GetBotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPromptsFluentBuilder {
-    /// Creates a new `ListPrompts`.
+    /// Creates a new `ListPromptsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

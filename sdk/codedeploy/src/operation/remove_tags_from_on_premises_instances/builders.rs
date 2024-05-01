@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveTagsFromOnPremisesInstancesFluentBuilder {
-    /// Creates a new `RemoveTagsFromOnPremisesInstances`.
+    /// Creates a new `RemoveTagsFromOnPremisesInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

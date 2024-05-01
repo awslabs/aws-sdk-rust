@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteConfigurationAggregatorFluentBuilder {
-    /// Creates a new `DeleteConfigurationAggregator`.
+    /// Creates a new `DeleteConfigurationAggregatorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

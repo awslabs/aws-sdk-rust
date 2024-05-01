@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetHealthCheckCountFluentBuilder {
-    /// Creates a new `GetHealthCheckCount`.
+    /// Creates a new `GetHealthCheckCountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

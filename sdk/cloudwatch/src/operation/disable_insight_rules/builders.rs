@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisableInsightRulesFluentBuilder {
-    /// Creates a new `DisableInsightRules`.
+    /// Creates a new `DisableInsightRulesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

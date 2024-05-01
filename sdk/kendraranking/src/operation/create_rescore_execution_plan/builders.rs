@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateRescoreExecutionPlanFluentBuilder {
-    /// Creates a new `CreateRescoreExecutionPlan`.
+    /// Creates a new `CreateRescoreExecutionPlanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

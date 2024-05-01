@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeControlPanelFluentBuilder {
-    /// Creates a new `DescribeControlPanel`.
+    /// Creates a new `DescribeControlPanelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

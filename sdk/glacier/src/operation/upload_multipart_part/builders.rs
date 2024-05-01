@@ -62,7 +62,7 @@ impl
     }
 }
 impl UploadMultipartPartFluentBuilder {
-    /// Creates a new `UploadMultipartPart`.
+    /// Creates a new `UploadMultipartPartFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

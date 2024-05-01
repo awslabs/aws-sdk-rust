@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSecurityProfilePermissionsFluentBuilder {
-    /// Creates a new `ListSecurityProfilePermissions`.
+    /// Creates a new `ListSecurityProfilePermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

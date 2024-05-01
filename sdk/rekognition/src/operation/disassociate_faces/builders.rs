@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateFacesFluentBuilder {
-    /// Creates a new `DisassociateFaces`.
+    /// Creates a new `DisassociateFacesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

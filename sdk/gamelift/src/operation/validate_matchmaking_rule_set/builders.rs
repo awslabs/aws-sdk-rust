@@ -53,7 +53,7 @@ impl
     }
 }
 impl ValidateMatchmakingRuleSetFluentBuilder {
-    /// Creates a new `ValidateMatchmakingRuleSet`.
+    /// Creates a new `ValidateMatchmakingRuleSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

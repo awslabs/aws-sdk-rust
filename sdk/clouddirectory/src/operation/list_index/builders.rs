@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::list
     }
 }
 impl ListIndexFluentBuilder {
-    /// Creates a new `ListIndex`.
+    /// Creates a new `ListIndexFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

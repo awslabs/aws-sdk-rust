@@ -49,7 +49,7 @@ impl
     }
 }
 impl ContinueUpdateRollbackFluentBuilder {
-    /// Creates a new `ContinueUpdateRollback`.
+    /// Creates a new `ContinueUpdateRollbackFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

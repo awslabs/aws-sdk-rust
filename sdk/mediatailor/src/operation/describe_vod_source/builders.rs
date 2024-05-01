@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeVodSourceFluentBuilder {
-    /// Creates a new `DescribeVodSource`.
+    /// Creates a new `DescribeVodSourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

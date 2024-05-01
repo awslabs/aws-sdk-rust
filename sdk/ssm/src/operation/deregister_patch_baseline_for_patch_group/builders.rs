@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeregisterPatchBaselineForPatchGroupFluentBuilder {
-    /// Creates a new `DeregisterPatchBaselineForPatchGroup`.
+    /// Creates a new `DeregisterPatchBaselineForPatchGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

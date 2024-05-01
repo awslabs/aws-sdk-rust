@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutDetectorFluentBuilder {
-    /// Creates a new `PutDetector`.
+    /// Creates a new `PutDetectorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

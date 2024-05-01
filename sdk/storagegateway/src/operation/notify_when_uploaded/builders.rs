@@ -50,7 +50,7 @@ impl
     }
 }
 impl NotifyWhenUploadedFluentBuilder {
-    /// Creates a new `NotifyWhenUploaded`.
+    /// Creates a new `NotifyWhenUploadedFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl DeleteFleetLocationsFluentBuilder {
-    /// Creates a new `DeleteFleetLocations`.
+    /// Creates a new `DeleteFleetLocationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

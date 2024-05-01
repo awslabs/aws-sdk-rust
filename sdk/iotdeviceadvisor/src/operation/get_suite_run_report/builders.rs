@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetSuiteRunReportFluentBuilder {
-    /// Creates a new `GetSuiteRunReport`.
+    /// Creates a new `GetSuiteRunReportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

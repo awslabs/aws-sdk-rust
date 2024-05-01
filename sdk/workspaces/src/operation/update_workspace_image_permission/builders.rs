@@ -59,7 +59,7 @@ impl
     }
 }
 impl UpdateWorkspaceImagePermissionFluentBuilder {
-    /// Creates a new `UpdateWorkspaceImagePermission`.
+    /// Creates a new `UpdateWorkspaceImagePermissionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

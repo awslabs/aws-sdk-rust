@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetUploadStatusFluentBuilder {
-    /// Creates a new `GetUploadStatus`.
+    /// Creates a new `GetUploadStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopStackSetOperationFluentBuilder {
-    /// Creates a new `StopStackSetOperation`.
+    /// Creates a new `StopStackSetOperationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

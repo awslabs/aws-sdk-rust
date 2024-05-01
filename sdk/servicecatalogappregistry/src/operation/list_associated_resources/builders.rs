@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListAssociatedResourcesFluentBuilder {
-    /// Creates a new `ListAssociatedResources`.
+    /// Creates a new `ListAssociatedResourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

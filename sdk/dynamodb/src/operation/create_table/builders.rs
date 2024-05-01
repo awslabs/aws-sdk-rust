@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateTableFluentBuilder {
-    /// Creates a new `CreateTable`.
+    /// Creates a new `CreateTableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateConnectPeerFluentBuilder {
-    /// Creates a new `AssociateConnectPeer`.
+    /// Creates a new `AssociateConnectPeerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

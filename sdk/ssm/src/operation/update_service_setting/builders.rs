@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateServiceSettingFluentBuilder {
-    /// Creates a new `UpdateServiceSetting`.
+    /// Creates a new `UpdateServiceSettingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

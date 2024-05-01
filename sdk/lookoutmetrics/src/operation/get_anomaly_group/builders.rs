@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAnomalyGroupFluentBuilder {
-    /// Creates a new `GetAnomalyGroup`.
+    /// Creates a new `GetAnomalyGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

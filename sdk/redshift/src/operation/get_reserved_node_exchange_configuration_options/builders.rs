@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetReservedNodeExchangeConfigurationOptionsFluentBuilder {
-    /// Creates a new `GetReservedNodeExchangeConfigurationOptions`.
+    /// Creates a new `GetReservedNodeExchangeConfigurationOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

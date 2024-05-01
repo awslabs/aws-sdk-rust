@@ -50,7 +50,7 @@ impl
     }
 }
 impl ModifyDBClusterFluentBuilder {
-    /// Creates a new `ModifyDBCluster`.
+    /// Creates a new `ModifyDBClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

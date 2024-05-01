@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateGraphUsingImportTaskFluentBuilder {
-    /// Creates a new `CreateGraphUsingImportTask`.
+    /// Creates a new `CreateGraphUsingImportTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -43,7 +43,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::get_
     }
 }
 impl GetGroupFluentBuilder {
-    /// Creates a new `GetGroup`.
+    /// Creates a new `GetGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

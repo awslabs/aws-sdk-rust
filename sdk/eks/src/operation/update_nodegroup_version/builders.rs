@@ -52,7 +52,7 @@ impl
     }
 }
 impl UpdateNodegroupVersionFluentBuilder {
-    /// Creates a new `UpdateNodegroupVersion`.
+    /// Creates a new `UpdateNodegroupVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

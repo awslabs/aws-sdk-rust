@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteAccessControlRuleFluentBuilder {
-    /// Creates a new `DeleteAccessControlRule`.
+    /// Creates a new `DeleteAccessControlRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

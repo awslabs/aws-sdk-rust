@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMeetingFluentBuilder {
-    /// Creates a new `DeleteMeeting`.
+    /// Creates a new `DeleteMeetingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

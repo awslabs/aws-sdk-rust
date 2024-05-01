@@ -51,7 +51,7 @@ impl
     }
 }
 impl QueryAssistantFluentBuilder {
-    /// Creates a new `QueryAssistant`.
+    /// Creates a new `QueryAssistantFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

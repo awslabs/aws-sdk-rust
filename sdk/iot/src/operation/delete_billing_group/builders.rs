@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteBillingGroupFluentBuilder {
-    /// Creates a new `DeleteBillingGroup`.
+    /// Creates a new `DeleteBillingGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

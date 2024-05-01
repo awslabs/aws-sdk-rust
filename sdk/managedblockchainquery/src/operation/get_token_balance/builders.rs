@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetTokenBalanceFluentBuilder {
-    /// Creates a new `GetTokenBalance`.
+    /// Creates a new `GetTokenBalanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

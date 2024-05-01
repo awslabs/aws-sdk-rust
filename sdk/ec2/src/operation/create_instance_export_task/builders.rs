@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateInstanceExportTaskFluentBuilder {
-    /// Creates a new `CreateInstanceExportTask`.
+    /// Creates a new `CreateInstanceExportTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

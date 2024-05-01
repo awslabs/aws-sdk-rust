@@ -45,7 +45,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::copy
     }
 }
 impl CopyImageFluentBuilder {
-    /// Creates a new `CopyImage`.
+    /// Creates a new `CopyImageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

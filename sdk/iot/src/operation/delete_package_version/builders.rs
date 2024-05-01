@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeletePackageVersionFluentBuilder {
-    /// Creates a new `DeletePackageVersion`.
+    /// Creates a new `DeletePackageVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

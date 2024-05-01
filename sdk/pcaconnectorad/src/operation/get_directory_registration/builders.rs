@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDirectoryRegistrationFluentBuilder {
-    /// Creates a new `GetDirectoryRegistration`.
+    /// Creates a new `GetDirectoryRegistrationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

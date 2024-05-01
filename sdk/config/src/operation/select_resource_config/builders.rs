@@ -49,7 +49,7 @@ impl
     }
 }
 impl SelectResourceConfigFluentBuilder {
-    /// Creates a new `SelectResourceConfig`.
+    /// Creates a new `SelectResourceConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

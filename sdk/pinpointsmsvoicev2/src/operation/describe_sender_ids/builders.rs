@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeSenderIdsFluentBuilder {
-    /// Creates a new `DescribeSenderIds`.
+    /// Creates a new `DescribeSenderIdsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

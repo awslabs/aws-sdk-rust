@@ -58,7 +58,7 @@ impl
     }
 }
 impl DeleteQuickConnectFluentBuilder {
-    /// Creates a new `DeleteQuickConnect`.
+    /// Creates a new `DeleteQuickConnectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

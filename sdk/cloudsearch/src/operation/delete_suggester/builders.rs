@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSuggesterFluentBuilder {
-    /// Creates a new `DeleteSuggester`.
+    /// Creates a new `DeleteSuggesterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

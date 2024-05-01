@@ -50,7 +50,7 @@ impl
     }
 }
 impl DisassociateTrackerConsumerFluentBuilder {
-    /// Creates a new `DisassociateTrackerConsumer`.
+    /// Creates a new `DisassociateTrackerConsumerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl RestoreEventDataStoreFluentBuilder {
-    /// Creates a new `RestoreEventDataStore`.
+    /// Creates a new `RestoreEventDataStoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

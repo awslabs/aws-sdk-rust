@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateCostCategoryDefinitionFluentBuilder {
-    /// Creates a new `UpdateCostCategoryDefinition`.
+    /// Creates a new `UpdateCostCategoryDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

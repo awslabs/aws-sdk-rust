@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutRecommendationFeedbackFluentBuilder {
-    /// Creates a new `PutRecommendationFeedback`.
+    /// Creates a new `PutRecommendationFeedbackFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

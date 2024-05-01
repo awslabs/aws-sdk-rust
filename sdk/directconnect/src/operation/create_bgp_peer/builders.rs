@@ -54,7 +54,7 @@ impl
     }
 }
 impl CreateBGPPeerFluentBuilder {
-    /// Creates a new `CreateBGPPeer`.
+    /// Creates a new `CreateBGPPeerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

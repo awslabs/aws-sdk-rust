@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetJourneyDateRangeKpiFluentBuilder {
-    /// Creates a new `GetJourneyDateRangeKpi`.
+    /// Creates a new `GetJourneyDateRangeKpiFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

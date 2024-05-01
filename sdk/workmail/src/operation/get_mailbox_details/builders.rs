@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMailboxDetailsFluentBuilder {
-    /// Creates a new `GetMailboxDetails`.
+    /// Creates a new `GetMailboxDetailsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

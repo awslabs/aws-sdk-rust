@@ -58,7 +58,7 @@ impl
     }
 }
 impl ValidateStateMachineDefinitionFluentBuilder {
-    /// Creates a new `ValidateStateMachineDefinition`.
+    /// Creates a new `ValidateStateMachineDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

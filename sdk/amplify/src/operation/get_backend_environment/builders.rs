@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetBackendEnvironmentFluentBuilder {
-    /// Creates a new `GetBackendEnvironment`.
+    /// Creates a new `GetBackendEnvironmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

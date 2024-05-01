@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateEndpointsBatchFluentBuilder {
-    /// Creates a new `UpdateEndpointsBatch`.
+    /// Creates a new `UpdateEndpointsBatchFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

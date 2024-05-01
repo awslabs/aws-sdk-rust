@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetBackendAuthFluentBuilder {
-    /// Creates a new `GetBackendAuth`.
+    /// Creates a new `GetBackendAuthFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

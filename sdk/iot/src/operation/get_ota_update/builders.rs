@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetOTAUpdateFluentBuilder {
-    /// Creates a new `GetOTAUpdate`.
+    /// Creates a new `GetOTAUpdateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

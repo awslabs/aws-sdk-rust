@@ -50,7 +50,7 @@ impl
     }
 }
 impl PutEmailIdentityFeedbackAttributesFluentBuilder {
-    /// Creates a new `PutEmailIdentityFeedbackAttributes`.
+    /// Creates a new `PutEmailIdentityFeedbackAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

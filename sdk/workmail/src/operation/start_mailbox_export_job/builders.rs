@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartMailboxExportJobFluentBuilder {
-    /// Creates a new `StartMailboxExportJob`.
+    /// Creates a new `StartMailboxExportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

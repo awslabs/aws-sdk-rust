@@ -49,7 +49,7 @@ impl
     }
 }
 impl AddThingToThingGroupFluentBuilder {
-    /// Creates a new `AddThingToThingGroup`.
+    /// Creates a new `AddThingToThingGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

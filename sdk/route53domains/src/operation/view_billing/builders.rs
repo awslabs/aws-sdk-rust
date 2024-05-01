@@ -48,7 +48,7 @@ impl
     }
 }
 impl ViewBillingFluentBuilder {
-    /// Creates a new `ViewBilling`.
+    /// Creates a new `ViewBillingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

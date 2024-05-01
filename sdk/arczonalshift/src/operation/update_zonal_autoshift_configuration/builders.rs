@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateZonalAutoshiftConfigurationFluentBuilder {
-    /// Creates a new `UpdateZonalAutoshiftConfiguration`.
+    /// Creates a new `UpdateZonalAutoshiftConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

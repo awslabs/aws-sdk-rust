@@ -52,7 +52,7 @@ impl
     }
 }
 impl CreateDBInstanceReadReplicaFluentBuilder {
-    /// Creates a new `CreateDBInstanceReadReplica`.
+    /// Creates a new `CreateDBInstanceReadReplicaFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ConfigureLogsForPlaybackConfigurationFluentBuilder {
-    /// Creates a new `ConfigureLogsForPlaybackConfiguration`.
+    /// Creates a new `ConfigureLogsForPlaybackConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

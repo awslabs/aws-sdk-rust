@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetSolNetworkPackageContentFluentBuilder {
-    /// Creates a new `GetSolNetworkPackageContent`.
+    /// Creates a new `GetSolNetworkPackageContentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

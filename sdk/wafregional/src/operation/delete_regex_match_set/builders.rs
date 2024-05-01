@@ -62,7 +62,7 @@ impl
     }
 }
 impl DeleteRegexMatchSetFluentBuilder {
-    /// Creates a new `DeleteRegexMatchSet`.
+    /// Creates a new `DeleteRegexMatchSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

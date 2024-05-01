@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAgentVersionFluentBuilder {
-    /// Creates a new `GetAgentVersion`.
+    /// Creates a new `GetAgentVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

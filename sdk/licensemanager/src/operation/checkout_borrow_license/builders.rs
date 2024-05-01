@@ -48,7 +48,7 @@ impl
     }
 }
 impl CheckoutBorrowLicenseFluentBuilder {
-    /// Creates a new `CheckoutBorrowLicense`.
+    /// Creates a new `CheckoutBorrowLicenseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePlatformApplicationFluentBuilder {
-    /// Creates a new `DeletePlatformApplication`.
+    /// Creates a new `DeletePlatformApplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

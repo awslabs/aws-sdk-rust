@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListEntityRecognizerSummariesFluentBuilder {
-    /// Creates a new `ListEntityRecognizerSummaries`.
+    /// Creates a new `ListEntityRecognizerSummariesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

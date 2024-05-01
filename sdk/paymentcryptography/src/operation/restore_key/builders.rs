@@ -59,7 +59,7 @@ impl
     }
 }
 impl RestoreKeyFluentBuilder {
-    /// Creates a new `RestoreKey`.
+    /// Creates a new `RestoreKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

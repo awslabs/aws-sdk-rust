@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterPackageVersionFluentBuilder {
-    /// Creates a new `RegisterPackageVersion`.
+    /// Creates a new `RegisterPackageVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl BatchDeleteRumMetricDefinitionsFluentBuilder {
-    /// Creates a new `BatchDeleteRumMetricDefinitions`.
+    /// Creates a new `BatchDeleteRumMetricDefinitionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

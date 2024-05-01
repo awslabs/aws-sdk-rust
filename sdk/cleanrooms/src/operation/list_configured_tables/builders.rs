@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListConfiguredTablesFluentBuilder {
-    /// Creates a new `ListConfiguredTables`.
+    /// Creates a new `ListConfiguredTablesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

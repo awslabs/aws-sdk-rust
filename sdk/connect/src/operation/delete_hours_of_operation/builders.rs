@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteHoursOfOperationFluentBuilder {
-    /// Creates a new `DeleteHoursOfOperation`.
+    /// Creates a new `DeleteHoursOfOperationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UntagPolicyFluentBuilder {
-    /// Creates a new `UntagPolicy`.
+    /// Creates a new `UntagPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

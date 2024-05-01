@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetDataSourceFluentBuilder {
-    /// Creates a new `GetDataSource`.
+    /// Creates a new `GetDataSourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListSignalCatalogNodesFluentBuilder {
-    /// Creates a new `ListSignalCatalogNodes`.
+    /// Creates a new `ListSignalCatalogNodesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

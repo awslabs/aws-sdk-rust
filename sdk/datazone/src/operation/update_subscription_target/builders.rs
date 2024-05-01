@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateSubscriptionTargetFluentBuilder {
-    /// Creates a new `UpdateSubscriptionTarget`.
+    /// Creates a new `UpdateSubscriptionTargetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateRouteResponseFluentBuilder {
-    /// Creates a new `CreateRouteResponse`.
+    /// Creates a new `CreateRouteResponseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl CompleteSnapshotFluentBuilder {
-    /// Creates a new `CompleteSnapshot`.
+    /// Creates a new `CompleteSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

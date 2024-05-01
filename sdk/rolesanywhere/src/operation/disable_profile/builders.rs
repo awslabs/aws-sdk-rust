@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisableProfileFluentBuilder {
-    /// Creates a new `DisableProfile`.
+    /// Creates a new `DisableProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

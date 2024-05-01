@@ -56,6 +56,20 @@ pub(crate) struct Handle {
 /// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
 /// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
 /// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -99,6 +113,113 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait until an annotation import is completed
+    fn wait_until_annotation_import_job_created(&self) -> crate::waiters::annotation_import_job_created::AnnotationImportJobCreatedFluentBuilder;
+    /// Wait until an annotation store is created
+    fn wait_until_annotation_store_created(&self) -> crate::waiters::annotation_store_created::AnnotationStoreCreatedFluentBuilder;
+    /// Wait until an annotation store is deleted.
+    fn wait_until_annotation_store_deleted(&self) -> crate::waiters::annotation_store_deleted::AnnotationStoreDeletedFluentBuilder;
+    /// Wait until an annotation store version is created
+    fn wait_until_annotation_store_version_created(
+        &self,
+    ) -> crate::waiters::annotation_store_version_created::AnnotationStoreVersionCreatedFluentBuilder;
+    /// Wait until an annotation store version is deleted.
+    fn wait_until_annotation_store_version_deleted(
+        &self,
+    ) -> crate::waiters::annotation_store_version_deleted::AnnotationStoreVersionDeletedFluentBuilder;
+    /// Wait until a job is completed.
+    fn wait_until_read_set_activation_job_completed(
+        &self,
+    ) -> crate::waiters::read_set_activation_job_completed::ReadSetActivationJobCompletedFluentBuilder;
+    /// Wait until a job is completed.
+    fn wait_until_read_set_export_job_completed(&self) -> crate::waiters::read_set_export_job_completed::ReadSetExportJobCompletedFluentBuilder;
+    /// Wait until a job is completed.
+    fn wait_until_read_set_import_job_completed(&self) -> crate::waiters::read_set_import_job_completed::ReadSetImportJobCompletedFluentBuilder;
+    /// Wait until a job is completed.
+    fn wait_until_reference_import_job_completed(&self) -> crate::waiters::reference_import_job_completed::ReferenceImportJobCompletedFluentBuilder;
+    /// Wait until a run is running.
+    fn wait_until_run_running(&self) -> crate::waiters::run_running::RunRunningFluentBuilder;
+    /// Wait until a run is completed.
+    fn wait_until_run_completed(&self) -> crate::waiters::run_completed::RunCompletedFluentBuilder;
+    /// Wait until a task is running.
+    fn wait_until_task_running(&self) -> crate::waiters::task_running::TaskRunningFluentBuilder;
+    /// Wait until a task is completed.
+    fn wait_until_task_completed(&self) -> crate::waiters::task_completed::TaskCompletedFluentBuilder;
+    /// Wait until variant import is completed
+    fn wait_until_variant_import_job_created(&self) -> crate::waiters::variant_import_job_created::VariantImportJobCreatedFluentBuilder;
+    /// Wait until a variant store is created
+    fn wait_until_variant_store_created(&self) -> crate::waiters::variant_store_created::VariantStoreCreatedFluentBuilder;
+    /// Wait until a variant store is deleted.
+    fn wait_until_variant_store_deleted(&self) -> crate::waiters::variant_store_deleted::VariantStoreDeletedFluentBuilder;
+    /// Wait until a workflow is active.
+    fn wait_until_workflow_active(&self) -> crate::waiters::workflow_active::WorkflowActiveFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_annotation_import_job_created(&self) -> crate::waiters::annotation_import_job_created::AnnotationImportJobCreatedFluentBuilder {
+        crate::waiters::annotation_import_job_created::AnnotationImportJobCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_annotation_store_created(&self) -> crate::waiters::annotation_store_created::AnnotationStoreCreatedFluentBuilder {
+        crate::waiters::annotation_store_created::AnnotationStoreCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_annotation_store_deleted(&self) -> crate::waiters::annotation_store_deleted::AnnotationStoreDeletedFluentBuilder {
+        crate::waiters::annotation_store_deleted::AnnotationStoreDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_annotation_store_version_created(
+        &self,
+    ) -> crate::waiters::annotation_store_version_created::AnnotationStoreVersionCreatedFluentBuilder {
+        crate::waiters::annotation_store_version_created::AnnotationStoreVersionCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_annotation_store_version_deleted(
+        &self,
+    ) -> crate::waiters::annotation_store_version_deleted::AnnotationStoreVersionDeletedFluentBuilder {
+        crate::waiters::annotation_store_version_deleted::AnnotationStoreVersionDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_read_set_activation_job_completed(
+        &self,
+    ) -> crate::waiters::read_set_activation_job_completed::ReadSetActivationJobCompletedFluentBuilder {
+        crate::waiters::read_set_activation_job_completed::ReadSetActivationJobCompletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_read_set_export_job_completed(&self) -> crate::waiters::read_set_export_job_completed::ReadSetExportJobCompletedFluentBuilder {
+        crate::waiters::read_set_export_job_completed::ReadSetExportJobCompletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_read_set_import_job_completed(&self) -> crate::waiters::read_set_import_job_completed::ReadSetImportJobCompletedFluentBuilder {
+        crate::waiters::read_set_import_job_completed::ReadSetImportJobCompletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_reference_import_job_completed(&self) -> crate::waiters::reference_import_job_completed::ReferenceImportJobCompletedFluentBuilder {
+        crate::waiters::reference_import_job_completed::ReferenceImportJobCompletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_run_running(&self) -> crate::waiters::run_running::RunRunningFluentBuilder {
+        crate::waiters::run_running::RunRunningFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_run_completed(&self) -> crate::waiters::run_completed::RunCompletedFluentBuilder {
+        crate::waiters::run_completed::RunCompletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_task_running(&self) -> crate::waiters::task_running::TaskRunningFluentBuilder {
+        crate::waiters::task_running::TaskRunningFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_task_completed(&self) -> crate::waiters::task_completed::TaskCompletedFluentBuilder {
+        crate::waiters::task_completed::TaskCompletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_variant_import_job_created(&self) -> crate::waiters::variant_import_job_created::VariantImportJobCreatedFluentBuilder {
+        crate::waiters::variant_import_job_created::VariantImportJobCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_variant_store_created(&self) -> crate::waiters::variant_store_created::VariantStoreCreatedFluentBuilder {
+        crate::waiters::variant_store_created::VariantStoreCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_variant_store_deleted(&self) -> crate::waiters::variant_store_deleted::VariantStoreDeletedFluentBuilder {
+        crate::waiters::variant_store_deleted::VariantStoreDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_workflow_active(&self) -> crate::waiters::workflow_active::WorkflowActiveFluentBuilder {
+        crate::waiters::workflow_active::WorkflowActiveFluentBuilder::new(self.handle.clone())
     }
 }
 

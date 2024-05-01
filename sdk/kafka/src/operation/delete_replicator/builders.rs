@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteReplicatorFluentBuilder {
-    /// Creates a new `DeleteReplicator`.
+    /// Creates a new `DeleteReplicatorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeSchedulingPoliciesFluentBuilder {
-    /// Creates a new `DescribeSchedulingPolicies`.
+    /// Creates a new `DescribeSchedulingPoliciesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateMetricAttributionFluentBuilder {
-    /// Creates a new `UpdateMetricAttribution`.
+    /// Creates a new `UpdateMetricAttributionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateVerifiedDestinationNumberFluentBuilder {
-    /// Creates a new `CreateVerifiedDestinationNumber`.
+    /// Creates a new `CreateVerifiedDestinationNumberFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

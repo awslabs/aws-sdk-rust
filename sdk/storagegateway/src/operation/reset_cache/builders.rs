@@ -50,7 +50,7 @@ impl
     }
 }
 impl ResetCacheFluentBuilder {
-    /// Creates a new `ResetCache`.
+    /// Creates a new `ResetCacheFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

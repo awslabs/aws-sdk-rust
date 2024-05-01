@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetContainerImagesFluentBuilder {
-    /// Creates a new `GetContainerImages`.
+    /// Creates a new `GetContainerImagesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

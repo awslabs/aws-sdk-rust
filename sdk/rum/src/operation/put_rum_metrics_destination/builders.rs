@@ -49,7 +49,7 @@ impl
     }
 }
 impl PutRumMetricsDestinationFluentBuilder {
-    /// Creates a new `PutRumMetricsDestination`.
+    /// Creates a new `PutRumMetricsDestinationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

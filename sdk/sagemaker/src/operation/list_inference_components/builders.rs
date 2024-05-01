@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListInferenceComponentsFluentBuilder {
-    /// Creates a new `ListInferenceComponents`.
+    /// Creates a new `ListInferenceComponentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

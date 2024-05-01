@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateTrafficPolicyCommentFluentBuilder {
-    /// Creates a new `UpdateTrafficPolicyComment`.
+    /// Creates a new `UpdateTrafficPolicyCommentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

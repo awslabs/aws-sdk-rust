@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDocumentVersionsFluentBuilder {
-    /// Creates a new `ListDocumentVersions`.
+    /// Creates a new `ListDocumentVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

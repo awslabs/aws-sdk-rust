@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetIdentityNotificationAttributesFluentBuilder {
-    /// Creates a new `GetIdentityNotificationAttributes`.
+    /// Creates a new `GetIdentityNotificationAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -53,7 +53,7 @@ impl
     }
 }
 impl ListParentsFluentBuilder {
-    /// Creates a new `ListParents`.
+    /// Creates a new `ListParentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

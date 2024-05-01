@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetSlotTypeFluentBuilder {
-    /// Creates a new `GetSlotType`.
+    /// Creates a new `GetSlotTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -53,7 +53,7 @@ impl
     }
 }
 impl AuthorizeSecurityGroupIngressFluentBuilder {
-    /// Creates a new `AuthorizeSecurityGroupIngress`.
+    /// Creates a new `AuthorizeSecurityGroupIngressFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

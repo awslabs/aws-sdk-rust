@@ -55,7 +55,7 @@ impl
     }
 }
 impl CreateEnvironmentTemplateFluentBuilder {
-    /// Creates a new `CreateEnvironmentTemplate`.
+    /// Creates a new `CreateEnvironmentTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

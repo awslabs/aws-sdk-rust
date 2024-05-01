@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListWirelessDeviceImportTasksFluentBuilder {
-    /// Creates a new `ListWirelessDeviceImportTasks`.
+    /// Creates a new `ListWirelessDeviceImportTasksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

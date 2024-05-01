@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetOrganizationRecommendationFluentBuilder {
-    /// Creates a new `GetOrganizationRecommendation`.
+    /// Creates a new `GetOrganizationRecommendationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

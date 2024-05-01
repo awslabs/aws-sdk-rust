@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteHostedConfigurationVersionFluentBuilder {
-    /// Creates a new `DeleteHostedConfigurationVersion`.
+    /// Creates a new `DeleteHostedConfigurationVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PauseCampaignFluentBuilder {
-    /// Creates a new `PauseCampaign`.
+    /// Creates a new `PauseCampaignFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

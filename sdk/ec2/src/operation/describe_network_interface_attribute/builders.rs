@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeNetworkInterfaceAttributeFluentBuilder {
-    /// Creates a new `DescribeNetworkInterfaceAttribute`.
+    /// Creates a new `DescribeNetworkInterfaceAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetFlowAssociationFluentBuilder {
-    /// Creates a new `GetFlowAssociation`.
+    /// Creates a new `GetFlowAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

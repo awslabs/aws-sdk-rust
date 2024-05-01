@@ -63,7 +63,7 @@ impl
     }
 }
 impl UpdateNFSFileShareFluentBuilder {
-    /// Creates a new `UpdateNFSFileShare`.
+    /// Creates a new `UpdateNFSFileShareFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

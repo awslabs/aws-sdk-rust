@@ -24,7 +24,7 @@ impl crate::operation::batch_disassociate_approval_rule_template_from_repositori
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::batch_disassociate_approval_rule_template_from_repositories::builders::BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -45,7 +45,7 @@ impl
     }
 }
 impl BatchDisassociateApprovalRuleTemplateFromRepositoriesFluentBuilder {
-    /// Creates a new `BatchDisassociateApprovalRuleTemplateFromRepositories`.
+    /// Creates a new `BatchDisassociateApprovalRuleTemplateFromRepositoriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

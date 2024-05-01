@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSchemaMappingsFluentBuilder {
-    /// Creates a new `ListSchemaMappings`.
+    /// Creates a new `ListSchemaMappingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

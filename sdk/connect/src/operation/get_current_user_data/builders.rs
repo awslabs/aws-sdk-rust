@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCurrentUserDataFluentBuilder {
-    /// Creates a new `GetCurrentUserData`.
+    /// Creates a new `GetCurrentUserDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

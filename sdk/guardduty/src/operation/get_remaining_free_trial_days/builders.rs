@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRemainingFreeTrialDaysFluentBuilder {
-    /// Creates a new `GetRemainingFreeTrialDays`.
+    /// Creates a new `GetRemainingFreeTrialDaysFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

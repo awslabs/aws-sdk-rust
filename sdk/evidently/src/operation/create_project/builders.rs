@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateProjectFluentBuilder {
-    /// Creates a new `CreateProject`.
+    /// Creates a new `CreateProjectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

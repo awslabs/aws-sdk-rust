@@ -48,7 +48,7 @@ impl
     }
 }
 impl VerifyOTPMessageFluentBuilder {
-    /// Creates a new `VerifyOTPMessage`.
+    /// Creates a new `VerifyOTPMessageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

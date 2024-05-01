@@ -54,7 +54,7 @@ impl
     }
 }
 impl ImportInstanceFluentBuilder {
-    /// Creates a new `ImportInstance`.
+    /// Creates a new `ImportInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetPropertygraphStatisticsFluentBuilder {
-    /// Creates a new `GetPropertygraphStatistics`.
+    /// Creates a new `GetPropertygraphStatisticsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

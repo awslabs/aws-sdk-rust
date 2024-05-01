@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::sear
     }
 }
 impl SearchFluentBuilder {
-    /// Creates a new `Search`.
+    /// Creates a new `SearchFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

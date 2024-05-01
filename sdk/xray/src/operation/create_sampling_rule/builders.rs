@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateSamplingRuleFluentBuilder {
-    /// Creates a new `CreateSamplingRule`.
+    /// Creates a new `CreateSamplingRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

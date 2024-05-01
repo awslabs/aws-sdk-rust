@@ -54,7 +54,7 @@ impl
     }
 }
 impl DistributeDatasetEntriesFluentBuilder {
-    /// Creates a new `DistributeDatasetEntries`.
+    /// Creates a new `DistributeDatasetEntriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

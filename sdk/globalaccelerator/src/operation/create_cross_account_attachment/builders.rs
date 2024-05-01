@@ -52,7 +52,7 @@ impl
     }
 }
 impl CreateCrossAccountAttachmentFluentBuilder {
-    /// Creates a new `CreateCrossAccountAttachment`.
+    /// Creates a new `CreateCrossAccountAttachmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

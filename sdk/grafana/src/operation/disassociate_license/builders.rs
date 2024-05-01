@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateLicenseFluentBuilder {
-    /// Creates a new `DisassociateLicense`.
+    /// Creates a new `DisassociateLicenseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

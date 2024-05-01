@@ -62,7 +62,7 @@ impl
     }
 }
 impl TagSAMLProviderFluentBuilder {
-    /// Creates a new `TagSAMLProvider`.
+    /// Creates a new `TagSAMLProviderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

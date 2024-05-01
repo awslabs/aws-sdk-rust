@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateLoginProfileFluentBuilder {
-    /// Creates a new `UpdateLoginProfile`.
+    /// Creates a new `UpdateLoginProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

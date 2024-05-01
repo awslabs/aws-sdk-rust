@@ -48,7 +48,7 @@ impl
     }
 }
 impl RetrieveAndGenerateFluentBuilder {
-    /// Creates a new `RetrieveAndGenerate`.
+    /// Creates a new `RetrieveAndGenerateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

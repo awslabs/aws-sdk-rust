@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCompatibleElasticsearchVersionsFluentBuilder {
-    /// Creates a new `GetCompatibleElasticsearchVersions`.
+    /// Creates a new `GetCompatibleElasticsearchVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

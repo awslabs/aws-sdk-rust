@@ -62,7 +62,7 @@ impl
     }
 }
 impl UpdateContainerInstancesStateFluentBuilder {
-    /// Creates a new `UpdateContainerInstancesState`.
+    /// Creates a new `UpdateContainerInstancesStateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

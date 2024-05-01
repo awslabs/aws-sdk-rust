@@ -50,7 +50,7 @@ impl
     }
 }
 impl CopyProductFluentBuilder {
-    /// Creates a new `CopyProduct`.
+    /// Creates a new `CopyProductFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

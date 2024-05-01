@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAccountLevelServiceConfigurationFluentBuilder {
-    /// Creates a new `GetAccountLevelServiceConfiguration`.
+    /// Creates a new `GetAccountLevelServiceConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

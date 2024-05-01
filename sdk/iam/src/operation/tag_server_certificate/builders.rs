@@ -66,7 +66,7 @@ impl
     }
 }
 impl TagServerCertificateFluentBuilder {
-    /// Creates a new `TagServerCertificate`.
+    /// Creates a new `TagServerCertificateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

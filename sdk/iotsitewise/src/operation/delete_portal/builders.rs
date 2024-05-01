@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePortalFluentBuilder {
-    /// Creates a new `DeletePortal`.
+    /// Creates a new `DeletePortalFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

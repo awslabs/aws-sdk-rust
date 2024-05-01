@@ -49,7 +49,7 @@ impl
     }
 }
 impl ResetEbsDefaultKmsKeyIdFluentBuilder {
-    /// Creates a new `ResetEbsDefaultKmsKeyId`.
+    /// Creates a new `ResetEbsDefaultKmsKeyIdFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

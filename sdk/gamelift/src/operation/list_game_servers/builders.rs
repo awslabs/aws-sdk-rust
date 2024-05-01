@@ -51,7 +51,7 @@ impl
     }
 }
 impl ListGameServersFluentBuilder {
-    /// Creates a new `ListGameServers`.
+    /// Creates a new `ListGameServersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

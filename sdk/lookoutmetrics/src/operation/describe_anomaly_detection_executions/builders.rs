@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAnomalyDetectionExecutionsFluentBuilder {
-    /// Creates a new `DescribeAnomalyDetectionExecutions`.
+    /// Creates a new `DescribeAnomalyDetectionExecutionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

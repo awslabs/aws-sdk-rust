@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteRestoreTestingSelectionFluentBuilder {
-    /// Creates a new `DeleteRestoreTestingSelection`.
+    /// Creates a new `DeleteRestoreTestingSelectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

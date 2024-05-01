@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetActionTypeFluentBuilder {
-    /// Creates a new `GetActionType`.
+    /// Creates a new `GetActionTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

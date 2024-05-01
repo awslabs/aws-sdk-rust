@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAppComponentCompliancesFluentBuilder {
-    /// Creates a new `ListAppComponentCompliances`.
+    /// Creates a new `ListAppComponentCompliancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

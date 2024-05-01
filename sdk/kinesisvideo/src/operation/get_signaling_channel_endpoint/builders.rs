@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetSignalingChannelEndpointFluentBuilder {
-    /// Creates a new `GetSignalingChannelEndpoint`.
+    /// Creates a new `GetSignalingChannelEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

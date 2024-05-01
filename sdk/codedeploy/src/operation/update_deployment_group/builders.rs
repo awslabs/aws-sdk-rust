@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateDeploymentGroupFluentBuilder {
-    /// Creates a new `UpdateDeploymentGroup`.
+    /// Creates a new `UpdateDeploymentGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

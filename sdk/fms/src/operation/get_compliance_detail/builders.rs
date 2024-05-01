@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetComplianceDetailFluentBuilder {
-    /// Creates a new `GetComplianceDetail`.
+    /// Creates a new `GetComplianceDetailFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

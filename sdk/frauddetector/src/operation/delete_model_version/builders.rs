@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteModelVersionFluentBuilder {
-    /// Creates a new `DeleteModelVersion`.
+    /// Creates a new `DeleteModelVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

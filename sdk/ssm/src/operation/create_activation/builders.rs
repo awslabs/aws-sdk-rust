@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateActivationFluentBuilder {
-    /// Creates a new `CreateActivation`.
+    /// Creates a new `CreateActivationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

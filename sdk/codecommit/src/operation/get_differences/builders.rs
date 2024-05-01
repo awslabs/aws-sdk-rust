@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDifferencesFluentBuilder {
-    /// Creates a new `GetDifferences`.
+    /// Creates a new `GetDifferencesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

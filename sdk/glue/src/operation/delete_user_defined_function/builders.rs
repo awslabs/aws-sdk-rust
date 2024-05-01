@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteUserDefinedFunctionFluentBuilder {
-    /// Creates a new `DeleteUserDefinedFunction`.
+    /// Creates a new `DeleteUserDefinedFunctionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

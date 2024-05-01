@@ -56,7 +56,7 @@ impl
     }
 }
 impl DeliverConfigSnapshotFluentBuilder {
-    /// Creates a new `DeliverConfigSnapshot`.
+    /// Creates a new `DeliverConfigSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

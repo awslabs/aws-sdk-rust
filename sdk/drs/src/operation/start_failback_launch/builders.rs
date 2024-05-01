@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartFailbackLaunchFluentBuilder {
-    /// Creates a new `StartFailbackLaunch`.
+    /// Creates a new `StartFailbackLaunchFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

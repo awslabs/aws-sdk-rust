@@ -48,7 +48,7 @@ impl
     }
 }
 impl TestMetricFilterFluentBuilder {
-    /// Creates a new `TestMetricFilter`.
+    /// Creates a new `TestMetricFilterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

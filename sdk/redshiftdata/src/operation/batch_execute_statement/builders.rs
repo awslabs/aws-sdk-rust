@@ -63,7 +63,7 @@ impl
     }
 }
 impl BatchExecuteStatementFluentBuilder {
-    /// Creates a new `BatchExecuteStatement`.
+    /// Creates a new `BatchExecuteStatementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

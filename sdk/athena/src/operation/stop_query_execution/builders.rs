@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopQueryExecutionFluentBuilder {
-    /// Creates a new `StopQueryExecution`.
+    /// Creates a new `StopQueryExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

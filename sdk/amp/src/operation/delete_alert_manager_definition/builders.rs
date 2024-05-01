@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAlertManagerDefinitionFluentBuilder {
-    /// Creates a new `DeleteAlertManagerDefinition`.
+    /// Creates a new `DeleteAlertManagerDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

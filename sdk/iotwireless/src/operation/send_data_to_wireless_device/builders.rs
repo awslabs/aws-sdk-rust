@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendDataToWirelessDeviceFluentBuilder {
-    /// Creates a new `SendDataToWirelessDevice`.
+    /// Creates a new `SendDataToWirelessDeviceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

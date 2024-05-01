@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListNotebookExecutionsFluentBuilder {
-    /// Creates a new `ListNotebookExecutions`.
+    /// Creates a new `ListNotebookExecutionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

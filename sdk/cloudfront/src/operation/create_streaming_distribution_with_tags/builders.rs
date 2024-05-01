@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateStreamingDistributionWithTagsFluentBuilder {
-    /// Creates a new `CreateStreamingDistributionWithTags`.
+    /// Creates a new `CreateStreamingDistributionWithTagsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -53,7 +53,7 @@ impl
     }
 }
 impl GetUtterancesViewFluentBuilder {
-    /// Creates a new `GetUtterancesView`.
+    /// Creates a new `GetUtterancesViewFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

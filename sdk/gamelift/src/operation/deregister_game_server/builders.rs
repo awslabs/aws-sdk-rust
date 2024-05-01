@@ -52,7 +52,7 @@ impl
     }
 }
 impl DeregisterGameServerFluentBuilder {
-    /// Creates a new `DeregisterGameServer`.
+    /// Creates a new `DeregisterGameServerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

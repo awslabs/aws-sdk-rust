@@ -52,7 +52,7 @@ impl
     }
 }
 impl PutVoiceConnectorProxyFluentBuilder {
-    /// Creates a new `PutVoiceConnectorProxy`.
+    /// Creates a new `PutVoiceConnectorProxyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

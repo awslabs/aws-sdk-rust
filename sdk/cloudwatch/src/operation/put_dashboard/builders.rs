@@ -51,7 +51,7 @@ impl
     }
 }
 impl PutDashboardFluentBuilder {
-    /// Creates a new `PutDashboard`.
+    /// Creates a new `PutDashboardFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

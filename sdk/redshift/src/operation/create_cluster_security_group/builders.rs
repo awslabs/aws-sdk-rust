@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateClusterSecurityGroupFluentBuilder {
-    /// Creates a new `CreateClusterSecurityGroup`.
+    /// Creates a new `CreateClusterSecurityGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

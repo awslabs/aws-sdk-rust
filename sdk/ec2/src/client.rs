@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,200 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait for `bundle_task_complete`
+    fn wait_until_bundle_task_complete(&self) -> crate::waiters::bundle_task_complete::BundleTaskCompleteFluentBuilder;
+    /// Wait for `conversion_task_cancelled`
+    fn wait_until_conversion_task_cancelled(&self) -> crate::waiters::conversion_task_cancelled::ConversionTaskCancelledFluentBuilder;
+    /// Wait for `conversion_task_completed`
+    fn wait_until_conversion_task_completed(&self) -> crate::waiters::conversion_task_completed::ConversionTaskCompletedFluentBuilder;
+    /// Wait for `conversion_task_deleted`
+    fn wait_until_conversion_task_deleted(&self) -> crate::waiters::conversion_task_deleted::ConversionTaskDeletedFluentBuilder;
+    /// Wait for `customer_gateway_available`
+    fn wait_until_customer_gateway_available(&self) -> crate::waiters::customer_gateway_available::CustomerGatewayAvailableFluentBuilder;
+    /// Wait for `export_task_cancelled`
+    fn wait_until_export_task_cancelled(&self) -> crate::waiters::export_task_cancelled::ExportTaskCancelledFluentBuilder;
+    /// Wait for `export_task_completed`
+    fn wait_until_export_task_completed(&self) -> crate::waiters::export_task_completed::ExportTaskCompletedFluentBuilder;
+    /// Wait for `image_available`
+    fn wait_until_image_available(&self) -> crate::waiters::image_available::ImageAvailableFluentBuilder;
+    /// Wait for `image_exists`
+    fn wait_until_image_exists(&self) -> crate::waiters::image_exists::ImageExistsFluentBuilder;
+    /// Wait for `snapshot_imported`
+    fn wait_until_snapshot_imported(&self) -> crate::waiters::snapshot_imported::SnapshotImportedFluentBuilder;
+    /// Wait for `instance_exists`
+    fn wait_until_instance_exists(&self) -> crate::waiters::instance_exists::InstanceExistsFluentBuilder;
+    /// Wait for `instance_running`
+    fn wait_until_instance_running(&self) -> crate::waiters::instance_running::InstanceRunningFluentBuilder;
+    /// Wait for `instance_stopped`
+    fn wait_until_instance_stopped(&self) -> crate::waiters::instance_stopped::InstanceStoppedFluentBuilder;
+    /// Wait for `instance_terminated`
+    fn wait_until_instance_terminated(&self) -> crate::waiters::instance_terminated::InstanceTerminatedFluentBuilder;
+    /// Wait for `instance_status_ok`
+    fn wait_until_instance_status_ok(&self) -> crate::waiters::instance_status_ok::InstanceStatusOkFluentBuilder;
+    /// Wait for `system_status_ok`
+    fn wait_until_system_status_ok(&self) -> crate::waiters::system_status_ok::SystemStatusOkFluentBuilder;
+    /// Wait for `internet_gateway_exists`
+    fn wait_until_internet_gateway_exists(&self) -> crate::waiters::internet_gateway_exists::InternetGatewayExistsFluentBuilder;
+    /// Wait for `key_pair_exists`
+    fn wait_until_key_pair_exists(&self) -> crate::waiters::key_pair_exists::KeyPairExistsFluentBuilder;
+    /// Wait for `nat_gateway_available`
+    fn wait_until_nat_gateway_available(&self) -> crate::waiters::nat_gateway_available::NatGatewayAvailableFluentBuilder;
+    /// Wait for `nat_gateway_deleted`
+    fn wait_until_nat_gateway_deleted(&self) -> crate::waiters::nat_gateway_deleted::NatGatewayDeletedFluentBuilder;
+    /// Wait for `network_interface_available`
+    fn wait_until_network_interface_available(&self) -> crate::waiters::network_interface_available::NetworkInterfaceAvailableFluentBuilder;
+    /// Wait for `security_group_exists`
+    fn wait_until_security_group_exists(&self) -> crate::waiters::security_group_exists::SecurityGroupExistsFluentBuilder;
+    /// Wait for `snapshot_completed`
+    fn wait_until_snapshot_completed(&self) -> crate::waiters::snapshot_completed::SnapshotCompletedFluentBuilder;
+    /// Wait for `spot_instance_request_fulfilled`
+    fn wait_until_spot_instance_request_fulfilled(
+        &self,
+    ) -> crate::waiters::spot_instance_request_fulfilled::SpotInstanceRequestFulfilledFluentBuilder;
+    /// Wait for `store_image_task_complete`
+    fn wait_until_store_image_task_complete(&self) -> crate::waiters::store_image_task_complete::StoreImageTaskCompleteFluentBuilder;
+    /// Wait for `subnet_available`
+    fn wait_until_subnet_available(&self) -> crate::waiters::subnet_available::SubnetAvailableFluentBuilder;
+    /// Wait for `volume_available`
+    fn wait_until_volume_available(&self) -> crate::waiters::volume_available::VolumeAvailableFluentBuilder;
+    /// Wait for `volume_deleted`
+    fn wait_until_volume_deleted(&self) -> crate::waiters::volume_deleted::VolumeDeletedFluentBuilder;
+    /// Wait for `volume_in_use`
+    fn wait_until_volume_in_use(&self) -> crate::waiters::volume_in_use::VolumeInUseFluentBuilder;
+    /// Wait for `vpc_peering_connection_deleted`
+    fn wait_until_vpc_peering_connection_deleted(&self) -> crate::waiters::vpc_peering_connection_deleted::VpcPeeringConnectionDeletedFluentBuilder;
+    /// Wait for `vpc_peering_connection_exists`
+    fn wait_until_vpc_peering_connection_exists(&self) -> crate::waiters::vpc_peering_connection_exists::VpcPeeringConnectionExistsFluentBuilder;
+    /// Wait for `vpc_available`
+    fn wait_until_vpc_available(&self) -> crate::waiters::vpc_available::VpcAvailableFluentBuilder;
+    /// Wait for `vpc_exists`
+    fn wait_until_vpc_exists(&self) -> crate::waiters::vpc_exists::VpcExistsFluentBuilder;
+    /// Wait for `vpn_connection_available`
+    fn wait_until_vpn_connection_available(&self) -> crate::waiters::vpn_connection_available::VpnConnectionAvailableFluentBuilder;
+    /// Wait for `vpn_connection_deleted`
+    fn wait_until_vpn_connection_deleted(&self) -> crate::waiters::vpn_connection_deleted::VpnConnectionDeletedFluentBuilder;
+    /// Wait for `password_data_available`
+    fn wait_until_password_data_available(&self) -> crate::waiters::password_data_available::PasswordDataAvailableFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_bundle_task_complete(&self) -> crate::waiters::bundle_task_complete::BundleTaskCompleteFluentBuilder {
+        crate::waiters::bundle_task_complete::BundleTaskCompleteFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_conversion_task_cancelled(&self) -> crate::waiters::conversion_task_cancelled::ConversionTaskCancelledFluentBuilder {
+        crate::waiters::conversion_task_cancelled::ConversionTaskCancelledFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_conversion_task_completed(&self) -> crate::waiters::conversion_task_completed::ConversionTaskCompletedFluentBuilder {
+        crate::waiters::conversion_task_completed::ConversionTaskCompletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_conversion_task_deleted(&self) -> crate::waiters::conversion_task_deleted::ConversionTaskDeletedFluentBuilder {
+        crate::waiters::conversion_task_deleted::ConversionTaskDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_customer_gateway_available(&self) -> crate::waiters::customer_gateway_available::CustomerGatewayAvailableFluentBuilder {
+        crate::waiters::customer_gateway_available::CustomerGatewayAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_export_task_cancelled(&self) -> crate::waiters::export_task_cancelled::ExportTaskCancelledFluentBuilder {
+        crate::waiters::export_task_cancelled::ExportTaskCancelledFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_export_task_completed(&self) -> crate::waiters::export_task_completed::ExportTaskCompletedFluentBuilder {
+        crate::waiters::export_task_completed::ExportTaskCompletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_image_available(&self) -> crate::waiters::image_available::ImageAvailableFluentBuilder {
+        crate::waiters::image_available::ImageAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_image_exists(&self) -> crate::waiters::image_exists::ImageExistsFluentBuilder {
+        crate::waiters::image_exists::ImageExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_snapshot_imported(&self) -> crate::waiters::snapshot_imported::SnapshotImportedFluentBuilder {
+        crate::waiters::snapshot_imported::SnapshotImportedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_instance_exists(&self) -> crate::waiters::instance_exists::InstanceExistsFluentBuilder {
+        crate::waiters::instance_exists::InstanceExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_instance_running(&self) -> crate::waiters::instance_running::InstanceRunningFluentBuilder {
+        crate::waiters::instance_running::InstanceRunningFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_instance_stopped(&self) -> crate::waiters::instance_stopped::InstanceStoppedFluentBuilder {
+        crate::waiters::instance_stopped::InstanceStoppedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_instance_terminated(&self) -> crate::waiters::instance_terminated::InstanceTerminatedFluentBuilder {
+        crate::waiters::instance_terminated::InstanceTerminatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_instance_status_ok(&self) -> crate::waiters::instance_status_ok::InstanceStatusOkFluentBuilder {
+        crate::waiters::instance_status_ok::InstanceStatusOkFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_system_status_ok(&self) -> crate::waiters::system_status_ok::SystemStatusOkFluentBuilder {
+        crate::waiters::system_status_ok::SystemStatusOkFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_internet_gateway_exists(&self) -> crate::waiters::internet_gateway_exists::InternetGatewayExistsFluentBuilder {
+        crate::waiters::internet_gateway_exists::InternetGatewayExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_key_pair_exists(&self) -> crate::waiters::key_pair_exists::KeyPairExistsFluentBuilder {
+        crate::waiters::key_pair_exists::KeyPairExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_nat_gateway_available(&self) -> crate::waiters::nat_gateway_available::NatGatewayAvailableFluentBuilder {
+        crate::waiters::nat_gateway_available::NatGatewayAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_nat_gateway_deleted(&self) -> crate::waiters::nat_gateway_deleted::NatGatewayDeletedFluentBuilder {
+        crate::waiters::nat_gateway_deleted::NatGatewayDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_network_interface_available(&self) -> crate::waiters::network_interface_available::NetworkInterfaceAvailableFluentBuilder {
+        crate::waiters::network_interface_available::NetworkInterfaceAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_security_group_exists(&self) -> crate::waiters::security_group_exists::SecurityGroupExistsFluentBuilder {
+        crate::waiters::security_group_exists::SecurityGroupExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_snapshot_completed(&self) -> crate::waiters::snapshot_completed::SnapshotCompletedFluentBuilder {
+        crate::waiters::snapshot_completed::SnapshotCompletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_spot_instance_request_fulfilled(
+        &self,
+    ) -> crate::waiters::spot_instance_request_fulfilled::SpotInstanceRequestFulfilledFluentBuilder {
+        crate::waiters::spot_instance_request_fulfilled::SpotInstanceRequestFulfilledFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_store_image_task_complete(&self) -> crate::waiters::store_image_task_complete::StoreImageTaskCompleteFluentBuilder {
+        crate::waiters::store_image_task_complete::StoreImageTaskCompleteFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_subnet_available(&self) -> crate::waiters::subnet_available::SubnetAvailableFluentBuilder {
+        crate::waiters::subnet_available::SubnetAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_volume_available(&self) -> crate::waiters::volume_available::VolumeAvailableFluentBuilder {
+        crate::waiters::volume_available::VolumeAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_volume_deleted(&self) -> crate::waiters::volume_deleted::VolumeDeletedFluentBuilder {
+        crate::waiters::volume_deleted::VolumeDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_volume_in_use(&self) -> crate::waiters::volume_in_use::VolumeInUseFluentBuilder {
+        crate::waiters::volume_in_use::VolumeInUseFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_vpc_peering_connection_deleted(&self) -> crate::waiters::vpc_peering_connection_deleted::VpcPeeringConnectionDeletedFluentBuilder {
+        crate::waiters::vpc_peering_connection_deleted::VpcPeeringConnectionDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_vpc_peering_connection_exists(&self) -> crate::waiters::vpc_peering_connection_exists::VpcPeeringConnectionExistsFluentBuilder {
+        crate::waiters::vpc_peering_connection_exists::VpcPeeringConnectionExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_vpc_available(&self) -> crate::waiters::vpc_available::VpcAvailableFluentBuilder {
+        crate::waiters::vpc_available::VpcAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_vpc_exists(&self) -> crate::waiters::vpc_exists::VpcExistsFluentBuilder {
+        crate::waiters::vpc_exists::VpcExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_vpn_connection_available(&self) -> crate::waiters::vpn_connection_available::VpnConnectionAvailableFluentBuilder {
+        crate::waiters::vpn_connection_available::VpnConnectionAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_vpn_connection_deleted(&self) -> crate::waiters::vpn_connection_deleted::VpnConnectionDeletedFluentBuilder {
+        crate::waiters::vpn_connection_deleted::VpnConnectionDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_password_data_available(&self) -> crate::waiters::password_data_available::PasswordDataAvailableFluentBuilder {
+        crate::waiters::password_data_available::PasswordDataAvailableFluentBuilder::new(self.handle.clone())
     }
 }
 

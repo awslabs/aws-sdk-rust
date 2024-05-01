@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateEksAnywhereSubscriptionFluentBuilder {
-    /// Creates a new `CreateEksAnywhereSubscription`.
+    /// Creates a new `CreateEksAnywhereSubscriptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

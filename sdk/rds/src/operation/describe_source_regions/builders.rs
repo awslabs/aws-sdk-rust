@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeSourceRegionsFluentBuilder {
-    /// Creates a new `DescribeSourceRegions`.
+    /// Creates a new `DescribeSourceRegionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

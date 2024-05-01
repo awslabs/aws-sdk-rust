@@ -50,7 +50,7 @@ impl
     }
 }
 impl AddTagsToCertificateFluentBuilder {
-    /// Creates a new `AddTagsToCertificate`.
+    /// Creates a new `AddTagsToCertificateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSpeechSynthesisTasksFluentBuilder {
-    /// Creates a new `ListSpeechSynthesisTasks`.
+    /// Creates a new `ListSpeechSynthesisTasksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

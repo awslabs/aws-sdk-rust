@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListConnectorDefinitionVersionsFluentBuilder {
-    /// Creates a new `ListConnectorDefinitionVersions`.
+    /// Creates a new `ListConnectorDefinitionVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

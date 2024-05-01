@@ -44,7 +44,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::get_
     }
 }
 impl GetRoleFluentBuilder {
-    /// Creates a new `GetRole`.
+    /// Creates a new `GetRoleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

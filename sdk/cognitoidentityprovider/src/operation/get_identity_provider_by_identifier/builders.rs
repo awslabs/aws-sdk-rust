@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetIdentityProviderByIdentifierFluentBuilder {
-    /// Creates a new `GetIdentityProviderByIdentifier`.
+    /// Creates a new `GetIdentityProviderByIdentifierFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

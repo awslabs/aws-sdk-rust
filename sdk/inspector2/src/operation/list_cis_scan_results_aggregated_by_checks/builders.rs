@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCisScanResultsAggregatedByChecksFluentBuilder {
-    /// Creates a new `ListCisScanResultsAggregatedByChecks`.
+    /// Creates a new `ListCisScanResultsAggregatedByChecksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

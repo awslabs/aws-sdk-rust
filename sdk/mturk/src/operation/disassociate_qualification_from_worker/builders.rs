@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateQualificationFromWorkerFluentBuilder {
-    /// Creates a new `DisassociateQualificationFromWorker`.
+    /// Creates a new `DisassociateQualificationFromWorkerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

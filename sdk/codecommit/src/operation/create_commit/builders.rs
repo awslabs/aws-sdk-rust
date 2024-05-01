@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateCommitFluentBuilder {
-    /// Creates a new `CreateCommit`.
+    /// Creates a new `CreateCommitFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

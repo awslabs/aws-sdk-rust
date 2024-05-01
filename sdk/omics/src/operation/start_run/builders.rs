@@ -45,7 +45,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::star
     }
 }
 impl StartRunFluentBuilder {
-    /// Creates a new `StartRun`.
+    /// Creates a new `StartRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

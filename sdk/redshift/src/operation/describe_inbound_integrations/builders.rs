@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeInboundIntegrationsFluentBuilder {
-    /// Creates a new `DescribeInboundIntegrations`.
+    /// Creates a new `DescribeInboundIntegrationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

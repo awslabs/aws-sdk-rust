@@ -50,7 +50,7 @@ impl
     }
 }
 impl StartMonitoringScheduleFluentBuilder {
-    /// Creates a new `StartMonitoringSchedule`.
+    /// Creates a new `StartMonitoringScheduleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

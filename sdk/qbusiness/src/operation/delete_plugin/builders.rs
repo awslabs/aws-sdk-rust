@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePluginFluentBuilder {
-    /// Creates a new `DeletePlugin`.
+    /// Creates a new `DeletePluginFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

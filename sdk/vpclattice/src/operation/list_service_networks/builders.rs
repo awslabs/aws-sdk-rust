@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListServiceNetworksFluentBuilder {
-    /// Creates a new `ListServiceNetworks`.
+    /// Creates a new `ListServiceNetworksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

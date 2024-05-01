@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisableRegionFluentBuilder {
-    /// Creates a new `DisableRegion`.
+    /// Creates a new `DisableRegionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

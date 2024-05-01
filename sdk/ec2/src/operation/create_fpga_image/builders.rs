@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateFpgaImageFluentBuilder {
-    /// Creates a new `CreateFpgaImage`.
+    /// Creates a new `CreateFpgaImageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

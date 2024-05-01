@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCampaignStateFluentBuilder {
-    /// Creates a new `GetCampaignState`.
+    /// Creates a new `GetCampaignStateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

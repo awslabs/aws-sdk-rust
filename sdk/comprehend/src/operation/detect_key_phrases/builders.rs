@@ -48,7 +48,7 @@ impl
     }
 }
 impl DetectKeyPhrasesFluentBuilder {
-    /// Creates a new `DetectKeyPhrases`.
+    /// Creates a new `DetectKeyPhrasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

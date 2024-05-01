@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateEphemerisFluentBuilder {
-    /// Creates a new `UpdateEphemeris`.
+    /// Creates a new `UpdateEphemerisFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

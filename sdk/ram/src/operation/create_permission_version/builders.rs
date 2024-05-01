@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreatePermissionVersionFluentBuilder {
-    /// Creates a new `CreatePermissionVersion`.
+    /// Creates a new `CreatePermissionVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListQuickConnectsFluentBuilder {
-    /// Creates a new `ListQuickConnects`.
+    /// Creates a new `ListQuickConnectsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

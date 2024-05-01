@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateHealthCheckFluentBuilder {
-    /// Creates a new `AssociateHealthCheck`.
+    /// Creates a new `AssociateHealthCheckFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

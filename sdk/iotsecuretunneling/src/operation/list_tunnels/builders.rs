@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListTunnelsFluentBuilder {
-    /// Creates a new `ListTunnels`.
+    /// Creates a new `ListTunnelsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

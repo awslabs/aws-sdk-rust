@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetBootstrapBrokersFluentBuilder {
-    /// Creates a new `GetBootstrapBrokers`.
+    /// Creates a new `GetBootstrapBrokersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

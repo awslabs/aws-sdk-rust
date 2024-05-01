@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateModelFluentBuilder {
-    /// Creates a new `CreateModel`.
+    /// Creates a new `CreateModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

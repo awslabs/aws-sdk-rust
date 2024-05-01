@@ -59,7 +59,7 @@ impl
     }
 }
 impl DeregisterTargetsFluentBuilder {
-    /// Creates a new `DeregisterTargets`.
+    /// Creates a new `DeregisterTargetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

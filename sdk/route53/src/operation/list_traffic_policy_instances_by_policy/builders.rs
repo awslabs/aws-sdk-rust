@@ -51,7 +51,7 @@ impl
     }
 }
 impl ListTrafficPolicyInstancesByPolicyFluentBuilder {
-    /// Creates a new `ListTrafficPolicyInstancesByPolicy`.
+    /// Creates a new `ListTrafficPolicyInstancesByPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

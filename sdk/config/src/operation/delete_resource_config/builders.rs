@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteResourceConfigFluentBuilder {
-    /// Creates a new `DeleteResourceConfig`.
+    /// Creates a new `DeleteResourceConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

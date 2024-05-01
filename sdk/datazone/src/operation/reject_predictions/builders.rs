@@ -48,7 +48,7 @@ impl
     }
 }
 impl RejectPredictionsFluentBuilder {
-    /// Creates a new `RejectPredictions`.
+    /// Creates a new `RejectPredictionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

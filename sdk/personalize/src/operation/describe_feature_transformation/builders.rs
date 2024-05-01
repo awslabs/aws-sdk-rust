@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeFeatureTransformationFluentBuilder {
-    /// Creates a new `DescribeFeatureTransformation`.
+    /// Creates a new `DescribeFeatureTransformationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

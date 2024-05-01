@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,55 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait until a Fleet is activated. Use this after invoking CreateFleet or UpdateFleet.
+    fn wait_until_fleet_active(&self) -> crate::waiters::fleet_active::FleetActiveFluentBuilder;
+    /// Wait until a Job is created. Use this after invoking CreateJob.
+    fn wait_until_job_create_complete(&self) -> crate::waiters::job_create_complete::JobCreateCompleteFluentBuilder;
+    /// Wait until a LicenseEndpoint is Ready. Use this after invoking CreateLicenseEndpoint.
+    fn wait_until_license_endpoint_valid(&self) -> crate::waiters::license_endpoint_valid::LicenseEndpointValidFluentBuilder;
+    /// Wait until a LicenseEndpoint is Deleted. Use this after invoking DeleteLicenseEndpoint.
+    fn wait_until_license_endpoint_deleted(&self) -> crate::waiters::license_endpoint_deleted::LicenseEndpointDeletedFluentBuilder;
+    /// Wait for `queue_scheduling_blocked`
+    fn wait_until_queue_scheduling_blocked(&self) -> crate::waiters::queue_scheduling_blocked::QueueSchedulingBlockedFluentBuilder;
+    /// Wait for `queue_scheduling`
+    fn wait_until_queue_scheduling(&self) -> crate::waiters::queue_scheduling::QueueSchedulingFluentBuilder;
+    /// Wait until a QueueFleetAssociation is stopped. Use this after setting the status to STOP_SCHEDULING_AND_COMPLETE_TASKS or STOP_SCHEDULING_AND_CANCEL_TASKS to wait for a QueueFleetAssociation to reach STOPPED
+    fn wait_until_queue_fleet_association_stopped(
+        &self,
+    ) -> crate::waiters::queue_fleet_association_stopped::QueueFleetAssociationStoppedFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_fleet_active(&self) -> crate::waiters::fleet_active::FleetActiveFluentBuilder {
+        crate::waiters::fleet_active::FleetActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_job_create_complete(&self) -> crate::waiters::job_create_complete::JobCreateCompleteFluentBuilder {
+        crate::waiters::job_create_complete::JobCreateCompleteFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_license_endpoint_valid(&self) -> crate::waiters::license_endpoint_valid::LicenseEndpointValidFluentBuilder {
+        crate::waiters::license_endpoint_valid::LicenseEndpointValidFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_license_endpoint_deleted(&self) -> crate::waiters::license_endpoint_deleted::LicenseEndpointDeletedFluentBuilder {
+        crate::waiters::license_endpoint_deleted::LicenseEndpointDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_queue_scheduling_blocked(&self) -> crate::waiters::queue_scheduling_blocked::QueueSchedulingBlockedFluentBuilder {
+        crate::waiters::queue_scheduling_blocked::QueueSchedulingBlockedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_queue_scheduling(&self) -> crate::waiters::queue_scheduling::QueueSchedulingFluentBuilder {
+        crate::waiters::queue_scheduling::QueueSchedulingFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_queue_fleet_association_stopped(
+        &self,
+    ) -> crate::waiters::queue_fleet_association_stopped::QueueFleetAssociationStoppedFluentBuilder {
+        crate::waiters::queue_fleet_association_stopped::QueueFleetAssociationStoppedFluentBuilder::new(self.handle.clone())
     }
 }
 

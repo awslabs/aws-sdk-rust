@@ -95,7 +95,7 @@ impl
     }
 }
 impl CreateEventSourceMappingFluentBuilder {
-    /// Creates a new `CreateEventSourceMapping`.
+    /// Creates a new `CreateEventSourceMappingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetDevicePositionFluentBuilder {
-    /// Creates a new `BatchGetDevicePosition`.
+    /// Creates a new `BatchGetDevicePositionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

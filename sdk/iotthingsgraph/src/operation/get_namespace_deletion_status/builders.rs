@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetNamespaceDeletionStatusFluentBuilder {
-    /// Creates a new `GetNamespaceDeletionStatus`.
+    /// Creates a new `GetNamespaceDeletionStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

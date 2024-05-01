@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateProtectionGroupFluentBuilder {
-    /// Creates a new `UpdateProtectionGroup`.
+    /// Creates a new `UpdateProtectionGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

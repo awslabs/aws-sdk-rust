@@ -53,7 +53,7 @@ impl
     }
 }
 impl JoinStorageSessionFluentBuilder {
-    /// Creates a new `JoinStorageSession`.
+    /// Creates a new `JoinStorageSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

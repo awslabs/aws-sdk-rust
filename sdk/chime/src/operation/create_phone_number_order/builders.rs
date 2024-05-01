@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreatePhoneNumberOrderFluentBuilder {
-    /// Creates a new `CreatePhoneNumberOrder`.
+    /// Creates a new `CreatePhoneNumberOrderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

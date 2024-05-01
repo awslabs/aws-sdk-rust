@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteSpaceFluentBuilder {
-    /// Creates a new `DeleteSpace`.
+    /// Creates a new `DeleteSpaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

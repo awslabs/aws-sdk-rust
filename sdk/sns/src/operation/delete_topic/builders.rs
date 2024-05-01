@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteTopicFluentBuilder {
-    /// Creates a new `DeleteTopic`.
+    /// Creates a new `DeleteTopicFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl AttachGroupPolicyFluentBuilder {
-    /// Creates a new `AttachGroupPolicy`.
+    /// Creates a new `AttachGroupPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

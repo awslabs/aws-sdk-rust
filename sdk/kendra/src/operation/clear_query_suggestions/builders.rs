@@ -50,7 +50,7 @@ impl
     }
 }
 impl ClearQuerySuggestionsFluentBuilder {
-    /// Creates a new `ClearQuerySuggestions`.
+    /// Creates a new `ClearQuerySuggestionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

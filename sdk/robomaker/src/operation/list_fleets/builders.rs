@@ -53,7 +53,7 @@ impl
     }
 }
 impl ListFleetsFluentBuilder {
-    /// Creates a new `ListFleets`.
+    /// Creates a new `ListFleetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

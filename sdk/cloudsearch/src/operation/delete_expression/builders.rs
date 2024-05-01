@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteExpressionFluentBuilder {
-    /// Creates a new `DeleteExpression`.
+    /// Creates a new `DeleteExpressionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

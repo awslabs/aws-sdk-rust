@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeGlobalSettingsFluentBuilder {
-    /// Creates a new `DescribeGlobalSettings`.
+    /// Creates a new `DescribeGlobalSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

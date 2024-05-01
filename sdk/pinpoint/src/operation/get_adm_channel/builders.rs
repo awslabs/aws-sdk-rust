@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAdmChannelFluentBuilder {
-    /// Creates a new `GetAdmChannel`.
+    /// Creates a new `GetAdmChannelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

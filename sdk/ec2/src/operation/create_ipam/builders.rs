@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateIpamFluentBuilder {
-    /// Creates a new `CreateIpam`.
+    /// Creates a new `CreateIpamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

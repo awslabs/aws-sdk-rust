@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateCanaryFluentBuilder {
-    /// Creates a new `UpdateCanary`.
+    /// Creates a new `UpdateCanaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

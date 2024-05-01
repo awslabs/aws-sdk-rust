@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeregisterTransitGatewayMulticastGroupSourcesFluentBuilder {
-    /// Creates a new `DeregisterTransitGatewayMulticastGroupSources`.
+    /// Creates a new `DeregisterTransitGatewayMulticastGroupSourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

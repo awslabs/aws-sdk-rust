@@ -53,7 +53,7 @@ impl
     }
 }
 impl SearchFacesFluentBuilder {
-    /// Creates a new `SearchFaces`.
+    /// Creates a new `SearchFacesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

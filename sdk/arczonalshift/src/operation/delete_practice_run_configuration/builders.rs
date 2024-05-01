@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePracticeRunConfigurationFluentBuilder {
-    /// Creates a new `DeletePracticeRunConfiguration`.
+    /// Creates a new `DeletePracticeRunConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

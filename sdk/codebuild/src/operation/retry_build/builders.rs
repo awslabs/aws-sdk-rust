@@ -48,7 +48,7 @@ impl
     }
 }
 impl RetryBuildFluentBuilder {
-    /// Creates a new `RetryBuild`.
+    /// Creates a new `RetryBuildFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

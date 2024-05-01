@@ -53,7 +53,7 @@ impl
     }
 }
 impl DetachLoadBalancersFluentBuilder {
-    /// Creates a new `DetachLoadBalancers`.
+    /// Creates a new `DetachLoadBalancersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

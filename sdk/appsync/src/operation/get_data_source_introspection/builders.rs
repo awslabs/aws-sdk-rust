@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDataSourceIntrospectionFluentBuilder {
-    /// Creates a new `GetDataSourceIntrospection`.
+    /// Creates a new `GetDataSourceIntrospectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

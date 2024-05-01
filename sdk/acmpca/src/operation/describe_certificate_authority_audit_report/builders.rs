@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeCertificateAuthorityAuditReportFluentBuilder {
-    /// Creates a new `DescribeCertificateAuthorityAuditReport`.
+    /// Creates a new `DescribeCertificateAuthorityAuditReportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

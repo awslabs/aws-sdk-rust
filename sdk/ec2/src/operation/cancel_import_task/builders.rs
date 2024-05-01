@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelImportTaskFluentBuilder {
-    /// Creates a new `CancelImportTask`.
+    /// Creates a new `CancelImportTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

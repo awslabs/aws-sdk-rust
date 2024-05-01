@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartInstanceOnboardingJobFluentBuilder {
-    /// Creates a new `StartInstanceOnboardingJob`.
+    /// Creates a new `StartInstanceOnboardingJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

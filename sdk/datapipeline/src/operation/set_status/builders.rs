@@ -49,7 +49,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::set_
     }
 }
 impl SetStatusFluentBuilder {
-    /// Creates a new `SetStatus`.
+    /// Creates a new `SetStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

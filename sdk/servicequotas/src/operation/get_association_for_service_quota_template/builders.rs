@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAssociationForServiceQuotaTemplateFluentBuilder {
-    /// Creates a new `GetAssociationForServiceQuotaTemplate`.
+    /// Creates a new `GetAssociationForServiceQuotaTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

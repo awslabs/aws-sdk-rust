@@ -50,7 +50,7 @@ impl
     }
 }
 impl EnableSnapshotBlockPublicAccessFluentBuilder {
-    /// Creates a new `EnableSnapshotBlockPublicAccess`.
+    /// Creates a new `EnableSnapshotBlockPublicAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

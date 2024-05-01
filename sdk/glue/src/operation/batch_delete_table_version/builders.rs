@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDeleteTableVersionFluentBuilder {
-    /// Creates a new `BatchDeleteTableVersion`.
+    /// Creates a new `BatchDeleteTableVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

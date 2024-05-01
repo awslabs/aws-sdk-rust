@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetUnfilteredPartitionMetadataFluentBuilder {
-    /// Creates a new `GetUnfilteredPartitionMetadata`.
+    /// Creates a new `GetUnfilteredPartitionMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

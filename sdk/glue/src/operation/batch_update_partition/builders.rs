@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchUpdatePartitionFluentBuilder {
-    /// Creates a new `BatchUpdatePartition`.
+    /// Creates a new `BatchUpdatePartitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

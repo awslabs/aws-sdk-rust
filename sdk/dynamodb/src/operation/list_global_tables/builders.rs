@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListGlobalTablesFluentBuilder {
-    /// Creates a new `ListGlobalTables`.
+    /// Creates a new `ListGlobalTablesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

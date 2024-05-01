@@ -56,7 +56,7 @@ impl
     }
 }
 impl DisassociateKmsKeyFluentBuilder {
-    /// Creates a new `DisassociateKmsKey`.
+    /// Creates a new `DisassociateKmsKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

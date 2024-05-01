@@ -47,7 +47,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::modi
     }
 }
 impl ModifyHsmFluentBuilder {
-    /// Creates a new `ModifyHsm`.
+    /// Creates a new `ModifyHsmFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

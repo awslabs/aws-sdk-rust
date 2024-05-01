@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateFleetMetricFluentBuilder {
-    /// Creates a new `UpdateFleetMetric`.
+    /// Creates a new `UpdateFleetMetricFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

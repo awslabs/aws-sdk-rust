@@ -60,7 +60,7 @@ impl
     }
 }
 impl ListPricesFluentBuilder {
-    /// Creates a new `ListPrices`.
+    /// Creates a new `ListPricesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveSourceServerActionFluentBuilder {
-    /// Creates a new `RemoveSourceServerAction`.
+    /// Creates a new `RemoveSourceServerActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

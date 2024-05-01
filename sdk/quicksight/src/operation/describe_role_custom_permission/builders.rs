@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeRoleCustomPermissionFluentBuilder {
-    /// Creates a new `DescribeRoleCustomPermission`.
+    /// Creates a new `DescribeRoleCustomPermissionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

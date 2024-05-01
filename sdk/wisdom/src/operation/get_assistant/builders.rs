@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAssistantFluentBuilder {
-    /// Creates a new `GetAssistant`.
+    /// Creates a new `GetAssistantFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

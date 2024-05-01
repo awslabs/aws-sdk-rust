@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetFindingDetailsFluentBuilder {
-    /// Creates a new `BatchGetFindingDetails`.
+    /// Creates a new `BatchGetFindingDetailsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl PutAnomalyDetectorFluentBuilder {
-    /// Creates a new `PutAnomalyDetector`.
+    /// Creates a new `PutAnomalyDetectorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

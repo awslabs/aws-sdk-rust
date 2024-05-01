@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSessionActionFluentBuilder {
-    /// Creates a new `GetSessionAction`.
+    /// Creates a new `GetSessionActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

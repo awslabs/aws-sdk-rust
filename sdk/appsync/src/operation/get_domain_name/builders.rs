@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDomainNameFluentBuilder {
-    /// Creates a new `GetDomainName`.
+    /// Creates a new `GetDomainNameFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -56,7 +56,7 @@ impl
     }
 }
 impl DeleteAccessGrantsInstanceResourcePolicyFluentBuilder {
-    /// Creates a new `DeleteAccessGrantsInstanceResourcePolicy`.
+    /// Creates a new `DeleteAccessGrantsInstanceResourcePolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

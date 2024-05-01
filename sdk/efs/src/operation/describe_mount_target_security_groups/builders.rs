@@ -55,7 +55,7 @@ impl
     }
 }
 impl DescribeMountTargetSecurityGroupsFluentBuilder {
-    /// Creates a new `DescribeMountTargetSecurityGroups`.
+    /// Creates a new `DescribeMountTargetSecurityGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateRecoveryGroupFluentBuilder {
-    /// Creates a new `CreateRecoveryGroup`.
+    /// Creates a new `CreateRecoveryGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

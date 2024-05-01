@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTransformerFluentBuilder {
-    /// Creates a new `GetTransformer`.
+    /// Creates a new `GetTransformerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

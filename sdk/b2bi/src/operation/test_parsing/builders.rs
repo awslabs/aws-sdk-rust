@@ -48,7 +48,7 @@ impl
     }
 }
 impl TestParsingFluentBuilder {
-    /// Creates a new `TestParsing`.
+    /// Creates a new `TestParsingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

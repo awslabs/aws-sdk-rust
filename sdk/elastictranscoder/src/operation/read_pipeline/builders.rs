@@ -48,7 +48,7 @@ impl
     }
 }
 impl ReadPipelineFluentBuilder {
-    /// Creates a new `ReadPipeline`.
+    /// Creates a new `ReadPipelineFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

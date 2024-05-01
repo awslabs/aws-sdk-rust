@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateMitigationActionFluentBuilder {
-    /// Creates a new `UpdateMitigationAction`.
+    /// Creates a new `UpdateMitigationActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

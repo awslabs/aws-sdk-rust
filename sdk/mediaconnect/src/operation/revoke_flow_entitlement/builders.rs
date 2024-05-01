@@ -48,7 +48,7 @@ impl
     }
 }
 impl RevokeFlowEntitlementFluentBuilder {
-    /// Creates a new `RevokeFlowEntitlement`.
+    /// Creates a new `RevokeFlowEntitlementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

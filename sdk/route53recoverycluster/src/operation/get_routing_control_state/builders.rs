@@ -58,7 +58,7 @@ impl
     }
 }
 impl GetRoutingControlStateFluentBuilder {
-    /// Creates a new `GetRoutingControlState`.
+    /// Creates a new `GetRoutingControlStateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

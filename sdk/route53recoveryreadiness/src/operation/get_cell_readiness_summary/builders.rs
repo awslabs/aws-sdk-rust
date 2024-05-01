@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCellReadinessSummaryFluentBuilder {
-    /// Creates a new `GetCellReadinessSummary`.
+    /// Creates a new `GetCellReadinessSummaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

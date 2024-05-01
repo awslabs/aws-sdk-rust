@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelSchemaExtensionFluentBuilder {
-    /// Creates a new `CancelSchemaExtension`.
+    /// Creates a new `CancelSchemaExtensionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

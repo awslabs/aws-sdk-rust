@@ -49,7 +49,7 @@ impl
     }
 }
 impl AddIpRoutesFluentBuilder {
-    /// Creates a new `AddIpRoutes`.
+    /// Creates a new `AddIpRoutesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl TestFunctionFluentBuilder {
-    /// Creates a new `TestFunction`.
+    /// Creates a new `TestFunctionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

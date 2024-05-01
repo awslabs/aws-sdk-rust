@@ -49,7 +49,7 @@ impl
     }
 }
 impl PutInsightRuleFluentBuilder {
-    /// Creates a new `PutInsightRule`.
+    /// Creates a new `PutInsightRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

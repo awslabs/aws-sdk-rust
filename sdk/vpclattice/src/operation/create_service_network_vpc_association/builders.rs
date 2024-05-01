@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateServiceNetworkVpcAssociationFluentBuilder {
-    /// Creates a new `CreateServiceNetworkVpcAssociation`.
+    /// Creates a new `CreateServiceNetworkVpcAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

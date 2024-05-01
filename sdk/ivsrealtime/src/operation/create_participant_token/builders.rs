@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateParticipantTokenFluentBuilder {
-    /// Creates a new `CreateParticipantToken`.
+    /// Creates a new `CreateParticipantTokenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

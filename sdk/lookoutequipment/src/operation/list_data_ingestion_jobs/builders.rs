@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDataIngestionJobsFluentBuilder {
-    /// Creates a new `ListDataIngestionJobs`.
+    /// Creates a new `ListDataIngestionJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

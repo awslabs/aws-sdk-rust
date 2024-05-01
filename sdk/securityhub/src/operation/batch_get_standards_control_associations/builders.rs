@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetStandardsControlAssociationsFluentBuilder {
-    /// Creates a new `BatchGetStandardsControlAssociations`.
+    /// Creates a new `BatchGetStandardsControlAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

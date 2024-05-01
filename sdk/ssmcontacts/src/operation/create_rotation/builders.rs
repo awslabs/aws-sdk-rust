@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateRotationFluentBuilder {
-    /// Creates a new `CreateRotation`.
+    /// Creates a new `CreateRotationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

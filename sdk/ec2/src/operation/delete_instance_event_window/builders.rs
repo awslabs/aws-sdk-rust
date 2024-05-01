@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteInstanceEventWindowFluentBuilder {
-    /// Creates a new `DeleteInstanceEventWindow`.
+    /// Creates a new `DeleteInstanceEventWindowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

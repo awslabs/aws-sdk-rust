@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteIpamPoolFluentBuilder {
-    /// Creates a new `DeleteIpamPool`.
+    /// Creates a new `DeleteIpamPoolFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

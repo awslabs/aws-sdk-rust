@@ -65,7 +65,7 @@ impl
     }
 }
 impl AssociateKmsKeyFluentBuilder {
-    /// Creates a new `AssociateKmsKey`.
+    /// Creates a new `AssociateKmsKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateRoutingProfileQueuesFluentBuilder {
-    /// Creates a new `AssociateRoutingProfileQueues`.
+    /// Creates a new `AssociateRoutingProfileQueuesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

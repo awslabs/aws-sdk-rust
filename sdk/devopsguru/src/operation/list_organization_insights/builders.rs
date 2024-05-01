@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListOrganizationInsightsFluentBuilder {
-    /// Creates a new `ListOrganizationInsights`.
+    /// Creates a new `ListOrganizationInsightsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeRuleGroupsNamespaceFluentBuilder {
-    /// Creates a new `DescribeRuleGroupsNamespace`.
+    /// Creates a new `DescribeRuleGroupsNamespaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSiteAddressFluentBuilder {
-    /// Creates a new `GetSiteAddress`.
+    /// Creates a new `GetSiteAddressFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

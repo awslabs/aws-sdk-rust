@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDhcpOptionsFluentBuilder {
-    /// Creates a new `DeleteDhcpOptions`.
+    /// Creates a new `DeleteDhcpOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

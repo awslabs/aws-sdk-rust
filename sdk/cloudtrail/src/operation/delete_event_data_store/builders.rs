@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteEventDataStoreFluentBuilder {
-    /// Creates a new `DeleteEventDataStore`.
+    /// Creates a new `DeleteEventDataStoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

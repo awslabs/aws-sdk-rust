@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopIngestionFluentBuilder {
-    /// Creates a new `StopIngestion`.
+    /// Creates a new `StopIngestionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

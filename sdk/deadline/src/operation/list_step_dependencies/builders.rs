@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListStepDependenciesFluentBuilder {
-    /// Creates a new `ListStepDependencies`.
+    /// Creates a new `ListStepDependenciesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl BatchCreateVehicleFluentBuilder {
-    /// Creates a new `BatchCreateVehicle`.
+    /// Creates a new `BatchCreateVehicleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

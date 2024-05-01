@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeDBSnapshotTenantDatabasesFluentBuilder {
-    /// Creates a new `DescribeDBSnapshotTenantDatabases`.
+    /// Creates a new `DescribeDBSnapshotTenantDatabasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

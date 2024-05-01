@@ -48,7 +48,7 @@ impl
     }
 }
 impl ConfirmSubscriptionFluentBuilder {
-    /// Creates a new `ConfirmSubscription`.
+    /// Creates a new `ConfirmSubscriptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

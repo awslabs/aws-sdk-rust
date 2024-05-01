@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateConnectionFromLagFluentBuilder {
-    /// Creates a new `DisassociateConnectionFromLag`.
+    /// Creates a new `DisassociateConnectionFromLagFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

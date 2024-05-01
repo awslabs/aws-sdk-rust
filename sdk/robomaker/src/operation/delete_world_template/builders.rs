@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteWorldTemplateFluentBuilder {
-    /// Creates a new `DeleteWorldTemplate`.
+    /// Creates a new `DeleteWorldTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

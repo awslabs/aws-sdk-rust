@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateDocumentMetadataFluentBuilder {
-    /// Creates a new `UpdateDocumentMetadata`.
+    /// Creates a new `UpdateDocumentMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

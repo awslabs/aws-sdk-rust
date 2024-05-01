@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTaskExecutionsFluentBuilder {
-    /// Creates a new `ListTaskExecutions`.
+    /// Creates a new `ListTaskExecutionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

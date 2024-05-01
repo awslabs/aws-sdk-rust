@@ -82,7 +82,7 @@ impl
     }
 }
 impl CreateComponentVersionFluentBuilder {
-    /// Creates a new `CreateComponentVersion`.
+    /// Creates a new `CreateComponentVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

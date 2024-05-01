@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListSizeConstraintSetsFluentBuilder {
-    /// Creates a new `ListSizeConstraintSets`.
+    /// Creates a new `ListSizeConstraintSetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

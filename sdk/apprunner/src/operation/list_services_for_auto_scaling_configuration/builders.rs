@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListServicesForAutoScalingConfigurationFluentBuilder {
-    /// Creates a new `ListServicesForAutoScalingConfiguration`.
+    /// Creates a new `ListServicesForAutoScalingConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

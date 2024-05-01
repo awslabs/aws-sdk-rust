@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetSolNetworkPackageDescriptorFluentBuilder {
-    /// Creates a new `GetSolNetworkPackageDescriptor`.
+    /// Creates a new `GetSolNetworkPackageDescriptorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDevelopmentSchemaArnsFluentBuilder {
-    /// Creates a new `ListDevelopmentSchemaArns`.
+    /// Creates a new `ListDevelopmentSchemaArnsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

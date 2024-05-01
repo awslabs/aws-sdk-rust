@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTrackerConsumersFluentBuilder {
-    /// Creates a new `ListTrackerConsumers`.
+    /// Creates a new `ListTrackerConsumersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

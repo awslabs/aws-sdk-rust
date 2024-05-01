@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetLendingAnalysisFluentBuilder {
-    /// Creates a new `GetLendingAnalysis`.
+    /// Creates a new `GetLendingAnalysisFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

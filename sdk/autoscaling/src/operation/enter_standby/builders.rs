@@ -51,7 +51,7 @@ impl
     }
 }
 impl EnterStandbyFluentBuilder {
-    /// Creates a new `EnterStandby`.
+    /// Creates a new `EnterStandbyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

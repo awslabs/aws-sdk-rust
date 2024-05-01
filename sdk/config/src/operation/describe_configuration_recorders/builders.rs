@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeConfigurationRecordersFluentBuilder {
-    /// Creates a new `DescribeConfigurationRecorders`.
+    /// Creates a new `DescribeConfigurationRecordersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

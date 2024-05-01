@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateDataQualityRulesetFluentBuilder {
-    /// Creates a new `CreateDataQualityRuleset`.
+    /// Creates a new `CreateDataQualityRulesetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

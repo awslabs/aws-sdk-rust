@@ -54,7 +54,7 @@ impl
     }
 }
 impl EnableAllFeaturesFluentBuilder {
-    /// Creates a new `EnableAllFeatures`.
+    /// Creates a new `EnableAllFeaturesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

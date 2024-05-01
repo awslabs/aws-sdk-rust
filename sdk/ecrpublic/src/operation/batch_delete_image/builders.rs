@@ -50,7 +50,7 @@ impl
     }
 }
 impl BatchDeleteImageFluentBuilder {
-    /// Creates a new `BatchDeleteImage`.
+    /// Creates a new `BatchDeleteImageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

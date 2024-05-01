@@ -52,7 +52,7 @@ impl
     }
 }
 impl DeleteRegexPatternSetFluentBuilder {
-    /// Creates a new `DeleteRegexPatternSet`.
+    /// Creates a new `DeleteRegexPatternSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

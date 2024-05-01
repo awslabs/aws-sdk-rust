@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyClientPropertiesFluentBuilder {
-    /// Creates a new `ModifyClientProperties`.
+    /// Creates a new `ModifyClientPropertiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl NotifyObjectCompleteFluentBuilder {
-    /// Creates a new `NotifyObjectComplete`.
+    /// Creates a new `NotifyObjectCompleteFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

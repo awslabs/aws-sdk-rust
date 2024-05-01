@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopImportFluentBuilder {
-    /// Creates a new `StopImport`.
+    /// Creates a new `StopImportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

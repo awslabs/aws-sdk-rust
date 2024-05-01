@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateReportGroupFluentBuilder {
-    /// Creates a new `UpdateReportGroup`.
+    /// Creates a new `UpdateReportGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

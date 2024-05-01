@@ -52,7 +52,7 @@ impl
     }
 }
 impl StopServerFluentBuilder {
-    /// Creates a new `StopServer`.
+    /// Creates a new `StopServerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetFirewallDomainListFluentBuilder {
-    /// Creates a new `GetFirewallDomainList`.
+    /// Creates a new `GetFirewallDomainListFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

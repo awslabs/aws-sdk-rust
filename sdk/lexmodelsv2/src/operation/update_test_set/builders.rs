@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateTestSetFluentBuilder {
-    /// Creates a new `UpdateTestSet`.
+    /// Creates a new `UpdateTestSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

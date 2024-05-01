@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSlackWorkspaceAuthorizationFluentBuilder {
-    /// Creates a new `DeleteSlackWorkspaceAuthorization`.
+    /// Creates a new `DeleteSlackWorkspaceAuthorizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

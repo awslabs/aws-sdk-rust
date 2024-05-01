@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetVpnConnectionDeviceSampleConfigurationFluentBuilder {
-    /// Creates a new `GetVpnConnectionDeviceSampleConfiguration`.
+    /// Creates a new `GetVpnConnectionDeviceSampleConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

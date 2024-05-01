@@ -48,7 +48,7 @@ impl
     }
 }
 impl IncreaseReplicaCountFluentBuilder {
-    /// Creates a new `IncreaseReplicaCount`.
+    /// Creates a new `IncreaseReplicaCountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

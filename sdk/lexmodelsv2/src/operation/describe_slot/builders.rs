@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeSlotFluentBuilder {
-    /// Creates a new `DescribeSlot`.
+    /// Creates a new `DescribeSlotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

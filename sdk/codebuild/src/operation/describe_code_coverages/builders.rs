@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeCodeCoveragesFluentBuilder {
-    /// Creates a new `DescribeCodeCoverages`.
+    /// Creates a new `DescribeCodeCoveragesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

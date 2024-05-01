@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteBranchFluentBuilder {
-    /// Creates a new `DeleteBranch`.
+    /// Creates a new `DeleteBranchFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

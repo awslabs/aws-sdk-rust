@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartImportFluentBuilder {
-    /// Creates a new `StartImport`.
+    /// Creates a new `StartImportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

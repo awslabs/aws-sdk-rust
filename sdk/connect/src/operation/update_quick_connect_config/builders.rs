@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateQuickConnectConfigFluentBuilder {
-    /// Creates a new `UpdateQuickConnectConfig`.
+    /// Creates a new `UpdateQuickConnectConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

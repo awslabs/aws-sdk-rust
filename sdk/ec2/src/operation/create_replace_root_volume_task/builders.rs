@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateReplaceRootVolumeTaskFluentBuilder {
-    /// Creates a new `CreateReplaceRootVolumeTask`.
+    /// Creates a new `CreateReplaceRootVolumeTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

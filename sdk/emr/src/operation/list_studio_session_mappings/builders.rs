@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListStudioSessionMappingsFluentBuilder {
-    /// Creates a new `ListStudioSessionMappings`.
+    /// Creates a new `ListStudioSessionMappingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

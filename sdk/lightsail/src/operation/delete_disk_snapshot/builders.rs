@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteDiskSnapshotFluentBuilder {
-    /// Creates a new `DeleteDiskSnapshot`.
+    /// Creates a new `DeleteDiskSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

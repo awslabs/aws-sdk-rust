@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteContainerServiceFluentBuilder {
-    /// Creates a new `DeleteContainerService`.
+    /// Creates a new `DeleteContainerServiceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

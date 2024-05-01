@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListFunctionEventInvokeConfigsFluentBuilder {
-    /// Creates a new `ListFunctionEventInvokeConfigs`.
+    /// Creates a new `ListFunctionEventInvokeConfigsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

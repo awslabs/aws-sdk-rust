@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSensitivityInspectionTemplateFluentBuilder {
-    /// Creates a new `GetSensitivityInspectionTemplate`.
+    /// Creates a new `GetSensitivityInspectionTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

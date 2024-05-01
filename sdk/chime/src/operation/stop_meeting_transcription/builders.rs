@@ -52,7 +52,7 @@ impl
     }
 }
 impl StopMeetingTranscriptionFluentBuilder {
-    /// Creates a new `StopMeetingTranscription`.
+    /// Creates a new `StopMeetingTranscriptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

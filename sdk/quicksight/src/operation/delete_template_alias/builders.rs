@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteTemplateAliasFluentBuilder {
-    /// Creates a new `DeleteTemplateAlias`.
+    /// Creates a new `DeleteTemplateAliasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

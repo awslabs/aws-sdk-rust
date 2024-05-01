@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetModelVersionFluentBuilder {
-    /// Creates a new `GetModelVersion`.
+    /// Creates a new `GetModelVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

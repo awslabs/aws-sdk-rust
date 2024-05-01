@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListCopyJobSummariesFluentBuilder {
-    /// Creates a new `ListCopyJobSummaries`.
+    /// Creates a new `ListCopyJobSummariesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteReusableDelegationSetFluentBuilder {
-    /// Creates a new `DeleteReusableDelegationSet`.
+    /// Creates a new `DeleteReusableDelegationSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartDataCollectionByAgentIdsFluentBuilder {
-    /// Creates a new `StartDataCollectionByAgentIds`.
+    /// Creates a new `StartDataCollectionByAgentIdsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

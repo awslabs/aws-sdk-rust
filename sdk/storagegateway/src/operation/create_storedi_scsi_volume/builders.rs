@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateStorediSCSIVolumeFluentBuilder {
-    /// Creates a new `CreateStorediSCSIVolume`.
+    /// Creates a new `CreateStorediSCSIVolumeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

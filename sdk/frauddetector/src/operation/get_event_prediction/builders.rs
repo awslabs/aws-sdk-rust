@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetEventPredictionFluentBuilder {
-    /// Creates a new `GetEventPrediction`.
+    /// Creates a new `GetEventPredictionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

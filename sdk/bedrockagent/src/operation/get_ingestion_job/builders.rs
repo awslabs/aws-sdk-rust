@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetIngestionJobFluentBuilder {
-    /// Creates a new `GetIngestionJob`.
+    /// Creates a new `GetIngestionJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

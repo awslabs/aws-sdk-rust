@@ -62,7 +62,7 @@ impl
     }
 }
 impl UpdateGlobalTableFluentBuilder {
-    /// Creates a new `UpdateGlobalTable`.
+    /// Creates a new `UpdateGlobalTableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

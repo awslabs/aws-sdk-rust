@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateFindingsFluentBuilder {
-    /// Creates a new `UpdateFindings`.
+    /// Creates a new `UpdateFindingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

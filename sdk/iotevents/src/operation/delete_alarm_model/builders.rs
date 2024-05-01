@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAlarmModelFluentBuilder {
-    /// Creates a new `DeleteAlarmModel`.
+    /// Creates a new `DeleteAlarmModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

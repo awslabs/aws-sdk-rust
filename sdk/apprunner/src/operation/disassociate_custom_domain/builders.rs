@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateCustomDomainFluentBuilder {
-    /// Creates a new `DisassociateCustomDomain`.
+    /// Creates a new `DisassociateCustomDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

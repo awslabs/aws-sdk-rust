@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateFleetFluentBuilder {
-    /// Creates a new `CreateFleet`.
+    /// Creates a new `CreateFleetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRegistrationAttachmentFluentBuilder {
-    /// Creates a new `DeleteRegistrationAttachment`.
+    /// Creates a new `DeleteRegistrationAttachmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

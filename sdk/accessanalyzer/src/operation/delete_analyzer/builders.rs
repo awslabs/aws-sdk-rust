@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAnalyzerFluentBuilder {
-    /// Creates a new `DeleteAnalyzer`.
+    /// Creates a new `DeleteAnalyzerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateAlarmModelFluentBuilder {
-    /// Creates a new `UpdateAlarmModel`.
+    /// Creates a new `UpdateAlarmModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

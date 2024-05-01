@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteForecastFluentBuilder {
-    /// Creates a new `DeleteForecast`.
+    /// Creates a new `DeleteForecastFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

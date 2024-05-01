@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRoleCustomPermissionFluentBuilder {
-    /// Creates a new `DeleteRoleCustomPermission`.
+    /// Creates a new `DeleteRoleCustomPermissionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

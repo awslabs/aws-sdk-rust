@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteConditionalForwarderFluentBuilder {
-    /// Creates a new `DeleteConditionalForwarder`.
+    /// Creates a new `DeleteConditionalForwarderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

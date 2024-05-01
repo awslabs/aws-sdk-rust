@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetConfigurationPolicyFluentBuilder {
-    /// Creates a new `GetConfigurationPolicy`.
+    /// Creates a new `GetConfigurationPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

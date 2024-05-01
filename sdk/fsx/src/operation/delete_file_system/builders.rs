@@ -56,7 +56,7 @@ impl
     }
 }
 impl DeleteFileSystemFluentBuilder {
-    /// Creates a new `DeleteFileSystem`.
+    /// Creates a new `DeleteFileSystemFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

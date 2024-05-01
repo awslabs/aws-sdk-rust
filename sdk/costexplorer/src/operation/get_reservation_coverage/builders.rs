@@ -75,7 +75,7 @@ impl
     }
 }
 impl GetReservationCoverageFluentBuilder {
-    /// Creates a new `GetReservationCoverage`.
+    /// Creates a new `GetReservationCoverageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

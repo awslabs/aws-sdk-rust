@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListImportsFluentBuilder {
-    /// Creates a new `ListImports`.
+    /// Creates a new `ListImportsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

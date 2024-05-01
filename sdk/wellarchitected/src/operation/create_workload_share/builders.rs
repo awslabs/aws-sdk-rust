@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateWorkloadShareFluentBuilder {
-    /// Creates a new `CreateWorkloadShare`.
+    /// Creates a new `CreateWorkloadShareFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

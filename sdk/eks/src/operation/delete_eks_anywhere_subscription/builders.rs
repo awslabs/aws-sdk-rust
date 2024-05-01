@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteEksAnywhereSubscriptionFluentBuilder {
-    /// Creates a new `DeleteEksAnywhereSubscription`.
+    /// Creates a new `DeleteEksAnywhereSubscriptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

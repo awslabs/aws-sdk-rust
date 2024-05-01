@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateTableObjectsFluentBuilder {
-    /// Creates a new `UpdateTableObjects`.
+    /// Creates a new `UpdateTableObjectsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

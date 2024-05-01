@@ -73,7 +73,7 @@ impl
     }
 }
 impl PutBucketCorsFluentBuilder {
-    /// Creates a new `PutBucketCors`.
+    /// Creates a new `PutBucketCorsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl SearchSystemTemplatesFluentBuilder {
-    /// Creates a new `SearchSystemTemplates`.
+    /// Creates a new `SearchSystemTemplatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

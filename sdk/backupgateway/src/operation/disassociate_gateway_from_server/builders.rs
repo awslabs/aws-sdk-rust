@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateGatewayFromServerFluentBuilder {
-    /// Creates a new `DisassociateGatewayFromServer`.
+    /// Creates a new `DisassociateGatewayFromServerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

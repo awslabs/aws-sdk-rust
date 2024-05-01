@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisableDomainTransferLockFluentBuilder {
-    /// Creates a new `DisableDomainTransferLock`.
+    /// Creates a new `DisableDomainTransferLockFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

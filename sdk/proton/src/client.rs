@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,74 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait until a Component is deployed. Use this after invoking CreateComponent or UpdateComponent
+    fn wait_until_component_deployed(&self) -> crate::waiters::component_deployed::ComponentDeployedFluentBuilder;
+    /// Wait until a Component is deleted. Use this after invoking DeleteComponent
+    fn wait_until_component_deleted(&self) -> crate::waiters::component_deleted::ComponentDeletedFluentBuilder;
+    /// Wait until an Environment is deployed. Use this after invoking CreateEnvironment or UpdateEnvironment
+    fn wait_until_environment_deployed(&self) -> crate::waiters::environment_deployed::EnvironmentDeployedFluentBuilder;
+    /// Wait until an EnvironmentTemplateVersion is registered. Use this after invoking CreateEnvironmentTemplateVersion
+    fn wait_until_environment_template_version_registered(
+        &self,
+    ) -> crate::waiters::environment_template_version_registered::EnvironmentTemplateVersionRegisteredFluentBuilder;
+    /// Wait until an Service has deployed its instances and possibly pipeline. Use this after invoking CreateService
+    fn wait_until_service_created(&self) -> crate::waiters::service_created::ServiceCreatedFluentBuilder;
+    /// Wait until a Service, its instances, and possibly pipeline have been deployed after UpdateService is invoked
+    fn wait_until_service_updated(&self) -> crate::waiters::service_updated::ServiceUpdatedFluentBuilder;
+    /// Wait until a Service, its instances, and possibly pipeline have been deleted after DeleteService is invoked
+    fn wait_until_service_deleted(&self) -> crate::waiters::service_deleted::ServiceDeletedFluentBuilder;
+    /// Wait until an ServicePipeline is deployed. Use this after invoking CreateService or UpdateServicePipeline
+    fn wait_until_service_pipeline_deployed(&self) -> crate::waiters::service_pipeline_deployed::ServicePipelineDeployedFluentBuilder;
+    /// Wait until a ServiceInstance is deployed. Use this after invoking CreateService or UpdateServiceInstance
+    fn wait_until_service_instance_deployed(&self) -> crate::waiters::service_instance_deployed::ServiceInstanceDeployedFluentBuilder;
+    /// Wait until a ServiceTemplateVersion is registered. Use this after invoking CreateServiceTemplateVersion
+    fn wait_until_service_template_version_registered(
+        &self,
+    ) -> crate::waiters::service_template_version_registered::ServiceTemplateVersionRegisteredFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_component_deployed(&self) -> crate::waiters::component_deployed::ComponentDeployedFluentBuilder {
+        crate::waiters::component_deployed::ComponentDeployedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_component_deleted(&self) -> crate::waiters::component_deleted::ComponentDeletedFluentBuilder {
+        crate::waiters::component_deleted::ComponentDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_environment_deployed(&self) -> crate::waiters::environment_deployed::EnvironmentDeployedFluentBuilder {
+        crate::waiters::environment_deployed::EnvironmentDeployedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_environment_template_version_registered(
+        &self,
+    ) -> crate::waiters::environment_template_version_registered::EnvironmentTemplateVersionRegisteredFluentBuilder {
+        crate::waiters::environment_template_version_registered::EnvironmentTemplateVersionRegisteredFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_service_created(&self) -> crate::waiters::service_created::ServiceCreatedFluentBuilder {
+        crate::waiters::service_created::ServiceCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_service_updated(&self) -> crate::waiters::service_updated::ServiceUpdatedFluentBuilder {
+        crate::waiters::service_updated::ServiceUpdatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_service_deleted(&self) -> crate::waiters::service_deleted::ServiceDeletedFluentBuilder {
+        crate::waiters::service_deleted::ServiceDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_service_pipeline_deployed(&self) -> crate::waiters::service_pipeline_deployed::ServicePipelineDeployedFluentBuilder {
+        crate::waiters::service_pipeline_deployed::ServicePipelineDeployedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_service_instance_deployed(&self) -> crate::waiters::service_instance_deployed::ServiceInstanceDeployedFluentBuilder {
+        crate::waiters::service_instance_deployed::ServiceInstanceDeployedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_service_template_version_registered(
+        &self,
+    ) -> crate::waiters::service_template_version_registered::ServiceTemplateVersionRegisteredFluentBuilder {
+        crate::waiters::service_template_version_registered::ServiceTemplateVersionRegisteredFluentBuilder::new(self.handle.clone())
     }
 }
 

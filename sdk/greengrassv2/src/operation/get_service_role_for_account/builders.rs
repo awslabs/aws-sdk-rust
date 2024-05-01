@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetServiceRoleForAccountFluentBuilder {
-    /// Creates a new `GetServiceRoleForAccount`.
+    /// Creates a new `GetServiceRoleForAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

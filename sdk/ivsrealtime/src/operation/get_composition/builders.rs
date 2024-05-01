@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCompositionFluentBuilder {
-    /// Creates a new `GetComposition`.
+    /// Creates a new `GetCompositionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeRaidArraysFluentBuilder {
-    /// Creates a new `DescribeRaidArrays`.
+    /// Creates a new `DescribeRaidArraysFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

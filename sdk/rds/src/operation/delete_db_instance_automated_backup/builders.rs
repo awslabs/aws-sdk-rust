@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDBInstanceAutomatedBackupFluentBuilder {
-    /// Creates a new `DeleteDBInstanceAutomatedBackup`.
+    /// Creates a new `DeleteDBInstanceAutomatedBackupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

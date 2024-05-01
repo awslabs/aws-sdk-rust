@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateFileSystemAliasesFluentBuilder {
-    /// Creates a new `AssociateFileSystemAliases`.
+    /// Creates a new `AssociateFileSystemAliasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -87,7 +87,7 @@ impl
     }
 }
 impl PutJobTaggingFluentBuilder {
-    /// Creates a new `PutJobTagging`.
+    /// Creates a new `PutJobTaggingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

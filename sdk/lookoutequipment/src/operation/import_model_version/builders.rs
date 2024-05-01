@@ -48,7 +48,7 @@ impl
     }
 }
 impl ImportModelVersionFluentBuilder {
-    /// Creates a new `ImportModelVersion`.
+    /// Creates a new `ImportModelVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

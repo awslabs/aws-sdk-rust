@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveLayerVersionPermissionFluentBuilder {
-    /// Creates a new `RemoveLayerVersionPermission`.
+    /// Creates a new `RemoveLayerVersionPermissionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDomainSuggestionsFluentBuilder {
-    /// Creates a new `GetDomainSuggestions`.
+    /// Creates a new `GetDomainSuggestionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

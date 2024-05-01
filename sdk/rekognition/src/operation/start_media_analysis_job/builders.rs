@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartMediaAnalysisJobFluentBuilder {
-    /// Creates a new `StartMediaAnalysisJob`.
+    /// Creates a new `StartMediaAnalysisJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMinuteUsageFluentBuilder {
-    /// Creates a new `GetMinuteUsage`.
+    /// Creates a new `GetMinuteUsageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

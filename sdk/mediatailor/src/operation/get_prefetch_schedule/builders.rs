@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetPrefetchScheduleFluentBuilder {
-    /// Creates a new `GetPrefetchSchedule`.
+    /// Creates a new `GetPrefetchScheduleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

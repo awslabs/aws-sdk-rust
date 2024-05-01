@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListResolversFluentBuilder {
-    /// Creates a new `ListResolvers`.
+    /// Creates a new `ListResolversFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

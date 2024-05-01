@@ -68,7 +68,7 @@ impl
     }
 }
 impl StartModelPackagingJobFluentBuilder {
-    /// Creates a new `StartModelPackagingJob`.
+    /// Creates a new `StartModelPackagingJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCoreDefinitionsFluentBuilder {
-    /// Creates a new `ListCoreDefinitions`.
+    /// Creates a new `ListCoreDefinitionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

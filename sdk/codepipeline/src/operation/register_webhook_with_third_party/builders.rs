@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterWebhookWithThirdPartyFluentBuilder {
-    /// Creates a new `RegisterWebhookWithThirdParty`.
+    /// Creates a new `RegisterWebhookWithThirdPartyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

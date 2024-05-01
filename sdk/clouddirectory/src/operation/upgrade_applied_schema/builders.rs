@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpgradeAppliedSchemaFluentBuilder {
-    /// Creates a new `UpgradeAppliedSchema`.
+    /// Creates a new `UpgradeAppliedSchemaFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

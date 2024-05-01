@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteDimensionFluentBuilder {
-    /// Creates a new `DeleteDimension`.
+    /// Creates a new `DeleteDimensionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

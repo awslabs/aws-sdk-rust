@@ -63,7 +63,7 @@ impl
     }
 }
 impl ListBucketIntelligentTieringConfigurationsFluentBuilder {
-    /// Creates a new `ListBucketIntelligentTieringConfigurations`.
+    /// Creates a new `ListBucketIntelligentTieringConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

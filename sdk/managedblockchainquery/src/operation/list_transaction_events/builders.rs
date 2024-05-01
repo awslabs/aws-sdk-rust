@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListTransactionEventsFluentBuilder {
-    /// Creates a new `ListTransactionEvents`.
+    /// Creates a new `ListTransactionEventsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

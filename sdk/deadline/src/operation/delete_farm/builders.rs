@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteFarmFluentBuilder {
-    /// Creates a new `DeleteFarm`.
+    /// Creates a new `DeleteFarmFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

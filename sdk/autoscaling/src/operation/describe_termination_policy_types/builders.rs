@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeTerminationPolicyTypesFluentBuilder {
-    /// Creates a new `DescribeTerminationPolicyTypes`.
+    /// Creates a new `DescribeTerminationPolicyTypesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

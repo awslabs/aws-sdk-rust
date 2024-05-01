@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeLoadBalancerPolicyTypesFluentBuilder {
-    /// Creates a new `DescribeLoadBalancerPolicyTypes`.
+    /// Creates a new `DescribeLoadBalancerPolicyTypesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

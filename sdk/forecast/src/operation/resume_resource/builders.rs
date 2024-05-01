@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResumeResourceFluentBuilder {
-    /// Creates a new `ResumeResource`.
+    /// Creates a new `ResumeResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

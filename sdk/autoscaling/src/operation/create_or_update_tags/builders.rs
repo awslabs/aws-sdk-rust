@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateOrUpdateTagsFluentBuilder {
-    /// Creates a new `CreateOrUpdateTags`.
+    /// Creates a new `CreateOrUpdateTagsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

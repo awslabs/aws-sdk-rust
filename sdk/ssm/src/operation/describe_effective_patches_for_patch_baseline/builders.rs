@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeEffectivePatchesForPatchBaselineFluentBuilder {
-    /// Creates a new `DescribeEffectivePatchesForPatchBaseline`.
+    /// Creates a new `DescribeEffectivePatchesForPatchBaselineFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

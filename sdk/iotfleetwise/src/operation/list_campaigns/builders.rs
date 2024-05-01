@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListCampaignsFluentBuilder {
-    /// Creates a new `ListCampaigns`.
+    /// Creates a new `ListCampaignsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

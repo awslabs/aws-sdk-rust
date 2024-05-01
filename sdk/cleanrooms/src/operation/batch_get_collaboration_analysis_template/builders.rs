@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetCollaborationAnalysisTemplateFluentBuilder {
-    /// Creates a new `BatchGetCollaborationAnalysisTemplate`.
+    /// Creates a new `BatchGetCollaborationAnalysisTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

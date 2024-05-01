@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCloudFrontOriginAccessIdentityFluentBuilder {
-    /// Creates a new `GetCloudFrontOriginAccessIdentity`.
+    /// Creates a new `GetCloudFrontOriginAccessIdentityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

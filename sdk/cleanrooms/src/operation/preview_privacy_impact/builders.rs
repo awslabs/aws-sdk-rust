@@ -48,7 +48,7 @@ impl
     }
 }
 impl PreviewPrivacyImpactFluentBuilder {
-    /// Creates a new `PreviewPrivacyImpact`.
+    /// Creates a new `PreviewPrivacyImpactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

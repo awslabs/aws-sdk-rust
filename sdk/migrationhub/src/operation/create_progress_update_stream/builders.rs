@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateProgressUpdateStreamFluentBuilder {
-    /// Creates a new `CreateProgressUpdateStream`.
+    /// Creates a new `CreateProgressUpdateStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

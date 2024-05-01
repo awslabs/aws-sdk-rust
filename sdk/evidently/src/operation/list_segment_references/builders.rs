@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSegmentReferencesFluentBuilder {
-    /// Creates a new `ListSegmentReferences`.
+    /// Creates a new `ListSegmentReferencesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

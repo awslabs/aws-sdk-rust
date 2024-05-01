@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSchemaFluentBuilder {
-    /// Creates a new `DeleteSchema`.
+    /// Creates a new `DeleteSchemaFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

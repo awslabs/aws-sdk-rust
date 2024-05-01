@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateUpdatedImageFluentBuilder {
-    /// Creates a new `CreateUpdatedImage`.
+    /// Creates a new `CreateUpdatedImageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

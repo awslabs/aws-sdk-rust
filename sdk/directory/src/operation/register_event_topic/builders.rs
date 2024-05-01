@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterEventTopicFluentBuilder {
-    /// Creates a new `RegisterEventTopic`.
+    /// Creates a new `RegisterEventTopicFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

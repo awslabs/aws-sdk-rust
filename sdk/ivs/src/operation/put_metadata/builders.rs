@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutMetadataFluentBuilder {
-    /// Creates a new `PutMetadata`.
+    /// Creates a new `PutMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

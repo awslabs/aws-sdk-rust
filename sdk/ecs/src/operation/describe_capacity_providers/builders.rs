@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeCapacityProvidersFluentBuilder {
-    /// Creates a new `DescribeCapacityProviders`.
+    /// Creates a new `DescribeCapacityProvidersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteApplicationAccessScopeFluentBuilder {
-    /// Creates a new `DeleteApplicationAccessScope`.
+    /// Creates a new `DeleteApplicationAccessScopeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

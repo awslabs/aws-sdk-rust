@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateSourceServersFluentBuilder {
-    /// Creates a new `AssociateSourceServers`.
+    /// Creates a new `AssociateSourceServersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

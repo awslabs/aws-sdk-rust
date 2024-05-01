@@ -54,7 +54,7 @@ impl
     }
 }
 impl CancelFlowExecutionsFluentBuilder {
-    /// Creates a new `CancelFlowExecutions`.
+    /// Creates a new `CancelFlowExecutionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

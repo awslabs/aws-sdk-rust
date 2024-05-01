@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListThemeAliasesFluentBuilder {
-    /// Creates a new `ListThemeAliases`.
+    /// Creates a new `ListThemeAliasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

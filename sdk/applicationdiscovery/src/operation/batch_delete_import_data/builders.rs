@@ -49,7 +49,7 @@ impl
     }
 }
 impl BatchDeleteImportDataFluentBuilder {
-    /// Creates a new `BatchDeleteImportData`.
+    /// Creates a new `BatchDeleteImportDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

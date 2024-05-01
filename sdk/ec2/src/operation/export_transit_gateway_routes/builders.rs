@@ -49,7 +49,7 @@ impl
     }
 }
 impl ExportTransitGatewayRoutesFluentBuilder {
-    /// Creates a new `ExportTransitGatewayRoutes`.
+    /// Creates a new `ExportTransitGatewayRoutesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

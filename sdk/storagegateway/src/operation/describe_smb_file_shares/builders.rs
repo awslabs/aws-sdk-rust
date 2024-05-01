@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeSMBFileSharesFluentBuilder {
-    /// Creates a new `DescribeSMBFileShares`.
+    /// Creates a new `DescribeSMBFileSharesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeStorageSystemFluentBuilder {
-    /// Creates a new `DescribeStorageSystem`.
+    /// Creates a new `DescribeStorageSystemFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

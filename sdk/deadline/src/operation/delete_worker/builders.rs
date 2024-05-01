@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteWorkerFluentBuilder {
-    /// Creates a new `DeleteWorker`.
+    /// Creates a new `DeleteWorkerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetLogGroupFieldsFluentBuilder {
-    /// Creates a new `GetLogGroupFields`.
+    /// Creates a new `GetLogGroupFieldsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

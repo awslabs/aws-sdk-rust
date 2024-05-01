@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateVPCAssociationAuthorizationFluentBuilder {
-    /// Creates a new `CreateVPCAssociationAuthorization`.
+    /// Creates a new `CreateVPCAssociationAuthorizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

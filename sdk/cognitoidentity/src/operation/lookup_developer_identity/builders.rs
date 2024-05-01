@@ -50,7 +50,7 @@ impl
     }
 }
 impl LookupDeveloperIdentityFluentBuilder {
-    /// Creates a new `LookupDeveloperIdentity`.
+    /// Creates a new `LookupDeveloperIdentityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

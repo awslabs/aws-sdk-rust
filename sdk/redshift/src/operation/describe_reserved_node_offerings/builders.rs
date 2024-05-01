@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeReservedNodeOfferingsFluentBuilder {
-    /// Creates a new `DescribeReservedNodeOfferings`.
+    /// Creates a new `DescribeReservedNodeOfferingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

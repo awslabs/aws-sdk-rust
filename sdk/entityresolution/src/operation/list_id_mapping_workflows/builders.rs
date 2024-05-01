@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListIdMappingWorkflowsFluentBuilder {
-    /// Creates a new `ListIdMappingWorkflows`.
+    /// Creates a new `ListIdMappingWorkflowsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

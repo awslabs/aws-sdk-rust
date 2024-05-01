@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCoreDefinitionVersionFluentBuilder {
-    /// Creates a new `GetCoreDefinitionVersion`.
+    /// Creates a new `GetCoreDefinitionVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

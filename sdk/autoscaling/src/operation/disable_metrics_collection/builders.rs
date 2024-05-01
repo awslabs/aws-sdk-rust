@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisableMetricsCollectionFluentBuilder {
-    /// Creates a new `DisableMetricsCollection`.
+    /// Creates a new `DisableMetricsCollectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

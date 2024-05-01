@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListHandshakesForAccountFluentBuilder {
-    /// Creates a new `ListHandshakesForAccount`.
+    /// Creates a new `ListHandshakesForAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

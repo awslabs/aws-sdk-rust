@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetManagedPrefixListAssociationsFluentBuilder {
-    /// Creates a new `GetManagedPrefixListAssociations`.
+    /// Creates a new `GetManagedPrefixListAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

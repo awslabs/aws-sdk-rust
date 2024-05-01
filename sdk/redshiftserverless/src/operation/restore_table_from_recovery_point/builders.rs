@@ -48,7 +48,7 @@ impl
     }
 }
 impl RestoreTableFromRecoveryPointFluentBuilder {
-    /// Creates a new `RestoreTableFromRecoveryPoint`.
+    /// Creates a new `RestoreTableFromRecoveryPointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

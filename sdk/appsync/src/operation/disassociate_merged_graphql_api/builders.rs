@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateMergedGraphqlApiFluentBuilder {
-    /// Creates a new `DisassociateMergedGraphqlApi`.
+    /// Creates a new `DisassociateMergedGraphqlApiFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

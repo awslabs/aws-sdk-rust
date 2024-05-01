@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::stop
     }
 }
 impl StopBuildFluentBuilder {
-    /// Creates a new `StopBuild`.
+    /// Creates a new `StopBuildFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

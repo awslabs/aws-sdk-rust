@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAccountCustomizationFluentBuilder {
-    /// Creates a new `DeleteAccountCustomization`.
+    /// Creates a new `DeleteAccountCustomizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

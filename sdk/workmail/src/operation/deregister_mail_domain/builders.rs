@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeregisterMailDomainFluentBuilder {
-    /// Creates a new `DeregisterMailDomain`.
+    /// Creates a new `DeregisterMailDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

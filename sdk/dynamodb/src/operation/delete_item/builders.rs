@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteItemFluentBuilder {
-    /// Creates a new `DeleteItem`.
+    /// Creates a new `DeleteItemFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

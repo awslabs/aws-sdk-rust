@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTableMetadataFluentBuilder {
-    /// Creates a new `ListTableMetadata`.
+    /// Creates a new `ListTableMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

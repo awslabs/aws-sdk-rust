@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListContactReferencesFluentBuilder {
-    /// Creates a new `ListContactReferences`.
+    /// Creates a new `ListContactReferencesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

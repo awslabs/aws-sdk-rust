@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopBuildBatchFluentBuilder {
-    /// Creates a new `StopBuildBatch`.
+    /// Creates a new `StopBuildBatchFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

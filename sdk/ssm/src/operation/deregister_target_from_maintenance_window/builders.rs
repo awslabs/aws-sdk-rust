@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeregisterTargetFromMaintenanceWindowFluentBuilder {
-    /// Creates a new `DeregisterTargetFromMaintenanceWindow`.
+    /// Creates a new `DeregisterTargetFromMaintenanceWindowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

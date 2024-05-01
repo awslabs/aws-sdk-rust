@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetGeoMatchSetFluentBuilder {
-    /// Creates a new `GetGeoMatchSet`.
+    /// Creates a new `GetGeoMatchSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetArchitectureRecommendationsFluentBuilder {
-    /// Creates a new `GetArchitectureRecommendations`.
+    /// Creates a new `GetArchitectureRecommendationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

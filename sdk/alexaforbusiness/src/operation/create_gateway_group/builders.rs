@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateGatewayGroupFluentBuilder {
-    /// Creates a new `CreateGatewayGroup`.
+    /// Creates a new `CreateGatewayGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

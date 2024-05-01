@@ -48,7 +48,7 @@ impl
     }
 }
 impl RestoreAnalysisFluentBuilder {
-    /// Creates a new `RestoreAnalysis`.
+    /// Creates a new `RestoreAnalysisFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateDatasourcePackagesFluentBuilder {
-    /// Creates a new `UpdateDatasourcePackages`.
+    /// Creates a new `UpdateDatasourcePackagesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

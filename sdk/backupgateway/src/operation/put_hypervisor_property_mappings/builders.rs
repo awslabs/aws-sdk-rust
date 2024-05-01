@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutHypervisorPropertyMappingsFluentBuilder {
-    /// Creates a new `PutHypervisorPropertyMappings`.
+    /// Creates a new `PutHypervisorPropertyMappingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

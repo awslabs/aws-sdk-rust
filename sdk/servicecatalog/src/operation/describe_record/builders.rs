@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeRecordFluentBuilder {
-    /// Creates a new `DescribeRecord`.
+    /// Creates a new `DescribeRecordFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

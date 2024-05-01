@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateLocalGatewayRouteTableVpcAssociationFluentBuilder {
-    /// Creates a new `CreateLocalGatewayRouteTableVpcAssociation`.
+    /// Creates a new `CreateLocalGatewayRouteTableVpcAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

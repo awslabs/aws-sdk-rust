@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteGroupPolicyFluentBuilder {
-    /// Creates a new `DeleteGroupPolicy`.
+    /// Creates a new `DeleteGroupPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

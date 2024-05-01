@@ -49,7 +49,7 @@ impl
     }
 }
 impl ResetConnectorMetadataCacheFluentBuilder {
-    /// Creates a new `ResetConnectorMetadataCache`.
+    /// Creates a new `ResetConnectorMetadataCacheFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

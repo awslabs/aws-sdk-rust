@@ -51,7 +51,7 @@ impl
     }
 }
 impl RegisterStreamConsumerFluentBuilder {
-    /// Creates a new `RegisterStreamConsumer`.
+    /// Creates a new `RegisterStreamConsumerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

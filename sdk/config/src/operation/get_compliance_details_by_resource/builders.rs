@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetComplianceDetailsByResourceFluentBuilder {
-    /// Creates a new `GetComplianceDetailsByResource`.
+    /// Creates a new `GetComplianceDetailsByResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

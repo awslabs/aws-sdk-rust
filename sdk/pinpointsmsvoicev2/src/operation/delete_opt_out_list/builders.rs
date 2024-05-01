@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteOptOutListFluentBuilder {
-    /// Creates a new `DeleteOptOutList`.
+    /// Creates a new `DeleteOptOutListFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

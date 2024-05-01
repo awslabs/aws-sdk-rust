@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetReviewTemplateLensReviewFluentBuilder {
-    /// Creates a new `GetReviewTemplateLensReview`.
+    /// Creates a new `GetReviewTemplateLensReviewFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

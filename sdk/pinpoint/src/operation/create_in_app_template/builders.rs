@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateInAppTemplateFluentBuilder {
-    /// Creates a new `CreateInAppTemplate`.
+    /// Creates a new `CreateInAppTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListIPSetsFluentBuilder {
-    /// Creates a new `ListIPSets`.
+    /// Creates a new `ListIPSetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

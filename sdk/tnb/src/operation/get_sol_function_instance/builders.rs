@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetSolFunctionInstanceFluentBuilder {
-    /// Creates a new `GetSolFunctionInstance`.
+    /// Creates a new `GetSolFunctionInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

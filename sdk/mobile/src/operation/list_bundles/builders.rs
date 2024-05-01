@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListBundlesFluentBuilder {
-    /// Creates a new `ListBundles`.
+    /// Creates a new `ListBundlesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

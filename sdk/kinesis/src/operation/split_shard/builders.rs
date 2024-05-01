@@ -59,7 +59,7 @@ impl
     }
 }
 impl SplitShardFluentBuilder {
-    /// Creates a new `SplitShard`.
+    /// Creates a new `SplitShardFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListRemoteAccessSessionsFluentBuilder {
-    /// Creates a new `ListRemoteAccessSessions`.
+    /// Creates a new `ListRemoteAccessSessionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

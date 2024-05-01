@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateDBSecurityGroupFluentBuilder {
-    /// Creates a new `CreateDBSecurityGroup`.
+    /// Creates a new `CreateDBSecurityGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

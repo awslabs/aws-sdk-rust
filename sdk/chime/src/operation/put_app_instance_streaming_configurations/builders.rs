@@ -52,7 +52,7 @@ impl
     }
 }
 impl PutAppInstanceStreamingConfigurationsFluentBuilder {
-    /// Creates a new `PutAppInstanceStreamingConfigurations`.
+    /// Creates a new `PutAppInstanceStreamingConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

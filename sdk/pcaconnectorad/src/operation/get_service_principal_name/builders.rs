@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetServicePrincipalNameFluentBuilder {
-    /// Creates a new `GetServicePrincipalName`.
+    /// Creates a new `GetServicePrincipalNameFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

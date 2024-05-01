@@ -48,7 +48,7 @@ impl
     }
 }
 impl AcceptEulasFluentBuilder {
-    /// Creates a new `AcceptEulas`.
+    /// Creates a new `AcceptEulasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

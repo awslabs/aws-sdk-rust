@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetDICOMImportJobFluentBuilder {
-    /// Creates a new `GetDICOMImportJob`.
+    /// Creates a new `GetDICOMImportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

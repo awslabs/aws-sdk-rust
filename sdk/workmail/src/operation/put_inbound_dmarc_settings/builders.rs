@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutInboundDmarcSettingsFluentBuilder {
-    /// Creates a new `PutInboundDmarcSettings`.
+    /// Creates a new `PutInboundDmarcSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -44,7 +44,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::sugg
     }
 }
 impl SuggestFluentBuilder {
-    /// Creates a new `Suggest`.
+    /// Creates a new `SuggestFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

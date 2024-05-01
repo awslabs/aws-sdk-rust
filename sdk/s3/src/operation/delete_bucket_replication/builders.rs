@@ -62,7 +62,7 @@ impl
     }
 }
 impl DeleteBucketReplicationFluentBuilder {
-    /// Creates a new `DeleteBucketReplication`.
+    /// Creates a new `DeleteBucketReplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

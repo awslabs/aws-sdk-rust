@@ -63,7 +63,7 @@ impl
     }
 }
 impl RequestCancelWorkflowExecutionFluentBuilder {
-    /// Creates a new `RequestCancelWorkflowExecution`.
+    /// Creates a new `RequestCancelWorkflowExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

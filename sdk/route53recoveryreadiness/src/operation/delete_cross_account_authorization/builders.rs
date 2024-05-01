@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCrossAccountAuthorizationFluentBuilder {
-    /// Creates a new `DeleteCrossAccountAuthorization`.
+    /// Creates a new `DeleteCrossAccountAuthorizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

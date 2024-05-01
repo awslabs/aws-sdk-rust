@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateEmailChannelFluentBuilder {
-    /// Creates a new `UpdateEmailChannel`.
+    /// Creates a new `UpdateEmailChannelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

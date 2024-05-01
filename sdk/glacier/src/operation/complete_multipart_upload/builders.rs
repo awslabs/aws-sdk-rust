@@ -53,7 +53,7 @@ impl
     }
 }
 impl CompleteMultipartUploadFluentBuilder {
-    /// Creates a new `CompleteMultipartUpload`.
+    /// Creates a new `CompleteMultipartUploadFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

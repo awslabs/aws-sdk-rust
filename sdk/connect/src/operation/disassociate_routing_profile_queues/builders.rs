@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateRoutingProfileQueuesFluentBuilder {
-    /// Creates a new `DisassociateRoutingProfileQueues`.
+    /// Creates a new `DisassociateRoutingProfileQueuesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

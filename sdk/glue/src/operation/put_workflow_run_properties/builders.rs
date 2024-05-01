@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutWorkflowRunPropertiesFluentBuilder {
-    /// Creates a new `PutWorkflowRunProperties`.
+    /// Creates a new `PutWorkflowRunPropertiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

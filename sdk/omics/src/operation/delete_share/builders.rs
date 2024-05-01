@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteShareFluentBuilder {
-    /// Creates a new `DeleteShare`.
+    /// Creates a new `DeleteShareFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutOriginEndpointPolicyFluentBuilder {
-    /// Creates a new `PutOriginEndpointPolicy`.
+    /// Creates a new `PutOriginEndpointPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

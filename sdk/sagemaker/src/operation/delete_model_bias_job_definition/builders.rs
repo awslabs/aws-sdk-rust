@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteModelBiasJobDefinitionFluentBuilder {
-    /// Creates a new `DeleteModelBiasJobDefinition`.
+    /// Creates a new `DeleteModelBiasJobDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

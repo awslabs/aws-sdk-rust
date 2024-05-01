@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeClientVpnAuthorizationRulesFluentBuilder {
-    /// Creates a new `DescribeClientVpnAuthorizationRules`.
+    /// Creates a new `DescribeClientVpnAuthorizationRulesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

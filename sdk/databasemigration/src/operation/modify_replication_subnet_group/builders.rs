@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyReplicationSubnetGroupFluentBuilder {
-    /// Creates a new `ModifyReplicationSubnetGroup`.
+    /// Creates a new `ModifyReplicationSubnetGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

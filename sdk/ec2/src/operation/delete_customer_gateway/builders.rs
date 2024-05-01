@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCustomerGatewayFluentBuilder {
-    /// Creates a new `DeleteCustomerGateway`.
+    /// Creates a new `DeleteCustomerGatewayFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

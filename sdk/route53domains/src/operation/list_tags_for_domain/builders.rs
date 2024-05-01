@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListTagsForDomainFluentBuilder {
-    /// Creates a new `ListTagsForDomain`.
+    /// Creates a new `ListTagsForDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl CreateAccessKeyFluentBuilder {
-    /// Creates a new `CreateAccessKey`.
+    /// Creates a new `CreateAccessKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

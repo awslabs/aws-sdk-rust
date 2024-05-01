@@ -50,7 +50,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::veri
     }
 }
 impl VerifyMacFluentBuilder {
-    /// Creates a new `VerifyMac`.
+    /// Creates a new `VerifyMacFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

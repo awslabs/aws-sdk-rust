@@ -51,7 +51,7 @@ impl
     }
 }
 impl StartDBInstanceFluentBuilder {
-    /// Creates a new `StartDBInstance`.
+    /// Creates a new `StartDBInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

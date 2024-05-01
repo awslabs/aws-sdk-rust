@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPageResolutionsFluentBuilder {
-    /// Creates a new `ListPageResolutions`.
+    /// Creates a new `ListPageResolutionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

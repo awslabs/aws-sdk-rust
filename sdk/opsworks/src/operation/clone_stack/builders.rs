@@ -49,7 +49,7 @@ impl
     }
 }
 impl CloneStackFluentBuilder {
-    /// Creates a new `CloneStack`.
+    /// Creates a new `CloneStackFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

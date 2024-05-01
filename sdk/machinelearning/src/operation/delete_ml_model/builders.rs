@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteMLModelFluentBuilder {
-    /// Creates a new `DeleteMLModel`.
+    /// Creates a new `DeleteMLModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

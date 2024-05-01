@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeFolderPermissionsFluentBuilder {
-    /// Creates a new `DescribeFolderPermissions`.
+    /// Creates a new `DescribeFolderPermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

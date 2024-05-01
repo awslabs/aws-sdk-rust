@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDeviceResourcesFluentBuilder {
-    /// Creates a new `ListDeviceResources`.
+    /// Creates a new `ListDeviceResourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

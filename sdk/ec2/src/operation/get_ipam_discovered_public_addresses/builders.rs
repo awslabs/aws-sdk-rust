@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetIpamDiscoveredPublicAddressesFluentBuilder {
-    /// Creates a new `GetIpamDiscoveredPublicAddresses`.
+    /// Creates a new `GetIpamDiscoveredPublicAddressesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

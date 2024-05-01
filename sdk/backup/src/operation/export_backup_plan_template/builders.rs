@@ -48,7 +48,7 @@ impl
     }
 }
 impl ExportBackupPlanTemplateFluentBuilder {
-    /// Creates a new `ExportBackupPlanTemplate`.
+    /// Creates a new `ExportBackupPlanTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

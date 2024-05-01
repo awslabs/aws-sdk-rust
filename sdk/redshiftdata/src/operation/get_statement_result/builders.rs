@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetStatementResultFluentBuilder {
-    /// Creates a new `GetStatementResult`.
+    /// Creates a new `GetStatementResultFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

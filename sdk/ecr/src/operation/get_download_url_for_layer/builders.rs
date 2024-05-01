@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetDownloadUrlForLayerFluentBuilder {
-    /// Creates a new `GetDownloadUrlForLayer`.
+    /// Creates a new `GetDownloadUrlForLayerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

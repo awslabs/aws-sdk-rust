@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelCommandFluentBuilder {
-    /// Creates a new `CancelCommand`.
+    /// Creates a new `CancelCommandFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

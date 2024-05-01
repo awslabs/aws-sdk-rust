@@ -53,7 +53,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::veri
     }
 }
 impl VerifyFluentBuilder {
-    /// Creates a new `Verify`.
+    /// Creates a new `VerifyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

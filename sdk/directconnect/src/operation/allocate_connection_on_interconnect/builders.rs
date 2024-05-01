@@ -53,7 +53,7 @@ impl
     }
 }
 impl AllocateConnectionOnInterconnectFluentBuilder {
-    /// Creates a new `AllocateConnectionOnInterconnect`.
+    /// Creates a new `AllocateConnectionOnInterconnectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMappingFluentBuilder {
-    /// Creates a new `GetMapping`.
+    /// Creates a new `GetMappingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

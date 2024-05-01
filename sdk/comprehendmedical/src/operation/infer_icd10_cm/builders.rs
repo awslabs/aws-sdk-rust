@@ -48,7 +48,7 @@ impl
     }
 }
 impl InferICD10CMFluentBuilder {
-    /// Creates a new `InferICD10CM`.
+    /// Creates a new `InferICD10CMFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

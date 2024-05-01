@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteProfileShareFluentBuilder {
-    /// Creates a new `DeleteProfileShare`.
+    /// Creates a new `DeleteProfileShareFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListHoursOfOperationsFluentBuilder {
-    /// Creates a new `ListHoursOfOperations`.
+    /// Creates a new `ListHoursOfOperationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

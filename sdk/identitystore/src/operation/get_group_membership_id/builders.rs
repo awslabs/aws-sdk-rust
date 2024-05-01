@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetGroupMembershipIdFluentBuilder {
-    /// Creates a new `GetGroupMembershipId`.
+    /// Creates a new `GetGroupMembershipIdFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

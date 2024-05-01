@@ -48,7 +48,7 @@ impl
     }
 }
 impl AddLFTagsToResourceFluentBuilder {
-    /// Creates a new `AddLFTagsToResource`.
+    /// Creates a new `AddLFTagsToResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

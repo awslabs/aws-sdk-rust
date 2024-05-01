@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateContactFlowMetadataFluentBuilder {
-    /// Creates a new `UpdateContactFlowMetadata`.
+    /// Creates a new `UpdateContactFlowMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

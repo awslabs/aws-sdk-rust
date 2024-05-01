@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteLogPatternFluentBuilder {
-    /// Creates a new `DeleteLogPattern`.
+    /// Creates a new `DeleteLogPatternFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

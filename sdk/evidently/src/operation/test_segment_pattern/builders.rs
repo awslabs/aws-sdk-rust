@@ -48,7 +48,7 @@ impl
     }
 }
 impl TestSegmentPatternFluentBuilder {
-    /// Creates a new `TestSegmentPattern`.
+    /// Creates a new `TestSegmentPatternFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

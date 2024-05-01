@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeWatchlistFluentBuilder {
-    /// Creates a new `DescribeWatchlist`.
+    /// Creates a new `DescribeWatchlistFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

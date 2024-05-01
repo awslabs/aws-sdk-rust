@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeDataRepositoryAssociationsFluentBuilder {
-    /// Creates a new `DescribeDataRepositoryAssociations`.
+    /// Creates a new `DescribeDataRepositoryAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl RemoveRoleFromInstanceProfileFluentBuilder {
-    /// Creates a new `RemoveRoleFromInstanceProfile`.
+    /// Creates a new `RemoveRoleFromInstanceProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

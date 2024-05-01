@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListApplicationAssociationsFluentBuilder {
-    /// Creates a new `ListApplicationAssociations`.
+    /// Creates a new `ListApplicationAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

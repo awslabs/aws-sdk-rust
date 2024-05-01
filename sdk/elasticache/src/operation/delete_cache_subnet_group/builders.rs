@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteCacheSubnetGroupFluentBuilder {
-    /// Creates a new `DeleteCacheSubnetGroup`.
+    /// Creates a new `DeleteCacheSubnetGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

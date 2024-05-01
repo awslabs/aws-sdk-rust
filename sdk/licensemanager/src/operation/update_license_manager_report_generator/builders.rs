@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateLicenseManagerReportGeneratorFluentBuilder {
-    /// Creates a new `UpdateLicenseManagerReportGenerator`.
+    /// Creates a new `UpdateLicenseManagerReportGeneratorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

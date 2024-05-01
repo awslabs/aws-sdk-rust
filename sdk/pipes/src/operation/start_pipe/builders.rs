@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::star
     }
 }
 impl StartPipeFluentBuilder {
-    /// Creates a new `StartPipe`.
+    /// Creates a new `StartPipeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

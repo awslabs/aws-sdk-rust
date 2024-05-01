@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateBaiduChannelFluentBuilder {
-    /// Creates a new `UpdateBaiduChannel`.
+    /// Creates a new `UpdateBaiduChannelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

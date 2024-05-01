@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDataLakeOrganizationConfigurationFluentBuilder {
-    /// Creates a new `DeleteDataLakeOrganizationConfiguration`.
+    /// Creates a new `DeleteDataLakeOrganizationConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

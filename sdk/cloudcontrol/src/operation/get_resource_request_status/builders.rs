@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetResourceRequestStatusFluentBuilder {
-    /// Creates a new `GetResourceRequestStatus`.
+    /// Creates a new `GetResourceRequestStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

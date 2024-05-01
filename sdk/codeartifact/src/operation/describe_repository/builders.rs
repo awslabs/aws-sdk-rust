@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeRepositoryFluentBuilder {
-    /// Creates a new `DescribeRepository`.
+    /// Creates a new `DescribeRepositoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

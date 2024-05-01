@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetOpsItemFluentBuilder {
-    /// Creates a new `GetOpsItem`.
+    /// Creates a new `GetOpsItemFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -53,7 +53,7 @@ impl
     }
 }
 impl PushDomainFluentBuilder {
-    /// Creates a new `PushDomain`.
+    /// Creates a new `PushDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

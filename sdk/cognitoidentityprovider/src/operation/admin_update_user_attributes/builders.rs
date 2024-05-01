@@ -63,7 +63,7 @@ impl
     }
 }
 impl AdminUpdateUserAttributesFluentBuilder {
-    /// Creates a new `AdminUpdateUserAttributes`.
+    /// Creates a new `AdminUpdateUserAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

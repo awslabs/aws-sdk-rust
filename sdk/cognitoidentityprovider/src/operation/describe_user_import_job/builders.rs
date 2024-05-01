@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeUserImportJobFluentBuilder {
-    /// Creates a new `DescribeUserImportJob`.
+    /// Creates a new `DescribeUserImportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

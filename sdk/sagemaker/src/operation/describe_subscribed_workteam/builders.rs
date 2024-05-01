@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeSubscribedWorkteamFluentBuilder {
-    /// Creates a new `DescribeSubscribedWorkteam`.
+    /// Creates a new `DescribeSubscribedWorkteamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRegistryFluentBuilder {
-    /// Creates a new `GetRegistry`.
+    /// Creates a new `GetRegistryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

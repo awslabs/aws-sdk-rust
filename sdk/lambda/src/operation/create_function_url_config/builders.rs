@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateFunctionUrlConfigFluentBuilder {
-    /// Creates a new `CreateFunctionUrlConfig`.
+    /// Creates a new `CreateFunctionUrlConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -47,7 +47,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::sign
     }
 }
 impl SignUpFluentBuilder {
-    /// Creates a new `SignUp`.
+    /// Creates a new `SignUpFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

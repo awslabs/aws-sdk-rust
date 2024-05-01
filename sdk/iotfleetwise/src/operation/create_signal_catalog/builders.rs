@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateSignalCatalogFluentBuilder {
-    /// Creates a new `CreateSignalCatalog`.
+    /// Creates a new `CreateSignalCatalogFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

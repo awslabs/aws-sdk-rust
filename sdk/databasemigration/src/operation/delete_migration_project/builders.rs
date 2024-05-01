@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteMigrationProjectFluentBuilder {
-    /// Creates a new `DeleteMigrationProject`.
+    /// Creates a new `DeleteMigrationProjectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

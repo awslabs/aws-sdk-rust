@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDbParameterGroupFluentBuilder {
-    /// Creates a new `GetDbParameterGroup`.
+    /// Creates a new `GetDbParameterGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

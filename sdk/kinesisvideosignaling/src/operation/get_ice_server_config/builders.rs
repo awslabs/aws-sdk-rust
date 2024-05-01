@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetIceServerConfigFluentBuilder {
-    /// Creates a new `GetIceServerConfig`.
+    /// Creates a new `GetIceServerConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

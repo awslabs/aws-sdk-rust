@@ -62,7 +62,7 @@ impl
     }
 }
 impl StartDirectoryListingFluentBuilder {
-    /// Creates a new `StartDirectoryListing`.
+    /// Creates a new `StartDirectoryListingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

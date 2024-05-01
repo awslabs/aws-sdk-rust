@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTrustStoreAssociationsFluentBuilder {
-    /// Creates a new `DescribeTrustStoreAssociations`.
+    /// Creates a new `DescribeTrustStoreAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

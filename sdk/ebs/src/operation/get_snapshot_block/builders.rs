@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetSnapshotBlockFluentBuilder {
-    /// Creates a new `GetSnapshotBlock`.
+    /// Creates a new `GetSnapshotBlockFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

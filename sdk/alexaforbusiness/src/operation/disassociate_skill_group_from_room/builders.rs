@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateSkillGroupFromRoomFluentBuilder {
-    /// Creates a new `DisassociateSkillGroupFromRoom`.
+    /// Creates a new `DisassociateSkillGroupFromRoomFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

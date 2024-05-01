@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeCustomPluginFluentBuilder {
-    /// Creates a new `DescribeCustomPlugin`.
+    /// Creates a new `DescribeCustomPluginFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

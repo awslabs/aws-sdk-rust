@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetECSServiceRecommendationProjectedMetricsFluentBuilder {
-    /// Creates a new `GetECSServiceRecommendationProjectedMetrics`.
+    /// Creates a new `GetECSServiceRecommendationProjectedMetricsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeHsmFluentBuilder {
-    /// Creates a new `DescribeHsm`.
+    /// Creates a new `DescribeHsmFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

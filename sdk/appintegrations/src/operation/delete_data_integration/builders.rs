@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteDataIntegrationFluentBuilder {
-    /// Creates a new `DeleteDataIntegration`.
+    /// Creates a new `DeleteDataIntegrationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

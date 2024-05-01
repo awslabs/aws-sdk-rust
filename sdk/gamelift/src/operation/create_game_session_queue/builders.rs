@@ -57,7 +57,7 @@ impl
     }
 }
 impl CreateGameSessionQueueFluentBuilder {
-    /// Creates a new `CreateGameSessionQueue`.
+    /// Creates a new `CreateGameSessionQueueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

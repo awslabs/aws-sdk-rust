@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisconnectUserFluentBuilder {
-    /// Creates a new `DisconnectUser`.
+    /// Creates a new `DisconnectUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateVirtualMFADeviceFluentBuilder {
-    /// Creates a new `CreateVirtualMFADevice`.
+    /// Creates a new `CreateVirtualMFADeviceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -70,7 +70,7 @@ impl
     }
 }
 impl ListRelatedResourcesForAuditFindingFluentBuilder {
-    /// Creates a new `ListRelatedResourcesForAuditFinding`.
+    /// Creates a new `ListRelatedResourcesForAuditFindingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

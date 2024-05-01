@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetFreeTierUsageFluentBuilder {
-    /// Creates a new `GetFreeTierUsage`.
+    /// Creates a new `GetFreeTierUsageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

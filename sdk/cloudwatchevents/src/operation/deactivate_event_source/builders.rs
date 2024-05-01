@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeactivateEventSourceFluentBuilder {
-    /// Creates a new `DeactivateEventSource`.
+    /// Creates a new `DeactivateEventSourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

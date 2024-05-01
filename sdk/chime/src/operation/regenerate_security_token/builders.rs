@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegenerateSecurityTokenFluentBuilder {
-    /// Creates a new `RegenerateSecurityToken`.
+    /// Creates a new `RegenerateSecurityTokenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeFleetInstancesFluentBuilder {
-    /// Creates a new `DescribeFleetInstances`.
+    /// Creates a new `DescribeFleetInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

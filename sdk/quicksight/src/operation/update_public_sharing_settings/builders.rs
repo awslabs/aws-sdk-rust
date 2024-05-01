@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdatePublicSharingSettingsFluentBuilder {
-    /// Creates a new `UpdatePublicSharingSettings`.
+    /// Creates a new `UpdatePublicSharingSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

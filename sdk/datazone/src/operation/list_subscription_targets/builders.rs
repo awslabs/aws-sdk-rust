@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSubscriptionTargetsFluentBuilder {
-    /// Creates a new `ListSubscriptionTargets`.
+    /// Creates a new `ListSubscriptionTargetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

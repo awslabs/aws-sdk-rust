@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateBatchLoadTaskFluentBuilder {
-    /// Creates a new `CreateBatchLoadTask`.
+    /// Creates a new `CreateBatchLoadTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

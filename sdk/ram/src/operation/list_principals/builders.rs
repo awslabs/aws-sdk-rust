@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPrincipalsFluentBuilder {
-    /// Creates a new `ListPrincipals`.
+    /// Creates a new `ListPrincipalsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

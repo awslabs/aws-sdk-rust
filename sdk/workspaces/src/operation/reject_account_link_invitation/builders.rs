@@ -48,7 +48,7 @@ impl
     }
 }
 impl RejectAccountLinkInvitationFluentBuilder {
-    /// Creates a new `RejectAccountLinkInvitation`.
+    /// Creates a new `RejectAccountLinkInvitationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

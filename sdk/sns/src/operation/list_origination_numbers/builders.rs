@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListOriginationNumbersFluentBuilder {
-    /// Creates a new `ListOriginationNumbers`.
+    /// Creates a new `ListOriginationNumbersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

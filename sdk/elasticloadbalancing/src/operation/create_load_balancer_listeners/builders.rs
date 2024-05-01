@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateLoadBalancerListenersFluentBuilder {
-    /// Creates a new `CreateLoadBalancerListeners`.
+    /// Creates a new `CreateLoadBalancerListenersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

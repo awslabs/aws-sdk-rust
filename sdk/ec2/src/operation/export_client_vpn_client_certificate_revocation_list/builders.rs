@@ -49,7 +49,7 @@ impl
     }
 }
 impl ExportClientVpnClientCertificateRevocationListFluentBuilder {
-    /// Creates a new `ExportClientVpnClientCertificateRevocationList`.
+    /// Creates a new `ExportClientVpnClientCertificateRevocationListFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateBrowserSettingsFluentBuilder {
-    /// Creates a new `UpdateBrowserSettings`.
+    /// Creates a new `UpdateBrowserSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

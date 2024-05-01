@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListVPCEConfigurationsFluentBuilder {
-    /// Creates a new `ListVPCEConfigurations`.
+    /// Creates a new `ListVPCEConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

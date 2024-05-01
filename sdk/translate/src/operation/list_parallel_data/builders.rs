@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListParallelDataFluentBuilder {
-    /// Creates a new `ListParallelData`.
+    /// Creates a new `ListParallelDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

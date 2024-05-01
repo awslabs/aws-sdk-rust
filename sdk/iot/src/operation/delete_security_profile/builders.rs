@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteSecurityProfileFluentBuilder {
-    /// Creates a new `DeleteSecurityProfile`.
+    /// Creates a new `DeleteSecurityProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

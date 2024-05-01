@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteEntityRecognizerFluentBuilder {
-    /// Creates a new `DeleteEntityRecognizer`.
+    /// Creates a new `DeleteEntityRecognizerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

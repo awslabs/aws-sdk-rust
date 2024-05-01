@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListUserProficienciesFluentBuilder {
-    /// Creates a new `ListUserProficiencies`.
+    /// Creates a new `ListUserProficienciesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSubscriptionDefinitionVersionFluentBuilder {
-    /// Creates a new `GetSubscriptionDefinitionVersion`.
+    /// Creates a new `GetSubscriptionDefinitionVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

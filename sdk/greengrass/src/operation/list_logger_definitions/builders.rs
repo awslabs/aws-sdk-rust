@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListLoggerDefinitionsFluentBuilder {
-    /// Creates a new `ListLoggerDefinitions`.
+    /// Creates a new `ListLoggerDefinitionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

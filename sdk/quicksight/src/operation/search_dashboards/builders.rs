@@ -50,7 +50,7 @@ impl
     }
 }
 impl SearchDashboardsFluentBuilder {
-    /// Creates a new `SearchDashboards`.
+    /// Creates a new `SearchDashboardsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

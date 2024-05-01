@@ -111,7 +111,7 @@ impl
     }
 }
 impl DescribePatchPropertiesFluentBuilder {
-    /// Creates a new `DescribePatchProperties`.
+    /// Creates a new `DescribePatchPropertiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

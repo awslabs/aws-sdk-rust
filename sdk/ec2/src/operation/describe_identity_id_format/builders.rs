@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeIdentityIdFormatFluentBuilder {
-    /// Creates a new `DescribeIdentityIdFormat`.
+    /// Creates a new `DescribeIdentityIdFormatFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl SearchRelatedItemsFluentBuilder {
-    /// Creates a new `SearchRelatedItems`.
+    /// Creates a new `SearchRelatedItemsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

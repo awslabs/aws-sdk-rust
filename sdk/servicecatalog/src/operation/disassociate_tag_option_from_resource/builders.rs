@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateTagOptionFromResourceFluentBuilder {
-    /// Creates a new `DisassociateTagOptionFromResource`.
+    /// Creates a new `DisassociateTagOptionFromResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

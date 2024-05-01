@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeVpcConnectorFluentBuilder {
-    /// Creates a new `DescribeVpcConnector`.
+    /// Creates a new `DescribeVpcConnectorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

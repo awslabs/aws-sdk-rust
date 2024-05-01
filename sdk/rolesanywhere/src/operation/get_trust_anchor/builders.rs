@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetTrustAnchorFluentBuilder {
-    /// Creates a new `GetTrustAnchor`.
+    /// Creates a new `GetTrustAnchorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

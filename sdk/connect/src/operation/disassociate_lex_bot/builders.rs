@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateLexBotFluentBuilder {
-    /// Creates a new `DisassociateLexBot`.
+    /// Creates a new `DisassociateLexBotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

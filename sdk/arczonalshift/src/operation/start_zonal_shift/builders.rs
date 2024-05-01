@@ -51,7 +51,7 @@ impl
     }
 }
 impl StartZonalShiftFluentBuilder {
-    /// Creates a new `StartZonalShift`.
+    /// Creates a new `StartZonalShiftFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

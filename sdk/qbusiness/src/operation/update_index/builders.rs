@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateIndexFluentBuilder {
-    /// Creates a new `UpdateIndex`.
+    /// Creates a new `UpdateIndexFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

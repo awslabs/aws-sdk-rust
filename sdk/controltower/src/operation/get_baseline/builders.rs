@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetBaselineFluentBuilder {
-    /// Creates a new `GetBaseline`.
+    /// Creates a new `GetBaselineFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

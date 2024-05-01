@@ -49,7 +49,7 @@ impl
     }
 }
 impl SetDefaultAuthorizerFluentBuilder {
-    /// Creates a new `SetDefaultAuthorizer`.
+    /// Creates a new `SetDefaultAuthorizerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

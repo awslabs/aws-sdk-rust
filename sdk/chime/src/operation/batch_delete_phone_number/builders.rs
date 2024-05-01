@@ -49,7 +49,7 @@ impl
     }
 }
 impl BatchDeletePhoneNumberFluentBuilder {
-    /// Creates a new `BatchDeletePhoneNumber`.
+    /// Creates a new `BatchDeletePhoneNumberFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

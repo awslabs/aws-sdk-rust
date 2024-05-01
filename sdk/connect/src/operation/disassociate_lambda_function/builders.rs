@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateLambdaFunctionFluentBuilder {
-    /// Creates a new `DisassociateLambdaFunction`.
+    /// Creates a new `DisassociateLambdaFunctionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

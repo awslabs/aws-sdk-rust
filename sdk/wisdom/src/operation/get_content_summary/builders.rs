@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetContentSummaryFluentBuilder {
-    /// Creates a new `GetContentSummary`.
+    /// Creates a new `GetContentSummaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

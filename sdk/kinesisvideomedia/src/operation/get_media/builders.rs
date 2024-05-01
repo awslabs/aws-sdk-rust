@@ -62,7 +62,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::get_
     }
 }
 impl GetMediaFluentBuilder {
-    /// Creates a new `GetMedia`.
+    /// Creates a new `GetMediaFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

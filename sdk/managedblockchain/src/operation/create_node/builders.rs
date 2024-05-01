@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateNodeFluentBuilder {
-    /// Creates a new `CreateNode`.
+    /// Creates a new `CreateNodeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

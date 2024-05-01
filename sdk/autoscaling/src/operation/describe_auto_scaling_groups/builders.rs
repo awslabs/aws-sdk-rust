@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeAutoScalingGroupsFluentBuilder {
-    /// Creates a new `DescribeAutoScalingGroups`.
+    /// Creates a new `DescribeAutoScalingGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

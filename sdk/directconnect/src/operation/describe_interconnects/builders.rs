@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeInterconnectsFluentBuilder {
-    /// Creates a new `DescribeInterconnects`.
+    /// Creates a new `DescribeInterconnectsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

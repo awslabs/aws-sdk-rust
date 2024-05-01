@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateCapacityProviderFluentBuilder {
-    /// Creates a new `UpdateCapacityProvider`.
+    /// Creates a new `UpdateCapacityProviderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

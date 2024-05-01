@@ -53,7 +53,7 @@ impl
     }
 }
 impl ModifySpotFleetRequestFluentBuilder {
-    /// Creates a new `ModifySpotFleetRequest`.
+    /// Creates a new `ModifySpotFleetRequestFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

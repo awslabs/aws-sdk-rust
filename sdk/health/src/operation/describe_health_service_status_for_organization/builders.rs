@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeHealthServiceStatusForOrganizationFluentBuilder {
-    /// Creates a new `DescribeHealthServiceStatusForOrganization`.
+    /// Creates a new `DescribeHealthServiceStatusForOrganizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

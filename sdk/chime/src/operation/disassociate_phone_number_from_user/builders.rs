@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociatePhoneNumberFromUserFluentBuilder {
-    /// Creates a new `DisassociatePhoneNumberFromUser`.
+    /// Creates a new `DisassociatePhoneNumberFromUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

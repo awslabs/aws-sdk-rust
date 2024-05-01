@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateIpAccessSettingsFluentBuilder {
-    /// Creates a new `DisassociateIpAccessSettings`.
+    /// Creates a new `DisassociateIpAccessSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

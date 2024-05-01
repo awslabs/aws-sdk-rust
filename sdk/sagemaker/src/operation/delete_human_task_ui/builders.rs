@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteHumanTaskUiFluentBuilder {
-    /// Creates a new `DeleteHumanTaskUi`.
+    /// Creates a new `DeleteHumanTaskUiFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

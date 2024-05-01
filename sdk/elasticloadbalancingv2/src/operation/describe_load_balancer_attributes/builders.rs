@@ -57,7 +57,7 @@ impl
     }
 }
 impl DescribeLoadBalancerAttributesFluentBuilder {
-    /// Creates a new `DescribeLoadBalancerAttributes`.
+    /// Creates a new `DescribeLoadBalancerAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

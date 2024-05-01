@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopICD10CMInferenceJobFluentBuilder {
-    /// Creates a new `StopICD10CMInferenceJob`.
+    /// Creates a new `StopICD10CMInferenceJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

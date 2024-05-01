@@ -60,7 +60,7 @@ impl
     }
 }
 impl DeleteObjectTaggingFluentBuilder {
-    /// Creates a new `DeleteObjectTagging`.
+    /// Creates a new `DeleteObjectTaggingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

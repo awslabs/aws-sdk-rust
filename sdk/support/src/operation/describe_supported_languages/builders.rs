@@ -55,7 +55,7 @@ impl
     }
 }
 impl DescribeSupportedLanguagesFluentBuilder {
-    /// Creates a new `DescribeSupportedLanguages`.
+    /// Creates a new `DescribeSupportedLanguagesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

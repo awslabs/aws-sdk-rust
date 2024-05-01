@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribePlacementGroupsFluentBuilder {
-    /// Creates a new `DescribePlacementGroups`.
+    /// Creates a new `DescribePlacementGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

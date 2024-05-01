@@ -49,7 +49,7 @@ impl
     }
 }
 impl ModifyDBSnapshotFluentBuilder {
-    /// Creates a new `ModifyDBSnapshot`.
+    /// Creates a new `ModifyDBSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

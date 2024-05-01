@@ -60,7 +60,7 @@ impl
     }
 }
 impl DeleteBucketCorsFluentBuilder {
-    /// Creates a new `DeleteBucketCors`.
+    /// Creates a new `DeleteBucketCorsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

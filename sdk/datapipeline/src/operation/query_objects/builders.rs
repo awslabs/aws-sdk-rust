@@ -55,7 +55,7 @@ impl
     }
 }
 impl QueryObjectsFluentBuilder {
-    /// Creates a new `QueryObjects`.
+    /// Creates a new `QueryObjectsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeVolumeAttributeFluentBuilder {
-    /// Creates a new `DescribeVolumeAttribute`.
+    /// Creates a new `DescribeVolumeAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

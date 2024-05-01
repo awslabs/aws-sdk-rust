@@ -51,7 +51,7 @@ impl
     }
 }
 impl SetUserMFAPreferenceFluentBuilder {
-    /// Creates a new `SetUserMFAPreference`.
+    /// Creates a new `SetUserMFAPreferenceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -45,7 +45,7 @@ impl
     }
 }
 impl GetApiKeyFluentBuilder {
-    /// Creates a new `GetApiKey`.
+    /// Creates a new `GetApiKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

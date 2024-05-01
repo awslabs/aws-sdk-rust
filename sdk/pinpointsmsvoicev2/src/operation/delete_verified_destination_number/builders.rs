@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteVerifiedDestinationNumberFluentBuilder {
-    /// Creates a new `DeleteVerifiedDestinationNumber`.
+    /// Creates a new `DeleteVerifiedDestinationNumberFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

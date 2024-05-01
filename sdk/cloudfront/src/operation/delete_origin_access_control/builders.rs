@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteOriginAccessControlFluentBuilder {
-    /// Creates a new `DeleteOriginAccessControl`.
+    /// Creates a new `DeleteOriginAccessControlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

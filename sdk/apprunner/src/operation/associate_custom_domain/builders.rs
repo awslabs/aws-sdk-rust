@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateCustomDomainFluentBuilder {
-    /// Creates a new `AssociateCustomDomain`.
+    /// Creates a new `AssociateCustomDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

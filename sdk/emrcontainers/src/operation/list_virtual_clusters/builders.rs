@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListVirtualClustersFluentBuilder {
-    /// Creates a new `ListVirtualClusters`.
+    /// Creates a new `ListVirtualClustersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

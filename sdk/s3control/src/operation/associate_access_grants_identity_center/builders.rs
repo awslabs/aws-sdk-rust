@@ -62,7 +62,7 @@ impl
     }
 }
 impl AssociateAccessGrantsIdentityCenterFluentBuilder {
-    /// Creates a new `AssociateAccessGrantsIdentityCenter`.
+    /// Creates a new `AssociateAccessGrantsIdentityCenterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -69,7 +69,7 @@ impl
     }
 }
 impl RotateKeyOnDemandFluentBuilder {
-    /// Creates a new `RotateKeyOnDemand`.
+    /// Creates a new `RotateKeyOnDemandFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

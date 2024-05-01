@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResetEnabledBaselineFluentBuilder {
-    /// Creates a new `ResetEnabledBaseline`.
+    /// Creates a new `ResetEnabledBaselineFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

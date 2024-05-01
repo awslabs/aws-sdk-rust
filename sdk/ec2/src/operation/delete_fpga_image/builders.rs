@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteFpgaImageFluentBuilder {
-    /// Creates a new `DeleteFpgaImage`.
+    /// Creates a new `DeleteFpgaImageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

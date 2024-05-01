@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTableRestoreStatusFluentBuilder {
-    /// Creates a new `DescribeTableRestoreStatus`.
+    /// Creates a new `DescribeTableRestoreStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

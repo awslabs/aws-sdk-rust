@@ -52,7 +52,7 @@ impl
     }
 }
 impl EnableAWSServiceAccessFluentBuilder {
-    /// Creates a new `EnableAWSServiceAccess`.
+    /// Creates a new `EnableAWSServiceAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteEnvironmentConfigurationFluentBuilder {
-    /// Creates a new `DeleteEnvironmentConfiguration`.
+    /// Creates a new `DeleteEnvironmentConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

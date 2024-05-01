@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeCustomRoutingEndpointGroupFluentBuilder {
-    /// Creates a new `DescribeCustomRoutingEndpointGroup`.
+    /// Creates a new `DescribeCustomRoutingEndpointGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

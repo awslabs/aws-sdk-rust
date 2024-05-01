@@ -59,7 +59,7 @@ impl
     }
 }
 impl CreateAppInstanceAdminFluentBuilder {
-    /// Creates a new `CreateAppInstanceAdmin`.
+    /// Creates a new `CreateAppInstanceAdminFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

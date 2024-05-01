@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelExportJobFluentBuilder {
-    /// Creates a new `CancelExportJob`.
+    /// Creates a new `CancelExportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

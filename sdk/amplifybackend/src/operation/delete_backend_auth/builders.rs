@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteBackendAuthFluentBuilder {
-    /// Creates a new `DeleteBackendAuth`.
+    /// Creates a new `DeleteBackendAuthFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

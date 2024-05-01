@@ -52,7 +52,7 @@ impl
     }
 }
 impl SendContactMethodVerificationFluentBuilder {
-    /// Creates a new `SendContactMethodVerification`.
+    /// Creates a new `SendContactMethodVerificationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

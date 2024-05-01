@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateAgentStatusFluentBuilder {
-    /// Creates a new `CreateAgentStatus`.
+    /// Creates a new `CreateAgentStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

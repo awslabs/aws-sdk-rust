@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMapSpritesFluentBuilder {
-    /// Creates a new `GetMapSprites`.
+    /// Creates a new `GetMapSpritesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

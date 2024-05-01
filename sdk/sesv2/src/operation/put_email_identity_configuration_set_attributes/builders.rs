@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutEmailIdentityConfigurationSetAttributesFluentBuilder {
-    /// Creates a new `PutEmailIdentityConfigurationSetAttributes`.
+    /// Creates a new `PutEmailIdentityConfigurationSetAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopSourceNetworkReplicationFluentBuilder {
-    /// Creates a new `StopSourceNetworkReplication`.
+    /// Creates a new `StopSourceNetworkReplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

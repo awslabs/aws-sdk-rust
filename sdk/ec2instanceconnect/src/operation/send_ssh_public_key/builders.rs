@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendSSHPublicKeyFluentBuilder {
-    /// Creates a new `SendSSHPublicKey`.
+    /// Creates a new `SendSSHPublicKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

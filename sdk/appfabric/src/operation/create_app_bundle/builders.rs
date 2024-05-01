@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAppBundleFluentBuilder {
-    /// Creates a new `CreateAppBundle`.
+    /// Creates a new `CreateAppBundleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

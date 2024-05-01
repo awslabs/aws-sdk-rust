@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetAutomationRulesFluentBuilder {
-    /// Creates a new `BatchGetAutomationRules`.
+    /// Creates a new `BatchGetAutomationRulesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

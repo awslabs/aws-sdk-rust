@@ -48,7 +48,7 @@ impl
     }
 }
 impl ImportDocumentationPartsFluentBuilder {
-    /// Creates a new `ImportDocumentationParts`.
+    /// Creates a new `ImportDocumentationPartsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

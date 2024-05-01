@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResetEncryptionKeyFluentBuilder {
-    /// Creates a new `ResetEncryptionKey`.
+    /// Creates a new `ResetEncryptionKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveProfilePermissionFluentBuilder {
-    /// Creates a new `RemoveProfilePermission`.
+    /// Creates a new `RemoveProfilePermissionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

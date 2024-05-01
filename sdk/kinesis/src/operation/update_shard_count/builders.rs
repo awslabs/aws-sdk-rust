@@ -71,7 +71,7 @@ impl
     }
 }
 impl UpdateShardCountFluentBuilder {
-    /// Creates a new `UpdateShardCount`.
+    /// Creates a new `UpdateShardCountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

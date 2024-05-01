@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribePortfolioShareStatusFluentBuilder {
-    /// Creates a new `DescribePortfolioShareStatus`.
+    /// Creates a new `DescribePortfolioShareStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

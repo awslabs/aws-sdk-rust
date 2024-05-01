@@ -51,7 +51,7 @@ impl
     }
 }
 impl RegisterContainerInstanceFluentBuilder {
-    /// Creates a new `RegisterContainerInstance`.
+    /// Creates a new `RegisterContainerInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteKeyGroupFluentBuilder {
-    /// Creates a new `DeleteKeyGroup`.
+    /// Creates a new `DeleteKeyGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

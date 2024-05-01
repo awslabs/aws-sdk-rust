@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeStackResourceDriftsFluentBuilder {
-    /// Creates a new `DescribeStackResourceDrifts`.
+    /// Creates a new `DescribeStackResourceDriftsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

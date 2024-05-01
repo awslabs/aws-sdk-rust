@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDeleteUniqueIdFluentBuilder {
-    /// Creates a new `BatchDeleteUniqueId`.
+    /// Creates a new `BatchDeleteUniqueIdFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateOpsItemRelatedItemFluentBuilder {
-    /// Creates a new `DisassociateOpsItemRelatedItem`.
+    /// Creates a new `DisassociateOpsItemRelatedItemFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl AddApplicationInputProcessingConfigurationFluentBuilder {
-    /// Creates a new `AddApplicationInputProcessingConfiguration`.
+    /// Creates a new `AddApplicationInputProcessingConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

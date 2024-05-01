@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateBackendFluentBuilder {
-    /// Creates a new `CreateBackend`.
+    /// Creates a new `CreateBackendFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

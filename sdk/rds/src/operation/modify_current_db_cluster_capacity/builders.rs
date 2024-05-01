@@ -55,7 +55,7 @@ impl
     }
 }
 impl ModifyCurrentDBClusterCapacityFluentBuilder {
-    /// Creates a new `ModifyCurrentDBClusterCapacity`.
+    /// Creates a new `ModifyCurrentDBClusterCapacityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

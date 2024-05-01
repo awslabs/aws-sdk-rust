@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListInferenceEventsFluentBuilder {
-    /// Creates a new `ListInferenceEvents`.
+    /// Creates a new `ListInferenceEventsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

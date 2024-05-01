@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetExecutionHistoryFluentBuilder {
-    /// Creates a new `GetExecutionHistory`.
+    /// Creates a new `GetExecutionHistoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

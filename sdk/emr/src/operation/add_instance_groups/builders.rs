@@ -48,7 +48,7 @@ impl
     }
 }
 impl AddInstanceGroupsFluentBuilder {
-    /// Creates a new `AddInstanceGroups`.
+    /// Creates a new `AddInstanceGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

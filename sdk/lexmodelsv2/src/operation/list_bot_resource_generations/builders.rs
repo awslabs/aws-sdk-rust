@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListBotResourceGenerationsFluentBuilder {
-    /// Creates a new `ListBotResourceGenerations`.
+    /// Creates a new `ListBotResourceGenerationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

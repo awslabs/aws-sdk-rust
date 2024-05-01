@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateDeviceWithRoomFluentBuilder {
-    /// Creates a new `AssociateDeviceWithRoom`.
+    /// Creates a new `AssociateDeviceWithRoomFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

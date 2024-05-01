@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTypedLinkFacetInformationFluentBuilder {
-    /// Creates a new `GetTypedLinkFacetInformation`.
+    /// Creates a new `GetTypedLinkFacetInformationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

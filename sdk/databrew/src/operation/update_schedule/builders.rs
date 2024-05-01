@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateScheduleFluentBuilder {
-    /// Creates a new `UpdateSchedule`.
+    /// Creates a new `UpdateScheduleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

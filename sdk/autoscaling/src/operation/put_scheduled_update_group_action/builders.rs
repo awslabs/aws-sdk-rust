@@ -51,7 +51,7 @@ impl
     }
 }
 impl PutScheduledUpdateGroupActionFluentBuilder {
-    /// Creates a new `PutScheduledUpdateGroupAction`.
+    /// Creates a new `PutScheduledUpdateGroupActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

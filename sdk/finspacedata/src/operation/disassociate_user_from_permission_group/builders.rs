@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateUserFromPermissionGroupFluentBuilder {
-    /// Creates a new `DisassociateUserFromPermissionGroup`.
+    /// Creates a new `DisassociateUserFromPermissionGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

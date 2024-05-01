@@ -48,7 +48,7 @@ impl
     }
 }
 impl ExportTableToPointInTimeFluentBuilder {
-    /// Creates a new `ExportTableToPointInTime`.
+    /// Creates a new `ExportTableToPointInTimeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

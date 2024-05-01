@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCidrLocationsFluentBuilder {
-    /// Creates a new `ListCidrLocations`.
+    /// Creates a new `ListCidrLocationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

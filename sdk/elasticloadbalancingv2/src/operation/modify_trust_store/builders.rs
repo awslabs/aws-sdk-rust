@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyTrustStoreFluentBuilder {
-    /// Creates a new `ModifyTrustStore`.
+    /// Creates a new `ModifyTrustStoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl ChangeMessageVisibilityBatchFluentBuilder {
-    /// Creates a new `ChangeMessageVisibilityBatch`.
+    /// Creates a new `ChangeMessageVisibilityBatchFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

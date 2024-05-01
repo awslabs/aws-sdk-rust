@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeSlackChannelConfigurationsFluentBuilder {
-    /// Creates a new `DescribeSlackChannelConfigurations`.
+    /// Creates a new `DescribeSlackChannelConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

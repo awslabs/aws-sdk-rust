@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateServiceSpecificCredentialFluentBuilder {
-    /// Creates a new `UpdateServiceSpecificCredential`.
+    /// Creates a new `UpdateServiceSpecificCredentialFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

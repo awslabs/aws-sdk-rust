@@ -57,7 +57,7 @@ impl
     }
 }
 impl AdminGetUserFluentBuilder {
-    /// Creates a new `AdminGetUser`.
+    /// Creates a new `AdminGetUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

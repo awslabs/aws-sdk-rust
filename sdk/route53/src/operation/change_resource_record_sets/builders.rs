@@ -75,7 +75,7 @@ impl
     }
 }
 impl ChangeResourceRecordSetsFluentBuilder {
-    /// Creates a new `ChangeResourceRecordSets`.
+    /// Creates a new `ChangeResourceRecordSetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

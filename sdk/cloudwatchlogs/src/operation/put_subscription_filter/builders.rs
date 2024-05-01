@@ -61,7 +61,7 @@ impl
     }
 }
 impl PutSubscriptionFilterFluentBuilder {
-    /// Creates a new `PutSubscriptionFilter`.
+    /// Creates a new `PutSubscriptionFilterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

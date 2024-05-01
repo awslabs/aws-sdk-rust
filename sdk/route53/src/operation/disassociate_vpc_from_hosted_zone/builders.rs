@@ -71,7 +71,7 @@ impl
     }
 }
 impl DisassociateVPCFromHostedZoneFluentBuilder {
-    /// Creates a new `DisassociateVPCFromHostedZone`.
+    /// Creates a new `DisassociateVPCFromHostedZoneFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

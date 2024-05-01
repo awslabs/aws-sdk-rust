@@ -60,7 +60,7 @@ impl
     }
 }
 impl GetAccessPointForObjectLambdaFluentBuilder {
-    /// Creates a new `GetAccessPointForObjectLambda`.
+    /// Creates a new `GetAccessPointForObjectLambdaFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

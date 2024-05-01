@@ -49,7 +49,7 @@ impl
     }
 }
 impl ResumeProcessesFluentBuilder {
-    /// Creates a new `ResumeProcesses`.
+    /// Creates a new `ResumeProcessesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

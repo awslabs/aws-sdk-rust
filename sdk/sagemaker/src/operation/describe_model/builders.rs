@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeModelFluentBuilder {
-    /// Creates a new `DescribeModel`.
+    /// Creates a new `DescribeModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

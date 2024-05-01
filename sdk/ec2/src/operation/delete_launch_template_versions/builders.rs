@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteLaunchTemplateVersionsFluentBuilder {
-    /// Creates a new `DeleteLaunchTemplateVersions`.
+    /// Creates a new `DeleteLaunchTemplateVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

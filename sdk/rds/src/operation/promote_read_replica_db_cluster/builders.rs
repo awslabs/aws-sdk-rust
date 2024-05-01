@@ -48,7 +48,7 @@ impl
     }
 }
 impl PromoteReadReplicaDBClusterFluentBuilder {
-    /// Creates a new `PromoteReadReplicaDBCluster`.
+    /// Creates a new `PromoteReadReplicaDBClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

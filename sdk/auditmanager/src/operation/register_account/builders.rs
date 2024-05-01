@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterAccountFluentBuilder {
-    /// Creates a new `RegisterAccount`.
+    /// Creates a new `RegisterAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

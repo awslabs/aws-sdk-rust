@@ -50,7 +50,7 @@ impl
     }
 }
 impl ExportServerEngineAttributeFluentBuilder {
-    /// Creates a new `ExportServerEngineAttribute`.
+    /// Creates a new `ExportServerEngineAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

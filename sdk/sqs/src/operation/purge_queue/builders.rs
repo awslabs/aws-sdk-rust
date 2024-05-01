@@ -53,7 +53,7 @@ impl
     }
 }
 impl PurgeQueueFluentBuilder {
-    /// Creates a new `PurgeQueue`.
+    /// Creates a new `PurgeQueueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl CancelZonalShiftFluentBuilder {
-    /// Creates a new `CancelZonalShift`.
+    /// Creates a new `CancelZonalShiftFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

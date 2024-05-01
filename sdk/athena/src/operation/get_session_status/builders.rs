@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSessionStatusFluentBuilder {
-    /// Creates a new `GetSessionStatus`.
+    /// Creates a new `GetSessionStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

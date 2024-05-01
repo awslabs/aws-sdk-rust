@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteConnectorDefinitionFluentBuilder {
-    /// Creates a new `DeleteConnectorDefinition`.
+    /// Creates a new `DeleteConnectorDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

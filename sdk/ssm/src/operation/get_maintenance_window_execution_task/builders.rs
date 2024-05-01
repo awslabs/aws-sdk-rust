@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMaintenanceWindowExecutionTaskFluentBuilder {
-    /// Creates a new `GetMaintenanceWindowExecutionTask`.
+    /// Creates a new `GetMaintenanceWindowExecutionTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

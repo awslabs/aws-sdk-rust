@@ -57,7 +57,7 @@ impl
     }
 }
 impl CreateCachePolicyFluentBuilder {
-    /// Creates a new `CreateCachePolicy`.
+    /// Creates a new `CreateCachePolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

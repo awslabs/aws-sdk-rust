@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListFieldOptionsFluentBuilder {
-    /// Creates a new `ListFieldOptions`.
+    /// Creates a new `ListFieldOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

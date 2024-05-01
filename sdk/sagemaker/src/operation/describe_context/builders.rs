@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeContextFluentBuilder {
-    /// Creates a new `DescribeContext`.
+    /// Creates a new `DescribeContextFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

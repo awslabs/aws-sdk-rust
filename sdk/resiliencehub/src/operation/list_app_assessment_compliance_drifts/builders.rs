@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAppAssessmentComplianceDriftsFluentBuilder {
-    /// Creates a new `ListAppAssessmentComplianceDrifts`.
+    /// Creates a new `ListAppAssessmentComplianceDriftsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

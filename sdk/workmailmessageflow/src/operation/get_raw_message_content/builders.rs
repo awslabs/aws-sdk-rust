@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRawMessageContentFluentBuilder {
-    /// Creates a new `GetRawMessageContent`.
+    /// Creates a new `GetRawMessageContentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

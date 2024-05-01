@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdatePullRequestTitleFluentBuilder {
-    /// Creates a new `UpdatePullRequestTitle`.
+    /// Creates a new `UpdatePullRequestTitleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

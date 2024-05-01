@@ -52,7 +52,7 @@ impl
     }
 }
 impl DetachInstancesFluentBuilder {
-    /// Creates a new `DetachInstances`.
+    /// Creates a new `DetachInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

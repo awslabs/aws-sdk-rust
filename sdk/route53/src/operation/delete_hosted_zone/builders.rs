@@ -61,7 +61,7 @@ impl
     }
 }
 impl DeleteHostedZoneFluentBuilder {
-    /// Creates a new `DeleteHostedZone`.
+    /// Creates a new `DeleteHostedZoneFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

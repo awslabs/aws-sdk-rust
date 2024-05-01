@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyVerifiedAccessInstanceFluentBuilder {
-    /// Creates a new `ModifyVerifiedAccessInstance`.
+    /// Creates a new `ModifyVerifiedAccessInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetInstanceTypesFromInstanceRequirementsFluentBuilder {
-    /// Creates a new `GetInstanceTypesFromInstanceRequirements`.
+    /// Creates a new `GetInstanceTypesFromInstanceRequirementsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CompleteMigrationFluentBuilder {
-    /// Creates a new `CompleteMigration`.
+    /// Creates a new `CompleteMigrationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

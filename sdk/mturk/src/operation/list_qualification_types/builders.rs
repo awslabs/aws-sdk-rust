@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListQualificationTypesFluentBuilder {
-    /// Creates a new `ListQualificationTypes`.
+    /// Creates a new `ListQualificationTypesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

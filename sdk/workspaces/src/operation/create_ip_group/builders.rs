@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateIpGroupFluentBuilder {
-    /// Creates a new `CreateIpGroup`.
+    /// Creates a new `CreateIpGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateExtendedSourceServerFluentBuilder {
-    /// Creates a new `CreateExtendedSourceServer`.
+    /// Creates a new `CreateExtendedSourceServerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

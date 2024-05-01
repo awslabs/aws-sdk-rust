@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteEnvironmentBlueprintConfigurationFluentBuilder {
-    /// Creates a new `DeleteEnvironmentBlueprintConfiguration`.
+    /// Creates a new `DeleteEnvironmentBlueprintConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

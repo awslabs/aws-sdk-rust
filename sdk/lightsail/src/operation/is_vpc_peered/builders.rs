@@ -48,7 +48,7 @@ impl
     }
 }
 impl IsVpcPeeredFluentBuilder {
-    /// Creates a new `IsVpcPeered`.
+    /// Creates a new `IsVpcPeeredFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

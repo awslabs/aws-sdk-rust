@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartSchemaExtensionFluentBuilder {
-    /// Creates a new `StartSchemaExtension`.
+    /// Creates a new `StartSchemaExtensionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

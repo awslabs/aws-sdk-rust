@@ -60,7 +60,7 @@ impl
     }
 }
 impl GetVaultLockFluentBuilder {
-    /// Creates a new `GetVaultLock`.
+    /// Creates a new `GetVaultLockFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

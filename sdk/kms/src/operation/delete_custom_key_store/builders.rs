@@ -69,7 +69,7 @@ impl
     }
 }
 impl DeleteCustomKeyStoreFluentBuilder {
-    /// Creates a new `DeleteCustomKeyStore`.
+    /// Creates a new `DeleteCustomKeyStoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -61,7 +61,7 @@ impl
     }
 }
 impl DeleteCanaryFluentBuilder {
-    /// Creates a new `DeleteCanary`.
+    /// Creates a new `DeleteCanaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

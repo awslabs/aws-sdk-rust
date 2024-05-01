@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteIntegrationResponseFluentBuilder {
-    /// Creates a new `DeleteIntegrationResponse`.
+    /// Creates a new `DeleteIntegrationResponseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteProvisioningArtifactFluentBuilder {
-    /// Creates a new `DeleteProvisioningArtifact`.
+    /// Creates a new `DeleteProvisioningArtifactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

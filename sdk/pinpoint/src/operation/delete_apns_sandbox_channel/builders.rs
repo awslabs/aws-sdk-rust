@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteApnsSandboxChannelFluentBuilder {
-    /// Creates a new `DeleteApnsSandboxChannel`.
+    /// Creates a new `DeleteApnsSandboxChannelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

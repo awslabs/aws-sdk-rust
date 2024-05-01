@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSlackUserIdentityFluentBuilder {
-    /// Creates a new `DeleteSlackUserIdentity`.
+    /// Creates a new `DeleteSlackUserIdentityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

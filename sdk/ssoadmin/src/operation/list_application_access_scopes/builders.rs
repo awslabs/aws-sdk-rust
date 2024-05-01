@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListApplicationAccessScopesFluentBuilder {
-    /// Creates a new `ListApplicationAccessScopes`.
+    /// Creates a new `ListApplicationAccessScopesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

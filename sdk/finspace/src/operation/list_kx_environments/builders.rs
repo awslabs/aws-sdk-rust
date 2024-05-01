@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListKxEnvironmentsFluentBuilder {
-    /// Creates a new `ListKxEnvironments`.
+    /// Creates a new `ListKxEnvironmentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl TerminateEnvironmentFluentBuilder {
-    /// Creates a new `TerminateEnvironment`.
+    /// Creates a new `TerminateEnvironmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

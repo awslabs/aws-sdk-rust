@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResetAddressAttributeFluentBuilder {
-    /// Creates a new `ResetAddressAttribute`.
+    /// Creates a new `ResetAddressAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

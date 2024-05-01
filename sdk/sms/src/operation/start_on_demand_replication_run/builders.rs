@@ -49,7 +49,7 @@ impl
     }
 }
 impl StartOnDemandReplicationRunFluentBuilder {
-    /// Creates a new `StartOnDemandReplicationRun`.
+    /// Creates a new `StartOnDemandReplicationRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

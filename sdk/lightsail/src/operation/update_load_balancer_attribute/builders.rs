@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateLoadBalancerAttributeFluentBuilder {
-    /// Creates a new `UpdateLoadBalancerAttribute`.
+    /// Creates a new `UpdateLoadBalancerAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

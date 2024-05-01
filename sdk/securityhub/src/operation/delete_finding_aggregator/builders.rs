@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteFindingAggregatorFluentBuilder {
-    /// Creates a new `DeleteFindingAggregator`.
+    /// Creates a new `DeleteFindingAggregatorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

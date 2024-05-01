@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateSourceLocationFluentBuilder {
-    /// Creates a new `UpdateSourceLocation`.
+    /// Creates a new `UpdateSourceLocationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

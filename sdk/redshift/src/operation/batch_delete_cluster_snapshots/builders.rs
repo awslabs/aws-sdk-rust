@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDeleteClusterSnapshotsFluentBuilder {
-    /// Creates a new `BatchDeleteClusterSnapshots`.
+    /// Creates a new `BatchDeleteClusterSnapshotsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

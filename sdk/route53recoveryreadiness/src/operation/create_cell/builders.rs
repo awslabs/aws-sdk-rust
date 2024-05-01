@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateCellFluentBuilder {
-    /// Creates a new `CreateCell`.
+    /// Creates a new `CreateCellFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

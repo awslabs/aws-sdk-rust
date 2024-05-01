@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeServiceAccessPoliciesFluentBuilder {
-    /// Creates a new `DescribeServiceAccessPolicies`.
+    /// Creates a new `DescribeServiceAccessPoliciesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

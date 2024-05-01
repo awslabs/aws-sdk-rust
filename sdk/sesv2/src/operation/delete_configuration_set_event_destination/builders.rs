@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteConfigurationSetEventDestinationFluentBuilder {
-    /// Creates a new `DeleteConfigurationSetEventDestination`.
+    /// Creates a new `DeleteConfigurationSetEventDestinationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

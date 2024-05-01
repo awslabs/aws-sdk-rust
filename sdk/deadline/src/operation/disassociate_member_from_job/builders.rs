@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateMemberFromJobFluentBuilder {
-    /// Creates a new `DisassociateMemberFromJob`.
+    /// Creates a new `DisassociateMemberFromJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

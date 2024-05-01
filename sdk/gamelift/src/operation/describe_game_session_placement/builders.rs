@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeGameSessionPlacementFluentBuilder {
-    /// Creates a new `DescribeGameSessionPlacement`.
+    /// Creates a new `DescribeGameSessionPlacementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

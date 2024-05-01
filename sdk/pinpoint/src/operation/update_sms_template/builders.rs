@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateSmsTemplateFluentBuilder {
-    /// Creates a new `UpdateSmsTemplate`.
+    /// Creates a new `UpdateSmsTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

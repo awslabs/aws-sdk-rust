@@ -49,7 +49,7 @@ impl
     }
 }
 impl StopSuiteRunFluentBuilder {
-    /// Creates a new `StopSuiteRun`.
+    /// Creates a new `StopSuiteRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

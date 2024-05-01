@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteThingShadowFluentBuilder {
-    /// Creates a new `DeleteThingShadow`.
+    /// Creates a new `DeleteThingShadowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

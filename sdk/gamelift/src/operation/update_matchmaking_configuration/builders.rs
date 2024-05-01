@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateMatchmakingConfigurationFluentBuilder {
-    /// Creates a new `UpdateMatchmakingConfiguration`.
+    /// Creates a new `UpdateMatchmakingConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

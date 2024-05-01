@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdatePricingRuleFluentBuilder {
-    /// Creates a new `UpdatePricingRule`.
+    /// Creates a new `UpdatePricingRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

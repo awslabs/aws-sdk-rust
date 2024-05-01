@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetCorsPolicyFluentBuilder {
-    /// Creates a new `GetCorsPolicy`.
+    /// Creates a new `GetCorsPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

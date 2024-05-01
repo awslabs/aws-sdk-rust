@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetOperationsForResourceFluentBuilder {
-    /// Creates a new `GetOperationsForResource`.
+    /// Creates a new `GetOperationsForResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

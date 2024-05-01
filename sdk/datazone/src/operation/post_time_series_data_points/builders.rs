@@ -48,7 +48,7 @@ impl
     }
 }
 impl PostTimeSeriesDataPointsFluentBuilder {
-    /// Creates a new `PostTimeSeriesDataPoints`.
+    /// Creates a new `PostTimeSeriesDataPointsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

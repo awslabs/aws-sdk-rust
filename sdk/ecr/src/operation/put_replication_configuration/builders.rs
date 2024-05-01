@@ -50,7 +50,7 @@ impl
     }
 }
 impl PutReplicationConfigurationFluentBuilder {
-    /// Creates a new `PutReplicationConfiguration`.
+    /// Creates a new `PutReplicationConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

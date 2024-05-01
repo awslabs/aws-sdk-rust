@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetOfferingStatusFluentBuilder {
-    /// Creates a new `GetOfferingStatus`.
+    /// Creates a new `GetOfferingStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

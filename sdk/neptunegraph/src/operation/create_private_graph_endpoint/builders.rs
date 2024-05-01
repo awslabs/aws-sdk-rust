@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreatePrivateGraphEndpointFluentBuilder {
-    /// Creates a new `CreatePrivateGraphEndpoint`.
+    /// Creates a new `CreatePrivateGraphEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

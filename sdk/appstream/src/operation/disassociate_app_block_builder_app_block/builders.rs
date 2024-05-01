@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateAppBlockBuilderAppBlockFluentBuilder {
-    /// Creates a new `DisassociateAppBlockBuilderAppBlock`.
+    /// Creates a new `DisassociateAppBlockBuilderAppBlockFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

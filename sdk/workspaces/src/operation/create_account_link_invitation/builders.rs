@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAccountLinkInvitationFluentBuilder {
-    /// Creates a new `CreateAccountLinkInvitation`.
+    /// Creates a new `CreateAccountLinkInvitationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

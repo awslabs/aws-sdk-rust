@@ -52,7 +52,7 @@ impl
     }
 }
 impl TagMeetingFluentBuilder {
-    /// Creates a new `TagMeeting`.
+    /// Creates a new `TagMeetingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAnomalyMonitorFluentBuilder {
-    /// Creates a new `CreateAnomalyMonitor`.
+    /// Creates a new `CreateAnomalyMonitorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

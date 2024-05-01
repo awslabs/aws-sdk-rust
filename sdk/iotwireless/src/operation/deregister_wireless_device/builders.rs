@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeregisterWirelessDeviceFluentBuilder {
-    /// Creates a new `DeregisterWirelessDevice`.
+    /// Creates a new `DeregisterWirelessDeviceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

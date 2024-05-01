@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeletePermissionGroupFluentBuilder {
-    /// Creates a new `DeletePermissionGroup`.
+    /// Creates a new `DeletePermissionGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

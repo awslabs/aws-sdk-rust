@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeregisterWebhookWithThirdPartyFluentBuilder {
-    /// Creates a new `DeregisterWebhookWithThirdParty`.
+    /// Creates a new `DeregisterWebhookWithThirdPartyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

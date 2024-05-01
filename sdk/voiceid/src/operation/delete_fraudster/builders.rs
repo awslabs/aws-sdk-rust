@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteFraudsterFluentBuilder {
-    /// Creates a new `DeleteFraudster`.
+    /// Creates a new `DeleteFraudsterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

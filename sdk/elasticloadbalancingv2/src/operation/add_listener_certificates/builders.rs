@@ -50,7 +50,7 @@ impl
     }
 }
 impl AddListenerCertificatesFluentBuilder {
-    /// Creates a new `AddListenerCertificates`.
+    /// Creates a new `AddListenerCertificatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateConnectClientAddInFluentBuilder {
-    /// Creates a new `UpdateConnectClientAddIn`.
+    /// Creates a new `UpdateConnectClientAddInFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

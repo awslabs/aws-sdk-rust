@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateOriginAccessControlFluentBuilder {
-    /// Creates a new `UpdateOriginAccessControl`.
+    /// Creates a new `UpdateOriginAccessControlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

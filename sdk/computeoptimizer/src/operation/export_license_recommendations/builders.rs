@@ -50,7 +50,7 @@ impl
     }
 }
 impl ExportLicenseRecommendationsFluentBuilder {
-    /// Creates a new `ExportLicenseRecommendations`.
+    /// Creates a new `ExportLicenseRecommendationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

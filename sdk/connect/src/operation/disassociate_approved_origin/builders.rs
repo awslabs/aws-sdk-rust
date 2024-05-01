@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateApprovedOriginFluentBuilder {
-    /// Creates a new `DisassociateApprovedOrigin`.
+    /// Creates a new `DisassociateApprovedOriginFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

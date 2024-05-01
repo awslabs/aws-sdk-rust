@@ -56,7 +56,7 @@ impl
     }
 }
 impl DeleteAccessGrantsLocationFluentBuilder {
-    /// Creates a new `DeleteAccessGrantsLocation`.
+    /// Creates a new `DeleteAccessGrantsLocationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -81,7 +81,7 @@ impl
     }
 }
 impl LookupEventsFluentBuilder {
-    /// Creates a new `LookupEvents`.
+    /// Creates a new `LookupEventsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

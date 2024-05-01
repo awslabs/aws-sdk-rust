@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDbInstanceFluentBuilder {
-    /// Creates a new `GetDbInstance`.
+    /// Creates a new `GetDbInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

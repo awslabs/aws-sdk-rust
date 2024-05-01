@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateVpnConnectionRouteFluentBuilder {
-    /// Creates a new `CreateVpnConnectionRoute`.
+    /// Creates a new `CreateVpnConnectionRouteFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyAddressAttributeFluentBuilder {
-    /// Creates a new `ModifyAddressAttribute`.
+    /// Creates a new `ModifyAddressAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

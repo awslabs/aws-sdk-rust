@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTypeRegistrationsFluentBuilder {
-    /// Creates a new `ListTypeRegistrations`.
+    /// Creates a new `ListTypeRegistrationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

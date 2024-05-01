@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateClusterSnapshotFluentBuilder {
-    /// Creates a new `CreateClusterSnapshot`.
+    /// Creates a new `CreateClusterSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

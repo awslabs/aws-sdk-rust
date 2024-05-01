@@ -100,7 +100,7 @@ impl
     }
 }
 impl GetDASHStreamingSessionURLFluentBuilder {
-    /// Creates a new `GetDASHStreamingSessionURL`.
+    /// Creates a new `GetDASHStreamingSessionURLFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

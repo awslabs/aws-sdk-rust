@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetLensVersionDifferenceFluentBuilder {
-    /// Creates a new `GetLensVersionDifference`.
+    /// Creates a new `GetLensVersionDifferenceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

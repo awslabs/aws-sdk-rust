@@ -56,7 +56,7 @@ impl
     }
 }
 impl RegisterScalableTargetFluentBuilder {
-    /// Creates a new `RegisterScalableTarget`.
+    /// Creates a new `RegisterScalableTargetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

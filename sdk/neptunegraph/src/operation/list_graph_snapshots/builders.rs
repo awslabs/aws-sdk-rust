@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListGraphSnapshotsFluentBuilder {
-    /// Creates a new `ListGraphSnapshots`.
+    /// Creates a new `ListGraphSnapshotsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

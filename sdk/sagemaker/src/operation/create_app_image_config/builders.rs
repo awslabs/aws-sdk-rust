@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAppImageConfigFluentBuilder {
-    /// Creates a new `CreateAppImageConfig`.
+    /// Creates a new `CreateAppImageConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

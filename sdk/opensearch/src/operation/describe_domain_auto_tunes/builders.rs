@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDomainAutoTunesFluentBuilder {
-    /// Creates a new `DescribeDomainAutoTunes`.
+    /// Creates a new `DescribeDomainAutoTunesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

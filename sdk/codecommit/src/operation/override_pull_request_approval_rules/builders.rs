@@ -48,7 +48,7 @@ impl
     }
 }
 impl OverridePullRequestApprovalRulesFluentBuilder {
-    /// Creates a new `OverridePullRequestApprovalRules`.
+    /// Creates a new `OverridePullRequestApprovalRulesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

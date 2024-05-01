@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeclineHandshakeFluentBuilder {
-    /// Creates a new `DeclineHandshake`.
+    /// Creates a new `DeclineHandshakeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

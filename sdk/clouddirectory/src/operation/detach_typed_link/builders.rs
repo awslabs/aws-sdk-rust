@@ -48,7 +48,7 @@ impl
     }
 }
 impl DetachTypedLinkFluentBuilder {
-    /// Creates a new `DetachTypedLink`.
+    /// Creates a new `DetachTypedLinkFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

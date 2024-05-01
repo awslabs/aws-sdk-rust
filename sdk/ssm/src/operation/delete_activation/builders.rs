@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteActivationFluentBuilder {
-    /// Creates a new `DeleteActivation`.
+    /// Creates a new `DeleteActivationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

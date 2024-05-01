@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelClusterFluentBuilder {
-    /// Creates a new `CancelCluster`.
+    /// Creates a new `CancelClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

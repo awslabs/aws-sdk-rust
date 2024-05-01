@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListHyperParameterTuningJobsFluentBuilder {
-    /// Creates a new `ListHyperParameterTuningJobs`.
+    /// Creates a new `ListHyperParameterTuningJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDirectoryLimitsFluentBuilder {
-    /// Creates a new `GetDirectoryLimits`.
+    /// Creates a new `GetDirectoryLimitsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

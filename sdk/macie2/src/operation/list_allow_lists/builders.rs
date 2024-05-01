@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAllowListsFluentBuilder {
-    /// Creates a new `ListAllowLists`.
+    /// Creates a new `ListAllowListsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

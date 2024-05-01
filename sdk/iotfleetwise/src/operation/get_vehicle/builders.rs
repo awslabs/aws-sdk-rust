@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetVehicleFluentBuilder {
-    /// Creates a new `GetVehicle`.
+    /// Creates a new `GetVehicleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

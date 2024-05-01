@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteImpersonationRoleFluentBuilder {
-    /// Creates a new `DeleteImpersonationRole`.
+    /// Creates a new `DeleteImpersonationRoleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

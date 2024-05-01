@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateDefaultMailDomainFluentBuilder {
-    /// Creates a new `UpdateDefaultMailDomain`.
+    /// Creates a new `UpdateDefaultMailDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

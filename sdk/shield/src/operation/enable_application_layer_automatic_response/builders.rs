@@ -54,7 +54,7 @@ impl
     }
 }
 impl EnableApplicationLayerAutomaticResponseFluentBuilder {
-    /// Creates a new `EnableApplicationLayerAutomaticResponse`.
+    /// Creates a new `EnableApplicationLayerAutomaticResponseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

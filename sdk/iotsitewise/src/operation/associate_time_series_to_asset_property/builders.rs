@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateTimeSeriesToAssetPropertyFluentBuilder {
-    /// Creates a new `AssociateTimeSeriesToAssetProperty`.
+    /// Creates a new `AssociateTimeSeriesToAssetPropertyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

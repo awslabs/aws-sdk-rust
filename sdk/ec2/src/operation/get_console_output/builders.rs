@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetConsoleOutputFluentBuilder {
-    /// Creates a new `GetConsoleOutput`.
+    /// Creates a new `GetConsoleOutputFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

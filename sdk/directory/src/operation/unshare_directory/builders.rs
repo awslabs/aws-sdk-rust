@@ -48,7 +48,7 @@ impl
     }
 }
 impl UnshareDirectoryFluentBuilder {
-    /// Creates a new `UnshareDirectory`.
+    /// Creates a new `UnshareDirectoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateAccessPolicyFluentBuilder {
-    /// Creates a new `UpdateAccessPolicy`.
+    /// Creates a new `UpdateAccessPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

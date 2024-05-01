@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeHumanTaskUiFluentBuilder {
-    /// Creates a new `DescribeHumanTaskUi`.
+    /// Creates a new `DescribeHumanTaskUiFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

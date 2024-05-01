@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteArtifactFluentBuilder {
-    /// Creates a new `DeleteArtifact`.
+    /// Creates a new `DeleteArtifactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

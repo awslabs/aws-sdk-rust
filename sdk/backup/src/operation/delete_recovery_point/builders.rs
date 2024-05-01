@@ -52,7 +52,7 @@ impl
     }
 }
 impl DeleteRecoveryPointFluentBuilder {
-    /// Creates a new `DeleteRecoveryPoint`.
+    /// Creates a new `DeleteRecoveryPointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

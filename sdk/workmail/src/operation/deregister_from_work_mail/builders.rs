@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeregisterFromWorkMailFluentBuilder {
-    /// Creates a new `DeregisterFromWorkMail`.
+    /// Creates a new `DeregisterFromWorkMailFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

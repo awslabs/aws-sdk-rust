@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCalculationExecutionStatusFluentBuilder {
-    /// Creates a new `GetCalculationExecutionStatus`.
+    /// Creates a new `GetCalculationExecutionStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

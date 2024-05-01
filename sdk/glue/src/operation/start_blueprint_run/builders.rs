@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartBlueprintRunFluentBuilder {
-    /// Creates a new `StartBlueprintRun`.
+    /// Creates a new `StartBlueprintRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

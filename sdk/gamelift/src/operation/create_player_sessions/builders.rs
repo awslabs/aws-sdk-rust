@@ -53,7 +53,7 @@ impl
     }
 }
 impl CreatePlayerSessionsFluentBuilder {
-    /// Creates a new `CreatePlayerSessions`.
+    /// Creates a new `CreatePlayerSessionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

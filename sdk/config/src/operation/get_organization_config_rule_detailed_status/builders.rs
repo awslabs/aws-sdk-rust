@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetOrganizationConfigRuleDetailedStatusFluentBuilder {
-    /// Creates a new `GetOrganizationConfigRuleDetailedStatus`.
+    /// Creates a new `GetOrganizationConfigRuleDetailedStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutAutoScalingPolicyFluentBuilder {
-    /// Creates a new `PutAutoScalingPolicy`.
+    /// Creates a new `PutAutoScalingPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

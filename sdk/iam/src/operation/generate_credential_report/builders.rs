@@ -48,7 +48,7 @@ impl
     }
 }
 impl GenerateCredentialReportFluentBuilder {
-    /// Creates a new `GenerateCredentialReport`.
+    /// Creates a new `GenerateCredentialReportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

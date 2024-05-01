@@ -50,7 +50,7 @@ impl
     }
 }
 impl CancelMailboxExportJobFluentBuilder {
-    /// Creates a new `CancelMailboxExportJob`.
+    /// Creates a new `CancelMailboxExportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

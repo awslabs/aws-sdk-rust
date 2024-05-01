@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateFirewallEncryptionConfigurationFluentBuilder {
-    /// Creates a new `UpdateFirewallEncryptionConfiguration`.
+    /// Creates a new `UpdateFirewallEncryptionConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

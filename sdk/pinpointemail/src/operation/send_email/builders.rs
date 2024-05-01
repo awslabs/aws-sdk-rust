@@ -48,7 +48,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::send
     }
 }
 impl SendEmailFluentBuilder {
-    /// Creates a new `SendEmail`.
+    /// Creates a new `SendEmailFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

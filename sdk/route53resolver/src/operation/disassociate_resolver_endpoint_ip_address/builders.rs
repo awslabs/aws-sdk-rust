@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateResolverEndpointIpAddressFluentBuilder {
-    /// Creates a new `DisassociateResolverEndpointIpAddress`.
+    /// Creates a new `DisassociateResolverEndpointIpAddressFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

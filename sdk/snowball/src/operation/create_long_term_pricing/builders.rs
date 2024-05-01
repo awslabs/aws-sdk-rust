@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateLongTermPricingFluentBuilder {
-    /// Creates a new `CreateLongTermPricing`.
+    /// Creates a new `CreateLongTermPricingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

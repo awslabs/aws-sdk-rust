@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteKnownHostKeysFluentBuilder {
-    /// Creates a new `DeleteKnownHostKeys`.
+    /// Creates a new `DeleteKnownHostKeysFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

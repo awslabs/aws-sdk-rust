@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteLoadBalancerPolicyFluentBuilder {
-    /// Creates a new `DeleteLoadBalancerPolicy`.
+    /// Creates a new `DeleteLoadBalancerPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

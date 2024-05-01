@@ -54,7 +54,7 @@ impl
     }
 }
 impl GetResourceConfigHistoryFluentBuilder {
-    /// Creates a new `GetResourceConfigHistory`.
+    /// Creates a new `GetResourceConfigHistoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

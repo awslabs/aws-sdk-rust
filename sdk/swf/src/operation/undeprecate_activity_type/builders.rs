@@ -67,7 +67,7 @@ impl
     }
 }
 impl UndeprecateActivityTypeFluentBuilder {
-    /// Creates a new `UndeprecateActivityType`.
+    /// Creates a new `UndeprecateActivityTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

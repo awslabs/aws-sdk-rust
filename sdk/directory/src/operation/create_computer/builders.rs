@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateComputerFluentBuilder {
-    /// Creates a new `CreateComputer`.
+    /// Creates a new `CreateComputerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

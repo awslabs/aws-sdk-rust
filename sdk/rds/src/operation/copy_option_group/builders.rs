@@ -48,7 +48,7 @@ impl
     }
 }
 impl CopyOptionGroupFluentBuilder {
-    /// Creates a new `CopyOptionGroup`.
+    /// Creates a new `CopyOptionGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

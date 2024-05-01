@@ -64,7 +64,7 @@ impl
     }
 }
 impl RedriveExecutionFluentBuilder {
-    /// Creates a new `RedriveExecution`.
+    /// Creates a new `RedriveExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

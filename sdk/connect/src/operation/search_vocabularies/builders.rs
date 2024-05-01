@@ -48,7 +48,7 @@ impl
     }
 }
 impl SearchVocabulariesFluentBuilder {
-    /// Creates a new `SearchVocabularies`.
+    /// Creates a new `SearchVocabulariesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeEffectivePolicyFluentBuilder {
-    /// Creates a new `DescribeEffectivePolicy`.
+    /// Creates a new `DescribeEffectivePolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl CancelRotateSecretFluentBuilder {
-    /// Creates a new `CancelRotateSecret`.
+    /// Creates a new `CancelRotateSecretFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

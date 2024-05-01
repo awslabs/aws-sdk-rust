@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdatePermissionGroupFluentBuilder {
-    /// Creates a new `UpdatePermissionGroup`.
+    /// Creates a new `UpdatePermissionGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

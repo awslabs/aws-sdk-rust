@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchPutPropertyValuesFluentBuilder {
-    /// Creates a new `BatchPutPropertyValues`.
+    /// Creates a new `BatchPutPropertyValuesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

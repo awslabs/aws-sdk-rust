@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateLambdaFunctionFluentBuilder {
-    /// Creates a new `AssociateLambdaFunction`.
+    /// Creates a new `AssociateLambdaFunctionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMessagingSessionEndpointFluentBuilder {
-    /// Creates a new `GetMessagingSessionEndpoint`.
+    /// Creates a new `GetMessagingSessionEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

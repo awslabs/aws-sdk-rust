@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetWorkflowsFluentBuilder {
-    /// Creates a new `BatchGetWorkflows`.
+    /// Creates a new `BatchGetWorkflowsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

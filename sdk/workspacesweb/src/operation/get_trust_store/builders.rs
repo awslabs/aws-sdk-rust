@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTrustStoreFluentBuilder {
-    /// Creates a new `GetTrustStore`.
+    /// Creates a new `GetTrustStoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetInventoryFluentBuilder {
-    /// Creates a new `GetInventory`.
+    /// Creates a new `GetInventoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

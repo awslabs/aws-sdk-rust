@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListClientDevicesAssociatedWithCoreDeviceFluentBuilder {
-    /// Creates a new `ListClientDevicesAssociatedWithCoreDevice`.
+    /// Creates a new `ListClientDevicesAssociatedWithCoreDeviceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

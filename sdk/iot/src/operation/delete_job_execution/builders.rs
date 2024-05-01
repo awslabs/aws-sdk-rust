@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteJobExecutionFluentBuilder {
-    /// Creates a new `DeleteJobExecution`.
+    /// Creates a new `DeleteJobExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

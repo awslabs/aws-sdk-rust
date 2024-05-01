@@ -48,7 +48,7 @@ impl
     }
 }
 impl EnableRegionFluentBuilder {
-    /// Creates a new `EnableRegion`.
+    /// Creates a new `EnableRegionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

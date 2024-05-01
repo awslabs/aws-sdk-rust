@@ -51,7 +51,7 @@ impl
     }
 }
 impl PutRolePermissionsBoundaryFluentBuilder {
-    /// Creates a new `PutRolePermissionsBoundary`.
+    /// Creates a new `PutRolePermissionsBoundaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

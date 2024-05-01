@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateAnomalyFluentBuilder {
-    /// Creates a new `UpdateAnomaly`.
+    /// Creates a new `UpdateAnomalyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateMemberDetectorsFluentBuilder {
-    /// Creates a new `UpdateMemberDetectors`.
+    /// Creates a new `UpdateMemberDetectorsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

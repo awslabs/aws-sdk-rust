@@ -50,7 +50,7 @@ impl
     }
 }
 impl UntagServerCertificateFluentBuilder {
-    /// Creates a new `UntagServerCertificate`.
+    /// Creates a new `UntagServerCertificateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateParameterGroupFluentBuilder {
-    /// Creates a new `UpdateParameterGroup`.
+    /// Creates a new `UpdateParameterGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

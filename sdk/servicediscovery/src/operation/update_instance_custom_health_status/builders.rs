@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateInstanceCustomHealthStatusFluentBuilder {
-    /// Creates a new `UpdateInstanceCustomHealthStatus`.
+    /// Creates a new `UpdateInstanceCustomHealthStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

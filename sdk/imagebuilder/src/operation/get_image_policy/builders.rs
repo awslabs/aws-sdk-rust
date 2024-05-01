@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetImagePolicyFluentBuilder {
-    /// Creates a new `GetImagePolicy`.
+    /// Creates a new `GetImagePolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

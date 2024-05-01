@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetAutoScalingGroupRecommendationsFluentBuilder {
-    /// Creates a new `GetAutoScalingGroupRecommendations`.
+    /// Creates a new `GetAutoScalingGroupRecommendationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

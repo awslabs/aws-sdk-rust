@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateUserToPermissionGroupFluentBuilder {
-    /// Creates a new `AssociateUserToPermissionGroup`.
+    /// Creates a new `AssociateUserToPermissionGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

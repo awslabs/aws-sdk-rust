@@ -53,7 +53,7 @@ impl
     }
 }
 impl DisableImageFluentBuilder {
-    /// Creates a new `DisableImage`.
+    /// Creates a new `DisableImageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

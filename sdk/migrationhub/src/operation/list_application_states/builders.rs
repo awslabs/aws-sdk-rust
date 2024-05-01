@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListApplicationStatesFluentBuilder {
-    /// Creates a new `ListApplicationStates`.
+    /// Creates a new `ListApplicationStatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

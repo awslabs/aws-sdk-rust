@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartJobRunFluentBuilder {
-    /// Creates a new `StartJobRun`.
+    /// Creates a new `StartJobRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

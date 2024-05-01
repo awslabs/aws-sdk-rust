@@ -61,7 +61,7 @@ impl
     }
 }
 impl PutRemediationExceptionsFluentBuilder {
-    /// Creates a new `PutRemediationExceptions`.
+    /// Creates a new `PutRemediationExceptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

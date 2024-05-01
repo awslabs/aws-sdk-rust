@@ -49,7 +49,7 @@ impl
     }
 }
 impl SearchIndexFluentBuilder {
-    /// Creates a new `SearchIndex`.
+    /// Creates a new `SearchIndexFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

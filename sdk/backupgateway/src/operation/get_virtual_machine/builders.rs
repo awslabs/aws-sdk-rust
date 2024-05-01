@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetVirtualMachineFluentBuilder {
-    /// Creates a new `GetVirtualMachine`.
+    /// Creates a new `GetVirtualMachineFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

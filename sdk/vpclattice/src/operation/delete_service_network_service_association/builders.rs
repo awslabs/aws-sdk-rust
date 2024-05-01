@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteServiceNetworkServiceAssociationFluentBuilder {
-    /// Creates a new `DeleteServiceNetworkServiceAssociation`.
+    /// Creates a new `DeleteServiceNetworkServiceAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

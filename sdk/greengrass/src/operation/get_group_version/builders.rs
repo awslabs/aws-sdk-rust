@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetGroupVersionFluentBuilder {
-    /// Creates a new `GetGroupVersion`.
+    /// Creates a new `GetGroupVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

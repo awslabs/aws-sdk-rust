@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeregisterCertificateFluentBuilder {
-    /// Creates a new `DeregisterCertificate`.
+    /// Creates a new `DeregisterCertificateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

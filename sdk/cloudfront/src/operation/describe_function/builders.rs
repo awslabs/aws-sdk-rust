@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeFunctionFluentBuilder {
-    /// Creates a new `DescribeFunction`.
+    /// Creates a new `DescribeFunctionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

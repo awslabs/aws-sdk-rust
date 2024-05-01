@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteUsageLimitFluentBuilder {
-    /// Creates a new `DeleteUsageLimit`.
+    /// Creates a new `DeleteUsageLimitFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

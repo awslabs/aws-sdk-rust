@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyVpcEndpointServicePayerResponsibilityFluentBuilder {
-    /// Creates a new `ModifyVpcEndpointServicePayerResponsibility`.
+    /// Creates a new `ModifyVpcEndpointServicePayerResponsibilityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

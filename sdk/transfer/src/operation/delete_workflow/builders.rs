@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteWorkflowFluentBuilder {
-    /// Creates a new `DeleteWorkflow`.
+    /// Creates a new `DeleteWorkflowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

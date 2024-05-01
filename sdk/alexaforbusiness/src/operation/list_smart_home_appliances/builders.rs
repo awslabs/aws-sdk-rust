@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListSmartHomeAppliancesFluentBuilder {
-    /// Creates a new `ListSmartHomeAppliances`.
+    /// Creates a new `ListSmartHomeAppliancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -60,7 +60,7 @@ impl
     }
 }
 impl PutObjectLockConfigurationFluentBuilder {
-    /// Creates a new `PutObjectLockConfiguration`.
+    /// Creates a new `PutObjectLockConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

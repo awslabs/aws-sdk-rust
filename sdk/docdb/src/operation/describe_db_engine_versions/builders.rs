@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDBEngineVersionsFluentBuilder {
-    /// Creates a new `DescribeDBEngineVersions`.
+    /// Creates a new `DescribeDBEngineVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

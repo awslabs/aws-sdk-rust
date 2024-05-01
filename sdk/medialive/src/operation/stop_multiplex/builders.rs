@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopMultiplexFluentBuilder {
-    /// Creates a new `StopMultiplex`.
+    /// Creates a new `StopMultiplexFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

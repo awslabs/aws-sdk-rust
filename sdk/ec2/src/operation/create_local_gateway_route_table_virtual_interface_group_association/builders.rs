@@ -24,7 +24,7 @@ impl crate::operation::create_local_gateway_route_table_virtual_interface_group_
 pub struct CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_local_gateway_route_table_virtual_interface_group_association::builders::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
                 crate::client::customize::internal::CustomizableSend<
@@ -45,7 +45,7 @@ impl
                 }
             }
 impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
-    /// Creates a new `CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation`.
+    /// Creates a new `CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

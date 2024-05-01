@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendWorkflowStepActionFluentBuilder {
-    /// Creates a new `SendWorkflowStepAction`.
+    /// Creates a new `SendWorkflowStepActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

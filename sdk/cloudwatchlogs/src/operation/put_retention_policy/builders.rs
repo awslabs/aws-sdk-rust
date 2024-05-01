@@ -52,7 +52,7 @@ impl
     }
 }
 impl PutRetentionPolicyFluentBuilder {
-    /// Creates a new `PutRetentionPolicy`.
+    /// Creates a new `PutRetentionPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

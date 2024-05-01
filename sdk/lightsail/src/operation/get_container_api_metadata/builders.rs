@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetContainerAPIMetadataFluentBuilder {
-    /// Creates a new `GetContainerAPIMetadata`.
+    /// Creates a new `GetContainerAPIMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

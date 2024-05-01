@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListEntitledApplicationsFluentBuilder {
-    /// Creates a new `ListEntitledApplications`.
+    /// Creates a new `ListEntitledApplicationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

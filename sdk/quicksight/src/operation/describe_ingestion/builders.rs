@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeIngestionFluentBuilder {
-    /// Creates a new `DescribeIngestion`.
+    /// Creates a new `DescribeIngestionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

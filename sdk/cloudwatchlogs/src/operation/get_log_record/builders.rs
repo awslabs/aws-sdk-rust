@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetLogRecordFluentBuilder {
-    /// Creates a new `GetLogRecord`.
+    /// Creates a new `GetLogRecordFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

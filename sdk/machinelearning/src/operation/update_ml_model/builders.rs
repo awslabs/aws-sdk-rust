@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateMLModelFluentBuilder {
-    /// Creates a new `UpdateMLModel`.
+    /// Creates a new `UpdateMLModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

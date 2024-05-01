@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDetectKeyPhrasesFluentBuilder {
-    /// Creates a new `BatchDetectKeyPhrases`.
+    /// Creates a new `BatchDetectKeyPhrasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

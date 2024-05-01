@@ -62,7 +62,7 @@ impl
     }
 }
 impl RegisterComputeFluentBuilder {
-    /// Creates a new `RegisterCompute`.
+    /// Creates a new `RegisterComputeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

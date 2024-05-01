@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDistributedGrantsFluentBuilder {
-    /// Creates a new `ListDistributedGrants`.
+    /// Creates a new `ListDistributedGrantsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

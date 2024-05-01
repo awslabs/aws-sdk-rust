@@ -56,7 +56,7 @@ impl
     }
 }
 impl RequestEnvironmentInfoFluentBuilder {
-    /// Creates a new `RequestEnvironmentInfo`.
+    /// Creates a new `RequestEnvironmentInfoFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

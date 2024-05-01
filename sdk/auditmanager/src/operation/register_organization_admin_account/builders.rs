@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterOrganizationAdminAccountFluentBuilder {
-    /// Creates a new `RegisterOrganizationAdminAccount`.
+    /// Creates a new `RegisterOrganizationAdminAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

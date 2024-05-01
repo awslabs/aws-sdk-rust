@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSamplingRuleFluentBuilder {
-    /// Creates a new `DeleteSamplingRule`.
+    /// Creates a new `DeleteSamplingRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

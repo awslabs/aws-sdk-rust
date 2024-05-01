@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteJourneyFluentBuilder {
-    /// Creates a new `DeleteJourney`.
+    /// Creates a new `DeleteJourneyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

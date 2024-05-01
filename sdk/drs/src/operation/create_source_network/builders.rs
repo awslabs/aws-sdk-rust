@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateSourceNetworkFluentBuilder {
-    /// Creates a new `CreateSourceNetwork`.
+    /// Creates a new `CreateSourceNetworkFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

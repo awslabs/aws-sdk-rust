@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateDbInstanceFluentBuilder {
-    /// Creates a new `UpdateDbInstance`.
+    /// Creates a new `UpdateDbInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

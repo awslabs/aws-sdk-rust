@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteHostFluentBuilder {
-    /// Creates a new `DeleteHost`.
+    /// Creates a new `DeleteHostFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

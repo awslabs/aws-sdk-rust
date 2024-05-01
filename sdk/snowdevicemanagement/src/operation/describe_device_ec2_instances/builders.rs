@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDeviceEc2InstancesFluentBuilder {
-    /// Creates a new `DescribeDeviceEc2Instances`.
+    /// Creates a new `DescribeDeviceEc2InstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

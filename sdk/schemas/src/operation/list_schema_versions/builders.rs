@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSchemaVersionsFluentBuilder {
-    /// Creates a new `ListSchemaVersions`.
+    /// Creates a new `ListSchemaVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

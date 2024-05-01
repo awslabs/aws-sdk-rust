@@ -54,7 +54,7 @@ impl
     }
 }
 impl FailoverDBClusterFluentBuilder {
-    /// Creates a new `FailoverDBCluster`.
+    /// Creates a new `FailoverDBClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutResolverQueryLogConfigPolicyFluentBuilder {
-    /// Creates a new `PutResolverQueryLogConfigPolicy`.
+    /// Creates a new `PutResolverQueryLogConfigPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

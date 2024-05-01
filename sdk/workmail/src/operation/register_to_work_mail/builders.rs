@@ -49,7 +49,7 @@ impl
     }
 }
 impl RegisterToWorkMailFluentBuilder {
-    /// Creates a new `RegisterToWorkMail`.
+    /// Creates a new `RegisterToWorkMailFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

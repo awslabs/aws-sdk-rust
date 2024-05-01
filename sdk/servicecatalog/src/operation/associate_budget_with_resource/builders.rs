@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateBudgetWithResourceFluentBuilder {
-    /// Creates a new `AssociateBudgetWithResource`.
+    /// Creates a new `AssociateBudgetWithResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateSlotFluentBuilder {
-    /// Creates a new `UpdateSlot`.
+    /// Creates a new `UpdateSlotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

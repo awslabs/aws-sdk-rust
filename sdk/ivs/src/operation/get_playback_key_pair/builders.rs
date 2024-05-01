@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetPlaybackKeyPairFluentBuilder {
-    /// Creates a new `GetPlaybackKeyPair`.
+    /// Creates a new `GetPlaybackKeyPairFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

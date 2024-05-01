@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateMLEndpointFluentBuilder {
-    /// Creates a new `CreateMLEndpoint`.
+    /// Creates a new `CreateMLEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

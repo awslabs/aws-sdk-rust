@@ -50,7 +50,7 @@ impl
     }
 }
 impl PutQueryDefinitionFluentBuilder {
-    /// Creates a new `PutQueryDefinition`.
+    /// Creates a new `PutQueryDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

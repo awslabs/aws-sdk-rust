@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::dele
     }
 }
 impl DeleteACLFluentBuilder {
-    /// Creates a new `DeleteACL`.
+    /// Creates a new `DeleteACLFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

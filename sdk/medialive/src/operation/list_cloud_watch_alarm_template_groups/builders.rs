@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCloudWatchAlarmTemplateGroupsFluentBuilder {
-    /// Creates a new `ListCloudWatchAlarmTemplateGroups`.
+    /// Creates a new `ListCloudWatchAlarmTemplateGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

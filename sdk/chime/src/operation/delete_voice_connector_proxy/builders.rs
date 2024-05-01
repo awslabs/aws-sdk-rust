@@ -52,7 +52,7 @@ impl
     }
 }
 impl DeleteVoiceConnectorProxyFluentBuilder {
-    /// Creates a new `DeleteVoiceConnectorProxy`.
+    /// Creates a new `DeleteVoiceConnectorProxyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateLoggerDefinitionVersionFluentBuilder {
-    /// Creates a new `CreateLoggerDefinitionVersion`.
+    /// Creates a new `CreateLoggerDefinitionVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

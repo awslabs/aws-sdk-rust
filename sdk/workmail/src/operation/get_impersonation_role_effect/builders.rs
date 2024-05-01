@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetImpersonationRoleEffectFluentBuilder {
-    /// Creates a new `GetImpersonationRoleEffect`.
+    /// Creates a new `GetImpersonationRoleEffectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

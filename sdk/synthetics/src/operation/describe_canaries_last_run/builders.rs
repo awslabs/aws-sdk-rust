@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeCanariesLastRunFluentBuilder {
-    /// Creates a new `DescribeCanariesLastRun`.
+    /// Creates a new `DescribeCanariesLastRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

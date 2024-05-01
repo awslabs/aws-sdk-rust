@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeprecateSystemTemplateFluentBuilder {
-    /// Creates a new `DeprecateSystemTemplate`.
+    /// Creates a new `DeprecateSystemTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

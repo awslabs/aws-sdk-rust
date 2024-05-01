@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateBotAliasFluentBuilder {
-    /// Creates a new `CreateBotAlias`.
+    /// Creates a new `CreateBotAliasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

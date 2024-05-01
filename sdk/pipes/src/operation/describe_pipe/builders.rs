@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribePipeFluentBuilder {
-    /// Creates a new `DescribePipe`.
+    /// Creates a new `DescribePipeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

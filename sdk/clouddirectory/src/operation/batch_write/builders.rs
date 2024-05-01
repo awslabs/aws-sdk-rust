@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchWriteFluentBuilder {
-    /// Creates a new `BatchWrite`.
+    /// Creates a new `BatchWriteFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

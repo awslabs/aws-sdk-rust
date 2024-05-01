@@ -55,7 +55,7 @@ impl
     }
 }
 impl PublishBatchFluentBuilder {
-    /// Creates a new `PublishBatch`.
+    /// Creates a new `PublishBatchFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

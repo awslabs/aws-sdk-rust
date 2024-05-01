@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetPerformanceAnalysisReportFluentBuilder {
-    /// Creates a new `GetPerformanceAnalysisReport`.
+    /// Creates a new `GetPerformanceAnalysisReportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

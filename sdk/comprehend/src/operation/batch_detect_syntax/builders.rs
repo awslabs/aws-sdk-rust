@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDetectSyntaxFluentBuilder {
-    /// Creates a new `BatchDetectSyntax`.
+    /// Creates a new `BatchDetectSyntaxFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

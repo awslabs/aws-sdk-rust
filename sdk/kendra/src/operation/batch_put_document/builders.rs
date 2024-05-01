@@ -51,7 +51,7 @@ impl
     }
 }
 impl BatchPutDocumentFluentBuilder {
-    /// Creates a new `BatchPutDocument`.
+    /// Creates a new `BatchPutDocumentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

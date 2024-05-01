@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateLoadBalancerFluentBuilder {
-    /// Creates a new `CreateLoadBalancer`.
+    /// Creates a new `CreateLoadBalancerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

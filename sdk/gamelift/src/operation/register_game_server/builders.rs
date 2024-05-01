@@ -53,7 +53,7 @@ impl
     }
 }
 impl RegisterGameServerFluentBuilder {
-    /// Creates a new `RegisterGameServer`.
+    /// Creates a new `RegisterGameServerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

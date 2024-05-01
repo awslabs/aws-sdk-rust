@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteVirtualServiceFluentBuilder {
-    /// Creates a new `DeleteVirtualService`.
+    /// Creates a new `DeleteVirtualServiceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

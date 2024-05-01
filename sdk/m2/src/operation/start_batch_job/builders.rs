@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartBatchJobFluentBuilder {
-    /// Creates a new `StartBatchJob`.
+    /// Creates a new `StartBatchJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

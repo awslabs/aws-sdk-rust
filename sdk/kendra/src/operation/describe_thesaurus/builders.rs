@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeThesaurusFluentBuilder {
-    /// Creates a new `DescribeThesaurus`.
+    /// Creates a new `DescribeThesaurusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

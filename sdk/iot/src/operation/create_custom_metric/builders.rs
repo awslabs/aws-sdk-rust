@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateCustomMetricFluentBuilder {
-    /// Creates a new `CreateCustomMetric`.
+    /// Creates a new `CreateCustomMetricFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterCertificateWithoutCAFluentBuilder {
-    /// Creates a new `RegisterCertificateWithoutCA`.
+    /// Creates a new `RegisterCertificateWithoutCAFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

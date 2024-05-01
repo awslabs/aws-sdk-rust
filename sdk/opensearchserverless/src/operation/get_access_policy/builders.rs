@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAccessPolicyFluentBuilder {
-    /// Creates a new `GetAccessPolicy`.
+    /// Creates a new `GetAccessPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

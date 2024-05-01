@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateImagePermissionsFluentBuilder {
-    /// Creates a new `UpdateImagePermissions`.
+    /// Creates a new `UpdateImagePermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

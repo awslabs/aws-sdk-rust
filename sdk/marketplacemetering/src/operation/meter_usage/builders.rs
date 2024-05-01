@@ -51,7 +51,7 @@ impl
     }
 }
 impl MeterUsageFluentBuilder {
-    /// Creates a new `MeterUsage`.
+    /// Creates a new `MeterUsageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

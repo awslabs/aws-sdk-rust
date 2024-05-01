@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteFunctionEventInvokeConfigFluentBuilder {
-    /// Creates a new `DeleteFunctionEventInvokeConfig`.
+    /// Creates a new `DeleteFunctionEventInvokeConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

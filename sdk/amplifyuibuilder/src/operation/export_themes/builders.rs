@@ -48,7 +48,7 @@ impl
     }
 }
 impl ExportThemesFluentBuilder {
-    /// Creates a new `ExportThemes`.
+    /// Creates a new `ExportThemesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

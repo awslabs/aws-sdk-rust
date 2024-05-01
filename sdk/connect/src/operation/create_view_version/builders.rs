@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateViewVersionFluentBuilder {
-    /// Creates a new `CreateViewVersion`.
+    /// Creates a new `CreateViewVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

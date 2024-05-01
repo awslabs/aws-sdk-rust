@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetInlinePolicyForPermissionSetFluentBuilder {
-    /// Creates a new `GetInlinePolicyForPermissionSet`.
+    /// Creates a new `GetInlinePolicyForPermissionSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

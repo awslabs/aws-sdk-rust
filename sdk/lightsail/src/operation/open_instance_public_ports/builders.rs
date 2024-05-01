@@ -49,7 +49,7 @@ impl
     }
 }
 impl OpenInstancePublicPortsFluentBuilder {
-    /// Creates a new `OpenInstancePublicPorts`.
+    /// Creates a new `OpenInstancePublicPortsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

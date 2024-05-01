@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRetrieverFluentBuilder {
-    /// Creates a new `DeleteRetriever`.
+    /// Creates a new `DeleteRetrieverFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

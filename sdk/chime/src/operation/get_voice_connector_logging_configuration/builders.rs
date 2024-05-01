@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetVoiceConnectorLoggingConfigurationFluentBuilder {
-    /// Creates a new `GetVoiceConnectorLoggingConfiguration`.
+    /// Creates a new `GetVoiceConnectorLoggingConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

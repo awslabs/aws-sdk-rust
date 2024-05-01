@@ -48,7 +48,7 @@ impl
     }
 }
 impl ConfirmCustomerAgreementFluentBuilder {
-    /// Creates a new `ConfirmCustomerAgreement`.
+    /// Creates a new `ConfirmCustomerAgreementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

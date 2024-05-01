@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteApplicationFromEnvironmentFluentBuilder {
-    /// Creates a new `DeleteApplicationFromEnvironment`.
+    /// Creates a new `DeleteApplicationFromEnvironmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

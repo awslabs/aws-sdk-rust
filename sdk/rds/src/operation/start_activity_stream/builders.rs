@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartActivityStreamFluentBuilder {
-    /// Creates a new `StartActivityStream`.
+    /// Creates a new `StartActivityStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListStackSetOperationsFluentBuilder {
-    /// Creates a new `ListStackSetOperations`.
+    /// Creates a new `ListStackSetOperationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

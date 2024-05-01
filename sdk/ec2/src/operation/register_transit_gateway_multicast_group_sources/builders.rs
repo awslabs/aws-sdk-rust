@@ -50,7 +50,7 @@ impl
     }
 }
 impl RegisterTransitGatewayMulticastGroupSourcesFluentBuilder {
-    /// Creates a new `RegisterTransitGatewayMulticastGroupSources`.
+    /// Creates a new `RegisterTransitGatewayMulticastGroupSourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

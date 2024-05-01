@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartAppReplicationFluentBuilder {
-    /// Creates a new `StartAppReplication`.
+    /// Creates a new `StartAppReplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

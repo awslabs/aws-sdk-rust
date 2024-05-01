@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateBatchPredictionJobFluentBuilder {
-    /// Creates a new `CreateBatchPredictionJob`.
+    /// Creates a new `CreateBatchPredictionJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

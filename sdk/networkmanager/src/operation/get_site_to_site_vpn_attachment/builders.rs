@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSiteToSiteVpnAttachmentFluentBuilder {
-    /// Creates a new `GetSiteToSiteVpnAttachment`.
+    /// Creates a new `GetSiteToSiteVpnAttachmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

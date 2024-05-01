@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeGlobalNetworksFluentBuilder {
-    /// Creates a new `DescribeGlobalNetworks`.
+    /// Creates a new `DescribeGlobalNetworksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

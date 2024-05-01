@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListFirewallConfigsFluentBuilder {
-    /// Creates a new `ListFirewallConfigs`.
+    /// Creates a new `ListFirewallConfigsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

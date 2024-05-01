@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateContactFromAddressBookFluentBuilder {
-    /// Creates a new `DisassociateContactFromAddressBook`.
+    /// Creates a new `DisassociateContactFromAddressBookFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

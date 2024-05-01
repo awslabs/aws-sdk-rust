@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDeleteFeaturedResultsSetFluentBuilder {
-    /// Creates a new `BatchDeleteFeaturedResultsSet`.
+    /// Creates a new `BatchDeleteFeaturedResultsSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

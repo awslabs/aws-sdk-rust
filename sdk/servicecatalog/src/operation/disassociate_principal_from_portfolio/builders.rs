@@ -53,7 +53,7 @@ impl
     }
 }
 impl DisassociatePrincipalFromPortfolioFluentBuilder {
-    /// Creates a new `DisassociatePrincipalFromPortfolio`.
+    /// Creates a new `DisassociatePrincipalFromPortfolioFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

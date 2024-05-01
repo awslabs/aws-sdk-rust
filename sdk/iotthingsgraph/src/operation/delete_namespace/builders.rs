@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteNamespaceFluentBuilder {
-    /// Creates a new `DeleteNamespace`.
+    /// Creates a new `DeleteNamespaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl UpdateRuntimeConfigurationFluentBuilder {
-    /// Creates a new `UpdateRuntimeConfiguration`.
+    /// Creates a new `UpdateRuntimeConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

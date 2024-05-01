@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisableSsoFluentBuilder {
-    /// Creates a new `DisableSso`.
+    /// Creates a new `DisableSsoFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl StartResourceEvaluationFluentBuilder {
-    /// Creates a new `StartResourceEvaluation`.
+    /// Creates a new `StartResourceEvaluationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

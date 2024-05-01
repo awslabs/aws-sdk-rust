@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteEnvironmentTemplateVersionFluentBuilder {
-    /// Creates a new `DeleteEnvironmentTemplateVersion`.
+    /// Creates a new `DeleteEnvironmentTemplateVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetEvidenceFluentBuilder {
-    /// Creates a new `GetEvidence`.
+    /// Creates a new `GetEvidenceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

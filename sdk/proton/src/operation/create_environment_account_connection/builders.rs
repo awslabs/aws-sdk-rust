@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateEnvironmentAccountConnectionFluentBuilder {
-    /// Creates a new `CreateEnvironmentAccountConnection`.
+    /// Creates a new `CreateEnvironmentAccountConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

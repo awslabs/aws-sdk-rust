@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssumeImpersonationRoleFluentBuilder {
-    /// Creates a new `AssumeImpersonationRole`.
+    /// Creates a new `AssumeImpersonationRoleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

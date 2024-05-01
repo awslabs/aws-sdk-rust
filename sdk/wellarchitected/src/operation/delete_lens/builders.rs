@@ -52,7 +52,7 @@ impl
     }
 }
 impl DeleteLensFluentBuilder {
-    /// Creates a new `DeleteLens`.
+    /// Creates a new `DeleteLensFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

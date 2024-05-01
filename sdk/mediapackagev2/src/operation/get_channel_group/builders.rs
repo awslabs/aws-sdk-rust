@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetChannelGroupFluentBuilder {
-    /// Creates a new `GetChannelGroup`.
+    /// Creates a new `GetChannelGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteIndexFieldFluentBuilder {
-    /// Creates a new `DeleteIndexField`.
+    /// Creates a new `DeleteIndexFieldFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

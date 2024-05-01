@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopDeploymentFluentBuilder {
-    /// Creates a new `StopDeployment`.
+    /// Creates a new `StopDeploymentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

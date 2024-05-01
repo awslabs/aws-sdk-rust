@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeMediaStorageConfigurationFluentBuilder {
-    /// Creates a new `DescribeMediaStorageConfiguration`.
+    /// Creates a new `DescribeMediaStorageConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

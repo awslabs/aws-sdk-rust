@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutRegistrationFieldValueFluentBuilder {
-    /// Creates a new `PutRegistrationFieldValue`.
+    /// Creates a new `PutRegistrationFieldValueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

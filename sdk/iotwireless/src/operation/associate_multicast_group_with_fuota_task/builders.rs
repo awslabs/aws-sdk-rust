@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateMulticastGroupWithFuotaTaskFluentBuilder {
-    /// Creates a new `AssociateMulticastGroupWithFuotaTask`.
+    /// Creates a new `AssociateMulticastGroupWithFuotaTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

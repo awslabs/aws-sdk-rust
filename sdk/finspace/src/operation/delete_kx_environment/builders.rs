@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteKxEnvironmentFluentBuilder {
-    /// Creates a new `DeleteKxEnvironment`.
+    /// Creates a new `DeleteKxEnvironmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetSipMediaApplicationLoggingConfigurationFluentBuilder {
-    /// Creates a new `GetSipMediaApplicationLoggingConfiguration`.
+    /// Creates a new `GetSipMediaApplicationLoggingConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

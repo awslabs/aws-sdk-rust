@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutAppInstanceRetentionSettingsFluentBuilder {
-    /// Creates a new `PutAppInstanceRetentionSettings`.
+    /// Creates a new `PutAppInstanceRetentionSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

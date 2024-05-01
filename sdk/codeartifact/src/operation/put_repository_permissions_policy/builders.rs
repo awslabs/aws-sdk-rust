@@ -49,7 +49,7 @@ impl
     }
 }
 impl PutRepositoryPermissionsPolicyFluentBuilder {
-    /// Creates a new `PutRepositoryPermissionsPolicy`.
+    /// Creates a new `PutRepositoryPermissionsPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeMetricCollectionTypesFluentBuilder {
-    /// Creates a new `DescribeMetricCollectionTypes`.
+    /// Creates a new `DescribeMetricCollectionTypesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

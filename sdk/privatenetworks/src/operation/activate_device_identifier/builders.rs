@@ -48,7 +48,7 @@ impl
     }
 }
 impl ActivateDeviceIdentifierFluentBuilder {
-    /// Creates a new `ActivateDeviceIdentifier`.
+    /// Creates a new `ActivateDeviceIdentifierFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

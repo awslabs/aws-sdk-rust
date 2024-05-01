@@ -59,7 +59,7 @@ impl
     }
 }
 impl GetIdentityDkimAttributesFluentBuilder {
-    /// Creates a new `GetIdentityDkimAttributes`.
+    /// Creates a new `GetIdentityDkimAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateIdMappingWorkflowFluentBuilder {
-    /// Creates a new `CreateIdMappingWorkflow`.
+    /// Creates a new `CreateIdMappingWorkflowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

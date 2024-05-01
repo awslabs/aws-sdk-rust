@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeVirtualNodeFluentBuilder {
-    /// Creates a new `DescribeVirtualNode`.
+    /// Creates a new `DescribeVirtualNodeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

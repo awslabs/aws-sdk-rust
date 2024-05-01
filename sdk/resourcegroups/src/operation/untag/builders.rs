@@ -48,7 +48,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::unta
     }
 }
 impl UntagFluentBuilder {
-    /// Creates a new `Untag`.
+    /// Creates a new `UntagFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

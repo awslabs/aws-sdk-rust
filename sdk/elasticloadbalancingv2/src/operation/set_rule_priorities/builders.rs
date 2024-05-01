@@ -49,7 +49,7 @@ impl
     }
 }
 impl SetRulePrioritiesFluentBuilder {
-    /// Creates a new `SetRulePriorities`.
+    /// Creates a new `SetRulePrioritiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

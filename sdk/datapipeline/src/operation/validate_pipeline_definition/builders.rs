@@ -77,7 +77,7 @@ impl
     }
 }
 impl ValidatePipelineDefinitionFluentBuilder {
-    /// Creates a new `ValidatePipelineDefinition`.
+    /// Creates a new `ValidatePipelineDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

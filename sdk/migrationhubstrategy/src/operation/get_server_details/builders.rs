@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetServerDetailsFluentBuilder {
-    /// Creates a new `GetServerDetails`.
+    /// Creates a new `GetServerDetailsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

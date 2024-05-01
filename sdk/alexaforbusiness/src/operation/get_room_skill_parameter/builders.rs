@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetRoomSkillParameterFluentBuilder {
-    /// Creates a new `GetRoomSkillParameter`.
+    /// Creates a new `GetRoomSkillParameterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

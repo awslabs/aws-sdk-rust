@@ -64,7 +64,7 @@ impl
     }
 }
 impl StartGameSessionPlacementFluentBuilder {
-    /// Creates a new `StartGameSessionPlacement`.
+    /// Creates a new `StartGameSessionPlacementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

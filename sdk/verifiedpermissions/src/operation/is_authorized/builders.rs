@@ -48,7 +48,7 @@ impl
     }
 }
 impl IsAuthorizedFluentBuilder {
-    /// Creates a new `IsAuthorized`.
+    /// Creates a new `IsAuthorizedFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

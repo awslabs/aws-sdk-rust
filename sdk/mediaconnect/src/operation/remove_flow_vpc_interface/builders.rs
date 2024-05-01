@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveFlowVpcInterfaceFluentBuilder {
-    /// Creates a new `RemoveFlowVpcInterface`.
+    /// Creates a new `RemoveFlowVpcInterfaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

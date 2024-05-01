@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetDeliverabilityDashboardOptionsFluentBuilder {
-    /// Creates a new `GetDeliverabilityDashboardOptions`.
+    /// Creates a new `GetDeliverabilityDashboardOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

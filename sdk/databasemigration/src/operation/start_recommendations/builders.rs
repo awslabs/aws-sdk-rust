@@ -49,7 +49,7 @@ impl
     }
 }
 impl StartRecommendationsFluentBuilder {
-    /// Creates a new `StartRecommendations`.
+    /// Creates a new `StartRecommendationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

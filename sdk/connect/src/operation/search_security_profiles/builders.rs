@@ -48,7 +48,7 @@ impl
     }
 }
 impl SearchSecurityProfilesFluentBuilder {
-    /// Creates a new `SearchSecurityProfiles`.
+    /// Creates a new `SearchSecurityProfilesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

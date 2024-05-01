@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDBClusterAutomatedBackupFluentBuilder {
-    /// Creates a new `DeleteDBClusterAutomatedBackup`.
+    /// Creates a new `DeleteDBClusterAutomatedBackupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

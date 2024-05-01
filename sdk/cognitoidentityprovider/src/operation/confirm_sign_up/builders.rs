@@ -51,7 +51,7 @@ impl
     }
 }
 impl ConfirmSignUpFluentBuilder {
-    /// Creates a new `ConfirmSignUp`.
+    /// Creates a new `ConfirmSignUpFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

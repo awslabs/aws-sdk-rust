@@ -48,7 +48,7 @@ impl
     }
 }
 impl EnableControlFluentBuilder {
-    /// Creates a new `EnableControl`.
+    /// Creates a new `EnableControlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetPropertyValueFluentBuilder {
-    /// Creates a new `GetPropertyValue`.
+    /// Creates a new `GetPropertyValueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

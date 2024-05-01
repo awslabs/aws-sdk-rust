@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListHubContentVersionsFluentBuilder {
-    /// Creates a new `ListHubContentVersions`.
+    /// Creates a new `ListHubContentVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl AcceptInputDeviceTransferFluentBuilder {
-    /// Creates a new `AcceptInputDeviceTransfer`.
+    /// Creates a new `AcceptInputDeviceTransferFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

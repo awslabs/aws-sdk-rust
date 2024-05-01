@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListFlowExecutionMessagesFluentBuilder {
-    /// Creates a new `ListFlowExecutionMessages`.
+    /// Creates a new `ListFlowExecutionMessagesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

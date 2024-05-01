@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTrailStatusFluentBuilder {
-    /// Creates a new `GetTrailStatus`.
+    /// Creates a new `GetTrailStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

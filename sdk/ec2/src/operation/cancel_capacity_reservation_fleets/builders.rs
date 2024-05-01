@@ -56,7 +56,7 @@ impl
     }
 }
 impl CancelCapacityReservationFleetsFluentBuilder {
-    /// Creates a new `CancelCapacityReservationFleets`.
+    /// Creates a new `CancelCapacityReservationFleetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

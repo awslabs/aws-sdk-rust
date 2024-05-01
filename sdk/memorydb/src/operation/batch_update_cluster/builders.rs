@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchUpdateClusterFluentBuilder {
-    /// Creates a new `BatchUpdateCluster`.
+    /// Creates a new `BatchUpdateClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

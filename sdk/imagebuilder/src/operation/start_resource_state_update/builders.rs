@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartResourceStateUpdateFluentBuilder {
-    /// Creates a new `StartResourceStateUpdate`.
+    /// Creates a new `StartResourceStateUpdateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

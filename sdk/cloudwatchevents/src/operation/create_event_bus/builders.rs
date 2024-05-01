@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateEventBusFluentBuilder {
-    /// Creates a new `CreateEventBus`.
+    /// Creates a new `CreateEventBusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

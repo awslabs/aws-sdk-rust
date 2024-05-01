@@ -59,7 +59,7 @@ impl
     }
 }
 impl DescribeWhatIfForecastExportFluentBuilder {
-    /// Creates a new `DescribeWhatIfForecastExport`.
+    /// Creates a new `DescribeWhatIfForecastExportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

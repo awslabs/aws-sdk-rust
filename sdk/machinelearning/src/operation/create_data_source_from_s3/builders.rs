@@ -52,7 +52,7 @@ impl
     }
 }
 impl CreateDataSourceFromS3FluentBuilder {
-    /// Creates a new `CreateDataSourceFromS3`.
+    /// Creates a new `CreateDataSourceFromS3FluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

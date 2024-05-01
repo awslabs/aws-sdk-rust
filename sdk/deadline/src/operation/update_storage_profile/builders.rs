@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateStorageProfileFluentBuilder {
-    /// Creates a new `UpdateStorageProfile`.
+    /// Creates a new `UpdateStorageProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

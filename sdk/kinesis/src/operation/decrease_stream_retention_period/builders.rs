@@ -51,7 +51,7 @@ impl
     }
 }
 impl DecreaseStreamRetentionPeriodFluentBuilder {
-    /// Creates a new `DecreaseStreamRetentionPeriod`.
+    /// Creates a new `DecreaseStreamRetentionPeriodFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

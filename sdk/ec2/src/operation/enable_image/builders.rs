@@ -50,7 +50,7 @@ impl
     }
 }
 impl EnableImageFluentBuilder {
-    /// Creates a new `EnableImage`.
+    /// Creates a new `EnableImageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

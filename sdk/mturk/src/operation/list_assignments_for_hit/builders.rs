@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListAssignmentsForHITFluentBuilder {
-    /// Creates a new `ListAssignmentsForHIT`.
+    /// Creates a new `ListAssignmentsForHITFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

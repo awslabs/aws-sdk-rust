@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListReviewPolicyResultsForHITFluentBuilder {
-    /// Creates a new `ListReviewPolicyResultsForHIT`.
+    /// Creates a new `ListReviewPolicyResultsForHITFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

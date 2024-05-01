@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListEventBusesFluentBuilder {
-    /// Creates a new `ListEventBuses`.
+    /// Creates a new `ListEventBusesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

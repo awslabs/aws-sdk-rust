@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyPrivateDnsNameOptionsFluentBuilder {
-    /// Creates a new `ModifyPrivateDnsNameOptions`.
+    /// Creates a new `ModifyPrivateDnsNameOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

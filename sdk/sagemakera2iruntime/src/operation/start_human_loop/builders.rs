@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartHumanLoopFluentBuilder {
-    /// Creates a new `StartHumanLoop`.
+    /// Creates a new `StartHumanLoopFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

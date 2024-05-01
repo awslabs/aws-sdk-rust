@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutOutcomeFluentBuilder {
-    /// Creates a new `PutOutcome`.
+    /// Creates a new `PutOutcomeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

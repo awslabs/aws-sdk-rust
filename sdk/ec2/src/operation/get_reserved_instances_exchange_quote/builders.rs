@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetReservedInstancesExchangeQuoteFluentBuilder {
-    /// Creates a new `GetReservedInstancesExchangeQuote`.
+    /// Creates a new `GetReservedInstancesExchangeQuoteFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

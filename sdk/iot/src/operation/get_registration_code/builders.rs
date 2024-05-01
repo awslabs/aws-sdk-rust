@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetRegistrationCodeFluentBuilder {
-    /// Creates a new `GetRegistrationCode`.
+    /// Creates a new `GetRegistrationCodeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

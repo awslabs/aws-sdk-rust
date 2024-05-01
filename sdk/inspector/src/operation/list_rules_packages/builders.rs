@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListRulesPackagesFluentBuilder {
-    /// Creates a new `ListRulesPackages`.
+    /// Creates a new `ListRulesPackagesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

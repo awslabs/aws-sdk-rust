@@ -49,7 +49,7 @@ impl
     }
 }
 impl StopTransformJobFluentBuilder {
-    /// Creates a new `StopTransformJob`.
+    /// Creates a new `StopTransformJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

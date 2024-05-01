@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetVpnTunnelReplacementStatusFluentBuilder {
-    /// Creates a new `GetVpnTunnelReplacementStatus`.
+    /// Creates a new `GetVpnTunnelReplacementStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

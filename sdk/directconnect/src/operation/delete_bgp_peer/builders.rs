@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteBGPPeerFluentBuilder {
-    /// Creates a new `DeleteBGPPeer`.
+    /// Creates a new `DeleteBGPPeerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

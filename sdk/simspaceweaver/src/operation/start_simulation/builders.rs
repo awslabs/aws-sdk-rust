@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartSimulationFluentBuilder {
-    /// Creates a new `StartSimulation`.
+    /// Creates a new `StartSimulationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutAuditEventsFluentBuilder {
-    /// Creates a new `PutAuditEvents`.
+    /// Creates a new `PutAuditEventsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

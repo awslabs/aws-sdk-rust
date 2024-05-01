@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDisassociateResourcesFromCustomLineItemFluentBuilder {
-    /// Creates a new `BatchDisassociateResourcesFromCustomLineItem`.
+    /// Creates a new `BatchDisassociateResourcesFromCustomLineItemFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

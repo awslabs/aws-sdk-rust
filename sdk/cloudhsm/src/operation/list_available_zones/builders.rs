@@ -51,7 +51,7 @@ impl
     }
 }
 impl ListAvailableZonesFluentBuilder {
-    /// Creates a new `ListAvailableZones`.
+    /// Creates a new `ListAvailableZonesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

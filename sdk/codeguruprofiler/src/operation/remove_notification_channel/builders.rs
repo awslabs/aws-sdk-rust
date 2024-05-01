@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveNotificationChannelFluentBuilder {
-    /// Creates a new `RemoveNotificationChannel`.
+    /// Creates a new `RemoveNotificationChannelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

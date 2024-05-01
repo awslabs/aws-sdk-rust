@@ -64,7 +64,7 @@ impl
     }
 }
 impl DeleteBucketMetricsConfigurationFluentBuilder {
-    /// Creates a new `DeleteBucketMetricsConfiguration`.
+    /// Creates a new `DeleteBucketMetricsConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

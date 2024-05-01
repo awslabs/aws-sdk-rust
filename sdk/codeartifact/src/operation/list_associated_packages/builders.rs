@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAssociatedPackagesFluentBuilder {
-    /// Creates a new `ListAssociatedPackages`.
+    /// Creates a new `ListAssociatedPackagesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

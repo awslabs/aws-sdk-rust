@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateDRTLogBucketFluentBuilder {
-    /// Creates a new `AssociateDRTLogBucket`.
+    /// Creates a new `AssociateDRTLogBucketFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

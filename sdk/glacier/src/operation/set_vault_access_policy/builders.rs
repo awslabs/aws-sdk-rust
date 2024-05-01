@@ -48,7 +48,7 @@ impl
     }
 }
 impl SetVaultAccessPolicyFluentBuilder {
-    /// Creates a new `SetVaultAccessPolicy`.
+    /// Creates a new `SetVaultAccessPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

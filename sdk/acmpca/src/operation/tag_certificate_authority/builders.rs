@@ -50,7 +50,7 @@ impl
     }
 }
 impl TagCertificateAuthorityFluentBuilder {
-    /// Creates a new `TagCertificateAuthority`.
+    /// Creates a new `TagCertificateAuthorityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

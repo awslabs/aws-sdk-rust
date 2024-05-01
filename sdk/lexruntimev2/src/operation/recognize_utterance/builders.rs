@@ -79,7 +79,7 @@ impl
     }
 }
 impl RecognizeUtteranceFluentBuilder {
-    /// Creates a new `RecognizeUtterance`.
+    /// Creates a new `RecognizeUtteranceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListBonusPaymentsFluentBuilder {
-    /// Creates a new `ListBonusPayments`.
+    /// Creates a new `ListBonusPaymentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

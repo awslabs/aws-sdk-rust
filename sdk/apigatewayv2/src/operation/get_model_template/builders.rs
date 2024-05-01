@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetModelTemplateFluentBuilder {
-    /// Creates a new `GetModelTemplate`.
+    /// Creates a new `GetModelTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

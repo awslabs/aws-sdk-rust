@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateOutboundConnectionFluentBuilder {
-    /// Creates a new `CreateOutboundConnection`.
+    /// Creates a new `CreateOutboundConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

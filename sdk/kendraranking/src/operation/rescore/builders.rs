@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::resc
     }
 }
 impl RescoreFluentBuilder {
-    /// Creates a new `Rescore`.
+    /// Creates a new `RescoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

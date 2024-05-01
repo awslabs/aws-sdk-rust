@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCustomRoutingPortMappingsByDestinationFluentBuilder {
-    /// Creates a new `ListCustomRoutingPortMappingsByDestination`.
+    /// Creates a new `ListCustomRoutingPortMappingsByDestinationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

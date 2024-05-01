@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetBlueprintFluentBuilder {
-    /// Creates a new `GetBlueprint`.
+    /// Creates a new `GetBlueprintFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

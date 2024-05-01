@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetWebACLForResourceFluentBuilder {
-    /// Creates a new `GetWebACLForResource`.
+    /// Creates a new `GetWebACLForResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateIpamResourceDiscoveryFluentBuilder {
-    /// Creates a new `DisassociateIpamResourceDiscovery`.
+    /// Creates a new `DisassociateIpamResourceDiscoveryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

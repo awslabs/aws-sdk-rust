@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSolutionFluentBuilder {
-    /// Creates a new `DeleteSolution`.
+    /// Creates a new `DeleteSolutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

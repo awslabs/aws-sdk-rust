@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::prom
     }
 }
 impl PromoteFluentBuilder {
-    /// Creates a new `Promote`.
+    /// Creates a new `PromoteFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

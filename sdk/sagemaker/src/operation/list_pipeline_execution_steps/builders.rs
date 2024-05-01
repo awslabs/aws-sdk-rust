@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPipelineExecutionStepsFluentBuilder {
-    /// Creates a new `ListPipelineExecutionSteps`.
+    /// Creates a new `ListPipelineExecutionStepsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

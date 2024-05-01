@@ -48,7 +48,7 @@ impl
     }
 }
 impl PublishRecipeFluentBuilder {
-    /// Creates a new `PublishRecipe`.
+    /// Creates a new `PublishRecipeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

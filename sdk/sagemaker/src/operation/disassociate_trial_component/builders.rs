@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateTrialComponentFluentBuilder {
-    /// Creates a new `DisassociateTrialComponent`.
+    /// Creates a new `DisassociateTrialComponentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

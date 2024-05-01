@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateConfigurationItemsFromApplicationFluentBuilder {
-    /// Creates a new `DisassociateConfigurationItemsFromApplication`.
+    /// Creates a new `DisassociateConfigurationItemsFromApplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

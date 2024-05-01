@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRequestValidatorFluentBuilder {
-    /// Creates a new `GetRequestValidator`.
+    /// Creates a new `GetRequestValidatorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

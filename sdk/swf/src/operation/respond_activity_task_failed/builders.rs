@@ -60,7 +60,7 @@ impl
     }
 }
 impl RespondActivityTaskFailedFluentBuilder {
-    /// Creates a new `RespondActivityTaskFailed`.
+    /// Creates a new `RespondActivityTaskFailedFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

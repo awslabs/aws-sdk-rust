@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetGeneratedTemplateFluentBuilder {
-    /// Creates a new `GetGeneratedTemplate`.
+    /// Creates a new `GetGeneratedTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

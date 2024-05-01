@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteEndpointAccessFluentBuilder {
-    /// Creates a new `DeleteEndpointAccess`.
+    /// Creates a new `DeleteEndpointAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

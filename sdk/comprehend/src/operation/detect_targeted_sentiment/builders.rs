@@ -49,7 +49,7 @@ impl
     }
 }
 impl DetectTargetedSentimentFluentBuilder {
-    /// Creates a new `DetectTargetedSentiment`.
+    /// Creates a new `DetectTargetedSentimentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl UpdateGameServerGroupFluentBuilder {
-    /// Creates a new `UpdateGameServerGroup`.
+    /// Creates a new `UpdateGameServerGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

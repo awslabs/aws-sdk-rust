@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListLinuxSubscriptionsFluentBuilder {
-    /// Creates a new `ListLinuxSubscriptions`.
+    /// Creates a new `ListLinuxSubscriptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -55,7 +55,7 @@ impl
     }
 }
 impl ReportTaskRunnerHeartbeatFluentBuilder {
-    /// Creates a new `ReportTaskRunnerHeartbeat`.
+    /// Creates a new `ReportTaskRunnerHeartbeatFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

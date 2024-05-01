@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateViewMetadataFluentBuilder {
-    /// Creates a new `UpdateViewMetadata`.
+    /// Creates a new `UpdateViewMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCodeRepositoriesFluentBuilder {
-    /// Creates a new `ListCodeRepositories`.
+    /// Creates a new `ListCodeRepositoriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DetectMetricSetConfigFluentBuilder {
-    /// Creates a new `DetectMetricSetConfig`.
+    /// Creates a new `DetectMetricSetConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

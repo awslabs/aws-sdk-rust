@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAddonFluentBuilder {
-    /// Creates a new `DescribeAddon`.
+    /// Creates a new `DescribeAddonFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

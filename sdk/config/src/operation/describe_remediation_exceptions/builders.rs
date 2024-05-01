@@ -52,7 +52,7 @@ impl
     }
 }
 impl DescribeRemediationExceptionsFluentBuilder {
-    /// Creates a new `DescribeRemediationExceptions`.
+    /// Creates a new `DescribeRemediationExceptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

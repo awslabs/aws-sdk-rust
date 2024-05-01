@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListRequestedServiceQuotaChangeHistoryByQuotaFluentBuilder {
-    /// Creates a new `ListRequestedServiceQuotaChangeHistoryByQuota`.
+    /// Creates a new `ListRequestedServiceQuotaChangeHistoryByQuotaFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

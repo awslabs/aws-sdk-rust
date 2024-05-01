@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopRemoteAccessSessionFluentBuilder {
-    /// Creates a new `StopRemoteAccessSession`.
+    /// Creates a new `StopRemoteAccessSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

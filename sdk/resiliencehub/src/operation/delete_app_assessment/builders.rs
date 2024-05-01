@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAppAssessmentFluentBuilder {
-    /// Creates a new `DeleteAppAssessment`.
+    /// Creates a new `DeleteAppAssessmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

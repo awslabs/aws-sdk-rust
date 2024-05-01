@@ -50,7 +50,7 @@ impl
     }
 }
 impl DisableFastLaunchFluentBuilder {
-    /// Creates a new `DisableFastLaunch`.
+    /// Creates a new `DisableFastLaunchFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

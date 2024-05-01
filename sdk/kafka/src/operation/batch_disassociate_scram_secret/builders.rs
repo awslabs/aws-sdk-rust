@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDisassociateScramSecretFluentBuilder {
-    /// Creates a new `BatchDisassociateScramSecret`.
+    /// Creates a new `BatchDisassociateScramSecretFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

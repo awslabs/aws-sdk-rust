@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopGUISessionFluentBuilder {
-    /// Creates a new `StopGUISession`.
+    /// Creates a new `StopGUISessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

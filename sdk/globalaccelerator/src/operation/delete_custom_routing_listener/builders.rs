@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCustomRoutingListenerFluentBuilder {
-    /// Creates a new `DeleteCustomRoutingListener`.
+    /// Creates a new `DeleteCustomRoutingListenerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

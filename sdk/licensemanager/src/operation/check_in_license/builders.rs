@@ -48,7 +48,7 @@ impl
     }
 }
 impl CheckInLicenseFluentBuilder {
-    /// Creates a new `CheckInLicense`.
+    /// Creates a new `CheckInLicenseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

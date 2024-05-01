@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListMLModelTransformJobsFluentBuilder {
-    /// Creates a new `ListMLModelTransformJobs`.
+    /// Creates a new `ListMLModelTransformJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

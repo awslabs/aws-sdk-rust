@@ -52,7 +52,7 @@ impl
     }
 }
 impl IsAuthorizedWithTokenFluentBuilder {
-    /// Creates a new `IsAuthorizedWithToken`.
+    /// Creates a new `IsAuthorizedWithTokenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

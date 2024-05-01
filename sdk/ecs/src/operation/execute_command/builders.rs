@@ -50,7 +50,7 @@ impl
     }
 }
 impl ExecuteCommandFluentBuilder {
-    /// Creates a new `ExecuteCommand`.
+    /// Creates a new `ExecuteCommandFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

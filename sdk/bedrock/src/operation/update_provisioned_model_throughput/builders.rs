@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateProvisionedModelThroughputFluentBuilder {
-    /// Creates a new `UpdateProvisionedModelThroughput`.
+    /// Creates a new `UpdateProvisionedModelThroughputFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

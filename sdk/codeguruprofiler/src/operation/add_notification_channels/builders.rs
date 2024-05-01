@@ -48,7 +48,7 @@ impl
     }
 }
 impl AddNotificationChannelsFluentBuilder {
-    /// Creates a new `AddNotificationChannels`.
+    /// Creates a new `AddNotificationChannelsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

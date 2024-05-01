@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateRoomFluentBuilder {
-    /// Creates a new `UpdateRoom`.
+    /// Creates a new `UpdateRoomFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

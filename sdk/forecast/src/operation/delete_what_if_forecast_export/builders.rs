@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteWhatIfForecastExportFluentBuilder {
-    /// Creates a new `DeleteWhatIfForecastExport`.
+    /// Creates a new `DeleteWhatIfForecastExportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

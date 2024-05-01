@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListQuerySuggestionsBlockListsFluentBuilder {
-    /// Creates a new `ListQuerySuggestionsBlockLists`.
+    /// Creates a new `ListQuerySuggestionsBlockListsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

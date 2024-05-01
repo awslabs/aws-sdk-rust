@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopTriggerFluentBuilder {
-    /// Creates a new `StopTrigger`.
+    /// Creates a new `StopTriggerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

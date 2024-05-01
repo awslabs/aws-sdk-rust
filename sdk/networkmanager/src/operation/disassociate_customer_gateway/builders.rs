@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateCustomerGatewayFluentBuilder {
-    /// Creates a new `DisassociateCustomerGateway`.
+    /// Creates a new `DisassociateCustomerGatewayFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

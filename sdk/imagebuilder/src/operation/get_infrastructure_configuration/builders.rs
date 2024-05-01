@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetInfrastructureConfigurationFluentBuilder {
-    /// Creates a new `GetInfrastructureConfiguration`.
+    /// Creates a new `GetInfrastructureConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

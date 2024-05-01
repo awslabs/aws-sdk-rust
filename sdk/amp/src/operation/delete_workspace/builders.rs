@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteWorkspaceFluentBuilder {
-    /// Creates a new `DeleteWorkspace`.
+    /// Creates a new `DeleteWorkspaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

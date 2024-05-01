@@ -53,7 +53,7 @@ impl
     }
 }
 impl QueryForecastFluentBuilder {
-    /// Creates a new `QueryForecast`.
+    /// Creates a new `QueryForecastFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

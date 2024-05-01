@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyInstanceEventStartTimeFluentBuilder {
-    /// Creates a new `ModifyInstanceEventStartTime`.
+    /// Creates a new `ModifyInstanceEventStartTimeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

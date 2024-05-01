@@ -51,7 +51,7 @@ impl
     }
 }
 impl RespondDecisionTaskCompletedFluentBuilder {
-    /// Creates a new `RespondDecisionTaskCompleted`.
+    /// Creates a new `RespondDecisionTaskCompletedFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl PutRawMessageContentFluentBuilder {
-    /// Creates a new `PutRawMessageContent`.
+    /// Creates a new `PutRawMessageContentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

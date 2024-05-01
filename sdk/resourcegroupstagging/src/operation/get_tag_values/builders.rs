@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetTagValuesFluentBuilder {
-    /// Creates a new `GetTagValues`.
+    /// Creates a new `GetTagValuesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

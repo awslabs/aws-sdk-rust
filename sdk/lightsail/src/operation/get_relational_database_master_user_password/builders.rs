@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetRelationalDatabaseMasterUserPasswordFluentBuilder {
-    /// Creates a new `GetRelationalDatabaseMasterUserPassword`.
+    /// Creates a new `GetRelationalDatabaseMasterUserPasswordFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

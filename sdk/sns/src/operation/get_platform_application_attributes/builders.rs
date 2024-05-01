@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetPlatformApplicationAttributesFluentBuilder {
-    /// Creates a new `GetPlatformApplicationAttributes`.
+    /// Creates a new `GetPlatformApplicationAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribePHIDetectionJobFluentBuilder {
-    /// Creates a new `DescribePHIDetectionJob`.
+    /// Creates a new `DescribePHIDetectionJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

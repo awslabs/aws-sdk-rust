@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetUpgradeHistoryFluentBuilder {
-    /// Creates a new `GetUpgradeHistory`.
+    /// Creates a new `GetUpgradeHistoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

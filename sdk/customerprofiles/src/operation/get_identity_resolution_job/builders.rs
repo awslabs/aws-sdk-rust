@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetIdentityResolutionJobFluentBuilder {
-    /// Creates a new `GetIdentityResolutionJob`.
+    /// Creates a new `GetIdentityResolutionJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateMemberFluentBuilder {
-    /// Creates a new `DisassociateMember`.
+    /// Creates a new `DisassociateMemberFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

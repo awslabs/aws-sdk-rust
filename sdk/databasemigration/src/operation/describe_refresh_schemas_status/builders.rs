@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeRefreshSchemasStatusFluentBuilder {
-    /// Creates a new `DescribeRefreshSchemasStatus`.
+    /// Creates a new `DescribeRefreshSchemasStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

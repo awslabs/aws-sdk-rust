@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListSecurityKeysFluentBuilder {
-    /// Creates a new `ListSecurityKeys`.
+    /// Creates a new `ListSecurityKeysFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteSkillAuthorizationFluentBuilder {
-    /// Creates a new `DeleteSkillAuthorization`.
+    /// Creates a new `DeleteSkillAuthorizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

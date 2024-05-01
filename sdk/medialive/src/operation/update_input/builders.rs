@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateInputFluentBuilder {
-    /// Creates a new `UpdateInput`.
+    /// Creates a new `UpdateInputFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

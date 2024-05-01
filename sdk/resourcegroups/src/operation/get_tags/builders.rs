@@ -48,7 +48,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::get_
     }
 }
 impl GetTagsFluentBuilder {
-    /// Creates a new `GetTags`.
+    /// Creates a new `GetTagsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

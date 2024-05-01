@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateRuleMetadataFluentBuilder {
-    /// Creates a new `UpdateRuleMetadata`.
+    /// Creates a new `UpdateRuleMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

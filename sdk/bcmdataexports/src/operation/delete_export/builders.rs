@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteExportFluentBuilder {
-    /// Creates a new `DeleteExport`.
+    /// Creates a new `DeleteExportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

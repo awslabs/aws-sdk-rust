@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListConfigurationPolicyAssociationsFluentBuilder {
-    /// Creates a new `ListConfigurationPolicyAssociations`.
+    /// Creates a new `ListConfigurationPolicyAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetActiveNamesFluentBuilder {
-    /// Creates a new `GetActiveNames`.
+    /// Creates a new `GetActiveNamesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

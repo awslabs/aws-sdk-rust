@@ -49,7 +49,7 @@ impl
     }
 }
 impl CancelAuditTaskFluentBuilder {
-    /// Creates a new `CancelAuditTask`.
+    /// Creates a new `CancelAuditTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

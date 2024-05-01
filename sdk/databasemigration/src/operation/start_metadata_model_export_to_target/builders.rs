@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartMetadataModelExportToTargetFluentBuilder {
-    /// Creates a new `StartMetadataModelExportToTarget`.
+    /// Creates a new `StartMetadataModelExportToTargetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

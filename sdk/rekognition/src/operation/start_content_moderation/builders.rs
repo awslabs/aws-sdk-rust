@@ -51,7 +51,7 @@ impl
     }
 }
 impl StartContentModerationFluentBuilder {
-    /// Creates a new `StartContentModeration`.
+    /// Creates a new `StartContentModerationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

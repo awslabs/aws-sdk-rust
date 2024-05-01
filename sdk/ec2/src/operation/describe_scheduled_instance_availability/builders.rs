@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeScheduledInstanceAvailabilityFluentBuilder {
-    /// Creates a new `DescribeScheduledInstanceAvailability`.
+    /// Creates a new `DescribeScheduledInstanceAvailabilityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateConferenceProviderFluentBuilder {
-    /// Creates a new `UpdateConferenceProvider`.
+    /// Creates a new `UpdateConferenceProviderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

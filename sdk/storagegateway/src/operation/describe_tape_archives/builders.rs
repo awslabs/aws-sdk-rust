@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeTapeArchivesFluentBuilder {
-    /// Creates a new `DescribeTapeArchives`.
+    /// Creates a new `DescribeTapeArchivesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

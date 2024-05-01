@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartCisSessionFluentBuilder {
-    /// Creates a new `StartCisSession`.
+    /// Creates a new `StartCisSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

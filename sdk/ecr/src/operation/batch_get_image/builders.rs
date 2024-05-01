@@ -49,7 +49,7 @@ impl
     }
 }
 impl BatchGetImageFluentBuilder {
-    /// Creates a new `BatchGetImage`.
+    /// Creates a new `BatchGetImageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

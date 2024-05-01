@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeConnectorProfilesFluentBuilder {
-    /// Creates a new `DescribeConnectorProfiles`.
+    /// Creates a new `DescribeConnectorProfilesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

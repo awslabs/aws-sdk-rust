@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListAttachedUserPoliciesFluentBuilder {
-    /// Creates a new `ListAttachedUserPolicies`.
+    /// Creates a new `ListAttachedUserPoliciesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

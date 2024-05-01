@@ -48,7 +48,7 @@ impl
     }
 }
 impl ReimportApiFluentBuilder {
-    /// Creates a new `ReimportApi`.
+    /// Creates a new `ReimportApiFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

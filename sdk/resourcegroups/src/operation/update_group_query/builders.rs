@@ -54,7 +54,7 @@ impl
     }
 }
 impl UpdateGroupQueryFluentBuilder {
-    /// Creates a new `UpdateGroupQuery`.
+    /// Creates a new `UpdateGroupQueryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

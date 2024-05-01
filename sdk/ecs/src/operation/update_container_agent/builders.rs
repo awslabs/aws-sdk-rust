@@ -53,7 +53,7 @@ impl
     }
 }
 impl UpdateContainerAgentFluentBuilder {
-    /// Creates a new `UpdateContainerAgent`.
+    /// Creates a new `UpdateContainerAgentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

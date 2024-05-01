@@ -48,7 +48,7 @@ impl
     }
 }
 impl ContinueDeploymentFluentBuilder {
-    /// Creates a new `ContinueDeployment`.
+    /// Creates a new `ContinueDeploymentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

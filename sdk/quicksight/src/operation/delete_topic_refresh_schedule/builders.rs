@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteTopicRefreshScheduleFluentBuilder {
-    /// Creates a new `DeleteTopicRefreshSchedule`.
+    /// Creates a new `DeleteTopicRefreshScheduleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

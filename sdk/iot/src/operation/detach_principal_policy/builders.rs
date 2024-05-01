@@ -51,7 +51,7 @@ impl
     }
 }
 impl DetachPrincipalPolicyFluentBuilder {
-    /// Creates a new `DetachPrincipalPolicy`.
+    /// Creates a new `DetachPrincipalPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

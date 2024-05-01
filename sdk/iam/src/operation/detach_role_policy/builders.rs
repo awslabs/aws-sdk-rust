@@ -49,7 +49,7 @@ impl
     }
 }
 impl DetachRolePolicyFluentBuilder {
-    /// Creates a new `DetachRolePolicy`.
+    /// Creates a new `DetachRolePolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

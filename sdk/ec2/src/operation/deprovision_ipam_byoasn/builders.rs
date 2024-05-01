@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeprovisionIpamByoasnFluentBuilder {
-    /// Creates a new `DeprovisionIpamByoasn`.
+    /// Creates a new `DeprovisionIpamByoasnFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

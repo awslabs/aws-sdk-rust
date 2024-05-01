@@ -48,7 +48,7 @@ impl
     }
 }
 impl ReplaceNetworkAclEntryFluentBuilder {
-    /// Creates a new `ReplaceNetworkAclEntry`.
+    /// Creates a new `ReplaceNetworkAclEntryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

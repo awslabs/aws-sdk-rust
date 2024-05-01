@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetLayerVersionFluentBuilder {
-    /// Creates a new `GetLayerVersion`.
+    /// Creates a new `GetLayerVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

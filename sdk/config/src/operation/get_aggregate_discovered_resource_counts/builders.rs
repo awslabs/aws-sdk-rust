@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetAggregateDiscoveredResourceCountsFluentBuilder {
-    /// Creates a new `GetAggregateDiscoveredResourceCounts`.
+    /// Creates a new `GetAggregateDiscoveredResourceCountsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl PromoteResourceShareCreatedFromPolicyFluentBuilder {
-    /// Creates a new `PromoteResourceShareCreatedFromPolicy`.
+    /// Creates a new `PromoteResourceShareCreatedFromPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

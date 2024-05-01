@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveAttributesFluentBuilder {
-    /// Creates a new `RemoveAttributes`.
+    /// Creates a new `RemoveAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

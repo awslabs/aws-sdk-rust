@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetIntegrationResponsesFluentBuilder {
-    /// Creates a new `GetIntegrationResponses`.
+    /// Creates a new `GetIntegrationResponsesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

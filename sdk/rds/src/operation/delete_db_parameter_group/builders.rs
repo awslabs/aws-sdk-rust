@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDBParameterGroupFluentBuilder {
-    /// Creates a new `DeleteDBParameterGroup`.
+    /// Creates a new `DeleteDBParameterGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

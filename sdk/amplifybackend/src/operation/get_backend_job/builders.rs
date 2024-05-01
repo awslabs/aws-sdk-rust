@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetBackendJobFluentBuilder {
-    /// Creates a new `GetBackendJob`.
+    /// Creates a new `GetBackendJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

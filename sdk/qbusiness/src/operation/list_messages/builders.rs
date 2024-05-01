@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListMessagesFluentBuilder {
-    /// Creates a new `ListMessages`.
+    /// Creates a new `ListMessagesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

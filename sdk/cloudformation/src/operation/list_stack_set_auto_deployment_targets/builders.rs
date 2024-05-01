@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListStackSetAutoDeploymentTargetsFluentBuilder {
-    /// Creates a new `ListStackSetAutoDeploymentTargets`.
+    /// Creates a new `ListStackSetAutoDeploymentTargetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

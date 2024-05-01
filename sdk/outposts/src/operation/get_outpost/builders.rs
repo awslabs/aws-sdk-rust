@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetOutpostFluentBuilder {
-    /// Creates a new `GetOutpost`.
+    /// Creates a new `GetOutpostFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListTopicsFluentBuilder {
-    /// Creates a new `ListTopics`.
+    /// Creates a new `ListTopicsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

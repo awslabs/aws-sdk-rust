@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListPermissionGroupsByUserFluentBuilder {
-    /// Creates a new `ListPermissionGroupsByUser`.
+    /// Creates a new `ListPermissionGroupsByUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

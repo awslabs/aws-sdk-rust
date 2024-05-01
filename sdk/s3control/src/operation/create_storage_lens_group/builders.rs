@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateStorageLensGroupFluentBuilder {
-    /// Creates a new `CreateStorageLensGroup`.
+    /// Creates a new `CreateStorageLensGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

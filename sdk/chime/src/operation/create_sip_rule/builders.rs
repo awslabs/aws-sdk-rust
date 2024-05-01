@@ -52,7 +52,7 @@ impl
     }
 }
 impl CreateSipRuleFluentBuilder {
-    /// Creates a new `CreateSipRule`.
+    /// Creates a new `CreateSipRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

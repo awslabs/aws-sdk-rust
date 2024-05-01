@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetFieldLevelEncryptionFluentBuilder {
-    /// Creates a new `GetFieldLevelEncryption`.
+    /// Creates a new `GetFieldLevelEncryptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -45,7 +45,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::publ
     }
 }
 impl PublishFluentBuilder {
-    /// Creates a new `Publish`.
+    /// Creates a new `PublishFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -71,7 +71,7 @@ impl
     }
 }
 impl PutBucketVersioningFluentBuilder {
-    /// Creates a new `PutBucketVersioning`.
+    /// Creates a new `PutBucketVersioningFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

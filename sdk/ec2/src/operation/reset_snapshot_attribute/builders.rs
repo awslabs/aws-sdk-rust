@@ -49,7 +49,7 @@ impl
     }
 }
 impl ResetSnapshotAttributeFluentBuilder {
-    /// Creates a new `ResetSnapshotAttribute`.
+    /// Creates a new `ResetSnapshotAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

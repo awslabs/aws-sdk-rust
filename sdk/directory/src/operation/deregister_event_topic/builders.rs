@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeregisterEventTopicFluentBuilder {
-    /// Creates a new `DeregisterEventTopic`.
+    /// Creates a new `DeregisterEventTopicFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterAppInstanceUserEndpointFluentBuilder {
-    /// Creates a new `RegisterAppInstanceUserEndpoint`.
+    /// Creates a new `RegisterAppInstanceUserEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

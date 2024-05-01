@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeLoggingStatusFluentBuilder {
-    /// Creates a new `DescribeLoggingStatus`.
+    /// Creates a new `DescribeLoggingStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

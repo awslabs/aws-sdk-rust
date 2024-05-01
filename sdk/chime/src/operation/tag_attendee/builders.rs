@@ -53,7 +53,7 @@ impl
     }
 }
 impl TagAttendeeFluentBuilder {
-    /// Creates a new `TagAttendee`.
+    /// Creates a new `TagAttendeeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

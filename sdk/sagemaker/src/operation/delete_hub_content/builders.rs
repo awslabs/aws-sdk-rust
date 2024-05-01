@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteHubContentFluentBuilder {
-    /// Creates a new `DeleteHubContent`.
+    /// Creates a new `DeleteHubContentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

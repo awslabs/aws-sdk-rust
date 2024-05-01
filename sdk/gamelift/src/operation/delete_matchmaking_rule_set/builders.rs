@@ -53,7 +53,7 @@ impl
     }
 }
 impl DeleteMatchmakingRuleSetFluentBuilder {
-    /// Creates a new `DeleteMatchmakingRuleSet`.
+    /// Creates a new `DeleteMatchmakingRuleSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

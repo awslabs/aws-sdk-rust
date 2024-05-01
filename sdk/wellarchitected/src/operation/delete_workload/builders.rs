@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteWorkloadFluentBuilder {
-    /// Creates a new `DeleteWorkload`.
+    /// Creates a new `DeleteWorkloadFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateResourceCollectionFluentBuilder {
-    /// Creates a new `UpdateResourceCollection`.
+    /// Creates a new `UpdateResourceCollectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

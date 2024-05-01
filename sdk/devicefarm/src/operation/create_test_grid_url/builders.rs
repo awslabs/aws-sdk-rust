@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateTestGridUrlFluentBuilder {
-    /// Creates a new `CreateTestGridUrl`.
+    /// Creates a new `CreateTestGridUrlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

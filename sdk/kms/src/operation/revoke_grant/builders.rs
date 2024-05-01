@@ -64,7 +64,7 @@ impl
     }
 }
 impl RevokeGrantFluentBuilder {
-    /// Creates a new `RevokeGrant`.
+    /// Creates a new `RevokeGrantFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

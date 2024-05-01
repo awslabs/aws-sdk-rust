@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteFlywheelFluentBuilder {
-    /// Creates a new `DeleteFlywheel`.
+    /// Creates a new `DeleteFlywheelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

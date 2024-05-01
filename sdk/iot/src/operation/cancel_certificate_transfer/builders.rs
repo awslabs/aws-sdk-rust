@@ -51,7 +51,7 @@ impl
     }
 }
 impl CancelCertificateTransferFluentBuilder {
-    /// Creates a new `CancelCertificateTransfer`.
+    /// Creates a new `CancelCertificateTransferFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PublishAppVersionFluentBuilder {
-    /// Creates a new `PublishAppVersion`.
+    /// Creates a new `PublishAppVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

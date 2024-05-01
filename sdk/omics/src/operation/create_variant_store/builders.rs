@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateVariantStoreFluentBuilder {
-    /// Creates a new `CreateVariantStore`.
+    /// Creates a new `CreateVariantStoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

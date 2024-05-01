@@ -71,7 +71,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::post
     }
 }
 impl PostTextFluentBuilder {
-    /// Creates a new `PostText`.
+    /// Creates a new `PostTextFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

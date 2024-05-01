@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListProjectMembershipsFluentBuilder {
-    /// Creates a new `ListProjectMemberships`.
+    /// Creates a new `ListProjectMembershipsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

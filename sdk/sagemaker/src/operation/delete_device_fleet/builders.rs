@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDeviceFleetFluentBuilder {
-    /// Creates a new `DeleteDeviceFleet`.
+    /// Creates a new `DeleteDeviceFleetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

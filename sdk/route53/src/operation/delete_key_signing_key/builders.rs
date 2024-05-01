@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteKeySigningKeyFluentBuilder {
-    /// Creates a new `DeleteKeySigningKey`.
+    /// Creates a new `DeleteKeySigningKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -53,7 +53,7 @@ impl
     }
 }
 impl DescribeRuntimeConfigurationFluentBuilder {
-    /// Creates a new `DescribeRuntimeConfiguration`.
+    /// Creates a new `DescribeRuntimeConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

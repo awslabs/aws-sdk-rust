@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeInputFluentBuilder {
-    /// Creates a new `DescribeInput`.
+    /// Creates a new `DescribeInputFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl RebootCacheClusterFluentBuilder {
-    /// Creates a new `RebootCacheCluster`.
+    /// Creates a new `RebootCacheClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

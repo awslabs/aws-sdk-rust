@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetDeliveryFluentBuilder {
-    /// Creates a new `GetDelivery`.
+    /// Creates a new `GetDeliveryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

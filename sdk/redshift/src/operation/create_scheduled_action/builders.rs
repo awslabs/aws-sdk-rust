@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateScheduledActionFluentBuilder {
-    /// Creates a new `CreateScheduledAction`.
+    /// Creates a new `CreateScheduledActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

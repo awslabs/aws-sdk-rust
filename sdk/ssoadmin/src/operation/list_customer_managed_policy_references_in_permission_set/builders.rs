@@ -24,7 +24,7 @@ impl crate::operation::list_customer_managed_policy_references_in_permission_set
 pub struct ListCustomerManagedPolicyReferencesInPermissionSetFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::list_customer_managed_policy_references_in_permission_set::builders::ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -45,7 +45,7 @@ impl
     }
 }
 impl ListCustomerManagedPolicyReferencesInPermissionSetFluentBuilder {
-    /// Creates a new `ListCustomerManagedPolicyReferencesInPermissionSet`.
+    /// Creates a new `ListCustomerManagedPolicyReferencesInPermissionSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeInventoryDeletionsFluentBuilder {
-    /// Creates a new `DescribeInventoryDeletions`.
+    /// Creates a new `DescribeInventoryDeletionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

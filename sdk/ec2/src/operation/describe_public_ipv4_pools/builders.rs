@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribePublicIpv4PoolsFluentBuilder {
-    /// Creates a new `DescribePublicIpv4Pools`.
+    /// Creates a new `DescribePublicIpv4PoolsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

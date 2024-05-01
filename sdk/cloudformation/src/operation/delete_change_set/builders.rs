@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteChangeSetFluentBuilder {
-    /// Creates a new `DeleteChangeSet`.
+    /// Creates a new `DeleteChangeSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

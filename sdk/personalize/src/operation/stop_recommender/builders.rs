@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopRecommenderFluentBuilder {
-    /// Creates a new `StopRecommender`.
+    /// Creates a new `StopRecommenderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

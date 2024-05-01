@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetFieldFluentBuilder {
-    /// Creates a new `BatchGetField`.
+    /// Creates a new `BatchGetFieldFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyOptionGroupFluentBuilder {
-    /// Creates a new `ModifyOptionGroup`.
+    /// Creates a new `ModifyOptionGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -53,7 +53,7 @@ impl
     }
 }
 impl GetTraceSummariesFluentBuilder {
-    /// Creates a new `GetTraceSummaries`.
+    /// Creates a new `GetTraceSummariesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

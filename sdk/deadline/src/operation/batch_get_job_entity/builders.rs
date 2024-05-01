@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetJobEntityFluentBuilder {
-    /// Creates a new `BatchGetJobEntity`.
+    /// Creates a new `BatchGetJobEntityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

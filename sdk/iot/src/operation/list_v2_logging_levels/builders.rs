@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListV2LoggingLevelsFluentBuilder {
-    /// Creates a new `ListV2LoggingLevels`.
+    /// Creates a new `ListV2LoggingLevelsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

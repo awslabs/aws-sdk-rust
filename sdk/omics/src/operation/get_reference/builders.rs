@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetReferenceFluentBuilder {
-    /// Creates a new `GetReference`.
+    /// Creates a new `GetReferenceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

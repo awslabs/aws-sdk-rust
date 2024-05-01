@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListHypervisorsFluentBuilder {
-    /// Creates a new `ListHypervisors`.
+    /// Creates a new `ListHypervisorsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

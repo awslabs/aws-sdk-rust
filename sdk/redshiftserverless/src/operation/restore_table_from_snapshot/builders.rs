@@ -48,7 +48,7 @@ impl
     }
 }
 impl RestoreTableFromSnapshotFluentBuilder {
-    /// Creates a new `RestoreTableFromSnapshot`.
+    /// Creates a new `RestoreTableFromSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

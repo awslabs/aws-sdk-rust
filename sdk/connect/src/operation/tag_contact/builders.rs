@@ -48,7 +48,7 @@ impl
     }
 }
 impl TagContactFluentBuilder {
-    /// Creates a new `TagContact`.
+    /// Creates a new `TagContactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

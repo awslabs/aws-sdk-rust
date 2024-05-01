@@ -58,7 +58,7 @@ impl
     }
 }
 impl DescribeAppVersionResourceFluentBuilder {
-    /// Creates a new `DescribeAppVersionResource`.
+    /// Creates a new `DescribeAppVersionResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

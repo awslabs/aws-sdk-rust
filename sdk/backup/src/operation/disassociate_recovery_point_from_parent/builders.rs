@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateRecoveryPointFromParentFluentBuilder {
-    /// Creates a new `DisassociateRecoveryPointFromParent`.
+    /// Creates a new `DisassociateRecoveryPointFromParentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

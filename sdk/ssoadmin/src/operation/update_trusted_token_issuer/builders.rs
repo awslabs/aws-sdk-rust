@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateTrustedTokenIssuerFluentBuilder {
-    /// Creates a new `UpdateTrustedTokenIssuer`.
+    /// Creates a new `UpdateTrustedTokenIssuerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

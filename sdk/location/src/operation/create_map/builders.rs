@@ -44,7 +44,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::crea
     }
 }
 impl CreateMapFluentBuilder {
-    /// Creates a new `CreateMap`.
+    /// Creates a new `CreateMapFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

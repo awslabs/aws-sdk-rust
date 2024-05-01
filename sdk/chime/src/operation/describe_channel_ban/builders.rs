@@ -54,7 +54,7 @@ impl
     }
 }
 impl DescribeChannelBanFluentBuilder {
-    /// Creates a new `DescribeChannelBan`.
+    /// Creates a new `DescribeChannelBanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

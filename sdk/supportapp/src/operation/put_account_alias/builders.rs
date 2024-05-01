@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutAccountAliasFluentBuilder {
-    /// Creates a new `PutAccountAlias`.
+    /// Creates a new `PutAccountAliasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteProfilingGroupFluentBuilder {
-    /// Creates a new `DeleteProfilingGroup`.
+    /// Creates a new `DeleteProfilingGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

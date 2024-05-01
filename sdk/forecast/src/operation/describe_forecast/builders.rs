@@ -61,7 +61,7 @@ impl
     }
 }
 impl DescribeForecastFluentBuilder {
-    /// Creates a new `DescribeForecast`.
+    /// Creates a new `DescribeForecastFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

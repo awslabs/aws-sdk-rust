@@ -48,7 +48,7 @@ impl
     }
 }
 impl DetachVolumeFluentBuilder {
-    /// Creates a new `DetachVolume`.
+    /// Creates a new `DetachVolumeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

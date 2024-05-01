@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDevicePoolFluentBuilder {
-    /// Creates a new `GetDevicePool`.
+    /// Creates a new `GetDevicePoolFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

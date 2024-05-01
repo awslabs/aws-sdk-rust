@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDataQualityJobDefinitionsFluentBuilder {
-    /// Creates a new `ListDataQualityJobDefinitions`.
+    /// Creates a new `ListDataQualityJobDefinitionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

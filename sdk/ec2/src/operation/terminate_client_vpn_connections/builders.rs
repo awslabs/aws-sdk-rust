@@ -48,7 +48,7 @@ impl
     }
 }
 impl TerminateClientVpnConnectionsFluentBuilder {
-    /// Creates a new `TerminateClientVpnConnections`.
+    /// Creates a new `TerminateClientVpnConnectionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

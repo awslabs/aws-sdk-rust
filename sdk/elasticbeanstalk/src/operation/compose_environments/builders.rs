@@ -48,7 +48,7 @@ impl
     }
 }
 impl ComposeEnvironmentsFluentBuilder {
-    /// Creates a new `ComposeEnvironments`.
+    /// Creates a new `ComposeEnvironmentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

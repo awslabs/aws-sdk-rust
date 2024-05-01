@@ -48,7 +48,7 @@ impl
     }
 }
 impl TestCustomDataIdentifierFluentBuilder {
-    /// Creates a new `TestCustomDataIdentifier`.
+    /// Creates a new `TestCustomDataIdentifierFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

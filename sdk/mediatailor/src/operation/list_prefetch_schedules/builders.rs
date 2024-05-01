@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPrefetchSchedulesFluentBuilder {
-    /// Creates a new `ListPrefetchSchedules`.
+    /// Creates a new `ListPrefetchSchedulesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

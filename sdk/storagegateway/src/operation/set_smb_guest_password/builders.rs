@@ -48,7 +48,7 @@ impl
     }
 }
 impl SetSMBGuestPasswordFluentBuilder {
-    /// Creates a new `SetSMBGuestPassword`.
+    /// Creates a new `SetSMBGuestPasswordFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

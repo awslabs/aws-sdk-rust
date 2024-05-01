@@ -48,7 +48,7 @@ impl
     }
 }
 impl UnassignPrivateIpAddressesFluentBuilder {
-    /// Creates a new `UnassignPrivateIpAddresses`.
+    /// Creates a new `UnassignPrivateIpAddressesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

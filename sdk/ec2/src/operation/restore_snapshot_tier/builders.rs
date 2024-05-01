@@ -49,7 +49,7 @@ impl
     }
 }
 impl RestoreSnapshotTierFluentBuilder {
-    /// Creates a new `RestoreSnapshotTier`.
+    /// Creates a new `RestoreSnapshotTierFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

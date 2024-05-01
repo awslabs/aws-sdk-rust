@@ -51,7 +51,7 @@ impl
     }
 }
 impl RestoreAddressToClassicFluentBuilder {
-    /// Creates a new `RestoreAddressToClassic`.
+    /// Creates a new `RestoreAddressToClassicFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListVolumeRecoveryPointsFluentBuilder {
-    /// Creates a new `ListVolumeRecoveryPoints`.
+    /// Creates a new `ListVolumeRecoveryPointsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -53,7 +53,7 @@ impl
     }
 }
 impl DeleteStorageLensConfigurationTaggingFluentBuilder {
-    /// Creates a new `DeleteStorageLensConfigurationTagging`.
+    /// Creates a new `DeleteStorageLensConfigurationTaggingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

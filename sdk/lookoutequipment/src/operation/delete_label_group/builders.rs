@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteLabelGroupFluentBuilder {
-    /// Creates a new `DeleteLabelGroup`.
+    /// Creates a new `DeleteLabelGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

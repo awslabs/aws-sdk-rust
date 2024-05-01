@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRobotApplicationFluentBuilder {
-    /// Creates a new `DeleteRobotApplication`.
+    /// Creates a new `DeleteRobotApplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

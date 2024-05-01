@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateBudgetFluentBuilder {
-    /// Creates a new `UpdateBudget`.
+    /// Creates a new `UpdateBudgetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

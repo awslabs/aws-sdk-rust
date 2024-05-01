@@ -48,7 +48,7 @@ impl
     }
 }
 impl ImportResourcesToDraftAppVersionFluentBuilder {
-    /// Creates a new `ImportResourcesToDraftAppVersion`.
+    /// Creates a new `ImportResourcesToDraftAppVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

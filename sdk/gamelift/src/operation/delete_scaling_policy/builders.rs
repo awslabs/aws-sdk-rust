@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteScalingPolicyFluentBuilder {
-    /// Creates a new `DeleteScalingPolicy`.
+    /// Creates a new `DeleteScalingPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

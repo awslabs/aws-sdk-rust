@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTrustedTokenIssuerFluentBuilder {
-    /// Creates a new `DescribeTrustedTokenIssuer`.
+    /// Creates a new `DescribeTrustedTokenIssuerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

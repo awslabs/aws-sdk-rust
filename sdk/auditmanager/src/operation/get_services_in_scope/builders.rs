@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetServicesInScopeFluentBuilder {
-    /// Creates a new `GetServicesInScope`.
+    /// Creates a new `GetServicesInScopeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

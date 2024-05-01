@@ -49,7 +49,7 @@ impl
     }
 }
 impl SearchFlowTemplatesFluentBuilder {
-    /// Creates a new `SearchFlowTemplates`.
+    /// Creates a new `SearchFlowTemplatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

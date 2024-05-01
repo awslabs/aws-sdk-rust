@@ -51,7 +51,7 @@ impl
     }
 }
 impl SetTerminationProtectionFluentBuilder {
-    /// Creates a new `SetTerminationProtection`.
+    /// Creates a new `SetTerminationProtectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

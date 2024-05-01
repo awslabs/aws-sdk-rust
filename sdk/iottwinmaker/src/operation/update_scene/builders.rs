@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateSceneFluentBuilder {
-    /// Creates a new `UpdateScene`.
+    /// Creates a new `UpdateSceneFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

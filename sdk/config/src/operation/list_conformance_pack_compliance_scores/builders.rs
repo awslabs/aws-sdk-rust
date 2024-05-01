@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListConformancePackComplianceScoresFluentBuilder {
-    /// Creates a new `ListConformancePackComplianceScores`.
+    /// Creates a new `ListConformancePackComplianceScoresFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

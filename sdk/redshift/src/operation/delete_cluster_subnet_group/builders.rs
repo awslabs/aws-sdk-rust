@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteClusterSubnetGroupFluentBuilder {
-    /// Creates a new `DeleteClusterSubnetGroup`.
+    /// Creates a new `DeleteClusterSubnetGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -54,7 +54,7 @@ impl
     }
 }
 impl AttachObjectFluentBuilder {
-    /// Creates a new `AttachObject`.
+    /// Creates a new `AttachObjectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

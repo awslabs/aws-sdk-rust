@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociatePhoneNumberWithUserFluentBuilder {
-    /// Creates a new `AssociatePhoneNumberWithUser`.
+    /// Creates a new `AssociatePhoneNumberWithUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteSystemInstanceFluentBuilder {
-    /// Creates a new `DeleteSystemInstance`.
+    /// Creates a new `DeleteSystemInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

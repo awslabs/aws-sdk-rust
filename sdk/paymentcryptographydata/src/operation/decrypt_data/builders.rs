@@ -62,7 +62,7 @@ impl
     }
 }
 impl DecryptDataFluentBuilder {
-    /// Creates a new `DecryptData`.
+    /// Creates a new `DecryptDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

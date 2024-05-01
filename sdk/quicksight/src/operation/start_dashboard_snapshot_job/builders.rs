@@ -87,7 +87,7 @@ impl
     }
 }
 impl StartDashboardSnapshotJobFluentBuilder {
-    /// Creates a new `StartDashboardSnapshotJob`.
+    /// Creates a new `StartDashboardSnapshotJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

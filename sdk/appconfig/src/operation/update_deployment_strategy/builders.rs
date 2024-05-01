@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateDeploymentStrategyFluentBuilder {
-    /// Creates a new `UpdateDeploymentStrategy`.
+    /// Creates a new `UpdateDeploymentStrategyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

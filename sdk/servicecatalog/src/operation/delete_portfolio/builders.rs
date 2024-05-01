@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeletePortfolioFluentBuilder {
-    /// Creates a new `DeletePortfolio`.
+    /// Creates a new `DeletePortfolioFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

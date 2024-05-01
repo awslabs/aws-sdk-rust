@@ -51,7 +51,7 @@ impl
     }
 }
 impl PutImageScanningConfigurationFluentBuilder {
-    /// Creates a new `PutImageScanningConfiguration`.
+    /// Creates a new `PutImageScanningConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

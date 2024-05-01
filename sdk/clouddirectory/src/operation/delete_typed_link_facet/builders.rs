@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteTypedLinkFacetFluentBuilder {
-    /// Creates a new `DeleteTypedLinkFacet`.
+    /// Creates a new `DeleteTypedLinkFacetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

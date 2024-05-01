@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDetectSentimentFluentBuilder {
-    /// Creates a new `BatchDetectSentiment`.
+    /// Creates a new `BatchDetectSentimentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

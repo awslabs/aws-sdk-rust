@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartDiscovererFluentBuilder {
-    /// Creates a new `StartDiscoverer`.
+    /// Creates a new `StartDiscovererFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

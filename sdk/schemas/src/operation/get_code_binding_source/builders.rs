@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCodeBindingSourceFluentBuilder {
-    /// Creates a new `GetCodeBindingSource`.
+    /// Creates a new `GetCodeBindingSourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

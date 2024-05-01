@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutDeploymentParameterFluentBuilder {
-    /// Creates a new `PutDeploymentParameter`.
+    /// Creates a new `PutDeploymentParameterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

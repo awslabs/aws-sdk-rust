@@ -50,7 +50,7 @@ impl
     }
 }
 impl BatchCheckLayerAvailabilityFluentBuilder {
-    /// Creates a new `BatchCheckLayerAvailability`.
+    /// Creates a new `BatchCheckLayerAvailabilityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

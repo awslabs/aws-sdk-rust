@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteChannelMembershipFluentBuilder {
-    /// Creates a new `DeleteChannelMembership`.
+    /// Creates a new `DeleteChannelMembershipFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

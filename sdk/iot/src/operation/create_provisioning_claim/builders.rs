@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateProvisioningClaimFluentBuilder {
-    /// Creates a new `CreateProvisioningClaim`.
+    /// Creates a new `CreateProvisioningClaimFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

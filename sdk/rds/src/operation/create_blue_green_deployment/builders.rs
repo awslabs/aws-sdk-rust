@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateBlueGreenDeploymentFluentBuilder {
-    /// Creates a new `CreateBlueGreenDeployment`.
+    /// Creates a new `CreateBlueGreenDeploymentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

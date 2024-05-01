@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListICD10CMInferenceJobsFluentBuilder {
-    /// Creates a new `ListICD10CMInferenceJobs`.
+    /// Creates a new `ListICD10CMInferenceJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListSnapshotBlocksFluentBuilder {
-    /// Creates a new `ListSnapshotBlocks`.
+    /// Creates a new `ListSnapshotBlocksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

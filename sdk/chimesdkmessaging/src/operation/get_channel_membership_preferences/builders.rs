@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetChannelMembershipPreferencesFluentBuilder {
-    /// Creates a new `GetChannelMembershipPreferences`.
+    /// Creates a new `GetChannelMembershipPreferencesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

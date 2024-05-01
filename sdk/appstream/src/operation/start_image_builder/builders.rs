@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartImageBuilderFluentBuilder {
-    /// Creates a new `StartImageBuilder`.
+    /// Creates a new `StartImageBuilderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

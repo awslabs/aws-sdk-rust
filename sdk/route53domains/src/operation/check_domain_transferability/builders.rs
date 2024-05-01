@@ -48,7 +48,7 @@ impl
     }
 }
 impl CheckDomainTransferabilityFluentBuilder {
-    /// Creates a new `CheckDomainTransferability`.
+    /// Creates a new `CheckDomainTransferabilityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

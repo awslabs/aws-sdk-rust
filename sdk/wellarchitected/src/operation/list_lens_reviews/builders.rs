@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListLensReviewsFluentBuilder {
-    /// Creates a new `ListLensReviews`.
+    /// Creates a new `ListLensReviewsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

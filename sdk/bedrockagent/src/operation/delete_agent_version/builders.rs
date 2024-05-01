@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAgentVersionFluentBuilder {
-    /// Creates a new `DeleteAgentVersion`.
+    /// Creates a new `DeleteAgentVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

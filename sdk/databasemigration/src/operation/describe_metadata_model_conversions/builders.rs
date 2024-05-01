@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeMetadataModelConversionsFluentBuilder {
-    /// Creates a new `DescribeMetadataModelConversions`.
+    /// Creates a new `DescribeMetadataModelConversionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSharedReportGroupsFluentBuilder {
-    /// Creates a new `ListSharedReportGroups`.
+    /// Creates a new `ListSharedReportGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

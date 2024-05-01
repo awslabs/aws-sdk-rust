@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetRegexPatternSetFluentBuilder {
-    /// Creates a new `GetRegexPatternSet`.
+    /// Creates a new `GetRegexPatternSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

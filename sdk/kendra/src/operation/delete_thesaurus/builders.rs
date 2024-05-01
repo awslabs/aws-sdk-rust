@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteThesaurusFluentBuilder {
-    /// Creates a new `DeleteThesaurus`.
+    /// Creates a new `DeleteThesaurusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateSubnetsFluentBuilder {
-    /// Creates a new `AssociateSubnets`.
+    /// Creates a new `AssociateSubnetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

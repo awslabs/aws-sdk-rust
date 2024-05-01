@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateUsagePlanKeyFluentBuilder {
-    /// Creates a new `CreateUsagePlanKey`.
+    /// Creates a new `CreateUsagePlanKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

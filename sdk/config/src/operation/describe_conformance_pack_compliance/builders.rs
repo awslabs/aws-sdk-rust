@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeConformancePackComplianceFluentBuilder {
-    /// Creates a new `DescribeConformancePackCompliance`.
+    /// Creates a new `DescribeConformancePackComplianceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

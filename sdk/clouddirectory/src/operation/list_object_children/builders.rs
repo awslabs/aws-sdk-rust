@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListObjectChildrenFluentBuilder {
-    /// Creates a new `ListObjectChildren`.
+    /// Creates a new `ListObjectChildrenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

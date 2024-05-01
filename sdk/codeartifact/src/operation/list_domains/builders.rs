@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDomainsFluentBuilder {
-    /// Creates a new `ListDomains`.
+    /// Creates a new `ListDomainsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

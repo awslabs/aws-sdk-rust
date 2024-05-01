@@ -70,7 +70,7 @@ impl
     }
 }
 impl RegisterWorkflowTypeFluentBuilder {
-    /// Creates a new `RegisterWorkflowType`.
+    /// Creates a new `RegisterWorkflowTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

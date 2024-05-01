@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListResourceComplianceSummariesFluentBuilder {
-    /// Creates a new `ListResourceComplianceSummaries`.
+    /// Creates a new `ListResourceComplianceSummariesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

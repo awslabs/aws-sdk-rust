@@ -48,7 +48,7 @@ impl
     }
 }
 impl MonitorContactFluentBuilder {
-    /// Creates a new `MonitorContact`.
+    /// Creates a new `MonitorContactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

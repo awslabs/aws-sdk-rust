@@ -56,7 +56,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::get_
     }
 }
 impl GetClipFluentBuilder {
-    /// Creates a new `GetClip`.
+    /// Creates a new `GetClipFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl BatchGetDeploymentInstancesFluentBuilder {
-    /// Creates a new `BatchGetDeploymentInstances`.
+    /// Creates a new `BatchGetDeploymentInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

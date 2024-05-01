@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateDomainAssociationFluentBuilder {
-    /// Creates a new `CreateDomainAssociation`.
+    /// Creates a new `CreateDomainAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

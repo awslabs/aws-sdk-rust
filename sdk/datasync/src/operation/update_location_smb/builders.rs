@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateLocationSmbFluentBuilder {
-    /// Creates a new `UpdateLocationSmb`.
+    /// Creates a new `UpdateLocationSmbFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

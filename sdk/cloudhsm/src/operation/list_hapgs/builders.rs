@@ -46,7 +46,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::list
     }
 }
 impl ListHapgsFluentBuilder {
-    /// Creates a new `ListHapgs`.
+    /// Creates a new `ListHapgsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

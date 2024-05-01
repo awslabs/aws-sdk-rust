@@ -49,7 +49,7 @@ impl
     }
 }
 impl DetachCertificateFromDistributionFluentBuilder {
-    /// Creates a new `DetachCertificateFromDistribution`.
+    /// Creates a new `DetachCertificateFromDistributionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

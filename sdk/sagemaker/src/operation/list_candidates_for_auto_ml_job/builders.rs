@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCandidatesForAutoMLJobFluentBuilder {
-    /// Creates a new `ListCandidatesForAutoMLJob`.
+    /// Creates a new `ListCandidatesForAutoMLJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

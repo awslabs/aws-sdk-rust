@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetChatControlsConfigurationFluentBuilder {
-    /// Creates a new `GetChatControlsConfiguration`.
+    /// Creates a new `GetChatControlsConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCampaignFluentBuilder {
-    /// Creates a new `DeleteCampaign`.
+    /// Creates a new `DeleteCampaignFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

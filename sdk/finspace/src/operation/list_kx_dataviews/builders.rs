@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListKxDataviewsFluentBuilder {
-    /// Creates a new `ListKxDataviews`.
+    /// Creates a new `ListKxDataviewsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

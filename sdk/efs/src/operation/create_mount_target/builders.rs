@@ -110,7 +110,7 @@ impl
     }
 }
 impl CreateMountTargetFluentBuilder {
-    /// Creates a new `CreateMountTarget`.
+    /// Creates a new `CreateMountTargetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

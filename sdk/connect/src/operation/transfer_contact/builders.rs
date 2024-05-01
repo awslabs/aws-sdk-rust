@@ -61,7 +61,7 @@ impl
     }
 }
 impl TransferContactFluentBuilder {
-    /// Creates a new `TransferContact`.
+    /// Creates a new `TransferContactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

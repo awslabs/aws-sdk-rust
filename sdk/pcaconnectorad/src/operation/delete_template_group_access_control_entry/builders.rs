@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteTemplateGroupAccessControlEntryFluentBuilder {
-    /// Creates a new `DeleteTemplateGroupAccessControlEntry`.
+    /// Creates a new `DeleteTemplateGroupAccessControlEntryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

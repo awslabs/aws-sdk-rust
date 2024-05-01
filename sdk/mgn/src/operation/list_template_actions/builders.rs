@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTemplateActionsFluentBuilder {
-    /// Creates a new `ListTemplateActions`.
+    /// Creates a new `ListTemplateActionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

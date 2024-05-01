@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeKeyPhrasesDetectionJobFluentBuilder {
-    /// Creates a new `DescribeKeyPhrasesDetectionJob`.
+    /// Creates a new `DescribeKeyPhrasesDetectionJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

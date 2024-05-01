@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeclineInvitationsFluentBuilder {
-    /// Creates a new `DeclineInvitations`.
+    /// Creates a new `DeclineInvitationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

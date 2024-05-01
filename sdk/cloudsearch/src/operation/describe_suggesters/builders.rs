@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeSuggestersFluentBuilder {
-    /// Creates a new `DescribeSuggesters`.
+    /// Creates a new `DescribeSuggestersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

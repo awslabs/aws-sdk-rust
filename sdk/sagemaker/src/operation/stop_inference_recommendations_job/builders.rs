@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopInferenceRecommendationsJobFluentBuilder {
-    /// Creates a new `StopInferenceRecommendationsJob`.
+    /// Creates a new `StopInferenceRecommendationsJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

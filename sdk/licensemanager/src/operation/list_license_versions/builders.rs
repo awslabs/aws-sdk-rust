@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListLicenseVersionsFluentBuilder {
-    /// Creates a new `ListLicenseVersions`.
+    /// Creates a new `ListLicenseVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -107,7 +107,7 @@ impl
     }
 }
 impl CreateExplainabilityFluentBuilder {
-    /// Creates a new `CreateExplainability`.
+    /// Creates a new `CreateExplainabilityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

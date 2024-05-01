@@ -57,7 +57,7 @@ impl
     }
 }
 impl UpdateAssetModelCompositeModelFluentBuilder {
-    /// Creates a new `UpdateAssetModelCompositeModel`.
+    /// Creates a new `UpdateAssetModelCompositeModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteNotificationSubscriptionFluentBuilder {
-    /// Creates a new `DeleteNotificationSubscription`.
+    /// Creates a new `DeleteNotificationSubscriptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -61,7 +61,7 @@ impl
     }
 }
 impl PutMetricDataFluentBuilder {
-    /// Creates a new `PutMetricData`.
+    /// Creates a new `PutMetricDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

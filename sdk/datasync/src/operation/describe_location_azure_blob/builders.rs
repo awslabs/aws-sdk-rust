@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeLocationAzureBlobFluentBuilder {
-    /// Creates a new `DescribeLocationAzureBlob`.
+    /// Creates a new `DescribeLocationAzureBlobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

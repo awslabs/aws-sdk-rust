@@ -64,7 +64,7 @@ impl
     }
 }
 impl DisableAWSServiceAccessFluentBuilder {
-    /// Creates a new `DisableAWSServiceAccess`.
+    /// Creates a new `DisableAWSServiceAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

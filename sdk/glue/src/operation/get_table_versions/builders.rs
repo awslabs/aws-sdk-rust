@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTableVersionsFluentBuilder {
-    /// Creates a new `GetTableVersions`.
+    /// Creates a new `GetTableVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteKeywordFluentBuilder {
-    /// Creates a new `DeleteKeyword`.
+    /// Creates a new `DeleteKeywordFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

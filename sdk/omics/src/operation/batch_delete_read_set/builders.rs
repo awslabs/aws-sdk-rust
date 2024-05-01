@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDeleteReadSetFluentBuilder {
-    /// Creates a new `BatchDeleteReadSet`.
+    /// Creates a new `BatchDeleteReadSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

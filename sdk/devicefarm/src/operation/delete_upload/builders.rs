@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteUploadFluentBuilder {
-    /// Creates a new `DeleteUpload`.
+    /// Creates a new `DeleteUploadFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

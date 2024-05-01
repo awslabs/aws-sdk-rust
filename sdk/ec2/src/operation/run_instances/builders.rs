@@ -66,7 +66,7 @@ impl
     }
 }
 impl RunInstancesFluentBuilder {
-    /// Creates a new `RunInstances`.
+    /// Creates a new `RunInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

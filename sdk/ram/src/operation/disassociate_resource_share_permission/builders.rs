@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateResourceSharePermissionFluentBuilder {
-    /// Creates a new `DisassociateResourceSharePermission`.
+    /// Creates a new `DisassociateResourceSharePermissionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

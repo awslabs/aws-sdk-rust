@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteLoggerDefinitionFluentBuilder {
-    /// Creates a new `DeleteLoggerDefinition`.
+    /// Creates a new `DeleteLoggerDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

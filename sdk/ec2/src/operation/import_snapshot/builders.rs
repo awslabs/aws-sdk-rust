@@ -49,7 +49,7 @@ impl
     }
 }
 impl ImportSnapshotFluentBuilder {
-    /// Creates a new `ImportSnapshot`.
+    /// Creates a new `ImportSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

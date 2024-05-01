@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListHITsForQualificationTypeFluentBuilder {
-    /// Creates a new `ListHITsForQualificationType`.
+    /// Creates a new `ListHITsForQualificationTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

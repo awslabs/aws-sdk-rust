@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResumeWorkflowRunFluentBuilder {
-    /// Creates a new `ResumeWorkflowRun`.
+    /// Creates a new `ResumeWorkflowRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

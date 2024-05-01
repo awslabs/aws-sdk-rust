@@ -62,7 +62,7 @@ impl
     }
 }
 impl DeleteRateBasedRuleFluentBuilder {
-    /// Creates a new `DeleteRateBasedRule`.
+    /// Creates a new `DeleteRateBasedRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutReportDefinitionFluentBuilder {
-    /// Creates a new `PutReportDefinition`.
+    /// Creates a new `PutReportDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutModelInvocationLoggingConfigurationFluentBuilder {
-    /// Creates a new `PutModelInvocationLoggingConfiguration`.
+    /// Creates a new `PutModelInvocationLoggingConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

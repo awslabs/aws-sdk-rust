@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetMembershipDatasourcesFluentBuilder {
-    /// Creates a new `BatchGetMembershipDatasources`.
+    /// Creates a new `BatchGetMembershipDatasourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

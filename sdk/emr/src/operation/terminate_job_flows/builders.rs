@@ -49,7 +49,7 @@ impl
     }
 }
 impl TerminateJobFlowsFluentBuilder {
-    /// Creates a new `TerminateJobFlows`.
+    /// Creates a new `TerminateJobFlowsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

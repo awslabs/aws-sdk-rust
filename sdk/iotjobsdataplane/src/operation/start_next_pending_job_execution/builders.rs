@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartNextPendingJobExecutionFluentBuilder {
-    /// Creates a new `StartNextPendingJobExecution`.
+    /// Creates a new `StartNextPendingJobExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

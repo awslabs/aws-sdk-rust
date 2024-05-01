@@ -59,7 +59,7 @@ impl
     }
 }
 impl ListImageScanFindingAggregationsFluentBuilder {
-    /// Creates a new `ListImageScanFindingAggregations`.
+    /// Creates a new `ListImageScanFindingAggregationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

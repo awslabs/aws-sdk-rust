@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveAutoTerminationPolicyFluentBuilder {
-    /// Creates a new `RemoveAutoTerminationPolicy`.
+    /// Creates a new `RemoveAutoTerminationPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

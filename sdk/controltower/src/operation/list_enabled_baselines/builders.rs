@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListEnabledBaselinesFluentBuilder {
-    /// Creates a new `ListEnabledBaselines`.
+    /// Creates a new `ListEnabledBaselinesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

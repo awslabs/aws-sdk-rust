@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateSlackChannelConfigurationFluentBuilder {
-    /// Creates a new `UpdateSlackChannelConfiguration`.
+    /// Creates a new `UpdateSlackChannelConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

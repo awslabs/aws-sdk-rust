@@ -78,7 +78,7 @@ impl
     }
 }
 impl UpdateEnvironmentFluentBuilder {
-    /// Creates a new `UpdateEnvironment`.
+    /// Creates a new `UpdateEnvironmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

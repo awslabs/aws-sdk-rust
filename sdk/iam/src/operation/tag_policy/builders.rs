@@ -56,7 +56,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::tag_
     }
 }
 impl TagPolicyFluentBuilder {
-    /// Creates a new `TagPolicy`.
+    /// Creates a new `TagPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

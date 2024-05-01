@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListGuardrailsFluentBuilder {
-    /// Creates a new `ListGuardrails`.
+    /// Creates a new `ListGuardrailsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

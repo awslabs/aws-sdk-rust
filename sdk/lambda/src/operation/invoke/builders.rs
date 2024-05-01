@@ -48,7 +48,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::invo
     }
 }
 impl InvokeFluentBuilder {
-    /// Creates a new `Invoke`.
+    /// Creates a new `InvokeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociatePersonasFromEntitiesFluentBuilder {
-    /// Creates a new `DisassociatePersonasFromEntities`.
+    /// Creates a new `DisassociatePersonasFromEntitiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

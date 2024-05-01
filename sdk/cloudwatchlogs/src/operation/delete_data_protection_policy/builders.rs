@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteDataProtectionPolicyFluentBuilder {
-    /// Creates a new `DeleteDataProtectionPolicy`.
+    /// Creates a new `DeleteDataProtectionPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

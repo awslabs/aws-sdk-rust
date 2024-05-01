@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateEncryptionConfigFluentBuilder {
-    /// Creates a new `AssociateEncryptionConfig`.
+    /// Creates a new `AssociateEncryptionConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

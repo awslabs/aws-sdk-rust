@@ -49,7 +49,7 @@ impl
     }
 }
 impl CheckCapacityFluentBuilder {
-    /// Creates a new `CheckCapacity`.
+    /// Creates a new `CheckCapacityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

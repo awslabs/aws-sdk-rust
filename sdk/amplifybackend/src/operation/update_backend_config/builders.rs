@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateBackendConfigFluentBuilder {
-    /// Creates a new `UpdateBackendConfig`.
+    /// Creates a new `UpdateBackendConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetBackendStorageFluentBuilder {
-    /// Creates a new `GetBackendStorage`.
+    /// Creates a new `GetBackendStorageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

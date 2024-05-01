@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeNotificationsForBudgetFluentBuilder {
-    /// Creates a new `DescribeNotificationsForBudget`.
+    /// Creates a new `DescribeNotificationsForBudgetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

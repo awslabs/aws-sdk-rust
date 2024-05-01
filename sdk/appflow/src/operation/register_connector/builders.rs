@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterConnectorFluentBuilder {
-    /// Creates a new `RegisterConnector`.
+    /// Creates a new `RegisterConnectorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

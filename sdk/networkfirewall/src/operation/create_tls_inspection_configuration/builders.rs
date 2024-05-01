@@ -53,7 +53,7 @@ impl
     }
 }
 impl CreateTLSInspectionConfigurationFluentBuilder {
-    /// Creates a new `CreateTLSInspectionConfiguration`.
+    /// Creates a new `CreateTLSInspectionConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

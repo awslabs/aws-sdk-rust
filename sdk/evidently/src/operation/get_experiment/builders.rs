@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetExperimentFluentBuilder {
-    /// Creates a new `GetExperiment`.
+    /// Creates a new `GetExperimentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

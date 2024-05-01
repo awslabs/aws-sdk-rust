@@ -48,7 +48,7 @@ impl
     }
 }
 impl ChangeServerLifeCycleStateFluentBuilder {
-    /// Creates a new `ChangeServerLifeCycleState`.
+    /// Creates a new `ChangeServerLifeCycleStateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

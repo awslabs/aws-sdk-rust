@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateMissionProfileFluentBuilder {
-    /// Creates a new `CreateMissionProfile`.
+    /// Creates a new `CreateMissionProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

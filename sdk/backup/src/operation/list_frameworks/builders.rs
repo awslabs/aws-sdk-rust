@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListFrameworksFluentBuilder {
-    /// Creates a new `ListFrameworks`.
+    /// Creates a new `ListFrameworksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

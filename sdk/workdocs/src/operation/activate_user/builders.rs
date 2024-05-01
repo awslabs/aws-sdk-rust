@@ -48,7 +48,7 @@ impl
     }
 }
 impl ActivateUserFluentBuilder {
-    /// Creates a new `ActivateUser`.
+    /// Creates a new `ActivateUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

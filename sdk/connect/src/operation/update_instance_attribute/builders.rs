@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateInstanceAttributeFluentBuilder {
-    /// Creates a new `UpdateInstanceAttribute`.
+    /// Creates a new `UpdateInstanceAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

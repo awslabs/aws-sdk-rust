@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteQueueFluentBuilder {
-    /// Creates a new `DeleteQueue`.
+    /// Creates a new `DeleteQueueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

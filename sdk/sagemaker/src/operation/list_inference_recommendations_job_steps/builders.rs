@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListInferenceRecommendationsJobStepsFluentBuilder {
-    /// Creates a new `ListInferenceRecommendationsJobSteps`.
+    /// Creates a new `ListInferenceRecommendationsJobStepsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

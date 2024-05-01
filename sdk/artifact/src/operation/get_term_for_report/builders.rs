@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTermForReportFluentBuilder {
-    /// Creates a new `GetTermForReport`.
+    /// Creates a new `GetTermForReportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

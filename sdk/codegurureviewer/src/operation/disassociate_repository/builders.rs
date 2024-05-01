@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateRepositoryFluentBuilder {
-    /// Creates a new `DisassociateRepository`.
+    /// Creates a new `DisassociateRepositoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

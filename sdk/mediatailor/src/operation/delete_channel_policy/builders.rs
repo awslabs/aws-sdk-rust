@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteChannelPolicyFluentBuilder {
-    /// Creates a new `DeleteChannelPolicy`.
+    /// Creates a new `DeleteChannelPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

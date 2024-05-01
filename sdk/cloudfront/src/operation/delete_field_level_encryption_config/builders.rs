@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteFieldLevelEncryptionConfigFluentBuilder {
-    /// Creates a new `DeleteFieldLevelEncryptionConfig`.
+    /// Creates a new `DeleteFieldLevelEncryptionConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

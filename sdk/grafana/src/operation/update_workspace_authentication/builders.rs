@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateWorkspaceAuthenticationFluentBuilder {
-    /// Creates a new `UpdateWorkspaceAuthentication`.
+    /// Creates a new `UpdateWorkspaceAuthenticationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

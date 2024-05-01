@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteTaskFluentBuilder {
-    /// Creates a new `DeleteTask`.
+    /// Creates a new `DeleteTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

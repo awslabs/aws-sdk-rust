@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteConfiguredAudienceModelAssociationFluentBuilder {
-    /// Creates a new `DeleteConfiguredAudienceModelAssociation`.
+    /// Creates a new `DeleteConfiguredAudienceModelAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

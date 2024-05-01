@@ -50,7 +50,7 @@ impl
     }
 }
 impl SetLoadBalancerPoliciesOfListenerFluentBuilder {
-    /// Creates a new `SetLoadBalancerPoliciesOfListener`.
+    /// Creates a new `SetLoadBalancerPoliciesOfListenerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

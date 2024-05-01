@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteNetworkInterfaceFluentBuilder {
-    /// Creates a new `DeleteNetworkInterface`.
+    /// Creates a new `DeleteNetworkInterfaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

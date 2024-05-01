@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchPutFieldOptionsFluentBuilder {
-    /// Creates a new `BatchPutFieldOptions`.
+    /// Creates a new `BatchPutFieldOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

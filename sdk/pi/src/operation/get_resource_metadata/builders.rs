@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetResourceMetadataFluentBuilder {
-    /// Creates a new `GetResourceMetadata`.
+    /// Creates a new `GetResourceMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

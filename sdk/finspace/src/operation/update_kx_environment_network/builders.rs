@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateKxEnvironmentNetworkFluentBuilder {
-    /// Creates a new `UpdateKxEnvironmentNetwork`.
+    /// Creates a new `UpdateKxEnvironmentNetworkFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

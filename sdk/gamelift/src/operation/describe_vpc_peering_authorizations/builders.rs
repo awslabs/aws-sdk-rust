@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeVpcPeeringAuthorizationsFluentBuilder {
-    /// Creates a new `DescribeVpcPeeringAuthorizations`.
+    /// Creates a new `DescribeVpcPeeringAuthorizationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

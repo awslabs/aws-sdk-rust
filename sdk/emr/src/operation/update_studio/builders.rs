@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateStudioFluentBuilder {
-    /// Creates a new `UpdateStudio`.
+    /// Creates a new `UpdateStudioFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateConnectorFluentBuilder {
-    /// Creates a new `DisassociateConnector`.
+    /// Creates a new `DisassociateConnectorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

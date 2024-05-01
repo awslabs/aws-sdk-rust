@@ -113,7 +113,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::impo
     }
 }
 impl ImportKeyFluentBuilder {
-    /// Creates a new `ImportKey`.
+    /// Creates a new `ImportKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

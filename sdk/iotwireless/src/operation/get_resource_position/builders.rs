@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetResourcePositionFluentBuilder {
-    /// Creates a new `GetResourcePosition`.
+    /// Creates a new `GetResourcePositionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

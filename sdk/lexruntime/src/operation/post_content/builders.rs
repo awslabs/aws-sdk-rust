@@ -78,7 +78,7 @@ impl
     }
 }
 impl PostContentFluentBuilder {
-    /// Creates a new `PostContent`.
+    /// Creates a new `PostContentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

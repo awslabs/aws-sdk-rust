@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteConformancePackFluentBuilder {
-    /// Creates a new `DeleteConformancePack`.
+    /// Creates a new `DeleteConformancePackFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateAppVersionAppComponentFluentBuilder {
-    /// Creates a new `CreateAppVersionAppComponent`.
+    /// Creates a new `CreateAppVersionAppComponentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

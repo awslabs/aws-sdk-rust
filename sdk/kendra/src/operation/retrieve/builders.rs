@@ -58,7 +58,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::retr
     }
 }
 impl RetrieveFluentBuilder {
-    /// Creates a new `Retrieve`.
+    /// Creates a new `RetrieveFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

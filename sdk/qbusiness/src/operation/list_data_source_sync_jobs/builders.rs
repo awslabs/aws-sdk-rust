@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDataSourceSyncJobsFluentBuilder {
-    /// Creates a new `ListDataSourceSyncJobs`.
+    /// Creates a new `ListDataSourceSyncJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

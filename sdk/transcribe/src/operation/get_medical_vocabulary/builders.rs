@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetMedicalVocabularyFluentBuilder {
-    /// Creates a new `GetMedicalVocabulary`.
+    /// Creates a new `GetMedicalVocabularyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteSparqlStatisticsFluentBuilder {
-    /// Creates a new `DeleteSparqlStatistics`.
+    /// Creates a new `DeleteSparqlStatisticsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

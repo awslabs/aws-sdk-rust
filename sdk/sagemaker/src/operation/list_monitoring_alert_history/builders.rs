@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListMonitoringAlertHistoryFluentBuilder {
-    /// Creates a new `ListMonitoringAlertHistory`.
+    /// Creates a new `ListMonitoringAlertHistoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

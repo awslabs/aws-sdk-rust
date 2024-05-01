@@ -49,7 +49,7 @@ impl
     }
 }
 impl RebootRelationalDatabaseFluentBuilder {
-    /// Creates a new `RebootRelationalDatabase`.
+    /// Creates a new `RebootRelationalDatabaseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

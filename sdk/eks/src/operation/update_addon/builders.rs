@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateAddonFluentBuilder {
-    /// Creates a new `UpdateAddon`.
+    /// Creates a new `UpdateAddonFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

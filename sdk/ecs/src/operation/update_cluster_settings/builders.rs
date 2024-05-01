@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateClusterSettingsFluentBuilder {
-    /// Creates a new `UpdateClusterSettings`.
+    /// Creates a new `UpdateClusterSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

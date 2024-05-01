@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMedicalScribeJobFluentBuilder {
-    /// Creates a new `DeleteMedicalScribeJob`.
+    /// Creates a new `DeleteMedicalScribeJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

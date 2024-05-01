@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeHoursOfOperationFluentBuilder {
-    /// Creates a new `DescribeHoursOfOperation`.
+    /// Creates a new `DescribeHoursOfOperationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

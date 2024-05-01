@@ -49,7 +49,7 @@ impl
     }
 }
 impl PutRoomSkillParameterFluentBuilder {
-    /// Creates a new `PutRoomSkillParameter`.
+    /// Creates a new `PutRoomSkillParameterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

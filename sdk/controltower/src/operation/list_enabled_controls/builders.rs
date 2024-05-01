@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListEnabledControlsFluentBuilder {
-    /// Creates a new `ListEnabledControls`.
+    /// Creates a new `ListEnabledControlsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

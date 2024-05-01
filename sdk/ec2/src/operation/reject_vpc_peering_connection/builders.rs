@@ -48,7 +48,7 @@ impl
     }
 }
 impl RejectVpcPeeringConnectionFluentBuilder {
-    /// Creates a new `RejectVpcPeeringConnection`.
+    /// Creates a new `RejectVpcPeeringConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

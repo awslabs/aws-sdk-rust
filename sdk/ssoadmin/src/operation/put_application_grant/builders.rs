@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutApplicationGrantFluentBuilder {
-    /// Creates a new `PutApplicationGrant`.
+    /// Creates a new `PutApplicationGrantFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetVerifiedAccessGroupPolicyFluentBuilder {
-    /// Creates a new `GetVerifiedAccessGroupPolicy`.
+    /// Creates a new `GetVerifiedAccessGroupPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

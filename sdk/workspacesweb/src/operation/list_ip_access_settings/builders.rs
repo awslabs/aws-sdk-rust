@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListIpAccessSettingsFluentBuilder {
-    /// Creates a new `ListIpAccessSettings`.
+    /// Creates a new `ListIpAccessSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateFunctionEventInvokeConfigFluentBuilder {
-    /// Creates a new `UpdateFunctionEventInvokeConfig`.
+    /// Creates a new `UpdateFunctionEventInvokeConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

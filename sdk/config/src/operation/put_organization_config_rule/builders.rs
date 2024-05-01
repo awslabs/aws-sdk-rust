@@ -58,7 +58,7 @@ impl
     }
 }
 impl PutOrganizationConfigRuleFluentBuilder {
-    /// Creates a new `PutOrganizationConfigRule`.
+    /// Creates a new `PutOrganizationConfigRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

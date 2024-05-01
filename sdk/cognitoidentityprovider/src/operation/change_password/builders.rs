@@ -51,7 +51,7 @@ impl
     }
 }
 impl ChangePasswordFluentBuilder {
-    /// Creates a new `ChangePassword`.
+    /// Creates a new `ChangePasswordFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

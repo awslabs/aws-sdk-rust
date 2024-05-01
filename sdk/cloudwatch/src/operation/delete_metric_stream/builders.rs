@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMetricStreamFluentBuilder {
-    /// Creates a new `DeleteMetricStream`.
+    /// Creates a new `DeleteMetricStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

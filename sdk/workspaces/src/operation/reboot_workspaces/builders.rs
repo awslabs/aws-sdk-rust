@@ -50,7 +50,7 @@ impl
     }
 }
 impl RebootWorkspacesFluentBuilder {
-    /// Creates a new `RebootWorkspaces`.
+    /// Creates a new `RebootWorkspacesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

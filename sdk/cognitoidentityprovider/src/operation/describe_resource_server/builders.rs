@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeResourceServerFluentBuilder {
-    /// Creates a new `DescribeResourceServer`.
+    /// Creates a new `DescribeResourceServerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

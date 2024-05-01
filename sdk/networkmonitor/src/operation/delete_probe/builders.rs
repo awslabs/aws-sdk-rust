@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteProbeFluentBuilder {
-    /// Creates a new `DeleteProbe`.
+    /// Creates a new `DeleteProbeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutJobFailureResultFluentBuilder {
-    /// Creates a new `PutJobFailureResult`.
+    /// Creates a new `PutJobFailureResultFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

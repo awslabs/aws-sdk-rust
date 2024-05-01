@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteVerifiedEmailAddressFluentBuilder {
-    /// Creates a new `DeleteVerifiedEmailAddress`.
+    /// Creates a new `DeleteVerifiedEmailAddressFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

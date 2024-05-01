@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,35 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait until a Audit Report is created
+    fn wait_until_audit_report_created(&self) -> crate::waiters::audit_report_created::AuditReportCreatedFluentBuilder;
+    /// Wait until a certificate is issued
+    fn wait_until_certificate_issued(&self) -> crate::waiters::certificate_issued::CertificateIssuedFluentBuilder;
+    /// Wait until a Certificate Authority CSR is created
+    fn wait_until_certificate_authority_csr_created(
+        &self,
+    ) -> crate::waiters::certificate_authority_csr_created::CertificateAuthorityCsrCreatedFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_audit_report_created(&self) -> crate::waiters::audit_report_created::AuditReportCreatedFluentBuilder {
+        crate::waiters::audit_report_created::AuditReportCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_certificate_issued(&self) -> crate::waiters::certificate_issued::CertificateIssuedFluentBuilder {
+        crate::waiters::certificate_issued::CertificateIssuedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_certificate_authority_csr_created(
+        &self,
+    ) -> crate::waiters::certificate_authority_csr_created::CertificateAuthorityCsrCreatedFluentBuilder {
+        crate::waiters::certificate_authority_csr_created::CertificateAuthorityCsrCreatedFluentBuilder::new(self.handle.clone())
     }
 }
 

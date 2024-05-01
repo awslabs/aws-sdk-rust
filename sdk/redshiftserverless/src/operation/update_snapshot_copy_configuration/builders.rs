@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateSnapshotCopyConfigurationFluentBuilder {
-    /// Creates a new `UpdateSnapshotCopyConfiguration`.
+    /// Creates a new `UpdateSnapshotCopyConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

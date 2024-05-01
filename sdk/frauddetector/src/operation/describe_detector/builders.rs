@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDetectorFluentBuilder {
-    /// Creates a new `DescribeDetector`.
+    /// Creates a new `DescribeDetectorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

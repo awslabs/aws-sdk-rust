@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetDashboardForJobRunFluentBuilder {
-    /// Creates a new `GetDashboardForJobRun`.
+    /// Creates a new `GetDashboardForJobRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

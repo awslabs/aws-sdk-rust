@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetEffectiveLifecyclePolicyFluentBuilder {
-    /// Creates a new `BatchGetEffectiveLifecyclePolicy`.
+    /// Creates a new `BatchGetEffectiveLifecyclePolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

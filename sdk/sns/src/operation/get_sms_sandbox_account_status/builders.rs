@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetSMSSandboxAccountStatusFluentBuilder {
-    /// Creates a new `GetSMSSandboxAccountStatus`.
+    /// Creates a new `GetSMSSandboxAccountStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -55,7 +55,7 @@ impl
     }
 }
 impl UpdateSecretFluentBuilder {
-    /// Creates a new `UpdateSecret`.
+    /// Creates a new `UpdateSecretFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTemplateAliasesFluentBuilder {
-    /// Creates a new `ListTemplateAliases`.
+    /// Creates a new `ListTemplateAliasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

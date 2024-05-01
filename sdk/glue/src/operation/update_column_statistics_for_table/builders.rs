@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateColumnStatisticsForTableFluentBuilder {
-    /// Creates a new `UpdateColumnStatisticsForTable`.
+    /// Creates a new `UpdateColumnStatisticsForTableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

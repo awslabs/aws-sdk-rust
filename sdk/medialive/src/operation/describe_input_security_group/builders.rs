@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeInputSecurityGroupFluentBuilder {
-    /// Creates a new `DescribeInputSecurityGroup`.
+    /// Creates a new `DescribeInputSecurityGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchPutScheduledUpdateGroupActionFluentBuilder {
-    /// Creates a new `BatchPutScheduledUpdateGroupAction`.
+    /// Creates a new `BatchPutScheduledUpdateGroupActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl DisableSnapshotBlockPublicAccessFluentBuilder {
-    /// Creates a new `DisableSnapshotBlockPublicAccess`.
+    /// Creates a new `DisableSnapshotBlockPublicAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

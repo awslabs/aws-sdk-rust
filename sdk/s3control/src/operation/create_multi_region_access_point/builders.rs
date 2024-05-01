@@ -64,7 +64,7 @@ impl
     }
 }
 impl CreateMultiRegionAccessPointFluentBuilder {
-    /// Creates a new `CreateMultiRegionAccessPoint`.
+    /// Creates a new `CreateMultiRegionAccessPointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::batc
     }
 }
 impl BatchStopFluentBuilder {
-    /// Creates a new `BatchStop`.
+    /// Creates a new `BatchStopFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

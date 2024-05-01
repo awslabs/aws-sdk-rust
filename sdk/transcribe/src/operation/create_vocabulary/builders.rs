@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateVocabularyFluentBuilder {
-    /// Creates a new `CreateVocabulary`.
+    /// Creates a new `CreateVocabularyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

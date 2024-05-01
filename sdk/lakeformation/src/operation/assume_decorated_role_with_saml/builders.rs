@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssumeDecoratedRoleWithSAMLFluentBuilder {
-    /// Creates a new `AssumeDecoratedRoleWithSAML`.
+    /// Creates a new `AssumeDecoratedRoleWithSAMLFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

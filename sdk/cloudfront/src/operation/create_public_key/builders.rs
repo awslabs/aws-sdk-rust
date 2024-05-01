@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreatePublicKeyFluentBuilder {
-    /// Creates a new `CreatePublicKey`.
+    /// Creates a new `CreatePublicKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

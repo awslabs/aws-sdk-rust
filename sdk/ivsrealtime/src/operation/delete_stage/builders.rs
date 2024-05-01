@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteStageFluentBuilder {
-    /// Creates a new `DeleteStage`.
+    /// Creates a new `DeleteStageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

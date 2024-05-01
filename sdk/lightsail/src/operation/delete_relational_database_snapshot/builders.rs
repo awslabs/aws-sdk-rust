@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteRelationalDatabaseSnapshotFluentBuilder {
-    /// Creates a new `DeleteRelationalDatabaseSnapshot`.
+    /// Creates a new `DeleteRelationalDatabaseSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

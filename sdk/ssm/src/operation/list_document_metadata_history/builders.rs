@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDocumentMetadataHistoryFluentBuilder {
-    /// Creates a new `ListDocumentMetadataHistory`.
+    /// Creates a new `ListDocumentMetadataHistoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

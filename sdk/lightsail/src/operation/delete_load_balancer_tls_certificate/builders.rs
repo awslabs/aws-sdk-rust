@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteLoadBalancerTlsCertificateFluentBuilder {
-    /// Creates a new `DeleteLoadBalancerTlsCertificate`.
+    /// Creates a new `DeleteLoadBalancerTlsCertificateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetBackendAPIModelsFluentBuilder {
-    /// Creates a new `GetBackendAPIModels`.
+    /// Creates a new `GetBackendAPIModelsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -54,7 +54,7 @@ impl
     }
 }
 impl ListChannelMembershipsForAppInstanceUserFluentBuilder {
-    /// Creates a new `ListChannelMembershipsForAppInstanceUser`.
+    /// Creates a new `ListChannelMembershipsForAppInstanceUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

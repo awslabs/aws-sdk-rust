@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetIpamAddressHistoryFluentBuilder {
-    /// Creates a new `GetIpamAddressHistory`.
+    /// Creates a new `GetIpamAddressHistoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

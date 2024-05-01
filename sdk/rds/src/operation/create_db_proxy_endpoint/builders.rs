@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateDBProxyEndpointFluentBuilder {
-    /// Creates a new `CreateDBProxyEndpoint`.
+    /// Creates a new `CreateDBProxyEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

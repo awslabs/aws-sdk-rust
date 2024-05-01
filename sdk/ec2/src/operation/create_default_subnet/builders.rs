@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateDefaultSubnetFluentBuilder {
-    /// Creates a new `CreateDefaultSubnet`.
+    /// Creates a new `CreateDefaultSubnetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

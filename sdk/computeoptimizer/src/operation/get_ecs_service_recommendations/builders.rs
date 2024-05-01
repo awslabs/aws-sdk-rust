@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetECSServiceRecommendationsFluentBuilder {
-    /// Creates a new `GetECSServiceRecommendations`.
+    /// Creates a new `GetECSServiceRecommendationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

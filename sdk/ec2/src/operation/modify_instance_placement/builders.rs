@@ -60,7 +60,7 @@ impl
     }
 }
 impl ModifyInstancePlacementFluentBuilder {
-    /// Creates a new `ModifyInstancePlacement`.
+    /// Creates a new `ModifyInstancePlacementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

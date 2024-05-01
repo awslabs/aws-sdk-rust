@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifySnapshotCopyRetentionPeriodFluentBuilder {
-    /// Creates a new `ModifySnapshotCopyRetentionPeriod`.
+    /// Creates a new `ModifySnapshotCopyRetentionPeriodFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

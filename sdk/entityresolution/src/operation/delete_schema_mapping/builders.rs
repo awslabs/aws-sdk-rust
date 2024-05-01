@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSchemaMappingFluentBuilder {
-    /// Creates a new `DeleteSchemaMapping`.
+    /// Creates a new `DeleteSchemaMappingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

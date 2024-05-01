@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListComplianceStatusFluentBuilder {
-    /// Creates a new `ListComplianceStatus`.
+    /// Creates a new `ListComplianceStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

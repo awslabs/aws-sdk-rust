@@ -60,7 +60,7 @@ impl
     }
 }
 impl GetChangeTokenStatusFluentBuilder {
-    /// Creates a new `GetChangeTokenStatus`.
+    /// Creates a new `GetChangeTokenStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

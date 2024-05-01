@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartQueryExecutionFluentBuilder {
-    /// Creates a new `StartQueryExecution`.
+    /// Creates a new `StartQueryExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

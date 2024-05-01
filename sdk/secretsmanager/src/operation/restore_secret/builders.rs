@@ -50,7 +50,7 @@ impl
     }
 }
 impl RestoreSecretFluentBuilder {
-    /// Creates a new `RestoreSecret`.
+    /// Creates a new `RestoreSecretFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

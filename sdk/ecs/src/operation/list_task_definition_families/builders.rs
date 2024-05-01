@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListTaskDefinitionFamiliesFluentBuilder {
-    /// Creates a new `ListTaskDefinitionFamilies`.
+    /// Creates a new `ListTaskDefinitionFamiliesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

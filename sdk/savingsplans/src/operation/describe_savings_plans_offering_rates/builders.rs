@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeSavingsPlansOfferingRatesFluentBuilder {
-    /// Creates a new `DescribeSavingsPlansOfferingRates`.
+    /// Creates a new `DescribeSavingsPlansOfferingRatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

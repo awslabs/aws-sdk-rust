@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateResourceShareFluentBuilder {
-    /// Creates a new `CreateResourceShare`.
+    /// Creates a new `CreateResourceShareFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

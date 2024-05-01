@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTriggerFluentBuilder {
-    /// Creates a new `GetTrigger`.
+    /// Creates a new `GetTriggerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

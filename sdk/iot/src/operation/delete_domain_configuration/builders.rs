@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteDomainConfigurationFluentBuilder {
-    /// Creates a new `DeleteDomainConfiguration`.
+    /// Creates a new `DeleteDomainConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

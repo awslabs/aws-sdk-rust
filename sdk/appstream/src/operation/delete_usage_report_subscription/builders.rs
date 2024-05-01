@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteUsageReportSubscriptionFluentBuilder {
-    /// Creates a new `DeleteUsageReportSubscription`.
+    /// Creates a new `DeleteUsageReportSubscriptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

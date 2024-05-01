@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartEngagementFluentBuilder {
-    /// Creates a new `StartEngagement`.
+    /// Creates a new `StartEngagementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -64,7 +64,7 @@ impl
     }
 }
 impl RetireGrantFluentBuilder {
-    /// Creates a new `RetireGrant`.
+    /// Creates a new `RetireGrantFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

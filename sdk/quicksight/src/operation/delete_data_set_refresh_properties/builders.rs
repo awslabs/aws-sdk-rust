@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDataSetRefreshPropertiesFluentBuilder {
-    /// Creates a new `DeleteDataSetRefreshProperties`.
+    /// Creates a new `DeleteDataSetRefreshPropertiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

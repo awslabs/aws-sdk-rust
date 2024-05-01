@@ -47,7 +47,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::enab
     }
 }
 impl EnableKeyFluentBuilder {
-    /// Creates a new `EnableKey`.
+    /// Creates a new `EnableKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

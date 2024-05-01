@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateKxClusterDatabasesFluentBuilder {
-    /// Creates a new `UpdateKxClusterDatabases`.
+    /// Creates a new `UpdateKxClusterDatabasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

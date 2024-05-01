@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeAssetPropertyFluentBuilder {
-    /// Creates a new `DescribeAssetProperty`.
+    /// Creates a new `DescribeAssetPropertyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteServerlessCacheSnapshotFluentBuilder {
-    /// Creates a new `DeleteServerlessCacheSnapshot`.
+    /// Creates a new `DeleteServerlessCacheSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

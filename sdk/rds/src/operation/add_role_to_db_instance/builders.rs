@@ -51,7 +51,7 @@ impl
     }
 }
 impl AddRoleToDBInstanceFluentBuilder {
-    /// Creates a new `AddRoleToDBInstance`.
+    /// Creates a new `AddRoleToDBInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

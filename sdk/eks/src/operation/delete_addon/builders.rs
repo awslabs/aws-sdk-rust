@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteAddonFluentBuilder {
-    /// Creates a new `DeleteAddon`.
+    /// Creates a new `DeleteAddonFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

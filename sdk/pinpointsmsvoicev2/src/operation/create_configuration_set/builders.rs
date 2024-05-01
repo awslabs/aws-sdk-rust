@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateConfigurationSetFluentBuilder {
-    /// Creates a new `CreateConfigurationSet`.
+    /// Creates a new `CreateConfigurationSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

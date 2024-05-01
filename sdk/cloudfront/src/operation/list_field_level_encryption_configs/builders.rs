@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListFieldLevelEncryptionConfigsFluentBuilder {
-    /// Creates a new `ListFieldLevelEncryptionConfigs`.
+    /// Creates a new `ListFieldLevelEncryptionConfigsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

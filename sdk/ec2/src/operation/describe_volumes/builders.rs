@@ -54,7 +54,7 @@ impl
     }
 }
 impl DescribeVolumesFluentBuilder {
-    /// Creates a new `DescribeVolumes`.
+    /// Creates a new `DescribeVolumesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

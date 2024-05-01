@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteReplicationTaskFluentBuilder {
-    /// Creates a new `DeleteReplicationTask`.
+    /// Creates a new `DeleteReplicationTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PostCommentForComparedCommitFluentBuilder {
-    /// Creates a new `PostCommentForComparedCommit`.
+    /// Creates a new `PostCommentForComparedCommitFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

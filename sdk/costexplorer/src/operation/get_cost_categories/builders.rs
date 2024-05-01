@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetCostCategoriesFluentBuilder {
-    /// Creates a new `GetCostCategories`.
+    /// Creates a new `GetCostCategoriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

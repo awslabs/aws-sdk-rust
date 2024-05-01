@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSamplesFluentBuilder {
-    /// Creates a new `ListSamples`.
+    /// Creates a new `ListSamplesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

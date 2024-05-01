@@ -48,7 +48,7 @@ impl
     }
 }
 impl RejectDataShareFluentBuilder {
-    /// Creates a new `RejectDataShare`.
+    /// Creates a new `RejectDataShareFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeBudgetActionFluentBuilder {
-    /// Creates a new `DescribeBudgetAction`.
+    /// Creates a new `DescribeBudgetActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

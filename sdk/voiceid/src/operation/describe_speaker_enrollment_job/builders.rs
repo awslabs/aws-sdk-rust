@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeSpeakerEnrollmentJobFluentBuilder {
-    /// Creates a new `DescribeSpeakerEnrollmentJob`.
+    /// Creates a new `DescribeSpeakerEnrollmentJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

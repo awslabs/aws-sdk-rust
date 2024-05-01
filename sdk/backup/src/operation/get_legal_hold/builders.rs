@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetLegalHoldFluentBuilder {
-    /// Creates a new `GetLegalHold`.
+    /// Creates a new `GetLegalHoldFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateEmergencyContactSettingsFluentBuilder {
-    /// Creates a new `UpdateEmergencyContactSettings`.
+    /// Creates a new `UpdateEmergencyContactSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

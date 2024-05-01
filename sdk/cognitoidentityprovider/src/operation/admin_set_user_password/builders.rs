@@ -60,7 +60,7 @@ impl
     }
 }
 impl AdminSetUserPasswordFluentBuilder {
-    /// Creates a new `AdminSetUserPassword`.
+    /// Creates a new `AdminSetUserPasswordFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

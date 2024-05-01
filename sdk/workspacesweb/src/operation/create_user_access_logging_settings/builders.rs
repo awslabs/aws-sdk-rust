@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateUserAccessLoggingSettingsFluentBuilder {
-    /// Creates a new `CreateUserAccessLoggingSettings`.
+    /// Creates a new `CreateUserAccessLoggingSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

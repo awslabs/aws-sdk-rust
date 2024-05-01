@@ -49,7 +49,7 @@ impl
     }
 }
 impl StartFaceSearchFluentBuilder {
-    /// Creates a new `StartFaceSearch`.
+    /// Creates a new `StartFaceSearchFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

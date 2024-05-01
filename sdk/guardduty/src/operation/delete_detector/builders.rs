@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDetectorFluentBuilder {
-    /// Creates a new `DeleteDetector`.
+    /// Creates a new `DeleteDetectorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

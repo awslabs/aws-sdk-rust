@@ -83,7 +83,7 @@ impl
     }
 }
 impl CreateSolutionFluentBuilder {
-    /// Creates a new `CreateSolution`.
+    /// Creates a new `CreateSolutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

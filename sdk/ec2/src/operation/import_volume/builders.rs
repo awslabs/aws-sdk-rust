@@ -51,7 +51,7 @@ impl
     }
 }
 impl ImportVolumeFluentBuilder {
-    /// Creates a new `ImportVolume`.
+    /// Creates a new `ImportVolumeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

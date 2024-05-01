@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateWirelessDeviceWithFuotaTaskFluentBuilder {
-    /// Creates a new `AssociateWirelessDeviceWithFuotaTask`.
+    /// Creates a new `AssociateWirelessDeviceWithFuotaTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

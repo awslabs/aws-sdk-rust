@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetPortalServiceProviderMetadataFluentBuilder {
-    /// Creates a new `GetPortalServiceProviderMetadata`.
+    /// Creates a new `GetPortalServiceProviderMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

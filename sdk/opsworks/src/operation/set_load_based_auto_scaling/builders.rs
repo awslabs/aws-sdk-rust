@@ -51,7 +51,7 @@ impl
     }
 }
 impl SetLoadBasedAutoScalingFluentBuilder {
-    /// Creates a new `SetLoadBasedAutoScaling`.
+    /// Creates a new `SetLoadBasedAutoScalingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

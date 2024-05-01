@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAttributeGroupsForApplicationFluentBuilder {
-    /// Creates a new `ListAttributeGroupsForApplication`.
+    /// Creates a new `ListAttributeGroupsForApplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

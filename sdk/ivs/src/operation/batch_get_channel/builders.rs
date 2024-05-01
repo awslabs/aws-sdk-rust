@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetChannelFluentBuilder {
-    /// Creates a new `BatchGetChannel`.
+    /// Creates a new `BatchGetChannelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

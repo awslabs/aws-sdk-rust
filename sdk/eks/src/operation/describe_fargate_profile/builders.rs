@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeFargateProfileFluentBuilder {
-    /// Creates a new `DescribeFargateProfile`.
+    /// Creates a new `DescribeFargateProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

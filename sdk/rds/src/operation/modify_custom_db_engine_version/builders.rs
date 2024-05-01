@@ -51,7 +51,7 @@ impl
     }
 }
 impl ModifyCustomDBEngineVersionFluentBuilder {
-    /// Creates a new `ModifyCustomDBEngineVersion`.
+    /// Creates a new `ModifyCustomDBEngineVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

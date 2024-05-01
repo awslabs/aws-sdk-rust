@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateRestApiFluentBuilder {
-    /// Creates a new `CreateRestApi`.
+    /// Creates a new `CreateRestApiFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

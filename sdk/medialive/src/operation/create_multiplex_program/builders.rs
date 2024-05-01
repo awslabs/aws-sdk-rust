@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateMultiplexProgramFluentBuilder {
-    /// Creates a new `CreateMultiplexProgram`.
+    /// Creates a new `CreateMultiplexProgramFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

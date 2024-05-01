@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetVoiceConnectorTerminationFluentBuilder {
-    /// Creates a new `GetVoiceConnectorTermination`.
+    /// Creates a new `GetVoiceConnectorTerminationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

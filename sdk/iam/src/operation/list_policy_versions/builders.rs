@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListPolicyVersionsFluentBuilder {
-    /// Creates a new `ListPolicyVersions`.
+    /// Creates a new `ListPolicyVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetPhoneNumberSettingsFluentBuilder {
-    /// Creates a new `GetPhoneNumberSettings`.
+    /// Creates a new `GetPhoneNumberSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

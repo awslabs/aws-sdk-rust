@@ -57,7 +57,7 @@ impl
     }
 }
 impl StopKeyUsageFluentBuilder {
-    /// Creates a new `StopKeyUsage`.
+    /// Creates a new `StopKeyUsageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

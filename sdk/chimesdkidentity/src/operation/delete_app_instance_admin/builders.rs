@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAppInstanceAdminFluentBuilder {
-    /// Creates a new `DeleteAppInstanceAdmin`.
+    /// Creates a new `DeleteAppInstanceAdminFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

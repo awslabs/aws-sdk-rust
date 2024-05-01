@@ -51,7 +51,7 @@ impl
     }
 }
 impl StartStudioSSOConfigurationRepairFluentBuilder {
-    /// Creates a new `StartStudioSSOConfigurationRepair`.
+    /// Creates a new `StartStudioSSOConfigurationRepairFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

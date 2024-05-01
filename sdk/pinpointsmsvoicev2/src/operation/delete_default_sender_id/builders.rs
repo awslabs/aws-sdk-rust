@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteDefaultSenderIdFluentBuilder {
-    /// Creates a new `DeleteDefaultSenderId`.
+    /// Creates a new `DeleteDefaultSenderIdFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

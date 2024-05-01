@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeEdgeDeploymentPlanFluentBuilder {
-    /// Creates a new `DescribeEdgeDeploymentPlan`.
+    /// Creates a new `DescribeEdgeDeploymentPlanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

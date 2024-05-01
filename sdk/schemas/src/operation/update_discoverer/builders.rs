@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateDiscovererFluentBuilder {
-    /// Creates a new `UpdateDiscoverer`.
+    /// Creates a new `UpdateDiscovererFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteThemeFluentBuilder {
-    /// Creates a new `DeleteTheme`.
+    /// Creates a new `DeleteThemeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

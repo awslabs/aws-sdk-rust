@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartBotResourceGenerationFluentBuilder {
-    /// Creates a new `StartBotResourceGeneration`.
+    /// Creates a new `StartBotResourceGenerationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateUserProficienciesFluentBuilder {
-    /// Creates a new `UpdateUserProficiencies`.
+    /// Creates a new `UpdateUserProficienciesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

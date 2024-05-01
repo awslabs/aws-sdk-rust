@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListOrganizationServiceAccessStatusFluentBuilder {
-    /// Creates a new `ListOrganizationServiceAccessStatus`.
+    /// Creates a new `ListOrganizationServiceAccessStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

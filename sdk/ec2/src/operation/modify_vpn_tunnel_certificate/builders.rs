@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyVpnTunnelCertificateFluentBuilder {
-    /// Creates a new `ModifyVpnTunnelCertificate`.
+    /// Creates a new `ModifyVpnTunnelCertificateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

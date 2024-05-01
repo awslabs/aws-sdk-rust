@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreatePublicDnsNamespaceFluentBuilder {
-    /// Creates a new `CreatePublicDnsNamespace`.
+    /// Creates a new `CreatePublicDnsNamespaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

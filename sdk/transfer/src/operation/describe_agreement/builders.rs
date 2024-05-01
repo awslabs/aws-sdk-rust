@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAgreementFluentBuilder {
-    /// Creates a new `DescribeAgreement`.
+    /// Creates a new `DescribeAgreementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCommandInvocationsFluentBuilder {
-    /// Creates a new `ListCommandInvocations`.
+    /// Creates a new `ListCommandInvocationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

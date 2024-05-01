@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchUpdateDetectorFluentBuilder {
-    /// Creates a new `BatchUpdateDetector`.
+    /// Creates a new `BatchUpdateDetectorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateRetrieverFluentBuilder {
-    /// Creates a new `UpdateRetriever`.
+    /// Creates a new `UpdateRetrieverFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

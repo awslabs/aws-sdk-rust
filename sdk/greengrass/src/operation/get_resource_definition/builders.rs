@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetResourceDefinitionFluentBuilder {
-    /// Creates a new `GetResourceDefinition`.
+    /// Creates a new `GetResourceDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

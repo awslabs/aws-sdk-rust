@@ -55,7 +55,7 @@ impl
     }
 }
 impl DescribeSeverityLevelsFluentBuilder {
-    /// Creates a new `DescribeSeverityLevels`.
+    /// Creates a new `DescribeSeverityLevelsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

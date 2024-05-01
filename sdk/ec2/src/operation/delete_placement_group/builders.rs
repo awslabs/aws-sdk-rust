@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePlacementGroupFluentBuilder {
-    /// Creates a new `DeletePlacementGroup`.
+    /// Creates a new `DeletePlacementGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

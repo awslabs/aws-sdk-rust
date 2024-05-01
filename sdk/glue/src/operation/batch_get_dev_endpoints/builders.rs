@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetDevEndpointsFluentBuilder {
-    /// Creates a new `BatchGetDevEndpoints`.
+    /// Creates a new `BatchGetDevEndpointsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

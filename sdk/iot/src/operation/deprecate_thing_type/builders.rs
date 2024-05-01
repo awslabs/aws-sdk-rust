@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeprecateThingTypeFluentBuilder {
-    /// Creates a new `DeprecateThingType`.
+    /// Creates a new `DeprecateThingTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

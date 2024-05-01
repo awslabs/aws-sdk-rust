@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::disa
     }
 }
 impl DisableFluentBuilder {
-    /// Creates a new `Disable`.
+    /// Creates a new `DisableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeLoaFluentBuilder {
-    /// Creates a new `DescribeLoa`.
+    /// Creates a new `DescribeLoaFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

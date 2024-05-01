@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateEnvironmentOperationsRoleFluentBuilder {
-    /// Creates a new `AssociateEnvironmentOperationsRole`.
+    /// Creates a new `AssociateEnvironmentOperationsRoleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateLogLevelsByResourceTypesFluentBuilder {
-    /// Creates a new `UpdateLogLevelsByResourceTypes`.
+    /// Creates a new `UpdateLogLevelsByResourceTypesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

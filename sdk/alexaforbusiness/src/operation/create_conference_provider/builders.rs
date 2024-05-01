@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateConferenceProviderFluentBuilder {
-    /// Creates a new `CreateConferenceProvider`.
+    /// Creates a new `CreateConferenceProviderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

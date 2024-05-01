@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTimelineEventFluentBuilder {
-    /// Creates a new `GetTimelineEvent`.
+    /// Creates a new `GetTimelineEventFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

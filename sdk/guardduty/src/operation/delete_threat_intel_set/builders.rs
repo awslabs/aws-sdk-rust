@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteThreatIntelSetFluentBuilder {
-    /// Creates a new `DeleteThreatIntelSet`.
+    /// Creates a new `DeleteThreatIntelSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

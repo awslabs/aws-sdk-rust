@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateBatchPredictionFluentBuilder {
-    /// Creates a new `CreateBatchPrediction`.
+    /// Creates a new `CreateBatchPredictionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

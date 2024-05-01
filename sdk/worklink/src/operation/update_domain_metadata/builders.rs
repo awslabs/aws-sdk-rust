@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateDomainMetadataFluentBuilder {
-    /// Creates a new `UpdateDomainMetadata`.
+    /// Creates a new `UpdateDomainMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl PublishMetricsFluentBuilder {
-    /// Creates a new `PublishMetrics`.
+    /// Creates a new `PublishMetricsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

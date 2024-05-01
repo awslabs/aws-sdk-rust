@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisableRadiusFluentBuilder {
-    /// Creates a new `DisableRadius`.
+    /// Creates a new `DisableRadiusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

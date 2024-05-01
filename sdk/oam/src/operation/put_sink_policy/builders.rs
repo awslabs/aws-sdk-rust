@@ -60,7 +60,7 @@ impl
     }
 }
 impl PutSinkPolicyFluentBuilder {
-    /// Creates a new `PutSinkPolicy`.
+    /// Creates a new `PutSinkPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

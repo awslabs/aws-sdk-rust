@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSourceCredentialsFluentBuilder {
-    /// Creates a new `ListSourceCredentials`.
+    /// Creates a new `ListSourceCredentialsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

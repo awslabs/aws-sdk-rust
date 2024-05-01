@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListChannelBansFluentBuilder {
-    /// Creates a new `ListChannelBans`.
+    /// Creates a new `ListChannelBansFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

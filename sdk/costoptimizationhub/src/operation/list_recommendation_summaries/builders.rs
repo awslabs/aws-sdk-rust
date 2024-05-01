@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListRecommendationSummariesFluentBuilder {
-    /// Creates a new `ListRecommendationSummaries`.
+    /// Creates a new `ListRecommendationSummariesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

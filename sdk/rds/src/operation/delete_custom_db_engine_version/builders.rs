@@ -58,7 +58,7 @@ impl
     }
 }
 impl DeleteCustomDBEngineVersionFluentBuilder {
-    /// Creates a new `DeleteCustomDBEngineVersion`.
+    /// Creates a new `DeleteCustomDBEngineVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

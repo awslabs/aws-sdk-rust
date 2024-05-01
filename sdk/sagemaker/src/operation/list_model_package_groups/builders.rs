@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListModelPackageGroupsFluentBuilder {
-    /// Creates a new `ListModelPackageGroups`.
+    /// Creates a new `ListModelPackageGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartProtectedQueryFluentBuilder {
-    /// Creates a new `StartProtectedQuery`.
+    /// Creates a new `StartProtectedQueryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

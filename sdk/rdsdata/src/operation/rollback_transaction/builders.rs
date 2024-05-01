@@ -48,7 +48,7 @@ impl
     }
 }
 impl RollbackTransactionFluentBuilder {
-    /// Creates a new `RollbackTransaction`.
+    /// Creates a new `RollbackTransactionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

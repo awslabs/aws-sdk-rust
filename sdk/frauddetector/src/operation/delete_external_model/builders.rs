@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteExternalModelFluentBuilder {
-    /// Creates a new `DeleteExternalModel`.
+    /// Creates a new `DeleteExternalModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

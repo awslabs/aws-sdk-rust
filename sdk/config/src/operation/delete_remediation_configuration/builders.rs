@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRemediationConfigurationFluentBuilder {
-    /// Creates a new `DeleteRemediationConfiguration`.
+    /// Creates a new `DeleteRemediationConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

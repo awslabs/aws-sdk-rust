@@ -58,7 +58,7 @@ impl
     }
 }
 impl UpdateQueueOutboundCallerConfigFluentBuilder {
-    /// Creates a new `UpdateQueueOutboundCallerConfig`.
+    /// Creates a new `UpdateQueueOutboundCallerConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

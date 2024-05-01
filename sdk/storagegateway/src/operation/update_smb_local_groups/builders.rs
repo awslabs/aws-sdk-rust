@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateSMBLocalGroupsFluentBuilder {
-    /// Creates a new `UpdateSMBLocalGroups`.
+    /// Creates a new `UpdateSMBLocalGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeFHIRExportJobFluentBuilder {
-    /// Creates a new `DescribeFHIRExportJob`.
+    /// Creates a new `DescribeFHIRExportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

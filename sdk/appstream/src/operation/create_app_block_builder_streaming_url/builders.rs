@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAppBlockBuilderStreamingURLFluentBuilder {
-    /// Creates a new `CreateAppBlockBuilderStreamingURL`.
+    /// Creates a new `CreateAppBlockBuilderStreamingURLFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

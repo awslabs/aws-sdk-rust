@@ -49,7 +49,7 @@ impl
     }
 }
 impl RejectInvitationFluentBuilder {
-    /// Creates a new `RejectInvitation`.
+    /// Creates a new `RejectInvitationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

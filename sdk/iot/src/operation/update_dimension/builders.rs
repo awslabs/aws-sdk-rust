@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateDimensionFluentBuilder {
-    /// Creates a new `UpdateDimension`.
+    /// Creates a new `UpdateDimensionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

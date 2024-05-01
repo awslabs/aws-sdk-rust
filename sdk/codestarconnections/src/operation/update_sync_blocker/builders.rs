@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateSyncBlockerFluentBuilder {
-    /// Creates a new `UpdateSyncBlocker`.
+    /// Creates a new `UpdateSyncBlockerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl UpdateGatewaySoftwareNowFluentBuilder {
-    /// Creates a new `UpdateGatewaySoftwareNow`.
+    /// Creates a new `UpdateGatewaySoftwareNowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

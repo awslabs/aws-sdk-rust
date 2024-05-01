@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPredefinedAttributesFluentBuilder {
-    /// Creates a new `ListPredefinedAttributes`.
+    /// Creates a new `ListPredefinedAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

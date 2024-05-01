@@ -57,7 +57,7 @@ impl
     }
 }
 impl AdminListGroupsForUserFluentBuilder {
-    /// Creates a new `AdminListGroupsForUser`.
+    /// Creates a new `AdminListGroupsForUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

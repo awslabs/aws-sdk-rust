@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeStackSummaryFluentBuilder {
-    /// Creates a new `DescribeStackSummary`.
+    /// Creates a new `DescribeStackSummaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

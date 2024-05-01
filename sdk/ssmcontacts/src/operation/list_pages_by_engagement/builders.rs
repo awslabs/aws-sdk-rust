@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPagesByEngagementFluentBuilder {
-    /// Creates a new `ListPagesByEngagement`.
+    /// Creates a new `ListPagesByEngagementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

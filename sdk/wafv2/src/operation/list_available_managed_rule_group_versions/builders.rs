@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAvailableManagedRuleGroupVersionsFluentBuilder {
-    /// Creates a new `ListAvailableManagedRuleGroupVersions`.
+    /// Creates a new `ListAvailableManagedRuleGroupVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

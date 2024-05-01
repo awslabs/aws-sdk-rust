@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteStudioLifecycleConfigFluentBuilder {
-    /// Creates a new `DeleteStudioLifecycleConfig`.
+    /// Creates a new `DeleteStudioLifecycleConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

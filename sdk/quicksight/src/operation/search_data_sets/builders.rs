@@ -48,7 +48,7 @@ impl
     }
 }
 impl SearchDataSetsFluentBuilder {
-    /// Creates a new `SearchDataSets`.
+    /// Creates a new `SearchDataSetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

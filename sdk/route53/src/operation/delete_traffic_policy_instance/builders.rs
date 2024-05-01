@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteTrafficPolicyInstanceFluentBuilder {
-    /// Creates a new `DeleteTrafficPolicyInstance`.
+    /// Creates a new `DeleteTrafficPolicyInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

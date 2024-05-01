@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteAccountAssignmentFluentBuilder {
-    /// Creates a new `DeleteAccountAssignment`.
+    /// Creates a new `DeleteAccountAssignmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

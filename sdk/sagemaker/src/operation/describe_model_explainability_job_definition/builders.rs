@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeModelExplainabilityJobDefinitionFluentBuilder {
-    /// Creates a new `DescribeModelExplainabilityJobDefinition`.
+    /// Creates a new `DescribeModelExplainabilityJobDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutCommentReactionFluentBuilder {
-    /// Creates a new `PutCommentReaction`.
+    /// Creates a new `PutCommentReactionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

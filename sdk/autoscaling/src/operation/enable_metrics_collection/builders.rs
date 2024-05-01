@@ -49,7 +49,7 @@ impl
     }
 }
 impl EnableMetricsCollectionFluentBuilder {
-    /// Creates a new `EnableMetricsCollection`.
+    /// Creates a new `EnableMetricsCollectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

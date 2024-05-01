@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchAssociateResourceFluentBuilder {
-    /// Creates a new `BatchAssociateResource`.
+    /// Creates a new `BatchAssociateResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

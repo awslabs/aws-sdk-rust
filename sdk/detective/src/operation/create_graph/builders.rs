@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateGraphFluentBuilder {
-    /// Creates a new `CreateGraph`.
+    /// Creates a new `CreateGraphFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

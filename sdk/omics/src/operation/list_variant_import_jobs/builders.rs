@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListVariantImportJobsFluentBuilder {
-    /// Creates a new `ListVariantImportJobs`.
+    /// Creates a new `ListVariantImportJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetBucketAccessKeysFluentBuilder {
-    /// Creates a new `GetBucketAccessKeys`.
+    /// Creates a new `GetBucketAccessKeysFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

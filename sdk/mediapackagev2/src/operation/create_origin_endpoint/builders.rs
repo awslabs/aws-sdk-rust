@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateOriginEndpointFluentBuilder {
-    /// Creates a new `CreateOriginEndpoint`.
+    /// Creates a new `CreateOriginEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

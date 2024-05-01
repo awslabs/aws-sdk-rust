@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListReferenceStoresFluentBuilder {
-    /// Creates a new `ListReferenceStores`.
+    /// Creates a new `ListReferenceStoresFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

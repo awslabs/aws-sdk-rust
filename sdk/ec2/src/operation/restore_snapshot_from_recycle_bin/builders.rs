@@ -48,7 +48,7 @@ impl
     }
 }
 impl RestoreSnapshotFromRecycleBinFluentBuilder {
-    /// Creates a new `RestoreSnapshotFromRecycleBin`.
+    /// Creates a new `RestoreSnapshotFromRecycleBinFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -24,7 +24,7 @@ impl crate::operation::notify_terminate_provisioned_product_engine_workflow_resu
 pub struct NotifyTerminateProvisionedProductEngineWorkflowResultFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::notify_terminate_provisioned_product_engine_workflow_result::builders::NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -45,7 +45,7 @@ impl
     }
 }
 impl NotifyTerminateProvisionedProductEngineWorkflowResultFluentBuilder {
-    /// Creates a new `NotifyTerminateProvisionedProductEngineWorkflowResult`.
+    /// Creates a new `NotifyTerminateProvisionedProductEngineWorkflowResultFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

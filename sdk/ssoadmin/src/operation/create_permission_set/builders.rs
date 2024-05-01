@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreatePermissionSetFluentBuilder {
-    /// Creates a new `CreatePermissionSet`.
+    /// Creates a new `CreatePermissionSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

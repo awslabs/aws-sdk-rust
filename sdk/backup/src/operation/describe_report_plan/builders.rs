@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeReportPlanFluentBuilder {
-    /// Creates a new `DescribeReportPlan`.
+    /// Creates a new `DescribeReportPlanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

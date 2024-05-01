@@ -48,7 +48,7 @@ impl
     }
 }
 impl AddSourceIdentifierToSubscriptionFluentBuilder {
-    /// Creates a new `AddSourceIdentifierToSubscription`.
+    /// Creates a new `AddSourceIdentifierToSubscriptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

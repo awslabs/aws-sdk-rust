@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartTestExecutionFluentBuilder {
-    /// Creates a new `StartTestExecution`.
+    /// Creates a new `StartTestExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

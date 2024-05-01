@@ -139,7 +139,7 @@ impl
     }
 }
 impl RestoreObjectFluentBuilder {
-    /// Creates a new `RestoreObject`.
+    /// Creates a new `RestoreObjectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

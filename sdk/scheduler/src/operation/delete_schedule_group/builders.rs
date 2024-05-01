@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteScheduleGroupFluentBuilder {
-    /// Creates a new `DeleteScheduleGroup`.
+    /// Creates a new `DeleteScheduleGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

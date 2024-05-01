@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateChatTokenFluentBuilder {
-    /// Creates a new `CreateChatToken`.
+    /// Creates a new `CreateChatTokenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

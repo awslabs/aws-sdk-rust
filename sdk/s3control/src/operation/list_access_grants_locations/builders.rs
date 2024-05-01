@@ -56,7 +56,7 @@ impl
     }
 }
 impl ListAccessGrantsLocationsFluentBuilder {
-    /// Creates a new `ListAccessGrantsLocations`.
+    /// Creates a new `ListAccessGrantsLocationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateMetadataTransferJobFluentBuilder {
-    /// Creates a new `CreateMetadataTransferJob`.
+    /// Creates a new `CreateMetadataTransferJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

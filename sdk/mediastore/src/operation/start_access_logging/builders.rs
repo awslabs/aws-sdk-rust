@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartAccessLoggingFluentBuilder {
-    /// Creates a new `StartAccessLogging`.
+    /// Creates a new `StartAccessLoggingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

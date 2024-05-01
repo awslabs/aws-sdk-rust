@@ -51,7 +51,7 @@ impl
     }
 }
 impl ModifyIdFormatFluentBuilder {
-    /// Creates a new `ModifyIdFormat`.
+    /// Creates a new `ModifyIdFormatFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

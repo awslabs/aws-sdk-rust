@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListAnalyticsDataAssociationsFluentBuilder {
-    /// Creates a new `ListAnalyticsDataAssociations`.
+    /// Creates a new `ListAnalyticsDataAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListPhoneNumbersOptedOutFluentBuilder {
-    /// Creates a new `ListPhoneNumbersOptedOut`.
+    /// Creates a new `ListPhoneNumbersOptedOutFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

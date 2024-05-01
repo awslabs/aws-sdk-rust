@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetProjectsFluentBuilder {
-    /// Creates a new `BatchGetProjects`.
+    /// Creates a new `BatchGetProjectsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,56 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait until testing connection succeeds.
+    fn wait_until_test_connection_succeeds(&self) -> crate::waiters::test_connection_succeeds::TestConnectionSucceedsFluentBuilder;
+    /// Wait until testing endpoint is deleted.
+    fn wait_until_endpoint_deleted(&self) -> crate::waiters::endpoint_deleted::EndpointDeletedFluentBuilder;
+    /// Wait until DMS replication instance is available.
+    fn wait_until_replication_instance_available(&self) -> crate::waiters::replication_instance_available::ReplicationInstanceAvailableFluentBuilder;
+    /// Wait until DMS replication instance is deleted.
+    fn wait_until_replication_instance_deleted(&self) -> crate::waiters::replication_instance_deleted::ReplicationInstanceDeletedFluentBuilder;
+    /// Wait until DMS replication task is deleted.
+    fn wait_until_replication_task_deleted(&self) -> crate::waiters::replication_task_deleted::ReplicationTaskDeletedFluentBuilder;
+    /// Wait until DMS replication task is ready.
+    fn wait_until_replication_task_ready(&self) -> crate::waiters::replication_task_ready::ReplicationTaskReadyFluentBuilder;
+    /// Wait until DMS replication task is running.
+    fn wait_until_replication_task_running(&self) -> crate::waiters::replication_task_running::ReplicationTaskRunningFluentBuilder;
+    /// Wait until DMS replication task is stopped.
+    fn wait_until_replication_task_stopped(&self) -> crate::waiters::replication_task_stopped::ReplicationTaskStoppedFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_test_connection_succeeds(&self) -> crate::waiters::test_connection_succeeds::TestConnectionSucceedsFluentBuilder {
+        crate::waiters::test_connection_succeeds::TestConnectionSucceedsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_endpoint_deleted(&self) -> crate::waiters::endpoint_deleted::EndpointDeletedFluentBuilder {
+        crate::waiters::endpoint_deleted::EndpointDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_replication_instance_available(&self) -> crate::waiters::replication_instance_available::ReplicationInstanceAvailableFluentBuilder {
+        crate::waiters::replication_instance_available::ReplicationInstanceAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_replication_instance_deleted(&self) -> crate::waiters::replication_instance_deleted::ReplicationInstanceDeletedFluentBuilder {
+        crate::waiters::replication_instance_deleted::ReplicationInstanceDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_replication_task_deleted(&self) -> crate::waiters::replication_task_deleted::ReplicationTaskDeletedFluentBuilder {
+        crate::waiters::replication_task_deleted::ReplicationTaskDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_replication_task_ready(&self) -> crate::waiters::replication_task_ready::ReplicationTaskReadyFluentBuilder {
+        crate::waiters::replication_task_ready::ReplicationTaskReadyFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_replication_task_running(&self) -> crate::waiters::replication_task_running::ReplicationTaskRunningFluentBuilder {
+        crate::waiters::replication_task_running::ReplicationTaskRunningFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_replication_task_stopped(&self) -> crate::waiters::replication_task_stopped::ReplicationTaskStoppedFluentBuilder {
+        crate::waiters::replication_task_stopped::ReplicationTaskStoppedFluentBuilder::new(self.handle.clone())
     }
 }
 

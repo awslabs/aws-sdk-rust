@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateSAMLProviderFluentBuilder {
-    /// Creates a new `UpdateSAMLProvider`.
+    /// Creates a new `UpdateSAMLProviderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

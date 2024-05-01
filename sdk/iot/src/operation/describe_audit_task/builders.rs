@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeAuditTaskFluentBuilder {
-    /// Creates a new `DescribeAuditTask`.
+    /// Creates a new `DescribeAuditTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

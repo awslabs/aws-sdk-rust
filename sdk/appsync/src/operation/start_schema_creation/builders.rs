@@ -49,7 +49,7 @@ impl
     }
 }
 impl StartSchemaCreationFluentBuilder {
-    /// Creates a new `StartSchemaCreation`.
+    /// Creates a new `StartSchemaCreationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -53,7 +53,7 @@ impl
     }
 }
 impl GetSegmentDetectionFluentBuilder {
-    /// Creates a new `GetSegmentDetection`.
+    /// Creates a new `GetSegmentDetectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

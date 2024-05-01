@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRequestValidatorFluentBuilder {
-    /// Creates a new `DeleteRequestValidator`.
+    /// Creates a new `DeleteRequestValidatorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

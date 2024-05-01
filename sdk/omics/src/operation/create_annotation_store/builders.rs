@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAnnotationStoreFluentBuilder {
-    /// Creates a new `CreateAnnotationStore`.
+    /// Creates a new `CreateAnnotationStoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateCustomRoutingAcceleratorAttributesFluentBuilder {
-    /// Creates a new `UpdateCustomRoutingAcceleratorAttributes`.
+    /// Creates a new `UpdateCustomRoutingAcceleratorAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

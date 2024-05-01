@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveFlowMediaStreamFluentBuilder {
-    /// Creates a new `RemoveFlowMediaStream`.
+    /// Creates a new `RemoveFlowMediaStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

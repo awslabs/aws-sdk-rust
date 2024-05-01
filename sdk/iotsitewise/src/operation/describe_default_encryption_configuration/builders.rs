@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDefaultEncryptionConfigurationFluentBuilder {
-    /// Creates a new `DescribeDefaultEncryptionConfiguration`.
+    /// Creates a new `DescribeDefaultEncryptionConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

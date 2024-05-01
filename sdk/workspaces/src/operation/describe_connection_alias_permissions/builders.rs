@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeConnectionAliasPermissionsFluentBuilder {
-    /// Creates a new `DescribeConnectionAliasPermissions`.
+    /// Creates a new `DescribeConnectionAliasPermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

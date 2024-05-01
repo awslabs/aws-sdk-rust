@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListVehiclesInFleetFluentBuilder {
-    /// Creates a new `ListVehiclesInFleet`.
+    /// Creates a new `ListVehiclesInFleetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

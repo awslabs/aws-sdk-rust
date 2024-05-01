@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetFindingsStatisticsFluentBuilder {
-    /// Creates a new `GetFindingsStatistics`.
+    /// Creates a new `GetFindingsStatisticsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

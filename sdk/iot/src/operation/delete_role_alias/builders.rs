@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteRoleAliasFluentBuilder {
-    /// Creates a new `DeleteRoleAlias`.
+    /// Creates a new `DeleteRoleAliasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

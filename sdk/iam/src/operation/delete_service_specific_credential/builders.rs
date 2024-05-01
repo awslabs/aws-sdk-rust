@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteServiceSpecificCredentialFluentBuilder {
-    /// Creates a new `DeleteServiceSpecificCredential`.
+    /// Creates a new `DeleteServiceSpecificCredentialFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

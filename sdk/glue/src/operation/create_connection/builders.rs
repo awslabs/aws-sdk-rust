@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateConnectionFluentBuilder {
-    /// Creates a new `CreateConnection`.
+    /// Creates a new `CreateConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

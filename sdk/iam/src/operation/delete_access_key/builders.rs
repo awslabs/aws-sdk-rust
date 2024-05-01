@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteAccessKeyFluentBuilder {
-    /// Creates a new `DeleteAccessKey`.
+    /// Creates a new `DeleteAccessKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

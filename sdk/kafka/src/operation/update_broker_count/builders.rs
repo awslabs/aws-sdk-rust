@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateBrokerCountFluentBuilder {
-    /// Creates a new `UpdateBrokerCount`.
+    /// Creates a new `UpdateBrokerCountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

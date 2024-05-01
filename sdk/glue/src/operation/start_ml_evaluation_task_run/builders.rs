@@ -50,7 +50,7 @@ impl
     }
 }
 impl StartMLEvaluationTaskRunFluentBuilder {
-    /// Creates a new `StartMLEvaluationTaskRun`.
+    /// Creates a new `StartMLEvaluationTaskRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

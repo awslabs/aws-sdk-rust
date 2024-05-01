@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateServiceRoleToAccountFluentBuilder {
-    /// Creates a new `AssociateServiceRoleToAccount`.
+    /// Creates a new `AssociateServiceRoleToAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

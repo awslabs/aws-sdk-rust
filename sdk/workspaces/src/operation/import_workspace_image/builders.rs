@@ -48,7 +48,7 @@ impl
     }
 }
 impl ImportWorkspaceImageFluentBuilder {
-    /// Creates a new `ImportWorkspaceImage`.
+    /// Creates a new `ImportWorkspaceImageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

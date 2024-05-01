@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateColumnStatisticsForPartitionFluentBuilder {
-    /// Creates a new `UpdateColumnStatisticsForPartition`.
+    /// Creates a new `UpdateColumnStatisticsForPartitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

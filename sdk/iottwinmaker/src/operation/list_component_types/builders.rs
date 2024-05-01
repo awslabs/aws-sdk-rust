@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListComponentTypesFluentBuilder {
-    /// Creates a new `ListComponentTypes`.
+    /// Creates a new `ListComponentTypesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSchedulingPoliciesFluentBuilder {
-    /// Creates a new `ListSchedulingPolicies`.
+    /// Creates a new `ListSchedulingPoliciesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

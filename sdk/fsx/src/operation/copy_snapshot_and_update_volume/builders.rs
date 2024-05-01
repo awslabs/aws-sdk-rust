@@ -48,7 +48,7 @@ impl
     }
 }
 impl CopySnapshotAndUpdateVolumeFluentBuilder {
-    /// Creates a new `CopySnapshotAndUpdateVolume`.
+    /// Creates a new `CopySnapshotAndUpdateVolumeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

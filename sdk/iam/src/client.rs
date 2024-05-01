@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,36 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait for `instance_profile_exists`
+    fn wait_until_instance_profile_exists(&self) -> crate::waiters::instance_profile_exists::InstanceProfileExistsFluentBuilder;
+    /// Wait for `policy_exists`
+    fn wait_until_policy_exists(&self) -> crate::waiters::policy_exists::PolicyExistsFluentBuilder;
+    /// Wait for `role_exists`
+    fn wait_until_role_exists(&self) -> crate::waiters::role_exists::RoleExistsFluentBuilder;
+    /// Wait for `user_exists`
+    fn wait_until_user_exists(&self) -> crate::waiters::user_exists::UserExistsFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_instance_profile_exists(&self) -> crate::waiters::instance_profile_exists::InstanceProfileExistsFluentBuilder {
+        crate::waiters::instance_profile_exists::InstanceProfileExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_policy_exists(&self) -> crate::waiters::policy_exists::PolicyExistsFluentBuilder {
+        crate::waiters::policy_exists::PolicyExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_role_exists(&self) -> crate::waiters::role_exists::RoleExistsFluentBuilder {
+        crate::waiters::role_exists::RoleExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_user_exists(&self) -> crate::waiters::user_exists::UserExistsFluentBuilder {
+        crate::waiters::user_exists::UserExistsFluentBuilder::new(self.handle.clone())
     }
 }
 

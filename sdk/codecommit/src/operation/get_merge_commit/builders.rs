@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMergeCommitFluentBuilder {
-    /// Creates a new `GetMergeCommit`.
+    /// Creates a new `GetMergeCommitFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

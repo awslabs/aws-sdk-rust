@@ -64,7 +64,7 @@ impl
     }
 }
 impl CompleteLifecycleActionFluentBuilder {
-    /// Creates a new `CompleteLifecycleAction`.
+    /// Creates a new `CompleteLifecycleActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

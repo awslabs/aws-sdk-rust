@@ -64,7 +64,7 @@ impl
     }
 }
 impl CreateRegexMatchSetFluentBuilder {
-    /// Creates a new `CreateRegexMatchSet`.
+    /// Creates a new `CreateRegexMatchSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

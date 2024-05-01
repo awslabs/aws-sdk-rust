@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePublicKeyFluentBuilder {
-    /// Creates a new `DeletePublicKey`.
+    /// Creates a new `DeletePublicKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

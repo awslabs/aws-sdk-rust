@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeMaintenanceStartTimeFluentBuilder {
-    /// Creates a new `DescribeMaintenanceStartTime`.
+    /// Creates a new `DescribeMaintenanceStartTimeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

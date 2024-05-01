@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateDefaultVpcFluentBuilder {
-    /// Creates a new `CreateDefaultVpc`.
+    /// Creates a new `CreateDefaultVpcFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

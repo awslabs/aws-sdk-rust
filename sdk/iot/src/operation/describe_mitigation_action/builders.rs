@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeMitigationActionFluentBuilder {
-    /// Creates a new `DescribeMitigationAction`.
+    /// Creates a new `DescribeMitigationActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

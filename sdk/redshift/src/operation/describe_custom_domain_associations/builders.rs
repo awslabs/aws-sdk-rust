@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeCustomDomainAssociationsFluentBuilder {
-    /// Creates a new `DescribeCustomDomainAssociations`.
+    /// Creates a new `DescribeCustomDomainAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

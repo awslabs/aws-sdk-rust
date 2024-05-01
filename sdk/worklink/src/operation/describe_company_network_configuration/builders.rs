@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeCompanyNetworkConfigurationFluentBuilder {
-    /// Creates a new `DescribeCompanyNetworkConfiguration`.
+    /// Creates a new `DescribeCompanyNetworkConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

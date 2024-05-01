@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateMonitoringAlertFluentBuilder {
-    /// Creates a new `UpdateMonitoringAlert`.
+    /// Creates a new `UpdateMonitoringAlertFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

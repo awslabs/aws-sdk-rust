@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateFlowLogsFluentBuilder {
-    /// Creates a new `CreateFlowLogs`.
+    /// Creates a new `CreateFlowLogsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

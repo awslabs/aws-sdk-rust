@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateSchemaMappingFluentBuilder {
-    /// Creates a new `UpdateSchemaMapping`.
+    /// Creates a new `UpdateSchemaMappingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

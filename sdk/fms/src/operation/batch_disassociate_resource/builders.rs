@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDisassociateResourceFluentBuilder {
-    /// Creates a new `BatchDisassociateResource`.
+    /// Creates a new `BatchDisassociateResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

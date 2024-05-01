@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteNetworkInsightsAccessScopeFluentBuilder {
-    /// Creates a new `DeleteNetworkInsightsAccessScope`.
+    /// Creates a new `DeleteNetworkInsightsAccessScopeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

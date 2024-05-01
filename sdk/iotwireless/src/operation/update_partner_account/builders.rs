@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdatePartnerAccountFluentBuilder {
-    /// Creates a new `UpdatePartnerAccount`.
+    /// Creates a new `UpdatePartnerAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

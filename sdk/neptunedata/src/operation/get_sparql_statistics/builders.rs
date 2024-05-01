@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSparqlStatisticsFluentBuilder {
-    /// Creates a new `GetSparqlStatistics`.
+    /// Creates a new `GetSparqlStatisticsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

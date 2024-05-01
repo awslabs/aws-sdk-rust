@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListEventSubscriptionsFluentBuilder {
-    /// Creates a new `ListEventSubscriptions`.
+    /// Creates a new `ListEventSubscriptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

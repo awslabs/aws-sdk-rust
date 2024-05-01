@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteGraphqlApiFluentBuilder {
-    /// Creates a new `DeleteGraphqlApi`.
+    /// Creates a new `DeleteGraphqlApiFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

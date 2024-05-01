@@ -53,7 +53,7 @@ impl
     }
 }
 impl RegisterResourceFluentBuilder {
-    /// Creates a new `RegisterResource`.
+    /// Creates a new `RegisterResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

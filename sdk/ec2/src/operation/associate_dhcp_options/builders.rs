@@ -50,7 +50,7 @@ impl
     }
 }
 impl AssociateDhcpOptionsFluentBuilder {
-    /// Creates a new `AssociateDhcpOptions`.
+    /// Creates a new `AssociateDhcpOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

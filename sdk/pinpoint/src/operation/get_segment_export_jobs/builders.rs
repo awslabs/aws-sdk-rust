@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSegmentExportJobsFluentBuilder {
-    /// Creates a new `GetSegmentExportJobs`.
+    /// Creates a new `GetSegmentExportJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

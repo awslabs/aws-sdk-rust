@@ -52,7 +52,7 @@ impl
     }
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorFluentBuilder {
-    /// Creates a new `DisassociatePhoneNumbersFromVoiceConnector`.
+    /// Creates a new `DisassociatePhoneNumbersFromVoiceConnectorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

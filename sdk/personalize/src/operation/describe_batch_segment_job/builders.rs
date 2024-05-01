@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeBatchSegmentJobFluentBuilder {
-    /// Creates a new `DescribeBatchSegmentJob`.
+    /// Creates a new `DescribeBatchSegmentJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

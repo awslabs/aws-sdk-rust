@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateApiMappingFluentBuilder {
-    /// Creates a new `UpdateApiMapping`.
+    /// Creates a new `UpdateApiMappingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

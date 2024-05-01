@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteConversationFluentBuilder {
-    /// Creates a new `DeleteConversation`.
+    /// Creates a new `DeleteConversationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetOrganizationConformancePackDetailedStatusFluentBuilder {
-    /// Creates a new `GetOrganizationConformancePackDetailedStatus`.
+    /// Creates a new `GetOrganizationConformancePackDetailedStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

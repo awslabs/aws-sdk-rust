@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetUserPoolMfaConfigFluentBuilder {
-    /// Creates a new `GetUserPoolMfaConfig`.
+    /// Creates a new `GetUserPoolMfaConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

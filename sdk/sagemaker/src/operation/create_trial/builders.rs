@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateTrialFluentBuilder {
-    /// Creates a new `CreateTrial`.
+    /// Creates a new `CreateTrialFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

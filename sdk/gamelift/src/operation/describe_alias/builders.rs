@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeAliasFluentBuilder {
-    /// Creates a new `DescribeAlias`.
+    /// Creates a new `DescribeAliasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

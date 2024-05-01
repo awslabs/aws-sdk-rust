@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeHostedConnectionsFluentBuilder {
-    /// Creates a new `DescribeHostedConnections`.
+    /// Creates a new `DescribeHostedConnectionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

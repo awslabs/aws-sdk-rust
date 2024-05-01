@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetRateBasedStatementManagedKeysFluentBuilder {
-    /// Creates a new `GetRateBasedStatementManagedKeys`.
+    /// Creates a new `GetRateBasedStatementManagedKeysFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

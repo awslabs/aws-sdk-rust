@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetPlaybackRestrictionPolicyFluentBuilder {
-    /// Creates a new `GetPlaybackRestrictionPolicy`.
+    /// Creates a new `GetPlaybackRestrictionPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

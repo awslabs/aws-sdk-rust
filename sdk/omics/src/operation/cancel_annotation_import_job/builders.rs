@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelAnnotationImportJobFluentBuilder {
-    /// Creates a new `CancelAnnotationImportJob`.
+    /// Creates a new `CancelAnnotationImportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

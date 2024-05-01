@@ -49,7 +49,7 @@ impl
     }
 }
 impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
-    /// Creates a new `ModifyVpcEndpointServiceConfiguration`.
+    /// Creates a new `ModifyVpcEndpointServiceConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

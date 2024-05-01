@@ -48,7 +48,7 @@ impl
     }
 }
 impl SynthesizeSpeechFluentBuilder {
-    /// Creates a new `SynthesizeSpeech`.
+    /// Creates a new `SynthesizeSpeechFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

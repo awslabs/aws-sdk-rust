@@ -51,7 +51,7 @@ impl
     }
 }
 impl StartDocumentTextDetectionFluentBuilder {
-    /// Creates a new `StartDocumentTextDetection`.
+    /// Creates a new `StartDocumentTextDetectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

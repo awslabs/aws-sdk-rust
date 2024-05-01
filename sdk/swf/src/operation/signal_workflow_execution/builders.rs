@@ -63,7 +63,7 @@ impl
     }
 }
 impl SignalWorkflowExecutionFluentBuilder {
-    /// Creates a new `SignalWorkflowExecution`.
+    /// Creates a new `SignalWorkflowExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

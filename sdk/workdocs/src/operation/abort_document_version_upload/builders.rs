@@ -48,7 +48,7 @@ impl
     }
 }
 impl AbortDocumentVersionUploadFluentBuilder {
-    /// Creates a new `AbortDocumentVersionUpload`.
+    /// Creates a new `AbortDocumentVersionUploadFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

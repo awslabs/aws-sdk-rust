@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeVirtualServiceFluentBuilder {
-    /// Creates a new `DescribeVirtualService`.
+    /// Creates a new `DescribeVirtualServiceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

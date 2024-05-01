@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAvailabilityMonitorTestFluentBuilder {
-    /// Creates a new `DescribeAvailabilityMonitorTest`.
+    /// Creates a new `DescribeAvailabilityMonitorTestFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

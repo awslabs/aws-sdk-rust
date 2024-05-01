@@ -49,7 +49,7 @@ impl
     }
 }
 impl GenerateRecommendationsFluentBuilder {
-    /// Creates a new `GenerateRecommendations`.
+    /// Creates a new `GenerateRecommendationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

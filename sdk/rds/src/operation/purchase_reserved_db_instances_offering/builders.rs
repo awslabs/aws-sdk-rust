@@ -48,7 +48,7 @@ impl
     }
 }
 impl PurchaseReservedDBInstancesOfferingFluentBuilder {
-    /// Creates a new `PurchaseReservedDBInstancesOffering`.
+    /// Creates a new `PurchaseReservedDBInstancesOfferingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

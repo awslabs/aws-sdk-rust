@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListRoleAliasesFluentBuilder {
-    /// Creates a new `ListRoleAliases`.
+    /// Creates a new `ListRoleAliasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

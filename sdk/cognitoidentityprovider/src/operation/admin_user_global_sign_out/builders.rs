@@ -67,7 +67,7 @@ impl
     }
 }
 impl AdminUserGlobalSignOutFluentBuilder {
-    /// Creates a new `AdminUserGlobalSignOut`.
+    /// Creates a new `AdminUserGlobalSignOutFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

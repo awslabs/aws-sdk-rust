@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDeploymentConfigFluentBuilder {
-    /// Creates a new `GetDeploymentConfig`.
+    /// Creates a new `GetDeploymentConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

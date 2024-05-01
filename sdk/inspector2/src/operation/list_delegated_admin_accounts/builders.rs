@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDelegatedAdminAccountsFluentBuilder {
-    /// Creates a new `ListDelegatedAdminAccounts`.
+    /// Creates a new `ListDelegatedAdminAccountsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

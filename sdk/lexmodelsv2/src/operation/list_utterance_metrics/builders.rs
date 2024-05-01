@@ -65,7 +65,7 @@ impl
     }
 }
 impl ListUtteranceMetricsFluentBuilder {
-    /// Creates a new `ListUtteranceMetrics`.
+    /// Creates a new `ListUtteranceMetricsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

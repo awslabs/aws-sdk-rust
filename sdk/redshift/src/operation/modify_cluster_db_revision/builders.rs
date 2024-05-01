@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyClusterDbRevisionFluentBuilder {
-    /// Creates a new `ModifyClusterDbRevision`.
+    /// Creates a new `ModifyClusterDbRevisionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

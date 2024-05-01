@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribePrincipalMappingFluentBuilder {
-    /// Creates a new `DescribePrincipalMapping`.
+    /// Creates a new `DescribePrincipalMappingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

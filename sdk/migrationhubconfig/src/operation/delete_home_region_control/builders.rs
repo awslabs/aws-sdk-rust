@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteHomeRegionControlFluentBuilder {
-    /// Creates a new `DeleteHomeRegionControl`.
+    /// Creates a new `DeleteHomeRegionControlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

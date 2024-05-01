@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateWorkteamFluentBuilder {
-    /// Creates a new `CreateWorkteam`.
+    /// Creates a new `CreateWorkteamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

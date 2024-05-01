@@ -48,7 +48,7 @@ impl
     }
 }
 impl ApplyArchiveRuleFluentBuilder {
-    /// Creates a new `ApplyArchiveRule`.
+    /// Creates a new `ApplyArchiveRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

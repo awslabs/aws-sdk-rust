@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDRTAccessFluentBuilder {
-    /// Creates a new `DescribeDRTAccess`.
+    /// Creates a new `DescribeDRTAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGrantPermissionsFluentBuilder {
-    /// Creates a new `BatchGrantPermissions`.
+    /// Creates a new `BatchGrantPermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

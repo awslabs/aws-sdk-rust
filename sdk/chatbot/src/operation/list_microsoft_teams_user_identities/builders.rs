@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListMicrosoftTeamsUserIdentitiesFluentBuilder {
-    /// Creates a new `ListMicrosoftTeamsUserIdentities`.
+    /// Creates a new `ListMicrosoftTeamsUserIdentitiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

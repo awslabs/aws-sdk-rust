@@ -49,7 +49,7 @@ impl
     }
 }
 impl StartMLModelTrainingJobFluentBuilder {
-    /// Creates a new `StartMLModelTrainingJob`.
+    /// Creates a new `StartMLModelTrainingJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

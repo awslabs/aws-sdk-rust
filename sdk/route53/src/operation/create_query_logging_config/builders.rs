@@ -135,7 +135,7 @@ impl
     }
 }
 impl CreateQueryLoggingConfigFluentBuilder {
-    /// Creates a new `CreateQueryLoggingConfig`.
+    /// Creates a new `CreateQueryLoggingConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

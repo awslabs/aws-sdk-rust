@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetImageFrameFluentBuilder {
-    /// Creates a new `GetImageFrame`.
+    /// Creates a new `GetImageFrameFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

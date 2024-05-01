@@ -48,7 +48,7 @@ impl
     }
 }
 impl ValidatePullThroughCacheRuleFluentBuilder {
-    /// Creates a new `ValidatePullThroughCacheRule`.
+    /// Creates a new `ValidatePullThroughCacheRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

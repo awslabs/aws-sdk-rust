@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeUserPoolDomainFluentBuilder {
-    /// Creates a new `DescribeUserPoolDomain`.
+    /// Creates a new `DescribeUserPoolDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

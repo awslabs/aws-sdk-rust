@@ -52,7 +52,7 @@ impl
     }
 }
 impl DetectStackDriftFluentBuilder {
-    /// Creates a new `DetectStackDrift`.
+    /// Creates a new `DetectStackDriftFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeDevicePolicyConfigurationFluentBuilder {
-    /// Creates a new `DescribeDevicePolicyConfiguration`.
+    /// Creates a new `DescribeDevicePolicyConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

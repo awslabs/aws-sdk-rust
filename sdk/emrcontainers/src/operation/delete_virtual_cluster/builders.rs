@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteVirtualClusterFluentBuilder {
-    /// Creates a new `DeleteVirtualCluster`.
+    /// Creates a new `DeleteVirtualClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

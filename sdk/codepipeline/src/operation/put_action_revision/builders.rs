@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutActionRevisionFluentBuilder {
-    /// Creates a new `PutActionRevision`.
+    /// Creates a new `PutActionRevisionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

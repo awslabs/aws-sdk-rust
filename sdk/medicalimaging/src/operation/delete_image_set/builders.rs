@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteImageSetFluentBuilder {
-    /// Creates a new `DeleteImageSet`.
+    /// Creates a new `DeleteImageSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

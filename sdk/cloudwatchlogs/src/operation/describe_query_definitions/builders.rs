@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeQueryDefinitionsFluentBuilder {
-    /// Creates a new `DescribeQueryDefinitions`.
+    /// Creates a new `DescribeQueryDefinitionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

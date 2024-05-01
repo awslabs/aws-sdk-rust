@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSchemaVersionFluentBuilder {
-    /// Creates a new `GetSchemaVersion`.
+    /// Creates a new `GetSchemaVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

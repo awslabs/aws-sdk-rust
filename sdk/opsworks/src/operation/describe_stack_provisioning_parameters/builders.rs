@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeStackProvisioningParametersFluentBuilder {
-    /// Creates a new `DescribeStackProvisioningParameters`.
+    /// Creates a new `DescribeStackProvisioningParametersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

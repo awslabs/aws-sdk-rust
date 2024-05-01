@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateReplicationSetFluentBuilder {
-    /// Creates a new `CreateReplicationSet`.
+    /// Creates a new `CreateReplicationSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

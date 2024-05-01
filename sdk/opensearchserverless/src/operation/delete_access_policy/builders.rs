@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAccessPolicyFluentBuilder {
-    /// Creates a new `DeleteAccessPolicy`.
+    /// Creates a new `DeleteAccessPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteLandingZoneFluentBuilder {
-    /// Creates a new `DeleteLandingZone`.
+    /// Creates a new `DeleteLandingZoneFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

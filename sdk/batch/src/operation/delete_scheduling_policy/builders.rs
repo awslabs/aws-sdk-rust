@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteSchedulingPolicyFluentBuilder {
-    /// Creates a new `DeleteSchedulingPolicy`.
+    /// Creates a new `DeleteSchedulingPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

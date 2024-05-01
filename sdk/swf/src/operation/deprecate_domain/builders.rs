@@ -61,7 +61,7 @@ impl
     }
 }
 impl DeprecateDomainFluentBuilder {
-    /// Creates a new `DeprecateDomain`.
+    /// Creates a new `DeprecateDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

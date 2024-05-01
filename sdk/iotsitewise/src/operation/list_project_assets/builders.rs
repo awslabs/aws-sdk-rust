@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListProjectAssetsFluentBuilder {
-    /// Creates a new `ListProjectAssets`.
+    /// Creates a new `ListProjectAssetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

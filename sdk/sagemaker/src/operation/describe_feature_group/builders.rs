@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeFeatureGroupFluentBuilder {
-    /// Creates a new `DescribeFeatureGroup`.
+    /// Creates a new `DescribeFeatureGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

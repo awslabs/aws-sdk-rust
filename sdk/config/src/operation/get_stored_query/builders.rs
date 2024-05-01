@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetStoredQueryFluentBuilder {
-    /// Creates a new `GetStoredQuery`.
+    /// Creates a new `GetStoredQueryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -93,7 +93,7 @@ impl
     }
 }
 impl CreateGovCloudAccountFluentBuilder {
-    /// Creates a new `CreateGovCloudAccount`.
+    /// Creates a new `CreateGovCloudAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateVolumeFromBackupFluentBuilder {
-    /// Creates a new `CreateVolumeFromBackup`.
+    /// Creates a new `CreateVolumeFromBackupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

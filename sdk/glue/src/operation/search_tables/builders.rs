@@ -49,7 +49,7 @@ impl
     }
 }
 impl SearchTablesFluentBuilder {
-    /// Creates a new `SearchTables`.
+    /// Creates a new `SearchTablesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

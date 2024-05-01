@@ -49,7 +49,7 @@ impl
     }
 }
 impl UnassignInstanceFluentBuilder {
-    /// Creates a new `UnassignInstance`.
+    /// Creates a new `UnassignInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

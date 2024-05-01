@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteScalingPlanFluentBuilder {
-    /// Creates a new `DeleteScalingPlan`.
+    /// Creates a new `DeleteScalingPlanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

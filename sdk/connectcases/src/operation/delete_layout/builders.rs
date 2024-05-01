@@ -57,7 +57,7 @@ impl
     }
 }
 impl DeleteLayoutFluentBuilder {
-    /// Creates a new `DeleteLayout`.
+    /// Creates a new `DeleteLayoutFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

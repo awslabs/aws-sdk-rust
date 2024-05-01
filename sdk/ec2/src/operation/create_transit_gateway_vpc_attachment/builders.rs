@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateTransitGatewayVpcAttachmentFluentBuilder {
-    /// Creates a new `CreateTransitGatewayVpcAttachment`.
+    /// Creates a new `CreateTransitGatewayVpcAttachmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

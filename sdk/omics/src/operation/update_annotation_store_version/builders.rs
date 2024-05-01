@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateAnnotationStoreVersionFluentBuilder {
-    /// Creates a new `UpdateAnnotationStoreVersion`.
+    /// Creates a new `UpdateAnnotationStoreVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

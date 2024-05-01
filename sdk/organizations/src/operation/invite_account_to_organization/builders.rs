@@ -57,7 +57,7 @@ impl
     }
 }
 impl InviteAccountToOrganizationFluentBuilder {
-    /// Creates a new `InviteAccountToOrganization`.
+    /// Creates a new `InviteAccountToOrganizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

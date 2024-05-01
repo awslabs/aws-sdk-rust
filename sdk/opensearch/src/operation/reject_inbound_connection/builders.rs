@@ -48,7 +48,7 @@ impl
     }
 }
 impl RejectInboundConnectionFluentBuilder {
-    /// Creates a new `RejectInboundConnection`.
+    /// Creates a new `RejectInboundConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeregisterDBProxyTargetsFluentBuilder {
-    /// Creates a new `DeregisterDBProxyTargets`.
+    /// Creates a new `DeregisterDBProxyTargetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

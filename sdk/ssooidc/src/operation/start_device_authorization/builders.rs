@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartDeviceAuthorizationFluentBuilder {
-    /// Creates a new `StartDeviceAuthorization`.
+    /// Creates a new `StartDeviceAuthorizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

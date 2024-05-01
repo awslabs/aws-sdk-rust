@@ -43,7 +43,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::put_
     }
 }
 impl PutGroupFluentBuilder {
-    /// Creates a new `PutGroup`.
+    /// Creates a new `PutGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

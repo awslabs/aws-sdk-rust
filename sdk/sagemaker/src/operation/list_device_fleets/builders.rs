@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDeviceFleetsFluentBuilder {
-    /// Creates a new `ListDeviceFleets`.
+    /// Creates a new `ListDeviceFleetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

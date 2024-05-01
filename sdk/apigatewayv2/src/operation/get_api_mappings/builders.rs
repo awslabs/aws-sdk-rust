@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetApiMappingsFluentBuilder {
-    /// Creates a new `GetApiMappings`.
+    /// Creates a new `GetApiMappingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

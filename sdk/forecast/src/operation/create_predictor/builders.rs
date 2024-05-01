@@ -73,7 +73,7 @@ impl
     }
 }
 impl CreatePredictorFluentBuilder {
-    /// Creates a new `CreatePredictor`.
+    /// Creates a new `CreatePredictorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

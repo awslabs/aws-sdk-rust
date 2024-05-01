@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAccountPasswordPolicyFluentBuilder {
-    /// Creates a new `DeleteAccountPasswordPolicy`.
+    /// Creates a new `DeleteAccountPasswordPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

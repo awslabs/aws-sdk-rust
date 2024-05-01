@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListChunksFluentBuilder {
-    /// Creates a new `ListChunks`.
+    /// Creates a new `ListChunksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeChapCredentialsFluentBuilder {
-    /// Creates a new `DescribeChapCredentials`.
+    /// Creates a new `DescribeChapCredentialsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetReviewTemplateAnswerFluentBuilder {
-    /// Creates a new `GetReviewTemplateAnswer`.
+    /// Creates a new `GetReviewTemplateAnswerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

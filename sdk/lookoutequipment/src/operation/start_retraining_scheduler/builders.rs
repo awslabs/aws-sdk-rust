@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartRetrainingSchedulerFluentBuilder {
-    /// Creates a new `StartRetrainingScheduler`.
+    /// Creates a new `StartRetrainingSchedulerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

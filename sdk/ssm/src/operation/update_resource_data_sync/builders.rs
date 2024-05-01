@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateResourceDataSyncFluentBuilder {
-    /// Creates a new `UpdateResourceDataSync`.
+    /// Creates a new `UpdateResourceDataSyncFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

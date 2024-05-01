@@ -48,7 +48,7 @@ impl
     }
 }
 impl CopyFpgaImageFluentBuilder {
-    /// Creates a new `CopyFpgaImage`.
+    /// Creates a new `CopyFpgaImageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

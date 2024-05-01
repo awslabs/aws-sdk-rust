@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateStorageConfigurationFluentBuilder {
-    /// Creates a new `CreateStorageConfiguration`.
+    /// Creates a new `CreateStorageConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

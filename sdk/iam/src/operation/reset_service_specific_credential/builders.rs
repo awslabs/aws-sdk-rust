@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResetServiceSpecificCredentialFluentBuilder {
-    /// Creates a new `ResetServiceSpecificCredential`.
+    /// Creates a new `ResetServiceSpecificCredentialFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

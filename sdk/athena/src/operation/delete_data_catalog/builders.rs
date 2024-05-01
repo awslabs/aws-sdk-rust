@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDataCatalogFluentBuilder {
-    /// Creates a new `DeleteDataCatalog`.
+    /// Creates a new `DeleteDataCatalogFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

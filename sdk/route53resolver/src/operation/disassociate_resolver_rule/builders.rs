@@ -50,7 +50,7 @@ impl
     }
 }
 impl DisassociateResolverRuleFluentBuilder {
-    /// Creates a new `DisassociateResolverRule`.
+    /// Creates a new `DisassociateResolverRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeSimulationApplicationFluentBuilder {
-    /// Creates a new `DescribeSimulationApplication`.
+    /// Creates a new `DescribeSimulationApplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

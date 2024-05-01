@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateKxClusterCodeConfigurationFluentBuilder {
-    /// Creates a new `UpdateKxClusterCodeConfiguration`.
+    /// Creates a new `UpdateKxClusterCodeConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -63,7 +63,7 @@ impl
     }
 }
 impl GetObjectTaggingFluentBuilder {
-    /// Creates a new `GetObjectTagging`.
+    /// Creates a new `GetObjectTaggingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

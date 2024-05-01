@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateResolverRuleFluentBuilder {
-    /// Creates a new `AssociateResolverRule`.
+    /// Creates a new `AssociateResolverRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

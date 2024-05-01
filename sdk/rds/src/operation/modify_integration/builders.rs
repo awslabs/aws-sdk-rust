@@ -50,7 +50,7 @@ impl
     }
 }
 impl ModifyIntegrationFluentBuilder {
-    /// Creates a new `ModifyIntegration`.
+    /// Creates a new `ModifyIntegrationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

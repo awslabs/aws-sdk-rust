@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListEntityRecognizersFluentBuilder {
-    /// Creates a new `ListEntityRecognizers`.
+    /// Creates a new `ListEntityRecognizersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

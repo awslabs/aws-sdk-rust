@@ -48,7 +48,7 @@ impl
     }
 }
 impl RejectGrantFluentBuilder {
-    /// Creates a new `RejectGrant`.
+    /// Creates a new `RejectGrantFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

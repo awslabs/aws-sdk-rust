@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListRepositoriesInDomainFluentBuilder {
-    /// Creates a new `ListRepositoriesInDomain`.
+    /// Creates a new `ListRepositoriesInDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

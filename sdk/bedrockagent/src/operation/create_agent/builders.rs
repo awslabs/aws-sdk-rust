@@ -64,7 +64,7 @@ impl
     }
 }
 impl CreateAgentFluentBuilder {
-    /// Creates a new `CreateAgent`.
+    /// Creates a new `CreateAgentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

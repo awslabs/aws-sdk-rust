@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteVirtualInterfaceFluentBuilder {
-    /// Creates a new `DeleteVirtualInterface`.
+    /// Creates a new `DeleteVirtualInterfaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

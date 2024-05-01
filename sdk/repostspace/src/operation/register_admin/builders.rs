@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterAdminFluentBuilder {
-    /// Creates a new `RegisterAdmin`.
+    /// Creates a new `RegisterAdminFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

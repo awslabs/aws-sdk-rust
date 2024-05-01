@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopDataCollectionByAgentIdsFluentBuilder {
-    /// Creates a new `StopDataCollectionByAgentIds`.
+    /// Creates a new `StopDataCollectionByAgentIdsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

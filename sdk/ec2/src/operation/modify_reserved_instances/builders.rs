@@ -49,7 +49,7 @@ impl
     }
 }
 impl ModifyReservedInstancesFluentBuilder {
-    /// Creates a new `ModifyReservedInstances`.
+    /// Creates a new `ModifyReservedInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

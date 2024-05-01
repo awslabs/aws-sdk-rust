@@ -50,7 +50,7 @@ impl
     }
 }
 impl AssociateEntityToThingFluentBuilder {
-    /// Creates a new `AssociateEntityToThing`.
+    /// Creates a new `AssociateEntityToThingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

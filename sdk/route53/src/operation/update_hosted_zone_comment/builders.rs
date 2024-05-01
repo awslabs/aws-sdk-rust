@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateHostedZoneCommentFluentBuilder {
-    /// Creates a new `UpdateHostedZoneComment`.
+    /// Creates a new `UpdateHostedZoneCommentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

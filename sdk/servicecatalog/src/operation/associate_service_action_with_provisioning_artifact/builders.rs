@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateServiceActionWithProvisioningArtifactFluentBuilder {
-    /// Creates a new `AssociateServiceActionWithProvisioningArtifact`.
+    /// Creates a new `AssociateServiceActionWithProvisioningArtifactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

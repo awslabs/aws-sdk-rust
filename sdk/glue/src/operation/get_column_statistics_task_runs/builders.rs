@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetColumnStatisticsTaskRunsFluentBuilder {
-    /// Creates a new `GetColumnStatisticsTaskRuns`.
+    /// Creates a new `GetColumnStatisticsTaskRunsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

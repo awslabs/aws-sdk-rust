@@ -48,7 +48,7 @@ impl
     }
 }
 impl RestoreGraphFromSnapshotFluentBuilder {
-    /// Creates a new `RestoreGraphFromSnapshot`.
+    /// Creates a new `RestoreGraphFromSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

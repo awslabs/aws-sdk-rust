@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetEnvironmentTemplateVersionFluentBuilder {
-    /// Creates a new `GetEnvironmentTemplateVersion`.
+    /// Creates a new `GetEnvironmentTemplateVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

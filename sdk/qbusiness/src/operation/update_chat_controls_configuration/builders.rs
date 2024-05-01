@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateChatControlsConfigurationFluentBuilder {
-    /// Creates a new `UpdateChatControlsConfiguration`.
+    /// Creates a new `UpdateChatControlsConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

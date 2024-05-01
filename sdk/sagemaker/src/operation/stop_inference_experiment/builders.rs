@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopInferenceExperimentFluentBuilder {
-    /// Creates a new `StopInferenceExperiment`.
+    /// Creates a new `StopInferenceExperimentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

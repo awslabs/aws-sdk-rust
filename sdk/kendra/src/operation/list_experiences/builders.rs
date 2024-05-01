@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListExperiencesFluentBuilder {
-    /// Creates a new `ListExperiences`.
+    /// Creates a new `ListExperiencesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

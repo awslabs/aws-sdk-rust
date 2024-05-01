@@ -53,7 +53,7 @@ impl
     }
 }
 impl CreateStateMachineFluentBuilder {
-    /// Creates a new `CreateStateMachine`.
+    /// Creates a new `CreateStateMachineFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

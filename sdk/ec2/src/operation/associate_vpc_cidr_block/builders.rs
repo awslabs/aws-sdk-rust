@@ -50,7 +50,7 @@ impl
     }
 }
 impl AssociateVpcCidrBlockFluentBuilder {
-    /// Creates a new `AssociateVpcCidrBlock`.
+    /// Creates a new `AssociateVpcCidrBlockFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

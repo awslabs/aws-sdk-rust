@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,76 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait until a LaunchProfile is Ready. Use this after invoking CreateLaunchProfile or UpdateLaunchProfile
+    fn wait_until_launch_profile_ready(&self) -> crate::waiters::launch_profile_ready::LaunchProfileReadyFluentBuilder;
+    /// Wait until a LaunchProfile is Deleted. Use this after invoking DeleteLaunchProfile
+    fn wait_until_launch_profile_deleted(&self) -> crate::waiters::launch_profile_deleted::LaunchProfileDeletedFluentBuilder;
+    /// Wait until a StreamingImage is Ready. Use this after invoking CreateStreamingImage or UpdateStreamingImage
+    fn wait_until_streaming_image_ready(&self) -> crate::waiters::streaming_image_ready::StreamingImageReadyFluentBuilder;
+    /// Wait until a StreamingImage Deleted. Use this after invoking DeleteStreamingImage
+    fn wait_until_streaming_image_deleted(&self) -> crate::waiters::streaming_image_deleted::StreamingImageDeletedFluentBuilder;
+    /// Wait until a StreamingSession is ready. Use this after invoking CreateStreamingSession, StartStreamingSession
+    fn wait_until_streaming_session_ready(&self) -> crate::waiters::streaming_session_ready::StreamingSessionReadyFluentBuilder;
+    /// Wait until a StreamingSessionStopped. Use this after invoking StopStreamingSession
+    fn wait_until_streaming_session_stopped(&self) -> crate::waiters::streaming_session_stopped::StreamingSessionStoppedFluentBuilder;
+    /// Wait until a StreamingSessionDeleted. Use this after invoking DeleteStreamingSession
+    fn wait_until_streaming_session_deleted(&self) -> crate::waiters::streaming_session_deleted::StreamingSessionDeletedFluentBuilder;
+    /// Wait until a StreamingSessionStream is ready. Use this after invoking CreateStreamingSessionStream
+    fn wait_until_streaming_session_stream_ready(&self) -> crate::waiters::streaming_session_stream_ready::StreamingSessionStreamReadyFluentBuilder;
+    /// Wait until a Studio is Ready. Use this after invoking CreateStudio, UpdateStudio, or StartStudioSSOConfigurationRepair
+    fn wait_until_studio_ready(&self) -> crate::waiters::studio_ready::StudioReadyFluentBuilder;
+    /// Wait until a Studio is Deleted. Use this after invoking DeleteStudio.
+    fn wait_until_studio_deleted(&self) -> crate::waiters::studio_deleted::StudioDeletedFluentBuilder;
+    /// Wait until a StudioComponent is Ready. Use this after invoking CreateStudioComponent or UpdateStudioComponent
+    fn wait_until_studio_component_ready(&self) -> crate::waiters::studio_component_ready::StudioComponentReadyFluentBuilder;
+    /// Wait until a StudioComponent Deleted. Use this after invoking DeleteStudioComponent
+    fn wait_until_studio_component_deleted(&self) -> crate::waiters::studio_component_deleted::StudioComponentDeletedFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_launch_profile_ready(&self) -> crate::waiters::launch_profile_ready::LaunchProfileReadyFluentBuilder {
+        crate::waiters::launch_profile_ready::LaunchProfileReadyFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_launch_profile_deleted(&self) -> crate::waiters::launch_profile_deleted::LaunchProfileDeletedFluentBuilder {
+        crate::waiters::launch_profile_deleted::LaunchProfileDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_streaming_image_ready(&self) -> crate::waiters::streaming_image_ready::StreamingImageReadyFluentBuilder {
+        crate::waiters::streaming_image_ready::StreamingImageReadyFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_streaming_image_deleted(&self) -> crate::waiters::streaming_image_deleted::StreamingImageDeletedFluentBuilder {
+        crate::waiters::streaming_image_deleted::StreamingImageDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_streaming_session_ready(&self) -> crate::waiters::streaming_session_ready::StreamingSessionReadyFluentBuilder {
+        crate::waiters::streaming_session_ready::StreamingSessionReadyFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_streaming_session_stopped(&self) -> crate::waiters::streaming_session_stopped::StreamingSessionStoppedFluentBuilder {
+        crate::waiters::streaming_session_stopped::StreamingSessionStoppedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_streaming_session_deleted(&self) -> crate::waiters::streaming_session_deleted::StreamingSessionDeletedFluentBuilder {
+        crate::waiters::streaming_session_deleted::StreamingSessionDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_streaming_session_stream_ready(&self) -> crate::waiters::streaming_session_stream_ready::StreamingSessionStreamReadyFluentBuilder {
+        crate::waiters::streaming_session_stream_ready::StreamingSessionStreamReadyFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_studio_ready(&self) -> crate::waiters::studio_ready::StudioReadyFluentBuilder {
+        crate::waiters::studio_ready::StudioReadyFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_studio_deleted(&self) -> crate::waiters::studio_deleted::StudioDeletedFluentBuilder {
+        crate::waiters::studio_deleted::StudioDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_studio_component_ready(&self) -> crate::waiters::studio_component_ready::StudioComponentReadyFluentBuilder {
+        crate::waiters::studio_component_ready::StudioComponentReadyFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_studio_component_deleted(&self) -> crate::waiters::studio_component_deleted::StudioComponentDeletedFluentBuilder {
+        crate::waiters::studio_component_deleted::StudioComponentDeletedFluentBuilder::new(self.handle.clone())
     }
 }
 

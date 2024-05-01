@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteServiceTemplateVersionFluentBuilder {
-    /// Creates a new `DeleteServiceTemplateVersion`.
+    /// Creates a new `DeleteServiceTemplateVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

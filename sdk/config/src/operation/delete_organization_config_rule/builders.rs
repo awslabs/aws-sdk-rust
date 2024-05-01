@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteOrganizationConfigRuleFluentBuilder {
-    /// Creates a new `DeleteOrganizationConfigRule`.
+    /// Creates a new `DeleteOrganizationConfigRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

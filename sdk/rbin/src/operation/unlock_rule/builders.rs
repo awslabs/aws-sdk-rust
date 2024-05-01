@@ -48,7 +48,7 @@ impl
     }
 }
 impl UnlockRuleFluentBuilder {
-    /// Creates a new `UnlockRule`.
+    /// Creates a new `UnlockRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

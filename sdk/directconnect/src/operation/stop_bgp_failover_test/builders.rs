@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopBgpFailoverTestFluentBuilder {
-    /// Creates a new `StopBgpFailoverTest`.
+    /// Creates a new `StopBgpFailoverTestFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

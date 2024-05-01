@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateCodeRepositoryFluentBuilder {
-    /// Creates a new `CreateCodeRepository`.
+    /// Creates a new `CreateCodeRepositoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

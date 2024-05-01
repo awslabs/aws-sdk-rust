@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,36 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait for `bucket_exists`
+    fn wait_until_bucket_exists(&self) -> crate::waiters::bucket_exists::BucketExistsFluentBuilder;
+    /// Wait for `bucket_not_exists`
+    fn wait_until_bucket_not_exists(&self) -> crate::waiters::bucket_not_exists::BucketNotExistsFluentBuilder;
+    /// Wait for `object_exists`
+    fn wait_until_object_exists(&self) -> crate::waiters::object_exists::ObjectExistsFluentBuilder;
+    /// Wait for `object_not_exists`
+    fn wait_until_object_not_exists(&self) -> crate::waiters::object_not_exists::ObjectNotExistsFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_bucket_exists(&self) -> crate::waiters::bucket_exists::BucketExistsFluentBuilder {
+        crate::waiters::bucket_exists::BucketExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_bucket_not_exists(&self) -> crate::waiters::bucket_not_exists::BucketNotExistsFluentBuilder {
+        crate::waiters::bucket_not_exists::BucketNotExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_object_exists(&self) -> crate::waiters::object_exists::ObjectExistsFluentBuilder {
+        crate::waiters::object_exists::ObjectExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_object_not_exists(&self) -> crate::waiters::object_not_exists::ObjectNotExistsFluentBuilder {
+        crate::waiters::object_not_exists::ObjectNotExistsFluentBuilder::new(self.handle.clone())
     }
 }
 

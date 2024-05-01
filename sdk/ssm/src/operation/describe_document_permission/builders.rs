@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDocumentPermissionFluentBuilder {
-    /// Creates a new `DescribeDocumentPermission`.
+    /// Creates a new `DescribeDocumentPermissionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

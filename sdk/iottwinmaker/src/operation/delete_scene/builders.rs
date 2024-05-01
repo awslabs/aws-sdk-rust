@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSceneFluentBuilder {
-    /// Creates a new `DeleteScene`.
+    /// Creates a new `DeleteSceneFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

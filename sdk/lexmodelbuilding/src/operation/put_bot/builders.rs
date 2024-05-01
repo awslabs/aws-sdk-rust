@@ -44,7 +44,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::put_
     }
 }
 impl PutBotFluentBuilder {
-    /// Creates a new `PutBot`.
+    /// Creates a new `PutBotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

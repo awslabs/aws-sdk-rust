@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveFacetFromObjectFluentBuilder {
-    /// Creates a new `RemoveFacetFromObject`.
+    /// Creates a new `RemoveFacetFromObjectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

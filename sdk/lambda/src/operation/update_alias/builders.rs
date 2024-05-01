@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateAliasFluentBuilder {
-    /// Creates a new `UpdateAlias`.
+    /// Creates a new `UpdateAliasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeVTLDevicesFluentBuilder {
-    /// Creates a new `DescribeVTLDevices`.
+    /// Creates a new `DescribeVTLDevicesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

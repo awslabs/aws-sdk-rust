@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetGroupIdFluentBuilder {
-    /// Creates a new `GetGroupId`.
+    /// Creates a new `GetGroupIdFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

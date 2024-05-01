@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateFormFluentBuilder {
-    /// Creates a new `CreateForm`.
+    /// Creates a new `CreateFormFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

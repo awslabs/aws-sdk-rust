@@ -64,7 +64,7 @@ impl
     }
 }
 impl DescribeGameSessionsFluentBuilder {
-    /// Creates a new `DescribeGameSessions`.
+    /// Creates a new `DescribeGameSessionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

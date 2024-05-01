@@ -78,7 +78,7 @@ impl
     }
 }
 impl CreateBrokerFluentBuilder {
-    /// Creates a new `CreateBroker`.
+    /// Creates a new `CreateBrokerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

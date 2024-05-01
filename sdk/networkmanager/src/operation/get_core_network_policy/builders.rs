@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCoreNetworkPolicyFluentBuilder {
-    /// Creates a new `GetCoreNetworkPolicy`.
+    /// Creates a new `GetCoreNetworkPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

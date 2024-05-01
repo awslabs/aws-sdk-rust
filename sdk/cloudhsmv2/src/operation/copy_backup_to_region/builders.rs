@@ -48,7 +48,7 @@ impl
     }
 }
 impl CopyBackupToRegionFluentBuilder {
-    /// Creates a new `CopyBackupToRegion`.
+    /// Creates a new `CopyBackupToRegionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteOTAUpdateFluentBuilder {
-    /// Creates a new `DeleteOTAUpdate`.
+    /// Creates a new `DeleteOTAUpdateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

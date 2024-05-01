@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateAssetsFluentBuilder {
-    /// Creates a new `AssociateAssets`.
+    /// Creates a new `AssociateAssetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

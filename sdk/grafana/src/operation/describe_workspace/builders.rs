@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeWorkspaceFluentBuilder {
-    /// Creates a new `DescribeWorkspace`.
+    /// Creates a new `DescribeWorkspaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

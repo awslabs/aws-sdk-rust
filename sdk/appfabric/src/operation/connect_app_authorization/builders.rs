@@ -48,7 +48,7 @@ impl
     }
 }
 impl ConnectAppAuthorizationFluentBuilder {
-    /// Creates a new `ConnectAppAuthorization`.
+    /// Creates a new `ConnectAppAuthorizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

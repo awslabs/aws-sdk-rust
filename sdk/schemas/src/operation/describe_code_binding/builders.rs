@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeCodeBindingFluentBuilder {
-    /// Creates a new `DescribeCodeBinding`.
+    /// Creates a new `DescribeCodeBindingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

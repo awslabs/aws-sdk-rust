@@ -64,7 +64,7 @@ impl
     }
 }
 impl AssociateVPCWithHostedZoneFluentBuilder {
-    /// Creates a new `AssociateVPCWithHostedZone`.
+    /// Creates a new `AssociateVPCWithHostedZoneFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

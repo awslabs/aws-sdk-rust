@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateTriggerFluentBuilder {
-    /// Creates a new `UpdateTrigger`.
+    /// Creates a new `UpdateTriggerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

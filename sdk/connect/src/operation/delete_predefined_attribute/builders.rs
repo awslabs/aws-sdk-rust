@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePredefinedAttributeFluentBuilder {
-    /// Creates a new `DeletePredefinedAttribute`.
+    /// Creates a new `DeletePredefinedAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

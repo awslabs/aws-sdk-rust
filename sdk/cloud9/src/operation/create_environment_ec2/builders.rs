@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateEnvironmentEC2FluentBuilder {
-    /// Creates a new `CreateEnvironmentEC2`.
+    /// Creates a new `CreateEnvironmentEC2FluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

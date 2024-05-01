@@ -64,7 +64,7 @@ impl
     }
 }
 impl GetComputeAuthTokenFluentBuilder {
-    /// Creates a new `GetComputeAuthToken`.
+    /// Creates a new `GetComputeAuthTokenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

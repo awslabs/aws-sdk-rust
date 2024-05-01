@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetReportDefinitionFluentBuilder {
-    /// Creates a new `GetReportDefinition`.
+    /// Creates a new `GetReportDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

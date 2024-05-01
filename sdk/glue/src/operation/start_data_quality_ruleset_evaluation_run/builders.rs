@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartDataQualityRulesetEvaluationRunFluentBuilder {
-    /// Creates a new `StartDataQualityRulesetEvaluationRun`.
+    /// Creates a new `StartDataQualityRulesetEvaluationRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

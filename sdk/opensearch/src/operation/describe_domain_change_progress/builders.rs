@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDomainChangeProgressFluentBuilder {
-    /// Creates a new `DescribeDomainChangeProgress`.
+    /// Creates a new `DescribeDomainChangeProgressFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

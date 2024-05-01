@@ -49,7 +49,7 @@ impl
     }
 }
 impl ModifyHostsFluentBuilder {
-    /// Creates a new `ModifyHosts`.
+    /// Creates a new `ModifyHostsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

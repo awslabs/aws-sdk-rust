@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateNodeFluentBuilder {
-    /// Creates a new `DisassociateNode`.
+    /// Creates a new `DisassociateNodeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

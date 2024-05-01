@@ -49,7 +49,7 @@ impl
     }
 }
 impl ApproveSkillFluentBuilder {
-    /// Creates a new `ApproveSkill`.
+    /// Creates a new `ApproveSkillFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

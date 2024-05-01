@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeOrganizationResourceCollectionHealthFluentBuilder {
-    /// Creates a new `DescribeOrganizationResourceCollectionHealth`.
+    /// Creates a new `DescribeOrganizationResourceCollectionHealthFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

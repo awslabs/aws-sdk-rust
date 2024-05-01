@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeAvailablePatchesFluentBuilder {
-    /// Creates a new `DescribeAvailablePatches`.
+    /// Creates a new `DescribeAvailablePatchesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

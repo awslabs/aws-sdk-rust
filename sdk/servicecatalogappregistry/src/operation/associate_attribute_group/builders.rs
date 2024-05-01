@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateAttributeGroupFluentBuilder {
-    /// Creates a new `AssociateAttributeGroup`.
+    /// Creates a new `AssociateAttributeGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListRecoveryPointsByBackupVaultFluentBuilder {
-    /// Creates a new `ListRecoveryPointsByBackupVault`.
+    /// Creates a new `ListRecoveryPointsByBackupVaultFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

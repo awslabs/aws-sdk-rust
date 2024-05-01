@@ -49,7 +49,7 @@ impl
     }
 }
 impl ModifyVpnConnectionOptionsFluentBuilder {
-    /// Creates a new `ModifyVpnConnectionOptions`.
+    /// Creates a new `ModifyVpnConnectionOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

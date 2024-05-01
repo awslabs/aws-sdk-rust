@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListPoolOriginationIdentitiesFluentBuilder {
-    /// Creates a new `ListPoolOriginationIdentities`.
+    /// Creates a new `ListPoolOriginationIdentitiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

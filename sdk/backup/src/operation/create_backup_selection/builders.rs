@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateBackupSelectionFluentBuilder {
-    /// Creates a new `CreateBackupSelection`.
+    /// Creates a new `CreateBackupSelectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

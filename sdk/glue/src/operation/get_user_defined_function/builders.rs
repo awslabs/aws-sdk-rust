@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetUserDefinedFunctionFluentBuilder {
-    /// Creates a new `GetUserDefinedFunction`.
+    /// Creates a new `GetUserDefinedFunctionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

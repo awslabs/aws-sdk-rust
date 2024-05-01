@@ -48,7 +48,7 @@ impl
     }
 }
 impl RenewCertificateFluentBuilder {
-    /// Creates a new `RenewCertificate`.
+    /// Creates a new `RenewCertificateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

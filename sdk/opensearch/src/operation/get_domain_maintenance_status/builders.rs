@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDomainMaintenanceStatusFluentBuilder {
-    /// Creates a new `GetDomainMaintenanceStatus`.
+    /// Creates a new `GetDomainMaintenanceStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSchemaByDefinitionFluentBuilder {
-    /// Creates a new `GetSchemaByDefinition`.
+    /// Creates a new `GetSchemaByDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

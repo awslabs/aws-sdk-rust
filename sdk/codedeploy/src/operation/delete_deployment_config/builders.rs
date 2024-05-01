@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteDeploymentConfigFluentBuilder {
-    /// Creates a new `DeleteDeploymentConfig`.
+    /// Creates a new `DeleteDeploymentConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

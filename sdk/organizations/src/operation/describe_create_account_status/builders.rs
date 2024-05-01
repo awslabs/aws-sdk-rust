@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeCreateAccountStatusFluentBuilder {
-    /// Creates a new `DescribeCreateAccountStatus`.
+    /// Creates a new `DescribeCreateAccountStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

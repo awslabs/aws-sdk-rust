@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeRdsDbInstancesFluentBuilder {
-    /// Creates a new `DescribeRdsDbInstances`.
+    /// Creates a new `DescribeRdsDbInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl CreatePresignedDomainUrlFluentBuilder {
-    /// Creates a new `CreatePresignedDomainUrl`.
+    /// Creates a new `CreatePresignedDomainUrlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

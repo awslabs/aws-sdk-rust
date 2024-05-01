@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateSampleFindingsFluentBuilder {
-    /// Creates a new `CreateSampleFindings`.
+    /// Creates a new `CreateSampleFindingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

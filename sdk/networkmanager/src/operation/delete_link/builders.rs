@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteLinkFluentBuilder {
-    /// Creates a new `DeleteLink`.
+    /// Creates a new `DeleteLinkFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

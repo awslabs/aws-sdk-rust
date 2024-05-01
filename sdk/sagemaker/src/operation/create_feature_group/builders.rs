@@ -52,7 +52,7 @@ impl
     }
 }
 impl CreateFeatureGroupFluentBuilder {
-    /// Creates a new `CreateFeatureGroup`.
+    /// Creates a new `CreateFeatureGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

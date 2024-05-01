@@ -52,7 +52,7 @@ impl
     }
 }
 impl DisassociateWebACLFluentBuilder {
-    /// Creates a new `DisassociateWebACL`.
+    /// Creates a new `DisassociateWebACLFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

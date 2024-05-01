@@ -66,7 +66,7 @@ impl
     }
 }
 impl CreateOpenIDConnectProviderFluentBuilder {
-    /// Creates a new `CreateOpenIDConnectProvider`.
+    /// Creates a new `CreateOpenIDConnectProviderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

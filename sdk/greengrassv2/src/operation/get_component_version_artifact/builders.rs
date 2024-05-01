@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetComponentVersionArtifactFluentBuilder {
-    /// Creates a new `GetComponentVersionArtifact`.
+    /// Creates a new `GetComponentVersionArtifactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

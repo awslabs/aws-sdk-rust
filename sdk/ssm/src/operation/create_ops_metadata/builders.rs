@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateOpsMetadataFluentBuilder {
-    /// Creates a new `CreateOpsMetadata`.
+    /// Creates a new `CreateOpsMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

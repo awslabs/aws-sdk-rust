@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribePendingAggregationRequestsFluentBuilder {
-    /// Creates a new `DescribePendingAggregationRequests`.
+    /// Creates a new `DescribePendingAggregationRequestsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

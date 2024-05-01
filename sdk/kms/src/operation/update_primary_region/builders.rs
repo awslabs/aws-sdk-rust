@@ -71,7 +71,7 @@ impl
     }
 }
 impl UpdatePrimaryRegionFluentBuilder {
-    /// Creates a new `UpdatePrimaryRegion`.
+    /// Creates a new `UpdatePrimaryRegionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

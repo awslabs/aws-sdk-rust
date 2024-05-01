@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateConnectorProfileFluentBuilder {
-    /// Creates a new `CreateConnectorProfile`.
+    /// Creates a new `CreateConnectorProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

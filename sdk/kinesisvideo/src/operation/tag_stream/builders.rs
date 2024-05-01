@@ -45,7 +45,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::tag_
     }
 }
 impl TagStreamFluentBuilder {
-    /// Creates a new `TagStream`.
+    /// Creates a new `TagStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

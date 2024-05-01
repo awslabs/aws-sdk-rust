@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetQueueEnvironmentFluentBuilder {
-    /// Creates a new `GetQueueEnvironment`.
+    /// Creates a new `GetQueueEnvironmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

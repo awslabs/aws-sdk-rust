@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetTranscriptionJobFluentBuilder {
-    /// Creates a new `GetTranscriptionJob`.
+    /// Creates a new `GetTranscriptionJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

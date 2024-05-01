@@ -51,7 +51,7 @@ impl
     }
 }
 impl SetSMSAttributesFluentBuilder {
-    /// Creates a new `SetSMSAttributes`.
+    /// Creates a new `SetSMSAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

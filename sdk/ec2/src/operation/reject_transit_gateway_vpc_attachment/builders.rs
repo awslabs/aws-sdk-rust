@@ -49,7 +49,7 @@ impl
     }
 }
 impl RejectTransitGatewayVpcAttachmentFluentBuilder {
-    /// Creates a new `RejectTransitGatewayVpcAttachment`.
+    /// Creates a new `RejectTransitGatewayVpcAttachmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

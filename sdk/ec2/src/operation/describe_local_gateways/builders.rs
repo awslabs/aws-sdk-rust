@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeLocalGatewaysFluentBuilder {
-    /// Creates a new `DescribeLocalGateways`.
+    /// Creates a new `DescribeLocalGatewaysFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

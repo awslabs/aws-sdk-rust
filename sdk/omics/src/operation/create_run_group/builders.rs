@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateRunGroupFluentBuilder {
-    /// Creates a new `CreateRunGroup`.
+    /// Creates a new `CreateRunGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

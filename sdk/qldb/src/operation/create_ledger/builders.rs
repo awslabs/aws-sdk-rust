@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateLedgerFluentBuilder {
-    /// Creates a new `CreateLedger`.
+    /// Creates a new `CreateLedgerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

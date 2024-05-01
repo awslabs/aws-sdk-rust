@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::put_
     }
 }
 impl PutKeyFluentBuilder {
-    /// Creates a new `PutKey`.
+    /// Creates a new `PutKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

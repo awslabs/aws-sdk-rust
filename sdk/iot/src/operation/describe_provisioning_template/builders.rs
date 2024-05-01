@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeProvisioningTemplateFluentBuilder {
-    /// Creates a new `DescribeProvisioningTemplate`.
+    /// Creates a new `DescribeProvisioningTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

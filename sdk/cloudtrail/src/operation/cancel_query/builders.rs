@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelQueryFluentBuilder {
-    /// Creates a new `CancelQuery`.
+    /// Creates a new `CancelQueryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

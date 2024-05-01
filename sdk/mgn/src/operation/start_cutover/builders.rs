@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartCutoverFluentBuilder {
-    /// Creates a new `StartCutover`.
+    /// Creates a new `StartCutoverFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

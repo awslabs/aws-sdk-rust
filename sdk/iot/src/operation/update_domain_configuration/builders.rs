@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateDomainConfigurationFluentBuilder {
-    /// Creates a new `UpdateDomainConfiguration`.
+    /// Creates a new `UpdateDomainConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

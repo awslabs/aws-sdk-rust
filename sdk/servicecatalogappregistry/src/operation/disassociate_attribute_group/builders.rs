@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateAttributeGroupFluentBuilder {
-    /// Creates a new `DisassociateAttributeGroup`.
+    /// Creates a new `DisassociateAttributeGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

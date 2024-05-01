@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRelationalDatabaseSnapshotsFluentBuilder {
-    /// Creates a new `GetRelationalDatabaseSnapshots`.
+    /// Creates a new `GetRelationalDatabaseSnapshotsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

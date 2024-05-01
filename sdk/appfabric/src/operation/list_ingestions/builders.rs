@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListIngestionsFluentBuilder {
-    /// Creates a new `ListIngestions`.
+    /// Creates a new `ListIngestionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

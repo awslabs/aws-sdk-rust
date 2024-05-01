@@ -50,7 +50,7 @@ impl
     }
 }
 impl SetIdentityNotificationTopicFluentBuilder {
-    /// Creates a new `SetIdentityNotificationTopic`.
+    /// Creates a new `SetIdentityNotificationTopicFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

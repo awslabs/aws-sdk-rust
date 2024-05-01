@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopVectorEnrichmentJobFluentBuilder {
-    /// Creates a new `StopVectorEnrichmentJob`.
+    /// Creates a new `StopVectorEnrichmentJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResendValidationEmailFluentBuilder {
-    /// Creates a new `ResendValidationEmail`.
+    /// Creates a new `ResendValidationEmailFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

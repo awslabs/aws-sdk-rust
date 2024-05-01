@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDataQualityJobDefinitionFluentBuilder {
-    /// Creates a new `DeleteDataQualityJobDefinition`.
+    /// Creates a new `DeleteDataQualityJobDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

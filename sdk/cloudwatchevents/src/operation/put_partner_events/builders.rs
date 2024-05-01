@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutPartnerEventsFluentBuilder {
-    /// Creates a new `PutPartnerEvents`.
+    /// Creates a new `PutPartnerEventsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

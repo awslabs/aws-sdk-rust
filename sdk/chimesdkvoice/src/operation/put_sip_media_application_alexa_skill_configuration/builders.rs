@@ -53,7 +53,7 @@ impl
     }
 }
 impl PutSipMediaApplicationAlexaSkillConfigurationFluentBuilder {
-    /// Creates a new `PutSipMediaApplicationAlexaSkillConfiguration`.
+    /// Creates a new `PutSipMediaApplicationAlexaSkillConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListMapRunsFluentBuilder {
-    /// Creates a new `ListMapRuns`.
+    /// Creates a new `ListMapRunsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

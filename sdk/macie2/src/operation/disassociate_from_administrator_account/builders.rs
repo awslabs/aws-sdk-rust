@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateFromAdministratorAccountFluentBuilder {
-    /// Creates a new `DisassociateFromAdministratorAccount`.
+    /// Creates a new `DisassociateFromAdministratorAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

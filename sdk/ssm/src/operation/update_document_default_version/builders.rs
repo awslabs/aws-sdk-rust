@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateDocumentDefaultVersionFluentBuilder {
-    /// Creates a new `UpdateDocumentDefaultVersion`.
+    /// Creates a new `UpdateDocumentDefaultVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

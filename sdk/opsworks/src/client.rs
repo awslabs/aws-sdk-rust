@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,46 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait for `app_exists`
+    fn wait_until_app_exists(&self) -> crate::waiters::app_exists::AppExistsFluentBuilder;
+    /// Wait until a deployment has completed successfully.
+    fn wait_until_deployment_successful(&self) -> crate::waiters::deployment_successful::DeploymentSuccessfulFluentBuilder;
+    /// Wait until OpsWorks instance is online.
+    fn wait_until_instance_online(&self) -> crate::waiters::instance_online::InstanceOnlineFluentBuilder;
+    /// Wait until OpsWorks instance is registered.
+    fn wait_until_instance_registered(&self) -> crate::waiters::instance_registered::InstanceRegisteredFluentBuilder;
+    /// Wait until OpsWorks instance is stopped.
+    fn wait_until_instance_stopped(&self) -> crate::waiters::instance_stopped::InstanceStoppedFluentBuilder;
+    /// Wait until OpsWorks instance is terminated.
+    fn wait_until_instance_terminated(&self) -> crate::waiters::instance_terminated::InstanceTerminatedFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_app_exists(&self) -> crate::waiters::app_exists::AppExistsFluentBuilder {
+        crate::waiters::app_exists::AppExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_deployment_successful(&self) -> crate::waiters::deployment_successful::DeploymentSuccessfulFluentBuilder {
+        crate::waiters::deployment_successful::DeploymentSuccessfulFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_instance_online(&self) -> crate::waiters::instance_online::InstanceOnlineFluentBuilder {
+        crate::waiters::instance_online::InstanceOnlineFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_instance_registered(&self) -> crate::waiters::instance_registered::InstanceRegisteredFluentBuilder {
+        crate::waiters::instance_registered::InstanceRegisteredFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_instance_stopped(&self) -> crate::waiters::instance_stopped::InstanceStoppedFluentBuilder {
+        crate::waiters::instance_stopped::InstanceStoppedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_instance_terminated(&self) -> crate::waiters::instance_terminated::InstanceTerminatedFluentBuilder {
+        crate::waiters::instance_terminated::InstanceTerminatedFluentBuilder::new(self.handle.clone())
     }
 }
 

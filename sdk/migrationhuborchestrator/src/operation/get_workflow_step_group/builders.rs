@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetWorkflowStepGroupFluentBuilder {
-    /// Creates a new `GetWorkflowStepGroup`.
+    /// Creates a new `GetWorkflowStepGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

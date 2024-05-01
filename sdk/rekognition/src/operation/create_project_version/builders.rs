@@ -56,7 +56,7 @@ impl
     }
 }
 impl CreateProjectVersionFluentBuilder {
-    /// Creates a new `CreateProjectVersion`.
+    /// Creates a new `CreateProjectVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

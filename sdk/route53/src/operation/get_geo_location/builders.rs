@@ -55,7 +55,7 @@ impl
     }
 }
 impl GetGeoLocationFluentBuilder {
-    /// Creates a new `GetGeoLocation`.
+    /// Creates a new `GetGeoLocationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

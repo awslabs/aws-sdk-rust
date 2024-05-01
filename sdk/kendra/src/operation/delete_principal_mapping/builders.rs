@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeletePrincipalMappingFluentBuilder {
-    /// Creates a new `DeletePrincipalMapping`.
+    /// Creates a new `DeletePrincipalMappingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

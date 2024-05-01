@@ -58,7 +58,7 @@ impl
     }
 }
 impl VerifyPinDataFluentBuilder {
-    /// Creates a new `VerifyPinData`.
+    /// Creates a new `VerifyPinDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

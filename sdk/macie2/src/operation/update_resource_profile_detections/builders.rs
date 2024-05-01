@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateResourceProfileDetectionsFluentBuilder {
-    /// Creates a new `UpdateResourceProfileDetections`.
+    /// Creates a new `UpdateResourceProfileDetectionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

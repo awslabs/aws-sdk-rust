@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetApiAssociationFluentBuilder {
-    /// Creates a new `GetApiAssociation`.
+    /// Creates a new `GetApiAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

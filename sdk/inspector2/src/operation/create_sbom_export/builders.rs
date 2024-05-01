@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateSbomExportFluentBuilder {
-    /// Creates a new `CreateSbomExport`.
+    /// Creates a new `CreateSbomExportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

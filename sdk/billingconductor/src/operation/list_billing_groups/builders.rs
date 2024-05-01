@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListBillingGroupsFluentBuilder {
-    /// Creates a new `ListBillingGroups`.
+    /// Creates a new `ListBillingGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

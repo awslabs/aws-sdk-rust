@@ -48,7 +48,7 @@ impl
     }
 }
 impl TestInvokeMethodFluentBuilder {
-    /// Creates a new `TestInvokeMethod`.
+    /// Creates a new `TestInvokeMethodFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

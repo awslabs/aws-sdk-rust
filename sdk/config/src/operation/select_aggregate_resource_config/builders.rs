@@ -52,7 +52,7 @@ impl
     }
 }
 impl SelectAggregateResourceConfigFluentBuilder {
-    /// Creates a new `SelectAggregateResourceConfig`.
+    /// Creates a new `SelectAggregateResourceConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

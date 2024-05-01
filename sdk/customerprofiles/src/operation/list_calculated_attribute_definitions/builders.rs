@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCalculatedAttributeDefinitionsFluentBuilder {
-    /// Creates a new `ListCalculatedAttributeDefinitions`.
+    /// Creates a new `ListCalculatedAttributeDefinitionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

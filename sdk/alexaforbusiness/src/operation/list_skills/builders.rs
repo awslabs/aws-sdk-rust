@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListSkillsFluentBuilder {
-    /// Creates a new `ListSkills`.
+    /// Creates a new `ListSkillsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

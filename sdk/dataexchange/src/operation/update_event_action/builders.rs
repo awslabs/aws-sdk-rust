@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateEventActionFluentBuilder {
-    /// Creates a new `UpdateEventAction`.
+    /// Creates a new `UpdateEventActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

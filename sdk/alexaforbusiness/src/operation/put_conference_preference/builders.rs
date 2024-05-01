@@ -49,7 +49,7 @@ impl
     }
 }
 impl PutConferencePreferenceFluentBuilder {
-    /// Creates a new `PutConferencePreference`.
+    /// Creates a new `PutConferencePreferenceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

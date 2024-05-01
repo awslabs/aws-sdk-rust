@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteParallelDataFluentBuilder {
-    /// Creates a new `DeleteParallelData`.
+    /// Creates a new `DeleteParallelDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

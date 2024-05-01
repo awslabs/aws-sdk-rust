@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMethodResponseFluentBuilder {
-    /// Creates a new `GetMethodResponse`.
+    /// Creates a new `GetMethodResponseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

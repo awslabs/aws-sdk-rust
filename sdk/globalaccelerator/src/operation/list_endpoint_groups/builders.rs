@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListEndpointGroupsFluentBuilder {
-    /// Creates a new `ListEndpointGroups`.
+    /// Creates a new `ListEndpointGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

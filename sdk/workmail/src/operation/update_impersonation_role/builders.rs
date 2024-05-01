@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateImpersonationRoleFluentBuilder {
-    /// Creates a new `UpdateImpersonationRole`.
+    /// Creates a new `UpdateImpersonationRoleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl DescribeStreamSummaryFluentBuilder {
-    /// Creates a new `DescribeStreamSummary`.
+    /// Creates a new `DescribeStreamSummaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

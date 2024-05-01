@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAggregationAuthorizationsFluentBuilder {
-    /// Creates a new `DescribeAggregationAuthorizations`.
+    /// Creates a new `DescribeAggregationAuthorizationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

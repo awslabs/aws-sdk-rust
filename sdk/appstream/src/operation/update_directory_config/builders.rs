@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateDirectoryConfigFluentBuilder {
-    /// Creates a new `UpdateDirectoryConfig`.
+    /// Creates a new `UpdateDirectoryConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

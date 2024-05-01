@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateDelegationSignerToDomainFluentBuilder {
-    /// Creates a new `AssociateDelegationSignerToDomain`.
+    /// Creates a new `AssociateDelegationSignerToDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

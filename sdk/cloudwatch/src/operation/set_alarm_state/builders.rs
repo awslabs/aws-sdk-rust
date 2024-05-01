@@ -51,7 +51,7 @@ impl
     }
 }
 impl SetAlarmStateFluentBuilder {
-    /// Creates a new `SetAlarmState`.
+    /// Creates a new `SetAlarmStateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

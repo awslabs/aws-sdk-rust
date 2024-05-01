@@ -145,6 +145,20 @@ pub use config::Config;
 /// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
 /// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
 /// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 pub mod client;
 
 /// Configuration for Amazon Omics.
@@ -182,6 +196,11 @@ mod endpoint_lib;
 mod lens;
 
 mod serde_util;
+
+/// Supporting types for waiters.
+///
+/// Note: to use waiters, import the [`Waiters`](crate::client::Waiters) trait, which adds methods prefixed with `wait_until` to the client.
+pub mod waiters;
 
 mod json_errors;
 

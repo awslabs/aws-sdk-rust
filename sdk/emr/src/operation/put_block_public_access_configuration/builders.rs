@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutBlockPublicAccessConfigurationFluentBuilder {
-    /// Creates a new `PutBlockPublicAccessConfiguration`.
+    /// Creates a new `PutBlockPublicAccessConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

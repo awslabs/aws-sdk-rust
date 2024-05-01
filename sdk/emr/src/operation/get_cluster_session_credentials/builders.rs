@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetClusterSessionCredentialsFluentBuilder {
-    /// Creates a new `GetClusterSessionCredentials`.
+    /// Creates a new `GetClusterSessionCredentialsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

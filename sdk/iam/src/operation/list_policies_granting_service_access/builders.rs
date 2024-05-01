@@ -61,7 +61,7 @@ impl
     }
 }
 impl ListPoliciesGrantingServiceAccessFluentBuilder {
-    /// Creates a new `ListPoliciesGrantingServiceAccess`.
+    /// Creates a new `ListPoliciesGrantingServiceAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

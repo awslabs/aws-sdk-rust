@@ -50,7 +50,7 @@ impl
     }
 }
 impl EnableAvailabilityZonesForLoadBalancerFluentBuilder {
-    /// Creates a new `EnableAvailabilityZonesForLoadBalancer`.
+    /// Creates a new `EnableAvailabilityZonesForLoadBalancerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

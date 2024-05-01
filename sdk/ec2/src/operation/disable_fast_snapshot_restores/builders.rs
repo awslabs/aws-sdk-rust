@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisableFastSnapshotRestoresFluentBuilder {
-    /// Creates a new `DisableFastSnapshotRestores`.
+    /// Creates a new `DisableFastSnapshotRestoresFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl EnableImageDeprecationFluentBuilder {
-    /// Creates a new `EnableImageDeprecation`.
+    /// Creates a new `EnableImageDeprecationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

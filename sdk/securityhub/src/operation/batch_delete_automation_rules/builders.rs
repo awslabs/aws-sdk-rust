@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDeleteAutomationRulesFluentBuilder {
-    /// Creates a new `BatchDeleteAutomationRules`.
+    /// Creates a new `BatchDeleteAutomationRulesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

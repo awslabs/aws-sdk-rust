@@ -53,7 +53,7 @@ impl
     }
 }
 impl AssignPrivateIpAddressesFluentBuilder {
-    /// Creates a new `AssignPrivateIpAddresses`.
+    /// Creates a new `AssignPrivateIpAddressesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

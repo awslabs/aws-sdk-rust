@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetWorkingLocationFluentBuilder {
-    /// Creates a new `GetWorkingLocation`.
+    /// Creates a new `GetWorkingLocationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

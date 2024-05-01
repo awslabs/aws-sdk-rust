@@ -49,7 +49,7 @@ impl
     }
 }
 impl ChangeTagsForResourceFluentBuilder {
-    /// Creates a new `ChangeTagsForResource`.
+    /// Creates a new `ChangeTagsForResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

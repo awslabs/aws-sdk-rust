@@ -48,7 +48,7 @@ impl
     }
 }
 impl DetachStaticIpFluentBuilder {
-    /// Creates a new `DetachStaticIp`.
+    /// Creates a new `DetachStaticIpFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

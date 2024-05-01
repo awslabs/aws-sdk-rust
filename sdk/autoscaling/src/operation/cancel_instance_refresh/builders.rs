@@ -50,7 +50,7 @@ impl
     }
 }
 impl CancelInstanceRefreshFluentBuilder {
-    /// Creates a new `CancelInstanceRefresh`.
+    /// Creates a new `CancelInstanceRefreshFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

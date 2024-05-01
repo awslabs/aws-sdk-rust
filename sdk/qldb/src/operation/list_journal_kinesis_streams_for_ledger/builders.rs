@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListJournalKinesisStreamsForLedgerFluentBuilder {
-    /// Creates a new `ListJournalKinesisStreamsForLedger`.
+    /// Creates a new `ListJournalKinesisStreamsForLedgerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

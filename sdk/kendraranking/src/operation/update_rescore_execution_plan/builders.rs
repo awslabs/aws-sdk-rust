@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateRescoreExecutionPlanFluentBuilder {
-    /// Creates a new `UpdateRescoreExecutionPlan`.
+    /// Creates a new `UpdateRescoreExecutionPlanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

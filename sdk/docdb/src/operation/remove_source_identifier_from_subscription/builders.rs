@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveSourceIdentifierFromSubscriptionFluentBuilder {
-    /// Creates a new `RemoveSourceIdentifierFromSubscription`.
+    /// Creates a new `RemoveSourceIdentifierFromSubscriptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

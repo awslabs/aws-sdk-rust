@@ -50,7 +50,7 @@ impl
     }
 }
 impl DisableImageBlockPublicAccessFluentBuilder {
-    /// Creates a new `DisableImageBlockPublicAccess`.
+    /// Creates a new `DisableImageBlockPublicAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

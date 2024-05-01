@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateKeyValueStoreFluentBuilder {
-    /// Creates a new `CreateKeyValueStore`.
+    /// Creates a new `CreateKeyValueStoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

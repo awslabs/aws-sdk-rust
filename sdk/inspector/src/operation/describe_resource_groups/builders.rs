@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeResourceGroupsFluentBuilder {
-    /// Creates a new `DescribeResourceGroups`.
+    /// Creates a new `DescribeResourceGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

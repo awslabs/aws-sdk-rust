@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListComplianceItemsFluentBuilder {
-    /// Creates a new `ListComplianceItems`.
+    /// Creates a new `ListComplianceItemsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

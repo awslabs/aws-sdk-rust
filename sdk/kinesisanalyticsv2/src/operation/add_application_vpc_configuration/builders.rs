@@ -55,7 +55,7 @@ impl
     }
 }
 impl AddApplicationVpcConfigurationFluentBuilder {
-    /// Creates a new `AddApplicationVpcConfiguration`.
+    /// Creates a new `AddApplicationVpcConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

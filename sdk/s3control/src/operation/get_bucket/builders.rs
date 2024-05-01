@@ -54,7 +54,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::get_
     }
 }
 impl GetBucketFluentBuilder {
-    /// Creates a new `GetBucket`.
+    /// Creates a new `GetBucketFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

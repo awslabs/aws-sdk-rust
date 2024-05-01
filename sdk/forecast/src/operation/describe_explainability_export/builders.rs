@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeExplainabilityExportFluentBuilder {
-    /// Creates a new `DescribeExplainabilityExport`.
+    /// Creates a new `DescribeExplainabilityExportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

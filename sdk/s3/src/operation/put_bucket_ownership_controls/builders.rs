@@ -59,7 +59,7 @@ impl
     }
 }
 impl PutBucketOwnershipControlsFluentBuilder {
-    /// Creates a new `PutBucketOwnershipControls`.
+    /// Creates a new `PutBucketOwnershipControlsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

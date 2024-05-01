@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetGlossaryTermFluentBuilder {
-    /// Creates a new `GetGlossaryTerm`.
+    /// Creates a new `GetGlossaryTermFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDBProxyFluentBuilder {
-    /// Creates a new `DeleteDBProxy`.
+    /// Creates a new `DeleteDBProxyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

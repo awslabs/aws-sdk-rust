@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRepositoryCatalogDataFluentBuilder {
-    /// Creates a new `GetRepositoryCatalogData`.
+    /// Creates a new `GetRepositoryCatalogDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

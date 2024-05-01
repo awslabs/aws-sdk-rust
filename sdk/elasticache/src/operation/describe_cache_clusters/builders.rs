@@ -53,7 +53,7 @@ impl
     }
 }
 impl DescribeCacheClustersFluentBuilder {
-    /// Creates a new `DescribeCacheClusters`.
+    /// Creates a new `DescribeCacheClustersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

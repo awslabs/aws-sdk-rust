@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteQuickResponseFluentBuilder {
-    /// Creates a new `DeleteQuickResponse`.
+    /// Creates a new `DeleteQuickResponseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

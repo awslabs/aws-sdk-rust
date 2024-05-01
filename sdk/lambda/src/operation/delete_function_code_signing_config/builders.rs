@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteFunctionCodeSigningConfigFluentBuilder {
-    /// Creates a new `DeleteFunctionCodeSigningConfig`.
+    /// Creates a new `DeleteFunctionCodeSigningConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

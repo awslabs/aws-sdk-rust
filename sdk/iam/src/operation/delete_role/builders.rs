@@ -60,7 +60,7 @@ impl
     }
 }
 impl DeleteRoleFluentBuilder {
-    /// Creates a new `DeleteRole`.
+    /// Creates a new `DeleteRoleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::enab
     }
 }
 impl EnableSsoFluentBuilder {
-    /// Creates a new `EnableSso`.
+    /// Creates a new `EnableSsoFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

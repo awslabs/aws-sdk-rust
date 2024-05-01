@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAccountSettingFluentBuilder {
-    /// Creates a new `DeleteAccountSetting`.
+    /// Creates a new `DeleteAccountSettingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteImageVersionFluentBuilder {
-    /// Creates a new `DeleteImageVersion`.
+    /// Creates a new `DeleteImageVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

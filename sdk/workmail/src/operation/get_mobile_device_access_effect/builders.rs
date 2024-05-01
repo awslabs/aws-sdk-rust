@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMobileDeviceAccessEffectFluentBuilder {
-    /// Creates a new `GetMobileDeviceAccessEffect`.
+    /// Creates a new `GetMobileDeviceAccessEffectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

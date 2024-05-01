@@ -48,7 +48,7 @@ impl
     }
 }
 impl SearchPredefinedAttributesFluentBuilder {
-    /// Creates a new `SearchPredefinedAttributes`.
+    /// Creates a new `SearchPredefinedAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

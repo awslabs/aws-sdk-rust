@@ -49,7 +49,7 @@ impl
     }
 }
 impl BatchUpdateTableRowsFluentBuilder {
-    /// Creates a new `BatchUpdateTableRows`.
+    /// Creates a new `BatchUpdateTableRowsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl ConfigureAccessPointFluentBuilder {
-    /// Creates a new `ConfigureAccessPoint`.
+    /// Creates a new `ConfigureAccessPointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetClassifierFluentBuilder {
-    /// Creates a new `GetClassifier`.
+    /// Creates a new `GetClassifierFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

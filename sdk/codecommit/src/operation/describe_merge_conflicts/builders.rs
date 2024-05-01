@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeMergeConflictsFluentBuilder {
-    /// Creates a new `DescribeMergeConflicts`.
+    /// Creates a new `DescribeMergeConflictsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

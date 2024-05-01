@@ -170,7 +170,7 @@ impl
     }
 }
 impl PutObjectAclFluentBuilder {
-    /// Creates a new `PutObjectAcl`.
+    /// Creates a new `PutObjectAclFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

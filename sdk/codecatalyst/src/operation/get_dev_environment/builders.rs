@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDevEnvironmentFluentBuilder {
-    /// Creates a new `GetDevEnvironment`.
+    /// Creates a new `GetDevEnvironmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

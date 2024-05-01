@@ -52,7 +52,7 @@ impl
     }
 }
 impl SendBounceFluentBuilder {
-    /// Creates a new `SendBounce`.
+    /// Creates a new `SendBounceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

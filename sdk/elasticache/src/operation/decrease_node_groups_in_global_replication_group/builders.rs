@@ -48,7 +48,7 @@ impl
     }
 }
 impl DecreaseNodeGroupsInGlobalReplicationGroupFluentBuilder {
-    /// Creates a new `DecreaseNodeGroupsInGlobalReplicationGroup`.
+    /// Creates a new `DecreaseNodeGroupsInGlobalReplicationGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

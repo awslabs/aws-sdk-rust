@@ -50,7 +50,7 @@ impl
     }
 }
 impl PutCorsPolicyFluentBuilder {
-    /// Creates a new `PutCorsPolicy`.
+    /// Creates a new `PutCorsPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

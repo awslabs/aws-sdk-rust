@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopDevEnvironmentSessionFluentBuilder {
-    /// Creates a new `StopDevEnvironmentSession`.
+    /// Creates a new `StopDevEnvironmentSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

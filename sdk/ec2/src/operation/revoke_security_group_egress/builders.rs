@@ -52,7 +52,7 @@ impl
     }
 }
 impl RevokeSecurityGroupEgressFluentBuilder {
-    /// Creates a new `RevokeSecurityGroupEgress`.
+    /// Creates a new `RevokeSecurityGroupEgressFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

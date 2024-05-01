@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAccessTokenFluentBuilder {
-    /// Creates a new `DeleteAccessToken`.
+    /// Creates a new `DeleteAccessTokenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

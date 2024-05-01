@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateGatewayInformationFluentBuilder {
-    /// Creates a new `UpdateGatewayInformation`.
+    /// Creates a new `UpdateGatewayInformationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

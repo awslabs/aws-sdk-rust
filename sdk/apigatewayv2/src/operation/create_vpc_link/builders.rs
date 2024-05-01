@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateVpcLinkFluentBuilder {
-    /// Creates a new `CreateVpcLink`.
+    /// Creates a new `CreateVpcLinkFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

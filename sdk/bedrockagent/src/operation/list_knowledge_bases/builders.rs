@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListKnowledgeBasesFluentBuilder {
-    /// Creates a new `ListKnowledgeBases`.
+    /// Creates a new `ListKnowledgeBasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

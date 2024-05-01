@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteIAMPolicyAssignmentFluentBuilder {
-    /// Creates a new `DeleteIAMPolicyAssignment`.
+    /// Creates a new `DeleteIAMPolicyAssignmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

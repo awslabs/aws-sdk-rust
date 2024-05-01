@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyTransitGatewayFluentBuilder {
-    /// Creates a new `ModifyTransitGateway`.
+    /// Creates a new `ModifyTransitGatewayFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

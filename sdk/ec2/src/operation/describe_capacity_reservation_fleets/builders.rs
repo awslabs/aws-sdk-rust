@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeCapacityReservationFleetsFluentBuilder {
-    /// Creates a new `DescribeCapacityReservationFleets`.
+    /// Creates a new `DescribeCapacityReservationFleetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

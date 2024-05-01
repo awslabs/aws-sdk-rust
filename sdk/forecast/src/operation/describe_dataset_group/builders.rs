@@ -59,7 +59,7 @@ impl
     }
 }
 impl DescribeDatasetGroupFluentBuilder {
-    /// Creates a new `DescribeDatasetGroup`.
+    /// Creates a new `DescribeDatasetGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

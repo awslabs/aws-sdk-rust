@@ -54,7 +54,7 @@ impl
     }
 }
 impl WriteRecordsFluentBuilder {
-    /// Creates a new `WriteRecords`.
+    /// Creates a new `WriteRecordsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePromptFluentBuilder {
-    /// Creates a new `DeletePrompt`.
+    /// Creates a new `DeletePromptFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

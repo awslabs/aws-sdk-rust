@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePredictorFluentBuilder {
-    /// Creates a new `DeletePredictor`.
+    /// Creates a new `DeletePredictorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAuthenticationProfileFluentBuilder {
-    /// Creates a new `CreateAuthenticationProfile`.
+    /// Creates a new `CreateAuthenticationProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

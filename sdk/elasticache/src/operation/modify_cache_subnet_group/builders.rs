@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyCacheSubnetGroupFluentBuilder {
-    /// Creates a new `ModifyCacheSubnetGroup`.
+    /// Creates a new `ModifyCacheSubnetGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

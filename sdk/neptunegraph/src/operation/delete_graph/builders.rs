@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteGraphFluentBuilder {
-    /// Creates a new `DeleteGraph`.
+    /// Creates a new `DeleteGraphFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

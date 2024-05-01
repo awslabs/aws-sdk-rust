@@ -49,7 +49,7 @@ impl
     }
 }
 impl AddLayerVersionPermissionFluentBuilder {
-    /// Creates a new `AddLayerVersionPermission`.
+    /// Creates a new `AddLayerVersionPermissionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

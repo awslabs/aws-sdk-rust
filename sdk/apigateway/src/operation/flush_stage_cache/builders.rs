@@ -48,7 +48,7 @@ impl
     }
 }
 impl FlushStageCacheFluentBuilder {
-    /// Creates a new `FlushStageCache`.
+    /// Creates a new `FlushStageCacheFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

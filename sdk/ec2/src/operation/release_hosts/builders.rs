@@ -50,7 +50,7 @@ impl
     }
 }
 impl ReleaseHostsFluentBuilder {
-    /// Creates a new `ReleaseHosts`.
+    /// Creates a new `ReleaseHostsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

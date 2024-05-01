@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPreparedStatementsFluentBuilder {
-    /// Creates a new `ListPreparedStatements`.
+    /// Creates a new `ListPreparedStatementsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

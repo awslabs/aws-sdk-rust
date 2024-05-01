@@ -65,7 +65,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::crea
     }
 }
 impl CreateJobFluentBuilder {
-    /// Creates a new `CreateJob`.
+    /// Creates a new `CreateJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

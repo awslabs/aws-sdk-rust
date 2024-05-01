@@ -65,7 +65,7 @@ impl
     }
 }
 impl GetServiceLastAccessedDetailsFluentBuilder {
-    /// Creates a new `GetServiceLastAccessedDetails`.
+    /// Creates a new `GetServiceLastAccessedDetailsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

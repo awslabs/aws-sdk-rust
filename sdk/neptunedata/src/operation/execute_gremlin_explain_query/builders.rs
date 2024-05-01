@@ -60,7 +60,7 @@ impl
     }
 }
 impl ExecuteGremlinExplainQueryFluentBuilder {
-    /// Creates a new `ExecuteGremlinExplainQuery`.
+    /// Creates a new `ExecuteGremlinExplainQueryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

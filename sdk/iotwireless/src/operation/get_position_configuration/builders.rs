@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetPositionConfigurationFluentBuilder {
-    /// Creates a new `GetPositionConfiguration`.
+    /// Creates a new `GetPositionConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

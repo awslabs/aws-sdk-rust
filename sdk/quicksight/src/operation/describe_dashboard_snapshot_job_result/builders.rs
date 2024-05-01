@@ -52,7 +52,7 @@ impl
     }
 }
 impl DescribeDashboardSnapshotJobResultFluentBuilder {
-    /// Creates a new `DescribeDashboardSnapshotJobResult`.
+    /// Creates a new `DescribeDashboardSnapshotJobResultFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

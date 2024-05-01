@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartCrawlerScheduleFluentBuilder {
-    /// Creates a new `StartCrawlerSchedule`.
+    /// Creates a new `StartCrawlerScheduleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

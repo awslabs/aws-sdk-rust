@@ -49,7 +49,7 @@ impl
     }
 }
 impl ProvisionByoipCidrFluentBuilder {
-    /// Creates a new `ProvisionByoipCidr`.
+    /// Creates a new `ProvisionByoipCidrFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

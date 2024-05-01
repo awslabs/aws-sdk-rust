@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::read
     }
 }
 impl ReadJobFluentBuilder {
-    /// Creates a new `ReadJob`.
+    /// Creates a new `ReadJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

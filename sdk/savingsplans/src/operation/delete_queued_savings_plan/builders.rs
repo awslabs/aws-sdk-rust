@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteQueuedSavingsPlanFluentBuilder {
-    /// Creates a new `DeleteQueuedSavingsPlan`.
+    /// Creates a new `DeleteQueuedSavingsPlanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

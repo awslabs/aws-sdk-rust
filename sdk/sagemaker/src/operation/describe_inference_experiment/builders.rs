@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeInferenceExperimentFluentBuilder {
-    /// Creates a new `DescribeInferenceExperiment`.
+    /// Creates a new `DescribeInferenceExperimentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

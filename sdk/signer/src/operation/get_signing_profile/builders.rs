@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSigningProfileFluentBuilder {
-    /// Creates a new `GetSigningProfile`.
+    /// Creates a new `GetSigningProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

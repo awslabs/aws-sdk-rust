@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateClassificationScopeFluentBuilder {
-    /// Creates a new `UpdateClassificationScope`.
+    /// Creates a new `UpdateClassificationScopeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

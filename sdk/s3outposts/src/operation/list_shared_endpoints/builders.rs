@@ -55,7 +55,7 @@ impl
     }
 }
 impl ListSharedEndpointsFluentBuilder {
-    /// Creates a new `ListSharedEndpoints`.
+    /// Creates a new `ListSharedEndpointsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

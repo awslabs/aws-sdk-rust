@@ -49,7 +49,7 @@ impl
     }
 }
 impl RebootInstanceFluentBuilder {
-    /// Creates a new `RebootInstance`.
+    /// Creates a new `RebootInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

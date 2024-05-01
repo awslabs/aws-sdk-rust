@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCapacityTaskFluentBuilder {
-    /// Creates a new `GetCapacityTask`.
+    /// Creates a new `GetCapacityTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

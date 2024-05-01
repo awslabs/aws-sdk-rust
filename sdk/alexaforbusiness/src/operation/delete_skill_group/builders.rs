@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteSkillGroupFluentBuilder {
-    /// Creates a new `DeleteSkillGroup`.
+    /// Creates a new `DeleteSkillGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

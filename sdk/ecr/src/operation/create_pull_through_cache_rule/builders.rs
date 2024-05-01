@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreatePullThroughCacheRuleFluentBuilder {
-    /// Creates a new `CreatePullThroughCacheRule`.
+    /// Creates a new `CreatePullThroughCacheRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

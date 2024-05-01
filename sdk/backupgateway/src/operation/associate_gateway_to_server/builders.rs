@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateGatewayToServerFluentBuilder {
-    /// Creates a new `AssociateGatewayToServer`.
+    /// Creates a new `AssociateGatewayToServerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

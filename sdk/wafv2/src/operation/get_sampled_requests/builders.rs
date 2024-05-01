@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetSampledRequestsFluentBuilder {
-    /// Creates a new `GetSampledRequests`.
+    /// Creates a new `GetSampledRequestsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

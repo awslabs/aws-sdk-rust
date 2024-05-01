@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateCrawlerFluentBuilder {
-    /// Creates a new `CreateCrawler`.
+    /// Creates a new `CreateCrawlerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

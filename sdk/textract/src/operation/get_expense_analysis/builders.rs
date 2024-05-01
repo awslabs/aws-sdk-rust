@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetExpenseAnalysisFluentBuilder {
-    /// Creates a new `GetExpenseAnalysis`.
+    /// Creates a new `GetExpenseAnalysisFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateConfiguredTableAssociationFluentBuilder {
-    /// Creates a new `UpdateConfiguredTableAssociation`.
+    /// Creates a new `UpdateConfiguredTableAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

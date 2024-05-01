@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeRecommendationExportJobsFluentBuilder {
-    /// Creates a new `DescribeRecommendationExportJobs`.
+    /// Creates a new `DescribeRecommendationExportJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

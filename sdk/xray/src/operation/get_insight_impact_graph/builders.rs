@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetInsightImpactGraphFluentBuilder {
-    /// Creates a new `GetInsightImpactGraph`.
+    /// Creates a new `GetInsightImpactGraphFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

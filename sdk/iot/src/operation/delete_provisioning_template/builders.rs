@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteProvisioningTemplateFluentBuilder {
-    /// Creates a new `DeleteProvisioningTemplate`.
+    /// Creates a new `DeleteProvisioningTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

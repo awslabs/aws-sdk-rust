@@ -61,7 +61,7 @@ impl
     }
 }
 impl TranslatePinDataFluentBuilder {
-    /// Creates a new `TranslatePinData`.
+    /// Creates a new `TranslatePinDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

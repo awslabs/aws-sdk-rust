@@ -57,7 +57,7 @@ impl
     }
 }
 impl UpdateOriginRequestPolicyFluentBuilder {
-    /// Creates a new `UpdateOriginRequestPolicy`.
+    /// Creates a new `UpdateOriginRequestPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMLTransformFluentBuilder {
-    /// Creates a new `DeleteMLTransform`.
+    /// Creates a new `DeleteMLTransformFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

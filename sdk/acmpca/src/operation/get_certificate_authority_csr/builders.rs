@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCertificateAuthorityCsrFluentBuilder {
-    /// Creates a new `GetCertificateAuthorityCsr`.
+    /// Creates a new `GetCertificateAuthorityCsrFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

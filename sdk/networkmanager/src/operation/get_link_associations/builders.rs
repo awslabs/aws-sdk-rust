@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetLinkAssociationsFluentBuilder {
-    /// Creates a new `GetLinkAssociations`.
+    /// Creates a new `GetLinkAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

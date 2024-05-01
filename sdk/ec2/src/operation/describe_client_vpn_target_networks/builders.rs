@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeClientVpnTargetNetworksFluentBuilder {
-    /// Creates a new `DescribeClientVpnTargetNetworks`.
+    /// Creates a new `DescribeClientVpnTargetNetworksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

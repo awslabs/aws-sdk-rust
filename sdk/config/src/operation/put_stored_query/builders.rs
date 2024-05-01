@@ -50,7 +50,7 @@ impl
     }
 }
 impl PutStoredQueryFluentBuilder {
-    /// Creates a new `PutStoredQuery`.
+    /// Creates a new `PutStoredQueryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

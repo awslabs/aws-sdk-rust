@@ -48,7 +48,7 @@ impl
     }
 }
 impl SubmitFeedbackFluentBuilder {
-    /// Creates a new `SubmitFeedback`.
+    /// Creates a new `SubmitFeedbackFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

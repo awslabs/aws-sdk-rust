@@ -52,7 +52,7 @@ impl
     }
 }
 impl UploadEntityDefinitionsFluentBuilder {
-    /// Creates a new `UploadEntityDefinitions`.
+    /// Creates a new `UploadEntityDefinitionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

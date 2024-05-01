@@ -53,7 +53,7 @@ impl
     }
 }
 impl DescribeOrganizationConformancePacksFluentBuilder {
-    /// Creates a new `DescribeOrganizationConformancePacks`.
+    /// Creates a new `DescribeOrganizationConformancePacksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

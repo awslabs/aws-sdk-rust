@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSourceApiAssociationsFluentBuilder {
-    /// Creates a new `ListSourceApiAssociations`.
+    /// Creates a new `ListSourceApiAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

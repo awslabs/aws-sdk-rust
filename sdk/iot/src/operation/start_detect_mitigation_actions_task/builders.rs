@@ -49,7 +49,7 @@ impl
     }
 }
 impl StartDetectMitigationActionsTaskFluentBuilder {
-    /// Creates a new `StartDetectMitigationActionsTask`.
+    /// Creates a new `StartDetectMitigationActionsTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

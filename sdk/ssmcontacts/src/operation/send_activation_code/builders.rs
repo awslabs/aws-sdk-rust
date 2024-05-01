@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendActivationCodeFluentBuilder {
-    /// Creates a new `SendActivationCode`.
+    /// Creates a new `SendActivationCodeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

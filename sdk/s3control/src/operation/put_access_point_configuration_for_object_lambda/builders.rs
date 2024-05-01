@@ -56,7 +56,7 @@ impl
     }
 }
 impl PutAccessPointConfigurationForObjectLambdaFluentBuilder {
-    /// Creates a new `PutAccessPointConfigurationForObjectLambda`.
+    /// Creates a new `PutAccessPointConfigurationForObjectLambdaFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

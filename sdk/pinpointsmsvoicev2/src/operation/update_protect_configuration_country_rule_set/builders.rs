@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateProtectConfigurationCountryRuleSetFluentBuilder {
-    /// Creates a new `UpdateProtectConfigurationCountryRuleSet`.
+    /// Creates a new `UpdateProtectConfigurationCountryRuleSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteTableVersionFluentBuilder {
-    /// Creates a new `DeleteTableVersion`.
+    /// Creates a new `DeleteTableVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateIdentityProviderConfigurationFluentBuilder {
-    /// Creates a new `UpdateIdentityProviderConfiguration`.
+    /// Creates a new `UpdateIdentityProviderConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

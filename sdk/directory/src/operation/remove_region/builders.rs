@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveRegionFluentBuilder {
-    /// Creates a new `RemoveRegion`.
+    /// Creates a new `RemoveRegionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetFreeTrialInfoFluentBuilder {
-    /// Creates a new `BatchGetFreeTrialInfo`.
+    /// Creates a new `BatchGetFreeTrialInfoFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

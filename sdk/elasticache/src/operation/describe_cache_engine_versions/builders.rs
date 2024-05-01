@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeCacheEngineVersionsFluentBuilder {
-    /// Creates a new `DescribeCacheEngineVersions`.
+    /// Creates a new `DescribeCacheEngineVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelServiceSoftwareUpdateFluentBuilder {
-    /// Creates a new `CancelServiceSoftwareUpdate`.
+    /// Creates a new `CancelServiceSoftwareUpdateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

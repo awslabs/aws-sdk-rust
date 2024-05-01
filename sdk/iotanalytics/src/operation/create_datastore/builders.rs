@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateDatastoreFluentBuilder {
-    /// Creates a new `CreateDatastore`.
+    /// Creates a new `CreateDatastoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

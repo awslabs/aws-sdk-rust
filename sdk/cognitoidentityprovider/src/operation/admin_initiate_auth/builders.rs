@@ -60,7 +60,7 @@ impl
     }
 }
 impl AdminInitiateAuthFluentBuilder {
-    /// Creates a new `AdminInitiateAuth`.
+    /// Creates a new `AdminInitiateAuthFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

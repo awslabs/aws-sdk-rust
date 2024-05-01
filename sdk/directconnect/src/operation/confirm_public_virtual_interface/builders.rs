@@ -49,7 +49,7 @@ impl
     }
 }
 impl ConfirmPublicVirtualInterfaceFluentBuilder {
-    /// Creates a new `ConfirmPublicVirtualInterface`.
+    /// Creates a new `ConfirmPublicVirtualInterfaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

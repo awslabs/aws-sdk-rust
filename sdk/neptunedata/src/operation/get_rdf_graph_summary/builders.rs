@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetRDFGraphSummaryFluentBuilder {
-    /// Creates a new `GetRDFGraphSummary`.
+    /// Creates a new `GetRDFGraphSummaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

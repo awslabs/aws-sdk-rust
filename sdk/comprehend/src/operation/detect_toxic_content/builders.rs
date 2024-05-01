@@ -48,7 +48,7 @@ impl
     }
 }
 impl DetectToxicContentFluentBuilder {
-    /// Creates a new `DetectToxicContent`.
+    /// Creates a new `DetectToxicContentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

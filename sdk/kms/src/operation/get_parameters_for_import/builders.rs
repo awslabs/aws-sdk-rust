@@ -80,7 +80,7 @@ impl
     }
 }
 impl GetParametersForImportFluentBuilder {
-    /// Creates a new `GetParametersForImport`.
+    /// Creates a new `GetParametersForImportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

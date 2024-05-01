@@ -55,7 +55,7 @@ impl
     }
 }
 impl ForgotPasswordFluentBuilder {
-    /// Creates a new `ForgotPassword`.
+    /// Creates a new `ForgotPasswordFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

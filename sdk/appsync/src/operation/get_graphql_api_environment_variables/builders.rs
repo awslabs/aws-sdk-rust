@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetGraphqlApiEnvironmentVariablesFluentBuilder {
-    /// Creates a new `GetGraphqlApiEnvironmentVariables`.
+    /// Creates a new `GetGraphqlApiEnvironmentVariablesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

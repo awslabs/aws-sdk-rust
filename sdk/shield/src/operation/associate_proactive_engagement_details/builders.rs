@@ -52,7 +52,7 @@ impl
     }
 }
 impl AssociateProactiveEngagementDetailsFluentBuilder {
-    /// Creates a new `AssociateProactiveEngagementDetails`.
+    /// Creates a new `AssociateProactiveEngagementDetailsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

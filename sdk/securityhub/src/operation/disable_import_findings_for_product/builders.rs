@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisableImportFindingsForProductFluentBuilder {
-    /// Creates a new `DisableImportFindingsForProduct`.
+    /// Creates a new `DisableImportFindingsForProductFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

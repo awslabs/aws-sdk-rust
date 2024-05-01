@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateRecoveryPointFluentBuilder {
-    /// Creates a new `DisassociateRecoveryPoint`.
+    /// Creates a new `DisassociateRecoveryPointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

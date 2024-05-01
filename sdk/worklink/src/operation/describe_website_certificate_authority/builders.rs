@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeWebsiteCertificateAuthorityFluentBuilder {
-    /// Creates a new `DescribeWebsiteCertificateAuthority`.
+    /// Creates a new `DescribeWebsiteCertificateAuthorityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

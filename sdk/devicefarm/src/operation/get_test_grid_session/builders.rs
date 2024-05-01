@@ -55,7 +55,7 @@ impl
     }
 }
 impl GetTestGridSessionFluentBuilder {
-    /// Creates a new `GetTestGridSession`.
+    /// Creates a new `GetTestGridSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

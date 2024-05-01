@@ -91,7 +91,7 @@ impl
     }
 }
 impl IndexFacesFluentBuilder {
-    /// Creates a new `IndexFaces`.
+    /// Creates a new `IndexFacesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

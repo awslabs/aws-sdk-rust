@@ -67,7 +67,7 @@ impl
     }
 }
 impl UpdateJobPriorityFluentBuilder {
-    /// Creates a new `UpdateJobPriority`.
+    /// Creates a new `UpdateJobPriorityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

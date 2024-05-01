@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateSubnetCidrBlockFluentBuilder {
-    /// Creates a new `DisassociateSubnetCidrBlock`.
+    /// Creates a new `DisassociateSubnetCidrBlockFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

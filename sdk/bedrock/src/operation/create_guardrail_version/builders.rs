@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateGuardrailVersionFluentBuilder {
-    /// Creates a new `CreateGuardrailVersion`.
+    /// Creates a new `CreateGuardrailVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

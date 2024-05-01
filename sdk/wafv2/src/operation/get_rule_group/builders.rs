@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRuleGroupFluentBuilder {
-    /// Creates a new `GetRuleGroup`.
+    /// Creates a new `GetRuleGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

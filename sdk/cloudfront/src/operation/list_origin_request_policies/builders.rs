@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListOriginRequestPoliciesFluentBuilder {
-    /// Creates a new `ListOriginRequestPolicies`.
+    /// Creates a new `ListOriginRequestPoliciesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

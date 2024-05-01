@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateResponseHeadersPolicyFluentBuilder {
-    /// Creates a new `CreateResponseHeadersPolicy`.
+    /// Creates a new `CreateResponseHeadersPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

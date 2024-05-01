@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopWorkflowFluentBuilder {
-    /// Creates a new `StopWorkflow`.
+    /// Creates a new `StopWorkflowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

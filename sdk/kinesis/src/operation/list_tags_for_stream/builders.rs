@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListTagsForStreamFluentBuilder {
-    /// Creates a new `ListTagsForStream`.
+    /// Creates a new `ListTagsForStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

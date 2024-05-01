@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteDirectConnectGatewayAssociationFluentBuilder {
-    /// Creates a new `DeleteDirectConnectGatewayAssociation`.
+    /// Creates a new `DeleteDirectConnectGatewayAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

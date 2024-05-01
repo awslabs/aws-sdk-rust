@@ -51,7 +51,7 @@ impl
     }
 }
 impl RestoreWorkspaceFluentBuilder {
-    /// Creates a new `RestoreWorkspace`.
+    /// Creates a new `RestoreWorkspaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

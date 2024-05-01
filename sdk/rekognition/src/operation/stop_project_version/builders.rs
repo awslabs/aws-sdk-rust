@@ -52,7 +52,7 @@ impl
     }
 }
 impl StopProjectVersionFluentBuilder {
-    /// Creates a new `StopProjectVersion`.
+    /// Creates a new `StopProjectVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateTransitVirtualInterfaceFluentBuilder {
-    /// Creates a new `CreateTransitVirtualInterface`.
+    /// Creates a new `CreateTransitVirtualInterfaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

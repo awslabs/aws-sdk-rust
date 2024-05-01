@@ -48,7 +48,7 @@ impl
     }
 }
 impl ExecuteCoreNetworkChangeSetFluentBuilder {
-    /// Creates a new `ExecuteCoreNetworkChangeSet`.
+    /// Creates a new `ExecuteCoreNetworkChangeSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

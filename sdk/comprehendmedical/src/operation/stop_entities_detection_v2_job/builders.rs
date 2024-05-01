@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopEntitiesDetectionV2JobFluentBuilder {
-    /// Creates a new `StopEntitiesDetectionV2Job`.
+    /// Creates a new `StopEntitiesDetectionV2JobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl TestEventPatternFluentBuilder {
-    /// Creates a new `TestEventPattern`.
+    /// Creates a new `TestEventPatternFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

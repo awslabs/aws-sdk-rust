@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateNodeFluentBuilder {
-    /// Creates a new `UpdateNode`.
+    /// Creates a new `UpdateNodeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

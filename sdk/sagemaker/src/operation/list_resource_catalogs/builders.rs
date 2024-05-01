@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListResourceCatalogsFluentBuilder {
-    /// Creates a new `ListResourceCatalogs`.
+    /// Creates a new `ListResourceCatalogsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

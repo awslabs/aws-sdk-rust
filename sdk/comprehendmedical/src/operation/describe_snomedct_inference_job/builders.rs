@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeSNOMEDCTInferenceJobFluentBuilder {
-    /// Creates a new `DescribeSNOMEDCTInferenceJob`.
+    /// Creates a new `DescribeSNOMEDCTInferenceJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

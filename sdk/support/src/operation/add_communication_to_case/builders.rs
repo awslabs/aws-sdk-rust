@@ -55,7 +55,7 @@ impl
     }
 }
 impl AddCommunicationToCaseFluentBuilder {
-    /// Creates a new `AddCommunicationToCase`.
+    /// Creates a new `AddCommunicationToCaseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSlackChannelConfigurationFluentBuilder {
-    /// Creates a new `DeleteSlackChannelConfiguration`.
+    /// Creates a new `DeleteSlackChannelConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

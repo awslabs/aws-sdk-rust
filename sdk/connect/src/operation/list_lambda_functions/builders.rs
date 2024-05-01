@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListLambdaFunctionsFluentBuilder {
-    /// Creates a new `ListLambdaFunctions`.
+    /// Creates a new `ListLambdaFunctionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

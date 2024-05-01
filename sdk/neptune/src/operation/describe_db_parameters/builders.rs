@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDBParametersFluentBuilder {
-    /// Creates a new `DescribeDBParameters`.
+    /// Creates a new `DescribeDBParametersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

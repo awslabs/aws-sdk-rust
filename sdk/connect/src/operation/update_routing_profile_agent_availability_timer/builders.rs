@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateRoutingProfileAgentAvailabilityTimerFluentBuilder {
-    /// Creates a new `UpdateRoutingProfileAgentAvailabilityTimer`.
+    /// Creates a new `UpdateRoutingProfileAgentAvailabilityTimerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

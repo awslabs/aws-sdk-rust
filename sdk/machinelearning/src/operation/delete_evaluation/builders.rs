@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteEvaluationFluentBuilder {
-    /// Creates a new `DeleteEvaluation`.
+    /// Creates a new `DeleteEvaluationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

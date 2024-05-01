@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeDBLogFilesFluentBuilder {
-    /// Creates a new `DescribeDBLogFiles`.
+    /// Creates a new `DescribeDBLogFilesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

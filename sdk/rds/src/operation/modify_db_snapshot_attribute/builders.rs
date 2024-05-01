@@ -53,7 +53,7 @@ impl
     }
 }
 impl ModifyDBSnapshotAttributeFluentBuilder {
-    /// Creates a new `ModifyDBSnapshotAttribute`.
+    /// Creates a new `ModifyDBSnapshotAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

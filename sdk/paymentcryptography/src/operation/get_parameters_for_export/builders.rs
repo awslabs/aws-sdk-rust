@@ -57,7 +57,7 @@ impl
     }
 }
 impl GetParametersForExportFluentBuilder {
-    /// Creates a new `GetParametersForExport`.
+    /// Creates a new `GetParametersForExportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

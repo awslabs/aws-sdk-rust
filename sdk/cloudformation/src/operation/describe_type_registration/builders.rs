@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeTypeRegistrationFluentBuilder {
-    /// Creates a new `DescribeTypeRegistration`.
+    /// Creates a new `DescribeTypeRegistrationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

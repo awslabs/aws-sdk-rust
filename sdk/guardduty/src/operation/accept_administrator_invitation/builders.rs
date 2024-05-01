@@ -48,7 +48,7 @@ impl
     }
 }
 impl AcceptAdministratorInvitationFluentBuilder {
-    /// Creates a new `AcceptAdministratorInvitation`.
+    /// Creates a new `AcceptAdministratorInvitationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

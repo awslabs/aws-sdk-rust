@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::put_
     }
 }
 impl PutLabelFluentBuilder {
-    /// Creates a new `PutLabel`.
+    /// Creates a new `PutLabelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

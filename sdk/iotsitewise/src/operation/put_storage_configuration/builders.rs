@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutStorageConfigurationFluentBuilder {
-    /// Creates a new `PutStorageConfiguration`.
+    /// Creates a new `PutStorageConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

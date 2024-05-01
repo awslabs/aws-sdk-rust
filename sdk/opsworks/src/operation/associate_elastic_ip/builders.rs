@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateElasticIpFluentBuilder {
-    /// Creates a new `AssociateElasticIp`.
+    /// Creates a new `AssociateElasticIpFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

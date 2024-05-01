@@ -50,7 +50,7 @@ impl
     }
 }
 impl PutBackupVaultLockConfigurationFluentBuilder {
-    /// Creates a new `PutBackupVaultLockConfiguration`.
+    /// Creates a new `PutBackupVaultLockConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

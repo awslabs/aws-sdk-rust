@@ -78,7 +78,7 @@ impl
     }
 }
 impl StartWorkflowExecutionFluentBuilder {
-    /// Creates a new `StartWorkflowExecution`.
+    /// Creates a new `StartWorkflowExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

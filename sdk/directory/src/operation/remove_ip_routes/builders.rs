@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveIpRoutesFluentBuilder {
-    /// Creates a new `RemoveIpRoutes`.
+    /// Creates a new `RemoveIpRoutesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

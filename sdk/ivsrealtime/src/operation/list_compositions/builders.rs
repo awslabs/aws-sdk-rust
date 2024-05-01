@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCompositionsFluentBuilder {
-    /// Creates a new `ListCompositions`.
+    /// Creates a new `ListCompositionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

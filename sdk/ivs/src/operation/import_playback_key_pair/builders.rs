@@ -48,7 +48,7 @@ impl
     }
 }
 impl ImportPlaybackKeyPairFluentBuilder {
-    /// Creates a new `ImportPlaybackKeyPair`.
+    /// Creates a new `ImportPlaybackKeyPairFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

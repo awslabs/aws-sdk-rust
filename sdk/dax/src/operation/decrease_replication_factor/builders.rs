@@ -50,7 +50,7 @@ impl
     }
 }
 impl DecreaseReplicationFactorFluentBuilder {
-    /// Creates a new `DecreaseReplicationFactor`.
+    /// Creates a new `DecreaseReplicationFactorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

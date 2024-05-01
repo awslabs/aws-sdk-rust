@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeEntityRecognizerFluentBuilder {
-    /// Creates a new `DescribeEntityRecognizer`.
+    /// Creates a new `DescribeEntityRecognizerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

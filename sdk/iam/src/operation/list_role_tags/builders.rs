@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListRoleTagsFluentBuilder {
-    /// Creates a new `ListRoleTags`.
+    /// Creates a new `ListRoleTagsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

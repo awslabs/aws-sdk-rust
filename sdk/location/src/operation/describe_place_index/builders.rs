@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribePlaceIndexFluentBuilder {
-    /// Creates a new `DescribePlaceIndex`.
+    /// Creates a new `DescribePlaceIndexFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

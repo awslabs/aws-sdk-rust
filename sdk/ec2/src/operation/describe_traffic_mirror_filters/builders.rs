@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTrafficMirrorFiltersFluentBuilder {
-    /// Creates a new `DescribeTrafficMirrorFilters`.
+    /// Creates a new `DescribeTrafficMirrorFiltersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

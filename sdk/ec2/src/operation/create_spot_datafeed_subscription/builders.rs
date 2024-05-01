@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateSpotDatafeedSubscriptionFluentBuilder {
-    /// Creates a new `CreateSpotDatafeedSubscription`.
+    /// Creates a new `CreateSpotDatafeedSubscriptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

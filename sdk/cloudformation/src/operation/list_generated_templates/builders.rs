@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListGeneratedTemplatesFluentBuilder {
-    /// Creates a new `ListGeneratedTemplates`.
+    /// Creates a new `ListGeneratedTemplatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

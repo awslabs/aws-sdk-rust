@@ -48,7 +48,7 @@ impl
     }
 }
 impl LookupPolicyFluentBuilder {
-    /// Creates a new `LookupPolicy`.
+    /// Creates a new `LookupPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

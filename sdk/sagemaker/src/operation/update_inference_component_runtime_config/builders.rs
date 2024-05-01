@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateInferenceComponentRuntimeConfigFluentBuilder {
-    /// Creates a new `UpdateInferenceComponentRuntimeConfig`.
+    /// Creates a new `UpdateInferenceComponentRuntimeConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

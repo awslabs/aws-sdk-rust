@@ -51,7 +51,7 @@ impl
     }
 }
 impl CompleteLayerUploadFluentBuilder {
-    /// Creates a new `CompleteLayerUpload`.
+    /// Creates a new `CompleteLayerUploadFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

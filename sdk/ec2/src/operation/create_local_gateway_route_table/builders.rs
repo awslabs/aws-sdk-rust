@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateLocalGatewayRouteTableFluentBuilder {
-    /// Creates a new `CreateLocalGatewayRouteTable`.
+    /// Creates a new `CreateLocalGatewayRouteTableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

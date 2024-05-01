@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAnalysisTemplateFluentBuilder {
-    /// Creates a new `CreateAnalysisTemplate`.
+    /// Creates a new `CreateAnalysisTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

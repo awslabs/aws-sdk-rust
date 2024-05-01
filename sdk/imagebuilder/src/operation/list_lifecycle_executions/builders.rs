@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListLifecycleExecutionsFluentBuilder {
-    /// Creates a new `ListLifecycleExecutions`.
+    /// Creates a new `ListLifecycleExecutionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

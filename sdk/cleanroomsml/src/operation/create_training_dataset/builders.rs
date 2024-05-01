@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateTrainingDatasetFluentBuilder {
-    /// Creates a new `CreateTrainingDataset`.
+    /// Creates a new `CreateTrainingDatasetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

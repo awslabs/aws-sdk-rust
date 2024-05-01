@@ -54,7 +54,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::get_
     }
 }
 impl GetPolicyFluentBuilder {
-    /// Creates a new `GetPolicy`.
+    /// Creates a new `GetPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

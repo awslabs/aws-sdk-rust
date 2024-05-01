@@ -53,7 +53,7 @@ impl
     }
 }
 impl DeleteAlarmsFluentBuilder {
-    /// Creates a new `DeleteAlarms`.
+    /// Creates a new `DeleteAlarmsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

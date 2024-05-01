@@ -52,7 +52,7 @@ impl
     }
 }
 impl BatchIsAuthorizedWithTokenFluentBuilder {
-    /// Creates a new `BatchIsAuthorizedWithToken`.
+    /// Creates a new `BatchIsAuthorizedWithTokenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

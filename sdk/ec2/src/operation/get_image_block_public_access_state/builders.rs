@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetImageBlockPublicAccessStateFluentBuilder {
-    /// Creates a new `GetImageBlockPublicAccessState`.
+    /// Creates a new `GetImageBlockPublicAccessStateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelOrderFluentBuilder {
-    /// Creates a new `CancelOrder`.
+    /// Creates a new `CancelOrderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

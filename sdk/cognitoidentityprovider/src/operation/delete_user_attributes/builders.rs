@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteUserAttributesFluentBuilder {
-    /// Creates a new `DeleteUserAttributes`.
+    /// Creates a new `DeleteUserAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

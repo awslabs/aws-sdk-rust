@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterPatchBaselineForPatchGroupFluentBuilder {
-    /// Creates a new `RegisterPatchBaselineForPatchGroup`.
+    /// Creates a new `RegisterPatchBaselineForPatchGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

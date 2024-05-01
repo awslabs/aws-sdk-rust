@@ -48,7 +48,7 @@ impl
     }
 }
 impl RejectResourceShareInvitationFluentBuilder {
-    /// Creates a new `RejectResourceShareInvitation`.
+    /// Creates a new `RejectResourceShareInvitationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

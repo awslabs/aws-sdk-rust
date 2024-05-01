@@ -60,7 +60,7 @@ impl
     }
 }
 impl PutDeliveryDestinationPolicyFluentBuilder {
-    /// Creates a new `PutDeliveryDestinationPolicy`.
+    /// Creates a new `PutDeliveryDestinationPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

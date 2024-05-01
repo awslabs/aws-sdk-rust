@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListRecipeVersionsFluentBuilder {
-    /// Creates a new `ListRecipeVersions`.
+    /// Creates a new `ListRecipeVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

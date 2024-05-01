@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteWhatIfAnalysisFluentBuilder {
-    /// Creates a new `DeleteWhatIfAnalysis`.
+    /// Creates a new `DeleteWhatIfAnalysisFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

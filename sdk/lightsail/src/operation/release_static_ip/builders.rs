@@ -48,7 +48,7 @@ impl
     }
 }
 impl ReleaseStaticIpFluentBuilder {
-    /// Creates a new `ReleaseStaticIp`.
+    /// Creates a new `ReleaseStaticIpFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

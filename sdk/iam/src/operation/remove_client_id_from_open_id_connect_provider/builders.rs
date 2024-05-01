@@ -49,7 +49,7 @@ impl
     }
 }
 impl RemoveClientIDFromOpenIDConnectProviderFluentBuilder {
-    /// Creates a new `RemoveClientIDFromOpenIDConnectProvider`.
+    /// Creates a new `RemoveClientIDFromOpenIDConnectProviderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl CancelLoaderJobFluentBuilder {
-    /// Creates a new `CancelLoaderJob`.
+    /// Creates a new `CancelLoaderJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

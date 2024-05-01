@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateElasticIpFluentBuilder {
-    /// Creates a new `DisassociateElasticIp`.
+    /// Creates a new `DisassociateElasticIpFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

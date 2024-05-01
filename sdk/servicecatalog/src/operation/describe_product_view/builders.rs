@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeProductViewFluentBuilder {
-    /// Creates a new `DescribeProductView`.
+    /// Creates a new `DescribeProductViewFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

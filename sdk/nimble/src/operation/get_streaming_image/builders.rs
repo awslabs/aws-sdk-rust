@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetStreamingImageFluentBuilder {
-    /// Creates a new `GetStreamingImage`.
+    /// Creates a new `GetStreamingImageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

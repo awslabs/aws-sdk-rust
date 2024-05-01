@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelReplayFluentBuilder {
-    /// Creates a new `CancelReplay`.
+    /// Creates a new `CancelReplayFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetLoadBalancerTlsCertificatesFluentBuilder {
-    /// Creates a new `GetLoadBalancerTlsCertificates`.
+    /// Creates a new `GetLoadBalancerTlsCertificatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

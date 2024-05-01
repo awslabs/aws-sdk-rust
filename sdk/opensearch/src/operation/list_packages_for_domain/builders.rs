@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPackagesForDomainFluentBuilder {
-    /// Creates a new `ListPackagesForDomain`.
+    /// Creates a new `ListPackagesForDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

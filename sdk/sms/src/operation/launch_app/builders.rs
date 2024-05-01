@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::laun
     }
 }
 impl LaunchAppFluentBuilder {
-    /// Creates a new `LaunchApp`.
+    /// Creates a new `LaunchAppFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

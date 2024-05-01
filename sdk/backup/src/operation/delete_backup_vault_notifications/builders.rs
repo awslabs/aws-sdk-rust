@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteBackupVaultNotificationsFluentBuilder {
-    /// Creates a new `DeleteBackupVaultNotifications`.
+    /// Creates a new `DeleteBackupVaultNotificationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

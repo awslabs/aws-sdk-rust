@@ -58,7 +58,7 @@ impl
     }
 }
 impl AcceptHandshakeFluentBuilder {
-    /// Creates a new `AcceptHandshake`.
+    /// Creates a new `AcceptHandshakeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

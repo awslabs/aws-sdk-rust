@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateThirdPartyFirewallFluentBuilder {
-    /// Creates a new `AssociateThirdPartyFirewall`.
+    /// Creates a new `AssociateThirdPartyFirewallFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

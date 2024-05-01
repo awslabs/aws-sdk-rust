@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateStorageProfileFluentBuilder {
-    /// Creates a new `CreateStorageProfile`.
+    /// Creates a new `CreateStorageProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

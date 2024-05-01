@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAvailabilityOptionsFluentBuilder {
-    /// Creates a new `DescribeAvailabilityOptions`.
+    /// Creates a new `DescribeAvailabilityOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -73,7 +73,7 @@ impl
     }
 }
 impl EnableKeyRotationFluentBuilder {
-    /// Creates a new `EnableKeyRotation`.
+    /// Creates a new `EnableKeyRotationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreatePracticeRunConfigurationFluentBuilder {
-    /// Creates a new `CreatePracticeRunConfiguration`.
+    /// Creates a new `CreatePracticeRunConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

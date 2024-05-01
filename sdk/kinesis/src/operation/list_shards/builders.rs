@@ -53,7 +53,7 @@ impl
     }
 }
 impl ListShardsFluentBuilder {
-    /// Creates a new `ListShards`.
+    /// Creates a new `ListShardsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

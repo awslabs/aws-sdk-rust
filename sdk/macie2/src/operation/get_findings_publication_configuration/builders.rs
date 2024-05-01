@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetFindingsPublicationConfigurationFluentBuilder {
-    /// Creates a new `GetFindingsPublicationConfiguration`.
+    /// Creates a new `GetFindingsPublicationConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

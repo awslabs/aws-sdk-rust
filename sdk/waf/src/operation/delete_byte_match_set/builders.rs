@@ -62,7 +62,7 @@ impl
     }
 }
 impl DeleteByteMatchSetFluentBuilder {
-    /// Creates a new `DeleteByteMatchSet`.
+    /// Creates a new `DeleteByteMatchSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

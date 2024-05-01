@@ -48,7 +48,7 @@ impl
     }
 }
 impl ImportSourceCredentialsFluentBuilder {
-    /// Creates a new `ImportSourceCredentials`.
+    /// Creates a new `ImportSourceCredentialsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

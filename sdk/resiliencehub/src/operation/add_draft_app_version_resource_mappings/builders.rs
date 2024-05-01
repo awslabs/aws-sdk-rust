@@ -48,7 +48,7 @@ impl
     }
 }
 impl AddDraftAppVersionResourceMappingsFluentBuilder {
-    /// Creates a new `AddDraftAppVersionResourceMappings`.
+    /// Creates a new `AddDraftAppVersionResourceMappingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PurchaseHostReservationFluentBuilder {
-    /// Creates a new `PurchaseHostReservation`.
+    /// Creates a new `PurchaseHostReservationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

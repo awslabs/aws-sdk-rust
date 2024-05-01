@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSignalMapFluentBuilder {
-    /// Creates a new `DeleteSignalMap`.
+    /// Creates a new `DeleteSignalMapFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

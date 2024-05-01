@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteDecoderManifestFluentBuilder {
-    /// Creates a new `DeleteDecoderManifest`.
+    /// Creates a new `DeleteDecoderManifestFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

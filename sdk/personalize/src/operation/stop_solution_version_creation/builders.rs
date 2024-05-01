@@ -57,7 +57,7 @@ impl
     }
 }
 impl StopSolutionVersionCreationFluentBuilder {
-    /// Creates a new `StopSolutionVersionCreation`.
+    /// Creates a new `StopSolutionVersionCreationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

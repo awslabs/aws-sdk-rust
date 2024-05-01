@@ -53,7 +53,7 @@ impl
     }
 }
 impl SetVisibleToAllUsersFluentBuilder {
-    /// Creates a new `SetVisibleToAllUsers`.
+    /// Creates a new `SetVisibleToAllUsersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

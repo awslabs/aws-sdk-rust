@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetReadinessCheckResourceStatusFluentBuilder {
-    /// Creates a new `GetReadinessCheckResourceStatus`.
+    /// Creates a new `GetReadinessCheckResourceStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -59,7 +59,7 @@ impl
     }
 }
 impl ChangeCidrCollectionFluentBuilder {
-    /// Creates a new `ChangeCidrCollection`.
+    /// Creates a new `ChangeCidrCollectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

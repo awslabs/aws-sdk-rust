@@ -50,7 +50,7 @@ impl
     }
 }
 impl UntagQueueFluentBuilder {
-    /// Creates a new `UntagQueue`.
+    /// Creates a new `UntagQueueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeVpcAttributeFluentBuilder {
-    /// Creates a new `DescribeVpcAttribute`.
+    /// Creates a new `DescribeVpcAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

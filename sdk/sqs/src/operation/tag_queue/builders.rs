@@ -56,7 +56,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::tag_
     }
 }
 impl TagQueueFluentBuilder {
-    /// Creates a new `TagQueue`.
+    /// Creates a new `TagQueueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

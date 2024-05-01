@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListReceivedLicensesFluentBuilder {
-    /// Creates a new `ListReceivedLicenses`.
+    /// Creates a new `ListReceivedLicensesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

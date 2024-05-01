@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListIdentityProviderConfigsFluentBuilder {
-    /// Creates a new `ListIdentityProviderConfigs`.
+    /// Creates a new `ListIdentityProviderConfigsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

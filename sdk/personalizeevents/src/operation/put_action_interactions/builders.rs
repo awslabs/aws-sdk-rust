@@ -49,7 +49,7 @@ impl
     }
 }
 impl PutActionInteractionsFluentBuilder {
-    /// Creates a new `PutActionInteractions`.
+    /// Creates a new `PutActionInteractionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

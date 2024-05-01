@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListHostedZonesFluentBuilder {
-    /// Creates a new `ListHostedZones`.
+    /// Creates a new `ListHostedZonesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

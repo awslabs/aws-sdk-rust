@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateLocationNfsFluentBuilder {
-    /// Creates a new `CreateLocationNfs`.
+    /// Creates a new `CreateLocationNfsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

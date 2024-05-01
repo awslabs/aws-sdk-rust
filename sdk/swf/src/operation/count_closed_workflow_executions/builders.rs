@@ -69,7 +69,7 @@ impl
     }
 }
 impl CountClosedWorkflowExecutionsFluentBuilder {
-    /// Creates a new `CountClosedWorkflowExecutions`.
+    /// Creates a new `CountClosedWorkflowExecutionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

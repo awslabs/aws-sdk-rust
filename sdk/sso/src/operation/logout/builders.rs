@@ -45,7 +45,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::logo
     }
 }
 impl LogoutFluentBuilder {
-    /// Creates a new `Logout`.
+    /// Creates a new `LogoutFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

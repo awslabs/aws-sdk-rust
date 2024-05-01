@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelMLTaskRunFluentBuilder {
-    /// Creates a new `CancelMLTaskRun`.
+    /// Creates a new `CancelMLTaskRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

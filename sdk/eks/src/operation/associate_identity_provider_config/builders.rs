@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateIdentityProviderConfigFluentBuilder {
-    /// Creates a new `AssociateIdentityProviderConfig`.
+    /// Creates a new `AssociateIdentityProviderConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

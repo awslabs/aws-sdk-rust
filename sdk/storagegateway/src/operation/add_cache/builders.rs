@@ -43,7 +43,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::add_
     }
 }
 impl AddCacheFluentBuilder {
-    /// Creates a new `AddCache`.
+    /// Creates a new `AddCacheFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetReadSetActivationJobFluentBuilder {
-    /// Creates a new `GetReadSetActivationJob`.
+    /// Creates a new `GetReadSetActivationJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

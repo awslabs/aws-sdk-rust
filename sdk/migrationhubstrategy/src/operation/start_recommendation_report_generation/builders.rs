@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartRecommendationReportGenerationFluentBuilder {
-    /// Creates a new `StartRecommendationReportGeneration`.
+    /// Creates a new `StartRecommendationReportGenerationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

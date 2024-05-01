@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateFirewallRuleGroupFluentBuilder {
-    /// Creates a new `AssociateFirewallRuleGroup`.
+    /// Creates a new `AssociateFirewallRuleGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

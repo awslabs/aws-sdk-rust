@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateGeofenceCollectionFluentBuilder {
-    /// Creates a new `UpdateGeofenceCollection`.
+    /// Creates a new `UpdateGeofenceCollectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

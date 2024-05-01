@@ -57,7 +57,7 @@ impl
     }
 }
 impl ApproveAssignmentFluentBuilder {
-    /// Creates a new `ApproveAssignment`.
+    /// Creates a new `ApproveAssignmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

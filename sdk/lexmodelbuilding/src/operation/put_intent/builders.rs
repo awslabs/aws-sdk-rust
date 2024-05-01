@@ -66,7 +66,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::put_
     }
 }
 impl PutIntentFluentBuilder {
-    /// Creates a new `PutIntent`.
+    /// Creates a new `PutIntentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

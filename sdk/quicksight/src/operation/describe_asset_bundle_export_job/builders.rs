@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeAssetBundleExportJobFluentBuilder {
-    /// Creates a new `DescribeAssetBundleExportJob`.
+    /// Creates a new `DescribeAssetBundleExportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

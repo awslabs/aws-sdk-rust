@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeMountTargetsFluentBuilder {
-    /// Creates a new `DescribeMountTargets`.
+    /// Creates a new `DescribeMountTargetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

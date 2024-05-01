@@ -50,7 +50,7 @@ impl
     }
 }
 impl ModifyMigrationProjectFluentBuilder {
-    /// Creates a new `ModifyMigrationProject`.
+    /// Creates a new `ModifyMigrationProjectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

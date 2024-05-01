@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetApplicationComponentStrategiesFluentBuilder {
-    /// Creates a new `GetApplicationComponentStrategies`.
+    /// Creates a new `GetApplicationComponentStrategiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetVariantImportJobFluentBuilder {
-    /// Creates a new `GetVariantImportJob`.
+    /// Creates a new `GetVariantImportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

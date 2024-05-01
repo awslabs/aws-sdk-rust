@@ -48,7 +48,7 @@ impl
     }
 }
 impl PhoneNumberValidateFluentBuilder {
-    /// Creates a new `PhoneNumberValidate`.
+    /// Creates a new `PhoneNumberValidateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl SearchSessionsFluentBuilder {
-    /// Creates a new `SearchSessions`.
+    /// Creates a new `SearchSessionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeStudioLifecycleConfigFluentBuilder {
-    /// Creates a new `DescribeStudioLifecycleConfig`.
+    /// Creates a new `DescribeStudioLifecycleConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

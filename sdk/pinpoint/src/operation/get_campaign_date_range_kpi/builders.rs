@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCampaignDateRangeKpiFluentBuilder {
-    /// Creates a new `GetCampaignDateRangeKpi`.
+    /// Creates a new `GetCampaignDateRangeKpiFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

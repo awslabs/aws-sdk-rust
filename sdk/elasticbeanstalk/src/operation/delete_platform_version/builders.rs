@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePlatformVersionFluentBuilder {
-    /// Creates a new `DeletePlatformVersion`.
+    /// Creates a new `DeletePlatformVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

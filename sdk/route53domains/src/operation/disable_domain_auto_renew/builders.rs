@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisableDomainAutoRenewFluentBuilder {
-    /// Creates a new `DisableDomainAutoRenew`.
+    /// Creates a new `DisableDomainAutoRenewFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

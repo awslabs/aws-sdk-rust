@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAlgorithmFluentBuilder {
-    /// Creates a new `CreateAlgorithm`.
+    /// Creates a new `CreateAlgorithmFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

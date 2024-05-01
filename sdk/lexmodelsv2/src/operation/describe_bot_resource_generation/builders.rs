@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeBotResourceGenerationFluentBuilder {
-    /// Creates a new `DescribeBotResourceGeneration`.
+    /// Creates a new `DescribeBotResourceGenerationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

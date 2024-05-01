@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateWorkerBlockFluentBuilder {
-    /// Creates a new `CreateWorkerBlock`.
+    /// Creates a new `CreateWorkerBlockFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

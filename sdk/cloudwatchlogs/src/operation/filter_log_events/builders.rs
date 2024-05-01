@@ -53,7 +53,7 @@ impl
     }
 }
 impl FilterLogEventsFluentBuilder {
-    /// Creates a new `FilterLogEvents`.
+    /// Creates a new `FilterLogEventsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetDistributionMetricDataFluentBuilder {
-    /// Creates a new `GetDistributionMetricData`.
+    /// Creates a new `GetDistributionMetricDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

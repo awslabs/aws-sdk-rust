@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteEventsByEventTypeFluentBuilder {
-    /// Creates a new `DeleteEventsByEventType`.
+    /// Creates a new `DeleteEventsByEventTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

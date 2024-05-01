@@ -77,7 +77,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::re_e
     }
 }
 impl ReEncryptFluentBuilder {
-    /// Creates a new `ReEncrypt`.
+    /// Creates a new `ReEncryptFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

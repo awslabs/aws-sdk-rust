@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateWorkspaceApplicationFluentBuilder {
-    /// Creates a new `AssociateWorkspaceApplication`.
+    /// Creates a new `AssociateWorkspaceApplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

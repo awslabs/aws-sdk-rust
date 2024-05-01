@@ -51,7 +51,7 @@ impl
     }
 }
 impl RestoreDBInstanceToPointInTimeFluentBuilder {
-    /// Creates a new `RestoreDBInstanceToPointInTime`.
+    /// Creates a new `RestoreDBInstanceToPointInTimeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

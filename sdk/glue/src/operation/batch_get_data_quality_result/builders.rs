@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetDataQualityResultFluentBuilder {
-    /// Creates a new `BatchGetDataQualityResult`.
+    /// Creates a new `BatchGetDataQualityResultFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

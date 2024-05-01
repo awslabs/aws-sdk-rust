@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPrincipalsForPortfolioFluentBuilder {
-    /// Creates a new `ListPrincipalsForPortfolio`.
+    /// Creates a new `ListPrincipalsForPortfolioFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

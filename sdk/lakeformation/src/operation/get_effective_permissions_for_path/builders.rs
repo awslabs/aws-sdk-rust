@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetEffectivePermissionsForPathFluentBuilder {
-    /// Creates a new `GetEffectivePermissionsForPath`.
+    /// Creates a new `GetEffectivePermissionsForPathFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

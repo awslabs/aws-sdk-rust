@@ -67,7 +67,7 @@ impl
     }
 }
 impl LabelParameterVersionFluentBuilder {
-    /// Creates a new `LabelParameterVersion`.
+    /// Creates a new `LabelParameterVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

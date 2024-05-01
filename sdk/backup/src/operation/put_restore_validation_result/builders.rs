@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutRestoreValidationResultFluentBuilder {
-    /// Creates a new `PutRestoreValidationResult`.
+    /// Creates a new `PutRestoreValidationResultFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

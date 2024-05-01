@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteArchiveRuleFluentBuilder {
-    /// Creates a new `DeleteArchiveRule`.
+    /// Creates a new `DeleteArchiveRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

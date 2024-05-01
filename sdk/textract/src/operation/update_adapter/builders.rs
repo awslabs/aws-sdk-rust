@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateAdapterFluentBuilder {
-    /// Creates a new `UpdateAdapter`.
+    /// Creates a new `UpdateAdapterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

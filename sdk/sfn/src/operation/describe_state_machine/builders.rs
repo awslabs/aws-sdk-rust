@@ -86,7 +86,7 @@ impl
     }
 }
 impl DescribeStateMachineFluentBuilder {
-    /// Creates a new `DescribeStateMachine`.
+    /// Creates a new `DescribeStateMachineFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

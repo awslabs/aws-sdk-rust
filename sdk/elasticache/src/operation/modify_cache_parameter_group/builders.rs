@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyCacheParameterGroupFluentBuilder {
-    /// Creates a new `ModifyCacheParameterGroup`.
+    /// Creates a new `ModifyCacheParameterGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

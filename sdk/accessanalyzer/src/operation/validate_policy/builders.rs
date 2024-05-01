@@ -48,7 +48,7 @@ impl
     }
 }
 impl ValidatePolicyFluentBuilder {
-    /// Creates a new `ValidatePolicy`.
+    /// Creates a new `ValidatePolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

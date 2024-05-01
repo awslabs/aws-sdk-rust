@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDeleteConnectionFluentBuilder {
-    /// Creates a new `BatchDeleteConnection`.
+    /// Creates a new `BatchDeleteConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

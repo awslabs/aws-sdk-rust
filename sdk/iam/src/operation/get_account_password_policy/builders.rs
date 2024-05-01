@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAccountPasswordPolicyFluentBuilder {
-    /// Creates a new `GetAccountPasswordPolicy`.
+    /// Creates a new `GetAccountPasswordPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

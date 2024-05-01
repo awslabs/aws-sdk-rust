@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListVolumeInitiatorsFluentBuilder {
-    /// Creates a new `ListVolumeInitiators`.
+    /// Creates a new `ListVolumeInitiatorsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

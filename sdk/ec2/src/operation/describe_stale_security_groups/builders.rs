@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeStaleSecurityGroupsFluentBuilder {
-    /// Creates a new `DescribeStaleSecurityGroups`.
+    /// Creates a new `DescribeStaleSecurityGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

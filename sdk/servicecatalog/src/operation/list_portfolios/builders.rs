@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPortfoliosFluentBuilder {
-    /// Creates a new `ListPortfolios`.
+    /// Creates a new `ListPortfoliosFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

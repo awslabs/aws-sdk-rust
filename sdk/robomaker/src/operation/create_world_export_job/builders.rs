@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateWorldExportJobFluentBuilder {
-    /// Creates a new `CreateWorldExportJob`.
+    /// Creates a new `CreateWorldExportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

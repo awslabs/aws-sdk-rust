@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateChimeWebhookConfigurationFluentBuilder {
-    /// Creates a new `CreateChimeWebhookConfiguration`.
+    /// Creates a new `CreateChimeWebhookConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

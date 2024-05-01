@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendTaskFailureFluentBuilder {
-    /// Creates a new `SendTaskFailure`.
+    /// Creates a new `SendTaskFailureFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

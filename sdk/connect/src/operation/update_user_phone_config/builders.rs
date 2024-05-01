@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateUserPhoneConfigFluentBuilder {
-    /// Creates a new `UpdateUserPhoneConfig`.
+    /// Creates a new `UpdateUserPhoneConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

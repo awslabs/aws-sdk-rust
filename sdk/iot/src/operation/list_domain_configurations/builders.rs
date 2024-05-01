@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListDomainConfigurationsFluentBuilder {
-    /// Creates a new `ListDomainConfigurations`.
+    /// Creates a new `ListDomainConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ReverseReplicationFluentBuilder {
-    /// Creates a new `ReverseReplication`.
+    /// Creates a new `ReverseReplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

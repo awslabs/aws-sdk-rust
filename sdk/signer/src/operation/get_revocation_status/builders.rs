@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRevocationStatusFluentBuilder {
-    /// Creates a new `GetRevocationStatus`.
+    /// Creates a new `GetRevocationStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

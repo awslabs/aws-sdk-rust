@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePartitionIndexFluentBuilder {
-    /// Creates a new `DeletePartitionIndex`.
+    /// Creates a new `DeletePartitionIndexFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl ExecuteQueryFluentBuilder {
-    /// Creates a new `ExecuteQuery`.
+    /// Creates a new `ExecuteQueryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

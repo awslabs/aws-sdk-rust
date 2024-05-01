@@ -48,7 +48,7 @@ impl
     }
 }
 impl SetEndpointAttributesFluentBuilder {
-    /// Creates a new `SetEndpointAttributes`.
+    /// Creates a new `SetEndpointAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

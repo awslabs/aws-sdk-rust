@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateModelQualityJobDefinitionFluentBuilder {
-    /// Creates a new `CreateModelQualityJobDefinition`.
+    /// Creates a new `CreateModelQualityJobDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -54,7 +54,7 @@ impl
     }
 }
 impl GetUserAttributeVerificationCodeFluentBuilder {
-    /// Creates a new `GetUserAttributeVerificationCode`.
+    /// Creates a new `GetUserAttributeVerificationCodeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

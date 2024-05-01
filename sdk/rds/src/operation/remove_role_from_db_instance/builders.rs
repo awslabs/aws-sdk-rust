@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveRoleFromDBInstanceFluentBuilder {
-    /// Creates a new `RemoveRoleFromDBInstance`.
+    /// Creates a new `RemoveRoleFromDBInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

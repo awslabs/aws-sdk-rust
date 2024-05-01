@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAccessLogSubscriptionFluentBuilder {
-    /// Creates a new `CreateAccessLogSubscription`.
+    /// Creates a new `CreateAccessLogSubscriptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

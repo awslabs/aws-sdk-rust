@@ -50,7 +50,7 @@ impl
     }
 }
 impl EvaluateMappingTemplateFluentBuilder {
-    /// Creates a new `EvaluateMappingTemplate`.
+    /// Creates a new `EvaluateMappingTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

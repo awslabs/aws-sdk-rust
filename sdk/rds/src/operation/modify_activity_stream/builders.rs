@@ -49,7 +49,7 @@ impl
     }
 }
 impl ModifyActivityStreamFluentBuilder {
-    /// Creates a new `ModifyActivityStream`.
+    /// Creates a new `ModifyActivityStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

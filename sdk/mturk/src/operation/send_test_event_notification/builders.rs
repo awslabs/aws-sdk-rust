@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendTestEventNotificationFluentBuilder {
-    /// Creates a new `SendTestEventNotification`.
+    /// Creates a new `SendTestEventNotificationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

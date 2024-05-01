@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeletePresetFluentBuilder {
-    /// Creates a new `DeletePreset`.
+    /// Creates a new `DeletePresetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

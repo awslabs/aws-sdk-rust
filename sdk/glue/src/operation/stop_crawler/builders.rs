@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopCrawlerFluentBuilder {
-    /// Creates a new `StopCrawler`.
+    /// Creates a new `StopCrawlerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

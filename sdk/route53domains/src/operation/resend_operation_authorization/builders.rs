@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResendOperationAuthorizationFluentBuilder {
-    /// Creates a new `ResendOperationAuthorization`.
+    /// Creates a new `ResendOperationAuthorizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

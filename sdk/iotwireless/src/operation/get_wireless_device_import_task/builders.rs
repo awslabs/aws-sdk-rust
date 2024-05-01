@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetWirelessDeviceImportTaskFluentBuilder {
-    /// Creates a new `GetWirelessDeviceImportTask`.
+    /// Creates a new `GetWirelessDeviceImportTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

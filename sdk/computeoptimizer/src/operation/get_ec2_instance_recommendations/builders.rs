@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetEC2InstanceRecommendationsFluentBuilder {
-    /// Creates a new `GetEC2InstanceRecommendations`.
+    /// Creates a new `GetEC2InstanceRecommendationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

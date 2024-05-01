@@ -50,7 +50,7 @@ impl
     }
 }
 impl StartCalculationExecutionFluentBuilder {
-    /// Creates a new `StartCalculationExecution`.
+    /// Creates a new `StartCalculationExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

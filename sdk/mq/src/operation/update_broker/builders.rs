@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateBrokerFluentBuilder {
-    /// Creates a new `UpdateBroker`.
+    /// Creates a new `UpdateBrokerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

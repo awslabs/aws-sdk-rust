@@ -53,7 +53,7 @@ impl
     }
 }
 impl GetSipMediaApplicationAlexaSkillConfigurationFluentBuilder {
-    /// Creates a new `GetSipMediaApplicationAlexaSkillConfiguration`.
+    /// Creates a new `GetSipMediaApplicationAlexaSkillConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

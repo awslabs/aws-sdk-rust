@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListImageSetVersionsFluentBuilder {
-    /// Creates a new `ListImageSetVersions`.
+    /// Creates a new `ListImageSetVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

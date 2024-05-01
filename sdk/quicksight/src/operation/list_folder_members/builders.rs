@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListFolderMembersFluentBuilder {
-    /// Creates a new `ListFolderMembers`.
+    /// Creates a new `ListFolderMembersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

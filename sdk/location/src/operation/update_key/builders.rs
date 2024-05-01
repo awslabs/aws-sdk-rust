@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::upda
     }
 }
 impl UpdateKeyFluentBuilder {
-    /// Creates a new `UpdateKey`.
+    /// Creates a new `UpdateKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

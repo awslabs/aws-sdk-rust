@@ -49,7 +49,7 @@ impl
     }
 }
 impl ResyncMFADeviceFluentBuilder {
-    /// Creates a new `ResyncMFADevice`.
+    /// Creates a new `ResyncMFADeviceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

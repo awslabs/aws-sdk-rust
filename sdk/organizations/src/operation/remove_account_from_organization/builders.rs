@@ -59,7 +59,7 @@ impl
     }
 }
 impl RemoveAccountFromOrganizationFluentBuilder {
-    /// Creates a new `RemoveAccountFromOrganization`.
+    /// Creates a new `RemoveAccountFromOrganizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

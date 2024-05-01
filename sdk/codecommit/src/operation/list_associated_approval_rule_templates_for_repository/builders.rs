@@ -29,7 +29,7 @@ impl
 pub struct ListAssociatedApprovalRuleTemplatesForRepositoryFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListAssociatedApprovalRuleTemplatesForRepositoryFluentBuilder {
-    /// Creates a new `ListAssociatedApprovalRuleTemplatesForRepository`.
+    /// Creates a new `ListAssociatedApprovalRuleTemplatesForRepositoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

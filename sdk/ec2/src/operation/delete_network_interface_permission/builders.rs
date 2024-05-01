@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteNetworkInterfacePermissionFluentBuilder {
-    /// Creates a new `DeleteNetworkInterfacePermission`.
+    /// Creates a new `DeleteNetworkInterfacePermissionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -29,7 +29,7 @@ impl
 pub struct UpdateInstanceAccessControlAttributeConfigurationFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::update_instance_access_control_attribute_configuration::builders::UpdateInstanceAccessControlAttributeConfigurationInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateInstanceAccessControlAttributeConfigurationFluentBuilder {
-    /// Creates a new `UpdateInstanceAccessControlAttributeConfiguration`.
+    /// Creates a new `UpdateInstanceAccessControlAttributeConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

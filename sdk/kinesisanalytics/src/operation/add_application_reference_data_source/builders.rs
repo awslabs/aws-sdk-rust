@@ -54,7 +54,7 @@ impl
     }
 }
 impl AddApplicationReferenceDataSourceFluentBuilder {
-    /// Creates a new `AddApplicationReferenceDataSource`.
+    /// Creates a new `AddApplicationReferenceDataSourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

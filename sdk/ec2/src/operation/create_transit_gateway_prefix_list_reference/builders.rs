@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateTransitGatewayPrefixListReferenceFluentBuilder {
-    /// Creates a new `CreateTransitGatewayPrefixListReference`.
+    /// Creates a new `CreateTransitGatewayPrefixListReferenceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

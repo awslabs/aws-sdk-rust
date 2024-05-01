@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetLicenseRecommendationsFluentBuilder {
-    /// Creates a new `GetLicenseRecommendations`.
+    /// Creates a new `GetLicenseRecommendationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

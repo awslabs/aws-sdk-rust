@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteColumnStatisticsForPartitionFluentBuilder {
-    /// Creates a new `DeleteColumnStatisticsForPartition`.
+    /// Creates a new `DeleteColumnStatisticsForPartitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

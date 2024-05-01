@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateAwsAccountFromPartnerAccountFluentBuilder {
-    /// Creates a new `DisassociateAwsAccountFromPartnerAccount`.
+    /// Creates a new `DisassociateAwsAccountFromPartnerAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

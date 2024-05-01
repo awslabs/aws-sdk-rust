@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelSimulationJobBatchFluentBuilder {
-    /// Creates a new `CancelSimulationJobBatch`.
+    /// Creates a new `CancelSimulationJobBatchFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

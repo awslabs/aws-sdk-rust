@@ -54,7 +54,7 @@ impl
     }
 }
 impl CreateAccountAssignmentFluentBuilder {
-    /// Creates a new `CreateAccountAssignment`.
+    /// Creates a new `CreateAccountAssignmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

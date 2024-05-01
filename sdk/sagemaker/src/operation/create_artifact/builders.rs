@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateArtifactFluentBuilder {
-    /// Creates a new `CreateArtifact`.
+    /// Creates a new `CreateArtifactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

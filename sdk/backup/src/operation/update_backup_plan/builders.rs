@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateBackupPlanFluentBuilder {
-    /// Creates a new `UpdateBackupPlan`.
+    /// Creates a new `UpdateBackupPlanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

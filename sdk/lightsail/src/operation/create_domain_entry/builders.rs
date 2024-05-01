@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateDomainEntryFluentBuilder {
-    /// Creates a new `CreateDomainEntry`.
+    /// Creates a new `CreateDomainEntryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

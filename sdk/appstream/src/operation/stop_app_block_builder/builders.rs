@@ -49,7 +49,7 @@ impl
     }
 }
 impl StopAppBlockBuilderFluentBuilder {
-    /// Creates a new `StopAppBlockBuilder`.
+    /// Creates a new `StopAppBlockBuilderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

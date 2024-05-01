@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateImagePipelineFluentBuilder {
-    /// Creates a new `UpdateImagePipeline`.
+    /// Creates a new `UpdateImagePipelineFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl SearchTransitGatewayMulticastGroupsFluentBuilder {
-    /// Creates a new `SearchTransitGatewayMulticastGroups`.
+    /// Creates a new `SearchTransitGatewayMulticastGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

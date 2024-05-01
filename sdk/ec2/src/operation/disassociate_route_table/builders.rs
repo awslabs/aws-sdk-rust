@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateRouteTableFluentBuilder {
-    /// Creates a new `DisassociateRouteTable`.
+    /// Creates a new `DisassociateRouteTableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

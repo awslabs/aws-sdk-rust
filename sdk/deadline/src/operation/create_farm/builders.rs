@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateFarmFluentBuilder {
-    /// Creates a new `CreateFarm`.
+    /// Creates a new `CreateFarmFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

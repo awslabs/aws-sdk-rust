@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeKeyFluentBuilder {
-    /// Creates a new `DescribeKey`.
+    /// Creates a new `DescribeKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

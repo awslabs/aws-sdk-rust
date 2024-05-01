@@ -49,7 +49,7 @@ impl
     }
 }
 impl StartStreamProcessorFluentBuilder {
-    /// Creates a new `StartStreamProcessor`.
+    /// Creates a new `StartStreamProcessorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

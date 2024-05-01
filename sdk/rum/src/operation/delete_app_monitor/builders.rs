@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAppMonitorFluentBuilder {
-    /// Creates a new `DeleteAppMonitor`.
+    /// Creates a new `DeleteAppMonitorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

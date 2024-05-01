@@ -52,7 +52,7 @@ impl
     }
 }
 impl DeleteConnectionAliasFluentBuilder {
-    /// Creates a new `DeleteConnectionAlias`.
+    /// Creates a new `DeleteConnectionAliasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

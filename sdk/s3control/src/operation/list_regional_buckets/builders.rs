@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListRegionalBucketsFluentBuilder {
-    /// Creates a new `ListRegionalBuckets`.
+    /// Creates a new `ListRegionalBucketsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

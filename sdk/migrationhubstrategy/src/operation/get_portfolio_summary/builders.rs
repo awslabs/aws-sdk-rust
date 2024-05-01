@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetPortfolioSummaryFluentBuilder {
-    /// Creates a new `GetPortfolioSummary`.
+    /// Creates a new `GetPortfolioSummaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePrivacyBudgetTemplateFluentBuilder {
-    /// Creates a new `DeletePrivacyBudgetTemplate`.
+    /// Creates a new `DeletePrivacyBudgetTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

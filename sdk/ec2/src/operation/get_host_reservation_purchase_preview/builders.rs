@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetHostReservationPurchasePreviewFluentBuilder {
-    /// Creates a new `GetHostReservationPurchasePreview`.
+    /// Creates a new `GetHostReservationPurchasePreviewFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

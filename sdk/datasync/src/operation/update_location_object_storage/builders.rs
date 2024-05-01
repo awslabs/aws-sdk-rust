@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateLocationObjectStorageFluentBuilder {
-    /// Creates a new `UpdateLocationObjectStorage`.
+    /// Creates a new `UpdateLocationObjectStorageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

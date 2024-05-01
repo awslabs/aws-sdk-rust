@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopAccessLoggingFluentBuilder {
-    /// Creates a new `StopAccessLogging`.
+    /// Creates a new `StopAccessLoggingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

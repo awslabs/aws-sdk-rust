@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListRegionsFluentBuilder {
-    /// Creates a new `ListRegions`.
+    /// Creates a new `ListRegionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

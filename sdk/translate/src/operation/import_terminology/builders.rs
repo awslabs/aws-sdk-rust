@@ -49,7 +49,7 @@ impl
     }
 }
 impl ImportTerminologyFluentBuilder {
-    /// Creates a new `ImportTerminology`.
+    /// Creates a new `ImportTerminologyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

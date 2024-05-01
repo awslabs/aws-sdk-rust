@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateBotFluentBuilder {
-    /// Creates a new `AssociateBot`.
+    /// Creates a new `AssociateBotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

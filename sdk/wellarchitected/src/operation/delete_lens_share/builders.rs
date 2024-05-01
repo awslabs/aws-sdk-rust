@@ -52,7 +52,7 @@ impl
     }
 }
 impl DeleteLensShareFluentBuilder {
-    /// Creates a new `DeleteLensShare`.
+    /// Creates a new `DeleteLensShareFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

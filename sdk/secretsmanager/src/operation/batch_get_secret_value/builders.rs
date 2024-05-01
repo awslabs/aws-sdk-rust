@@ -51,7 +51,7 @@ impl
     }
 }
 impl BatchGetSecretValueFluentBuilder {
-    /// Creates a new `BatchGetSecretValue`.
+    /// Creates a new `BatchGetSecretValueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl TerminateSessionFluentBuilder {
-    /// Creates a new `TerminateSession`.
+    /// Creates a new `TerminateSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

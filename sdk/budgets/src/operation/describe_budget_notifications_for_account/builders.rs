@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeBudgetNotificationsForAccountFluentBuilder {
-    /// Creates a new `DescribeBudgetNotificationsForAccount`.
+    /// Creates a new `DescribeBudgetNotificationsForAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

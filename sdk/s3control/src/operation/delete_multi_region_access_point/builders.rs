@@ -64,7 +64,7 @@ impl
     }
 }
 impl DeleteMultiRegionAccessPointFluentBuilder {
-    /// Creates a new `DeleteMultiRegionAccessPoint`.
+    /// Creates a new `DeleteMultiRegionAccessPointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

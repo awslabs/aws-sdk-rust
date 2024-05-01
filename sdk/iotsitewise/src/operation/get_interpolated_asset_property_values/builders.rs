@@ -56,7 +56,7 @@ impl
     }
 }
 impl GetInterpolatedAssetPropertyValuesFluentBuilder {
-    /// Creates a new `GetInterpolatedAssetPropertyValues`.
+    /// Creates a new `GetInterpolatedAssetPropertyValuesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

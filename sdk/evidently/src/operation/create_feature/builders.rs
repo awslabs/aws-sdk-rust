@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateFeatureFluentBuilder {
-    /// Creates a new `CreateFeature`.
+    /// Creates a new `CreateFeatureFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeactivateMFADeviceFluentBuilder {
-    /// Creates a new `DeactivateMFADevice`.
+    /// Creates a new `DeactivateMFADeviceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

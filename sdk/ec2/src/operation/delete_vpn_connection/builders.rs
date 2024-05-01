@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteVpnConnectionFluentBuilder {
-    /// Creates a new `DeleteVpnConnection`.
+    /// Creates a new `DeleteVpnConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

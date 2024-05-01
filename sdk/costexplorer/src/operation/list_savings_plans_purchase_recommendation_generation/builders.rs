@@ -27,7 +27,7 @@ impl crate::operation::list_savings_plans_purchase_recommendation_generation::bu
 pub struct ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::list_savings_plans_purchase_recommendation_generation::builders::ListSavingsPlansPurchaseRecommendationGenerationInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder {
-    /// Creates a new `ListSavingsPlansPurchaseRecommendationGeneration`.
+    /// Creates a new `ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

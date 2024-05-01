@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeSharedDirectoriesFluentBuilder {
-    /// Creates a new `DescribeSharedDirectories`.
+    /// Creates a new `DescribeSharedDirectoriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

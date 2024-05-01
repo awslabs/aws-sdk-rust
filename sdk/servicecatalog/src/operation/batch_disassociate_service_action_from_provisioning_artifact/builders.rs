@@ -24,7 +24,7 @@ impl crate::operation::batch_disassociate_service_action_from_provisioning_artif
 pub struct BatchDisassociateServiceActionFromProvisioningArtifactFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::batch_disassociate_service_action_from_provisioning_artifact::builders::BatchDisassociateServiceActionFromProvisioningArtifactInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -45,7 +45,7 @@ impl
     }
 }
 impl BatchDisassociateServiceActionFromProvisioningArtifactFluentBuilder {
-    /// Creates a new `BatchDisassociateServiceActionFromProvisioningArtifact`.
+    /// Creates a new `BatchDisassociateServiceActionFromProvisioningArtifactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

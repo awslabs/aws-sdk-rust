@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeactivateEvaluationFormFluentBuilder {
-    /// Creates a new `DeactivateEvaluationForm`.
+    /// Creates a new `DeactivateEvaluationFormFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

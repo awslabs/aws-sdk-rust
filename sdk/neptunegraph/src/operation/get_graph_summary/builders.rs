@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetGraphSummaryFluentBuilder {
-    /// Creates a new `GetGraphSummary`.
+    /// Creates a new `GetGraphSummaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -86,7 +86,7 @@ impl
     }
 }
 impl PutPipelineDefinitionFluentBuilder {
-    /// Creates a new `PutPipelineDefinition`.
+    /// Creates a new `PutPipelineDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

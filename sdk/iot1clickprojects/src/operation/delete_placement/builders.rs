@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeletePlacementFluentBuilder {
-    /// Creates a new `DeletePlacement`.
+    /// Creates a new `DeletePlacementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

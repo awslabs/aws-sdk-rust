@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpgradeReviewTemplateLensReviewFluentBuilder {
-    /// Creates a new `UpgradeReviewTemplateLensReview`.
+    /// Creates a new `UpgradeReviewTemplateLensReviewFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

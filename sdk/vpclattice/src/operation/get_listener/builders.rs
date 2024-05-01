@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetListenerFluentBuilder {
-    /// Creates a new `GetListener`.
+    /// Creates a new `GetListenerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

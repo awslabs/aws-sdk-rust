@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRecommenderConfigurationFluentBuilder {
-    /// Creates a new `DeleteRecommenderConfiguration`.
+    /// Creates a new `DeleteRecommenderConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetImportJobFluentBuilder {
-    /// Creates a new `GetImportJob`.
+    /// Creates a new `GetImportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

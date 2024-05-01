@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateLaunchProfileFluentBuilder {
-    /// Creates a new `CreateLaunchProfile`.
+    /// Creates a new `CreateLaunchProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

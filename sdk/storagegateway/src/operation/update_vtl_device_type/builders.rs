@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateVTLDeviceTypeFluentBuilder {
-    /// Creates a new `UpdateVTLDeviceType`.
+    /// Creates a new `UpdateVTLDeviceTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteEnvironmentAccountConnectionFluentBuilder {
-    /// Creates a new `DeleteEnvironmentAccountConnection`.
+    /// Creates a new `DeleteEnvironmentAccountConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

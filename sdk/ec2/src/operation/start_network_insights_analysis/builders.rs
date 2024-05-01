@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartNetworkInsightsAnalysisFluentBuilder {
-    /// Creates a new `StartNetworkInsightsAnalysis`.
+    /// Creates a new `StartNetworkInsightsAnalysisFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

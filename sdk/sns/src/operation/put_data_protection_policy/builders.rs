@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutDataProtectionPolicyFluentBuilder {
-    /// Creates a new `PutDataProtectionPolicy`.
+    /// Creates a new `PutDataProtectionPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

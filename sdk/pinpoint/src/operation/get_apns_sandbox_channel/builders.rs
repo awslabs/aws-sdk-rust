@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetApnsSandboxChannelFluentBuilder {
-    /// Creates a new `GetApnsSandboxChannel`.
+    /// Creates a new `GetApnsSandboxChannelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

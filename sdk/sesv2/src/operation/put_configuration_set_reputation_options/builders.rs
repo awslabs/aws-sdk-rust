@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutConfigurationSetReputationOptionsFluentBuilder {
-    /// Creates a new `PutConfigurationSetReputationOptions`.
+    /// Creates a new `PutConfigurationSetReputationOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

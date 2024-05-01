@@ -58,7 +58,7 @@ impl
     }
 }
 impl CopyDistributionFluentBuilder {
-    /// Creates a new `CopyDistribution`.
+    /// Creates a new `CopyDistributionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

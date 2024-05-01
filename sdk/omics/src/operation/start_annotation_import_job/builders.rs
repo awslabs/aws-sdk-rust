@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartAnnotationImportJobFluentBuilder {
-    /// Creates a new `StartAnnotationImportJob`.
+    /// Creates a new `StartAnnotationImportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

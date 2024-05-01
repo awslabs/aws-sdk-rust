@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdatePullRequestApprovalStateFluentBuilder {
-    /// Creates a new `UpdatePullRequestApprovalState`.
+    /// Creates a new `UpdatePullRequestApprovalStateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreatePrivateVirtualInterfaceFluentBuilder {
-    /// Creates a new `CreatePrivateVirtualInterface`.
+    /// Creates a new `CreatePrivateVirtualInterfaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

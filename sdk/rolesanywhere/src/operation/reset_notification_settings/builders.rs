@@ -49,7 +49,7 @@ impl
     }
 }
 impl ResetNotificationSettingsFluentBuilder {
-    /// Creates a new `ResetNotificationSettings`.
+    /// Creates a new `ResetNotificationSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

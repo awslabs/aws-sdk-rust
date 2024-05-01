@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeSSLPoliciesFluentBuilder {
-    /// Creates a new `DescribeSSLPolicies`.
+    /// Creates a new `DescribeSSLPoliciesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListScheduleGroupsFluentBuilder {
-    /// Creates a new `ListScheduleGroups`.
+    /// Creates a new `ListScheduleGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

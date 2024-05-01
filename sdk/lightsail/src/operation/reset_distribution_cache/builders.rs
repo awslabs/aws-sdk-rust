@@ -49,7 +49,7 @@ impl
     }
 }
 impl ResetDistributionCacheFluentBuilder {
-    /// Creates a new `ResetDistributionCache`.
+    /// Creates a new `ResetDistributionCacheFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutSessionFluentBuilder {
-    /// Creates a new `PutSession`.
+    /// Creates a new `PutSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

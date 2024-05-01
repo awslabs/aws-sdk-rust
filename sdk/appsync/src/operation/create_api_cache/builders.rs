@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateApiCacheFluentBuilder {
-    /// Creates a new `CreateApiCache`.
+    /// Creates a new `CreateApiCacheFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

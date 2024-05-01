@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAdapterVersionFluentBuilder {
-    /// Creates a new `GetAdapterVersion`.
+    /// Creates a new `GetAdapterVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

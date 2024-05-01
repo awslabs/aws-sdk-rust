@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAccessPreviewFluentBuilder {
-    /// Creates a new `CreateAccessPreview`.
+    /// Creates a new `CreateAccessPreviewFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

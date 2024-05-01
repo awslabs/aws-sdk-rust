@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateConfiguredAudienceModelAssociationFluentBuilder {
-    /// Creates a new `CreateConfiguredAudienceModelAssociation`.
+    /// Creates a new `CreateConfiguredAudienceModelAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

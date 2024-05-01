@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeStreamProcessorFluentBuilder {
-    /// Creates a new `DescribeStreamProcessor`.
+    /// Creates a new `DescribeStreamProcessorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

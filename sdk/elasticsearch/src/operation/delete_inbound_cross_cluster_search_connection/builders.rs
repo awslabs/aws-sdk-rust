@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteInboundCrossClusterSearchConnectionFluentBuilder {
-    /// Creates a new `DeleteInboundCrossClusterSearchConnection`.
+    /// Creates a new `DeleteInboundCrossClusterSearchConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

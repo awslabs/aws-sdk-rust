@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateContainerFluentBuilder {
-    /// Creates a new `CreateContainer`.
+    /// Creates a new `CreateContainerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

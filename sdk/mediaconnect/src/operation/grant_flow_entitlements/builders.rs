@@ -48,7 +48,7 @@ impl
     }
 }
 impl GrantFlowEntitlementsFluentBuilder {
-    /// Creates a new `GrantFlowEntitlements`.
+    /// Creates a new `GrantFlowEntitlementsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

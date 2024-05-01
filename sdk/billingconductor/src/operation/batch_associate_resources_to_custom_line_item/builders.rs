@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchAssociateResourcesToCustomLineItemFluentBuilder {
-    /// Creates a new `BatchAssociateResourcesToCustomLineItem`.
+    /// Creates a new `BatchAssociateResourcesToCustomLineItemFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

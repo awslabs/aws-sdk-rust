@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteApplicationSnapshotFluentBuilder {
-    /// Creates a new `DeleteApplicationSnapshot`.
+    /// Creates a new `DeleteApplicationSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

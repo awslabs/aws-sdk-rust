@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeMaintenanceWindowTasksFluentBuilder {
-    /// Creates a new `DescribeMaintenanceWindowTasks`.
+    /// Creates a new `DescribeMaintenanceWindowTasksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

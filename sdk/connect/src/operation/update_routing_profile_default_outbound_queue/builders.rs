@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateRoutingProfileDefaultOutboundQueueFluentBuilder {
-    /// Creates a new `UpdateRoutingProfileDefaultOutboundQueue`.
+    /// Creates a new `UpdateRoutingProfileDefaultOutboundQueueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutClassificationExportConfigurationFluentBuilder {
-    /// Creates a new `PutClassificationExportConfiguration`.
+    /// Creates a new `PutClassificationExportConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

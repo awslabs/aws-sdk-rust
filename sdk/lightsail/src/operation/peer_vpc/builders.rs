@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::peer
     }
 }
 impl PeerVpcFluentBuilder {
-    /// Creates a new `PeerVpc`.
+    /// Creates a new `PeerVpcFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

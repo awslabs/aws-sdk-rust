@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartContinuousExportFluentBuilder {
-    /// Creates a new `StartContinuousExport`.
+    /// Creates a new `StartContinuousExportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

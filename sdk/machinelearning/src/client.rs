@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,36 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait for `batch_prediction_available`
+    fn wait_until_batch_prediction_available(&self) -> crate::waiters::batch_prediction_available::BatchPredictionAvailableFluentBuilder;
+    /// Wait for `data_source_available`
+    fn wait_until_data_source_available(&self) -> crate::waiters::data_source_available::DataSourceAvailableFluentBuilder;
+    /// Wait for `evaluation_available`
+    fn wait_until_evaluation_available(&self) -> crate::waiters::evaluation_available::EvaluationAvailableFluentBuilder;
+    /// Wait for `ml_model_available`
+    fn wait_until_ml_model_available(&self) -> crate::waiters::ml_model_available::MlModelAvailableFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_batch_prediction_available(&self) -> crate::waiters::batch_prediction_available::BatchPredictionAvailableFluentBuilder {
+        crate::waiters::batch_prediction_available::BatchPredictionAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_data_source_available(&self) -> crate::waiters::data_source_available::DataSourceAvailableFluentBuilder {
+        crate::waiters::data_source_available::DataSourceAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_evaluation_available(&self) -> crate::waiters::evaluation_available::EvaluationAvailableFluentBuilder {
+        crate::waiters::evaluation_available::EvaluationAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_ml_model_available(&self) -> crate::waiters::ml_model_available::MlModelAvailableFluentBuilder {
+        crate::waiters::ml_model_available::MlModelAvailableFluentBuilder::new(self.handle.clone())
     }
 }
 

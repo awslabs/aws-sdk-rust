@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRelationalDatabaseEventsFluentBuilder {
-    /// Creates a new `GetRelationalDatabaseEvents`.
+    /// Creates a new `GetRelationalDatabaseEventsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

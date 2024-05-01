@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAutoSnapshotFluentBuilder {
-    /// Creates a new `DeleteAutoSnapshot`.
+    /// Creates a new `DeleteAutoSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

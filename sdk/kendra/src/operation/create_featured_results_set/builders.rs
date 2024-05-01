@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateFeaturedResultsSetFluentBuilder {
-    /// Creates a new `CreateFeaturedResultsSet`.
+    /// Creates a new `CreateFeaturedResultsSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

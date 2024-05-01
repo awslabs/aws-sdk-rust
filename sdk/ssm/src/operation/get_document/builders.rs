@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDocumentFluentBuilder {
-    /// Creates a new `GetDocument`.
+    /// Creates a new `GetDocumentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

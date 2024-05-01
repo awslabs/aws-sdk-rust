@@ -49,7 +49,7 @@ impl
     }
 }
 impl CancelReplicationTaskAssessmentRunFluentBuilder {
-    /// Creates a new `CancelReplicationTaskAssessmentRun`.
+    /// Creates a new `CancelReplicationTaskAssessmentRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

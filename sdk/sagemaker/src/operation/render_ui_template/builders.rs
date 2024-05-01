@@ -48,7 +48,7 @@ impl
     }
 }
 impl RenderUiTemplateFluentBuilder {
-    /// Creates a new `RenderUiTemplate`.
+    /// Creates a new `RenderUiTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

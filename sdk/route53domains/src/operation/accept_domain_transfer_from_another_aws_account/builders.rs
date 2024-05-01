@@ -50,7 +50,7 @@ impl
     }
 }
 impl AcceptDomainTransferFromAnotherAwsAccountFluentBuilder {
-    /// Creates a new `AcceptDomainTransferFromAnotherAwsAccount`.
+    /// Creates a new `AcceptDomainTransferFromAnotherAwsAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

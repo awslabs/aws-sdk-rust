@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateSignalMapFluentBuilder {
-    /// Creates a new `CreateSignalMap`.
+    /// Creates a new `CreateSignalMapFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

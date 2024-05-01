@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeGlobalReplicationGroupsFluentBuilder {
-    /// Creates a new `DescribeGlobalReplicationGroups`.
+    /// Creates a new `DescribeGlobalReplicationGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

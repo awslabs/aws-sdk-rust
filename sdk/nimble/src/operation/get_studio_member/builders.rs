@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetStudioMemberFluentBuilder {
-    /// Creates a new `GetStudioMember`.
+    /// Creates a new `GetStudioMemberFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

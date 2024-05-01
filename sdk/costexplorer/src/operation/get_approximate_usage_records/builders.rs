@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetApproximateUsageRecordsFluentBuilder {
-    /// Creates a new `GetApproximateUsageRecords`.
+    /// Creates a new `GetApproximateUsageRecordsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

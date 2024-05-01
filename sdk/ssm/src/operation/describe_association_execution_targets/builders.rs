@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAssociationExecutionTargetsFluentBuilder {
-    /// Creates a new `DescribeAssociationExecutionTargets`.
+    /// Creates a new `DescribeAssociationExecutionTargetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

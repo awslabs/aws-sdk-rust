@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetAppInstanceStreamingConfigurationsFluentBuilder {
-    /// Creates a new `GetAppInstanceStreamingConfigurations`.
+    /// Creates a new `GetAppInstanceStreamingConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

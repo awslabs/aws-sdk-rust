@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRevisionFluentBuilder {
-    /// Creates a new `DeleteRevision`.
+    /// Creates a new `DeleteRevisionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

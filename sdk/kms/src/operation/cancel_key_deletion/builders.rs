@@ -54,7 +54,7 @@ impl
     }
 }
 impl CancelKeyDeletionFluentBuilder {
-    /// Creates a new `CancelKeyDeletion`.
+    /// Creates a new `CancelKeyDeletionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

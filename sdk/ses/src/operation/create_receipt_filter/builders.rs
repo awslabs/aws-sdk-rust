@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateReceiptFilterFluentBuilder {
-    /// Creates a new `CreateReceiptFilter`.
+    /// Creates a new `CreateReceiptFilterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

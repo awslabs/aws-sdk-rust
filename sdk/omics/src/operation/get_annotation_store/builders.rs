@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAnnotationStoreFluentBuilder {
-    /// Creates a new `GetAnnotationStore`.
+    /// Creates a new `GetAnnotationStoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

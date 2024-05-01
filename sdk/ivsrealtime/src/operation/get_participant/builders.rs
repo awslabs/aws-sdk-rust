@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetParticipantFluentBuilder {
-    /// Creates a new `GetParticipant`.
+    /// Creates a new `GetParticipantFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

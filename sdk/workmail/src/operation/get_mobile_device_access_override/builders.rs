@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMobileDeviceAccessOverrideFluentBuilder {
-    /// Creates a new `GetMobileDeviceAccessOverride`.
+    /// Creates a new `GetMobileDeviceAccessOverrideFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

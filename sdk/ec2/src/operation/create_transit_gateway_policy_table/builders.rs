@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateTransitGatewayPolicyTableFluentBuilder {
-    /// Creates a new `CreateTransitGatewayPolicyTable`.
+    /// Creates a new `CreateTransitGatewayPolicyTableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

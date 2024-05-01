@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListJourneysFluentBuilder {
-    /// Creates a new `ListJourneys`.
+    /// Creates a new `ListJourneysFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

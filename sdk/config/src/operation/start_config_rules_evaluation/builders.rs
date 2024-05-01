@@ -65,7 +65,7 @@ impl
     }
 }
 impl StartConfigRulesEvaluationFluentBuilder {
-    /// Creates a new `StartConfigRulesEvaluation`.
+    /// Creates a new `StartConfigRulesEvaluationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

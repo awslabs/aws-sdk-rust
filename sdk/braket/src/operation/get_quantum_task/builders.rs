@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetQuantumTaskFluentBuilder {
-    /// Creates a new `GetQuantumTask`.
+    /// Creates a new `GetQuantumTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

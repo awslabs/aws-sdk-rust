@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendProjectSessionActionFluentBuilder {
-    /// Creates a new `SendProjectSessionAction`.
+    /// Creates a new `SendProjectSessionActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

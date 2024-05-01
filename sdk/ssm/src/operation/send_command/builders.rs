@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendCommandFluentBuilder {
-    /// Creates a new `SendCommand`.
+    /// Creates a new `SendCommandFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

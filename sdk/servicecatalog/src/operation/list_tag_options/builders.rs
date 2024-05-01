@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTagOptionsFluentBuilder {
-    /// Creates a new `ListTagOptions`.
+    /// Creates a new `ListTagOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

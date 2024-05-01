@@ -89,7 +89,7 @@ impl
     }
 }
 impl UpdateStateMachineFluentBuilder {
-    /// Creates a new `UpdateStateMachine`.
+    /// Creates a new `UpdateStateMachineFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

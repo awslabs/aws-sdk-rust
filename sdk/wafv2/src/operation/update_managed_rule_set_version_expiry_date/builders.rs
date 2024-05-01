@@ -51,7 +51,7 @@ impl
     }
 }
 impl UpdateManagedRuleSetVersionExpiryDateFluentBuilder {
-    /// Creates a new `UpdateManagedRuleSetVersionExpiryDate`.
+    /// Creates a new `UpdateManagedRuleSetVersionExpiryDateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSupportedResourceTypesFluentBuilder {
-    /// Creates a new `ListSupportedResourceTypes`.
+    /// Creates a new `ListSupportedResourceTypesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

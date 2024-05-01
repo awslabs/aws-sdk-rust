@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeClusterVersionsFluentBuilder {
-    /// Creates a new `DescribeClusterVersions`.
+    /// Creates a new `DescribeClusterVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

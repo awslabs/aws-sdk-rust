@@ -52,7 +52,7 @@ impl
     }
 }
 impl UpdateResourceFluentBuilder {
-    /// Creates a new `UpdateResource`.
+    /// Creates a new `UpdateResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

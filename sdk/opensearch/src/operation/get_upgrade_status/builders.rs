@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetUpgradeStatusFluentBuilder {
-    /// Creates a new `GetUpgradeStatus`.
+    /// Creates a new `GetUpgradeStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

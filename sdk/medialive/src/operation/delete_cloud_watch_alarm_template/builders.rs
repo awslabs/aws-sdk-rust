@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCloudWatchAlarmTemplateFluentBuilder {
-    /// Creates a new `DeleteCloudWatchAlarmTemplate`.
+    /// Creates a new `DeleteCloudWatchAlarmTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

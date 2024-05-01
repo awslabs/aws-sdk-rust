@@ -54,7 +54,7 @@ impl
     }
 }
 impl UngroupResourcesFluentBuilder {
-    /// Creates a new `UngroupResources`.
+    /// Creates a new `UngroupResourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

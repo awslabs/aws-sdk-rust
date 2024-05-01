@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDeleteDevicePositionHistoryFluentBuilder {
-    /// Creates a new `BatchDeleteDevicePositionHistory`.
+    /// Creates a new `BatchDeleteDevicePositionHistoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

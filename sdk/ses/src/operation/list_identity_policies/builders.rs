@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListIdentityPoliciesFluentBuilder {
-    /// Creates a new `ListIdentityPolicies`.
+    /// Creates a new `ListIdentityPoliciesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

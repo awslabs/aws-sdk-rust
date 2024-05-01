@@ -56,7 +56,7 @@ impl
     }
 }
 impl DeleteAccessGrantFluentBuilder {
-    /// Creates a new `DeleteAccessGrant`.
+    /// Creates a new `DeleteAccessGrantFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

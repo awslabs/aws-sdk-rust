@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeElasticsearchInstanceTypeLimitsFluentBuilder {
-    /// Creates a new `DescribeElasticsearchInstanceTypeLimits`.
+    /// Creates a new `DescribeElasticsearchInstanceTypeLimitsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

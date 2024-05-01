@@ -52,7 +52,7 @@ impl
     }
 }
 impl BeginTransactionFluentBuilder {
-    /// Creates a new `BeginTransaction`.
+    /// Creates a new `BeginTransactionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

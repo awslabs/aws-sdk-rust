@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateUsagePlanFluentBuilder {
-    /// Creates a new `UpdateUsagePlan`.
+    /// Creates a new `UpdateUsagePlanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

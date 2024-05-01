@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartAssociationsOnceFluentBuilder {
-    /// Creates a new `StartAssociationsOnce`.
+    /// Creates a new `StartAssociationsOnceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

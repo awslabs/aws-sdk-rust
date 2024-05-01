@@ -24,7 +24,7 @@ impl crate::operation::delete_local_gateway_route_table_virtual_interface_group_
 pub struct DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::builders::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
                 crate::client::customize::internal::CustomizableSend<
@@ -45,7 +45,7 @@ impl
                 }
             }
 impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
-    /// Creates a new `DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation`.
+    /// Creates a new `DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

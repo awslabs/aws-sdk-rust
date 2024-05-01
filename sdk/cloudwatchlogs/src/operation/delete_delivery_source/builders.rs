@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteDeliverySourceFluentBuilder {
-    /// Creates a new `DeleteDeliverySource`.
+    /// Creates a new `DeleteDeliverySourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

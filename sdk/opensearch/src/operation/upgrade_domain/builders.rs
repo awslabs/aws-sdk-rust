@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpgradeDomainFluentBuilder {
-    /// Creates a new `UpgradeDomain`.
+    /// Creates a new `UpgradeDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

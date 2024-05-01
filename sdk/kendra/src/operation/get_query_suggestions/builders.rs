@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetQuerySuggestionsFluentBuilder {
-    /// Creates a new `GetQuerySuggestions`.
+    /// Creates a new `GetQuerySuggestionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

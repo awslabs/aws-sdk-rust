@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutMailboxPermissionsFluentBuilder {
-    /// Creates a new `PutMailboxPermissions`.
+    /// Creates a new `PutMailboxPermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

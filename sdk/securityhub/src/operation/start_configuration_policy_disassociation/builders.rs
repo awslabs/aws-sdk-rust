@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartConfigurationPolicyDisassociationFluentBuilder {
-    /// Creates a new `StartConfigurationPolicyDisassociation`.
+    /// Creates a new `StartConfigurationPolicyDisassociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

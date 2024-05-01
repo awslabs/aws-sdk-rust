@@ -48,7 +48,7 @@ impl
     }
 }
 impl AcknowledgeJobFluentBuilder {
-    /// Creates a new `AcknowledgeJob`.
+    /// Creates a new `AcknowledgeJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

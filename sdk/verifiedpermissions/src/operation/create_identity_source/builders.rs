@@ -57,7 +57,7 @@ impl
     }
 }
 impl CreateIdentitySourceFluentBuilder {
-    /// Creates a new `CreateIdentitySource`.
+    /// Creates a new `CreateIdentitySourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

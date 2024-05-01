@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateFileSystemAliasesFluentBuilder {
-    /// Creates a new `DisassociateFileSystemAliases`.
+    /// Creates a new `DisassociateFileSystemAliasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

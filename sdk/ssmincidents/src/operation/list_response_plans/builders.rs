@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListResponsePlansFluentBuilder {
-    /// Creates a new `ListResponsePlans`.
+    /// Creates a new `ListResponsePlansFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

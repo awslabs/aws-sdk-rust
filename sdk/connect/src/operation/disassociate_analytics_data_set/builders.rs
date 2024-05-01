@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateAnalyticsDataSetFluentBuilder {
-    /// Creates a new `DisassociateAnalyticsDataSet`.
+    /// Creates a new `DisassociateAnalyticsDataSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

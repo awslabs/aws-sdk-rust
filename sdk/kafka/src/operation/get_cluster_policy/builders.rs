@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetClusterPolicyFluentBuilder {
-    /// Creates a new `GetClusterPolicy`.
+    /// Creates a new `GetClusterPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteVariableFluentBuilder {
-    /// Creates a new `DeleteVariable`.
+    /// Creates a new `DeleteVariableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

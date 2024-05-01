@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResetAuthorizersCacheFluentBuilder {
-    /// Creates a new `ResetAuthorizersCache`.
+    /// Creates a new `ResetAuthorizersCacheFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl ExecuteOpenCypherExplainQueryFluentBuilder {
-    /// Creates a new `ExecuteOpenCypherExplainQuery`.
+    /// Creates a new `ExecuteOpenCypherExplainQueryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteKeyPairFluentBuilder {
-    /// Creates a new `DeleteKeyPair`.
+    /// Creates a new `DeleteKeyPairFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

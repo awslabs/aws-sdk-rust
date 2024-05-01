@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDevicesInPlacementFluentBuilder {
-    /// Creates a new `GetDevicesInPlacement`.
+    /// Creates a new `GetDevicesInPlacementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

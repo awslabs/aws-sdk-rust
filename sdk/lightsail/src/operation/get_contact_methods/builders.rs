@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetContactMethodsFluentBuilder {
-    /// Creates a new `GetContactMethods`.
+    /// Creates a new `GetContactMethodsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

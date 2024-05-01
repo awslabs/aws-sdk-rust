@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSensitiveDataOccurrencesFluentBuilder {
-    /// Creates a new `GetSensitiveDataOccurrences`.
+    /// Creates a new `GetSensitiveDataOccurrencesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

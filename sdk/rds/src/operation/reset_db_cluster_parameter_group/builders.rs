@@ -51,7 +51,7 @@ impl
     }
 }
 impl ResetDBClusterParameterGroupFluentBuilder {
-    /// Creates a new `ResetDBClusterParameterGroup`.
+    /// Creates a new `ResetDBClusterParameterGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

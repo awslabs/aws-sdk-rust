@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListQuickResponsesFluentBuilder {
-    /// Creates a new `ListQuickResponses`.
+    /// Creates a new `ListQuickResponsesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

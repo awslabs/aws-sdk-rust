@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRouteSettingsFluentBuilder {
-    /// Creates a new `DeleteRouteSettings`.
+    /// Creates a new `DeleteRouteSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

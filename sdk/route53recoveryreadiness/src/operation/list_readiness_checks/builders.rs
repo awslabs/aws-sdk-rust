@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListReadinessChecksFluentBuilder {
-    /// Creates a new `ListReadinessChecks`.
+    /// Creates a new `ListReadinessChecksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateTopicRuleDestinationFluentBuilder {
-    /// Creates a new `UpdateTopicRuleDestination`.
+    /// Creates a new `UpdateTopicRuleDestinationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

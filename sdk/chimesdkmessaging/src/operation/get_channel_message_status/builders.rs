@@ -84,7 +84,7 @@ impl
     }
 }
 impl GetChannelMessageStatusFluentBuilder {
-    /// Creates a new `GetChannelMessageStatus`.
+    /// Creates a new `GetChannelMessageStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

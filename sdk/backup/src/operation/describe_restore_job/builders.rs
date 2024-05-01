@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeRestoreJobFluentBuilder {
-    /// Creates a new `DescribeRestoreJob`.
+    /// Creates a new `DescribeRestoreJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

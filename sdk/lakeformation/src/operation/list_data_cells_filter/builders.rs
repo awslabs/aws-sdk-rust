@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDataCellsFilterFluentBuilder {
-    /// Creates a new `ListDataCellsFilter`.
+    /// Creates a new `ListDataCellsFilterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

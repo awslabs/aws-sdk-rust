@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAccessTokenFluentBuilder {
-    /// Creates a new `GetAccessToken`.
+    /// Creates a new `GetAccessTokenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

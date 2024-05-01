@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListLanguageModelsFluentBuilder {
-    /// Creates a new `ListLanguageModels`.
+    /// Creates a new `ListLanguageModelsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

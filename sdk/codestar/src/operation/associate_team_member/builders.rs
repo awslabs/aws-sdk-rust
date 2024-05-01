@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateTeamMemberFluentBuilder {
-    /// Creates a new `AssociateTeamMember`.
+    /// Creates a new `AssociateTeamMemberFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

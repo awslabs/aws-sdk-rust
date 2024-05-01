@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMatchingWorkflowFluentBuilder {
-    /// Creates a new `DeleteMatchingWorkflow`.
+    /// Creates a new `DeleteMatchingWorkflowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

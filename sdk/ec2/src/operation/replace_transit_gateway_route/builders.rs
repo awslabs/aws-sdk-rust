@@ -48,7 +48,7 @@ impl
     }
 }
 impl ReplaceTransitGatewayRouteFluentBuilder {
-    /// Creates a new `ReplaceTransitGatewayRoute`.
+    /// Creates a new `ReplaceTransitGatewayRouteFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

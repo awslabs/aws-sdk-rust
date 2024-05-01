@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListOutpostsWithS3FluentBuilder {
-    /// Creates a new `ListOutpostsWithS3`.
+    /// Creates a new `ListOutpostsWithS3FluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

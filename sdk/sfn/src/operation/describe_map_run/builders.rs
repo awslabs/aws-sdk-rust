@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeMapRunFluentBuilder {
-    /// Creates a new `DescribeMapRun`.
+    /// Creates a new `DescribeMapRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

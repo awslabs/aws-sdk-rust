@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeUpdateActionsFluentBuilder {
-    /// Creates a new `DescribeUpdateActions`.
+    /// Creates a new `DescribeUpdateActionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

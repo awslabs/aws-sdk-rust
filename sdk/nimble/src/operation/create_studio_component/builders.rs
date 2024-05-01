@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateStudioComponentFluentBuilder {
-    /// Creates a new `CreateStudioComponent`.
+    /// Creates a new `CreateStudioComponentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

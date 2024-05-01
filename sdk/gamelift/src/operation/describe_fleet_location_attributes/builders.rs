@@ -59,7 +59,7 @@ impl
     }
 }
 impl DescribeFleetLocationAttributesFluentBuilder {
-    /// Creates a new `DescribeFleetLocationAttributes`.
+    /// Creates a new `DescribeFleetLocationAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

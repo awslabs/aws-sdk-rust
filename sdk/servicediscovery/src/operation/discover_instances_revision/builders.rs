@@ -48,7 +48,7 @@ impl
     }
 }
 impl DiscoverInstancesRevisionFluentBuilder {
-    /// Creates a new `DiscoverInstancesRevision`.
+    /// Creates a new `DiscoverInstancesRevisionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListHealthChecksFluentBuilder {
-    /// Creates a new `ListHealthChecks`.
+    /// Creates a new `ListHealthChecksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

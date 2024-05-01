@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetApplicationRevisionFluentBuilder {
-    /// Creates a new `GetApplicationRevision`.
+    /// Creates a new `GetApplicationRevisionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

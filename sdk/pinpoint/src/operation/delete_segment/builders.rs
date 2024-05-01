@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSegmentFluentBuilder {
-    /// Creates a new `DeleteSegment`.
+    /// Creates a new `DeleteSegmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

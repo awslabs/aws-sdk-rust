@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListUserSettingsFluentBuilder {
-    /// Creates a new `ListUserSettings`.
+    /// Creates a new `ListUserSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeNatGatewaysFluentBuilder {
-    /// Creates a new `DescribeNatGateways`.
+    /// Creates a new `DescribeNatGatewaysFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

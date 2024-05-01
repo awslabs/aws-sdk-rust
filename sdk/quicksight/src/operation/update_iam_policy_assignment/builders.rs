@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateIAMPolicyAssignmentFluentBuilder {
-    /// Creates a new `UpdateIAMPolicyAssignment`.
+    /// Creates a new `UpdateIAMPolicyAssignmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

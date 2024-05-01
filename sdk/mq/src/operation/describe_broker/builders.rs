@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeBrokerFluentBuilder {
-    /// Creates a new `DescribeBroker`.
+    /// Creates a new `DescribeBrokerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

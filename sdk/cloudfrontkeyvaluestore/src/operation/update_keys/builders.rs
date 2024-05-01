@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateKeysFluentBuilder {
-    /// Creates a new `UpdateKeys`.
+    /// Creates a new `UpdateKeysFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

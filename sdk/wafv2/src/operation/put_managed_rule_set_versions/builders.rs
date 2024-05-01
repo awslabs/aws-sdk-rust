@@ -53,7 +53,7 @@ impl
     }
 }
 impl PutManagedRuleSetVersionsFluentBuilder {
-    /// Creates a new `PutManagedRuleSetVersions`.
+    /// Creates a new `PutManagedRuleSetVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

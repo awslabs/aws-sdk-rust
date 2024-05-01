@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetAutoMergingPreviewFluentBuilder {
-    /// Creates a new `GetAutoMergingPreview`.
+    /// Creates a new `GetAutoMergingPreviewFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

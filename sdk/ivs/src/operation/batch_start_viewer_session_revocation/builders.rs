@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchStartViewerSessionRevocationFluentBuilder {
-    /// Creates a new `BatchStartViewerSessionRevocation`.
+    /// Creates a new `BatchStartViewerSessionRevocationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

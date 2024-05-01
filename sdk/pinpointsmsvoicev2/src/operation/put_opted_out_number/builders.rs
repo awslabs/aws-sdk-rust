@@ -49,7 +49,7 @@ impl
     }
 }
 impl PutOptedOutNumberFluentBuilder {
-    /// Creates a new `PutOptedOutNumber`.
+    /// Creates a new `PutOptedOutNumberFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

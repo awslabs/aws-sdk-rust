@@ -49,7 +49,7 @@ impl
     }
 }
 impl StopActivityStreamFluentBuilder {
-    /// Creates a new `StopActivityStream`.
+    /// Creates a new `StopActivityStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

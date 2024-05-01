@@ -48,7 +48,7 @@ impl
     }
 }
 impl RestoreDocumentVersionsFluentBuilder {
-    /// Creates a new `RestoreDocumentVersions`.
+    /// Creates a new `RestoreDocumentVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

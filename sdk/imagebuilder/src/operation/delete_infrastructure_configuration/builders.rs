@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteInfrastructureConfigurationFluentBuilder {
-    /// Creates a new `DeleteInfrastructureConfiguration`.
+    /// Creates a new `DeleteInfrastructureConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

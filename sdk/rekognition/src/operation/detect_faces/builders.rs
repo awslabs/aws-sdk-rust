@@ -54,7 +54,7 @@ impl
     }
 }
 impl DetectFacesFluentBuilder {
-    /// Creates a new `DetectFaces`.
+    /// Creates a new `DetectFacesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

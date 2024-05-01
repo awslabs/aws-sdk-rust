@@ -48,7 +48,7 @@ impl
     }
 }
 impl InvalidateProjectCacheFluentBuilder {
-    /// Creates a new `InvalidateProjectCache`.
+    /// Creates a new `InvalidateProjectCacheFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

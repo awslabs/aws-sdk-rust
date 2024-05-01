@@ -48,7 +48,7 @@ impl
     }
 }
 impl ScheduleRunFluentBuilder {
-    /// Creates a new `ScheduleRun`.
+    /// Creates a new `ScheduleRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

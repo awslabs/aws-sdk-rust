@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetTrustStoreRevocationContentFluentBuilder {
-    /// Creates a new `GetTrustStoreRevocationContent`.
+    /// Creates a new `GetTrustStoreRevocationContentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

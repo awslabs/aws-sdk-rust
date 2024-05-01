@@ -50,7 +50,7 @@ impl
     }
 }
 impl StartCelebrityRecognitionFluentBuilder {
-    /// Creates a new `StartCelebrityRecognition`.
+    /// Creates a new `StartCelebrityRecognitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

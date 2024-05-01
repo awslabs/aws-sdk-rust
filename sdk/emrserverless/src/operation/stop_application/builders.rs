@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopApplicationFluentBuilder {
-    /// Creates a new `StopApplication`.
+    /// Creates a new `StopApplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

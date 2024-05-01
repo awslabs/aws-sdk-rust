@@ -102,7 +102,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::expo
     }
 }
 impl ExportKeyFluentBuilder {
-    /// Creates a new `ExportKey`.
+    /// Creates a new `ExportKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

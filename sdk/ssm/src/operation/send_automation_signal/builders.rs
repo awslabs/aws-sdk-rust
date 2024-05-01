@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendAutomationSignalFluentBuilder {
-    /// Creates a new `SendAutomationSignal`.
+    /// Creates a new `SendAutomationSignalFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

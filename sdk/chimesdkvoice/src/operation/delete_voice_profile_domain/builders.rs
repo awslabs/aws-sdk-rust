@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteVoiceProfileDomainFluentBuilder {
-    /// Creates a new `DeleteVoiceProfileDomain`.
+    /// Creates a new `DeleteVoiceProfileDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

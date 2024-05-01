@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateAppBlockBuilderFluentBuilder {
-    /// Creates a new `UpdateAppBlockBuilder`.
+    /// Creates a new `UpdateAppBlockBuilderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

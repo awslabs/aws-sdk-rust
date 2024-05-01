@@ -49,7 +49,7 @@ impl
     }
 }
 impl CancelStatementFluentBuilder {
-    /// Creates a new `CancelStatement`.
+    /// Creates a new `CancelStatementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

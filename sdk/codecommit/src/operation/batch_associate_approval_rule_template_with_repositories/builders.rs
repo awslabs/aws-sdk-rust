@@ -24,7 +24,7 @@ impl crate::operation::batch_associate_approval_rule_template_with_repositories:
 pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::batch_associate_approval_rule_template_with_repositories::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -45,7 +45,7 @@ impl
     }
 }
 impl BatchAssociateApprovalRuleTemplateWithRepositoriesFluentBuilder {
-    /// Creates a new `BatchAssociateApprovalRuleTemplateWithRepositories`.
+    /// Creates a new `BatchAssociateApprovalRuleTemplateWithRepositoriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

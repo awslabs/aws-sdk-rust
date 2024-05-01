@@ -62,7 +62,7 @@ impl
     }
 }
 impl ClaimGameServerFluentBuilder {
-    /// Creates a new `ClaimGameServer`.
+    /// Creates a new `ClaimGameServerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

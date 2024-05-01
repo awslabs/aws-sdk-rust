@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetAuthorizationTokenFluentBuilder {
-    /// Creates a new `GetAuthorizationToken`.
+    /// Creates a new `GetAuthorizationTokenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

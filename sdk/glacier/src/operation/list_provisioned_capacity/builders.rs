@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListProvisionedCapacityFluentBuilder {
-    /// Creates a new `ListProvisionedCapacity`.
+    /// Creates a new `ListProvisionedCapacityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

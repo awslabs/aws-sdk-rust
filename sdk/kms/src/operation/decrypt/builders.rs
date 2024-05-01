@@ -74,7 +74,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::decr
     }
 }
 impl DecryptFluentBuilder {
-    /// Creates a new `Decrypt`.
+    /// Creates a new `DecryptFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateLaunchConfigurationFluentBuilder {
-    /// Creates a new `UpdateLaunchConfiguration`.
+    /// Creates a new `UpdateLaunchConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

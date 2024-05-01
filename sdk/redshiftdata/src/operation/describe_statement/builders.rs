@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeStatementFluentBuilder {
-    /// Creates a new `DescribeStatement`.
+    /// Creates a new `DescribeStatementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

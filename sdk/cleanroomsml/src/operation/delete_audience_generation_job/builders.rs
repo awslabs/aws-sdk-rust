@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAudienceGenerationJobFluentBuilder {
-    /// Creates a new `DeleteAudienceGenerationJob`.
+    /// Creates a new `DeleteAudienceGenerationJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

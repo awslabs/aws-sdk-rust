@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSubChannelsFluentBuilder {
-    /// Creates a new `ListSubChannels`.
+    /// Creates a new `ListSubChannelsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

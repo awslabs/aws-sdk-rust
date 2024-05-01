@@ -43,7 +43,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::impo
     }
 }
 impl ImportCrlFluentBuilder {
-    /// Creates a new `ImportCrl`.
+    /// Creates a new `ImportCrlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

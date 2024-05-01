@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDatasourcePackagesFluentBuilder {
-    /// Creates a new `ListDatasourcePackages`.
+    /// Creates a new `ListDatasourcePackagesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

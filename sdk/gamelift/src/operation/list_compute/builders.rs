@@ -60,7 +60,7 @@ impl
     }
 }
 impl ListComputeFluentBuilder {
-    /// Creates a new `ListCompute`.
+    /// Creates a new `ListComputeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -58,7 +58,7 @@ impl
     }
 }
 impl UpdateRealtimeLogConfigFluentBuilder {
-    /// Creates a new `UpdateRealtimeLogConfig`.
+    /// Creates a new `UpdateRealtimeLogConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

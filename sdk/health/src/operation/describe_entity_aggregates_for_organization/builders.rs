@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeEntityAggregatesForOrganizationFluentBuilder {
-    /// Creates a new `DescribeEntityAggregatesForOrganization`.
+    /// Creates a new `DescribeEntityAggregatesForOrganizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

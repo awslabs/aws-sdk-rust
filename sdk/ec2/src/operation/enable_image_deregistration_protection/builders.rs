@@ -50,7 +50,7 @@ impl
     }
 }
 impl EnableImageDeregistrationProtectionFluentBuilder {
-    /// Creates a new `EnableImageDeregistrationProtection`.
+    /// Creates a new `EnableImageDeregistrationProtectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

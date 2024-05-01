@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePricingRuleFluentBuilder {
-    /// Creates a new `DeletePricingRule`.
+    /// Creates a new `DeletePricingRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

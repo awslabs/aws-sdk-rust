@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteLocalGatewayRouteTableFluentBuilder {
-    /// Creates a new `DeleteLocalGatewayRouteTable`.
+    /// Creates a new `DeleteLocalGatewayRouteTableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

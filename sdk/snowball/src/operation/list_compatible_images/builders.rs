@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCompatibleImagesFluentBuilder {
-    /// Creates a new `ListCompatibleImages`.
+    /// Creates a new `ListCompatibleImagesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetNamedQueryFluentBuilder {
-    /// Creates a new `GetNamedQuery`.
+    /// Creates a new `GetNamedQueryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

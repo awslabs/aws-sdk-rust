@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveKnowledgeBaseTemplateUriFluentBuilder {
-    /// Creates a new `RemoveKnowledgeBaseTemplateUri`.
+    /// Creates a new `RemoveKnowledgeBaseTemplateUriFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

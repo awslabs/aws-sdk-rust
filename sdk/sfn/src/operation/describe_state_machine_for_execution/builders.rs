@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeStateMachineForExecutionFluentBuilder {
-    /// Creates a new `DescribeStateMachineForExecution`.
+    /// Creates a new `DescribeStateMachineForExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

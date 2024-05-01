@@ -48,7 +48,7 @@ impl
     }
 }
 impl QueryLineageFluentBuilder {
-    /// Creates a new `QueryLineage`.
+    /// Creates a new `QueryLineageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

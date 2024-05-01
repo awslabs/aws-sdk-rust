@@ -62,7 +62,7 @@ impl
     }
 }
 impl ListUtteranceAnalyticsDataFluentBuilder {
-    /// Creates a new `ListUtteranceAnalyticsData`.
+    /// Creates a new `ListUtteranceAnalyticsDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

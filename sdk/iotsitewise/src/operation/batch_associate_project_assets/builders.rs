@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchAssociateProjectAssetsFluentBuilder {
-    /// Creates a new `BatchAssociateProjectAssets`.
+    /// Creates a new `BatchAssociateProjectAssetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

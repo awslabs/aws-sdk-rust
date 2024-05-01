@@ -50,7 +50,7 @@ impl
     }
 }
 impl StartContactEvaluationFluentBuilder {
-    /// Creates a new `StartContactEvaluation`.
+    /// Creates a new `StartContactEvaluationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

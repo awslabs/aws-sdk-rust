@@ -56,7 +56,7 @@ impl
     }
 }
 impl ListConfigurationHistoryFluentBuilder {
-    /// Creates a new `ListConfigurationHistory`.
+    /// Creates a new `ListConfigurationHistoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

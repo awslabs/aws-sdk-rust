@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeApplicationStateFluentBuilder {
-    /// Creates a new `DescribeApplicationState`.
+    /// Creates a new `DescribeApplicationStateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

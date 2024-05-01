@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeCodeReviewFluentBuilder {
-    /// Creates a new `DescribeCodeReview`.
+    /// Creates a new `DescribeCodeReviewFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

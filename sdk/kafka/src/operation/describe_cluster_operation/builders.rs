@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeClusterOperationFluentBuilder {
-    /// Creates a new `DescribeClusterOperation`.
+    /// Creates a new `DescribeClusterOperationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

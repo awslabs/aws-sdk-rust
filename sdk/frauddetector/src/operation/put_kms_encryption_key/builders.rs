@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutKMSEncryptionKeyFluentBuilder {
-    /// Creates a new `PutKMSEncryptionKey`.
+    /// Creates a new `PutKMSEncryptionKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

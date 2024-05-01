@@ -51,7 +51,7 @@ impl
     }
 }
 impl SetLoadBalancerPoliciesForBackendServerFluentBuilder {
-    /// Creates a new `SetLoadBalancerPoliciesForBackendServer`.
+    /// Creates a new `SetLoadBalancerPoliciesForBackendServerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteWebhookFluentBuilder {
-    /// Creates a new `DeleteWebhook`.
+    /// Creates a new `DeleteWebhookFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -53,7 +53,7 @@ impl
     }
 }
 impl CreateScraperFluentBuilder {
-    /// Creates a new `CreateScraper`.
+    /// Creates a new `CreateScraperFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

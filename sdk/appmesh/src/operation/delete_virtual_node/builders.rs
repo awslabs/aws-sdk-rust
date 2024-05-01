@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteVirtualNodeFluentBuilder {
-    /// Creates a new `DeleteVirtualNode`.
+    /// Creates a new `DeleteVirtualNodeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl InvokeModelFluentBuilder {
-    /// Creates a new `InvokeModel`.
+    /// Creates a new `InvokeModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

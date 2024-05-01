@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTableOptimizerRunsFluentBuilder {
-    /// Creates a new `ListTableOptimizerRuns`.
+    /// Creates a new `ListTableOptimizerRunsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

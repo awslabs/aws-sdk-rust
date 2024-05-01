@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetInvalidationFluentBuilder {
-    /// Creates a new `GetInvalidation`.
+    /// Creates a new `GetInvalidationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

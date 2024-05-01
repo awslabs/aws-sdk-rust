@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteGeofenceCollectionFluentBuilder {
-    /// Creates a new `DeleteGeofenceCollection`.
+    /// Creates a new `DeleteGeofenceCollectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

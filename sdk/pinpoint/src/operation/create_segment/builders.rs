@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateSegmentFluentBuilder {
-    /// Creates a new `CreateSegment`.
+    /// Creates a new `CreateSegmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

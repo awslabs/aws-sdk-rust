@@ -50,7 +50,7 @@ impl
     }
 }
 impl SearchUsersByImageFluentBuilder {
-    /// Creates a new `SearchUsersByImage`.
+    /// Creates a new `SearchUsersByImageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -62,7 +62,7 @@ impl
     }
 }
 impl VerifyDomainDkimFluentBuilder {
-    /// Creates a new `VerifyDomainDkim`.
+    /// Creates a new `VerifyDomainDkimFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

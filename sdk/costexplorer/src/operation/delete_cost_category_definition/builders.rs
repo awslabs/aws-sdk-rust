@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCostCategoryDefinitionFluentBuilder {
-    /// Creates a new `DeleteCostCategoryDefinition`.
+    /// Creates a new `DeleteCostCategoryDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

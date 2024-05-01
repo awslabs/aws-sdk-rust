@@ -50,7 +50,7 @@ impl
     }
 }
 impl CancelUpdateStackFluentBuilder {
-    /// Creates a new `CancelUpdateStack`.
+    /// Creates a new `CancelUpdateStackFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

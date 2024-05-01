@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSourceRepositoryCloneUrlsFluentBuilder {
-    /// Creates a new `GetSourceRepositoryCloneUrls`.
+    /// Creates a new `GetSourceRepositoryCloneUrlsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

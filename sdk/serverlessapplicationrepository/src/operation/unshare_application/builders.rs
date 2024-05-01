@@ -49,7 +49,7 @@ impl
     }
 }
 impl UnshareApplicationFluentBuilder {
-    /// Creates a new `UnshareApplication`.
+    /// Creates a new `UnshareApplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

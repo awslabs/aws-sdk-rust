@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::scan
     }
 }
 impl ScanSbomFluentBuilder {
-    /// Creates a new `ScanSbom`.
+    /// Creates a new `ScanSbomFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

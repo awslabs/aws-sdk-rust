@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelElasticsearchServiceSoftwareUpdateFluentBuilder {
-    /// Creates a new `CancelElasticsearchServiceSoftwareUpdate`.
+    /// Creates a new `CancelElasticsearchServiceSoftwareUpdateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetParametersByPathFluentBuilder {
-    /// Creates a new `GetParametersByPath`.
+    /// Creates a new `GetParametersByPathFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

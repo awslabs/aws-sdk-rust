@@ -61,7 +61,7 @@ impl
     }
 }
 impl GetPropertygraphStreamFluentBuilder {
-    /// Creates a new `GetPropertygraphStream`.
+    /// Creates a new `GetPropertygraphStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

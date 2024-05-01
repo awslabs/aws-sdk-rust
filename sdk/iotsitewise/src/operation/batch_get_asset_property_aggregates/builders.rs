@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetAssetPropertyAggregatesFluentBuilder {
-    /// Creates a new `BatchGetAssetPropertyAggregates`.
+    /// Creates a new `BatchGetAssetPropertyAggregatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

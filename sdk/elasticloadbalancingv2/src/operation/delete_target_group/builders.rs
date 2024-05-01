@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteTargetGroupFluentBuilder {
-    /// Creates a new `DeleteTargetGroup`.
+    /// Creates a new `DeleteTargetGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

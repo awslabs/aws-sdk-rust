@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListServiceQuotaIncreaseRequestsInTemplateFluentBuilder {
-    /// Creates a new `ListServiceQuotaIncreaseRequestsInTemplate`.
+    /// Creates a new `ListServiceQuotaIncreaseRequestsInTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

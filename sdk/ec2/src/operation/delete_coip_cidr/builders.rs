@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCoipCidrFluentBuilder {
-    /// Creates a new `DeleteCoipCidr`.
+    /// Creates a new `DeleteCoipCidrFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

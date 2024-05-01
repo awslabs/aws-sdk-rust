@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetComponentFluentBuilder {
-    /// Creates a new `GetComponent`.
+    /// Creates a new `GetComponentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

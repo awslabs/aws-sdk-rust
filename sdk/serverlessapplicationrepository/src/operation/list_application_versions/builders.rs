@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListApplicationVersionsFluentBuilder {
-    /// Creates a new `ListApplicationVersions`.
+    /// Creates a new `ListApplicationVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

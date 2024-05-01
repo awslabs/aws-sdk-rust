@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSamplingTargetsFluentBuilder {
-    /// Creates a new `GetSamplingTargets`.
+    /// Creates a new `GetSamplingTargetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

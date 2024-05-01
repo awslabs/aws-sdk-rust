@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateGatewayResponseFluentBuilder {
-    /// Creates a new `UpdateGatewayResponse`.
+    /// Creates a new `UpdateGatewayResponseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -54,7 +54,7 @@ impl
     }
 }
 impl DisableKeyFluentBuilder {
-    /// Creates a new `DisableKey`.
+    /// Creates a new `DisableKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

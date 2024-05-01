@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListByteMatchSetsFluentBuilder {
-    /// Creates a new `ListByteMatchSets`.
+    /// Creates a new `ListByteMatchSetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

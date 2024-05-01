@@ -59,7 +59,7 @@ impl
     }
 }
 impl GetBucketWebsiteFluentBuilder {
-    /// Creates a new `GetBucketWebsite`.
+    /// Creates a new `GetBucketWebsiteFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

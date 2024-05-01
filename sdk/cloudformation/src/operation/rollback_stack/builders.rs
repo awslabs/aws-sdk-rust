@@ -62,7 +62,7 @@ impl
     }
 }
 impl RollbackStackFluentBuilder {
-    /// Creates a new `RollbackStack`.
+    /// Creates a new `RollbackStackFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

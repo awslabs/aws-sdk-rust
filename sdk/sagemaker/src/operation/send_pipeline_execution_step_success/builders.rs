@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendPipelineExecutionStepSuccessFluentBuilder {
-    /// Creates a new `SendPipelineExecutionStepSuccess`.
+    /// Creates a new `SendPipelineExecutionStepSuccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

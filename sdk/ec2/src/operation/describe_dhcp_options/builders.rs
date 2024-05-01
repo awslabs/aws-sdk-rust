@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeDhcpOptionsFluentBuilder {
-    /// Creates a new `DescribeDhcpOptions`.
+    /// Creates a new `DescribeDhcpOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

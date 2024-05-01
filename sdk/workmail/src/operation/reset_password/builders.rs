@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResetPasswordFluentBuilder {
-    /// Creates a new `ResetPassword`.
+    /// Creates a new `ResetPasswordFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

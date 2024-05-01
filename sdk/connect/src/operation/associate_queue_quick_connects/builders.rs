@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateQueueQuickConnectsFluentBuilder {
-    /// Creates a new `AssociateQueueQuickConnects`.
+    /// Creates a new `AssociateQueueQuickConnectsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

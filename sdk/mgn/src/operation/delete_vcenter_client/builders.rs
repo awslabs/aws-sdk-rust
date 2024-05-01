@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteVcenterClientFluentBuilder {
-    /// Creates a new `DeleteVcenterClient`.
+    /// Creates a new `DeleteVcenterClientFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

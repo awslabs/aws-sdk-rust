@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListScriptsFluentBuilder {
-    /// Creates a new `ListScripts`.
+    /// Creates a new `ListScriptsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

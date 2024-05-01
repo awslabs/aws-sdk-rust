@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateApplicationFromEntitlementFluentBuilder {
-    /// Creates a new `DisassociateApplicationFromEntitlement`.
+    /// Creates a new `DisassociateApplicationFromEntitlementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

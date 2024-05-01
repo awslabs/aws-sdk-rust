@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteIntentFluentBuilder {
-    /// Creates a new `DeleteIntent`.
+    /// Creates a new `DeleteIntentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

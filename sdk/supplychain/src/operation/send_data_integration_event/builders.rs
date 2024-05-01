@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendDataIntegrationEventFluentBuilder {
-    /// Creates a new `SendDataIntegrationEvent`.
+    /// Creates a new `SendDataIntegrationEventFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

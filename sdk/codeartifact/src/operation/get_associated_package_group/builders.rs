@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetAssociatedPackageGroupFluentBuilder {
-    /// Creates a new `GetAssociatedPackageGroup`.
+    /// Creates a new `GetAssociatedPackageGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

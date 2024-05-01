@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteConfiguredTableAnalysisRuleFluentBuilder {
-    /// Creates a new `DeleteConfiguredTableAnalysisRule`.
+    /// Creates a new `DeleteConfiguredTableAnalysisRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

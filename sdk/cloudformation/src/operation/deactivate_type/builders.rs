@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeactivateTypeFluentBuilder {
-    /// Creates a new `DeactivateType`.
+    /// Creates a new `DeactivateTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

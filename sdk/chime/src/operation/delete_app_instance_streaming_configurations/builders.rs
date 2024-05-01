@@ -52,7 +52,7 @@ impl
     }
 }
 impl DeleteAppInstanceStreamingConfigurationsFluentBuilder {
-    /// Creates a new `DeleteAppInstanceStreamingConfigurations`.
+    /// Creates a new `DeleteAppInstanceStreamingConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

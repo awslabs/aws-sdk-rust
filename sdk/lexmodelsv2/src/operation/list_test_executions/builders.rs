@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTestExecutionsFluentBuilder {
-    /// Creates a new `ListTestExecutions`.
+    /// Creates a new `ListTestExecutionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

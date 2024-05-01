@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutResourceLogLevelFluentBuilder {
-    /// Creates a new `PutResourceLogLevel`.
+    /// Creates a new `PutResourceLogLevelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

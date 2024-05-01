@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateServerlessCacheSnapshotFluentBuilder {
-    /// Creates a new `CreateServerlessCacheSnapshot`.
+    /// Creates a new `CreateServerlessCacheSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

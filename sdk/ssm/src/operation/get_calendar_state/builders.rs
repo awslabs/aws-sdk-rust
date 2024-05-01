@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetCalendarStateFluentBuilder {
-    /// Creates a new `GetCalendarState`.
+    /// Creates a new `GetCalendarStateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

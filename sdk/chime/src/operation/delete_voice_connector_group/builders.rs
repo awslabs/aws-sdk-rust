@@ -52,7 +52,7 @@ impl
     }
 }
 impl DeleteVoiceConnectorGroupFluentBuilder {
-    /// Creates a new `DeleteVoiceConnectorGroup`.
+    /// Creates a new `DeleteVoiceConnectorGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

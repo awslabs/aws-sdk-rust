@@ -64,7 +64,7 @@ impl
     }
 }
 impl RecordLifecycleActionHeartbeatFluentBuilder {
-    /// Creates a new `RecordLifecycleActionHeartbeat`.
+    /// Creates a new `RecordLifecycleActionHeartbeatFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

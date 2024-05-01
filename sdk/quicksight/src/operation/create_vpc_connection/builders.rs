@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateVPCConnectionFluentBuilder {
-    /// Creates a new `CreateVPCConnection`.
+    /// Creates a new `CreateVPCConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

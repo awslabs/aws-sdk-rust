@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateDataRepositoryAssociationFluentBuilder {
-    /// Creates a new `UpdateDataRepositoryAssociation`.
+    /// Creates a new `UpdateDataRepositoryAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl SearchStepsFluentBuilder {
-    /// Creates a new `SearchSteps`.
+    /// Creates a new `SearchStepsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

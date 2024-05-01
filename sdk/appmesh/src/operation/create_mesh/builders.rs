@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateMeshFluentBuilder {
-    /// Creates a new `CreateMesh`.
+    /// Creates a new `CreateMeshFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

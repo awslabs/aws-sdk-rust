@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteOutpostResolverFluentBuilder {
-    /// Creates a new `DeleteOutpostResolver`.
+    /// Creates a new `DeleteOutpostResolverFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

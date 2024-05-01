@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateReplicatorFluentBuilder {
-    /// Creates a new `CreateReplicator`.
+    /// Creates a new `CreateReplicatorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

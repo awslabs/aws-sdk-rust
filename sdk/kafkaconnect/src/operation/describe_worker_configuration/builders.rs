@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeWorkerConfigurationFluentBuilder {
-    /// Creates a new `DescribeWorkerConfiguration`.
+    /// Creates a new `DescribeWorkerConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

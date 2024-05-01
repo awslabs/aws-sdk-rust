@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRequestedServiceQuotaChangeFluentBuilder {
-    /// Creates a new `GetRequestedServiceQuotaChange`.
+    /// Creates a new `GetRequestedServiceQuotaChangeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

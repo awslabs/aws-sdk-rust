@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeEntitlementsFluentBuilder {
-    /// Creates a new `DescribeEntitlements`.
+    /// Creates a new `DescribeEntitlementsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

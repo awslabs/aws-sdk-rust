@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeMapFluentBuilder {
-    /// Creates a new `DescribeMap`.
+    /// Creates a new `DescribeMapFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -60,7 +60,7 @@ impl
     }
 }
 impl GetObjectTorrentFluentBuilder {
-    /// Creates a new `GetObjectTorrent`.
+    /// Creates a new `GetObjectTorrentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

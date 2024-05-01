@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeProfileFluentBuilder {
-    /// Creates a new `DescribeProfile`.
+    /// Creates a new `DescribeProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyDBProxyFluentBuilder {
-    /// Creates a new `ModifyDBProxy`.
+    /// Creates a new `ModifyDBProxyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

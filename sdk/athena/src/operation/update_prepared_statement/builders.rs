@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdatePreparedStatementFluentBuilder {
-    /// Creates a new `UpdatePreparedStatement`.
+    /// Creates a new `UpdatePreparedStatementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

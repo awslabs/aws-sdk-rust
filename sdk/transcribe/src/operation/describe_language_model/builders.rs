@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeLanguageModelFluentBuilder {
-    /// Creates a new `DescribeLanguageModel`.
+    /// Creates a new `DescribeLanguageModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

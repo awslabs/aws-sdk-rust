@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateSecurityGroupRuleDescriptionsEgressFluentBuilder {
-    /// Creates a new `UpdateSecurityGroupRuleDescriptionsEgress`.
+    /// Creates a new `UpdateSecurityGroupRuleDescriptionsEgressFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl StopContactRecordingFluentBuilder {
-    /// Creates a new `StopContactRecording`.
+    /// Creates a new `StopContactRecordingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

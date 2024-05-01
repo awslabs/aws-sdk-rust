@@ -54,7 +54,7 @@ impl
     }
 }
 impl CreateDistributionWithTagsFluentBuilder {
-    /// Creates a new `CreateDistributionWithTags`.
+    /// Creates a new `CreateDistributionWithTagsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

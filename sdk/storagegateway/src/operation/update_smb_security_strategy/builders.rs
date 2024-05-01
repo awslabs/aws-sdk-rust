@@ -51,7 +51,7 @@ impl
     }
 }
 impl UpdateSMBSecurityStrategyFluentBuilder {
-    /// Creates a new `UpdateSMBSecurityStrategy`.
+    /// Creates a new `UpdateSMBSecurityStrategyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

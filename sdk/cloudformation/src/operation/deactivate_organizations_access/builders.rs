@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeactivateOrganizationsAccessFluentBuilder {
-    /// Creates a new `DeactivateOrganizationsAccess`.
+    /// Creates a new `DeactivateOrganizationsAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl RegisterEcsClusterFluentBuilder {
-    /// Creates a new `RegisterEcsCluster`.
+    /// Creates a new `RegisterEcsClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

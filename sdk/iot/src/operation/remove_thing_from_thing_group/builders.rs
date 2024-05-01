@@ -50,7 +50,7 @@ impl
     }
 }
 impl RemoveThingFromThingGroupFluentBuilder {
-    /// Creates a new `RemoveThingFromThingGroup`.
+    /// Creates a new `RemoveThingFromThingGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListMFADeviceTagsFluentBuilder {
-    /// Creates a new `ListMFADeviceTags`.
+    /// Creates a new `ListMFADeviceTagsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateWirelessDeviceWithMulticastGroupFluentBuilder {
-    /// Creates a new `AssociateWirelessDeviceWithMulticastGroup`.
+    /// Creates a new `AssociateWirelessDeviceWithMulticastGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

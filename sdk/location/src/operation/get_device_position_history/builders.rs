@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetDevicePositionHistoryFluentBuilder {
-    /// Creates a new `GetDevicePositionHistory`.
+    /// Creates a new `GetDevicePositionHistoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateInstanceConnectEndpointFluentBuilder {
-    /// Creates a new `CreateInstanceConnectEndpoint`.
+    /// Creates a new `CreateInstanceConnectEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

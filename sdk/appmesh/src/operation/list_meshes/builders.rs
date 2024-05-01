@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListMeshesFluentBuilder {
-    /// Creates a new `ListMeshes`.
+    /// Creates a new `ListMeshesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

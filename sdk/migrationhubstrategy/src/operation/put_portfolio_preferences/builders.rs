@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutPortfolioPreferencesFluentBuilder {
-    /// Creates a new `PutPortfolioPreferences`.
+    /// Creates a new `PutPortfolioPreferencesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

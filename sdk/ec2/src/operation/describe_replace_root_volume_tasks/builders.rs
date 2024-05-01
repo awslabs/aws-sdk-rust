@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeReplaceRootVolumeTasksFluentBuilder {
-    /// Creates a new `DescribeReplaceRootVolumeTasks`.
+    /// Creates a new `DescribeReplaceRootVolumeTasksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

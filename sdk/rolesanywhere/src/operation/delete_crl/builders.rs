@@ -43,7 +43,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::dele
     }
 }
 impl DeleteCrlFluentBuilder {
-    /// Creates a new `DeleteCrl`.
+    /// Creates a new `DeleteCrlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

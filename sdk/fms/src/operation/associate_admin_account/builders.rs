@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateAdminAccountFluentBuilder {
-    /// Creates a new `AssociateAdminAccount`.
+    /// Creates a new `AssociateAdminAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeCopyJobFluentBuilder {
-    /// Creates a new `DescribeCopyJob`.
+    /// Creates a new `DescribeCopyJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

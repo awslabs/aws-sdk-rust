@@ -75,7 +75,7 @@ impl
     }
 }
 impl ResizeClusterFluentBuilder {
-    /// Creates a new `ResizeCluster`.
+    /// Creates a new `ResizeClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

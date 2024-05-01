@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateTypeFluentBuilder {
-    /// Creates a new `UpdateType`.
+    /// Creates a new `UpdateTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

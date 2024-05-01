@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetOpenCypherQueryStatusFluentBuilder {
-    /// Creates a new `GetOpenCypherQueryStatus`.
+    /// Creates a new `GetOpenCypherQueryStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

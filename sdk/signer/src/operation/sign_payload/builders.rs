@@ -48,7 +48,7 @@ impl
     }
 }
 impl SignPayloadFluentBuilder {
-    /// Creates a new `SignPayload`.
+    /// Creates a new `SignPayloadFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

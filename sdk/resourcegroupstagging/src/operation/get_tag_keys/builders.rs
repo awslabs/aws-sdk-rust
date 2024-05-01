@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetTagKeysFluentBuilder {
-    /// Creates a new `GetTagKeys`.
+    /// Creates a new `GetTagKeysFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

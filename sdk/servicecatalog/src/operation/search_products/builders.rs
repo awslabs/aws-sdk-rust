@@ -48,7 +48,7 @@ impl
     }
 }
 impl SearchProductsFluentBuilder {
-    /// Creates a new `SearchProducts`.
+    /// Creates a new `SearchProductsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

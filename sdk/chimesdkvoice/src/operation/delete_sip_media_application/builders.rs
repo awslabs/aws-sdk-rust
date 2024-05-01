@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSipMediaApplicationFluentBuilder {
-    /// Creates a new `DeleteSipMediaApplication`.
+    /// Creates a new `DeleteSipMediaApplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

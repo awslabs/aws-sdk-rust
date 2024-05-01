@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutApplicationPolicyFluentBuilder {
-    /// Creates a new `PutApplicationPolicy`.
+    /// Creates a new `PutApplicationPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

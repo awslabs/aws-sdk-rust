@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetPriceListFileUrlFluentBuilder {
-    /// Creates a new `GetPriceListFileUrl`.
+    /// Creates a new `GetPriceListFileUrlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

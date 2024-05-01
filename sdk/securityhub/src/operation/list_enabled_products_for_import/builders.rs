@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListEnabledProductsForImportFluentBuilder {
-    /// Creates a new `ListEnabledProductsForImport`.
+    /// Creates a new `ListEnabledProductsForImportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

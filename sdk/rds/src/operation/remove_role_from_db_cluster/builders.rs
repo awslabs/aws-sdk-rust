@@ -50,7 +50,7 @@ impl
     }
 }
 impl RemoveRoleFromDBClusterFluentBuilder {
-    /// Creates a new `RemoveRoleFromDBCluster`.
+    /// Creates a new `RemoveRoleFromDBClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetTextDetectionFluentBuilder {
-    /// Creates a new `GetTextDetection`.
+    /// Creates a new `GetTextDetectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

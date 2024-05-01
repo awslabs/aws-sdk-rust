@@ -62,7 +62,7 @@ impl
     }
 }
 impl DeleteGeoMatchSetFluentBuilder {
-    /// Creates a new `DeleteGeoMatchSet`.
+    /// Creates a new `DeleteGeoMatchSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

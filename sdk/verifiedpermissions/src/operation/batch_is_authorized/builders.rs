@@ -52,7 +52,7 @@ impl
     }
 }
 impl BatchIsAuthorizedFluentBuilder {
-    /// Creates a new `BatchIsAuthorized`.
+    /// Creates a new `BatchIsAuthorizedFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

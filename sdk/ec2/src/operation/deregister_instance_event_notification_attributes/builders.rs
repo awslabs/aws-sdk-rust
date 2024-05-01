@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeregisterInstanceEventNotificationAttributesFluentBuilder {
-    /// Creates a new `DeregisterInstanceEventNotificationAttributes`.
+    /// Creates a new `DeregisterInstanceEventNotificationAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

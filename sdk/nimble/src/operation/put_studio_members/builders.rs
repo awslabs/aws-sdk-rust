@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutStudioMembersFluentBuilder {
-    /// Creates a new `PutStudioMembers`.
+    /// Creates a new `PutStudioMembersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

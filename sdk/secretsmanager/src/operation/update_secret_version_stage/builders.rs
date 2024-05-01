@@ -55,7 +55,7 @@ impl
     }
 }
 impl UpdateSecretVersionStageFluentBuilder {
-    /// Creates a new `UpdateSecretVersionStage`.
+    /// Creates a new `UpdateSecretVersionStageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

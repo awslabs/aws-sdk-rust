@@ -49,7 +49,7 @@ impl
     }
 }
 impl PutInstancePublicPortsFluentBuilder {
-    /// Creates a new `PutInstancePublicPorts`.
+    /// Creates a new `PutInstancePublicPortsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

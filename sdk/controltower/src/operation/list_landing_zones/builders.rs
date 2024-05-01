@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListLandingZonesFluentBuilder {
-    /// Creates a new `ListLandingZones`.
+    /// Creates a new `ListLandingZonesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

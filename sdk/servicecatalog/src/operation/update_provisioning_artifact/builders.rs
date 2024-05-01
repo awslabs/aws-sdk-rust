@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateProvisioningArtifactFluentBuilder {
-    /// Creates a new `UpdateProvisioningArtifact`.
+    /// Creates a new `UpdateProvisioningArtifactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

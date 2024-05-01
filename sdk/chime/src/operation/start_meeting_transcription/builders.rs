@@ -55,7 +55,7 @@ impl
     }
 }
 impl StartMeetingTranscriptionFluentBuilder {
-    /// Creates a new `StartMeetingTranscription`.
+    /// Creates a new `StartMeetingTranscriptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

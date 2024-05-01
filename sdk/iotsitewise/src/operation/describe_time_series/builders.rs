@@ -61,7 +61,7 @@ impl
     }
 }
 impl DescribeTimeSeriesFluentBuilder {
-    /// Creates a new `DescribeTimeSeries`.
+    /// Creates a new `DescribeTimeSeriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

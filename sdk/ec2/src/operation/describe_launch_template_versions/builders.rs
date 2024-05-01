@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeLaunchTemplateVersionsFluentBuilder {
-    /// Creates a new `DescribeLaunchTemplateVersions`.
+    /// Creates a new `DescribeLaunchTemplateVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

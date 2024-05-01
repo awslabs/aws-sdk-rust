@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterOrganizationDelegatedAdminFluentBuilder {
-    /// Creates a new `RegisterOrganizationDelegatedAdmin`.
+    /// Creates a new `RegisterOrganizationDelegatedAdminFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

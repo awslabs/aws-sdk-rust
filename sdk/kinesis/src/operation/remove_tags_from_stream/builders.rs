@@ -52,7 +52,7 @@ impl
     }
 }
 impl RemoveTagsFromStreamFluentBuilder {
-    /// Creates a new `RemoveTagsFromStream`.
+    /// Creates a new `RemoveTagsFromStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

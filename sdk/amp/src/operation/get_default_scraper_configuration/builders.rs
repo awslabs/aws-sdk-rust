@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDefaultScraperConfigurationFluentBuilder {
-    /// Creates a new `GetDefaultScraperConfiguration`.
+    /// Creates a new `GetDefaultScraperConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateWorkspaceBundleFluentBuilder {
-    /// Creates a new `UpdateWorkspaceBundle`.
+    /// Creates a new `UpdateWorkspaceBundleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

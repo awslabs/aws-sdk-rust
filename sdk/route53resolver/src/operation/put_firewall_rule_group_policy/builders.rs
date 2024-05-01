@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutFirewallRuleGroupPolicyFluentBuilder {
-    /// Creates a new `PutFirewallRuleGroupPolicy`.
+    /// Creates a new `PutFirewallRuleGroupPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

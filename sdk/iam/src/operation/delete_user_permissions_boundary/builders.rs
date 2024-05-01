@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteUserPermissionsBoundaryFluentBuilder {
-    /// Creates a new `DeleteUserPermissionsBoundary`.
+    /// Creates a new `DeleteUserPermissionsBoundaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

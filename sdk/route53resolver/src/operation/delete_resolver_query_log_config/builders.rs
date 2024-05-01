@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteResolverQueryLogConfigFluentBuilder {
-    /// Creates a new `DeleteResolverQueryLogConfig`.
+    /// Creates a new `DeleteResolverQueryLogConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

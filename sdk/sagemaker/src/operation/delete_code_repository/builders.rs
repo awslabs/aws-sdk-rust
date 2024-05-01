@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCodeRepositoryFluentBuilder {
-    /// Creates a new `DeleteCodeRepository`.
+    /// Creates a new `DeleteCodeRepositoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

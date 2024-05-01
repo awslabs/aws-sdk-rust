@@ -51,7 +51,7 @@ impl
     }
 }
 impl BatchPutContactFluentBuilder {
-    /// Creates a new `BatchPutContact`.
+    /// Creates a new `BatchPutContactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

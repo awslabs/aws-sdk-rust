@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteIpGroupFluentBuilder {
-    /// Creates a new `DeleteIpGroup`.
+    /// Creates a new `DeleteIpGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

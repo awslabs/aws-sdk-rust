@@ -50,7 +50,7 @@ impl
     }
 }
 impl ModifyGlobalClusterFluentBuilder {
-    /// Creates a new `ModifyGlobalCluster`.
+    /// Creates a new `ModifyGlobalClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl CancelGremlinQueryFluentBuilder {
-    /// Creates a new `CancelGremlinQuery`.
+    /// Creates a new `CancelGremlinQueryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

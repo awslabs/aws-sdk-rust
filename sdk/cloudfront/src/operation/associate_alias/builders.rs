@@ -50,7 +50,7 @@ impl
     }
 }
 impl AssociateAliasFluentBuilder {
-    /// Creates a new `AssociateAlias`.
+    /// Creates a new `AssociateAliasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

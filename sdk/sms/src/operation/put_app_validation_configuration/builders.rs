@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutAppValidationConfigurationFluentBuilder {
-    /// Creates a new `PutAppValidationConfiguration`.
+    /// Creates a new `PutAppValidationConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

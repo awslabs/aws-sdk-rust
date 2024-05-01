@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendCisSessionHealthFluentBuilder {
-    /// Creates a new `SendCisSessionHealth`.
+    /// Creates a new `SendCisSessionHealthFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

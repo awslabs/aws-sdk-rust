@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetUserProfileFluentBuilder {
-    /// Creates a new `GetUserProfile`.
+    /// Creates a new `GetUserProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

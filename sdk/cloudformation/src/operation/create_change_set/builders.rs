@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateChangeSetFluentBuilder {
-    /// Creates a new `CreateChangeSet`.
+    /// Creates a new `CreateChangeSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

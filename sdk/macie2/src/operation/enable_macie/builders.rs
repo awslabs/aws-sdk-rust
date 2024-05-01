@@ -48,7 +48,7 @@ impl
     }
 }
 impl EnableMacieFluentBuilder {
-    /// Creates a new `EnableMacie`.
+    /// Creates a new `EnableMacieFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

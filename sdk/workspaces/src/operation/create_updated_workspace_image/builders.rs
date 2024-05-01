@@ -58,7 +58,7 @@ impl
     }
 }
 impl CreateUpdatedWorkspaceImageFluentBuilder {
-    /// Creates a new `CreateUpdatedWorkspaceImage`.
+    /// Creates a new `CreateUpdatedWorkspaceImageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

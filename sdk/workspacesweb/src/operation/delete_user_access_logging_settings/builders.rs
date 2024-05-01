@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteUserAccessLoggingSettingsFluentBuilder {
-    /// Creates a new `DeleteUserAccessLoggingSettings`.
+    /// Creates a new `DeleteUserAccessLoggingSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

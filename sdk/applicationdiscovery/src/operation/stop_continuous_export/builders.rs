@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopContinuousExportFluentBuilder {
-    /// Creates a new `StopContinuousExport`.
+    /// Creates a new `StopContinuousExportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl InitiateDeviceClaimFluentBuilder {
-    /// Creates a new `InitiateDeviceClaim`.
+    /// Creates a new `InitiateDeviceClaimFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeInstanceTypeOfferingsFluentBuilder {
-    /// Creates a new `DescribeInstanceTypeOfferings`.
+    /// Creates a new `DescribeInstanceTypeOfferingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

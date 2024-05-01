@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateIdentityPropagationConfigFluentBuilder {
-    /// Creates a new `UpdateIdentityPropagationConfig`.
+    /// Creates a new `UpdateIdentityPropagationConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

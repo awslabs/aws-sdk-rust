@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateFunctionDefinitionFluentBuilder {
-    /// Creates a new `CreateFunctionDefinition`.
+    /// Creates a new `CreateFunctionDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

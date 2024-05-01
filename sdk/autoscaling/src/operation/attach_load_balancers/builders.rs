@@ -54,7 +54,7 @@ impl
     }
 }
 impl AttachLoadBalancersFluentBuilder {
-    /// Creates a new `AttachLoadBalancers`.
+    /// Creates a new `AttachLoadBalancersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

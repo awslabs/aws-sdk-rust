@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateGraphqlApiFluentBuilder {
-    /// Creates a new `UpdateGraphqlApi`.
+    /// Creates a new `UpdateGraphqlApiFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

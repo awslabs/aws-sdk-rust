@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveStorageSystemFluentBuilder {
-    /// Creates a new `RemoveStorageSystem`.
+    /// Creates a new `RemoveStorageSystemFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

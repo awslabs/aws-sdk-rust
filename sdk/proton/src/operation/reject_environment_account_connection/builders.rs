@@ -51,7 +51,7 @@ impl
     }
 }
 impl RejectEnvironmentAccountConnectionFluentBuilder {
-    /// Creates a new `RejectEnvironmentAccountConnection`.
+    /// Creates a new `RejectEnvironmentAccountConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

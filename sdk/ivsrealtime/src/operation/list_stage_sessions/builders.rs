@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListStageSessionsFluentBuilder {
-    /// Creates a new `ListStageSessions`.
+    /// Creates a new `ListStageSessionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

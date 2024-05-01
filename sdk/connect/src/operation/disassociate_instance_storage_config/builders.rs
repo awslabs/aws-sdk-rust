@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateInstanceStorageConfigFluentBuilder {
-    /// Creates a new `DisassociateInstanceStorageConfig`.
+    /// Creates a new `DisassociateInstanceStorageConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

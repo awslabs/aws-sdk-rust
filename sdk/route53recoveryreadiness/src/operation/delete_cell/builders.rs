@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCellFluentBuilder {
-    /// Creates a new `DeleteCell`.
+    /// Creates a new `DeleteCellFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

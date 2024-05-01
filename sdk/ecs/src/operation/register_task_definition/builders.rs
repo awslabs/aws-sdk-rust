@@ -50,7 +50,7 @@ impl
     }
 }
 impl RegisterTaskDefinitionFluentBuilder {
-    /// Creates a new `RegisterTaskDefinition`.
+    /// Creates a new `RegisterTaskDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

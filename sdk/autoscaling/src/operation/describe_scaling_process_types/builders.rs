@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeScalingProcessTypesFluentBuilder {
-    /// Creates a new `DescribeScalingProcessTypes`.
+    /// Creates a new `DescribeScalingProcessTypesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

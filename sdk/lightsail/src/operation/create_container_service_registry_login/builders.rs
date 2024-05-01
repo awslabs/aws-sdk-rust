@@ -53,7 +53,7 @@ impl
     }
 }
 impl CreateContainerServiceRegistryLoginFluentBuilder {
-    /// Creates a new `CreateContainerServiceRegistryLogin`.
+    /// Creates a new `CreateContainerServiceRegistryLoginFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

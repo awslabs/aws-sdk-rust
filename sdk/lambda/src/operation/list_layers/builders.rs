@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListLayersFluentBuilder {
-    /// Creates a new `ListLayers`.
+    /// Creates a new `ListLayersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

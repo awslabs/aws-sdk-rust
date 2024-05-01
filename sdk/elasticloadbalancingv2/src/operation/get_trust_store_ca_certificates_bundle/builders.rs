@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetTrustStoreCaCertificatesBundleFluentBuilder {
-    /// Creates a new `GetTrustStoreCaCertificatesBundle`.
+    /// Creates a new `GetTrustStoreCaCertificatesBundleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListClassificationScopesFluentBuilder {
-    /// Creates a new `ListClassificationScopes`.
+    /// Creates a new `ListClassificationScopesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

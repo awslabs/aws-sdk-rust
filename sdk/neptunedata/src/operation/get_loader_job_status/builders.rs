@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetLoaderJobStatusFluentBuilder {
-    /// Creates a new `GetLoaderJobStatus`.
+    /// Creates a new `GetLoaderJobStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateCodeSigningConfigFluentBuilder {
-    /// Creates a new `CreateCodeSigningConfig`.
+    /// Creates a new `CreateCodeSigningConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

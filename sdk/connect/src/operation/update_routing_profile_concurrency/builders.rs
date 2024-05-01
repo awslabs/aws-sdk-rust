@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateRoutingProfileConcurrencyFluentBuilder {
-    /// Creates a new `UpdateRoutingProfileConcurrency`.
+    /// Creates a new `UpdateRoutingProfileConcurrencyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

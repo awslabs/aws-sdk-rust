@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteIpamScopeFluentBuilder {
-    /// Creates a new `DeleteIpamScope`.
+    /// Creates a new `DeleteIpamScopeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

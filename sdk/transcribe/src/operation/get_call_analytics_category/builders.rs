@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetCallAnalyticsCategoryFluentBuilder {
-    /// Creates a new `GetCallAnalyticsCategory`.
+    /// Creates a new `GetCallAnalyticsCategoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

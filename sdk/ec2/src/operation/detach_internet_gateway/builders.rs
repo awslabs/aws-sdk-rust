@@ -48,7 +48,7 @@ impl
     }
 }
 impl DetachInternetGatewayFluentBuilder {
-    /// Creates a new `DetachInternetGateway`.
+    /// Creates a new `DetachInternetGatewayFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

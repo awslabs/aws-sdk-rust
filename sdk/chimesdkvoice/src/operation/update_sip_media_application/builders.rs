@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateSipMediaApplicationFluentBuilder {
-    /// Creates a new `UpdateSipMediaApplication`.
+    /// Creates a new `UpdateSipMediaApplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetFuotaTaskFluentBuilder {
-    /// Creates a new `GetFuotaTask`.
+    /// Creates a new `GetFuotaTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

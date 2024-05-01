@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateLayerFluentBuilder {
-    /// Creates a new `UpdateLayer`.
+    /// Creates a new `UpdateLayerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

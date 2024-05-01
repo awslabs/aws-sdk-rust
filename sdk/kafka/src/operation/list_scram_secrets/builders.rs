@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListScramSecretsFluentBuilder {
-    /// Creates a new `ListScramSecrets`.
+    /// Creates a new `ListScramSecretsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

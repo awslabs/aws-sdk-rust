@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateMethodFluentBuilder {
-    /// Creates a new `UpdateMethod`.
+    /// Creates a new `UpdateMethodFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

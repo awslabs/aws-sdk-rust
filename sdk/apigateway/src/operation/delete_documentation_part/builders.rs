@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDocumentationPartFluentBuilder {
-    /// Creates a new `DeleteDocumentationPart`.
+    /// Creates a new `DeleteDocumentationPartFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

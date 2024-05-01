@@ -54,7 +54,7 @@ impl
     }
 }
 impl DetachLoadBalancerTargetGroupsFluentBuilder {
-    /// Creates a new `DetachLoadBalancerTargetGroups`.
+    /// Creates a new `DetachLoadBalancerTargetGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

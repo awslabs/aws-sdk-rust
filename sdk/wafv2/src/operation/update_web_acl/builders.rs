@@ -73,7 +73,7 @@ impl
     }
 }
 impl UpdateWebACLFluentBuilder {
-    /// Creates a new `UpdateWebACL`.
+    /// Creates a new `UpdateWebACLFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

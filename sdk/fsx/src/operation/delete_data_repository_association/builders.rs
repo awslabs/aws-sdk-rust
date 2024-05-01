@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDataRepositoryAssociationFluentBuilder {
-    /// Creates a new `DeleteDataRepositoryAssociation`.
+    /// Creates a new `DeleteDataRepositoryAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

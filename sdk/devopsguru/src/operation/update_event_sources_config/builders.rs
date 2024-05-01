@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateEventSourcesConfigFluentBuilder {
-    /// Creates a new `UpdateEventSourcesConfig`.
+    /// Creates a new `UpdateEventSourcesConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

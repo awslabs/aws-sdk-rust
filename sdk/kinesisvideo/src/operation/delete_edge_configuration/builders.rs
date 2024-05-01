@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteEdgeConfigurationFluentBuilder {
-    /// Creates a new `DeleteEdgeConfiguration`.
+    /// Creates a new `DeleteEdgeConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

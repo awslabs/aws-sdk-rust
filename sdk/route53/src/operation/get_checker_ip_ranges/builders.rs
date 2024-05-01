@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetCheckerIpRangesFluentBuilder {
-    /// Creates a new `GetCheckerIpRanges`.
+    /// Creates a new `GetCheckerIpRangesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

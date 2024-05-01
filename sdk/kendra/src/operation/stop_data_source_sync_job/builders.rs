@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopDataSourceSyncJobFluentBuilder {
-    /// Creates a new `StopDataSourceSyncJob`.
+    /// Creates a new `StopDataSourceSyncJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

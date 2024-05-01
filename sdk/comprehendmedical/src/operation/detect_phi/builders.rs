@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::dete
     }
 }
 impl DetectPHIFluentBuilder {
-    /// Creates a new `DetectPHI`.
+    /// Creates a new `DetectPHIFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

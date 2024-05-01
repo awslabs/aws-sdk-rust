@@ -48,7 +48,7 @@ impl
     }
 }
 impl RotateIngestEndpointCredentialsFluentBuilder {
-    /// Creates a new `RotateIngestEndpointCredentials`.
+    /// Creates a new `RotateIngestEndpointCredentialsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

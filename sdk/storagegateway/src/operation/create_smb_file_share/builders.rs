@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateSMBFileShareFluentBuilder {
-    /// Creates a new `CreateSMBFileShare`.
+    /// Creates a new `CreateSMBFileShareFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

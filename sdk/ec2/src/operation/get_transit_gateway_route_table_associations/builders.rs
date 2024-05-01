@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTransitGatewayRouteTableAssociationsFluentBuilder {
-    /// Creates a new `GetTransitGatewayRouteTableAssociations`.
+    /// Creates a new `GetTransitGatewayRouteTableAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

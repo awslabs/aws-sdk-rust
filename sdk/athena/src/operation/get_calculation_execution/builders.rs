@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCalculationExecutionFluentBuilder {
-    /// Creates a new `GetCalculationExecution`.
+    /// Creates a new `GetCalculationExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

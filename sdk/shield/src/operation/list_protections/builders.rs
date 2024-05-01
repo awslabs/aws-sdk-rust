@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListProtectionsFluentBuilder {
-    /// Creates a new `ListProtections`.
+    /// Creates a new `ListProtectionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

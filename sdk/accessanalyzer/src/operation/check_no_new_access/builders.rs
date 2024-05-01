@@ -49,7 +49,7 @@ impl
     }
 }
 impl CheckNoNewAccessFluentBuilder {
-    /// Creates a new `CheckNoNewAccess`.
+    /// Creates a new `CheckNoNewAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

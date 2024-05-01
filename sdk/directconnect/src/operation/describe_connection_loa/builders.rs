@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeConnectionLoaFluentBuilder {
-    /// Creates a new `DescribeConnectionLoa`.
+    /// Creates a new `DescribeConnectionLoaFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

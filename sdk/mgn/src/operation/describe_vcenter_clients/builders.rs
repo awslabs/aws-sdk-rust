@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeVcenterClientsFluentBuilder {
-    /// Creates a new `DescribeVcenterClients`.
+    /// Creates a new `DescribeVcenterClientsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

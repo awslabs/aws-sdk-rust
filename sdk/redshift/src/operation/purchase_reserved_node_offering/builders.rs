@@ -49,7 +49,7 @@ impl
     }
 }
 impl PurchaseReservedNodeOfferingFluentBuilder {
-    /// Creates a new `PurchaseReservedNodeOffering`.
+    /// Creates a new `PurchaseReservedNodeOfferingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

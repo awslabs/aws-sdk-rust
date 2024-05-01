@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPackagingConfigurationsFluentBuilder {
-    /// Creates a new `ListPackagingConfigurations`.
+    /// Creates a new `ListPackagingConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -65,7 +65,7 @@ impl
     }
 }
 impl DeleteCacheClusterFluentBuilder {
-    /// Creates a new `DeleteCacheCluster`.
+    /// Creates a new `DeleteCacheClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

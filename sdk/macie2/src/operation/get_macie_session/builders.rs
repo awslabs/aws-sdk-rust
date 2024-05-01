@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMacieSessionFluentBuilder {
-    /// Creates a new `GetMacieSession`.
+    /// Creates a new `GetMacieSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

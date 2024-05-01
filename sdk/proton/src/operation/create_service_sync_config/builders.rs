@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateServiceSyncConfigFluentBuilder {
-    /// Creates a new `CreateServiceSyncConfig`.
+    /// Creates a new `CreateServiceSyncConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

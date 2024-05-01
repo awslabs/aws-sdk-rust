@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSegmentsFluentBuilder {
-    /// Creates a new `GetSegments`.
+    /// Creates a new `GetSegmentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

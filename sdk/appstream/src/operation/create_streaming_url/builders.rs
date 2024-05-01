@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateStreamingURLFluentBuilder {
-    /// Creates a new `CreateStreamingURL`.
+    /// Creates a new `CreateStreamingURLFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

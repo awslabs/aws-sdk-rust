@@ -63,7 +63,7 @@ impl
     }
 }
 impl AttachTrafficSourcesFluentBuilder {
-    /// Creates a new `AttachTrafficSources`.
+    /// Creates a new `AttachTrafficSourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

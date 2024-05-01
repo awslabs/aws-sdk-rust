@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeSimulationJobBatchFluentBuilder {
-    /// Creates a new `DescribeSimulationJobBatch`.
+    /// Creates a new `DescribeSimulationJobBatchFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

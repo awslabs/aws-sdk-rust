@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRotationOverrideFluentBuilder {
-    /// Creates a new `DeleteRotationOverride`.
+    /// Creates a new `DeleteRotationOverrideFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

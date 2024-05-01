@@ -48,7 +48,7 @@ impl
     }
 }
 impl RejectVpcEndpointConnectionsFluentBuilder {
-    /// Creates a new `RejectVpcEndpointConnections`.
+    /// Creates a new `RejectVpcEndpointConnectionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

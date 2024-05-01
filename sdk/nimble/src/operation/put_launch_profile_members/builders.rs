@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutLaunchProfileMembersFluentBuilder {
-    /// Creates a new `PutLaunchProfileMembers`.
+    /// Creates a new `PutLaunchProfileMembersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

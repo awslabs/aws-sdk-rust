@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartImagePipelineExecutionFluentBuilder {
-    /// Creates a new `StartImagePipelineExecution`.
+    /// Creates a new `StartImagePipelineExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

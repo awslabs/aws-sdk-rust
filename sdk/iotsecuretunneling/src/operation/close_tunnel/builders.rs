@@ -49,7 +49,7 @@ impl
     }
 }
 impl CloseTunnelFluentBuilder {
-    /// Creates a new `CloseTunnel`.
+    /// Creates a new `CloseTunnelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

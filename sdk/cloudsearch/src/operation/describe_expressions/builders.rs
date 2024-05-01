@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeExpressionsFluentBuilder {
-    /// Creates a new `DescribeExpressions`.
+    /// Creates a new `DescribeExpressionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

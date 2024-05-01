@@ -51,7 +51,7 @@ impl
     }
 }
 impl AddApplicationOutputFluentBuilder {
-    /// Creates a new `AddApplicationOutput`.
+    /// Creates a new `AddApplicationOutputFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

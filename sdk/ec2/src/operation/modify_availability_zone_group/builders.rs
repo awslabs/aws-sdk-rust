@@ -49,7 +49,7 @@ impl
     }
 }
 impl ModifyAvailabilityZoneGroupFluentBuilder {
-    /// Creates a new `ModifyAvailabilityZoneGroup`.
+    /// Creates a new `ModifyAvailabilityZoneGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

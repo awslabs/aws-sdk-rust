@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopLaunchFluentBuilder {
-    /// Creates a new `StopLaunch`.
+    /// Creates a new `StopLaunchFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

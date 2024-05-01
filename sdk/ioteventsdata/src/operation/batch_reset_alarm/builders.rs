@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchResetAlarmFluentBuilder {
-    /// Creates a new `BatchResetAlarm`.
+    /// Creates a new `BatchResetAlarmFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

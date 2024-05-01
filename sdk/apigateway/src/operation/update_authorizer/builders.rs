@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateAuthorizerFluentBuilder {
-    /// Creates a new `UpdateAuthorizer`.
+    /// Creates a new `UpdateAuthorizerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

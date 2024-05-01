@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateContinuousBackupsFluentBuilder {
-    /// Creates a new `UpdateContinuousBackups`.
+    /// Creates a new `UpdateContinuousBackupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

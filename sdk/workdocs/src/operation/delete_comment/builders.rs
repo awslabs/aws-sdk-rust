@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCommentFluentBuilder {
-    /// Creates a new `DeleteComment`.
+    /// Creates a new `DeleteCommentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -54,7 +54,7 @@ impl
     }
 }
 impl PutOrganizationConformancePackFluentBuilder {
-    /// Creates a new `PutOrganizationConformancePack`.
+    /// Creates a new `PutOrganizationConformancePackFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

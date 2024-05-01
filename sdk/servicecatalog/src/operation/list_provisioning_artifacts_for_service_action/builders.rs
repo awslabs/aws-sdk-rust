@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListProvisioningArtifactsForServiceActionFluentBuilder {
-    /// Creates a new `ListProvisioningArtifactsForServiceAction`.
+    /// Creates a new `ListProvisioningArtifactsForServiceActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateSecurityKeyFluentBuilder {
-    /// Creates a new `AssociateSecurityKey`.
+    /// Creates a new `AssociateSecurityKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

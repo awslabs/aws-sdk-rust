@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetLandingZoneOperationFluentBuilder {
-    /// Creates a new `GetLandingZoneOperation`.
+    /// Creates a new `GetLandingZoneOperationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

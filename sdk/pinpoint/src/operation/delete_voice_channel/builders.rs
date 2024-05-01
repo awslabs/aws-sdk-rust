@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteVoiceChannelFluentBuilder {
-    /// Creates a new `DeleteVoiceChannel`.
+    /// Creates a new `DeleteVoiceChannelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

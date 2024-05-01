@@ -50,7 +50,7 @@ impl
     }
 }
 impl StopSimulationFluentBuilder {
-    /// Creates a new `StopSimulation`.
+    /// Creates a new `StopSimulationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

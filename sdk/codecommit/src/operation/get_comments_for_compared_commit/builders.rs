@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetCommentsForComparedCommitFluentBuilder {
-    /// Creates a new `GetCommentsForComparedCommit`.
+    /// Creates a new `GetCommentsForComparedCommitFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

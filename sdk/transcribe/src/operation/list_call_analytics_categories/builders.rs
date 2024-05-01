@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListCallAnalyticsCategoriesFluentBuilder {
-    /// Creates a new `ListCallAnalyticsCategories`.
+    /// Creates a new `ListCallAnalyticsCategoriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

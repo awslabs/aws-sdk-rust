@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetScalingConfigurationRecommendationFluentBuilder {
-    /// Creates a new `GetScalingConfigurationRecommendation`.
+    /// Creates a new `GetScalingConfigurationRecommendationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

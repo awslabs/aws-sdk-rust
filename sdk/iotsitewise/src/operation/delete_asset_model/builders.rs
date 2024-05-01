@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAssetModelFluentBuilder {
-    /// Creates a new `DeleteAssetModel`.
+    /// Creates a new `DeleteAssetModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

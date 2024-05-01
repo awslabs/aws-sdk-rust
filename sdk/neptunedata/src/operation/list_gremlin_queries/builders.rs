@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListGremlinQueriesFluentBuilder {
-    /// Creates a new `ListGremlinQueries`.
+    /// Creates a new `ListGremlinQueriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

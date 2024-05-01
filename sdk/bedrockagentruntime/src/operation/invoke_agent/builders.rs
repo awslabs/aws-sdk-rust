@@ -71,7 +71,7 @@ impl
     }
 }
 impl InvokeAgentFluentBuilder {
-    /// Creates a new `InvokeAgent`.
+    /// Creates a new `InvokeAgentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

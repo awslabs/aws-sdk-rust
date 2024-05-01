@@ -49,7 +49,7 @@ impl
     }
 }
 impl SkipWaitTimeForInstanceTerminationFluentBuilder {
-    /// Creates a new `SkipWaitTimeForInstanceTermination`.
+    /// Creates a new `SkipWaitTimeForInstanceTerminationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteProtectionFluentBuilder {
-    /// Creates a new `DeleteProtection`.
+    /// Creates a new `DeleteProtectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

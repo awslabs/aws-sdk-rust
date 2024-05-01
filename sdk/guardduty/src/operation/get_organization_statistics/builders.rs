@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetOrganizationStatisticsFluentBuilder {
-    /// Creates a new `GetOrganizationStatistics`.
+    /// Creates a new `GetOrganizationStatisticsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

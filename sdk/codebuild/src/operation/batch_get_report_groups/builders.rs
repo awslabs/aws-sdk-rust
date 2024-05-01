@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetReportGroupsFluentBuilder {
-    /// Creates a new `BatchGetReportGroups`.
+    /// Creates a new `BatchGetReportGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

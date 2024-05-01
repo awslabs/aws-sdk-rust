@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteProjectMembershipFluentBuilder {
-    /// Creates a new `DeleteProjectMembership`.
+    /// Creates a new `DeleteProjectMembershipFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

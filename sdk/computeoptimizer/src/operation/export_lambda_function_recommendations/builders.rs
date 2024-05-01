@@ -50,7 +50,7 @@ impl
     }
 }
 impl ExportLambdaFunctionRecommendationsFluentBuilder {
-    /// Creates a new `ExportLambdaFunctionRecommendations`.
+    /// Creates a new `ExportLambdaFunctionRecommendationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

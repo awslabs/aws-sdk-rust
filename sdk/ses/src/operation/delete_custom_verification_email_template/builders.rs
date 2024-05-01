@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteCustomVerificationEmailTemplateFluentBuilder {
-    /// Creates a new `DeleteCustomVerificationEmailTemplate`.
+    /// Creates a new `DeleteCustomVerificationEmailTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

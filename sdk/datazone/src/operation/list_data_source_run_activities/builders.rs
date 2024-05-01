@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDataSourceRunActivitiesFluentBuilder {
-    /// Creates a new `ListDataSourceRunActivities`.
+    /// Creates a new `ListDataSourceRunActivitiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

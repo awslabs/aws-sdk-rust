@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteDomainEntryFluentBuilder {
-    /// Creates a new `DeleteDomainEntry`.
+    /// Creates a new `DeleteDomainEntryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

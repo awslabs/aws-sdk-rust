@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateCisScanConfigurationFluentBuilder {
-    /// Creates a new `CreateCisScanConfiguration`.
+    /// Creates a new `CreateCisScanConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

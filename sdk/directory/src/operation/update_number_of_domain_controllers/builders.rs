@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateNumberOfDomainControllersFluentBuilder {
-    /// Creates a new `UpdateNumberOfDomainControllers`.
+    /// Creates a new `UpdateNumberOfDomainControllersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

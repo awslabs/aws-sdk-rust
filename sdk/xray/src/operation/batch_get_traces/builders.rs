@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetTracesFluentBuilder {
-    /// Creates a new `BatchGetTraces`.
+    /// Creates a new `BatchGetTracesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

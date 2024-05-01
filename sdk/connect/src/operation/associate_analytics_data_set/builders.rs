@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateAnalyticsDataSetFluentBuilder {
-    /// Creates a new `AssociateAnalyticsDataSet`.
+    /// Creates a new `AssociateAnalyticsDataSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -58,7 +58,7 @@ impl
     }
 }
 impl GetTableAutoScalingSettingsFluentBuilder {
-    /// Creates a new `GetTableAutoScalingSettings`.
+    /// Creates a new `GetTableAutoScalingSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

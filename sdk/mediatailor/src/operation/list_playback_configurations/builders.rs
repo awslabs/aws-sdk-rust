@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPlaybackConfigurationsFluentBuilder {
-    /// Creates a new `ListPlaybackConfigurations`.
+    /// Creates a new `ListPlaybackConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRuleGroupsNamespaceFluentBuilder {
-    /// Creates a new `DeleteRuleGroupsNamespace`.
+    /// Creates a new `DeleteRuleGroupsNamespaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

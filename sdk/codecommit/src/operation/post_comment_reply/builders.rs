@@ -48,7 +48,7 @@ impl
     }
 }
 impl PostCommentReplyFluentBuilder {
-    /// Creates a new `PostCommentReply`.
+    /// Creates a new `PostCommentReplyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

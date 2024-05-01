@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartOrganizationServiceAccessUpdateFluentBuilder {
-    /// Creates a new `StartOrganizationServiceAccessUpdate`.
+    /// Creates a new `StartOrganizationServiceAccessUpdateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

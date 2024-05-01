@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDatabaseFluentBuilder {
-    /// Creates a new `DescribeDatabase`.
+    /// Creates a new `DescribeDatabaseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

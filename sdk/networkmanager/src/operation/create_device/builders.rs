@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateDeviceFluentBuilder {
-    /// Creates a new `CreateDevice`.
+    /// Creates a new `CreateDeviceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

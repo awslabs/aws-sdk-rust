@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteListenerFluentBuilder {
-    /// Creates a new `DeleteListener`.
+    /// Creates a new `DeleteListenerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeInstanceTypeLimitsFluentBuilder {
-    /// Creates a new `DescribeInstanceTypeLimits`.
+    /// Creates a new `DescribeInstanceTypeLimitsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

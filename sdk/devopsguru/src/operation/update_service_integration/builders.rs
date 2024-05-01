@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateServiceIntegrationFluentBuilder {
-    /// Creates a new `UpdateServiceIntegration`.
+    /// Creates a new `UpdateServiceIntegrationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

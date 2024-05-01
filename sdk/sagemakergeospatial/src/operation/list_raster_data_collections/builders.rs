@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListRasterDataCollectionsFluentBuilder {
-    /// Creates a new `ListRasterDataCollections`.
+    /// Creates a new `ListRasterDataCollectionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

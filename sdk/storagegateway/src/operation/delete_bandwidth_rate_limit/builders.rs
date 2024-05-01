@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteBandwidthRateLimitFluentBuilder {
-    /// Creates a new `DeleteBandwidthRateLimit`.
+    /// Creates a new `DeleteBandwidthRateLimitFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

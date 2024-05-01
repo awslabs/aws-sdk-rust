@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeLocalGatewayVirtualInterfacesFluentBuilder {
-    /// Creates a new `DescribeLocalGatewayVirtualInterfaces`.
+    /// Creates a new `DescribeLocalGatewayVirtualInterfacesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

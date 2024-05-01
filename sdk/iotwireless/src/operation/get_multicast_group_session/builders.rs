@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMulticastGroupSessionFluentBuilder {
-    /// Creates a new `GetMulticastGroupSession`.
+    /// Creates a new `GetMulticastGroupSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

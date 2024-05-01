@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeWorkloadFluentBuilder {
-    /// Creates a new `DescribeWorkload`.
+    /// Creates a new `DescribeWorkloadFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl RetrieveDomainAuthCodeFluentBuilder {
-    /// Creates a new `RetrieveDomainAuthCode`.
+    /// Creates a new `RetrieveDomainAuthCodeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

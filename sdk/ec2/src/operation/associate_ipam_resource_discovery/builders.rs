@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateIpamResourceDiscoveryFluentBuilder {
-    /// Creates a new `AssociateIpamResourceDiscovery`.
+    /// Creates a new `AssociateIpamResourceDiscoveryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl SearchSchemasFluentBuilder {
-    /// Creates a new `SearchSchemas`.
+    /// Creates a new `SearchSchemasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

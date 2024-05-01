@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::enab
     }
 }
 impl EnableFluentBuilder {
-    /// Creates a new `Enable`.
+    /// Creates a new `EnableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

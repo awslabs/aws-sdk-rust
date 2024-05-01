@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetLoggerDefinitionFluentBuilder {
-    /// Creates a new `GetLoggerDefinition`.
+    /// Creates a new `GetLoggerDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

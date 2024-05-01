@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateDiskFromSnapshotFluentBuilder {
-    /// Creates a new `CreateDiskFromSnapshot`.
+    /// Creates a new `CreateDiskFromSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

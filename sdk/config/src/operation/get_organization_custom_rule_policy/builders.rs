@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetOrganizationCustomRulePolicyFluentBuilder {
-    /// Creates a new `GetOrganizationCustomRulePolicy`.
+    /// Creates a new `GetOrganizationCustomRulePolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl TestMappingFluentBuilder {
-    /// Creates a new `TestMapping`.
+    /// Creates a new `TestMappingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

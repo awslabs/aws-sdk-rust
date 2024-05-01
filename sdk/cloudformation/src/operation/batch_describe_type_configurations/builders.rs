@@ -49,7 +49,7 @@ impl
     }
 }
 impl BatchDescribeTypeConfigurationsFluentBuilder {
-    /// Creates a new `BatchDescribeTypeConfigurations`.
+    /// Creates a new `BatchDescribeTypeConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

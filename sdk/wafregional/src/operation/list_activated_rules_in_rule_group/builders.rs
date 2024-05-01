@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListActivatedRulesInRuleGroupFluentBuilder {
-    /// Creates a new `ListActivatedRulesInRuleGroup`.
+    /// Creates a new `ListActivatedRulesInRuleGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

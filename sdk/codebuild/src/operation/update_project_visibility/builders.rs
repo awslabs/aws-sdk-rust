@@ -64,7 +64,7 @@ impl
     }
 }
 impl UpdateProjectVisibilityFluentBuilder {
-    /// Creates a new `UpdateProjectVisibility`.
+    /// Creates a new `UpdateProjectVisibilityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

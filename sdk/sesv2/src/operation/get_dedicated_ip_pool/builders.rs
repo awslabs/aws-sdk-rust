@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDedicatedIpPoolFluentBuilder {
-    /// Creates a new `GetDedicatedIpPool`.
+    /// Creates a new `GetDedicatedIpPoolFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

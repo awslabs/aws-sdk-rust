@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateCampaignOutboundCallConfigFluentBuilder {
-    /// Creates a new `UpdateCampaignOutboundCallConfig`.
+    /// Creates a new `UpdateCampaignOutboundCallConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

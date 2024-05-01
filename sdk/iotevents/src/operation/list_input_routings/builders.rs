@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListInputRoutingsFluentBuilder {
-    /// Creates a new `ListInputRoutings`.
+    /// Creates a new `ListInputRoutingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

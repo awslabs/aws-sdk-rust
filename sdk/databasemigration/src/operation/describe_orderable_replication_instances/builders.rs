@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeOrderableReplicationInstancesFluentBuilder {
-    /// Creates a new `DescribeOrderableReplicationInstances`.
+    /// Creates a new `DescribeOrderableReplicationInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

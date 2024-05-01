@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSignedBluinsightsUrlFluentBuilder {
-    /// Creates a new `GetSignedBluinsightsUrl`.
+    /// Creates a new `GetSignedBluinsightsUrlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

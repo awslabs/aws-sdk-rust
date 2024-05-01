@@ -49,7 +49,7 @@ impl
     }
 }
 impl RestoreDomainAccessFluentBuilder {
-    /// Creates a new `RestoreDomainAccess`.
+    /// Creates a new `RestoreDomainAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

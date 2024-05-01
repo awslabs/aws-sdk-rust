@@ -49,7 +49,7 @@ impl
     }
 }
 impl ReplaceTopicRuleFluentBuilder {
-    /// Creates a new `ReplaceTopicRule`.
+    /// Creates a new `ReplaceTopicRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

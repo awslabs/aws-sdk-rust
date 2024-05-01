@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateInstanceEventWindowFluentBuilder {
-    /// Creates a new `DisassociateInstanceEventWindow`.
+    /// Creates a new `DisassociateInstanceEventWindowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

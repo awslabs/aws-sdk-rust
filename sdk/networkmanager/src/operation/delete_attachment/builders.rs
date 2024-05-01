@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAttachmentFluentBuilder {
-    /// Creates a new `DeleteAttachment`.
+    /// Creates a new `DeleteAttachmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

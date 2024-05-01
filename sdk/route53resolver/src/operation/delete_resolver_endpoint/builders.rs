@@ -54,7 +54,7 @@ impl
     }
 }
 impl DeleteResolverEndpointFluentBuilder {
-    /// Creates a new `DeleteResolverEndpoint`.
+    /// Creates a new `DeleteResolverEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

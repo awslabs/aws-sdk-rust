@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartExtensionPackAssociationFluentBuilder {
-    /// Creates a new `StartExtensionPackAssociation`.
+    /// Creates a new `StartExtensionPackAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

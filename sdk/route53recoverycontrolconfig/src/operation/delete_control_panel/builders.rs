@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteControlPanelFluentBuilder {
-    /// Creates a new `DeleteControlPanel`.
+    /// Creates a new `DeleteControlPanelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

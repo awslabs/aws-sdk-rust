@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateScanFluentBuilder {
-    /// Creates a new `CreateScan`.
+    /// Creates a new `CreateScanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

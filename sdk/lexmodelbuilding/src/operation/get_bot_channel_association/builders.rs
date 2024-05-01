@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetBotChannelAssociationFluentBuilder {
-    /// Creates a new `GetBotChannelAssociation`.
+    /// Creates a new `GetBotChannelAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

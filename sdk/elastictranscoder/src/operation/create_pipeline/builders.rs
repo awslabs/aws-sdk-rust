@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreatePipelineFluentBuilder {
-    /// Creates a new `CreatePipeline`.
+    /// Creates a new `CreatePipelineFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

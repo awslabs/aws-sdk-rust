@@ -57,7 +57,7 @@ impl
     }
 }
 impl CreateLocationS3FluentBuilder {
-    /// Creates a new `CreateLocationS3`.
+    /// Creates a new `CreateLocationS3FluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

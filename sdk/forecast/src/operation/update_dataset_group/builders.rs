@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateDatasetGroupFluentBuilder {
-    /// Creates a new `UpdateDatasetGroup`.
+    /// Creates a new `UpdateDatasetGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

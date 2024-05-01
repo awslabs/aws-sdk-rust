@@ -45,7 +45,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::crea
     }
 }
 impl CreateVpcFluentBuilder {
-    /// Creates a new `CreateVpc`.
+    /// Creates a new `CreateVpcFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListFlywheelIterationHistoryFluentBuilder {
-    /// Creates a new `ListFlywheelIterationHistory`.
+    /// Creates a new `ListFlywheelIterationHistoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

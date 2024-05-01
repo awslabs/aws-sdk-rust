@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteWatchlistFluentBuilder {
-    /// Creates a new `DeleteWatchlist`.
+    /// Creates a new `DeleteWatchlistFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

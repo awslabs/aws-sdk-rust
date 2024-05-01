@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSinkFluentBuilder {
-    /// Creates a new `DeleteSink`.
+    /// Creates a new `DeleteSinkFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

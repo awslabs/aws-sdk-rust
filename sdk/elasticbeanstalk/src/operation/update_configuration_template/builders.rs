@@ -55,7 +55,7 @@ impl
     }
 }
 impl UpdateConfigurationTemplateFluentBuilder {
-    /// Creates a new `UpdateConfigurationTemplate`.
+    /// Creates a new `UpdateConfigurationTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

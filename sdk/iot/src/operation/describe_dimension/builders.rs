@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeDimensionFluentBuilder {
-    /// Creates a new `DescribeDimension`.
+    /// Creates a new `DescribeDimensionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

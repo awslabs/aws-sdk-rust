@@ -62,7 +62,7 @@ impl
     }
 }
 impl TagMFADeviceFluentBuilder {
-    /// Creates a new `TagMFADevice`.
+    /// Creates a new `TagMFADeviceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

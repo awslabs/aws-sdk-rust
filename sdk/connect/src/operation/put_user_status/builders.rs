@@ -49,7 +49,7 @@ impl
     }
 }
 impl PutUserStatusFluentBuilder {
-    /// Creates a new `PutUserStatus`.
+    /// Creates a new `PutUserStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

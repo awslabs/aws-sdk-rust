@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeEnvironmentManagedActionsFluentBuilder {
-    /// Creates a new `DescribeEnvironmentManagedActions`.
+    /// Creates a new `DescribeEnvironmentManagedActionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

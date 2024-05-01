@@ -48,7 +48,7 @@ impl
     }
 }
 impl UnlabelParameterVersionFluentBuilder {
-    /// Creates a new `UnlabelParameterVersion`.
+    /// Creates a new `UnlabelParameterVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

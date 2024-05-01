@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartEdgeDeploymentStageFluentBuilder {
-    /// Creates a new `StartEdgeDeploymentStage`.
+    /// Creates a new `StartEdgeDeploymentStageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

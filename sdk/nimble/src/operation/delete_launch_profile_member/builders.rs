@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteLaunchProfileMemberFluentBuilder {
-    /// Creates a new `DeleteLaunchProfileMember`.
+    /// Creates a new `DeleteLaunchProfileMemberFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

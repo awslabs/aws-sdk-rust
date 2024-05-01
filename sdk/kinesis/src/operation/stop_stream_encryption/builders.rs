@@ -53,7 +53,7 @@ impl
     }
 }
 impl StopStreamEncryptionFluentBuilder {
-    /// Creates a new `StopStreamEncryption`.
+    /// Creates a new `StopStreamEncryptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

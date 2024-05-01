@@ -52,7 +52,7 @@ impl
     }
 }
 impl CreateCachediSCSIVolumeFluentBuilder {
-    /// Creates a new `CreateCachediSCSIVolume`.
+    /// Creates a new `CreateCachediSCSIVolumeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

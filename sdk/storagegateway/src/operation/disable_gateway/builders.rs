@@ -51,7 +51,7 @@ impl
     }
 }
 impl DisableGatewayFluentBuilder {
-    /// Creates a new `DisableGateway`.
+    /// Creates a new `DisableGatewayFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

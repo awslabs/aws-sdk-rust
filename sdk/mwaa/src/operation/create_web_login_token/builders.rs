@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateWebLoginTokenFluentBuilder {
-    /// Creates a new `CreateWebLoginToken`.
+    /// Creates a new `CreateWebLoginTokenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

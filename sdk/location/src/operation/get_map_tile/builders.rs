@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetMapTileFluentBuilder {
-    /// Creates a new `GetMapTile`.
+    /// Creates a new `GetMapTileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

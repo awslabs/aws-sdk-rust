@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAWSOrganizationsAccessStatusFluentBuilder {
-    /// Creates a new `GetAWSOrganizationsAccessStatus`.
+    /// Creates a new `GetAWSOrganizationsAccessStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

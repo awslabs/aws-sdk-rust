@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetKxScalingGroupFluentBuilder {
-    /// Creates a new `GetKxScalingGroup`.
+    /// Creates a new `GetKxScalingGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

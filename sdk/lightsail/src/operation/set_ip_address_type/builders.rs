@@ -49,7 +49,7 @@ impl
     }
 }
 impl SetIpAddressTypeFluentBuilder {
-    /// Creates a new `SetIpAddressType`.
+    /// Creates a new `SetIpAddressTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

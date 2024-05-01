@@ -48,7 +48,7 @@ impl
     }
 }
 impl CheckDNSAvailabilityFluentBuilder {
-    /// Creates a new `CheckDNSAvailability`.
+    /// Creates a new `CheckDNSAvailabilityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -75,7 +75,7 @@ impl
     }
 }
 impl CreateTrainingJobFluentBuilder {
-    /// Creates a new `CreateTrainingJob`.
+    /// Creates a new `CreateTrainingJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

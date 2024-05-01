@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDataflowEndpointGroupFluentBuilder {
-    /// Creates a new `GetDataflowEndpointGroup`.
+    /// Creates a new `GetDataflowEndpointGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

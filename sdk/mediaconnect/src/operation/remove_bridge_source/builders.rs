@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveBridgeSourceFluentBuilder {
-    /// Creates a new `RemoveBridgeSource`.
+    /// Creates a new `RemoveBridgeSourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeThemeAliasFluentBuilder {
-    /// Creates a new `DescribeThemeAlias`.
+    /// Creates a new `DescribeThemeAliasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

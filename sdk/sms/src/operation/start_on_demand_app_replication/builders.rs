@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartOnDemandAppReplicationFluentBuilder {
-    /// Creates a new `StartOnDemandAppReplication`.
+    /// Creates a new `StartOnDemandAppReplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

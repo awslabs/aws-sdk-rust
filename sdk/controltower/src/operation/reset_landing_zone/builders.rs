@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResetLandingZoneFluentBuilder {
-    /// Creates a new `ResetLandingZone`.
+    /// Creates a new `ResetLandingZoneFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

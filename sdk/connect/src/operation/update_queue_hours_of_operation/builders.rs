@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateQueueHoursOfOperationFluentBuilder {
-    /// Creates a new `UpdateQueueHoursOfOperation`.
+    /// Creates a new `UpdateQueueHoursOfOperationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

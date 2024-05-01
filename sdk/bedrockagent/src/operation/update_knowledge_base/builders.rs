@@ -58,7 +58,7 @@ impl
     }
 }
 impl UpdateKnowledgeBaseFluentBuilder {
-    /// Creates a new `UpdateKnowledgeBase`.
+    /// Creates a new `UpdateKnowledgeBaseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetIamPortalLoginUrlFluentBuilder {
-    /// Creates a new `GetIamPortalLoginUrl`.
+    /// Creates a new `GetIamPortalLoginUrlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

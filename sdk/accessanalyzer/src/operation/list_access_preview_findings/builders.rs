@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAccessPreviewFindingsFluentBuilder {
-    /// Creates a new `ListAccessPreviewFindings`.
+    /// Creates a new `ListAccessPreviewFindingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

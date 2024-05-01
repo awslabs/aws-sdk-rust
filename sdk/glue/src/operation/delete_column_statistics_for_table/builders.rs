@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteColumnStatisticsForTableFluentBuilder {
-    /// Creates a new `DeleteColumnStatisticsForTable`.
+    /// Creates a new `DeleteColumnStatisticsForTableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

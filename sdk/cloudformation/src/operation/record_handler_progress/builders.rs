@@ -49,7 +49,7 @@ impl
     }
 }
 impl RecordHandlerProgressFluentBuilder {
-    /// Creates a new `RecordHandlerProgress`.
+    /// Creates a new `RecordHandlerProgressFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

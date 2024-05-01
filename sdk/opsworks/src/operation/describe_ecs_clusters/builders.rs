@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeEcsClustersFluentBuilder {
-    /// Creates a new `DescribeEcsClusters`.
+    /// Creates a new `DescribeEcsClustersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

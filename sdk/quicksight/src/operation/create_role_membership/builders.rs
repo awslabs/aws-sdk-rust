@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateRoleMembershipFluentBuilder {
-    /// Creates a new `CreateRoleMembership`.
+    /// Creates a new `CreateRoleMembershipFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

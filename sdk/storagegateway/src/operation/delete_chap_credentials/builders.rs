@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteChapCredentialsFluentBuilder {
-    /// Creates a new `DeleteChapCredentials`.
+    /// Creates a new `DeleteChapCredentialsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl PublishLayerVersionFluentBuilder {
-    /// Creates a new `PublishLayerVersion`.
+    /// Creates a new `PublishLayerVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

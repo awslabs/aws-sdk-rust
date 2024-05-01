@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopColumnStatisticsTaskRunFluentBuilder {
-    /// Creates a new `StopColumnStatisticsTaskRun`.
+    /// Creates a new `StopColumnStatisticsTaskRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

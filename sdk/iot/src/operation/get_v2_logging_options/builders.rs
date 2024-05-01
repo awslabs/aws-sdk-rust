@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetV2LoggingOptionsFluentBuilder {
-    /// Creates a new `GetV2LoggingOptions`.
+    /// Creates a new `GetV2LoggingOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdatePrimaryEmailAddressFluentBuilder {
-    /// Creates a new `UpdatePrimaryEmailAddress`.
+    /// Creates a new `UpdatePrimaryEmailAddressFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

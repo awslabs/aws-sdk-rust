@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListGroupsForEntityFluentBuilder {
-    /// Creates a new `ListGroupsForEntity`.
+    /// Creates a new `ListGroupsForEntityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

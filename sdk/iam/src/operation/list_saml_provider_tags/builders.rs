@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListSAMLProviderTagsFluentBuilder {
-    /// Creates a new `ListSAMLProviderTags`.
+    /// Creates a new `ListSAMLProviderTagsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

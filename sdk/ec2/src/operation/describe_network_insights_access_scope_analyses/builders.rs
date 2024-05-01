@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeNetworkInsightsAccessScopeAnalysesFluentBuilder {
-    /// Creates a new `DescribeNetworkInsightsAccessScopeAnalyses`.
+    /// Creates a new `DescribeNetworkInsightsAccessScopeAnalysesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

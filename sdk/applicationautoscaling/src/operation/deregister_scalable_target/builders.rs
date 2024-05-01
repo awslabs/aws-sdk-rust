@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeregisterScalableTargetFluentBuilder {
-    /// Creates a new `DeregisterScalableTarget`.
+    /// Creates a new `DeregisterScalableTargetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

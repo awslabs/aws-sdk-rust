@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeRetentionConfigurationsFluentBuilder {
-    /// Creates a new `DescribeRetentionConfigurations`.
+    /// Creates a new `DescribeRetentionConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

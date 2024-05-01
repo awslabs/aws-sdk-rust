@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteFirewallManagerRuleGroupsFluentBuilder {
-    /// Creates a new `DeleteFirewallManagerRuleGroups`.
+    /// Creates a new `DeleteFirewallManagerRuleGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

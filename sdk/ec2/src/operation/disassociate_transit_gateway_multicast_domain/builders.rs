@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateTransitGatewayMulticastDomainFluentBuilder {
-    /// Creates a new `DisassociateTransitGatewayMulticastDomain`.
+    /// Creates a new `DisassociateTransitGatewayMulticastDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

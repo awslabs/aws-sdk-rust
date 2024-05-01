@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListProfilingGroupsFluentBuilder {
-    /// Creates a new `ListProfilingGroups`.
+    /// Creates a new `ListProfilingGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

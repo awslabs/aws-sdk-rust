@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutEmailMonitoringConfigurationFluentBuilder {
-    /// Creates a new `PutEmailMonitoringConfiguration`.
+    /// Creates a new `PutEmailMonitoringConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

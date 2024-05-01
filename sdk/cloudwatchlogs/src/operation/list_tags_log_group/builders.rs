@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListTagsLogGroupFluentBuilder {
-    /// Creates a new `ListTagsLogGroup`.
+    /// Creates a new `ListTagsLogGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

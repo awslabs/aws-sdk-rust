@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateDynamicThingGroupFluentBuilder {
-    /// Creates a new `CreateDynamicThingGroup`.
+    /// Creates a new `CreateDynamicThingGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDataLakeOrganizationConfigurationFluentBuilder {
-    /// Creates a new `GetDataLakeOrganizationConfiguration`.
+    /// Creates a new `GetDataLakeOrganizationConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

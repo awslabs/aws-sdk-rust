@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteProxySessionFluentBuilder {
-    /// Creates a new `DeleteProxySession`.
+    /// Creates a new `DeleteProxySessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

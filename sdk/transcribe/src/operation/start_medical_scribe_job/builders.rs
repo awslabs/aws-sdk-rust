@@ -65,7 +65,7 @@ impl
     }
 }
 impl StartMedicalScribeJobFluentBuilder {
-    /// Creates a new `StartMedicalScribeJob`.
+    /// Creates a new `StartMedicalScribeJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

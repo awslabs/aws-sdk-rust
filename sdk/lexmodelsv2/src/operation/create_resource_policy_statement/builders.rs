@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateResourcePolicyStatementFluentBuilder {
-    /// Creates a new `CreateResourcePolicyStatement`.
+    /// Creates a new `CreateResourcePolicyStatementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

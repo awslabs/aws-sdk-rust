@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListHostedConfigurationVersionsFluentBuilder {
-    /// Creates a new `ListHostedConfigurationVersions`.
+    /// Creates a new `ListHostedConfigurationVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeprovisionPublicIpv4PoolCidrFluentBuilder {
-    /// Creates a new `DeprovisionPublicIpv4PoolCidr`.
+    /// Creates a new `DeprovisionPublicIpv4PoolCidrFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

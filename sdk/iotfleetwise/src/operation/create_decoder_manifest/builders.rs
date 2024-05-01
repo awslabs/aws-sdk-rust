@@ -58,7 +58,7 @@ impl
     }
 }
 impl CreateDecoderManifestFluentBuilder {
-    /// Creates a new `CreateDecoderManifest`.
+    /// Creates a new `CreateDecoderManifestFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

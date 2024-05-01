@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteApnsVoipChannelFluentBuilder {
-    /// Creates a new `DeleteApnsVoipChannel`.
+    /// Creates a new `DeleteApnsVoipChannelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

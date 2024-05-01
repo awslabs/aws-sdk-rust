@@ -55,7 +55,7 @@ impl
     }
 }
 impl GenerateRandomFluentBuilder {
-    /// Creates a new `GenerateRandom`.
+    /// Creates a new `GenerateRandomFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

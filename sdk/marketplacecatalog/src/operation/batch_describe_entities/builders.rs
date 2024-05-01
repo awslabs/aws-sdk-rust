@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDescribeEntitiesFluentBuilder {
-    /// Creates a new `BatchDescribeEntities`.
+    /// Creates a new `BatchDescribeEntitiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

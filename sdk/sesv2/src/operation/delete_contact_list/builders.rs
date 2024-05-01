@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteContactListFluentBuilder {
-    /// Creates a new `DeleteContactList`.
+    /// Creates a new `DeleteContactListFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -60,7 +60,7 @@ impl
     }
 }
 impl DeleteBucketWebsiteFluentBuilder {
-    /// Creates a new `DeleteBucketWebsite`.
+    /// Creates a new `DeleteBucketWebsiteFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DetachSecurityProfileFluentBuilder {
-    /// Creates a new `DetachSecurityProfile`.
+    /// Creates a new `DetachSecurityProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

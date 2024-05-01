@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListNotebookMetadataFluentBuilder {
-    /// Creates a new `ListNotebookMetadata`.
+    /// Creates a new `ListNotebookMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

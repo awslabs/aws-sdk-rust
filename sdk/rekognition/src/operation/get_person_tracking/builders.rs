@@ -56,7 +56,7 @@ impl
     }
 }
 impl GetPersonTrackingFluentBuilder {
-    /// Creates a new `GetPersonTracking`.
+    /// Creates a new `GetPersonTrackingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl EnableLoggingFluentBuilder {
-    /// Creates a new `EnableLogging`.
+    /// Creates a new `EnableLoggingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

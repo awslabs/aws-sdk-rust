@@ -55,7 +55,7 @@ impl
     }
 }
 impl DeleteAppVersionAppComponentFluentBuilder {
-    /// Creates a new `DeleteAppVersionAppComponent`.
+    /// Creates a new `DeleteAppVersionAppComponentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

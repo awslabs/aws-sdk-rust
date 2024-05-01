@@ -57,7 +57,7 @@ impl
     }
 }
 impl DescribeAdjustmentTypesFluentBuilder {
-    /// Creates a new `DescribeAdjustmentTypes`.
+    /// Creates a new `DescribeAdjustmentTypesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

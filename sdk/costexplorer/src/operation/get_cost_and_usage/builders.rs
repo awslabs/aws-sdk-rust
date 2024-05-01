@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetCostAndUsageFluentBuilder {
-    /// Creates a new `GetCostAndUsage`.
+    /// Creates a new `GetCostAndUsageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

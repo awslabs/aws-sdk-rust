@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribePublishingDestinationFluentBuilder {
-    /// Creates a new `DescribePublishingDestination`.
+    /// Creates a new `DescribePublishingDestinationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

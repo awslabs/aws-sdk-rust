@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeDataSetPermissionsFluentBuilder {
-    /// Creates a new `DescribeDataSetPermissions`.
+    /// Creates a new `DescribeDataSetPermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl TestConnectionFluentBuilder {
-    /// Creates a new `TestConnection`.
+    /// Creates a new `TestConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

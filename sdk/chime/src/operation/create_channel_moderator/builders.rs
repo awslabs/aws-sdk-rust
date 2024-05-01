@@ -66,7 +66,7 @@ impl
     }
 }
 impl CreateChannelModeratorFluentBuilder {
-    /// Creates a new `CreateChannelModerator`.
+    /// Creates a new `CreateChannelModeratorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

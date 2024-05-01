@@ -49,7 +49,7 @@ impl
     }
 }
 impl ImportServerCatalogFluentBuilder {
-    /// Creates a new `ImportServerCatalog`.
+    /// Creates a new `ImportServerCatalogFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateInferenceSchedulerFluentBuilder {
-    /// Creates a new `UpdateInferenceScheduler`.
+    /// Creates a new `UpdateInferenceSchedulerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

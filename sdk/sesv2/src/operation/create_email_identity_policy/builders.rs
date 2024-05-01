@@ -52,7 +52,7 @@ impl
     }
 }
 impl CreateEmailIdentityPolicyFluentBuilder {
-    /// Creates a new `CreateEmailIdentityPolicy`.
+    /// Creates a new `CreateEmailIdentityPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

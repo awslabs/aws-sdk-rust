@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetVoiceProfileFluentBuilder {
-    /// Creates a new `GetVoiceProfile`.
+    /// Creates a new `GetVoiceProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

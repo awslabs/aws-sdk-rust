@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyInstanceMetadataOptionsFluentBuilder {
-    /// Creates a new `ModifyInstanceMetadataOptions`.
+    /// Creates a new `ModifyInstanceMetadataOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

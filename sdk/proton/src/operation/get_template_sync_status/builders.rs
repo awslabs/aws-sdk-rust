@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTemplateSyncStatusFluentBuilder {
-    /// Creates a new `GetTemplateSyncStatus`.
+    /// Creates a new `GetTemplateSyncStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

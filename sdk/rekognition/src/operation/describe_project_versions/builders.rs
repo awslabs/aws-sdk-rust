@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeProjectVersionsFluentBuilder {
-    /// Creates a new `DescribeProjectVersions`.
+    /// Creates a new `DescribeProjectVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl VerifyTrustFluentBuilder {
-    /// Creates a new `VerifyTrust`.
+    /// Creates a new `VerifyTrustFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateInstanceStorageConfigFluentBuilder {
-    /// Creates a new `UpdateInstanceStorageConfig`.
+    /// Creates a new `UpdateInstanceStorageConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListAuditMitigationActionsExecutionsFluentBuilder {
-    /// Creates a new `ListAuditMitigationActionsExecutions`.
+    /// Creates a new `ListAuditMitigationActionsExecutionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

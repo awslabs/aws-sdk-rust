@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpgradeProfileVersionFluentBuilder {
-    /// Creates a new `UpgradeProfileVersion`.
+    /// Creates a new `UpgradeProfileVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

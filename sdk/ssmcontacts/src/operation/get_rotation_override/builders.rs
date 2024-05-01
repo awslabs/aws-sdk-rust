@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRotationOverrideFluentBuilder {
-    /// Creates a new `GetRotationOverride`.
+    /// Creates a new `GetRotationOverrideFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeIpamResourceDiscoveriesFluentBuilder {
-    /// Creates a new `DescribeIpamResourceDiscoveries`.
+    /// Creates a new `DescribeIpamResourceDiscoveriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

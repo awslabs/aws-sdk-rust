@@ -50,7 +50,7 @@ impl
     }
 }
 impl BatchDeleteDocumentFluentBuilder {
-    /// Creates a new `BatchDeleteDocument`.
+    /// Creates a new `BatchDeleteDocumentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdatePartitionFluentBuilder {
-    /// Creates a new `UpdatePartition`.
+    /// Creates a new `UpdatePartitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

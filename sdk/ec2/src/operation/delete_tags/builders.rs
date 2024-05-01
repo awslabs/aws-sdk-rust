@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteTagsFluentBuilder {
-    /// Creates a new `DeleteTags`.
+    /// Creates a new `DeleteTagsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

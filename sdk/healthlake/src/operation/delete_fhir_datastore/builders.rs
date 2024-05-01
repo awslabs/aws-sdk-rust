@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteFHIRDatastoreFluentBuilder {
-    /// Creates a new `DeleteFHIRDatastore`.
+    /// Creates a new `DeleteFHIRDatastoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

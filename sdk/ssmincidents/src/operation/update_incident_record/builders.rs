@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateIncidentRecordFluentBuilder {
-    /// Creates a new `UpdateIncidentRecord`.
+    /// Creates a new `UpdateIncidentRecordFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -53,7 +53,7 @@ impl
     }
 }
 impl ListStorageLensConfigurationsFluentBuilder {
-    /// Creates a new `ListStorageLensConfigurations`.
+    /// Creates a new `ListStorageLensConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

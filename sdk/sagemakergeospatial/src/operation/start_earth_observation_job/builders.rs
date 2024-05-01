@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartEarthObservationJobFluentBuilder {
-    /// Creates a new `StartEarthObservationJob`.
+    /// Creates a new `StartEarthObservationJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

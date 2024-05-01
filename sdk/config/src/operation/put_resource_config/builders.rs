@@ -52,7 +52,7 @@ impl
     }
 }
 impl PutResourceConfigFluentBuilder {
-    /// Creates a new `PutResourceConfig`.
+    /// Creates a new `PutResourceConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

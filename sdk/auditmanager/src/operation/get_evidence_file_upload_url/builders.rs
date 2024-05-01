@@ -58,7 +58,7 @@ impl
     }
 }
 impl GetEvidenceFileUploadUrlFluentBuilder {
-    /// Creates a new `GetEvidenceFileUploadUrl`.
+    /// Creates a new `GetEvidenceFileUploadUrlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDimensionKeyDetailsFluentBuilder {
-    /// Creates a new `GetDimensionKeyDetails`.
+    /// Creates a new `GetDimensionKeyDetailsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

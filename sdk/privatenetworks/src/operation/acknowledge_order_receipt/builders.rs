@@ -48,7 +48,7 @@ impl
     }
 }
 impl AcknowledgeOrderReceiptFluentBuilder {
-    /// Creates a new `AcknowledgeOrderReceipt`.
+    /// Creates a new `AcknowledgeOrderReceiptFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

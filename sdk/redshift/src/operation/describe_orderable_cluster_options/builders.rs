@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeOrderableClusterOptionsFluentBuilder {
-    /// Creates a new `DescribeOrderableClusterOptions`.
+    /// Creates a new `DescribeOrderableClusterOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -53,7 +53,7 @@ impl
     }
 }
 impl CreateAccountSubscriptionFluentBuilder {
-    /// Creates a new `CreateAccountSubscription`.
+    /// Creates a new `CreateAccountSubscriptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

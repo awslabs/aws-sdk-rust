@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteBudgetActionFluentBuilder {
-    /// Creates a new `DeleteBudgetAction`.
+    /// Creates a new `DeleteBudgetActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

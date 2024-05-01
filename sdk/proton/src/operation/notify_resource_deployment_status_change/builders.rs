@@ -49,7 +49,7 @@ impl
     }
 }
 impl NotifyResourceDeploymentStatusChangeFluentBuilder {
-    /// Creates a new `NotifyResourceDeploymentStatusChange`.
+    /// Creates a new `NotifyResourceDeploymentStatusChangeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

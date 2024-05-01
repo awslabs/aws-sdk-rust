@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDiscovererFluentBuilder {
-    /// Creates a new `DeleteDiscoverer`.
+    /// Creates a new `DeleteDiscovererFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

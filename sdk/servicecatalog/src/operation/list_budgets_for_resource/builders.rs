@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListBudgetsForResourceFluentBuilder {
-    /// Creates a new `ListBudgetsForResource`.
+    /// Creates a new `ListBudgetsForResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

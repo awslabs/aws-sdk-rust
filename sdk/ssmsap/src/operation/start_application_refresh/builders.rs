@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartApplicationRefreshFluentBuilder {
-    /// Creates a new `StartApplicationRefresh`.
+    /// Creates a new `StartApplicationRefreshFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

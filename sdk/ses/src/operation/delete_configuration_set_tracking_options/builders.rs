@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteConfigurationSetTrackingOptionsFluentBuilder {
-    /// Creates a new `DeleteConfigurationSetTrackingOptions`.
+    /// Creates a new `DeleteConfigurationSetTrackingOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateVpcIngressConnectionFluentBuilder {
-    /// Creates a new `CreateVpcIngressConnection`.
+    /// Creates a new `CreateVpcIngressConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

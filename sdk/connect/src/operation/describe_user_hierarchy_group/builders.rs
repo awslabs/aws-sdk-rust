@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeUserHierarchyGroupFluentBuilder {
-    /// Creates a new `DescribeUserHierarchyGroup`.
+    /// Creates a new `DescribeUserHierarchyGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

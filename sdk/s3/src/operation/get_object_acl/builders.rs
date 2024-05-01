@@ -66,7 +66,7 @@ impl
     }
 }
 impl GetObjectAclFluentBuilder {
-    /// Creates a new `GetObjectAcl`.
+    /// Creates a new `GetObjectAclFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetIngestionDestinationFluentBuilder {
-    /// Creates a new `GetIngestionDestination`.
+    /// Creates a new `GetIngestionDestinationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

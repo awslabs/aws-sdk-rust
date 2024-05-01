@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeChangeSetFluentBuilder {
-    /// Creates a new `DescribeChangeSet`.
+    /// Creates a new `DescribeChangeSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

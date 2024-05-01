@@ -63,7 +63,7 @@ impl
     }
 }
 impl UpdateAttendeeCapabilitiesFluentBuilder {
-    /// Creates a new `UpdateAttendeeCapabilities`.
+    /// Creates a new `UpdateAttendeeCapabilitiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

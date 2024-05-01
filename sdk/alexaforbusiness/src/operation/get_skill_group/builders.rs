@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetSkillGroupFluentBuilder {
-    /// Creates a new `GetSkillGroup`.
+    /// Creates a new `GetSkillGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopEdgePackagingJobFluentBuilder {
-    /// Creates a new `StopEdgePackagingJob`.
+    /// Creates a new `StopEdgePackagingJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

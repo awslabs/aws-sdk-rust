@@ -62,7 +62,7 @@ impl
     }
 }
 impl GetBucketVersioningFluentBuilder {
-    /// Creates a new `GetBucketVersioning`.
+    /// Creates a new `GetBucketVersioningFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

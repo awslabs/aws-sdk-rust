@@ -50,7 +50,7 @@ impl
     }
 }
 impl MergeDeveloperIdentitiesFluentBuilder {
-    /// Creates a new `MergeDeveloperIdentities`.
+    /// Creates a new `MergeDeveloperIdentitiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

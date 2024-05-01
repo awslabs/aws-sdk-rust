@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelLifecycleExecutionFluentBuilder {
-    /// Creates a new `CancelLifecycleExecution`.
+    /// Creates a new `CancelLifecycleExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

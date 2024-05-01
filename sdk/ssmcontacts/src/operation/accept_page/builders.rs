@@ -48,7 +48,7 @@ impl
     }
 }
 impl AcceptPageFluentBuilder {
-    /// Creates a new `AcceptPage`.
+    /// Creates a new `AcceptPageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

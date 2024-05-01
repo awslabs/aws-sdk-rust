@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDBShardGroupsFluentBuilder {
-    /// Creates a new `DescribeDBShardGroups`.
+    /// Creates a new `DescribeDBShardGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

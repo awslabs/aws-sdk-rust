@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteWirelessDeviceImportTaskFluentBuilder {
-    /// Creates a new `DeleteWirelessDeviceImportTask`.
+    /// Creates a new `DeleteWirelessDeviceImportTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

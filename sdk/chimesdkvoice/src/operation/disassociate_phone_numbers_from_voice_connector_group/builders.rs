@@ -27,7 +27,7 @@ impl crate::operation::disassociate_phone_numbers_from_voice_connector_group::bu
 pub struct DisassociatePhoneNumbersFromVoiceConnectorGroupFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::disassociate_phone_numbers_from_voice_connector_group::builders::DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorGroupFluentBuilder {
-    /// Creates a new `DisassociatePhoneNumbersFromVoiceConnectorGroup`.
+    /// Creates a new `DisassociatePhoneNumbersFromVoiceConnectorGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeSpendLimitsFluentBuilder {
-    /// Creates a new `DescribeSpendLimits`.
+    /// Creates a new `DescribeSpendLimitsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

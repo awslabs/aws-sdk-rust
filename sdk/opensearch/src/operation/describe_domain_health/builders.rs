@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDomainHealthFluentBuilder {
-    /// Creates a new `DescribeDomainHealth`.
+    /// Creates a new `DescribeDomainHealthFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

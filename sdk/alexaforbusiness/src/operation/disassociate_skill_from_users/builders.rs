@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateSkillFromUsersFluentBuilder {
-    /// Creates a new `DisassociateSkillFromUsers`.
+    /// Creates a new `DisassociateSkillFromUsersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

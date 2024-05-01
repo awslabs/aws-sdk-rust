@@ -50,7 +50,7 @@ impl
     }
 }
 impl ModifyInstanceProfileFluentBuilder {
-    /// Creates a new `ModifyInstanceProfile`.
+    /// Creates a new `ModifyInstanceProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

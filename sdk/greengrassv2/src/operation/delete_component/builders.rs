@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteComponentFluentBuilder {
-    /// Creates a new `DeleteComponent`.
+    /// Creates a new `DeleteComponentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

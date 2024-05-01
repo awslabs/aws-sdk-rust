@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateGlossaryFluentBuilder {
-    /// Creates a new `UpdateGlossary`.
+    /// Creates a new `UpdateGlossaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

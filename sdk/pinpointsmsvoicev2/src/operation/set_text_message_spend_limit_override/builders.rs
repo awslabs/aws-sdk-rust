@@ -48,7 +48,7 @@ impl
     }
 }
 impl SetTextMessageSpendLimitOverrideFluentBuilder {
-    /// Creates a new `SetTextMessageSpendLimitOverride`.
+    /// Creates a new `SetTextMessageSpendLimitOverrideFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

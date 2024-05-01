@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListWebhooksFluentBuilder {
-    /// Creates a new `ListWebhooks`.
+    /// Creates a new `ListWebhooksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

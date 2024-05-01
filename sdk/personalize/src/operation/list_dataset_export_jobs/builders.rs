@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDatasetExportJobsFluentBuilder {
-    /// Creates a new `ListDatasetExportJobs`.
+    /// Creates a new `ListDatasetExportJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

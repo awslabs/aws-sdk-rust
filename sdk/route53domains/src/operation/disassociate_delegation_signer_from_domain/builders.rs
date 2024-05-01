@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateDelegationSignerFromDomainFluentBuilder {
-    /// Creates a new `DisassociateDelegationSignerFromDomain`.
+    /// Creates a new `DisassociateDelegationSignerFromDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

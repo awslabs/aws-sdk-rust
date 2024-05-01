@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutActionsFluentBuilder {
-    /// Creates a new `PutActions`.
+    /// Creates a new `PutActionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

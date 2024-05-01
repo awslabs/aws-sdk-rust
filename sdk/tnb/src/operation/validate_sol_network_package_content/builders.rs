@@ -49,7 +49,7 @@ impl
     }
 }
 impl ValidateSolNetworkPackageContentFluentBuilder {
-    /// Creates a new `ValidateSolNetworkPackageContent`.
+    /// Creates a new `ValidateSolNetworkPackageContentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

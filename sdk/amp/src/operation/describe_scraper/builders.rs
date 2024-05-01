@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeScraperFluentBuilder {
-    /// Creates a new `DescribeScraper`.
+    /// Creates a new `DescribeScraperFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateTypedLinkFacetFluentBuilder {
-    /// Creates a new `CreateTypedLinkFacet`.
+    /// Creates a new `CreateTypedLinkFacetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

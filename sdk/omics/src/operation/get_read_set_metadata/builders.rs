@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetReadSetMetadataFluentBuilder {
-    /// Creates a new `GetReadSetMetadata`.
+    /// Creates a new `GetReadSetMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

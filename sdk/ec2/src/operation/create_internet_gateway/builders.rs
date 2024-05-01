@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateInternetGatewayFluentBuilder {
-    /// Creates a new `CreateInternetGateway`.
+    /// Creates a new `CreateInternetGatewayFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

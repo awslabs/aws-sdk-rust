@@ -56,7 +56,7 @@ impl
     }
 }
 impl ListAccessGrantsFluentBuilder {
-    /// Creates a new `ListAccessGrants`.
+    /// Creates a new `ListAccessGrantsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

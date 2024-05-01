@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListMFADevicesFluentBuilder {
-    /// Creates a new `ListMFADevices`.
+    /// Creates a new `ListMFADevicesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

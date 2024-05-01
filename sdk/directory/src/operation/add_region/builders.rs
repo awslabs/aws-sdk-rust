@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::add_
     }
 }
 impl AddRegionFluentBuilder {
-    /// Creates a new `AddRegion`.
+    /// Creates a new `AddRegionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

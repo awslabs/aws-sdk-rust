@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetLicenseConversionTaskFluentBuilder {
-    /// Creates a new `GetLicenseConversionTask`.
+    /// Creates a new `GetLicenseConversionTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

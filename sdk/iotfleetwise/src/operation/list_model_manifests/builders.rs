@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListModelManifestsFluentBuilder {
-    /// Creates a new `ListModelManifests`.
+    /// Creates a new `ListModelManifestsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

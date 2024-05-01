@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateKeySigningKeyFluentBuilder {
-    /// Creates a new `CreateKeySigningKey`.
+    /// Creates a new `CreateKeySigningKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

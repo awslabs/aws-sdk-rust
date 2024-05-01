@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeCustomerGatewaysFluentBuilder {
-    /// Creates a new `DescribeCustomerGateways`.
+    /// Creates a new `DescribeCustomerGatewaysFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

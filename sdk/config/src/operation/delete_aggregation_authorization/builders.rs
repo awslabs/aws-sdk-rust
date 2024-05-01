@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAggregationAuthorizationFluentBuilder {
-    /// Creates a new `DeleteAggregationAuthorization`.
+    /// Creates a new `DeleteAggregationAuthorizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

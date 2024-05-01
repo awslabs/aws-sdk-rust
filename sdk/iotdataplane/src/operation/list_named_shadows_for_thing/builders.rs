@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListNamedShadowsForThingFluentBuilder {
-    /// Creates a new `ListNamedShadowsForThing`.
+    /// Creates a new `ListNamedShadowsForThingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

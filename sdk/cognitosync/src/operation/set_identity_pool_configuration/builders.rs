@@ -70,7 +70,7 @@ impl
     }
 }
 impl SetIdentityPoolConfigurationFluentBuilder {
-    /// Creates a new `SetIdentityPoolConfiguration`.
+    /// Creates a new `SetIdentityPoolConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

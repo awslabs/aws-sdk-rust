@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateTrunkInterfaceFluentBuilder {
-    /// Creates a new `DisassociateTrunkInterface`.
+    /// Creates a new `DisassociateTrunkInterfaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

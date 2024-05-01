@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteWaveFluentBuilder {
-    /// Creates a new `DeleteWave`.
+    /// Creates a new `DeleteWaveFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

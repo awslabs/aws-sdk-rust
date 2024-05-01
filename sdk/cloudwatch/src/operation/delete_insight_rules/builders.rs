@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteInsightRulesFluentBuilder {
-    /// Creates a new `DeleteInsightRules`.
+    /// Creates a new `DeleteInsightRulesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

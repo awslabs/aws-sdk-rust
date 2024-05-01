@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTestSetGenerationFluentBuilder {
-    /// Creates a new `DescribeTestSetGeneration`.
+    /// Creates a new `DescribeTestSetGenerationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl StartStackFluentBuilder {
-    /// Creates a new `StartStack`.
+    /// Creates a new `StartStackFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateThreatIntelSetFluentBuilder {
-    /// Creates a new `UpdateThreatIntelSet`.
+    /// Creates a new `UpdateThreatIntelSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

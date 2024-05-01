@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListStreamKeysFluentBuilder {
-    /// Creates a new `ListStreamKeys`.
+    /// Creates a new `ListStreamKeysFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

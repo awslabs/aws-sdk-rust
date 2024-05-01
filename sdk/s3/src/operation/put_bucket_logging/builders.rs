@@ -105,7 +105,7 @@ impl
     }
 }
 impl PutBucketLoggingFluentBuilder {
-    /// Creates a new `PutBucketLogging`.
+    /// Creates a new `PutBucketLoggingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateStackSetFluentBuilder {
-    /// Creates a new `UpdateStackSet`.
+    /// Creates a new `UpdateStackSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

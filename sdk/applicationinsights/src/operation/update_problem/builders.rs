@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateProblemFluentBuilder {
-    /// Creates a new `UpdateProblem`.
+    /// Creates a new `UpdateProblemFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

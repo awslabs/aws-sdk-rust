@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteApplicationCloudWatchLoggingOptionFluentBuilder {
-    /// Creates a new `DeleteApplicationCloudWatchLoggingOption`.
+    /// Creates a new `DeleteApplicationCloudWatchLoggingOptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

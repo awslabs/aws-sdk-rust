@@ -53,7 +53,7 @@ impl
     }
 }
 impl DeleteTaskDefinitionsFluentBuilder {
-    /// Creates a new `DeleteTaskDefinitions`.
+    /// Creates a new `DeleteTaskDefinitionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

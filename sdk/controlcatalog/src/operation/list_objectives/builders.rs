@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListObjectivesFluentBuilder {
-    /// Creates a new `ListObjectives`.
+    /// Creates a new `ListObjectivesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

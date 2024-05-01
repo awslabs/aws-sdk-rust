@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteApiCacheFluentBuilder {
-    /// Creates a new `DeleteApiCache`.
+    /// Creates a new `DeleteApiCacheFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

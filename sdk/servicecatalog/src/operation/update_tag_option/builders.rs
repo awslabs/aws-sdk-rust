@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateTagOptionFluentBuilder {
-    /// Creates a new `UpdateTagOption`.
+    /// Creates a new `UpdateTagOptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteIngestionDestinationFluentBuilder {
-    /// Creates a new `DeleteIngestionDestination`.
+    /// Creates a new `DeleteIngestionDestinationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

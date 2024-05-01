@@ -53,7 +53,7 @@ impl
     }
 }
 impl DeleteScriptFluentBuilder {
-    /// Creates a new `DeleteScript`.
+    /// Creates a new `DeleteScriptFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

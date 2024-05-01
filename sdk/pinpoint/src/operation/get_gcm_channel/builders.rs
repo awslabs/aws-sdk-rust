@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetGcmChannelFluentBuilder {
-    /// Creates a new `GetGcmChannel`.
+    /// Creates a new `GetGcmChannelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

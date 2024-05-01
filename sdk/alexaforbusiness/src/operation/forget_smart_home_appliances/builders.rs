@@ -49,7 +49,7 @@ impl
     }
 }
 impl ForgetSmartHomeAppliancesFluentBuilder {
-    /// Creates a new `ForgetSmartHomeAppliances`.
+    /// Creates a new `ForgetSmartHomeAppliancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

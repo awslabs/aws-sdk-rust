@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreatePlatformVersionFluentBuilder {
-    /// Creates a new `CreatePlatformVersion`.
+    /// Creates a new `CreatePlatformVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

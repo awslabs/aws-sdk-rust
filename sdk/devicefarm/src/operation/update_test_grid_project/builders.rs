@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateTestGridProjectFluentBuilder {
-    /// Creates a new `UpdateTestGridProject`.
+    /// Creates a new `UpdateTestGridProjectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

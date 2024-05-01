@@ -57,7 +57,7 @@ impl
     }
 }
 impl CancelServicePipelineDeploymentFluentBuilder {
-    /// Creates a new `CancelServicePipelineDeployment`.
+    /// Creates a new `CancelServicePipelineDeploymentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

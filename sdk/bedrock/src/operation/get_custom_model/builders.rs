@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCustomModelFluentBuilder {
-    /// Creates a new `GetCustomModel`.
+    /// Creates a new `GetCustomModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

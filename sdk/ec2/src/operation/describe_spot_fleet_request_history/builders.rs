@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeSpotFleetRequestHistoryFluentBuilder {
-    /// Creates a new `DescribeSpotFleetRequestHistory`.
+    /// Creates a new `DescribeSpotFleetRequestHistoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

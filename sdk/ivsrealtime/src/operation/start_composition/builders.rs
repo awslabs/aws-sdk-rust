@@ -61,7 +61,7 @@ impl
     }
 }
 impl StartCompositionFluentBuilder {
-    /// Creates a new `StartComposition`.
+    /// Creates a new `StartCompositionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

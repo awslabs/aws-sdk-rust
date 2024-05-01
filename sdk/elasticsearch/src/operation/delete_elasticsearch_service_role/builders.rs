@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteElasticsearchServiceRoleFluentBuilder {
-    /// Creates a new `DeleteElasticsearchServiceRole`.
+    /// Creates a new `DeleteElasticsearchServiceRoleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

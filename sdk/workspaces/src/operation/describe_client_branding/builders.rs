@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeClientBrandingFluentBuilder {
-    /// Creates a new `DescribeClientBranding`.
+    /// Creates a new `DescribeClientBrandingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

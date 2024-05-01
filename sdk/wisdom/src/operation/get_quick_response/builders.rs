@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetQuickResponseFluentBuilder {
-    /// Creates a new `GetQuickResponse`.
+    /// Creates a new `GetQuickResponseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

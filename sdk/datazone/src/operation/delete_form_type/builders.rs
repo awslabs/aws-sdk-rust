@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteFormTypeFluentBuilder {
-    /// Creates a new `DeleteFormType`.
+    /// Creates a new `DeleteFormTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeRedshiftIdcApplicationsFluentBuilder {
-    /// Creates a new `DescribeRedshiftIdcApplications`.
+    /// Creates a new `DescribeRedshiftIdcApplicationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeSolutionVersionFluentBuilder {
-    /// Creates a new `DescribeSolutionVersion`.
+    /// Creates a new `DescribeSolutionVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

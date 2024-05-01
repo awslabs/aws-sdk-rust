@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetWorkflowStepExecutionFluentBuilder {
-    /// Creates a new `GetWorkflowStepExecution`.
+    /// Creates a new `GetWorkflowStepExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl EnableEbsEncryptionByDefaultFluentBuilder {
-    /// Creates a new `EnableEbsEncryptionByDefault`.
+    /// Creates a new `EnableEbsEncryptionByDefaultFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

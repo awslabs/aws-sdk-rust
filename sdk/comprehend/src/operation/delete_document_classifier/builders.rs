@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteDocumentClassifierFluentBuilder {
-    /// Creates a new `DeleteDocumentClassifier`.
+    /// Creates a new `DeleteDocumentClassifierFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

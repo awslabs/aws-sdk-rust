@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteAwsLogSourceFluentBuilder {
-    /// Creates a new `DeleteAwsLogSource`.
+    /// Creates a new `DeleteAwsLogSourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

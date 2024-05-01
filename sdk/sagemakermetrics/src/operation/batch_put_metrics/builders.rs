@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchPutMetricsFluentBuilder {
-    /// Creates a new `BatchPutMetrics`.
+    /// Creates a new `BatchPutMetricsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

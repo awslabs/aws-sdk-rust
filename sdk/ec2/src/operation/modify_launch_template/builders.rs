@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyLaunchTemplateFluentBuilder {
-    /// Creates a new `ModifyLaunchTemplate`.
+    /// Creates a new `ModifyLaunchTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

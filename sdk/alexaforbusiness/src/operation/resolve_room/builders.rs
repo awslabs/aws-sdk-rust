@@ -50,7 +50,7 @@ impl
     }
 }
 impl ResolveRoomFluentBuilder {
-    /// Creates a new `ResolveRoom`.
+    /// Creates a new `ResolveRoomFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

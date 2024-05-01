@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTrustStoreCertificatesFluentBuilder {
-    /// Creates a new `ListTrustStoreCertificates`.
+    /// Creates a new `ListTrustStoreCertificatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

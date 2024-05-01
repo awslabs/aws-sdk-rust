@@ -48,7 +48,7 @@ impl
     }
 }
 impl CopyImageSetFluentBuilder {
-    /// Creates a new `CopyImageSet`.
+    /// Creates a new `CopyImageSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

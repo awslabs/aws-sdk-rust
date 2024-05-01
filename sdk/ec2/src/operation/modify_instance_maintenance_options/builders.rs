@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyInstanceMaintenanceOptionsFluentBuilder {
-    /// Creates a new `ModifyInstanceMaintenanceOptions`.
+    /// Creates a new `ModifyInstanceMaintenanceOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

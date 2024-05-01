@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetResourceEvaluationSummaryFluentBuilder {
-    /// Creates a new `GetResourceEvaluationSummary`.
+    /// Creates a new `GetResourceEvaluationSummaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

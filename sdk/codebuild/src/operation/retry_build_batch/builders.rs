@@ -48,7 +48,7 @@ impl
     }
 }
 impl RetryBuildBatchFluentBuilder {
-    /// Creates a new `RetryBuildBatch`.
+    /// Creates a new `RetryBuildBatchFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetLicenseUsageFluentBuilder {
-    /// Creates a new `GetLicenseUsage`.
+    /// Creates a new `GetLicenseUsageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTargetHealthFluentBuilder {
-    /// Creates a new `DescribeTargetHealth`.
+    /// Creates a new `DescribeTargetHealthFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

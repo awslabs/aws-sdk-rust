@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateSkillWithUsersFluentBuilder {
-    /// Creates a new `AssociateSkillWithUsers`.
+    /// Creates a new `AssociateSkillWithUsersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

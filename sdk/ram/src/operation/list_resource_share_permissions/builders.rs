@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListResourceSharePermissionsFluentBuilder {
-    /// Creates a new `ListResourceSharePermissions`.
+    /// Creates a new `ListResourceSharePermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

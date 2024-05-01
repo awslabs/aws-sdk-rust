@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetPortfolioPreferencesFluentBuilder {
-    /// Creates a new `GetPortfolioPreferences`.
+    /// Creates a new `GetPortfolioPreferencesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

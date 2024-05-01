@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteLedgerFluentBuilder {
-    /// Creates a new `DeleteLedger`.
+    /// Creates a new `DeleteLedgerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

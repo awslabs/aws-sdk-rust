@@ -48,7 +48,7 @@ impl
     }
 }
 impl RebootClusterFluentBuilder {
-    /// Creates a new `RebootCluster`.
+    /// Creates a new `RebootClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

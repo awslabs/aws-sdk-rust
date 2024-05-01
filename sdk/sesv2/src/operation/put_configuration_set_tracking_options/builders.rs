@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutConfigurationSetTrackingOptionsFluentBuilder {
-    /// Creates a new `PutConfigurationSetTrackingOptions`.
+    /// Creates a new `PutConfigurationSetTrackingOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

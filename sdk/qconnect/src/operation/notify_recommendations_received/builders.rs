@@ -48,7 +48,7 @@ impl
     }
 }
 impl NotifyRecommendationsReceivedFluentBuilder {
-    /// Creates a new `NotifyRecommendationsReceived`.
+    /// Creates a new `NotifyRecommendationsReceivedFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

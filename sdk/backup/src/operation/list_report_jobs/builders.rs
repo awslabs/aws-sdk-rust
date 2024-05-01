@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListReportJobsFluentBuilder {
-    /// Creates a new `ListReportJobs`.
+    /// Creates a new `ListReportJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

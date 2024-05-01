@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListApplicationAuthenticationMethodsFluentBuilder {
-    /// Creates a new `ListApplicationAuthenticationMethods`.
+    /// Creates a new `ListApplicationAuthenticationMethodsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

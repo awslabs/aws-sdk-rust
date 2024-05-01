@@ -60,7 +60,7 @@ impl
     }
 }
 impl DeleteOpsItemFluentBuilder {
-    /// Creates a new `DeleteOpsItem`.
+    /// Creates a new `DeleteOpsItemFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

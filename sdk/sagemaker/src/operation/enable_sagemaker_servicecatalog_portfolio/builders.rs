@@ -48,7 +48,7 @@ impl
     }
 }
 impl EnableSagemakerServicecatalogPortfolioFluentBuilder {
-    /// Creates a new `EnableSagemakerServicecatalogPortfolio`.
+    /// Creates a new `EnableSagemakerServicecatalogPortfolioFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeServiceActionExecutionParametersFluentBuilder {
-    /// Creates a new `DescribeServiceActionExecutionParameters`.
+    /// Creates a new `DescribeServiceActionExecutionParametersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

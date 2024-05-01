@@ -49,7 +49,7 @@ impl
     }
 }
 impl StartSupportDataExportFluentBuilder {
-    /// Creates a new `StartSupportDataExport`.
+    /// Creates a new `StartSupportDataExportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

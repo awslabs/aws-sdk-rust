@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::canc
     }
 }
 impl CancelJobFluentBuilder {
-    /// Creates a new `CancelJob`.
+    /// Creates a new `CancelJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

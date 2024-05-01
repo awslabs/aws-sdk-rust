@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListSigningCertificatesFluentBuilder {
-    /// Creates a new `ListSigningCertificates`.
+    /// Creates a new `ListSigningCertificatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

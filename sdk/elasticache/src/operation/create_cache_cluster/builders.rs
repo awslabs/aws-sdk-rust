@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateCacheClusterFluentBuilder {
-    /// Creates a new `CreateCacheCluster`.
+    /// Creates a new `CreateCacheClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

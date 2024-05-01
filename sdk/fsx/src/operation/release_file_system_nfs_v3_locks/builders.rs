@@ -48,7 +48,7 @@ impl
     }
 }
 impl ReleaseFileSystemNfsV3LocksFluentBuilder {
-    /// Creates a new `ReleaseFileSystemNfsV3Locks`.
+    /// Creates a new `ReleaseFileSystemNfsV3LocksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

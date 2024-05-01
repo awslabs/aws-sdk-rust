@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSipMediaApplicationsFluentBuilder {
-    /// Creates a new `ListSipMediaApplications`.
+    /// Creates a new `ListSipMediaApplicationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

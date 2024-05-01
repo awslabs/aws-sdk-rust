@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCoipPoolFluentBuilder {
-    /// Creates a new `DeleteCoipPool`.
+    /// Creates a new `DeleteCoipPoolFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

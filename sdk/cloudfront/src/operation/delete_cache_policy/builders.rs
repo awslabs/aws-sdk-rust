@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteCachePolicyFluentBuilder {
-    /// Creates a new `DeleteCachePolicy`.
+    /// Creates a new `DeleteCachePolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

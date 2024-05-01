@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateRecommenderConfigurationFluentBuilder {
-    /// Creates a new `UpdateRecommenderConfiguration`.
+    /// Creates a new `UpdateRecommenderConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

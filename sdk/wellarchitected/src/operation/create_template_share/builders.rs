@@ -54,7 +54,7 @@ impl
     }
 }
 impl CreateTemplateShareFluentBuilder {
-    /// Creates a new `CreateTemplateShare`.
+    /// Creates a new `CreateTemplateShareFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

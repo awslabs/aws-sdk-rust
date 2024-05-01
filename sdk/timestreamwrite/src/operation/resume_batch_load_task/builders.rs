@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResumeBatchLoadTaskFluentBuilder {
-    /// Creates a new `ResumeBatchLoadTask`.
+    /// Creates a new `ResumeBatchLoadTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

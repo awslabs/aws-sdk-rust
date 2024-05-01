@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePackagingConfigurationFluentBuilder {
-    /// Creates a new `DeletePackagingConfiguration`.
+    /// Creates a new `DeletePackagingConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

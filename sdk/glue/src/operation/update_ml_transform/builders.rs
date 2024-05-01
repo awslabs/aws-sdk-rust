@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateMLTransformFluentBuilder {
-    /// Creates a new `UpdateMLTransform`.
+    /// Creates a new `UpdateMLTransformFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

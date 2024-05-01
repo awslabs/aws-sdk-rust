@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeDBClusterBacktracksFluentBuilder {
-    /// Creates a new `DescribeDBClusterBacktracks`.
+    /// Creates a new `DescribeDBClusterBacktracksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

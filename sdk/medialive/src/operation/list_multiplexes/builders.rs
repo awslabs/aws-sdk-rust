@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListMultiplexesFluentBuilder {
-    /// Creates a new `ListMultiplexes`.
+    /// Creates a new `ListMultiplexesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

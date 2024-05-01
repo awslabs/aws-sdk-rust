@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateUseCaseFluentBuilder {
-    /// Creates a new `CreateUseCase`.
+    /// Creates a new `CreateUseCaseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

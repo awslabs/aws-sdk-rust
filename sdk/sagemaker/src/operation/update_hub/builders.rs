@@ -44,7 +44,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::upda
     }
 }
 impl UpdateHubFluentBuilder {
-    /// Creates a new `UpdateHub`.
+    /// Creates a new `UpdateHubFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

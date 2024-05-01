@@ -48,7 +48,7 @@ impl
     }
 }
 impl ContainsPiiEntitiesFluentBuilder {
-    /// Creates a new `ContainsPiiEntities`.
+    /// Creates a new `ContainsPiiEntitiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

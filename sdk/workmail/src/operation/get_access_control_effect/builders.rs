@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAccessControlEffectFluentBuilder {
-    /// Creates a new `GetAccessControlEffect`.
+    /// Creates a new `GetAccessControlEffectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteImportFluentBuilder {
-    /// Creates a new `DeleteImport`.
+    /// Creates a new `DeleteImportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

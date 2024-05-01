@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetModelManifestFluentBuilder {
-    /// Creates a new `GetModelManifest`.
+    /// Creates a new `GetModelManifestFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

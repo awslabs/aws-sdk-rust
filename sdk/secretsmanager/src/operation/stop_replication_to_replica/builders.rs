@@ -51,7 +51,7 @@ impl
     }
 }
 impl StopReplicationToReplicaFluentBuilder {
-    /// Creates a new `StopReplicationToReplica`.
+    /// Creates a new `StopReplicationToReplicaFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

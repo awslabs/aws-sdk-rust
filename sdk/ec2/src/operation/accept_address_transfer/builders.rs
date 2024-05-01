@@ -48,7 +48,7 @@ impl
     }
 }
 impl AcceptAddressTransferFluentBuilder {
-    /// Creates a new `AcceptAddressTransfer`.
+    /// Creates a new `AcceptAddressTransferFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

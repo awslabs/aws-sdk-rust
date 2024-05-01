@@ -61,7 +61,7 @@ impl
     }
 }
 impl BatchEvaluateGeofencesFluentBuilder {
-    /// Creates a new `BatchEvaluateGeofences`.
+    /// Creates a new `BatchEvaluateGeofencesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

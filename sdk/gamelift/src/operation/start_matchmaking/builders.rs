@@ -54,7 +54,7 @@ impl
     }
 }
 impl StartMatchmakingFluentBuilder {
-    /// Creates a new `StartMatchmaking`.
+    /// Creates a new `StartMatchmakingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

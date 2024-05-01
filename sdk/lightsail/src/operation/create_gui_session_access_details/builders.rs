@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateGUISessionAccessDetailsFluentBuilder {
-    /// Creates a new `CreateGUISessionAccessDetails`.
+    /// Creates a new `CreateGUISessionAccessDetailsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

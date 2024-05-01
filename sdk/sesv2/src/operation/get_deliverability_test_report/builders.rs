@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDeliverabilityTestReportFluentBuilder {
-    /// Creates a new `GetDeliverabilityTestReport`.
+    /// Creates a new `GetDeliverabilityTestReportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

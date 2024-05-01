@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeLedgerFluentBuilder {
-    /// Creates a new `DescribeLedger`.
+    /// Creates a new `DescribeLedgerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

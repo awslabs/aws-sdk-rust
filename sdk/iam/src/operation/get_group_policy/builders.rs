@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetGroupPolicyFluentBuilder {
-    /// Creates a new `GetGroupPolicy`.
+    /// Creates a new `GetGroupPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

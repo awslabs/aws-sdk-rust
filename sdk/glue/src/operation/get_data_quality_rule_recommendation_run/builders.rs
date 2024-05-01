@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDataQualityRuleRecommendationRunFluentBuilder {
-    /// Creates a new `GetDataQualityRuleRecommendationRun`.
+    /// Creates a new `GetDataQualityRuleRecommendationRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

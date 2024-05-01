@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCanaryRunsFluentBuilder {
-    /// Creates a new `GetCanaryRuns`.
+    /// Creates a new `GetCanaryRunsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

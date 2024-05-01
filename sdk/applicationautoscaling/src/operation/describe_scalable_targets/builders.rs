@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeScalableTargetsFluentBuilder {
-    /// Creates a new `DescribeScalableTargets`.
+    /// Creates a new `DescribeScalableTargetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

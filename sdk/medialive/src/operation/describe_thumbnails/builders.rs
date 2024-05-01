@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeThumbnailsFluentBuilder {
-    /// Creates a new `DescribeThumbnails`.
+    /// Creates a new `DescribeThumbnailsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

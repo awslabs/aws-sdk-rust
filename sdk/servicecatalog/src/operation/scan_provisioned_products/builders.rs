@@ -49,7 +49,7 @@ impl
     }
 }
 impl ScanProvisionedProductsFluentBuilder {
-    /// Creates a new `ScanProvisionedProducts`.
+    /// Creates a new `ScanProvisionedProductsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

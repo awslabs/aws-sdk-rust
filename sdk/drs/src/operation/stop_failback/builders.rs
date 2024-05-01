@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopFailbackFluentBuilder {
-    /// Creates a new `StopFailback`.
+    /// Creates a new `StopFailbackFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

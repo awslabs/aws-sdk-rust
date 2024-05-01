@@ -48,7 +48,7 @@ impl
     }
 }
 impl RequestSenderIdFluentBuilder {
-    /// Creates a new `RequestSenderId`.
+    /// Creates a new `RequestSenderIdFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

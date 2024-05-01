@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendCisSessionTelemetryFluentBuilder {
-    /// Creates a new `SendCisSessionTelemetry`.
+    /// Creates a new `SendCisSessionTelemetryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

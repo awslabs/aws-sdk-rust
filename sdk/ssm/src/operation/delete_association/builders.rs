@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteAssociationFluentBuilder {
-    /// Creates a new `DeleteAssociation`.
+    /// Creates a new `DeleteAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

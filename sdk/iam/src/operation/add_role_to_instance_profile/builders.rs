@@ -51,7 +51,7 @@ impl
     }
 }
 impl AddRoleToInstanceProfileFluentBuilder {
-    /// Creates a new `AddRoleToInstanceProfile`.
+    /// Creates a new `AddRoleToInstanceProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

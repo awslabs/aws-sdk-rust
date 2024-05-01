@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetAccountAuthorizationDetailsFluentBuilder {
-    /// Creates a new `GetAccountAuthorizationDetails`.
+    /// Creates a new `GetAccountAuthorizationDetailsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

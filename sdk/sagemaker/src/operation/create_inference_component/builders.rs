@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateInferenceComponentFluentBuilder {
-    /// Creates a new `CreateInferenceComponent`.
+    /// Creates a new `CreateInferenceComponentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

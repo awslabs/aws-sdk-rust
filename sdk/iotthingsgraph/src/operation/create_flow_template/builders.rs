@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateFlowTemplateFluentBuilder {
-    /// Creates a new `CreateFlowTemplate`.
+    /// Creates a new `CreateFlowTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

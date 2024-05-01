@@ -51,7 +51,7 @@ impl
     }
 }
 impl UploadLayerPartFluentBuilder {
-    /// Creates a new `UploadLayerPart`.
+    /// Creates a new `UploadLayerPartFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

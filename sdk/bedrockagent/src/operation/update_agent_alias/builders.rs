@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateAgentAliasFluentBuilder {
-    /// Creates a new `UpdateAgentAlias`.
+    /// Creates a new `UpdateAgentAliasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

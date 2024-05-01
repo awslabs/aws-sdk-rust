@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::anal
     }
 }
 impl AnalyzeIDFluentBuilder {
-    /// Creates a new `AnalyzeID`.
+    /// Creates a new `AnalyzeIDFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

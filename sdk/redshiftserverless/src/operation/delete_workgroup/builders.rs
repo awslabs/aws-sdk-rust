@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteWorkgroupFluentBuilder {
-    /// Creates a new `DeleteWorkgroup`.
+    /// Creates a new `DeleteWorkgroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

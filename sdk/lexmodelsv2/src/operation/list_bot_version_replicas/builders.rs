@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListBotVersionReplicasFluentBuilder {
-    /// Creates a new `ListBotVersionReplicas`.
+    /// Creates a new `ListBotVersionReplicasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

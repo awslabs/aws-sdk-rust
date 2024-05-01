@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetInstanceMetadataDefaultsFluentBuilder {
-    /// Creates a new `GetInstanceMetadataDefaults`.
+    /// Creates a new `GetInstanceMetadataDefaultsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

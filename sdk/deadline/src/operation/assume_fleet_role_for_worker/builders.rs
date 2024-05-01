@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssumeFleetRoleForWorkerFluentBuilder {
-    /// Creates a new `AssumeFleetRoleForWorker`.
+    /// Creates a new `AssumeFleetRoleForWorkerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GenerateBotElementFluentBuilder {
-    /// Creates a new `GenerateBotElement`.
+    /// Creates a new `GenerateBotElementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

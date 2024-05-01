@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateUserSettingsFluentBuilder {
-    /// Creates a new `AssociateUserSettings`.
+    /// Creates a new `AssociateUserSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

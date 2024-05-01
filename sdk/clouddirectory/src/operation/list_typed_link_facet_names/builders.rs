@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTypedLinkFacetNamesFluentBuilder {
-    /// Creates a new `ListTypedLinkFacetNames`.
+    /// Creates a new `ListTypedLinkFacetNamesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

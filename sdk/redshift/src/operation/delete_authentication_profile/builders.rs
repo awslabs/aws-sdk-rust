@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAuthenticationProfileFluentBuilder {
-    /// Creates a new `DeleteAuthenticationProfile`.
+    /// Creates a new `DeleteAuthenticationProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

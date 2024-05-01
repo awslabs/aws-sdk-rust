@@ -49,7 +49,7 @@ impl
     }
 }
 impl DetachTrafficSourcesFluentBuilder {
-    /// Creates a new `DetachTrafficSources`.
+    /// Creates a new `DetachTrafficSourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

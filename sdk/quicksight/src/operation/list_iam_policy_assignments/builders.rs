@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListIAMPolicyAssignmentsFluentBuilder {
-    /// Creates a new `ListIAMPolicyAssignments`.
+    /// Creates a new `ListIAMPolicyAssignmentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

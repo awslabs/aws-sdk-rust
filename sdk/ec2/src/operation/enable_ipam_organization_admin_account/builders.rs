@@ -48,7 +48,7 @@ impl
     }
 }
 impl EnableIpamOrganizationAdminAccountFluentBuilder {
-    /// Creates a new `EnableIpamOrganizationAdminAccount`.
+    /// Creates a new `EnableIpamOrganizationAdminAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

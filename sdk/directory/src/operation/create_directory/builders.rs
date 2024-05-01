@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateDirectoryFluentBuilder {
-    /// Creates a new `CreateDirectory`.
+    /// Creates a new `CreateDirectoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

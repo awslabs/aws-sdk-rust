@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTimeToLiveFluentBuilder {
-    /// Creates a new `DescribeTimeToLive`.
+    /// Creates a new `DescribeTimeToLiveFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

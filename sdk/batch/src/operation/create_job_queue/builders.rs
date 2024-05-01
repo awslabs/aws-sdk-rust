@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateJobQueueFluentBuilder {
-    /// Creates a new `CreateJobQueue`.
+    /// Creates a new `CreateJobQueueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

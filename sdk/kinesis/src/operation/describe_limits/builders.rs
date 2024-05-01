@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeLimitsFluentBuilder {
-    /// Creates a new `DescribeLimits`.
+    /// Creates a new `DescribeLimitsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

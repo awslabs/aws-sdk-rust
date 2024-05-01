@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCustomDomainAssociationFluentBuilder {
-    /// Creates a new `DeleteCustomDomainAssociation`.
+    /// Creates a new `DeleteCustomDomainAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

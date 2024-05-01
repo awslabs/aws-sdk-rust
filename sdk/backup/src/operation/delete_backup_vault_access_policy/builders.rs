@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteBackupVaultAccessPolicyFluentBuilder {
-    /// Creates a new `DeleteBackupVaultAccessPolicy`.
+    /// Creates a new `DeleteBackupVaultAccessPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

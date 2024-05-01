@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeEffectiveInstanceAssociationsFluentBuilder {
-    /// Creates a new `DescribeEffectiveInstanceAssociations`.
+    /// Creates a new `DescribeEffectiveInstanceAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

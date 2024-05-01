@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAutomaticTapeCreationPolicyFluentBuilder {
-    /// Creates a new `DeleteAutomaticTapeCreationPolicy`.
+    /// Creates a new `DeleteAutomaticTapeCreationPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

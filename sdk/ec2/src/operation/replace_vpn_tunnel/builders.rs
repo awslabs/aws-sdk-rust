@@ -48,7 +48,7 @@ impl
     }
 }
 impl ReplaceVpnTunnelFluentBuilder {
-    /// Creates a new `ReplaceVpnTunnel`.
+    /// Creates a new `ReplaceVpnTunnelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

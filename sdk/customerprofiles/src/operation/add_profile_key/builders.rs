@@ -49,7 +49,7 @@ impl
     }
 }
 impl AddProfileKeyFluentBuilder {
-    /// Creates a new `AddProfileKey`.
+    /// Creates a new `AddProfileKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

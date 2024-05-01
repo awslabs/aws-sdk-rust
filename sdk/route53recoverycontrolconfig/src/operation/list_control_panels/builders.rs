@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListControlPanelsFluentBuilder {
-    /// Creates a new `ListControlPanels`.
+    /// Creates a new `ListControlPanelsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetConfiguredTableFluentBuilder {
-    /// Creates a new `GetConfiguredTable`.
+    /// Creates a new `GetConfiguredTableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

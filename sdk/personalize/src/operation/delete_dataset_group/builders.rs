@@ -56,7 +56,7 @@ impl
     }
 }
 impl DeleteDatasetGroupFluentBuilder {
-    /// Creates a new `DeleteDatasetGroup`.
+    /// Creates a new `DeleteDatasetGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl DisassociateChannelFlowFluentBuilder {
-    /// Creates a new `DisassociateChannelFlow`.
+    /// Creates a new `DisassociateChannelFlowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

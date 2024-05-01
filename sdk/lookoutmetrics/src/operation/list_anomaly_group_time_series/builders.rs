@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAnomalyGroupTimeSeriesFluentBuilder {
-    /// Creates a new `ListAnomalyGroupTimeSeries`.
+    /// Creates a new `ListAnomalyGroupTimeSeriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

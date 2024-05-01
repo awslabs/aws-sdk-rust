@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAssistantAssociationFluentBuilder {
-    /// Creates a new `DeleteAssistantAssociation`.
+    /// Creates a new `DeleteAssistantAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

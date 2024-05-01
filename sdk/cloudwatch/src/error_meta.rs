@@ -1107,6 +1107,18 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<O, E> ::std::convert::From<::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>> for Error
+where
+    O: ::std::fmt::Debug + ::std::marker::Send + ::std::marker::Sync + 'static,
+    E: ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>) -> Self {
+        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            meta: ::std::default::Default::default(),
+            source: err.into(),
+        })
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateFieldLevelEncryptionConfigFluentBuilder {
-    /// Creates a new `UpdateFieldLevelEncryptionConfig`.
+    /// Creates a new `UpdateFieldLevelEncryptionConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

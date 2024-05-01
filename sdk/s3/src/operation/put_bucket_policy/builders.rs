@@ -87,7 +87,7 @@ impl
     }
 }
 impl PutBucketPolicyFluentBuilder {
-    /// Creates a new `PutBucketPolicy`.
+    /// Creates a new `PutBucketPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

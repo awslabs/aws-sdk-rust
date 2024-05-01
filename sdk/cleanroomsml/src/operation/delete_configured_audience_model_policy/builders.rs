@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteConfiguredAudienceModelPolicyFluentBuilder {
-    /// Creates a new `DeleteConfiguredAudienceModelPolicy`.
+    /// Creates a new `DeleteConfiguredAudienceModelPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

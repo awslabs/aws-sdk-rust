@@ -49,7 +49,7 @@ impl
     }
 }
 impl RevokeDomainAccessFluentBuilder {
-    /// Creates a new `RevokeDomainAccess`.
+    /// Creates a new `RevokeDomainAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

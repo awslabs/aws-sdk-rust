@@ -53,7 +53,7 @@ impl
     }
 }
 impl GetActivityTaskFluentBuilder {
-    /// Creates a new `GetActivityTask`.
+    /// Creates a new `GetActivityTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

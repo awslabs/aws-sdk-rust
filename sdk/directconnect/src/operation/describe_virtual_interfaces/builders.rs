@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeVirtualInterfacesFluentBuilder {
-    /// Creates a new `DescribeVirtualInterfaces`.
+    /// Creates a new `DescribeVirtualInterfacesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

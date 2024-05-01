@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartIncidentFluentBuilder {
-    /// Creates a new `StartIncident`.
+    /// Creates a new `StartIncidentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

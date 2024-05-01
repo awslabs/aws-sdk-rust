@@ -27,7 +27,7 @@ impl crate::operation::describe_aws_network_performance_metric_subscriptions::bu
 pub struct DescribeAwsNetworkPerformanceMetricSubscriptionsFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_aws_network_performance_metric_subscriptions::builders::DescribeAwsNetworkPerformanceMetricSubscriptionsInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAwsNetworkPerformanceMetricSubscriptionsFluentBuilder {
-    /// Creates a new `DescribeAwsNetworkPerformanceMetricSubscriptions`.
+    /// Creates a new `DescribeAwsNetworkPerformanceMetricSubscriptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

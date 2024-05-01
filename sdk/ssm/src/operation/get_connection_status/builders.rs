@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetConnectionStatusFluentBuilder {
-    /// Creates a new `GetConnectionStatus`.
+    /// Creates a new `GetConnectionStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

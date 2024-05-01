@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchSnoozeAlarmFluentBuilder {
-    /// Creates a new `BatchSnoozeAlarm`.
+    /// Creates a new `BatchSnoozeAlarmFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

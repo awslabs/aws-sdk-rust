@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListVolumesFluentBuilder {
-    /// Creates a new `ListVolumes`.
+    /// Creates a new `ListVolumesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

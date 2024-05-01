@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTargetResourceTypeFluentBuilder {
-    /// Creates a new `GetTargetResourceType`.
+    /// Creates a new `GetTargetResourceTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

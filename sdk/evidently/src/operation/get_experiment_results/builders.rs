@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetExperimentResultsFluentBuilder {
-    /// Creates a new `GetExperimentResults`.
+    /// Creates a new `GetExperimentResultsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

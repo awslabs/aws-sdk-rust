@@ -49,7 +49,7 @@ impl
     }
 }
 impl ConfirmTopicRuleDestinationFluentBuilder {
-    /// Creates a new `ConfirmTopicRuleDestination`.
+    /// Creates a new `ConfirmTopicRuleDestinationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

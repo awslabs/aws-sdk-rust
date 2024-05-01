@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDisassociateUserStackFluentBuilder {
-    /// Creates a new `BatchDisassociateUserStack`.
+    /// Creates a new `BatchDisassociateUserStackFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

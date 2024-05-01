@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateMacSecKeyFluentBuilder {
-    /// Creates a new `DisassociateMacSecKey`.
+    /// Creates a new `DisassociateMacSecKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

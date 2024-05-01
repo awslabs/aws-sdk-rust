@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeBackupVaultFluentBuilder {
-    /// Creates a new `DescribeBackupVault`.
+    /// Creates a new `DescribeBackupVaultFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

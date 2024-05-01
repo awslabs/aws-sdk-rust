@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAnnotationStoreVersionsFluentBuilder {
-    /// Creates a new `DeleteAnnotationStoreVersions`.
+    /// Creates a new `DeleteAnnotationStoreVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

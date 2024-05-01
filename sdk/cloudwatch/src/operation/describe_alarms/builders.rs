@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeAlarmsFluentBuilder {
-    /// Creates a new `DescribeAlarms`.
+    /// Creates a new `DescribeAlarmsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

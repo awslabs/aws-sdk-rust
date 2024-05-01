@@ -55,7 +55,7 @@ impl
     }
 }
 impl BatchGetResourceConfigFluentBuilder {
-    /// Creates a new `BatchGetResourceConfig`.
+    /// Creates a new `BatchGetResourceConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

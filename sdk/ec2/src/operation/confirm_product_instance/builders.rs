@@ -48,7 +48,7 @@ impl
     }
 }
 impl ConfirmProductInstanceFluentBuilder {
-    /// Creates a new `ConfirmProductInstance`.
+    /// Creates a new `ConfirmProductInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

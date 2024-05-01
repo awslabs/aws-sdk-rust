@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCommentReactionsFluentBuilder {
-    /// Creates a new `GetCommentReactions`.
+    /// Creates a new `GetCommentReactionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
-    /// Creates a new `CreateRelationalDatabaseFromSnapshot`.
+    /// Creates a new `CreateRelationalDatabaseFromSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

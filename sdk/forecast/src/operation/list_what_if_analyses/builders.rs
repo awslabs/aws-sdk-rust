@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListWhatIfAnalysesFluentBuilder {
-    /// Creates a new `ListWhatIfAnalyses`.
+    /// Creates a new `ListWhatIfAnalysesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

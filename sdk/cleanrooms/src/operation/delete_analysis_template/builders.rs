@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAnalysisTemplateFluentBuilder {
-    /// Creates a new `DeleteAnalysisTemplate`.
+    /// Creates a new `DeleteAnalysisTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

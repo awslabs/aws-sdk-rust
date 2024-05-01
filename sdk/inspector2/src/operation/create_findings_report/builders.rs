@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateFindingsReportFluentBuilder {
-    /// Creates a new `CreateFindingsReport`.
+    /// Creates a new `CreateFindingsReportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

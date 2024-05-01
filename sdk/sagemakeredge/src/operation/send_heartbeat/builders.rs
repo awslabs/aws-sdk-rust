@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendHeartbeatFluentBuilder {
-    /// Creates a new `SendHeartbeat`.
+    /// Creates a new `SendHeartbeatFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

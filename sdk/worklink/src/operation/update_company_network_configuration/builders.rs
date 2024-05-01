@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateCompanyNetworkConfigurationFluentBuilder {
-    /// Creates a new `UpdateCompanyNetworkConfiguration`.
+    /// Creates a new `UpdateCompanyNetworkConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

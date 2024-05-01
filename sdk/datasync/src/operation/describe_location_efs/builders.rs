@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeLocationEfsFluentBuilder {
-    /// Creates a new `DescribeLocationEfs`.
+    /// Creates a new `DescribeLocationEfsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

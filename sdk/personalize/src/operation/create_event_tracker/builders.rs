@@ -70,7 +70,7 @@ impl
     }
 }
 impl CreateEventTrackerFluentBuilder {
-    /// Creates a new `CreateEventTracker`.
+    /// Creates a new `CreateEventTrackerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

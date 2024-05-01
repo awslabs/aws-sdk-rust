@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateFraudsterFluentBuilder {
-    /// Creates a new `DisassociateFraudster`.
+    /// Creates a new `DisassociateFraudsterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

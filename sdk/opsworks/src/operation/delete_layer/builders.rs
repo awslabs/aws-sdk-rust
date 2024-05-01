@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteLayerFluentBuilder {
-    /// Creates a new `DeleteLayer`.
+    /// Creates a new `DeleteLayerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

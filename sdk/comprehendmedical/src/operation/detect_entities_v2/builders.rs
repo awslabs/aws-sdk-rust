@@ -50,7 +50,7 @@ impl
     }
 }
 impl DetectEntitiesV2FluentBuilder {
-    /// Creates a new `DetectEntitiesV2`.
+    /// Creates a new `DetectEntitiesV2FluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

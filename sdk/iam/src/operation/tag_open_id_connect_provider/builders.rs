@@ -62,7 +62,7 @@ impl
     }
 }
 impl TagOpenIDConnectProviderFluentBuilder {
-    /// Creates a new `TagOpenIDConnectProvider`.
+    /// Creates a new `TagOpenIDConnectProviderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

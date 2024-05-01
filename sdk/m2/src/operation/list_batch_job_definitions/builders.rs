@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListBatchJobDefinitionsFluentBuilder {
-    /// Creates a new `ListBatchJobDefinitions`.
+    /// Creates a new `ListBatchJobDefinitionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

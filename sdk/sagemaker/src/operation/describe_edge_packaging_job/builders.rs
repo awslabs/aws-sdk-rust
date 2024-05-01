@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeEdgePackagingJobFluentBuilder {
-    /// Creates a new `DescribeEdgePackagingJob`.
+    /// Creates a new `DescribeEdgePackagingJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

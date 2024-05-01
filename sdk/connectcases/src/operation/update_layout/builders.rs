@@ -52,7 +52,7 @@ impl
     }
 }
 impl UpdateLayoutFluentBuilder {
-    /// Creates a new `UpdateLayout`.
+    /// Creates a new `UpdateLayoutFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

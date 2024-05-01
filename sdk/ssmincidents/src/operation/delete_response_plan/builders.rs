@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteResponsePlanFluentBuilder {
-    /// Creates a new `DeleteResponsePlan`.
+    /// Creates a new `DeleteResponsePlanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

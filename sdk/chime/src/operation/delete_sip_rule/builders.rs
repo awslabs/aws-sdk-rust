@@ -52,7 +52,7 @@ impl
     }
 }
 impl DeleteSipRuleFluentBuilder {
-    /// Creates a new `DeleteSipRule`.
+    /// Creates a new `DeleteSipRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

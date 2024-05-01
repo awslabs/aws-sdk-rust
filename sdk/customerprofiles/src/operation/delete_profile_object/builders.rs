@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteProfileObjectFluentBuilder {
-    /// Creates a new `DeleteProfileObject`.
+    /// Creates a new `DeleteProfileObjectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

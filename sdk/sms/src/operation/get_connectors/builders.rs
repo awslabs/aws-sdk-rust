@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetConnectorsFluentBuilder {
-    /// Creates a new `GetConnectors`.
+    /// Creates a new `GetConnectorsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

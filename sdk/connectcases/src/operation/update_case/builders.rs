@@ -52,7 +52,7 @@ impl
     }
 }
 impl UpdateCaseFluentBuilder {
-    /// Creates a new `UpdateCase`.
+    /// Creates a new `UpdateCaseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

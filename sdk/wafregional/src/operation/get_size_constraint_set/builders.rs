@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetSizeConstraintSetFluentBuilder {
-    /// Creates a new `GetSizeConstraintSet`.
+    /// Creates a new `GetSizeConstraintSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

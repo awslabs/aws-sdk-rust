@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTransitGatewayMulticastDomainAssociationsFluentBuilder {
-    /// Creates a new `GetTransitGatewayMulticastDomainAssociations`.
+    /// Creates a new `GetTransitGatewayMulticastDomainAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteExtensionFluentBuilder {
-    /// Creates a new `DeleteExtension`.
+    /// Creates a new `DeleteExtensionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

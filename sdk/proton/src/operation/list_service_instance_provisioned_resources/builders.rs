@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListServiceInstanceProvisionedResourcesFluentBuilder {
-    /// Creates a new `ListServiceInstanceProvisionedResources`.
+    /// Creates a new `ListServiceInstanceProvisionedResourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

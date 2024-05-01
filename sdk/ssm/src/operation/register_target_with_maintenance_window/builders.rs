@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterTargetWithMaintenanceWindowFluentBuilder {
-    /// Creates a new `RegisterTargetWithMaintenanceWindow`.
+    /// Creates a new `RegisterTargetWithMaintenanceWindowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

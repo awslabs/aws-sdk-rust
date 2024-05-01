@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateFieldFluentBuilder {
-    /// Creates a new `CreateField`.
+    /// Creates a new `CreateFieldFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

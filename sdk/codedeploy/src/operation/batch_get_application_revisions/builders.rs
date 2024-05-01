@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetApplicationRevisionsFluentBuilder {
-    /// Creates a new `BatchGetApplicationRevisions`.
+    /// Creates a new `BatchGetApplicationRevisionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

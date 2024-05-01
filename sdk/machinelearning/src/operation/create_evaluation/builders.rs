@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateEvaluationFluentBuilder {
-    /// Creates a new `CreateEvaluation`.
+    /// Creates a new `CreateEvaluationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

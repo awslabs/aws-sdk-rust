@@ -48,7 +48,7 @@ impl
     }
 }
 impl UnarchiveWaveFluentBuilder {
-    /// Creates a new `UnarchiveWave`.
+    /// Creates a new `UnarchiveWaveFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

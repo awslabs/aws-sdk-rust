@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMetricsSummaryFluentBuilder {
-    /// Creates a new `GetMetricsSummary`.
+    /// Creates a new `GetMetricsSummaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

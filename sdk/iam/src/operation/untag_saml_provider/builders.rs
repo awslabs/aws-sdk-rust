@@ -48,7 +48,7 @@ impl
     }
 }
 impl UntagSAMLProviderFluentBuilder {
-    /// Creates a new `UntagSAMLProvider`.
+    /// Creates a new `UntagSAMLProviderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

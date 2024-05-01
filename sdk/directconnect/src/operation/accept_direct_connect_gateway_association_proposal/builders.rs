@@ -48,7 +48,7 @@ impl
     }
 }
 impl AcceptDirectConnectGatewayAssociationProposalFluentBuilder {
-    /// Creates a new `AcceptDirectConnectGatewayAssociationProposal`.
+    /// Creates a new `AcceptDirectConnectGatewayAssociationProposalFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

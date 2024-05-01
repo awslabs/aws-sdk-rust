@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteCustomRoutingAcceleratorFluentBuilder {
-    /// Creates a new `DeleteCustomRoutingAccelerator`.
+    /// Creates a new `DeleteCustomRoutingAcceleratorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

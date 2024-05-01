@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAccountAliasesFluentBuilder {
-    /// Creates a new `ListAccountAliases`.
+    /// Creates a new `ListAccountAliasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

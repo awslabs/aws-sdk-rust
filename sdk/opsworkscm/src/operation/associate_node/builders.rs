@@ -53,7 +53,7 @@ impl
     }
 }
 impl AssociateNodeFluentBuilder {
-    /// Creates a new `AssociateNode`.
+    /// Creates a new `AssociateNodeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

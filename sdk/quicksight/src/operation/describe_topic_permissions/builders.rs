@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTopicPermissionsFluentBuilder {
-    /// Creates a new `DescribeTopicPermissions`.
+    /// Creates a new `DescribeTopicPermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

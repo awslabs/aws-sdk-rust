@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelDataQualityRulesetEvaluationRunFluentBuilder {
-    /// Creates a new `CancelDataQualityRulesetEvaluationRun`.
+    /// Creates a new `CancelDataQualityRulesetEvaluationRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

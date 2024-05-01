@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisableClientAuthenticationFluentBuilder {
-    /// Creates a new `DisableClientAuthentication`.
+    /// Creates a new `DisableClientAuthenticationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

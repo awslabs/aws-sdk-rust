@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteConstraintFluentBuilder {
-    /// Creates a new `DeleteConstraint`.
+    /// Creates a new `DeleteConstraintFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

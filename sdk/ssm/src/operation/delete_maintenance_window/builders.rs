@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMaintenanceWindowFluentBuilder {
-    /// Creates a new `DeleteMaintenanceWindow`.
+    /// Creates a new `DeleteMaintenanceWindowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

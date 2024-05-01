@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAnomalousLogGroupsFluentBuilder {
-    /// Creates a new `ListAnomalousLogGroups`.
+    /// Creates a new `ListAnomalousLogGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

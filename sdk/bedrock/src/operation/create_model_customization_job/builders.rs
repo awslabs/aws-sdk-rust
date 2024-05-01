@@ -52,7 +52,7 @@ impl
     }
 }
 impl CreateModelCustomizationJobFluentBuilder {
-    /// Creates a new `CreateModelCustomizationJob`.
+    /// Creates a new `CreateModelCustomizationJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

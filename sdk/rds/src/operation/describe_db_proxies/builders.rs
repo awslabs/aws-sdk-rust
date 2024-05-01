@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDBProxiesFluentBuilder {
-    /// Creates a new `DescribeDBProxies`.
+    /// Creates a new `DescribeDBProxiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

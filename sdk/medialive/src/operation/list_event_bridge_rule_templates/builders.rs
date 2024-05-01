@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListEventBridgeRuleTemplatesFluentBuilder {
-    /// Creates a new `ListEventBridgeRuleTemplates`.
+    /// Creates a new `ListEventBridgeRuleTemplatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

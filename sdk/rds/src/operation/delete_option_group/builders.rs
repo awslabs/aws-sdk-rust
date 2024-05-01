@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteOptionGroupFluentBuilder {
-    /// Creates a new `DeleteOptionGroup`.
+    /// Creates a new `DeleteOptionGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

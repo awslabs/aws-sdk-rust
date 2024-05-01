@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartBackupJobFluentBuilder {
-    /// Creates a new `StartBackupJob`.
+    /// Creates a new `StartBackupJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyLocalGatewayRouteFluentBuilder {
-    /// Creates a new `ModifyLocalGatewayRoute`.
+    /// Creates a new `ModifyLocalGatewayRouteFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

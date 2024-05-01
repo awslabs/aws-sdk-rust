@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAnalysisTemplatesFluentBuilder {
-    /// Creates a new `ListAnalysisTemplates`.
+    /// Creates a new `ListAnalysisTemplatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

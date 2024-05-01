@@ -62,7 +62,7 @@ impl
     }
 }
 impl PutDeliveryDestinationFluentBuilder {
-    /// Creates a new `PutDeliveryDestination`.
+    /// Creates a new `PutDeliveryDestinationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

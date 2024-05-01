@@ -48,7 +48,7 @@ impl
     }
 }
 impl UploadReadSetPartFluentBuilder {
-    /// Creates a new `UploadReadSetPart`.
+    /// Creates a new `UploadReadSetPartFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

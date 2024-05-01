@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeSecurityPolicyFluentBuilder {
-    /// Creates a new `DescribeSecurityPolicy`.
+    /// Creates a new `DescribeSecurityPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

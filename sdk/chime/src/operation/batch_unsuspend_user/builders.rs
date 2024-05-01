@@ -49,7 +49,7 @@ impl
     }
 }
 impl BatchUnsuspendUserFluentBuilder {
-    /// Creates a new `BatchUnsuspendUser`.
+    /// Creates a new `BatchUnsuspendUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

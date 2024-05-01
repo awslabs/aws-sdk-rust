@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeActivityFluentBuilder {
-    /// Creates a new `DescribeActivity`.
+    /// Creates a new `DescribeActivityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

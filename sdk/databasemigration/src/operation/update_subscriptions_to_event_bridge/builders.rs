@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateSubscriptionsToEventBridgeFluentBuilder {
-    /// Creates a new `UpdateSubscriptionsToEventBridge`.
+    /// Creates a new `UpdateSubscriptionsToEventBridgeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterWorkspaceDirectoryFluentBuilder {
-    /// Creates a new `RegisterWorkspaceDirectory`.
+    /// Creates a new `RegisterWorkspaceDirectoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

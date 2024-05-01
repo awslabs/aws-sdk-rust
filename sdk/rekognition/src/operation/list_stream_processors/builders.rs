@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListStreamProcessorsFluentBuilder {
-    /// Creates a new `ListStreamProcessors`.
+    /// Creates a new `ListStreamProcessorsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

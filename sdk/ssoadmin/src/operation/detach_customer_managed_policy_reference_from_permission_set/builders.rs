@@ -24,7 +24,7 @@ impl crate::operation::detach_customer_managed_policy_reference_from_permission_
 pub struct DetachCustomerManagedPolicyReferenceFromPermissionSetFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::detach_customer_managed_policy_reference_from_permission_set::builders::DetachCustomerManagedPolicyReferenceFromPermissionSetInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -45,7 +45,7 @@ impl
     }
 }
 impl DetachCustomerManagedPolicyReferenceFromPermissionSetFluentBuilder {
-    /// Creates a new `DetachCustomerManagedPolicyReferenceFromPermissionSet`.
+    /// Creates a new `DetachCustomerManagedPolicyReferenceFromPermissionSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

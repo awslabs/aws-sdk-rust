@@ -49,7 +49,7 @@ impl
     }
 }
 impl SetLoadBalancerListenerSSLCertificateFluentBuilder {
-    /// Creates a new `SetLoadBalancerListenerSSLCertificate`.
+    /// Creates a new `SetLoadBalancerListenerSSLCertificateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

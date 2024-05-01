@@ -48,7 +48,7 @@ impl
     }
 }
 impl ProvideAnomalyFeedbackFluentBuilder {
-    /// Creates a new `ProvideAnomalyFeedback`.
+    /// Creates a new `ProvideAnomalyFeedbackFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

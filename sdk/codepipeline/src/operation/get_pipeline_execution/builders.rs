@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetPipelineExecutionFluentBuilder {
-    /// Creates a new `GetPipelineExecution`.
+    /// Creates a new `GetPipelineExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

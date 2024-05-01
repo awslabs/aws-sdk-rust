@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListDeadLetterSourceQueuesFluentBuilder {
-    /// Creates a new `ListDeadLetterSourceQueues`.
+    /// Creates a new `ListDeadLetterSourceQueuesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteVoiceTemplateFluentBuilder {
-    /// Creates a new `DeleteVoiceTemplate`.
+    /// Creates a new `DeleteVoiceTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

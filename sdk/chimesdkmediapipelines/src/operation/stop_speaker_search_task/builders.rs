@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopSpeakerSearchTaskFluentBuilder {
-    /// Creates a new `StopSpeakerSearchTask`.
+    /// Creates a new `StopSpeakerSearchTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

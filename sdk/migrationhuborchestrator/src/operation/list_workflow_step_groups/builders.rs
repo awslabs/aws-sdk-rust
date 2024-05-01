@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListWorkflowStepGroupsFluentBuilder {
-    /// Creates a new `ListWorkflowStepGroups`.
+    /// Creates a new `ListWorkflowStepGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateLoggingConfigurationFluentBuilder {
-    /// Creates a new `CreateLoggingConfiguration`.
+    /// Creates a new `CreateLoggingConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

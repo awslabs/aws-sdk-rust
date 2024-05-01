@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListThemeVersionsFluentBuilder {
-    /// Creates a new `ListThemeVersions`.
+    /// Creates a new `ListThemeVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateReplicationInfoFluentBuilder {
-    /// Creates a new `UpdateReplicationInfo`.
+    /// Creates a new `UpdateReplicationInfoFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

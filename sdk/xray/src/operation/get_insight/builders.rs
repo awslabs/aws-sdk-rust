@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetInsightFluentBuilder {
-    /// Creates a new `GetInsight`.
+    /// Creates a new `GetInsightFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

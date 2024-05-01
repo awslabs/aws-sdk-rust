@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateDetectorVersionMetadataFluentBuilder {
-    /// Creates a new `UpdateDetectorVersionMetadata`.
+    /// Creates a new `UpdateDetectorVersionMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

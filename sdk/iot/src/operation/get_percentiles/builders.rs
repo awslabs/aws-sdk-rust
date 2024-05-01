@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetPercentilesFluentBuilder {
-    /// Creates a new `GetPercentiles`.
+    /// Creates a new `GetPercentilesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

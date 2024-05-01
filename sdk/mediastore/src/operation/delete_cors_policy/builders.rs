@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteCorsPolicyFluentBuilder {
-    /// Creates a new `DeleteCorsPolicy`.
+    /// Creates a new `DeleteCorsPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

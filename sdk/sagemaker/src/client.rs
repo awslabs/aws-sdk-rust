@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,93 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait for `endpoint_deleted`
+    fn wait_until_endpoint_deleted(&self) -> crate::waiters::endpoint_deleted::EndpointDeletedFluentBuilder;
+    /// Wait for `endpoint_in_service`
+    fn wait_until_endpoint_in_service(&self) -> crate::waiters::endpoint_in_service::EndpointInServiceFluentBuilder;
+    /// Wait for `image_created`
+    fn wait_until_image_created(&self) -> crate::waiters::image_created::ImageCreatedFluentBuilder;
+    /// Wait for `image_deleted`
+    fn wait_until_image_deleted(&self) -> crate::waiters::image_deleted::ImageDeletedFluentBuilder;
+    /// Wait for `image_updated`
+    fn wait_until_image_updated(&self) -> crate::waiters::image_updated::ImageUpdatedFluentBuilder;
+    /// Wait for `image_version_created`
+    fn wait_until_image_version_created(&self) -> crate::waiters::image_version_created::ImageVersionCreatedFluentBuilder;
+    /// Wait for `image_version_deleted`
+    fn wait_until_image_version_deleted(&self) -> crate::waiters::image_version_deleted::ImageVersionDeletedFluentBuilder;
+    /// Wait for `notebook_instance_deleted`
+    fn wait_until_notebook_instance_deleted(&self) -> crate::waiters::notebook_instance_deleted::NotebookInstanceDeletedFluentBuilder;
+    /// Wait for `notebook_instance_in_service`
+    fn wait_until_notebook_instance_in_service(&self) -> crate::waiters::notebook_instance_in_service::NotebookInstanceInServiceFluentBuilder;
+    /// Wait for `notebook_instance_stopped`
+    fn wait_until_notebook_instance_stopped(&self) -> crate::waiters::notebook_instance_stopped::NotebookInstanceStoppedFluentBuilder;
+    /// Wait for `processing_job_completed_or_stopped`
+    fn wait_until_processing_job_completed_or_stopped(
+        &self,
+    ) -> crate::waiters::processing_job_completed_or_stopped::ProcessingJobCompletedOrStoppedFluentBuilder;
+    /// Wait for `training_job_completed_or_stopped`
+    fn wait_until_training_job_completed_or_stopped(
+        &self,
+    ) -> crate::waiters::training_job_completed_or_stopped::TrainingJobCompletedOrStoppedFluentBuilder;
+    /// Wait for `transform_job_completed_or_stopped`
+    fn wait_until_transform_job_completed_or_stopped(
+        &self,
+    ) -> crate::waiters::transform_job_completed_or_stopped::TransformJobCompletedOrStoppedFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_endpoint_deleted(&self) -> crate::waiters::endpoint_deleted::EndpointDeletedFluentBuilder {
+        crate::waiters::endpoint_deleted::EndpointDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_endpoint_in_service(&self) -> crate::waiters::endpoint_in_service::EndpointInServiceFluentBuilder {
+        crate::waiters::endpoint_in_service::EndpointInServiceFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_image_created(&self) -> crate::waiters::image_created::ImageCreatedFluentBuilder {
+        crate::waiters::image_created::ImageCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_image_deleted(&self) -> crate::waiters::image_deleted::ImageDeletedFluentBuilder {
+        crate::waiters::image_deleted::ImageDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_image_updated(&self) -> crate::waiters::image_updated::ImageUpdatedFluentBuilder {
+        crate::waiters::image_updated::ImageUpdatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_image_version_created(&self) -> crate::waiters::image_version_created::ImageVersionCreatedFluentBuilder {
+        crate::waiters::image_version_created::ImageVersionCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_image_version_deleted(&self) -> crate::waiters::image_version_deleted::ImageVersionDeletedFluentBuilder {
+        crate::waiters::image_version_deleted::ImageVersionDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_notebook_instance_deleted(&self) -> crate::waiters::notebook_instance_deleted::NotebookInstanceDeletedFluentBuilder {
+        crate::waiters::notebook_instance_deleted::NotebookInstanceDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_notebook_instance_in_service(&self) -> crate::waiters::notebook_instance_in_service::NotebookInstanceInServiceFluentBuilder {
+        crate::waiters::notebook_instance_in_service::NotebookInstanceInServiceFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_notebook_instance_stopped(&self) -> crate::waiters::notebook_instance_stopped::NotebookInstanceStoppedFluentBuilder {
+        crate::waiters::notebook_instance_stopped::NotebookInstanceStoppedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_processing_job_completed_or_stopped(
+        &self,
+    ) -> crate::waiters::processing_job_completed_or_stopped::ProcessingJobCompletedOrStoppedFluentBuilder {
+        crate::waiters::processing_job_completed_or_stopped::ProcessingJobCompletedOrStoppedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_training_job_completed_or_stopped(
+        &self,
+    ) -> crate::waiters::training_job_completed_or_stopped::TrainingJobCompletedOrStoppedFluentBuilder {
+        crate::waiters::training_job_completed_or_stopped::TrainingJobCompletedOrStoppedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_transform_job_completed_or_stopped(
+        &self,
+    ) -> crate::waiters::transform_job_completed_or_stopped::TransformJobCompletedOrStoppedFluentBuilder {
+        crate::waiters::transform_job_completed_or_stopped::TransformJobCompletedOrStoppedFluentBuilder::new(self.handle.clone())
     }
 }
 

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResolveAppVersionResourcesFluentBuilder {
-    /// Creates a new `ResolveAppVersionResources`.
+    /// Creates a new `ResolveAppVersionResourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -107,7 +107,7 @@ impl
     }
 }
 impl GetHLSStreamingSessionURLFluentBuilder {
-    /// Creates a new `GetHLSStreamingSessionURL`.
+    /// Creates a new `GetHLSStreamingSessionURLFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

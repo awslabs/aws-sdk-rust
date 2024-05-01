@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateWorkgroupFluentBuilder {
-    /// Creates a new `CreateWorkgroup`.
+    /// Creates a new `CreateWorkgroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

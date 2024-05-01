@@ -51,7 +51,7 @@ impl
     }
 }
 impl FailoverGlobalClusterFluentBuilder {
-    /// Creates a new `FailoverGlobalCluster`.
+    /// Creates a new `FailoverGlobalClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

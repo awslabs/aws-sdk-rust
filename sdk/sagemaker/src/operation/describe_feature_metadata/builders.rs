@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeFeatureMetadataFluentBuilder {
-    /// Creates a new `DescribeFeatureMetadata`.
+    /// Creates a new `DescribeFeatureMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListRumMetricsDestinationsFluentBuilder {
-    /// Creates a new `ListRumMetricsDestinations`.
+    /// Creates a new `ListRumMetricsDestinationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

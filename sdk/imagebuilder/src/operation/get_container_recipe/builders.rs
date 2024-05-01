@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetContainerRecipeFluentBuilder {
-    /// Creates a new `GetContainerRecipe`.
+    /// Creates a new `GetContainerRecipeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

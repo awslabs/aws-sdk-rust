@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartLifecyclePolicyPreviewFluentBuilder {
-    /// Creates a new `StartLifecyclePolicyPreview`.
+    /// Creates a new `StartLifecyclePolicyPreviewFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

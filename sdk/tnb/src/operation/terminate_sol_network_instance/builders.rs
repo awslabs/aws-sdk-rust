@@ -50,7 +50,7 @@ impl
     }
 }
 impl TerminateSolNetworkInstanceFluentBuilder {
-    /// Creates a new `TerminateSolNetworkInstance`.
+    /// Creates a new `TerminateSolNetworkInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

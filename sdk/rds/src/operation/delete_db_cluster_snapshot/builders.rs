@@ -52,7 +52,7 @@ impl
     }
 }
 impl DeleteDBClusterSnapshotFluentBuilder {
-    /// Creates a new `DeleteDBClusterSnapshot`.
+    /// Creates a new `DeleteDBClusterSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

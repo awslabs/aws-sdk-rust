@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateKxClusterFluentBuilder {
-    /// Creates a new `CreateKxCluster`.
+    /// Creates a new `CreateKxClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

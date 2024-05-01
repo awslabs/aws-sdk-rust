@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDataflowGraphFluentBuilder {
-    /// Creates a new `GetDataflowGraph`.
+    /// Creates a new `GetDataflowGraphFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteOutcomeFluentBuilder {
-    /// Creates a new `DeleteOutcome`.
+    /// Creates a new `DeleteOutcomeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

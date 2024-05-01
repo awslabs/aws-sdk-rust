@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeSpotPriceHistoryFluentBuilder {
-    /// Creates a new `DescribeSpotPriceHistory`.
+    /// Creates a new `DescribeSpotPriceHistoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

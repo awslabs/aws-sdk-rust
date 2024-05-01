@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetExperimentTargetAccountConfigurationFluentBuilder {
-    /// Creates a new `GetExperimentTargetAccountConfiguration`.
+    /// Creates a new `GetExperimentTargetAccountConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

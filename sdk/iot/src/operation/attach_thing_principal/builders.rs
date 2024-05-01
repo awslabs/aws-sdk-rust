@@ -49,7 +49,7 @@ impl
     }
 }
 impl AttachThingPrincipalFluentBuilder {
-    /// Creates a new `AttachThingPrincipal`.
+    /// Creates a new `AttachThingPrincipalFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

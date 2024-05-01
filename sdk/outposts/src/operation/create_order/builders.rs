@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateOrderFluentBuilder {
-    /// Creates a new `CreateOrder`.
+    /// Creates a new `CreateOrderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

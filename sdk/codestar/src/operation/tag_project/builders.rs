@@ -48,7 +48,7 @@ impl
     }
 }
 impl TagProjectFluentBuilder {
-    /// Creates a new `TagProject`.
+    /// Creates a new `TagProjectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

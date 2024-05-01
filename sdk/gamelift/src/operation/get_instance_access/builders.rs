@@ -61,7 +61,7 @@ impl
     }
 }
 impl GetInstanceAccessFluentBuilder {
-    /// Creates a new `GetInstanceAccess`.
+    /// Creates a new `GetInstanceAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

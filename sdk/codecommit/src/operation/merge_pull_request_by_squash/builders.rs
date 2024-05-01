@@ -48,7 +48,7 @@ impl
     }
 }
 impl MergePullRequestBySquashFluentBuilder {
-    /// Creates a new `MergePullRequestBySquash`.
+    /// Creates a new `MergePullRequestBySquashFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

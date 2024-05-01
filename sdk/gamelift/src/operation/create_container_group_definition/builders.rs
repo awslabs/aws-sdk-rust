@@ -70,7 +70,7 @@ impl
     }
 }
 impl CreateContainerGroupDefinitionFluentBuilder {
-    /// Creates a new `CreateContainerGroupDefinition`.
+    /// Creates a new `CreateContainerGroupDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -56,7 +56,7 @@ impl
     }
 }
 impl DeleteGlobalReplicationGroupFluentBuilder {
-    /// Creates a new `DeleteGlobalReplicationGroup`.
+    /// Creates a new `DeleteGlobalReplicationGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

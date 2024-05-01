@@ -60,7 +60,7 @@ impl
     }
 }
 impl StartTranscriptionJobFluentBuilder {
-    /// Creates a new `StartTranscriptionJob`.
+    /// Creates a new `StartTranscriptionJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

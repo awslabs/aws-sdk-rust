@@ -53,7 +53,7 @@ impl
     }
 }
 impl UploadServerCertificateFluentBuilder {
-    /// Creates a new `UploadServerCertificate`.
+    /// Creates a new `UploadServerCertificateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

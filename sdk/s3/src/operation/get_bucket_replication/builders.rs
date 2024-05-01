@@ -64,7 +64,7 @@ impl
     }
 }
 impl GetBucketReplicationFluentBuilder {
-    /// Creates a new `GetBucketReplication`.
+    /// Creates a new `GetBucketReplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteInferenceComponentFluentBuilder {
-    /// Creates a new `DeleteInferenceComponent`.
+    /// Creates a new `DeleteInferenceComponentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

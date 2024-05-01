@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteBatchPredictionFluentBuilder {
-    /// Creates a new `DeleteBatchPrediction`.
+    /// Creates a new `DeleteBatchPredictionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

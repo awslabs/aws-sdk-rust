@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchRevokePermissionsFluentBuilder {
-    /// Creates a new `BatchRevokePermissions`.
+    /// Creates a new `BatchRevokePermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

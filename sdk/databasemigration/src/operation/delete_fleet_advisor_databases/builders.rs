@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteFleetAdvisorDatabasesFluentBuilder {
-    /// Creates a new `DeleteFleetAdvisorDatabases`.
+    /// Creates a new `DeleteFleetAdvisorDatabasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

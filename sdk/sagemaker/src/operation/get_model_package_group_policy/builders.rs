@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetModelPackageGroupPolicyFluentBuilder {
-    /// Creates a new `GetModelPackageGroupPolicy`.
+    /// Creates a new `GetModelPackageGroupPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateScalingParametersFluentBuilder {
-    /// Creates a new `UpdateScalingParameters`.
+    /// Creates a new `UpdateScalingParametersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

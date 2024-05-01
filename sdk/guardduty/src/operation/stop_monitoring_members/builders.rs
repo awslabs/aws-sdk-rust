@@ -49,7 +49,7 @@ impl
     }
 }
 impl StopMonitoringMembersFluentBuilder {
-    /// Creates a new `StopMonitoringMembers`.
+    /// Creates a new `StopMonitoringMembersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetResourceShareAssociationsFluentBuilder {
-    /// Creates a new `GetResourceShareAssociations`.
+    /// Creates a new `GetResourceShareAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

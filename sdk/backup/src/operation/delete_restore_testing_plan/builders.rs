@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteRestoreTestingPlanFluentBuilder {
-    /// Creates a new `DeleteRestoreTestingPlan`.
+    /// Creates a new `DeleteRestoreTestingPlanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

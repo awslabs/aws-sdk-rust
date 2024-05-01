@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeVerifiedAccessGroupsFluentBuilder {
-    /// Creates a new `DescribeVerifiedAccessGroups`.
+    /// Creates a new `DescribeVerifiedAccessGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

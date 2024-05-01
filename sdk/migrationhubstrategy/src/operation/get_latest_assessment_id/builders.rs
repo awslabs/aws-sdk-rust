@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetLatestAssessmentIdFluentBuilder {
-    /// Creates a new `GetLatestAssessmentId`.
+    /// Creates a new `GetLatestAssessmentIdFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

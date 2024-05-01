@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribePhoneNumberFluentBuilder {
-    /// Creates a new `DescribePhoneNumber`.
+    /// Creates a new `DescribePhoneNumberFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

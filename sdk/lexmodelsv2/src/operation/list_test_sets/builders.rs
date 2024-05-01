@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTestSetsFluentBuilder {
-    /// Creates a new `ListTestSets`.
+    /// Creates a new `ListTestSetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

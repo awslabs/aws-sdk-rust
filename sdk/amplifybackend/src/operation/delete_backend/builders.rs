@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteBackendFluentBuilder {
-    /// Creates a new `DeleteBackend`.
+    /// Creates a new `DeleteBackendFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

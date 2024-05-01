@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateAuditStreamConfigurationFluentBuilder {
-    /// Creates a new `UpdateAuditStreamConfiguration`.
+    /// Creates a new `UpdateAuditStreamConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

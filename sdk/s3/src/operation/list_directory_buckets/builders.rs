@@ -64,7 +64,7 @@ impl
     }
 }
 impl ListDirectoryBucketsFluentBuilder {
-    /// Creates a new `ListDirectoryBuckets`.
+    /// Creates a new `ListDirectoryBucketsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

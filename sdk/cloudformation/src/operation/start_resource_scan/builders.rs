@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartResourceScanFluentBuilder {
-    /// Creates a new `StartResourceScan`.
+    /// Creates a new `StartResourceScanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -27,7 +27,7 @@ impl crate::operation::describe_lake_formation_identity_center_configuration::bu
 pub struct DescribeLakeFormationIdentityCenterConfigurationFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_lake_formation_identity_center_configuration::builders::DescribeLakeFormationIdentityCenterConfigurationInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeLakeFormationIdentityCenterConfigurationFluentBuilder {
-    /// Creates a new `DescribeLakeFormationIdentityCenterConfiguration`.
+    /// Creates a new `DescribeLakeFormationIdentityCenterConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

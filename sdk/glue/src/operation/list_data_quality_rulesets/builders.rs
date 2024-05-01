@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDataQualityRulesetsFluentBuilder {
-    /// Creates a new `ListDataQualityRulesets`.
+    /// Creates a new `ListDataQualityRulesetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

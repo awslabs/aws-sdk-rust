@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateAvailabilityOptionsFluentBuilder {
-    /// Creates a new `UpdateAvailabilityOptions`.
+    /// Creates a new `UpdateAvailabilityOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -60,7 +60,7 @@ impl
     }
 }
 impl StartFileTransferFluentBuilder {
-    /// Creates a new `StartFileTransfer`.
+    /// Creates a new `StartFileTransferFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

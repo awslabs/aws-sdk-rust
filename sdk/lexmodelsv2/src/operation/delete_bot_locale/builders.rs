@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteBotLocaleFluentBuilder {
-    /// Creates a new `DeleteBotLocale`.
+    /// Creates a new `DeleteBotLocaleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

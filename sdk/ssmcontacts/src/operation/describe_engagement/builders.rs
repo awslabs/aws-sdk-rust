@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeEngagementFluentBuilder {
-    /// Creates a new `DescribeEngagement`.
+    /// Creates a new `DescribeEngagementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

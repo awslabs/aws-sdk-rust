@@ -129,7 +129,7 @@ impl
     }
 }
 impl CopyObjectFluentBuilder {
-    /// Creates a new `CopyObject`.
+    /// Creates a new `CopyObjectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeLocationFsxWindowsFluentBuilder {
-    /// Creates a new `DescribeLocationFsxWindows`.
+    /// Creates a new `DescribeLocationFsxWindowsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAccountAssignmentCreationStatusFluentBuilder {
-    /// Creates a new `DescribeAccountAssignmentCreationStatus`.
+    /// Creates a new `DescribeAccountAssignmentCreationStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

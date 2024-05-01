@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeEndpointTypesFluentBuilder {
-    /// Creates a new `DescribeEndpointTypes`.
+    /// Creates a new `DescribeEndpointTypesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

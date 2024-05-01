@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDiscovererFluentBuilder {
-    /// Creates a new `DescribeDiscoverer`.
+    /// Creates a new `DescribeDiscovererFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

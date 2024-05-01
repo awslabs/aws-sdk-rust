@@ -56,7 +56,7 @@ impl
     }
 }
 impl SuspendGameServerGroupFluentBuilder {
-    /// Creates a new `SuspendGameServerGroup`.
+    /// Creates a new `SuspendGameServerGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

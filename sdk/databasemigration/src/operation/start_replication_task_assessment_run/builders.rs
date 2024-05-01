@@ -49,7 +49,7 @@ impl
     }
 }
 impl StartReplicationTaskAssessmentRunFluentBuilder {
-    /// Creates a new `StartReplicationTaskAssessmentRun`.
+    /// Creates a new `StartReplicationTaskAssessmentRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

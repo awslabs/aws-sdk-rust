@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetReportGroupTrendFluentBuilder {
-    /// Creates a new `GetReportGroupTrend`.
+    /// Creates a new `GetReportGroupTrendFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

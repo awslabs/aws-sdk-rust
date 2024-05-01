@@ -52,7 +52,7 @@ impl
     }
 }
 impl DeleteAttendeeFluentBuilder {
-    /// Creates a new `DeleteAttendee`.
+    /// Creates a new `DeleteAttendeeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

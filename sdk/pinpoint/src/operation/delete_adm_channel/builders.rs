@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAdmChannelFluentBuilder {
-    /// Creates a new `DeleteAdmChannel`.
+    /// Creates a new `DeleteAdmChannelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

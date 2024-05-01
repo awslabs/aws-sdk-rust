@@ -59,7 +59,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::tag_
     }
 }
 impl TagUserFluentBuilder {
-    /// Creates a new `TagUser`.
+    /// Creates a new `TagUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

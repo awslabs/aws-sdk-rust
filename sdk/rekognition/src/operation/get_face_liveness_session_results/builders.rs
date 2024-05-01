@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetFaceLivenessSessionResultsFluentBuilder {
-    /// Creates a new `GetFaceLivenessSessionResults`.
+    /// Creates a new `GetFaceLivenessSessionResultsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

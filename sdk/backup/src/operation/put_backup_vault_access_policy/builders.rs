@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutBackupVaultAccessPolicyFluentBuilder {
-    /// Creates a new `PutBackupVaultAccessPolicy`.
+    /// Creates a new `PutBackupVaultAccessPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

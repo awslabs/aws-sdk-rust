@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResetDBParameterGroupFluentBuilder {
-    /// Creates a new `ResetDBParameterGroup`.
+    /// Creates a new `ResetDBParameterGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

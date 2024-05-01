@@ -43,7 +43,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::pred
     }
 }
 impl PredictFluentBuilder {
-    /// Creates a new `Predict`.
+    /// Creates a new `PredictFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

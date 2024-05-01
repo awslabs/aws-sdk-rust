@@ -49,7 +49,7 @@ impl
     }
 }
 impl UnlinkDeveloperIdentityFluentBuilder {
-    /// Creates a new `UnlinkDeveloperIdentity`.
+    /// Creates a new `UnlinkDeveloperIdentityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

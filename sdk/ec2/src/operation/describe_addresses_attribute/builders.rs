@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAddressesAttributeFluentBuilder {
-    /// Creates a new `DescribeAddressesAttribute`.
+    /// Creates a new `DescribeAddressesAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

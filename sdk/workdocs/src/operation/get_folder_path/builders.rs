@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetFolderPathFluentBuilder {
-    /// Creates a new `GetFolderPath`.
+    /// Creates a new `GetFolderPathFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

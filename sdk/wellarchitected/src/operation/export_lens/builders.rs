@@ -53,7 +53,7 @@ impl
     }
 }
 impl ExportLensFluentBuilder {
-    /// Creates a new `ExportLens`.
+    /// Creates a new `ExportLensFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

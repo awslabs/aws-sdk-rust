@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreatePartnershipFluentBuilder {
-    /// Creates a new `CreatePartnership`.
+    /// Creates a new `CreatePartnershipFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

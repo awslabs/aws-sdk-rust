@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchUpdateScheduleFluentBuilder {
-    /// Creates a new `BatchUpdateSchedule`.
+    /// Creates a new `BatchUpdateScheduleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

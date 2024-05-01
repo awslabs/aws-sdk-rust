@@ -48,7 +48,7 @@ impl
     }
 }
 impl MergeBranchesBySquashFluentBuilder {
-    /// Creates a new `MergeBranchesBySquash`.
+    /// Creates a new `MergeBranchesBySquashFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

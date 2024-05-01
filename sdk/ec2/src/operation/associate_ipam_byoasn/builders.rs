@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateIpamByoasnFluentBuilder {
-    /// Creates a new `AssociateIpamByoasn`.
+    /// Creates a new `AssociateIpamByoasnFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

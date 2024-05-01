@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreatePullRequestFluentBuilder {
-    /// Creates a new `CreatePullRequest`.
+    /// Creates a new `CreatePullRequestFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl ProvisionProductFluentBuilder {
-    /// Creates a new `ProvisionProduct`.
+    /// Creates a new `ProvisionProductFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

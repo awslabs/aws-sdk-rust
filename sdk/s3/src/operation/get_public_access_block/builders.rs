@@ -65,7 +65,7 @@ impl
     }
 }
 impl GetPublicAccessBlockFluentBuilder {
-    /// Creates a new `GetPublicAccessBlock`.
+    /// Creates a new `GetPublicAccessBlockFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

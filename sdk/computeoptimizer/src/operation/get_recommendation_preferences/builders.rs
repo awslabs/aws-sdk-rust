@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetRecommendationPreferencesFluentBuilder {
-    /// Creates a new `GetRecommendationPreferences`.
+    /// Creates a new `GetRecommendationPreferencesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

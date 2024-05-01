@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeFlowSourceMetadataFluentBuilder {
-    /// Creates a new `DescribeFlowSourceMetadata`.
+    /// Creates a new `DescribeFlowSourceMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

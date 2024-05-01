@@ -51,7 +51,7 @@ impl
     }
 }
 impl DisassociateLensesFluentBuilder {
-    /// Creates a new `DisassociateLenses`.
+    /// Creates a new `DisassociateLensesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

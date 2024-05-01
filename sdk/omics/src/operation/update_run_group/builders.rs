@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateRunGroupFluentBuilder {
-    /// Creates a new `UpdateRunGroup`.
+    /// Creates a new `UpdateRunGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

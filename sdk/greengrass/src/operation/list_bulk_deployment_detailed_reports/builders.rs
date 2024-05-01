@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListBulkDeploymentDetailedReportsFluentBuilder {
-    /// Creates a new `ListBulkDeploymentDetailedReports`.
+    /// Creates a new `ListBulkDeploymentDetailedReportsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

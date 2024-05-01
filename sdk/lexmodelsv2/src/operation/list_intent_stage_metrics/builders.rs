@@ -62,7 +62,7 @@ impl
     }
 }
 impl ListIntentStageMetricsFluentBuilder {
-    /// Creates a new `ListIntentStageMetrics`.
+    /// Creates a new `ListIntentStageMetricsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

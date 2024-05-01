@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateAuthEventFeedbackFluentBuilder {
-    /// Creates a new `UpdateAuthEventFeedback`.
+    /// Creates a new `UpdateAuthEventFeedbackFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

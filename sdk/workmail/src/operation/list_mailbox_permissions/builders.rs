@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListMailboxPermissionsFluentBuilder {
-    /// Creates a new `ListMailboxPermissions`.
+    /// Creates a new `ListMailboxPermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

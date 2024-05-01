@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateServiceTemplateVersionFluentBuilder {
-    /// Creates a new `CreateServiceTemplateVersion`.
+    /// Creates a new `CreateServiceTemplateVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

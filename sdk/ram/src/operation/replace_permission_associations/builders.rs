@@ -52,7 +52,7 @@ impl
     }
 }
 impl ReplacePermissionAssociationsFluentBuilder {
-    /// Creates a new `ReplacePermissionAssociations`.
+    /// Creates a new `ReplacePermissionAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAttendeeFluentBuilder {
-    /// Creates a new `CreateAttendee`.
+    /// Creates a new `CreateAttendeeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTraceGraphFluentBuilder {
-    /// Creates a new `GetTraceGraph`.
+    /// Creates a new `GetTraceGraphFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

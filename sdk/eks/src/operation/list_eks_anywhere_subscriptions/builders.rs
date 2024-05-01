@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListEksAnywhereSubscriptionsFluentBuilder {
-    /// Creates a new `ListEksAnywhereSubscriptions`.
+    /// Creates a new `ListEksAnywhereSubscriptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeStreamConsumerFluentBuilder {
-    /// Creates a new `DescribeStreamConsumer`.
+    /// Creates a new `DescribeStreamConsumerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

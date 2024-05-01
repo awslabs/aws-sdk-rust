@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutConfigurationSetSendingOptionsFluentBuilder {
-    /// Creates a new `PutConfigurationSetSendingOptions`.
+    /// Creates a new `PutConfigurationSetSendingOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

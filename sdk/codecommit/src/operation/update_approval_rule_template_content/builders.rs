@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateApprovalRuleTemplateContentFluentBuilder {
-    /// Creates a new `UpdateApprovalRuleTemplateContent`.
+    /// Creates a new `UpdateApprovalRuleTemplateContentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

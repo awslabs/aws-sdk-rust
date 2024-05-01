@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAllowListFluentBuilder {
-    /// Creates a new `GetAllowList`.
+    /// Creates a new `GetAllowListFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

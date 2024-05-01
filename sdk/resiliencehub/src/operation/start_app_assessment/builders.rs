@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartAppAssessmentFluentBuilder {
-    /// Creates a new `StartAppAssessment`.
+    /// Creates a new `StartAppAssessmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

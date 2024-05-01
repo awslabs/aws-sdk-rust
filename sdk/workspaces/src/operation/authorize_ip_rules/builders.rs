@@ -49,7 +49,7 @@ impl
     }
 }
 impl AuthorizeIpRulesFluentBuilder {
-    /// Creates a new `AuthorizeIpRules`.
+    /// Creates a new `AuthorizeIpRulesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

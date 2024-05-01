@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListRealtimeContactAnalysisSegmentsFluentBuilder {
-    /// Creates a new `ListRealtimeContactAnalysisSegments`.
+    /// Creates a new `ListRealtimeContactAnalysisSegmentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateSMSSandboxPhoneNumberFluentBuilder {
-    /// Creates a new `CreateSMSSandboxPhoneNumber`.
+    /// Creates a new `CreateSMSSandboxPhoneNumberFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

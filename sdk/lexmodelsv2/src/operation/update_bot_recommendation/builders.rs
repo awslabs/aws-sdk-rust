@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateBotRecommendationFluentBuilder {
-    /// Creates a new `UpdateBotRecommendation`.
+    /// Creates a new `UpdateBotRecommendationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteIpamResourceDiscoveryFluentBuilder {
-    /// Creates a new `DeleteIpamResourceDiscovery`.
+    /// Creates a new `DeleteIpamResourceDiscoveryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

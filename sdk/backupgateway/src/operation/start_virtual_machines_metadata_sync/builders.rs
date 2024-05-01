@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartVirtualMachinesMetadataSyncFluentBuilder {
-    /// Creates a new `StartVirtualMachinesMetadataSync`.
+    /// Creates a new `StartVirtualMachinesMetadataSyncFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

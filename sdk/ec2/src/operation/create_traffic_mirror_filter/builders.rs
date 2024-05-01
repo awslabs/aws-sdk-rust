@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateTrafficMirrorFilterFluentBuilder {
-    /// Creates a new `CreateTrafficMirrorFilter`.
+    /// Creates a new `CreateTrafficMirrorFilterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

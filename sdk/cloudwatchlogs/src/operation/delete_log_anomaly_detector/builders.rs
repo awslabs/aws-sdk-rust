@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteLogAnomalyDetectorFluentBuilder {
-    /// Creates a new `DeleteLogAnomalyDetector`.
+    /// Creates a new `DeleteLogAnomalyDetectorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

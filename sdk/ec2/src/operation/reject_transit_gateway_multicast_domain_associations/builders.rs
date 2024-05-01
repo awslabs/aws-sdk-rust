@@ -49,7 +49,7 @@ impl
     }
 }
 impl RejectTransitGatewayMulticastDomainAssociationsFluentBuilder {
-    /// Creates a new `RejectTransitGatewayMulticastDomainAssociations`.
+    /// Creates a new `RejectTransitGatewayMulticastDomainAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

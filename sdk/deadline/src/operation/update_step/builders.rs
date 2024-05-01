@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateStepFluentBuilder {
-    /// Creates a new `UpdateStep`.
+    /// Creates a new `UpdateStepFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

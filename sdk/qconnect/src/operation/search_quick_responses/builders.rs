@@ -48,7 +48,7 @@ impl
     }
 }
 impl SearchQuickResponsesFluentBuilder {
-    /// Creates a new `SearchQuickResponses`.
+    /// Creates a new `SearchQuickResponsesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateFindingAggregatorFluentBuilder {
-    /// Creates a new `UpdateFindingAggregator`.
+    /// Creates a new `UpdateFindingAggregatorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

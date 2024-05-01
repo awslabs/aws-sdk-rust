@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeFpgaImageAttributeFluentBuilder {
-    /// Creates a new `DescribeFpgaImageAttribute`.
+    /// Creates a new `DescribeFpgaImageAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

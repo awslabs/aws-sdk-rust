@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeletePlaceIndexFluentBuilder {
-    /// Creates a new `DeletePlaceIndex`.
+    /// Creates a new `DeletePlaceIndexFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

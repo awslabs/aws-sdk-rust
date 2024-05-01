@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateDefaultViewFluentBuilder {
-    /// Creates a new `DisassociateDefaultView`.
+    /// Creates a new `DisassociateDefaultViewFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

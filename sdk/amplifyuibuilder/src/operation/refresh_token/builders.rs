@@ -51,7 +51,7 @@ impl
     }
 }
 impl RefreshTokenFluentBuilder {
-    /// Creates a new `RefreshToken`.
+    /// Creates a new `RefreshTokenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

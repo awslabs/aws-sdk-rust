@@ -63,7 +63,7 @@ impl
     }
 }
 impl GetBucketIntelligentTieringConfigurationFluentBuilder {
-    /// Creates a new `GetBucketIntelligentTieringConfiguration`.
+    /// Creates a new `GetBucketIntelligentTieringConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

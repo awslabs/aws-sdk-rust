@@ -52,7 +52,7 @@ impl
     }
 }
 impl UnassignPrivateNatGatewayAddressFluentBuilder {
-    /// Creates a new `UnassignPrivateNatGatewayAddress`.
+    /// Creates a new `UnassignPrivateNatGatewayAddressFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

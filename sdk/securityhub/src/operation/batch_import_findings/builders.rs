@@ -81,7 +81,7 @@ impl
     }
 }
 impl BatchImportFindingsFluentBuilder {
-    /// Creates a new `BatchImportFindings`.
+    /// Creates a new `BatchImportFindingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

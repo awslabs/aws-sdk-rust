@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateWirelessDeviceFromFuotaTaskFluentBuilder {
-    /// Creates a new `DisassociateWirelessDeviceFromFuotaTask`.
+    /// Creates a new `DisassociateWirelessDeviceFromFuotaTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

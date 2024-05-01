@@ -55,7 +55,7 @@ impl
     }
 }
 impl TerminateWorkspacesFluentBuilder {
-    /// Creates a new `TerminateWorkspaces`.
+    /// Creates a new `TerminateWorkspacesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

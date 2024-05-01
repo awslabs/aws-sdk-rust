@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyIpamFluentBuilder {
-    /// Creates a new `ModifyIpam`.
+    /// Creates a new `ModifyIpamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

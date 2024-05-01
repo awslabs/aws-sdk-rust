@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteGameSessionQueueFluentBuilder {
-    /// Creates a new `DeleteGameSessionQueue`.
+    /// Creates a new `DeleteGameSessionQueueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

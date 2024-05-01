@@ -70,7 +70,7 @@ impl
     }
 }
 impl DisconnectCustomKeyStoreFluentBuilder {
-    /// Creates a new `DisconnectCustomKeyStore`.
+    /// Creates a new `DisconnectCustomKeyStoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

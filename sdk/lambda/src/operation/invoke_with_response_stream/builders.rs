@@ -49,7 +49,7 @@ impl
     }
 }
 impl InvokeWithResponseStreamFluentBuilder {
-    /// Creates a new `InvokeWithResponseStream`.
+    /// Creates a new `InvokeWithResponseStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

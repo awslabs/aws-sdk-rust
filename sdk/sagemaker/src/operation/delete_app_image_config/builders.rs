@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAppImageConfigFluentBuilder {
-    /// Creates a new `DeleteAppImageConfig`.
+    /// Creates a new `DeleteAppImageConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

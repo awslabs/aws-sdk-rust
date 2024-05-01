@@ -56,7 +56,7 @@ impl
     }
 }
 impl DeleteRecordFluentBuilder {
-    /// Creates a new `DeleteRecord`.
+    /// Creates a new `DeleteRecordFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

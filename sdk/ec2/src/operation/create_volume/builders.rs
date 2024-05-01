@@ -52,7 +52,7 @@ impl
     }
 }
 impl CreateVolumeFluentBuilder {
-    /// Creates a new `CreateVolume`.
+    /// Creates a new `CreateVolumeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

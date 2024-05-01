@@ -52,7 +52,7 @@ impl
     }
 }
 impl PutInsightSelectorsFluentBuilder {
-    /// Creates a new `PutInsightSelectors`.
+    /// Creates a new `PutInsightSelectorsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

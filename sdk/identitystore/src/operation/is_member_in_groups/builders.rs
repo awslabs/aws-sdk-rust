@@ -50,7 +50,7 @@ impl
     }
 }
 impl IsMemberInGroupsFluentBuilder {
-    /// Creates a new `IsMemberInGroups`.
+    /// Creates a new `IsMemberInGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

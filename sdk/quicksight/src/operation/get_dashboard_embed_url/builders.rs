@@ -63,7 +63,7 @@ impl
     }
 }
 impl GetDashboardEmbedUrlFluentBuilder {
-    /// Creates a new `GetDashboardEmbedUrl`.
+    /// Creates a new `GetDashboardEmbedUrlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

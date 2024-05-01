@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeDBInstanceAutomatedBackupsFluentBuilder {
-    /// Creates a new `DescribeDBInstanceAutomatedBackups`.
+    /// Creates a new `DescribeDBInstanceAutomatedBackupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

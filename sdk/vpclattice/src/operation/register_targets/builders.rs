@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterTargetsFluentBuilder {
-    /// Creates a new `RegisterTargets`.
+    /// Creates a new `RegisterTargetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

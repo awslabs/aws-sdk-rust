@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartCodegenJobFluentBuilder {
-    /// Creates a new `StartCodegenJob`.
+    /// Creates a new `StartCodegenJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartTopicsDetectionJobFluentBuilder {
-    /// Creates a new `StartTopicsDetectionJob`.
+    /// Creates a new `StartTopicsDetectionJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeObservabilityConfigurationFluentBuilder {
-    /// Creates a new `DescribeObservabilityConfiguration`.
+    /// Creates a new `DescribeObservabilityConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

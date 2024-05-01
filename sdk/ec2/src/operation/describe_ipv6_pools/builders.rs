@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeIpv6PoolsFluentBuilder {
-    /// Creates a new `DescribeIpv6Pools`.
+    /// Creates a new `DescribeIpv6PoolsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutIntegrationResponseFluentBuilder {
-    /// Creates a new `PutIntegrationResponse`.
+    /// Creates a new `PutIntegrationResponseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

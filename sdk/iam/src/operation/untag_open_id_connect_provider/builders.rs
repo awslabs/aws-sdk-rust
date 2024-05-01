@@ -48,7 +48,7 @@ impl
     }
 }
 impl UntagOpenIDConnectProviderFluentBuilder {
-    /// Creates a new `UntagOpenIDConnectProvider`.
+    /// Creates a new `UntagOpenIDConnectProviderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

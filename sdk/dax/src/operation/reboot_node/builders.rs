@@ -50,7 +50,7 @@ impl
     }
 }
 impl RebootNodeFluentBuilder {
-    /// Creates a new `RebootNode`.
+    /// Creates a new `RebootNodeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

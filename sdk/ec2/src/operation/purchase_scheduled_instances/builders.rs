@@ -53,7 +53,7 @@ impl
     }
 }
 impl PurchaseScheduledInstancesFluentBuilder {
-    /// Creates a new `PurchaseScheduledInstances`.
+    /// Creates a new `PurchaseScheduledInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

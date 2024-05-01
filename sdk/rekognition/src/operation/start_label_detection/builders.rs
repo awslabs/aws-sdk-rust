@@ -54,7 +54,7 @@ impl
     }
 }
 impl StartLabelDetectionFluentBuilder {
-    /// Creates a new `StartLabelDetection`.
+    /// Creates a new `StartLabelDetectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

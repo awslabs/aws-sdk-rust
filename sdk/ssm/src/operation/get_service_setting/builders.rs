@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetServiceSettingFluentBuilder {
-    /// Creates a new `GetServiceSetting`.
+    /// Creates a new `GetServiceSettingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

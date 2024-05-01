@@ -48,7 +48,7 @@ impl
     }
 }
 impl CloneBackendFluentBuilder {
-    /// Creates a new `CloneBackend`.
+    /// Creates a new `CloneBackendFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

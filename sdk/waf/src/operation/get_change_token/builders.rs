@@ -54,7 +54,7 @@ impl
     }
 }
 impl GetChangeTokenFluentBuilder {
-    /// Creates a new `GetChangeToken`.
+    /// Creates a new `GetChangeTokenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

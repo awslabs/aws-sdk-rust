@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder {
-    /// Creates a new `DescribeTransitGatewayRouteTableAnnouncements`.
+    /// Creates a new `DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -54,7 +54,7 @@ impl
     }
 }
 impl UpdateChannelReadMarkerFluentBuilder {
-    /// Creates a new `UpdateChannelReadMarker`.
+    /// Creates a new `UpdateChannelReadMarkerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

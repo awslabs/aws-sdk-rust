@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateTopicFluentBuilder {
-    /// Creates a new `CreateTopic`.
+    /// Creates a new `CreateTopicFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

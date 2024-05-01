@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListWorkflowBuildVersionsFluentBuilder {
-    /// Creates a new `ListWorkflowBuildVersions`.
+    /// Creates a new `ListWorkflowBuildVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

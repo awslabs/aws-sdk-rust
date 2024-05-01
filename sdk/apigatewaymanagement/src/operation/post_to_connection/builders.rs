@@ -48,7 +48,7 @@ impl
     }
 }
 impl PostToConnectionFluentBuilder {
-    /// Creates a new `PostToConnection`.
+    /// Creates a new `PostToConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

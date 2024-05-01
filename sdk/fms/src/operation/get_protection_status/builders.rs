@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetProtectionStatusFluentBuilder {
-    /// Creates a new `GetProtectionStatus`.
+    /// Creates a new `GetProtectionStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

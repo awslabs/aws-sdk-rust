@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteWorkspaceApiKeyFluentBuilder {
-    /// Creates a new `DeleteWorkspaceApiKey`.
+    /// Creates a new `DeleteWorkspaceApiKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

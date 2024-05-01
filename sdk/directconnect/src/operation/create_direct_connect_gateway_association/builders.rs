@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateDirectConnectGatewayAssociationFluentBuilder {
-    /// Creates a new `CreateDirectConnectGatewayAssociation`.
+    /// Creates a new `CreateDirectConnectGatewayAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

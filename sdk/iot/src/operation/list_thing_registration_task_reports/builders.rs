@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListThingRegistrationTaskReportsFluentBuilder {
-    /// Creates a new `ListThingRegistrationTaskReports`.
+    /// Creates a new `ListThingRegistrationTaskReportsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

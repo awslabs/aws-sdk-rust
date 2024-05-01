@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetConsolidatedReportFluentBuilder {
-    /// Creates a new `GetConsolidatedReport`.
+    /// Creates a new `GetConsolidatedReportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

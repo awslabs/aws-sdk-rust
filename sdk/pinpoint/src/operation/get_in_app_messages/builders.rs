@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetInAppMessagesFluentBuilder {
-    /// Creates a new `GetInAppMessages`.
+    /// Creates a new `GetInAppMessagesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

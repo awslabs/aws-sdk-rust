@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetRelationalDatabaseBundlesFluentBuilder {
-    /// Creates a new `GetRelationalDatabaseBundles`.
+    /// Creates a new `GetRelationalDatabaseBundlesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

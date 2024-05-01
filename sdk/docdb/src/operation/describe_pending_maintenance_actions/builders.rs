@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribePendingMaintenanceActionsFluentBuilder {
-    /// Creates a new `DescribePendingMaintenanceActions`.
+    /// Creates a new `DescribePendingMaintenanceActionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

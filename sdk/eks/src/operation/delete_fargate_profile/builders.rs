@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteFargateProfileFluentBuilder {
-    /// Creates a new `DeleteFargateProfile`.
+    /// Creates a new `DeleteFargateProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

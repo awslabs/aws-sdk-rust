@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMultiplexFluentBuilder {
-    /// Creates a new `DeleteMultiplex`.
+    /// Creates a new `DeleteMultiplexFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

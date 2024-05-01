@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyAquaConfigurationFluentBuilder {
-    /// Creates a new `ModifyAquaConfiguration`.
+    /// Creates a new `ModifyAquaConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

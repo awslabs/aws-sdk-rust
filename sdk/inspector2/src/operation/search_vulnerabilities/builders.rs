@@ -48,7 +48,7 @@ impl
     }
 }
 impl SearchVulnerabilitiesFluentBuilder {
-    /// Creates a new `SearchVulnerabilities`.
+    /// Creates a new `SearchVulnerabilitiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

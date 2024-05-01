@@ -50,7 +50,7 @@ impl
     }
 }
 impl SwitchoverBlueGreenDeploymentFluentBuilder {
-    /// Creates a new `SwitchoverBlueGreenDeployment`.
+    /// Creates a new `SwitchoverBlueGreenDeploymentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

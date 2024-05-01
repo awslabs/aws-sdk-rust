@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateTrailFluentBuilder {
-    /// Creates a new `UpdateTrail`.
+    /// Creates a new `UpdateTrailFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCapabilityFluentBuilder {
-    /// Creates a new `GetCapability`.
+    /// Creates a new `GetCapabilityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

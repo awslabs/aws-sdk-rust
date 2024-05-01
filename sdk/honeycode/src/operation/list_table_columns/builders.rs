@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTableColumnsFluentBuilder {
-    /// Creates a new `ListTableColumns`.
+    /// Creates a new `ListTableColumnsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

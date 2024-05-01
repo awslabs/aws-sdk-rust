@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetByteMatchSetFluentBuilder {
-    /// Creates a new `GetByteMatchSet`.
+    /// Creates a new `GetByteMatchSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

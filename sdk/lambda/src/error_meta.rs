@@ -2572,6 +2572,18 @@ impl From<crate::operation::update_function_url_config::UpdateFunctionUrlConfigE
         }
     }
 }
+impl<O, E> ::std::convert::From<::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>> for Error
+where
+    O: ::std::fmt::Debug + ::std::marker::Send + ::std::marker::Sync + 'static,
+    E: ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>) -> Self {
+        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            meta: ::std::default::Default::default(),
+            source: err.into(),
+        })
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::InvokeWithResponseStreamResponseEventError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

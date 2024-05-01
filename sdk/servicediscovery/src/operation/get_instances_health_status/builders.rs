@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetInstancesHealthStatusFluentBuilder {
-    /// Creates a new `GetInstancesHealthStatus`.
+    /// Creates a new `GetInstancesHealthStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

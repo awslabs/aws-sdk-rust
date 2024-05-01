@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteProvisionedProductPlanFluentBuilder {
-    /// Creates a new `DeleteProvisionedProductPlan`.
+    /// Creates a new `DeleteProvisionedProductPlanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

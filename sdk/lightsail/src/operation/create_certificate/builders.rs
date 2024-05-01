@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateCertificateFluentBuilder {
-    /// Creates a new `CreateCertificate`.
+    /// Creates a new `CreateCertificateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

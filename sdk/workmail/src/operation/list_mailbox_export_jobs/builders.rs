@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListMailboxExportJobsFluentBuilder {
-    /// Creates a new `ListMailboxExportJobs`.
+    /// Creates a new `ListMailboxExportJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeConnectorEntityFluentBuilder {
-    /// Creates a new `DescribeConnectorEntity`.
+    /// Creates a new `DescribeConnectorEntityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

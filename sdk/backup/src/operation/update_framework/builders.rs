@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateFrameworkFluentBuilder {
-    /// Creates a new `UpdateFramework`.
+    /// Creates a new `UpdateFrameworkFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

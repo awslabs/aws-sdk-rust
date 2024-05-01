@@ -29,7 +29,7 @@ impl
 pub struct DeleteVoiceConnectorEmergencyCallingConfigurationFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::delete_voice_connector_emergency_calling_configuration::builders::DeleteVoiceConnectorEmergencyCallingConfigurationInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteVoiceConnectorEmergencyCallingConfigurationFluentBuilder {
-    /// Creates a new `DeleteVoiceConnectorEmergencyCallingConfiguration`.
+    /// Creates a new `DeleteVoiceConnectorEmergencyCallingConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

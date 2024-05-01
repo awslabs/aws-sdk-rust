@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListRetainedMessagesFluentBuilder {
-    /// Creates a new `ListRetainedMessages`.
+    /// Creates a new `ListRetainedMessagesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

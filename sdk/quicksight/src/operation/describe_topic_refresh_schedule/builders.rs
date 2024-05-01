@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTopicRefreshScheduleFluentBuilder {
-    /// Creates a new `DescribeTopicRefreshSchedule`.
+    /// Creates a new `DescribeTopicRefreshScheduleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSNOMEDCTInferenceJobsFluentBuilder {
-    /// Creates a new `ListSNOMEDCTInferenceJobs`.
+    /// Creates a new `ListSNOMEDCTInferenceJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

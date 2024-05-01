@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateReturnShippingLabelFluentBuilder {
-    /// Creates a new `CreateReturnShippingLabel`.
+    /// Creates a new `CreateReturnShippingLabelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetBucketsFluentBuilder {
-    /// Creates a new `GetBuckets`.
+    /// Creates a new `GetBucketsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

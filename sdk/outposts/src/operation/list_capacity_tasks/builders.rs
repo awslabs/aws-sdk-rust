@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListCapacityTasksFluentBuilder {
-    /// Creates a new `ListCapacityTasks`.
+    /// Creates a new `ListCapacityTasksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

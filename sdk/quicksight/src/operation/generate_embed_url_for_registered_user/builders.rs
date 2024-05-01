@@ -60,7 +60,7 @@ impl
     }
 }
 impl GenerateEmbedUrlForRegisteredUserFluentBuilder {
-    /// Creates a new `GenerateEmbedUrlForRegisteredUser`.
+    /// Creates a new `GenerateEmbedUrlForRegisteredUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

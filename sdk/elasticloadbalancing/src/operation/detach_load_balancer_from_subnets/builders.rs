@@ -49,7 +49,7 @@ impl
     }
 }
 impl DetachLoadBalancerFromSubnetsFluentBuilder {
-    /// Creates a new `DetachLoadBalancerFromSubnets`.
+    /// Creates a new `DetachLoadBalancerFromSubnetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

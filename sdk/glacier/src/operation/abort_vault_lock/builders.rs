@@ -50,7 +50,7 @@ impl
     }
 }
 impl AbortVaultLockFluentBuilder {
-    /// Creates a new `AbortVaultLock`.
+    /// Creates a new `AbortVaultLockFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

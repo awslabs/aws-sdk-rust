@@ -24,7 +24,7 @@ impl crate::operation::start_bulk_associate_wireless_device_with_multicast_group
 pub struct StartBulkAssociateWirelessDeviceWithMulticastGroupFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::start_bulk_associate_wireless_device_with_multicast_group::builders::StartBulkAssociateWirelessDeviceWithMulticastGroupInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -45,7 +45,7 @@ impl
     }
 }
 impl StartBulkAssociateWirelessDeviceWithMulticastGroupFluentBuilder {
-    /// Creates a new `StartBulkAssociateWirelessDeviceWithMulticastGroup`.
+    /// Creates a new `StartBulkAssociateWirelessDeviceWithMulticastGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

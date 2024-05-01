@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutImageTagMutabilityFluentBuilder {
-    /// Creates a new `PutImageTagMutability`.
+    /// Creates a new `PutImageTagMutabilityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

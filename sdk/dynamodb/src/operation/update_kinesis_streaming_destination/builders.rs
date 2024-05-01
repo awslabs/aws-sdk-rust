@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateKinesisStreamingDestinationFluentBuilder {
-    /// Creates a new `UpdateKinesisStreamingDestination`.
+    /// Creates a new `UpdateKinesisStreamingDestinationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

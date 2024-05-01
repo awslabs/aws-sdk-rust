@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListResolverRulesFluentBuilder {
-    /// Creates a new `ListResolverRules`.
+    /// Creates a new `ListResolverRulesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateMemberToFarmFluentBuilder {
-    /// Creates a new `AssociateMemberToFarm`.
+    /// Creates a new `AssociateMemberToFarmFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

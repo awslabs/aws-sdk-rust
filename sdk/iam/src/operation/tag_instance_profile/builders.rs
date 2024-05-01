@@ -62,7 +62,7 @@ impl
     }
 }
 impl TagInstanceProfileFluentBuilder {
-    /// Creates a new `TagInstanceProfile`.
+    /// Creates a new `TagInstanceProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

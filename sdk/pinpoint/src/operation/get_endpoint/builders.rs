@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetEndpointFluentBuilder {
-    /// Creates a new `GetEndpoint`.
+    /// Creates a new `GetEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

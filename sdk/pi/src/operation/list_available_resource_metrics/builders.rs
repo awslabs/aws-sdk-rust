@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAvailableResourceMetricsFluentBuilder {
-    /// Creates a new `ListAvailableResourceMetrics`.
+    /// Creates a new `ListAvailableResourceMetricsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

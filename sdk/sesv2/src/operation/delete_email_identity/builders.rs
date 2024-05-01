@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteEmailIdentityFluentBuilder {
-    /// Creates a new `DeleteEmailIdentity`.
+    /// Creates a new `DeleteEmailIdentityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

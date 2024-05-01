@@ -53,7 +53,7 @@ impl
     }
 }
 impl StartModelFluentBuilder {
-    /// Creates a new `StartModel`.
+    /// Creates a new `StartModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

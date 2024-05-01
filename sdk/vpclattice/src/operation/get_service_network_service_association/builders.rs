@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetServiceNetworkServiceAssociationFluentBuilder {
-    /// Creates a new `GetServiceNetworkServiceAssociation`.
+    /// Creates a new `GetServiceNetworkServiceAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

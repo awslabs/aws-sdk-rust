@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeModelCardFluentBuilder {
-    /// Creates a new `DescribeModelCard`.
+    /// Creates a new `DescribeModelCardFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

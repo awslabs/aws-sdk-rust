@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateIntentFluentBuilder {
-    /// Creates a new `UpdateIntent`.
+    /// Creates a new `UpdateIntentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

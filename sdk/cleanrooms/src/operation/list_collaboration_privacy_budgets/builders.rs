@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCollaborationPrivacyBudgetsFluentBuilder {
-    /// Creates a new `ListCollaborationPrivacyBudgets`.
+    /// Creates a new `ListCollaborationPrivacyBudgetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

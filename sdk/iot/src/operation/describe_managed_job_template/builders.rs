@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeManagedJobTemplateFluentBuilder {
-    /// Creates a new `DescribeManagedJobTemplate`.
+    /// Creates a new `DescribeManagedJobTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

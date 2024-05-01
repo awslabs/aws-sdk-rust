@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutEmailIdentityMailFromAttributesFluentBuilder {
-    /// Creates a new `PutEmailIdentityMailFromAttributes`.
+    /// Creates a new `PutEmailIdentityMailFromAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -67,7 +67,7 @@ impl
     }
 }
 impl DeprecateWorkflowTypeFluentBuilder {
-    /// Creates a new `DeprecateWorkflowType`.
+    /// Creates a new `DeprecateWorkflowTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

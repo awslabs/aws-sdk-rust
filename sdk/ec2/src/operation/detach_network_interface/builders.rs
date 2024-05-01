@@ -48,7 +48,7 @@ impl
     }
 }
 impl DetachNetworkInterfaceFluentBuilder {
-    /// Creates a new `DetachNetworkInterface`.
+    /// Creates a new `DetachNetworkInterfaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

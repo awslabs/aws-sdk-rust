@@ -50,7 +50,7 @@ impl
     }
 }
 impl ModifyEndpointFluentBuilder {
-    /// Creates a new `ModifyEndpoint`.
+    /// Creates a new `ModifyEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

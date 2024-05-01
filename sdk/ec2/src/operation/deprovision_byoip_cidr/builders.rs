@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeprovisionByoipCidrFluentBuilder {
-    /// Creates a new `DeprovisionByoipCidr`.
+    /// Creates a new `DeprovisionByoipCidrFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

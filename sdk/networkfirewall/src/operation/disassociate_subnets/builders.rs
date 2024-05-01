@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateSubnetsFluentBuilder {
-    /// Creates a new `DisassociateSubnets`.
+    /// Creates a new `DisassociateSubnetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

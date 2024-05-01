@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListApprovalRuleTemplatesFluentBuilder {
-    /// Creates a new `ListApprovalRuleTemplates`.
+    /// Creates a new `ListApprovalRuleTemplatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

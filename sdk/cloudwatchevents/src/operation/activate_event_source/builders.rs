@@ -48,7 +48,7 @@ impl
     }
 }
 impl ActivateEventSourceFluentBuilder {
-    /// Creates a new `ActivateEventSource`.
+    /// Creates a new `ActivateEventSourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

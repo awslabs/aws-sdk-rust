@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteListFluentBuilder {
-    /// Creates a new `DeleteList`.
+    /// Creates a new `DeleteListFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

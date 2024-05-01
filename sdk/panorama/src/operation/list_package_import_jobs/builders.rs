@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPackageImportJobsFluentBuilder {
-    /// Creates a new `ListPackageImportJobs`.
+    /// Creates a new `ListPackageImportJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

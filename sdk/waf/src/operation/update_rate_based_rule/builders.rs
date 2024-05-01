@@ -73,7 +73,7 @@ impl
     }
 }
 impl UpdateRateBasedRuleFluentBuilder {
-    /// Creates a new `UpdateRateBasedRule`.
+    /// Creates a new `UpdateRateBasedRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

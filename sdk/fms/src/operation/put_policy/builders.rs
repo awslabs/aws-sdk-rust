@@ -67,7 +67,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::put_
     }
 }
 impl PutPolicyFluentBuilder {
-    /// Creates a new `PutPolicy`.
+    /// Creates a new `PutPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

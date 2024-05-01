@@ -51,7 +51,7 @@ impl
     }
 }
 impl TerminateInstanceInAutoScalingGroupFluentBuilder {
-    /// Creates a new `TerminateInstanceInAutoScalingGroup`.
+    /// Creates a new `TerminateInstanceInAutoScalingGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

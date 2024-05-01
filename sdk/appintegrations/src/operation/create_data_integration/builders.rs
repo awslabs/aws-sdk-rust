@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateDataIntegrationFluentBuilder {
-    /// Creates a new `CreateDataIntegration`.
+    /// Creates a new `CreateDataIntegrationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

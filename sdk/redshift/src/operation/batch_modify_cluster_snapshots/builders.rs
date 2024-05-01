@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchModifyClusterSnapshotsFluentBuilder {
-    /// Creates a new `BatchModifyClusterSnapshots`.
+    /// Creates a new `BatchModifyClusterSnapshotsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

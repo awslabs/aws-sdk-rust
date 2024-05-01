@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateBotLocaleFluentBuilder {
-    /// Creates a new `CreateBotLocale`.
+    /// Creates a new `CreateBotLocaleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

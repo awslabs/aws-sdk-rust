@@ -57,7 +57,7 @@ impl
     }
 }
 impl CreateFileCacheFluentBuilder {
-    /// Creates a new `CreateFileCache`.
+    /// Creates a new `CreateFileCacheFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

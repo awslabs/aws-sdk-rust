@@ -24,7 +24,7 @@ impl crate::operation::get_collaboration_configured_audience_model_association::
 pub struct GetCollaborationConfiguredAudienceModelAssociationFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::get_collaboration_configured_audience_model_association::builders::GetCollaborationConfiguredAudienceModelAssociationInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -45,7 +45,7 @@ impl
     }
 }
 impl GetCollaborationConfiguredAudienceModelAssociationFluentBuilder {
-    /// Creates a new `GetCollaborationConfiguredAudienceModelAssociation`.
+    /// Creates a new `GetCollaborationConfiguredAudienceModelAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

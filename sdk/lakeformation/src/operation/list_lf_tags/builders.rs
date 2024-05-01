@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListLFTagsFluentBuilder {
-    /// Creates a new `ListLFTags`.
+    /// Creates a new `ListLFTagsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

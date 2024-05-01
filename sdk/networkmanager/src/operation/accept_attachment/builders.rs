@@ -49,7 +49,7 @@ impl
     }
 }
 impl AcceptAttachmentFluentBuilder {
-    /// Creates a new `AcceptAttachment`.
+    /// Creates a new `AcceptAttachmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

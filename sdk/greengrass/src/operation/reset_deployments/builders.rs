@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResetDeploymentsFluentBuilder {
-    /// Creates a new `ResetDeployments`.
+    /// Creates a new `ResetDeploymentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

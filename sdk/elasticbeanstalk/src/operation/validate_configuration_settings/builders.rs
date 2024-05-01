@@ -49,7 +49,7 @@ impl
     }
 }
 impl ValidateConfigurationSettingsFluentBuilder {
-    /// Creates a new `ValidateConfigurationSettings`.
+    /// Creates a new `ValidateConfigurationSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

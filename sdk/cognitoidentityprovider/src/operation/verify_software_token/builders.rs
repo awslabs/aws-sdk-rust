@@ -50,7 +50,7 @@ impl
     }
 }
 impl VerifySoftwareTokenFluentBuilder {
-    /// Creates a new `VerifySoftwareToken`.
+    /// Creates a new `VerifySoftwareTokenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

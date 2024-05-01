@@ -49,7 +49,7 @@ impl
     }
 }
 impl RotateChannelCredentialsFluentBuilder {
-    /// Creates a new `RotateChannelCredentials`.
+    /// Creates a new `RotateChannelCredentialsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

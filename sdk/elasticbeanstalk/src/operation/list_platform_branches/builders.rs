@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListPlatformBranchesFluentBuilder {
-    /// Creates a new `ListPlatformBranches`.
+    /// Creates a new `ListPlatformBranchesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

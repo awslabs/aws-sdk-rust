@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,41 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait for `load_balancer_available`
+    fn wait_until_load_balancer_available(&self) -> crate::waiters::load_balancer_available::LoadBalancerAvailableFluentBuilder;
+    /// Wait for `load_balancer_exists`
+    fn wait_until_load_balancer_exists(&self) -> crate::waiters::load_balancer_exists::LoadBalancerExistsFluentBuilder;
+    /// Wait for `load_balancers_deleted`
+    fn wait_until_load_balancers_deleted(&self) -> crate::waiters::load_balancers_deleted::LoadBalancersDeletedFluentBuilder;
+    /// Wait for `target_deregistered`
+    fn wait_until_target_deregistered(&self) -> crate::waiters::target_deregistered::TargetDeregisteredFluentBuilder;
+    /// Wait for `target_in_service`
+    fn wait_until_target_in_service(&self) -> crate::waiters::target_in_service::TargetInServiceFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_load_balancer_available(&self) -> crate::waiters::load_balancer_available::LoadBalancerAvailableFluentBuilder {
+        crate::waiters::load_balancer_available::LoadBalancerAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_load_balancer_exists(&self) -> crate::waiters::load_balancer_exists::LoadBalancerExistsFluentBuilder {
+        crate::waiters::load_balancer_exists::LoadBalancerExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_load_balancers_deleted(&self) -> crate::waiters::load_balancers_deleted::LoadBalancersDeletedFluentBuilder {
+        crate::waiters::load_balancers_deleted::LoadBalancersDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_target_deregistered(&self) -> crate::waiters::target_deregistered::TargetDeregisteredFluentBuilder {
+        crate::waiters::target_deregistered::TargetDeregisteredFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_target_in_service(&self) -> crate::waiters::target_in_service::TargetInServiceFluentBuilder {
+        crate::waiters::target_in_service::TargetInServiceFluentBuilder::new(self.handle.clone())
     }
 }
 

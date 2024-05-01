@@ -41,7 +41,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::expo
     }
 }
 impl ExportApiFluentBuilder {
-    /// Creates a new `ExportApi`.
+    /// Creates a new `ExportApiFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

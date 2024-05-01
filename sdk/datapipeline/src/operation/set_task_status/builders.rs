@@ -55,7 +55,7 @@ impl
     }
 }
 impl SetTaskStatusFluentBuilder {
-    /// Creates a new `SetTaskStatus`.
+    /// Creates a new `SetTaskStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListSubscriptionsByTopicFluentBuilder {
-    /// Creates a new `ListSubscriptionsByTopic`.
+    /// Creates a new `ListSubscriptionsByTopicFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

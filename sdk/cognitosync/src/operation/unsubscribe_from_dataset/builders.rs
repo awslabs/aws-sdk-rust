@@ -73,7 +73,7 @@ impl
     }
 }
 impl UnsubscribeFromDatasetFluentBuilder {
-    /// Creates a new `UnsubscribeFromDataset`.
+    /// Creates a new `UnsubscribeFromDatasetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

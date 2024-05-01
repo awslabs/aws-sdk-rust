@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartMetadataGenerationRunFluentBuilder {
-    /// Creates a new `StartMetadataGenerationRun`.
+    /// Creates a new `StartMetadataGenerationRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

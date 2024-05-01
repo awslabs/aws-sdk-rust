@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::lock
     }
 }
 impl LockRuleFluentBuilder {
-    /// Creates a new `LockRule`.
+    /// Creates a new `LockRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

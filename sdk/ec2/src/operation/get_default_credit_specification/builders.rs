@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetDefaultCreditSpecificationFluentBuilder {
-    /// Creates a new `GetDefaultCreditSpecification`.
+    /// Creates a new `GetDefaultCreditSpecificationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

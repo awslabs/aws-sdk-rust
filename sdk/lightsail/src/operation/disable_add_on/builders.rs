@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisableAddOnFluentBuilder {
-    /// Creates a new `DisableAddOn`.
+    /// Creates a new `DisableAddOnFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

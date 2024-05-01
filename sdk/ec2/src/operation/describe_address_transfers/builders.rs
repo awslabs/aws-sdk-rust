@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeAddressTransfersFluentBuilder {
-    /// Creates a new `DescribeAddressTransfers`.
+    /// Creates a new `DescribeAddressTransfersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

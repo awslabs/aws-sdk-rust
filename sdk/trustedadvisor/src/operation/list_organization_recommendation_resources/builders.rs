@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListOrganizationRecommendationResourcesFluentBuilder {
-    /// Creates a new `ListOrganizationRecommendationResources`.
+    /// Creates a new `ListOrganizationRecommendationResourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

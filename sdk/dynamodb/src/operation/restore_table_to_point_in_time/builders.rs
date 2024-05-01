@@ -79,7 +79,7 @@ impl
     }
 }
 impl RestoreTableToPointInTimeFluentBuilder {
-    /// Creates a new `RestoreTableToPointInTime`.
+    /// Creates a new `RestoreTableToPointInTimeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

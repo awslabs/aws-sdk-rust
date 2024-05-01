@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListLakeFormationOptInsFluentBuilder {
-    /// Creates a new `ListLakeFormationOptIns`.
+    /// Creates a new `ListLakeFormationOptInsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

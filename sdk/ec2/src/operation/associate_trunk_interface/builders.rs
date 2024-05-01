@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateTrunkInterfaceFluentBuilder {
-    /// Creates a new `AssociateTrunkInterface`.
+    /// Creates a new `AssociateTrunkInterfaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTransitGatewayPeeringFluentBuilder {
-    /// Creates a new `GetTransitGatewayPeering`.
+    /// Creates a new `GetTransitGatewayPeeringFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

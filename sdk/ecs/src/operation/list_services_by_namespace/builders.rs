@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListServicesByNamespaceFluentBuilder {
-    /// Creates a new `ListServicesByNamespace`.
+    /// Creates a new `ListServicesByNamespaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

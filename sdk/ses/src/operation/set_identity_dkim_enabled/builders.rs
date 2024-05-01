@@ -53,7 +53,7 @@ impl
     }
 }
 impl SetIdentityDkimEnabledFluentBuilder {
-    /// Creates a new `SetIdentityDkimEnabled`.
+    /// Creates a new `SetIdentityDkimEnabledFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMeteredProductFluentBuilder {
-    /// Creates a new `DeleteMeteredProduct`.
+    /// Creates a new `DeleteMeteredProductFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

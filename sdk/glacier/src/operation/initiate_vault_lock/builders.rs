@@ -61,7 +61,7 @@ impl
     }
 }
 impl InitiateVaultLockFluentBuilder {
-    /// Creates a new `InitiateVaultLock`.
+    /// Creates a new `InitiateVaultLockFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

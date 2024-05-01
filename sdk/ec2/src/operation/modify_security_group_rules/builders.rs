@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifySecurityGroupRulesFluentBuilder {
-    /// Creates a new `ModifySecurityGroupRules`.
+    /// Creates a new `ModifySecurityGroupRulesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

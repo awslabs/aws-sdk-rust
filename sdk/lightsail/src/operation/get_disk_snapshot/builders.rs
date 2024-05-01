@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDiskSnapshotFluentBuilder {
-    /// Creates a new `GetDiskSnapshot`.
+    /// Creates a new `GetDiskSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

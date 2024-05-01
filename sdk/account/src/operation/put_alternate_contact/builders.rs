@@ -51,7 +51,7 @@ impl
     }
 }
 impl PutAlternateContactFluentBuilder {
-    /// Creates a new `PutAlternateContact`.
+    /// Creates a new `PutAlternateContactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

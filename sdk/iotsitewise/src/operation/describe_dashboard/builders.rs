@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDashboardFluentBuilder {
-    /// Creates a new `DescribeDashboard`.
+    /// Creates a new `DescribeDashboardFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

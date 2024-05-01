@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateArchiveFluentBuilder {
-    /// Creates a new `CreateArchive`.
+    /// Creates a new `CreateArchiveFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

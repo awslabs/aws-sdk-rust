@@ -49,7 +49,7 @@ impl
     }
 }
 impl StartUserAccessTasksFluentBuilder {
-    /// Creates a new `StartUserAccessTasks`.
+    /// Creates a new `StartUserAccessTasksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateMobileDeviceAccessRuleFluentBuilder {
-    /// Creates a new `UpdateMobileDeviceAccessRule`.
+    /// Creates a new `UpdateMobileDeviceAccessRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

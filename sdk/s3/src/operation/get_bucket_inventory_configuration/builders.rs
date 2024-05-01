@@ -62,7 +62,7 @@ impl
     }
 }
 impl GetBucketInventoryConfigurationFluentBuilder {
-    /// Creates a new `GetBucketInventoryConfiguration`.
+    /// Creates a new `GetBucketInventoryConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

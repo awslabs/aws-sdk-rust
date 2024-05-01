@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetAccuracyMetricsFluentBuilder {
-    /// Creates a new `GetAccuracyMetrics`.
+    /// Creates a new `GetAccuracyMetricsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

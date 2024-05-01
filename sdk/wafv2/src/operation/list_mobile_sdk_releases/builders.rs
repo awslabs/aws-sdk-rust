@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListMobileSdkReleasesFluentBuilder {
-    /// Creates a new `ListMobileSdkReleases`.
+    /// Creates a new `ListMobileSdkReleasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

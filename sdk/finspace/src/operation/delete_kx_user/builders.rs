@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteKxUserFluentBuilder {
-    /// Creates a new `DeleteKxUser`.
+    /// Creates a new `DeleteKxUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -53,7 +53,7 @@ impl
     }
 }
 impl RevokeCertificateFluentBuilder {
-    /// Creates a new `RevokeCertificate`.
+    /// Creates a new `RevokeCertificateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

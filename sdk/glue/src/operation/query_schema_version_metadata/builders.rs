@@ -48,7 +48,7 @@ impl
     }
 }
 impl QuerySchemaVersionMetadataFluentBuilder {
-    /// Creates a new `QuerySchemaVersionMetadata`.
+    /// Creates a new `QuerySchemaVersionMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -55,7 +55,7 @@ impl
     }
 }
 impl GetAssetPropertyAggregatesFluentBuilder {
-    /// Creates a new `GetAssetPropertyAggregates`.
+    /// Creates a new `GetAssetPropertyAggregatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

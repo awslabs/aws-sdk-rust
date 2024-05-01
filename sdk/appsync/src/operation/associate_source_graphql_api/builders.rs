@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateSourceGraphqlApiFluentBuilder {
-    /// Creates a new `AssociateSourceGraphqlApi`.
+    /// Creates a new `AssociateSourceGraphqlApiFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -55,7 +55,7 @@ impl
     }
 }
 impl CreateServerFluentBuilder {
-    /// Creates a new `CreateServer`.
+    /// Creates a new `CreateServerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

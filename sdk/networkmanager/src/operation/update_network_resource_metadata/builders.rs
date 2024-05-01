@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateNetworkResourceMetadataFluentBuilder {
-    /// Creates a new `UpdateNetworkResourceMetadata`.
+    /// Creates a new `UpdateNetworkResourceMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

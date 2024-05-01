@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAssociatedRoute53HealthChecksFluentBuilder {
-    /// Creates a new `ListAssociatedRoute53HealthChecks`.
+    /// Creates a new `ListAssociatedRoute53HealthChecksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

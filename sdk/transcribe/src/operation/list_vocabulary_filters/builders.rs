@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListVocabularyFiltersFluentBuilder {
-    /// Creates a new `ListVocabularyFilters`.
+    /// Creates a new `ListVocabularyFiltersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

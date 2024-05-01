@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetMLEndpointFluentBuilder {
-    /// Creates a new `GetMLEndpoint`.
+    /// Creates a new `GetMLEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

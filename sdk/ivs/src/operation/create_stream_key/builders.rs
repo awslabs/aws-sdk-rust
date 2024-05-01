@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateStreamKeyFluentBuilder {
-    /// Creates a new `CreateStreamKey`.
+    /// Creates a new `CreateStreamKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

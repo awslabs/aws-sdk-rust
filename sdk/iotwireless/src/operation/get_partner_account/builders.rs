@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetPartnerAccountFluentBuilder {
-    /// Creates a new `GetPartnerAccount`.
+    /// Creates a new `GetPartnerAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

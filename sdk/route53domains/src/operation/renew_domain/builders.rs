@@ -49,7 +49,7 @@ impl
     }
 }
 impl RenewDomainFluentBuilder {
-    /// Creates a new `RenewDomain`.
+    /// Creates a new `RenewDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListManagedResourcesFluentBuilder {
-    /// Creates a new `ListManagedResources`.
+    /// Creates a new `ListManagedResourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

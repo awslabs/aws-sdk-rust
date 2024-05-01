@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetServiceLinkedRoleDeletionStatusFluentBuilder {
-    /// Creates a new `GetServiceLinkedRoleDeletionStatus`.
+    /// Creates a new `GetServiceLinkedRoleDeletionStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

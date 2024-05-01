@@ -51,7 +51,7 @@ impl
     }
 }
 impl DisableHealthServiceAccessForOrganizationFluentBuilder {
-    /// Creates a new `DisableHealthServiceAccessForOrganization`.
+    /// Creates a new `DisableHealthServiceAccessForOrganizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

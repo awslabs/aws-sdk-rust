@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateMapRunFluentBuilder {
-    /// Creates a new `UpdateMapRun`.
+    /// Creates a new `UpdateMapRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

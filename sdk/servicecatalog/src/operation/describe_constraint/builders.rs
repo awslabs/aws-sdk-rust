@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeConstraintFluentBuilder {
-    /// Creates a new `DescribeConstraint`.
+    /// Creates a new `DescribeConstraintFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

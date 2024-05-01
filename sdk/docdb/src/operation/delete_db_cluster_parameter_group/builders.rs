@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDBClusterParameterGroupFluentBuilder {
-    /// Creates a new `DeleteDBClusterParameterGroup`.
+    /// Creates a new `DeleteDBClusterParameterGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

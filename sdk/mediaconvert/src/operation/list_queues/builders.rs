@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListQueuesFluentBuilder {
-    /// Creates a new `ListQueues`.
+    /// Creates a new `ListQueuesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

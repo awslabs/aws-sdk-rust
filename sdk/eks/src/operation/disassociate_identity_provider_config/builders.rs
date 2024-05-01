@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateIdentityProviderConfigFluentBuilder {
-    /// Creates a new `DisassociateIdentityProviderConfig`.
+    /// Creates a new `DisassociateIdentityProviderConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

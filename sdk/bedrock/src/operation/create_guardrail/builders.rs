@@ -76,7 +76,7 @@ impl
     }
 }
 impl CreateGuardrailFluentBuilder {
-    /// Creates a new `CreateGuardrail`.
+    /// Creates a new `CreateGuardrailFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
-    /// Creates a new `RemoveDraftAppVersionResourceMappings`.
+    /// Creates a new `RemoveDraftAppVersionResourceMappingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

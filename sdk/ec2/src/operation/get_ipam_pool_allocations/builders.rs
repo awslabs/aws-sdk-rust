@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetIpamPoolAllocationsFluentBuilder {
-    /// Creates a new `GetIpamPoolAllocations`.
+    /// Creates a new `GetIpamPoolAllocationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

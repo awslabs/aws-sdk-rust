@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendTaskSuccessFluentBuilder {
-    /// Creates a new `SendTaskSuccess`.
+    /// Creates a new `SendTaskSuccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

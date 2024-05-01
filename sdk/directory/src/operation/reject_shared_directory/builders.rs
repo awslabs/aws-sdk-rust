@@ -48,7 +48,7 @@ impl
     }
 }
 impl RejectSharedDirectoryFluentBuilder {
-    /// Creates a new `RejectSharedDirectory`.
+    /// Creates a new `RejectSharedDirectoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

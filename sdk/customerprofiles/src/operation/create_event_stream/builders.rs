@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateEventStreamFluentBuilder {
-    /// Creates a new `CreateEventStream`.
+    /// Creates a new `CreateEventStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

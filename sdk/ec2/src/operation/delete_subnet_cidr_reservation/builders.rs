@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSubnetCidrReservationFluentBuilder {
-    /// Creates a new `DeleteSubnetCidrReservation`.
+    /// Creates a new `DeleteSubnetCidrReservationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

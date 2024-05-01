@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetAccessKeyInfoFluentBuilder {
-    /// Creates a new `GetAccessKeyInfo`.
+    /// Creates a new `GetAccessKeyInfoFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl ListManagedRuleSetsFluentBuilder {
-    /// Creates a new `ListManagedRuleSets`.
+    /// Creates a new `ListManagedRuleSetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

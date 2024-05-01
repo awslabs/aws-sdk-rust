@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeProblemFluentBuilder {
-    /// Creates a new `DescribeProblem`.
+    /// Creates a new `DescribeProblemFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

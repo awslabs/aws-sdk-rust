@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetFunctionConcurrencyFluentBuilder {
-    /// Creates a new `GetFunctionConcurrency`.
+    /// Creates a new `GetFunctionConcurrencyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

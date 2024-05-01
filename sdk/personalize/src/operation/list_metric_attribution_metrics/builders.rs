@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListMetricAttributionMetricsFluentBuilder {
-    /// Creates a new `ListMetricAttributionMetrics`.
+    /// Creates a new `ListMetricAttributionMetricsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

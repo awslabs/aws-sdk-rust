@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeMaintenanceWindowScheduleFluentBuilder {
-    /// Creates a new `DescribeMaintenanceWindowSchedule`.
+    /// Creates a new `DescribeMaintenanceWindowScheduleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

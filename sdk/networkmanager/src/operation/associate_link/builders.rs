@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateLinkFluentBuilder {
-    /// Creates a new `AssociateLink`.
+    /// Creates a new `AssociateLinkFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

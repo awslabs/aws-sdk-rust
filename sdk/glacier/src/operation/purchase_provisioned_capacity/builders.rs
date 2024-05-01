@@ -48,7 +48,7 @@ impl
     }
 }
 impl PurchaseProvisionedCapacityFluentBuilder {
-    /// Creates a new `PurchaseProvisionedCapacity`.
+    /// Creates a new `PurchaseProvisionedCapacityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

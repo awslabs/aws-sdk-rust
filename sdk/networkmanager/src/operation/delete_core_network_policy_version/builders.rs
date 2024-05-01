@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCoreNetworkPolicyVersionFluentBuilder {
-    /// Creates a new `DeleteCoreNetworkPolicyVersion`.
+    /// Creates a new `DeleteCoreNetworkPolicyVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

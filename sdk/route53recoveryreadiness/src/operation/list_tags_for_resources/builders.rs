@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTagsForResourcesFluentBuilder {
-    /// Creates a new `ListTagsForResources`.
+    /// Creates a new `ListTagsForResourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

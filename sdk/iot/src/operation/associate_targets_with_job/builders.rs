@@ -57,7 +57,7 @@ impl
     }
 }
 impl AssociateTargetsWithJobFluentBuilder {
-    /// Creates a new `AssociateTargetsWithJob`.
+    /// Creates a new `AssociateTargetsWithJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

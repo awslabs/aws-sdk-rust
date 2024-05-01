@@ -52,7 +52,7 @@ impl
     }
 }
 impl VerifyUserAttributeFluentBuilder {
-    /// Creates a new `VerifyUserAttribute`.
+    /// Creates a new `VerifyUserAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

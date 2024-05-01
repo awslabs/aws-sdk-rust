@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRescoreExecutionPlanFluentBuilder {
-    /// Creates a new `DeleteRescoreExecutionPlan`.
+    /// Creates a new `DeleteRescoreExecutionPlanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

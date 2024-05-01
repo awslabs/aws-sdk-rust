@@ -48,7 +48,7 @@ impl
     }
 }
 impl ValidateE911AddressFluentBuilder {
-    /// Creates a new `ValidateE911Address`.
+    /// Creates a new `ValidateE911AddressFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

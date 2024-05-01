@@ -48,7 +48,7 @@ impl
     }
 }
 impl RestoreClusterFromSnapshotFluentBuilder {
-    /// Creates a new `RestoreClusterFromSnapshot`.
+    /// Creates a new `RestoreClusterFromSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

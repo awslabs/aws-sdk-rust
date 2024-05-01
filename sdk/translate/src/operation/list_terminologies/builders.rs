@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTerminologiesFluentBuilder {
-    /// Creates a new `ListTerminologies`.
+    /// Creates a new `ListTerminologiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

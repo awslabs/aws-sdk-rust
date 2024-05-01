@@ -48,7 +48,7 @@ impl
     }
 }
 impl NotifyAppValidationOutputFluentBuilder {
-    /// Creates a new `NotifyAppValidationOutput`.
+    /// Creates a new `NotifyAppValidationOutputFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

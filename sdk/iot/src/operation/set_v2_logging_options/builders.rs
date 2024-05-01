@@ -49,7 +49,7 @@ impl
     }
 }
 impl SetV2LoggingOptionsFluentBuilder {
-    /// Creates a new `SetV2LoggingOptions`.
+    /// Creates a new `SetV2LoggingOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

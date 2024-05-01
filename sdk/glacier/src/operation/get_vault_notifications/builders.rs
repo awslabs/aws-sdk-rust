@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetVaultNotificationsFluentBuilder {
-    /// Creates a new `GetVaultNotifications`.
+    /// Creates a new `GetVaultNotificationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

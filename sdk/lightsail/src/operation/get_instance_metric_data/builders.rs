@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetInstanceMetricDataFluentBuilder {
-    /// Creates a new `GetInstanceMetricData`.
+    /// Creates a new `GetInstanceMetricDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

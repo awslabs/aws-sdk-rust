@@ -48,7 +48,7 @@ impl
     }
 }
 impl RevokeSubscriptionFluentBuilder {
-    /// Creates a new `RevokeSubscription`.
+    /// Creates a new `RevokeSubscriptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

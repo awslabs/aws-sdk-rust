@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutCodeBindingFluentBuilder {
-    /// Creates a new `PutCodeBinding`.
+    /// Creates a new `PutCodeBindingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

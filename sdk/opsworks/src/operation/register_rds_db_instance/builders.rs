@@ -49,7 +49,7 @@ impl
     }
 }
 impl RegisterRdsDbInstanceFluentBuilder {
-    /// Creates a new `RegisterRdsDbInstance`.
+    /// Creates a new `RegisterRdsDbInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

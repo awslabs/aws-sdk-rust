@@ -49,7 +49,7 @@ impl
     }
 }
 impl ReplaceRouteTableAssociationFluentBuilder {
-    /// Creates a new `ReplaceRouteTableAssociation`.
+    /// Creates a new `ReplaceRouteTableAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

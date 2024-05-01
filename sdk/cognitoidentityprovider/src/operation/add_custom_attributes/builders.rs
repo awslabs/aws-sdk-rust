@@ -57,7 +57,7 @@ impl
     }
 }
 impl AddCustomAttributesFluentBuilder {
-    /// Creates a new `AddCustomAttributes`.
+    /// Creates a new `AddCustomAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

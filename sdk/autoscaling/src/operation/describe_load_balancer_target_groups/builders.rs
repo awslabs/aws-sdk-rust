@@ -56,7 +56,7 @@ impl
     }
 }
 impl DescribeLoadBalancerTargetGroupsFluentBuilder {
-    /// Creates a new `DescribeLoadBalancerTargetGroups`.
+    /// Creates a new `DescribeLoadBalancerTargetGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

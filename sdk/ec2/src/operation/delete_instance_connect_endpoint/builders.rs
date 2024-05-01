@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteInstanceConnectEndpointFluentBuilder {
-    /// Creates a new `DeleteInstanceConnectEndpoint`.
+    /// Creates a new `DeleteInstanceConnectEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

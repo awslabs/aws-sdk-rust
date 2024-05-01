@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendAnnouncementFluentBuilder {
-    /// Creates a new `SendAnnouncement`.
+    /// Creates a new `SendAnnouncementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

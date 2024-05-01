@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetExtensionAssociationFluentBuilder {
-    /// Creates a new `GetExtensionAssociation`.
+    /// Creates a new `GetExtensionAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

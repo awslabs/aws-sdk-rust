@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRecoveryPointRestoreMetadataFluentBuilder {
-    /// Creates a new `GetRecoveryPointRestoreMetadata`.
+    /// Creates a new `GetRecoveryPointRestoreMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ImportDecoderManifestFluentBuilder {
-    /// Creates a new `ImportDecoderManifest`.
+    /// Creates a new `ImportDecoderManifestFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

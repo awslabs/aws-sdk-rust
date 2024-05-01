@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteDocumentFluentBuilder {
-    /// Creates a new `DeleteDocument`.
+    /// Creates a new `DeleteDocumentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl StopKeyPhrasesDetectionJobFluentBuilder {
-    /// Creates a new `StopKeyPhrasesDetectionJob`.
+    /// Creates a new `StopKeyPhrasesDetectionJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

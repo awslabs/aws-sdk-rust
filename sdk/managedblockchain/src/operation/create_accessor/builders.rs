@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAccessorFluentBuilder {
-    /// Creates a new `CreateAccessor`.
+    /// Creates a new `CreateAccessorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

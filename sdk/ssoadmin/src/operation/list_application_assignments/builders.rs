@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListApplicationAssignmentsFluentBuilder {
-    /// Creates a new `ListApplicationAssignments`.
+    /// Creates a new `ListApplicationAssignmentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

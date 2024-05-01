@@ -54,7 +54,7 @@ impl
     }
 }
 impl StartKeyUsageFluentBuilder {
-    /// Creates a new `StartKeyUsage`.
+    /// Creates a new `StartKeyUsageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateSigninDelegateGroupsFromAccountFluentBuilder {
-    /// Creates a new `DisassociateSigninDelegateGroupsFromAccount`.
+    /// Creates a new `DisassociateSigninDelegateGroupsFromAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

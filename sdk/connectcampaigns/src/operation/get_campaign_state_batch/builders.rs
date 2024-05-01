@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCampaignStateBatchFluentBuilder {
-    /// Creates a new `GetCampaignStateBatch`.
+    /// Creates a new `GetCampaignStateBatchFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

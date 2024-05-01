@@ -50,7 +50,7 @@ impl
     }
 }
 impl CopyDBClusterParameterGroupFluentBuilder {
-    /// Creates a new `CopyDBClusterParameterGroup`.
+    /// Creates a new `CopyDBClusterParameterGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

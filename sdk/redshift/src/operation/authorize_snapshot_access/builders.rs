@@ -49,7 +49,7 @@ impl
     }
 }
 impl AuthorizeSnapshotAccessFluentBuilder {
-    /// Creates a new `AuthorizeSnapshotAccess`.
+    /// Creates a new `AuthorizeSnapshotAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

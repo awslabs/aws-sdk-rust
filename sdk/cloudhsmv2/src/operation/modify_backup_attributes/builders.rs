@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyBackupAttributesFluentBuilder {
-    /// Creates a new `ModifyBackupAttributes`.
+    /// Creates a new `ModifyBackupAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

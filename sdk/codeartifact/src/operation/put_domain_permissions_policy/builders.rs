@@ -49,7 +49,7 @@ impl
     }
 }
 impl PutDomainPermissionsPolicyFluentBuilder {
-    /// Creates a new `PutDomainPermissionsPolicy`.
+    /// Creates a new `PutDomainPermissionsPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

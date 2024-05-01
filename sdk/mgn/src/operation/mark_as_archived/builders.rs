@@ -48,7 +48,7 @@ impl
     }
 }
 impl MarkAsArchivedFluentBuilder {
-    /// Creates a new `MarkAsArchived`.
+    /// Creates a new `MarkAsArchivedFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

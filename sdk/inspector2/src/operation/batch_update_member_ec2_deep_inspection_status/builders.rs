@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchUpdateMemberEc2DeepInspectionStatusFluentBuilder {
-    /// Creates a new `BatchUpdateMemberEc2DeepInspectionStatus`.
+    /// Creates a new `BatchUpdateMemberEc2DeepInspectionStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

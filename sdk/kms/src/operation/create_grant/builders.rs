@@ -73,7 +73,7 @@ impl
     }
 }
 impl CreateGrantFluentBuilder {
-    /// Creates a new `CreateGrant`.
+    /// Creates a new `CreateGrantFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

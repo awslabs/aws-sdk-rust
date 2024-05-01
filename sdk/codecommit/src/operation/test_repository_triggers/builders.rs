@@ -48,7 +48,7 @@ impl
     }
 }
 impl TestRepositoryTriggersFluentBuilder {
-    /// Creates a new `TestRepositoryTriggers`.
+    /// Creates a new `TestRepositoryTriggersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

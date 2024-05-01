@@ -52,7 +52,7 @@ impl
     }
 }
 impl CreateSafetyRuleFluentBuilder {
-    /// Creates a new `CreateSafetyRule`.
+    /// Creates a new `CreateSafetyRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRecommendationReportDetailsFluentBuilder {
-    /// Creates a new `GetRecommendationReportDetails`.
+    /// Creates a new `GetRecommendationReportDetailsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

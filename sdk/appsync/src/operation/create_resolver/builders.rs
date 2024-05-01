@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateResolverFluentBuilder {
-    /// Creates a new `CreateResolver`.
+    /// Creates a new `CreateResolverFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

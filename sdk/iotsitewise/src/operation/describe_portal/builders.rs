@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribePortalFluentBuilder {
-    /// Creates a new `DescribePortal`.
+    /// Creates a new `DescribePortalFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

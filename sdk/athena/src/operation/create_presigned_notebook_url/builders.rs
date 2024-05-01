@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreatePresignedNotebookUrlFluentBuilder {
-    /// Creates a new `CreatePresignedNotebookUrl`.
+    /// Creates a new `CreatePresignedNotebookUrlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

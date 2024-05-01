@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDataLakesFluentBuilder {
-    /// Creates a new `ListDataLakes`.
+    /// Creates a new `ListDataLakesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -55,7 +55,7 @@ impl
     }
 }
 impl UpdateScriptFluentBuilder {
-    /// Creates a new `UpdateScript`.
+    /// Creates a new `UpdateScriptFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

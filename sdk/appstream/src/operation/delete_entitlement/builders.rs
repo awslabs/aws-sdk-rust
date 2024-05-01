@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteEntitlementFluentBuilder {
-    /// Creates a new `DeleteEntitlement`.
+    /// Creates a new `DeleteEntitlementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

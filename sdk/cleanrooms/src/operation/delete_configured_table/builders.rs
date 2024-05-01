@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteConfiguredTableFluentBuilder {
-    /// Creates a new `DeleteConfiguredTable`.
+    /// Creates a new `DeleteConfiguredTableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

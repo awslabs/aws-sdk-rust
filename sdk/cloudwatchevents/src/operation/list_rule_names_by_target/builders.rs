@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListRuleNamesByTargetFluentBuilder {
-    /// Creates a new `ListRuleNamesByTarget`.
+    /// Creates a new `ListRuleNamesByTargetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -59,7 +59,7 @@ impl
     }
 }
 impl CopyProjectVersionFluentBuilder {
-    /// Creates a new `CopyProjectVersion`.
+    /// Creates a new `CopyProjectVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

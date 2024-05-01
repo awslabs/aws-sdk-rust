@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetApplicationAuthenticationMethodFluentBuilder {
-    /// Creates a new `GetApplicationAuthenticationMethod`.
+    /// Creates a new `GetApplicationAuthenticationMethodFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

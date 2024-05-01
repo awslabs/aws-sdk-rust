@@ -57,7 +57,7 @@ impl
     }
 }
 impl UpdateContinuousDeploymentPolicyFluentBuilder {
-    /// Creates a new `UpdateContinuousDeploymentPolicy`.
+    /// Creates a new `UpdateContinuousDeploymentPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

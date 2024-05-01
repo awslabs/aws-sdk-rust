@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyClusterSnapshotScheduleFluentBuilder {
-    /// Creates a new `ModifyClusterSnapshotSchedule`.
+    /// Creates a new `ModifyClusterSnapshotScheduleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

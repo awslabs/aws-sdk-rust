@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopClusterFluentBuilder {
-    /// Creates a new `StopCluster`.
+    /// Creates a new `StopClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

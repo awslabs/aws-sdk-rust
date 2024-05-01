@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateIpGroupsFluentBuilder {
-    /// Creates a new `DisassociateIpGroups`.
+    /// Creates a new `DisassociateIpGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

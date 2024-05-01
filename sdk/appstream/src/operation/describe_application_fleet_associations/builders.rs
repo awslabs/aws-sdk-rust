@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeApplicationFleetAssociationsFluentBuilder {
-    /// Creates a new `DescribeApplicationFleetAssociations`.
+    /// Creates a new `DescribeApplicationFleetAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

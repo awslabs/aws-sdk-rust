@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteResourcePolicyStatementFluentBuilder {
-    /// Creates a new `DeleteResourcePolicyStatement`.
+    /// Creates a new `DeleteResourcePolicyStatementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

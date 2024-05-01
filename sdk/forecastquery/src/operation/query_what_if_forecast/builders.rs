@@ -48,7 +48,7 @@ impl
     }
 }
 impl QueryWhatIfForecastFluentBuilder {
-    /// Creates a new `QueryWhatIfForecast`.
+    /// Creates a new `QueryWhatIfForecastFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

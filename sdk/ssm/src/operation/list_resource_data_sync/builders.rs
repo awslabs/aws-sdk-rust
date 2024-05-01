@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListResourceDataSyncFluentBuilder {
-    /// Creates a new `ListResourceDataSync`.
+    /// Creates a new `ListResourceDataSyncFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

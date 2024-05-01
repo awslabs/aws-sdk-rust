@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteUtterancesFluentBuilder {
-    /// Creates a new `DeleteUtterances`.
+    /// Creates a new `DeleteUtterancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

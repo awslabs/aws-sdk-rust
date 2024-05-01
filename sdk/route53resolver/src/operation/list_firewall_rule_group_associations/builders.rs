@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListFirewallRuleGroupAssociationsFluentBuilder {
-    /// Creates a new `ListFirewallRuleGroupAssociations`.
+    /// Creates a new `ListFirewallRuleGroupAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

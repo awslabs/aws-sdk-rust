@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::upda
     }
 }
 impl UpdateAppFluentBuilder {
-    /// Creates a new `UpdateApp`.
+    /// Creates a new `UpdateAppFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

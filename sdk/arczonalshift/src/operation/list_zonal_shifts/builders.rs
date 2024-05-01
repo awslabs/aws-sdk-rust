@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListZonalShiftsFluentBuilder {
-    /// Creates a new `ListZonalShifts`.
+    /// Creates a new `ListZonalShiftsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

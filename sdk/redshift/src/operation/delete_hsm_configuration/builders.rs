@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteHsmConfigurationFluentBuilder {
-    /// Creates a new `DeleteHsmConfiguration`.
+    /// Creates a new `DeleteHsmConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

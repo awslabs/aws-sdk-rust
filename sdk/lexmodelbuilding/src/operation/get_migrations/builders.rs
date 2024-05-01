@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMigrationsFluentBuilder {
-    /// Creates a new `GetMigrations`.
+    /// Creates a new `GetMigrationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

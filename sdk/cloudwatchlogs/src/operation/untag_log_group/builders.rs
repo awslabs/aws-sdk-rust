@@ -54,7 +54,7 @@ impl
     }
 }
 impl UntagLogGroupFluentBuilder {
-    /// Creates a new `UntagLogGroup`.
+    /// Creates a new `UntagLogGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

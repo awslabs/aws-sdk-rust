@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartInputDeviceFluentBuilder {
-    /// Creates a new `StartInputDevice`.
+    /// Creates a new `StartInputDeviceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

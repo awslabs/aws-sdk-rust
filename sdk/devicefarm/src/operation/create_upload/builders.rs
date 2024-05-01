@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateUploadFluentBuilder {
-    /// Creates a new `CreateUpload`.
+    /// Creates a new `CreateUploadFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

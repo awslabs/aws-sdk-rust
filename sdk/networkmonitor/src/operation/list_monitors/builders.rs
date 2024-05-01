@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListMonitorsFluentBuilder {
-    /// Creates a new `ListMonitors`.
+    /// Creates a new `ListMonitorsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

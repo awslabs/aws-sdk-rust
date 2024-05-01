@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAudienceModelsFluentBuilder {
-    /// Creates a new `ListAudienceModels`.
+    /// Creates a new `ListAudienceModelsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

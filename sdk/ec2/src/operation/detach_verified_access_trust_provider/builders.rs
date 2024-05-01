@@ -48,7 +48,7 @@ impl
     }
 }
 impl DetachVerifiedAccessTrustProviderFluentBuilder {
-    /// Creates a new `DetachVerifiedAccessTrustProvider`.
+    /// Creates a new `DetachVerifiedAccessTrustProviderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

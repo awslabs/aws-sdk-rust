@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListUserHierarchyGroupsFluentBuilder {
-    /// Creates a new `ListUserHierarchyGroups`.
+    /// Creates a new `ListUserHierarchyGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -73,7 +73,7 @@ impl
     }
 }
 impl SubscribeToDatasetFluentBuilder {
-    /// Creates a new `SubscribeToDataset`.
+    /// Creates a new `SubscribeToDatasetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

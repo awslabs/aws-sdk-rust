@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopMetricStreamsFluentBuilder {
-    /// Creates a new `StopMetricStreams`.
+    /// Creates a new `StopMetricStreamsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

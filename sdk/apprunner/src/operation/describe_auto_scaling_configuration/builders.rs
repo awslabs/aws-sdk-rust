@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAutoScalingConfigurationFluentBuilder {
-    /// Creates a new `DescribeAutoScalingConfiguration`.
+    /// Creates a new `DescribeAutoScalingConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

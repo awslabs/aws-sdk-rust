@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeBatchDeleteConfigurationTaskFluentBuilder {
-    /// Creates a new `DescribeBatchDeleteConfigurationTask`.
+    /// Creates a new `DescribeBatchDeleteConfigurationTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

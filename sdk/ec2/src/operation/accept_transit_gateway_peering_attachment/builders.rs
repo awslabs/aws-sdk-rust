@@ -48,7 +48,7 @@ impl
     }
 }
 impl AcceptTransitGatewayPeeringAttachmentFluentBuilder {
-    /// Creates a new `AcceptTransitGatewayPeeringAttachment`.
+    /// Creates a new `AcceptTransitGatewayPeeringAttachmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

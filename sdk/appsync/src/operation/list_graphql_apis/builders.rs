@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListGraphqlApisFluentBuilder {
-    /// Creates a new `ListGraphqlApis`.
+    /// Creates a new `ListGraphqlApisFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

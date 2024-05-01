@@ -57,7 +57,7 @@ impl
     }
 }
 impl BatchMeterUsageFluentBuilder {
-    /// Creates a new `BatchMeterUsage`.
+    /// Creates a new `BatchMeterUsageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

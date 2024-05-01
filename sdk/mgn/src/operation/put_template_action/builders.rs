@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutTemplateActionFluentBuilder {
-    /// Creates a new `PutTemplateAction`.
+    /// Creates a new `PutTemplateActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

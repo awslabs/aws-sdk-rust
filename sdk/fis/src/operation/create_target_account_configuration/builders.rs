@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateTargetAccountConfigurationFluentBuilder {
-    /// Creates a new `CreateTargetAccountConfiguration`.
+    /// Creates a new `CreateTargetAccountConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

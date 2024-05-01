@@ -62,7 +62,7 @@ impl
     }
 }
 impl DeletePublicAccessBlockFluentBuilder {
-    /// Creates a new `DeletePublicAccessBlock`.
+    /// Creates a new `DeletePublicAccessBlockFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

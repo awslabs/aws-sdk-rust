@@ -51,7 +51,7 @@ impl
     }
 }
 impl StartDocumentAnalysisFluentBuilder {
-    /// Creates a new `StartDocumentAnalysis`.
+    /// Creates a new `StartDocumentAnalysisFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl ModifyVpcEndpointServicePermissionsFluentBuilder {
-    /// Creates a new `ModifyVpcEndpointServicePermissions`.
+    /// Creates a new `ModifyVpcEndpointServicePermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

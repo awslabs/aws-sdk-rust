@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetRightsizingRecommendationFluentBuilder {
-    /// Creates a new `GetRightsizingRecommendation`.
+    /// Creates a new `GetRightsizingRecommendationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

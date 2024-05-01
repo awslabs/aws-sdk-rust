@@ -51,7 +51,7 @@ impl
     }
 }
 impl ListPoliciesForTargetFluentBuilder {
-    /// Creates a new `ListPoliciesForTarget`.
+    /// Creates a new `ListPoliciesForTargetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

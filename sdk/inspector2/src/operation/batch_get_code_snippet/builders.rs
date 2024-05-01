@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetCodeSnippetFluentBuilder {
-    /// Creates a new `BatchGetCodeSnippet`.
+    /// Creates a new `BatchGetCodeSnippetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

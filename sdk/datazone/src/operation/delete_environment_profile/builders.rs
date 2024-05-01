@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteEnvironmentProfileFluentBuilder {
-    /// Creates a new `DeleteEnvironmentProfile`.
+    /// Creates a new `DeleteEnvironmentProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

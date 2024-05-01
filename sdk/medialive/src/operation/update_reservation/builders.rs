@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateReservationFluentBuilder {
-    /// Creates a new `UpdateReservation`.
+    /// Creates a new `UpdateReservationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

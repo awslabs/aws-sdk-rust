@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCoverageFluentBuilder {
-    /// Creates a new `ListCoverage`.
+    /// Creates a new `ListCoverageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

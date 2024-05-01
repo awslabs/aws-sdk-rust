@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyFpgaImageAttributeFluentBuilder {
-    /// Creates a new `ModifyFpgaImageAttribute`.
+    /// Creates a new `ModifyFpgaImageAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -68,7 +68,7 @@ impl
     }
 }
 impl DeregisterOrganizationAdminAccountFluentBuilder {
-    /// Creates a new `DeregisterOrganizationAdminAccount`.
+    /// Creates a new `DeregisterOrganizationAdminAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

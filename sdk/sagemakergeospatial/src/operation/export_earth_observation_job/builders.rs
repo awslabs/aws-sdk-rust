@@ -48,7 +48,7 @@ impl
     }
 }
 impl ExportEarthObservationJobFluentBuilder {
-    /// Creates a new `ExportEarthObservationJob`.
+    /// Creates a new `ExportEarthObservationJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

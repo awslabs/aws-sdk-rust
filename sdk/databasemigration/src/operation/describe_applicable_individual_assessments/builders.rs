@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeApplicableIndividualAssessmentsFluentBuilder {
-    /// Creates a new `DescribeApplicableIndividualAssessments`.
+    /// Creates a new `DescribeApplicableIndividualAssessmentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

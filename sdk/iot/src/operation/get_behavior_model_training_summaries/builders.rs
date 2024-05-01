@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetBehaviorModelTrainingSummariesFluentBuilder {
-    /// Creates a new `GetBehaviorModelTrainingSummaries`.
+    /// Creates a new `GetBehaviorModelTrainingSummariesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

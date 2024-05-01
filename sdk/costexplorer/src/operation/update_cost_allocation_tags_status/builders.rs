@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateCostAllocationTagsStatusFluentBuilder {
-    /// Creates a new `UpdateCostAllocationTagsStatus`.
+    /// Creates a new `UpdateCostAllocationTagsStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

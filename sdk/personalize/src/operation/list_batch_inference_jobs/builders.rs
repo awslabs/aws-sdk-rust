@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListBatchInferenceJobsFluentBuilder {
-    /// Creates a new `ListBatchInferenceJobs`.
+    /// Creates a new `ListBatchInferenceJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

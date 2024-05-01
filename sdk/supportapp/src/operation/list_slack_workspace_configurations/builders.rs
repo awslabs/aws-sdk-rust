@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSlackWorkspaceConfigurationsFluentBuilder {
-    /// Creates a new `ListSlackWorkspaceConfigurations`.
+    /// Creates a new `ListSlackWorkspaceConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl FailoverPrimaryComputeFluentBuilder {
-    /// Creates a new `FailoverPrimaryCompute`.
+    /// Creates a new `FailoverPrimaryComputeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

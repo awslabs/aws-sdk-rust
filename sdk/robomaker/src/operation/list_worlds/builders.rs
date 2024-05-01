@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListWorldsFluentBuilder {
-    /// Creates a new `ListWorlds`.
+    /// Creates a new `ListWorldsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

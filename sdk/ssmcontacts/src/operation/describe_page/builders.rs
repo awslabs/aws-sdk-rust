@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribePageFluentBuilder {
-    /// Creates a new `DescribePage`.
+    /// Creates a new `DescribePageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

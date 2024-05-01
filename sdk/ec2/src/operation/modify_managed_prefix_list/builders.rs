@@ -50,7 +50,7 @@ impl
     }
 }
 impl ModifyManagedPrefixListFluentBuilder {
-    /// Creates a new `ModifyManagedPrefixList`.
+    /// Creates a new `ModifyManagedPrefixListFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

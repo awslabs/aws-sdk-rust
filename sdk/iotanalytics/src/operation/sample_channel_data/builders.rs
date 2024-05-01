@@ -48,7 +48,7 @@ impl
     }
 }
 impl SampleChannelDataFluentBuilder {
-    /// Creates a new `SampleChannelData`.
+    /// Creates a new `SampleChannelDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

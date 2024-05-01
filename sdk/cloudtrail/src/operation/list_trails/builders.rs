@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTrailsFluentBuilder {
-    /// Creates a new `ListTrails`.
+    /// Creates a new `ListTrailsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

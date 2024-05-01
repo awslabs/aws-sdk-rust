@@ -65,7 +65,7 @@ impl
     }
 }
 impl StartCallAnalyticsJobFluentBuilder {
-    /// Creates a new `StartCallAnalyticsJob`.
+    /// Creates a new `StartCallAnalyticsJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

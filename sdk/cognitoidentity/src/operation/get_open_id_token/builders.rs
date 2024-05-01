@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetOpenIdTokenFluentBuilder {
-    /// Creates a new `GetOpenIdToken`.
+    /// Creates a new `GetOpenIdTokenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

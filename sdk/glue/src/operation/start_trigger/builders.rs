@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartTriggerFluentBuilder {
-    /// Creates a new `StartTrigger`.
+    /// Creates a new `StartTriggerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

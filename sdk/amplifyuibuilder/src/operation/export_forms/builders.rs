@@ -48,7 +48,7 @@ impl
     }
 }
 impl ExportFormsFluentBuilder {
-    /// Creates a new `ExportForms`.
+    /// Creates a new `ExportFormsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

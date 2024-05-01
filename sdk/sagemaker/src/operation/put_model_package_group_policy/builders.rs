@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutModelPackageGroupPolicyFluentBuilder {
-    /// Creates a new `PutModelPackageGroupPolicy`.
+    /// Creates a new `PutModelPackageGroupPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -65,7 +65,7 @@ impl
     }
 }
 impl ChangeMessageVisibilityFluentBuilder {
-    /// Creates a new `ChangeMessageVisibility`.
+    /// Creates a new `ChangeMessageVisibilityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

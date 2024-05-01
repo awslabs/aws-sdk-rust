@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResetNetworkInterfaceAttributeFluentBuilder {
-    /// Creates a new `ResetNetworkInterfaceAttribute`.
+    /// Creates a new `ResetNetworkInterfaceAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

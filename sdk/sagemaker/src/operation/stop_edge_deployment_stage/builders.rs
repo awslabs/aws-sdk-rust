@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopEdgeDeploymentStageFluentBuilder {
-    /// Creates a new `StopEdgeDeploymentStage`.
+    /// Creates a new `StopEdgeDeploymentStageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

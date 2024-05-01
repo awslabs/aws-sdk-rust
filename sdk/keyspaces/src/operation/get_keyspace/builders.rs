@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetKeyspaceFluentBuilder {
-    /// Creates a new `GetKeyspace`.
+    /// Creates a new `GetKeyspaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateWorkspaceApplicationFluentBuilder {
-    /// Creates a new `DisassociateWorkspaceApplication`.
+    /// Creates a new `DisassociateWorkspaceApplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

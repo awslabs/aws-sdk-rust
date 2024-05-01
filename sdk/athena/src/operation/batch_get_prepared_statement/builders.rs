@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetPreparedStatementFluentBuilder {
-    /// Creates a new `BatchGetPreparedStatement`.
+    /// Creates a new `BatchGetPreparedStatementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

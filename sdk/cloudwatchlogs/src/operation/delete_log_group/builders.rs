@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteLogGroupFluentBuilder {
-    /// Creates a new `DeleteLogGroup`.
+    /// Creates a new `DeleteLogGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

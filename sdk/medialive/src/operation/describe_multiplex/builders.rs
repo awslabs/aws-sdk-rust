@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeMultiplexFluentBuilder {
-    /// Creates a new `DescribeMultiplex`.
+    /// Creates a new `DescribeMultiplexFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

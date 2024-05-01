@@ -52,7 +52,7 @@ impl
     }
 }
 impl PutConfigurationRecorderFluentBuilder {
-    /// Creates a new `PutConfigurationRecorder`.
+    /// Creates a new `PutConfigurationRecorderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

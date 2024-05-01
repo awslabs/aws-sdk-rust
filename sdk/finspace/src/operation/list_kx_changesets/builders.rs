@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListKxChangesetsFluentBuilder {
-    /// Creates a new `ListKxChangesets`.
+    /// Creates a new `ListKxChangesetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl AttachElasticLoadBalancerFluentBuilder {
-    /// Creates a new `AttachElasticLoadBalancer`.
+    /// Creates a new `AttachElasticLoadBalancerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

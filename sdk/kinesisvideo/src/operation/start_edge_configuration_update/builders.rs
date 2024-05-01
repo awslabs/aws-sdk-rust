@@ -50,7 +50,7 @@ impl
     }
 }
 impl StartEdgeConfigurationUpdateFluentBuilder {
-    /// Creates a new `StartEdgeConfigurationUpdate`.
+    /// Creates a new `StartEdgeConfigurationUpdateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

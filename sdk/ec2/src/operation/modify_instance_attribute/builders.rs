@@ -50,7 +50,7 @@ impl
     }
 }
 impl ModifyInstanceAttributeFluentBuilder {
-    /// Creates a new `ModifyInstanceAttribute`.
+    /// Creates a new `ModifyInstanceAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

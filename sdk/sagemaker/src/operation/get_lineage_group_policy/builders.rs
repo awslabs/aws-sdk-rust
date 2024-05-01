@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetLineageGroupPolicyFluentBuilder {
-    /// Creates a new `GetLineageGroupPolicy`.
+    /// Creates a new `GetLineageGroupPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

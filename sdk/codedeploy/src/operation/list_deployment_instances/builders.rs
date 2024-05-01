@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListDeploymentInstancesFluentBuilder {
-    /// Creates a new `ListDeploymentInstances`.
+    /// Creates a new `ListDeploymentInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

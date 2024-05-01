@@ -56,7 +56,7 @@ impl
     }
 }
 impl DeleteAccessGrantsInstanceFluentBuilder {
-    /// Creates a new `DeleteAccessGrantsInstance`.
+    /// Creates a new `DeleteAccessGrantsInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

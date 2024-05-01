@@ -50,7 +50,7 @@ impl
     }
 }
 impl RunScheduledInstancesFluentBuilder {
-    /// Creates a new `RunScheduledInstances`.
+    /// Creates a new `RunScheduledInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

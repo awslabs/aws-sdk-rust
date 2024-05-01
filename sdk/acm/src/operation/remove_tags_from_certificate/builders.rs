@@ -49,7 +49,7 @@ impl
     }
 }
 impl RemoveTagsFromCertificateFluentBuilder {
-    /// Creates a new `RemoveTagsFromCertificate`.
+    /// Creates a new `RemoveTagsFromCertificateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

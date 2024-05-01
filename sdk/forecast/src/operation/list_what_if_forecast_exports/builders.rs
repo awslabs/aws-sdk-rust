@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListWhatIfForecastExportsFluentBuilder {
-    /// Creates a new `ListWhatIfForecastExports`.
+    /// Creates a new `ListWhatIfForecastExportsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

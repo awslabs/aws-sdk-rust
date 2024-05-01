@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeLagsFluentBuilder {
-    /// Creates a new `DescribeLags`.
+    /// Creates a new `DescribeLagsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

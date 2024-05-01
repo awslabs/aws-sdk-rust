@@ -55,7 +55,7 @@ impl
     }
 }
 impl SendMessageBatchFluentBuilder {
-    /// Creates a new `SendMessageBatch`.
+    /// Creates a new `SendMessageBatchFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

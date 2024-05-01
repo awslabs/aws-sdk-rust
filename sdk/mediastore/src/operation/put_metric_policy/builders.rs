@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutMetricPolicyFluentBuilder {
-    /// Creates a new `PutMetricPolicy`.
+    /// Creates a new `PutMetricPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSerialConsoleAccessStatusFluentBuilder {
-    /// Creates a new `GetSerialConsoleAccessStatus`.
+    /// Creates a new `GetSerialConsoleAccessStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

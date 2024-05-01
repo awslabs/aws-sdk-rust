@@ -63,7 +63,7 @@ impl
     }
 }
 impl ListBucketMetricsConfigurationsFluentBuilder {
-    /// Creates a new `ListBucketMetricsConfigurations`.
+    /// Creates a new `ListBucketMetricsConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

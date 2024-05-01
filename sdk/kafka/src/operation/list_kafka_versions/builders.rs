@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListKafkaVersionsFluentBuilder {
-    /// Creates a new `ListKafkaVersions`.
+    /// Creates a new `ListKafkaVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetViolationDetailsFluentBuilder {
-    /// Creates a new `GetViolationDetails`.
+    /// Creates a new `GetViolationDetailsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

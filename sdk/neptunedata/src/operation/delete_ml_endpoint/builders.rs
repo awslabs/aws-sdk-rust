@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteMLEndpointFluentBuilder {
-    /// Creates a new `DeleteMLEndpoint`.
+    /// Creates a new `DeleteMLEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl ImportClientVpnClientCertificateRevocationListFluentBuilder {
-    /// Creates a new `ImportClientVpnClientCertificateRevocationList`.
+    /// Creates a new `ImportClientVpnClientCertificateRevocationListFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

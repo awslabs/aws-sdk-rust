@@ -48,7 +48,7 @@ impl
     }
 }
 impl AuthorizeDataShareFluentBuilder {
-    /// Creates a new `AuthorizeDataShare`.
+    /// Creates a new `AuthorizeDataShareFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDomainDeliverabilityCampaignFluentBuilder {
-    /// Creates a new `GetDomainDeliverabilityCampaign`.
+    /// Creates a new `GetDomainDeliverabilityCampaignFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

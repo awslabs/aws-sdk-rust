@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteClusterPolicyFluentBuilder {
-    /// Creates a new `DeleteClusterPolicy`.
+    /// Creates a new `DeleteClusterPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

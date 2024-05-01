@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteVolumeFluentBuilder {
-    /// Creates a new `DeleteVolume`.
+    /// Creates a new `DeleteVolumeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

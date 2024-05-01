@@ -57,7 +57,7 @@ impl
     }
 }
 impl UpdateKeyGroupFluentBuilder {
-    /// Creates a new `UpdateKeyGroup`.
+    /// Creates a new `UpdateKeyGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

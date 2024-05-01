@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdatePhoneNumberMetadataFluentBuilder {
-    /// Creates a new `UpdatePhoneNumberMetadata`.
+    /// Creates a new `UpdatePhoneNumberMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

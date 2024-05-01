@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListDataViewsFluentBuilder {
-    /// Creates a new `ListDataViews`.
+    /// Creates a new `ListDataViewsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

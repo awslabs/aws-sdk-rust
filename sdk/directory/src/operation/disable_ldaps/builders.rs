@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisableLDAPSFluentBuilder {
-    /// Creates a new `DisableLDAPS`.
+    /// Creates a new `DisableLDAPSFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

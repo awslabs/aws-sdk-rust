@@ -62,7 +62,7 @@ impl
     }
 }
 impl RespondActivityTaskCompletedFluentBuilder {
-    /// Creates a new `RespondActivityTaskCompleted`.
+    /// Creates a new `RespondActivityTaskCompletedFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

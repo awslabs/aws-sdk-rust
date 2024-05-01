@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetLexiconFluentBuilder {
-    /// Creates a new `GetLexicon`.
+    /// Creates a new `GetLexiconFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

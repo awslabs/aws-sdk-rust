@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateApnsVoipSandboxChannelFluentBuilder {
-    /// Creates a new `UpdateApnsVoipSandboxChannel`.
+    /// Creates a new `UpdateApnsVoipSandboxChannelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

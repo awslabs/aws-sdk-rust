@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateFolderFluentBuilder {
-    /// Creates a new `CreateFolder`.
+    /// Creates a new `CreateFolderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

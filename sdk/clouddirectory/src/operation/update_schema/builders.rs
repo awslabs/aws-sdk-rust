@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateSchemaFluentBuilder {
-    /// Creates a new `UpdateSchema`.
+    /// Creates a new `UpdateSchemaFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

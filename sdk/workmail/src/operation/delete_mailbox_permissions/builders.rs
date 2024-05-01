@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMailboxPermissionsFluentBuilder {
-    /// Creates a new `DeleteMailboxPermissions`.
+    /// Creates a new `DeleteMailboxPermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

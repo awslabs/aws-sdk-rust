@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDetectDominantLanguageFluentBuilder {
-    /// Creates a new `BatchDetectDominantLanguage`.
+    /// Creates a new `BatchDetectDominantLanguageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

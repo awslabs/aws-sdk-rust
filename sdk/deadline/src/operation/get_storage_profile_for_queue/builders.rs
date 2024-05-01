@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetStorageProfileForQueueFluentBuilder {
-    /// Creates a new `GetStorageProfileForQueue`.
+    /// Creates a new `GetStorageProfileForQueueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

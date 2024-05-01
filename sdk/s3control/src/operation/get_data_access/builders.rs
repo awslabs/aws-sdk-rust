@@ -62,7 +62,7 @@ impl
     }
 }
 impl GetDataAccessFluentBuilder {
-    /// Creates a new `GetDataAccess`.
+    /// Creates a new `GetDataAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

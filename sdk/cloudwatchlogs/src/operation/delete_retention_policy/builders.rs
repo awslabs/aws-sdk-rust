@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteRetentionPolicyFluentBuilder {
-    /// Creates a new `DeleteRetentionPolicy`.
+    /// Creates a new `DeleteRetentionPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

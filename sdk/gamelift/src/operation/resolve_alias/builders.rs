@@ -51,7 +51,7 @@ impl
     }
 }
 impl ResolveAliasFluentBuilder {
-    /// Creates a new `ResolveAlias`.
+    /// Creates a new `ResolveAliasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

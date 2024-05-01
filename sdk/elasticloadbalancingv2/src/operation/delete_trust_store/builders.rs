@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteTrustStoreFluentBuilder {
-    /// Creates a new `DeleteTrustStore`.
+    /// Creates a new `DeleteTrustStoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

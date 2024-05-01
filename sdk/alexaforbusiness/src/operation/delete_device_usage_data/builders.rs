@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteDeviceUsageDataFluentBuilder {
-    /// Creates a new `DeleteDeviceUsageData`.
+    /// Creates a new `DeleteDeviceUsageDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

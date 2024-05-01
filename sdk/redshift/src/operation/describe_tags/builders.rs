@@ -59,7 +59,7 @@ impl
     }
 }
 impl DescribeTagsFluentBuilder {
-    /// Creates a new `DescribeTags`.
+    /// Creates a new `DescribeTagsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

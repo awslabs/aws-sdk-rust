@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSoftwareUpdatesFluentBuilder {
-    /// Creates a new `GetSoftwareUpdates`.
+    /// Creates a new `GetSoftwareUpdatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

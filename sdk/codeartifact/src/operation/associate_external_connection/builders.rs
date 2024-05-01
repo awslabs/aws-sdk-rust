@@ -50,7 +50,7 @@ impl
     }
 }
 impl AssociateExternalConnectionFluentBuilder {
-    /// Creates a new `AssociateExternalConnection`.
+    /// Creates a new `AssociateExternalConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

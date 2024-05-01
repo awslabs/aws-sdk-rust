@@ -56,7 +56,7 @@ impl
     }
 }
 impl CreateLayoutFluentBuilder {
-    /// Creates a new `CreateLayout`.
+    /// Creates a new `CreateLayoutFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

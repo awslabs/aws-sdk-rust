@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListFHIRDatastoresFluentBuilder {
-    /// Creates a new `ListFHIRDatastores`.
+    /// Creates a new `ListFHIRDatastoresFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

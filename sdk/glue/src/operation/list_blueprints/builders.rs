@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListBlueprintsFluentBuilder {
-    /// Creates a new `ListBlueprints`.
+    /// Creates a new `ListBlueprintsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

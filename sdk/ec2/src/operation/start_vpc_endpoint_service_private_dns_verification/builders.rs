@@ -50,7 +50,7 @@ impl
     }
 }
 impl StartVpcEndpointServicePrivateDnsVerificationFluentBuilder {
-    /// Creates a new `StartVpcEndpointServicePrivateDnsVerification`.
+    /// Creates a new `StartVpcEndpointServicePrivateDnsVerificationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DetectSyntaxFluentBuilder {
-    /// Creates a new `DetectSyntax`.
+    /// Creates a new `DetectSyntaxFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

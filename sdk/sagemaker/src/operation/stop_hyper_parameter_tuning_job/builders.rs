@@ -49,7 +49,7 @@ impl
     }
 }
 impl StopHyperParameterTuningJobFluentBuilder {
-    /// Creates a new `StopHyperParameterTuningJob`.
+    /// Creates a new `StopHyperParameterTuningJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

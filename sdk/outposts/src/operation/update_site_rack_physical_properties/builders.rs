@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateSiteRackPhysicalPropertiesFluentBuilder {
-    /// Creates a new `UpdateSiteRackPhysicalProperties`.
+    /// Creates a new `UpdateSiteRackPhysicalPropertiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

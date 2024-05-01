@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteSlotTypeVersionFluentBuilder {
-    /// Creates a new `DeleteSlotTypeVersion`.
+    /// Creates a new `DeleteSlotTypeVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutMeteredProductFluentBuilder {
-    /// Creates a new `PutMeteredProduct`.
+    /// Creates a new `PutMeteredProductFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

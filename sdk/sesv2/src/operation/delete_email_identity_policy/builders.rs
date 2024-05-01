@@ -52,7 +52,7 @@ impl
     }
 }
 impl DeleteEmailIdentityPolicyFluentBuilder {
-    /// Creates a new `DeleteEmailIdentityPolicy`.
+    /// Creates a new `DeleteEmailIdentityPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

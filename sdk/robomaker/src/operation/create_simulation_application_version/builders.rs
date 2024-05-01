@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateSimulationApplicationVersionFluentBuilder {
-    /// Creates a new `CreateSimulationApplicationVersion`.
+    /// Creates a new `CreateSimulationApplicationVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

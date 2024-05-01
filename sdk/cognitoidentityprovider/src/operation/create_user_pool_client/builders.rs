@@ -60,7 +60,7 @@ impl
     }
 }
 impl CreateUserPoolClientFluentBuilder {
-    /// Creates a new `CreateUserPoolClient`.
+    /// Creates a new `CreateUserPoolClientFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

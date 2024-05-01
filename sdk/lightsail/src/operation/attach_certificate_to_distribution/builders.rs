@@ -52,7 +52,7 @@ impl
     }
 }
 impl AttachCertificateToDistributionFluentBuilder {
-    /// Creates a new `AttachCertificateToDistribution`.
+    /// Creates a new `AttachCertificateToDistributionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

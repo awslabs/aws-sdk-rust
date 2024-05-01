@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListWorkspacesFluentBuilder {
-    /// Creates a new `ListWorkspaces`.
+    /// Creates a new `ListWorkspacesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

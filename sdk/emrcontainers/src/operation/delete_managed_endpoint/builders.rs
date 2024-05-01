@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteManagedEndpointFluentBuilder {
-    /// Creates a new `DeleteManagedEndpoint`.
+    /// Creates a new `DeleteManagedEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

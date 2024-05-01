@@ -49,7 +49,7 @@ impl
     }
 }
 impl CancelJournalKinesisStreamFluentBuilder {
-    /// Creates a new `CancelJournalKinesisStream`.
+    /// Creates a new `CancelJournalKinesisStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSdkTypeFluentBuilder {
-    /// Creates a new `GetSdkType`.
+    /// Creates a new `GetSdkTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

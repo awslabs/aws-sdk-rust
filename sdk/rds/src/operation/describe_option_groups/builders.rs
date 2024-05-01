@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeOptionGroupsFluentBuilder {
-    /// Creates a new `DescribeOptionGroups`.
+    /// Creates a new `DescribeOptionGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

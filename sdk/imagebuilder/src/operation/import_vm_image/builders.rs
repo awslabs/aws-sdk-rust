@@ -49,7 +49,7 @@ impl
     }
 }
 impl ImportVmImageFluentBuilder {
-    /// Creates a new `ImportVmImage`.
+    /// Creates a new `ImportVmImageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

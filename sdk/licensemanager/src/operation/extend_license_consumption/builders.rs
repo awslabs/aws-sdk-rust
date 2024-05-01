@@ -48,7 +48,7 @@ impl
     }
 }
 impl ExtendLicenseConsumptionFluentBuilder {
-    /// Creates a new `ExtendLicenseConsumption`.
+    /// Creates a new `ExtendLicenseConsumptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

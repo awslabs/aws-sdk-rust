@@ -60,7 +60,7 @@ impl
     }
 }
 impl PutAccessPointPolicyFluentBuilder {
-    /// Creates a new `PutAccessPointPolicy`.
+    /// Creates a new `PutAccessPointPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

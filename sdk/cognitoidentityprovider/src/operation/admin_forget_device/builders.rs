@@ -57,7 +57,7 @@ impl
     }
 }
 impl AdminForgetDeviceFluentBuilder {
-    /// Creates a new `AdminForgetDevice`.
+    /// Creates a new `AdminForgetDeviceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

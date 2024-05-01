@@ -49,7 +49,7 @@ impl
     }
 }
 impl RejectSkillFluentBuilder {
-    /// Creates a new `RejectSkill`.
+    /// Creates a new `RejectSkillFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

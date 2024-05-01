@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateHostKeyFluentBuilder {
-    /// Creates a new `UpdateHostKey`.
+    /// Creates a new `UpdateHostKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

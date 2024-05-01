@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateSpaceFluentBuilder {
-    /// Creates a new `CreateSpace`.
+    /// Creates a new `CreateSpaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

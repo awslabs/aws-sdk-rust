@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListKxScalingGroupsFluentBuilder {
-    /// Creates a new `ListKxScalingGroups`.
+    /// Creates a new `ListKxScalingGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

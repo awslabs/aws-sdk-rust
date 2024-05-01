@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListMLEndpointsFluentBuilder {
-    /// Creates a new `ListMLEndpoints`.
+    /// Creates a new `ListMLEndpointsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

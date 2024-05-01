@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateAddressFluentBuilder {
-    /// Creates a new `DisassociateAddress`.
+    /// Creates a new `DisassociateAddressFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetHealthCheckLastFailureReasonFluentBuilder {
-    /// Creates a new `GetHealthCheckLastFailureReason`.
+    /// Creates a new `GetHealthCheckLastFailureReasonFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

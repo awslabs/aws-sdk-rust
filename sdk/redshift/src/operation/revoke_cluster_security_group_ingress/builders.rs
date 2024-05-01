@@ -48,7 +48,7 @@ impl
     }
 }
 impl RevokeClusterSecurityGroupIngressFluentBuilder {
-    /// Creates a new `RevokeClusterSecurityGroupIngress`.
+    /// Creates a new `RevokeClusterSecurityGroupIngressFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

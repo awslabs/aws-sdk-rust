@@ -61,7 +61,7 @@ impl
     }
 }
 impl DeleteWebACLFluentBuilder {
-    /// Creates a new `DeleteWebACL`.
+    /// Creates a new `DeleteWebACLFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

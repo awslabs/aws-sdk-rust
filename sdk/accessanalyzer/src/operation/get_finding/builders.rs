@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetFindingFluentBuilder {
-    /// Creates a new `GetFinding`.
+    /// Creates a new `GetFindingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

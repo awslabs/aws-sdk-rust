@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListRecoveryPointsByLegalHoldFluentBuilder {
-    /// Creates a new `ListRecoveryPointsByLegalHold`.
+    /// Creates a new `ListRecoveryPointsByLegalHoldFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

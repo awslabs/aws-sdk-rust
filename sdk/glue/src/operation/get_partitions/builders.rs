@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetPartitionsFluentBuilder {
-    /// Creates a new `GetPartitions`.
+    /// Creates a new `GetPartitionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

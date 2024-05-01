@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetManagedEndpointSessionCredentialsFluentBuilder {
-    /// Creates a new `GetManagedEndpointSessionCredentials`.
+    /// Creates a new `GetManagedEndpointSessionCredentialsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

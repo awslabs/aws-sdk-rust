@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdatePlacementFluentBuilder {
-    /// Creates a new `UpdatePlacement`.
+    /// Creates a new `UpdatePlacementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

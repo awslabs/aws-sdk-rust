@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTrunkInterfaceAssociationsFluentBuilder {
-    /// Creates a new `DescribeTrunkInterfaceAssociations`.
+    /// Creates a new `DescribeTrunkInterfaceAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAlertsFluentBuilder {
-    /// Creates a new `ListAlerts`.
+    /// Creates a new `ListAlertsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

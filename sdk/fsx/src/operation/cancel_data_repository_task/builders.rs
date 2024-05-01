@@ -57,7 +57,7 @@ impl
     }
 }
 impl CancelDataRepositoryTaskFluentBuilder {
-    /// Creates a new `CancelDataRepositoryTask`.
+    /// Creates a new `CancelDataRepositoryTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

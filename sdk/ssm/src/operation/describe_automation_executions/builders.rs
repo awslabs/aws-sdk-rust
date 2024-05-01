@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAutomationExecutionsFluentBuilder {
-    /// Creates a new `DescribeAutomationExecutions`.
+    /// Creates a new `DescribeAutomationExecutionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

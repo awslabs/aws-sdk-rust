@@ -52,7 +52,7 @@ impl
     }
 }
 impl UpdateQuerySuggestionsBlockListFluentBuilder {
-    /// Creates a new `UpdateQuerySuggestionsBlockList`.
+    /// Creates a new `UpdateQuerySuggestionsBlockListFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

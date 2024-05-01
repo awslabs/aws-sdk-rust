@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAdaptersFluentBuilder {
-    /// Creates a new `ListAdapters`.
+    /// Creates a new `ListAdaptersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

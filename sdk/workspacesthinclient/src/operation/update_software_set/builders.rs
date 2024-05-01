@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateSoftwareSetFluentBuilder {
-    /// Creates a new `UpdateSoftwareSet`.
+    /// Creates a new `UpdateSoftwareSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

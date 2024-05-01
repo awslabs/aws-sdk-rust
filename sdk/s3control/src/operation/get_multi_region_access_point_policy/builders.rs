@@ -59,7 +59,7 @@ impl
     }
 }
 impl GetMultiRegionAccessPointPolicyFluentBuilder {
-    /// Creates a new `GetMultiRegionAccessPointPolicy`.
+    /// Creates a new `GetMultiRegionAccessPointPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ExportBundleFluentBuilder {
-    /// Creates a new `ExportBundle`.
+    /// Creates a new `ExportBundleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

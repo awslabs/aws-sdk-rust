@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetStageSessionFluentBuilder {
-    /// Creates a new `GetStageSession`.
+    /// Creates a new `GetStageSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

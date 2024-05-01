@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeConnectionAliasesFluentBuilder {
-    /// Creates a new `DescribeConnectionAliases`.
+    /// Creates a new `DescribeConnectionAliasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

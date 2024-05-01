@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeAffectedAccountsForOrganizationFluentBuilder {
-    /// Creates a new `DescribeAffectedAccountsForOrganization`.
+    /// Creates a new `DescribeAffectedAccountsForOrganizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

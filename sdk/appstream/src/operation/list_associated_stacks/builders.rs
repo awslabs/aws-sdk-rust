@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAssociatedStacksFluentBuilder {
-    /// Creates a new `ListAssociatedStacks`.
+    /// Creates a new `ListAssociatedStacksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

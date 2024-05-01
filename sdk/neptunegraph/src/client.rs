@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,60 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait until Graph is Available
+    fn wait_until_graph_available(&self) -> crate::waiters::graph_available::GraphAvailableFluentBuilder;
+    /// Wait until Graph is Deleted
+    fn wait_until_graph_deleted(&self) -> crate::waiters::graph_deleted::GraphDeletedFluentBuilder;
+    /// Wait until GraphSnapshot is Available
+    fn wait_until_graph_snapshot_available(&self) -> crate::waiters::graph_snapshot_available::GraphSnapshotAvailableFluentBuilder;
+    /// Wait until GraphSnapshot is Deleted
+    fn wait_until_graph_snapshot_deleted(&self) -> crate::waiters::graph_snapshot_deleted::GraphSnapshotDeletedFluentBuilder;
+    /// Wait until Import Task is Successful
+    fn wait_until_import_task_successful(&self) -> crate::waiters::import_task_successful::ImportTaskSuccessfulFluentBuilder;
+    /// Wait until Import Task is Cancelled
+    fn wait_until_import_task_cancelled(&self) -> crate::waiters::import_task_cancelled::ImportTaskCancelledFluentBuilder;
+    /// Wait until PrivateGraphEndpoint is Available
+    fn wait_until_private_graph_endpoint_available(
+        &self,
+    ) -> crate::waiters::private_graph_endpoint_available::PrivateGraphEndpointAvailableFluentBuilder;
+    /// Wait until PrivateGraphEndpoint is Deleted
+    fn wait_until_private_graph_endpoint_deleted(&self) -> crate::waiters::private_graph_endpoint_deleted::PrivateGraphEndpointDeletedFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_graph_available(&self) -> crate::waiters::graph_available::GraphAvailableFluentBuilder {
+        crate::waiters::graph_available::GraphAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_graph_deleted(&self) -> crate::waiters::graph_deleted::GraphDeletedFluentBuilder {
+        crate::waiters::graph_deleted::GraphDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_graph_snapshot_available(&self) -> crate::waiters::graph_snapshot_available::GraphSnapshotAvailableFluentBuilder {
+        crate::waiters::graph_snapshot_available::GraphSnapshotAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_graph_snapshot_deleted(&self) -> crate::waiters::graph_snapshot_deleted::GraphSnapshotDeletedFluentBuilder {
+        crate::waiters::graph_snapshot_deleted::GraphSnapshotDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_import_task_successful(&self) -> crate::waiters::import_task_successful::ImportTaskSuccessfulFluentBuilder {
+        crate::waiters::import_task_successful::ImportTaskSuccessfulFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_import_task_cancelled(&self) -> crate::waiters::import_task_cancelled::ImportTaskCancelledFluentBuilder {
+        crate::waiters::import_task_cancelled::ImportTaskCancelledFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_private_graph_endpoint_available(
+        &self,
+    ) -> crate::waiters::private_graph_endpoint_available::PrivateGraphEndpointAvailableFluentBuilder {
+        crate::waiters::private_graph_endpoint_available::PrivateGraphEndpointAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_private_graph_endpoint_deleted(&self) -> crate::waiters::private_graph_endpoint_deleted::PrivateGraphEndpointDeletedFluentBuilder {
+        crate::waiters::private_graph_endpoint_deleted::PrivateGraphEndpointDeletedFluentBuilder::new(self.handle.clone())
     }
 }
 

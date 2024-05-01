@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSupportedPhoneNumberCountriesFluentBuilder {
-    /// Creates a new `ListSupportedPhoneNumberCountries`.
+    /// Creates a new `ListSupportedPhoneNumberCountriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateTimeSeriesFromAssetPropertyFluentBuilder {
-    /// Creates a new `DisassociateTimeSeriesFromAssetProperty`.
+    /// Creates a new `DisassociateTimeSeriesFromAssetPropertyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

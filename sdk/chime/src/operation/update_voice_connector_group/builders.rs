@@ -52,7 +52,7 @@ impl
     }
 }
 impl UpdateVoiceConnectorGroupFluentBuilder {
-    /// Creates a new `UpdateVoiceConnectorGroup`.
+    /// Creates a new `UpdateVoiceConnectorGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

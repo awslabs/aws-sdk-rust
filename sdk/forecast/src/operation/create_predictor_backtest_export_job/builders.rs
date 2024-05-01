@@ -64,7 +64,7 @@ impl
     }
 }
 impl CreatePredictorBacktestExportJobFluentBuilder {
-    /// Creates a new `CreatePredictorBacktestExportJob`.
+    /// Creates a new `CreatePredictorBacktestExportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

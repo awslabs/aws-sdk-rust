@@ -48,7 +48,7 @@ impl
     }
 }
 impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
-    /// Creates a new `AddApplicationCloudWatchLoggingOption`.
+    /// Creates a new `AddApplicationCloudWatchLoggingOptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

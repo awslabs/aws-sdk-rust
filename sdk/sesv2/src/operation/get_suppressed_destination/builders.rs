@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSuppressedDestinationFluentBuilder {
-    /// Creates a new `GetSuppressedDestination`.
+    /// Creates a new `GetSuppressedDestinationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

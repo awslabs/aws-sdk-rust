@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateClusterParameterGroupFluentBuilder {
-    /// Creates a new `CreateClusterParameterGroup`.
+    /// Creates a new `CreateClusterParameterGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

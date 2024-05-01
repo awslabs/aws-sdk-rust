@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetBuiltinIntentFluentBuilder {
-    /// Creates a new `GetBuiltinIntent`.
+    /// Creates a new `GetBuiltinIntentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

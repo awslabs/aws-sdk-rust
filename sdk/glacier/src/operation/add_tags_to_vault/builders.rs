@@ -48,7 +48,7 @@ impl
     }
 }
 impl AddTagsToVaultFluentBuilder {
-    /// Creates a new `AddTagsToVault`.
+    /// Creates a new `AddTagsToVaultFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

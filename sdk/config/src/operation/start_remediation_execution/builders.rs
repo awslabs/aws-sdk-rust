@@ -49,7 +49,7 @@ impl
     }
 }
 impl StartRemediationExecutionFluentBuilder {
-    /// Creates a new `StartRemediationExecution`.
+    /// Creates a new `StartRemediationExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

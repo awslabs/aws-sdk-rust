@@ -53,7 +53,7 @@ impl
     }
 }
 impl GetSecretValueFluentBuilder {
-    /// Creates a new `GetSecretValue`.
+    /// Creates a new `GetSecretValueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

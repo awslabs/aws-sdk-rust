@@ -51,7 +51,7 @@ impl
     }
 }
 impl PutSnapshotBlockFluentBuilder {
-    /// Creates a new `PutSnapshotBlock`.
+    /// Creates a new `PutSnapshotBlockFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListThesauriFluentBuilder {
-    /// Creates a new `ListThesauri`.
+    /// Creates a new `ListThesauriFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

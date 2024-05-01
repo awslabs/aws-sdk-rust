@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetThirdPartyFirewallAssociationStatusFluentBuilder {
-    /// Creates a new `GetThirdPartyFirewallAssociationStatus`.
+    /// Creates a new `GetThirdPartyFirewallAssociationStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

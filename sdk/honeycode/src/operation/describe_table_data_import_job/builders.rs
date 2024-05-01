@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTableDataImportJobFluentBuilder {
-    /// Creates a new `DescribeTableDataImportJob`.
+    /// Creates a new `DescribeTableDataImportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetHostnameSuggestionFluentBuilder {
-    /// Creates a new `GetHostnameSuggestion`.
+    /// Creates a new `GetHostnameSuggestionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

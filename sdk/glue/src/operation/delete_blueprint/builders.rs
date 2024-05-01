@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteBlueprintFluentBuilder {
-    /// Creates a new `DeleteBlueprint`.
+    /// Creates a new `DeleteBlueprintFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

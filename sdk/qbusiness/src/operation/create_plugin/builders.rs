@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreatePluginFluentBuilder {
-    /// Creates a new `CreatePlugin`.
+    /// Creates a new `CreatePluginFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

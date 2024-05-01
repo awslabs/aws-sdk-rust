@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetListElementsFluentBuilder {
-    /// Creates a new `GetListElements`.
+    /// Creates a new `GetListElementsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

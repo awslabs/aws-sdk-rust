@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeLockedSnapshotsFluentBuilder {
-    /// Creates a new `DescribeLockedSnapshots`.
+    /// Creates a new `DescribeLockedSnapshotsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

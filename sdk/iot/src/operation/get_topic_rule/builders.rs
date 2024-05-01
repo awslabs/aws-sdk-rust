@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetTopicRuleFluentBuilder {
-    /// Creates a new `GetTopicRule`.
+    /// Creates a new `GetTopicRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

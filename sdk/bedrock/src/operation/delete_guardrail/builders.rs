@@ -54,7 +54,7 @@ impl
     }
 }
 impl DeleteGuardrailFluentBuilder {
-    /// Creates a new `DeleteGuardrail`.
+    /// Creates a new `DeleteGuardrailFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

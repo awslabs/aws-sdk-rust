@@ -48,7 +48,7 @@ impl
     }
 }
 impl SearchAvailablePhoneNumbersFluentBuilder {
-    /// Creates a new `SearchAvailablePhoneNumbers`.
+    /// Creates a new `SearchAvailablePhoneNumbersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

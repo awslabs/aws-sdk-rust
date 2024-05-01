@@ -50,7 +50,7 @@ impl
     }
 }
 impl FinalizeDeviceClaimFluentBuilder {
-    /// Creates a new `FinalizeDeviceClaim`.
+    /// Creates a new `FinalizeDeviceClaimFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

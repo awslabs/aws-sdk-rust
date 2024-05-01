@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDomainFluentBuilder {
-    /// Creates a new `DescribeDomain`.
+    /// Creates a new `DescribeDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

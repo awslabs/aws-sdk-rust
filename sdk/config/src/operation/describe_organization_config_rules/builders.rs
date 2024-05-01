@@ -53,7 +53,7 @@ impl
     }
 }
 impl DescribeOrganizationConfigRulesFluentBuilder {
-    /// Creates a new `DescribeOrganizationConfigRules`.
+    /// Creates a new `DescribeOrganizationConfigRulesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

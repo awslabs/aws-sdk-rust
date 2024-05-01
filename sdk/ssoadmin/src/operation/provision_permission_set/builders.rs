@@ -48,7 +48,7 @@ impl
     }
 }
 impl ProvisionPermissionSetFluentBuilder {
-    /// Creates a new `ProvisionPermissionSet`.
+    /// Creates a new `ProvisionPermissionSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

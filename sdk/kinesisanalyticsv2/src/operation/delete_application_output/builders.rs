@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteApplicationOutputFluentBuilder {
-    /// Creates a new `DeleteApplicationOutput`.
+    /// Creates a new `DeleteApplicationOutputFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

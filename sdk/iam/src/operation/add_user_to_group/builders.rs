@@ -48,7 +48,7 @@ impl
     }
 }
 impl AddUserToGroupFluentBuilder {
-    /// Creates a new `AddUserToGroup`.
+    /// Creates a new `AddUserToGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

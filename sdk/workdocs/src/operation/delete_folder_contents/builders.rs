@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteFolderContentsFluentBuilder {
-    /// Creates a new `DeleteFolderContents`.
+    /// Creates a new `DeleteFolderContentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

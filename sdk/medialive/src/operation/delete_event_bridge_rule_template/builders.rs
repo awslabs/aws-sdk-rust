@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteEventBridgeRuleTemplateFluentBuilder {
-    /// Creates a new `DeleteEventBridgeRuleTemplate`.
+    /// Creates a new `DeleteEventBridgeRuleTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

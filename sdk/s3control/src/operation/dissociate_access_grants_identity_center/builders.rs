@@ -62,7 +62,7 @@ impl
     }
 }
 impl DissociateAccessGrantsIdentityCenterFluentBuilder {
-    /// Creates a new `DissociateAccessGrantsIdentityCenter`.
+    /// Creates a new `DissociateAccessGrantsIdentityCenterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateRecommendationLifecycleFluentBuilder {
-    /// Creates a new `UpdateRecommendationLifecycle`.
+    /// Creates a new `UpdateRecommendationLifecycleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

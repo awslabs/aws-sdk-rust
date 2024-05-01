@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetAggregateConfigRuleComplianceSummaryFluentBuilder {
-    /// Creates a new `GetAggregateConfigRuleComplianceSummary`.
+    /// Creates a new `GetAggregateConfigRuleComplianceSummaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

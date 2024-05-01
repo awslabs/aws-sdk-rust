@@ -49,7 +49,7 @@ impl
     }
 }
 impl SetDefaultMessageTypeFluentBuilder {
-    /// Creates a new `SetDefaultMessageType`.
+    /// Creates a new `SetDefaultMessageTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

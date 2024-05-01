@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateProfileJobFluentBuilder {
-    /// Creates a new `CreateProfileJob`.
+    /// Creates a new `CreateProfileJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

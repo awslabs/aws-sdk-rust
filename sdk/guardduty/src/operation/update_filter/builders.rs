@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateFilterFluentBuilder {
-    /// Creates a new `UpdateFilter`.
+    /// Creates a new `UpdateFilterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

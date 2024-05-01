@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteKxClusterFluentBuilder {
-    /// Creates a new `DeleteKxCluster`.
+    /// Creates a new `DeleteKxClusterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

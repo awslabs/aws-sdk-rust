@@ -74,7 +74,7 @@ impl
     }
 }
 impl GetKeyRotationStatusFluentBuilder {
-    /// Creates a new `GetKeyRotationStatus`.
+    /// Creates a new `GetKeyRotationStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

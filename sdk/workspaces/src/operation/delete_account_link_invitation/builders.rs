@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAccountLinkInvitationFluentBuilder {
-    /// Creates a new `DeleteAccountLinkInvitation`.
+    /// Creates a new `DeleteAccountLinkInvitationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

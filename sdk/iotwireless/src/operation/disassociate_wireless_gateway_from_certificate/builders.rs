@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateWirelessGatewayFromCertificateFluentBuilder {
-    /// Creates a new `DisassociateWirelessGatewayFromCertificate`.
+    /// Creates a new `DisassociateWirelessGatewayFromCertificateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

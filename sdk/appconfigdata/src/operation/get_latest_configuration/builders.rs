@@ -56,7 +56,7 @@ impl
     }
 }
 impl GetLatestConfigurationFluentBuilder {
-    /// Creates a new `GetLatestConfiguration`.
+    /// Creates a new `GetLatestConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

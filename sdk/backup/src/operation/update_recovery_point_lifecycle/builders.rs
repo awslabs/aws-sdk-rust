@@ -52,7 +52,7 @@ impl
     }
 }
 impl UpdateRecoveryPointLifecycleFluentBuilder {
-    /// Creates a new `UpdateRecoveryPointLifecycle`.
+    /// Creates a new `UpdateRecoveryPointLifecycleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

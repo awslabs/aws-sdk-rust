@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopConfigurationRecorderFluentBuilder {
-    /// Creates a new `StopConfigurationRecorder`.
+    /// Creates a new `StopConfigurationRecorderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

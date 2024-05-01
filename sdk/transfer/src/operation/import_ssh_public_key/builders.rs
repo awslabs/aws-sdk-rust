@@ -49,7 +49,7 @@ impl
     }
 }
 impl ImportSshPublicKeyFluentBuilder {
-    /// Creates a new `ImportSshPublicKey`.
+    /// Creates a new `ImportSshPublicKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

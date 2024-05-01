@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListAWSServiceAccessForOrganizationFluentBuilder {
-    /// Creates a new `ListAWSServiceAccessForOrganization`.
+    /// Creates a new `ListAWSServiceAccessForOrganizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

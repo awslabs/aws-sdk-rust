@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateContactWithAddressBookFluentBuilder {
-    /// Creates a new `AssociateContactWithAddressBook`.
+    /// Creates a new `AssociateContactWithAddressBookFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

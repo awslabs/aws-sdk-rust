@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeRegistrationAttachmentsFluentBuilder {
-    /// Creates a new `DescribeRegistrationAttachments`.
+    /// Creates a new `DescribeRegistrationAttachmentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

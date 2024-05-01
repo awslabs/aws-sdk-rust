@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteForecastExportJobFluentBuilder {
-    /// Creates a new `DeleteForecastExportJob`.
+    /// Creates a new `DeleteForecastExportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

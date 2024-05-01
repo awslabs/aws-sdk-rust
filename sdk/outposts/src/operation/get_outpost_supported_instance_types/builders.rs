@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetOutpostSupportedInstanceTypesFluentBuilder {
-    /// Creates a new `GetOutpostSupportedInstanceTypes`.
+    /// Creates a new `GetOutpostSupportedInstanceTypesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

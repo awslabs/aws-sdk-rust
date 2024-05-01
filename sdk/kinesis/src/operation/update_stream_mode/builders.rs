@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateStreamModeFluentBuilder {
-    /// Creates a new `UpdateStreamMode`.
+    /// Creates a new `UpdateStreamModeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

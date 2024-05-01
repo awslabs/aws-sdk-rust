@@ -51,7 +51,7 @@ impl
     }
 }
 impl StopSentimentDetectionJobFluentBuilder {
-    /// Creates a new `StopSentimentDetectionJob`.
+    /// Creates a new `StopSentimentDetectionJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

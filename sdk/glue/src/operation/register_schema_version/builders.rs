@@ -50,7 +50,7 @@ impl
     }
 }
 impl RegisterSchemaVersionFluentBuilder {
-    /// Creates a new `RegisterSchemaVersion`.
+    /// Creates a new `RegisterSchemaVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

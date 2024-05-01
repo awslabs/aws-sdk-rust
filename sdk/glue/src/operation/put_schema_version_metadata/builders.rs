@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutSchemaVersionMetadataFluentBuilder {
-    /// Creates a new `PutSchemaVersionMetadata`.
+    /// Creates a new `PutSchemaVersionMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

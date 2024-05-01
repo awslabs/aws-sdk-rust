@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateHarvestJobFluentBuilder {
-    /// Creates a new `CreateHarvestJob`.
+    /// Creates a new `CreateHarvestJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

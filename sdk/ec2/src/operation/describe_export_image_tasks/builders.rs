@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeExportImageTasksFluentBuilder {
-    /// Creates a new `DescribeExportImageTasks`.
+    /// Creates a new `DescribeExportImageTasksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

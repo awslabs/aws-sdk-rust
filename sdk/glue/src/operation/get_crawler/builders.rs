@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCrawlerFluentBuilder {
-    /// Creates a new `GetCrawler`.
+    /// Creates a new `GetCrawlerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

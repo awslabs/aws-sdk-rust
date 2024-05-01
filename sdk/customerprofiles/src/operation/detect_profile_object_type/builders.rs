@@ -48,7 +48,7 @@ impl
     }
 }
 impl DetectProfileObjectTypeFluentBuilder {
-    /// Creates a new `DetectProfileObjectType`.
+    /// Creates a new `DetectProfileObjectTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

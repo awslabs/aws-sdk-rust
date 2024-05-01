@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRemoteAccessSessionFluentBuilder {
-    /// Creates a new `GetRemoteAccessSession`.
+    /// Creates a new `GetRemoteAccessSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

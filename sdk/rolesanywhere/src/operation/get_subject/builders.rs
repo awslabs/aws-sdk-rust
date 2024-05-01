@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetSubjectFluentBuilder {
-    /// Creates a new `GetSubject`.
+    /// Creates a new `GetSubjectFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

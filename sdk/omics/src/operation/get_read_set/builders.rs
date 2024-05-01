@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetReadSetFluentBuilder {
-    /// Creates a new `GetReadSet`.
+    /// Creates a new `GetReadSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

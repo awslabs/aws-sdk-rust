@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetPartitionIndexesFluentBuilder {
-    /// Creates a new `GetPartitionIndexes`.
+    /// Creates a new `GetPartitionIndexesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

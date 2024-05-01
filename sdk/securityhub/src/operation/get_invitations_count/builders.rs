@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetInvitationsCountFluentBuilder {
-    /// Creates a new `GetInvitationsCount`.
+    /// Creates a new `GetInvitationsCountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

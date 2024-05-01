@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateModelBiasJobDefinitionFluentBuilder {
-    /// Creates a new `CreateModelBiasJobDefinition`.
+    /// Creates a new `CreateModelBiasJobDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

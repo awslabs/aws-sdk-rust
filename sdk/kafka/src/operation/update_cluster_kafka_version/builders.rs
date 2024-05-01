@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateClusterKafkaVersionFluentBuilder {
-    /// Creates a new `UpdateClusterKafkaVersion`.
+    /// Creates a new `UpdateClusterKafkaVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

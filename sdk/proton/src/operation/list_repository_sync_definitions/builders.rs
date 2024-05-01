@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListRepositorySyncDefinitionsFluentBuilder {
-    /// Creates a new `ListRepositorySyncDefinitions`.
+    /// Creates a new `ListRepositorySyncDefinitionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

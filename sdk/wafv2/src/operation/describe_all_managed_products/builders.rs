@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeAllManagedProductsFluentBuilder {
-    /// Creates a new `DescribeAllManagedProducts`.
+    /// Creates a new `DescribeAllManagedProductsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

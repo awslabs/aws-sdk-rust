@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateKxUserFluentBuilder {
-    /// Creates a new `UpdateKxUser`.
+    /// Creates a new `UpdateKxUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

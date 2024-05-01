@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateMicrosoftTeamsChannelConfigurationFluentBuilder {
-    /// Creates a new `CreateMicrosoftTeamsChannelConfiguration`.
+    /// Creates a new `CreateMicrosoftTeamsChannelConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

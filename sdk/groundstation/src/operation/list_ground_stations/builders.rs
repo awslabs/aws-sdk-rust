@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListGroundStationsFluentBuilder {
-    /// Creates a new `ListGroundStations`.
+    /// Creates a new `ListGroundStationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

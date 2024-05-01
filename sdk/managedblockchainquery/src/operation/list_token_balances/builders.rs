@@ -58,7 +58,7 @@ impl
     }
 }
 impl ListTokenBalancesFluentBuilder {
-    /// Creates a new `ListTokenBalances`.
+    /// Creates a new `ListTokenBalancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

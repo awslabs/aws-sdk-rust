@@ -48,7 +48,7 @@ impl
     }
 }
 impl VerifySessionFluentBuilder {
-    /// Creates a new `VerifySession`.
+    /// Creates a new `VerifySessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

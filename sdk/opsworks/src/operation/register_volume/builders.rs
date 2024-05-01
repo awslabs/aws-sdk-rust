@@ -49,7 +49,7 @@ impl
     }
 }
 impl RegisterVolumeFluentBuilder {
-    /// Creates a new `RegisterVolume`.
+    /// Creates a new `RegisterVolumeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

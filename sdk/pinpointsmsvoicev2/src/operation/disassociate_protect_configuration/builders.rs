@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateProtectConfigurationFluentBuilder {
-    /// Creates a new `DisassociateProtectConfiguration`.
+    /// Creates a new `DisassociateProtectConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateServerConfigFluentBuilder {
-    /// Creates a new `UpdateServerConfig`.
+    /// Creates a new `UpdateServerConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

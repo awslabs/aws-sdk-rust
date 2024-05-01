@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelMetadataTransferJobFluentBuilder {
-    /// Creates a new `CancelMetadataTransferJob`.
+    /// Creates a new `CancelMetadataTransferJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

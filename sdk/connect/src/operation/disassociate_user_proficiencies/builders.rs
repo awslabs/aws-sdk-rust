@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateUserProficienciesFluentBuilder {
-    /// Creates a new `DisassociateUserProficiencies`.
+    /// Creates a new `DisassociateUserProficienciesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

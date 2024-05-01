@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateVehicleFleetFluentBuilder {
-    /// Creates a new `AssociateVehicleFleet`.
+    /// Creates a new `AssociateVehicleFleetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -46,7 +46,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::subm
     }
 }
 impl SubmitJobFluentBuilder {
-    /// Creates a new `SubmitJob`.
+    /// Creates a new `SubmitJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

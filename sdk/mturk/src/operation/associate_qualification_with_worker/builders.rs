@@ -51,7 +51,7 @@ impl
     }
 }
 impl AssociateQualificationWithWorkerFluentBuilder {
-    /// Creates a new `AssociateQualificationWithWorker`.
+    /// Creates a new `AssociateQualificationWithWorkerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

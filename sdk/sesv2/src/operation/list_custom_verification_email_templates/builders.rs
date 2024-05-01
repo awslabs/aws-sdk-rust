@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListCustomVerificationEmailTemplatesFluentBuilder {
-    /// Creates a new `ListCustomVerificationEmailTemplates`.
+    /// Creates a new `ListCustomVerificationEmailTemplatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

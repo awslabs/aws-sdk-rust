@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateNetworkSitePlanFluentBuilder {
-    /// Creates a new `UpdateNetworkSitePlan`.
+    /// Creates a new `UpdateNetworkSitePlanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

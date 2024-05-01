@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRecordingConfigurationFluentBuilder {
-    /// Creates a new `GetRecordingConfiguration`.
+    /// Creates a new `GetRecordingConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDocumentationPartFluentBuilder {
-    /// Creates a new `GetDocumentationPart`.
+    /// Creates a new `GetDocumentationPartFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListAuditSuppressionsFluentBuilder {
-    /// Creates a new `ListAuditSuppressions`.
+    /// Creates a new `ListAuditSuppressionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

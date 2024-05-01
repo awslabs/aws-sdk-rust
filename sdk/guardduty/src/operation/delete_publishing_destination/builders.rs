@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePublishingDestinationFluentBuilder {
-    /// Creates a new `DeletePublishingDestination`.
+    /// Creates a new `DeletePublishingDestinationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetPricingPlanFluentBuilder {
-    /// Creates a new `GetPricingPlan`.
+    /// Creates a new `GetPricingPlanFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

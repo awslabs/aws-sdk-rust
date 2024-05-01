@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateConfigurationSetReputationMetricsEnabledFluentBuilder {
-    /// Creates a new `UpdateConfigurationSetReputationMetricsEnabled`.
+    /// Creates a new `UpdateConfigurationSetReputationMetricsEnabledFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -70,7 +70,7 @@ impl
     }
 }
 impl DetectProtectiveEquipmentFluentBuilder {
-    /// Creates a new `DetectProtectiveEquipment`.
+    /// Creates a new `DetectProtectiveEquipmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

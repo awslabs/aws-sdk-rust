@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCollaborationFluentBuilder {
-    /// Creates a new `GetCollaboration`.
+    /// Creates a new `GetCollaborationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

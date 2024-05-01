@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListManagedDataIdentifiersFluentBuilder {
-    /// Creates a new `ListManagedDataIdentifiers`.
+    /// Creates a new `ListManagedDataIdentifiersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

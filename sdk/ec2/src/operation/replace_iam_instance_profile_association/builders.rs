@@ -49,7 +49,7 @@ impl
     }
 }
 impl ReplaceIamInstanceProfileAssociationFluentBuilder {
-    /// Creates a new `ReplaceIamInstanceProfileAssociation`.
+    /// Creates a new `ReplaceIamInstanceProfileAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

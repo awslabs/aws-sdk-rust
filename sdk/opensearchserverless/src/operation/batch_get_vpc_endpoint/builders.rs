@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetVpcEndpointFluentBuilder {
-    /// Creates a new `BatchGetVpcEndpoint`.
+    /// Creates a new `BatchGetVpcEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

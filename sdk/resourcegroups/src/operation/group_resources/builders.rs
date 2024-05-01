@@ -63,7 +63,7 @@ impl
     }
 }
 impl GroupResourcesFluentBuilder {
-    /// Creates a new `GroupResources`.
+    /// Creates a new `GroupResourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

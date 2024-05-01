@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyVerifiedAccessEndpointPolicyFluentBuilder {
-    /// Creates a new `ModifyVerifiedAccessEndpointPolicy`.
+    /// Creates a new `ModifyVerifiedAccessEndpointPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

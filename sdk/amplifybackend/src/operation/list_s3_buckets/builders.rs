@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListS3BucketsFluentBuilder {
-    /// Creates a new `ListS3Buckets`.
+    /// Creates a new `ListS3BucketsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

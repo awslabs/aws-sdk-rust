@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetUnfilteredTableMetadataFluentBuilder {
-    /// Creates a new `GetUnfilteredTableMetadata`.
+    /// Creates a new `GetUnfilteredTableMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

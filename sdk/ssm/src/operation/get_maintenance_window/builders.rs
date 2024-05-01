@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMaintenanceWindowFluentBuilder {
-    /// Creates a new `GetMaintenanceWindow`.
+    /// Creates a new `GetMaintenanceWindowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

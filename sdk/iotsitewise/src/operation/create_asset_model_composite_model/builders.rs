@@ -52,7 +52,7 @@ impl
     }
 }
 impl CreateAssetModelCompositeModelFluentBuilder {
-    /// Creates a new `CreateAssetModelCompositeModel`.
+    /// Creates a new `CreateAssetModelCompositeModelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

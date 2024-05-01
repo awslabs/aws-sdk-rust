@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSegmentVersionsFluentBuilder {
-    /// Creates a new `GetSegmentVersions`.
+    /// Creates a new `GetSegmentVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

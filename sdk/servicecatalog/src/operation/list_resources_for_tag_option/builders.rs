@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListResourcesForTagOptionFluentBuilder {
-    /// Creates a new `ListResourcesForTagOption`.
+    /// Creates a new `ListResourcesForTagOptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

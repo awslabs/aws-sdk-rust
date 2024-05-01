@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteKeyValueStoreFluentBuilder {
-    /// Creates a new `DeleteKeyValueStore`.
+    /// Creates a new `DeleteKeyValueStoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

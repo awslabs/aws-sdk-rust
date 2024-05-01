@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartFlywheelIterationFluentBuilder {
-    /// Creates a new `StartFlywheelIteration`.
+    /// Creates a new `StartFlywheelIterationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

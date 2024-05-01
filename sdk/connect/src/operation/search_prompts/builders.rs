@@ -48,7 +48,7 @@ impl
     }
 }
 impl SearchPromptsFluentBuilder {
-    /// Creates a new `SearchPrompts`.
+    /// Creates a new `SearchPromptsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

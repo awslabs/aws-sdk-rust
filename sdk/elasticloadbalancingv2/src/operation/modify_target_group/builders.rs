@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyTargetGroupFluentBuilder {
-    /// Creates a new `ModifyTargetGroup`.
+    /// Creates a new `ModifyTargetGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

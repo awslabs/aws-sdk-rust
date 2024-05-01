@@ -76,7 +76,7 @@ impl
     }
 }
 impl CreateReusableDelegationSetFluentBuilder {
-    /// Creates a new `CreateReusableDelegationSet`.
+    /// Creates a new `CreateReusableDelegationSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

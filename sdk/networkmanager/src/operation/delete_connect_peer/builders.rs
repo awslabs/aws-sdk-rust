@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteConnectPeerFluentBuilder {
-    /// Creates a new `DeleteConnectPeer`.
+    /// Creates a new `DeleteConnectPeerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

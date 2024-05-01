@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListResourceInventoryFluentBuilder {
-    /// Creates a new `ListResourceInventory`.
+    /// Creates a new `ListResourceInventoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

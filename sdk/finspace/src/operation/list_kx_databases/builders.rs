@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListKxDatabasesFluentBuilder {
-    /// Creates a new `ListKxDatabases`.
+    /// Creates a new `ListKxDatabasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

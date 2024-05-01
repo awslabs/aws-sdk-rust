@@ -50,7 +50,7 @@ impl
     }
 }
 impl AssignIpv6AddressesFluentBuilder {
-    /// Creates a new `AssignIpv6Addresses`.
+    /// Creates a new `AssignIpv6AddressesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

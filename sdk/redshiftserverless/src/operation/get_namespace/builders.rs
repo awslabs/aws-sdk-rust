@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetNamespaceFluentBuilder {
-    /// Creates a new `GetNamespace`.
+    /// Creates a new `GetNamespaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

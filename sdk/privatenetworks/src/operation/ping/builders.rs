@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::ping
     }
 }
 impl PingFluentBuilder {
-    /// Creates a new `Ping`.
+    /// Creates a new `PingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

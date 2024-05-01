@@ -24,7 +24,7 @@ impl crate::operation::batch_associate_service_action_with_provisioning_artifact
 pub struct BatchAssociateServiceActionWithProvisioningArtifactFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::batch_associate_service_action_with_provisioning_artifact::builders::BatchAssociateServiceActionWithProvisioningArtifactInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -45,7 +45,7 @@ impl
     }
 }
 impl BatchAssociateServiceActionWithProvisioningArtifactFluentBuilder {
-    /// Creates a new `BatchAssociateServiceActionWithProvisioningArtifact`.
+    /// Creates a new `BatchAssociateServiceActionWithProvisioningArtifactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

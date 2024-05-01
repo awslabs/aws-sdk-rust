@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeConfigRuleEvaluationStatusFluentBuilder {
-    /// Creates a new `DescribeConfigRuleEvaluationStatus`.
+    /// Creates a new `DescribeConfigRuleEvaluationStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

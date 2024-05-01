@@ -54,7 +54,7 @@ impl
     }
 }
 impl RegisterUsageFluentBuilder {
-    /// Creates a new `RegisterUsage`.
+    /// Creates a new `RegisterUsageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

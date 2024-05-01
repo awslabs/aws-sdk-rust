@@ -73,7 +73,7 @@ impl
     }
 }
 impl MergeProfilesFluentBuilder {
-    /// Creates a new `MergeProfiles`.
+    /// Creates a new `MergeProfilesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

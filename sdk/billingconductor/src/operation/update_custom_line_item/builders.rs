@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateCustomLineItemFluentBuilder {
-    /// Creates a new `UpdateCustomLineItem`.
+    /// Creates a new `UpdateCustomLineItemFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

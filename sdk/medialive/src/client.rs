@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,91 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait until a channel has been created
+    fn wait_until_channel_created(&self) -> crate::waiters::channel_created::ChannelCreatedFluentBuilder;
+    /// Wait until a channel has been deleted
+    fn wait_until_channel_deleted(&self) -> crate::waiters::channel_deleted::ChannelDeletedFluentBuilder;
+    /// Wait until a channel is running
+    fn wait_until_channel_running(&self) -> crate::waiters::channel_running::ChannelRunningFluentBuilder;
+    /// Wait until a channel has is stopped
+    fn wait_until_channel_stopped(&self) -> crate::waiters::channel_stopped::ChannelStoppedFluentBuilder;
+    /// Wait until an input has been attached
+    fn wait_until_input_attached(&self) -> crate::waiters::input_attached::InputAttachedFluentBuilder;
+    /// Wait until an input has been deleted
+    fn wait_until_input_deleted(&self) -> crate::waiters::input_deleted::InputDeletedFluentBuilder;
+    /// Wait until an input has been detached
+    fn wait_until_input_detached(&self) -> crate::waiters::input_detached::InputDetachedFluentBuilder;
+    /// Wait until a multiplex has been created
+    fn wait_until_multiplex_created(&self) -> crate::waiters::multiplex_created::MultiplexCreatedFluentBuilder;
+    /// Wait until a multiplex has been deleted
+    fn wait_until_multiplex_deleted(&self) -> crate::waiters::multiplex_deleted::MultiplexDeletedFluentBuilder;
+    /// Wait until a multiplex is running
+    fn wait_until_multiplex_running(&self) -> crate::waiters::multiplex_running::MultiplexRunningFluentBuilder;
+    /// Wait until a multiplex has is stopped
+    fn wait_until_multiplex_stopped(&self) -> crate::waiters::multiplex_stopped::MultiplexStoppedFluentBuilder;
+    /// Wait until a signal map has been created
+    fn wait_until_signal_map_created(&self) -> crate::waiters::signal_map_created::SignalMapCreatedFluentBuilder;
+    /// Wait until a signal map's monitor has been deleted
+    fn wait_until_signal_map_monitor_deleted(&self) -> crate::waiters::signal_map_monitor_deleted::SignalMapMonitorDeletedFluentBuilder;
+    /// Wait until a signal map's monitor has been deployed
+    fn wait_until_signal_map_monitor_deployed(&self) -> crate::waiters::signal_map_monitor_deployed::SignalMapMonitorDeployedFluentBuilder;
+    /// Wait until a signal map has been updated
+    fn wait_until_signal_map_updated(&self) -> crate::waiters::signal_map_updated::SignalMapUpdatedFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_channel_created(&self) -> crate::waiters::channel_created::ChannelCreatedFluentBuilder {
+        crate::waiters::channel_created::ChannelCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_channel_deleted(&self) -> crate::waiters::channel_deleted::ChannelDeletedFluentBuilder {
+        crate::waiters::channel_deleted::ChannelDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_channel_running(&self) -> crate::waiters::channel_running::ChannelRunningFluentBuilder {
+        crate::waiters::channel_running::ChannelRunningFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_channel_stopped(&self) -> crate::waiters::channel_stopped::ChannelStoppedFluentBuilder {
+        crate::waiters::channel_stopped::ChannelStoppedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_input_attached(&self) -> crate::waiters::input_attached::InputAttachedFluentBuilder {
+        crate::waiters::input_attached::InputAttachedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_input_deleted(&self) -> crate::waiters::input_deleted::InputDeletedFluentBuilder {
+        crate::waiters::input_deleted::InputDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_input_detached(&self) -> crate::waiters::input_detached::InputDetachedFluentBuilder {
+        crate::waiters::input_detached::InputDetachedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_multiplex_created(&self) -> crate::waiters::multiplex_created::MultiplexCreatedFluentBuilder {
+        crate::waiters::multiplex_created::MultiplexCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_multiplex_deleted(&self) -> crate::waiters::multiplex_deleted::MultiplexDeletedFluentBuilder {
+        crate::waiters::multiplex_deleted::MultiplexDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_multiplex_running(&self) -> crate::waiters::multiplex_running::MultiplexRunningFluentBuilder {
+        crate::waiters::multiplex_running::MultiplexRunningFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_multiplex_stopped(&self) -> crate::waiters::multiplex_stopped::MultiplexStoppedFluentBuilder {
+        crate::waiters::multiplex_stopped::MultiplexStoppedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_signal_map_created(&self) -> crate::waiters::signal_map_created::SignalMapCreatedFluentBuilder {
+        crate::waiters::signal_map_created::SignalMapCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_signal_map_monitor_deleted(&self) -> crate::waiters::signal_map_monitor_deleted::SignalMapMonitorDeletedFluentBuilder {
+        crate::waiters::signal_map_monitor_deleted::SignalMapMonitorDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_signal_map_monitor_deployed(&self) -> crate::waiters::signal_map_monitor_deployed::SignalMapMonitorDeployedFluentBuilder {
+        crate::waiters::signal_map_monitor_deployed::SignalMapMonitorDeployedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_signal_map_updated(&self) -> crate::waiters::signal_map_updated::SignalMapUpdatedFluentBuilder {
+        crate::waiters::signal_map_updated::SignalMapUpdatedFluentBuilder::new(self.handle.clone())
     }
 }
 

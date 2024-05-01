@@ -54,7 +54,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::list
     }
 }
 impl ListRolesFluentBuilder {
-    /// Creates a new `ListRoles`.
+    /// Creates a new `ListRolesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

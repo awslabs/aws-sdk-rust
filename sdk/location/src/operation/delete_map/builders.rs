@@ -44,7 +44,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::dele
     }
 }
 impl DeleteMapFluentBuilder {
-    /// Creates a new `DeleteMap`.
+    /// Creates a new `DeleteMapFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

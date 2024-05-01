@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelMaintenanceWindowExecutionFluentBuilder {
-    /// Creates a new `CancelMaintenanceWindowExecution`.
+    /// Creates a new `CancelMaintenanceWindowExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

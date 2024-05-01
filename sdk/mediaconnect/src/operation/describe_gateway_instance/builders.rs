@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeGatewayInstanceFluentBuilder {
-    /// Creates a new `DescribeGatewayInstance`.
+    /// Creates a new `DescribeGatewayInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

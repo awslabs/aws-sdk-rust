@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchStopJobRunFluentBuilder {
-    /// Creates a new `BatchStopJobRun`.
+    /// Creates a new `BatchStopJobRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

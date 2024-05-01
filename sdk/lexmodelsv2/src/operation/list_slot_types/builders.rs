@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSlotTypesFluentBuilder {
-    /// Creates a new `ListSlotTypes`.
+    /// Creates a new `ListSlotTypesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

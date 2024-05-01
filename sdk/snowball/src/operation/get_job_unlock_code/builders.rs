@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetJobUnlockCodeFluentBuilder {
-    /// Creates a new `GetJobUnlockCode`.
+    /// Creates a new `GetJobUnlockCodeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

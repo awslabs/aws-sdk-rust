@@ -69,7 +69,7 @@ impl
     }
 }
 impl RegisterActivityTypeFluentBuilder {
-    /// Creates a new `RegisterActivityType`.
+    /// Creates a new `RegisterActivityTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

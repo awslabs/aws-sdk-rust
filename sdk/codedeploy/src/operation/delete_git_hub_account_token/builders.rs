@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteGitHubAccountTokenFluentBuilder {
-    /// Creates a new `DeleteGitHubAccountToken`.
+    /// Creates a new `DeleteGitHubAccountTokenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

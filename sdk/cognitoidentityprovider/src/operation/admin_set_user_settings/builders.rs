@@ -57,7 +57,7 @@ impl
     }
 }
 impl AdminSetUserSettingsFluentBuilder {
-    /// Creates a new `AdminSetUserSettings`.
+    /// Creates a new `AdminSetUserSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

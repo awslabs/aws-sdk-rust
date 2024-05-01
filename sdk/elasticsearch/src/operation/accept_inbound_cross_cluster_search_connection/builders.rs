@@ -48,7 +48,7 @@ impl
     }
 }
 impl AcceptInboundCrossClusterSearchConnectionFluentBuilder {
-    /// Creates a new `AcceptInboundCrossClusterSearchConnection`.
+    /// Creates a new `AcceptInboundCrossClusterSearchConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

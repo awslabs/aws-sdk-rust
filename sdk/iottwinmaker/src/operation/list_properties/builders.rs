@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPropertiesFluentBuilder {
-    /// Creates a new `ListProperties`.
+    /// Creates a new `ListPropertiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

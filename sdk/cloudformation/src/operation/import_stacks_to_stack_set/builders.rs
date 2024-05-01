@@ -48,7 +48,7 @@ impl
     }
 }
 impl ImportStacksToStackSetFluentBuilder {
-    /// Creates a new `ImportStacksToStackSet`.
+    /// Creates a new `ImportStacksToStackSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateKeyPairFluentBuilder {
-    /// Creates a new `CreateKeyPair`.
+    /// Creates a new `CreateKeyPairFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

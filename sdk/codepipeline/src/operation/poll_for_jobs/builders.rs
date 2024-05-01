@@ -50,7 +50,7 @@ impl
     }
 }
 impl PollForJobsFluentBuilder {
-    /// Creates a new `PollForJobs`.
+    /// Creates a new `PollForJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl ModifyInstanceEventWindowFluentBuilder {
-    /// Creates a new `ModifyInstanceEventWindow`.
+    /// Creates a new `ModifyInstanceEventWindowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

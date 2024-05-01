@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetLaunchTemplateDataFluentBuilder {
-    /// Creates a new `GetLaunchTemplateData`.
+    /// Creates a new `GetLaunchTemplateDataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

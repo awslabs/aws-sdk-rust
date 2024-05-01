@@ -48,7 +48,7 @@ impl
     }
 }
 impl EnableHostedZoneDNSSECFluentBuilder {
-    /// Creates a new `EnableHostedZoneDNSSEC`.
+    /// Creates a new `EnableHostedZoneDNSSECFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAnnotationImportJobsFluentBuilder {
-    /// Creates a new `ListAnnotationImportJobs`.
+    /// Creates a new `ListAnnotationImportJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

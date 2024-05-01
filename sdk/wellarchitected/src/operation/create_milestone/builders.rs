@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateMilestoneFluentBuilder {
-    /// Creates a new `CreateMilestone`.
+    /// Creates a new `CreateMilestoneFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl StopTrainingDocumentClassifierFluentBuilder {
-    /// Creates a new `StopTrainingDocumentClassifier`.
+    /// Creates a new `StopTrainingDocumentClassifierFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

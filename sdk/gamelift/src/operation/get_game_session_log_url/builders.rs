@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetGameSessionLogUrlFluentBuilder {
-    /// Creates a new `GetGameSessionLogUrl`.
+    /// Creates a new `GetGameSessionLogUrlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

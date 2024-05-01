@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetTriggersFluentBuilder {
-    /// Creates a new `BatchGetTriggers`.
+    /// Creates a new `BatchGetTriggersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

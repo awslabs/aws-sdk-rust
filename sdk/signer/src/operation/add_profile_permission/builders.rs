@@ -48,7 +48,7 @@ impl
     }
 }
 impl AddProfilePermissionFluentBuilder {
-    /// Creates a new `AddProfilePermission`.
+    /// Creates a new `AddProfilePermissionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

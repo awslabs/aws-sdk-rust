@@ -100,7 +100,7 @@ impl
     }
 }
 impl PutBucketWebsiteFluentBuilder {
-    /// Creates a new `PutBucketWebsite`.
+    /// Creates a new `PutBucketWebsiteFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

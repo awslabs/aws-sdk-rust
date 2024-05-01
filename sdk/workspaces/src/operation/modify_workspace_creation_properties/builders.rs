@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyWorkspaceCreationPropertiesFluentBuilder {
-    /// Creates a new `ModifyWorkspaceCreationProperties`.
+    /// Creates a new `ModifyWorkspaceCreationPropertiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

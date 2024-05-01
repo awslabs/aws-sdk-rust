@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchEnableAlarmFluentBuilder {
-    /// Creates a new `BatchEnableAlarm`.
+    /// Creates a new `BatchEnableAlarmFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

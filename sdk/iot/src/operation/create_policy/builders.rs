@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreatePolicyFluentBuilder {
-    /// Creates a new `CreatePolicy`.
+    /// Creates a new `CreatePolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

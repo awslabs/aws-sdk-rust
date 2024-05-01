@@ -65,7 +65,7 @@ impl
     }
 }
 impl PutEventSelectorsFluentBuilder {
-    /// Creates a new `PutEventSelectors`.
+    /// Creates a new `PutEventSelectorsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

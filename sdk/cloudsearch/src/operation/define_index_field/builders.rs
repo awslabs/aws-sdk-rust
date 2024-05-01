@@ -48,7 +48,7 @@ impl
     }
 }
 impl DefineIndexFieldFluentBuilder {
-    /// Creates a new `DefineIndexField`.
+    /// Creates a new `DefineIndexFieldFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

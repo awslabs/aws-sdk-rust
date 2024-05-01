@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetXssMatchSetFluentBuilder {
-    /// Creates a new `GetXssMatchSet`.
+    /// Creates a new `GetXssMatchSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

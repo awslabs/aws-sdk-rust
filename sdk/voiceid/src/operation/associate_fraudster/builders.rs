@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateFraudsterFluentBuilder {
-    /// Creates a new `AssociateFraudster`.
+    /// Creates a new `AssociateFraudsterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

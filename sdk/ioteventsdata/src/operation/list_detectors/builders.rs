@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDetectorsFluentBuilder {
-    /// Creates a new `ListDetectors`.
+    /// Creates a new `ListDetectorsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

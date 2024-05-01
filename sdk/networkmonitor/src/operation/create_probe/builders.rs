@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateProbeFluentBuilder {
-    /// Creates a new `CreateProbe`.
+    /// Creates a new `CreateProbeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

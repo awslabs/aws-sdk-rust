@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutThirdPartyJobSuccessResultFluentBuilder {
-    /// Creates a new `PutThirdPartyJobSuccessResult`.
+    /// Creates a new `PutThirdPartyJobSuccessResultFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartMetadataModelAssessmentFluentBuilder {
-    /// Creates a new `StartMetadataModelAssessment`.
+    /// Creates a new `StartMetadataModelAssessmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

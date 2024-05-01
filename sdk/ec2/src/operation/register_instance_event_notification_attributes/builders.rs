@@ -49,7 +49,7 @@ impl
     }
 }
 impl RegisterInstanceEventNotificationAttributesFluentBuilder {
-    /// Creates a new `RegisterInstanceEventNotificationAttributes`.
+    /// Creates a new `RegisterInstanceEventNotificationAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

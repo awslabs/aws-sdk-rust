@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMessagingStreamingConfigurationsFluentBuilder {
-    /// Creates a new `DeleteMessagingStreamingConfigurations`.
+    /// Creates a new `DeleteMessagingStreamingConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

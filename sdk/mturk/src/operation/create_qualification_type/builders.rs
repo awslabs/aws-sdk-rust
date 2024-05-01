@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateQualificationTypeFluentBuilder {
-    /// Creates a new `CreateQualificationType`.
+    /// Creates a new `CreateQualificationTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteIdMappingWorkflowFluentBuilder {
-    /// Creates a new `DeleteIdMappingWorkflow`.
+    /// Creates a new `DeleteIdMappingWorkflowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

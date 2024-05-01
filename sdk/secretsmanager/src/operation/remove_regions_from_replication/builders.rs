@@ -50,7 +50,7 @@ impl
     }
 }
 impl RemoveRegionsFromReplicationFluentBuilder {
-    /// Creates a new `RemoveRegionsFromReplication`.
+    /// Creates a new `RemoveRegionsFromReplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

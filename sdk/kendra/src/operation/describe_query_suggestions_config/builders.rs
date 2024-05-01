@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeQuerySuggestionsConfigFluentBuilder {
-    /// Creates a new `DescribeQuerySuggestionsConfig`.
+    /// Creates a new `DescribeQuerySuggestionsConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

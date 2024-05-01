@@ -59,7 +59,7 @@ impl
     }
 }
 impl StopFleetActionsFluentBuilder {
-    /// Creates a new `StopFleetActions`.
+    /// Creates a new `StopFleetActionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

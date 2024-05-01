@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListImagesInRecycleBinFluentBuilder {
-    /// Creates a new `ListImagesInRecycleBin`.
+    /// Creates a new `ListImagesInRecycleBinFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl StartSnapshotFluentBuilder {
-    /// Creates a new `StartSnapshot`.
+    /// Creates a new `StartSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

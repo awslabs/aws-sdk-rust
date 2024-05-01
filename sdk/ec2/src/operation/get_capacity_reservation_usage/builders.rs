@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCapacityReservationUsageFluentBuilder {
-    /// Creates a new `GetCapacityReservationUsage`.
+    /// Creates a new `GetCapacityReservationUsageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

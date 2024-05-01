@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyConversionConfigurationFluentBuilder {
-    /// Creates a new `ModifyConversionConfiguration`.
+    /// Creates a new `ModifyConversionConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -56,7 +56,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::upda
     }
 }
 impl UpdateLagFluentBuilder {
-    /// Creates a new `UpdateLag`.
+    /// Creates a new `UpdateLagFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

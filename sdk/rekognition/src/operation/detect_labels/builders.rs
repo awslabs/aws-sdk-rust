@@ -94,7 +94,7 @@ impl
     }
 }
 impl DetectLabelsFluentBuilder {
-    /// Creates a new `DetectLabels`.
+    /// Creates a new `DetectLabelsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

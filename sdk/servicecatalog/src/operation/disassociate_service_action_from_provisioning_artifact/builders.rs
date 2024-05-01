@@ -29,7 +29,7 @@ impl
 pub struct DisassociateServiceActionFromProvisioningArtifactFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::disassociate_service_action_from_provisioning_artifact::builders::DisassociateServiceActionFromProvisioningArtifactInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -50,7 +50,7 @@ impl
     }
 }
 impl DisassociateServiceActionFromProvisioningArtifactFluentBuilder {
-    /// Creates a new `DisassociateServiceActionFromProvisioningArtifact`.
+    /// Creates a new `DisassociateServiceActionFromProvisioningArtifactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl UntagDeliveryStreamFluentBuilder {
-    /// Creates a new `UntagDeliveryStream`.
+    /// Creates a new `UntagDeliveryStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

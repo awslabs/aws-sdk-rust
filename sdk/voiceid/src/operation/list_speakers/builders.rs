@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSpeakersFluentBuilder {
-    /// Creates a new `ListSpeakers`.
+    /// Creates a new `ListSpeakersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

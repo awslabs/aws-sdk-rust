@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAppInstanceAdminsFluentBuilder {
-    /// Creates a new `ListAppInstanceAdmins`.
+    /// Creates a new `ListAppInstanceAdminsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

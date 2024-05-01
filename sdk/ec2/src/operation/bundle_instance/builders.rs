@@ -51,7 +51,7 @@ impl
     }
 }
 impl BundleInstanceFluentBuilder {
-    /// Creates a new `BundleInstance`.
+    /// Creates a new `BundleInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

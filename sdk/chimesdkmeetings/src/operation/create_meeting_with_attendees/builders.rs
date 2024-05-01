@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateMeetingWithAttendeesFluentBuilder {
-    /// Creates a new `CreateMeetingWithAttendees`.
+    /// Creates a new `CreateMeetingWithAttendeesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

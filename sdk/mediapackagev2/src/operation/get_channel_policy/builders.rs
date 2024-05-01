@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetChannelPolicyFluentBuilder {
-    /// Creates a new `GetChannelPolicy`.
+    /// Creates a new `GetChannelPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

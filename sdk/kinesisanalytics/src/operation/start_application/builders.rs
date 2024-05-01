@@ -55,7 +55,7 @@ impl
     }
 }
 impl StartApplicationFluentBuilder {
-    /// Creates a new `StartApplication`.
+    /// Creates a new `StartApplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

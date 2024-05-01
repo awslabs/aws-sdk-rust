@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRestoreTestingSelectionFluentBuilder {
-    /// Creates a new `GetRestoreTestingSelection`.
+    /// Creates a new `GetRestoreTestingSelectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetSystemTemplateFluentBuilder {
-    /// Creates a new `GetSystemTemplate`.
+    /// Creates a new `GetSystemTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

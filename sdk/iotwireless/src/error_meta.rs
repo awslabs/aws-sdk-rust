@@ -3374,11 +3374,11 @@ impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            crate::error::sealed_unhandled::Unhandled {
-                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                                                source: err.into(),
-                                            }
-                                        ),
+                                        crate::error::sealed_unhandled::Unhandled {
+                                            meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                            source: err.into(),
+                                        }
+                                    ),
         }
     }
 }

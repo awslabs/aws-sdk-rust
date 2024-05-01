@@ -49,7 +49,7 @@ impl
     }
 }
 impl CancelComponentDeploymentFluentBuilder {
-    /// Creates a new `CancelComponentDeployment`.
+    /// Creates a new `CancelComponentDeploymentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

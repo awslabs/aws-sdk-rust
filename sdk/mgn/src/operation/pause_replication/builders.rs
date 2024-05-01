@@ -48,7 +48,7 @@ impl
     }
 }
 impl PauseReplicationFluentBuilder {
-    /// Creates a new `PauseReplication`.
+    /// Creates a new `PauseReplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

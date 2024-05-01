@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterDBProxyTargetsFluentBuilder {
-    /// Creates a new `RegisterDBProxyTargets`.
+    /// Creates a new `RegisterDBProxyTargetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

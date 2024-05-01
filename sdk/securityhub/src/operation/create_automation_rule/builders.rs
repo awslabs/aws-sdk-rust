@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAutomationRuleFluentBuilder {
-    /// Creates a new `CreateAutomationRule`.
+    /// Creates a new `CreateAutomationRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

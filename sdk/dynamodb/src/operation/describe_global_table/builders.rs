@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeGlobalTableFluentBuilder {
-    /// Creates a new `DescribeGlobalTable`.
+    /// Creates a new `DescribeGlobalTableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

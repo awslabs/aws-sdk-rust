@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteVpcPeeringConnectionFluentBuilder {
-    /// Creates a new `DeleteVpcPeeringConnection`.
+    /// Creates a new `DeleteVpcPeeringConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

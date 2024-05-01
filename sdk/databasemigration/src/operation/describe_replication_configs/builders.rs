@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeReplicationConfigsFluentBuilder {
-    /// Creates a new `DescribeReplicationConfigs`.
+    /// Creates a new `DescribeReplicationConfigsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

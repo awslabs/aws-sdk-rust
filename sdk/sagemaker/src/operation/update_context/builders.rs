@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateContextFluentBuilder {
-    /// Creates a new `UpdateContext`.
+    /// Creates a new `UpdateContextFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

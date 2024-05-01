@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeResizeFluentBuilder {
-    /// Creates a new `DescribeResize`.
+    /// Creates a new `DescribeResizeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

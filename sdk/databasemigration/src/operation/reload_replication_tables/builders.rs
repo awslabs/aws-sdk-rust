@@ -49,7 +49,7 @@ impl
     }
 }
 impl ReloadReplicationTablesFluentBuilder {
-    /// Creates a new `ReloadReplicationTables`.
+    /// Creates a new `ReloadReplicationTablesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

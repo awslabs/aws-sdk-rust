@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateApiFluentBuilder {
-    /// Creates a new `DisassociateApi`.
+    /// Creates a new `DisassociateApiFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

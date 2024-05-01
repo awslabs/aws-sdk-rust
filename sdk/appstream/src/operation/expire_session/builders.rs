@@ -48,7 +48,7 @@ impl
     }
 }
 impl ExpireSessionFluentBuilder {
-    /// Creates a new `ExpireSession`.
+    /// Creates a new `ExpireSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

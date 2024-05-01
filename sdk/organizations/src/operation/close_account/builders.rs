@@ -64,7 +64,7 @@ impl
     }
 }
 impl CloseAccountFluentBuilder {
-    /// Creates a new `CloseAccount`.
+    /// Creates a new `CloseAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

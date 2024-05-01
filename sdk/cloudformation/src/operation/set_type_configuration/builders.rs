@@ -51,7 +51,7 @@ impl
     }
 }
 impl SetTypeConfigurationFluentBuilder {
-    /// Creates a new `SetTypeConfiguration`.
+    /// Creates a new `SetTypeConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

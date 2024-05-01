@@ -50,7 +50,7 @@ impl
     }
 }
 impl ReplaceRouteFluentBuilder {
-    /// Creates a new `ReplaceRoute`.
+    /// Creates a new `ReplaceRouteFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeComponentConfigurationRecommendationFluentBuilder {
-    /// Creates a new `DescribeComponentConfigurationRecommendation`.
+    /// Creates a new `DescribeComponentConfigurationRecommendationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

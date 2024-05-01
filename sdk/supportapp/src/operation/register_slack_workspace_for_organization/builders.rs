@@ -63,7 +63,7 @@ impl
     }
 }
 impl RegisterSlackWorkspaceForOrganizationFluentBuilder {
-    /// Creates a new `RegisterSlackWorkspaceForOrganization`.
+    /// Creates a new `RegisterSlackWorkspaceForOrganizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

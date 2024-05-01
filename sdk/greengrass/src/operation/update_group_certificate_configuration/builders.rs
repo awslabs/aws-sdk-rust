@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateGroupCertificateConfigurationFluentBuilder {
-    /// Creates a new `UpdateGroupCertificateConfiguration`.
+    /// Creates a new `UpdateGroupCertificateConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutAppsListFluentBuilder {
-    /// Creates a new `PutAppsList`.
+    /// Creates a new `PutAppsListFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

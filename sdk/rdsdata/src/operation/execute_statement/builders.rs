@@ -51,7 +51,7 @@ impl
     }
 }
 impl ExecuteStatementFluentBuilder {
-    /// Creates a new `ExecuteStatement`.
+    /// Creates a new `ExecuteStatementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

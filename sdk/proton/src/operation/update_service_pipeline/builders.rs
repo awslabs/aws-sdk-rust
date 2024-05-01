@@ -71,7 +71,7 @@ impl
     }
 }
 impl UpdateServicePipelineFluentBuilder {
-    /// Creates a new `UpdateServicePipeline`.
+    /// Creates a new `UpdateServicePipelineFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

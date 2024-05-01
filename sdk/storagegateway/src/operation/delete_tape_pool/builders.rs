@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteTapePoolFluentBuilder {
-    /// Creates a new `DeleteTapePool`.
+    /// Creates a new `DeleteTapePoolFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

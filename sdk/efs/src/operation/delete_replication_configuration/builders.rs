@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteReplicationConfigurationFluentBuilder {
-    /// Creates a new `DeleteReplicationConfiguration`.
+    /// Creates a new `DeleteReplicationConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

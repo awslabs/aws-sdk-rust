@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetLogEventsFluentBuilder {
-    /// Creates a new `GetLogEvents`.
+    /// Creates a new `GetLogEventsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl ConfirmForgotPasswordFluentBuilder {
-    /// Creates a new `ConfirmForgotPassword`.
+    /// Creates a new `ConfirmForgotPasswordFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

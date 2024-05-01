@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePartnershipFluentBuilder {
-    /// Creates a new `DeletePartnership`.
+    /// Creates a new `DeletePartnershipFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteNotebookFluentBuilder {
-    /// Creates a new `DeleteNotebook`.
+    /// Creates a new `DeleteNotebookFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

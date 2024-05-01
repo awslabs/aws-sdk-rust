@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartInferenceExperimentFluentBuilder {
-    /// Creates a new `StartInferenceExperiment`.
+    /// Creates a new `StartInferenceExperimentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

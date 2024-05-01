@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeWorkspaceBundlesFluentBuilder {
-    /// Creates a new `DescribeWorkspaceBundles`.
+    /// Creates a new `DescribeWorkspaceBundlesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

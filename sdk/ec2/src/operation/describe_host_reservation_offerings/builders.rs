@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeHostReservationOfferingsFluentBuilder {
-    /// Creates a new `DescribeHostReservationOfferings`.
+    /// Creates a new `DescribeHostReservationOfferingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeElasticGpusFluentBuilder {
-    /// Creates a new `DescribeElasticGpus`.
+    /// Creates a new `DescribeElasticGpusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

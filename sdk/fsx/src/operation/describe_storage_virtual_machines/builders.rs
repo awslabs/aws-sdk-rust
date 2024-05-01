@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeStorageVirtualMachinesFluentBuilder {
-    /// Creates a new `DescribeStorageVirtualMachines`.
+    /// Creates a new `DescribeStorageVirtualMachinesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

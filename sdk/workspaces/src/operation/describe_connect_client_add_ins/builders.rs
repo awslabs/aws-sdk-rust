@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeConnectClientAddInsFluentBuilder {
-    /// Creates a new `DescribeConnectClientAddIns`.
+    /// Creates a new `DescribeConnectClientAddInsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

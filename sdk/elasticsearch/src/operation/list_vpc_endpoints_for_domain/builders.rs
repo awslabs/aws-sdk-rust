@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListVpcEndpointsForDomainFluentBuilder {
-    /// Creates a new `ListVpcEndpointsForDomain`.
+    /// Creates a new `ListVpcEndpointsForDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

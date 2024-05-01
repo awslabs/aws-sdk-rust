@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateFileSystemAssociationFluentBuilder {
-    /// Creates a new `UpdateFileSystemAssociation`.
+    /// Creates a new `UpdateFileSystemAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

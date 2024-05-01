@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateProvisioningTemplateFluentBuilder {
-    /// Creates a new `UpdateProvisioningTemplate`.
+    /// Creates a new `UpdateProvisioningTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

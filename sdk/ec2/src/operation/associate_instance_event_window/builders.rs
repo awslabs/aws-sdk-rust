@@ -49,7 +49,7 @@ impl
     }
 }
 impl AssociateInstanceEventWindowFluentBuilder {
-    /// Creates a new `AssociateInstanceEventWindow`.
+    /// Creates a new `AssociateInstanceEventWindowFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDataLakeSourcesFluentBuilder {
-    /// Creates a new `GetDataLakeSources`.
+    /// Creates a new `GetDataLakeSourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

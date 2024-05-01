@@ -50,7 +50,7 @@ impl
     }
 }
 impl BatchDeleteGeofenceFluentBuilder {
-    /// Creates a new `BatchDeleteGeofence`.
+    /// Creates a new `BatchDeleteGeofenceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

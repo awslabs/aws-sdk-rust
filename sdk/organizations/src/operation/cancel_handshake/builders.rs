@@ -50,7 +50,7 @@ impl
     }
 }
 impl CancelHandshakeFluentBuilder {
-    /// Creates a new `CancelHandshake`.
+    /// Creates a new `CancelHandshakeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

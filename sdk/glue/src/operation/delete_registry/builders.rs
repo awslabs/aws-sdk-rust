@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRegistryFluentBuilder {
-    /// Creates a new `DeleteRegistry`.
+    /// Creates a new `DeleteRegistryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetInstanceSnapshotsFluentBuilder {
-    /// Creates a new `GetInstanceSnapshots`.
+    /// Creates a new `GetInstanceSnapshotsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

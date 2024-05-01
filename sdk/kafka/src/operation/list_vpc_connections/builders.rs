@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListVpcConnectionsFluentBuilder {
-    /// Creates a new `ListVpcConnections`.
+    /// Creates a new `ListVpcConnectionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

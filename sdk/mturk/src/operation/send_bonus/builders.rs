@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::send
     }
 }
 impl SendBonusFluentBuilder {
-    /// Creates a new `SendBonus`.
+    /// Creates a new `SendBonusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

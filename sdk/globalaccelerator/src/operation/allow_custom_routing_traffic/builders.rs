@@ -49,7 +49,7 @@ impl
     }
 }
 impl AllowCustomRoutingTrafficFluentBuilder {
-    /// Creates a new `AllowCustomRoutingTraffic`.
+    /// Creates a new `AllowCustomRoutingTrafficFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

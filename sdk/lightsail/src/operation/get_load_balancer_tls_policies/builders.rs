@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetLoadBalancerTlsPoliciesFluentBuilder {
-    /// Creates a new `GetLoadBalancerTlsPolicies`.
+    /// Creates a new `GetLoadBalancerTlsPoliciesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListFraudstersFluentBuilder {
-    /// Creates a new `ListFraudsters`.
+    /// Creates a new `ListFraudstersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

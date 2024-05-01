@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateSPICECapacityConfigurationFluentBuilder {
-    /// Creates a new `UpdateSPICECapacityConfiguration`.
+    /// Creates a new `UpdateSPICECapacityConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

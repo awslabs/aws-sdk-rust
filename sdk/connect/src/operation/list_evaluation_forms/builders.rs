@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListEvaluationFormsFluentBuilder {
-    /// Creates a new `ListEvaluationForms`.
+    /// Creates a new `ListEvaluationFormsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

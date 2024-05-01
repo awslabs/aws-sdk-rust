@@ -65,7 +65,7 @@ impl
     }
 }
 impl TerminateWorkflowExecutionFluentBuilder {
-    /// Creates a new `TerminateWorkflowExecution`.
+    /// Creates a new `TerminateWorkflowExecutionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveSchemaVersionMetadataFluentBuilder {
-    /// Creates a new `RemoveSchemaVersionMetadata`.
+    /// Creates a new `RemoveSchemaVersionMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

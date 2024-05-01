@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeNetworkInsightsPathsFluentBuilder {
-    /// Creates a new `DescribeNetworkInsightsPaths`.
+    /// Creates a new `DescribeNetworkInsightsPathsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

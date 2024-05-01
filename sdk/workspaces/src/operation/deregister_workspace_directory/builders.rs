@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeregisterWorkspaceDirectoryFluentBuilder {
-    /// Creates a new `DeregisterWorkspaceDirectory`.
+    /// Creates a new `DeregisterWorkspaceDirectoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

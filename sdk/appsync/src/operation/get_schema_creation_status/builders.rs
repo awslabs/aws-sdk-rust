@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSchemaCreationStatusFluentBuilder {
-    /// Creates a new `GetSchemaCreationStatus`.
+    /// Creates a new `GetSchemaCreationStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

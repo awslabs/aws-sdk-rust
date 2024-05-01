@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateAccessControlConfigurationFluentBuilder {
-    /// Creates a new `CreateAccessControlConfiguration`.
+    /// Creates a new `CreateAccessControlConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

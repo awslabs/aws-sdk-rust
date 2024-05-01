@@ -48,7 +48,7 @@ impl
     }
 }
 impl SwapEnvironmentCNAMEsFluentBuilder {
-    /// Creates a new `SwapEnvironmentCNAMEs`.
+    /// Creates a new `SwapEnvironmentCNAMEsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

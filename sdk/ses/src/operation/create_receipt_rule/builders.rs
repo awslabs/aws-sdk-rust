@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreateReceiptRuleFluentBuilder {
-    /// Creates a new `CreateReceiptRule`.
+    /// Creates a new `CreateReceiptRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

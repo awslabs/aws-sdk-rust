@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListEntitiesFluentBuilder {
-    /// Creates a new `ListEntities`.
+    /// Creates a new `ListEntitiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

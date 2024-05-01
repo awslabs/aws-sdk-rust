@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteHapgFluentBuilder {
-    /// Creates a new `DeleteHapg`.
+    /// Creates a new `DeleteHapgFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

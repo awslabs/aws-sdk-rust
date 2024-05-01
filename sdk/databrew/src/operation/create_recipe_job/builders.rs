@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateRecipeJobFluentBuilder {
-    /// Creates a new `CreateRecipeJob`.
+    /// Creates a new `CreateRecipeJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

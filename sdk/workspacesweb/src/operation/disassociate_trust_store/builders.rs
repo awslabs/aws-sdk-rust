@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateTrustStoreFluentBuilder {
-    /// Creates a new `DisassociateTrustStore`.
+    /// Creates a new `DisassociateTrustStoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

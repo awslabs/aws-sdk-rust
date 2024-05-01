@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetBandwidthRateLimitScheduleFluentBuilder {
-    /// Creates a new `GetBandwidthRateLimitSchedule`.
+    /// Creates a new `GetBandwidthRateLimitScheduleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

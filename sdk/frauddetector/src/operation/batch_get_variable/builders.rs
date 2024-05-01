@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetVariableFluentBuilder {
-    /// Creates a new `BatchGetVariable`.
+    /// Creates a new `BatchGetVariableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -1,0 +1,588 @@
+{
+  "events": [
+    {
+      "connection_id": 0,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "https://ec2.us-west-2.amazonaws.com/",
+            "headers": {
+              "content-type": [
+                "application/x-www-form-urlencoded"
+              ],
+              "content-length": [
+                "73"
+              ],
+              "amz-sdk-request": [
+                "attempt=1; max=3"
+              ]
+            },
+            "method": "POST"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "Action=StartInstances&Version=2016-11-15&InstanceId.1=i-09fb4224219ac6902"
+          },
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "headers": {
+                "x-amzn-requestid": [
+                  "bec35864-7ea6-430e-864e-229454f8b80d"
+                ],
+                "cache-control": [
+                  "no-cache, no-store"
+                ],
+                "strict-transport-security": [
+                  "max-age=31536000; includeSubDomains"
+                ],
+                "content-type": [
+                  "text/xml;charset=UTF-8"
+                ],
+                "content-length": [
+                  "579"
+                ],
+                "date": [
+                  "Fri, 19 Apr 2024 00:26:55 GMT"
+                ],
+                "server": [
+                  "AmazonEC2"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<StartInstancesResponse xmlns=\"http://ec2.amazonaws.com/doc/2016-11-15/\">\n    <requestId>bec35864-7ea6-430e-864e-229454f8b80d</requestId>\n    <instancesSet>\n        <item>\n            <instanceId>i-09fb4224219ac6902</instanceId>\n            <currentState>\n                <code>0</code>\n                <name>pending</name>\n            </currentState>\n            <previousState>\n                <code>80</code>\n                <name>stopped</name>\n            </previousState>\n        </item>\n    </instancesSet>\n</StartInstancesResponse>\n"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "https://ec2.us-west-2.amazonaws.com/",
+            "headers": {
+              "content-type": [
+                "application/x-www-form-urlencoded"
+              ],
+              "content-length": [
+                "81"
+              ],
+              "amz-sdk-request": [
+                "attempt=1; max=3"
+              ]
+            },
+            "method": "POST"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "Action=DescribeInstanceStatus&Version=2016-11-15&InstanceId.1=i-09fb4224219ac6902"
+          },
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "headers": {
+                "x-amzn-requestid": [
+                  "02147aa0-b2d0-41a3-afd7-570bb2d75151"
+                ],
+                "cache-control": [
+                  "no-cache, no-store"
+                ],
+                "strict-transport-security": [
+                  "max-age=31536000; includeSubDomains"
+                ],
+                "content-type": [
+                  "text/xml;charset=UTF-8"
+                ],
+                "content-length": [
+                  "243"
+                ],
+                "date": [
+                  "Fri, 19 Apr 2024 00:26:56 GMT"
+                ],
+                "server": [
+                  "AmazonEC2"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<DescribeInstanceStatusResponse xmlns=\"http://ec2.amazonaws.com/doc/2016-11-15/\">\n    <requestId>02147aa0-b2d0-41a3-afd7-570bb2d75151</requestId>\n    <instanceStatusSet/>\n</DescribeInstanceStatusResponse>"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 2,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "https://ec2.us-west-2.amazonaws.com/",
+            "headers": {
+              "content-type": [
+                "application/x-www-form-urlencoded"
+              ],
+              "content-length": [
+                "81"
+              ],
+              "amz-sdk-request": [
+                "attempt=1; max=3"
+              ]
+            },
+            "method": "POST"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 2,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "Action=DescribeInstanceStatus&Version=2016-11-15&InstanceId.1=i-09fb4224219ac6902"
+          },
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 2,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 2,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "headers": {
+                "x-amzn-requestid": [
+                  "4ddc4e65-50f4-42f9-a327-ad1c1fa717c8"
+                ],
+                "cache-control": [
+                  "no-cache, no-store"
+                ],
+                "strict-transport-security": [
+                  "max-age=31536000; includeSubDomains"
+                ],
+                "content-type": [
+                  "text/xml;charset=UTF-8"
+                ],
+                "content-length": [
+                  "1171"
+                ],
+                "date": [
+                  "Fri, 19 Apr 2024 00:27:11 GMT"
+                ],
+                "server": [
+                  "AmazonEC2"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 2,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<DescribeInstanceStatusResponse xmlns=\"http://ec2.amazonaws.com/doc/2016-11-15/\">\n    <requestId>4ddc4e65-50f4-42f9-a327-ad1c1fa717c8</requestId>\n    <instanceStatusSet>\n        <item>\n            <instanceId>i-09fb4224219ac6902</instanceId>\n            <availabilityZone>us-west-2d</availabilityZone>\n            <instanceState>\n                <code>16</code>\n                <name>running</name>\n            </instanceState>\n            <systemStatus>\n                <status>initializing</status>\n                <details>\n                    <item>\n                        <name>reachability</name>\n                        <status>initializing</status>\n                    </item>\n                </details>\n            </systemStatus>\n            <instanceStatus>\n                <status>initializing</status>\n                <details>\n                    <item>\n                        <name>reachability</name>\n                        <status>initializing</status>\n                    </item>\n                </details>\n            </instanceStatus>\n        </item>\n    </instanceStatusSet>\n</DescribeInstanceStatusResponse>"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 2,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 3,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "https://ec2.us-west-2.amazonaws.com/",
+            "headers": {
+              "content-type": [
+                "application/x-www-form-urlencoded"
+              ],
+              "content-length": [
+                "81"
+              ],
+              "amz-sdk-request": [
+                "attempt=1; max=3"
+              ]
+            },
+            "method": "POST"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 3,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "Action=DescribeInstanceStatus&Version=2016-11-15&InstanceId.1=i-09fb4224219ac6902"
+          },
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 3,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 3,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "headers": {
+                "x-amzn-requestid": [
+                  "78adf8db-74c8-462e-98c5-17db37544534"
+                ],
+                "cache-control": [
+                  "no-cache, no-store"
+                ],
+                "strict-transport-security": [
+                  "max-age=31536000; includeSubDomains"
+                ],
+                "content-type": [
+                  "text/xml;charset=UTF-8"
+                ],
+                "content-length": [
+                  "1171"
+                ],
+                "date": [
+                  "Fri, 19 Apr 2024 00:27:39 GMT"
+                ],
+                "server": [
+                  "AmazonEC2"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 3,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<DescribeInstanceStatusResponse xmlns=\"http://ec2.amazonaws.com/doc/2016-11-15/\">\n    <requestId>78adf8db-74c8-462e-98c5-17db37544534</requestId>\n    <instanceStatusSet>\n        <item>\n            <instanceId>i-09fb4224219ac6902</instanceId>\n            <availabilityZone>us-west-2d</availabilityZone>\n            <instanceState>\n                <code>16</code>\n                <name>running</name>\n            </instanceState>\n            <systemStatus>\n                <status>initializing</status>\n                <details>\n                    <item>\n                        <name>reachability</name>\n                        <status>initializing</status>\n                    </item>\n                </details>\n            </systemStatus>\n            <instanceStatus>\n                <status>initializing</status>\n                <details>\n                    <item>\n                        <name>reachability</name>\n                        <status>initializing</status>\n                    </item>\n                </details>\n            </instanceStatus>\n        </item>\n    </instanceStatusSet>\n</DescribeInstanceStatusResponse>"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 3,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 4,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "https://ec2.us-west-2.amazonaws.com/",
+            "headers": {
+              "content-type": [
+                "application/x-www-form-urlencoded"
+              ],
+              "content-length": [
+                "81"
+              ],
+              "amz-sdk-request": [
+                "attempt=1; max=3"
+              ]
+            },
+            "method": "POST"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 4,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "Action=DescribeInstanceStatus&Version=2016-11-15&InstanceId.1=i-09fb4224219ac6902"
+          },
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 4,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 4,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "headers": {
+                "x-amzn-requestid": [
+                  "48fb29e8-5b25-4854-a127-586f1b0ff62c"
+                ],
+                "cache-control": [
+                  "no-cache, no-store"
+                ],
+                "strict-transport-security": [
+                  "max-age=31536000; includeSubDomains"
+                ],
+                "content-type": [
+                  "text/xml;charset=UTF-8"
+                ],
+                "content-length": [
+                  "1171"
+                ],
+                "date": [
+                  "Fri, 19 Apr 2024 00:28:34 GMT"
+                ],
+                "server": [
+                  "AmazonEC2"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 4,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<DescribeInstanceStatusResponse xmlns=\"http://ec2.amazonaws.com/doc/2016-11-15/\">\n    <requestId>48fb29e8-5b25-4854-a127-586f1b0ff62c</requestId>\n    <instanceStatusSet>\n        <item>\n            <instanceId>i-09fb4224219ac6902</instanceId>\n            <availabilityZone>us-west-2d</availabilityZone>\n            <instanceState>\n                <code>16</code>\n                <name>running</name>\n            </instanceState>\n            <systemStatus>\n                <status>initializing</status>\n                <details>\n                    <item>\n                        <name>reachability</name>\n                        <status>initializing</status>\n                    </item>\n                </details>\n            </systemStatus>\n            <instanceStatus>\n                <status>initializing</status>\n                <details>\n                    <item>\n                        <name>reachability</name>\n                        <status>initializing</status>\n                    </item>\n                </details>\n            </instanceStatus>\n        </item>\n    </instanceStatusSet>\n</DescribeInstanceStatusResponse>"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 4,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 5,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "https://ec2.us-west-2.amazonaws.com/",
+            "headers": {
+              "content-type": [
+                "application/x-www-form-urlencoded"
+              ],
+              "content-length": [
+                "81"
+              ],
+              "amz-sdk-request": [
+                "attempt=1; max=3"
+              ]
+            },
+            "method": "POST"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 5,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "Action=DescribeInstanceStatus&Version=2016-11-15&InstanceId.1=i-09fb4224219ac6902"
+          },
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 5,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 5,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "headers": {
+                "x-amzn-requestid": [
+                  "c9b9b2a0-ddbc-4ea8-a76a-4339a9a99de4"
+                ],
+                "cache-control": [
+                  "no-cache, no-store"
+                ],
+                "strict-transport-security": [
+                  "max-age=31536000; includeSubDomains"
+                ],
+                "content-type": [
+                  "text/xml;charset=UTF-8"
+                ],
+                "content-length": [
+                  "1139"
+                ],
+                "date": [
+                  "Fri, 19 Apr 2024 00:29:53 GMT"
+                ],
+                "server": [
+                  "AmazonEC2"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 5,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<DescribeInstanceStatusResponse xmlns=\"http://ec2.amazonaws.com/doc/2016-11-15/\">\n    <requestId>c9b9b2a0-ddbc-4ea8-a76a-4339a9a99de4</requestId>\n    <instanceStatusSet>\n        <item>\n            <instanceId>i-09fb4224219ac6902</instanceId>\n            <availabilityZone>us-west-2d</availabilityZone>\n            <instanceState>\n                <code>16</code>\n                <name>running</name>\n            </instanceState>\n            <systemStatus>\n                <status>ok</status>\n                <details>\n                    <item>\n                        <name>reachability</name>\n                        <status>passed</status>\n                    </item>\n                </details>\n            </systemStatus>\n            <instanceStatus>\n                <status>ok</status>\n                <details>\n                    <item>\n                        <name>reachability</name>\n                        <status>passed</status>\n                    </item>\n                </details>\n            </instanceStatus>\n        </item>\n    </instanceStatusSet>\n</DescribeInstanceStatusResponse>"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 5,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    }
+  ],
+  "docs": "traffic recording of EC2 start_instance followed by EC2 wait_until_instance_status_ok being successful",
+  "version": "V0"
+}

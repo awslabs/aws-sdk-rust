@@ -49,7 +49,7 @@ impl
     }
 }
 impl SearchAddressBooksFluentBuilder {
-    /// Creates a new `SearchAddressBooks`.
+    /// Creates a new `SearchAddressBooksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

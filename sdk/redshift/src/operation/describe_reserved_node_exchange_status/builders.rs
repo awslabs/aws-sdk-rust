@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeReservedNodeExchangeStatusFluentBuilder {
-    /// Creates a new `DescribeReservedNodeExchangeStatus`.
+    /// Creates a new `DescribeReservedNodeExchangeStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

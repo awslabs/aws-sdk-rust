@@ -59,7 +59,7 @@ impl
     }
 }
 impl CountPendingDecisionTasksFluentBuilder {
-    /// Creates a new `CountPendingDecisionTasks`.
+    /// Creates a new `CountPendingDecisionTasksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

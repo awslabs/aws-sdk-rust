@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSchemaAsJsonFluentBuilder {
-    /// Creates a new `GetSchemaAsJson`.
+    /// Creates a new `GetSchemaAsJsonFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

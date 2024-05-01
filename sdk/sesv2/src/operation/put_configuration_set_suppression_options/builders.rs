@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutConfigurationSetSuppressionOptionsFluentBuilder {
-    /// Creates a new `PutConfigurationSetSuppressionOptions`.
+    /// Creates a new `PutConfigurationSetSuppressionOptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

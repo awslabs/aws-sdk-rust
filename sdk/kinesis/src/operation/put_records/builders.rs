@@ -62,7 +62,7 @@ impl
     }
 }
 impl PutRecordsFluentBuilder {
-    /// Creates a new `PutRecords`.
+    /// Creates a new `PutRecordsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

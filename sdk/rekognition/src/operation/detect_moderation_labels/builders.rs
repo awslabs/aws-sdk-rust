@@ -52,7 +52,7 @@ impl
     }
 }
 impl DetectModerationLabelsFluentBuilder {
-    /// Creates a new `DetectModerationLabels`.
+    /// Creates a new `DetectModerationLabelsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

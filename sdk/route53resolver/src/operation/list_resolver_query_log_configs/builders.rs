@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListResolverQueryLogConfigsFluentBuilder {
-    /// Creates a new `ListResolverQueryLogConfigs`.
+    /// Creates a new `ListResolverQueryLogConfigsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

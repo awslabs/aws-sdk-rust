@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeACLsFluentBuilder {
-    /// Creates a new `DescribeACLs`.
+    /// Creates a new `DescribeACLsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

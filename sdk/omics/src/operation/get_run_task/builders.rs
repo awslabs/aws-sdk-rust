@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRunTaskFluentBuilder {
-    /// Creates a new `GetRunTask`.
+    /// Creates a new `GetRunTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

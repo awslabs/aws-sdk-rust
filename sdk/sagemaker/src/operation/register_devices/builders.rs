@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterDevicesFluentBuilder {
-    /// Creates a new `RegisterDevices`.
+    /// Creates a new `RegisterDevicesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

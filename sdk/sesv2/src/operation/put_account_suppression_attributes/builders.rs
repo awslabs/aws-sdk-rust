@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutAccountSuppressionAttributesFluentBuilder {
-    /// Creates a new `PutAccountSuppressionAttributes`.
+    /// Creates a new `PutAccountSuppressionAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

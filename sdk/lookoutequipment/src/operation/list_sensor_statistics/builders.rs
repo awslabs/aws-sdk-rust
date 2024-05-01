@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSensorStatisticsFluentBuilder {
-    /// Creates a new `ListSensorStatistics`.
+    /// Creates a new `ListSensorStatisticsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

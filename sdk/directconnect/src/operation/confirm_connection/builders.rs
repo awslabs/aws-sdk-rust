@@ -49,7 +49,7 @@ impl
     }
 }
 impl ConfirmConnectionFluentBuilder {
-    /// Creates a new `ConfirmConnection`.
+    /// Creates a new `ConfirmConnectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateVirtualGatewayFluentBuilder {
-    /// Creates a new `UpdateVirtualGateway`.
+    /// Creates a new `UpdateVirtualGatewayFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

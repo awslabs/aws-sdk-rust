@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeOptedOutNumbersFluentBuilder {
-    /// Creates a new `DescribeOptedOutNumbers`.
+    /// Creates a new `DescribeOptedOutNumbersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

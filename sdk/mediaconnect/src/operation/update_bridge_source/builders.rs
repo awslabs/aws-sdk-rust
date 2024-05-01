@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateBridgeSourceFluentBuilder {
-    /// Creates a new `UpdateBridgeSource`.
+    /// Creates a new `UpdateBridgeSourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

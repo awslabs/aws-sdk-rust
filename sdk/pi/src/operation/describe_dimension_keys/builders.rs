@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeDimensionKeysFluentBuilder {
-    /// Creates a new `DescribeDimensionKeys`.
+    /// Creates a new `DescribeDimensionKeysFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

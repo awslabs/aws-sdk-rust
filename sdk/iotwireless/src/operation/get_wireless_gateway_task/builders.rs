@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetWirelessGatewayTaskFluentBuilder {
-    /// Creates a new `GetWirelessGatewayTask`.
+    /// Creates a new `GetWirelessGatewayTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

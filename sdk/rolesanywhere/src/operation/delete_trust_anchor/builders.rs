@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteTrustAnchorFluentBuilder {
-    /// Creates a new `DeleteTrustAnchor`.
+    /// Creates a new `DeleteTrustAnchorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

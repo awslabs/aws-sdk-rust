@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetJourneyFluentBuilder {
-    /// Creates a new `GetJourney`.
+    /// Creates a new `GetJourneyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

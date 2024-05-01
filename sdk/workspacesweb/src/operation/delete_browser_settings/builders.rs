@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteBrowserSettingsFluentBuilder {
-    /// Creates a new `DeleteBrowserSettings`.
+    /// Creates a new `DeleteBrowserSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

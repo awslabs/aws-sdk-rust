@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateSnapshotScheduleFluentBuilder {
-    /// Creates a new `CreateSnapshotSchedule`.
+    /// Creates a new `CreateSnapshotScheduleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

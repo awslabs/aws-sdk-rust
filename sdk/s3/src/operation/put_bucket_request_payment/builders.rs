@@ -58,7 +58,7 @@ impl
     }
 }
 impl PutBucketRequestPaymentFluentBuilder {
-    /// Creates a new `PutBucketRequestPayment`.
+    /// Creates a new `PutBucketRequestPaymentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

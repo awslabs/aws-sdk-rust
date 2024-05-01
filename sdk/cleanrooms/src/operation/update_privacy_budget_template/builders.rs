@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdatePrivacyBudgetTemplateFluentBuilder {
-    /// Creates a new `UpdatePrivacyBudgetTemplate`.
+    /// Creates a new `UpdatePrivacyBudgetTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

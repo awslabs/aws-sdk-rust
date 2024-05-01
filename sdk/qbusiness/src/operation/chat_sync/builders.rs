@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::chat
     }
 }
 impl ChatSyncFluentBuilder {
-    /// Creates a new `ChatSync`.
+    /// Creates a new `ChatSyncFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

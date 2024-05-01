@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteExperimentTemplateFluentBuilder {
-    /// Creates a new `DeleteExperimentTemplate`.
+    /// Creates a new `DeleteExperimentTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

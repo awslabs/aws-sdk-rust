@@ -62,7 +62,7 @@ impl
     }
 }
 impl GetBucketLocationFluentBuilder {
-    /// Creates a new `GetBucketLocation`.
+    /// Creates a new `GetBucketLocationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

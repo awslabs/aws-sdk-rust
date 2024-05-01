@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetEmailTemplateFluentBuilder {
-    /// Creates a new `GetEmailTemplate`.
+    /// Creates a new `GetEmailTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

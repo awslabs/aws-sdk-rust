@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCustomEntityTypeFluentBuilder {
-    /// Creates a new `DeleteCustomEntityType`.
+    /// Creates a new `DeleteCustomEntityTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

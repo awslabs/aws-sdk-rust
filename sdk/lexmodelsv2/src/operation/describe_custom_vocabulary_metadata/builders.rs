@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeCustomVocabularyMetadataFluentBuilder {
-    /// Creates a new `DescribeCustomVocabularyMetadata`.
+    /// Creates a new `DescribeCustomVocabularyMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

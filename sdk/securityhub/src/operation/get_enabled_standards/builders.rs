@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetEnabledStandardsFluentBuilder {
-    /// Creates a new `GetEnabledStandards`.
+    /// Creates a new `GetEnabledStandardsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

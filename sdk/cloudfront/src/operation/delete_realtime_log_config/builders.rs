@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteRealtimeLogConfigFluentBuilder {
-    /// Creates a new `DeleteRealtimeLogConfig`.
+    /// Creates a new `DeleteRealtimeLogConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMetricPolicyFluentBuilder {
-    /// Creates a new `DeleteMetricPolicy`.
+    /// Creates a new `DeleteMetricPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

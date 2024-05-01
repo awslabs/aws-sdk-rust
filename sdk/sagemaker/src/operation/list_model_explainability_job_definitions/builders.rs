@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListModelExplainabilityJobDefinitionsFluentBuilder {
-    /// Creates a new `ListModelExplainabilityJobDefinitions`.
+    /// Creates a new `ListModelExplainabilityJobDefinitionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

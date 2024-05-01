@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateTableStorageOptimizerFluentBuilder {
-    /// Creates a new `UpdateTableStorageOptimizer`.
+    /// Creates a new `UpdateTableStorageOptimizerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

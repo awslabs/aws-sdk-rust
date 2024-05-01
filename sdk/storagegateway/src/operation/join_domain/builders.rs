@@ -51,7 +51,7 @@ impl
     }
 }
 impl JoinDomainFluentBuilder {
-    /// Creates a new `JoinDomain`.
+    /// Creates a new `JoinDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

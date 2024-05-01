@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateBotVersionFluentBuilder {
-    /// Creates a new `CreateBotVersion`.
+    /// Creates a new `CreateBotVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeFastSnapshotRestoresFluentBuilder {
-    /// Creates a new `DescribeFastSnapshotRestores`.
+    /// Creates a new `DescribeFastSnapshotRestoresFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

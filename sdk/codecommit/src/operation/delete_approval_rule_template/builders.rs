@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteApprovalRuleTemplateFluentBuilder {
-    /// Creates a new `DeleteApprovalRuleTemplate`.
+    /// Creates a new `DeleteApprovalRuleTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

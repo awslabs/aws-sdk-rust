@@ -43,7 +43,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::enab
     }
 }
 impl EnableCrlFluentBuilder {
-    /// Creates a new `EnableCrl`.
+    /// Creates a new `EnableCrlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

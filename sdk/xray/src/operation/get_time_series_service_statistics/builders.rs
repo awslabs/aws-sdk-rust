@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTimeSeriesServiceStatisticsFluentBuilder {
-    /// Creates a new `GetTimeSeriesServiceStatistics`.
+    /// Creates a new `GetTimeSeriesServiceStatisticsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

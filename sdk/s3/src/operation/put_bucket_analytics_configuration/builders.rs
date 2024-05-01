@@ -94,7 +94,7 @@ impl
     }
 }
 impl PutBucketAnalyticsConfigurationFluentBuilder {
-    /// Creates a new `PutBucketAnalyticsConfiguration`.
+    /// Creates a new `PutBucketAnalyticsConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

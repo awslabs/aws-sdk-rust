@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteProtectionGroupFluentBuilder {
-    /// Creates a new `DeleteProtectionGroup`.
+    /// Creates a new `DeleteProtectionGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

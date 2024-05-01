@@ -52,7 +52,7 @@ impl
     }
 }
 impl ModifyIdentityIdFormatFluentBuilder {
-    /// Creates a new `ModifyIdentityIdFormat`.
+    /// Creates a new `ModifyIdentityIdFormatFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListModelCardsFluentBuilder {
-    /// Creates a new `ListModelCards`.
+    /// Creates a new `ListModelCardsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

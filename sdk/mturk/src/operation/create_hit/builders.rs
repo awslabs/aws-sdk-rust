@@ -47,7 +47,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::crea
     }
 }
 impl CreateHITFluentBuilder {
-    /// Creates a new `CreateHIT`.
+    /// Creates a new `CreateHITFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

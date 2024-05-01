@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutDataCatalogEncryptionSettingsFluentBuilder {
-    /// Creates a new `PutDataCatalogEncryptionSettings`.
+    /// Creates a new `PutDataCatalogEncryptionSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

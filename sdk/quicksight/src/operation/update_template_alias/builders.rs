@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateTemplateAliasFluentBuilder {
-    /// Creates a new `UpdateTemplateAlias`.
+    /// Creates a new `UpdateTemplateAliasFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

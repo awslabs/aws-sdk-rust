@@ -50,7 +50,7 @@ impl
     }
 }
 impl ListServerCertificateTagsFluentBuilder {
-    /// Creates a new `ListServerCertificateTags`.
+    /// Creates a new `ListServerCertificateTagsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

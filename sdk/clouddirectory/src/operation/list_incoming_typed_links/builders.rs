@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListIncomingTypedLinksFluentBuilder {
-    /// Creates a new `ListIncomingTypedLinks`.
+    /// Creates a new `ListIncomingTypedLinksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

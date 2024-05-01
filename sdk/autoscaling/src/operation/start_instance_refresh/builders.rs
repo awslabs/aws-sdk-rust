@@ -52,7 +52,7 @@ impl
     }
 }
 impl StartInstanceRefreshFluentBuilder {
-    /// Creates a new `StartInstanceRefresh`.
+    /// Creates a new `StartInstanceRefreshFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

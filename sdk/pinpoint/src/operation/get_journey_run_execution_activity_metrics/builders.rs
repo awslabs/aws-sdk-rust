@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetJourneyRunExecutionActivityMetricsFluentBuilder {
-    /// Creates a new `GetJourneyRunExecutionActivityMetrics`.
+    /// Creates a new `GetJourneyRunExecutionActivityMetricsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

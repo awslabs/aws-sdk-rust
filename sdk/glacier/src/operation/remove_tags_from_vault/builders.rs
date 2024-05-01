@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveTagsFromVaultFluentBuilder {
-    /// Creates a new `RemoveTagsFromVault`.
+    /// Creates a new `RemoveTagsFromVaultFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

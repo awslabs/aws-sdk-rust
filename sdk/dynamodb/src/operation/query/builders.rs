@@ -52,7 +52,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::quer
     }
 }
 impl QueryFluentBuilder {
-    /// Creates a new `Query`.
+    /// Creates a new `QueryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeRouterConfigurationFluentBuilder {
-    /// Creates a new `DescribeRouterConfiguration`.
+    /// Creates a new `DescribeRouterConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

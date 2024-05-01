@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteVirtualGatewayFluentBuilder {
-    /// Creates a new `DeleteVirtualGateway`.
+    /// Creates a new `DeleteVirtualGatewayFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

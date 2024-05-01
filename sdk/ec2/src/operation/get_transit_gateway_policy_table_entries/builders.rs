@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTransitGatewayPolicyTableEntriesFluentBuilder {
-    /// Creates a new `GetTransitGatewayPolicyTableEntries`.
+    /// Creates a new `GetTransitGatewayPolicyTableEntriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

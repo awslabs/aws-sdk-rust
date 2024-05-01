@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPermissionAssociationsFluentBuilder {
-    /// Creates a new `ListPermissionAssociations`.
+    /// Creates a new `ListPermissionAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

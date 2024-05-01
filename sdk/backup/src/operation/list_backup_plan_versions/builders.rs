@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListBackupPlanVersionsFluentBuilder {
-    /// Creates a new `ListBackupPlanVersions`.
+    /// Creates a new `ListBackupPlanVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

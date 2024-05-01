@@ -52,7 +52,7 @@ impl
     }
 }
 impl AssociateRepositoryFluentBuilder {
-    /// Creates a new `AssociateRepository`.
+    /// Creates a new `AssociateRepositoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

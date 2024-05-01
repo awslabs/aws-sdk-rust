@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateVirtualRouterFluentBuilder {
-    /// Creates a new `UpdateVirtualRouter`.
+    /// Creates a new `UpdateVirtualRouterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveManagedScalingPolicyFluentBuilder {
-    /// Creates a new `RemoveManagedScalingPolicy`.
+    /// Creates a new `RemoveManagedScalingPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl StartVoiceToneAnalysisTaskFluentBuilder {
-    /// Creates a new `StartVoiceToneAnalysisTask`.
+    /// Creates a new `StartVoiceToneAnalysisTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

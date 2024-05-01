@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateKxEnvironmentFluentBuilder {
-    /// Creates a new `CreateKxEnvironment`.
+    /// Creates a new `CreateKxEnvironmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

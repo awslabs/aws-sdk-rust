@@ -48,7 +48,7 @@ impl
     }
 }
 impl RunPipelineActivityFluentBuilder {
-    /// Creates a new `RunPipelineActivity`.
+    /// Creates a new `RunPipelineActivityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

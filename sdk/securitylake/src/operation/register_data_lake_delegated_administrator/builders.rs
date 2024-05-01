@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterDataLakeDelegatedAdministratorFluentBuilder {
-    /// Creates a new `RegisterDataLakeDelegatedAdministrator`.
+    /// Creates a new `RegisterDataLakeDelegatedAdministratorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

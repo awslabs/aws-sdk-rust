@@ -50,7 +50,7 @@ impl
     }
 }
 impl RevokeTokenFluentBuilder {
-    /// Creates a new `RevokeToken`.
+    /// Creates a new `RevokeTokenFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

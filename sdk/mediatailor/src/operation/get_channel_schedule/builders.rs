@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetChannelScheduleFluentBuilder {
-    /// Creates a new `GetChannelSchedule`.
+    /// Creates a new `GetChannelScheduleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

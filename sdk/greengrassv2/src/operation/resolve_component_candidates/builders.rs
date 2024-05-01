@@ -52,7 +52,7 @@ impl
     }
 }
 impl ResolveComponentCandidatesFluentBuilder {
-    /// Creates a new `ResolveComponentCandidates`.
+    /// Creates a new `ResolveComponentCandidatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDataCellsFilterFluentBuilder {
-    /// Creates a new `GetDataCellsFilter`.
+    /// Creates a new `GetDataCellsFilterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

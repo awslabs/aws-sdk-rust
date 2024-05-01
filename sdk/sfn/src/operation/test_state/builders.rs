@@ -68,7 +68,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::test
     }
 }
 impl TestStateFluentBuilder {
-    /// Creates a new `TestState`.
+    /// Creates a new `TestStateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -58,7 +58,7 @@ impl
     }
 }
 impl StartMedicalStreamTranscriptionFluentBuilder {
-    /// Creates a new `StartMedicalStreamTranscription`.
+    /// Creates a new `StartMedicalStreamTranscriptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

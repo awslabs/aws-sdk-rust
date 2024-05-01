@@ -53,7 +53,7 @@ impl
     }
 }
 impl PutVoiceConnectorEmergencyCallingConfigurationFluentBuilder {
-    /// Creates a new `PutVoiceConnectorEmergencyCallingConfiguration`.
+    /// Creates a new `PutVoiceConnectorEmergencyCallingConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

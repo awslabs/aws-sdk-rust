@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateServicePrincipalNameFluentBuilder {
-    /// Creates a new `CreateServicePrincipalName`.
+    /// Creates a new `CreateServicePrincipalNameFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListEntitiesDetectionV2JobsFluentBuilder {
-    /// Creates a new `ListEntitiesDetectionV2Jobs`.
+    /// Creates a new `ListEntitiesDetectionV2JobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

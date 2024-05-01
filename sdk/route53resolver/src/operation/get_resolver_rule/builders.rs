@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetResolverRuleFluentBuilder {
-    /// Creates a new `GetResolverRule`.
+    /// Creates a new `GetResolverRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

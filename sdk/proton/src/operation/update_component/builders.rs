@@ -52,7 +52,7 @@ impl
     }
 }
 impl UpdateComponentFluentBuilder {
-    /// Creates a new `UpdateComponent`.
+    /// Creates a new `UpdateComponentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

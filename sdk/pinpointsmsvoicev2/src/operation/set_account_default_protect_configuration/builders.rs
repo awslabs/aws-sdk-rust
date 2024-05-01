@@ -48,7 +48,7 @@ impl
     }
 }
 impl SetAccountDefaultProtectConfigurationFluentBuilder {
-    /// Creates a new `SetAccountDefaultProtectConfiguration`.
+    /// Creates a new `SetAccountDefaultProtectConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

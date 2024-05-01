@@ -50,7 +50,7 @@ impl
     }
 }
 impl BatchGetRepositoriesFluentBuilder {
-    /// Creates a new `BatchGetRepositories`.
+    /// Creates a new `BatchGetRepositoriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

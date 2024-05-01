@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartEventDataStoreIngestionFluentBuilder {
-    /// Creates a new `StartEventDataStoreIngestion`.
+    /// Creates a new `StartEventDataStoreIngestionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyClusterMaintenanceFluentBuilder {
-    /// Creates a new `ModifyClusterMaintenance`.
+    /// Creates a new `ModifyClusterMaintenanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

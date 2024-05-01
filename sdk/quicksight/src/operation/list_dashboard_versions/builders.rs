@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDashboardVersionsFluentBuilder {
-    /// Creates a new `ListDashboardVersions`.
+    /// Creates a new `ListDashboardVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

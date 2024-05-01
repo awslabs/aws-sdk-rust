@@ -49,7 +49,7 @@ impl
     }
 }
 impl UnassignVolumeFluentBuilder {
-    /// Creates a new `UnassignVolume`.
+    /// Creates a new `UnassignVolumeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDataSetRevisionsFluentBuilder {
-    /// Creates a new `ListDataSetRevisions`.
+    /// Creates a new `ListDataSetRevisionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

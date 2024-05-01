@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeReservedDBInstancesFluentBuilder {
-    /// Creates a new `DescribeReservedDBInstances`.
+    /// Creates a new `DescribeReservedDBInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

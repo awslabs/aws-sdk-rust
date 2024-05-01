@@ -49,7 +49,7 @@ impl
     }
 }
 impl EnableReachabilityAnalyzerOrganizationSharingFluentBuilder {
-    /// Creates a new `EnableReachabilityAnalyzerOrganizationSharing`.
+    /// Creates a new `EnableReachabilityAnalyzerOrganizationSharingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

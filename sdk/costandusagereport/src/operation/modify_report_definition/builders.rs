@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyReportDefinitionFluentBuilder {
-    /// Creates a new `ModifyReportDefinition`.
+    /// Creates a new `ModifyReportDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

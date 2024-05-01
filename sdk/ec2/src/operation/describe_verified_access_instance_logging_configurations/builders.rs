@@ -24,7 +24,7 @@ impl crate::operation::describe_verified_access_instance_logging_configurations:
 pub struct DescribeVerifiedAccessInstanceLoggingConfigurationsFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_verified_access_instance_logging_configurations::builders::DescribeVerifiedAccessInstanceLoggingConfigurationsInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -45,7 +45,7 @@ impl
     }
 }
 impl DescribeVerifiedAccessInstanceLoggingConfigurationsFluentBuilder {
-    /// Creates a new `DescribeVerifiedAccessInstanceLoggingConfigurations`.
+    /// Creates a new `DescribeVerifiedAccessInstanceLoggingConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

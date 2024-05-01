@@ -59,7 +59,7 @@ impl
     }
 }
 impl DescribeTrustedAdvisorChecksFluentBuilder {
-    /// Creates a new `DescribeTrustedAdvisorChecks`.
+    /// Creates a new `DescribeTrustedAdvisorChecksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

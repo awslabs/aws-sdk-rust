@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateSpaceFluentBuilder {
-    /// Creates a new `UpdateSpace`.
+    /// Creates a new `UpdateSpaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

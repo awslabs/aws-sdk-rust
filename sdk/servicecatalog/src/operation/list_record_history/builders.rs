@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListRecordHistoryFluentBuilder {
-    /// Creates a new `ListRecordHistory`.
+    /// Creates a new `ListRecordHistoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

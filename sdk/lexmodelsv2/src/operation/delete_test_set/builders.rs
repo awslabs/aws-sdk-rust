@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteTestSetFluentBuilder {
-    /// Creates a new `DeleteTestSet`.
+    /// Creates a new `DeleteTestSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

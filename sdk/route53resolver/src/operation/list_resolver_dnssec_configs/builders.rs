@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListResolverDnssecConfigsFluentBuilder {
-    /// Creates a new `ListResolverDnssecConfigs`.
+    /// Creates a new `ListResolverDnssecConfigsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

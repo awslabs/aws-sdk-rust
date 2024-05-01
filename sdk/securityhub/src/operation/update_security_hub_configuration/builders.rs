@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateSecurityHubConfigurationFluentBuilder {
-    /// Creates a new `UpdateSecurityHubConfiguration`.
+    /// Creates a new `UpdateSecurityHubConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

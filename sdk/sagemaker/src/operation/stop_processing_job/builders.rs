@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopProcessingJobFluentBuilder {
-    /// Creates a new `StopProcessingJob`.
+    /// Creates a new `StopProcessingJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

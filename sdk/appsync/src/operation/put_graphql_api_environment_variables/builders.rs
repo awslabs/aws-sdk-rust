@@ -75,7 +75,7 @@ impl
     }
 }
 impl PutGraphqlApiEnvironmentVariablesFluentBuilder {
-    /// Creates a new `PutGraphqlApiEnvironmentVariables`.
+    /// Creates a new `PutGraphqlApiEnvironmentVariablesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

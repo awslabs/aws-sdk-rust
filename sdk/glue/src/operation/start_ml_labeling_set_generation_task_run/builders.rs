@@ -51,7 +51,7 @@ impl
     }
 }
 impl StartMLLabelingSetGenerationTaskRunFluentBuilder {
-    /// Creates a new `StartMLLabelingSetGenerationTaskRun`.
+    /// Creates a new `StartMLLabelingSetGenerationTaskRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

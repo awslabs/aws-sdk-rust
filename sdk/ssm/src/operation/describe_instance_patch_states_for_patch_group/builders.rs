@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeInstancePatchStatesForPatchGroupFluentBuilder {
-    /// Creates a new `DescribeInstancePatchStatesForPatchGroup`.
+    /// Creates a new `DescribeInstancePatchStatesForPatchGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

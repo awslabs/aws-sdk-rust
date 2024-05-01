@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListServicePipelineOutputsFluentBuilder {
-    /// Creates a new `ListServicePipelineOutputs`.
+    /// Creates a new `ListServicePipelineOutputsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

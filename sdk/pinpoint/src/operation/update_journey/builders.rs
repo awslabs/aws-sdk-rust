@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateJourneyFluentBuilder {
-    /// Creates a new `UpdateJourney`.
+    /// Creates a new `UpdateJourneyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

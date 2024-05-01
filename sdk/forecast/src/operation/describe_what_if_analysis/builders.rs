@@ -59,7 +59,7 @@ impl
     }
 }
 impl DescribeWhatIfAnalysisFluentBuilder {
-    /// Creates a new `DescribeWhatIfAnalysis`.
+    /// Creates a new `DescribeWhatIfAnalysisFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

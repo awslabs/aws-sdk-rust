@@ -70,7 +70,7 @@ impl
     }
 }
 impl PutBucketAccelerateConfigurationFluentBuilder {
-    /// Creates a new `PutBucketAccelerateConfiguration`.
+    /// Creates a new `PutBucketAccelerateConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

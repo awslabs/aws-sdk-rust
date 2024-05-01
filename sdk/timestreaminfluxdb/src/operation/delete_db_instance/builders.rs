@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDbInstanceFluentBuilder {
-    /// Creates a new `DeleteDbInstance`.
+    /// Creates a new `DeleteDbInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

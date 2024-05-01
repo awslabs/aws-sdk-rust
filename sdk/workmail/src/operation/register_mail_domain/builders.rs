@@ -48,7 +48,7 @@ impl
     }
 }
 impl RegisterMailDomainFluentBuilder {
-    /// Creates a new `RegisterMailDomain`.
+    /// Creates a new `RegisterMailDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

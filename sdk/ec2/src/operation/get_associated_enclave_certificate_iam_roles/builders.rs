@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAssociatedEnclaveCertificateIamRolesFluentBuilder {
-    /// Creates a new `GetAssociatedEnclaveCertificateIamRoles`.
+    /// Creates a new `GetAssociatedEnclaveCertificateIamRolesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

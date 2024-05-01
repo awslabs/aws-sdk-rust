@@ -48,7 +48,7 @@ impl
     }
 }
 impl EnableProactiveEngagementFluentBuilder {
-    /// Creates a new `EnableProactiveEngagement`.
+    /// Creates a new `EnableProactiveEngagementFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

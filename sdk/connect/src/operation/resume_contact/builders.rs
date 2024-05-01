@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResumeContactFluentBuilder {
-    /// Creates a new `ResumeContact`.
+    /// Creates a new `ResumeContactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

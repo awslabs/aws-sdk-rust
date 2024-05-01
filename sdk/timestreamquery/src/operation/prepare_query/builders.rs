@@ -48,7 +48,7 @@ impl
     }
 }
 impl PrepareQueryFluentBuilder {
-    /// Creates a new `PrepareQuery`.
+    /// Creates a new `PrepareQueryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

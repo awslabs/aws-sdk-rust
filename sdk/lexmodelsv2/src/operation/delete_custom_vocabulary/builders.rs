@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteCustomVocabularyFluentBuilder {
-    /// Creates a new `DeleteCustomVocabulary`.
+    /// Creates a new `DeleteCustomVocabularyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

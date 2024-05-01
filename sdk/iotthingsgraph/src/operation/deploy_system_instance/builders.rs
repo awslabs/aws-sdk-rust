@@ -54,7 +54,7 @@ impl
     }
 }
 impl DeploySystemInstanceFluentBuilder {
-    /// Creates a new `DeploySystemInstance`.
+    /// Creates a new `DeploySystemInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

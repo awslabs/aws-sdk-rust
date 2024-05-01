@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCustomVocabularyItemsFluentBuilder {
-    /// Creates a new `ListCustomVocabularyItems`.
+    /// Creates a new `ListCustomVocabularyItemsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

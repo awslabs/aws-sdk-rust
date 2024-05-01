@@ -73,7 +73,7 @@ impl
     }
 }
 impl CreateChannelMembershipFluentBuilder {
-    /// Creates a new `CreateChannelMembership`.
+    /// Creates a new `CreateChannelMembershipFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

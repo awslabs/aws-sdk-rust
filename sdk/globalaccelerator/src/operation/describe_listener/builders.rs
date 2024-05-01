@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeListenerFluentBuilder {
-    /// Creates a new `DescribeListener`.
+    /// Creates a new `DescribeListenerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

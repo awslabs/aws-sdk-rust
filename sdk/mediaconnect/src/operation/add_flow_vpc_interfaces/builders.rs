@@ -48,7 +48,7 @@ impl
     }
 }
 impl AddFlowVpcInterfacesFluentBuilder {
-    /// Creates a new `AddFlowVpcInterfaces`.
+    /// Creates a new `AddFlowVpcInterfacesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutVoiceConnectorLoggingConfigurationFluentBuilder {
-    /// Creates a new `PutVoiceConnectorLoggingConfiguration`.
+    /// Creates a new `PutVoiceConnectorLoggingConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

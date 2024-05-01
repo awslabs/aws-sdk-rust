@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteSafetyRuleFluentBuilder {
-    /// Creates a new `DeleteSafetyRule`.
+    /// Creates a new `DeleteSafetyRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

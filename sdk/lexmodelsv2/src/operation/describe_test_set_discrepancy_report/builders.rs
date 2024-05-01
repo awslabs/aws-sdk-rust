@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTestSetDiscrepancyReportFluentBuilder {
-    /// Creates a new `DescribeTestSetDiscrepancyReport`.
+    /// Creates a new `DescribeTestSetDiscrepancyReportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

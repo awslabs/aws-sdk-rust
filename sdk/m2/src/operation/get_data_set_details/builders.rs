@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDataSetDetailsFluentBuilder {
-    /// Creates a new `GetDataSetDetails`.
+    /// Creates a new `GetDataSetDetailsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

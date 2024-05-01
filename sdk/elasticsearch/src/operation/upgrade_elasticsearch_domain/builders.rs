@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpgradeElasticsearchDomainFluentBuilder {
-    /// Creates a new `UpgradeElasticsearchDomain`.
+    /// Creates a new `UpgradeElasticsearchDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

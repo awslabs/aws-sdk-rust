@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetCognitoEventsFluentBuilder {
-    /// Creates a new `GetCognitoEvents`.
+    /// Creates a new `GetCognitoEventsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

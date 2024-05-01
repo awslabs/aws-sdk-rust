@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribePromptFluentBuilder {
-    /// Creates a new `DescribePrompt`.
+    /// Creates a new `DescribePromptFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

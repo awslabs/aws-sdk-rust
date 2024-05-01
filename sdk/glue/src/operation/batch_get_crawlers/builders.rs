@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetCrawlersFluentBuilder {
-    /// Creates a new `BatchGetCrawlers`.
+    /// Creates a new `BatchGetCrawlersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

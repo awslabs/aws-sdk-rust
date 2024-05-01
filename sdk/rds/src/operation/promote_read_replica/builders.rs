@@ -55,7 +55,7 @@ impl
     }
 }
 impl PromoteReadReplicaFluentBuilder {
-    /// Creates a new `PromoteReadReplica`.
+    /// Creates a new `PromoteReadReplicaFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

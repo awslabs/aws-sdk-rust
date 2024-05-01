@@ -48,7 +48,7 @@ impl
     }
 }
 impl ExecuteProvisionedProductServiceActionFluentBuilder {
-    /// Creates a new `ExecuteProvisionedProductServiceAction`.
+    /// Creates a new `ExecuteProvisionedProductServiceActionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

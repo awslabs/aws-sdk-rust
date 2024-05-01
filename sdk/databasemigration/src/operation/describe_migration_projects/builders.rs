@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeMigrationProjectsFluentBuilder {
-    /// Creates a new `DescribeMigrationProjects`.
+    /// Creates a new `DescribeMigrationProjectsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

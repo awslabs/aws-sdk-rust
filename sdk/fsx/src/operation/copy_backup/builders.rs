@@ -52,7 +52,7 @@ impl
     }
 }
 impl CopyBackupFluentBuilder {
-    /// Creates a new `CopyBackup`.
+    /// Creates a new `CopyBackupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

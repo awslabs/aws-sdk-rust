@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetListsMetadataFluentBuilder {
-    /// Creates a new `GetListsMetadata`.
+    /// Creates a new `GetListsMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

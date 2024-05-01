@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeactivatePipelineFluentBuilder {
-    /// Creates a new `DeactivatePipeline`.
+    /// Creates a new `DeactivatePipelineFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

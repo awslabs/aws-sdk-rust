@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateDatastoreFluentBuilder {
-    /// Creates a new `UpdateDatastore`.
+    /// Creates a new `UpdateDatastoreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

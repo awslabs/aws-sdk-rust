@@ -48,7 +48,7 @@ impl
     }
 }
 impl AbortMultipartReadSetUploadFluentBuilder {
-    /// Creates a new `AbortMultipartReadSetUpload`.
+    /// Creates a new `AbortMultipartReadSetUploadFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

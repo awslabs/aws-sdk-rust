@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteFolderMembershipFluentBuilder {
-    /// Creates a new `DeleteFolderMembership`.
+    /// Creates a new `DeleteFolderMembershipFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

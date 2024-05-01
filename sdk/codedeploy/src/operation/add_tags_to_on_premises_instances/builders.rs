@@ -48,7 +48,7 @@ impl
     }
 }
 impl AddTagsToOnPremisesInstancesFluentBuilder {
-    /// Creates a new `AddTagsToOnPremisesInstances`.
+    /// Creates a new `AddTagsToOnPremisesInstancesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

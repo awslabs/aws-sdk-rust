@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetUsageTotalsFluentBuilder {
-    /// Creates a new `GetUsageTotals`.
+    /// Creates a new `GetUsageTotalsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

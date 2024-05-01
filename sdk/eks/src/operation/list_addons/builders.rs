@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAddonsFluentBuilder {
-    /// Creates a new `ListAddons`.
+    /// Creates a new `ListAddonsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

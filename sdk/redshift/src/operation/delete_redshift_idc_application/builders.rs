@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRedshiftIdcApplicationFluentBuilder {
-    /// Creates a new `DeleteRedshiftIdcApplication`.
+    /// Creates a new `DeleteRedshiftIdcApplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

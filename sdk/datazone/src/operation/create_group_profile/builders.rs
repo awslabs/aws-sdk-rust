@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateGroupProfileFluentBuilder {
-    /// Creates a new `CreateGroupProfile`.
+    /// Creates a new `CreateGroupProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

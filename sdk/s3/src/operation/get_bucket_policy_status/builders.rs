@@ -63,7 +63,7 @@ impl
     }
 }
 impl GetBucketPolicyStatusFluentBuilder {
-    /// Creates a new `GetBucketPolicyStatus`.
+    /// Creates a new `GetBucketPolicyStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

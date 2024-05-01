@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMediaMessageSpendLimitOverrideFluentBuilder {
-    /// Creates a new `DeleteMediaMessageSpendLimitOverride`.
+    /// Creates a new `DeleteMediaMessageSpendLimitOverrideFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

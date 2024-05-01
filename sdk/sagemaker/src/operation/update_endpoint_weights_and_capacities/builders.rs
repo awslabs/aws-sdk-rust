@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateEndpointWeightsAndCapacitiesFluentBuilder {
-    /// Creates a new `UpdateEndpointWeightsAndCapacities`.
+    /// Creates a new `UpdateEndpointWeightsAndCapacitiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

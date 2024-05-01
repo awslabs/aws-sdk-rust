@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetProvisionedModelThroughputFluentBuilder {
-    /// Creates a new `GetProvisionedModelThroughput`.
+    /// Creates a new `GetProvisionedModelThroughputFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

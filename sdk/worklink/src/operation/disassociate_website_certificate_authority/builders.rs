@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateWebsiteCertificateAuthorityFluentBuilder {
-    /// Creates a new `DisassociateWebsiteCertificateAuthority`.
+    /// Creates a new `DisassociateWebsiteCertificateAuthorityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

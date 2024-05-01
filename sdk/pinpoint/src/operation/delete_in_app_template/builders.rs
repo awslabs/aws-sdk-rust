@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteInAppTemplateFluentBuilder {
-    /// Creates a new `DeleteInAppTemplate`.
+    /// Creates a new `DeleteInAppTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

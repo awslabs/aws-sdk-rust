@@ -48,7 +48,7 @@ impl
     }
 }
 impl RestoreVolumeFromSnapshotFluentBuilder {
-    /// Creates a new `RestoreVolumeFromSnapshot`.
+    /// Creates a new `RestoreVolumeFromSnapshotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

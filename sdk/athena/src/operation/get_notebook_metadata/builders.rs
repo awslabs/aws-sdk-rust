@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetNotebookMetadataFluentBuilder {
-    /// Creates a new `GetNotebookMetadata`.
+    /// Creates a new `GetNotebookMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

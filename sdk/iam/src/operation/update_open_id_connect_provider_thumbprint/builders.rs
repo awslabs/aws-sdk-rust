@@ -54,7 +54,7 @@ impl
     }
 }
 impl UpdateOpenIDConnectProviderThumbprintFluentBuilder {
-    /// Creates a new `UpdateOpenIDConnectProviderThumbprint`.
+    /// Creates a new `UpdateOpenIDConnectProviderThumbprintFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

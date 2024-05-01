@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeConditionalForwardersFluentBuilder {
-    /// Creates a new `DescribeConditionalForwarders`.
+    /// Creates a new `DescribeConditionalForwardersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl CreateSnapshotFromVolumeRecoveryPointFluentBuilder {
-    /// Creates a new `CreateSnapshotFromVolumeRecoveryPoint`.
+    /// Creates a new `CreateSnapshotFromVolumeRecoveryPointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

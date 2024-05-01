@@ -53,7 +53,7 @@ impl
     }
 }
 impl StopMatchmakingFluentBuilder {
-    /// Creates a new `StopMatchmaking`.
+    /// Creates a new `StopMatchmakingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

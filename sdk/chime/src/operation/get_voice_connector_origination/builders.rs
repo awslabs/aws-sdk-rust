@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetVoiceConnectorOriginationFluentBuilder {
-    /// Creates a new `GetVoiceConnectorOrigination`.
+    /// Creates a new `GetVoiceConnectorOriginationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

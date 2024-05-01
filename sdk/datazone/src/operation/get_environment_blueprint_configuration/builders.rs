@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetEnvironmentBlueprintConfigurationFluentBuilder {
-    /// Creates a new `GetEnvironmentBlueprintConfiguration`.
+    /// Creates a new `GetEnvironmentBlueprintConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

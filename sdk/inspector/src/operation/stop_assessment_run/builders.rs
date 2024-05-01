@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopAssessmentRunFluentBuilder {
-    /// Creates a new `StopAssessmentRun`.
+    /// Creates a new `StopAssessmentRunFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

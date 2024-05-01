@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateClassificationJobFluentBuilder {
-    /// Creates a new `CreateClassificationJob`.
+    /// Creates a new `CreateClassificationJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -54,7 +54,7 @@ impl
     }
 }
 impl GetContentModerationFluentBuilder {
-    /// Creates a new `GetContentModeration`.
+    /// Creates a new `GetContentModerationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetPredictiveScalingForecastFluentBuilder {
-    /// Creates a new `GetPredictiveScalingForecast`.
+    /// Creates a new `GetPredictiveScalingForecastFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

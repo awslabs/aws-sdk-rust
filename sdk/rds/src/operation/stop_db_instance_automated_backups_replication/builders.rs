@@ -50,7 +50,7 @@ impl
     }
 }
 impl StopDBInstanceAutomatedBackupsReplicationFluentBuilder {
-    /// Creates a new `StopDBInstanceAutomatedBackupsReplication`.
+    /// Creates a new `StopDBInstanceAutomatedBackupsReplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

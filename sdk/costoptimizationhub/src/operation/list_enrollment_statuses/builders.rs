@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListEnrollmentStatusesFluentBuilder {
-    /// Creates a new `ListEnrollmentStatuses`.
+    /// Creates a new `ListEnrollmentStatusesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

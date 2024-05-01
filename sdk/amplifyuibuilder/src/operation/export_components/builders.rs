@@ -48,7 +48,7 @@ impl
     }
 }
 impl ExportComponentsFluentBuilder {
-    /// Creates a new `ExportComponents`.
+    /// Creates a new `ExportComponentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

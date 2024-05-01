@@ -27,7 +27,7 @@ impl crate::operation::describe_direct_connect_gateway_association_proposals::bu
 pub struct DescribeDirectConnectGatewayAssociationProposalsFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_direct_connect_gateway_association_proposals::builders::DescribeDirectConnectGatewayAssociationProposalsInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDirectConnectGatewayAssociationProposalsFluentBuilder {
-    /// Creates a new `DescribeDirectConnectGatewayAssociationProposals`.
+    /// Creates a new `DescribeDirectConnectGatewayAssociationProposalsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

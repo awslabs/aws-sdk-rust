@@ -74,7 +74,7 @@ impl
     }
 }
 impl PutTraceSegmentsFluentBuilder {
-    /// Creates a new `PutTraceSegments`.
+    /// Creates a new `PutTraceSegmentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

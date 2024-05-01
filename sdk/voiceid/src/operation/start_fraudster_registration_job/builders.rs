@@ -48,7 +48,7 @@ impl
     }
 }
 impl StartFraudsterRegistrationJobFluentBuilder {
-    /// Creates a new `StartFraudsterRegistrationJob`.
+    /// Creates a new `StartFraudsterRegistrationJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

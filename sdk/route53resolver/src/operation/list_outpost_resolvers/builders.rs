@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListOutpostResolversFluentBuilder {
-    /// Creates a new `ListOutpostResolvers`.
+    /// Creates a new `ListOutpostResolversFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

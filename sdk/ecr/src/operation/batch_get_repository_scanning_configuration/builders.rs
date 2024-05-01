@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetRepositoryScanningConfigurationFluentBuilder {
-    /// Creates a new `BatchGetRepositoryScanningConfiguration`.
+    /// Creates a new `BatchGetRepositoryScanningConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

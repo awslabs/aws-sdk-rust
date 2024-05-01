@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteTextMessageSpendLimitOverrideFluentBuilder {
-    /// Creates a new `DeleteTextMessageSpendLimitOverride`.
+    /// Creates a new `DeleteTextMessageSpendLimitOverrideFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

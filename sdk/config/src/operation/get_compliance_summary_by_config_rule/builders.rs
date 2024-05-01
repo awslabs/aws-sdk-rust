@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetComplianceSummaryByConfigRuleFluentBuilder {
-    /// Creates a new `GetComplianceSummaryByConfigRule`.
+    /// Creates a new `GetComplianceSummaryByConfigRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

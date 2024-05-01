@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteInternetGatewayFluentBuilder {
-    /// Creates a new `DeleteInternetGateway`.
+    /// Creates a new `DeleteInternetGatewayFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

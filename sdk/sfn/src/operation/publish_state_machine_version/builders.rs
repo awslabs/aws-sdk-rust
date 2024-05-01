@@ -57,7 +57,7 @@ impl
     }
 }
 impl PublishStateMachineVersionFluentBuilder {
-    /// Creates a new `PublishStateMachineVersion`.
+    /// Creates a new `PublishStateMachineVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

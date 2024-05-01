@@ -62,7 +62,7 @@ impl
     }
 }
 impl DeleteGameServerGroupFluentBuilder {
-    /// Creates a new `DeleteGameServerGroup`.
+    /// Creates a new `DeleteGameServerGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

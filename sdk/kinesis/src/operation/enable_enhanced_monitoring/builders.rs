@@ -50,7 +50,7 @@ impl
     }
 }
 impl EnableEnhancedMonitoringFluentBuilder {
-    /// Creates a new `EnableEnhancedMonitoring`.
+    /// Creates a new `EnableEnhancedMonitoringFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

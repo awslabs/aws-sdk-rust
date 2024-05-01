@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateVoiceProfileDomainFluentBuilder {
-    /// Creates a new `CreateVoiceProfileDomain`.
+    /// Creates a new `CreateVoiceProfileDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl AcceptGrantFluentBuilder {
-    /// Creates a new `AcceptGrant`.
+    /// Creates a new `AcceptGrantFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

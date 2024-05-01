@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDisassociateAssessmentReportEvidenceFluentBuilder {
-    /// Creates a new `BatchDisassociateAssessmentReportEvidence`.
+    /// Creates a new `BatchDisassociateAssessmentReportEvidenceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

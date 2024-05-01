@@ -91,7 +91,7 @@ impl
     }
 }
 impl UpdateThemePermissionsFluentBuilder {
-    /// Creates a new `UpdateThemePermissions`.
+    /// Creates a new `UpdateThemePermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

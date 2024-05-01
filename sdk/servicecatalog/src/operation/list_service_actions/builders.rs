@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListServiceActionsFluentBuilder {
-    /// Creates a new `ListServiceActions`.
+    /// Creates a new `ListServiceActionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

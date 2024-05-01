@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteSchemaVersionsFluentBuilder {
-    /// Creates a new `DeleteSchemaVersions`.
+    /// Creates a new `DeleteSchemaVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

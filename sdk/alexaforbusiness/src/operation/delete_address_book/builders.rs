@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteAddressBookFluentBuilder {
-    /// Creates a new `DeleteAddressBook`.
+    /// Creates a new `DeleteAddressBookFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMatchingJobFluentBuilder {
-    /// Creates a new `GetMatchingJob`.
+    /// Creates a new `GetMatchingJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

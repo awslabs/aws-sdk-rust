@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateHITTypeOfHITFluentBuilder {
-    /// Creates a new `UpdateHITTypeOfHIT`.
+    /// Creates a new `UpdateHITTypeOfHITFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

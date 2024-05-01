@@ -50,7 +50,7 @@ impl
     }
 }
 impl ReplicateSecretToRegionsFluentBuilder {
-    /// Creates a new `ReplicateSecretToRegions`.
+    /// Creates a new `ReplicateSecretToRegionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

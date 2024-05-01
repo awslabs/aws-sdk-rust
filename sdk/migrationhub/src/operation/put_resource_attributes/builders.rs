@@ -57,7 +57,7 @@ impl
     }
 }
 impl PutResourceAttributesFluentBuilder {
-    /// Creates a new `PutResourceAttributes`.
+    /// Creates a new `PutResourceAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

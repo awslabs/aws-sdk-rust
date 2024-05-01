@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::crea
     }
 }
 impl CreateACLFluentBuilder {
-    /// Creates a new `CreateACL`.
+    /// Creates a new `CreateACLFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

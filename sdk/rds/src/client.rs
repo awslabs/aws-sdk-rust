@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,66 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait for `db_cluster_available`
+    fn wait_until_db_cluster_available(&self) -> crate::waiters::db_cluster_available::DbClusterAvailableFluentBuilder;
+    /// Wait for `db_cluster_deleted`
+    fn wait_until_db_cluster_deleted(&self) -> crate::waiters::db_cluster_deleted::DbClusterDeletedFluentBuilder;
+    /// Wait for `db_cluster_snapshot_available`
+    fn wait_until_db_cluster_snapshot_available(&self) -> crate::waiters::db_cluster_snapshot_available::DbClusterSnapshotAvailableFluentBuilder;
+    /// Wait for `db_cluster_snapshot_deleted`
+    fn wait_until_db_cluster_snapshot_deleted(&self) -> crate::waiters::db_cluster_snapshot_deleted::DbClusterSnapshotDeletedFluentBuilder;
+    /// Wait for `db_instance_available`
+    fn wait_until_db_instance_available(&self) -> crate::waiters::db_instance_available::DbInstanceAvailableFluentBuilder;
+    /// Wait for `db_instance_deleted`
+    fn wait_until_db_instance_deleted(&self) -> crate::waiters::db_instance_deleted::DbInstanceDeletedFluentBuilder;
+    /// Wait for `db_snapshot_available`
+    fn wait_until_db_snapshot_available(&self) -> crate::waiters::db_snapshot_available::DbSnapshotAvailableFluentBuilder;
+    /// Wait for `db_snapshot_deleted`
+    fn wait_until_db_snapshot_deleted(&self) -> crate::waiters::db_snapshot_deleted::DbSnapshotDeletedFluentBuilder;
+    /// Wait for `tenant_database_available`
+    fn wait_until_tenant_database_available(&self) -> crate::waiters::tenant_database_available::TenantDatabaseAvailableFluentBuilder;
+    /// Wait for `tenant_database_deleted`
+    fn wait_until_tenant_database_deleted(&self) -> crate::waiters::tenant_database_deleted::TenantDatabaseDeletedFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_db_cluster_available(&self) -> crate::waiters::db_cluster_available::DbClusterAvailableFluentBuilder {
+        crate::waiters::db_cluster_available::DbClusterAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_db_cluster_deleted(&self) -> crate::waiters::db_cluster_deleted::DbClusterDeletedFluentBuilder {
+        crate::waiters::db_cluster_deleted::DbClusterDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_db_cluster_snapshot_available(&self) -> crate::waiters::db_cluster_snapshot_available::DbClusterSnapshotAvailableFluentBuilder {
+        crate::waiters::db_cluster_snapshot_available::DbClusterSnapshotAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_db_cluster_snapshot_deleted(&self) -> crate::waiters::db_cluster_snapshot_deleted::DbClusterSnapshotDeletedFluentBuilder {
+        crate::waiters::db_cluster_snapshot_deleted::DbClusterSnapshotDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_db_instance_available(&self) -> crate::waiters::db_instance_available::DbInstanceAvailableFluentBuilder {
+        crate::waiters::db_instance_available::DbInstanceAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_db_instance_deleted(&self) -> crate::waiters::db_instance_deleted::DbInstanceDeletedFluentBuilder {
+        crate::waiters::db_instance_deleted::DbInstanceDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_db_snapshot_available(&self) -> crate::waiters::db_snapshot_available::DbSnapshotAvailableFluentBuilder {
+        crate::waiters::db_snapshot_available::DbSnapshotAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_db_snapshot_deleted(&self) -> crate::waiters::db_snapshot_deleted::DbSnapshotDeletedFluentBuilder {
+        crate::waiters::db_snapshot_deleted::DbSnapshotDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_tenant_database_available(&self) -> crate::waiters::tenant_database_available::TenantDatabaseAvailableFluentBuilder {
+        crate::waiters::tenant_database_available::TenantDatabaseAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_tenant_database_deleted(&self) -> crate::waiters::tenant_database_deleted::TenantDatabaseDeletedFluentBuilder {
+        crate::waiters::tenant_database_deleted::TenantDatabaseDeletedFluentBuilder::new(self.handle.clone())
     }
 }
 

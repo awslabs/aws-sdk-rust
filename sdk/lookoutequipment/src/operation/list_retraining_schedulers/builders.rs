@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListRetrainingSchedulersFluentBuilder {
-    /// Creates a new `ListRetrainingSchedulers`.
+    /// Creates a new `ListRetrainingSchedulersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

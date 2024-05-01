@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetDeployablePatchSnapshotForInstanceFluentBuilder {
-    /// Creates a new `GetDeployablePatchSnapshotForInstance`.
+    /// Creates a new `GetDeployablePatchSnapshotForInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

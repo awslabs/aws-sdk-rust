@@ -51,7 +51,7 @@ impl
     }
 }
 impl UpdateVoiceProfileFluentBuilder {
-    /// Creates a new `UpdateVoiceProfile`.
+    /// Creates a new `UpdateVoiceProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

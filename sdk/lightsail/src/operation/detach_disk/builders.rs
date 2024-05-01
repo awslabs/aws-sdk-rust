@@ -49,7 +49,7 @@ impl
     }
 }
 impl DetachDiskFluentBuilder {
-    /// Creates a new `DetachDisk`.
+    /// Creates a new `DetachDiskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeHapgFluentBuilder {
-    /// Creates a new `DescribeHapg`.
+    /// Creates a new `DescribeHapgFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

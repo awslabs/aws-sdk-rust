@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelVariantImportJobFluentBuilder {
-    /// Creates a new `CancelVariantImportJob`.
+    /// Creates a new `CancelVariantImportJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

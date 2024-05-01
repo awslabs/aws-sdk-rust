@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDeploymentStatusFluentBuilder {
-    /// Creates a new `GetDeploymentStatus`.
+    /// Creates a new `GetDeploymentStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

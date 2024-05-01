@@ -49,7 +49,7 @@ impl
     }
 }
 impl StartTransformerJobFluentBuilder {
-    /// Creates a new `StartTransformerJob`.
+    /// Creates a new `StartTransformerJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

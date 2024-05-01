@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateFindingsFilterFluentBuilder {
-    /// Creates a new `CreateFindingsFilter`.
+    /// Creates a new `CreateFindingsFilterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteNetworkAclEntryFluentBuilder {
-    /// Creates a new `DeleteNetworkAclEntry`.
+    /// Creates a new `DeleteNetworkAclEntryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

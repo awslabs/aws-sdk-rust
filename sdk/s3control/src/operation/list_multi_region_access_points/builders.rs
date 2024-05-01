@@ -63,7 +63,7 @@ impl
     }
 }
 impl ListMultiRegionAccessPointsFluentBuilder {
-    /// Creates a new `ListMultiRegionAccessPoints`.
+    /// Creates a new `ListMultiRegionAccessPointsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

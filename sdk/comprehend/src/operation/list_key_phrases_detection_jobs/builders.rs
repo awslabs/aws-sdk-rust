@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListKeyPhrasesDetectionJobsFluentBuilder {
-    /// Creates a new `ListKeyPhrasesDetectionJobs`.
+    /// Creates a new `ListKeyPhrasesDetectionJobsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

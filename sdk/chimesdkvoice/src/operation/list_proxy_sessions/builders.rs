@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListProxySessionsFluentBuilder {
-    /// Creates a new `ListProxySessions`.
+    /// Creates a new `ListProxySessionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

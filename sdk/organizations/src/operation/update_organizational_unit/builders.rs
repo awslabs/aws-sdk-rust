@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateOrganizationalUnitFluentBuilder {
-    /// Creates a new `UpdateOrganizationalUnit`.
+    /// Creates a new `UpdateOrganizationalUnitFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl PutUserPolicyFluentBuilder {
-    /// Creates a new `PutUserPolicy`.
+    /// Creates a new `PutUserPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

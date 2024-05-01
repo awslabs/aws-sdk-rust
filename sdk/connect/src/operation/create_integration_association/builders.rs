@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateIntegrationAssociationFluentBuilder {
-    /// Creates a new `CreateIntegrationAssociation`.
+    /// Creates a new `CreateIntegrationAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

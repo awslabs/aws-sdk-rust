@@ -50,7 +50,7 @@ impl
     }
 }
 impl TestAvailabilityConfigurationFluentBuilder {
-    /// Creates a new `TestAvailabilityConfiguration`.
+    /// Creates a new `TestAvailabilityConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

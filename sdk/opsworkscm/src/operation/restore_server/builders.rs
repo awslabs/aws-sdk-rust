@@ -51,7 +51,7 @@ impl
     }
 }
 impl RestoreServerFluentBuilder {
-    /// Creates a new `RestoreServer`.
+    /// Creates a new `RestoreServerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeStackSetOperationFluentBuilder {
-    /// Creates a new `DescribeStackSetOperation`.
+    /// Creates a new `DescribeStackSetOperationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

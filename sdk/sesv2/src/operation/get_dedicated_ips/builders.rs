@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDedicatedIpsFluentBuilder {
-    /// Creates a new `GetDedicatedIps`.
+    /// Creates a new `GetDedicatedIpsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

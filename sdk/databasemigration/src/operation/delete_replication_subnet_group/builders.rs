@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteReplicationSubnetGroupFluentBuilder {
-    /// Creates a new `DeleteReplicationSubnetGroup`.
+    /// Creates a new `DeleteReplicationSubnetGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

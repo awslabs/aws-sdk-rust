@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetPromptFileFluentBuilder {
-    /// Creates a new `GetPromptFile`.
+    /// Creates a new `GetPromptFileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

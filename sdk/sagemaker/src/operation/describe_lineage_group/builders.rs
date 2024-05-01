@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeLineageGroupFluentBuilder {
-    /// Creates a new `DescribeLineageGroup`.
+    /// Creates a new `DescribeLineageGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

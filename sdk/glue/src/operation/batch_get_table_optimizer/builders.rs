@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetTableOptimizerFluentBuilder {
-    /// Creates a new `BatchGetTableOptimizer`.
+    /// Creates a new `BatchGetTableOptimizerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

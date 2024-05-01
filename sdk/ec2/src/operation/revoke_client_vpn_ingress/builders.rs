@@ -48,7 +48,7 @@ impl
     }
 }
 impl RevokeClientVpnIngressFluentBuilder {
-    /// Creates a new `RevokeClientVpnIngress`.
+    /// Creates a new `RevokeClientVpnIngressFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

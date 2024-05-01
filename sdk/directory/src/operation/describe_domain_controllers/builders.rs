@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeDomainControllersFluentBuilder {
-    /// Creates a new `DescribeDomainControllers`.
+    /// Creates a new `DescribeDomainControllersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

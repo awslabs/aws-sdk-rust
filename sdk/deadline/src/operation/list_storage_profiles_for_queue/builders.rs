@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListStorageProfilesForQueueFluentBuilder {
-    /// Creates a new `ListStorageProfilesForQueue`.
+    /// Creates a new `ListStorageProfilesForQueueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

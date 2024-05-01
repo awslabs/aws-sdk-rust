@@ -51,7 +51,7 @@ impl
     }
 }
 impl AssociateNatGatewayAddressFluentBuilder {
-    /// Creates a new `AssociateNatGatewayAddress`.
+    /// Creates a new `AssociateNatGatewayAddressFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

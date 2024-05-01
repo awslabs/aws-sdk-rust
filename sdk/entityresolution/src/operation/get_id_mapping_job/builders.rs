@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetIdMappingJobFluentBuilder {
-    /// Creates a new `GetIdMappingJob`.
+    /// Creates a new `GetIdMappingJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

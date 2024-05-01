@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateTokenWithIAMFluentBuilder {
-    /// Creates a new `CreateTokenWithIAM`.
+    /// Creates a new `CreateTokenWithIAMFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

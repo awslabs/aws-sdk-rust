@@ -53,7 +53,7 @@ impl
     }
 }
 impl SyncDeploymentJobFluentBuilder {
-    /// Creates a new `SyncDeploymentJob`.
+    /// Creates a new `SyncDeploymentJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

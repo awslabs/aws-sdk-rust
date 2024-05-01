@@ -53,7 +53,7 @@ impl
     }
 }
 impl CreateSAMLProviderFluentBuilder {
-    /// Creates a new `CreateSAMLProvider`.
+    /// Creates a new `CreateSAMLProviderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

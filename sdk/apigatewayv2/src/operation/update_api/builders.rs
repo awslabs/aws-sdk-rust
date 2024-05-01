@@ -42,7 +42,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::upda
     }
 }
 impl UpdateApiFluentBuilder {
-    /// Creates a new `UpdateApi`.
+    /// Creates a new `UpdateApiFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

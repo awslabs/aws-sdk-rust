@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyTransitGatewayVpcAttachmentFluentBuilder {
-    /// Creates a new `ModifyTransitGatewayVpcAttachment`.
+    /// Creates a new `ModifyTransitGatewayVpcAttachmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

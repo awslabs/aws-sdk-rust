@@ -61,7 +61,7 @@ impl
     }
 }
 impl ListFragmentsFluentBuilder {
-    /// Creates a new `ListFragments`.
+    /// Creates a new `ListFragmentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

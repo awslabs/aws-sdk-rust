@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListAssociationsForLicenseConfigurationFluentBuilder {
-    /// Creates a new `ListAssociationsForLicenseConfiguration`.
+    /// Creates a new `ListAssociationsForLicenseConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

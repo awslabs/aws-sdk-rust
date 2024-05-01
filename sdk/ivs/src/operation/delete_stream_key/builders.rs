@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteStreamKeyFluentBuilder {
-    /// Creates a new `DeleteStreamKey`.
+    /// Creates a new `DeleteStreamKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

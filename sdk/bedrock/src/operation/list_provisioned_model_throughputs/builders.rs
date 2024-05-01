@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListProvisionedModelThroughputsFluentBuilder {
-    /// Creates a new `ListProvisionedModelThroughputs`.
+    /// Creates a new `ListProvisionedModelThroughputsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

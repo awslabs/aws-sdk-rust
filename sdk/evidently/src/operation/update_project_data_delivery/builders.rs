@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateProjectDataDeliveryFluentBuilder {
-    /// Creates a new `UpdateProjectDataDelivery`.
+    /// Creates a new `UpdateProjectDataDeliveryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

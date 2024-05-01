@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetClassificationExportConfigurationFluentBuilder {
-    /// Creates a new `GetClassificationExportConfiguration`.
+    /// Creates a new `GetClassificationExportConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

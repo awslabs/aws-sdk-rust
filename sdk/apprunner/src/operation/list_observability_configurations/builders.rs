@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListObservabilityConfigurationsFluentBuilder {
-    /// Creates a new `ListObservabilityConfigurations`.
+    /// Creates a new `ListObservabilityConfigurationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

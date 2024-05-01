@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAppLaunchConfigurationFluentBuilder {
-    /// Creates a new `DeleteAppLaunchConfiguration`.
+    /// Creates a new `DeleteAppLaunchConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

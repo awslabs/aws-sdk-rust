@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreatePersistentContactAssociationFluentBuilder {
-    /// Creates a new `CreatePersistentContactAssociation`.
+    /// Creates a new `CreatePersistentContactAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeDirectoryConfigsFluentBuilder {
-    /// Creates a new `DescribeDirectoryConfigs`.
+    /// Creates a new `DescribeDirectoryConfigsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

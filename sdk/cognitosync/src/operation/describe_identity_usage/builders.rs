@@ -70,7 +70,7 @@ impl
     }
 }
 impl DescribeIdentityUsageFluentBuilder {
-    /// Creates a new `DescribeIdentityUsage`.
+    /// Creates a new `DescribeIdentityUsageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

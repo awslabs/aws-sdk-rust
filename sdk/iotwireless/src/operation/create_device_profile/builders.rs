@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateDeviceProfileFluentBuilder {
-    /// Creates a new `CreateDeviceProfile`.
+    /// Creates a new `CreateDeviceProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

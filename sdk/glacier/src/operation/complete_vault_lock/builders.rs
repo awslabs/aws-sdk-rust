@@ -50,7 +50,7 @@ impl
     }
 }
 impl CompleteVaultLockFluentBuilder {
-    /// Creates a new `CompleteVaultLock`.
+    /// Creates a new `CompleteVaultLockFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

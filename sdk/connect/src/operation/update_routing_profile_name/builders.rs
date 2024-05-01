@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateRoutingProfileNameFluentBuilder {
-    /// Creates a new `UpdateRoutingProfileName`.
+    /// Creates a new `UpdateRoutingProfileNameFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

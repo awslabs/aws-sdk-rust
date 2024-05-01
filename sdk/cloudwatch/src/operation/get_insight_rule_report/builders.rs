@@ -66,7 +66,7 @@ impl
     }
 }
 impl GetInsightRuleReportFluentBuilder {
-    /// Creates a new `GetInsightRuleReport`.
+    /// Creates a new `GetInsightRuleReportFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

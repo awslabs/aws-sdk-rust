@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetPackageVersionReadmeFluentBuilder {
-    /// Creates a new `GetPackageVersionReadme`.
+    /// Creates a new `GetPackageVersionReadmeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

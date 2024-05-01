@@ -57,7 +57,7 @@ impl
     }
 }
 impl ResetJobBookmarkFluentBuilder {
-    /// Creates a new `ResetJobBookmark`.
+    /// Creates a new `ResetJobBookmarkFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

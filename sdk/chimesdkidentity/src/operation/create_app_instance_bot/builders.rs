@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateAppInstanceBotFluentBuilder {
-    /// Creates a new `CreateAppInstanceBot`.
+    /// Creates a new `CreateAppInstanceBotFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

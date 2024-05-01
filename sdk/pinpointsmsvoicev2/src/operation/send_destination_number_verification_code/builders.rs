@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendDestinationNumberVerificationCodeFluentBuilder {
-    /// Creates a new `SendDestinationNumberVerificationCode`.
+    /// Creates a new `SendDestinationNumberVerificationCodeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

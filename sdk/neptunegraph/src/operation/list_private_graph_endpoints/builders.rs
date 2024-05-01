@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListPrivateGraphEndpointsFluentBuilder {
-    /// Creates a new `ListPrivateGraphEndpoints`.
+    /// Creates a new `ListPrivateGraphEndpointsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

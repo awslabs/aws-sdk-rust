@@ -48,7 +48,7 @@ impl
     }
 }
 impl MergePullRequestByThreeWayFluentBuilder {
-    /// Creates a new `MergePullRequestByThreeWay`.
+    /// Creates a new `MergePullRequestByThreeWayFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

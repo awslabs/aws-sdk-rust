@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteStudioMemberFluentBuilder {
-    /// Creates a new `DeleteStudioMember`.
+    /// Creates a new `DeleteStudioMemberFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

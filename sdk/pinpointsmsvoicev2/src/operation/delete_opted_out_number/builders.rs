@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteOptedOutNumberFluentBuilder {
-    /// Creates a new `DeleteOptedOutNumber`.
+    /// Creates a new `DeleteOptedOutNumberFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

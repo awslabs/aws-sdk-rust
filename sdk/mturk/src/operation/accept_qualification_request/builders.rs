@@ -50,7 +50,7 @@ impl
     }
 }
 impl AcceptQualificationRequestFluentBuilder {
-    /// Creates a new `AcceptQualificationRequest`.
+    /// Creates a new `AcceptQualificationRequestFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreatePodIdentityAssociationFluentBuilder {
-    /// Creates a new `CreatePodIdentityAssociation`.
+    /// Creates a new `CreatePodIdentityAssociationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

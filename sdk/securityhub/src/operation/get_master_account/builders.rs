@@ -52,7 +52,7 @@ impl
     }
 }
 impl GetMasterAccountFluentBuilder {
-    /// Creates a new `GetMasterAccount`.
+    /// Creates a new `GetMasterAccountFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

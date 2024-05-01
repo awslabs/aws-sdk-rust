@@ -50,7 +50,7 @@ impl
     }
 }
 impl TagDeliveryStreamFluentBuilder {
-    /// Creates a new `TagDeliveryStream`.
+    /// Creates a new `TagDeliveryStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

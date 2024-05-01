@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateLocationSmbFluentBuilder {
-    /// Creates a new `CreateLocationSmb`.
+    /// Creates a new `CreateLocationSmbFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

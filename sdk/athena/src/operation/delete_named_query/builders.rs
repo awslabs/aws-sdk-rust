@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteNamedQueryFluentBuilder {
-    /// Creates a new `DeleteNamedQuery`.
+    /// Creates a new `DeleteNamedQueryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

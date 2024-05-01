@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetRecordFluentBuilder {
-    /// Creates a new `BatchGetRecord`.
+    /// Creates a new `BatchGetRecordFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

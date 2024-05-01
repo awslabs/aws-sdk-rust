@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteRecoveryInstanceFluentBuilder {
-    /// Creates a new `DeleteRecoveryInstance`.
+    /// Creates a new `DeleteRecoveryInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

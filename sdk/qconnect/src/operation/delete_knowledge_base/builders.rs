@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteKnowledgeBaseFluentBuilder {
-    /// Creates a new `DeleteKnowledgeBase`.
+    /// Creates a new `DeleteKnowledgeBaseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendOTPMessageFluentBuilder {
-    /// Creates a new `SendOTPMessage`.
+    /// Creates a new `SendOTPMessageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

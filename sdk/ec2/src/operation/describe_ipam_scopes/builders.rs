@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeIpamScopesFluentBuilder {
-    /// Creates a new `DescribeIpamScopes`.
+    /// Creates a new `DescribeIpamScopesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

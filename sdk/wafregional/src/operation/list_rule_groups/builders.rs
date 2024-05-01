@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListRuleGroupsFluentBuilder {
-    /// Creates a new `ListRuleGroups`.
+    /// Creates a new `ListRuleGroupsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl PutFileSystemPolicyFluentBuilder {
-    /// Creates a new `PutFileSystemPolicy`.
+    /// Creates a new `PutFileSystemPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl UnclaimDeviceFluentBuilder {
-    /// Creates a new `UnclaimDevice`.
+    /// Creates a new `UnclaimDeviceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

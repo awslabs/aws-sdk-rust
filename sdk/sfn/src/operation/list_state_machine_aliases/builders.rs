@@ -61,7 +61,7 @@ impl
     }
 }
 impl ListStateMachineAliasesFluentBuilder {
-    /// Creates a new `ListStateMachineAliases`.
+    /// Creates a new `ListStateMachineAliasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

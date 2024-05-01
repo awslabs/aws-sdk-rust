@@ -64,7 +64,7 @@ impl
     }
 }
 impl CreateIPSetFluentBuilder {
-    /// Creates a new `CreateIPSet`.
+    /// Creates a new `CreateIPSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

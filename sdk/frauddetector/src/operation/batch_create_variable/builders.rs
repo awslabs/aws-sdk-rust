@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchCreateVariableFluentBuilder {
-    /// Creates a new `BatchCreateVariable`.
+    /// Creates a new `BatchCreateVariableFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

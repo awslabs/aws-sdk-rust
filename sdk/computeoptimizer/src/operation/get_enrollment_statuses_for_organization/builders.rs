@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetEnrollmentStatusesForOrganizationFluentBuilder {
-    /// Creates a new `GetEnrollmentStatusesForOrganization`.
+    /// Creates a new `GetEnrollmentStatusesForOrganizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl RemoveCustomRoutingEndpointsFluentBuilder {
-    /// Creates a new `RemoveCustomRoutingEndpoints`.
+    /// Creates a new `RemoveCustomRoutingEndpointsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -62,7 +62,7 @@ impl
     }
 }
 impl UpdateIndexTypeFluentBuilder {
-    /// Creates a new `UpdateIndexType`.
+    /// Creates a new `UpdateIndexTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

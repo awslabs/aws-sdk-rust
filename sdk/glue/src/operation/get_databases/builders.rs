@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDatabasesFluentBuilder {
-    /// Creates a new `GetDatabases`.
+    /// Creates a new `GetDatabasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetContactReachabilityStatusFluentBuilder {
-    /// Creates a new `GetContactReachabilityStatus`.
+    /// Creates a new `GetContactReachabilityStatusFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

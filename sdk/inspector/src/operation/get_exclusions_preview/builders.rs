@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetExclusionsPreviewFluentBuilder {
-    /// Creates a new `GetExclusionsPreview`.
+    /// Creates a new `GetExclusionsPreviewFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

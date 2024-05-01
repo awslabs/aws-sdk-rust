@@ -48,7 +48,7 @@ impl
     }
 }
 impl IndexDocumentsFluentBuilder {
-    /// Creates a new `IndexDocuments`.
+    /// Creates a new `IndexDocumentsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

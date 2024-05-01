@@ -55,7 +55,7 @@ impl
     }
 }
 impl ResolveCaseFluentBuilder {
-    /// Creates a new `ResolveCase`.
+    /// Creates a new `ResolveCaseFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

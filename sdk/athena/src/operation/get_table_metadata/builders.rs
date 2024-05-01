@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetTableMetadataFluentBuilder {
-    /// Creates a new `GetTableMetadata`.
+    /// Creates a new `GetTableMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

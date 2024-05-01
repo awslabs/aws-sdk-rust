@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateNetworkInterfacePermissionFluentBuilder {
-    /// Creates a new `CreateNetworkInterfacePermission`.
+    /// Creates a new `CreateNetworkInterfacePermissionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

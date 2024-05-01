@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetAggregateConformancePackComplianceSummaryFluentBuilder {
-    /// Creates a new `GetAggregateConformancePackComplianceSummary`.
+    /// Creates a new `GetAggregateConformancePackComplianceSummaryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

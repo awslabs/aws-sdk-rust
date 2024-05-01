@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateHealthCheckFluentBuilder {
-    /// Creates a new `DisassociateHealthCheck`.
+    /// Creates a new `DisassociateHealthCheckFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -54,7 +54,7 @@ impl
     }
 }
 impl ImportImageFluentBuilder {
-    /// Creates a new `ImportImage`.
+    /// Creates a new `ImportImageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

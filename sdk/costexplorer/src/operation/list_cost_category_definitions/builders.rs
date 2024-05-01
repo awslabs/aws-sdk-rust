@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCostCategoryDefinitionsFluentBuilder {
-    /// Creates a new `ListCostCategoryDefinitions`.
+    /// Creates a new `ListCostCategoryDefinitionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

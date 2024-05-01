@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeQueueFluentBuilder {
-    /// Creates a new `DescribeQueue`.
+    /// Creates a new `DescribeQueueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

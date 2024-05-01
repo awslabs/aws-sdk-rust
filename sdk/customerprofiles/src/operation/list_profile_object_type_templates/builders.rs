@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListProfileObjectTypeTemplatesFluentBuilder {
-    /// Creates a new `ListProfileObjectTypeTemplates`.
+    /// Creates a new `ListProfileObjectTypeTemplatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

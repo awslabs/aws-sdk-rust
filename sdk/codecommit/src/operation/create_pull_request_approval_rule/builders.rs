@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreatePullRequestApprovalRuleFluentBuilder {
-    /// Creates a new `CreatePullRequestApprovalRule`.
+    /// Creates a new `CreatePullRequestApprovalRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl CreatePatchBaselineFluentBuilder {
-    /// Creates a new `CreatePatchBaseline`.
+    /// Creates a new `CreatePatchBaselineFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

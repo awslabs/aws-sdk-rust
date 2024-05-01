@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeBundleAssociationsFluentBuilder {
-    /// Creates a new `DescribeBundleAssociations`.
+    /// Creates a new `DescribeBundleAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

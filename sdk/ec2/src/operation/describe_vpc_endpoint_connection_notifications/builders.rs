@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeVpcEndpointConnectionNotificationsFluentBuilder {
-    /// Creates a new `DescribeVpcEndpointConnectionNotifications`.
+    /// Creates a new `DescribeVpcEndpointConnectionNotificationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

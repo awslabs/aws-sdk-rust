@@ -49,7 +49,7 @@ impl
     }
 }
 impl UpdateLicenseSpecificationsForResourceFluentBuilder {
-    /// Creates a new `UpdateLicenseSpecificationsForResource`.
+    /// Creates a new `UpdateLicenseSpecificationsForResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

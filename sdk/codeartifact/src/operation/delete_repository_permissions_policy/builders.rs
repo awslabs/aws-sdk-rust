@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteRepositoryPermissionsPolicyFluentBuilder {
-    /// Creates a new `DeleteRepositoryPermissionsPolicy`.
+    /// Creates a new `DeleteRepositoryPermissionsPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

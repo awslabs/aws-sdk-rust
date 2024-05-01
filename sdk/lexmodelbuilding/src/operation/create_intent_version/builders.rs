@@ -52,7 +52,7 @@ impl
     }
 }
 impl CreateIntentVersionFluentBuilder {
-    /// Creates a new `CreateIntentVersion`.
+    /// Creates a new `CreateIntentVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

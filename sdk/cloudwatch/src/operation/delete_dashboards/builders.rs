@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDashboardsFluentBuilder {
-    /// Creates a new `DeleteDashboards`.
+    /// Creates a new `DeleteDashboardsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

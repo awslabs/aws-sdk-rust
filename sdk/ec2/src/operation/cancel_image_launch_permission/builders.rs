@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelImageLaunchPermissionFluentBuilder {
-    /// Creates a new `CancelImageLaunchPermission`.
+    /// Creates a new `CancelImageLaunchPermissionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

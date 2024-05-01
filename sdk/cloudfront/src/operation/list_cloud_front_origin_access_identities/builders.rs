@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCloudFrontOriginAccessIdentitiesFluentBuilder {
-    /// Creates a new `ListCloudFrontOriginAccessIdentities`.
+    /// Creates a new `ListCloudFrontOriginAccessIdentitiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

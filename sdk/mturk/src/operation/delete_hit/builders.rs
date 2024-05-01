@@ -54,7 +54,7 @@ impl crate::client::customize::internal::CustomizableSend<crate::operation::dele
     }
 }
 impl DeleteHITFluentBuilder {
-    /// Creates a new `DeleteHIT`.
+    /// Creates a new `DeleteHITFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

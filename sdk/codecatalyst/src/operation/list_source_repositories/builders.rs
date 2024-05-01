@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSourceRepositoriesFluentBuilder {
-    /// Creates a new `ListSourceRepositories`.
+    /// Creates a new `ListSourceRepositoriesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

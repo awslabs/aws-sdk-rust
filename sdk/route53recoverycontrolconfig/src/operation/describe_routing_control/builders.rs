@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeRoutingControlFluentBuilder {
-    /// Creates a new `DescribeRoutingControl`.
+    /// Creates a new `DescribeRoutingControlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

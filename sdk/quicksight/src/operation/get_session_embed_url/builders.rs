@@ -54,7 +54,7 @@ impl
     }
 }
 impl GetSessionEmbedUrlFluentBuilder {
-    /// Creates a new `GetSessionEmbedUrl`.
+    /// Creates a new `GetSessionEmbedUrlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeFlywheelFluentBuilder {
-    /// Creates a new `DescribeFlywheel`.
+    /// Creates a new `DescribeFlywheelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

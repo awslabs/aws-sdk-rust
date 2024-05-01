@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetRelationalDatabaseParametersFluentBuilder {
-    /// Creates a new `GetRelationalDatabaseParameters`.
+    /// Creates a new `GetRelationalDatabaseParametersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

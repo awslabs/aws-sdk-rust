@@ -49,7 +49,7 @@ impl
     }
 }
 impl GenerateMobileSdkReleaseUrlFluentBuilder {
-    /// Creates a new `GenerateMobileSdkReleaseUrl`.
+    /// Creates a new `GenerateMobileSdkReleaseUrlFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

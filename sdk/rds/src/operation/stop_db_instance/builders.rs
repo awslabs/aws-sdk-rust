@@ -51,7 +51,7 @@ impl
     }
 }
 impl StopDBInstanceFluentBuilder {
-    /// Creates a new `StopDBInstance`.
+    /// Creates a new `StopDBInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

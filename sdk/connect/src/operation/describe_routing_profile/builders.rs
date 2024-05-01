@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeRoutingProfileFluentBuilder {
-    /// Creates a new `DescribeRoutingProfile`.
+    /// Creates a new `DescribeRoutingProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

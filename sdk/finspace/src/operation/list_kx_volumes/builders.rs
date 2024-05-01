@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListKxVolumesFluentBuilder {
-    /// Creates a new `ListKxVolumes`.
+    /// Creates a new `ListKxVolumesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

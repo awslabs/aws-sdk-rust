@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListTrafficDistributionGroupUsersFluentBuilder {
-    /// Creates a new `ListTrafficDistributionGroupUsers`.
+    /// Creates a new `ListTrafficDistributionGroupUsersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

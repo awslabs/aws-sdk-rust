@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTestCasesFluentBuilder {
-    /// Creates a new `DescribeTestCases`.
+    /// Creates a new `DescribeTestCasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

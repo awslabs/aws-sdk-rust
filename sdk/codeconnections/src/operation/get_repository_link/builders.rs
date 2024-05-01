@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetRepositoryLinkFluentBuilder {
-    /// Creates a new `GetRepositoryLink`.
+    /// Creates a new `GetRepositoryLinkFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

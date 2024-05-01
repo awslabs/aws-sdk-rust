@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListFindingsMetricsFluentBuilder {
-    /// Creates a new `ListFindingsMetrics`.
+    /// Creates a new `ListFindingsMetricsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListAvailableSolutionStacksFluentBuilder {
-    /// Creates a new `ListAvailableSolutionStacks`.
+    /// Creates a new `ListAvailableSolutionStacksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

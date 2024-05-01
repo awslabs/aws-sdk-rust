@@ -51,7 +51,7 @@ impl
     }
 }
 impl GetManagedRuleSetFluentBuilder {
-    /// Creates a new `GetManagedRuleSet`.
+    /// Creates a new `GetManagedRuleSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

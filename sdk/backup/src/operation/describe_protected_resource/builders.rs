@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeProtectedResourceFluentBuilder {
-    /// Creates a new `DescribeProtectedResource`.
+    /// Creates a new `DescribeProtectedResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCostForecastFluentBuilder {
-    /// Creates a new `GetCostForecast`.
+    /// Creates a new `GetCostForecastFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

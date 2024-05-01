@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociatePricingRulesFluentBuilder {
-    /// Creates a new `DisassociatePricingRules`.
+    /// Creates a new `DisassociatePricingRulesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

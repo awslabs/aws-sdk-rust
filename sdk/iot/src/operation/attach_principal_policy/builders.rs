@@ -51,7 +51,7 @@ impl
     }
 }
 impl AttachPrincipalPolicyFluentBuilder {
-    /// Creates a new `AttachPrincipalPolicy`.
+    /// Creates a new `AttachPrincipalPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl CheckIfPhoneNumberIsOptedOutFluentBuilder {
-    /// Creates a new `CheckIfPhoneNumberIsOptedOut`.
+    /// Creates a new `CheckIfPhoneNumberIsOptedOutFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

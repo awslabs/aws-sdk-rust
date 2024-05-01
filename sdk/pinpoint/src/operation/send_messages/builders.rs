@@ -48,7 +48,7 @@ impl
     }
 }
 impl SendMessagesFluentBuilder {
-    /// Creates a new `SendMessages`.
+    /// Creates a new `SendMessagesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListSMSSandboxPhoneNumbersFluentBuilder {
-    /// Creates a new `ListSMSSandboxPhoneNumbers`.
+    /// Creates a new `ListSMSSandboxPhoneNumbersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl RevokeIpRulesFluentBuilder {
-    /// Creates a new `RevokeIpRules`.
+    /// Creates a new `RevokeIpRulesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteMediaInsightsPipelineConfigurationFluentBuilder {
-    /// Creates a new `DeleteMediaInsightsPipelineConfiguration`.
+    /// Creates a new `DeleteMediaInsightsPipelineConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

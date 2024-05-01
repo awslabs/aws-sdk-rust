@@ -48,7 +48,7 @@ impl
     }
 }
 impl DismissUserContactFluentBuilder {
-    /// Creates a new `DismissUserContact`.
+    /// Creates a new `DismissUserContactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

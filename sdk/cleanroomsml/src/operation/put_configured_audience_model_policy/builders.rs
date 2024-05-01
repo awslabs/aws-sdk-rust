@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutConfiguredAudienceModelPolicyFluentBuilder {
-    /// Creates a new `PutConfiguredAudienceModelPolicy`.
+    /// Creates a new `PutConfiguredAudienceModelPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

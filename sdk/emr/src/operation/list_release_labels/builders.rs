@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListReleaseLabelsFluentBuilder {
-    /// Creates a new `ListReleaseLabels`.
+    /// Creates a new `ListReleaseLabelsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

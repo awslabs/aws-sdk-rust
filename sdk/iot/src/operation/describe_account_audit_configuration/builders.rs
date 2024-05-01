@@ -49,7 +49,7 @@ impl
     }
 }
 impl DescribeAccountAuditConfigurationFluentBuilder {
-    /// Creates a new `DescribeAccountAuditConfiguration`.
+    /// Creates a new `DescribeAccountAuditConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

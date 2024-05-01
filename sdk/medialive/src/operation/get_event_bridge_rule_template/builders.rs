@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetEventBridgeRuleTemplateFluentBuilder {
-    /// Creates a new `GetEventBridgeRuleTemplate`.
+    /// Creates a new `GetEventBridgeRuleTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

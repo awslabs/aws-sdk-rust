@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeletePolicyVersionFluentBuilder {
-    /// Creates a new `DeletePolicyVersion`.
+    /// Creates a new `DeletePolicyVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

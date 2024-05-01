@@ -48,7 +48,7 @@ impl
     }
 }
 impl StopRxNormInferenceJobFluentBuilder {
-    /// Creates a new `StopRxNormInferenceJob`.
+    /// Creates a new `StopRxNormInferenceJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

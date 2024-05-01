@@ -48,7 +48,7 @@ impl
     }
 }
 impl ModifyVpcEndpointConnectionNotificationFluentBuilder {
-    /// Creates a new `ModifyVpcEndpointConnectionNotification`.
+    /// Creates a new `ModifyVpcEndpointConnectionNotificationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

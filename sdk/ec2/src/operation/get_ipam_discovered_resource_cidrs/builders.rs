@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetIpamDiscoveredResourceCidrsFluentBuilder {
-    /// Creates a new `GetIpamDiscoveredResourceCidrs`.
+    /// Creates a new `GetIpamDiscoveredResourceCidrsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

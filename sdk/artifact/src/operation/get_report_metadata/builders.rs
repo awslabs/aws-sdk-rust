@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetReportMetadataFluentBuilder {
-    /// Creates a new `GetReportMetadata`.
+    /// Creates a new `GetReportMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

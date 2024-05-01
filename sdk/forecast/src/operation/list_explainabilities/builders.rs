@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListExplainabilitiesFluentBuilder {
-    /// Creates a new `ListExplainabilities`.
+    /// Creates a new `ListExplainabilitiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DisassociateApprovalRuleTemplateFromRepositoryFluentBuilder {
-    /// Creates a new `DisassociateApprovalRuleTemplateFromRepository`.
+    /// Creates a new `DisassociateApprovalRuleTemplateFromRepositoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

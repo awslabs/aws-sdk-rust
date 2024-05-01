@@ -50,7 +50,7 @@ impl
     }
 }
 impl GetCelebrityInfoFluentBuilder {
-    /// Creates a new `GetCelebrityInfo`.
+    /// Creates a new `GetCelebrityInfoFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

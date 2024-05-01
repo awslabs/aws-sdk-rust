@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeLocationObjectStorageFluentBuilder {
-    /// Creates a new `DescribeLocationObjectStorage`.
+    /// Creates a new `DescribeLocationObjectStorageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

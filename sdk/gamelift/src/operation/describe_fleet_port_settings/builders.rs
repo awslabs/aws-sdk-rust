@@ -58,7 +58,7 @@ impl
     }
 }
 impl DescribeFleetPortSettingsFluentBuilder {
-    /// Creates a new `DescribeFleetPortSettings`.
+    /// Creates a new `DescribeFleetPortSettingsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

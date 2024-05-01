@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteTrafficMirrorSessionFluentBuilder {
-    /// Creates a new `DeleteTrafficMirrorSession`.
+    /// Creates a new `DeleteTrafficMirrorSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

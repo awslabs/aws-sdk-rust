@@ -64,7 +64,7 @@ impl
     }
 }
 impl ListKeyRotationsFluentBuilder {
-    /// Creates a new `ListKeyRotations`.
+    /// Creates a new `ListKeyRotationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

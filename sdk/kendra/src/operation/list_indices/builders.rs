@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListIndicesFluentBuilder {
-    /// Creates a new `ListIndices`.
+    /// Creates a new `ListIndicesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

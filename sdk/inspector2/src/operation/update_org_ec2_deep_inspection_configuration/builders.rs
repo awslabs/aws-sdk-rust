@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateOrgEc2DeepInspectionConfigurationFluentBuilder {
-    /// Creates a new `UpdateOrgEc2DeepInspectionConfiguration`.
+    /// Creates a new `UpdateOrgEc2DeepInspectionConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListLocalDisksFluentBuilder {
-    /// Creates a new `ListLocalDisks`.
+    /// Creates a new `ListLocalDisksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

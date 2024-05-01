@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateBucketBundleFluentBuilder {
-    /// Creates a new `UpdateBucketBundle`.
+    /// Creates a new `UpdateBucketBundleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

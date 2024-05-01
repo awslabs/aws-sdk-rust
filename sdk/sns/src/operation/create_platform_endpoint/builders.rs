@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreatePlatformEndpointFluentBuilder {
-    /// Creates a new `CreatePlatformEndpoint`.
+    /// Creates a new `CreatePlatformEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

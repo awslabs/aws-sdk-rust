@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetBackupPlanFromTemplateFluentBuilder {
-    /// Creates a new `GetBackupPlanFromTemplate`.
+    /// Creates a new `GetBackupPlanFromTemplateFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

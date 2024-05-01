@@ -55,7 +55,7 @@ impl
     }
 }
 impl GetExternalDataViewAccessDetailsFluentBuilder {
-    /// Creates a new `GetExternalDataViewAccessDetails`.
+    /// Creates a new `GetExternalDataViewAccessDetailsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

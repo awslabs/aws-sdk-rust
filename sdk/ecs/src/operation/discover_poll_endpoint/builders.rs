@@ -51,7 +51,7 @@ impl
     }
 }
 impl DiscoverPollEndpointFluentBuilder {
-    /// Creates a new `DiscoverPollEndpoint`.
+    /// Creates a new `DiscoverPollEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

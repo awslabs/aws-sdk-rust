@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListOTAUpdatesFluentBuilder {
-    /// Creates a new `ListOTAUpdates`.
+    /// Creates a new `ListOTAUpdatesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

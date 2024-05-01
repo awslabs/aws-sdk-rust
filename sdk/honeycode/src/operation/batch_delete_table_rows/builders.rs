@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchDeleteTableRowsFluentBuilder {
-    /// Creates a new `BatchDeleteTableRows`.
+    /// Creates a new `BatchDeleteTableRowsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

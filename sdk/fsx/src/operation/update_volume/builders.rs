@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateVolumeFluentBuilder {
-    /// Creates a new `UpdateVolume`.
+    /// Creates a new `UpdateVolumeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

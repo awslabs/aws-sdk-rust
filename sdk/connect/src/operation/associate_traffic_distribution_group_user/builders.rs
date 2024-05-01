@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateTrafficDistributionGroupUserFluentBuilder {
-    /// Creates a new `AssociateTrafficDistributionGroupUser`.
+    /// Creates a new `AssociateTrafficDistributionGroupUserFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetCustomEntityTypesFluentBuilder {
-    /// Creates a new `BatchGetCustomEntityTypes`.
+    /// Creates a new `BatchGetCustomEntityTypesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

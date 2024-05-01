@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdatePortalFluentBuilder {
-    /// Creates a new `UpdatePortal`.
+    /// Creates a new `UpdatePortalFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

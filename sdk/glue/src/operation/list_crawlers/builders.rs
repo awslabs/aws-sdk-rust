@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListCrawlersFluentBuilder {
-    /// Creates a new `ListCrawlers`.
+    /// Creates a new `ListCrawlersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

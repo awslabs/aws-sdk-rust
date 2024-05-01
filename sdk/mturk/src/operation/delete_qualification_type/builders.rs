@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteQualificationTypeFluentBuilder {
-    /// Creates a new `DeleteQualificationType`.
+    /// Creates a new `DeleteQualificationTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

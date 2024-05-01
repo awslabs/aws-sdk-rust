@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListDataLakeExceptionsFluentBuilder {
-    /// Creates a new `ListDataLakeExceptions`.
+    /// Creates a new `ListDataLakeExceptionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

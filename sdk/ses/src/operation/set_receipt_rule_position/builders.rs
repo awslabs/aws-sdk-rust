@@ -50,7 +50,7 @@ impl
     }
 }
 impl SetReceiptRulePositionFluentBuilder {
-    /// Creates a new `SetReceiptRulePosition`.
+    /// Creates a new `SetReceiptRulePositionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

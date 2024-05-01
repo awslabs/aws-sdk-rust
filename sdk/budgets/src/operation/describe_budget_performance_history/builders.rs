@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeBudgetPerformanceHistoryFluentBuilder {
-    /// Creates a new `DescribeBudgetPerformanceHistory`.
+    /// Creates a new `DescribeBudgetPerformanceHistoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

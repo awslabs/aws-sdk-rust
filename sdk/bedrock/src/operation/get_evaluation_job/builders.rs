@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetEvaluationJobFluentBuilder {
-    /// Creates a new `GetEvaluationJob`.
+    /// Creates a new `GetEvaluationJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

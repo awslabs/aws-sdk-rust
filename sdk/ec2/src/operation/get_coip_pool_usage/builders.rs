@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCoipPoolUsageFluentBuilder {
-    /// Creates a new `GetCoipPoolUsage`.
+    /// Creates a new `GetCoipPoolUsageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -57,7 +57,7 @@ impl
     }
 }
 impl DescribeAffectedEntitiesForOrganizationFluentBuilder {
-    /// Creates a new `DescribeAffectedEntitiesForOrganization`.
+    /// Creates a new `DescribeAffectedEntitiesForOrganizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateMulticastGroupFluentBuilder {
-    /// Creates a new `CreateMulticastGroup`.
+    /// Creates a new `CreateMulticastGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

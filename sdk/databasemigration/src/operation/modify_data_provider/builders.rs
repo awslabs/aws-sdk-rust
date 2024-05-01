@@ -50,7 +50,7 @@ impl
     }
 }
 impl ModifyDataProviderFluentBuilder {
-    /// Creates a new `ModifyDataProvider`.
+    /// Creates a new `ModifyDataProviderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

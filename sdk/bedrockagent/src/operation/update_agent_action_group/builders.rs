@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateAgentActionGroupFluentBuilder {
-    /// Creates a new `UpdateAgentActionGroup`.
+    /// Creates a new `UpdateAgentActionGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

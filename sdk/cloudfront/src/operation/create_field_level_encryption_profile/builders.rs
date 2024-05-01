@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateFieldLevelEncryptionProfileFluentBuilder {
-    /// Creates a new `CreateFieldLevelEncryptionProfile`.
+    /// Creates a new `CreateFieldLevelEncryptionProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -52,7 +52,7 @@ impl
     }
 }
 impl ListDatasetLabelsFluentBuilder {
-    /// Creates a new `ListDatasetLabels`.
+    /// Creates a new `ListDatasetLabelsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

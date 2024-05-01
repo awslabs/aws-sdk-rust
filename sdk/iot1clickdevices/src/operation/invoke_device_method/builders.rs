@@ -48,7 +48,7 @@ impl
     }
 }
 impl InvokeDeviceMethodFluentBuilder {
-    /// Creates a new `InvokeDeviceMethod`.
+    /// Creates a new `InvokeDeviceMethodFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

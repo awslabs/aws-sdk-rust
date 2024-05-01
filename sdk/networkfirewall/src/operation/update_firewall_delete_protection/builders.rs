@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateFirewallDeleteProtectionFluentBuilder {
-    /// Creates a new `UpdateFirewallDeleteProtection`.
+    /// Creates a new `UpdateFirewallDeleteProtectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl RedactConversationMessageFluentBuilder {
-    /// Creates a new `RedactConversationMessage`.
+    /// Creates a new `RedactConversationMessageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

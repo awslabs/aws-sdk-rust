@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelPolicyGenerationFluentBuilder {
-    /// Creates a new `CancelPolicyGeneration`.
+    /// Creates a new `CancelPolicyGenerationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

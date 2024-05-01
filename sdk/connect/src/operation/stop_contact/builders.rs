@@ -57,7 +57,7 @@ impl
     }
 }
 impl StopContactFluentBuilder {
-    /// Creates a new `StopContact`.
+    /// Creates a new `StopContactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -58,7 +58,7 @@ impl
     }
 }
 impl PutPublicAccessBlockFluentBuilder {
-    /// Creates a new `PutPublicAccessBlock`.
+    /// Creates a new `PutPublicAccessBlockFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeRecoverySnapshotsFluentBuilder {
-    /// Creates a new `DescribeRecoverySnapshots`.
+    /// Creates a new `DescribeRecoverySnapshotsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

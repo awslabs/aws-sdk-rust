@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListFileCommitHistoryFluentBuilder {
-    /// Creates a new `ListFileCommitHistory`.
+    /// Creates a new `ListFileCommitHistoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

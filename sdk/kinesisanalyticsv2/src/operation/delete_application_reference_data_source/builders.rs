@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteApplicationReferenceDataSourceFluentBuilder {
-    /// Creates a new `DeleteApplicationReferenceDataSource`.
+    /// Creates a new `DeleteApplicationReferenceDataSourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

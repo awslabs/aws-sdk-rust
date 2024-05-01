@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteDataLakeExceptionSubscriptionFluentBuilder {
-    /// Creates a new `DeleteDataLakeExceptionSubscription`.
+    /// Creates a new `DeleteDataLakeExceptionSubscriptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

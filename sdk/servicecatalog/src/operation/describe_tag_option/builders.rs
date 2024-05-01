@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeTagOptionFluentBuilder {
-    /// Creates a new `DescribeTagOption`.
+    /// Creates a new `DescribeTagOptionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ExportVectorEnrichmentJobFluentBuilder {
-    /// Creates a new `ExportVectorEnrichmentJob`.
+    /// Creates a new `ExportVectorEnrichmentJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

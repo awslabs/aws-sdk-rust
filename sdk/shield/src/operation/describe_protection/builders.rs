@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeProtectionFluentBuilder {
-    /// Creates a new `DescribeProtection`.
+    /// Creates a new `DescribeProtectionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

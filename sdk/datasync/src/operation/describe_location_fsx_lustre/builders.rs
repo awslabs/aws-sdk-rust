@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeLocationFsxLustreFluentBuilder {
-    /// Creates a new `DescribeLocationFsxLustre`.
+    /// Creates a new `DescribeLocationFsxLustreFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

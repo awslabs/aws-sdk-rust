@@ -87,7 +87,7 @@ impl
     }
 }
 impl SendRawEmailFluentBuilder {
-    /// Creates a new `SendRawEmail`.
+    /// Creates a new `SendRawEmailFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

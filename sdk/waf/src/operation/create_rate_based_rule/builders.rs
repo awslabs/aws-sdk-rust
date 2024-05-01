@@ -88,7 +88,7 @@ impl
     }
 }
 impl CreateRateBasedRuleFluentBuilder {
-    /// Creates a new `CreateRateBasedRule`.
+    /// Creates a new `CreateRateBasedRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl CompleteMultipartReadSetUploadFluentBuilder {
-    /// Creates a new `CompleteMultipartReadSetUpload`.
+    /// Creates a new `CompleteMultipartReadSetUploadFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

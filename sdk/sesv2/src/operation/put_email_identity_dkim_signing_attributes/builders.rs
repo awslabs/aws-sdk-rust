@@ -62,7 +62,7 @@ impl
     }
 }
 impl PutEmailIdentityDkimSigningAttributesFluentBuilder {
-    /// Creates a new `PutEmailIdentityDkimSigningAttributes`.
+    /// Creates a new `PutEmailIdentityDkimSigningAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

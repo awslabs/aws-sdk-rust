@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetMediaPipelineKinesisVideoStreamPoolFluentBuilder {
-    /// Creates a new `GetMediaPipelineKinesisVideoStreamPool`.
+    /// Creates a new `GetMediaPipelineKinesisVideoStreamPoolFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

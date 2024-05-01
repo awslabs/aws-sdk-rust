@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListStandardsControlAssociationsFluentBuilder {
-    /// Creates a new `ListStandardsControlAssociations`.
+    /// Creates a new `ListStandardsControlAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

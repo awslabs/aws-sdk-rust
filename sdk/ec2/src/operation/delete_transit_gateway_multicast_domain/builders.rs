@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteTransitGatewayMulticastDomainFluentBuilder {
-    /// Creates a new `DeleteTransitGatewayMulticastDomain`.
+    /// Creates a new `DeleteTransitGatewayMulticastDomainFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -63,7 +63,7 @@ impl
     }
 }
 impl ListCoreDevicesFluentBuilder {
-    /// Creates a new `ListCoreDevices`.
+    /// Creates a new `ListCoreDevicesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

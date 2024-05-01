@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAnomaliesFluentBuilder {
-    /// Creates a new `GetAnomalies`.
+    /// Creates a new `GetAnomaliesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

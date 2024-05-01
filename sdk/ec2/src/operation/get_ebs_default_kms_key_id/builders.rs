@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetEbsDefaultKmsKeyIdFluentBuilder {
-    /// Creates a new `GetEbsDefaultKmsKeyId`.
+    /// Creates a new `GetEbsDefaultKmsKeyIdFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

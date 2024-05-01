@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteOrganizationConformancePackFluentBuilder {
-    /// Creates a new `DeleteOrganizationConformancePack`.
+    /// Creates a new `DeleteOrganizationConformancePackFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

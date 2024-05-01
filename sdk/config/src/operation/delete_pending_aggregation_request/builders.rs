@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeletePendingAggregationRequestFluentBuilder {
-    /// Creates a new `DeletePendingAggregationRequest`.
+    /// Creates a new `DeletePendingAggregationRequestFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

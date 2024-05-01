@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteParameterFluentBuilder {
-    /// Creates a new `DeleteParameter`.
+    /// Creates a new `DeleteParameterFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteSolNetworkPackageFluentBuilder {
-    /// Creates a new `DeleteSolNetworkPackage`.
+    /// Creates a new `DeleteSolNetworkPackageFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl SearchImageSetsFluentBuilder {
-    /// Creates a new `SearchImageSets`.
+    /// Creates a new `SearchImageSetsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

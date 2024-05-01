@@ -51,7 +51,7 @@ impl
     }
 }
 impl SubmitTaskStateChangeFluentBuilder {
-    /// Creates a new `SubmitTaskStateChange`.
+    /// Creates a new `SubmitTaskStateChangeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

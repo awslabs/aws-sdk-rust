@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListFarmMembersFluentBuilder {
-    /// Creates a new `ListFarmMembers`.
+    /// Creates a new `ListFarmMembersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

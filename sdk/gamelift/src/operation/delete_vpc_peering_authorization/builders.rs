@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteVpcPeeringAuthorizationFluentBuilder {
-    /// Creates a new `DeleteVpcPeeringAuthorization`.
+    /// Creates a new `DeleteVpcPeeringAuthorizationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

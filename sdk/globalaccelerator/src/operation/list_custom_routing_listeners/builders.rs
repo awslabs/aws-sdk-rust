@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCustomRoutingListenersFluentBuilder {
-    /// Creates a new `ListCustomRoutingListeners`.
+    /// Creates a new `ListCustomRoutingListenersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -50,7 +50,7 @@ impl
     }
 }
 impl UpdateNotificationRuleFluentBuilder {
-    /// Creates a new `UpdateNotificationRule`.
+    /// Creates a new `UpdateNotificationRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

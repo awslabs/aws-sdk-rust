@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListCrossAccountResourceAccountsFluentBuilder {
-    /// Creates a new `ListCrossAccountResourceAccounts`.
+    /// Creates a new `ListCrossAccountResourceAccountsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

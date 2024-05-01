@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateViewFluentBuilder {
-    /// Creates a new `UpdateView`.
+    /// Creates a new `UpdateViewFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

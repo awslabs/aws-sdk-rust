@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateGlobalReplicationGroupFluentBuilder {
-    /// Creates a new `DisassociateGlobalReplicationGroup`.
+    /// Creates a new `DisassociateGlobalReplicationGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

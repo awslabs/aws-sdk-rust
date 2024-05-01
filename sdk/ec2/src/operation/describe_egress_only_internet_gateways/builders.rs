@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeEgressOnlyInternetGatewaysFluentBuilder {
-    /// Creates a new `DescribeEgressOnlyInternetGateways`.
+    /// Creates a new `DescribeEgressOnlyInternetGatewaysFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

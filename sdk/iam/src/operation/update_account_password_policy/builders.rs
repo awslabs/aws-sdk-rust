@@ -51,7 +51,7 @@ impl
     }
 }
 impl UpdateAccountPasswordPolicyFluentBuilder {
-    /// Creates a new `UpdateAccountPasswordPolicy`.
+    /// Creates a new `UpdateAccountPasswordPolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

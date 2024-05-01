@@ -48,7 +48,7 @@ impl
     }
 }
 impl RevokePermissionsFluentBuilder {
-    /// Creates a new `RevokePermissions`.
+    /// Creates a new `RevokePermissionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

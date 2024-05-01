@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteObservabilityConfigurationFluentBuilder {
-    /// Creates a new `DeleteObservabilityConfiguration`.
+    /// Creates a new `DeleteObservabilityConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

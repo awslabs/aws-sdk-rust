@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateConnectAttachmentFluentBuilder {
-    /// Creates a new `CreateConnectAttachment`.
+    /// Creates a new `CreateConnectAttachmentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

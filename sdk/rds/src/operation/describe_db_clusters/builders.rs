@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeDBClustersFluentBuilder {
-    /// Creates a new `DescribeDBClusters`.
+    /// Creates a new `DescribeDBClustersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

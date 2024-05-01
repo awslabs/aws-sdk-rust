@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateEnvironmentProfileFluentBuilder {
-    /// Creates a new `CreateEnvironmentProfile`.
+    /// Creates a new `CreateEnvironmentProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

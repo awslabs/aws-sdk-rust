@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetAppsListFluentBuilder {
-    /// Creates a new `GetAppsList`.
+    /// Creates a new `GetAppsListFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

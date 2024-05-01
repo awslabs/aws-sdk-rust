@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteServiceSyncConfigFluentBuilder {
-    /// Creates a new `DeleteServiceSyncConfig`.
+    /// Creates a new `DeleteServiceSyncConfigFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

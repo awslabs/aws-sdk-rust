@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetDistributionFluentBuilder {
-    /// Creates a new `GetDistribution`.
+    /// Creates a new `GetDistributionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

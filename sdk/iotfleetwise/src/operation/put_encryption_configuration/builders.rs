@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutEncryptionConfigurationFluentBuilder {
-    /// Creates a new `PutEncryptionConfiguration`.
+    /// Creates a new `PutEncryptionConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

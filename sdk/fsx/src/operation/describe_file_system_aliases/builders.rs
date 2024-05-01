@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeFileSystemAliasesFluentBuilder {
-    /// Creates a new `DescribeFileSystemAliases`.
+    /// Creates a new `DescribeFileSystemAliasesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

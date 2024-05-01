@@ -73,7 +73,7 @@ impl
     }
 }
 impl PutObjectTaggingFluentBuilder {
-    /// Creates a new `PutObjectTagging`.
+    /// Creates a new `PutObjectTaggingFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

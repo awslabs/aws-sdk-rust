@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteTriggerFluentBuilder {
-    /// Creates a new `DeleteTrigger`.
+    /// Creates a new `DeleteTriggerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

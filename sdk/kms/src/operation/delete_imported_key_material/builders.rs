@@ -60,7 +60,7 @@ impl
     }
 }
 impl DeleteImportedKeyMaterialFluentBuilder {
-    /// Creates a new `DeleteImportedKeyMaterial`.
+    /// Creates a new `DeleteImportedKeyMaterialFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

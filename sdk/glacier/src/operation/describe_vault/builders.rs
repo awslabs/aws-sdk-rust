@@ -50,7 +50,7 @@ impl
     }
 }
 impl DescribeVaultFluentBuilder {
-    /// Creates a new `DescribeVault`.
+    /// Creates a new `DescribeVaultFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

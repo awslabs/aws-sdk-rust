@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListAuditTasksFluentBuilder {
-    /// Creates a new `ListAuditTasks`.
+    /// Creates a new `ListAuditTasksFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

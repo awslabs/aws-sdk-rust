@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateRedshiftIdcApplicationFluentBuilder {
-    /// Creates a new `CreateRedshiftIdcApplication`.
+    /// Creates a new `CreateRedshiftIdcApplicationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

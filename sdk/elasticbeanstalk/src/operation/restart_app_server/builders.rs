@@ -48,7 +48,7 @@ impl
     }
 }
 impl RestartAppServerFluentBuilder {
-    /// Creates a new `RestartAppServer`.
+    /// Creates a new `RestartAppServerFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

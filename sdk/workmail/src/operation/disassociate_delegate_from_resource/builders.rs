@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateDelegateFromResourceFluentBuilder {
-    /// Creates a new `DisassociateDelegateFromResource`.
+    /// Creates a new `DisassociateDelegateFromResourceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

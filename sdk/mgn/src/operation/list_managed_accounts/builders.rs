@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListManagedAccountsFluentBuilder {
-    /// Creates a new `ListManagedAccounts`.
+    /// Creates a new `ListManagedAccountsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

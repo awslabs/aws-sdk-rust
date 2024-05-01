@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListAutomaticTapeCreationPoliciesFluentBuilder {
-    /// Creates a new `ListAutomaticTapeCreationPolicies`.
+    /// Creates a new `ListAutomaticTapeCreationPoliciesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

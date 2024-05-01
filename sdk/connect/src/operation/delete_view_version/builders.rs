@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteViewVersionFluentBuilder {
-    /// Creates a new `DeleteViewVersion`.
+    /// Creates a new `DeleteViewVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

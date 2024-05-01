@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateCacheSecurityGroupFluentBuilder {
-    /// Creates a new `CreateCacheSecurityGroup`.
+    /// Creates a new `CreateCacheSecurityGroupFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

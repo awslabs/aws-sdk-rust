@@ -62,7 +62,7 @@ impl
     }
 }
 impl PutMetricStreamFluentBuilder {
-    /// Creates a new `PutMetricStream`.
+    /// Creates a new `PutMetricStreamFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl AcknowledgeThirdPartyJobFluentBuilder {
-    /// Creates a new `AcknowledgeThirdPartyJob`.
+    /// Creates a new `AcknowledgeThirdPartyJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

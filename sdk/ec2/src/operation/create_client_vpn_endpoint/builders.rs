@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateClientVpnEndpointFluentBuilder {
-    /// Creates a new `CreateClientVpnEndpoint`.
+    /// Creates a new `CreateClientVpnEndpointFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

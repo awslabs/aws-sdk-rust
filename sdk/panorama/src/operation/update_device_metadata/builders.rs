@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateDeviceMetadataFluentBuilder {
-    /// Creates a new `UpdateDeviceMetadata`.
+    /// Creates a new `UpdateDeviceMetadataFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResetFpgaImageAttributeFluentBuilder {
-    /// Creates a new `ResetFpgaImageAttribute`.
+    /// Creates a new `ResetFpgaImageAttributeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

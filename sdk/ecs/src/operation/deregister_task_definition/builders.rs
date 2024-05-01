@@ -52,7 +52,7 @@ impl
     }
 }
 impl DeregisterTaskDefinitionFluentBuilder {
-    /// Creates a new `DeregisterTaskDefinition`.
+    /// Creates a new `DeregisterTaskDefinitionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

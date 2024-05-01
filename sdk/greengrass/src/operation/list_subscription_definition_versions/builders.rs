@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListSubscriptionDefinitionVersionsFluentBuilder {
-    /// Creates a new `ListSubscriptionDefinitionVersions`.
+    /// Creates a new `ListSubscriptionDefinitionVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

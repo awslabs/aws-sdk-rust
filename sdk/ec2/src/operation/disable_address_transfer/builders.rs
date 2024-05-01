@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisableAddressTransferFluentBuilder {
-    /// Creates a new `DisableAddressTransfer`.
+    /// Creates a new `DisableAddressTransferFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

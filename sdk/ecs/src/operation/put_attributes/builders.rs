@@ -48,7 +48,7 @@ impl
     }
 }
 impl PutAttributesFluentBuilder {
-    /// Creates a new `PutAttributes`.
+    /// Creates a new `PutAttributesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

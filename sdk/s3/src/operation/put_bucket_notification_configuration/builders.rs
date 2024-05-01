@@ -68,7 +68,7 @@ impl
     }
 }
 impl PutBucketNotificationConfigurationFluentBuilder {
-    /// Creates a new `PutBucketNotificationConfiguration`.
+    /// Creates a new `PutBucketNotificationConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

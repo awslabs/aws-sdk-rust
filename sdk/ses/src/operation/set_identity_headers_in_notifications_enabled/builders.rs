@@ -50,7 +50,7 @@ impl
     }
 }
 impl SetIdentityHeadersInNotificationsEnabledFluentBuilder {
-    /// Creates a new `SetIdentityHeadersInNotificationsEnabled`.
+    /// Creates a new `SetIdentityHeadersInNotificationsEnabledFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

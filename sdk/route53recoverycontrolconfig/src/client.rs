@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -117,6 +131,46 @@ impl Client {
             .apply_client_configuration(&mut cfg)?
             .validate_base_client_config(&cfg)?;
         Ok(())
+    }
+}
+
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait until a cluster is created
+    fn wait_until_cluster_created(&self) -> crate::waiters::cluster_created::ClusterCreatedFluentBuilder;
+    /// Wait for a cluster to be deleted
+    fn wait_until_cluster_deleted(&self) -> crate::waiters::cluster_deleted::ClusterDeletedFluentBuilder;
+    /// Wait until a control panel is created
+    fn wait_until_control_panel_created(&self) -> crate::waiters::control_panel_created::ControlPanelCreatedFluentBuilder;
+    /// Wait until a control panel is deleted
+    fn wait_until_control_panel_deleted(&self) -> crate::waiters::control_panel_deleted::ControlPanelDeletedFluentBuilder;
+    /// Wait until a routing control is created
+    fn wait_until_routing_control_created(&self) -> crate::waiters::routing_control_created::RoutingControlCreatedFluentBuilder;
+    /// Wait for a routing control to be deleted
+    fn wait_until_routing_control_deleted(&self) -> crate::waiters::routing_control_deleted::RoutingControlDeletedFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_cluster_created(&self) -> crate::waiters::cluster_created::ClusterCreatedFluentBuilder {
+        crate::waiters::cluster_created::ClusterCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_cluster_deleted(&self) -> crate::waiters::cluster_deleted::ClusterDeletedFluentBuilder {
+        crate::waiters::cluster_deleted::ClusterDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_control_panel_created(&self) -> crate::waiters::control_panel_created::ControlPanelCreatedFluentBuilder {
+        crate::waiters::control_panel_created::ControlPanelCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_control_panel_deleted(&self) -> crate::waiters::control_panel_deleted::ControlPanelDeletedFluentBuilder {
+        crate::waiters::control_panel_deleted::ControlPanelDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_routing_control_created(&self) -> crate::waiters::routing_control_created::RoutingControlCreatedFluentBuilder {
+        crate::waiters::routing_control_created::RoutingControlCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_routing_control_deleted(&self) -> crate::waiters::routing_control_deleted::RoutingControlDeletedFluentBuilder {
+        crate::waiters::routing_control_deleted::RoutingControlDeletedFluentBuilder::new(self.handle.clone())
     }
 }
 

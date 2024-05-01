@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetSystemTemplateRevisionsFluentBuilder {
-    /// Creates a new `GetSystemTemplateRevisions`.
+    /// Creates a new `GetSystemTemplateRevisionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

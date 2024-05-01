@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteScheduledAuditFluentBuilder {
-    /// Creates a new `DeleteScheduledAudit`.
+    /// Creates a new `DeleteScheduledAuditFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeSubscriptionFiltersFluentBuilder {
-    /// Creates a new `DescribeSubscriptionFilters`.
+    /// Creates a new `DescribeSubscriptionFiltersFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

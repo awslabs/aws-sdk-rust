@@ -48,7 +48,7 @@ impl
     }
 }
 impl UpdateSourceServerReplicationTypeFluentBuilder {
-    /// Creates a new `UpdateSourceServerReplicationType`.
+    /// Creates a new `UpdateSourceServerReplicationTypeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

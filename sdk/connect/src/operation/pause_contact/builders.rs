@@ -48,7 +48,7 @@ impl
     }
 }
 impl PauseContactFluentBuilder {
-    /// Creates a new `PauseContact`.
+    /// Creates a new `PauseContactFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

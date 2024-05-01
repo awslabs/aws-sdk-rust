@@ -49,7 +49,7 @@ impl
     }
 }
 impl StartMLModelTransformJobFluentBuilder {
-    /// Creates a new `StartMLModelTransformJob`.
+    /// Creates a new `StartMLModelTransformJobFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl DeleteFileCacheFluentBuilder {
-    /// Creates a new `DeleteFileCache`.
+    /// Creates a new `DeleteFileCacheFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

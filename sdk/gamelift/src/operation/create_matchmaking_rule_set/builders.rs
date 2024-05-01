@@ -59,7 +59,7 @@ impl
     }
 }
 impl CreateMatchmakingRuleSetFluentBuilder {
-    /// Creates a new `CreateMatchmakingRuleSet`.
+    /// Creates a new `CreateMatchmakingRuleSetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

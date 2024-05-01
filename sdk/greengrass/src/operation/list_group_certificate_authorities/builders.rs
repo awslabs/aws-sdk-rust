@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListGroupCertificateAuthoritiesFluentBuilder {
-    /// Creates a new `ListGroupCertificateAuthorities`.
+    /// Creates a new `ListGroupCertificateAuthoritiesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

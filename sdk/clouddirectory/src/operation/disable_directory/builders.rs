@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisableDirectoryFluentBuilder {
-    /// Creates a new `DisableDirectory`.
+    /// Creates a new `DisableDirectoryFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

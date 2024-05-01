@@ -48,7 +48,7 @@ impl
     }
 }
 impl DisassociateApplicationFleetFluentBuilder {
-    /// Creates a new `DisassociateApplicationFleet`.
+    /// Creates a new `DisassociateApplicationFleetFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl AssociateMemberToQueueFluentBuilder {
-    /// Creates a new `AssociateMemberToQueue`.
+    /// Creates a new `AssociateMemberToQueueFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

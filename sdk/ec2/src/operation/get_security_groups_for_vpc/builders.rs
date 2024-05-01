@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetSecurityGroupsForVpcFluentBuilder {
-    /// Creates a new `GetSecurityGroupsForVpc`.
+    /// Creates a new `GetSecurityGroupsForVpcFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

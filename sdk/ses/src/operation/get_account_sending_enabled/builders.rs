@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetAccountSendingEnabledFluentBuilder {
-    /// Creates a new `GetAccountSendingEnabled`.
+    /// Creates a new `GetAccountSendingEnabledFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

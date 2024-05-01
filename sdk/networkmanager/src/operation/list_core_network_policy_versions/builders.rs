@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListCoreNetworkPolicyVersionsFluentBuilder {
-    /// Creates a new `ListCoreNetworkPolicyVersions`.
+    /// Creates a new `ListCoreNetworkPolicyVersionsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

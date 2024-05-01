@@ -49,7 +49,7 @@ impl
     }
 }
 impl GetDecryptedAPIKeyFluentBuilder {
-    /// Creates a new `GetDecryptedAPIKey`.
+    /// Creates a new `GetDecryptedAPIKeyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

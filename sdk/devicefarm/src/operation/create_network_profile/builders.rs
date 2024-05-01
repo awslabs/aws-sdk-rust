@@ -48,7 +48,7 @@ impl
     }
 }
 impl CreateNetworkProfileFluentBuilder {
-    /// Creates a new `CreateNetworkProfile`.
+    /// Creates a new `CreateNetworkProfileFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

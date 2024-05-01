@@ -48,7 +48,7 @@ impl
     }
 }
 impl CancelCapacityTaskFluentBuilder {
-    /// Creates a new `CancelCapacityTask`.
+    /// Creates a new `CancelCapacityTaskFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

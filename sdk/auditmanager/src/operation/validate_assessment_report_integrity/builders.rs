@@ -48,7 +48,7 @@ impl
     }
 }
 impl ValidateAssessmentReportIntegrityFluentBuilder {
-    /// Creates a new `ValidateAssessmentReportIntegrity`.
+    /// Creates a new `ValidateAssessmentReportIntegrityFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

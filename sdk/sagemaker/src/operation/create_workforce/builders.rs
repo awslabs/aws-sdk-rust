@@ -51,7 +51,7 @@ impl
     }
 }
 impl CreateWorkforceFluentBuilder {
-    /// Creates a new `CreateWorkforce`.
+    /// Creates a new `CreateWorkforceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

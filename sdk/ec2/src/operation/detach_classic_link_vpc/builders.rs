@@ -51,7 +51,7 @@ impl
     }
 }
 impl DetachClassicLinkVpcFluentBuilder {
-    /// Creates a new `DetachClassicLinkVpc`.
+    /// Creates a new `DetachClassicLinkVpcFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

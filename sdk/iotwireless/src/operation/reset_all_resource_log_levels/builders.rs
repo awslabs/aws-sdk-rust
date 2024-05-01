@@ -48,7 +48,7 @@ impl
     }
 }
 impl ResetAllResourceLogLevelsFluentBuilder {
-    /// Creates a new `ResetAllResourceLogLevels`.
+    /// Creates a new `ResetAllResourceLogLevelsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

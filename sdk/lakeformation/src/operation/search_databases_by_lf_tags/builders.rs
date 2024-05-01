@@ -48,7 +48,7 @@ impl
     }
 }
 impl SearchDatabasesByLFTagsFluentBuilder {
-    /// Creates a new `SearchDatabasesByLFTags`.
+    /// Creates a new `SearchDatabasesByLFTagsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeRiskConfigurationFluentBuilder {
-    /// Creates a new `DescribeRiskConfiguration`.
+    /// Creates a new `DescribeRiskConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

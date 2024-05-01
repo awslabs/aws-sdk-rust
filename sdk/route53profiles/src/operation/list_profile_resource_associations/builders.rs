@@ -48,7 +48,7 @@ impl
     }
 }
 impl ListProfileResourceAssociationsFluentBuilder {
-    /// Creates a new `ListProfileResourceAssociations`.
+    /// Creates a new `ListProfileResourceAssociationsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

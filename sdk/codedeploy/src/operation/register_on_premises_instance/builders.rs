@@ -50,7 +50,7 @@ impl
     }
 }
 impl RegisterOnPremisesInstanceFluentBuilder {
-    /// Creates a new `RegisterOnPremisesInstance`.
+    /// Creates a new `RegisterOnPremisesInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -51,7 +51,7 @@ impl
     }
 }
 impl DescribeLunaClientFluentBuilder {
-    /// Creates a new `DescribeLunaClient`.
+    /// Creates a new `DescribeLunaClientFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

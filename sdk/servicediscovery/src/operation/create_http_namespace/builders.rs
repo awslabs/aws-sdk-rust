@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateHttpNamespaceFluentBuilder {
-    /// Creates a new `CreateHttpNamespace`.
+    /// Creates a new `CreateHttpNamespaceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

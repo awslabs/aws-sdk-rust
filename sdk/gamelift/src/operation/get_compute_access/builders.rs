@@ -63,7 +63,7 @@ impl
     }
 }
 impl GetComputeAccessFluentBuilder {
-    /// Creates a new `GetComputeAccess`.
+    /// Creates a new `GetComputeAccessFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

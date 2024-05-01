@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeregisterGatewayInstanceFluentBuilder {
-    /// Creates a new `DeregisterGatewayInstance`.
+    /// Creates a new `DeregisterGatewayInstanceFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

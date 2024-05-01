@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteAdapterVersionFluentBuilder {
-    /// Creates a new `DeleteAdapterVersion`.
+    /// Creates a new `DeleteAdapterVersionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

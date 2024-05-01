@@ -48,7 +48,7 @@ impl
     }
 }
 impl ImportComponentFluentBuilder {
-    /// Creates a new `ImportComponent`.
+    /// Creates a new `ImportComponentFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -62,7 +62,7 @@ impl
     }
 }
 impl UntagResourcesFluentBuilder {
-    /// Creates a new `UntagResources`.
+    /// Creates a new `UntagResourcesFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -49,7 +49,7 @@ impl
     }
 }
 impl DeleteObjectsOnCancelFluentBuilder {
-    /// Creates a new `DeleteObjectsOnCancel`.
+    /// Creates a new `DeleteObjectsOnCancelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

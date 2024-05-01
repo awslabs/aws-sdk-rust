@@ -48,7 +48,7 @@ impl
     }
 }
 impl DeleteContainerRecipeFluentBuilder {
-    /// Creates a new `DeleteContainerRecipe`.
+    /// Creates a new `DeleteContainerRecipeFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

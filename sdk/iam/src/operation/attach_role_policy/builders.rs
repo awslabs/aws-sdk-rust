@@ -52,7 +52,7 @@ impl
     }
 }
 impl AttachRolePolicyFluentBuilder {
-    /// Creates a new `AttachRolePolicy`.
+    /// Creates a new `AttachRolePolicyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

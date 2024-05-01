@@ -48,7 +48,7 @@ impl
     }
 }
 impl BatchGetSchemaAnalysisRuleFluentBuilder {
-    /// Creates a new `BatchGetSchemaAnalysisRule`.
+    /// Creates a new `BatchGetSchemaAnalysisRuleFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

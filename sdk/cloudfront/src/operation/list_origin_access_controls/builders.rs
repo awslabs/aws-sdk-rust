@@ -49,7 +49,7 @@ impl
     }
 }
 impl ListOriginAccessControlsFluentBuilder {
-    /// Creates a new `ListOriginAccessControls`.
+    /// Creates a new `ListOriginAccessControlsFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

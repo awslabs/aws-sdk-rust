@@ -50,7 +50,7 @@ impl
     }
 }
 impl ExitStandbyFluentBuilder {
-    /// Creates a new `ExitStandby`.
+    /// Creates a new `ExitStandbyFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

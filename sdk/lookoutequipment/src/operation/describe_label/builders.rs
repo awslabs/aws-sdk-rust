@@ -48,7 +48,7 @@ impl
     }
 }
 impl DescribeLabelFluentBuilder {
-    /// Creates a new `DescribeLabel`.
+    /// Creates a new `DescribeLabelFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

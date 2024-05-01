@@ -52,7 +52,7 @@ impl
     }
 }
 impl DeregisterDelegatedAdministratorFluentBuilder {
-    /// Creates a new `DeregisterDelegatedAdministrator`.
+    /// Creates a new `DeregisterDelegatedAdministratorFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

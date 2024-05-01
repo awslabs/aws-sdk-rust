@@ -48,7 +48,7 @@ impl
     }
 }
 impl GetCSVHeaderFluentBuilder {
-    /// Creates a new `GetCSVHeader`.
+    /// Creates a new `GetCSVHeaderFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

@@ -29,7 +29,7 @@ impl
 pub struct DeleteInstanceAccessControlAttributeConfigurationFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::delete_instance_access_control_attribute_configuration::builders::DeleteInstanceAccessControlAttributeConfigurationInputBuilder,
-                config_override: ::std::option::Option<crate::config::Builder>,
+config_override: ::std::option::Option<crate::config::Builder>,
             }
 impl
     crate::client::customize::internal::CustomizableSend<
@@ -50,7 +50,7 @@ impl
     }
 }
 impl DeleteInstanceAccessControlAttributeConfigurationFluentBuilder {
-    /// Creates a new `DeleteInstanceAccessControlAttributeConfiguration`.
+    /// Creates a new `DeleteInstanceAccessControlAttributeConfigurationFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,

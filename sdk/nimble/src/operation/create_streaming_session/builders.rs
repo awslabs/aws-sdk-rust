@@ -49,7 +49,7 @@ impl
     }
 }
 impl CreateStreamingSessionFluentBuilder {
-    /// Creates a new `CreateStreamingSession`.
+    /// Creates a new `CreateStreamingSessionFluentBuilder`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
