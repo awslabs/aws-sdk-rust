@@ -170,24 +170,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListImportJo
                 output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
-                ::std::write!(output, "/v2/email/import-jobs").expect("formatting should succeed");
-                ::std::result::Result::Ok(())
-            }
-            fn uri_query(
-                _input: &crate::operation::list_import_jobs::ListImportJobsInput,
-                mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if let ::std::option::Option::Some(inner_1) = &_input.next_token {
-                    {
-                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_1));
-                    }
-                }
-                if let ::std::option::Option::Some(inner_2) = &_input.page_size {
-                    {
-                        query.push_kv("PageSize", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
-                    }
-                }
+                ::std::write!(output, "/v2/email/import-jobs/list").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -197,8 +180,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListImportJo
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
-                uri_query(input, &mut uri)?;
-                ::std::result::Result::Ok(builder.method("GET").uri(uri))
+                ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");

@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`throughput(i32)`](crate::operation::create_volume::builders::CreateVolumeFluentBuilder::throughput) / [`set_throughput(Option<i32>)`](crate::operation::create_volume::builders::CreateVolumeFluentBuilder::set_throughput):<br>required: **false**<br><p>The throughput to provision for a volume, with a maximum of 1,000 MiB/s.</p> <p>This parameter is valid only for <code>gp3</code> volumes.</p> <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p><br>
     ///   - [`client_token(impl Into<String>)`](crate::operation::create_volume::builders::CreateVolumeFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::create_volume::builders::CreateVolumeFluentBuilder::set_client_token):<br>required: **false**<br><p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure Idempotency</a>.</p><br>
     /// - On success, responds with [`CreateVolumeOutput`](crate::operation::create_volume::CreateVolumeOutput) with field(s):
-    ///   - [`attachments(Option<Vec::<VolumeAttachment>>)`](crate::operation::create_volume::CreateVolumeOutput::attachments): <p>Information about the volume attachments.</p>
+    ///   - [`attachments(Option<Vec::<VolumeAttachment>>)`](crate::operation::create_volume::CreateVolumeOutput::attachments): <note>  <p>This parameter is not returned by CreateVolume.</p> </note> <p>Information about the volume attachments.</p>
     ///   - [`availability_zone(Option<String>)`](crate::operation::create_volume::CreateVolumeOutput::availability_zone): <p>The Availability Zone for the volume.</p>
     ///   - [`create_time(Option<DateTime>)`](crate::operation::create_volume::CreateVolumeOutput::create_time): <p>The time stamp when volume creation was initiated.</p>
     ///   - [`encrypted(Option<bool>)`](crate::operation::create_volume::CreateVolumeOutput::encrypted): <p>Indicates whether the volume is encrypted.</p>
@@ -30,10 +30,10 @@ impl super::Client {
     ///   - [`iops(Option<i32>)`](crate::operation::create_volume::CreateVolumeOutput::iops): <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::create_volume::CreateVolumeOutput::tags): <p>Any tags assigned to the volume.</p>
     ///   - [`volume_type(Option<VolumeType>)`](crate::operation::create_volume::CreateVolumeOutput::volume_type): <p>The volume type.</p>
-    ///   - [`fast_restored(Option<bool>)`](crate::operation::create_volume::CreateVolumeOutput::fast_restored): <p>Indicates whether the volume was created using fast snapshot restore.</p>
+    ///   - [`fast_restored(Option<bool>)`](crate::operation::create_volume::CreateVolumeOutput::fast_restored): <note>  <p>This parameter is not returned by CreateVolume.</p> </note> <p>Indicates whether the volume was created using fast snapshot restore.</p>
     ///   - [`multi_attach_enabled(Option<bool>)`](crate::operation::create_volume::CreateVolumeOutput::multi_attach_enabled): <p>Indicates whether Amazon EBS Multi-Attach is enabled.</p>
     ///   - [`throughput(Option<i32>)`](crate::operation::create_volume::CreateVolumeOutput::throughput): <p>The throughput that the volume supports, in MiB/s.</p>
-    ///   - [`sse_type(Option<SseType>)`](crate::operation::create_volume::CreateVolumeOutput::sse_type): <p>Reserved for future use.</p>
+    ///   - [`sse_type(Option<SseType>)`](crate::operation::create_volume::CreateVolumeOutput::sse_type): <note>  <p>This parameter is not returned by CreateVolume.</p> </note> <p>Reserved for future use.</p>
     /// - On failure, responds with [`SdkError<CreateVolumeError>`](crate::operation::create_volume::CreateVolumeError)
     pub fn create_volume(&self) -> crate::operation::create_volume::builders::CreateVolumeFluentBuilder {
         crate::operation::create_volume::builders::CreateVolumeFluentBuilder::new(self.handle.clone())

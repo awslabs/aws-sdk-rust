@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartConfigurationPolicyAssociationInput {
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of a configuration policy, the universally unique identifier (UUID) of a configuration policy, or a value of <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration.</p>
     pub configuration_policy_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the target account, organizational unit, or the root to associate with the specified configuration.</p>
     pub target: ::std::option::Option<crate::types::Target>,
 }
 impl StartConfigurationPolicyAssociationInput {
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of a configuration policy, the universally unique identifier (UUID) of a configuration policy, or a value of <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration.</p>
     pub fn configuration_policy_identifier(&self) -> ::std::option::Option<&str> {
         self.configuration_policy_identifier.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct StartConfigurationPolicyAssociationInputBuilder {
     pub(crate) target: ::std::option::Option<crate::types::Target>,
 }
 impl StartConfigurationPolicyAssociationInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of a configuration policy, the universally unique identifier (UUID) of a configuration policy, or a value of <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration.</p>
     /// This field is required.
     pub fn configuration_policy_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_policy_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of a configuration policy, the universally unique identifier (UUID) of a configuration policy, or a value of <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration.</p>
     pub fn set_configuration_policy_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_policy_identifier = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of a configuration policy, the universally unique identifier (UUID) of a configuration policy, or a value of <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration.</p>
     pub fn get_configuration_policy_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_policy_identifier
     }

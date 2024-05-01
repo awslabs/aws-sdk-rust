@@ -863,6 +863,33 @@ pub(crate) fn chunking_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn mongo_db_atlas_configuration_correct_errors(
+    mut builder: crate::types::builders::MongoDbAtlasConfigurationBuilder,
+) -> crate::types::builders::MongoDbAtlasConfigurationBuilder {
+    if builder.endpoint.is_none() {
+        builder.endpoint = Some(Default::default())
+    }
+    if builder.database_name.is_none() {
+        builder.database_name = Some(Default::default())
+    }
+    if builder.collection_name.is_none() {
+        builder.collection_name = Some(Default::default())
+    }
+    if builder.vector_index_name.is_none() {
+        builder.vector_index_name = Some(Default::default())
+    }
+    if builder.credentials_secret_arn.is_none() {
+        builder.credentials_secret_arn = Some(Default::default())
+    }
+    if builder.field_mapping.is_none() {
+        builder.field_mapping = {
+            let builder = crate::types::builders::MongoDbAtlasFieldMappingBuilder::default();
+            crate::serde_util::mongo_db_atlas_field_mapping_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn open_search_serverless_configuration_correct_errors(
     mut builder: crate::types::builders::OpenSearchServerlessConfigurationBuilder,
 ) -> crate::types::builders::OpenSearchServerlessConfigurationBuilder {
@@ -981,6 +1008,21 @@ pub(crate) fn fixed_size_chunking_configuration_correct_errors(
 pub(crate) fn function_correct_errors(mut builder: crate::types::builders::FunctionBuilder) -> crate::types::builders::FunctionBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn mongo_db_atlas_field_mapping_correct_errors(
+    mut builder: crate::types::builders::MongoDbAtlasFieldMappingBuilder,
+) -> crate::types::builders::MongoDbAtlasFieldMappingBuilder {
+    if builder.vector_field.is_none() {
+        builder.vector_field = Some(Default::default())
+    }
+    if builder.text_field.is_none() {
+        builder.text_field = Some(Default::default())
+    }
+    if builder.metadata_field.is_none() {
+        builder.metadata_field = Some(Default::default())
     }
     builder
 }

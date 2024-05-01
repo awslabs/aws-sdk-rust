@@ -4,6 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Volume {
+    /// <note>
+    /// <p>This parameter is not returned by CreateVolume.</p>
+    /// </note>
     /// <p>Information about the volume attachments.</p>
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::VolumeAttachment>>,
     /// <p>The Availability Zone for the volume.</p>
@@ -30,16 +33,25 @@ pub struct Volume {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The volume type.</p>
     pub volume_type: ::std::option::Option<crate::types::VolumeType>,
+    /// <note>
+    /// <p>This parameter is not returned by CreateVolume.</p>
+    /// </note>
     /// <p>Indicates whether the volume was created using fast snapshot restore.</p>
     pub fast_restored: ::std::option::Option<bool>,
     /// <p>Indicates whether Amazon EBS Multi-Attach is enabled.</p>
     pub multi_attach_enabled: ::std::option::Option<bool>,
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     pub throughput: ::std::option::Option<i32>,
+    /// <note>
+    /// <p>This parameter is not returned by CreateVolume.</p>
+    /// </note>
     /// <p>Reserved for future use.</p>
     pub sse_type: ::std::option::Option<crate::types::SseType>,
 }
 impl Volume {
+    /// <note>
+    /// <p>This parameter is not returned by CreateVolume.</p>
+    /// </note>
     /// <p>Information about the volume attachments.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
@@ -96,6 +108,9 @@ impl Volume {
     pub fn volume_type(&self) -> ::std::option::Option<&crate::types::VolumeType> {
         self.volume_type.as_ref()
     }
+    /// <note>
+    /// <p>This parameter is not returned by CreateVolume.</p>
+    /// </note>
     /// <p>Indicates whether the volume was created using fast snapshot restore.</p>
     pub fn fast_restored(&self) -> ::std::option::Option<bool> {
         self.fast_restored
@@ -108,6 +123,9 @@ impl Volume {
     pub fn throughput(&self) -> ::std::option::Option<i32> {
         self.throughput
     }
+    /// <note>
+    /// <p>This parameter is not returned by CreateVolume.</p>
+    /// </note>
     /// <p>Reserved for future use.</p>
     pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
         self.sse_type.as_ref()
@@ -147,6 +165,9 @@ impl VolumeBuilder {
     ///
     /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
     ///
+    /// <note>
+    /// <p>This parameter is not returned by CreateVolume.</p>
+    /// </note>
     /// <p>Information about the volume attachments.</p>
     pub fn attachments(mut self, input: crate::types::VolumeAttachment) -> Self {
         let mut v = self.attachments.unwrap_or_default();
@@ -154,11 +175,17 @@ impl VolumeBuilder {
         self.attachments = ::std::option::Option::Some(v);
         self
     }
+    /// <note>
+    /// <p>This parameter is not returned by CreateVolume.</p>
+    /// </note>
     /// <p>Information about the volume attachments.</p>
     pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeAttachment>>) -> Self {
         self.attachments = input;
         self
     }
+    /// <note>
+    /// <p>This parameter is not returned by CreateVolume.</p>
+    /// </note>
     /// <p>Information about the volume attachments.</p>
     pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeAttachment>> {
         &self.attachments
@@ -337,16 +364,25 @@ impl VolumeBuilder {
     pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::VolumeType> {
         &self.volume_type
     }
+    /// <note>
+    /// <p>This parameter is not returned by CreateVolume.</p>
+    /// </note>
     /// <p>Indicates whether the volume was created using fast snapshot restore.</p>
     pub fn fast_restored(mut self, input: bool) -> Self {
         self.fast_restored = ::std::option::Option::Some(input);
         self
     }
+    /// <note>
+    /// <p>This parameter is not returned by CreateVolume.</p>
+    /// </note>
     /// <p>Indicates whether the volume was created using fast snapshot restore.</p>
     pub fn set_fast_restored(mut self, input: ::std::option::Option<bool>) -> Self {
         self.fast_restored = input;
         self
     }
+    /// <note>
+    /// <p>This parameter is not returned by CreateVolume.</p>
+    /// </note>
     /// <p>Indicates whether the volume was created using fast snapshot restore.</p>
     pub fn get_fast_restored(&self) -> &::std::option::Option<bool> {
         &self.fast_restored
@@ -379,16 +415,25 @@ impl VolumeBuilder {
     pub fn get_throughput(&self) -> &::std::option::Option<i32> {
         &self.throughput
     }
+    /// <note>
+    /// <p>This parameter is not returned by CreateVolume.</p>
+    /// </note>
     /// <p>Reserved for future use.</p>
     pub fn sse_type(mut self, input: crate::types::SseType) -> Self {
         self.sse_type = ::std::option::Option::Some(input);
         self
     }
+    /// <note>
+    /// <p>This parameter is not returned by CreateVolume.</p>
+    /// </note>
     /// <p>Reserved for future use.</p>
     pub fn set_sse_type(mut self, input: ::std::option::Option<crate::types::SseType>) -> Self {
         self.sse_type = input;
         self
     }
+    /// <note>
+    /// <p>This parameter is not returned by CreateVolume.</p>
+    /// </note>
     /// <p>Reserved for future use.</p>
     pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
         &self.sse_type

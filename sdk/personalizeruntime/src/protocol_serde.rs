@@ -58,3 +58,5 @@ pub(crate) mod shape_predicted_action;
 pub(crate) mod shape_predicted_item;
 
 pub(crate) mod shape_metadata;
+
+pub(crate) mod shape_reason_list;

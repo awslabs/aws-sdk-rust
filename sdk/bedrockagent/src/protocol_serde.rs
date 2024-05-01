@@ -257,6 +257,8 @@ pub(crate) mod shape_ingestion_job_summary;
 
 pub(crate) mod shape_knowledge_base_summary;
 
+pub(crate) mod shape_mongo_db_atlas_configuration;
+
 pub(crate) mod shape_open_search_serverless_configuration;
 
 pub(crate) mod shape_pinecone_configuration;
@@ -284,6 +286,8 @@ pub(crate) mod shape_fixed_size_chunking_configuration;
 pub(crate) mod shape_functions;
 
 pub(crate) mod shape_inference_configuration;
+
+pub(crate) mod shape_mongo_db_atlas_field_mapping;
 
 pub(crate) mod shape_open_search_serverless_field_mapping;
 

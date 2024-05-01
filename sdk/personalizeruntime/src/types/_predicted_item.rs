@@ -3,7 +3,7 @@
 /// <p>An object that identifies an item.</p>
 /// <p>The and APIs return a list of <code>PredictedItem</code>s.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PredictedItem {
     /// <p>The recommended item ID.</p>
     pub item_id: ::std::option::Option<::std::string::String>,
@@ -13,6 +13,16 @@ pub struct PredictedItem {
     pub promotion_name: ::std::option::Option<::std::string::String>,
     /// <p>Metadata about the item from your Items dataset.</p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>If you use User-Personalization-v2, a list of reasons for why the item was included in recommendations. Possible reasons include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Promoted item - Indicates the item was included as part of a promotion that you applied in your recommendation request.</p></li>
+    /// <li>
+    /// <p>Exploration - Indicates the item was included with exploration. With exploration, recommendations include items with less interactions data or relevance for the user. For more information about exploration, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#about-exploration">Exploration</a>.</p></li>
+    /// <li>
+    /// <p>Popular item - Indicates the item was included as a placeholder popular item. If you use a filter, depending on how many recommendations the filter removes, Amazon Personalize might add placeholder items to meet the <code>numResults</code> for your recommendation request. These items are popular items, based on interactions data, that satisfy your filter criteria. They don't have a relevance score for the user.</p></li>
+    /// </ul>
+    pub reason: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PredictedItem {
     /// <p>The recommended item ID.</p>
@@ -31,6 +41,31 @@ impl PredictedItem {
     pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
+    /// <p>If you use User-Personalization-v2, a list of reasons for why the item was included in recommendations. Possible reasons include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Promoted item - Indicates the item was included as part of a promotion that you applied in your recommendation request.</p></li>
+    /// <li>
+    /// <p>Exploration - Indicates the item was included with exploration. With exploration, recommendations include items with less interactions data or relevance for the user. For more information about exploration, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#about-exploration">Exploration</a>.</p></li>
+    /// <li>
+    /// <p>Popular item - Indicates the item was included as a placeholder popular item. If you use a filter, depending on how many recommendations the filter removes, Amazon Personalize might add placeholder items to meet the <code>numResults</code> for your recommendation request. These items are popular items, based on interactions data, that satisfy your filter criteria. They don't have a relevance score for the user.</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reason.is_none()`.
+    pub fn reason(&self) -> &[::std::string::String] {
+        self.reason.as_deref().unwrap_or_default()
+    }
+}
+impl ::std::fmt::Debug for PredictedItem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PredictedItem");
+        formatter.field("item_id", &self.item_id);
+        formatter.field("score", &self.score);
+        formatter.field("promotion_name", &self.promotion_name);
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("reason", &self.reason);
+        formatter.finish()
+    }
 }
 impl PredictedItem {
     /// Creates a new builder-style object to manufacture [`PredictedItem`](crate::types::PredictedItem).
@@ -41,12 +76,13 @@ impl PredictedItem {
 
 /// A builder for [`PredictedItem`](crate::types::PredictedItem).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PredictedItemBuilder {
     pub(crate) item_id: ::std::option::Option<::std::string::String>,
     pub(crate) score: ::std::option::Option<f64>,
     pub(crate) promotion_name: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) reason: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PredictedItemBuilder {
     /// <p>The recommended item ID.</p>
@@ -111,6 +147,50 @@ impl PredictedItemBuilder {
     pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
+    /// Appends an item to `reason`.
+    ///
+    /// To override the contents of this collection use [`set_reason`](Self::set_reason).
+    ///
+    /// <p>If you use User-Personalization-v2, a list of reasons for why the item was included in recommendations. Possible reasons include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Promoted item - Indicates the item was included as part of a promotion that you applied in your recommendation request.</p></li>
+    /// <li>
+    /// <p>Exploration - Indicates the item was included with exploration. With exploration, recommendations include items with less interactions data or relevance for the user. For more information about exploration, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#about-exploration">Exploration</a>.</p></li>
+    /// <li>
+    /// <p>Popular item - Indicates the item was included as a placeholder popular item. If you use a filter, depending on how many recommendations the filter removes, Amazon Personalize might add placeholder items to meet the <code>numResults</code> for your recommendation request. These items are popular items, based on interactions data, that satisfy your filter criteria. They don't have a relevance score for the user.</p></li>
+    /// </ul>
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.reason.unwrap_or_default();
+        v.push(input.into());
+        self.reason = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>If you use User-Personalization-v2, a list of reasons for why the item was included in recommendations. Possible reasons include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Promoted item - Indicates the item was included as part of a promotion that you applied in your recommendation request.</p></li>
+    /// <li>
+    /// <p>Exploration - Indicates the item was included with exploration. With exploration, recommendations include items with less interactions data or relevance for the user. For more information about exploration, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#about-exploration">Exploration</a>.</p></li>
+    /// <li>
+    /// <p>Popular item - Indicates the item was included as a placeholder popular item. If you use a filter, depending on how many recommendations the filter removes, Amazon Personalize might add placeholder items to meet the <code>numResults</code> for your recommendation request. These items are popular items, based on interactions data, that satisfy your filter criteria. They don't have a relevance score for the user.</p></li>
+    /// </ul>
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.reason = input;
+        self
+    }
+    /// <p>If you use User-Personalization-v2, a list of reasons for why the item was included in recommendations. Possible reasons include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Promoted item - Indicates the item was included as part of a promotion that you applied in your recommendation request.</p></li>
+    /// <li>
+    /// <p>Exploration - Indicates the item was included with exploration. With exploration, recommendations include items with less interactions data or relevance for the user. For more information about exploration, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#about-exploration">Exploration</a>.</p></li>
+    /// <li>
+    /// <p>Popular item - Indicates the item was included as a placeholder popular item. If you use a filter, depending on how many recommendations the filter removes, Amazon Personalize might add placeholder items to meet the <code>numResults</code> for your recommendation request. These items are popular items, based on interactions data, that satisfy your filter criteria. They don't have a relevance score for the user.</p></li>
+    /// </ul>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.reason
+    }
     /// Consumes the builder and constructs a [`PredictedItem`](crate::types::PredictedItem).
     pub fn build(self) -> crate::types::PredictedItem {
         crate::types::PredictedItem {
@@ -118,6 +198,18 @@ impl PredictedItemBuilder {
             score: self.score,
             promotion_name: self.promotion_name,
             metadata: self.metadata,
+            reason: self.reason,
         }
+    }
+}
+impl ::std::fmt::Debug for PredictedItemBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PredictedItemBuilder");
+        formatter.field("item_id", &self.item_id);
+        formatter.field("score", &self.score);
+        formatter.field("promotion_name", &self.promotion_name);
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("reason", &self.reason);
+        formatter.finish()
     }
 }

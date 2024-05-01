@@ -22,7 +22,7 @@ impl crate::operation::delete_transit_gateway_route_table::builders::DeleteTrans
 }
 /// Fluent builder constructing a request to `DeleteTransitGatewayRouteTable`.
 ///
-/// <p>Deletes the specified transit gateway route table. You must disassociate the route table from any transit gateway route tables before you can delete it.</p>
+/// <p>Deletes the specified transit gateway route table. If there are any route tables associated with the transit gateway route table, you must first run <code>DisassociateRouteTable</code> before you can delete the transit gateway route table. This removes any route tables associated with the transit gateway route table.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTransitGatewayRouteTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

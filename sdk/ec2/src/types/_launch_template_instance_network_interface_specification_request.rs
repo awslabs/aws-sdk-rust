@@ -14,7 +14,7 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>A description for the network interface.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The device index for the network interface attachment.</p>
+    /// <p>The device index for the network interface attachment. Each network interface requires a device index. If you create a launch template that includes secondary network interfaces but not a primary network interface, then you must add a primary network interface as a launch parameter when you launch an instance from the template.</p>
     pub device_index: ::std::option::Option<i32>,
     /// <p>The IDs of one or more security groups.</p>
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,7 +72,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The device index for the network interface attachment.</p>
+    /// <p>The device index for the network interface attachment. Each network interface requires a device index. If you create a launch template that includes secondary network interfaces but not a primary network interface, then you must add a primary network interface as a launch parameter when you launch an instance from the template.</p>
     pub fn device_index(&self) -> ::std::option::Option<i32> {
         self.device_index
     }
@@ -254,17 +254,17 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The device index for the network interface attachment.</p>
+    /// <p>The device index for the network interface attachment. Each network interface requires a device index. If you create a launch template that includes secondary network interfaces but not a primary network interface, then you must add a primary network interface as a launch parameter when you launch an instance from the template.</p>
     pub fn device_index(mut self, input: i32) -> Self {
         self.device_index = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The device index for the network interface attachment.</p>
+    /// <p>The device index for the network interface attachment. Each network interface requires a device index. If you create a launch template that includes secondary network interfaces but not a primary network interface, then you must add a primary network interface as a launch parameter when you launch an instance from the template.</p>
     pub fn set_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.device_index = input;
         self
     }
-    /// <p>The device index for the network interface attachment.</p>
+    /// <p>The device index for the network interface attachment. Each network interface requires a device index. If you create a launch template that includes secondary network interfaces but not a primary network interface, then you must add a primary network interface as a launch parameter when you launch an instance from the template.</p>
     pub fn get_device_index(&self) -> &::std::option::Option<i32> {
         &self.device_index
     }

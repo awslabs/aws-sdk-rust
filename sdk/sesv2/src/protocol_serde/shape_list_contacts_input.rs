@@ -9,5 +9,14 @@ pub fn ser_list_contacts_input_input(
         crate::protocol_serde::shape_list_contacts_filter::ser_list_contacts_filter(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.next_token {
+        object.key("NextToken").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.page_size {
+        object.key("PageSize").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
     Ok(())
 }

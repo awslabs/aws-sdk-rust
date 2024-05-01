@@ -25,6 +25,10 @@ pub use crate::types::_knowledge_base_status::KnowledgeBaseStatus;
 
 pub use crate::types::_storage_configuration::StorageConfiguration;
 
+pub use crate::types::_mongo_db_atlas_configuration::MongoDbAtlasConfiguration;
+
+pub use crate::types::_mongo_db_atlas_field_mapping::MongoDbAtlasFieldMapping;
+
 pub use crate::types::_rds_configuration::RdsConfiguration;
 
 pub use crate::types::_rds_field_mapping::RdsFieldMapping;
@@ -234,6 +238,10 @@ mod _knowledge_base_storage_type;
 mod _knowledge_base_summary;
 
 mod _knowledge_base_type;
+
+mod _mongo_db_atlas_configuration;
+
+mod _mongo_db_atlas_field_mapping;
 
 mod _open_search_serverless_configuration;
 

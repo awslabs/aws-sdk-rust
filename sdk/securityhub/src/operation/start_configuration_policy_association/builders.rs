@@ -109,17 +109,17 @@ impl StartConfigurationPolicyAssociationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of a configuration policy, the universally unique identifier (UUID) of a configuration policy, or a value of <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration.</p>
     pub fn configuration_policy_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_policy_identifier(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of a configuration policy, the universally unique identifier (UUID) of a configuration policy, or a value of <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration.</p>
     pub fn set_configuration_policy_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_policy_identifier(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of a configuration policy, the universally unique identifier (UUID) of a configuration policy, or a value of <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration.</p>
     pub fn get_configuration_policy_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_policy_identifier()
     }

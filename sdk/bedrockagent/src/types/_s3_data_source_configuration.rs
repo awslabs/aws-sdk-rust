@@ -8,7 +8,7 @@ pub struct S3DataSourceConfiguration {
     pub bucket_arn: ::std::string::String,
     /// <p>A list of S3 prefixes that define the object containing the data sources. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a>.</p>
     pub inclusion_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The account ID for the owner of the S3 bucket.</p>
+    /// <p>The bucket account owner ID for the S3 bucket.</p>
     pub bucket_owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl S3DataSourceConfiguration {
@@ -23,7 +23,7 @@ impl S3DataSourceConfiguration {
     pub fn inclusion_prefixes(&self) -> &[::std::string::String] {
         self.inclusion_prefixes.as_deref().unwrap_or_default()
     }
-    /// <p>The account ID for the owner of the S3 bucket.</p>
+    /// <p>The bucket account owner ID for the S3 bucket.</p>
     pub fn bucket_owner_account_id(&self) -> ::std::option::Option<&str> {
         self.bucket_owner_account_id.as_deref()
     }
@@ -79,17 +79,17 @@ impl S3DataSourceConfigurationBuilder {
     pub fn get_inclusion_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.inclusion_prefixes
     }
-    /// <p>The account ID for the owner of the S3 bucket.</p>
+    /// <p>The bucket account owner ID for the S3 bucket.</p>
     pub fn bucket_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_owner_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The account ID for the owner of the S3 bucket.</p>
+    /// <p>The bucket account owner ID for the S3 bucket.</p>
     pub fn set_bucket_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_owner_account_id = input;
         self
     }
-    /// <p>The account ID for the owner of the S3 bucket.</p>
+    /// <p>The bucket account owner ID for the S3 bucket.</p>
     pub fn get_bucket_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket_owner_account_id
     }

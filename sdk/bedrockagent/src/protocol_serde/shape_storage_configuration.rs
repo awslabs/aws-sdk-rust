@@ -30,6 +30,12 @@ pub fn ser_storage_configuration(
         crate::protocol_serde::shape_rds_configuration::ser_rds_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.mongo_db_atlas_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("mongoDbAtlasConfiguration").start_object();
+        crate::protocol_serde::shape_mongo_db_atlas_configuration::ser_mongo_db_atlas_configuration(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }
 
@@ -71,6 +77,11 @@ where
                         }
                         "rdsConfiguration" => {
                             builder = builder.set_rds_configuration(crate::protocol_serde::shape_rds_configuration::de_rds_configuration(tokens)?);
+                        }
+                        "mongoDbAtlasConfiguration" => {
+                            builder = builder.set_mongo_db_atlas_configuration(
+                                crate::protocol_serde::shape_mongo_db_atlas_configuration::de_mongo_db_atlas_configuration(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

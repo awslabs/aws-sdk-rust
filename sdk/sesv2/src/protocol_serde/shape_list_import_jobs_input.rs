@@ -6,5 +6,14 @@ pub fn ser_list_import_jobs_input_input(
     if let Some(var_1) = &input.import_destination_type {
         object.key("ImportDestinationType").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.next_token {
+        object.key("NextToken").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.page_size {
+        object.key("PageSize").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
     Ok(())
 }

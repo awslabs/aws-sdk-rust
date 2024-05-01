@@ -15,6 +15,10 @@ pub use crate::types::_knowledge_base::KnowledgeBaseBuilder;
 
 pub use crate::types::_storage_configuration::StorageConfigurationBuilder;
 
+pub use crate::types::_mongo_db_atlas_configuration::MongoDbAtlasConfigurationBuilder;
+
+pub use crate::types::_mongo_db_atlas_field_mapping::MongoDbAtlasFieldMappingBuilder;
+
 pub use crate::types::_rds_configuration::RdsConfigurationBuilder;
 
 pub use crate::types::_rds_field_mapping::RdsFieldMappingBuilder;
