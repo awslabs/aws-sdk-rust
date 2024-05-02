@@ -9,6 +9,8 @@ pub struct UpdateGlobalSecondaryIndexAction {
     /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
+    /// <p>Updates the maximum number of read and write units for the specified global secondary index. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
 }
 impl UpdateGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be updated.</p>
@@ -20,6 +22,10 @@ impl UpdateGlobalSecondaryIndexAction {
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn provisioned_throughput(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
+    }
+    /// <p>Updates the maximum number of read and write units for the specified global secondary index. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput(&self) -> ::std::option::Option<&crate::types::OnDemandThroughput> {
+        self.on_demand_throughput.as_ref()
     }
 }
 impl UpdateGlobalSecondaryIndexAction {
@@ -35,6 +41,7 @@ impl UpdateGlobalSecondaryIndexAction {
 pub struct UpdateGlobalSecondaryIndexActionBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
+    pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
 }
 impl UpdateGlobalSecondaryIndexActionBuilder {
     /// <p>The name of the global secondary index to be updated.</p>
@@ -54,7 +61,6 @@ impl UpdateGlobalSecondaryIndexActionBuilder {
     }
     /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    /// This field is required.
     pub fn provisioned_throughput(mut self, input: crate::types::ProvisionedThroughput) -> Self {
         self.provisioned_throughput = ::std::option::Option::Some(input);
         self
@@ -70,6 +76,20 @@ impl UpdateGlobalSecondaryIndexActionBuilder {
     pub fn get_provisioned_throughput(&self) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
         &self.provisioned_throughput
     }
+    /// <p>Updates the maximum number of read and write units for the specified global secondary index. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput(mut self, input: crate::types::OnDemandThroughput) -> Self {
+        self.on_demand_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updates the maximum number of read and write units for the specified global secondary index. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn set_on_demand_throughput(mut self, input: ::std::option::Option<crate::types::OnDemandThroughput>) -> Self {
+        self.on_demand_throughput = input;
+        self
+    }
+    /// <p>Updates the maximum number of read and write units for the specified global secondary index. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn get_on_demand_throughput(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
+        &self.on_demand_throughput
+    }
     /// Consumes the builder and constructs a [`UpdateGlobalSecondaryIndexAction`](crate::types::UpdateGlobalSecondaryIndexAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`index_name`](crate::types::builders::UpdateGlobalSecondaryIndexActionBuilder::index_name)
@@ -82,6 +102,7 @@ impl UpdateGlobalSecondaryIndexActionBuilder {
                 )
             })?,
             provisioned_throughput: self.provisioned_throughput,
+            on_demand_throughput: self.on_demand_throughput,
         })
     }
 }

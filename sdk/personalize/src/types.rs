@@ -47,6 +47,8 @@ pub use crate::types::_dataset_group_summary::DatasetGroupSummary;
 
 pub use crate::types::_dataset_export_job_summary::DatasetExportJobSummary;
 
+pub use crate::types::_data_deletion_job_summary::DataDeletionJobSummary;
+
 pub use crate::types::_campaign_summary::CampaignSummary;
 
 pub use crate::types::_batch_segment_job_summary::BatchSegmentJobSummary;
@@ -118,6 +120,8 @@ pub use crate::types::_ingestion_mode::IngestionMode;
 pub use crate::types::_dataset::Dataset;
 
 pub use crate::types::_dataset_update_summary::DatasetUpdateSummary;
+
+pub use crate::types::_data_deletion_job::DataDeletionJob;
 
 pub use crate::types::_campaign::Campaign;
 
@@ -194,6 +198,10 @@ mod _campaign_update_summary;
 mod _categorical_hyper_parameter_range;
 
 mod _continuous_hyper_parameter_range;
+
+mod _data_deletion_job;
+
+mod _data_deletion_job_summary;
 
 mod _data_source;
 

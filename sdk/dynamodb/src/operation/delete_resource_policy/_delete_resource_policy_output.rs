@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyOutput {
-    /// <p>A unique string that represents the revision ID of the policy. If you are comparing revision IDs, make sure to always use string comparison logic.</p>
+    /// <p>A unique string that represents the revision ID of the policy. If you're comparing revision IDs, make sure to always use string comparison logic.</p>
     /// <p>This value will be empty if you make a request against a resource without a policy.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteResourcePolicyOutput {
-    /// <p>A unique string that represents the revision ID of the policy. If you are comparing revision IDs, make sure to always use string comparison logic.</p>
+    /// <p>A unique string that represents the revision ID of the policy. If you're comparing revision IDs, make sure to always use string comparison logic.</p>
     /// <p>This value will be empty if you make a request against a resource without a policy.</p>
     pub fn revision_id(&self) -> ::std::option::Option<&str> {
         self.revision_id.as_deref()
@@ -35,19 +35,19 @@ pub struct DeleteResourcePolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteResourcePolicyOutputBuilder {
-    /// <p>A unique string that represents the revision ID of the policy. If you are comparing revision IDs, make sure to always use string comparison logic.</p>
+    /// <p>A unique string that represents the revision ID of the policy. If you're comparing revision IDs, make sure to always use string comparison logic.</p>
     /// <p>This value will be empty if you make a request against a resource without a policy.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique string that represents the revision ID of the policy. If you are comparing revision IDs, make sure to always use string comparison logic.</p>
+    /// <p>A unique string that represents the revision ID of the policy. If you're comparing revision IDs, make sure to always use string comparison logic.</p>
     /// <p>This value will be empty if you make a request against a resource without a policy.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
     }
-    /// <p>A unique string that represents the revision ID of the policy. If you are comparing revision IDs, make sure to always use string comparison logic.</p>
+    /// <p>A unique string that represents the revision ID of the policy. If you're comparing revision IDs, make sure to always use string comparison logic.</p>
     /// <p>This value will be empty if you make a request against a resource without a policy.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision_id

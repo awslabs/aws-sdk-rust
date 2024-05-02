@@ -1795,6 +1795,10 @@ pub(crate) mod shape_get_instance_metadata_defaults;
 
 pub(crate) mod shape_get_instance_metadata_defaults_input;
 
+pub(crate) mod shape_get_instance_tpm_ek_pub;
+
+pub(crate) mod shape_get_instance_tpm_ek_pub_input;
+
 pub(crate) mod shape_get_instance_types_from_instance_requirements;
 
 pub(crate) mod shape_get_instance_types_from_instance_requirements_input;

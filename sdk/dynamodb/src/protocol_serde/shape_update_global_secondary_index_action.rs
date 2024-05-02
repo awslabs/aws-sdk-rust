@@ -12,5 +12,11 @@ pub fn ser_update_global_secondary_index_action(
         crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.on_demand_throughput {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("OnDemandThroughput").start_object();
+        crate::protocol_serde::shape_on_demand_throughput::ser_on_demand_throughput(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

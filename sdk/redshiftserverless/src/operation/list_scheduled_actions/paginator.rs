@@ -130,7 +130,7 @@ impl ListScheduledActionsPaginatorItems {
         self,
     ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
         ::std::result::Result<
-            ::std::string::String,
+            crate::types::ScheduledActionAssociation,
             ::aws_smithy_runtime_api::client::result::SdkError<
                 crate::operation::list_scheduled_actions::ListScheduledActionsError,
                 ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,

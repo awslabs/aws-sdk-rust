@@ -169,6 +169,8 @@ pub struct TableDescription {
     pub table_class_summary: ::std::option::Option<crate::types::TableClassSummary>,
     /// <p>Indicates whether deletion protection is enabled (true) or disabled (false) on the table.</p>
     pub deletion_protection_enabled: ::std::option::Option<bool>,
+    /// <p>The maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
 }
 impl TableDescription {
     /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes one attribute in the table and index key schema.</p>
@@ -392,6 +394,10 @@ impl TableDescription {
     pub fn deletion_protection_enabled(&self) -> ::std::option::Option<bool> {
         self.deletion_protection_enabled
     }
+    /// <p>The maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput(&self) -> ::std::option::Option<&crate::types::OnDemandThroughput> {
+        self.on_demand_throughput.as_ref()
+    }
 }
 impl TableDescription {
     /// Creates a new builder-style object to manufacture [`TableDescription`](crate::types::TableDescription).
@@ -427,6 +433,7 @@ pub struct TableDescriptionBuilder {
     pub(crate) archival_summary: ::std::option::Option<crate::types::ArchivalSummary>,
     pub(crate) table_class_summary: ::std::option::Option<crate::types::TableClassSummary>,
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
+    pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
 }
 impl TableDescriptionBuilder {
     /// Appends an item to `attribute_definitions`.
@@ -1144,6 +1151,20 @@ impl TableDescriptionBuilder {
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection_enabled
     }
+    /// <p>The maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput(mut self, input: crate::types::OnDemandThroughput) -> Self {
+        self.on_demand_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn set_on_demand_throughput(mut self, input: ::std::option::Option<crate::types::OnDemandThroughput>) -> Self {
+        self.on_demand_throughput = input;
+        self
+    }
+    /// <p>The maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn get_on_demand_throughput(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
+        &self.on_demand_throughput
+    }
     /// Consumes the builder and constructs a [`TableDescription`](crate::types::TableDescription).
     pub fn build(self) -> crate::types::TableDescription {
         crate::types::TableDescription {
@@ -1170,6 +1191,7 @@ impl TableDescriptionBuilder {
             archival_summary: self.archival_summary,
             table_class_summary: self.table_class_summary,
             deletion_protection_enabled: self.deletion_protection_enabled,
+            on_demand_throughput: self.on_demand_throughput,
         }
     }
 }

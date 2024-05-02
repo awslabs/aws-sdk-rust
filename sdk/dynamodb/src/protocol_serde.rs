@@ -409,6 +409,8 @@ pub(crate) mod shape_kinesis_data_stream_destinations;
 
 pub(crate) mod shape_local_secondary_index;
 
+pub(crate) mod shape_on_demand_throughput;
+
 pub(crate) mod shape_parameterized_statement;
 
 pub(crate) mod shape_parti_ql_batch_response;
@@ -592,6 +594,8 @@ pub(crate) mod shape_local_secondary_indexes;
 pub(crate) mod shape_map_attribute_value;
 
 pub(crate) mod shape_number_set_attribute_value;
+
+pub(crate) mod shape_on_demand_throughput_override;
 
 pub(crate) mod shape_provisioned_throughput_override;
 

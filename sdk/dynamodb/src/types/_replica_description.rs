@@ -34,6 +34,8 @@ pub struct ReplicaDescription {
     pub kms_master_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Replica-specific provisioned throughput. If not described, uses the source table's provisioned throughput settings.</p>
     pub provisioned_throughput_override: ::std::option::Option<crate::types::ProvisionedThroughputOverride>,
+    /// <p>Overrides the maximum on-demand throughput settings for the specified replica table.</p>
+    pub on_demand_throughput_override: ::std::option::Option<crate::types::OnDemandThroughputOverride>,
     /// <p>Replica-specific global secondary index settings.</p>
     pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexDescription>>,
     /// <p>The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the <code>ReplicaStatus</code> property.</p>
@@ -84,6 +86,10 @@ impl ReplicaDescription {
     pub fn provisioned_throughput_override(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughputOverride> {
         self.provisioned_throughput_override.as_ref()
     }
+    /// <p>Overrides the maximum on-demand throughput settings for the specified replica table.</p>
+    pub fn on_demand_throughput_override(&self) -> ::std::option::Option<&crate::types::OnDemandThroughputOverride> {
+        self.on_demand_throughput_override.as_ref()
+    }
     /// <p>Replica-specific global secondary index settings.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_secondary_indexes.is_none()`.
@@ -116,6 +122,7 @@ pub struct ReplicaDescriptionBuilder {
     pub(crate) replica_status_percent_progress: ::std::option::Option<::std::string::String>,
     pub(crate) kms_master_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_throughput_override: ::std::option::Option<crate::types::ProvisionedThroughputOverride>,
+    pub(crate) on_demand_throughput_override: ::std::option::Option<crate::types::OnDemandThroughputOverride>,
     pub(crate) global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexDescription>>,
     pub(crate) replica_inaccessible_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) replica_table_class_summary: ::std::option::Option<crate::types::TableClassSummary>,
@@ -259,6 +266,20 @@ impl ReplicaDescriptionBuilder {
     pub fn get_provisioned_throughput_override(&self) -> &::std::option::Option<crate::types::ProvisionedThroughputOverride> {
         &self.provisioned_throughput_override
     }
+    /// <p>Overrides the maximum on-demand throughput settings for the specified replica table.</p>
+    pub fn on_demand_throughput_override(mut self, input: crate::types::OnDemandThroughputOverride) -> Self {
+        self.on_demand_throughput_override = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Overrides the maximum on-demand throughput settings for the specified replica table.</p>
+    pub fn set_on_demand_throughput_override(mut self, input: ::std::option::Option<crate::types::OnDemandThroughputOverride>) -> Self {
+        self.on_demand_throughput_override = input;
+        self
+    }
+    /// <p>Overrides the maximum on-demand throughput settings for the specified replica table.</p>
+    pub fn get_on_demand_throughput_override(&self) -> &::std::option::Option<crate::types::OnDemandThroughputOverride> {
+        &self.on_demand_throughput_override
+    }
     /// Appends an item to `global_secondary_indexes`.
     ///
     /// To override the contents of this collection use [`set_global_secondary_indexes`](Self::set_global_secondary_indexes).
@@ -319,6 +340,7 @@ impl ReplicaDescriptionBuilder {
             replica_status_percent_progress: self.replica_status_percent_progress,
             kms_master_key_id: self.kms_master_key_id,
             provisioned_throughput_override: self.provisioned_throughput_override,
+            on_demand_throughput_override: self.on_demand_throughput_override,
             global_secondary_indexes: self.global_secondary_indexes,
             replica_inaccessible_date_time: self.replica_inaccessible_date_time,
             replica_table_class_summary: self.replica_table_class_summary,

@@ -15,6 +15,8 @@ pub struct RestoreTableFromBackupInput {
     pub local_secondary_index_override: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>>,
     /// <p>Provisioned throughput settings for the restored table.</p>
     pub provisioned_throughput_override: ::std::option::Option<crate::types::ProvisionedThroughput>,
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub on_demand_throughput_override: ::std::option::Option<crate::types::OnDemandThroughput>,
     /// <p>The new server-side encryption settings for the restored table.</p>
     pub sse_specification_override: ::std::option::Option<crate::types::SseSpecification>,
 }
@@ -47,6 +49,10 @@ impl RestoreTableFromBackupInput {
     pub fn provisioned_throughput_override(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
         self.provisioned_throughput_override.as_ref()
     }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput_override(&self) -> ::std::option::Option<&crate::types::OnDemandThroughput> {
+        self.on_demand_throughput_override.as_ref()
+    }
     /// <p>The new server-side encryption settings for the restored table.</p>
     pub fn sse_specification_override(&self) -> ::std::option::Option<&crate::types::SseSpecification> {
         self.sse_specification_override.as_ref()
@@ -69,6 +75,7 @@ pub struct RestoreTableFromBackupInputBuilder {
     pub(crate) global_secondary_index_override: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
     pub(crate) local_secondary_index_override: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>>,
     pub(crate) provisioned_throughput_override: ::std::option::Option<crate::types::ProvisionedThroughput>,
+    pub(crate) on_demand_throughput_override: ::std::option::Option<crate::types::OnDemandThroughput>,
     pub(crate) sse_specification_override: ::std::option::Option<crate::types::SseSpecification>,
 }
 impl RestoreTableFromBackupInputBuilder {
@@ -170,6 +177,20 @@ impl RestoreTableFromBackupInputBuilder {
     pub fn get_provisioned_throughput_override(&self) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
         &self.provisioned_throughput_override
     }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput_override(mut self, input: crate::types::OnDemandThroughput) -> Self {
+        self.on_demand_throughput_override = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn set_on_demand_throughput_override(mut self, input: ::std::option::Option<crate::types::OnDemandThroughput>) -> Self {
+        self.on_demand_throughput_override = input;
+        self
+    }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn get_on_demand_throughput_override(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
+        &self.on_demand_throughput_override
+    }
     /// <p>The new server-side encryption settings for the restored table.</p>
     pub fn sse_specification_override(mut self, input: crate::types::SseSpecification) -> Self {
         self.sse_specification_override = ::std::option::Option::Some(input);
@@ -198,6 +219,7 @@ impl RestoreTableFromBackupInputBuilder {
             global_secondary_index_override: self.global_secondary_index_override,
             local_secondary_index_override: self.local_secondary_index_override,
             provisioned_throughput_override: self.provisioned_throughput_override,
+            on_demand_throughput_override: self.on_demand_throughput_override,
             sse_specification_override: self.sse_specification_override,
         })
     }

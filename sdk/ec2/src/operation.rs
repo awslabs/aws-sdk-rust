@@ -1330,6 +1330,9 @@ pub mod get_image_block_public_access_state;
 /// Types for the `GetInstanceMetadataDefaults` operation.
 pub mod get_instance_metadata_defaults;
 
+/// Types for the `GetInstanceTpmEkPub` operation.
+pub mod get_instance_tpm_ek_pub;
+
 /// Types for the `GetInstanceTypesFromInstanceRequirements` operation.
 pub mod get_instance_types_from_instance_requirements;
 

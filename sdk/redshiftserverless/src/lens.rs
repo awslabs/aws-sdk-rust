@@ -135,7 +135,7 @@ pub(crate) fn lens_list_recovery_points_output_output_recovery_points(
 
 pub(crate) fn lens_list_scheduled_actions_output_output_scheduled_actions(
     input: crate::operation::list_scheduled_actions::ListScheduledActionsOutput,
-) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionAssociation>> {
     let input = match input.scheduled_actions {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,

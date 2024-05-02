@@ -1257,6 +1257,8 @@ mod get_image_block_public_access_state;
 
 mod get_instance_metadata_defaults;
 
+mod get_instance_tpm_ek_pub;
+
 mod get_instance_types_from_instance_requirements;
 
 mod get_instance_uefi_data;

@@ -1139,6 +1139,10 @@ pub use crate::types::_ipam_address_history_resource_type::IpamAddressHistoryRes
 
 pub use crate::types::_instance_type_info_from_instance_requirements::InstanceTypeInfoFromInstanceRequirements;
 
+pub use crate::types::_ek_pub_key_format::EkPubKeyFormat;
+
+pub use crate::types::_ek_pub_key_type::EkPubKeyType;
+
 pub use crate::types::_instance_metadata_defaults_response::InstanceMetadataDefaultsResponse;
 
 pub use crate::types::_capacity_reservation_group::CapacityReservationGroup;
@@ -2626,6 +2630,10 @@ mod _ec2_instance_connect_endpoint_state;
 mod _efa_info;
 
 mod _egress_only_internet_gateway;
+
+mod _ek_pub_key_format;
+
+mod _ek_pub_key_type;
 
 mod _elastic_gpu_association;
 

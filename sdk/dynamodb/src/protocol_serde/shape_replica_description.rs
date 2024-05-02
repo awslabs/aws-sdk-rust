@@ -54,6 +54,11 @@ where
                                 crate::protocol_serde::shape_provisioned_throughput_override::de_provisioned_throughput_override(tokens)?,
                             );
                         }
+                        "OnDemandThroughputOverride" => {
+                            builder = builder.set_on_demand_throughput_override(
+                                crate::protocol_serde::shape_on_demand_throughput_override::de_on_demand_throughput_override(tokens)?,
+                            );
+                        }
                         "GlobalSecondaryIndexes" => {
                             builder = builder.set_global_secondary_indexes(
                                     crate::protocol_serde::shape_replica_global_secondary_index_description_list::de_replica_global_secondary_index_description_list(tokens)?

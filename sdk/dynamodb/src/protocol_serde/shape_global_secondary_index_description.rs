@@ -63,6 +63,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "OnDemandThroughput" => {
+                            builder =
+                                builder.set_on_demand_throughput(crate::protocol_serde::shape_on_demand_throughput::de_on_demand_throughput(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

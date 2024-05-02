@@ -218,6 +218,20 @@ impl RestoreTableFromBackupFluentBuilder {
     pub fn get_provisioned_throughput_override(&self) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
         self.inner.get_provisioned_throughput_override()
     }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput_override(mut self, input: crate::types::OnDemandThroughput) -> Self {
+        self.inner = self.inner.on_demand_throughput_override(input);
+        self
+    }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn set_on_demand_throughput_override(mut self, input: ::std::option::Option<crate::types::OnDemandThroughput>) -> Self {
+        self.inner = self.inner.set_on_demand_throughput_override(input);
+        self
+    }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn get_on_demand_throughput_override(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
+        self.inner.get_on_demand_throughput_override()
+    }
     /// <p>The new server-side encryption settings for the restored table.</p>
     pub fn sse_specification_override(mut self, input: crate::types::SseSpecification) -> Self {
         self.inner = self.inner.sse_specification_override(input);

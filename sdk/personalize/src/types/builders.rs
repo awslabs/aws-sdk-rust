@@ -37,6 +37,8 @@ pub use crate::types::_dataset_group_summary::DatasetGroupSummaryBuilder;
 
 pub use crate::types::_dataset_export_job_summary::DatasetExportJobSummaryBuilder;
 
+pub use crate::types::_data_deletion_job_summary::DataDeletionJobSummaryBuilder;
+
 pub use crate::types::_campaign_summary::CampaignSummaryBuilder;
 
 pub use crate::types::_batch_segment_job_summary::BatchSegmentJobSummaryBuilder;
@@ -102,6 +104,8 @@ pub use crate::types::_dataset_export_job_output::DatasetExportJobOutputBuilder;
 pub use crate::types::_dataset::DatasetBuilder;
 
 pub use crate::types::_dataset_update_summary::DatasetUpdateSummaryBuilder;
+
+pub use crate::types::_data_deletion_job::DataDeletionJobBuilder;
 
 pub use crate::types::_campaign::CampaignBuilder;
 

@@ -25,6 +25,8 @@ pub use crate::types::_scheduled_action_response::ScheduledActionResponseBuilder
 
 pub use crate::types::_create_snapshot_schedule_action_parameters::CreateSnapshotScheduleActionParametersBuilder;
 
+pub use crate::types::_scheduled_action_association::ScheduledActionAssociationBuilder;
+
 pub use crate::types::_recovery_point::RecoveryPointBuilder;
 
 pub use crate::types::_endpoint_access::EndpointAccessBuilder;

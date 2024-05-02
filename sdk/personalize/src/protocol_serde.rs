@@ -29,6 +29,8 @@ pub(crate) mod shape_create_batch_segment_job;
 
 pub(crate) mod shape_create_campaign;
 
+pub(crate) mod shape_create_data_deletion_job;
+
 pub(crate) mod shape_create_dataset;
 
 pub(crate) mod shape_create_dataset_export_job;
@@ -77,6 +79,8 @@ pub(crate) mod shape_describe_batch_segment_job;
 
 pub(crate) mod shape_describe_campaign;
 
+pub(crate) mod shape_describe_data_deletion_job;
+
 pub(crate) mod shape_describe_dataset;
 
 pub(crate) mod shape_describe_dataset_export_job;
@@ -110,6 +114,8 @@ pub(crate) mod shape_list_batch_inference_jobs;
 pub(crate) mod shape_list_batch_segment_jobs;
 
 pub(crate) mod shape_list_campaigns;
+
+pub(crate) mod shape_list_data_deletion_jobs;
 
 pub(crate) mod shape_list_dataset_export_jobs;
 
@@ -171,6 +177,8 @@ pub(crate) mod shape_create_batch_segment_job_input;
 
 pub(crate) mod shape_create_campaign_input;
 
+pub(crate) mod shape_create_data_deletion_job_input;
+
 pub(crate) mod shape_create_dataset_export_job_input;
 
 pub(crate) mod shape_create_dataset_group_input;
@@ -219,6 +227,8 @@ pub(crate) mod shape_describe_batch_segment_job_input;
 
 pub(crate) mod shape_describe_campaign_input;
 
+pub(crate) mod shape_describe_data_deletion_job_input;
+
 pub(crate) mod shape_describe_dataset_export_job_input;
 
 pub(crate) mod shape_describe_dataset_group_input;
@@ -258,6 +268,8 @@ pub(crate) mod shape_list_batch_inference_jobs_input;
 pub(crate) mod shape_list_batch_segment_jobs_input;
 
 pub(crate) mod shape_list_campaigns_input;
+
+pub(crate) mod shape_list_data_deletion_jobs_input;
 
 pub(crate) mod shape_list_dataset_export_jobs_input;
 
@@ -340,6 +352,10 @@ pub(crate) mod shape_campaign;
 pub(crate) mod shape_campaign_config;
 
 pub(crate) mod shape_campaigns;
+
+pub(crate) mod shape_data_deletion_job;
+
+pub(crate) mod shape_data_deletion_jobs;
 
 pub(crate) mod shape_data_source;
 
@@ -428,6 +444,8 @@ pub(crate) mod shape_batch_segment_job_summary;
 pub(crate) mod shape_campaign_summary;
 
 pub(crate) mod shape_campaign_update_summary;
+
+pub(crate) mod shape_data_deletion_job_summary;
 
 pub(crate) mod shape_dataset_export_job_summary;
 

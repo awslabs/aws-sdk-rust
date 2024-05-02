@@ -10,6 +10,9 @@ pub mod create_batch_segment_job;
 /// Types for the `CreateCampaign` operation.
 pub mod create_campaign;
 
+/// Types for the `CreateDataDeletionJob` operation.
+pub mod create_data_deletion_job;
+
 /// Types for the `CreateDataset` operation.
 pub mod create_dataset;
 
@@ -82,6 +85,9 @@ pub mod describe_batch_segment_job;
 /// Types for the `DescribeCampaign` operation.
 pub mod describe_campaign;
 
+/// Types for the `DescribeDataDeletionJob` operation.
+pub mod describe_data_deletion_job;
+
 /// Types for the `DescribeDataset` operation.
 pub mod describe_dataset;
 
@@ -132,6 +138,9 @@ pub mod list_batch_segment_jobs;
 
 /// Types for the `ListCampaigns` operation.
 pub mod list_campaigns;
+
+/// Types for the `ListDataDeletionJobs` operation.
+pub mod list_data_deletion_jobs;
 
 /// Types for the `ListDatasetExportJobs` operation.
 pub mod list_dataset_export_jobs;

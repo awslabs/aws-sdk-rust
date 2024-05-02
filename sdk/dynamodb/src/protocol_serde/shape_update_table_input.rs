@@ -69,5 +69,11 @@ pub fn ser_update_table_input_input(
     if let Some(var_22) = &input.deletion_protection_enabled {
         object.key("DeletionProtectionEnabled").boolean(*var_22);
     }
+    if let Some(var_23) = &input.on_demand_throughput {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("OnDemandThroughput").start_object();
+        crate::protocol_serde::shape_on_demand_throughput::ser_on_demand_throughput(&mut object_24, var_23)?;
+        object_24.finish();
+    }
     Ok(())
 }

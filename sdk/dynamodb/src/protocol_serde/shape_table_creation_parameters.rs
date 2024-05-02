@@ -39,23 +39,29 @@ pub fn ser_table_creation_parameters(
         crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.sse_specification {
+    if let Some(var_10) = &input.on_demand_throughput {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("SSESpecification").start_object();
-        crate::protocol_serde::shape_sse_specification::ser_sse_specification(&mut object_11, var_10)?;
+        let mut object_11 = object.key("OnDemandThroughput").start_object();
+        crate::protocol_serde::shape_on_demand_throughput::ser_on_demand_throughput(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.global_secondary_indexes {
-        let mut array_13 = object.key("GlobalSecondaryIndexes").start_array();
-        for item_14 in var_12 {
+    if let Some(var_12) = &input.sse_specification {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("SSESpecification").start_object();
+        crate::protocol_serde::shape_sse_specification::ser_sse_specification(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.global_secondary_indexes {
+        let mut array_15 = object.key("GlobalSecondaryIndexes").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_global_secondary_index::ser_global_secondary_index(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_global_secondary_index::ser_global_secondary_index(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_13.finish();
+        array_15.finish();
     }
     Ok(())
 }
@@ -99,6 +105,10 @@ where
                         "ProvisionedThroughput" => {
                             builder = builder
                                 .set_provisioned_throughput(crate::protocol_serde::shape_provisioned_throughput::de_provisioned_throughput(tokens)?);
+                        }
+                        "OnDemandThroughput" => {
+                            builder =
+                                builder.set_on_demand_throughput(crate::protocol_serde::shape_on_demand_throughput::de_on_demand_throughput(tokens)?);
                         }
                         "SSESpecification" => {
                             builder = builder.set_sse_specification(crate::protocol_serde::shape_sse_specification::de_sse_specification(tokens)?);

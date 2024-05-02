@@ -581,23 +581,37 @@ impl CreateTableFluentBuilder {
         self.inner.get_deletion_protection_enabled()
     }
     /// <p>An Amazon Web Services resource-based policy document in JSON format that will be attached to the table.</p>
-    /// <p>When you attach a resource-based policy while creating a table, the policy creation is <i>strongly consistent</i>.</p>
-    /// <p>The maximum size supported for a resource-based policy document is 20 KB. DynamoDB counts whitespaces when calculating the size of a policy against this limit. You can’t request an increase for this limit. For a full list of all considerations that you should keep in mind while attaching a resource-based policy, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based policy considerations</a>.</p>
+    /// <p>When you attach a resource-based policy while creating a table, the policy application is <i>strongly consistent</i>.</p>
+    /// <p>The maximum size supported for a resource-based policy document is 20 KB. DynamoDB counts whitespaces when calculating the size of a policy against this limit. For a full list of all considerations that apply for resource-based policies, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based policy considerations</a>.</p>
     pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_policy(input.into());
         self
     }
     /// <p>An Amazon Web Services resource-based policy document in JSON format that will be attached to the table.</p>
-    /// <p>When you attach a resource-based policy while creating a table, the policy creation is <i>strongly consistent</i>.</p>
-    /// <p>The maximum size supported for a resource-based policy document is 20 KB. DynamoDB counts whitespaces when calculating the size of a policy against this limit. You can’t request an increase for this limit. For a full list of all considerations that you should keep in mind while attaching a resource-based policy, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based policy considerations</a>.</p>
+    /// <p>When you attach a resource-based policy while creating a table, the policy application is <i>strongly consistent</i>.</p>
+    /// <p>The maximum size supported for a resource-based policy document is 20 KB. DynamoDB counts whitespaces when calculating the size of a policy against this limit. For a full list of all considerations that apply for resource-based policies, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based policy considerations</a>.</p>
     pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_policy(input);
         self
     }
     /// <p>An Amazon Web Services resource-based policy document in JSON format that will be attached to the table.</p>
-    /// <p>When you attach a resource-based policy while creating a table, the policy creation is <i>strongly consistent</i>.</p>
-    /// <p>The maximum size supported for a resource-based policy document is 20 KB. DynamoDB counts whitespaces when calculating the size of a policy against this limit. You can’t request an increase for this limit. For a full list of all considerations that you should keep in mind while attaching a resource-based policy, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based policy considerations</a>.</p>
+    /// <p>When you attach a resource-based policy while creating a table, the policy application is <i>strongly consistent</i>.</p>
+    /// <p>The maximum size supported for a resource-based policy document is 20 KB. DynamoDB counts whitespaces when calculating the size of a policy against this limit. For a full list of all considerations that apply for resource-based policies, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based policy considerations</a>.</p>
     pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_policy()
+    }
+    /// <p>Sets the maximum number of read and write units for the specified table in on-demand capacity mode. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput(mut self, input: crate::types::OnDemandThroughput) -> Self {
+        self.inner = self.inner.on_demand_throughput(input);
+        self
+    }
+    /// <p>Sets the maximum number of read and write units for the specified table in on-demand capacity mode. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn set_on_demand_throughput(mut self, input: ::std::option::Option<crate::types::OnDemandThroughput>) -> Self {
+        self.inner = self.inner.set_on_demand_throughput(input);
+        self
+    }
+    /// <p>Sets the maximum number of read and write units for the specified table in on-demand capacity mode. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn get_on_demand_throughput(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
+        self.inner.get_on_demand_throughput()
     }
 }

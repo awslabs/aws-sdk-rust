@@ -27,6 +27,8 @@ pub use crate::types::_global_secondary_index_auto_scaling_update::GlobalSeconda
 
 pub use crate::types::_table_description::TableDescriptionBuilder;
 
+pub use crate::types::_on_demand_throughput::OnDemandThroughputBuilder;
+
 pub use crate::types::_table_class_summary::TableClassSummaryBuilder;
 
 pub use crate::types::_archival_summary::ArchivalSummaryBuilder;
@@ -38,6 +40,8 @@ pub use crate::types::_restore_summary::RestoreSummaryBuilder;
 pub use crate::types::_replica_description::ReplicaDescriptionBuilder;
 
 pub use crate::types::_replica_global_secondary_index_description::ReplicaGlobalSecondaryIndexDescriptionBuilder;
+
+pub use crate::types::_on_demand_throughput_override::OnDemandThroughputOverrideBuilder;
 
 pub use crate::types::_provisioned_throughput_override::ProvisionedThroughputOverrideBuilder;
 

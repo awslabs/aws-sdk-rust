@@ -30,6 +30,12 @@ pub fn ser_global_secondary_index(
         crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.on_demand_throughput {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("OnDemandThroughput").start_object();
+        crate::protocol_serde::shape_on_demand_throughput::ser_on_demand_throughput(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }
 
@@ -64,6 +70,10 @@ where
                         "ProvisionedThroughput" => {
                             builder = builder
                                 .set_provisioned_throughput(crate::protocol_serde::shape_provisioned_throughput::de_provisioned_throughput(tokens)?);
+                        }
+                        "OnDemandThroughput" => {
+                            builder =
+                                builder.set_on_demand_throughput(crate::protocol_serde::shape_on_demand_throughput::de_on_demand_throughput(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -18,6 +18,8 @@ pub struct SourceTableDetails {
     pub table_creation_date_time: ::aws_smithy_types::DateTime,
     /// <p>Read IOPs and Write IOPS on the table when the backup was created.</p>
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
     /// <p>Number of items in the table. Note that this is an approximate value.</p>
     pub item_count: ::std::option::Option<i64>,
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
@@ -61,6 +63,10 @@ impl SourceTableDetails {
     pub fn provisioned_throughput(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput(&self) -> ::std::option::Option<&crate::types::OnDemandThroughput> {
+        self.on_demand_throughput.as_ref()
+    }
     /// <p>Number of items in the table. Note that this is an approximate value.</p>
     pub fn item_count(&self) -> ::std::option::Option<i64> {
         self.item_count
@@ -94,6 +100,7 @@ pub struct SourceTableDetailsBuilder {
     pub(crate) key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     pub(crate) table_creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
+    pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
     pub(crate) item_count: ::std::option::Option<i64>,
     pub(crate) billing_mode: ::std::option::Option<crate::types::BillingMode>,
 }
@@ -206,6 +213,20 @@ impl SourceTableDetailsBuilder {
     pub fn get_provisioned_throughput(&self) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
         &self.provisioned_throughput
     }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput(mut self, input: crate::types::OnDemandThroughput) -> Self {
+        self.on_demand_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn set_on_demand_throughput(mut self, input: ::std::option::Option<crate::types::OnDemandThroughput>) -> Self {
+        self.on_demand_throughput = input;
+        self
+    }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn get_on_demand_throughput(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
+        &self.on_demand_throughput
+    }
     /// <p>Number of items in the table. Note that this is an approximate value.</p>
     pub fn item_count(mut self, input: i64) -> Self {
         self.item_count = ::std::option::Option::Some(input);
@@ -287,6 +308,7 @@ impl SourceTableDetailsBuilder {
                 )
             })?,
             provisioned_throughput: self.provisioned_throughput,
+            on_demand_throughput: self.on_demand_throughput,
             item_count: self.item_count,
             billing_mode: self.billing_mode,
         })

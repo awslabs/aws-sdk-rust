@@ -33,6 +33,8 @@ pub use crate::types::_global_secondary_index_auto_scaling_update::GlobalSeconda
 
 pub use crate::types::_table_description::TableDescription;
 
+pub use crate::types::_on_demand_throughput::OnDemandThroughput;
+
 pub use crate::types::_table_class_summary::TableClassSummary;
 
 pub use crate::types::_table_class::TableClass;
@@ -50,6 +52,8 @@ pub use crate::types::_restore_summary::RestoreSummary;
 pub use crate::types::_replica_description::ReplicaDescription;
 
 pub use crate::types::_replica_global_secondary_index_description::ReplicaGlobalSecondaryIndexDescription;
+
+pub use crate::types::_on_demand_throughput_override::OnDemandThroughputOverride;
 
 pub use crate::types::_provisioned_throughput_override::ProvisionedThroughputOverride;
 
@@ -450,6 +454,10 @@ mod _local_secondary_index;
 mod _local_secondary_index_description;
 
 mod _local_secondary_index_info;
+
+mod _on_demand_throughput;
+
+mod _on_demand_throughput_override;
 
 mod _parameterized_statement;
 

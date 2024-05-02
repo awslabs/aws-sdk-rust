@@ -42,11 +42,17 @@ pub fn ser_restore_table_from_backup_input_input(
         crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.sse_specification_override {
+    if let Some(var_14) = &input.on_demand_throughput_override {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("SSESpecificationOverride").start_object();
-        crate::protocol_serde::shape_sse_specification::ser_sse_specification(&mut object_15, var_14)?;
+        let mut object_15 = object.key("OnDemandThroughputOverride").start_object();
+        crate::protocol_serde::shape_on_demand_throughput::ser_on_demand_throughput(&mut object_15, var_14)?;
         object_15.finish();
+    }
+    if let Some(var_16) = &input.sse_specification_override {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("SSESpecificationOverride").start_object();
+        crate::protocol_serde::shape_sse_specification::ser_sse_specification(&mut object_17, var_16)?;
+        object_17.finish();
     }
     Ok(())
 }

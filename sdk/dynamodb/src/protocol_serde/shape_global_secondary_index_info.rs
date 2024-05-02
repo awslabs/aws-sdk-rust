@@ -31,6 +31,10 @@ where
                             builder = builder
                                 .set_provisioned_throughput(crate::protocol_serde::shape_provisioned_throughput::de_provisioned_throughput(tokens)?);
                         }
+                        "OnDemandThroughput" => {
+                            builder =
+                                builder.set_on_demand_throughput(crate::protocol_serde::shape_on_demand_throughput::de_on_demand_throughput(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

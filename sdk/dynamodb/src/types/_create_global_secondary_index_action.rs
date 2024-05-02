@@ -13,6 +13,8 @@ pub struct CreateGlobalSecondaryIndexAction {
     /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
+    /// <p>The maximum number of read and write units for the global secondary index being created. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
 }
 impl CreateGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be created.</p>
@@ -34,6 +36,10 @@ impl CreateGlobalSecondaryIndexAction {
     pub fn provisioned_throughput(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
+    /// <p>The maximum number of read and write units for the global secondary index being created. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput(&self) -> ::std::option::Option<&crate::types::OnDemandThroughput> {
+        self.on_demand_throughput.as_ref()
+    }
 }
 impl CreateGlobalSecondaryIndexAction {
     /// Creates a new builder-style object to manufacture [`CreateGlobalSecondaryIndexAction`](crate::types::CreateGlobalSecondaryIndexAction).
@@ -50,6 +56,7 @@ pub struct CreateGlobalSecondaryIndexActionBuilder {
     pub(crate) key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     pub(crate) projection: ::std::option::Option<crate::types::Projection>,
     pub(crate) provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
+    pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
 }
 impl CreateGlobalSecondaryIndexActionBuilder {
     /// <p>The name of the global secondary index to be created.</p>
@@ -119,6 +126,20 @@ impl CreateGlobalSecondaryIndexActionBuilder {
     pub fn get_provisioned_throughput(&self) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
         &self.provisioned_throughput
     }
+    /// <p>The maximum number of read and write units for the global secondary index being created. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput(mut self, input: crate::types::OnDemandThroughput) -> Self {
+        self.on_demand_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of read and write units for the global secondary index being created. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn set_on_demand_throughput(mut self, input: ::std::option::Option<crate::types::OnDemandThroughput>) -> Self {
+        self.on_demand_throughput = input;
+        self
+    }
+    /// <p>The maximum number of read and write units for the global secondary index being created. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn get_on_demand_throughput(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
+        &self.on_demand_throughput
+    }
     /// Consumes the builder and constructs a [`CreateGlobalSecondaryIndexAction`](crate::types::CreateGlobalSecondaryIndexAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`index_name`](crate::types::builders::CreateGlobalSecondaryIndexActionBuilder::index_name)
@@ -139,6 +160,7 @@ impl CreateGlobalSecondaryIndexActionBuilder {
             })?,
             projection: self.projection,
             provisioned_throughput: self.provisioned_throughput,
+            on_demand_throughput: self.on_demand_throughput,
         })
     }
 }

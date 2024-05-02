@@ -96,5 +96,11 @@ pub fn ser_create_table_input_input(
     if let Some(var_31) = &input.resource_policy {
         object.key("ResourcePolicy").string(var_31.as_str());
     }
+    if let Some(var_32) = &input.on_demand_throughput {
+        #[allow(unused_mut)]
+        let mut object_33 = object.key("OnDemandThroughput").start_object();
+        crate::protocol_serde::shape_on_demand_throughput::ser_on_demand_throughput(&mut object_33, var_32)?;
+        object_33.finish();
+    }
     Ok(())
 }

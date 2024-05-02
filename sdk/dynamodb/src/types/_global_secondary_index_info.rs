@@ -21,6 +21,8 @@ pub struct GlobalSecondaryIndexInfo {
     pub projection: ::std::option::Option<crate::types::Projection>,
     /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
 }
 impl GlobalSecondaryIndexInfo {
     /// <p>The name of the global secondary index.</p>
@@ -50,6 +52,10 @@ impl GlobalSecondaryIndexInfo {
     pub fn provisioned_throughput(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput(&self) -> ::std::option::Option<&crate::types::OnDemandThroughput> {
+        self.on_demand_throughput.as_ref()
+    }
 }
 impl GlobalSecondaryIndexInfo {
     /// Creates a new builder-style object to manufacture [`GlobalSecondaryIndexInfo`](crate::types::GlobalSecondaryIndexInfo).
@@ -66,6 +72,7 @@ pub struct GlobalSecondaryIndexInfoBuilder {
     pub(crate) key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     pub(crate) projection: ::std::option::Option<crate::types::Projection>,
     pub(crate) provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
+    pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
 }
 impl GlobalSecondaryIndexInfoBuilder {
     /// <p>The name of the global secondary index.</p>
@@ -157,6 +164,20 @@ impl GlobalSecondaryIndexInfoBuilder {
     pub fn get_provisioned_throughput(&self) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
         &self.provisioned_throughput
     }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput(mut self, input: crate::types::OnDemandThroughput) -> Self {
+        self.on_demand_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn set_on_demand_throughput(mut self, input: ::std::option::Option<crate::types::OnDemandThroughput>) -> Self {
+        self.on_demand_throughput = input;
+        self
+    }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn get_on_demand_throughput(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
+        &self.on_demand_throughput
+    }
     /// Consumes the builder and constructs a [`GlobalSecondaryIndexInfo`](crate::types::GlobalSecondaryIndexInfo).
     pub fn build(self) -> crate::types::GlobalSecondaryIndexInfo {
         crate::types::GlobalSecondaryIndexInfo {
@@ -164,6 +185,7 @@ impl GlobalSecondaryIndexInfoBuilder {
             key_schema: self.key_schema,
             projection: self.projection,
             provisioned_throughput: self.provisioned_throughput,
+            on_demand_throughput: self.on_demand_throughput,
         }
     }
 }

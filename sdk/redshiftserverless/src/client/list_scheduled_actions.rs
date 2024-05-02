@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`namespace_name(impl Into<String>)`](crate::operation::list_scheduled_actions::builders::ListScheduledActionsFluentBuilder::namespace_name) / [`set_namespace_name(Option<String>)`](crate::operation::list_scheduled_actions::builders::ListScheduledActionsFluentBuilder::set_namespace_name):<br>required: **false**<br><p>The name of namespace associated with the scheduled action to retrieve.</p><br>
     /// - On success, responds with [`ListScheduledActionsOutput`](crate::operation::list_scheduled_actions::ListScheduledActionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_scheduled_actions::ListScheduledActionsOutput::next_token): <p>If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    ///   - [`scheduled_actions(Option<Vec::<String>>)`](crate::operation::list_scheduled_actions::ListScheduledActionsOutput::scheduled_actions): <p>All of the returned scheduled action objects.</p>
+    ///   - [`scheduled_actions(Option<Vec::<ScheduledActionAssociation>>)`](crate::operation::list_scheduled_actions::ListScheduledActionsOutput::scheduled_actions): <p>All of the returned scheduled action association objects.</p>
     /// - On failure, responds with [`SdkError<ListScheduledActionsError>`](crate::operation::list_scheduled_actions::ListScheduledActionsError)
     pub fn list_scheduled_actions(&self) -> crate::operation::list_scheduled_actions::builders::ListScheduledActionsFluentBuilder {
         crate::operation::list_scheduled_actions::builders::ListScheduledActionsFluentBuilder::new(self.handle.clone())

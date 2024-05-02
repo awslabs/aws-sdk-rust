@@ -142,6 +142,8 @@ mod create_batch_segment_job;
 
 mod create_campaign;
 
+mod create_data_deletion_job;
+
 mod create_dataset;
 
 mod create_dataset_export_job;
@@ -217,6 +219,8 @@ mod describe_batch_segment_job;
 
 mod describe_campaign;
 
+mod describe_data_deletion_job;
+
 mod describe_dataset;
 
 mod describe_dataset_export_job;
@@ -250,6 +254,8 @@ mod list_batch_inference_jobs;
 mod list_batch_segment_jobs;
 
 mod list_campaigns;
+
+mod list_data_deletion_jobs;
 
 mod list_dataset_export_jobs;
 

@@ -338,4 +338,18 @@ impl UpdateTableFluentBuilder {
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection_enabled()
     }
+    /// <p>Updates the maximum number of read and write units for the specified table in on-demand capacity mode. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput(mut self, input: crate::types::OnDemandThroughput) -> Self {
+        self.inner = self.inner.on_demand_throughput(input);
+        self
+    }
+    /// <p>Updates the maximum number of read and write units for the specified table in on-demand capacity mode. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn set_on_demand_throughput(mut self, input: ::std::option::Option<crate::types::OnDemandThroughput>) -> Self {
+        self.inner = self.inner.set_on_demand_throughput(input);
+        self
+    }
+    /// <p>Updates the maximum number of read and write units for the specified table in on-demand capacity mode. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn get_on_demand_throughput(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
+        self.inner.get_on_demand_throughput()
+    }
 }

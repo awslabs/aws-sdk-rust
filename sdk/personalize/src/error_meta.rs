@@ -182,6 +182,45 @@ impl From<crate::operation::create_campaign::CreateCampaignError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_deletion_job::CreateDataDeletionJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_deletion_job::CreateDataDeletionJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_data_deletion_job::CreateDataDeletionJobError> for Error {
+    fn from(err: crate::operation::create_data_deletion_job::CreateDataDeletionJobError) -> Self {
+        match err {
+            crate::operation::create_data_deletion_job::CreateDataDeletionJobError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::create_data_deletion_job::CreateDataDeletionJobError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_data_deletion_job::CreateDataDeletionJobError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::operation::create_data_deletion_job::CreateDataDeletionJobError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::create_data_deletion_job::CreateDataDeletionJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_data_deletion_job::CreateDataDeletionJobError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::create_data_deletion_job::CreateDataDeletionJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_dataset::CreateDatasetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -874,6 +913,36 @@ impl From<crate::operation::describe_campaign::DescribeCampaignError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_data_deletion_job::DescribeDataDeletionJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_data_deletion_job::DescribeDataDeletionJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_data_deletion_job::DescribeDataDeletionJobError> for Error {
+    fn from(err: crate::operation::describe_data_deletion_job::DescribeDataDeletionJobError) -> Self {
+        match err {
+            crate::operation::describe_data_deletion_job::DescribeDataDeletionJobError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::describe_data_deletion_job::DescribeDataDeletionJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_data_deletion_job::DescribeDataDeletionJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_dataset::DescribeDatasetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1321,6 +1390,33 @@ impl From<crate::operation::list_campaigns::ListCampaignsError> for Error {
             crate::operation::list_campaigns::ListCampaignsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::list_campaigns::ListCampaignsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
             crate::operation::list_campaigns::ListCampaignsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_deletion_jobs::ListDataDeletionJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_deletion_jobs::ListDataDeletionJobsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_data_deletion_jobs::ListDataDeletionJobsError> for Error {
+    fn from(err: crate::operation::list_data_deletion_jobs::ListDataDeletionJobsError) -> Self {
+        match err {
+            crate::operation::list_data_deletion_jobs::ListDataDeletionJobsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_data_deletion_jobs::ListDataDeletionJobsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::list_data_deletion_jobs::ListDataDeletionJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

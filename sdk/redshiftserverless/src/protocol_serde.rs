@@ -337,6 +337,8 @@ pub(crate) mod shape_log_export_list;
 
 pub(crate) mod shape_next_invocations_list;
 
+pub(crate) mod shape_scheduled_action_association;
+
 pub(crate) mod shape_security_group_id_list;
 
 pub(crate) mod shape_subnet_id_list;

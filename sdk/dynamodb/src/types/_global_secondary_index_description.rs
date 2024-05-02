@@ -45,6 +45,8 @@ pub struct GlobalSecondaryIndexDescription {
     pub item_count: ::std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
     pub index_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The maximum number of read and write units for the specified global secondary index. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
 }
 impl GlobalSecondaryIndexDescription {
     /// <p>The name of the global secondary index.</p>
@@ -108,6 +110,10 @@ impl GlobalSecondaryIndexDescription {
     pub fn index_arn(&self) -> ::std::option::Option<&str> {
         self.index_arn.as_deref()
     }
+    /// <p>The maximum number of read and write units for the specified global secondary index. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput(&self) -> ::std::option::Option<&crate::types::OnDemandThroughput> {
+        self.on_demand_throughput.as_ref()
+    }
 }
 impl GlobalSecondaryIndexDescription {
     /// Creates a new builder-style object to manufacture [`GlobalSecondaryIndexDescription`](crate::types::GlobalSecondaryIndexDescription).
@@ -129,6 +135,7 @@ pub struct GlobalSecondaryIndexDescriptionBuilder {
     pub(crate) index_size_bytes: ::std::option::Option<i64>,
     pub(crate) item_count: ::std::option::Option<i64>,
     pub(crate) index_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
 }
 impl GlobalSecondaryIndexDescriptionBuilder {
     /// <p>The name of the global secondary index.</p>
@@ -332,6 +339,20 @@ impl GlobalSecondaryIndexDescriptionBuilder {
     pub fn get_index_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_arn
     }
+    /// <p>The maximum number of read and write units for the specified global secondary index. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput(mut self, input: crate::types::OnDemandThroughput) -> Self {
+        self.on_demand_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of read and write units for the specified global secondary index. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn set_on_demand_throughput(mut self, input: ::std::option::Option<crate::types::OnDemandThroughput>) -> Self {
+        self.on_demand_throughput = input;
+        self
+    }
+    /// <p>The maximum number of read and write units for the specified global secondary index. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn get_on_demand_throughput(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
+        &self.on_demand_throughput
+    }
     /// Consumes the builder and constructs a [`GlobalSecondaryIndexDescription`](crate::types::GlobalSecondaryIndexDescription).
     pub fn build(self) -> crate::types::GlobalSecondaryIndexDescription {
         crate::types::GlobalSecondaryIndexDescription {
@@ -344,6 +365,7 @@ impl GlobalSecondaryIndexDescriptionBuilder {
             index_size_bytes: self.index_size_bytes,
             item_count: self.item_count,
             index_arn: self.index_arn,
+            on_demand_throughput: self.on_demand_throughput,
         }
     }
 }

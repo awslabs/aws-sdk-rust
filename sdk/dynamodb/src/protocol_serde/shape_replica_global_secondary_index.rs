@@ -12,5 +12,11 @@ pub fn ser_replica_global_secondary_index(
         crate::protocol_serde::shape_provisioned_throughput_override::ser_provisioned_throughput_override(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.on_demand_throughput_override {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("OnDemandThroughputOverride").start_object();
+        crate::protocol_serde::shape_on_demand_throughput_override::ser_on_demand_throughput_override(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

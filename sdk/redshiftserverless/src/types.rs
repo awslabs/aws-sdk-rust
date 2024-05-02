@@ -45,6 +45,8 @@ pub use crate::types::_state::State;
 
 pub use crate::types::_schedule::Schedule;
 
+pub use crate::types::_scheduled_action_association::ScheduledActionAssociation;
+
 pub use crate::types::_recovery_point::RecoveryPoint;
 
 pub use crate::types::_endpoint_access::EndpointAccess;
@@ -78,6 +80,8 @@ mod _recovery_point;
 mod _resource_policy;
 
 mod _schedule;
+
+mod _scheduled_action_association;
 
 mod _scheduled_action_response;
 

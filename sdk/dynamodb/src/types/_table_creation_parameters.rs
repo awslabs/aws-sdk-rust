@@ -15,6 +15,8 @@ pub struct TableCreationParameters {
     /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
     /// <p>Represents the settings used to enable server-side encryption.</p>
     pub sse_specification: ::std::option::Option<crate::types::SseSpecification>,
     /// <p>The Global Secondary Indexes (GSI) of the table to be created as part of the import operation.</p>
@@ -45,6 +47,10 @@ impl TableCreationParameters {
     pub fn provisioned_throughput(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput(&self) -> ::std::option::Option<&crate::types::OnDemandThroughput> {
+        self.on_demand_throughput.as_ref()
+    }
     /// <p>Represents the settings used to enable server-side encryption.</p>
     pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::SseSpecification> {
         self.sse_specification.as_ref()
@@ -72,6 +78,7 @@ pub struct TableCreationParametersBuilder {
     pub(crate) key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     pub(crate) billing_mode: ::std::option::Option<crate::types::BillingMode>,
     pub(crate) provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
+    pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
     pub(crate) sse_specification: ::std::option::Option<crate::types::SseSpecification>,
     pub(crate) global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
 }
@@ -162,6 +169,20 @@ impl TableCreationParametersBuilder {
     pub fn get_provisioned_throughput(&self) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
         &self.provisioned_throughput
     }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn on_demand_throughput(mut self, input: crate::types::OnDemandThroughput) -> Self {
+        self.on_demand_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn set_on_demand_throughput(mut self, input: ::std::option::Option<crate::types::OnDemandThroughput>) -> Self {
+        self.on_demand_throughput = input;
+        self
+    }
+    /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
+    pub fn get_on_demand_throughput(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
+        &self.on_demand_throughput
+    }
     /// <p>Represents the settings used to enable server-side encryption.</p>
     pub fn sse_specification(mut self, input: crate::types::SseSpecification) -> Self {
         self.sse_specification = ::std::option::Option::Some(input);
@@ -223,6 +244,7 @@ impl TableCreationParametersBuilder {
             })?,
             billing_mode: self.billing_mode,
             provisioned_throughput: self.provisioned_throughput,
+            on_demand_throughput: self.on_demand_throughput,
             sse_specification: self.sse_specification,
             global_secondary_indexes: self.global_secondary_indexes,
         })

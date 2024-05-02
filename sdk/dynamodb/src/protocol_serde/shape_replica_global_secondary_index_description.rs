@@ -26,6 +26,11 @@ where
                                 crate::protocol_serde::shape_provisioned_throughput_override::de_provisioned_throughput_override(tokens)?,
                             );
                         }
+                        "OnDemandThroughputOverride" => {
+                            builder = builder.set_on_demand_throughput_override(
+                                crate::protocol_serde::shape_on_demand_throughput_override::de_on_demand_throughput_override(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

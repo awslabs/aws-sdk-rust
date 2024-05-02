@@ -5,8 +5,8 @@
 pub struct ListScheduledActionsOutput {
     /// <p>If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>All of the returned scheduled action objects.</p>
-    pub scheduled_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>All of the returned scheduled action association objects.</p>
+    pub scheduled_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionAssociation>>,
     _request_id: Option<String>,
 }
 impl ListScheduledActionsOutput {
@@ -14,10 +14,10 @@ impl ListScheduledActionsOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>All of the returned scheduled action objects.</p>
+    /// <p>All of the returned scheduled action association objects.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_actions.is_none()`.
-    pub fn scheduled_actions(&self) -> &[::std::string::String] {
+    pub fn scheduled_actions(&self) -> &[crate::types::ScheduledActionAssociation] {
         self.scheduled_actions.as_deref().unwrap_or_default()
     }
 }
@@ -38,7 +38,7 @@ impl ListScheduledActionsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListScheduledActionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) scheduled_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) scheduled_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionAssociation>>,
     _request_id: Option<String>,
 }
 impl ListScheduledActionsOutputBuilder {
@@ -60,20 +60,20 @@ impl ListScheduledActionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_scheduled_actions`](Self::set_scheduled_actions).
     ///
-    /// <p>All of the returned scheduled action objects.</p>
-    pub fn scheduled_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+    /// <p>All of the returned scheduled action association objects.</p>
+    pub fn scheduled_actions(mut self, input: crate::types::ScheduledActionAssociation) -> Self {
         let mut v = self.scheduled_actions.unwrap_or_default();
-        v.push(input.into());
+        v.push(input);
         self.scheduled_actions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>All of the returned scheduled action objects.</p>
-    pub fn set_scheduled_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    /// <p>All of the returned scheduled action association objects.</p>
+    pub fn set_scheduled_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionAssociation>>) -> Self {
         self.scheduled_actions = input;
         self
     }
-    /// <p>All of the returned scheduled action objects.</p>
-    pub fn get_scheduled_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    /// <p>All of the returned scheduled action association objects.</p>
+    pub fn get_scheduled_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionAssociation>> {
         &self.scheduled_actions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
