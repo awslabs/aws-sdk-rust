@@ -6,7 +6,15 @@
 pub struct InvalidRequestException {
     /// <p>The message about the request.</p>
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>Reason why the request was invalid.</p>
+    pub reason: ::std::option::Option<crate::types::InvalidRequestExceptionReason>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
+}
+impl InvalidRequestException {
+    /// <p>Reason why the request was invalid.</p>
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::InvalidRequestExceptionReason> {
+        self.reason.as_ref()
+    }
 }
 impl InvalidRequestException {
     /// Returns the error message.
@@ -49,6 +57,7 @@ impl InvalidRequestException {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidRequestExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<crate::types::InvalidRequestExceptionReason>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidRequestExceptionBuilder {
@@ -66,6 +75,20 @@ impl InvalidRequestExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// <p>Reason why the request was invalid.</p>
+    pub fn reason(mut self, input: crate::types::InvalidRequestExceptionReason) -> Self {
+        self.reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reason why the request was invalid.</p>
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::InvalidRequestExceptionReason>) -> Self {
+        self.reason = input;
+        self
+    }
+    /// <p>Reason why the request was invalid.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::InvalidRequestExceptionReason> {
+        &self.reason
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
@@ -81,6 +104,7 @@ impl InvalidRequestExceptionBuilder {
     pub fn build(self) -> crate::types::error::InvalidRequestException {
         crate::types::error::InvalidRequestException {
             message: self.message,
+            reason: self.reason,
             meta: self.meta.unwrap_or_default(),
         }
     }

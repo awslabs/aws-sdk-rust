@@ -8,6 +8,8 @@ pub enum RelatedItemTypeFilter {
     Comment(crate::types::CommentFilter),
     /// <p>A filter for related items of type <code>Contact</code>.</p>
     Contact(crate::types::ContactFilter),
+    /// <p>A filter for related items of this type of <code>File</code>.</p>
+    File(crate::types::FileFilter),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -44,6 +46,19 @@ impl RelatedItemTypeFilter {
     /// Returns true if this is a [`Contact`](crate::types::RelatedItemTypeFilter::Contact).
     pub fn is_contact(&self) -> bool {
         self.as_contact().is_ok()
+    }
+    /// Tries to convert the enum instance into [`File`](crate::types::RelatedItemTypeFilter::File), extracting the inner [`FileFilter`](crate::types::FileFilter).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_file(&self) -> ::std::result::Result<&crate::types::FileFilter, &Self> {
+        if let RelatedItemTypeFilter::File(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`File`](crate::types::RelatedItemTypeFilter::File).
+    pub fn is_file(&self) -> bool {
+        self.as_file().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

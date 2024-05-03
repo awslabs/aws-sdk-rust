@@ -843,6 +843,49 @@ impl From<crate::operation::batch_disassociate_analytics_data_set::BatchDisassoc
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_attached_file_metadata::BatchGetAttachedFileMetadataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_get_attached_file_metadata::BatchGetAttachedFileMetadataError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_attached_file_metadata::BatchGetAttachedFileMetadataError> for Error {
+    fn from(err: crate::operation::batch_get_attached_file_metadata::BatchGetAttachedFileMetadataError) -> Self {
+        match err {
+            crate::operation::batch_get_attached_file_metadata::BatchGetAttachedFileMetadataError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_get_attached_file_metadata::BatchGetAttachedFileMetadataError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::batch_get_attached_file_metadata::BatchGetAttachedFileMetadataError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::batch_get_attached_file_metadata::BatchGetAttachedFileMetadataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_get_attached_file_metadata::BatchGetAttachedFileMetadataError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_get_attached_file_metadata::BatchGetAttachedFileMetadataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_flow_association::BatchGetFlowAssociationError, R>>
     for Error
 where
@@ -936,6 +979,45 @@ impl From<crate::operation::claim_phone_number::ClaimPhoneNumberError> for Error
             crate::operation::claim_phone_number::ClaimPhoneNumberError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::claim_phone_number::ClaimPhoneNumberError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::claim_phone_number::ClaimPhoneNumberError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_attached_file_upload::CompleteAttachedFileUploadError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_attached_file_upload::CompleteAttachedFileUploadError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::complete_attached_file_upload::CompleteAttachedFileUploadError> for Error {
+    fn from(err: crate::operation::complete_attached_file_upload::CompleteAttachedFileUploadError) -> Self {
+        match err {
+            crate::operation::complete_attached_file_upload::CompleteAttachedFileUploadError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::complete_attached_file_upload::CompleteAttachedFileUploadError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::complete_attached_file_upload::CompleteAttachedFileUploadError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::complete_attached_file_upload::CompleteAttachedFileUploadError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::complete_attached_file_upload::CompleteAttachedFileUploadError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::complete_attached_file_upload::CompleteAttachedFileUploadError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1864,6 +1946,36 @@ impl From<crate::operation::deactivate_evaluation_form::DeactivateEvaluationForm
                 Error::ThrottlingException(inner)
             }
             crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_attached_file::DeleteAttachedFileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_attached_file::DeleteAttachedFileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_attached_file::DeleteAttachedFileError> for Error {
+    fn from(err: crate::operation::delete_attached_file::DeleteAttachedFileError) -> Self {
+        match err {
+            crate::operation::delete_attached_file::DeleteAttachedFileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_attached_file::DeleteAttachedFileError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_attached_file::DeleteAttachedFileError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_attached_file::DeleteAttachedFileError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_attached_file::DeleteAttachedFileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_attached_file::DeleteAttachedFileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3978,6 +4090,32 @@ impl From<crate::operation::dismiss_user_contact::DismissUserContactError> for E
             }
             crate::operation::dismiss_user_contact::DismissUserContactError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::dismiss_user_contact::DismissUserContactError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_attached_file::GetAttachedFileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_attached_file::GetAttachedFileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_attached_file::GetAttachedFileError> for Error {
+    fn from(err: crate::operation::get_attached_file::GetAttachedFileError) -> Self {
+        match err {
+            crate::operation::get_attached_file::GetAttachedFileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_attached_file::GetAttachedFileError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_attached_file::GetAttachedFileError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_attached_file::GetAttachedFileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_attached_file::GetAttachedFileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_attached_file::GetAttachedFileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6444,6 +6582,48 @@ impl From<crate::operation::send_chat_integration_event::SendChatIntegrationEven
                 Error::ThrottlingException(inner)
             }
             crate::operation::send_chat_integration_event::SendChatIntegrationEventError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_attached_file_upload::StartAttachedFileUploadError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_attached_file_upload::StartAttachedFileUploadError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_attached_file_upload::StartAttachedFileUploadError> for Error {
+    fn from(err: crate::operation::start_attached_file_upload::StartAttachedFileUploadError) -> Self {
+        match err {
+            crate::operation::start_attached_file_upload::StartAttachedFileUploadError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_attached_file_upload::StartAttachedFileUploadError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::start_attached_file_upload::StartAttachedFileUploadError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::start_attached_file_upload::StartAttachedFileUploadError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::start_attached_file_upload::StartAttachedFileUploadError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_attached_file_upload::StartAttachedFileUploadError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_attached_file_upload::StartAttachedFileUploadError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

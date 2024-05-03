@@ -53,6 +53,8 @@ pub use crate::types::_audit_event_performed_by::AuditEventPerformedByBuilder;
 
 pub use crate::types::_audit_event_field::AuditEventFieldBuilder;
 
+pub use crate::types::_file_content::FileContentBuilder;
+
 pub use crate::types::_comment_content::CommentContentBuilder;
 
 pub use crate::types::_contact::ContactBuilder;
@@ -60,6 +62,8 @@ pub use crate::types::_contact::ContactBuilder;
 pub use crate::types::_search_related_items_response_item::SearchRelatedItemsResponseItemBuilder;
 
 pub use crate::types::_contact_content::ContactContentBuilder;
+
+pub use crate::types::_file_filter::FileFilterBuilder;
 
 pub use crate::types::_comment_filter::CommentFilterBuilder;
 

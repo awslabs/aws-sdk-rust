@@ -5,8 +5,9 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`scan_arn(impl Into<String>)`](crate::operation::get_cis_scan_report::builders::GetCisScanReportFluentBuilder::scan_arn) / [`set_scan_arn(Option<String>)`](crate::operation::get_cis_scan_report::builders::GetCisScanReportFluentBuilder::set_scan_arn):<br>required: **true**<br><p>The scan ARN.</p><br>
     ///   - [`target_accounts(impl Into<String>)`](crate::operation::get_cis_scan_report::builders::GetCisScanReportFluentBuilder::target_accounts) / [`set_target_accounts(Option<Vec::<String>>)`](crate::operation::get_cis_scan_report::builders::GetCisScanReportFluentBuilder::set_target_accounts):<br>required: **false**<br><p>The target accounts.</p><br>
+    ///   - [`report_format(CisReportFormat)`](crate::operation::get_cis_scan_report::builders::GetCisScanReportFluentBuilder::report_format) / [`set_report_format(Option<CisReportFormat>)`](crate::operation::get_cis_scan_report::builders::GetCisScanReportFluentBuilder::set_report_format):<br>required: **false**<br><p>The format of the report. Valid values are <code>PDF</code> and <code>CSV</code>. If no value is specified, the report format defaults to <code>PDF</code>.</p><br>
     /// - On success, responds with [`GetCisScanReportOutput`](crate::operation::get_cis_scan_report::GetCisScanReportOutput) with field(s):
-    ///   - [`url(Option<String>)`](crate::operation::get_cis_scan_report::GetCisScanReportOutput::url): <p>The URL where a PDF of the CIS scan report can be downloaded.</p>
+    ///   - [`url(Option<String>)`](crate::operation::get_cis_scan_report::GetCisScanReportOutput::url): <p>The URL where a PDF or CSV of the CIS scan report can be downloaded.</p>
     ///   - [`status(Option<CisReportStatus>)`](crate::operation::get_cis_scan_report::GetCisScanReportOutput::status): <p>The status.</p>
     /// - On failure, responds with [`SdkError<GetCisScanReportError>`](crate::operation::get_cis_scan_report::GetCisScanReportError)
     pub fn get_cis_scan_report(&self) -> crate::operation::get_cis_scan_report::builders::GetCisScanReportFluentBuilder {

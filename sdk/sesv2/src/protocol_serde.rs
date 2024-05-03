@@ -531,6 +531,8 @@ pub(crate) mod shape_kinesis_firehose_destination;
 
 pub(crate) mod shape_message;
 
+pub(crate) mod shape_message_header;
+
 pub(crate) mod shape_message_insights_data_source;
 
 pub(crate) mod shape_metric_data_error;
@@ -586,8 +588,6 @@ pub(crate) mod shape_export_metric;
 pub(crate) mod shape_export_metrics;
 
 pub(crate) mod shape_insights_events;
-
-pub(crate) mod shape_message_header;
 
 pub(crate) mod shape_message_insights_filters;
 

@@ -5,13 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentAliasRoutingConfigurationListItem {
     /// <p>The version of the agent with which the alias is associated.</p>
-    pub agent_version: ::std::string::String,
+    pub agent_version: ::std::option::Option<::std::string::String>,
+    /// <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
+    pub provisioned_throughput: ::std::option::Option<::std::string::String>,
 }
 impl AgentAliasRoutingConfigurationListItem {
     /// <p>The version of the agent with which the alias is associated.</p>
-    pub fn agent_version(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_version.deref()
+    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+        self.agent_version.as_deref()
+    }
+    /// <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
+    pub fn provisioned_throughput(&self) -> ::std::option::Option<&str> {
+        self.provisioned_throughput.as_deref()
     }
 }
 impl AgentAliasRoutingConfigurationListItem {
@@ -26,10 +31,10 @@ impl AgentAliasRoutingConfigurationListItem {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentAliasRoutingConfigurationListItemBuilder {
     pub(crate) agent_version: ::std::option::Option<::std::string::String>,
+    pub(crate) provisioned_throughput: ::std::option::Option<::std::string::String>,
 }
 impl AgentAliasRoutingConfigurationListItemBuilder {
     /// <p>The version of the agent with which the alias is associated.</p>
-    /// This field is required.
     pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_version = ::std::option::Option::Some(input.into());
         self
@@ -43,19 +48,25 @@ impl AgentAliasRoutingConfigurationListItemBuilder {
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_version
     }
+    /// <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
+    pub fn provisioned_throughput(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.provisioned_throughput = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
+    pub fn set_provisioned_throughput(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.provisioned_throughput = input;
+        self
+    }
+    /// <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
+    pub fn get_provisioned_throughput(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioned_throughput
+    }
     /// Consumes the builder and constructs a [`AgentAliasRoutingConfigurationListItem`](crate::types::AgentAliasRoutingConfigurationListItem).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`agent_version`](crate::types::builders::AgentAliasRoutingConfigurationListItemBuilder::agent_version)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AgentAliasRoutingConfigurationListItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AgentAliasRoutingConfigurationListItem {
-            agent_version: self.agent_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_version",
-                    "agent_version was not specified but it is required when building AgentAliasRoutingConfigurationListItem",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::AgentAliasRoutingConfigurationListItem {
+        crate::types::AgentAliasRoutingConfigurationListItem {
+            agent_version: self.agent_version,
+            provisioned_throughput: self.provisioned_throughput,
+        }
     }
 }

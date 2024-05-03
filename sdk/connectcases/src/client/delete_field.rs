@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain_id(impl Into<String>)`](crate::operation::delete_field::builders::DeleteFieldFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::delete_field::builders::DeleteFieldFluentBuilder::set_domain_id):<br>required: **true**<br><p>The unique identifier of the Cases domain.</p><br>
-    ///   - [`field_id(impl Into<String>)`](crate::operation::delete_field::builders::DeleteFieldFluentBuilder::field_id) / [`set_field_id(Option<String>)`](crate::operation::delete_field::builders::DeleteFieldFluentBuilder::set_field_id):<br>required: **true**<br><p>The unique identifier of a field.</p><br>
+    ///   - [`field_id(impl Into<String>)`](crate::operation::delete_field::builders::DeleteFieldFluentBuilder::field_id) / [`set_field_id(Option<String>)`](crate::operation::delete_field::builders::DeleteFieldFluentBuilder::set_field_id):<br>required: **true**<br><p>Unique identifier of the field.</p><br>
     /// - On success, responds with [`DeleteFieldOutput`](crate::operation::delete_field::DeleteFieldOutput)
     /// - On failure, responds with [`SdkError<DeleteFieldError>`](crate::operation::delete_field::DeleteFieldError)
     pub fn delete_field(&self) -> crate::operation::delete_field::builders::DeleteFieldFluentBuilder {

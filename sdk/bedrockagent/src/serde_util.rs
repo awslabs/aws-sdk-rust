@@ -845,15 +845,6 @@ pub(crate) fn validation_exception_field_correct_errors(
     builder
 }
 
-pub(crate) fn agent_alias_routing_configuration_list_item_correct_errors(
-    mut builder: crate::types::builders::AgentAliasRoutingConfigurationListItemBuilder,
-) -> crate::types::builders::AgentAliasRoutingConfigurationListItemBuilder {
-    if builder.agent_version.is_none() {
-        builder.agent_version = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn chunking_configuration_correct_errors(
     mut builder: crate::types::builders::ChunkingConfigurationBuilder,
 ) -> crate::types::builders::ChunkingConfigurationBuilder {

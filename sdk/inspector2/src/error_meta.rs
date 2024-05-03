@@ -777,6 +777,7 @@ impl From<crate::operation::get_cis_scan_report::GetCisScanReportError> for Erro
         match err {
             crate::operation::get_cis_scan_report::GetCisScanReportError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_cis_scan_report::GetCisScanReportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_cis_scan_report::GetCisScanReportError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_cis_scan_report::GetCisScanReportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_cis_scan_report::GetCisScanReportError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_cis_scan_report::GetCisScanReportError::Unhandled(inner) => Error::Unhandled(inner),

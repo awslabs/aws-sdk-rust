@@ -596,6 +596,13 @@ pub(crate) fn contact_content_correct_errors(
     builder
 }
 
+pub(crate) fn file_content_correct_errors(mut builder: crate::types::builders::FileContentBuilder) -> crate::types::builders::FileContentBuilder {
+    if builder.file_arn.is_none() {
+        builder.file_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn field_identifier_correct_errors(
     mut builder: crate::types::builders::FieldIdentifierBuilder,
 ) -> crate::types::builders::FieldIdentifierBuilder {

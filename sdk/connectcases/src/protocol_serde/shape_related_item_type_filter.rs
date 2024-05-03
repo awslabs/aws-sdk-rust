@@ -16,6 +16,12 @@ pub fn ser_related_item_type_filter(
             crate::protocol_serde::shape_comment_filter::ser_comment_filter(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::RelatedItemTypeFilter::File(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_4.key("file").start_object();
+            crate::protocol_serde::shape_file_filter::ser_file_filter(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::RelatedItemTypeFilter::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "RelatedItemTypeFilter",

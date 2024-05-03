@@ -83,6 +83,8 @@ pub use crate::types::_audit_event_type::AuditEventType;
 
 pub use crate::types::_related_item_input_content::RelatedItemInputContent;
 
+pub use crate::types::_file_content::FileContent;
+
 pub use crate::types::_comment_content::CommentContent;
 
 pub use crate::types::_comment_body_text_type::CommentBodyTextType;
@@ -96,6 +98,8 @@ pub use crate::types::_related_item_content::RelatedItemContent;
 pub use crate::types::_contact_content::ContactContent;
 
 pub use crate::types::_related_item_type_filter::RelatedItemTypeFilter;
+
+pub use crate::types::_file_filter::FileFilter;
 
 pub use crate::types::_comment_filter::CommentFilter;
 
@@ -164,6 +168,10 @@ mod _field_type;
 mod _field_value;
 
 mod _field_value_union;
+
+mod _file_content;
+
+mod _file_filter;
 
 mod _get_field_response;
 

@@ -11,6 +11,20 @@ pub struct BulkEmailEntry {
     pub replacement_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
     /// <p>The <code>ReplacementEmailContent</code> associated with a <code>BulkEmailEntry</code>.</p>
     pub replacement_email_content: ::std::option::Option<crate::types::ReplacementEmailContent>,
+    /// <p>The list of message headers associated with the <code>BulkEmailEntry</code> data type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Headers Not Present in <code>BulkEmailEntry</code>: If a header is specified in <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a> but not in <code>BulkEmailEntry</code>, the header from <code>Template</code> will be added to the outgoing email.</p></li>
+    /// <li>
+    /// <p>Headers Present in <code>BulkEmailEntry</code>: If a header is specified in <code>BulkEmailEntry</code>, it takes precedence over any header of the same name specified in <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the header is also defined within <code>Template</code>, the value from <code>BulkEmailEntry</code> will replace the header's value in the email.</p></li>
+    /// <li>
+    /// <p>If the header is not defined within <code>Template</code>, it will simply be added to the email as specified in <code>BulkEmailEntry</code>.</p></li>
+    /// </ul></li>
+    /// </ul>
+    pub replacement_headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
 }
 impl BulkEmailEntry {
     /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p><note>
@@ -29,6 +43,24 @@ impl BulkEmailEntry {
     pub fn replacement_email_content(&self) -> ::std::option::Option<&crate::types::ReplacementEmailContent> {
         self.replacement_email_content.as_ref()
     }
+    /// <p>The list of message headers associated with the <code>BulkEmailEntry</code> data type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Headers Not Present in <code>BulkEmailEntry</code>: If a header is specified in <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a> but not in <code>BulkEmailEntry</code>, the header from <code>Template</code> will be added to the outgoing email.</p></li>
+    /// <li>
+    /// <p>Headers Present in <code>BulkEmailEntry</code>: If a header is specified in <code>BulkEmailEntry</code>, it takes precedence over any header of the same name specified in <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the header is also defined within <code>Template</code>, the value from <code>BulkEmailEntry</code> will replace the header's value in the email.</p></li>
+    /// <li>
+    /// <p>If the header is not defined within <code>Template</code>, it will simply be added to the email as specified in <code>BulkEmailEntry</code>.</p></li>
+    /// </ul></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replacement_headers.is_none()`.
+    pub fn replacement_headers(&self) -> &[crate::types::MessageHeader] {
+        self.replacement_headers.as_deref().unwrap_or_default()
+    }
 }
 impl BulkEmailEntry {
     /// Creates a new builder-style object to manufacture [`BulkEmailEntry`](crate::types::BulkEmailEntry).
@@ -44,6 +76,7 @@ pub struct BulkEmailEntryBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
     pub(crate) replacement_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
     pub(crate) replacement_email_content: ::std::option::Option<crate::types::ReplacementEmailContent>,
+    pub(crate) replacement_headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
 }
 impl BulkEmailEntryBuilder {
     /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p><note>
@@ -101,12 +134,69 @@ impl BulkEmailEntryBuilder {
     pub fn get_replacement_email_content(&self) -> &::std::option::Option<crate::types::ReplacementEmailContent> {
         &self.replacement_email_content
     }
+    /// Appends an item to `replacement_headers`.
+    ///
+    /// To override the contents of this collection use [`set_replacement_headers`](Self::set_replacement_headers).
+    ///
+    /// <p>The list of message headers associated with the <code>BulkEmailEntry</code> data type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Headers Not Present in <code>BulkEmailEntry</code>: If a header is specified in <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a> but not in <code>BulkEmailEntry</code>, the header from <code>Template</code> will be added to the outgoing email.</p></li>
+    /// <li>
+    /// <p>Headers Present in <code>BulkEmailEntry</code>: If a header is specified in <code>BulkEmailEntry</code>, it takes precedence over any header of the same name specified in <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the header is also defined within <code>Template</code>, the value from <code>BulkEmailEntry</code> will replace the header's value in the email.</p></li>
+    /// <li>
+    /// <p>If the header is not defined within <code>Template</code>, it will simply be added to the email as specified in <code>BulkEmailEntry</code>.</p></li>
+    /// </ul></li>
+    /// </ul>
+    pub fn replacement_headers(mut self, input: crate::types::MessageHeader) -> Self {
+        let mut v = self.replacement_headers.unwrap_or_default();
+        v.push(input);
+        self.replacement_headers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of message headers associated with the <code>BulkEmailEntry</code> data type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Headers Not Present in <code>BulkEmailEntry</code>: If a header is specified in <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a> but not in <code>BulkEmailEntry</code>, the header from <code>Template</code> will be added to the outgoing email.</p></li>
+    /// <li>
+    /// <p>Headers Present in <code>BulkEmailEntry</code>: If a header is specified in <code>BulkEmailEntry</code>, it takes precedence over any header of the same name specified in <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the header is also defined within <code>Template</code>, the value from <code>BulkEmailEntry</code> will replace the header's value in the email.</p></li>
+    /// <li>
+    /// <p>If the header is not defined within <code>Template</code>, it will simply be added to the email as specified in <code>BulkEmailEntry</code>.</p></li>
+    /// </ul></li>
+    /// </ul>
+    pub fn set_replacement_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>) -> Self {
+        self.replacement_headers = input;
+        self
+    }
+    /// <p>The list of message headers associated with the <code>BulkEmailEntry</code> data type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Headers Not Present in <code>BulkEmailEntry</code>: If a header is specified in <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a> but not in <code>BulkEmailEntry</code>, the header from <code>Template</code> will be added to the outgoing email.</p></li>
+    /// <li>
+    /// <p>Headers Present in <code>BulkEmailEntry</code>: If a header is specified in <code>BulkEmailEntry</code>, it takes precedence over any header of the same name specified in <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the header is also defined within <code>Template</code>, the value from <code>BulkEmailEntry</code> will replace the header's value in the email.</p></li>
+    /// <li>
+    /// <p>If the header is not defined within <code>Template</code>, it will simply be added to the email as specified in <code>BulkEmailEntry</code>.</p></li>
+    /// </ul></li>
+    /// </ul>
+    pub fn get_replacement_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>> {
+        &self.replacement_headers
+    }
     /// Consumes the builder and constructs a [`BulkEmailEntry`](crate::types::BulkEmailEntry).
     pub fn build(self) -> crate::types::BulkEmailEntry {
         crate::types::BulkEmailEntry {
             destination: self.destination,
             replacement_tags: self.replacement_tags,
             replacement_email_content: self.replacement_email_content,
+            replacement_headers: self.replacement_headers,
         }
     }
 }

@@ -39,6 +39,10 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'comment' cannot be null")
                             })?,
                         )),
+                        "file" => Some(crate::types::RelatedItemContent::File(
+                            crate::protocol_serde::shape_file_content::de_file_content(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'file' cannot be null"))?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::RelatedItemContent::Unknown)

@@ -52,6 +52,9 @@ pub mod batch_associate_analytics_data_set;
 /// Types for the `BatchDisassociateAnalyticsDataSet` operation.
 pub mod batch_disassociate_analytics_data_set;
 
+/// Types for the `BatchGetAttachedFileMetadata` operation.
+pub mod batch_get_attached_file_metadata;
+
 /// Types for the `BatchGetFlowAssociation` operation.
 pub mod batch_get_flow_association;
 
@@ -60,6 +63,9 @@ pub mod batch_put_contact;
 
 /// Types for the `ClaimPhoneNumber` operation.
 pub mod claim_phone_number;
+
+/// Types for the `CompleteAttachedFileUpload` operation.
+pub mod complete_attached_file_upload;
 
 /// Types for the `CreateAgentStatus` operation.
 pub mod create_agent_status;
@@ -135,6 +141,9 @@ pub mod create_vocabulary;
 
 /// Types for the `DeactivateEvaluationForm` operation.
 pub mod deactivate_evaluation_form;
+
+/// Types for the `DeleteAttachedFile` operation.
+pub mod delete_attached_file;
 
 /// Types for the `DeleteContactEvaluation` operation.
 pub mod delete_contact_evaluation;
@@ -315,6 +324,9 @@ pub mod disassociate_user_proficiencies;
 
 /// Types for the `DismissUserContact` operation.
 pub mod dismiss_user_contact;
+
+/// Types for the `GetAttachedFile` operation.
+pub mod get_attached_file;
 
 /// Types for the `GetContactAttributes` operation.
 pub mod get_contact_attributes;
@@ -540,6 +552,9 @@ pub mod search_vocabularies;
 
 /// Types for the `SendChatIntegrationEvent` operation.
 pub mod send_chat_integration_event;
+
+/// Types for the `StartAttachedFileUpload` operation.
+pub mod start_attached_file_upload;
 
 /// Types for the `StartChatContact` operation.
 pub mod start_chat_contact;

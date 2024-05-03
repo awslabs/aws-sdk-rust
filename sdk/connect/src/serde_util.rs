@@ -158,6 +158,15 @@ pub(crate) fn describe_vocabulary_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_attached_file_output_output_correct_errors(
+    mut builder: crate::operation::get_attached_file::builders::GetAttachedFileOutputBuilder,
+) -> crate::operation::get_attached_file::builders::GetAttachedFileOutputBuilder {
+    if builder.file_size_in_bytes.is_none() {
+        builder.file_size_in_bytes = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_task_template_output_output_correct_errors(
     mut builder: crate::operation::get_task_template::builders::GetTaskTemplateOutputBuilder,
 ) -> crate::operation::get_task_template::builders::GetTaskTemplateOutputBuilder {
@@ -501,6 +510,28 @@ pub(crate) fn rule_trigger_event_source_correct_errors(
 ) -> crate::types::builders::RuleTriggerEventSourceBuilder {
     if builder.event_source_name.is_none() {
         builder.event_source_name = "no value was set".parse::<crate::types::EventSourceName>().ok()
+    }
+    builder
+}
+
+pub(crate) fn attached_file_correct_errors(mut builder: crate::types::builders::AttachedFileBuilder) -> crate::types::builders::AttachedFileBuilder {
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(Default::default())
+    }
+    if builder.file_arn.is_none() {
+        builder.file_arn = Some(Default::default())
+    }
+    if builder.file_id.is_none() {
+        builder.file_id = Some(Default::default())
+    }
+    if builder.file_name.is_none() {
+        builder.file_name = Some(Default::default())
+    }
+    if builder.file_size_in_bytes.is_none() {
+        builder.file_size_in_bytes = Some(Default::default())
+    }
+    if builder.file_status.is_none() {
+        builder.file_status = "no value was set".parse::<crate::types::FileStatusType>().ok()
     }
     builder
 }

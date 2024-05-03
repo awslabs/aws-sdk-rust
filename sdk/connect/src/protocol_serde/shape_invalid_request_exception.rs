@@ -17,6 +17,10 @@ pub(crate) fn de_invalid_request_exception_json_err(
                             .transpose()?,
                     );
                 }
+                "Reason" => {
+                    builder = builder
+                        .set_reason(crate::protocol_serde::shape_invalid_request_exception_reason::de_invalid_request_exception_reason(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -57,11 +57,15 @@ pub(crate) mod shape_batch_associate_analytics_data_set;
 
 pub(crate) mod shape_batch_disassociate_analytics_data_set;
 
+pub(crate) mod shape_batch_get_attached_file_metadata;
+
 pub(crate) mod shape_batch_get_flow_association;
 
 pub(crate) mod shape_batch_put_contact;
 
 pub(crate) mod shape_claim_phone_number;
+
+pub(crate) mod shape_complete_attached_file_upload;
 
 pub(crate) mod shape_create_agent_status;
 
@@ -112,6 +116,8 @@ pub(crate) mod shape_create_view_version;
 pub(crate) mod shape_create_vocabulary;
 
 pub(crate) mod shape_deactivate_evaluation_form;
+
+pub(crate) mod shape_delete_attached_file;
 
 pub(crate) mod shape_delete_contact_evaluation;
 
@@ -232,6 +238,8 @@ pub(crate) mod shape_disassociate_traffic_distribution_group_user;
 pub(crate) mod shape_disassociate_user_proficiencies;
 
 pub(crate) mod shape_dismiss_user_contact;
+
+pub(crate) mod shape_get_attached_file;
 
 pub(crate) mod shape_get_contact_attributes;
 
@@ -382,6 +390,8 @@ pub(crate) mod shape_search_users;
 pub(crate) mod shape_search_vocabularies;
 
 pub(crate) mod shape_send_chat_integration_event;
+
+pub(crate) mod shape_start_attached_file_upload;
 
 pub(crate) mod shape_start_chat_contact;
 
@@ -553,6 +563,8 @@ pub(crate) mod shape_batch_associate_analytics_data_set_input;
 
 pub(crate) mod shape_batch_disassociate_analytics_data_set_input;
 
+pub(crate) mod shape_batch_get_attached_file_metadata_input;
+
 pub(crate) mod shape_batch_get_flow_association_input;
 
 pub(crate) mod shape_batch_put_contact_input;
@@ -717,6 +729,8 @@ pub(crate) mod shape_send_chat_integration_event_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_attached_file_upload_input;
+
 pub(crate) mod shape_start_chat_contact_input;
 
 pub(crate) mod shape_start_contact_evaluation_input;
@@ -861,6 +875,10 @@ pub(crate) mod shape_application;
 
 pub(crate) mod shape_applications;
 
+pub(crate) mod shape_attached_file_errors_list;
+
+pub(crate) mod shape_attached_files_list;
+
 pub(crate) mod shape_attribute;
 
 pub(crate) mod shape_attributes;
@@ -893,6 +911,8 @@ pub(crate) mod shape_contact_flow_summary_list;
 
 pub(crate) mod shape_contacts;
 
+pub(crate) mod shape_created_by_info;
+
 pub(crate) mod shape_credentials;
 
 pub(crate) mod shape_current_metric;
@@ -906,6 +926,8 @@ pub(crate) mod shape_data_set_ids;
 pub(crate) mod shape_default_vocabulary_list;
 
 pub(crate) mod shape_disconnect_reason;
+
+pub(crate) mod shape_download_url_metadata;
 
 pub(crate) mod shape_error_results;
 
@@ -974,6 +996,8 @@ pub(crate) mod shape_instance_summary_list;
 pub(crate) mod shape_integration_association_summary_list;
 
 pub(crate) mod shape_interval_details;
+
+pub(crate) mod shape_invalid_request_exception_reason;
 
 pub(crate) mod shape_lex_bot;
 
@@ -1135,6 +1159,8 @@ pub(crate) mod shape_traffic_distribution_group_user_summary_list;
 
 pub(crate) mod shape_update_participant_role_config_channel_info;
 
+pub(crate) mod shape_upload_url_metadata;
+
 pub(crate) mod shape_use_case_summary_list;
 
 pub(crate) mod shape_user;
@@ -1186,6 +1212,10 @@ pub(crate) mod shape_allowed_access_control_tags;
 pub(crate) mod shape_analytics_data_association_result;
 
 pub(crate) mod shape_assign_contact_category_action_definition;
+
+pub(crate) mod shape_attached_file;
+
+pub(crate) mod shape_attached_file_error;
 
 pub(crate) mod shape_attendee;
 
@@ -1398,6 +1428,8 @@ pub(crate) mod shape_traffic_distribution_group_summary;
 pub(crate) mod shape_traffic_distribution_group_user_summary;
 
 pub(crate) mod shape_update_case_action_definition;
+
+pub(crate) mod shape_url_metadata_signed_headers;
 
 pub(crate) mod shape_use_case;
 

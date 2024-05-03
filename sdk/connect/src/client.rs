@@ -170,11 +170,15 @@ mod batch_associate_analytics_data_set;
 
 mod batch_disassociate_analytics_data_set;
 
+mod batch_get_attached_file_metadata;
+
 mod batch_get_flow_association;
 
 mod batch_put_contact;
 
 mod claim_phone_number;
+
+mod complete_attached_file_upload;
 
 mod create_agent_status;
 
@@ -252,6 +256,8 @@ mod create_vocabulary;
 pub mod customize;
 
 mod deactivate_evaluation_form;
+
+mod delete_attached_file;
 
 mod delete_contact_evaluation;
 
@@ -372,6 +378,8 @@ mod disassociate_traffic_distribution_group_user;
 mod disassociate_user_proficiencies;
 
 mod dismiss_user_contact;
+
+mod get_attached_file;
 
 mod get_contact_attributes;
 
@@ -522,6 +530,8 @@ mod search_users;
 mod search_vocabularies;
 
 mod send_chat_integration_event;
+
+mod start_attached_file_upload;
 
 mod start_chat_contact;
 

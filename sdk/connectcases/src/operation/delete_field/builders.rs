@@ -149,17 +149,17 @@ impl DeleteFieldFluentBuilder {
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_id()
     }
-    /// <p>The unique identifier of a field.</p>
+    /// <p>Unique identifier of the field.</p>
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.field_id(input.into());
         self
     }
-    /// <p>The unique identifier of a field.</p>
+    /// <p>Unique identifier of the field.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_field_id(input);
         self
     }
-    /// <p>The unique identifier of a field.</p>
+    /// <p>Unique identifier of the field.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_field_id()
     }

@@ -423,6 +423,8 @@ pub use crate::types::_cis_finding_status_comparison::CisFindingStatusComparison
 
 pub use crate::types::_cis_report_status::CisReportStatus;
 
+pub use crate::types::_cis_report_format::CisReportFormat;
+
 pub use crate::types::_failed_account::FailedAccount;
 
 pub use crate::types::_error_code::ErrorCode;
@@ -536,6 +538,8 @@ mod _cis_finding_status_comparison;
 mod _cis_finding_status_filter;
 
 mod _cis_number_filter;
+
+mod _cis_report_format;
 
 mod _cis_report_status;
 

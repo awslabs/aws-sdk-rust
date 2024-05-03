@@ -22,7 +22,7 @@ impl crate::operation::update_location_object_storage::builders::UpdateLocationO
 }
 /// Fluent builder constructing a request to `UpdateLocationObjectStorage`.
 ///
-/// <p>Updates some parameters of an existing object storage location that DataSync accesses for a transfer. For information about creating a self-managed object storage location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for object storage</a>.</p>
+/// <p>Updates some parameters of an existing DataSync location for an object storage system.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLocationObjectStorageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -211,23 +211,56 @@ impl UpdateLocationObjectStorageFluentBuilder {
     pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_agent_arns()
     }
-    /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+    /// <p>Specifies a certificate chain for DataSync to authenticate with your object storage system if the system uses a private or self-signed certificate authority (CA). You must specify a single <code>.pem</code> file with a full certificate chain (for example, <code>file:///home/user/.ssh/object_storage_certificates.pem</code>).</p>
+    /// <p>The certificate chain might include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The object storage system's certificate</p></li>
+    /// <li>
+    /// <p>All intermediate certificates (if there are any)</p></li>
+    /// <li>
+    /// <p>The root certificate of the signing CA</p></li>
+    /// </ul>
+    /// <p>You can concatenate your certificates into a <code>.pem</code> file (which can be up to 32768 bytes before base64 encoding). The following example <code>cat</code> command creates an <code>object_storage_certificates.pem</code> file that includes three certificates:</p>
+    /// <p><code>cat object_server_certificate.pem intermediate_certificate.pem ca_root_certificate.pem &gt; object_storage_certificates.pem</code></p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
-    /// <p>Updating the certificate doesn't interfere with tasks that you have in progress.</p>
+    /// <p>Updating this parameter doesn't interfere with tasks that you have in progress.</p>
     pub fn server_certificate(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.server_certificate(input);
         self
     }
-    /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+    /// <p>Specifies a certificate chain for DataSync to authenticate with your object storage system if the system uses a private or self-signed certificate authority (CA). You must specify a single <code>.pem</code> file with a full certificate chain (for example, <code>file:///home/user/.ssh/object_storage_certificates.pem</code>).</p>
+    /// <p>The certificate chain might include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The object storage system's certificate</p></li>
+    /// <li>
+    /// <p>All intermediate certificates (if there are any)</p></li>
+    /// <li>
+    /// <p>The root certificate of the signing CA</p></li>
+    /// </ul>
+    /// <p>You can concatenate your certificates into a <code>.pem</code> file (which can be up to 32768 bytes before base64 encoding). The following example <code>cat</code> command creates an <code>object_storage_certificates.pem</code> file that includes three certificates:</p>
+    /// <p><code>cat object_server_certificate.pem intermediate_certificate.pem ca_root_certificate.pem &gt; object_storage_certificates.pem</code></p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
-    /// <p>Updating the certificate doesn't interfere with tasks that you have in progress.</p>
+    /// <p>Updating this parameter doesn't interfere with tasks that you have in progress.</p>
     pub fn set_server_certificate(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_server_certificate(input);
         self
     }
-    /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+    /// <p>Specifies a certificate chain for DataSync to authenticate with your object storage system if the system uses a private or self-signed certificate authority (CA). You must specify a single <code>.pem</code> file with a full certificate chain (for example, <code>file:///home/user/.ssh/object_storage_certificates.pem</code>).</p>
+    /// <p>The certificate chain might include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The object storage system's certificate</p></li>
+    /// <li>
+    /// <p>All intermediate certificates (if there are any)</p></li>
+    /// <li>
+    /// <p>The root certificate of the signing CA</p></li>
+    /// </ul>
+    /// <p>You can concatenate your certificates into a <code>.pem</code> file (which can be up to 32768 bytes before base64 encoding). The following example <code>cat</code> command creates an <code>object_storage_certificates.pem</code> file that includes three certificates:</p>
+    /// <p><code>cat object_server_certificate.pem intermediate_certificate.pem ca_root_certificate.pem &gt; object_storage_certificates.pem</code></p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
-    /// <p>Updating the certificate doesn't interfere with tasks that you have in progress.</p>
+    /// <p>Updating this parameter doesn't interfere with tasks that you have in progress.</p>
     pub fn get_server_certificate(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_server_certificate()
     }

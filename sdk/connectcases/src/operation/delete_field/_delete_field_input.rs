@@ -5,7 +5,7 @@
 pub struct DeleteFieldInput {
     /// <p>The unique identifier of the Cases domain.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of a field.</p>
+    /// <p>Unique identifier of the field.</p>
     pub field_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFieldInput {
@@ -13,7 +13,7 @@ impl DeleteFieldInput {
     pub fn domain_id(&self) -> ::std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>The unique identifier of a field.</p>
+    /// <p>Unique identifier of the field.</p>
     pub fn field_id(&self) -> ::std::option::Option<&str> {
         self.field_id.as_deref()
     }
@@ -48,18 +48,18 @@ impl DeleteFieldInputBuilder {
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }
-    /// <p>The unique identifier of a field.</p>
+    /// <p>Unique identifier of the field.</p>
     /// This field is required.
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of a field.</p>
+    /// <p>Unique identifier of the field.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_id = input;
         self
     }
-    /// <p>The unique identifier of a field.</p>
+    /// <p>Unique identifier of the field.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.field_id
     }

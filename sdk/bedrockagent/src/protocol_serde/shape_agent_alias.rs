@@ -85,6 +85,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "failureReasons" => {
+                            builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

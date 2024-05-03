@@ -3,8 +3,11 @@ pub fn ser_agent_alias_routing_configuration_list_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AgentAliasRoutingConfigurationListItem,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    {
-        object.key("agentVersion").string(input.agent_version.as_str());
+    if let Some(var_1) = &input.agent_version {
+        object.key("agentVersion").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.provisioned_throughput {
+        object.key("provisionedThroughput").string(var_2.as_str());
     }
     Ok(())
 }
@@ -31,6 +34,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "provisionedThroughput" => {
+                            builder = builder.set_provisioned_throughput(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -41,11 +51,7 @@ where
                     }
                 }
             }
-            Ok(Some(
-                crate::serde_util::agent_alias_routing_configuration_list_item_correct_errors(builder)
-                    .build()
-                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
-            ))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

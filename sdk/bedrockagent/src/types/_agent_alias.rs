@@ -38,6 +38,8 @@ pub struct AgentAlias {
     /// <p>DELETING – The agent alias is being deleted.</p></li>
     /// </ul>
     pub agent_alias_status: crate::types::AgentAliasStatus,
+    /// <p>Information on the failure of Provisioned Throughput assigned to an agent alias.</p>
+    pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AgentAlias {
     /// <p>The unique identifier of the agent.</p>
@@ -103,6 +105,12 @@ impl AgentAlias {
     pub fn agent_alias_status(&self) -> &crate::types::AgentAliasStatus {
         &self.agent_alias_status
     }
+    /// <p>Information on the failure of Provisioned Throughput assigned to an agent alias.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
+    pub fn failure_reasons(&self) -> &[::std::string::String] {
+        self.failure_reasons.as_deref().unwrap_or_default()
+    }
 }
 impl AgentAlias {
     /// Creates a new builder-style object to manufacture [`AgentAlias`](crate::types::AgentAlias).
@@ -126,6 +134,7 @@ pub struct AgentAliasBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) agent_alias_history_events: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasHistoryEvent>>,
     pub(crate) agent_alias_status: ::std::option::Option<crate::types::AgentAliasStatus>,
+    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AgentAliasBuilder {
     /// <p>The unique identifier of the agent.</p>
@@ -340,6 +349,26 @@ impl AgentAliasBuilder {
     pub fn get_agent_alias_status(&self) -> &::std::option::Option<crate::types::AgentAliasStatus> {
         &self.agent_alias_status
     }
+    /// Appends an item to `failure_reasons`.
+    ///
+    /// To override the contents of this collection use [`set_failure_reasons`](Self::set_failure_reasons).
+    ///
+    /// <p>Information on the failure of Provisioned Throughput assigned to an agent alias.</p>
+    pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.failure_reasons.unwrap_or_default();
+        v.push(input.into());
+        self.failure_reasons = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information on the failure of Provisioned Throughput assigned to an agent alias.</p>
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.failure_reasons = input;
+        self
+    }
+    /// <p>Information on the failure of Provisioned Throughput assigned to an agent alias.</p>
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.failure_reasons
+    }
     /// Consumes the builder and constructs a [`AgentAlias`](crate::types::AgentAlias).
     /// This method will fail if any of the following fields are not set:
     /// - [`agent_id`](crate::types::builders::AgentAliasBuilder::agent_id)
@@ -403,6 +432,7 @@ impl AgentAliasBuilder {
                     "agent_alias_status was not specified but it is required when building AgentAlias",
                 )
             })?,
+            failure_reasons: self.failure_reasons,
         })
     }
 }

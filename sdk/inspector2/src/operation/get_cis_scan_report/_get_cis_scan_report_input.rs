@@ -7,6 +7,8 @@ pub struct GetCisScanReportInput {
     pub scan_arn: ::std::option::Option<::std::string::String>,
     /// <p>The target accounts.</p>
     pub target_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The format of the report. Valid values are <code>PDF</code> and <code>CSV</code>. If no value is specified, the report format defaults to <code>PDF</code>.</p>
+    pub report_format: ::std::option::Option<crate::types::CisReportFormat>,
 }
 impl GetCisScanReportInput {
     /// <p>The scan ARN.</p>
@@ -18,6 +20,10 @@ impl GetCisScanReportInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_accounts.is_none()`.
     pub fn target_accounts(&self) -> &[::std::string::String] {
         self.target_accounts.as_deref().unwrap_or_default()
+    }
+    /// <p>The format of the report. Valid values are <code>PDF</code> and <code>CSV</code>. If no value is specified, the report format defaults to <code>PDF</code>.</p>
+    pub fn report_format(&self) -> ::std::option::Option<&crate::types::CisReportFormat> {
+        self.report_format.as_ref()
     }
 }
 impl GetCisScanReportInput {
@@ -33,6 +39,7 @@ impl GetCisScanReportInput {
 pub struct GetCisScanReportInputBuilder {
     pub(crate) scan_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) report_format: ::std::option::Option<crate::types::CisReportFormat>,
 }
 impl GetCisScanReportInputBuilder {
     /// <p>The scan ARN.</p>
@@ -70,6 +77,20 @@ impl GetCisScanReportInputBuilder {
     pub fn get_target_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_accounts
     }
+    /// <p>The format of the report. Valid values are <code>PDF</code> and <code>CSV</code>. If no value is specified, the report format defaults to <code>PDF</code>.</p>
+    pub fn report_format(mut self, input: crate::types::CisReportFormat) -> Self {
+        self.report_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The format of the report. Valid values are <code>PDF</code> and <code>CSV</code>. If no value is specified, the report format defaults to <code>PDF</code>.</p>
+    pub fn set_report_format(mut self, input: ::std::option::Option<crate::types::CisReportFormat>) -> Self {
+        self.report_format = input;
+        self
+    }
+    /// <p>The format of the report. Valid values are <code>PDF</code> and <code>CSV</code>. If no value is specified, the report format defaults to <code>PDF</code>.</p>
+    pub fn get_report_format(&self) -> &::std::option::Option<crate::types::CisReportFormat> {
+        &self.report_format
+    }
     /// Consumes the builder and constructs a [`GetCisScanReportInput`](crate::operation::get_cis_scan_report::GetCisScanReportInput).
     pub fn build(
         self,
@@ -77,6 +98,7 @@ impl GetCisScanReportInputBuilder {
         ::std::result::Result::Ok(crate::operation::get_cis_scan_report::GetCisScanReportInput {
             scan_arn: self.scan_arn,
             target_accounts: self.target_accounts,
+            report_format: self.report_format,
         })
     }
 }

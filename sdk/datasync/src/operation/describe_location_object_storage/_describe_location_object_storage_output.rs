@@ -18,7 +18,7 @@ pub struct DescribeLocationObjectStorageOutput {
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time that the location was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
+    /// <p>The certificate chain for DataSync to authenticate with your object storage system if the system uses a private or self-signed certificate authority (CA).</p>
     pub server_certificate: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
@@ -53,7 +53,7 @@ impl DescribeLocationObjectStorageOutput {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
+    /// <p>The certificate chain for DataSync to authenticate with your object storage system if the system uses a private or self-signed certificate authority (CA).</p>
     pub fn server_certificate(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.server_certificate.as_ref()
     }
@@ -189,17 +189,17 @@ impl DescribeLocationObjectStorageOutputBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
+    /// <p>The certificate chain for DataSync to authenticate with your object storage system if the system uses a private or self-signed certificate authority (CA).</p>
     pub fn server_certificate(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.server_certificate = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
+    /// <p>The certificate chain for DataSync to authenticate with your object storage system if the system uses a private or self-signed certificate authority (CA).</p>
     pub fn set_server_certificate(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.server_certificate = input;
         self
     }
-    /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
+    /// <p>The certificate chain for DataSync to authenticate with your object storage system if the system uses a private or self-signed certificate authority (CA).</p>
     pub fn get_server_certificate(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.server_certificate
     }

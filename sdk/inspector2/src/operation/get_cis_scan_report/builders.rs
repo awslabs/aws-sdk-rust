@@ -141,4 +141,18 @@ impl GetCisScanReportFluentBuilder {
     pub fn get_target_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_target_accounts()
     }
+    /// <p>The format of the report. Valid values are <code>PDF</code> and <code>CSV</code>. If no value is specified, the report format defaults to <code>PDF</code>.</p>
+    pub fn report_format(mut self, input: crate::types::CisReportFormat) -> Self {
+        self.inner = self.inner.report_format(input);
+        self
+    }
+    /// <p>The format of the report. Valid values are <code>PDF</code> and <code>CSV</code>. If no value is specified, the report format defaults to <code>PDF</code>.</p>
+    pub fn set_report_format(mut self, input: ::std::option::Option<crate::types::CisReportFormat>) -> Self {
+        self.inner = self.inner.set_report_format(input);
+        self
+    }
+    /// <p>The format of the report. Valid values are <code>PDF</code> and <code>CSV</code>. If no value is specified, the report format defaults to <code>PDF</code>.</p>
+    pub fn get_report_format(&self) -> &::std::option::Option<crate::types::CisReportFormat> {
+        self.inner.get_report_format()
+    }
 }

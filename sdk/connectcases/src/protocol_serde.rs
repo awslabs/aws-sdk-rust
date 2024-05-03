@@ -233,6 +233,10 @@ pub(crate) mod shape_field_summary;
 
 pub(crate) mod shape_field_value_union;
 
+pub(crate) mod shape_file_content;
+
+pub(crate) mod shape_file_filter;
+
 pub(crate) mod shape_get_field_response;
 
 pub(crate) mod shape_layout_summary;

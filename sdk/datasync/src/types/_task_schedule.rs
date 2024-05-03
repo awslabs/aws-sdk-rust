@@ -6,7 +6,7 @@
 pub struct TaskSchedule {
     /// <p>Specifies your task schedule by using a cron expression in UTC time. For information about cron expression syntax, see the <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html"> <i>Amazon EventBridge User Guide</i> </a>.</p>
     pub schedule_expression: ::std::string::String,
-    /// <p>Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there can be situations where you need to disable it. For example, you might need to pause a recurring transfer or fix an issue with your task or perform maintenance on your storage system.</p>
+    /// <p>Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there can be situations where you need to disable it. For example, you might need to pause a recurring transfer to fix an issue with your task or perform maintenance on your storage system.</p>
     /// <p>DataSync might disable your schedule automatically if your task fails repeatedly with the same error. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_TaskScheduleDetails.html">TaskScheduleDetails</a>.</p>
     pub status: ::std::option::Option<crate::types::ScheduleStatus>,
 }
@@ -16,7 +16,7 @@ impl TaskSchedule {
         use std::ops::Deref;
         self.schedule_expression.deref()
     }
-    /// <p>Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there can be situations where you need to disable it. For example, you might need to pause a recurring transfer or fix an issue with your task or perform maintenance on your storage system.</p>
+    /// <p>Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there can be situations where you need to disable it. For example, you might need to pause a recurring transfer to fix an issue with your task or perform maintenance on your storage system.</p>
     /// <p>DataSync might disable your schedule automatically if your task fails repeatedly with the same error. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_TaskScheduleDetails.html">TaskScheduleDetails</a>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ScheduleStatus> {
         self.status.as_ref()
@@ -52,19 +52,19 @@ impl TaskScheduleBuilder {
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_expression
     }
-    /// <p>Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there can be situations where you need to disable it. For example, you might need to pause a recurring transfer or fix an issue with your task or perform maintenance on your storage system.</p>
+    /// <p>Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there can be situations where you need to disable it. For example, you might need to pause a recurring transfer to fix an issue with your task or perform maintenance on your storage system.</p>
     /// <p>DataSync might disable your schedule automatically if your task fails repeatedly with the same error. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_TaskScheduleDetails.html">TaskScheduleDetails</a>.</p>
     pub fn status(mut self, input: crate::types::ScheduleStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there can be situations where you need to disable it. For example, you might need to pause a recurring transfer or fix an issue with your task or perform maintenance on your storage system.</p>
+    /// <p>Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there can be situations where you need to disable it. For example, you might need to pause a recurring transfer to fix an issue with your task or perform maintenance on your storage system.</p>
     /// <p>DataSync might disable your schedule automatically if your task fails repeatedly with the same error. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_TaskScheduleDetails.html">TaskScheduleDetails</a>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ScheduleStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there can be situations where you need to disable it. For example, you might need to pause a recurring transfer or fix an issue with your task or perform maintenance on your storage system.</p>
+    /// <p>Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there can be situations where you need to disable it. For example, you might need to pause a recurring transfer to fix an issue with your task or perform maintenance on your storage system.</p>
     /// <p>DataSync might disable your schedule automatically if your task fails repeatedly with the same error. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_TaskScheduleDetails.html">TaskScheduleDetails</a>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ScheduleStatus> {
         &self.status

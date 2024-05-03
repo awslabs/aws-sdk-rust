@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`server_protocol(Option<ObjectStorageServerProtocol>)`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput::server_protocol): <p>The protocol that your object storage system uses to communicate.</p>
     ///   - [`agent_arns(Option<Vec::<String>>)`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput::agent_arns): <p>The ARNs of the DataSync agents that can connect with your object storage system.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput::creation_time): <p>The time that the location was created.</p>
-    ///   - [`server_certificate(Option<Blob>)`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput::server_certificate): <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
+    ///   - [`server_certificate(Option<Blob>)`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput::server_certificate): <p>The certificate chain for DataSync to authenticate with your object storage system if the system uses a private or self-signed certificate authority (CA).</p>
     /// - On failure, responds with [`SdkError<DescribeLocationObjectStorageError>`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageError)
     pub fn describe_location_object_storage(
         &self,

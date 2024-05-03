@@ -169,6 +169,8 @@ pub use crate::types::_persistent_chat::PersistentChatBuilder;
 
 pub use crate::types::_chat_message::ChatMessageBuilder;
 
+pub use crate::types::_upload_url_metadata::UploadUrlMetadataBuilder;
+
 pub use crate::types::_new_session_details::NewSessionDetailsBuilder;
 
 pub use crate::types::_chat_event::ChatEventBuilder;
@@ -437,6 +439,8 @@ pub use crate::types::_current_metric::CurrentMetricBuilder;
 
 pub use crate::types::_current_metric_sort_criteria::CurrentMetricSortCriteriaBuilder;
 
+pub use crate::types::_download_url_metadata::DownloadUrlMetadataBuilder;
+
 pub use crate::types::_user_proficiency_disassociate::UserProficiencyDisassociateBuilder;
 
 pub use crate::types::_vocabulary::VocabularyBuilder;
@@ -504,5 +508,9 @@ pub use crate::types::_contact_data_request::ContactDataRequestBuilder;
 pub use crate::types::_campaign::CampaignBuilder;
 
 pub use crate::types::_endpoint::EndpointBuilder;
+
+pub use crate::types::_attached_file_error::AttachedFileErrorBuilder;
+
+pub use crate::types::_attached_file::AttachedFileBuilder;
 
 pub use crate::types::_error_result::ErrorResultBuilder;
