@@ -2459,6 +2459,10 @@ source_hash = '55bd4aa4b9771b6b2f028da79814b74a81debb355168aa2b1175bf619af749f7'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'a854b53efd4d2c4587c4bb6e5163332b967b70e138da5ad621b32ab7408c62d2'
+
+[release]
+tag = 'release-2024-05-03'
+
 [release.crates]
 aws-sdk-bedrockagent = '1.24.0'
 aws-sdk-connect = '1.35.0'
