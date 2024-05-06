@@ -809,6 +809,8 @@ pub use crate::types::_blackout_slate_network_end_blackout::BlackoutSlateNetwork
 
 pub use crate::types::_avail_configuration::AvailConfiguration;
 
+pub use crate::types::_scte35_segmentation_scope::Scte35SegmentationScope;
+
 pub use crate::types::_avail_settings::AvailSettings;
 
 pub use crate::types::_scte35_time_signal_apos::Scte35TimeSignalApos;
@@ -2080,6 +2082,8 @@ mod _scte35_return_to_network_schedule_action_settings;
 mod _scte35_segmentation_cancel_indicator;
 
 mod _scte35_segmentation_descriptor;
+
+mod _scte35_segmentation_scope;
 
 mod _scte35_splice_insert;
 

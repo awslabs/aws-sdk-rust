@@ -1420,9 +1420,9 @@ model_hash = 'a3d61780225704cf84c734af328caa5d4cd42ad2d399b3c1cfa6cedd6a9a8a06'
 
 [crates.aws-sdk-medialive]
 category = 'AwsSdk'
-version = '1.27.0'
-source_hash = 'ccd6d357be230c5c86cbc2e2f1f77d78183c14a6ccfb459ab808960d71b346dc'
-model_hash = 'bfbed8a0d864ad6c1b3bbc633a851c4e8de80a31b5abca05aa99fd330a2f65c0'
+version = '1.28.0'
+source_hash = 'd10497f97835709d1886d3e9560f834dc0b283e977188f44da44a7e4f2c62d9f'
+model_hash = '29c03532a3a4e27a6a86e74f7ddce972bc9d09e5d570188da5d1e81b6f30d22f'
 
 [crates.aws-sdk-mediapackage]
 category = 'AwsSdk'
@@ -2459,15 +2459,5 @@ source_hash = '55bd4aa4b9771b6b2f028da79814b74a81debb355168aa2b1175bf619af749f7'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'a854b53efd4d2c4587c4bb6e5163332b967b70e138da5ad621b32ab7408c62d2'
-
-[release]
-tag = 'release-2024-05-03'
-
 [release.crates]
-aws-sdk-bedrockagent = '1.24.0'
-aws-sdk-connect = '1.35.0'
-aws-sdk-connectcases = '1.25.0'
-aws-sdk-datasync = '1.24.1'
-aws-sdk-inspector2 = '1.26.0'
-aws-sdk-sagemaker = '1.38.0'
-aws-sdk-sesv2 = '1.24.0'
+aws-sdk-medialive = '1.28.0'

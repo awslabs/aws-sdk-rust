@@ -9,6 +9,9 @@ pub fn ser_avail_configuration(
         crate::protocol_serde::shape_avail_settings::ser_avail_settings(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.scte35_segmentation_scope {
+        object.key("scte35SegmentationScope").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -29,6 +32,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "availSettings" => {
                             builder = builder.set_avail_settings(crate::protocol_serde::shape_avail_settings::de_avail_settings(tokens)?);
+                        }
+                        "scte35SegmentationScope" => {
+                            builder = builder.set_scte35_segmentation_scope(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Scte35SegmentationScope::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
