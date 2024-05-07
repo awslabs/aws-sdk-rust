@@ -65,6 +65,10 @@ pub use crate::types::_app_component_compliance::AppComponentComplianceBuilder;
 
 pub use crate::types::_app_assessment_summary::AppAssessmentSummaryBuilder;
 
+pub use crate::types::_resource_drift::ResourceDriftBuilder;
+
+pub use crate::types::_resource_identifier::ResourceIdentifierBuilder;
+
 pub use crate::types::_compliance_drift::ComplianceDriftBuilder;
 
 pub use crate::types::_alarm_recommendation::AlarmRecommendationBuilder;

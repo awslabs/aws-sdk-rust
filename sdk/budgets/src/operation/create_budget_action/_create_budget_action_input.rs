@@ -21,6 +21,8 @@ pub struct CreateBudgetActionInput {
     pub approval_model: ::std::option::Option<crate::types::ApprovalModel>,
     /// <p>A list of subscribers.</p>
     pub subscribers: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
+    /// <p>An optional list of tags to associate with the specified budget action. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
+    pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
 }
 impl CreateBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
@@ -61,6 +63,12 @@ impl CreateBudgetActionInput {
     pub fn subscribers(&self) -> &[crate::types::Subscriber] {
         self.subscribers.as_deref().unwrap_or_default()
     }
+    /// <p>An optional list of tags to associate with the specified budget action. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
+    pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
+        self.resource_tags.as_deref().unwrap_or_default()
+    }
 }
 impl CreateBudgetActionInput {
     /// Creates a new builder-style object to manufacture [`CreateBudgetActionInput`](crate::operation::create_budget_action::CreateBudgetActionInput).
@@ -82,6 +90,7 @@ pub struct CreateBudgetActionInputBuilder {
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) approval_model: ::std::option::Option<crate::types::ApprovalModel>,
     pub(crate) subscribers: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
+    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
 }
 impl CreateBudgetActionInputBuilder {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
@@ -224,6 +233,26 @@ impl CreateBudgetActionInputBuilder {
     pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
         &self.subscribers
     }
+    /// Appends an item to `resource_tags`.
+    ///
+    /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+    ///
+    /// <p>An optional list of tags to associate with the specified budget action. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
+    pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
+        let mut v = self.resource_tags.unwrap_or_default();
+        v.push(input);
+        self.resource_tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An optional list of tags to associate with the specified budget action. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
+        self.resource_tags = input;
+        self
+    }
+    /// <p>An optional list of tags to associate with the specified budget action. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+        &self.resource_tags
+    }
     /// Consumes the builder and constructs a [`CreateBudgetActionInput`](crate::operation::create_budget_action::CreateBudgetActionInput).
     pub fn build(
         self,
@@ -239,6 +268,7 @@ impl CreateBudgetActionInputBuilder {
             execution_role_arn: self.execution_role_arn,
             approval_model: self.approval_model,
             subscribers: self.subscribers,
+            resource_tags: self.resource_tags,
         })
     }
 }

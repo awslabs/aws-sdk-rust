@@ -10,7 +10,7 @@ pub struct PhysicalResource {
     pub logical_resource_id: ::std::option::Option<crate::types::LogicalResourceId>,
     /// <p>Identifier of the physical resource.</p>
     pub physical_resource_id: ::std::option::Option<crate::types::PhysicalResourceId>,
-    /// <p>The type of resource.</p>
+    /// <p>Type of resource.</p>
     pub resource_type: ::std::string::String,
     /// <p>The application components that belong to this resource.</p>
     pub app_components: ::std::option::Option<::std::vec::Vec<crate::types::AppComponent>>,
@@ -40,7 +40,7 @@ impl PhysicalResource {
     pub fn physical_resource_id(&self) -> ::std::option::Option<&crate::types::PhysicalResourceId> {
         self.physical_resource_id.as_ref()
     }
-    /// <p>The type of resource.</p>
+    /// <p>Type of resource.</p>
     pub fn resource_type(&self) -> &str {
         use std::ops::Deref;
         self.resource_type.deref()
@@ -140,18 +140,18 @@ impl PhysicalResourceBuilder {
     pub fn get_physical_resource_id(&self) -> &::std::option::Option<crate::types::PhysicalResourceId> {
         &self.physical_resource_id
     }
-    /// <p>The type of resource.</p>
+    /// <p>Type of resource.</p>
     /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of resource.</p>
+    /// <p>Type of resource.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The type of resource.</p>
+    /// <p>Type of resource.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }

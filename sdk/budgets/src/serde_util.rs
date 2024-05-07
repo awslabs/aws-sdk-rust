@@ -239,6 +239,16 @@ pub(crate) fn notification_correct_errors(mut builder: crate::types::builders::N
     builder
 }
 
+pub(crate) fn resource_tag_correct_errors(mut builder: crate::types::builders::ResourceTagBuilder) -> crate::types::builders::ResourceTagBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn spend_correct_errors(mut builder: crate::types::builders::SpendBuilder) -> crate::types::builders::SpendBuilder {
     if builder.amount.is_none() {
         builder.amount = Some(Default::default())

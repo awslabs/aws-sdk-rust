@@ -13,6 +13,8 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_resource_locked_exception::ResourceLockedException;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
 pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenException;
 
 pub use crate::types::error::_expired_next_token_exception::ExpiredNextTokenException;
@@ -36,6 +38,8 @@ mod _invalid_parameter_exception;
 mod _not_found_exception;
 
 mod _resource_locked_exception;
+
+mod _service_quota_exceeded_exception;
 
 mod _throttling_exception;
 

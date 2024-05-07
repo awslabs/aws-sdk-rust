@@ -36,8 +36,8 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// <p> The comparison operator of a notification. Currently, the service supports the following
-/// operators:</p>
+/// <p> The comparison operator of a notification. Currently, the service supports the
+/// following operators:</p>
 /// <p>
 /// <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code>
 /// </p>

@@ -41,7 +41,9 @@
 /// - It might inadvertently shadow other intended match arms.
 /// <p> The type of a budget. It must be one of the following types: </p>
 /// <p>
-/// <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
+/// <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>,
+/// <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or
+/// <code>SAVINGS_PLANS_COVERAGE</code>.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

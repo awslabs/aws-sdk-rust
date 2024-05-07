@@ -20,7 +20,7 @@ pub struct Budget {
     /// <p>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the same experience as a fixed budget.</p>
     /// <p><code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets that are created with <code>PlannedBudgetLimits</code>. Budgets that are created without <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They don't contain <code>PlannedBudgetLimits</code>.</p>
     pub planned_budget_limits: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Spend>>,
-    /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
+    /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that are applied to a budget.</p>
     /// <p>Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:</p>
     /// <ul>
     /// <li>
@@ -76,7 +76,7 @@ impl Budget {
     pub fn planned_budget_limits(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Spend>> {
         self.planned_budget_limits.as_ref()
     }
-    /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
+    /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that are applied to a budget.</p>
     /// <p>Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:</p>
     /// <ul>
     /// <li>
@@ -230,7 +230,7 @@ impl BudgetBuilder {
     ///
     /// To override the contents of this collection use [`set_cost_filters`](Self::set_cost_filters).
     ///
-    /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
+    /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that are applied to a budget.</p>
     /// <p>Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:</p>
     /// <ul>
     /// <li>
@@ -250,7 +250,7 @@ impl BudgetBuilder {
         self.cost_filters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
+    /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that are applied to a budget.</p>
     /// <p>Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:</p>
     /// <ul>
     /// <li>
@@ -271,7 +271,7 @@ impl BudgetBuilder {
         self.cost_filters = input;
         self
     }
-    /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
+    /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that are applied to a budget.</p>
     /// <p>Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:</p>
     /// <ul>
     /// <li>

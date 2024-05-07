@@ -1097,6 +1097,50 @@ impl From<crate::operation::list_app_assessment_compliance_drifts::ListAppAssess
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_app_assessment_resource_drifts::ListAppAssessmentResourceDriftsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_app_assessment_resource_drifts::ListAppAssessmentResourceDriftsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_app_assessment_resource_drifts::ListAppAssessmentResourceDriftsError> for Error {
+    fn from(err: crate::operation::list_app_assessment_resource_drifts::ListAppAssessmentResourceDriftsError) -> Self {
+        match err {
+            crate::operation::list_app_assessment_resource_drifts::ListAppAssessmentResourceDriftsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_app_assessment_resource_drifts::ListAppAssessmentResourceDriftsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_app_assessment_resource_drifts::ListAppAssessmentResourceDriftsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_app_assessment_resource_drifts::ListAppAssessmentResourceDriftsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_app_assessment_resource_drifts::ListAppAssessmentResourceDriftsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_app_assessments::ListAppAssessmentsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

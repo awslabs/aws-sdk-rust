@@ -201,6 +201,12 @@ mod describe_subscribers_for_notification;
 
 mod execute_budget_action;
 
+mod list_tags_for_resource;
+
+mod tag_resource;
+
+mod untag_resource;
+
 mod update_budget;
 
 mod update_budget_action;

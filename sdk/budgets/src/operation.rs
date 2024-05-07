@@ -58,6 +58,15 @@ pub mod describe_subscribers_for_notification;
 /// Types for the `ExecuteBudgetAction` operation.
 pub mod execute_budget_action;
 
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;
+
 /// Types for the `UpdateBudget` operation.
 pub mod update_budget;
 

@@ -79,6 +79,9 @@ pub mod list_alarm_recommendations;
 /// Types for the `ListAppAssessmentComplianceDrifts` operation.
 pub mod list_app_assessment_compliance_drifts;
 
+/// Types for the `ListAppAssessmentResourceDrifts` operation.
+pub mod list_app_assessment_resource_drifts;
+
 /// Types for the `ListAppAssessments` operation.
 pub mod list_app_assessments;
 

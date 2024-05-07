@@ -29,6 +29,8 @@ pub use crate::types::_time_period::TimePeriodBuilder;
 
 pub use crate::types::_cost_types::CostTypesBuilder;
 
+pub use crate::types::_resource_tag::ResourceTagBuilder;
+
 pub use crate::types::_budget_performance_history::BudgetPerformanceHistoryBuilder;
 
 pub use crate::types::_budgeted_and_actual_amounts::BudgetedAndActualAmountsBuilder;

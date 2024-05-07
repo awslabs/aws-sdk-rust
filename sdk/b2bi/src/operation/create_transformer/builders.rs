@@ -136,17 +136,17 @@ impl CreateTransformerFluentBuilder {
     pub fn get_file_format(&self) -> &::std::option::Option<crate::types::FileFormat> {
         self.inner.get_file_format()
     }
-    /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
+    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>
     pub fn mapping_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mapping_template(input.into());
         self
     }
-    /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
+    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>
     pub fn set_mapping_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mapping_template(input);
         self
     }
-    /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
+    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>
     pub fn get_mapping_template(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_mapping_template()
     }

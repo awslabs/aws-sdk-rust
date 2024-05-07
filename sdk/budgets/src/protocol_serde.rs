@@ -61,6 +61,12 @@ pub(crate) mod shape_describe_subscribers_for_notification;
 
 pub(crate) mod shape_execute_budget_action;
 
+pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
+
 pub(crate) mod shape_update_budget;
 
 pub(crate) mod shape_update_budget_action;
@@ -129,11 +135,19 @@ pub(crate) mod shape_invalid_next_token_exception;
 
 pub(crate) mod shape_invalid_parameter_exception;
 
+pub(crate) mod shape_list_tags_for_resource_input;
+
 pub(crate) mod shape_not_found_exception;
 
 pub(crate) mod shape_resource_locked_exception;
 
+pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_tag_resource_input;
+
 pub(crate) mod shape_throttling_exception;
+
+pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_budget_action_input;
 
@@ -166,6 +180,10 @@ pub(crate) mod shape_notification;
 pub(crate) mod shape_notification_with_subscribers;
 
 pub(crate) mod shape_notifications;
+
+pub(crate) mod shape_resource_tag;
+
+pub(crate) mod shape_resource_tag_list;
 
 pub(crate) mod shape_subscriber;
 

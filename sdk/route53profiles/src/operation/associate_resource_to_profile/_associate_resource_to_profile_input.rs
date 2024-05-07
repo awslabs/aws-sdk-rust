@@ -9,8 +9,8 @@ pub struct AssociateResourceToProfileInput {
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name for the resource association.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>If you are adding a DNS Firewall rule group, include also a priority in this format:</p>
-    /// <p><code>Key=FirewallRuleGroupPriority,Value=100</code></p>
+    /// <p>If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order for the rule groups, starting with the priority assinged the lowest value.</p>
+    /// <p>The allowed values for priority are between 100 and 9900.</p>
     pub resource_properties: ::std::option::Option<::std::string::String>,
 }
 impl AssociateResourceToProfileInput {
@@ -26,8 +26,8 @@ impl AssociateResourceToProfileInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>If you are adding a DNS Firewall rule group, include also a priority in this format:</p>
-    /// <p><code>Key=FirewallRuleGroupPriority,Value=100</code></p>
+    /// <p>If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order for the rule groups, starting with the priority assinged the lowest value.</p>
+    /// <p>The allowed values for priority are between 100 and 9900.</p>
     pub fn resource_properties(&self) -> ::std::option::Option<&str> {
         self.resource_properties.as_deref()
     }
@@ -94,20 +94,20 @@ impl AssociateResourceToProfileInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>If you are adding a DNS Firewall rule group, include also a priority in this format:</p>
-    /// <p><code>Key=FirewallRuleGroupPriority,Value=100</code></p>
+    /// <p>If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order for the rule groups, starting with the priority assinged the lowest value.</p>
+    /// <p>The allowed values for priority are between 100 and 9900.</p>
     pub fn resource_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_properties = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If you are adding a DNS Firewall rule group, include also a priority in this format:</p>
-    /// <p><code>Key=FirewallRuleGroupPriority,Value=100</code></p>
+    /// <p>If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order for the rule groups, starting with the priority assinged the lowest value.</p>
+    /// <p>The allowed values for priority are between 100 and 9900.</p>
     pub fn set_resource_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_properties = input;
         self
     }
-    /// <p>If you are adding a DNS Firewall rule group, include also a priority in this format:</p>
-    /// <p><code>Key=FirewallRuleGroupPriority,Value=100</code></p>
+    /// <p>If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order for the rule groups, starting with the priority assinged the lowest value.</p>
+    /// <p>The allowed values for priority are between 100 and 9900.</p>
     pub fn get_resource_properties(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_properties
     }

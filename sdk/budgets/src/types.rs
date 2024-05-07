@@ -53,6 +53,8 @@ pub use crate::types::_time_unit::TimeUnit;
 
 pub use crate::types::_cost_types::CostTypes;
 
+pub use crate::types::_resource_tag::ResourceTag;
+
 pub use crate::types::_execution_type::ExecutionType;
 
 pub use crate::types::_budget_performance_history::BudgetPerformanceHistory;
@@ -122,6 +124,8 @@ mod _notification_state;
 mod _notification_type;
 
 mod _notification_with_subscribers;
+
+mod _resource_tag;
 
 mod _scp_action_definition;
 

@@ -136,20 +136,20 @@ impl UpdateProfileResourceAssociationFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>If you are adding a DNS Firewall rule group, include also a priority in this format:</p>
-    /// <p><code>Key=FirewallRuleGroupPriority,Value=100</code>.</p>
+    /// <p>If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order for the rule groups, starting with the priority assinged the lowest value.</p>
+    /// <p>The allowed values for priority are between 100 and 9900.</p>
     pub fn resource_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_properties(input.into());
         self
     }
-    /// <p>If you are adding a DNS Firewall rule group, include also a priority in this format:</p>
-    /// <p><code>Key=FirewallRuleGroupPriority,Value=100</code>.</p>
+    /// <p>If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order for the rule groups, starting with the priority assinged the lowest value.</p>
+    /// <p>The allowed values for priority are between 100 and 9900.</p>
     pub fn set_resource_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_properties(input);
         self
     }
-    /// <p>If you are adding a DNS Firewall rule group, include also a priority in this format:</p>
-    /// <p><code>Key=FirewallRuleGroupPriority,Value=100</code>.</p>
+    /// <p>If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order for the rule groups, starting with the priority assinged the lowest value.</p>
+    /// <p>The allowed values for priority are between 100 and 9900.</p>
     pub fn get_resource_properties(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_properties()
     }

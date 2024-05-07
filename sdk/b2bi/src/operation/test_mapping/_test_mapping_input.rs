@@ -5,7 +5,7 @@
 pub struct TestMappingInput {
     /// <p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>
     pub input_file_content: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
+    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>
     pub mapping_template: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
     pub file_format: ::std::option::Option<crate::types::FileFormat>,
@@ -15,7 +15,7 @@ impl TestMappingInput {
     pub fn input_file_content(&self) -> ::std::option::Option<&str> {
         self.input_file_content.as_deref()
     }
-    /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
+    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>
     pub fn mapping_template(&self) -> ::std::option::Option<&str> {
         self.mapping_template.as_deref()
     }
@@ -55,18 +55,18 @@ impl TestMappingInputBuilder {
     pub fn get_input_file_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_file_content
     }
-    /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
+    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>
     /// This field is required.
     pub fn mapping_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mapping_template = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
+    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>
     pub fn set_mapping_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mapping_template = input;
         self
     }
-    /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
+    /// <p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>
     pub fn get_mapping_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.mapping_template
     }

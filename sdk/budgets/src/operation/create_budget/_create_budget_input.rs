@@ -10,6 +10,8 @@ pub struct CreateBudgetInput {
     pub budget: ::std::option::Option<crate::types::Budget>,
     /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
     pub notifications_with_subscribers: ::std::option::Option<::std::vec::Vec<crate::types::NotificationWithSubscribers>>,
+    /// <p>An optional list of tags to associate with the specified budget. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
+    pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
 }
 impl CreateBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget.</p>
@@ -26,6 +28,12 @@ impl CreateBudgetInput {
     pub fn notifications_with_subscribers(&self) -> &[crate::types::NotificationWithSubscribers] {
         self.notifications_with_subscribers.as_deref().unwrap_or_default()
     }
+    /// <p>An optional list of tags to associate with the specified budget. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
+    pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
+        self.resource_tags.as_deref().unwrap_or_default()
+    }
 }
 impl CreateBudgetInput {
     /// Creates a new builder-style object to manufacture [`CreateBudgetInput`](crate::operation::create_budget::CreateBudgetInput).
@@ -41,6 +49,7 @@ pub struct CreateBudgetInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget: ::std::option::Option<crate::types::Budget>,
     pub(crate) notifications_with_subscribers: ::std::option::Option<::std::vec::Vec<crate::types::NotificationWithSubscribers>>,
+    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
 }
 impl CreateBudgetInputBuilder {
     /// <p>The <code>accountId</code> that is associated with the budget.</p>
@@ -96,6 +105,26 @@ impl CreateBudgetInputBuilder {
     pub fn get_notifications_with_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationWithSubscribers>> {
         &self.notifications_with_subscribers
     }
+    /// Appends an item to `resource_tags`.
+    ///
+    /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+    ///
+    /// <p>An optional list of tags to associate with the specified budget. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
+    pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
+        let mut v = self.resource_tags.unwrap_or_default();
+        v.push(input);
+        self.resource_tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An optional list of tags to associate with the specified budget. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
+        self.resource_tags = input;
+        self
+    }
+    /// <p>An optional list of tags to associate with the specified budget. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+        &self.resource_tags
+    }
     /// Consumes the builder and constructs a [`CreateBudgetInput`](crate::operation::create_budget::CreateBudgetInput).
     pub fn build(
         self,
@@ -104,6 +133,7 @@ impl CreateBudgetInputBuilder {
             account_id: self.account_id,
             budget: self.budget,
             notifications_with_subscribers: self.notifications_with_subscribers,
+            resource_tags: self.resource_tags,
         })
     }
 }

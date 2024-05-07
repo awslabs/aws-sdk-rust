@@ -24,5 +24,17 @@ pub fn ser_create_budget_input_input(
         }
         array_5.finish();
     }
+    if let Some(var_8) = &input.resource_tags {
+        let mut array_9 = object.key("ResourceTags").start_array();
+        for item_10 in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_resource_tag::ser_resource_tag(&mut object_11, item_10)?;
+                object_11.finish();
+            }
+        }
+        array_9.finish();
+    }
     Ok(())
 }

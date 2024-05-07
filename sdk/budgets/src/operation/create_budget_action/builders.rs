@@ -239,4 +239,23 @@ impl CreateBudgetActionFluentBuilder {
     pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
         self.inner.get_subscribers()
     }
+    ///
+    /// Appends an item to `ResourceTags`.
+    ///
+    /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+    ///
+    /// <p>An optional list of tags to associate with the specified budget action. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
+    pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
+        self.inner = self.inner.resource_tags(input);
+        self
+    }
+    /// <p>An optional list of tags to associate with the specified budget action. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
+        self.inner = self.inner.set_resource_tags(input);
+        self
+    }
+    /// <p>An optional list of tags to associate with the specified budget action. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+        self.inner.get_resource_tags()
+    }
 }

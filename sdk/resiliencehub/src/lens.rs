@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_app_assessment_compliance_drifts_output_output_next_t
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_app_assessment_resource_drifts_output_output_next_token(
+    input: &crate::operation::list_app_assessment_resource_drifts::ListAppAssessmentResourceDriftsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_app_assessments_output_output_next_token(
     input: &crate::operation::list_app_assessments::ListAppAssessmentsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -166,5 +176,12 @@ pub(crate) fn reflens_list_unsupported_app_version_resources_output_output_next_
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_app_assessment_resource_drifts_output_output_resource_drifts(
+    input: crate::operation::list_app_assessment_resource_drifts::ListAppAssessmentResourceDriftsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceDrift>> {
+    let input = input.resource_drifts;
     ::std::option::Option::Some(input)
 }

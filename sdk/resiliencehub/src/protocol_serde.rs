@@ -75,6 +75,8 @@ pub(crate) mod shape_list_alarm_recommendations;
 
 pub(crate) mod shape_list_app_assessment_compliance_drifts;
 
+pub(crate) mod shape_list_app_assessment_resource_drifts;
+
 pub(crate) mod shape_list_app_assessments;
 
 pub(crate) mod shape_list_app_component_compliances;
@@ -197,6 +199,8 @@ pub(crate) mod shape_list_alarm_recommendations_input;
 
 pub(crate) mod shape_list_app_assessment_compliance_drifts_input;
 
+pub(crate) mod shape_list_app_assessment_resource_drifts_input;
+
 pub(crate) mod shape_list_app_component_compliances_input;
 
 pub(crate) mod shape_list_app_component_recommendations_input;
@@ -307,6 +311,8 @@ pub(crate) mod shape_resiliency_policies;
 
 pub(crate) mod shape_resiliency_policy;
 
+pub(crate) mod shape_resource_drift_list;
+
 pub(crate) mod shape_resource_mapping;
 
 pub(crate) mod shape_resource_mapping_list;
@@ -361,6 +367,8 @@ pub(crate) mod shape_render_recommendation_type_list;
 
 pub(crate) mod shape_resiliency_score;
 
+pub(crate) mod shape_resource_drift;
+
 pub(crate) mod shape_resource_errors_details;
 
 pub(crate) mod shape_s3_location;
@@ -390,6 +398,8 @@ pub(crate) mod shape_iam_role_arn_list;
 pub(crate) mod shape_recommendation_item_list;
 
 pub(crate) mod shape_resource_error_list;
+
+pub(crate) mod shape_resource_identifier;
 
 pub(crate) mod shape_scoring_component_resiliency_scores;
 

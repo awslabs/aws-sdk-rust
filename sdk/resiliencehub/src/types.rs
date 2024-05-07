@@ -127,9 +127,13 @@ pub use crate::types::_app_component_compliance::AppComponentCompliance;
 
 pub use crate::types::_app_assessment_summary::AppAssessmentSummary;
 
-pub use crate::types::_compliance_drift::ComplianceDrift;
+pub use crate::types::_resource_drift::ResourceDrift;
 
 pub use crate::types::_difference_type::DifferenceType;
+
+pub use crate::types::_resource_identifier::ResourceIdentifier;
+
+pub use crate::types::_compliance_drift::ComplianceDrift;
 
 pub use crate::types::_drift_type::DriftType;
 
@@ -263,9 +267,13 @@ mod _resiliency_score;
 
 mod _resiliency_score_type;
 
+mod _resource_drift;
+
 mod _resource_error;
 
 mod _resource_errors_details;
+
+mod _resource_identifier;
 
 mod _resource_import_status_type;
 

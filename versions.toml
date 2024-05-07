@@ -227,8 +227,8 @@ model_hash = '228b888792ce40aa06e158c9b654f5d46820d2d2a947936808ff6412c1b61b0f'
 [crates.aws-sdk-b2bi]
 category = 'AwsSdk'
 version = '1.23.0'
-source_hash = '1286306bafd0b5b32e0826f4dc68b202de921cf4005fa2560e69979362432de2'
-model_hash = '011bf2aed91e3903e8f2391860b83ff5ae3b0af732378b42fbeb8ca8918dda4a'
+source_hash = 'c161d75f0bb2b29e436bd39da4bcb784c645f3c4529da44da91a875778a46150'
+model_hash = '928226ffeb279545cfae15f09c86a65356548cf8b34fe921b0a716f3a0517a7e'
 
 [crates.aws-sdk-backup]
 category = 'AwsSdk'
@@ -299,8 +299,8 @@ model_hash = 'c5d0bbeaa9fc98e88cd3cda2df9625e3694bf667d3c20a5f41b01aa3f0bd4be7'
 [crates.aws-sdk-budgets]
 category = 'AwsSdk'
 version = '1.23.0'
-source_hash = 'f632c0031255dd6c3ae7b4269e21d9e5e490618954141e9f6e48238ee883a453'
-model_hash = '03312a8563ba6d615995f0490f1d169fee1f5a508c6844da34372a3dcbea8c07'
+source_hash = '2f93987e04a48a9d80bcff2c64c4c6be06186b8b18196e7e019e17e3f768f071'
+model_hash = 'c6768877255d396250501ec482da0c6a2d27e5ac7f4b6abe807d58ef805bfb90'
 
 [crates.aws-sdk-chatbot]
 category = 'AwsSdk'
@@ -1817,8 +1817,8 @@ model_hash = '1740a029d9327517f19ade84759349b7d729ad38260dd0f96afcfea396d670ba'
 [crates.aws-sdk-resiliencehub]
 category = 'AwsSdk'
 version = '1.23.0'
-source_hash = 'b593aff481d724ab6353e54ecb34eebb0172db4367fbd938d51f2eb01ec206ea'
-model_hash = '3b7c4073b58550739ced02a559e747f674b70a91a8799ffe7fc4a644257d6161'
+source_hash = '058c7cc09861cbf40ee22173ce506de995c985c50af27faa79f9d0382fdb7b11'
+model_hash = '3745f8d6837c94d538ac75c6d270a79eb5836b793549504856d587d6901e22fd'
 
 [crates.aws-sdk-resourceexplorer2]
 category = 'AwsSdk'
@@ -1865,8 +1865,8 @@ model_hash = '3c5fcda69ee82c2a93d68e023a451df9b08472221cde4b4fca74869940aa24f6'
 [crates.aws-sdk-route53profiles]
 category = 'AwsSdk'
 version = '1.2.0'
-source_hash = '43b2ef5f492a45aa61fa975bf2621b2323be30ffc8e180846bd49d9664a1e224'
-model_hash = '95c8e18ad0fb84f3d7748ea424e408f47a9985b4367e03fdf4abba15b14cbe67'
+source_hash = 'eb234fb08d782fe840c217aa449ee41b3b57900c652679f2a515a2593dce26ec'
+model_hash = '3f9fa5cb10c43eac77cce90b40fbcb9e988bd15e862a89864bd20954333601ae'
 
 [crates.aws-sdk-route53recoverycluster]
 category = 'AwsSdk'

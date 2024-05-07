@@ -12,7 +12,9 @@
 /// ```text
 /// # let differencetype = unimplemented!();
 /// match differencetype {
+///     DifferenceType::Added => { /* ... */ },
 ///     DifferenceType::NotEqual => { /* ... */ },
+///     DifferenceType::Removed => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -41,7 +43,11 @@
 )]
 pub enum DifferenceType {
     #[allow(missing_docs)] // documentation missing in model
+    Added,
+    #[allow(missing_docs)] // documentation missing in model
     NotEqual,
+    #[allow(missing_docs)] // documentation missing in model
+    Removed,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -49,7 +55,9 @@ pub enum DifferenceType {
 impl ::std::convert::From<&str> for DifferenceType {
     fn from(s: &str) -> Self {
         match s {
+            "Added" => DifferenceType::Added,
             "NotEqual" => DifferenceType::NotEqual,
+            "Removed" => DifferenceType::Removed,
             other => DifferenceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -65,13 +73,15 @@ impl DifferenceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DifferenceType::Added => "Added",
             DifferenceType::NotEqual => "NotEqual",
+            DifferenceType::Removed => "Removed",
             DifferenceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NotEqual"]
+        &["Added", "NotEqual", "Removed"]
     }
 }
 impl ::std::convert::AsRef<str> for DifferenceType {
@@ -94,7 +104,9 @@ impl DifferenceType {
 impl ::std::fmt::Display for DifferenceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            DifferenceType::Added => write!(f, "Added"),
             DifferenceType::NotEqual => write!(f, "NotEqual"),
+            DifferenceType::Removed => write!(f, "Removed"),
             DifferenceType::Unknown(value) => write!(f, "{}", value),
         }
     }

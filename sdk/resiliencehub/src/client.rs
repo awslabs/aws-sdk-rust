@@ -215,6 +215,8 @@ mod list_alarm_recommendations;
 
 mod list_app_assessment_compliance_drifts;
 
+mod list_app_assessment_resource_drifts;
+
 mod list_app_assessments;
 
 mod list_app_component_compliances;

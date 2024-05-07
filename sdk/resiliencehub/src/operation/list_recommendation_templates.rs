@@ -189,17 +189,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRecommen
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                let inner_1 = &_input.assessment_arn;
-                let inner_1 = inner_1
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("assessment_arn", "cannot be empty or unset"))?;
-                if inner_1.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "assessment_arn",
-                        "cannot be empty or unset",
-                    ));
+                if let ::std::option::Option::Some(inner_1) = &_input.assessment_arn {
+                    {
+                        query.push_kv("assessmentArn", &::aws_smithy_http::query::fmt_string(inner_1));
+                    }
                 }
-                query.push_kv("assessmentArn", &::aws_smithy_http::query::fmt_string(inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.reverse_order {
                     {
                         query.push_kv("reverseOrder", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());

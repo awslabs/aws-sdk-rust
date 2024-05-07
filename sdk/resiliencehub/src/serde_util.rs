@@ -299,6 +299,15 @@ pub(crate) fn list_app_assessment_compliance_drifts_output_output_correct_errors
     builder
 }
 
+pub(crate) fn list_app_assessment_resource_drifts_output_output_correct_errors(
+    mut builder: crate::operation::list_app_assessment_resource_drifts::builders::ListAppAssessmentResourceDriftsOutputBuilder,
+) -> crate::operation::list_app_assessment_resource_drifts::builders::ListAppAssessmentResourceDriftsOutputBuilder {
+    if builder.resource_drifts.is_none() {
+        builder.resource_drifts = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_app_assessments_output_output_correct_errors(
     mut builder: crate::operation::list_app_assessments::builders::ListAppAssessmentsOutputBuilder,
 ) -> crate::operation::list_app_assessments::builders::ListAppAssessmentsOutputBuilder {
