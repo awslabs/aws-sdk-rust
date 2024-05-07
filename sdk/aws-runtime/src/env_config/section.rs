@@ -18,12 +18,14 @@ pub(crate) trait Section {
     fn name(&self) -> &str;
 
     /// Returns all the properties in this section
+    #[allow(dead_code)]
     fn properties(&self) -> &HashMap<String, Property>;
 
     /// Returns a reference to the property named `name`
     fn get(&self, name: &str) -> Option<&str>;
 
     /// True if there are no properties in this section.
+    #[allow(dead_code)]
     fn is_empty(&self) -> bool;
 
     /// Insert a property into a section
