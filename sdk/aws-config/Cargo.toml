@@ -40,7 +40,7 @@ version = "1.2.0"
 
 [dependencies.aws-runtime]
 path = "../aws-runtime"
-version = "1.2.0"
+version = "1.2.1"
 
 [dependencies.aws-sdk-sts]
 path = "../sts"
