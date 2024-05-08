@@ -20,7 +20,7 @@ version = "1.2.0"
 
 [dependencies.aws-runtime]
 path = "../aws-runtime"
-version = "1.2.1"
+version = "1.2.2"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"

@@ -21,7 +21,7 @@ version = "1.2.0"
 [dependencies.aws-runtime]
 path = "../aws-runtime"
 features = ["event-stream"]
-version = "1.2.1"
+version = "1.2.2"
 
 [dependencies.aws-sigv4]
 path = "../aws-sigv4"
@@ -96,7 +96,7 @@ version = "1.2.0"
 [dev-dependencies.aws-runtime]
 path = "../aws-runtime"
 features = ["test-util"]
-version = "1.2.1"
+version = "1.2.2"
 
 [dev-dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
