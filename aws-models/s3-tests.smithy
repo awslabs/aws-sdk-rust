@@ -153,8 +153,7 @@ apply CreateMultipartUpload @httpRequestTests([
         protocol: "aws.protocols#restXml",
         uri: "/object.txt",
         queryParams: [
-            "uploads",
-            "x-id=CreateMultipartUpload"
+            "uploads"
         ],
         params: {
             "Bucket": "test-bucket",
