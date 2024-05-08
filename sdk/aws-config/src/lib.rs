@@ -214,6 +214,7 @@ mod loader {
     use aws_credential_types::Credentials;
     use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep, SharedAsyncSleep};
     use aws_smithy_async::time::{SharedTimeSource, TimeSource};
+    use aws_smithy_runtime::client::identity::IdentityCache;
     use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
     use aws_smithy_runtime_api::client::http::HttpClient;
     use aws_smithy_runtime_api::client::identity::{ResolveCachedIdentity, SharedIdentityCache};
@@ -238,14 +239,14 @@ mod loader {
     use crate::provider_config::ProviderConfig;
 
     #[derive(Default, Debug)]
-    enum CredentialsProviderOption {
-        /// No provider was set by the user. We can set up the default credentials provider chain.
+    enum TriStateOption<T> {
+        /// No option was set by the user. We can set up the default.
         #[default]
         NotSet,
-        /// The credentials provider was explicitly unset. Do not set up a default chain.
+        /// The option was explicitly unset. Do not set up a default.
         ExplicitlyUnset,
-        /// Use the given credentials provider.
-        Set(SharedCredentialsProvider),
+        /// Use the given user provided option.
+        Set(T),
     }
 
     /// Load a cross-service [`SdkConfig`] from the environment
@@ -258,7 +259,7 @@ mod loader {
     pub struct ConfigLoader {
         app_name: Option<AppName>,
         identity_cache: Option<SharedIdentityCache>,
-        credentials_provider: CredentialsProviderOption,
+        credentials_provider: TriStateOption<SharedCredentialsProvider>,
         token_provider: Option<SharedTokenProvider>,
         endpoint_url: Option<String>,
         region: Option<Box<dyn ProvideRegion>>,
@@ -464,9 +465,8 @@ mod loader {
             mut self,
             credentials_provider: impl ProvideCredentials + 'static,
         ) -> Self {
-            self.credentials_provider = CredentialsProviderOption::Set(
-                SharedCredentialsProvider::new(credentials_provider),
-            );
+            self.credentials_provider =
+                TriStateOption::Set(SharedCredentialsProvider::new(credentials_provider));
             self
         }
 
@@ -492,7 +492,7 @@ mod loader {
         /// # }
         /// ```
         pub fn no_credentials(mut self) -> Self {
-            self.credentials_provider = CredentialsProviderOption::ExplicitlyUnset;
+            self.credentials_provider = TriStateOption::ExplicitlyUnset;
             self
         }
 
@@ -781,14 +781,14 @@ mod loader {
             timeout_config.take_defaults_from(&base_config);
 
             let credentials_provider = match self.credentials_provider {
-                CredentialsProviderOption::Set(provider) => Some(provider),
-                CredentialsProviderOption::NotSet => {
+                TriStateOption::Set(provider) => Some(provider),
+                TriStateOption::NotSet => {
                     let mut builder =
                         credentials::DefaultCredentialsChain::builder().configure(conf.clone());
                     builder.set_region(region.clone());
                     Some(SharedCredentialsProvider::new(builder.build().await))
                 }
-                CredentialsProviderOption::ExplicitlyUnset => None,
+                TriStateOption::ExplicitlyUnset => None,
             };
 
             let token_provider = match self.token_provider {
@@ -851,7 +851,18 @@ mod loader {
             builder.set_behavior_version(self.behavior_version);
             builder.set_http_client(self.http_client);
             builder.set_app_name(app_name);
-            builder.set_identity_cache(self.identity_cache);
+
+            let identity_cache = match self.identity_cache {
+                None => match self.behavior_version {
+                    Some(bv) if bv.is_at_least(BehaviorVersion::v2024_03_28()) => {
+                        Some(IdentityCache::lazy().build())
+                    }
+                    _ => None,
+                },
+                Some(user_cache) => Some(user_cache),
+            };
+
+            builder.set_identity_cache(identity_cache);
             builder.set_credentials_provider(credentials_provider);
             builder.set_token_provider(token_provider);
             builder.set_sleep_impl(sleep_impl);
@@ -1055,8 +1066,24 @@ mod loader {
                 .no_credentials()
                 .load()
                 .await;
-            assert!(config.identity_cache().is_none());
             assert!(config.credentials_provider().is_none());
+        }
+
+        #[cfg(feature = "rustls")]
+        #[tokio::test]
+        async fn identity_cache_defaulted() {
+            let config = defaults(BehaviorVersion::latest()).load().await;
+
+            assert!(config.identity_cache().is_some());
+        }
+
+        #[cfg(feature = "rustls")]
+        #[allow(deprecated)]
+        #[tokio::test]
+        async fn identity_cache_old_behavior_version() {
+            let config = defaults(BehaviorVersion::v2023_11_09()).load().await;
+
+            assert!(config.identity_cache().is_none());
         }
 
         #[tokio::test]

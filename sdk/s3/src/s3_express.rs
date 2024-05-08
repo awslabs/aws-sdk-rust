@@ -454,7 +454,7 @@ pub(crate) mod identity_provider {
             runtime_components: &'a RuntimeComponents,
             config_bag: &'a ConfigBag,
         ) -> Result<SessionCredentials, BoxError> {
-            let mut config_builder = crate::config::Builder::from_config_bag(config_bag).behavior_version(self.behavior_version.clone());
+            let mut config_builder = crate::config::Builder::from_config_bag(config_bag).behavior_version(self.behavior_version);
 
             // inherits all runtime components from a current S3 operation but clears out
             // out interceptors configured for that operation

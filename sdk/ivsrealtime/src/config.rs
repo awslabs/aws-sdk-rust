@@ -38,7 +38,7 @@ impl Config {
             config: self.cloneable.clone(),
             runtime_components: self.runtime_components.clone(),
             runtime_plugins: self.runtime_plugins.clone(),
-            behavior_version: self.behavior_version.clone(),
+            behavior_version: self.behavior_version,
         }
     }
     /// Return a reference to the stalled stream protection configuration contained in this config, if any.
@@ -1299,7 +1299,7 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
                         .with_client_plugins(::aws_smithy_runtime::client::defaults::default_plugins(
                             ::aws_smithy_runtime::client::defaults::DefaultPluginParams::new()
                                 .with_retry_partition_name("ivsrealtime")
-                                .with_behavior_version(config.behavior_version.clone().expect("Invalid client configuration: A behavior major version must be set when sending a request or constructing a client. You must set it during client construction or by enabling the `behavior-version-latest` cargo feature."))
+                                .with_behavior_version(config.behavior_version.expect("Invalid client configuration: A behavior major version must be set when sending a request or constructing a client. You must set it during client construction or by enabling the `behavior-version-latest` cargo feature."))
                         ))
                         // user config
                         .with_client_plugin(

@@ -152,6 +152,7 @@ async fn test_time_source_for_identity_cache() {
     let _client = aws_sdk_s3::Client::from_conf(config);
 }
 
+#[allow(deprecated)] // intentionally testing an old behavior version
 #[tokio::test]
 async fn behavior_mv_from_aws_config() {
     let (http_client, req) = capture_request(None);
@@ -177,6 +178,7 @@ async fn behavior_mv_from_aws_config() {
         .starts_with("https://s3.us-west-2.amazonaws.com/"));
 }
 
+#[allow(deprecated)] // intentionally testing an old behavior version
 #[tokio::test]
 async fn behavior_mv_from_client_construction() {
     let (http_client, req) = capture_request(None);

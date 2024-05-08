@@ -92,11 +92,10 @@ async fn test_stalled_stream_protection_defaults_for_upload() {
     let _ = tokio::spawn(server);
 
     let conf = Config::builder()
+        // Stalled stream protection MUST BE enabled by default. Do not configure it explicitly.
         .credentials_provider(Credentials::for_tests())
         .region(Region::new("us-east-1"))
         .endpoint_url(format!("http://{server_addr}"))
-        // TODO(https://github.com/smithy-lang/smithy-rs/issues/3510): make stalled stream protection enabled by default with BMV and remove this line
-        .stalled_stream_protection(StalledStreamProtectionConfig::enabled().build())
         .build();
     let client = Client::from_conf(conf);
 
@@ -255,6 +254,7 @@ async fn test_stalled_stream_protection_for_downloads_is_enabled_by_default() {
 
     // Stalled stream protection should be enabled by default.
     let sdk_config = aws_config::from_env()
+        // Stalled stream protection MUST BE enabled by default. Do not configure it explicitly.
         .credentials_provider(Credentials::for_tests())
         .region(Region::new("us-east-1"))
         .endpoint_url(format!("http://{server_addr}"))
@@ -282,12 +282,10 @@ async fn test_stalled_stream_protection_for_downloads_is_enabled_by_default() {
         "minimum throughput was specified at 1 B/s, but throughput of 0 B/s was observed"
     );
     // 5s grace period
-    // TODO(https://github.com/smithy-lang/smithy-rs/issues/3510): Currently comparing against 5 and 6 due to
-    // the behavior change in #3485. Once that feature/fix is released, this should be changed to only check for 5.
     let elapsed_secs = start.elapsed().as_secs();
     assert!(
-        elapsed_secs == 5 || elapsed_secs == 6,
-        "elapsed secs should be 5 or 6, but was {elapsed_secs}"
+        elapsed_secs == 5,
+        "elapsed secs should be 5, but was {elapsed_secs}"
     )
 }
 
