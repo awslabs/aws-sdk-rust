@@ -16,6 +16,7 @@
 ///     UpstreamRegistry::DockerHub => { /* ... */ },
 ///     UpstreamRegistry::EcrPublic => { /* ... */ },
 ///     UpstreamRegistry::GitHubContainerRegistry => { /* ... */ },
+///     UpstreamRegistry::GitLabContainerRegistry => { /* ... */ },
 ///     UpstreamRegistry::K8s => { /* ... */ },
 ///     UpstreamRegistry::Quay => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -54,6 +55,8 @@ pub enum UpstreamRegistry {
     #[allow(missing_docs)] // documentation missing in model
     GitHubContainerRegistry,
     #[allow(missing_docs)] // documentation missing in model
+    GitLabContainerRegistry,
+    #[allow(missing_docs)] // documentation missing in model
     K8s,
     #[allow(missing_docs)] // documentation missing in model
     Quay,
@@ -68,6 +71,7 @@ impl ::std::convert::From<&str> for UpstreamRegistry {
             "docker-hub" => UpstreamRegistry::DockerHub,
             "ecr-public" => UpstreamRegistry::EcrPublic,
             "github-container-registry" => UpstreamRegistry::GitHubContainerRegistry,
+            "gitlab-container-registry" => UpstreamRegistry::GitLabContainerRegistry,
             "k8s" => UpstreamRegistry::K8s,
             "quay" => UpstreamRegistry::Quay,
             other => UpstreamRegistry::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -89,6 +93,7 @@ impl UpstreamRegistry {
             UpstreamRegistry::DockerHub => "docker-hub",
             UpstreamRegistry::EcrPublic => "ecr-public",
             UpstreamRegistry::GitHubContainerRegistry => "github-container-registry",
+            UpstreamRegistry::GitLabContainerRegistry => "gitlab-container-registry",
             UpstreamRegistry::K8s => "k8s",
             UpstreamRegistry::Quay => "quay",
             UpstreamRegistry::Unknown(value) => value.as_str(),
@@ -101,6 +106,7 @@ impl UpstreamRegistry {
             "docker-hub",
             "ecr-public",
             "github-container-registry",
+            "gitlab-container-registry",
             "k8s",
             "quay",
         ]
@@ -130,6 +136,7 @@ impl ::std::fmt::Display for UpstreamRegistry {
             UpstreamRegistry::DockerHub => write!(f, "docker-hub"),
             UpstreamRegistry::EcrPublic => write!(f, "ecr-public"),
             UpstreamRegistry::GitHubContainerRegistry => write!(f, "github-container-registry"),
+            UpstreamRegistry::GitLabContainerRegistry => write!(f, "gitlab-container-registry"),
             UpstreamRegistry::K8s => write!(f, "k8s"),
             UpstreamRegistry::Quay => write!(f, "quay"),
             UpstreamRegistry::Unknown(value) => write!(f, "{}", value),

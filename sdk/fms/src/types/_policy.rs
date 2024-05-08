@@ -71,7 +71,7 @@ pub struct Policy {
         ::std::option::Option<::std::collections::HashMap<crate::types::CustomerPolicyScopeIdType, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The unique identifiers of the resource sets used by the policy.</p>
     pub resource_set_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The definition of the Network Firewall firewall policy.</p>
+    /// <p>Your description of the Firewall Manager policy.</p>
     pub policy_description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
     /// <ul>
@@ -186,7 +186,7 @@ impl Policy {
     pub fn resource_set_ids(&self) -> &[::std::string::String] {
         self.resource_set_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The definition of the Network Firewall firewall policy.</p>
+    /// <p>Your description of the Firewall Manager policy.</p>
     pub fn policy_description(&self) -> ::std::option::Option<&str> {
         self.policy_description.as_deref()
     }
@@ -575,17 +575,17 @@ impl PolicyBuilder {
     pub fn get_resource_set_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_set_ids
     }
-    /// <p>The definition of the Network Firewall firewall policy.</p>
+    /// <p>Your description of the Firewall Manager policy.</p>
     pub fn policy_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The definition of the Network Firewall firewall policy.</p>
+    /// <p>Your description of the Firewall Manager policy.</p>
     pub fn set_policy_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_description = input;
         self
     }
-    /// <p>The definition of the Network Firewall firewall policy.</p>
+    /// <p>Your description of the Firewall Manager policy.</p>
     pub fn get_policy_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_description
     }

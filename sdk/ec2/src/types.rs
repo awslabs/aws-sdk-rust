@@ -1617,6 +1617,8 @@ pub use crate::types::_internet_gateway_attachment::InternetGatewayAttachment;
 
 pub use crate::types::_instance_type_info::InstanceTypeInfo;
 
+pub use crate::types::_phc_support::PhcSupport;
+
 pub use crate::types::_neuron_info::NeuronInfo;
 
 pub use crate::types::_neuron_device_info::NeuronDeviceInfo;
@@ -3540,6 +3542,8 @@ mod _phase2_encryption_algorithms_request_list_value;
 mod _phase2_integrity_algorithms_list_value;
 
 mod _phase2_integrity_algorithms_request_list_value;
+
+mod _phc_support;
 
 mod _placement;
 

@@ -16,7 +16,7 @@ pub struct ListMessageMoveTasksResultEntry {
     pub max_number_of_messages_per_second: ::std::option::Option<i32>,
     /// <p>The approximate number of messages already moved to the destination queue.</p>
     pub approximate_number_of_messages_moved: i64,
-    /// <p>The number of messages to be moved from the source queue. This number is obtained at the time of starting the message movement task.</p>
+    /// <p>The number of messages to be moved from the source queue. This number is obtained at the time of starting the message movement task and is only included after the message movement task is selected to start.</p>
     pub approximate_number_of_messages_to_move: ::std::option::Option<i64>,
     /// <p>The task failure reason (only included if the task status is FAILED).</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
@@ -48,7 +48,7 @@ impl ListMessageMoveTasksResultEntry {
     pub fn approximate_number_of_messages_moved(&self) -> i64 {
         self.approximate_number_of_messages_moved
     }
-    /// <p>The number of messages to be moved from the source queue. This number is obtained at the time of starting the message movement task.</p>
+    /// <p>The number of messages to be moved from the source queue. This number is obtained at the time of starting the message movement task and is only included after the message movement task is selected to start.</p>
     pub fn approximate_number_of_messages_to_move(&self) -> ::std::option::Option<i64> {
         self.approximate_number_of_messages_to_move
     }
@@ -167,17 +167,17 @@ impl ListMessageMoveTasksResultEntryBuilder {
     pub fn get_approximate_number_of_messages_moved(&self) -> &::std::option::Option<i64> {
         &self.approximate_number_of_messages_moved
     }
-    /// <p>The number of messages to be moved from the source queue. This number is obtained at the time of starting the message movement task.</p>
+    /// <p>The number of messages to be moved from the source queue. This number is obtained at the time of starting the message movement task and is only included after the message movement task is selected to start.</p>
     pub fn approximate_number_of_messages_to_move(mut self, input: i64) -> Self {
         self.approximate_number_of_messages_to_move = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of messages to be moved from the source queue. This number is obtained at the time of starting the message movement task.</p>
+    /// <p>The number of messages to be moved from the source queue. This number is obtained at the time of starting the message movement task and is only included after the message movement task is selected to start.</p>
     pub fn set_approximate_number_of_messages_to_move(mut self, input: ::std::option::Option<i64>) -> Self {
         self.approximate_number_of_messages_to_move = input;
         self
     }
-    /// <p>The number of messages to be moved from the source queue. This number is obtained at the time of starting the message movement task.</p>
+    /// <p>The number of messages to be moved from the source queue. This number is obtained at the time of starting the message movement task and is only included after the message movement task is selected to start.</p>
     pub fn get_approximate_number_of_messages_to_move(&self) -> &::std::option::Option<i64> {
         &self.approximate_number_of_messages_to_move
     }

@@ -17,7 +17,7 @@ pub struct Voice {
     /// <p>Additional codes for languages available for the specified voice in addition to its default language.</p>
     /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
     pub additional_language_codes: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>,
-    /// <p>Specifies which engines (<code>standard</code>, <code>neural</code> or <code>long-form</code>) are supported by a given voice.</p>
+    /// <p>Specifies which engines (<code>standard</code>, <code>neural</code>, <code>long-form</code> or <code>generative</code>) are supported by a given voice.</p>
     pub supported_engines: ::std::option::Option<::std::vec::Vec<crate::types::Engine>>,
 }
 impl Voice {
@@ -48,7 +48,7 @@ impl Voice {
     pub fn additional_language_codes(&self) -> &[crate::types::LanguageCode] {
         self.additional_language_codes.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies which engines (<code>standard</code>, <code>neural</code> or <code>long-form</code>) are supported by a given voice.</p>
+    /// <p>Specifies which engines (<code>standard</code>, <code>neural</code>, <code>long-form</code> or <code>generative</code>) are supported by a given voice.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_engines.is_none()`.
     pub fn supported_engines(&self) -> &[crate::types::Engine] {
@@ -172,19 +172,19 @@ impl VoiceBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_engines`](Self::set_supported_engines).
     ///
-    /// <p>Specifies which engines (<code>standard</code>, <code>neural</code> or <code>long-form</code>) are supported by a given voice.</p>
+    /// <p>Specifies which engines (<code>standard</code>, <code>neural</code>, <code>long-form</code> or <code>generative</code>) are supported by a given voice.</p>
     pub fn supported_engines(mut self, input: crate::types::Engine) -> Self {
         let mut v = self.supported_engines.unwrap_or_default();
         v.push(input);
         self.supported_engines = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies which engines (<code>standard</code>, <code>neural</code> or <code>long-form</code>) are supported by a given voice.</p>
+    /// <p>Specifies which engines (<code>standard</code>, <code>neural</code>, <code>long-form</code> or <code>generative</code>) are supported by a given voice.</p>
     pub fn set_supported_engines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Engine>>) -> Self {
         self.supported_engines = input;
         self
     }
-    /// <p>Specifies which engines (<code>standard</code>, <code>neural</code> or <code>long-form</code>) are supported by a given voice.</p>
+    /// <p>Specifies which engines (<code>standard</code>, <code>neural</code>, <code>long-form</code> or <code>generative</code>) are supported by a given voice.</p>
     pub fn get_supported_engines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Engine>> {
         &self.supported_engines
     }

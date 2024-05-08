@@ -10,7 +10,7 @@ pub struct NetworkAclEntrySet {
     /// <p>You must specify at least one first entry or one last entry in any network ACL policy.</p>
     pub first_entries: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>,
     /// <p>Applies only when remediation is enabled for the policy as a whole. Firewall Manager uses this setting when it finds policy violations that involve conflicts between the custom entries and the policy entries.</p>
-    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network access control list (ACL) policies</a> in the <i>Firewall Manager Developer Guide</i>.</p>
+    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
     pub force_remediate_for_first_entries: bool,
     /// <p>The rules that you want to run last in the Firewall Manager managed network ACLs.</p><note>
     /// <p>Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule numbers for you, in the network ACLs that it creates.</p>
@@ -18,7 +18,7 @@ pub struct NetworkAclEntrySet {
     /// <p>You must specify at least one first entry or one last entry in any network ACL policy.</p>
     pub last_entries: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>,
     /// <p>Applies only when remediation is enabled for the policy as a whole. Firewall Manager uses this setting when it finds policy violations that involve conflicts between the custom entries and the policy entries.</p>
-    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network access control list (ACL) policies</a> in the <i>Firewall Manager Developer Guide</i>.</p>
+    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
     pub force_remediate_for_last_entries: bool,
 }
 impl NetworkAclEntrySet {
@@ -32,7 +32,7 @@ impl NetworkAclEntrySet {
         self.first_entries.as_deref().unwrap_or_default()
     }
     /// <p>Applies only when remediation is enabled for the policy as a whole. Firewall Manager uses this setting when it finds policy violations that involve conflicts between the custom entries and the policy entries.</p>
-    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network access control list (ACL) policies</a> in the <i>Firewall Manager Developer Guide</i>.</p>
+    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
     pub fn force_remediate_for_first_entries(&self) -> bool {
         self.force_remediate_for_first_entries
     }
@@ -46,7 +46,7 @@ impl NetworkAclEntrySet {
         self.last_entries.as_deref().unwrap_or_default()
     }
     /// <p>Applies only when remediation is enabled for the policy as a whole. Firewall Manager uses this setting when it finds policy violations that involve conflicts between the custom entries and the policy entries.</p>
-    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network access control list (ACL) policies</a> in the <i>Firewall Manager Developer Guide</i>.</p>
+    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
     pub fn force_remediate_for_last_entries(&self) -> bool {
         self.force_remediate_for_last_entries
     }
@@ -98,20 +98,20 @@ impl NetworkAclEntrySetBuilder {
         &self.first_entries
     }
     /// <p>Applies only when remediation is enabled for the policy as a whole. Firewall Manager uses this setting when it finds policy violations that involve conflicts between the custom entries and the policy entries.</p>
-    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network access control list (ACL) policies</a> in the <i>Firewall Manager Developer Guide</i>.</p>
+    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
     /// This field is required.
     pub fn force_remediate_for_first_entries(mut self, input: bool) -> Self {
         self.force_remediate_for_first_entries = ::std::option::Option::Some(input);
         self
     }
     /// <p>Applies only when remediation is enabled for the policy as a whole. Firewall Manager uses this setting when it finds policy violations that involve conflicts between the custom entries and the policy entries.</p>
-    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network access control list (ACL) policies</a> in the <i>Firewall Manager Developer Guide</i>.</p>
+    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
     pub fn set_force_remediate_for_first_entries(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_remediate_for_first_entries = input;
         self
     }
     /// <p>Applies only when remediation is enabled for the policy as a whole. Firewall Manager uses this setting when it finds policy violations that involve conflicts between the custom entries and the policy entries.</p>
-    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network access control list (ACL) policies</a> in the <i>Firewall Manager Developer Guide</i>.</p>
+    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
     pub fn get_force_remediate_for_first_entries(&self) -> &::std::option::Option<bool> {
         &self.force_remediate_for_first_entries
     }
@@ -145,20 +145,20 @@ impl NetworkAclEntrySetBuilder {
         &self.last_entries
     }
     /// <p>Applies only when remediation is enabled for the policy as a whole. Firewall Manager uses this setting when it finds policy violations that involve conflicts between the custom entries and the policy entries.</p>
-    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network access control list (ACL) policies</a> in the <i>Firewall Manager Developer Guide</i>.</p>
+    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
     /// This field is required.
     pub fn force_remediate_for_last_entries(mut self, input: bool) -> Self {
         self.force_remediate_for_last_entries = ::std::option::Option::Some(input);
         self
     }
     /// <p>Applies only when remediation is enabled for the policy as a whole. Firewall Manager uses this setting when it finds policy violations that involve conflicts between the custom entries and the policy entries.</p>
-    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network access control list (ACL) policies</a> in the <i>Firewall Manager Developer Guide</i>.</p>
+    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
     pub fn set_force_remediate_for_last_entries(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_remediate_for_last_entries = input;
         self
     }
     /// <p>Applies only when remediation is enabled for the policy as a whole. Firewall Manager uses this setting when it finds policy violations that involve conflicts between the custom entries and the policy entries.</p>
-    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network access control list (ACL) policies</a> in the <i>Firewall Manager Developer Guide</i>.</p>
+    /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
     pub fn get_force_remediate_for_last_entries(&self) -> &::std::option::Option<bool> {
         &self.force_remediate_for_last_entries
     }

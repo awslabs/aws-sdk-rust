@@ -15,6 +15,7 @@
 ///     UserStatusType::Archived => { /* ... */ },
 ///     UserStatusType::Compromised => { /* ... */ },
 ///     UserStatusType::Confirmed => { /* ... */ },
+///     UserStatusType::ExternalProvider => { /* ... */ },
 ///     UserStatusType::ForceChangePassword => { /* ... */ },
 ///     UserStatusType::ResetRequired => { /* ... */ },
 ///     UserStatusType::Unconfirmed => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum UserStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Confirmed,
     #[allow(missing_docs)] // documentation missing in model
+    ExternalProvider,
+    #[allow(missing_docs)] // documentation missing in model
     ForceChangePassword,
     #[allow(missing_docs)] // documentation missing in model
     ResetRequired,
@@ -70,6 +73,7 @@ impl ::std::convert::From<&str> for UserStatusType {
             "ARCHIVED" => UserStatusType::Archived,
             "COMPROMISED" => UserStatusType::Compromised,
             "CONFIRMED" => UserStatusType::Confirmed,
+            "EXTERNAL_PROVIDER" => UserStatusType::ExternalProvider,
             "FORCE_CHANGE_PASSWORD" => UserStatusType::ForceChangePassword,
             "RESET_REQUIRED" => UserStatusType::ResetRequired,
             "UNCONFIRMED" => UserStatusType::Unconfirmed,
@@ -92,6 +96,7 @@ impl UserStatusType {
             UserStatusType::Archived => "ARCHIVED",
             UserStatusType::Compromised => "COMPROMISED",
             UserStatusType::Confirmed => "CONFIRMED",
+            UserStatusType::ExternalProvider => "EXTERNAL_PROVIDER",
             UserStatusType::ForceChangePassword => "FORCE_CHANGE_PASSWORD",
             UserStatusType::ResetRequired => "RESET_REQUIRED",
             UserStatusType::Unconfirmed => "UNCONFIRMED",
@@ -105,6 +110,7 @@ impl UserStatusType {
             "ARCHIVED",
             "COMPROMISED",
             "CONFIRMED",
+            "EXTERNAL_PROVIDER",
             "FORCE_CHANGE_PASSWORD",
             "RESET_REQUIRED",
             "UNCONFIRMED",
@@ -135,6 +141,7 @@ impl ::std::fmt::Display for UserStatusType {
             UserStatusType::Archived => write!(f, "ARCHIVED"),
             UserStatusType::Compromised => write!(f, "COMPROMISED"),
             UserStatusType::Confirmed => write!(f, "CONFIRMED"),
+            UserStatusType::ExternalProvider => write!(f, "EXTERNAL_PROVIDER"),
             UserStatusType::ForceChangePassword => write!(f, "FORCE_CHANGE_PASSWORD"),
             UserStatusType::ResetRequired => write!(f, "RESET_REQUIRED"),
             UserStatusType::Unconfirmed => write!(f, "UNCONFIRMED"),

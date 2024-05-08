@@ -62,6 +62,8 @@ pub struct InstanceTypeInfo {
     pub media_accelerator_info: ::std::option::Option<crate::types::MediaAcceleratorInfo>,
     /// <p>Describes the Neuron accelerator settings for the instance type.</p>
     pub neuron_info: ::std::option::Option<crate::types::NeuronInfo>,
+    /// <p>Indicates whether a local Precision Time Protocol (PTP) hardware clock (PHC) is supported.</p>
+    pub phc_support: ::std::option::Option<crate::types::PhcSupport>,
 }
 impl InstanceTypeInfo {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -188,6 +190,10 @@ impl InstanceTypeInfo {
     pub fn neuron_info(&self) -> ::std::option::Option<&crate::types::NeuronInfo> {
         self.neuron_info.as_ref()
     }
+    /// <p>Indicates whether a local Precision Time Protocol (PTP) hardware clock (PHC) is supported.</p>
+    pub fn phc_support(&self) -> ::std::option::Option<&crate::types::PhcSupport> {
+        self.phc_support.as_ref()
+    }
 }
 impl InstanceTypeInfo {
     /// Creates a new builder-style object to manufacture [`InstanceTypeInfo`](crate::types::InstanceTypeInfo).
@@ -229,6 +235,7 @@ pub struct InstanceTypeInfoBuilder {
     pub(crate) nitro_tpm_info: ::std::option::Option<crate::types::NitroTpmInfo>,
     pub(crate) media_accelerator_info: ::std::option::Option<crate::types::MediaAcceleratorInfo>,
     pub(crate) neuron_info: ::std::option::Option<crate::types::NeuronInfo>,
+    pub(crate) phc_support: ::std::option::Option<crate::types::PhcSupport>,
 }
 impl InstanceTypeInfoBuilder {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -661,6 +668,20 @@ impl InstanceTypeInfoBuilder {
     pub fn get_neuron_info(&self) -> &::std::option::Option<crate::types::NeuronInfo> {
         &self.neuron_info
     }
+    /// <p>Indicates whether a local Precision Time Protocol (PTP) hardware clock (PHC) is supported.</p>
+    pub fn phc_support(mut self, input: crate::types::PhcSupport) -> Self {
+        self.phc_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether a local Precision Time Protocol (PTP) hardware clock (PHC) is supported.</p>
+    pub fn set_phc_support(mut self, input: ::std::option::Option<crate::types::PhcSupport>) -> Self {
+        self.phc_support = input;
+        self
+    }
+    /// <p>Indicates whether a local Precision Time Protocol (PTP) hardware clock (PHC) is supported.</p>
+    pub fn get_phc_support(&self) -> &::std::option::Option<crate::types::PhcSupport> {
+        &self.phc_support
+    }
     /// Consumes the builder and constructs a [`InstanceTypeInfo`](crate::types::InstanceTypeInfo).
     pub fn build(self) -> crate::types::InstanceTypeInfo {
         crate::types::InstanceTypeInfo {
@@ -693,6 +714,7 @@ impl InstanceTypeInfoBuilder {
             nitro_tpm_info: self.nitro_tpm_info,
             media_accelerator_info: self.media_accelerator_info,
             neuron_info: self.neuron_info,
+            phc_support: self.phc_support,
         }
     }
 }

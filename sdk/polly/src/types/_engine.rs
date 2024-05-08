@@ -12,6 +12,7 @@
 /// ```text
 /// # let engine = unimplemented!();
 /// match engine {
+///     Engine::Generative => { /* ... */ },
 ///     Engine::LongForm => { /* ... */ },
 ///     Engine::Neural => { /* ... */ },
 ///     Engine::Standard => { /* ... */ },
@@ -43,6 +44,8 @@
 )]
 pub enum Engine {
     #[allow(missing_docs)] // documentation missing in model
+    Generative,
+    #[allow(missing_docs)] // documentation missing in model
     LongForm,
     #[allow(missing_docs)] // documentation missing in model
     Neural,
@@ -55,6 +58,7 @@ pub enum Engine {
 impl ::std::convert::From<&str> for Engine {
     fn from(s: &str) -> Self {
         match s {
+            "generative" => Engine::Generative,
             "long-form" => Engine::LongForm,
             "neural" => Engine::Neural,
             "standard" => Engine::Standard,
@@ -73,6 +77,7 @@ impl Engine {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Engine::Generative => "generative",
             Engine::LongForm => "long-form",
             Engine::Neural => "neural",
             Engine::Standard => "standard",
@@ -81,7 +86,7 @@ impl Engine {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["long-form", "neural", "standard"]
+        &["generative", "long-form", "neural", "standard"]
     }
 }
 impl ::std::convert::AsRef<str> for Engine {
@@ -104,6 +109,7 @@ impl Engine {
 impl ::std::fmt::Display for Engine {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            Engine::Generative => write!(f, "generative"),
             Engine::LongForm => write!(f, "long-form"),
             Engine::Neural => write!(f, "neural"),
             Engine::Standard => write!(f, "standard"),

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVoicesInput {
-    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis.</p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code>, <code>long-form</code> or <code>generative</code>) used by Amazon Polly when processing input text for speech synthesis.</p>
     pub engine: ::std::option::Option<crate::types::Engine>,
     /// <p>The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.</p>
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
@@ -13,7 +13,7 @@ pub struct DescribeVoicesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeVoicesInput {
-    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis.</p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code>, <code>long-form</code> or <code>generative</code>) used by Amazon Polly when processing input text for speech synthesis.</p>
     pub fn engine(&self) -> ::std::option::Option<&crate::types::Engine> {
         self.engine.as_ref()
     }
@@ -47,17 +47,17 @@ pub struct DescribeVoicesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeVoicesInputBuilder {
-    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis.</p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code>, <code>long-form</code> or <code>generative</code>) used by Amazon Polly when processing input text for speech synthesis.</p>
     pub fn engine(mut self, input: crate::types::Engine) -> Self {
         self.engine = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis.</p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code>, <code>long-form</code> or <code>generative</code>) used by Amazon Polly when processing input text for speech synthesis.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<crate::types::Engine>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis.</p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code>, <code>long-form</code> or <code>generative</code>) used by Amazon Polly when processing input text for speech synthesis.</p>
     pub fn get_engine(&self) -> &::std::option::Option<crate::types::Engine> {
         &self.engine
     }

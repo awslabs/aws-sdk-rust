@@ -151,6 +151,9 @@ impl ReceiveMessageFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
     ///
+    /// <important>
+    /// <p>This parameter has been deprecated but will be supported for backward compatibility. To provide attribute names, you are encouraged to use <code>MessageSystemAttributeNames</code>.</p>
+    /// </important>
     /// <p>A list of attributes that need to be returned along with each message. These attributes include:</p>
     /// <ul>
     /// <li>
@@ -180,10 +183,14 @@ impl ReceiveMessageFluentBuilder {
     /// <li>
     /// <p><code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p></li>
     /// </ul>
+    #[deprecated(note = "AttributeNames has been replaced by MessageSystemAttributeNames")]
     pub fn attribute_names(mut self, input: crate::types::QueueAttributeName) -> Self {
         self.inner = self.inner.attribute_names(input);
         self
     }
+    /// <important>
+    /// <p>This parameter has been deprecated but will be supported for backward compatibility. To provide attribute names, you are encouraged to use <code>MessageSystemAttributeNames</code>.</p>
+    /// </important>
     /// <p>A list of attributes that need to be returned along with each message. These attributes include:</p>
     /// <ul>
     /// <li>
@@ -213,8 +220,83 @@ impl ReceiveMessageFluentBuilder {
     /// <li>
     /// <p><code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p></li>
     /// </ul>
+    #[deprecated(note = "AttributeNames has been replaced by MessageSystemAttributeNames")]
     pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>>) -> Self {
         self.inner = self.inner.set_attribute_names(input);
+        self
+    }
+    /// <important>
+    /// <p>This parameter has been deprecated but will be supported for backward compatibility. To provide attribute names, you are encouraged to use <code>MessageSystemAttributeNames</code>.</p>
+    /// </important>
+    /// <p>A list of attributes that need to be returned along with each message. These attributes include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>All</code> – Returns all values.</p></li>
+    /// <li>
+    /// <p><code>ApproximateFirstReceiveTimestamp</code> – Returns the time the message was first received from the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p></li>
+    /// <li>
+    /// <p><code>ApproximateReceiveCount</code> – Returns the number of times a message has been received across all queues but not deleted.</p></li>
+    /// <li>
+    /// <p><code>AWSTraceHeader</code> – Returns the X-Ray trace header string.</p></li>
+    /// <li>
+    /// <p><code>SenderId</code></p>
+    /// <ul>
+    /// <li>
+    /// <p>For a user, returns the user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p></li>
+    /// <li>
+    /// <p>For an IAM role, returns the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>SentTimestamp</code> – Returns the time the message was sent to the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p></li>
+    /// <li>
+    /// <p><code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (for example, <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p></li>
+    /// <li>
+    /// <p><code>MessageDeduplicationId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action.</p></li>
+    /// <li>
+    /// <p><code>MessageGroupId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action. Messages with the same <code>MessageGroupId</code> are returned in sequence.</p></li>
+    /// <li>
+    /// <p><code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p></li>
+    /// </ul>
+    #[deprecated(note = "AttributeNames has been replaced by MessageSystemAttributeNames")]
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>> {
+        self.inner.get_attribute_names()
+    }
+    ///
+    /// Appends an item to `MessageSystemAttributeNames`.
+    ///
+    /// To override the contents of this collection use [`set_message_system_attribute_names`](Self::set_message_system_attribute_names).
+    ///
+    /// <p>A list of attributes that need to be returned along with each message. These attributes include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>All</code> – Returns all values.</p></li>
+    /// <li>
+    /// <p><code>ApproximateFirstReceiveTimestamp</code> – Returns the time the message was first received from the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p></li>
+    /// <li>
+    /// <p><code>ApproximateReceiveCount</code> – Returns the number of times a message has been received across all queues but not deleted.</p></li>
+    /// <li>
+    /// <p><code>AWSTraceHeader</code> – Returns the X-Ray trace header string.</p></li>
+    /// <li>
+    /// <p><code>SenderId</code></p>
+    /// <ul>
+    /// <li>
+    /// <p>For a user, returns the user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p></li>
+    /// <li>
+    /// <p>For an IAM role, returns the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>SentTimestamp</code> – Returns the time the message was sent to the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p></li>
+    /// <li>
+    /// <p><code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (for example, <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p></li>
+    /// <li>
+    /// <p><code>MessageDeduplicationId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action.</p></li>
+    /// <li>
+    /// <p><code>MessageGroupId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action. Messages with the same <code>MessageGroupId</code> are returned in sequence.</p></li>
+    /// <li>
+    /// <p><code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p></li>
+    /// </ul>
+    pub fn message_system_attribute_names(mut self, input: crate::types::MessageSystemAttributeName) -> Self {
+        self.inner = self.inner.message_system_attribute_names(input);
         self
     }
     /// <p>A list of attributes that need to be returned along with each message. These attributes include:</p>
@@ -246,8 +328,44 @@ impl ReceiveMessageFluentBuilder {
     /// <li>
     /// <p><code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p></li>
     /// </ul>
-    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>> {
-        self.inner.get_attribute_names()
+    pub fn set_message_system_attribute_names(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageSystemAttributeName>>,
+    ) -> Self {
+        self.inner = self.inner.set_message_system_attribute_names(input);
+        self
+    }
+    /// <p>A list of attributes that need to be returned along with each message. These attributes include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>All</code> – Returns all values.</p></li>
+    /// <li>
+    /// <p><code>ApproximateFirstReceiveTimestamp</code> – Returns the time the message was first received from the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p></li>
+    /// <li>
+    /// <p><code>ApproximateReceiveCount</code> – Returns the number of times a message has been received across all queues but not deleted.</p></li>
+    /// <li>
+    /// <p><code>AWSTraceHeader</code> – Returns the X-Ray trace header string.</p></li>
+    /// <li>
+    /// <p><code>SenderId</code></p>
+    /// <ul>
+    /// <li>
+    /// <p>For a user, returns the user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p></li>
+    /// <li>
+    /// <p>For an IAM role, returns the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>SentTimestamp</code> – Returns the time the message was sent to the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p></li>
+    /// <li>
+    /// <p><code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (for example, <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p></li>
+    /// <li>
+    /// <p><code>MessageDeduplicationId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action.</p></li>
+    /// <li>
+    /// <p><code>MessageGroupId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action. Messages with the same <code>MessageGroupId</code> are returned in sequence.</p></li>
+    /// <li>
+    /// <p><code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p></li>
+    /// </ul>
+    pub fn get_message_system_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageSystemAttributeName>> {
+        self.inner.get_message_system_attribute_names()
     }
     ///
     /// Appends an item to `MessageAttributeNames`.
@@ -335,21 +453,21 @@ impl ReceiveMessageFluentBuilder {
     pub fn get_visibility_timeout(&self) -> &::std::option::Option<i32> {
         self.inner.get_visibility_timeout()
     }
-    /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p><important>
+    /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call does not return a message list.</p><important>
     /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code> requests is longer than the <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients.</p>
     /// </important>
     pub fn wait_time_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.wait_time_seconds(input);
         self
     }
-    /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p><important>
+    /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call does not return a message list.</p><important>
     /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code> requests is longer than the <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients.</p>
     /// </important>
     pub fn set_wait_time_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_wait_time_seconds(input);
         self
     }
-    /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p><important>
+    /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call does not return a message list.</p><important>
     /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code> requests is longer than the <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients.</p>
     /// </important>
     pub fn get_wait_time_seconds(&self) -> &::std::option::Option<i32> {
@@ -362,8 +480,6 @@ impl ReceiveMessageFluentBuilder {
     /// <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a <code>ReceiveMessage</code> action.</p></li>
     /// <li>
     /// <p>When you set <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can provide a <code>ReceiveRequestAttemptId</code> explicitly.</p></li>
-    /// <li>
-    /// <p>If a caller of the <code>ReceiveMessage</code> action doesn't provide a <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a <code>ReceiveRequestAttemptId</code>.</p></li>
     /// <li>
     /// <p>It is possible to retry the <code>ReceiveMessage</code> action with the same <code>ReceiveRequestAttemptId</code> if none of the messages have been modified (deleted or had their visibility changes).</p></li>
     /// <li>
@@ -390,8 +506,6 @@ impl ReceiveMessageFluentBuilder {
     /// <li>
     /// <p>When you set <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can provide a <code>ReceiveRequestAttemptId</code> explicitly.</p></li>
     /// <li>
-    /// <p>If a caller of the <code>ReceiveMessage</code> action doesn't provide a <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a <code>ReceiveRequestAttemptId</code>.</p></li>
-    /// <li>
     /// <p>It is possible to retry the <code>ReceiveMessage</code> action with the same <code>ReceiveRequestAttemptId</code> if none of the messages have been modified (deleted or had their visibility changes).</p></li>
     /// <li>
     /// <p>During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code> return the same messages and receipt handles. If a retry occurs within the deduplication interval, it resets the visibility timeout. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p><important>
@@ -416,8 +530,6 @@ impl ReceiveMessageFluentBuilder {
     /// <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a <code>ReceiveMessage</code> action.</p></li>
     /// <li>
     /// <p>When you set <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can provide a <code>ReceiveRequestAttemptId</code> explicitly.</p></li>
-    /// <li>
-    /// <p>If a caller of the <code>ReceiveMessage</code> action doesn't provide a <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a <code>ReceiveRequestAttemptId</code>.</p></li>
     /// <li>
     /// <p>It is possible to retry the <code>ReceiveMessage</code> action with the same <code>ReceiveRequestAttemptId</code> if none of the messages have been modified (deleted or had their visibility changes).</p></li>
     /// <li>

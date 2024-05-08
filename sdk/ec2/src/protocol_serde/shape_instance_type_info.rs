@@ -353,6 +353,20 @@ pub fn de_instance_type_info(
                 builder = builder.set_neuron_info(var_29);
             }
             ,
+            s if s.matches("phcSupport") /* PhcSupport com.amazonaws.ec2#InstanceTypeInfo$PhcSupport */ =>  {
+                let var_30 =
+                    Some(
+                        Result::<crate::types::PhcSupport, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::PhcSupport::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_phc_support(var_30);
+            }
+            ,
             _ => {}
         }
     }

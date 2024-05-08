@@ -15,8 +15,8 @@ pub fn ser_receive_message_input_input(
         }
         array_3.finish();
     }
-    if let Some(var_5) = &input.message_attribute_names {
-        let mut array_6 = object.key("MessageAttributeNames").start_array();
+    if let Some(var_5) = &input.message_system_attribute_names {
+        let mut array_6 = object.key("MessageSystemAttributeNames").start_array();
         for item_7 in var_5 {
             {
                 array_6.value().string(item_7.as_str());
@@ -24,26 +24,35 @@ pub fn ser_receive_message_input_input(
         }
         array_6.finish();
     }
-    if let Some(var_8) = &input.max_number_of_messages {
+    if let Some(var_8) = &input.message_attribute_names {
+        let mut array_9 = object.key("MessageAttributeNames").start_array();
+        for item_10 in var_8 {
+            {
+                array_9.value().string(item_10.as_str());
+            }
+        }
+        array_9.finish();
+    }
+    if let Some(var_11) = &input.max_number_of_messages {
         object.key("MaxNumberOfMessages").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_9) = &input.visibility_timeout {
+    if let Some(var_12) = &input.visibility_timeout {
         object.key("VisibilityTimeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
-    if let Some(var_10) = &input.wait_time_seconds {
+    if let Some(var_13) = &input.wait_time_seconds {
         object.key("WaitTimeSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_11) = &input.receive_request_attempt_id {
-        object.key("ReceiveRequestAttemptId").string(var_11.as_str());
+    if let Some(var_14) = &input.receive_request_attempt_id {
+        object.key("ReceiveRequestAttemptId").string(var_14.as_str());
     }
     Ok(())
 }
