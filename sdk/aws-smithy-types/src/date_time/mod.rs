@@ -55,7 +55,7 @@ const NANOS_PER_SECOND_U32: u32 = 1_000_000_000;
 /// The [`aws-smithy-types-convert`](https://crates.io/crates/aws-smithy-types-convert) crate
 /// can be used for conversions to/from other libraries, such as
 /// [`time`](https://crates.io/crates/time) or [`chrono`](https://crates.io/crates/chrono).
-#[derive(Debug, PartialEq, Eq, Hash, Clone, Copy)]
+#[derive(PartialEq, Eq, Hash, Clone, Copy)]
 pub struct DateTime {
     pub(crate) seconds: i64,
     /// Subsecond nanos always advances the wallclock time, even for times where seconds is negative
@@ -336,6 +336,12 @@ impl Display for DateTime {
         write!(f, "{}", date)
     }
 }
+
+impl fmt::Debug for DateTime {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        fmt::Display::fmt(self, f)
+    }
+}
 /// Failure to convert a `DateTime` to or from another type.
 #[derive(Debug)]
 #[non_exhaustive]
@@ -392,6 +398,21 @@ mod test {
 
         let date_time = DateTime::from_secs(16995123);
         assert_eq!(format!("{}", date_time), "1970-07-16T16:52:03Z");
+    }
+
+    #[test]
+    fn test_debug_date_time() {
+        let date_time = DateTime::from_secs(1576540098);
+        assert_eq!(format!("{:?}", date_time), "2019-12-16T23:48:18Z");
+
+        let date_time = DateTime::from_fractional_secs(1576540098, 0.52);
+        assert_eq!(format!("{:?}", date_time), "2019-12-16T23:48:18.52Z");
+
+        let date_time = DateTime::from_secs(1699942527);
+        assert_eq!(format!("{:?}", date_time), "2023-11-14T06:15:27Z");
+
+        let date_time = DateTime::from_secs(16995123);
+        assert_eq!(format!("{:?}", date_time), "1970-07-16T16:52:03Z");
     }
 
     #[test]

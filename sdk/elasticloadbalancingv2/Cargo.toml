@@ -50,7 +50,7 @@ version = "1.5.0"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.1.8"
+version = "1.1.9"
 
 [dependencies.aws-smithy-xml]
 path = "../aws-smithy-xml"

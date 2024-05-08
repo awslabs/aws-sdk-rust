@@ -20,7 +20,7 @@ use tracing::debug;
 
 // TODO(https://github.com/smithy-lang/smithy-rs/issues/3523): Unignore this test
 #[tokio::test]
-#[should_panic]
+#[ignore]
 async fn test_too_short_body_causes_an_error() {
     // this is almost impossible to reproduce with Hyper—you need to do stuff like run each request
     // in its own async runtime. But there's no reason a customer couldn't run their _own_ HttpClient
