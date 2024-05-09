@@ -22,9 +22,10 @@ impl crate::operation::invoke_agent::builders::InvokeAgentInputBuilder {
 }
 /// Fluent builder constructing a request to `InvokeAgent`.
 ///
-/// <p>Sends a prompt for the agent to process and respond to. Use return control event type for function calling.</p><note>
+/// <note>
 /// <p>The CLI doesn't support <code>InvokeAgent</code>.</p>
 /// </note>
+/// <p>Sends a prompt for the agent to process and respond to. Note the following fields for the request:</p>
 /// <ul>
 /// <li>
 /// <p>To continue the same conversation with an agent, use the same <code>sessionId</code> value in the request.</p></li>
@@ -33,9 +34,7 @@ impl crate::operation::invoke_agent::builders::InvokeAgentInputBuilder {
 /// <li>
 /// <p>End a conversation by setting <code>endSession</code> to <code>true</code>.</p></li>
 /// <li>
-/// <p>In the <code>sessionState</code> object, you can include attributes for the session or prompt or parameters returned from the action group.</p></li>
-/// <li>
-/// <p>Use return control event type for function calling.</p></li>
+/// <p>In the <code>sessionState</code> object, you can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group.</p></li>
 /// </ul>
 /// <p>The response is returned in the <code>bytes</code> field of the <code>chunk</code> object.</p>
 /// <ul>
@@ -43,6 +42,8 @@ impl crate::operation::invoke_agent::builders::InvokeAgentInputBuilder {
 /// <p>The <code>attribution</code> object contains citations for parts of the response.</p></li>
 /// <li>
 /// <p>If you set <code>enableTrace</code> to <code>true</code> in the request, you can trace the agent's steps and reasoning process that led it to the response.</p></li>
+/// <li>
+/// <p>If the action predicted was configured to return control, the response returns parameters for the action, elicited from the user, in the <code>returnControl</code> field.</p></li>
 /// <li>
 /// <p>Errors are also surfaced in the response.</p></li>
 /// </ul>
@@ -131,17 +132,23 @@ impl InvokeAgentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p>
+    /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
+    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
+    /// </note>
     pub fn session_state(mut self, input: crate::types::SessionState) -> Self {
         self.inner = self.inner.session_state(input);
         self
     }
-    /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p>
+    /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
+    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
+    /// </note>
     pub fn set_session_state(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
         self.inner = self.inner.set_session_state(input);
         self
     }
-    /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p>
+    /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
+    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
+    /// </note>
     pub fn get_session_state(&self) -> &::std::option::Option<crate::types::SessionState> {
         self.inner.get_session_state()
     }
@@ -215,17 +222,23 @@ impl InvokeAgentFluentBuilder {
     pub fn get_enable_trace(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_trace()
     }
-    /// <p>The prompt text to send the agent.</p>
+    /// <p>The prompt text to send the agent.</p><note>
+    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
+    /// </note>
     pub fn input_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_text(input.into());
         self
     }
-    /// <p>The prompt text to send the agent.</p>
+    /// <p>The prompt text to send the agent.</p><note>
+    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
+    /// </note>
     pub fn set_input_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_text(input);
         self
     }
-    /// <p>The prompt text to send the agent.</p>
+    /// <p>The prompt text to send the agent.</p><note>
+    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
+    /// </note>
     pub fn get_input_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_input_text()
     }

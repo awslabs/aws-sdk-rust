@@ -41,6 +41,8 @@ pub use crate::types::_policy_store_item::PolicyStoreItem;
 
 pub use crate::types::_policy_template_item::PolicyTemplateItem;
 
+pub use crate::types::_policy_effect::PolicyEffect;
+
 pub use crate::types::_policy_type::PolicyType;
 
 pub use crate::types::_update_policy_definition::UpdatePolicyDefinition;
@@ -166,6 +168,8 @@ mod _policy_definition;
 mod _policy_definition_detail;
 
 mod _policy_definition_item;
+
+mod _policy_effect;
 
 mod _policy_filter;
 

@@ -8,6 +8,8 @@ pub struct CampaignEmailMessage {
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>The verified email address to send the email from. The default address is the FromAddress specified for the email channel for the application.</p>
     pub from_address: ::std::option::Option<::std::string::String>,
+    /// <p>The list of <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader">MessageHeaders</a> for the email. You can have up to 15 MessageHeaders for each email.</p>
+    pub headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
     /// <p>The body of the email, in HTML format, for recipients whose email clients render HTML content.</p>
     pub html_body: ::std::option::Option<::std::string::String>,
     /// <p>The subject line, or title, of the email.</p>
@@ -21,6 +23,12 @@ impl CampaignEmailMessage {
     /// <p>The verified email address to send the email from. The default address is the FromAddress specified for the email channel for the application.</p>
     pub fn from_address(&self) -> ::std::option::Option<&str> {
         self.from_address.as_deref()
+    }
+    /// <p>The list of <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader">MessageHeaders</a> for the email. You can have up to 15 MessageHeaders for each email.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.headers.is_none()`.
+    pub fn headers(&self) -> &[crate::types::MessageHeader] {
+        self.headers.as_deref().unwrap_or_default()
     }
     /// <p>The body of the email, in HTML format, for recipients whose email clients render HTML content.</p>
     pub fn html_body(&self) -> ::std::option::Option<&str> {
@@ -44,6 +52,7 @@ impl CampaignEmailMessage {
 pub struct CampaignEmailMessageBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) from_address: ::std::option::Option<::std::string::String>,
+    pub(crate) headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
     pub(crate) html_body: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
 }
@@ -75,6 +84,26 @@ impl CampaignEmailMessageBuilder {
     /// <p>The verified email address to send the email from. The default address is the FromAddress specified for the email channel for the application.</p>
     pub fn get_from_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.from_address
+    }
+    /// Appends an item to `headers`.
+    ///
+    /// To override the contents of this collection use [`set_headers`](Self::set_headers).
+    ///
+    /// <p>The list of <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader">MessageHeaders</a> for the email. You can have up to 15 MessageHeaders for each email.</p>
+    pub fn headers(mut self, input: crate::types::MessageHeader) -> Self {
+        let mut v = self.headers.unwrap_or_default();
+        v.push(input);
+        self.headers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader">MessageHeaders</a> for the email. You can have up to 15 MessageHeaders for each email.</p>
+    pub fn set_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>) -> Self {
+        self.headers = input;
+        self
+    }
+    /// <p>The list of <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader">MessageHeaders</a> for the email. You can have up to 15 MessageHeaders for each email.</p>
+    pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>> {
+        &self.headers
     }
     /// <p>The body of the email, in HTML format, for recipients whose email clients render HTML content.</p>
     pub fn html_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,6 +138,7 @@ impl CampaignEmailMessageBuilder {
         crate::types::CampaignEmailMessage {
             body: self.body,
             from_address: self.from_address,
+            headers: self.headers,
             html_body: self.html_body,
             title: self.title,
         }

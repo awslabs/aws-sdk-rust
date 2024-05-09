@@ -15,21 +15,33 @@ pub fn ser_email_template_request(
     if let Some(var_4) = &input.subject {
         object.key("Subject").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("tags").start_object();
-        for (key_7, value_8) in var_5 {
+    if let Some(var_5) = &input.headers {
+        let mut array_6 = object.key("Headers").start_array();
+        for item_7 in var_5 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_message_header::ser_message_header(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        object_6.finish();
+        array_6.finish();
     }
-    if let Some(var_9) = &input.template_description {
-        object.key("TemplateDescription").string(var_9.as_str());
+    if let Some(var_9) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
+            {
+                object_10.key(key_11.as_str()).string(value_12.as_str());
+            }
+        }
+        object_10.finish();
     }
-    if let Some(var_10) = &input.text_part {
-        object.key("TextPart").string(var_10.as_str());
+    if let Some(var_13) = &input.template_description {
+        object.key("TemplateDescription").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.text_part {
+        object.key("TextPart").string(var_14.as_str());
     }
     Ok(())
 }

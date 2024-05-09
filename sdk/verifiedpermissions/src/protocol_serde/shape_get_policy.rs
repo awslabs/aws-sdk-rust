@@ -157,6 +157,9 @@ pub(crate) fn de_get_policy(
                 "resource" => {
                     builder = builder.set_resource(crate::protocol_serde::shape_entity_identifier::de_entity_identifier(tokens)?);
                 }
+                "actions" => {
+                    builder = builder.set_actions(crate::protocol_serde::shape_action_identifier_list::de_action_identifier_list(tokens)?);
+                }
                 "definition" => {
                     builder = builder.set_definition(crate::protocol_serde::shape_policy_definition_detail::de_policy_definition_detail(
                         tokens,
@@ -173,6 +176,13 @@ pub(crate) fn de_get_policy(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
+                }
+                "effect" => {
+                    builder = builder.set_effect(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::PolicyEffect::from(u.as_ref())))
+                            .transpose()?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -35,6 +35,12 @@ pub use crate::types::_external_sources_retrieve_and_generate_configuration::Ext
 
 pub use crate::types::_external_sources_generation_configuration::ExternalSourcesGenerationConfigurationBuilder;
 
+pub use crate::types::_inference_config::InferenceConfigBuilder;
+
+pub use crate::types::_text_inference_config::TextInferenceConfigBuilder;
+
+pub use crate::types::_guardrail_configuration::GuardrailConfigurationBuilder;
+
 pub use crate::types::_prompt_template::PromptTemplateBuilder;
 
 pub use crate::types::_external_source::ExternalSourceBuilder;

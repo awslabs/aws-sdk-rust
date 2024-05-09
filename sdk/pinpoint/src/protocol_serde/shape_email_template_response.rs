@@ -78,6 +78,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Headers" => {
+                            builder = builder.set_headers(crate::protocol_serde::shape_list_of_message_header::de_list_of_message_header(tokens)?);
+                        }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                         }

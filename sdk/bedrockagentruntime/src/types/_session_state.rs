@@ -8,9 +8,11 @@ pub struct SessionState {
     pub session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Contains attributes that persist across a prompt and the values of those attributes. These attributes replace the $prompt_session_attributes$ placeholder variable in the orchestration prompt template. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt template placeholder variables</a>.</p>
     pub prompt_session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Contains information about the results from the action group invocation.</p>
+    /// <p>Contains information about the results from the action group invocation. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return control to the agent developer</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
+    /// <p>If you include this field, the <code>inputText</code> field will be ignored.</p>
+    /// </note>
     pub return_control_invocation_results: ::std::option::Option<::std::vec::Vec<crate::types::InvocationResultMember>>,
-    /// <p>The identifier of the invocation.</p>
+    /// <p>The identifier of the invocation of an action. This value must match the <code>invocationId</code> returned in the <code>InvokeAgent</code> response for the action whose results are provided in the <code>returnControlInvocationResults</code> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return control to the agent developer</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p>
     pub invocation_id: ::std::option::Option<::std::string::String>,
 }
 impl SessionState {
@@ -22,13 +24,15 @@ impl SessionState {
     pub fn prompt_session_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.prompt_session_attributes.as_ref()
     }
-    /// <p>Contains information about the results from the action group invocation.</p>
+    /// <p>Contains information about the results from the action group invocation. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return control to the agent developer</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
+    /// <p>If you include this field, the <code>inputText</code> field will be ignored.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.return_control_invocation_results.is_none()`.
     pub fn return_control_invocation_results(&self) -> &[crate::types::InvocationResultMember] {
         self.return_control_invocation_results.as_deref().unwrap_or_default()
     }
-    /// <p>The identifier of the invocation.</p>
+    /// <p>The identifier of the invocation of an action. This value must match the <code>invocationId</code> returned in the <code>InvokeAgent</code> response for the action whose results are provided in the <code>returnControlInvocationResults</code> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return control to the agent developer</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p>
     pub fn invocation_id(&self) -> ::std::option::Option<&str> {
         self.invocation_id.as_deref()
     }
@@ -108,14 +112,18 @@ impl SessionStateBuilder {
     ///
     /// To override the contents of this collection use [`set_return_control_invocation_results`](Self::set_return_control_invocation_results).
     ///
-    /// <p>Contains information about the results from the action group invocation.</p>
+    /// <p>Contains information about the results from the action group invocation. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return control to the agent developer</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
+    /// <p>If you include this field, the <code>inputText</code> field will be ignored.</p>
+    /// </note>
     pub fn return_control_invocation_results(mut self, input: crate::types::InvocationResultMember) -> Self {
         let mut v = self.return_control_invocation_results.unwrap_or_default();
         v.push(input);
         self.return_control_invocation_results = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains information about the results from the action group invocation.</p>
+    /// <p>Contains information about the results from the action group invocation. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return control to the agent developer</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
+    /// <p>If you include this field, the <code>inputText</code> field will be ignored.</p>
+    /// </note>
     pub fn set_return_control_invocation_results(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::InvocationResultMember>>,
@@ -123,21 +131,23 @@ impl SessionStateBuilder {
         self.return_control_invocation_results = input;
         self
     }
-    /// <p>Contains information about the results from the action group invocation.</p>
+    /// <p>Contains information about the results from the action group invocation. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return control to the agent developer</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
+    /// <p>If you include this field, the <code>inputText</code> field will be ignored.</p>
+    /// </note>
     pub fn get_return_control_invocation_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InvocationResultMember>> {
         &self.return_control_invocation_results
     }
-    /// <p>The identifier of the invocation.</p>
+    /// <p>The identifier of the invocation of an action. This value must match the <code>invocationId</code> returned in the <code>InvokeAgent</code> response for the action whose results are provided in the <code>returnControlInvocationResults</code> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return control to the agent developer</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p>
     pub fn invocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invocation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the invocation.</p>
+    /// <p>The identifier of the invocation of an action. This value must match the <code>invocationId</code> returned in the <code>InvokeAgent</code> response for the action whose results are provided in the <code>returnControlInvocationResults</code> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return control to the agent developer</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p>
     pub fn set_invocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invocation_id = input;
         self
     }
-    /// <p>The identifier of the invocation.</p>
+    /// <p>The identifier of the invocation of an action. This value must match the <code>invocationId</code> returned in the <code>InvokeAgent</code> response for the action whose results are provided in the <code>returnControlInvocationResults</code> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return control to the agent developer</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p>
     pub fn get_invocation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.invocation_id
     }

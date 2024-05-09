@@ -213,6 +213,8 @@ pub use crate::types::_endpoint_request::EndpointRequest;
 
 pub use crate::types::_email_template_request::EmailTemplateRequest;
 
+pub use crate::types::_message_header::MessageHeader;
+
 pub use crate::types::_email_channel_response::EmailChannelResponse;
 
 pub use crate::types::_email_channel_request::EmailChannelRequest;
@@ -768,6 +770,8 @@ mod _message;
 mod _message_body;
 
 mod _message_configuration;
+
+mod _message_header;
 
 mod _message_request;
 

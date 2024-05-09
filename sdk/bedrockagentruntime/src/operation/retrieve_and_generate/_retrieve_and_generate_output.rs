@@ -9,6 +9,8 @@ pub struct RetrieveAndGenerateOutput {
     pub output: ::std::option::Option<crate::types::RetrieveAndGenerateOutput>,
     /// <p>A list of segments of the generated response that are based on sources in the knowledge base, alongside information about the sources.</p>
     pub citations: ::std::option::Option<::std::vec::Vec<crate::types::Citation>>,
+    /// <p>Specifies if there is a guardrail intervention in the response.</p>
+    pub guardrail_action: ::std::option::Option<crate::types::GuadrailAction>,
     _request_id: Option<String>,
 }
 impl RetrieveAndGenerateOutput {
@@ -27,6 +29,10 @@ impl RetrieveAndGenerateOutput {
     pub fn citations(&self) -> &[crate::types::Citation] {
         self.citations.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies if there is a guardrail intervention in the response.</p>
+    pub fn guardrail_action(&self) -> ::std::option::Option<&crate::types::GuadrailAction> {
+        self.guardrail_action.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RetrieveAndGenerateOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -34,6 +40,7 @@ impl ::std::fmt::Debug for RetrieveAndGenerateOutput {
         formatter.field("session_id", &self.session_id);
         formatter.field("output", &"*** Sensitive Data Redacted ***");
         formatter.field("citations", &self.citations);
+        formatter.field("guardrail_action", &self.guardrail_action);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -57,6 +64,7 @@ pub struct RetrieveAndGenerateOutputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) output: ::std::option::Option<crate::types::RetrieveAndGenerateOutput>,
     pub(crate) citations: ::std::option::Option<::std::vec::Vec<crate::types::Citation>>,
+    pub(crate) guardrail_action: ::std::option::Option<crate::types::GuadrailAction>,
     _request_id: Option<String>,
 }
 impl RetrieveAndGenerateOutputBuilder {
@@ -110,6 +118,20 @@ impl RetrieveAndGenerateOutputBuilder {
     pub fn get_citations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Citation>> {
         &self.citations
     }
+    /// <p>Specifies if there is a guardrail intervention in the response.</p>
+    pub fn guardrail_action(mut self, input: crate::types::GuadrailAction) -> Self {
+        self.guardrail_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies if there is a guardrail intervention in the response.</p>
+    pub fn set_guardrail_action(mut self, input: ::std::option::Option<crate::types::GuadrailAction>) -> Self {
+        self.guardrail_action = input;
+        self
+    }
+    /// <p>Specifies if there is a guardrail intervention in the response.</p>
+    pub fn get_guardrail_action(&self) -> &::std::option::Option<crate::types::GuadrailAction> {
+        &self.guardrail_action
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -135,6 +157,7 @@ impl RetrieveAndGenerateOutputBuilder {
             })?,
             output: self.output,
             citations: self.citations,
+            guardrail_action: self.guardrail_action,
             _request_id: self._request_id,
         })
     }
@@ -145,6 +168,7 @@ impl ::std::fmt::Debug for RetrieveAndGenerateOutputBuilder {
         formatter.field("session_id", &self.session_id);
         formatter.field("output", &"*** Sensitive Data Redacted ***");
         formatter.field("citations", &self.citations);
+        formatter.field("guardrail_action", &self.guardrail_action);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

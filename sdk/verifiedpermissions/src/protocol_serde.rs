@@ -151,6 +151,8 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_action_identifier;
 
+pub(crate) mod shape_action_identifier_list;
+
 pub(crate) mod shape_batch_is_authorized_input_item;
 
 pub(crate) mod shape_batch_is_authorized_output_list;

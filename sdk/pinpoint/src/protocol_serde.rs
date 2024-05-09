@@ -853,6 +853,8 @@ pub(crate) mod shape_journey_schedule;
 
 pub(crate) mod shape_message_configuration;
 
+pub(crate) mod shape_message_header;
+
 pub(crate) mod shape_open_hours;
 
 pub(crate) mod shape_quiet_time;
@@ -946,6 +948,8 @@ pub(crate) mod shape_list_of_in_app_message_content;
 pub(crate) mod shape_list_of_journey_response;
 
 pub(crate) mod shape_list_of_journey_run_response;
+
+pub(crate) mod shape_list_of_message_header;
 
 pub(crate) mod shape_list_of_recommender_configuration_response;
 

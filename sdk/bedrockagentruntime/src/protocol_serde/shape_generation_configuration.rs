@@ -9,5 +9,27 @@ pub fn ser_generation_configuration(
         crate::protocol_serde::shape_prompt_template::ser_prompt_template(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.guardrail_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("guardrailConfiguration").start_object();
+        crate::protocol_serde::shape_guardrail_configuration::ser_guardrail_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.inference_config {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("inferenceConfig").start_object();
+        crate::protocol_serde::shape_inference_config::ser_inference_config(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.additional_model_request_fields {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("additionalModelRequestFields").start_object();
+        for (key_9, value_10) in var_7 {
+            {
+                object_8.key(key_9.as_str()).document(value_10);
+            }
+        }
+        object_8.finish();
+    }
     Ok(())
 }

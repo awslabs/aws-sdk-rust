@@ -183,6 +183,8 @@ mod list_components;
 
 mod list_databases;
 
+mod list_operation_events;
+
 mod list_operations;
 
 mod list_tags_for_resource;
@@ -191,7 +193,11 @@ mod put_resource_permission;
 
 mod register_application;
 
+mod start_application;
+
 mod start_application_refresh;
+
+mod stop_application;
 
 mod tag_resource;
 

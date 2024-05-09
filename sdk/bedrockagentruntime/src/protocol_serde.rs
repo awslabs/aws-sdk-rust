@@ -134,6 +134,10 @@ pub(crate) mod shape_content_body;
 
 pub(crate) mod shape_filter_attribute;
 
+pub(crate) mod shape_guardrail_configuration;
+
+pub(crate) mod shape_inference_config;
+
 pub(crate) mod shape_invocation_inputs;
 
 pub(crate) mod shape_prompt_template;
@@ -159,6 +163,8 @@ pub(crate) mod shape_post_processing_trace;
 pub(crate) mod shape_pre_processing_trace;
 
 pub(crate) mod shape_span;
+
+pub(crate) mod shape_text_inference_config;
 
 pub(crate) mod shape_api_invocation_input;
 

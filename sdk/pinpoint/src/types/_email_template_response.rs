@@ -18,6 +18,8 @@ pub struct EmailTemplateResponse {
     pub recommender_id: ::std::option::Option<::std::string::String>,
     /// <p>The subject line, or title, that's used in email messages that are based on the message template.</p>
     pub subject: ::std::option::Option<::std::string::String>,
+    /// <p>The list of <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a> for the email. You can have up to 15 Headers.</p>
+    pub headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The custom description of the message template.</p>
@@ -59,6 +61,12 @@ impl EmailTemplateResponse {
     /// <p>The subject line, or title, that's used in email messages that are based on the message template.</p>
     pub fn subject(&self) -> ::std::option::Option<&str> {
         self.subject.as_deref()
+    }
+    /// <p>The list of <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a> for the email. You can have up to 15 Headers.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.headers.is_none()`.
+    pub fn headers(&self) -> &[crate::types::MessageHeader] {
+        self.headers.as_deref().unwrap_or_default()
     }
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -103,6 +111,7 @@ pub struct EmailTemplateResponseBuilder {
     pub(crate) last_modified_date: ::std::option::Option<::std::string::String>,
     pub(crate) recommender_id: ::std::option::Option<::std::string::String>,
     pub(crate) subject: ::std::option::Option<::std::string::String>,
+    pub(crate) headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) template_description: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
@@ -211,6 +220,26 @@ impl EmailTemplateResponseBuilder {
     pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
         &self.subject
     }
+    /// Appends an item to `headers`.
+    ///
+    /// To override the contents of this collection use [`set_headers`](Self::set_headers).
+    ///
+    /// <p>The list of <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a> for the email. You can have up to 15 Headers.</p>
+    pub fn headers(mut self, input: crate::types::MessageHeader) -> Self {
+        let mut v = self.headers.unwrap_or_default();
+        v.push(input);
+        self.headers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a> for the email. You can have up to 15 Headers.</p>
+    pub fn set_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>) -> Self {
+        self.headers = input;
+        self
+    }
+    /// <p>The list of <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a> for the email. You can have up to 15 Headers.</p>
+    pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>> {
+        &self.headers
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -313,6 +342,7 @@ impl EmailTemplateResponseBuilder {
             last_modified_date: self.last_modified_date,
             recommender_id: self.recommender_id,
             subject: self.subject,
+            headers: self.headers,
             tags: self.tags,
             template_description: self.template_description,
             template_name: self.template_name,

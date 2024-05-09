@@ -43,6 +43,8 @@ pub(crate) mod shape_list_components;
 
 pub(crate) mod shape_list_databases;
 
+pub(crate) mod shape_list_operation_events;
+
 pub(crate) mod shape_list_operations;
 
 pub(crate) mod shape_list_tags_for_resource;
@@ -51,7 +53,11 @@ pub(crate) mod shape_put_resource_permission;
 
 pub(crate) mod shape_register_application;
 
+pub(crate) mod shape_start_application;
+
 pub(crate) mod shape_start_application_refresh;
+
+pub(crate) mod shape_stop_application;
 
 pub(crate) mod shape_tag_resource;
 
@@ -91,6 +97,8 @@ pub(crate) mod shape_list_components_input;
 
 pub(crate) mod shape_list_databases_input;
 
+pub(crate) mod shape_list_operation_events_input;
+
 pub(crate) mod shape_list_operations_input;
 
 pub(crate) mod shape_put_resource_permission_input;
@@ -99,7 +107,11 @@ pub(crate) mod shape_register_application_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_start_application_input;
+
 pub(crate) mod shape_start_application_refresh_input;
+
+pub(crate) mod shape_stop_application_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -129,6 +141,8 @@ pub(crate) mod shape_filter;
 
 pub(crate) mod shape_operation;
 
+pub(crate) mod shape_operation_event_list;
+
 pub(crate) mod shape_operation_id_list;
 
 pub(crate) mod shape_operation_list;
@@ -153,6 +167,8 @@ pub(crate) mod shape_database_summary;
 
 pub(crate) mod shape_host_list;
 
+pub(crate) mod shape_operation_event;
+
 pub(crate) mod shape_operation_properties;
 
 pub(crate) mod shape_resilience;
@@ -160,5 +176,7 @@ pub(crate) mod shape_resilience;
 pub(crate) mod shape_host;
 
 pub(crate) mod shape_ip_address_list;
+
+pub(crate) mod shape_resource;
 
 pub(crate) mod shape_ip_address_member;

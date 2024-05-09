@@ -21,5 +21,17 @@ pub fn ser_simple_email(
         crate::protocol_serde::shape_simple_email_part::ser_simple_email_part(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.headers {
+        let mut array_8 = object.key("Headers").start_array();
+        for item_9 in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_message_header::ser_message_header(&mut object_10, item_9)?;
+                object_10.finish();
+            }
+        }
+        array_8.finish();
+    }
     Ok(())
 }

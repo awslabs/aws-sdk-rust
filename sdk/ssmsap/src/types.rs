@@ -7,6 +7,8 @@ pub use crate::types::_application_credential::ApplicationCredential;
 
 pub use crate::types::_credential_type::CredentialType;
 
+pub use crate::types::_connected_entity_type::ConnectedEntityType;
+
 pub use crate::types::_application::Application;
 
 pub use crate::types::_application_discovery_status::ApplicationDiscoveryStatus;
@@ -24,6 +26,12 @@ pub use crate::types::_operation_status::OperationStatus;
 pub use crate::types::_filter::Filter;
 
 pub use crate::types::_filter_operator::FilterOperator;
+
+pub use crate::types::_operation_event::OperationEvent;
+
+pub use crate::types::_operation_event_status::OperationEventStatus;
+
+pub use crate::types::_resource::Resource;
 
 pub use crate::types::_database_summary::DatabaseSummary;
 
@@ -95,6 +103,8 @@ mod _component_summary;
 
 mod _component_type;
 
+mod _connected_entity_type;
+
 mod _credential_type;
 
 mod _database;
@@ -121,6 +131,10 @@ mod _ip_address_member;
 
 mod _operation;
 
+mod _operation_event;
+
+mod _operation_event_status;
+
 mod _operation_mode;
 
 mod _operation_status;
@@ -130,6 +144,8 @@ mod _permission_action_type;
 mod _replication_mode;
 
 mod _resilience;
+
+mod _resource;
 
 /// Builders
 pub mod builders;

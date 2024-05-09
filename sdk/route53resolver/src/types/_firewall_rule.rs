@@ -44,9 +44,9 @@ pub struct FirewallRule {
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the rule was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub modification_time: ::std::option::Option<::std::string::String>,
-    /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME, ot ALIAS.</p>
-    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the allow domain list.</p>
-    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain alloww list.</p>
+    /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.</p>
+    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
+    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
     pub firewall_domain_redirection_action: ::std::option::Option<crate::types::FirewallDomainRedirectionAction>,
     /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
     /// <ul>
@@ -146,9 +146,9 @@ impl FirewallRule {
     pub fn modification_time(&self) -> ::std::option::Option<&str> {
         self.modification_time.as_deref()
     }
-    /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME, ot ALIAS.</p>
-    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the allow domain list.</p>
-    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain alloww list.</p>
+    /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.</p>
+    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
+    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
     pub fn firewall_domain_redirection_action(&self) -> ::std::option::Option<&crate::types::FirewallDomainRedirectionAction> {
         self.firewall_domain_redirection_action.as_ref()
     }
@@ -430,23 +430,23 @@ impl FirewallRuleBuilder {
     pub fn get_modification_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.modification_time
     }
-    /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME, ot ALIAS.</p>
-    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the allow domain list.</p>
-    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain alloww list.</p>
+    /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.</p>
+    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
+    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
     pub fn firewall_domain_redirection_action(mut self, input: crate::types::FirewallDomainRedirectionAction) -> Self {
         self.firewall_domain_redirection_action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME, ot ALIAS.</p>
-    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the allow domain list.</p>
-    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain alloww list.</p>
+    /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.</p>
+    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
+    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
     pub fn set_firewall_domain_redirection_action(mut self, input: ::std::option::Option<crate::types::FirewallDomainRedirectionAction>) -> Self {
         self.firewall_domain_redirection_action = input;
         self
     }
-    /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME, ot ALIAS.</p>
-    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the allow domain list.</p>
-    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain alloww list.</p>
+    /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.</p>
+    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
+    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
     pub fn get_firewall_domain_redirection_action(&self) -> &::std::option::Option<crate::types::FirewallDomainRedirectionAction> {
         &self.firewall_domain_redirection_action
     }

@@ -210,6 +210,13 @@ pub(crate) fn de_retrieve_and_generate(
                 "citations" => {
                     builder = builder.set_citations(crate::protocol_serde::shape_citations::de_citations(tokens)?);
                 }
+                "guardrailAction" => {
+                    builder = builder.set_guardrail_action(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::GuadrailAction::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "output" => {
                     builder = builder.set_output(crate::protocol_serde::shape_retrieve_and_generate_output::de_retrieve_and_generate_output(tokens)?);
                 }

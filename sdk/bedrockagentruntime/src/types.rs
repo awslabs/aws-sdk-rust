@@ -21,6 +21,8 @@ pub use crate::types::_search_type::SearchType;
 
 pub use crate::types::_knowledge_base_query::KnowledgeBaseQuery;
 
+pub use crate::types::_guadrail_action::GuadrailAction;
+
 pub use crate::types::_citation::Citation;
 
 pub use crate::types::_retrieved_reference::RetrievedReference;
@@ -40,6 +42,12 @@ pub use crate::types::_retrieve_and_generate_configuration::RetrieveAndGenerateC
 pub use crate::types::_external_sources_retrieve_and_generate_configuration::ExternalSourcesRetrieveAndGenerateConfiguration;
 
 pub use crate::types::_external_sources_generation_configuration::ExternalSourcesGenerationConfiguration;
+
+pub use crate::types::_inference_config::InferenceConfig;
+
+pub use crate::types::_text_inference_config::TextInferenceConfig;
+
+pub use crate::types::_guardrail_configuration::GuardrailConfiguration;
 
 pub use crate::types::_prompt_template::PromptTemplate;
 
@@ -195,6 +203,12 @@ mod _generated_response_part;
 
 mod _generation_configuration;
 
+mod _guadrail_action;
+
+mod _guardrail_configuration;
+
+mod _inference_config;
+
 mod _inference_configuration;
 
 mod _invocation_input;
@@ -290,6 +304,8 @@ mod _session_state;
 mod _source;
 
 mod _span;
+
+mod _text_inference_config;
 
 mod _text_response_part;
 

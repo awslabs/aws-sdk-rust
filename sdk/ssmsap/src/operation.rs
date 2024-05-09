@@ -31,6 +31,9 @@ pub mod list_components;
 /// Types for the `ListDatabases` operation.
 pub mod list_databases;
 
+/// Types for the `ListOperationEvents` operation.
+pub mod list_operation_events;
+
 /// Types for the `ListOperations` operation.
 pub mod list_operations;
 
@@ -43,8 +46,14 @@ pub mod put_resource_permission;
 /// Types for the `RegisterApplication` operation.
 pub mod register_application;
 
+/// Types for the `StartApplication` operation.
+pub mod start_application;
+
 /// Types for the `StartApplicationRefresh` operation.
 pub mod start_application_refresh;
+
+/// Types for the `StopApplication` operation.
+pub mod stop_application;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

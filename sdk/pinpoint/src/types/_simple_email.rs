@@ -10,6 +10,8 @@ pub struct SimpleEmail {
     pub subject: ::std::option::Option<crate::types::SimpleEmailPart>,
     /// <p>The body of the email message, in plain text format. We recommend using plain text format for email clients that don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.</p>
     pub text_part: ::std::option::Option<crate::types::SimpleEmailPart>,
+    /// <p>The list of MessageHeaders for the email. You can have up to 15 Headers.</p>
+    pub headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
 }
 impl SimpleEmail {
     /// <p>The body of the email message, in HTML format. We recommend using HTML format for email clients that render HTML content. You can include links, formatted text, and more in an HTML message.</p>
@@ -23,6 +25,12 @@ impl SimpleEmail {
     /// <p>The body of the email message, in plain text format. We recommend using plain text format for email clients that don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.</p>
     pub fn text_part(&self) -> ::std::option::Option<&crate::types::SimpleEmailPart> {
         self.text_part.as_ref()
+    }
+    /// <p>The list of MessageHeaders for the email. You can have up to 15 Headers.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.headers.is_none()`.
+    pub fn headers(&self) -> &[crate::types::MessageHeader] {
+        self.headers.as_deref().unwrap_or_default()
     }
 }
 impl SimpleEmail {
@@ -39,6 +47,7 @@ pub struct SimpleEmailBuilder {
     pub(crate) html_part: ::std::option::Option<crate::types::SimpleEmailPart>,
     pub(crate) subject: ::std::option::Option<crate::types::SimpleEmailPart>,
     pub(crate) text_part: ::std::option::Option<crate::types::SimpleEmailPart>,
+    pub(crate) headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
 }
 impl SimpleEmailBuilder {
     /// <p>The body of the email message, in HTML format. We recommend using HTML format for email clients that render HTML content. You can include links, formatted text, and more in an HTML message.</p>
@@ -83,12 +92,33 @@ impl SimpleEmailBuilder {
     pub fn get_text_part(&self) -> &::std::option::Option<crate::types::SimpleEmailPart> {
         &self.text_part
     }
+    /// Appends an item to `headers`.
+    ///
+    /// To override the contents of this collection use [`set_headers`](Self::set_headers).
+    ///
+    /// <p>The list of MessageHeaders for the email. You can have up to 15 Headers.</p>
+    pub fn headers(mut self, input: crate::types::MessageHeader) -> Self {
+        let mut v = self.headers.unwrap_or_default();
+        v.push(input);
+        self.headers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of MessageHeaders for the email. You can have up to 15 Headers.</p>
+    pub fn set_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>) -> Self {
+        self.headers = input;
+        self
+    }
+    /// <p>The list of MessageHeaders for the email. You can have up to 15 Headers.</p>
+    pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>> {
+        &self.headers
+    }
     /// Consumes the builder and constructs a [`SimpleEmail`](crate::types::SimpleEmail).
     pub fn build(self) -> crate::types::SimpleEmail {
         crate::types::SimpleEmail {
             html_part: self.html_part,
             subject: self.subject,
             text_part: self.text_part,
+            headers: self.headers,
         }
     }
 }

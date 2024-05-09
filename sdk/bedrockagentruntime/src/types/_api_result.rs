@@ -4,7 +4,7 @@
 /// <p>This data type is used in the following API operations:</p>
 /// <ul>
 /// <li>
-/// <p>In the <code>returnControlInvocationResults</code> of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve request</a></p></li>
+/// <p>In the <code>returnControlInvocationResults</code> of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html#API_agent-runtime_InvokeAgent_RequestSyntax">InvokeAgent request</a></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
@@ -15,7 +15,7 @@ pub struct ApiResult {
     pub http_method: ::std::option::Option<::std::string::String>,
     /// <p>The path to the API operation.</p>
     pub api_path: ::std::option::Option<::std::string::String>,
-    /// <p>The response body from the API operation. The key of the object is the content type. The response may be returned directly or from the Lambda function.</p>
+    /// <p>The response body from the API operation. The key of the object is the content type (currently, only <code>TEXT</code> is supported). The response may be returned directly or from the Lambda function.</p>
     pub response_body: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContentBody>>,
     /// <p>http status code from API execution response (for example: 200, 400, 500).</p>
     pub http_status_code: ::std::option::Option<i32>,
@@ -36,7 +36,7 @@ impl ApiResult {
     pub fn api_path(&self) -> ::std::option::Option<&str> {
         self.api_path.as_deref()
     }
-    /// <p>The response body from the API operation. The key of the object is the content type. The response may be returned directly or from the Lambda function.</p>
+    /// <p>The response body from the API operation. The key of the object is the content type (currently, only <code>TEXT</code> is supported). The response may be returned directly or from the Lambda function.</p>
     pub fn response_body(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ContentBody>> {
         self.response_body.as_ref()
     }
@@ -127,14 +127,14 @@ impl ApiResultBuilder {
     ///
     /// To override the contents of this collection use [`set_response_body`](Self::set_response_body).
     ///
-    /// <p>The response body from the API operation. The key of the object is the content type. The response may be returned directly or from the Lambda function.</p>
+    /// <p>The response body from the API operation. The key of the object is the content type (currently, only <code>TEXT</code> is supported). The response may be returned directly or from the Lambda function.</p>
     pub fn response_body(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ContentBody) -> Self {
         let mut hash_map = self.response_body.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.response_body = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The response body from the API operation. The key of the object is the content type. The response may be returned directly or from the Lambda function.</p>
+    /// <p>The response body from the API operation. The key of the object is the content type (currently, only <code>TEXT</code> is supported). The response may be returned directly or from the Lambda function.</p>
     pub fn set_response_body(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContentBody>>,
@@ -142,7 +142,7 @@ impl ApiResultBuilder {
         self.response_body = input;
         self
     }
-    /// <p>The response body from the API operation. The key of the object is the content type. The response may be returned directly or from the Lambda function.</p>
+    /// <p>The response body from the API operation. The key of the object is the content type (currently, only <code>TEXT</code> is supported). The response may be returned directly or from the Lambda function.</p>
     pub fn get_response_body(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContentBody>> {
         &self.response_body
     }

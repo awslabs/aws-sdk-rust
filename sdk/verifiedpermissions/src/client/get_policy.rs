@@ -11,9 +11,11 @@ impl super::Client {
     ///   - [`policy_type(PolicyType)`](crate::operation::get_policy::GetPolicyOutput::policy_type): <p>The type of the policy.</p>
     ///   - [`principal(Option<EntityIdentifier>)`](crate::operation::get_policy::GetPolicyOutput::principal): <p>The principal specified in the policy's scope. This element isn't included in the response when <code>Principal</code> isn't present in the policy content.</p>
     ///   - [`resource(Option<EntityIdentifier>)`](crate::operation::get_policy::GetPolicyOutput::resource): <p>The resource specified in the policy's scope. This element isn't included in the response when <code>Resource</code> isn't present in the policy content.</p>
+    ///   - [`actions(Option<Vec::<ActionIdentifier>>)`](crate::operation::get_policy::GetPolicyOutput::actions): <p>The action that a policy permits or forbids. For example, <code>{"actions": [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
     ///   - [`definition(Option<PolicyDefinitionDetail>)`](crate::operation::get_policy::GetPolicyOutput::definition): <p>The definition of the requested policy.</p>
     ///   - [`created_date(DateTime)`](crate::operation::get_policy::GetPolicyOutput::created_date): <p>The date and time that the policy was originally created.</p>
     ///   - [`last_updated_date(DateTime)`](crate::operation::get_policy::GetPolicyOutput::last_updated_date): <p>The date and time that the policy was last updated.</p>
+    ///   - [`effect(Option<PolicyEffect>)`](crate::operation::get_policy::GetPolicyOutput::effect): <p>The effect of the decision that a policy returns to an authorization request. For example, <code>"effect": "Permit"</code>.</p>
     /// - On failure, responds with [`SdkError<GetPolicyError>`](crate::operation::get_policy::GetPolicyError)
     pub fn get_policy(&self) -> crate::operation::get_policy::builders::GetPolicyFluentBuilder {
         crate::operation::get_policy::builders::GetPolicyFluentBuilder::new(self.handle.clone())

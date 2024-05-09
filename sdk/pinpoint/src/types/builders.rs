@@ -171,6 +171,8 @@ pub use crate::types::_endpoint_request::EndpointRequestBuilder;
 
 pub use crate::types::_email_template_request::EmailTemplateRequestBuilder;
 
+pub use crate::types::_message_header::MessageHeaderBuilder;
+
 pub use crate::types::_email_channel_response::EmailChannelResponseBuilder;
 
 pub use crate::types::_email_channel_request::EmailChannelRequestBuilder;

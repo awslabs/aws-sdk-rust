@@ -12,8 +12,10 @@ impl super::Client {
     ///   - [`policy_type(PolicyType)`](crate::operation::create_policy::CreatePolicyOutput::policy_type): <p>The policy type of the new policy.</p>
     ///   - [`principal(Option<EntityIdentifier>)`](crate::operation::create_policy::CreatePolicyOutput::principal): <p>The principal specified in the new policy's scope. This response element isn't present when <code>principal</code> isn't specified in the policy content.</p>
     ///   - [`resource(Option<EntityIdentifier>)`](crate::operation::create_policy::CreatePolicyOutput::resource): <p>The resource specified in the new policy's scope. This response element isn't present when the <code>resource</code> isn't specified in the policy content.</p>
+    ///   - [`actions(Option<Vec::<ActionIdentifier>>)`](crate::operation::create_policy::CreatePolicyOutput::actions): <p>The action that a policy permits or forbids. For example, <code>{"actions": [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
     ///   - [`created_date(DateTime)`](crate::operation::create_policy::CreatePolicyOutput::created_date): <p>The date and time the policy was originally created.</p>
     ///   - [`last_updated_date(DateTime)`](crate::operation::create_policy::CreatePolicyOutput::last_updated_date): <p>The date and time the policy was last updated.</p>
+    ///   - [`effect(Option<PolicyEffect>)`](crate::operation::create_policy::CreatePolicyOutput::effect): <p>The effect of the decision that a policy returns to an authorization request. For example, <code>"effect": "Permit"</code>.</p>
     /// - On failure, responds with [`SdkError<CreatePolicyError>`](crate::operation::create_policy::CreatePolicyError)
     pub fn create_policy(&self) -> crate::operation::create_policy::builders::CreatePolicyFluentBuilder {
         crate::operation::create_policy::builders::CreatePolicyFluentBuilder::new(self.handle.clone())

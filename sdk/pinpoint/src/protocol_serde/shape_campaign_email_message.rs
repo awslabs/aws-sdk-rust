@@ -9,11 +9,23 @@ pub fn ser_campaign_email_message(
     if let Some(var_2) = &input.from_address {
         object.key("FromAddress").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.html_body {
-        object.key("HtmlBody").string(var_3.as_str());
+    if let Some(var_3) = &input.headers {
+        let mut array_4 = object.key("Headers").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_message_header::ser_message_header(&mut object_6, item_5)?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
     }
-    if let Some(var_4) = &input.title {
-        object.key("Title").string(var_4.as_str());
+    if let Some(var_7) = &input.html_body {
+        object.key("HtmlBody").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.title {
+        object.key("Title").string(var_8.as_str());
     }
     Ok(())
 }
@@ -46,6 +58,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "Headers" => {
+                            builder = builder.set_headers(crate::protocol_serde::shape_list_of_message_header::de_list_of_message_header(tokens)?);
                         }
                         "HtmlBody" => {
                             builder = builder.set_html_body(

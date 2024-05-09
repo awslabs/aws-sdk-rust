@@ -455,6 +455,18 @@ pub(crate) fn entity_identifier_correct_errors(
     builder
 }
 
+pub(crate) fn action_identifier_correct_errors(
+    mut builder: crate::types::builders::ActionIdentifierBuilder,
+) -> crate::types::builders::ActionIdentifierBuilder {
+    if builder.action_type.is_none() {
+        builder.action_type = Some(Default::default())
+    }
+    if builder.action_id.is_none() {
+        builder.action_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_is_authorized_output_item_correct_errors(
     mut builder: crate::types::builders::BatchIsAuthorizedOutputItemBuilder,
 ) -> crate::types::builders::BatchIsAuthorizedOutputItemBuilder {
@@ -644,18 +656,6 @@ pub(crate) fn validation_exception_field_correct_errors(
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn action_identifier_correct_errors(
-    mut builder: crate::types::builders::ActionIdentifierBuilder,
-) -> crate::types::builders::ActionIdentifierBuilder {
-    if builder.action_type.is_none() {
-        builder.action_type = Some(Default::default())
-    }
-    if builder.action_id.is_none() {
-        builder.action_id = Some(Default::default())
     }
     builder
 }

@@ -12,6 +12,8 @@ pub struct EmailTemplateRequest {
     pub recommender_id: ::std::option::Option<::std::string::String>,
     /// <p>The subject line, or title, to use in email messages that are based on the message template.</p>
     pub subject: ::std::option::Option<::std::string::String>,
+    /// <p>The list of <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a> for the email. You can have up to 15 Headers.</p>
+    pub headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
     /// <note>
     /// <p>As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not processed and an error code is not returned. To manage tags we recommend using either <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API Reference for Amazon Pinpoint</i>, <a href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p>
     /// </note>
@@ -38,6 +40,12 @@ impl EmailTemplateRequest {
     /// <p>The subject line, or title, to use in email messages that are based on the message template.</p>
     pub fn subject(&self) -> ::std::option::Option<&str> {
         self.subject.as_deref()
+    }
+    /// <p>The list of <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a> for the email. You can have up to 15 Headers.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.headers.is_none()`.
+    pub fn headers(&self) -> &[crate::types::MessageHeader] {
+        self.headers.as_deref().unwrap_or_default()
     }
     /// <note>
     /// <p>As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not processed and an error code is not returned. To manage tags we recommend using either <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API Reference for Amazon Pinpoint</i>, <a href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p>
@@ -70,6 +78,7 @@ pub struct EmailTemplateRequestBuilder {
     pub(crate) html_part: ::std::option::Option<::std::string::String>,
     pub(crate) recommender_id: ::std::option::Option<::std::string::String>,
     pub(crate) subject: ::std::option::Option<::std::string::String>,
+    pub(crate) headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) template_description: ::std::option::Option<::std::string::String>,
     pub(crate) text_part: ::std::option::Option<::std::string::String>,
@@ -130,6 +139,26 @@ impl EmailTemplateRequestBuilder {
     /// <p>The subject line, or title, to use in email messages that are based on the message template.</p>
     pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
         &self.subject
+    }
+    /// Appends an item to `headers`.
+    ///
+    /// To override the contents of this collection use [`set_headers`](Self::set_headers).
+    ///
+    /// <p>The list of <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a> for the email. You can have up to 15 Headers.</p>
+    pub fn headers(mut self, input: crate::types::MessageHeader) -> Self {
+        let mut v = self.headers.unwrap_or_default();
+        v.push(input);
+        self.headers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a> for the email. You can have up to 15 Headers.</p>
+    pub fn set_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>) -> Self {
+        self.headers = input;
+        self
+    }
+    /// <p>The list of <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a> for the email. You can have up to 15 Headers.</p>
+    pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>> {
+        &self.headers
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -195,6 +224,7 @@ impl EmailTemplateRequestBuilder {
             html_part: self.html_part,
             recommender_id: self.recommender_id,
             subject: self.subject,
+            headers: self.headers,
             tags: self.tags,
             template_description: self.template_description,
             text_part: self.text_part,

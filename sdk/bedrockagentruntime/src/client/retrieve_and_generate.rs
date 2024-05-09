@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`session_id(String)`](crate::operation::retrieve_and_generate::RetrieveAndGenerateOutput::session_id): <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
     ///   - [`output(Option<RetrieveAndGenerateOutput>)`](crate::operation::retrieve_and_generate::RetrieveAndGenerateOutput::output): <p>Contains the response generated from querying the knowledge base.</p>
     ///   - [`citations(Option<Vec::<Citation>>)`](crate::operation::retrieve_and_generate::RetrieveAndGenerateOutput::citations): <p>A list of segments of the generated response that are based on sources in the knowledge base, alongside information about the sources.</p>
+    ///   - [`guardrail_action(Option<GuadrailAction>)`](crate::operation::retrieve_and_generate::RetrieveAndGenerateOutput::guardrail_action): <p>Specifies if there is a guardrail intervention in the response.</p>
     /// - On failure, responds with [`SdkError<RetrieveAndGenerateError>`](crate::operation::retrieve_and_generate::RetrieveAndGenerateError)
     pub fn retrieve_and_generate(&self) -> crate::operation::retrieve_and_generate::builders::RetrieveAndGenerateFluentBuilder {
         crate::operation::retrieve_and_generate::builders::RetrieveAndGenerateFluentBuilder::new(self.handle.clone())

@@ -8,7 +8,7 @@ pub struct ListIdentitySourcesInput {
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
-    /// <p>If you do not specify this parameter, the operation defaults to 10 identity sources per response. You can specify a maximum of 200 identity sources per response.</p>
+    /// <p>If you do not specify this parameter, the operation defaults to 10 identity sources per response. You can specify a maximum of 50 identity sources per response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specifies characteristics of an identity source that you can use to limit the output to matching identity sources.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceFilter>>,
@@ -23,7 +23,7 @@ impl ListIdentitySourcesInput {
         self.next_token.as_deref()
     }
     /// <p>Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
-    /// <p>If you do not specify this parameter, the operation defaults to 10 identity sources per response. You can specify a maximum of 200 identity sources per response.</p>
+    /// <p>If you do not specify this parameter, the operation defaults to 10 identity sources per response. You can specify a maximum of 50 identity sources per response.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -81,19 +81,19 @@ impl ListIdentitySourcesInputBuilder {
         &self.next_token
     }
     /// <p>Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
-    /// <p>If you do not specify this parameter, the operation defaults to 10 identity sources per response. You can specify a maximum of 200 identity sources per response.</p>
+    /// <p>If you do not specify this parameter, the operation defaults to 10 identity sources per response. You can specify a maximum of 50 identity sources per response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
-    /// <p>If you do not specify this parameter, the operation defaults to 10 identity sources per response. You can specify a maximum of 200 identity sources per response.</p>
+    /// <p>If you do not specify this parameter, the operation defaults to 10 identity sources per response. You can specify a maximum of 50 identity sources per response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
-    /// <p>If you do not specify this parameter, the operation defaults to 10 identity sources per response. You can specify a maximum of 200 identity sources per response.</p>
+    /// <p>If you do not specify this parameter, the operation defaults to 10 identity sources per response. You can specify a maximum of 50 identity sources per response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

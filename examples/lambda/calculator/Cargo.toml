@@ -16,7 +16,7 @@ serde = "1.0.164"
 aws-config= { version = "1.4.0", path = "../../../sdk/aws-config" }
 aws-sdk-ec2= { version = "1.41.0", path = "../../../sdk/ec2" }
 aws-sdk-lambda= { version = "1.25.0", path = "../../../sdk/lambda" }
-aws-sdk-s3= { version = "1.27.0", path = "../../../sdk/s3" }
+aws-sdk-s3= { version = "1.28.0", path = "../../../sdk/s3" }
 
 [dependencies.clap]
 version = "~4.4"

@@ -9,6 +9,10 @@ pub use crate::types::_operation::OperationBuilder;
 
 pub use crate::types::_filter::FilterBuilder;
 
+pub use crate::types::_operation_event::OperationEventBuilder;
+
+pub use crate::types::_resource::ResourceBuilder;
+
 pub use crate::types::_database_summary::DatabaseSummaryBuilder;
 
 pub use crate::types::_component_summary::ComponentSummaryBuilder;

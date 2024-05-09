@@ -21,12 +21,16 @@ pub struct PolicyItem {
     pub principal: ::std::option::Option<crate::types::EntityIdentifier>,
     /// <p>The resource associated with the policy.</p>
     pub resource: ::std::option::Option<crate::types::EntityIdentifier>,
+    /// <p>The action that a policy permits or forbids. For example, <code>{"actions": [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
+    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::ActionIdentifier>>,
     /// <p>The policy definition of an item in the list of policies returned.</p>
     pub definition: ::std::option::Option<crate::types::PolicyDefinitionItem>,
     /// <p>The date and time the policy was created.</p>
     pub created_date: ::aws_smithy_types::DateTime,
     /// <p>The date and time the policy was most recently updated.</p>
     pub last_updated_date: ::aws_smithy_types::DateTime,
+    /// <p>The effect of the decision that a policy returns to an authorization request. For example, <code>"effect": "Permit"</code>.</p>
+    pub effect: ::std::option::Option<crate::types::PolicyEffect>,
 }
 impl PolicyItem {
     /// <p>The identifier of the PolicyStore where the policy you want information about is stored.</p>
@@ -57,6 +61,12 @@ impl PolicyItem {
     pub fn resource(&self) -> ::std::option::Option<&crate::types::EntityIdentifier> {
         self.resource.as_ref()
     }
+    /// <p>The action that a policy permits or forbids. For example, <code>{"actions": [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::ActionIdentifier] {
+        self.actions.as_deref().unwrap_or_default()
+    }
     /// <p>The policy definition of an item in the list of policies returned.</p>
     pub fn definition(&self) -> ::std::option::Option<&crate::types::PolicyDefinitionItem> {
         self.definition.as_ref()
@@ -68,6 +78,10 @@ impl PolicyItem {
     /// <p>The date and time the policy was most recently updated.</p>
     pub fn last_updated_date(&self) -> &::aws_smithy_types::DateTime {
         &self.last_updated_date
+    }
+    /// <p>The effect of the decision that a policy returns to an authorization request. For example, <code>"effect": "Permit"</code>.</p>
+    pub fn effect(&self) -> ::std::option::Option<&crate::types::PolicyEffect> {
+        self.effect.as_ref()
     }
 }
 impl PolicyItem {
@@ -86,9 +100,11 @@ pub struct PolicyItemBuilder {
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyType>,
     pub(crate) principal: ::std::option::Option<crate::types::EntityIdentifier>,
     pub(crate) resource: ::std::option::Option<crate::types::EntityIdentifier>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::ActionIdentifier>>,
     pub(crate) definition: ::std::option::Option<crate::types::PolicyDefinitionItem>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) effect: ::std::option::Option<crate::types::PolicyEffect>,
 }
 impl PolicyItemBuilder {
     /// <p>The identifier of the PolicyStore where the policy you want information about is stored.</p>
@@ -182,6 +198,26 @@ impl PolicyItemBuilder {
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
         &self.resource
     }
+    /// Appends an item to `actions`.
+    ///
+    /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+    ///
+    /// <p>The action that a policy permits or forbids. For example, <code>{"actions": [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
+    pub fn actions(mut self, input: crate::types::ActionIdentifier) -> Self {
+        let mut v = self.actions.unwrap_or_default();
+        v.push(input);
+        self.actions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The action that a policy permits or forbids. For example, <code>{"actions": [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionIdentifier>>) -> Self {
+        self.actions = input;
+        self
+    }
+    /// <p>The action that a policy permits or forbids. For example, <code>{"actions": [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionIdentifier>> {
+        &self.actions
+    }
     /// <p>The policy definition of an item in the list of policies returned.</p>
     /// This field is required.
     pub fn definition(mut self, input: crate::types::PolicyDefinitionItem) -> Self {
@@ -227,6 +263,20 @@ impl PolicyItemBuilder {
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date
     }
+    /// <p>The effect of the decision that a policy returns to an authorization request. For example, <code>"effect": "Permit"</code>.</p>
+    pub fn effect(mut self, input: crate::types::PolicyEffect) -> Self {
+        self.effect = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The effect of the decision that a policy returns to an authorization request. For example, <code>"effect": "Permit"</code>.</p>
+    pub fn set_effect(mut self, input: ::std::option::Option<crate::types::PolicyEffect>) -> Self {
+        self.effect = input;
+        self
+    }
+    /// <p>The effect of the decision that a policy returns to an authorization request. For example, <code>"effect": "Permit"</code>.</p>
+    pub fn get_effect(&self) -> &::std::option::Option<crate::types::PolicyEffect> {
+        &self.effect
+    }
     /// Consumes the builder and constructs a [`PolicyItem`](crate::types::PolicyItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_store_id`](crate::types::builders::PolicyItemBuilder::policy_store_id)
@@ -256,6 +306,7 @@ impl PolicyItemBuilder {
             })?,
             principal: self.principal,
             resource: self.resource,
+            actions: self.actions,
             definition: self.definition,
             created_date: self.created_date.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -269,6 +320,7 @@ impl PolicyItemBuilder {
                     "last_updated_date was not specified but it is required when building PolicyItem",
                 )
             })?,
+            effect: self.effect,
         })
     }
 }
