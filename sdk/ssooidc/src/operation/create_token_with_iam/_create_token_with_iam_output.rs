@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateTokenWithIamOutput {
-    /// <p>A bearer token to access AWS accounts and applications assigned to a user.</p>
+    /// <p>A bearer token to access Amazon Web Services accounts and applications assigned to a user.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>Used to notify the requester that the returned token is an access token. The supported token type is <code>Bearer</code>.</p>
     pub token_type: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ pub struct CreateTokenWithIamOutput {
     _request_id: Option<String>,
 }
 impl CreateTokenWithIamOutput {
-    /// <p>A bearer token to access AWS accounts and applications assigned to a user.</p>
+    /// <p>A bearer token to access Amazon Web Services accounts and applications assigned to a user.</p>
     pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -97,17 +97,17 @@ pub struct CreateTokenWithIamOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateTokenWithIamOutputBuilder {
-    /// <p>A bearer token to access AWS accounts and applications assigned to a user.</p>
+    /// <p>A bearer token to access Amazon Web Services accounts and applications assigned to a user.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A bearer token to access AWS accounts and applications assigned to a user.</p>
+    /// <p>A bearer token to access Amazon Web Services accounts and applications assigned to a user.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
-    /// <p>A bearer token to access AWS accounts and applications assigned to a user.</p>
+    /// <p>A bearer token to access Amazon Web Services accounts and applications assigned to a user.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }

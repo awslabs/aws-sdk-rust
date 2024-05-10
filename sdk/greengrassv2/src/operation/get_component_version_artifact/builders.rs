@@ -139,4 +139,35 @@ impl GetComponentVersionArtifactFluentBuilder {
     pub fn get_artifact_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_artifact_name()
     }
+    /// <p>Specifies the endpoint to use when getting Amazon S3 pre-signed URLs.</p>
+    /// <p>All Amazon Web Services Regions except US East (N. Virginia) use <code>REGIONAL</code> in all cases. In the US East (N. Virginia) Region the default is <code>GLOBAL</code>, but you can change it to <code>REGIONAL</code> with this parameter.</p>
+    pub fn s3_endpoint_type(mut self, input: crate::types::S3EndpointType) -> Self {
+        self.inner = self.inner.s3_endpoint_type(input);
+        self
+    }
+    /// <p>Specifies the endpoint to use when getting Amazon S3 pre-signed URLs.</p>
+    /// <p>All Amazon Web Services Regions except US East (N. Virginia) use <code>REGIONAL</code> in all cases. In the US East (N. Virginia) Region the default is <code>GLOBAL</code>, but you can change it to <code>REGIONAL</code> with this parameter.</p>
+    pub fn set_s3_endpoint_type(mut self, input: ::std::option::Option<crate::types::S3EndpointType>) -> Self {
+        self.inner = self.inner.set_s3_endpoint_type(input);
+        self
+    }
+    /// <p>Specifies the endpoint to use when getting Amazon S3 pre-signed URLs.</p>
+    /// <p>All Amazon Web Services Regions except US East (N. Virginia) use <code>REGIONAL</code> in all cases. In the US East (N. Virginia) Region the default is <code>GLOBAL</code>, but you can change it to <code>REGIONAL</code> with this parameter.</p>
+    pub fn get_s3_endpoint_type(&self) -> &::std::option::Option<crate::types::S3EndpointType> {
+        self.inner.get_s3_endpoint_type()
+    }
+    /// <p>Determines if the Amazon S3 URL returned is a FIPS pre-signed URL endpoint. Specify <code>fips</code> if you want the returned Amazon S3 pre-signed URL to point to an Amazon S3 FIPS endpoint. If you don't specify a value, the default is <code>standard</code>.</p>
+    pub fn iot_endpoint_type(mut self, input: crate::types::IotEndpointType) -> Self {
+        self.inner = self.inner.iot_endpoint_type(input);
+        self
+    }
+    /// <p>Determines if the Amazon S3 URL returned is a FIPS pre-signed URL endpoint. Specify <code>fips</code> if you want the returned Amazon S3 pre-signed URL to point to an Amazon S3 FIPS endpoint. If you don't specify a value, the default is <code>standard</code>.</p>
+    pub fn set_iot_endpoint_type(mut self, input: ::std::option::Option<crate::types::IotEndpointType>) -> Self {
+        self.inner = self.inner.set_iot_endpoint_type(input);
+        self
+    }
+    /// <p>Determines if the Amazon S3 URL returned is a FIPS pre-signed URL endpoint. Specify <code>fips</code> if you want the returned Amazon S3 pre-signed URL to point to an Amazon S3 FIPS endpoint. If you don't specify a value, the default is <code>standard</code>.</p>
+    pub fn get_iot_endpoint_type(&self) -> &::std::option::Option<crate::types::IotEndpointType> {
+        self.inner.get_iot_endpoint_type()
+    }
 }

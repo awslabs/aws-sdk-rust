@@ -17,6 +17,7 @@ pub struct ListDeploymentsInput {
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
     pub parent_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>Default: <code>50</code></p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -42,6 +43,7 @@ impl ListDeploymentsInput {
         self.parent_target_arn.as_deref()
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>Default: <code>50</code></p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -132,16 +134,19 @@ impl ListDeploymentsInputBuilder {
         &self.parent_target_arn
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>Default: <code>50</code></p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>Default: <code>50</code></p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>Default: <code>50</code></p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

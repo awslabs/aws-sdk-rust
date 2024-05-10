@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentDeploymentSpecification {
     /// <p>The version of the component.</p>
-    pub component_version: ::std::option::Option<::std::string::String>,
+    pub component_version: ::std::string::String,
     /// <p>The configuration updates to deploy for the component. You can define <i>reset</i> updates and <i>merge</i> updates. A reset updates the keys that you specify to the default configuration for the component. A merge updates the core device's component configuration with the keys and values that you specify. The IoT Greengrass Core software applies reset updates before it applies merge updates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub configuration_update: ::std::option::Option<crate::types::ComponentConfigurationUpdate>,
     /// <p>The system user and group that the IoT Greengrass Core software uses to run component processes on the core device. If you omit this parameter, the IoT Greengrass Core software uses the system user and group that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
@@ -13,8 +13,9 @@ pub struct ComponentDeploymentSpecification {
 }
 impl ComponentDeploymentSpecification {
     /// <p>The version of the component.</p>
-    pub fn component_version(&self) -> ::std::option::Option<&str> {
-        self.component_version.as_deref()
+    pub fn component_version(&self) -> &str {
+        use std::ops::Deref;
+        self.component_version.deref()
     }
     /// <p>The configuration updates to deploy for the component. You can define <i>reset</i> updates and <i>merge</i> updates. A reset updates the keys that you specify to the default configuration for the component. A merge updates the core device's component configuration with the keys and values that you specify. The IoT Greengrass Core software applies reset updates before it applies merge updates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn configuration_update(&self) -> ::std::option::Option<&crate::types::ComponentConfigurationUpdate> {
@@ -42,6 +43,7 @@ pub struct ComponentDeploymentSpecificationBuilder {
 }
 impl ComponentDeploymentSpecificationBuilder {
     /// <p>The version of the component.</p>
+    /// This field is required.
     pub fn component_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_version = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl ComponentDeploymentSpecificationBuilder {
         &self.run_with
     }
     /// Consumes the builder and constructs a [`ComponentDeploymentSpecification`](crate::types::ComponentDeploymentSpecification).
-    pub fn build(self) -> crate::types::ComponentDeploymentSpecification {
-        crate::types::ComponentDeploymentSpecification {
-            component_version: self.component_version,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`component_version`](crate::types::builders::ComponentDeploymentSpecificationBuilder::component_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::ComponentDeploymentSpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ComponentDeploymentSpecification {
+            component_version: self.component_version.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "component_version",
+                    "component_version was not specified but it is required when building ComponentDeploymentSpecification",
+                )
+            })?,
             configuration_update: self.configuration_update,
             run_with: self.run_with,
-        }
+        })
     }
 }

@@ -9,11 +9,13 @@ pub use crate::types::error::_invalid_client_exception::InvalidClientException;
 
 pub use crate::types::error::_internal_server_exception::InternalServerException;
 
+pub use crate::types::error::_unsupported_grant_type_exception::UnsupportedGrantTypeException;
+
 pub use crate::types::error::_invalid_scope_exception::InvalidScopeException;
 
-pub use crate::types::error::_invalid_client_metadata_exception::InvalidClientMetadataException;
+pub use crate::types::error::_invalid_redirect_uri_exception::InvalidRedirectUriException;
 
-pub use crate::types::error::_unsupported_grant_type_exception::UnsupportedGrantTypeException;
+pub use crate::types::error::_invalid_client_metadata_exception::InvalidClientMetadataException;
 
 pub use crate::types::error::_invalid_request_region_exception::InvalidRequestRegionException;
 
@@ -38,6 +40,8 @@ mod _invalid_client_exception;
 mod _invalid_client_metadata_exception;
 
 mod _invalid_grant_exception;
+
+mod _invalid_redirect_uri_exception;
 
 mod _invalid_request_exception;
 

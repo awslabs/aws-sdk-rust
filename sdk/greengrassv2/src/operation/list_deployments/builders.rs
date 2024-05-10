@@ -178,16 +178,19 @@ impl ListDeploymentsFluentBuilder {
         self.inner.get_parent_target_arn()
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>Default: <code>50</code></p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>Default: <code>50</code></p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>Default: <code>50</code></p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

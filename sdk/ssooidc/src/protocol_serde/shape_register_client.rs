@@ -50,6 +50,22 @@ pub fn de_register_client_http_error(
             }
             tmp
         }),
+        "InvalidRedirectUriException" => crate::operation::register_client::RegisterClientError::InvalidRedirectUriException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidRedirectUriExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_redirect_uri_exception::de_invalid_redirect_uri_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::register_client::RegisterClientError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidRequestException" => crate::operation::register_client::RegisterClientError::InvalidRequestException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -72,6 +88,24 @@ pub fn de_register_client_http_error(
                 let mut output = crate::types::error::builders::InvalidScopeExceptionBuilder::default();
                 output = crate::protocol_serde::shape_invalid_scope_exception::de_invalid_scope_exception_json_err(_response_body, output)
                     .map_err(crate::operation::register_client::RegisterClientError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnsupportedGrantTypeException" => crate::operation::register_client::RegisterClientError::UnsupportedGrantTypeException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedGrantTypeExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_grant_type_exception::de_unsupported_grant_type_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::register_client::RegisterClientError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

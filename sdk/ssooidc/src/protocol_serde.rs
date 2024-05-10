@@ -57,6 +57,8 @@ pub(crate) mod shape_invalid_client_metadata_exception;
 
 pub(crate) mod shape_invalid_grant_exception;
 
+pub(crate) mod shape_invalid_redirect_uri_exception;
+
 pub(crate) mod shape_invalid_request_exception;
 
 pub(crate) mod shape_invalid_request_region_exception;

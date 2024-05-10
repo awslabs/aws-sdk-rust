@@ -17,6 +17,8 @@ pub enum Error {
     InvalidClientMetadataException(crate::types::error::InvalidClientMetadataException),
     /// <p>Indicates that a request contains an invalid grant. This can occur if a client makes a <code>CreateToken</code> request with an invalid grant type.</p>
     InvalidGrantException(crate::types::error::InvalidGrantException),
+    /// <p>Indicates that one or more redirect URI in the request is not supported for this operation.</p>
+    InvalidRedirectUriException(crate::types::error::InvalidRedirectUriException),
     /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter might be missing or out of range.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>Indicates that a token provided as input to the request was issued by and is only usable by calling IAM Identity Center endpoints in another region.</p>
@@ -48,6 +50,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidClientException(inner) => inner.fmt(f),
             Error::InvalidClientMetadataException(inner) => inner.fmt(f),
             Error::InvalidGrantException(inner) => inner.fmt(f),
+            Error::InvalidRedirectUriException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
             Error::InvalidRequestRegionException(inner) => inner.fmt(f),
             Error::InvalidScopeException(inner) => inner.fmt(f),
@@ -82,6 +85,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidClientException(inner) => inner.meta(),
             Self::InvalidClientMetadataException(inner) => inner.meta(),
             Self::InvalidGrantException(inner) => inner.meta(),
+            Self::InvalidRedirectUriException(inner) => inner.meta(),
             Self::InvalidRequestException(inner) => inner.meta(),
             Self::InvalidRequestRegionException(inner) => inner.meta(),
             Self::InvalidScopeException(inner) => inner.meta(),
@@ -186,8 +190,12 @@ impl From<crate::operation::register_client::RegisterClientError> for Error {
             crate::operation::register_client::RegisterClientError::InvalidClientMetadataException(inner) => {
                 Error::InvalidClientMetadataException(inner)
             }
+            crate::operation::register_client::RegisterClientError::InvalidRedirectUriException(inner) => Error::InvalidRedirectUriException(inner),
             crate::operation::register_client::RegisterClientError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::register_client::RegisterClientError::InvalidScopeException(inner) => Error::InvalidScopeException(inner),
+            crate::operation::register_client::RegisterClientError::UnsupportedGrantTypeException(inner) => {
+                Error::UnsupportedGrantTypeException(inner)
+            }
             crate::operation::register_client::RegisterClientError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -239,6 +247,7 @@ impl ::std::error::Error for Error {
             Error::InvalidClientException(inner) => inner.source(),
             Error::InvalidClientMetadataException(inner) => inner.source(),
             Error::InvalidGrantException(inner) => inner.source(),
+            Error::InvalidRedirectUriException(inner) => inner.source(),
             Error::InvalidRequestException(inner) => inner.source(),
             Error::InvalidRequestRegionException(inner) => inner.source(),
             Error::InvalidScopeException(inner) => inner.source(),
@@ -259,6 +268,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidClientException(e) => e.request_id(),
             Self::InvalidClientMetadataException(e) => e.request_id(),
             Self::InvalidGrantException(e) => e.request_id(),
+            Self::InvalidRedirectUriException(e) => e.request_id(),
             Self::InvalidRequestException(e) => e.request_id(),
             Self::InvalidRequestRegionException(e) => e.request_id(),
             Self::InvalidScopeException(e) => e.request_id(),

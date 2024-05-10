@@ -131,6 +131,15 @@ pub(crate) fn get_component_version_artifact_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn component_deployment_specification_correct_errors(
+    mut builder: crate::types::builders::ComponentDeploymentSpecificationBuilder,
+) -> crate::types::builders::ComponentDeploymentSpecificationBuilder {
+    if builder.component_version.is_none() {
+        builder.component_version = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn effective_deployment_correct_errors(
     mut builder: crate::types::builders::EffectiveDeploymentBuilder,
 ) -> crate::types::builders::EffectiveDeploymentBuilder {

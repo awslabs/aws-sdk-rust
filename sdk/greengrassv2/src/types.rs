@@ -81,6 +81,10 @@ pub use crate::types::_system_resource_limits::SystemResourceLimits;
 
 pub use crate::types::_component_configuration_update::ComponentConfigurationUpdate;
 
+pub use crate::types::_iot_endpoint_type::IotEndpointType;
+
+pub use crate::types::_s3_endpoint_type::S3EndpointType;
+
 pub use crate::types::_recipe_output_format::RecipeOutputFormat;
 
 pub use crate::types::_cloud_component_status::CloudComponentStatus;
@@ -209,6 +213,8 @@ mod _io_t_job_rate_increase_criteria;
 
 mod _io_t_job_timeout_config;
 
+mod _iot_endpoint_type;
+
 mod _lambda_container_params;
 
 mod _lambda_device_mount;
@@ -234,6 +240,8 @@ mod _lambda_volume_mount;
 mod _recipe_output_format;
 
 mod _resolved_component_version;
+
+mod _s3_endpoint_type;
 
 mod _system_resource_limits;
 

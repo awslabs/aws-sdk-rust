@@ -20,7 +20,7 @@ pub struct InstalledComponent {
     /// <p>The last time the Greengrass core device sent a message containing a component's state to the Amazon Web Services Cloud.</p>
     /// <p>A component does not need to see a state change for this field to update.</p>
     pub last_reported_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p><note>
+    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the ID of the last deployment that contained the component. For local deployments it will be <code>LOCAL</code>.</p><note>
     /// <p>Any deployment will attempt to reinstall currently broken components on the device, which will update the last installation source.</p>
     /// </note>
     pub last_installation_source: ::std::option::Option<::std::string::String>,
@@ -60,7 +60,7 @@ impl InstalledComponent {
     pub fn last_reported_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_reported_timestamp.as_ref()
     }
-    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p><note>
+    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the ID of the last deployment that contained the component. For local deployments it will be <code>LOCAL</code>.</p><note>
     /// <p>Any deployment will attempt to reinstall currently broken components on the device, which will update the last installation source.</p>
     /// </note>
     pub fn last_installation_source(&self) -> ::std::option::Option<&str> {
@@ -201,21 +201,21 @@ impl InstalledComponentBuilder {
     pub fn get_last_reported_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_reported_timestamp
     }
-    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p><note>
+    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the ID of the last deployment that contained the component. For local deployments it will be <code>LOCAL</code>.</p><note>
     /// <p>Any deployment will attempt to reinstall currently broken components on the device, which will update the last installation source.</p>
     /// </note>
     pub fn last_installation_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_installation_source = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p><note>
+    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the ID of the last deployment that contained the component. For local deployments it will be <code>LOCAL</code>.</p><note>
     /// <p>Any deployment will attempt to reinstall currently broken components on the device, which will update the last installation source.</p>
     /// </note>
     pub fn set_last_installation_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_installation_source = input;
         self
     }
-    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p><note>
+    /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the ID of the last deployment that contained the component. For local deployments it will be <code>LOCAL</code>.</p><note>
     /// <p>Any deployment will attempt to reinstall currently broken components on the device, which will update the last installation source.</p>
     /// </note>
     pub fn get_last_installation_source(&self) -> &::std::option::Option<::std::string::String> {

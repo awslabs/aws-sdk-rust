@@ -9,11 +9,13 @@ pub use crate::types::error::_invalid_client_exception::InvalidClientExceptionBu
 
 pub use crate::types::error::_internal_server_exception::InternalServerExceptionBuilder;
 
+pub use crate::types::error::_unsupported_grant_type_exception::UnsupportedGrantTypeExceptionBuilder;
+
 pub use crate::types::error::_invalid_scope_exception::InvalidScopeExceptionBuilder;
 
-pub use crate::types::error::_invalid_client_metadata_exception::InvalidClientMetadataExceptionBuilder;
+pub use crate::types::error::_invalid_redirect_uri_exception::InvalidRedirectUriExceptionBuilder;
 
-pub use crate::types::error::_unsupported_grant_type_exception::UnsupportedGrantTypeExceptionBuilder;
+pub use crate::types::error::_invalid_client_metadata_exception::InvalidClientMetadataExceptionBuilder;
 
 pub use crate::types::error::_invalid_request_region_exception::InvalidRequestRegionExceptionBuilder;
 

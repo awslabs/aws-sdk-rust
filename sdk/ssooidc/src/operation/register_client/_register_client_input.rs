@@ -9,6 +9,14 @@ pub struct RegisterClientInput {
     pub client_type: ::std::option::Option<::std::string::String>,
     /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
     pub scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The list of redirect URI that are defined by the client. At completion of authorization, this list is used to restrict what locations the user agent can be redirected back to.</p>
+    pub redirect_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The list of OAuth 2.0 grant types that are defined by the client. This list is used to restrict the token granting flows available to the client.</p>
+    pub grant_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IAM Identity Center Issuer URL associated with an instance of IAM Identity Center. This value is needed for user access to resources through the client.</p>
+    pub issuer_url: ::std::option::Option<::std::string::String>,
+    /// <p>This IAM Identity Center application ARN is used to define administrator-managed configuration for public client access to resources. At authorization, the scopes, grants, and redirect URI available to this client will be restricted by this application resource.</p>
+    pub entitled_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl RegisterClientInput {
     /// <p>The friendly name of the client.</p>
@@ -25,6 +33,26 @@ impl RegisterClientInput {
     pub fn scopes(&self) -> &[::std::string::String] {
         self.scopes.as_deref().unwrap_or_default()
     }
+    /// <p>The list of redirect URI that are defined by the client. At completion of authorization, this list is used to restrict what locations the user agent can be redirected back to.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.redirect_uris.is_none()`.
+    pub fn redirect_uris(&self) -> &[::std::string::String] {
+        self.redirect_uris.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of OAuth 2.0 grant types that are defined by the client. This list is used to restrict the token granting flows available to the client.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grant_types.is_none()`.
+    pub fn grant_types(&self) -> &[::std::string::String] {
+        self.grant_types.as_deref().unwrap_or_default()
+    }
+    /// <p>The IAM Identity Center Issuer URL associated with an instance of IAM Identity Center. This value is needed for user access to resources through the client.</p>
+    pub fn issuer_url(&self) -> ::std::option::Option<&str> {
+        self.issuer_url.as_deref()
+    }
+    /// <p>This IAM Identity Center application ARN is used to define administrator-managed configuration for public client access to resources. At authorization, the scopes, grants, and redirect URI available to this client will be restricted by this application resource.</p>
+    pub fn entitled_application_arn(&self) -> ::std::option::Option<&str> {
+        self.entitled_application_arn.as_deref()
+    }
 }
 impl RegisterClientInput {
     /// Creates a new builder-style object to manufacture [`RegisterClientInput`](crate::operation::register_client::RegisterClientInput).
@@ -40,6 +68,10 @@ pub struct RegisterClientInputBuilder {
     pub(crate) client_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_type: ::std::option::Option<::std::string::String>,
     pub(crate) scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) redirect_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) grant_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) issuer_url: ::std::option::Option<::std::string::String>,
+    pub(crate) entitled_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl RegisterClientInputBuilder {
     /// <p>The friendly name of the client.</p>
@@ -92,6 +124,74 @@ impl RegisterClientInputBuilder {
     pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.scopes
     }
+    /// Appends an item to `redirect_uris`.
+    ///
+    /// To override the contents of this collection use [`set_redirect_uris`](Self::set_redirect_uris).
+    ///
+    /// <p>The list of redirect URI that are defined by the client. At completion of authorization, this list is used to restrict what locations the user agent can be redirected back to.</p>
+    pub fn redirect_uris(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.redirect_uris.unwrap_or_default();
+        v.push(input.into());
+        self.redirect_uris = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of redirect URI that are defined by the client. At completion of authorization, this list is used to restrict what locations the user agent can be redirected back to.</p>
+    pub fn set_redirect_uris(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.redirect_uris = input;
+        self
+    }
+    /// <p>The list of redirect URI that are defined by the client. At completion of authorization, this list is used to restrict what locations the user agent can be redirected back to.</p>
+    pub fn get_redirect_uris(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.redirect_uris
+    }
+    /// Appends an item to `grant_types`.
+    ///
+    /// To override the contents of this collection use [`set_grant_types`](Self::set_grant_types).
+    ///
+    /// <p>The list of OAuth 2.0 grant types that are defined by the client. This list is used to restrict the token granting flows available to the client.</p>
+    pub fn grant_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.grant_types.unwrap_or_default();
+        v.push(input.into());
+        self.grant_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of OAuth 2.0 grant types that are defined by the client. This list is used to restrict the token granting flows available to the client.</p>
+    pub fn set_grant_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.grant_types = input;
+        self
+    }
+    /// <p>The list of OAuth 2.0 grant types that are defined by the client. This list is used to restrict the token granting flows available to the client.</p>
+    pub fn get_grant_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.grant_types
+    }
+    /// <p>The IAM Identity Center Issuer URL associated with an instance of IAM Identity Center. This value is needed for user access to resources through the client.</p>
+    pub fn issuer_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.issuer_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IAM Identity Center Issuer URL associated with an instance of IAM Identity Center. This value is needed for user access to resources through the client.</p>
+    pub fn set_issuer_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.issuer_url = input;
+        self
+    }
+    /// <p>The IAM Identity Center Issuer URL associated with an instance of IAM Identity Center. This value is needed for user access to resources through the client.</p>
+    pub fn get_issuer_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuer_url
+    }
+    /// <p>This IAM Identity Center application ARN is used to define administrator-managed configuration for public client access to resources. At authorization, the scopes, grants, and redirect URI available to this client will be restricted by this application resource.</p>
+    pub fn entitled_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.entitled_application_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This IAM Identity Center application ARN is used to define administrator-managed configuration for public client access to resources. At authorization, the scopes, grants, and redirect URI available to this client will be restricted by this application resource.</p>
+    pub fn set_entitled_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.entitled_application_arn = input;
+        self
+    }
+    /// <p>This IAM Identity Center application ARN is used to define administrator-managed configuration for public client access to resources. At authorization, the scopes, grants, and redirect URI available to this client will be restricted by this application resource.</p>
+    pub fn get_entitled_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entitled_application_arn
+    }
     /// Consumes the builder and constructs a [`RegisterClientInput`](crate::operation::register_client::RegisterClientInput).
     pub fn build(
         self,
@@ -100,6 +200,10 @@ impl RegisterClientInputBuilder {
             client_name: self.client_name,
             client_type: self.client_type,
             scopes: self.scopes,
+            redirect_uris: self.redirect_uris,
+            grant_types: self.grant_types,
+            issuer_url: self.issuer_url,
+            entitled_application_arn: self.entitled_application_arn,
         })
     }
 }
