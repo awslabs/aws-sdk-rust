@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_rule::CreateRuleOutput::name): <p>The name of the rule.</p>
     ///   - [`r#match(Option<RuleMatch>)`](crate::operation::create_rule::CreateRuleOutput::match): <p>The rule match. The <code>RuleMatch</code> must be an <code>HttpMatch</code>. This means that the rule should be an exact match on HTTP constraints which are made up of the HTTP method, path, and header.</p>
     ///   - [`priority(Option<i32>)`](crate::operation::create_rule::CreateRuleOutput::priority): <p>The priority assigned to the rule. The lower the priority number the higher the priority.</p>
-    ///   - [`action(Option<RuleAction>)`](crate::operation::create_rule::CreateRuleOutput::action): <p>The rule action. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed.</p>
+    ///   - [`action(Option<RuleAction>)`](crate::operation::create_rule::CreateRuleOutput::action): <p>The rule action.</p>
     /// - On failure, responds with [`SdkError<CreateRuleError>`](crate::operation::create_rule::CreateRuleError)
     pub fn create_rule(&self) -> crate::operation::create_rule::builders::CreateRuleFluentBuilder {
         crate::operation::create_rule::builders::CreateRuleFluentBuilder::new(self.handle.clone())

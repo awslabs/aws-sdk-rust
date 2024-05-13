@@ -8,7 +8,7 @@ pub struct HeaderMatch {
     pub name: ::std::string::String,
     /// <p>The header match type.</p>
     pub r#match: ::std::option::Option<crate::types::HeaderMatchType>,
-    /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
+    /// <p>Indicates whether the match is case sensitive.</p>
     pub case_sensitive: ::std::option::Option<bool>,
 }
 impl HeaderMatch {
@@ -21,7 +21,7 @@ impl HeaderMatch {
     pub fn r#match(&self) -> ::std::option::Option<&crate::types::HeaderMatchType> {
         self.r#match.as_ref()
     }
-    /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
+    /// <p>Indicates whether the match is case sensitive.</p>
     pub fn case_sensitive(&self) -> ::std::option::Option<bool> {
         self.case_sensitive
     }
@@ -72,17 +72,17 @@ impl HeaderMatchBuilder {
     pub fn get_match(&self) -> &::std::option::Option<crate::types::HeaderMatchType> {
         &self.r#match
     }
-    /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
+    /// <p>Indicates whether the match is case sensitive.</p>
     pub fn case_sensitive(mut self, input: bool) -> Self {
         self.case_sensitive = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
+    /// <p>Indicates whether the match is case sensitive.</p>
     pub fn set_case_sensitive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.case_sensitive = input;
         self
     }
-    /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
+    /// <p>Indicates whether the match is case sensitive.</p>
     pub fn get_case_sensitive(&self) -> &::std::option::Option<bool> {
         &self.case_sensitive
     }

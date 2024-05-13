@@ -14,6 +14,7 @@
 /// match targetgroupprotocol {
 ///     TargetGroupProtocol::Http => { /* ... */ },
 ///     TargetGroupProtocol::Https => { /* ... */ },
+///     TargetGroupProtocol::Tcp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum TargetGroupProtocol {
     Http,
     /// Indicates HTTPS protocol
     Https,
+    /// Indicates TCP protocol
+    Tcp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for TargetGroupProtocol {
         match s {
             "HTTP" => TargetGroupProtocol::Http,
             "HTTPS" => TargetGroupProtocol::Https,
+            "TCP" => TargetGroupProtocol::Tcp,
             other => TargetGroupProtocol::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl TargetGroupProtocol {
         match self {
             TargetGroupProtocol::Http => "HTTP",
             TargetGroupProtocol::Https => "HTTPS",
+            TargetGroupProtocol::Tcp => "TCP",
             TargetGroupProtocol::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HTTP", "HTTPS"]
+        &["HTTP", "HTTPS", "TCP"]
     }
 }
 impl ::std::convert::AsRef<str> for TargetGroupProtocol {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for TargetGroupProtocol {
         match self {
             TargetGroupProtocol::Http => write!(f, "HTTP"),
             TargetGroupProtocol::Https => write!(f, "HTTPS"),
+            TargetGroupProtocol::Tcp => write!(f, "TCP"),
             TargetGroupProtocol::Unknown(value) => write!(f, "{}", value),
         }
     }

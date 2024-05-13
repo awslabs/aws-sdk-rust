@@ -13,7 +13,7 @@ pub struct CreateServiceOutput {
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The status. If the status is <code>CREATE_FAILED</code>, you will have to delete and recreate the service.</p>
+    /// <p>The status. If the status is <code>CREATE_FAILED</code>, you must delete and recreate the service.</p>
     pub status: ::std::option::Option<crate::types::ServiceStatus>,
     /// <p>The type of IAM policy.</p>
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
@@ -42,7 +42,7 @@ impl CreateServiceOutput {
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
-    /// <p>The status. If the status is <code>CREATE_FAILED</code>, you will have to delete and recreate the service.</p>
+    /// <p>The status. If the status is <code>CREATE_FAILED</code>, you must delete and recreate the service.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ServiceStatus> {
         self.status.as_ref()
     }
@@ -152,17 +152,17 @@ impl CreateServiceOutputBuilder {
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
     }
-    /// <p>The status. If the status is <code>CREATE_FAILED</code>, you will have to delete and recreate the service.</p>
+    /// <p>The status. If the status is <code>CREATE_FAILED</code>, you must delete and recreate the service.</p>
     pub fn status(mut self, input: crate::types::ServiceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status. If the status is <code>CREATE_FAILED</code>, you will have to delete and recreate the service.</p>
+    /// <p>The status. If the status is <code>CREATE_FAILED</code>, you must delete and recreate the service.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status. If the status is <code>CREATE_FAILED</code>, you will have to delete and recreate the service.</p>
+    /// <p>The status. If the status is <code>CREATE_FAILED</code>, you must delete and recreate the service.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceStatus> {
         &self.status
     }

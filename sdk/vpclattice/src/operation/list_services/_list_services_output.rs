@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServicesOutput {
-    /// <p>The services.</p>
+    /// <p>Information about the services.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>,
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListServicesOutput {
-    /// <p>The services.</p>
+    /// <p>Information about the services.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
     pub fn items(&self) -> &[crate::types::ServiceSummary] {
@@ -46,19 +46,19 @@ impl ListServicesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p>The services.</p>
+    /// <p>Information about the services.</p>
     pub fn items(mut self, input: crate::types::ServiceSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The services.</p>
+    /// <p>Information about the services.</p>
     pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>) -> Self {
         self.items = input;
         self
     }
-    /// <p>The services.</p>
+    /// <p>Information about the services.</p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>> {
         &self.items
     }

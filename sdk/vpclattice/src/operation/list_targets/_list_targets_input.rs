@@ -9,7 +9,7 @@ pub struct ListTargetsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>A pagination token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The targets to list.</p>
+    /// <p>The targets.</p>
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
 }
 impl ListTargetsInput {
@@ -25,7 +25,7 @@ impl ListTargetsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The targets to list.</p>
+    /// <p>The targets.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
     pub fn targets(&self) -> &[crate::types::Target] {
@@ -96,19 +96,19 @@ impl ListTargetsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
-    /// <p>The targets to list.</p>
+    /// <p>The targets.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
         v.push(input);
         self.targets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The targets to list.</p>
+    /// <p>The targets.</p>
     pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
-    /// <p>The targets to list.</p>
+    /// <p>The targets.</p>
     pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
         &self.targets
     }

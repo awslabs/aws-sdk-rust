@@ -22,7 +22,7 @@ impl crate::operation::delete_service_network_service_association::builders::Del
 }
 /// Fluent builder constructing a request to `DeleteServiceNetworkServiceAssociation`.
 ///
-/// <p>Deletes the association between a specified service and the specific service network. This request will fail if an association is still in progress.</p>
+/// <p>Deletes the association between a specified service and the specific service network. This operation fails if an association is still in progress.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteServiceNetworkServiceAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

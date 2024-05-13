@@ -23,7 +23,7 @@ impl crate::operation::list_service_network_service_associations::builders::List
 /// Fluent builder constructing a request to `ListServiceNetworkServiceAssociations`.
 ///
 /// <p>Lists the associations between the service network and the service. You can filter the list either by service or service network. You must provide either the service network identifier or the service identifier.</p>
-/// <p>Every association in Amazon VPC Lattice is given a unique Amazon Resource Name (ARN), such as when a service network is associated with a VPC or when a service is associated with a service network. If the association is for a resource that is shared with another account, the association will include the local account ID as the prefix in the ARN for each account the resource is shared with.</p>
+/// <p>Every association in Amazon VPC Lattice is given a unique Amazon Resource Name (ARN), such as when a service network is associated with a VPC or when a service is associated with a service network. If the association is for a resource that is shared with another account, the association includes the local account ID as the prefix in the ARN for each account the resource is shared with.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServiceNetworkServiceAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

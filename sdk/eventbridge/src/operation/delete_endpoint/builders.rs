@@ -22,7 +22,7 @@ impl crate::operation::delete_endpoint::builders::DeleteEndpointInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteEndpoint`.
 ///
-/// <p>Delete an existing global endpoint. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making applications Regional-fault tolerant with global endpoints and event replication</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+/// <p>Delete an existing global endpoint. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making applications Regional-fault tolerant with global endpoints and event replication</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

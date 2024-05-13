@@ -4,31 +4,31 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetSummary {
-    /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
+    /// <p>The ID of the target. If the target group type is <code>INSTANCE</code>, this is an instance ID. If the target group type is <code>IP</code>, this is an IP address. If the target group type is <code>LAMBDA</code>, this is the ARN of a Lambda function. If the target type is <code>ALB</code>, this is the ARN of an Application Load Balancer.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The port on which the target is listening.</p>
     pub port: ::std::option::Option<i32>,
     /// <p>The status of the target.</p>
     /// <ul>
     /// <li>
-    /// <p><code>Draining</code>: The target is being deregistered. No new connections will be sent to this target while current connections are being drained. Default draining time is 5 minutes.</p></li>
+    /// <p><code>DRAINING</code>: The target is being deregistered. No new connections are sent to this target while current connections are being drained. The default draining time is 5 minutes.</p></li>
     /// <li>
-    /// <p><code>Unavailable</code>: Health checks are unavailable for the target group.</p></li>
+    /// <p><code>UNAVAILABLE</code>: Health checks are unavailable for the target group.</p></li>
     /// <li>
-    /// <p><code>Healthy</code>: The target is healthy.</p></li>
+    /// <p><code>HEALTHY</code>: The target is healthy.</p></li>
     /// <li>
-    /// <p><code>Unhealthy</code>: The target is unhealthy.</p></li>
+    /// <p><code>UNHEALTHY</code>: The target is unhealthy.</p></li>
     /// <li>
-    /// <p><code>Initial</code>: Initial health checks on the target are being performed.</p></li>
+    /// <p><code>INITIAL</code>: Initial health checks on the target are being performed.</p></li>
     /// <li>
-    /// <p><code>Unused</code>: Target group is not used in a service.</p></li>
+    /// <p><code>UNUSED</code>: Target group is not used in a service.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::TargetStatus>,
     /// <p>The code for why the target status is what it is.</p>
     pub reason_code: ::std::option::Option<::std::string::String>,
 }
 impl TargetSummary {
-    /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
+    /// <p>The ID of the target. If the target group type is <code>INSTANCE</code>, this is an instance ID. If the target group type is <code>IP</code>, this is an IP address. If the target group type is <code>LAMBDA</code>, this is the ARN of a Lambda function. If the target type is <code>ALB</code>, this is the ARN of an Application Load Balancer.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -39,17 +39,17 @@ impl TargetSummary {
     /// <p>The status of the target.</p>
     /// <ul>
     /// <li>
-    /// <p><code>Draining</code>: The target is being deregistered. No new connections will be sent to this target while current connections are being drained. Default draining time is 5 minutes.</p></li>
+    /// <p><code>DRAINING</code>: The target is being deregistered. No new connections are sent to this target while current connections are being drained. The default draining time is 5 minutes.</p></li>
     /// <li>
-    /// <p><code>Unavailable</code>: Health checks are unavailable for the target group.</p></li>
+    /// <p><code>UNAVAILABLE</code>: Health checks are unavailable for the target group.</p></li>
     /// <li>
-    /// <p><code>Healthy</code>: The target is healthy.</p></li>
+    /// <p><code>HEALTHY</code>: The target is healthy.</p></li>
     /// <li>
-    /// <p><code>Unhealthy</code>: The target is unhealthy.</p></li>
+    /// <p><code>UNHEALTHY</code>: The target is unhealthy.</p></li>
     /// <li>
-    /// <p><code>Initial</code>: Initial health checks on the target are being performed.</p></li>
+    /// <p><code>INITIAL</code>: Initial health checks on the target are being performed.</p></li>
     /// <li>
-    /// <p><code>Unused</code>: Target group is not used in a service.</p></li>
+    /// <p><code>UNUSED</code>: Target group is not used in a service.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TargetStatus> {
         self.status.as_ref()
@@ -76,17 +76,17 @@ pub struct TargetSummaryBuilder {
     pub(crate) reason_code: ::std::option::Option<::std::string::String>,
 }
 impl TargetSummaryBuilder {
-    /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
+    /// <p>The ID of the target. If the target group type is <code>INSTANCE</code>, this is an instance ID. If the target group type is <code>IP</code>, this is an IP address. If the target group type is <code>LAMBDA</code>, this is the ARN of a Lambda function. If the target type is <code>ALB</code>, this is the ARN of an Application Load Balancer.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
+    /// <p>The ID of the target. If the target group type is <code>INSTANCE</code>, this is an instance ID. If the target group type is <code>IP</code>, this is an IP address. If the target group type is <code>LAMBDA</code>, this is the ARN of a Lambda function. If the target type is <code>ALB</code>, this is the ARN of an Application Load Balancer.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
+    /// <p>The ID of the target. If the target group type is <code>INSTANCE</code>, this is an instance ID. If the target group type is <code>IP</code>, this is an IP address. If the target group type is <code>LAMBDA</code>, this is the ARN of a Lambda function. If the target type is <code>ALB</code>, this is the ARN of an Application Load Balancer.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -107,17 +107,17 @@ impl TargetSummaryBuilder {
     /// <p>The status of the target.</p>
     /// <ul>
     /// <li>
-    /// <p><code>Draining</code>: The target is being deregistered. No new connections will be sent to this target while current connections are being drained. Default draining time is 5 minutes.</p></li>
+    /// <p><code>DRAINING</code>: The target is being deregistered. No new connections are sent to this target while current connections are being drained. The default draining time is 5 minutes.</p></li>
     /// <li>
-    /// <p><code>Unavailable</code>: Health checks are unavailable for the target group.</p></li>
+    /// <p><code>UNAVAILABLE</code>: Health checks are unavailable for the target group.</p></li>
     /// <li>
-    /// <p><code>Healthy</code>: The target is healthy.</p></li>
+    /// <p><code>HEALTHY</code>: The target is healthy.</p></li>
     /// <li>
-    /// <p><code>Unhealthy</code>: The target is unhealthy.</p></li>
+    /// <p><code>UNHEALTHY</code>: The target is unhealthy.</p></li>
     /// <li>
-    /// <p><code>Initial</code>: Initial health checks on the target are being performed.</p></li>
+    /// <p><code>INITIAL</code>: Initial health checks on the target are being performed.</p></li>
     /// <li>
-    /// <p><code>Unused</code>: Target group is not used in a service.</p></li>
+    /// <p><code>UNUSED</code>: Target group is not used in a service.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::TargetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -126,17 +126,17 @@ impl TargetSummaryBuilder {
     /// <p>The status of the target.</p>
     /// <ul>
     /// <li>
-    /// <p><code>Draining</code>: The target is being deregistered. No new connections will be sent to this target while current connections are being drained. Default draining time is 5 minutes.</p></li>
+    /// <p><code>DRAINING</code>: The target is being deregistered. No new connections are sent to this target while current connections are being drained. The default draining time is 5 minutes.</p></li>
     /// <li>
-    /// <p><code>Unavailable</code>: Health checks are unavailable for the target group.</p></li>
+    /// <p><code>UNAVAILABLE</code>: Health checks are unavailable for the target group.</p></li>
     /// <li>
-    /// <p><code>Healthy</code>: The target is healthy.</p></li>
+    /// <p><code>HEALTHY</code>: The target is healthy.</p></li>
     /// <li>
-    /// <p><code>Unhealthy</code>: The target is unhealthy.</p></li>
+    /// <p><code>UNHEALTHY</code>: The target is unhealthy.</p></li>
     /// <li>
-    /// <p><code>Initial</code>: Initial health checks on the target are being performed.</p></li>
+    /// <p><code>INITIAL</code>: Initial health checks on the target are being performed.</p></li>
     /// <li>
-    /// <p><code>Unused</code>: Target group is not used in a service.</p></li>
+    /// <p><code>UNUSED</code>: Target group is not used in a service.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TargetStatus>) -> Self {
         self.status = input;
@@ -145,17 +145,17 @@ impl TargetSummaryBuilder {
     /// <p>The status of the target.</p>
     /// <ul>
     /// <li>
-    /// <p><code>Draining</code>: The target is being deregistered. No new connections will be sent to this target while current connections are being drained. Default draining time is 5 minutes.</p></li>
+    /// <p><code>DRAINING</code>: The target is being deregistered. No new connections are sent to this target while current connections are being drained. The default draining time is 5 minutes.</p></li>
     /// <li>
-    /// <p><code>Unavailable</code>: Health checks are unavailable for the target group.</p></li>
+    /// <p><code>UNAVAILABLE</code>: Health checks are unavailable for the target group.</p></li>
     /// <li>
-    /// <p><code>Healthy</code>: The target is healthy.</p></li>
+    /// <p><code>HEALTHY</code>: The target is healthy.</p></li>
     /// <li>
-    /// <p><code>Unhealthy</code>: The target is unhealthy.</p></li>
+    /// <p><code>UNHEALTHY</code>: The target is unhealthy.</p></li>
     /// <li>
-    /// <p><code>Initial</code>: Initial health checks on the target are being performed.</p></li>
+    /// <p><code>INITIAL</code>: Initial health checks on the target are being performed.</p></li>
     /// <li>
-    /// <p><code>Unused</code>: Target group is not used in a service.</p></li>
+    /// <p><code>UNUSED</code>: Target group is not used in a service.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TargetStatus> {
         &self.status

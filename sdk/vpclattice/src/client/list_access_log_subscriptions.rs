@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token for the next page of results.</p><br>
     /// - On success, responds with [`ListAccessLogSubscriptionsOutput`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput) with field(s):
-    ///   - [`items(Vec::<AccessLogSubscriptionSummary>)`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput::items): <p>The access log subscriptions.</p>
+    ///   - [`items(Vec::<AccessLogSubscriptionSummary>)`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput::items): <p>Information about the access log subscriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput::next_token): <p>A pagination token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListAccessLogSubscriptionsError>`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError)
     pub fn list_access_log_subscriptions(

@@ -6,7 +6,7 @@
 pub struct ValidationExceptionField {
     /// <p>The name of the validation exception.</p>
     pub name: ::std::string::String,
-    /// <p>Additional details about why the validation failed.</p>
+    /// <p>Additional information about why the validation failed.</p>
     pub message: ::std::string::String,
 }
 impl ValidationExceptionField {
@@ -15,7 +15,7 @@ impl ValidationExceptionField {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>Additional details about why the validation failed.</p>
+    /// <p>Additional information about why the validation failed.</p>
     pub fn message(&self) -> &str {
         use std::ops::Deref;
         self.message.deref()
@@ -51,18 +51,18 @@ impl ValidationExceptionFieldBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Additional details about why the validation failed.</p>
+    /// <p>Additional information about why the validation failed.</p>
     /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Additional details about why the validation failed.</p>
+    /// <p>Additional information about why the validation failed.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// <p>Additional details about why the validation failed.</p>
+    /// <p>Additional information about why the validation failed.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

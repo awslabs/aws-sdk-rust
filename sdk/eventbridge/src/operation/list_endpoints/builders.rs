@@ -22,7 +22,7 @@ impl crate::operation::list_endpoints::builders::ListEndpointsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListEndpoints`.
 ///
-/// <p>List the global endpoints associated with this account. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making applications Regional-fault tolerant with global endpoints and event replication</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+/// <p>List the global endpoints associated with this account. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making applications Regional-fault tolerant with global endpoints and event replication</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEndpointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

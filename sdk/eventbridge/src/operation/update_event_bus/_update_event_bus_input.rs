@@ -2,15 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEventBusInput {
-    /// <p>The name of the new event bus.</p>
-    /// <p>Custom event bus names can't contain the <code>/</code> character, but you can use the <code>/</code> character in partner event bus names. In addition, for partner event buses, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
-    /// <p>You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
+pub struct UpdateEventBusInput {
+    /// <p>The name of the event bus.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
-    pub event_source_name: ::std::option::Option<::std::string::String>,
-    /// <p>The event bus description.</p>
-    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt events on this event bus. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
     /// <p>If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt events on the event bus.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/getting-started.html">Managing keys</a> in the <i>Key Management Service Developer Guide</i>.</p><note>
@@ -26,26 +20,16 @@ pub struct CreateEventBusInput {
     /// <p>To enable archives or schema discovery on an event bus, choose to use an Amazon Web Services owned key. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     /// </note>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The event bus description.</p>
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
     /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
     pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
-    /// <p>Tags to associate with the event bus.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
-impl CreateEventBusInput {
-    /// <p>The name of the new event bus.</p>
-    /// <p>Custom event bus names can't contain the <code>/</code> character, but you can use the <code>/</code> character in partner event bus names. In addition, for partner event buses, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
-    /// <p>You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
+impl UpdateEventBusInput {
+    /// <p>The name of the event bus.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
-    }
-    /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
-    pub fn event_source_name(&self) -> ::std::option::Option<&str> {
-        self.event_source_name.as_deref()
-    }
-    /// <p>The event bus description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
     }
     /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt events on this event bus. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
     /// <p>If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt events on the event bus.</p>
@@ -64,85 +48,46 @@ impl CreateEventBusInput {
     pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
         self.kms_key_identifier.as_deref()
     }
+    /// <p>The event bus description.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
     /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
     /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn dead_letter_config(&self) -> ::std::option::Option<&crate::types::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
-    /// <p>Tags to associate with the event bus.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
-    }
 }
-impl CreateEventBusInput {
-    /// Creates a new builder-style object to manufacture [`CreateEventBusInput`](crate::operation::create_event_bus::CreateEventBusInput).
-    pub fn builder() -> crate::operation::create_event_bus::builders::CreateEventBusInputBuilder {
-        crate::operation::create_event_bus::builders::CreateEventBusInputBuilder::default()
+impl UpdateEventBusInput {
+    /// Creates a new builder-style object to manufacture [`UpdateEventBusInput`](crate::operation::update_event_bus::UpdateEventBusInput).
+    pub fn builder() -> crate::operation::update_event_bus::builders::UpdateEventBusInputBuilder {
+        crate::operation::update_event_bus::builders::UpdateEventBusInputBuilder::default()
     }
 }
 
-/// A builder for [`CreateEventBusInput`](crate::operation::create_event_bus::CreateEventBusInput).
+/// A builder for [`UpdateEventBusInput`](crate::operation::update_event_bus::UpdateEventBusInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct CreateEventBusInputBuilder {
+pub struct UpdateEventBusInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) event_source_name: ::std::option::Option<::std::string::String>,
-    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
-impl CreateEventBusInputBuilder {
-    /// <p>The name of the new event bus.</p>
-    /// <p>Custom event bus names can't contain the <code>/</code> character, but you can use the <code>/</code> character in partner event bus names. In addition, for partner event buses, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
-    /// <p>You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
-    /// This field is required.
+impl UpdateEventBusInputBuilder {
+    /// <p>The name of the event bus.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the new event bus.</p>
-    /// <p>Custom event bus names can't contain the <code>/</code> character, but you can use the <code>/</code> character in partner event bus names. In addition, for partner event buses, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
-    /// <p>You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
+    /// <p>The name of the event bus.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the new event bus.</p>
-    /// <p>Custom event bus names can't contain the <code>/</code> character, but you can use the <code>/</code> character in partner event bus names. In addition, for partner event buses, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
-    /// <p>You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
+    /// <p>The name of the event bus.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
-    }
-    /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
-    pub fn event_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.event_source_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
-    pub fn set_event_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_source_name = input;
-        self
-    }
-    /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
-    pub fn get_event_source_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.event_source_name
-    }
-    /// <p>The event bus description.</p>
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.description = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The event bus description.</p>
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
-    }
-    /// <p>The event bus description.</p>
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
-        &self.description
     }
     /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt events on this event bus. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
     /// <p>If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt events on the event bus.</p>
@@ -197,6 +142,20 @@ impl CreateEventBusInputBuilder {
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_identifier
     }
+    /// <p>The event bus description.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The event bus description.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>The event bus description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
     /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn dead_letter_config(mut self, input: crate::types::DeadLetterConfig) -> Self {
@@ -214,37 +173,15 @@ impl CreateEventBusInputBuilder {
     pub fn get_dead_letter_config(&self) -> &::std::option::Option<crate::types::DeadLetterConfig> {
         &self.dead_letter_config
     }
-    /// Appends an item to `tags`.
-    ///
-    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-    ///
-    /// <p>Tags to associate with the event bus.</p>
-    pub fn tags(mut self, input: crate::types::Tag) -> Self {
-        let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>Tags to associate with the event bus.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
-    }
-    /// <p>Tags to associate with the event bus.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
-        &self.tags
-    }
-    /// Consumes the builder and constructs a [`CreateEventBusInput`](crate::operation::create_event_bus::CreateEventBusInput).
+    /// Consumes the builder and constructs a [`UpdateEventBusInput`](crate::operation::update_event_bus::UpdateEventBusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_event_bus::CreateEventBusInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_event_bus::CreateEventBusInput {
+    ) -> ::std::result::Result<crate::operation::update_event_bus::UpdateEventBusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_event_bus::UpdateEventBusInput {
             name: self.name,
-            event_source_name: self.event_source_name,
-            description: self.description,
             kms_key_identifier: self.kms_key_identifier,
+            description: self.description,
             dead_letter_config: self.dead_letter_config,
-            tags: self.tags,
         })
     }
 }

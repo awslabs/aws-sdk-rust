@@ -7,7 +7,12 @@ impl super::Client {
     /// - On success, responds with [`DescribeEventBusOutput`](crate::operation::describe_event_bus::DescribeEventBusOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::describe_event_bus::DescribeEventBusOutput::name): <p>The name of the event bus. Currently, this is always <code>default</code>.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_event_bus::DescribeEventBusOutput::arn): <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
+    ///   - [`description(Option<String>)`](crate::operation::describe_event_bus::DescribeEventBusOutput::description): <p>The event bus description.</p>
+    ///   - [`kms_key_identifier(Option<String>)`](crate::operation::describe_event_bus::DescribeEventBusOutput::kms_key_identifier): <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt events on this event bus, if one has been specified.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    ///   - [`dead_letter_config(Option<DeadLetterConfig>)`](crate::operation::describe_event_bus::DescribeEventBusOutput::dead_letter_config): <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p> <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
     ///   - [`policy(Option<String>)`](crate::operation::describe_event_bus::DescribeEventBusOutput::policy): <p>The policy that enables the external account to send events to your account.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_event_bus::DescribeEventBusOutput::creation_time): <p>The time the event bus was created.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_event_bus::DescribeEventBusOutput::last_modified_time): <p>The time the event bus was last modified.</p>
     /// - On failure, responds with [`SdkError<DescribeEventBusError>`](crate::operation::describe_event_bus::DescribeEventBusError)
     pub fn describe_event_bus(&self) -> crate::operation::describe_event_bus::builders::DescribeEventBusFluentBuilder {
         crate::operation::describe_event_bus::builders::DescribeEventBusFluentBuilder::new(self.handle.clone())

@@ -26,7 +26,7 @@ pub struct ServiceNetworkServiceAssociationSummary {
     pub service_network_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
     pub service_network_arn: ::std::option::Option<::std::string::String>,
-    /// <p>DNS information about the service.</p>
+    /// <p>The DNS information.</p>
     pub dns_entry: ::std::option::Option<crate::types::DnsEntry>,
     /// <p>The custom domain name of the service.</p>
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
@@ -76,7 +76,7 @@ impl ServiceNetworkServiceAssociationSummary {
     pub fn service_network_arn(&self) -> ::std::option::Option<&str> {
         self.service_network_arn.as_deref()
     }
-    /// <p>DNS information about the service.</p>
+    /// <p>The DNS information.</p>
     pub fn dns_entry(&self) -> ::std::option::Option<&crate::types::DnsEntry> {
         self.dns_entry.as_ref()
     }
@@ -265,17 +265,17 @@ impl ServiceNetworkServiceAssociationSummaryBuilder {
     pub fn get_service_network_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_network_arn
     }
-    /// <p>DNS information about the service.</p>
+    /// <p>The DNS information.</p>
     pub fn dns_entry(mut self, input: crate::types::DnsEntry) -> Self {
         self.dns_entry = ::std::option::Option::Some(input);
         self
     }
-    /// <p>DNS information about the service.</p>
+    /// <p>The DNS information.</p>
     pub fn set_dns_entry(mut self, input: ::std::option::Option<crate::types::DnsEntry>) -> Self {
         self.dns_entry = input;
         self
     }
-    /// <p>DNS information about the service.</p>
+    /// <p>The DNS information.</p>
     pub fn get_dns_entry(&self) -> &::std::option::Option<crate::types::DnsEntry> {
         &self.dns_entry
     }

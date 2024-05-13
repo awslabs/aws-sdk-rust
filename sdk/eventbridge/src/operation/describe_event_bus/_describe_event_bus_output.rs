@@ -7,8 +7,20 @@ pub struct DescribeEventBusOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The event bus description.</p>
+    pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt events on this event bus, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub kms_key_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
+    /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
+    pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     /// <p>The policy that enables the external account to send events to your account.</p>
     pub policy: ::std::option::Option<::std::string::String>,
+    /// <p>The time the event bus was created.</p>
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The time the event bus was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeEventBusOutput {
@@ -20,9 +32,31 @@ impl DescribeEventBusOutput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
+    /// <p>The event bus description.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt events on this event bus, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+        self.kms_key_identifier.as_deref()
+    }
+    /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
+    /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
+    pub fn dead_letter_config(&self) -> ::std::option::Option<&crate::types::DeadLetterConfig> {
+        self.dead_letter_config.as_ref()
+    }
     /// <p>The policy that enables the external account to send events to your account.</p>
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
+    }
+    /// <p>The time the event bus was created.</p>
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time the event bus was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEventBusOutput {
@@ -43,7 +77,12 @@ impl DescribeEventBusOutput {
 pub struct DescribeEventBusOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeEventBusOutputBuilder {
@@ -75,6 +114,54 @@ impl DescribeEventBusOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>The event bus description.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The event bus description.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>The event bus description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt events on this event bus, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt events on this event bus, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_identifier = input;
+        self
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt events on this event bus, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_identifier
+    }
+    /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
+    /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
+    pub fn dead_letter_config(mut self, input: crate::types::DeadLetterConfig) -> Self {
+        self.dead_letter_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
+    /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
+    pub fn set_dead_letter_config(mut self, input: ::std::option::Option<crate::types::DeadLetterConfig>) -> Self {
+        self.dead_letter_config = input;
+        self
+    }
+    /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
+    /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
+    pub fn get_dead_letter_config(&self) -> &::std::option::Option<crate::types::DeadLetterConfig> {
+        &self.dead_letter_config
+    }
     /// <p>The policy that enables the external account to send events to your account.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -88,6 +175,34 @@ impl DescribeEventBusOutputBuilder {
     /// <p>The policy that enables the external account to send events to your account.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
+    }
+    /// <p>The time the event bus was created.</p>
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time the event bus was created.</p>
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input;
+        self
+    }
+    /// <p>The time the event bus was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
+    /// <p>The time the event bus was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time the event bus was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The time the event bus was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -103,7 +218,12 @@ impl DescribeEventBusOutputBuilder {
         crate::operation::describe_event_bus::DescribeEventBusOutput {
             name: self.name,
             arn: self.arn,
+            description: self.description,
+            kms_key_identifier: self.kms_key_identifier,
+            dead_letter_config: self.dead_letter_config,
             policy: self.policy,
+            creation_time: self.creation_time,
+            last_modified_time: self.last_modified_time,
             _request_id: self._request_id,
         }
     }

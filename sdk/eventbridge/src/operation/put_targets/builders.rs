@@ -27,7 +27,7 @@ impl crate::operation::put_targets::builders::PutTargetsInputBuilder {
 /// <p>The maximum number of entries per request is 10.</p><note>
 /// <p>Each rule can have up to five (5) targets associated with it at one time.</p>
 /// </note>
-/// <p>For a list of services you can configure as targets for events, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-targets.html">EventBridge targets</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+/// <p>For a list of services you can configure as targets for events, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-targets.html">EventBridge targets</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
 /// <p>Creating rules with built-in targets is supported only in the Amazon Web Services Management Console. The built-in targets are:</p>
 /// <ul>
 /// <li>
@@ -47,7 +47,7 @@ impl crate::operation::put_targets::builders::PutTargetsInputBuilder {
 /// <li>
 /// <p>For EC2 instances, Kinesis Data Streams, Step Functions state machines and API Gateway APIs, EventBridge relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>.</p></li>
 /// </ul>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication and Access Control</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
 /// <p>If another Amazon Web Services account is in the same region and has granted you permission (using <code>PutPermission</code>), you can send events to that account. Set that account's event bus as a target of the rules in your account. To send the matched events to the other account, specify that account's event bus as the <code>Arn</code> value when you run <code>PutTargets</code>. If your account sends events to another account, your account is charged for each sent event. Each event sent to another account is charged as a custom event. The account receiving the event is not charged. For more information, see <a href="http://aws.amazon.com/eventbridge/pricing/">Amazon EventBridge Pricing</a>.</p><note>
 /// <p><code>Input</code>, <code>InputPath</code>, and <code>InputTransformer</code> are not available with <code>PutTarget</code> if the target is an event bus of a different Amazon Web Services account.</p>
 /// </note>

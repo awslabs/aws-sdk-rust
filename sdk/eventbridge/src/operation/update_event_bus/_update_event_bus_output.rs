@@ -2,32 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEventBusOutput {
-    /// <p>The ARN of the new event bus.</p>
-    pub event_bus_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The event bus description.</p>
-    pub description: ::std::option::Option<::std::string::String>,
+pub struct UpdateEventBusOutput {
+    /// <p>The event bus Amazon Resource Name (ARN).</p>
+    pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The event bus name.</p>
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt events on this event bus, if one has been specified.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The event bus description.</p>
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
     /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
     pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     _request_id: Option<String>,
 }
-impl CreateEventBusOutput {
-    /// <p>The ARN of the new event bus.</p>
-    pub fn event_bus_arn(&self) -> ::std::option::Option<&str> {
-        self.event_bus_arn.as_deref()
+impl UpdateEventBusOutput {
+    /// <p>The event bus Amazon Resource Name (ARN).</p>
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
-    /// <p>The event bus description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    /// <p>The event bus name.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt events on this event bus, if one has been specified.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
         self.kms_key_identifier.as_deref()
+    }
+    /// <p>The event bus description.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
     }
     /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
     /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
@@ -35,56 +41,57 @@ impl CreateEventBusOutput {
         self.dead_letter_config.as_ref()
     }
 }
-impl ::aws_types::request_id::RequestId for CreateEventBusOutput {
+impl ::aws_types::request_id::RequestId for UpdateEventBusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
 }
-impl CreateEventBusOutput {
-    /// Creates a new builder-style object to manufacture [`CreateEventBusOutput`](crate::operation::create_event_bus::CreateEventBusOutput).
-    pub fn builder() -> crate::operation::create_event_bus::builders::CreateEventBusOutputBuilder {
-        crate::operation::create_event_bus::builders::CreateEventBusOutputBuilder::default()
+impl UpdateEventBusOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEventBusOutput`](crate::operation::update_event_bus::UpdateEventBusOutput).
+    pub fn builder() -> crate::operation::update_event_bus::builders::UpdateEventBusOutputBuilder {
+        crate::operation::update_event_bus::builders::UpdateEventBusOutputBuilder::default()
     }
 }
 
-/// A builder for [`CreateEventBusOutput`](crate::operation::create_event_bus::CreateEventBusOutput).
+/// A builder for [`UpdateEventBusOutput`](crate::operation::update_event_bus::UpdateEventBusOutput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct CreateEventBusOutputBuilder {
-    pub(crate) event_bus_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) description: ::std::option::Option<::std::string::String>,
+pub struct UpdateEventBusOutputBuilder {
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     _request_id: Option<String>,
 }
-impl CreateEventBusOutputBuilder {
-    /// <p>The ARN of the new event bus.</p>
-    pub fn event_bus_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.event_bus_arn = ::std::option::Option::Some(input.into());
+impl UpdateEventBusOutputBuilder {
+    /// <p>The event bus Amazon Resource Name (ARN).</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the new event bus.</p>
-    pub fn set_event_bus_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_bus_arn = input;
+    /// <p>The event bus Amazon Resource Name (ARN).</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.arn = input;
         self
     }
-    /// <p>The ARN of the new event bus.</p>
-    pub fn get_event_bus_arn(&self) -> &::std::option::Option<::std::string::String> {
-        &self.event_bus_arn
+    /// <p>The event bus Amazon Resource Name (ARN).</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
-    /// <p>The event bus description.</p>
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.description = ::std::option::Option::Some(input.into());
+    /// <p>The event bus name.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The event bus description.</p>
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
+    /// <p>The event bus name.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
         self
     }
-    /// <p>The event bus description.</p>
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
-        &self.description
+    /// <p>The event bus name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt events on this event bus, if one has been specified.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
@@ -102,6 +109,20 @@ impl CreateEventBusOutputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_identifier
+    }
+    /// <p>The event bus description.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The event bus description.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>The event bus description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
     /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
@@ -129,12 +150,13 @@ impl CreateEventBusOutputBuilder {
         self._request_id = request_id;
         self
     }
-    /// Consumes the builder and constructs a [`CreateEventBusOutput`](crate::operation::create_event_bus::CreateEventBusOutput).
-    pub fn build(self) -> crate::operation::create_event_bus::CreateEventBusOutput {
-        crate::operation::create_event_bus::CreateEventBusOutput {
-            event_bus_arn: self.event_bus_arn,
-            description: self.description,
+    /// Consumes the builder and constructs a [`UpdateEventBusOutput`](crate::operation::update_event_bus::UpdateEventBusOutput).
+    pub fn build(self) -> crate::operation::update_event_bus::UpdateEventBusOutput {
+        crate::operation::update_event_bus::UpdateEventBusOutput {
+            arn: self.arn,
+            name: self.name,
             kms_key_identifier: self.kms_key_identifier,
+            description: self.description,
             dead_letter_config: self.dead_letter_config,
             _request_id: self._request_id,
         }

@@ -9,17 +9,29 @@ pub fn ser_create_event_bus_input_input(
     if let Some(var_2) = &input.event_source_name {
         object.key("EventSourceName").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.tags {
-        let mut array_4 = object.key("Tags").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.description {
+        object.key("Description").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.kms_key_identifier {
+        object.key("KmsKeyIdentifier").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.dead_letter_config {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("DeadLetterConfig").start_object();
+        crate::protocol_serde::shape_dead_letter_config::ser_dead_letter_config(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.tags {
+        let mut array_8 = object.key("Tags").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_4.finish();
+        array_8.finish();
     }
     Ok(())
 }

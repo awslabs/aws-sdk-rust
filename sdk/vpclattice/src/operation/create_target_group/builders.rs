@@ -137,17 +137,17 @@ impl CreateTargetGroupFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TargetGroupType> {
         self.inner.get_type()
     }
-    /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
+    /// <p>The target group configuration.</p>
     pub fn config(mut self, input: crate::types::TargetGroupConfig) -> Self {
         self.inner = self.inner.config(input);
         self
     }
-    /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
+    /// <p>The target group configuration.</p>
     pub fn set_config(mut self, input: ::std::option::Option<crate::types::TargetGroupConfig>) -> Self {
         self.inner = self.inner.set_config(input);
         self
     }
-    /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
+    /// <p>The target group configuration.</p>
     pub fn get_config(&self) -> &::std::option::Option<crate::types::TargetGroupConfig> {
         self.inner.get_config()
     }

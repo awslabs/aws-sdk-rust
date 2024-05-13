@@ -7,7 +7,7 @@ pub struct ListTargetGroupsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>A pagination token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
     pub vpc_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The target group type.</p>
     pub target_group_type: ::std::option::Option<crate::types::TargetGroupType>,
@@ -21,7 +21,7 @@ impl ListTargetGroupsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
     pub fn vpc_identifier(&self) -> ::std::option::Option<&str> {
         self.vpc_identifier.as_deref()
     }
@@ -75,17 +75,17 @@ impl ListTargetGroupsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
     pub fn vpc_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
     pub fn set_vpc_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
     pub fn get_vpc_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_identifier
     }

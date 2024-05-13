@@ -11,9 +11,9 @@ pub struct CreateTargetGroupOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of target group.</p>
     pub r#type: ::std::option::Option<crate::types::TargetGroupType>,
-    /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
+    /// <p>The target group configuration.</p>
     pub config: ::std::option::Option<crate::types::TargetGroupConfig>,
-    /// <p>The operation's status. You can retry the operation if the status is <code>CREATE_FAILED</code>. However, if you retry it while the status is <code>CREATE_IN_PROGRESS</code>, there is no change in the status.</p>
+    /// <p>The status. You can retry the operation if the status is <code>CREATE_FAILED</code>. However, if you retry it while the status is <code>CREATE_IN_PROGRESS</code>, there is no change in the status.</p>
     pub status: ::std::option::Option<crate::types::TargetGroupStatus>,
     _request_id: Option<String>,
 }
@@ -34,11 +34,11 @@ impl CreateTargetGroupOutput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::TargetGroupType> {
         self.r#type.as_ref()
     }
-    /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
+    /// <p>The target group configuration.</p>
     pub fn config(&self) -> ::std::option::Option<&crate::types::TargetGroupConfig> {
         self.config.as_ref()
     }
-    /// <p>The operation's status. You can retry the operation if the status is <code>CREATE_FAILED</code>. However, if you retry it while the status is <code>CREATE_IN_PROGRESS</code>, there is no change in the status.</p>
+    /// <p>The status. You can retry the operation if the status is <code>CREATE_FAILED</code>. However, if you retry it while the status is <code>CREATE_IN_PROGRESS</code>, there is no change in the status.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TargetGroupStatus> {
         self.status.as_ref()
     }
@@ -124,31 +124,31 @@ impl CreateTargetGroupOutputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TargetGroupType> {
         &self.r#type
     }
-    /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
+    /// <p>The target group configuration.</p>
     pub fn config(mut self, input: crate::types::TargetGroupConfig) -> Self {
         self.config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
+    /// <p>The target group configuration.</p>
     pub fn set_config(mut self, input: ::std::option::Option<crate::types::TargetGroupConfig>) -> Self {
         self.config = input;
         self
     }
-    /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
+    /// <p>The target group configuration.</p>
     pub fn get_config(&self) -> &::std::option::Option<crate::types::TargetGroupConfig> {
         &self.config
     }
-    /// <p>The operation's status. You can retry the operation if the status is <code>CREATE_FAILED</code>. However, if you retry it while the status is <code>CREATE_IN_PROGRESS</code>, there is no change in the status.</p>
+    /// <p>The status. You can retry the operation if the status is <code>CREATE_FAILED</code>. However, if you retry it while the status is <code>CREATE_IN_PROGRESS</code>, there is no change in the status.</p>
     pub fn status(mut self, input: crate::types::TargetGroupStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The operation's status. You can retry the operation if the status is <code>CREATE_FAILED</code>. However, if you retry it while the status is <code>CREATE_IN_PROGRESS</code>, there is no change in the status.</p>
+    /// <p>The status. You can retry the operation if the status is <code>CREATE_FAILED</code>. However, if you retry it while the status is <code>CREATE_IN_PROGRESS</code>, there is no change in the status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TargetGroupStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The operation's status. You can retry the operation if the status is <code>CREATE_FAILED</code>. However, if you retry it while the status is <code>CREATE_IN_PROGRESS</code>, there is no change in the status.</p>
+    /// <p>The status. You can retry the operation if the status is <code>CREATE_FAILED</code>. However, if you retry it while the status is <code>CREATE_IN_PROGRESS</code>, there is no change in the status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TargetGroupStatus> {
         &self.status
     }

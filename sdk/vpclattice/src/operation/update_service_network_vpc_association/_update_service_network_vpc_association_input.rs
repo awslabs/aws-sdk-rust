@@ -5,7 +5,7 @@
 pub struct UpdateServiceNetworkVpcAssociationInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
     pub service_network_vpc_association_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
+    /// <p>The IDs of the security groups.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateServiceNetworkVpcAssociationInput {
@@ -13,7 +13,7 @@ impl UpdateServiceNetworkVpcAssociationInput {
     pub fn service_network_vpc_association_identifier(&self) -> ::std::option::Option<&str> {
         self.service_network_vpc_association_identifier.as_deref()
     }
-    /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
+    /// <p>The IDs of the security groups.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
     pub fn security_group_ids(&self) -> &[::std::string::String] {
@@ -54,19 +54,19 @@ impl UpdateServiceNetworkVpcAssociationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
-    /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
+    /// <p>The IDs of the security groups.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
+    /// <p>The IDs of the security groups.</p>
     pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
-    /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
+    /// <p>The IDs of the security groups.</p>
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }

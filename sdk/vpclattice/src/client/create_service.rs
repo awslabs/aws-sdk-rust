@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_service::CreateServiceOutput::name): <p>The name of the service.</p>
     ///   - [`custom_domain_name(Option<String>)`](crate::operation::create_service::CreateServiceOutput::custom_domain_name): <p>The custom domain name of the service.</p>
     ///   - [`certificate_arn(Option<String>)`](crate::operation::create_service::CreateServiceOutput::certificate_arn): <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    ///   - [`status(Option<ServiceStatus>)`](crate::operation::create_service::CreateServiceOutput::status): <p>The status. If the status is <code>CREATE_FAILED</code>, you will have to delete and recreate the service.</p>
+    ///   - [`status(Option<ServiceStatus>)`](crate::operation::create_service::CreateServiceOutput::status): <p>The status. If the status is <code>CREATE_FAILED</code>, you must delete and recreate the service.</p>
     ///   - [`auth_type(Option<AuthType>)`](crate::operation::create_service::CreateServiceOutput::auth_type): <p>The type of IAM policy.</p>
     ///   - [`dns_entry(Option<DnsEntry>)`](crate::operation::create_service::CreateServiceOutput::dns_entry): <p>The public DNS name of the service.</p>
     /// - On failure, responds with [`SdkError<CreateServiceError>`](crate::operation::create_service::CreateServiceError)

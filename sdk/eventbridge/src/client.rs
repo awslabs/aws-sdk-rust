@@ -274,3 +274,5 @@ mod update_archive;
 mod update_connection;
 
 mod update_endpoint;
+
+mod update_event_bus;

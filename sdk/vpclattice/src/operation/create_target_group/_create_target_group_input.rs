@@ -7,7 +7,7 @@ pub struct CreateTargetGroupInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of target group.</p>
     pub r#type: ::std::option::Option<crate::types::TargetGroupType>,
-    /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
+    /// <p>The target group configuration.</p>
     pub config: ::std::option::Option<crate::types::TargetGroupConfig>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ impl CreateTargetGroupInput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::TargetGroupType> {
         self.r#type.as_ref()
     }
-    /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
+    /// <p>The target group configuration.</p>
     pub fn config(&self) -> ::std::option::Option<&crate::types::TargetGroupConfig> {
         self.config.as_ref()
     }
@@ -84,17 +84,17 @@ impl CreateTargetGroupInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TargetGroupType> {
         &self.r#type
     }
-    /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
+    /// <p>The target group configuration.</p>
     pub fn config(mut self, input: crate::types::TargetGroupConfig) -> Self {
         self.config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
+    /// <p>The target group configuration.</p>
     pub fn set_config(mut self, input: ::std::option::Option<crate::types::TargetGroupConfig>) -> Self {
         self.config = input;
         self
     }
-    /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
+    /// <p>The target group configuration.</p>
     pub fn get_config(&self) -> &::std::option::Option<crate::types::TargetGroupConfig> {
         &self.config
     }

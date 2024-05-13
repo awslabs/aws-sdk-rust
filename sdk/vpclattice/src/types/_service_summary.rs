@@ -14,7 +14,7 @@ pub struct ServiceSummary {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the service was last updated. The format is ISO-8601.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>DNS information about the service.</p>
+    /// <p>The DNS information.</p>
     pub dns_entry: ::std::option::Option<crate::types::DnsEntry>,
     /// <p>The custom domain name of the service.</p>
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
@@ -42,7 +42,7 @@ impl ServiceSummary {
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>DNS information about the service.</p>
+    /// <p>The DNS information.</p>
     pub fn dns_entry(&self) -> ::std::option::Option<&crate::types::DnsEntry> {
         self.dns_entry.as_ref()
     }
@@ -146,17 +146,17 @@ impl ServiceSummaryBuilder {
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
-    /// <p>DNS information about the service.</p>
+    /// <p>The DNS information.</p>
     pub fn dns_entry(mut self, input: crate::types::DnsEntry) -> Self {
         self.dns_entry = ::std::option::Option::Some(input);
         self
     }
-    /// <p>DNS information about the service.</p>
+    /// <p>The DNS information.</p>
     pub fn set_dns_entry(mut self, input: ::std::option::Option<crate::types::DnsEntry>) -> Self {
         self.dns_entry = input;
         self
     }
-    /// <p>DNS information about the service.</p>
+    /// <p>The DNS information.</p>
     pub fn get_dns_entry(&self) -> &::std::option::Option<crate::types::DnsEntry> {
         &self.dns_entry
     }

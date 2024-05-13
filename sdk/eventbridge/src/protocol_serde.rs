@@ -135,6 +135,8 @@ pub(crate) mod shape_update_connection;
 
 pub(crate) mod shape_update_endpoint;
 
+pub(crate) mod shape_update_event_bus;
+
 pub(crate) mod shape_activate_event_source_input;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -277,6 +279,8 @@ pub(crate) mod shape_update_connection_input;
 
 pub(crate) mod shape_update_endpoint_input;
 
+pub(crate) mod shape_update_event_bus_input;
+
 pub(crate) mod shape_api_destination_response_list;
 
 pub(crate) mod shape_archive_response_list;
@@ -288,6 +292,8 @@ pub(crate) mod shape_connection_auth_response_parameters;
 pub(crate) mod shape_connection_response_list;
 
 pub(crate) mod shape_create_connection_auth_request_parameters;
+
+pub(crate) mod shape_dead_letter_config;
 
 pub(crate) mod shape_endpoint_event_bus;
 
@@ -360,8 +366,6 @@ pub(crate) mod shape_create_connection_api_key_auth_request_parameters;
 pub(crate) mod shape_create_connection_basic_auth_request_parameters;
 
 pub(crate) mod shape_create_connection_o_auth_request_parameters;
-
-pub(crate) mod shape_dead_letter_config;
 
 pub(crate) mod shape_ecs_parameters;
 

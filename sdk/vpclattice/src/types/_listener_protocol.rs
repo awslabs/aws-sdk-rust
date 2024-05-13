@@ -14,6 +14,7 @@
 /// match listenerprotocol {
 ///     ListenerProtocol::Http => { /* ... */ },
 ///     ListenerProtocol::Https => { /* ... */ },
+///     ListenerProtocol::TlsPassthrough => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum ListenerProtocol {
     Http,
     /// Indicates HTTPS protocol
     Https,
+    /// Indicates TLS_PASSTHROUGH protocol
+    TlsPassthrough,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for ListenerProtocol {
         match s {
             "HTTP" => ListenerProtocol::Http,
             "HTTPS" => ListenerProtocol::Https,
+            "TLS_PASSTHROUGH" => ListenerProtocol::TlsPassthrough,
             other => ListenerProtocol::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl ListenerProtocol {
         match self {
             ListenerProtocol::Http => "HTTP",
             ListenerProtocol::Https => "HTTPS",
+            ListenerProtocol::TlsPassthrough => "TLS_PASSTHROUGH",
             ListenerProtocol::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HTTP", "HTTPS"]
+        &["HTTP", "HTTPS", "TLS_PASSTHROUGH"]
     }
 }
 impl ::std::convert::AsRef<str> for ListenerProtocol {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for ListenerProtocol {
         match self {
             ListenerProtocol::Http => write!(f, "HTTP"),
             ListenerProtocol::Https => write!(f, "HTTPS"),
+            ListenerProtocol::TlsPassthrough => write!(f, "TLS_PASSTHROUGH"),
             ListenerProtocol::Unknown(value) => write!(f, "{}", value),
         }
     }

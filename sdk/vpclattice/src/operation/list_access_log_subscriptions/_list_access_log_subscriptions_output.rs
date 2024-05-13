@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccessLogSubscriptionsOutput {
-    /// <p>The access log subscriptions.</p>
+    /// <p>Information about the access log subscriptions.</p>
     pub items: ::std::vec::Vec<crate::types::AccessLogSubscriptionSummary>,
     /// <p>A pagination token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAccessLogSubscriptionsOutput {
-    /// <p>The access log subscriptions.</p>
+    /// <p>Information about the access log subscriptions.</p>
     pub fn items(&self) -> &[crate::types::AccessLogSubscriptionSummary] {
         use std::ops::Deref;
         self.items.deref()
@@ -45,19 +45,19 @@ impl ListAccessLogSubscriptionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p>The access log subscriptions.</p>
+    /// <p>Information about the access log subscriptions.</p>
     pub fn items(mut self, input: crate::types::AccessLogSubscriptionSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The access log subscriptions.</p>
+    /// <p>Information about the access log subscriptions.</p>
     pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessLogSubscriptionSummary>>) -> Self {
         self.items = input;
         self
     }
-    /// <p>The access log subscriptions.</p>
+    /// <p>Information about the access log subscriptions.</p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessLogSubscriptionSummary>> {
         &self.items
     }

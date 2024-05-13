@@ -136,45 +136,45 @@ impl CreateListenerFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The listener protocol HTTP or HTTPS.</p>
+    /// <p>The listener protocol.</p>
     pub fn protocol(mut self, input: crate::types::ListenerProtocol) -> Self {
         self.inner = self.inner.protocol(input);
         self
     }
-    /// <p>The listener protocol HTTP or HTTPS.</p>
+    /// <p>The listener protocol.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ListenerProtocol>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
     }
-    /// <p>The listener protocol HTTP or HTTPS.</p>
+    /// <p>The listener protocol.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ListenerProtocol> {
         self.inner.get_protocol()
     }
-    /// <p>The listener port. You can specify a value from <code>1</code> to <code>65535</code>. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code>.</p>
+    /// <p>The listener port. You can specify a value from 1 to 65535. For HTTP, the default is 80. For HTTPS, the default is 443.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.inner = self.inner.port(input);
         self
     }
-    /// <p>The listener port. You can specify a value from <code>1</code> to <code>65535</code>. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code>.</p>
+    /// <p>The listener port. You can specify a value from 1 to 65535. For HTTP, the default is 80. For HTTPS, the default is 443.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
         self
     }
-    /// <p>The listener port. You can specify a value from <code>1</code> to <code>65535</code>. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code>.</p>
+    /// <p>The listener port. You can specify a value from 1 to 65535. For HTTP, the default is 80. For HTTPS, the default is 443.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_port()
     }
-    /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed.</p>
+    /// <p>The action for the default rule. Each listener has a default rule. The default rule is used if no other rules match.</p>
     pub fn default_action(mut self, input: crate::types::RuleAction) -> Self {
         self.inner = self.inner.default_action(input);
         self
     }
-    /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed.</p>
+    /// <p>The action for the default rule. Each listener has a default rule. The default rule is used if no other rules match.</p>
     pub fn set_default_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
         self.inner = self.inner.set_default_action(input);
         self
     }
-    /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed.</p>
+    /// <p>The action for the default rule. Each listener has a default rule. The default rule is used if no other rules match.</p>
     pub fn get_default_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
         self.inner.get_default_action()
     }

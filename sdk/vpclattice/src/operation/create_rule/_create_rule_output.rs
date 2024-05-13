@@ -13,7 +13,7 @@ pub struct CreateRuleOutput {
     pub r#match: ::std::option::Option<crate::types::RuleMatch>,
     /// <p>The priority assigned to the rule. The lower the priority number the higher the priority.</p>
     pub priority: ::std::option::Option<i32>,
-    /// <p>The rule action. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed.</p>
+    /// <p>The rule action.</p>
     pub action: ::std::option::Option<crate::types::RuleAction>,
     _request_id: Option<String>,
 }
@@ -38,7 +38,7 @@ impl CreateRuleOutput {
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
-    /// <p>The rule action. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed.</p>
+    /// <p>The rule action.</p>
     pub fn action(&self) -> ::std::option::Option<&crate::types::RuleAction> {
         self.action.as_ref()
     }
@@ -138,17 +138,17 @@ impl CreateRuleOutputBuilder {
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }
-    /// <p>The rule action. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed.</p>
+    /// <p>The rule action.</p>
     pub fn action(mut self, input: crate::types::RuleAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The rule action. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed.</p>
+    /// <p>The rule action.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
         self.action = input;
         self
     }
-    /// <p>The rule action. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed.</p>
+    /// <p>The rule action.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
         &self.action
     }

@@ -16,7 +16,7 @@ pub struct RuleUpdateSuccess {
     pub r#match: ::std::option::Option<crate::types::RuleMatch>,
     /// <p>The rule priority.</p>
     pub priority: ::std::option::Option<i32>,
-    /// <p>The action for the default rule.</p>
+    /// <p>The action for the rule.</p>
     pub action: ::std::option::Option<crate::types::RuleAction>,
 }
 impl RuleUpdateSuccess {
@@ -44,7 +44,7 @@ impl RuleUpdateSuccess {
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
-    /// <p>The action for the default rule.</p>
+    /// <p>The action for the rule.</p>
     pub fn action(&self) -> ::std::option::Option<&crate::types::RuleAction> {
         self.action.as_ref()
     }
@@ -153,17 +153,17 @@ impl RuleUpdateSuccessBuilder {
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }
-    /// <p>The action for the default rule.</p>
+    /// <p>The action for the rule.</p>
     pub fn action(mut self, input: crate::types::RuleAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The action for the default rule.</p>
+    /// <p>The action for the rule.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
         self.action = input;
         self
     }
-    /// <p>The action for the default rule.</p>
+    /// <p>The action for the rule.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
         &self.action
     }

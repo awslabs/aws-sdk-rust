@@ -22,7 +22,8 @@ impl crate::operation::put_auth_policy::builders::PutAuthPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `PutAuthPolicy`.
 ///
-/// <p>Creates or updates the auth policy.</p>
+/// <p>Creates or updates the auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html">Auth policies</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAuthPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +123,17 @@ impl PutAuthPolicyFluentBuilder {
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_identifier()
     }
-    /// <p>The auth policy.</p>
+    /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy(input.into());
         self
     }
-    /// <p>The auth policy.</p>
+    /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
     }
-    /// <p>The auth policy.</p>
+    /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy()
     }

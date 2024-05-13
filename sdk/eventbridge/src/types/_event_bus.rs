@@ -8,8 +8,14 @@ pub struct EventBus {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the event bus.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The event bus description.</p>
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write events to this event bus.</p>
     pub policy: ::std::option::Option<::std::string::String>,
+    /// <p>The time the event bus was created.</p>
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The time the event bus was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventBus {
     /// <p>The name of the event bus.</p>
@@ -20,9 +26,21 @@ impl EventBus {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
+    /// <p>The event bus description.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
     /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write events to this event bus.</p>
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
+    }
+    /// <p>The time the event bus was created.</p>
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time the event bus was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
     }
 }
 impl EventBus {
@@ -38,7 +56,10 @@ impl EventBus {
 pub struct EventBusBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventBusBuilder {
     /// <p>The name of the event bus.</p>
@@ -69,6 +90,20 @@ impl EventBusBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>The event bus description.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The event bus description.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>The event bus description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write events to this event bus.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -83,12 +118,43 @@ impl EventBusBuilder {
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
+    /// <p>The time the event bus was created.</p>
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time the event bus was created.</p>
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input;
+        self
+    }
+    /// <p>The time the event bus was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
+    /// <p>The time the event bus was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time the event bus was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The time the event bus was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// Consumes the builder and constructs a [`EventBus`](crate::types::EventBus).
     pub fn build(self) -> crate::types::EventBus {
         crate::types::EventBus {
             name: self.name,
             arn: self.arn,
+            description: self.description,
             policy: self.policy,
+            creation_time: self.creation_time,
+            last_modified_time: self.last_modified_time,
         }
     }
 }
