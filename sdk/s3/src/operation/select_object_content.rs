@@ -210,7 +210,6 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SelectObject
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 query.push_v("select");
                 query.push_kv("select-type", "2");
-                query.push_kv("x-id", "SelectObjectContent");
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

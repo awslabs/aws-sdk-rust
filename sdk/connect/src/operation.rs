@@ -517,6 +517,12 @@ pub mod resume_contact_recording;
 /// Types for the `SearchAvailablePhoneNumbers` operation.
 pub mod search_available_phone_numbers;
 
+/// Types for the `SearchContactFlowModules` operation.
+pub mod search_contact_flow_modules;
+
+/// Types for the `SearchContactFlows` operation.
+pub mod search_contact_flows;
+
 /// Types for the `SearchContacts` operation.
 pub mod search_contacts;
 

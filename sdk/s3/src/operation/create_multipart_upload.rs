@@ -204,7 +204,6 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateMultip
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 query.push_v("uploads");
-                query.push_kv("x-id", "CreateMultipartUpload");
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

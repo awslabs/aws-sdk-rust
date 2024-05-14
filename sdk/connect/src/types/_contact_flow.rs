@@ -14,6 +14,8 @@ pub struct ContactFlow {
     pub r#type: ::std::option::Option<crate::types::ContactFlowType>,
     /// <p>The type of flow.</p>
     pub state: ::std::option::Option<crate::types::ContactFlowState>,
+    /// <p>The status of the contact flow.</p>
+    pub status: ::std::option::Option<crate::types::ContactFlowStatus>,
     /// <p>The description of the flow.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
@@ -42,6 +44,10 @@ impl ContactFlow {
     /// <p>The type of flow.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ContactFlowState> {
         self.state.as_ref()
+    }
+    /// <p>The status of the contact flow.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ContactFlowStatus> {
+        self.status.as_ref()
     }
     /// <p>The description of the flow.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -73,6 +79,7 @@ pub struct ContactFlowBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ContactFlowType>,
     pub(crate) state: ::std::option::Option<crate::types::ContactFlowState>,
+    pub(crate) status: ::std::option::Option<crate::types::ContactFlowStatus>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -148,6 +155,20 @@ impl ContactFlowBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ContactFlowState> {
         &self.state
     }
+    /// <p>The status of the contact flow.</p>
+    pub fn status(mut self, input: crate::types::ContactFlowStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the contact flow.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ContactFlowStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The status of the contact flow.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ContactFlowStatus> {
+        &self.status
+    }
     /// <p>The description of the flow.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -207,6 +228,7 @@ impl ContactFlowBuilder {
             name: self.name,
             r#type: self.r#type,
             state: self.state,
+            status: self.status,
             description: self.description,
             content: self.content,
             tags: self.tags,

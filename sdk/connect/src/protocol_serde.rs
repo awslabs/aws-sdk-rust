@@ -367,6 +367,10 @@ pub(crate) mod shape_resume_contact_recording;
 
 pub(crate) mod shape_search_available_phone_numbers;
 
+pub(crate) mod shape_search_contact_flow_modules;
+
+pub(crate) mod shape_search_contact_flows;
+
 pub(crate) mod shape_search_contacts;
 
 pub(crate) mod shape_search_hours_of_operations;
@@ -703,6 +707,10 @@ pub(crate) mod shape_resume_contact_recording_input;
 
 pub(crate) mod shape_search_available_phone_numbers_input;
 
+pub(crate) mod shape_search_contact_flow_modules_input;
+
+pub(crate) mod shape_search_contact_flows_input;
+
 pub(crate) mod shape_search_contacts_input;
 
 pub(crate) mod shape_search_hours_of_operations_input;
@@ -905,7 +913,19 @@ pub(crate) mod shape_contact_flow;
 
 pub(crate) mod shape_contact_flow_module;
 
+pub(crate) mod shape_contact_flow_module_search_criteria;
+
+pub(crate) mod shape_contact_flow_module_search_filter;
+
+pub(crate) mod shape_contact_flow_module_search_summary_list;
+
 pub(crate) mod shape_contact_flow_modules_summary_list;
+
+pub(crate) mod shape_contact_flow_search_criteria;
+
+pub(crate) mod shape_contact_flow_search_filter;
+
+pub(crate) mod shape_contact_flow_search_summary_list;
 
 pub(crate) mod shape_contact_flow_summary_list;
 

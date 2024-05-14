@@ -186,14 +186,6 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for WriteGetObje
                 ::std::write!(output, "/WriteGetObjectResponse").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
-            fn uri_query(
-                _input: &crate::operation::write_get_object_response::WriteGetObjectResponseInput,
-                mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                let mut query = ::aws_smithy_http::query::Writer::new(output);
-                query.push_kv("x-id", "WriteGetObjectResponse");
-                ::std::result::Result::Ok(())
-            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::write_get_object_response::WriteGetObjectResponseInput,
@@ -201,7 +193,6 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for WriteGetObje
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
-                uri_query(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_write_get_object_response::ser_write_get_object_response_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }

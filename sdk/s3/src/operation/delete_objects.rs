@@ -205,7 +205,6 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteObject
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 query.push_v("delete");
-                query.push_kv("x-id", "DeleteObjects");
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

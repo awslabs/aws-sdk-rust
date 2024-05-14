@@ -507,6 +507,10 @@ mod resume_contact_recording;
 
 mod search_available_phone_numbers;
 
+mod search_contact_flow_modules;
+
+mod search_contact_flows;
+
 mod search_contacts;
 
 mod search_hours_of_operations;

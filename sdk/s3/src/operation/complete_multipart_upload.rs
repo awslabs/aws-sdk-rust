@@ -203,7 +203,6 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CompleteMult
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                query.push_kv("x-id", "CompleteMultipartUpload");
                 let inner_2 = &_input.upload_id;
                 let inner_2 = inner_2
                     .as_ref()

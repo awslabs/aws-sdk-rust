@@ -267,6 +267,18 @@ pub use crate::types::_agent_hierarchy_groups::AgentHierarchyGroupsBuilder;
 
 pub use crate::types::_search_contacts_time_range::SearchContactsTimeRangeBuilder;
 
+pub use crate::types::_contact_flow::ContactFlowBuilder;
+
+pub use crate::types::_contact_flow_search_criteria::ContactFlowSearchCriteriaBuilder;
+
+pub use crate::types::_contact_flow_search_filter::ContactFlowSearchFilterBuilder;
+
+pub use crate::types::_contact_flow_module::ContactFlowModuleBuilder;
+
+pub use crate::types::_contact_flow_module_search_criteria::ContactFlowModuleSearchCriteriaBuilder;
+
+pub use crate::types::_contact_flow_module_search_filter::ContactFlowModuleSearchFilterBuilder;
+
 pub use crate::types::_available_number_summary::AvailableNumberSummaryBuilder;
 
 pub use crate::types::_view_version_summary::ViewVersionSummaryBuilder;
@@ -472,10 +484,6 @@ pub use crate::types::_instance::InstanceBuilder;
 pub use crate::types::_instance_status_reason::InstanceStatusReasonBuilder;
 
 pub use crate::types::_evaluation_form::EvaluationFormBuilder;
-
-pub use crate::types::_contact_flow_module::ContactFlowModuleBuilder;
-
-pub use crate::types::_contact_flow::ContactFlowBuilder;
 
 pub use crate::types::_evaluation_form_content::EvaluationFormContentBuilder;
 

@@ -469,6 +469,26 @@ pub(crate) fn reflens_search_available_phone_numbers_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_search_contact_flow_modules_output_output_next_token(
+    input: &crate::operation::search_contact_flow_modules::SearchContactFlowModulesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_search_contact_flows_output_output_next_token(
+    input: &crate::operation::search_contact_flows::SearchContactFlowsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_search_contacts_output_output_next_token(
     input: &crate::operation::search_contacts::SearchContactsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -978,6 +998,26 @@ pub(crate) fn lens_search_available_phone_numbers_output_output_available_number
     input: crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>> {
     let input = match input.available_numbers_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_contact_flow_modules_output_output_contact_flow_modules(
+    input: crate::operation::search_contact_flow_modules::SearchContactFlowModulesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModule>> {
+    let input = match input.contact_flow_modules {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_contact_flows_output_output_contact_flows(
+    input: crate::operation::search_contact_flows::SearchContactFlowsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ContactFlow>> {
+    let input = match input.contact_flows {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

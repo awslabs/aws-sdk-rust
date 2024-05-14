@@ -182,6 +182,20 @@ impl CreateContactFlowFluentBuilder {
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content()
     }
+    /// <p>Indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content. the <code>SAVED</code> status does not initiate validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.</p>
+    pub fn status(mut self, input: crate::types::ContactFlowStatus) -> Self {
+        self.inner = self.inner.status(input);
+        self
+    }
+    /// <p>Indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content. the <code>SAVED</code> status does not initiate validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ContactFlowStatus>) -> Self {
+        self.inner = self.inner.set_status(input);
+        self
+    }
+    /// <p>Indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content. the <code>SAVED</code> status does not initiate validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ContactFlowStatus> {
+        self.inner.get_status()
+    }
     ///
     /// Adds a key-value pair to `Tags`.
     ///

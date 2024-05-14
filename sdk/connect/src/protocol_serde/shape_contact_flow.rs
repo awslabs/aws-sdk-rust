@@ -49,6 +49,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ContactFlowStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "Description" => {
                             builder = builder.set_description(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -8,7 +8,7 @@ pub struct GetAttachedFileInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the attached file resource.</p>
     pub file_id: ::std::option::Option<::std::string::String>,
-    /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds.</p>
+    /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.</p>
     pub url_expiry_in_seconds: ::std::option::Option<i32>,
     /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p><note>
     /// <p>This value must be a valid ARN.</p>
@@ -24,7 +24,7 @@ impl GetAttachedFileInput {
     pub fn file_id(&self) -> ::std::option::Option<&str> {
         self.file_id.as_deref()
     }
-    /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds.</p>
+    /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.</p>
     pub fn url_expiry_in_seconds(&self) -> ::std::option::Option<i32> {
         self.url_expiry_in_seconds
     }
@@ -82,17 +82,17 @@ impl GetAttachedFileInputBuilder {
     pub fn get_file_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_id
     }
-    /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds.</p>
+    /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.</p>
     pub fn url_expiry_in_seconds(mut self, input: i32) -> Self {
         self.url_expiry_in_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds.</p>
+    /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.</p>
     pub fn set_url_expiry_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.url_expiry_in_seconds = input;
         self
     }
-    /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds.</p>
+    /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.</p>
     pub fn get_url_expiry_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.url_expiry_in_seconds
     }

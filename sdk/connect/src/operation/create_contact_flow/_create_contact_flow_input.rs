@@ -14,6 +14,8 @@ pub struct CreateContactFlowInput {
     /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 256000.</p>
     pub content: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content. the <code>SAVED</code> status does not initiate validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.</p>
+    pub status: ::std::option::Option<crate::types::ContactFlowStatus>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -39,6 +41,10 @@ impl CreateContactFlowInput {
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
+    /// <p>Indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content. the <code>SAVED</code> status does not initiate validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ContactFlowStatus> {
+        self.status.as_ref()
+    }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -60,6 +66,7 @@ pub struct CreateContactFlowInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ContactFlowType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ContactFlowStatus>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateContactFlowInputBuilder {
@@ -140,6 +147,20 @@ impl CreateContactFlowInputBuilder {
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content
     }
+    /// <p>Indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content. the <code>SAVED</code> status does not initiate validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.</p>
+    pub fn status(mut self, input: crate::types::ContactFlowStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content. the <code>SAVED</code> status does not initiate validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ContactFlowStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>Indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content. the <code>SAVED</code> status does not initiate validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ContactFlowStatus> {
+        &self.status
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -170,6 +191,7 @@ impl CreateContactFlowInputBuilder {
             r#type: self.r#type,
             description: self.description,
             content: self.content,
+            status: self.status,
             tags: self.tags,
         })
     }

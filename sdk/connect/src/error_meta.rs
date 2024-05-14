@@ -6198,6 +6198,77 @@ impl From<crate::operation::search_available_phone_numbers::SearchAvailablePhone
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_contact_flow_modules::SearchContactFlowModulesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_contact_flow_modules::SearchContactFlowModulesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_contact_flow_modules::SearchContactFlowModulesError> for Error {
+    fn from(err: crate::operation::search_contact_flow_modules::SearchContactFlowModulesError) -> Self {
+        match err {
+            crate::operation::search_contact_flow_modules::SearchContactFlowModulesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::search_contact_flow_modules::SearchContactFlowModulesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::search_contact_flow_modules::SearchContactFlowModulesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::search_contact_flow_modules::SearchContactFlowModulesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_contact_flow_modules::SearchContactFlowModulesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::search_contact_flow_modules::SearchContactFlowModulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_contact_flows::SearchContactFlowsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_contact_flows::SearchContactFlowsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_contact_flows::SearchContactFlowsError> for Error {
+    fn from(err: crate::operation::search_contact_flows::SearchContactFlowsError) -> Self {
+        match err {
+            crate::operation::search_contact_flows::SearchContactFlowsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::search_contact_flows::SearchContactFlowsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::search_contact_flows::SearchContactFlowsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::search_contact_flows::SearchContactFlowsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_contact_flows::SearchContactFlowsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_contact_flows::SearchContactFlowsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_contacts::SearchContactsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

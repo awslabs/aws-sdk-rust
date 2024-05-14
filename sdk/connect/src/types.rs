@@ -395,6 +395,24 @@ pub use crate::types::_search_contacts_time_range::SearchContactsTimeRange;
 
 pub use crate::types::_search_contacts_time_range_type::SearchContactsTimeRangeType;
 
+pub use crate::types::_contact_flow::ContactFlow;
+
+pub use crate::types::_contact_flow_status::ContactFlowStatus;
+
+pub use crate::types::_contact_flow_type::ContactFlowType;
+
+pub use crate::types::_contact_flow_search_criteria::ContactFlowSearchCriteria;
+
+pub use crate::types::_contact_flow_search_filter::ContactFlowSearchFilter;
+
+pub use crate::types::_contact_flow_module::ContactFlowModule;
+
+pub use crate::types::_contact_flow_module_status::ContactFlowModuleStatus;
+
+pub use crate::types::_contact_flow_module_search_criteria::ContactFlowModuleSearchCriteria;
+
+pub use crate::types::_contact_flow_module_search_filter::ContactFlowModuleSearchFilter;
+
 pub use crate::types::_available_number_summary::AvailableNumberSummary;
 
 pub use crate::types::_phone_number_type::PhoneNumberType;
@@ -541,8 +559,6 @@ pub use crate::types::_url_reference::UrlReference;
 
 pub use crate::types::_contact_flow_summary::ContactFlowSummary;
 
-pub use crate::types::_contact_flow_type::ContactFlowType;
-
 pub use crate::types::_contact_flow_module_summary::ContactFlowModuleSummary;
 
 pub use crate::types::_evaluation_summary::EvaluationSummary;
@@ -675,12 +691,6 @@ pub use crate::types::_instance_status_reason::InstanceStatusReason;
 
 pub use crate::types::_evaluation_form::EvaluationForm;
 
-pub use crate::types::_contact_flow_module::ContactFlowModule;
-
-pub use crate::types::_contact_flow_module_status::ContactFlowModuleStatus;
-
-pub use crate::types::_contact_flow::ContactFlow;
-
 pub use crate::types::_evaluation_form_content::EvaluationFormContent;
 
 pub use crate::types::_evaluation::Evaluation;
@@ -811,13 +821,23 @@ mod _contact_flow;
 
 mod _contact_flow_module;
 
+mod _contact_flow_module_search_criteria;
+
+mod _contact_flow_module_search_filter;
+
 mod _contact_flow_module_state;
 
 mod _contact_flow_module_status;
 
 mod _contact_flow_module_summary;
 
+mod _contact_flow_search_criteria;
+
+mod _contact_flow_search_filter;
+
 mod _contact_flow_state;
+
+mod _contact_flow_status;
 
 mod _contact_flow_summary;
 

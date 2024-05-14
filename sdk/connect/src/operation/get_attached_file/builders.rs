@@ -136,17 +136,17 @@ impl GetAttachedFileFluentBuilder {
     pub fn get_file_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_file_id()
     }
-    /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds.</p>
+    /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.</p>
     pub fn url_expiry_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.url_expiry_in_seconds(input);
         self
     }
-    /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds.</p>
+    /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.</p>
     pub fn set_url_expiry_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_url_expiry_in_seconds(input);
         self
     }
-    /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds.</p>
+    /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.</p>
     pub fn get_url_expiry_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_url_expiry_in_seconds()
     }

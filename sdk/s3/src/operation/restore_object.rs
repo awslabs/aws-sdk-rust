@@ -215,7 +215,6 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RestoreObjec
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 query.push_v("restore");
-                query.push_kv("x-id", "RestoreObject");
                 if let ::std::option::Option::Some(inner_2) = &_input.version_id {
                     {
                         query.push_kv("versionId", &::aws_smithy_http::query::fmt_string(inner_2));
