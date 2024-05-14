@@ -23,9 +23,9 @@ async_once = "0.2.6"
 lazy_static = "1.4.0"
 aws-config= { version = "1.4.0", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-credential-types= { version = "1.2.0", path = "../../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
-aws-sdk-iam= { version = "1.25.0", path = "../../../sdk/iam" }
-aws-sdk-s3= { version = "1.28.0", path = "../../../sdk/s3" }
-aws-sdk-sts= { version = "1.24.0", path = "../../../sdk/sts" }
+aws-sdk-iam= { version = "1.26.0", path = "../../../sdk/iam" }
+aws-sdk-s3= { version = "1.29.0", path = "../../../sdk/s3" }
+aws-sdk-sts= { version = "1.25.0", path = "../../../sdk/sts" }
 
 [dependencies.sdk-examples-test-utils]
 path = "../../test-utils"

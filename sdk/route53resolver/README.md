@@ -26,7 +26,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-route53resolver = "1.27.1"
+aws-sdk-route53resolver = "1.28.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

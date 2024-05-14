@@ -151,8 +151,16 @@ async fn write_get_object_response() {
     );
 
     let captured_request = req.expect_request();
+    let uri_no_query = captured_request
+        .uri()
+        .splitn(2, '?')
+        .into_iter()
+        .next()
+        .unwrap()
+        .to_string();
+
     assert_eq!(
-        captured_request.uri().to_string(),
-        "https://req-route.s3-object-lambda.us-west-4.amazonaws.com/WriteGetObjectResponse?x-id=WriteGetObjectResponse"
+        uri_no_query,
+        "https://req-route.s3-object-lambda.us-west-4.amazonaws.com/WriteGetObjectResponse"
     );
 }
