@@ -5,8 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessDetails {
     /// <p>The name of the process.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 64.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The path to the process executable.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 512.</p>
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The process ID.</p>
     pub pid: ::std::option::Option<i32>,
@@ -45,10 +47,12 @@ pub struct ProcessDetails {
 }
 impl ProcessDetails {
     /// <p>The name of the process.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 64.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The path to the process executable.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 512.</p>
     pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
@@ -115,30 +119,36 @@ pub struct ProcessDetailsBuilder {
 }
 impl ProcessDetailsBuilder {
     /// <p>The name of the process.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 64.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the process.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 64.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the process.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 64.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// <p>The path to the process executable.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 512.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the process executable.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 512.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
     }
     /// <p>The path to the process executable.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 512.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.path
     }

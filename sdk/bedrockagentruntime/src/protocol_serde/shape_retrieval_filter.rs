@@ -58,29 +58,41 @@ pub fn ser_retrieval_filter(
             crate::protocol_serde::shape_filter_attribute::ser_filter_attribute(&mut object_9, inner)?;
             object_9.finish();
         }
+        crate::types::RetrievalFilter::ListContains(inner) => {
+            #[allow(unused_mut)]
+            let mut object_10 = object_3.key("listContains").start_object();
+            crate::protocol_serde::shape_filter_attribute::ser_filter_attribute(&mut object_10, inner)?;
+            object_10.finish();
+        }
+        crate::types::RetrievalFilter::StringContains(inner) => {
+            #[allow(unused_mut)]
+            let mut object_11 = object_3.key("stringContains").start_object();
+            crate::protocol_serde::shape_filter_attribute::ser_filter_attribute(&mut object_11, inner)?;
+            object_11.finish();
+        }
         crate::types::RetrievalFilter::AndAll(inner) => {
-            let mut array_10 = object_3.key("andAll").start_array();
-            for item_11 in inner {
+            let mut array_12 = object_3.key("andAll").start_array();
+            for item_13 in inner {
                 {
                     #[allow(unused_mut)]
-                    let mut object_12 = array_10.value().start_object();
-                    crate::protocol_serde::shape_retrieval_filter::ser_retrieval_filter(&mut object_12, item_11)?;
-                    object_12.finish();
+                    let mut object_14 = array_12.value().start_object();
+                    crate::protocol_serde::shape_retrieval_filter::ser_retrieval_filter(&mut object_14, item_13)?;
+                    object_14.finish();
                 }
             }
-            array_10.finish();
+            array_12.finish();
         }
         crate::types::RetrievalFilter::OrAll(inner) => {
-            let mut array_13 = object_3.key("orAll").start_array();
-            for item_14 in inner {
+            let mut array_15 = object_3.key("orAll").start_array();
+            for item_16 in inner {
                 {
                     #[allow(unused_mut)]
-                    let mut object_15 = array_13.value().start_object();
-                    crate::protocol_serde::shape_retrieval_filter::ser_retrieval_filter(&mut object_15, item_14)?;
-                    object_15.finish();
+                    let mut object_17 = array_15.value().start_object();
+                    crate::protocol_serde::shape_retrieval_filter::ser_retrieval_filter(&mut object_17, item_16)?;
+                    object_17.finish();
                 }
             }
-            array_13.finish();
+            array_15.finish();
         }
         crate::types::RetrievalFilter::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(

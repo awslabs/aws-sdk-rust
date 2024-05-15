@@ -29,9 +29,17 @@ pub(crate) mod shape_create_workspace;
 
 pub(crate) mod shape_create_workspace_api_key;
 
+pub(crate) mod shape_create_workspace_service_account;
+
+pub(crate) mod shape_create_workspace_service_account_token;
+
 pub(crate) mod shape_delete_workspace;
 
 pub(crate) mod shape_delete_workspace_api_key;
+
+pub(crate) mod shape_delete_workspace_service_account;
+
+pub(crate) mod shape_delete_workspace_service_account_token;
 
 pub(crate) mod shape_describe_workspace;
 
@@ -46,6 +54,10 @@ pub(crate) mod shape_list_permissions;
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_versions;
+
+pub(crate) mod shape_list_workspace_service_account_tokens;
+
+pub(crate) mod shape_list_workspace_service_accounts;
 
 pub(crate) mod shape_list_workspaces;
 
@@ -77,6 +89,10 @@ pub(crate) mod shape_create_workspace_api_key_input;
 
 pub(crate) mod shape_create_workspace_input;
 
+pub(crate) mod shape_create_workspace_service_account_input;
+
+pub(crate) mod shape_create_workspace_service_account_token_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
@@ -106,6 +122,12 @@ pub(crate) mod shape_network_access_configuration;
 pub(crate) mod shape_permission_entry_list;
 
 pub(crate) mod shape_saml_configuration;
+
+pub(crate) mod shape_service_account_list;
+
+pub(crate) mod shape_service_account_token_list;
+
+pub(crate) mod shape_service_account_token_summary_with_key;
 
 pub(crate) mod shape_tag_map;
 
@@ -142,6 +164,10 @@ pub(crate) mod shape_permission_entry;
 pub(crate) mod shape_role_values;
 
 pub(crate) mod shape_saml_authentication;
+
+pub(crate) mod shape_service_account_summary;
+
+pub(crate) mod shape_service_account_token_summary;
 
 pub(crate) mod shape_update_error;
 

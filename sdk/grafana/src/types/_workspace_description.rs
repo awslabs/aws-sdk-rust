@@ -62,7 +62,7 @@ pub struct WorkspaceDescription {
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     /// <p>The configuration settings for network access to your workspace.</p>
     pub network_access_control: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
-    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link your account with Grafana Labs</a>.</p>
     pub grafana_token: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceDescription {
@@ -180,7 +180,7 @@ impl WorkspaceDescription {
     pub fn network_access_control(&self) -> ::std::option::Option<&crate::types::NetworkAccessConfiguration> {
         self.network_access_control.as_ref()
     }
-    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link your account with Grafana Labs</a>.</p>
     pub fn grafana_token(&self) -> ::std::option::Option<&str> {
         self.grafana_token.as_deref()
     }
@@ -651,17 +651,17 @@ impl WorkspaceDescriptionBuilder {
     pub fn get_network_access_control(&self) -> &::std::option::Option<crate::types::NetworkAccessConfiguration> {
         &self.network_access_control
     }
-    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link your account with Grafana Labs</a>.</p>
     pub fn grafana_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grafana_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link your account with Grafana Labs</a>.</p>
     pub fn set_grafana_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grafana_token = input;
         self
     }
-    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link your account with Grafana Labs</a>.</p>
     pub fn get_grafana_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.grafana_token
     }

@@ -5,8 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsApiCallAction {
     /// <p>The name of the API method that was issued.</p>
+    /// <p>Length Constraints: 128.</p>
     pub api: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services service that the API method belongs to.</p>
+    /// <p>Length Constraints: 128.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the API call originated from a remote IP address (<code>remoteip</code>) or from a DNS domain (<code>domain</code>).</p>
     pub caller_type: ::std::option::Option<::std::string::String>,
@@ -49,10 +51,12 @@ pub struct AwsApiCallAction {
 }
 impl AwsApiCallAction {
     /// <p>The name of the API method that was issued.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn api(&self) -> ::std::option::Option<&str> {
         self.api.as_deref()
     }
     /// <p>The name of the Amazon Web Services service that the API method belongs to.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn service_name(&self) -> ::std::option::Option<&str> {
         self.service_name.as_deref()
     }
@@ -129,30 +133,36 @@ pub struct AwsApiCallActionBuilder {
 }
 impl AwsApiCallActionBuilder {
     /// <p>The name of the API method that was issued.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn api(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the API method that was issued.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn set_api(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api = input;
         self
     }
     /// <p>The name of the API method that was issued.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn get_api(&self) -> &::std::option::Option<::std::string::String> {
         &self.api
     }
     /// <p>The name of the Amazon Web Services service that the API method belongs to.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon Web Services service that the API method belongs to.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
     }
     /// <p>The name of the Amazon Web Services service that the API method belongs to.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_name
     }

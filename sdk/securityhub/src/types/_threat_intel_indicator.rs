@@ -7,6 +7,7 @@ pub struct ThreatIntelIndicator {
     /// <p>The type of threat intelligence indicator.</p>
     pub r#type: ::std::option::Option<crate::types::ThreatIntelIndicatorType>,
     /// <p>The value of a threat intelligence indicator.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 512 length.</p>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The category of a threat intelligence indicator.</p>
     pub category: ::std::option::Option<crate::types::ThreatIntelIndicatorCategory>,
@@ -26,6 +27,7 @@ pub struct ThreatIntelIndicator {
     /// </ul>
     pub last_observed_at: ::std::option::Option<::std::string::String>,
     /// <p>The source of the threat intelligence indicator.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 64 length.</p>
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the page or site where you can get more information about the threat intelligence indicator.</p>
     pub source_url: ::std::option::Option<::std::string::String>,
@@ -36,6 +38,7 @@ impl ThreatIntelIndicator {
         self.r#type.as_ref()
     }
     /// <p>The value of a threat intelligence indicator.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 512 length.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -61,6 +64,7 @@ impl ThreatIntelIndicator {
         self.last_observed_at.as_deref()
     }
     /// <p>The source of the threat intelligence indicator.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 64 length.</p>
     pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
@@ -103,16 +107,19 @@ impl ThreatIntelIndicatorBuilder {
         &self.r#type
     }
     /// <p>The value of a threat intelligence indicator.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 512 length.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of a threat intelligence indicator.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 512 length.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p>The value of a threat intelligence indicator.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 512 length.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
@@ -184,16 +191,19 @@ impl ThreatIntelIndicatorBuilder {
         &self.last_observed_at
     }
     /// <p>The source of the threat intelligence indicator.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 64 length.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source of the threat intelligence indicator.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 64 length.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
     }
     /// <p>The source of the threat intelligence indicator.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 64 length.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.source
     }

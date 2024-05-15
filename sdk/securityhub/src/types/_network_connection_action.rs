@@ -13,6 +13,7 @@ pub struct NetworkConnectionAction {
     /// <p>Information about the port on the EC2 instance.</p>
     pub local_port_details: ::std::option::Option<crate::types::ActionLocalPortDetails>,
     /// <p>The protocol used to make the network connection request.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the network connection attempt was blocked.</p>
     pub blocked: ::std::option::Option<bool>,
@@ -35,6 +36,7 @@ impl NetworkConnectionAction {
         self.local_port_details.as_ref()
     }
     /// <p>The protocol used to make the network connection request.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub fn protocol(&self) -> ::std::option::Option<&str> {
         self.protocol.as_deref()
     }
@@ -119,16 +121,19 @@ impl NetworkConnectionActionBuilder {
         &self.local_port_details
     }
     /// <p>The protocol used to make the network connection request.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The protocol used to make the network connection request.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
     }
     /// <p>The protocol used to make the network connection request.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
         &self.protocol
     }

@@ -5,6 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkHeader {
     /// <p>The protocol used for the component.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 16.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>Information about the destination of the component.</p>
     pub destination: ::std::option::Option<crate::types::NetworkPathComponentDetails>,
@@ -13,6 +14,7 @@ pub struct NetworkHeader {
 }
 impl NetworkHeader {
     /// <p>The protocol used for the component.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 16.</p>
     pub fn protocol(&self) -> ::std::option::Option<&str> {
         self.protocol.as_deref()
     }
@@ -42,16 +44,19 @@ pub struct NetworkHeaderBuilder {
 }
 impl NetworkHeaderBuilder {
     /// <p>The protocol used for the component.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 16.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The protocol used for the component.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 16.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
     }
     /// <p>The protocol used for the component.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 16.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
         &self.protocol
     }

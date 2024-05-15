@@ -6,16 +6,18 @@
 pub struct Resource {
     /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
     /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The canonical identifier for the given resource type.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The canonical Amazon Web Services partition name that the Region is assigned to.</p>
     pub partition: ::std::option::Option<crate::types::Partition>,
     /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 16.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the role of the resource in the finding. A resource is either the actor or target of the finding activity,</p>
     pub resource_role: ::std::option::Option<::std::string::String>,
-    /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed.</p>
+    /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed. Tags must follow <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon Web Services tag naming limits and requirements</a>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Contains information about sensitive data that was detected on the resource.</p>
     pub data_classification: ::std::option::Option<crate::types::DataClassificationDetails>,
@@ -29,6 +31,7 @@ pub struct Resource {
 impl Resource {
     /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
     /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -41,6 +44,7 @@ impl Resource {
         self.partition.as_ref()
     }
     /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 16.</p>
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
@@ -48,7 +52,7 @@ impl Resource {
     pub fn resource_role(&self) -> ::std::option::Option<&str> {
         self.resource_role.as_deref()
     }
-    /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed.</p>
+    /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed. Tags must follow <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon Web Services tag naming limits and requirements</a>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -94,6 +98,7 @@ pub struct ResourceBuilder {
 impl ResourceBuilder {
     /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
     /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256.</p>
     /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -101,12 +106,14 @@ impl ResourceBuilder {
     }
     /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
     /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
     /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
@@ -140,16 +147,19 @@ impl ResourceBuilder {
         &self.partition
     }
     /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 16.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 16.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
     /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 16.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.region
     }
@@ -171,19 +181,19 @@ impl ResourceBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed.</p>
+    /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed. Tags must follow <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon Web Services tag naming limits and requirements</a>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed.</p>
+    /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed. Tags must follow <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon Web Services tag naming limits and requirements</a>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed.</p>
+    /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed. Tags must follow <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon Web Services tag naming limits and requirements</a>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

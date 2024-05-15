@@ -10,11 +10,23 @@ pub mod create_workspace;
 /// Types for the `CreateWorkspaceApiKey` operation.
 pub mod create_workspace_api_key;
 
+/// Types for the `CreateWorkspaceServiceAccount` operation.
+pub mod create_workspace_service_account;
+
+/// Types for the `CreateWorkspaceServiceAccountToken` operation.
+pub mod create_workspace_service_account_token;
+
 /// Types for the `DeleteWorkspace` operation.
 pub mod delete_workspace;
 
 /// Types for the `DeleteWorkspaceApiKey` operation.
 pub mod delete_workspace_api_key;
+
+/// Types for the `DeleteWorkspaceServiceAccount` operation.
+pub mod delete_workspace_service_account;
+
+/// Types for the `DeleteWorkspaceServiceAccountToken` operation.
+pub mod delete_workspace_service_account_token;
 
 /// Types for the `DescribeWorkspace` operation.
 pub mod describe_workspace;
@@ -36,6 +48,12 @@ pub mod list_tags_for_resource;
 
 /// Types for the `ListVersions` operation.
 pub mod list_versions;
+
+/// Types for the `ListWorkspaceServiceAccountTokens` operation.
+pub mod list_workspace_service_account_tokens;
+
+/// Types for the `ListWorkspaceServiceAccounts` operation.
+pub mod list_workspace_service_accounts;
 
 /// Types for the `ListWorkspaces` operation.
 pub mod list_workspaces;

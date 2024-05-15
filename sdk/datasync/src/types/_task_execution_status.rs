@@ -12,6 +12,7 @@
 /// ```text
 /// # let taskexecutionstatus = unimplemented!();
 /// match taskexecutionstatus {
+///     TaskExecutionStatus::Cancelling => { /* ... */ },
 ///     TaskExecutionStatus::Error => { /* ... */ },
 ///     TaskExecutionStatus::Launching => { /* ... */ },
 ///     TaskExecutionStatus::Preparing => { /* ... */ },
@@ -47,6 +48,8 @@
 )]
 pub enum TaskExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
+    Cancelling,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
     #[allow(missing_docs)] // documentation missing in model
     Launching,
@@ -67,6 +70,7 @@ pub enum TaskExecutionStatus {
 impl ::std::convert::From<&str> for TaskExecutionStatus {
     fn from(s: &str) -> Self {
         match s {
+            "CANCELLING" => TaskExecutionStatus::Cancelling,
             "ERROR" => TaskExecutionStatus::Error,
             "LAUNCHING" => TaskExecutionStatus::Launching,
             "PREPARING" => TaskExecutionStatus::Preparing,
@@ -89,6 +93,7 @@ impl TaskExecutionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TaskExecutionStatus::Cancelling => "CANCELLING",
             TaskExecutionStatus::Error => "ERROR",
             TaskExecutionStatus::Launching => "LAUNCHING",
             TaskExecutionStatus::Preparing => "PREPARING",
@@ -101,7 +106,16 @@ impl TaskExecutionStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ERROR", "LAUNCHING", "PREPARING", "QUEUED", "SUCCESS", "TRANSFERRING", "VERIFYING"]
+        &[
+            "CANCELLING",
+            "ERROR",
+            "LAUNCHING",
+            "PREPARING",
+            "QUEUED",
+            "SUCCESS",
+            "TRANSFERRING",
+            "VERIFYING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for TaskExecutionStatus {
@@ -124,6 +138,7 @@ impl TaskExecutionStatus {
 impl ::std::fmt::Display for TaskExecutionStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            TaskExecutionStatus::Cancelling => write!(f, "CANCELLING"),
             TaskExecutionStatus::Error => write!(f, "ERROR"),
             TaskExecutionStatus::Launching => write!(f, "LAUNCHING"),
             TaskExecutionStatus::Preparing => write!(f, "PREPARING"),

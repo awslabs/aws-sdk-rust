@@ -5,10 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsApiCallActionDomainDetails {
     /// <p>The name of the DNS domain that issued the API call.</p>
+    /// <p>Length Constraints: 128.</p>
     pub domain: ::std::option::Option<::std::string::String>,
 }
 impl AwsApiCallActionDomainDetails {
     /// <p>The name of the DNS domain that issued the API call.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
@@ -28,16 +30,19 @@ pub struct AwsApiCallActionDomainDetailsBuilder {
 }
 impl AwsApiCallActionDomainDetailsBuilder {
     /// <p>The name of the DNS domain that issued the API call.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DNS domain that issued the API call.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
     /// <p>The name of the DNS domain that issued the API call.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }

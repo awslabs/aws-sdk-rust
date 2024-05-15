@@ -9,14 +9,17 @@ pub fn ser_start_dicom_import_job_input_input(
     if let Some(var_2) = &input.data_access_role_arn {
         object.key("dataAccessRoleArn").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.input_s3_uri {
-        object.key("inputS3Uri").string(var_3.as_str());
+    if let Some(var_3) = &input.input_owner_account_id {
+        object.key("inputOwnerAccountId").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.job_name {
-        object.key("jobName").string(var_4.as_str());
+    if let Some(var_4) = &input.input_s3_uri {
+        object.key("inputS3Uri").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.output_s3_uri {
-        object.key("outputS3Uri").string(var_5.as_str());
+    if let Some(var_5) = &input.job_name {
+        object.key("jobName").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.output_s3_uri {
+        object.key("outputS3Uri").string(var_6.as_str());
     }
     Ok(())
 }

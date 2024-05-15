@@ -179,6 +179,12 @@ impl StartBuildFluentBuilder {
     /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
     /// </dd>
     /// <dt>
+    /// GitLab
+    /// </dt>
+    /// <dd>
+    /// <p>The commit ID, branch, or Git tag to use.</p>
+    /// </dd>
+    /// <dt>
     /// Bitbucket
     /// </dt>
     /// <dd>
@@ -212,6 +218,12 @@ impl StartBuildFluentBuilder {
     /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
     /// </dd>
     /// <dt>
+    /// GitLab
+    /// </dt>
+    /// <dd>
+    /// <p>The commit ID, branch, or Git tag to use.</p>
+    /// </dd>
+    /// <dt>
     /// Bitbucket
     /// </dt>
     /// <dd>
@@ -243,6 +255,12 @@ impl StartBuildFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
+    /// </dd>
+    /// <dt>
+    /// GitLab
+    /// </dt>
+    /// <dd>
+    /// <p>The commit ID, branch, or Git tag to use.</p>
     /// </dd>
     /// <dt>
     /// Bitbucket
@@ -342,17 +360,17 @@ impl StartBuildFluentBuilder {
     pub fn get_source_location_override(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_location_override()
     }
-    /// <p>An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
+    /// <p>An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.</p>
     pub fn source_auth_override(mut self, input: crate::types::SourceAuth) -> Self {
         self.inner = self.inner.source_auth_override(input);
         self
     }
-    /// <p>An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
+    /// <p>An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.</p>
     pub fn set_source_auth_override(mut self, input: ::std::option::Option<crate::types::SourceAuth>) -> Self {
         self.inner = self.inner.set_source_auth_override(input);
         self
     }
-    /// <p>An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
+    /// <p>An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.</p>
     pub fn get_source_auth_override(&self) -> &::std::option::Option<crate::types::SourceAuth> {
         self.inner.get_source_auth_override()
     }

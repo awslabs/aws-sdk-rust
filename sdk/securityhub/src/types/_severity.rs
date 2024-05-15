@@ -37,6 +37,7 @@ pub struct Severity {
     /// </ul>
     pub label: ::std::option::Option<crate::types::SeverityLabel>,
     /// <p>Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
+    /// <p>The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
     /// <ul>
     /// <li>
@@ -52,6 +53,7 @@ pub struct Severity {
     /// </ul>
     pub normalized: ::std::option::Option<i32>,
     /// <p>The native severity from the finding product that generated the finding.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub original: ::std::option::Option<::std::string::String>,
 }
 impl Severity {
@@ -90,6 +92,7 @@ impl Severity {
         self.label.as_ref()
     }
     /// <p>Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
+    /// <p>The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
     /// <ul>
     /// <li>
@@ -107,6 +110,7 @@ impl Severity {
         self.normalized
     }
     /// <p>The native severity from the finding product that generated the finding.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub fn original(&self) -> ::std::option::Option<&str> {
         self.original.as_deref()
     }
@@ -235,6 +239,7 @@ impl SeverityBuilder {
         &self.label
     }
     /// <p>Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
+    /// <p>The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
     /// <ul>
     /// <li>
@@ -253,6 +258,7 @@ impl SeverityBuilder {
         self
     }
     /// <p>Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
+    /// <p>The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
     /// <ul>
     /// <li>
@@ -271,6 +277,7 @@ impl SeverityBuilder {
         self
     }
     /// <p>Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
+    /// <p>The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
     /// <ul>
     /// <li>
@@ -288,16 +295,19 @@ impl SeverityBuilder {
         &self.normalized
     }
     /// <p>The native severity from the finding product that generated the finding.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub fn original(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.original = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The native severity from the finding product that generated the finding.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub fn set_original(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.original = input;
         self
     }
     /// <p>The native severity from the finding product that generated the finding.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub fn get_original(&self) -> &::std::option::Option<::std::string::String> {
         &self.original
     }

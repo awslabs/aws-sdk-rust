@@ -5,18 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsRequestAction {
     /// <p>The DNS domain that is associated with the DNS request.</p>
+    /// <p>Length Constraints: 128.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The protocol that was used for the DNS request.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DNS request was blocked.</p>
     pub blocked: ::std::option::Option<bool>,
 }
 impl DnsRequestAction {
     /// <p>The DNS domain that is associated with the DNS request.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>The protocol that was used for the DNS request.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub fn protocol(&self) -> ::std::option::Option<&str> {
         self.protocol.as_deref()
     }
@@ -42,30 +46,36 @@ pub struct DnsRequestActionBuilder {
 }
 impl DnsRequestActionBuilder {
     /// <p>The DNS domain that is associated with the DNS request.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNS domain that is associated with the DNS request.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
     /// <p>The DNS domain that is associated with the DNS request.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
     /// <p>The protocol that was used for the DNS request.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The protocol that was used for the DNS request.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
     }
     /// <p>The protocol that was used for the DNS request.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
         &self.protocol
     }

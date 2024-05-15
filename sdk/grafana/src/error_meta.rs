@@ -161,6 +161,111 @@ impl From<crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyError
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_workspace_service_account::CreateWorkspaceServiceAccountError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_workspace_service_account::CreateWorkspaceServiceAccountError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_workspace_service_account::CreateWorkspaceServiceAccountError> for Error {
+    fn from(err: crate::operation::create_workspace_service_account::CreateWorkspaceServiceAccountError) -> Self {
+        match err {
+            crate::operation::create_workspace_service_account::CreateWorkspaceServiceAccountError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_workspace_service_account::CreateWorkspaceServiceAccountError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_workspace_service_account::CreateWorkspaceServiceAccountError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_workspace_service_account::CreateWorkspaceServiceAccountError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_workspace_service_account::CreateWorkspaceServiceAccountError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_workspace_service_account::CreateWorkspaceServiceAccountError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_workspace_service_account::CreateWorkspaceServiceAccountError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_workspace_service_account::CreateWorkspaceServiceAccountError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_workspace_service_account_token::CreateWorkspaceServiceAccountTokenError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_workspace_service_account_token::CreateWorkspaceServiceAccountTokenError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_workspace_service_account_token::CreateWorkspaceServiceAccountTokenError> for Error {
+    fn from(err: crate::operation::create_workspace_service_account_token::CreateWorkspaceServiceAccountTokenError) -> Self {
+        match err {
+            crate::operation::create_workspace_service_account_token::CreateWorkspaceServiceAccountTokenError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_workspace_service_account_token::CreateWorkspaceServiceAccountTokenError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_workspace_service_account_token::CreateWorkspaceServiceAccountTokenError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_workspace_service_account_token::CreateWorkspaceServiceAccountTokenError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_workspace_service_account_token::CreateWorkspaceServiceAccountTokenError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_workspace_service_account_token::CreateWorkspaceServiceAccountTokenError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_workspace_service_account_token::CreateWorkspaceServiceAccountTokenError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_workspace_service_account_token::CreateWorkspaceServiceAccountTokenError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_workspace::DeleteWorkspaceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -223,6 +328,105 @@ impl From<crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyError
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_workspace_service_account::DeleteWorkspaceServiceAccountError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_workspace_service_account::DeleteWorkspaceServiceAccountError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_workspace_service_account::DeleteWorkspaceServiceAccountError> for Error {
+    fn from(err: crate::operation::delete_workspace_service_account::DeleteWorkspaceServiceAccountError) -> Self {
+        match err {
+            crate::operation::delete_workspace_service_account::DeleteWorkspaceServiceAccountError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_workspace_service_account::DeleteWorkspaceServiceAccountError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_workspace_service_account::DeleteWorkspaceServiceAccountError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_workspace_service_account::DeleteWorkspaceServiceAccountError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_workspace_service_account::DeleteWorkspaceServiceAccountError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_workspace_service_account::DeleteWorkspaceServiceAccountError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_workspace_service_account::DeleteWorkspaceServiceAccountError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_workspace_service_account_token::DeleteWorkspaceServiceAccountTokenError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_workspace_service_account_token::DeleteWorkspaceServiceAccountTokenError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_workspace_service_account_token::DeleteWorkspaceServiceAccountTokenError> for Error {
+    fn from(err: crate::operation::delete_workspace_service_account_token::DeleteWorkspaceServiceAccountTokenError) -> Self {
+        match err {
+            crate::operation::delete_workspace_service_account_token::DeleteWorkspaceServiceAccountTokenError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_workspace_service_account_token::DeleteWorkspaceServiceAccountTokenError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_workspace_service_account_token::DeleteWorkspaceServiceAccountTokenError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_workspace_service_account_token::DeleteWorkspaceServiceAccountTokenError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_workspace_service_account_token::DeleteWorkspaceServiceAccountTokenError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_workspace_service_account_token::DeleteWorkspaceServiceAccountTokenError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_workspace_service_account_token::DeleteWorkspaceServiceAccountTokenError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_workspace::DescribeWorkspaceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -279,6 +483,9 @@ impl From<crate::operation::describe_workspace_authentication::DescribeWorkspace
         match err {
             crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
             }
             crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
@@ -471,6 +678,104 @@ impl From<crate::operation::list_workspaces::ListWorkspacesError> for Error {
             crate::operation::list_workspaces::ListWorkspacesError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_workspaces::ListWorkspacesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_workspaces::ListWorkspacesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_workspace_service_accounts::ListWorkspaceServiceAccountsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_workspace_service_accounts::ListWorkspaceServiceAccountsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_workspace_service_accounts::ListWorkspaceServiceAccountsError> for Error {
+    fn from(err: crate::operation::list_workspace_service_accounts::ListWorkspaceServiceAccountsError) -> Self {
+        match err {
+            crate::operation::list_workspace_service_accounts::ListWorkspaceServiceAccountsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_workspace_service_accounts::ListWorkspaceServiceAccountsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::list_workspace_service_accounts::ListWorkspaceServiceAccountsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_workspace_service_accounts::ListWorkspaceServiceAccountsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_workspace_service_accounts::ListWorkspaceServiceAccountsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_workspace_service_accounts::ListWorkspaceServiceAccountsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_workspace_service_accounts::ListWorkspaceServiceAccountsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_workspace_service_account_tokens::ListWorkspaceServiceAccountTokensError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_workspace_service_account_tokens::ListWorkspaceServiceAccountTokensError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_workspace_service_account_tokens::ListWorkspaceServiceAccountTokensError> for Error {
+    fn from(err: crate::operation::list_workspace_service_account_tokens::ListWorkspaceServiceAccountTokensError) -> Self {
+        match err {
+            crate::operation::list_workspace_service_account_tokens::ListWorkspaceServiceAccountTokensError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_workspace_service_account_tokens::ListWorkspaceServiceAccountTokensError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::list_workspace_service_account_tokens::ListWorkspaceServiceAccountTokensError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_workspace_service_account_tokens::ListWorkspaceServiceAccountTokensError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_workspace_service_account_tokens::ListWorkspaceServiceAccountTokensError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_workspace_service_account_tokens::ListWorkspaceServiceAccountTokensError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_workspace_service_account_tokens::ListWorkspaceServiceAccountTokensError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

@@ -192,4 +192,18 @@ impl StartDICOMImportJobFluentBuilder {
     pub fn get_output_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_output_s3_uri()
     }
+    /// <p>The account ID of the source S3 bucket owner.</p>
+    pub fn input_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.input_owner_account_id(input.into());
+        self
+    }
+    /// <p>The account ID of the source S3 bucket owner.</p>
+    pub fn set_input_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_input_owner_account_id(input);
+        self
+    }
+    /// <p>The account ID of the source S3 bucket owner.</p>
+    pub fn get_input_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_owner_account_id()
+    }
 }

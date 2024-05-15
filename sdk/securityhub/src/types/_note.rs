@@ -5,6 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Note {
     /// <p>The text of a note.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 512.</p>
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The principal that created a note.</p>
     pub updated_by: ::std::option::Option<::std::string::String>,
@@ -26,6 +27,7 @@ pub struct Note {
 }
 impl Note {
     /// <p>The text of a note.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 512.</p>
     pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -68,17 +70,20 @@ pub struct NoteBuilder {
 }
 impl NoteBuilder {
     /// <p>The text of a note.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 512.</p>
     /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of a note.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 512.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }
     /// <p>The text of a note.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 512.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.text
     }

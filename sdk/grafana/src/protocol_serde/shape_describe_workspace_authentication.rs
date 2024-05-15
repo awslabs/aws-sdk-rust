@@ -36,6 +36,20 @@ pub fn de_describe_workspace_authentication_http_error(
                 tmp
             })
         }
+        "ConflictException" => crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationError::unhandled)?
+            };
+            tmp
+        }),
         "InternalServerException" => {
             crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationError::InternalServerException({
                 #[allow(unused_mut)]

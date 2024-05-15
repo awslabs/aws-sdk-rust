@@ -11,6 +11,12 @@ pub use crate::types::_authentication_summary::AuthenticationSummaryBuilder;
 
 pub use crate::types::_workspace_summary::WorkspaceSummaryBuilder;
 
+pub use crate::types::_service_account_token_summary::ServiceAccountTokenSummaryBuilder;
+
+pub use crate::types::_service_account_token_summary_with_key::ServiceAccountTokenSummaryWithKeyBuilder;
+
+pub use crate::types::_service_account_summary::ServiceAccountSummaryBuilder;
+
 pub use crate::types::_update_error::UpdateErrorBuilder;
 
 pub use crate::types::_update_instruction::UpdateInstructionBuilder;

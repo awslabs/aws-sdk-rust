@@ -27,17 +27,26 @@ pub fn ser_create_fleet_input_input(
     if let Some(var_7) = &input.overflow_behavior {
         object.key("overflowBehavior").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.tags {
-        let mut array_9 = object.key("tags").start_array();
-        for item_10 in var_8 {
+    if let Some(var_8) = &input.vpc_config {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("vpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.fleet_service_role {
+        object.key("fleetServiceRole").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.tags {
+        let mut array_12 = object.key("tags").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_9.finish();
+        array_12.finish();
     }
     Ok(())
 }

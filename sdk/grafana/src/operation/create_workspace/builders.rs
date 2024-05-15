@@ -391,19 +391,19 @@ impl CreateWorkspaceFluentBuilder {
     pub fn get_network_access_control(&self) -> &::std::option::Option<crate::types::NetworkAccessConfiguration> {
         self.inner.get_network_access_control()
     }
-    /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 9.4).</p>
+    /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 10.4).</p>
     /// <p>To get a list of supported versions, use the <code>ListVersions</code> operation.</p>
     pub fn grafana_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grafana_version(input.into());
         self
     }
-    /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 9.4).</p>
+    /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 10.4).</p>
     /// <p>To get a list of supported versions, use the <code>ListVersions</code> operation.</p>
     pub fn set_grafana_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grafana_version(input);
         self
     }
-    /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 9.4).</p>
+    /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 10.4).</p>
     /// <p>To get a list of supported versions, use the <code>ListVersions</code> operation.</p>
     pub fn get_grafana_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_grafana_version()

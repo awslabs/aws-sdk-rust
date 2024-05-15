@@ -22,7 +22,9 @@ impl crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKey
 }
 /// Fluent builder constructing a request to `DeleteWorkspaceApiKey`.
 ///
-/// <p>Deletes a Grafana API key for the workspace.</p>
+/// <p>Deletes a Grafana API key for the workspace.</p><note>
+/// <p>In workspaces compatible with Grafana version 9 or above, use workspace service accounts instead of API keys. API keys will be removed in a future release.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWorkspaceApiKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

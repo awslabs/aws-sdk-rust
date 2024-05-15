@@ -29,6 +29,14 @@ pub use crate::types::_account_access_type::AccountAccessType;
 
 pub use crate::types::_workspace_summary::WorkspaceSummary;
 
+pub use crate::types::_service_account_token_summary::ServiceAccountTokenSummary;
+
+pub use crate::types::_service_account_token_summary_with_key::ServiceAccountTokenSummaryWithKey;
+
+pub use crate::types::_service_account_summary::ServiceAccountSummary;
+
+pub use crate::types::_role::Role;
+
 pub use crate::types::_update_error::UpdateError;
 
 pub use crate::types::_update_instruction::UpdateInstruction;
@@ -36,8 +44,6 @@ pub use crate::types::_update_instruction::UpdateInstruction;
 pub use crate::types::_user::User;
 
 pub use crate::types::_user_type::UserType;
-
-pub use crate::types::_role::Role;
 
 pub use crate::types::_update_action::UpdateAction;
 
@@ -92,6 +98,12 @@ mod _saml_authentication;
 mod _saml_configuration;
 
 mod _saml_configuration_status;
+
+mod _service_account_summary;
+
+mod _service_account_token_summary;
+
+mod _service_account_token_summary_with_key;
 
 mod _update_action;
 

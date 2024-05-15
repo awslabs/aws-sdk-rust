@@ -22,7 +22,9 @@ impl crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKey
 }
 /// Fluent builder constructing a request to `CreateWorkspaceApiKey`.
 ///
-/// <p>Creates a Grafana API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP API. See <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example requests.</p>
+/// <p>Creates a Grafana API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP API. See <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example requests.</p><note>
+/// <p>In workspaces compatible with Grafana version 9 or above, use workspace service accounts instead of API keys. API keys will be removed in a future release.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorkspaceApiKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -123,19 +125,19 @@ impl CreateWorkspaceApiKeyFluentBuilder {
         self.inner.get_key_name()
     }
     /// <p>Specifies the permission level of the key.</p>
-    /// <p>Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code></p>
+    /// <p>Valid values: <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code></p>
     pub fn key_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_role(input.into());
         self
     }
     /// <p>Specifies the permission level of the key.</p>
-    /// <p>Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code></p>
+    /// <p>Valid values: <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code></p>
     pub fn set_key_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_role(input);
         self
     }
     /// <p>Specifies the permission level of the key.</p>
-    /// <p>Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code></p>
+    /// <p>Valid values: <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code></p>
     pub fn get_key_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_role()
     }

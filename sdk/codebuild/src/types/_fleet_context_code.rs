@@ -12,6 +12,7 @@
 /// ```text
 /// # let fleetcontextcode = unimplemented!();
 /// match fleetcontextcode {
+///     FleetContextCode::ActionRequired => { /* ... */ },
 ///     FleetContextCode::CreateFailed => { /* ... */ },
 ///     FleetContextCode::UpdateFailed => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum FleetContextCode {
     #[allow(missing_docs)] // documentation missing in model
+    ActionRequired,
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
     #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
@@ -52,6 +55,7 @@ pub enum FleetContextCode {
 impl ::std::convert::From<&str> for FleetContextCode {
     fn from(s: &str) -> Self {
         match s {
+            "ACTION_REQUIRED" => FleetContextCode::ActionRequired,
             "CREATE_FAILED" => FleetContextCode::CreateFailed,
             "UPDATE_FAILED" => FleetContextCode::UpdateFailed,
             other => FleetContextCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +73,7 @@ impl FleetContextCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            FleetContextCode::ActionRequired => "ACTION_REQUIRED",
             FleetContextCode::CreateFailed => "CREATE_FAILED",
             FleetContextCode::UpdateFailed => "UPDATE_FAILED",
             FleetContextCode::Unknown(value) => value.as_str(),
@@ -76,7 +81,7 @@ impl FleetContextCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATE_FAILED", "UPDATE_FAILED"]
+        &["ACTION_REQUIRED", "CREATE_FAILED", "UPDATE_FAILED"]
     }
 }
 impl ::std::convert::AsRef<str> for FleetContextCode {
@@ -99,6 +104,7 @@ impl FleetContextCode {
 impl ::std::fmt::Display for FleetContextCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            FleetContextCode::ActionRequired => write!(f, "ACTION_REQUIRED"),
             FleetContextCode::CreateFailed => write!(f, "CREATE_FAILED"),
             FleetContextCode::UpdateFailed => write!(f, "UPDATE_FAILED"),
             FleetContextCode::Unknown(value) => write!(f, "{}", value),

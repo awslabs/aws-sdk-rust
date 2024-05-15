@@ -5,20 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Threat {
     /// <p>The name of the threat.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 128 length.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The severity of the threat.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 128 length.</p>
     pub severity: ::std::option::Option<::std::string::String>,
     /// <p>This total number of items in which the threat has been detected.</p>
     pub item_count: ::std::option::Option<i32>,
     /// <p>Provides information about the file paths that were affected by the threat.</p>
+    /// <p>Array Members: Minimum number of 1 item. Maximum number of 5 items.</p>
     pub file_paths: ::std::option::Option<::std::vec::Vec<crate::types::FilePaths>>,
 }
 impl Threat {
     /// <p>The name of the threat.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 128 length.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The severity of the threat.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 128 length.</p>
     pub fn severity(&self) -> ::std::option::Option<&str> {
         self.severity.as_deref()
     }
@@ -27,6 +32,7 @@ impl Threat {
         self.item_count
     }
     /// <p>Provides information about the file paths that were affected by the threat.</p>
+    /// <p>Array Members: Minimum number of 1 item. Maximum number of 5 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_paths.is_none()`.
     pub fn file_paths(&self) -> &[crate::types::FilePaths] {
@@ -51,30 +57,36 @@ pub struct ThreatBuilder {
 }
 impl ThreatBuilder {
     /// <p>The name of the threat.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 128 length.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the threat.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 128 length.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the threat.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 128 length.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// <p>The severity of the threat.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 128 length.</p>
     pub fn severity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.severity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The severity of the threat.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 128 length.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.severity = input;
         self
     }
     /// <p>The severity of the threat.</p>
+    /// <p>Length Constraints: Minimum of 1 length. Maximum of 128 length.</p>
     pub fn get_severity(&self) -> &::std::option::Option<::std::string::String> {
         &self.severity
     }
@@ -97,6 +109,7 @@ impl ThreatBuilder {
     /// To override the contents of this collection use [`set_file_paths`](Self::set_file_paths).
     ///
     /// <p>Provides information about the file paths that were affected by the threat.</p>
+    /// <p>Array Members: Minimum number of 1 item. Maximum number of 5 items.</p>
     pub fn file_paths(mut self, input: crate::types::FilePaths) -> Self {
         let mut v = self.file_paths.unwrap_or_default();
         v.push(input);
@@ -104,11 +117,13 @@ impl ThreatBuilder {
         self
     }
     /// <p>Provides information about the file paths that were affected by the threat.</p>
+    /// <p>Array Members: Minimum number of 1 item. Maximum number of 5 items.</p>
     pub fn set_file_paths(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilePaths>>) -> Self {
         self.file_paths = input;
         self
     }
     /// <p>Provides information about the file paths that were affected by the threat.</p>
+    /// <p>Array Members: Minimum number of 1 item. Maximum number of 5 items.</p>
     pub fn get_file_paths(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilePaths>> {
         &self.file_paths
     }

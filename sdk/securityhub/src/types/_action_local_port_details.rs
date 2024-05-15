@@ -7,6 +7,7 @@ pub struct ActionLocalPortDetails {
     /// <p>The number of the port.</p>
     pub port: ::std::option::Option<i32>,
     /// <p>The port name of the local connection.</p>
+    /// <p>Length Constraints: 128.</p>
     pub port_name: ::std::option::Option<::std::string::String>,
 }
 impl ActionLocalPortDetails {
@@ -15,6 +16,7 @@ impl ActionLocalPortDetails {
         self.port
     }
     /// <p>The port name of the local connection.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn port_name(&self) -> ::std::option::Option<&str> {
         self.port_name.as_deref()
     }
@@ -49,16 +51,19 @@ impl ActionLocalPortDetailsBuilder {
         &self.port
     }
     /// <p>The port name of the local connection.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn port_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.port_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The port name of the local connection.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn set_port_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.port_name = input;
         self
     }
     /// <p>The port name of the local connection.</p>
+    /// <p>Length Constraints: 128.</p>
     pub fn get_port_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.port_name
     }

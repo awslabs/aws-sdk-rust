@@ -9,6 +9,7 @@ pub struct GeneratorDetails {
     /// <p>The description of the detector used to identify the code vulnerability.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of tags used to identify the detector associated with the finding.</p>
+    /// <p>Array Members: Minimum number of 0 items. Maximum number of 10 items.</p>
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GeneratorDetails {
@@ -21,6 +22,7 @@ impl GeneratorDetails {
         self.description.as_deref()
     }
     /// <p>An array of tags used to identify the detector associated with the finding.</p>
+    /// <p>Array Members: Minimum number of 0 items. Maximum number of 10 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
     pub fn labels(&self) -> &[::std::string::String] {
@@ -76,6 +78,7 @@ impl GeneratorDetailsBuilder {
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
     ///
     /// <p>An array of tags used to identify the detector associated with the finding.</p>
+    /// <p>Array Members: Minimum number of 0 items. Maximum number of 10 items.</p>
     pub fn labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
         v.push(input.into());
@@ -83,11 +86,13 @@ impl GeneratorDetailsBuilder {
         self
     }
     /// <p>An array of tags used to identify the detector associated with the finding.</p>
+    /// <p>Array Members: Minimum number of 0 items. Maximum number of 10 items.</p>
     pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
     /// <p>An array of tags used to identify the detector associated with the finding.</p>
+    /// <p>Array Members: Minimum number of 0 items. Maximum number of 10 items.</p>
     pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.labels
     }

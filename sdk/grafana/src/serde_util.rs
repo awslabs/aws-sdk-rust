@@ -128,6 +128,44 @@ pub(crate) fn create_workspace_api_key_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_workspace_service_account_output_output_correct_errors(
+    mut builder: crate::operation::create_workspace_service_account::builders::CreateWorkspaceServiceAccountOutputBuilder,
+) -> crate::operation::create_workspace_service_account::builders::CreateWorkspaceServiceAccountOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.grafana_role.is_none() {
+        builder.grafana_role = "no value was set".parse::<crate::types::Role>().ok()
+    }
+    if builder.workspace_id.is_none() {
+        builder.workspace_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_workspace_service_account_token_output_output_correct_errors(
+    mut builder: crate::operation::create_workspace_service_account_token::builders::CreateWorkspaceServiceAccountTokenOutputBuilder,
+) -> crate::operation::create_workspace_service_account_token::builders::CreateWorkspaceServiceAccountTokenOutputBuilder {
+    if builder.service_account_token.is_none() {
+        builder.service_account_token = {
+            let builder = crate::types::builders::ServiceAccountTokenSummaryWithKeyBuilder::default();
+            crate::serde_util::service_account_token_summary_with_key_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.service_account_id.is_none() {
+        builder.service_account_id = Some(Default::default())
+    }
+    if builder.workspace_id.is_none() {
+        builder.workspace_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn delete_workspace_output_output_correct_errors(
     mut builder: crate::operation::delete_workspace::builders::DeleteWorkspaceOutputBuilder,
 ) -> crate::operation::delete_workspace::builders::DeleteWorkspaceOutputBuilder {
@@ -145,6 +183,33 @@ pub(crate) fn delete_workspace_api_key_output_output_correct_errors(
 ) -> crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyOutputBuilder {
     if builder.key_name.is_none() {
         builder.key_name = Some(Default::default())
+    }
+    if builder.workspace_id.is_none() {
+        builder.workspace_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_workspace_service_account_output_output_correct_errors(
+    mut builder: crate::operation::delete_workspace_service_account::builders::DeleteWorkspaceServiceAccountOutputBuilder,
+) -> crate::operation::delete_workspace_service_account::builders::DeleteWorkspaceServiceAccountOutputBuilder {
+    if builder.service_account_id.is_none() {
+        builder.service_account_id = Some(Default::default())
+    }
+    if builder.workspace_id.is_none() {
+        builder.workspace_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_workspace_service_account_token_output_output_correct_errors(
+    mut builder: crate::operation::delete_workspace_service_account_token::builders::DeleteWorkspaceServiceAccountTokenOutputBuilder,
+) -> crate::operation::delete_workspace_service_account_token::builders::DeleteWorkspaceServiceAccountTokenOutputBuilder {
+    if builder.token_id.is_none() {
+        builder.token_id = Some(Default::default())
+    }
+    if builder.service_account_id.is_none() {
+        builder.service_account_id = Some(Default::default())
     }
     if builder.workspace_id.is_none() {
         builder.workspace_id = Some(Default::default())
@@ -202,6 +267,33 @@ pub(crate) fn list_permissions_output_output_correct_errors(
 ) -> crate::operation::list_permissions::builders::ListPermissionsOutputBuilder {
     if builder.permissions.is_none() {
         builder.permissions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_workspace_service_account_tokens_output_output_correct_errors(
+    mut builder: crate::operation::list_workspace_service_account_tokens::builders::ListWorkspaceServiceAccountTokensOutputBuilder,
+) -> crate::operation::list_workspace_service_account_tokens::builders::ListWorkspaceServiceAccountTokensOutputBuilder {
+    if builder.service_account_tokens.is_none() {
+        builder.service_account_tokens = Some(Default::default())
+    }
+    if builder.service_account_id.is_none() {
+        builder.service_account_id = Some(Default::default())
+    }
+    if builder.workspace_id.is_none() {
+        builder.workspace_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_workspace_service_accounts_output_output_correct_errors(
+    mut builder: crate::operation::list_workspace_service_accounts::builders::ListWorkspaceServiceAccountsOutputBuilder,
+) -> crate::operation::list_workspace_service_accounts::builders::ListWorkspaceServiceAccountsOutputBuilder {
+    if builder.service_accounts.is_none() {
+        builder.service_accounts = Some(Default::default())
+    }
+    if builder.workspace_id.is_none() {
+        builder.workspace_id = Some(Default::default())
     }
     builder
 }
@@ -281,6 +373,21 @@ pub(crate) fn workspace_description_correct_errors(
     builder
 }
 
+pub(crate) fn service_account_token_summary_with_key_correct_errors(
+    mut builder: crate::types::builders::ServiceAccountTokenSummaryWithKeyBuilder,
+) -> crate::types::builders::ServiceAccountTokenSummaryWithKeyBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn authentication_description_correct_errors(
     mut builder: crate::types::builders::AuthenticationDescriptionBuilder,
 ) -> crate::types::builders::AuthenticationDescriptionBuilder {
@@ -331,6 +438,42 @@ pub(crate) fn saml_authentication_correct_errors(
 ) -> crate::types::builders::SamlAuthenticationBuilder {
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::SamlConfigurationStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn service_account_summary_correct_errors(
+    mut builder: crate::types::builders::ServiceAccountSummaryBuilder,
+) -> crate::types::builders::ServiceAccountSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.is_disabled.is_none() {
+        builder.is_disabled = Some(Default::default())
+    }
+    if builder.grafana_role.is_none() {
+        builder.grafana_role = "no value was set".parse::<crate::types::Role>().ok()
+    }
+    builder
+}
+
+pub(crate) fn service_account_token_summary_correct_errors(
+    mut builder: crate::types::builders::ServiceAccountTokenSummaryBuilder,
+) -> crate::types::builders::ServiceAccountTokenSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.expires_at.is_none() {
+        builder.expires_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

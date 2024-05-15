@@ -15,6 +15,8 @@ pub struct StartDicomImportJobInput {
     pub input_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The output prefix of the S3 bucket to upload the results of the DICOM import job.</p>
     pub output_s3_uri: ::std::option::Option<::std::string::String>,
+    /// <p>The account ID of the source S3 bucket owner.</p>
+    pub input_owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartDicomImportJobInput {
     /// <p>The import job name.</p>
@@ -41,6 +43,10 @@ impl StartDicomImportJobInput {
     pub fn output_s3_uri(&self) -> ::std::option::Option<&str> {
         self.output_s3_uri.as_deref()
     }
+    /// <p>The account ID of the source S3 bucket owner.</p>
+    pub fn input_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.input_owner_account_id.as_deref()
+    }
 }
 impl StartDicomImportJobInput {
     /// Creates a new builder-style object to manufacture [`StartDicomImportJobInput`](crate::operation::start_dicom_import_job::StartDicomImportJobInput).
@@ -59,6 +65,7 @@ pub struct StartDicomImportJobInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) output_s3_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) input_owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartDicomImportJobInputBuilder {
     /// <p>The import job name.</p>
@@ -150,6 +157,20 @@ impl StartDicomImportJobInputBuilder {
     pub fn get_output_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_s3_uri
     }
+    /// <p>The account ID of the source S3 bucket owner.</p>
+    pub fn input_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.input_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the source S3 bucket owner.</p>
+    pub fn set_input_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.input_owner_account_id = input;
+        self
+    }
+    /// <p>The account ID of the source S3 bucket owner.</p>
+    pub fn get_input_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_owner_account_id
+    }
     /// Consumes the builder and constructs a [`StartDicomImportJobInput`](crate::operation::start_dicom_import_job::StartDicomImportJobInput).
     pub fn build(
         self,
@@ -162,6 +183,7 @@ impl StartDicomImportJobInputBuilder {
             datastore_id: self.datastore_id,
             input_s3_uri: self.input_s3_uri,
             output_s3_uri: self.output_s3_uri,
+            input_owner_account_id: self.input_owner_account_id,
         })
     }
 }

@@ -142,6 +142,10 @@ mod create_workspace;
 
 mod create_workspace_api_key;
 
+mod create_workspace_service_account;
+
+mod create_workspace_service_account_token;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -173,6 +177,10 @@ mod delete_workspace;
 
 mod delete_workspace_api_key;
 
+mod delete_workspace_service_account;
+
+mod delete_workspace_service_account_token;
+
 mod describe_workspace;
 
 mod describe_workspace_authentication;
@@ -186,6 +194,10 @@ mod list_permissions;
 mod list_tags_for_resource;
 
 mod list_versions;
+
+mod list_workspace_service_account_tokens;
+
+mod list_workspace_service_accounts;
 
 mod list_workspaces;
 

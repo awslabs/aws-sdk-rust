@@ -18,6 +18,8 @@ pub struct CreateProjectInput {
     /// <li>
     /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
     /// <li>
+    /// <p>For GitLab: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li>
     /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
     /// <li>
     /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
@@ -49,7 +51,9 @@ pub struct CreateProjectInput {
     /// <p>A list of tag key and value pairs associated with this build project.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+    /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p><note>
+    /// <p>If you're using compute fleets during project creation, do not provide vpcConfig.</p>
+    /// </note>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
     pub badge_enabled: ::std::option::Option<bool>,
@@ -88,6 +92,8 @@ impl CreateProjectInput {
     /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
     /// <li>
     /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For GitLab: the commit ID, branch, or Git tag to use.</p></li>
     /// <li>
     /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
     /// <li>
@@ -148,7 +154,9 @@ impl CreateProjectInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+    /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p><note>
+    /// <p>If you're using compute fleets during project creation, do not provide vpcConfig.</p>
+    /// </note>
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
@@ -281,6 +289,8 @@ impl CreateProjectInputBuilder {
     /// <li>
     /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
     /// <li>
+    /// <p>For GitLab: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li>
     /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
     /// <li>
     /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
@@ -298,6 +308,8 @@ impl CreateProjectInputBuilder {
     /// <li>
     /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
     /// <li>
+    /// <p>For GitLab: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li>
     /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
     /// <li>
     /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
@@ -314,6 +326,8 @@ impl CreateProjectInputBuilder {
     /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
     /// <li>
     /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For GitLab: the commit ID, branch, or Git tag to use.</p></li>
     /// <li>
     /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
     /// <li>
@@ -497,17 +511,23 @@ impl CreateProjectInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+    /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p><note>
+    /// <p>If you're using compute fleets during project creation, do not provide vpcConfig.</p>
+    /// </note>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+    /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p><note>
+    /// <p>If you're using compute fleets during project creation, do not provide vpcConfig.</p>
+    /// </note>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
     }
-    /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+    /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p><note>
+    /// <p>If you're using compute fleets during project creation, do not provide vpcConfig.</p>
+    /// </note>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }

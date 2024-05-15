@@ -19,6 +19,26 @@ pub(crate) fn reflens_list_versions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_workspace_service_account_tokens_output_output_next_token(
+    input: &crate::operation::list_workspace_service_account_tokens::ListWorkspaceServiceAccountTokensOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_workspace_service_accounts_output_output_next_token(
+    input: &crate::operation::list_workspace_service_accounts::ListWorkspaceServiceAccountsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_workspaces_output_output_next_token(
     input: &crate::operation::list_workspaces::ListWorkspacesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -43,6 +63,20 @@ pub(crate) fn lens_list_versions_output_output_grafana_versions(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_workspace_service_account_tokens_output_output_service_account_tokens(
+    input: crate::operation::list_workspace_service_account_tokens::ListWorkspaceServiceAccountTokensOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ServiceAccountTokenSummary>> {
+    let input = input.service_account_tokens;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_workspace_service_accounts_output_output_service_accounts(
+    input: crate::operation::list_workspace_service_accounts::ListWorkspaceServiceAccountsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ServiceAccountSummary>> {
+    let input = input.service_accounts;
     ::std::option::Option::Some(input)
 }
 

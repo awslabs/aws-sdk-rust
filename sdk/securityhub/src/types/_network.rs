@@ -7,6 +7,7 @@ pub struct Network {
     /// <p>The direction of network traffic associated with a finding.</p>
     pub direction: ::std::option::Option<crate::types::NetworkDirection>,
     /// <p>The protocol of network-related information about a finding.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 16.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The range of open ports that is present on the network.</p>
     pub open_port_range: ::std::option::Option<crate::types::PortRange>,
@@ -17,6 +18,7 @@ pub struct Network {
     /// <p>The source port of network-related information about a finding.</p>
     pub source_port: ::std::option::Option<i32>,
     /// <p>The source domain of network-related information about a finding.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
     pub source_domain: ::std::option::Option<::std::string::String>,
     /// <p>The source media access control (MAC) address of network-related information about a finding.</p>
     pub source_mac: ::std::option::Option<::std::string::String>,
@@ -27,6 +29,7 @@ pub struct Network {
     /// <p>The destination port of network-related information about a finding.</p>
     pub destination_port: ::std::option::Option<i32>,
     /// <p>The destination domain of network-related information about a finding.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
     pub destination_domain: ::std::option::Option<::std::string::String>,
 }
 impl Network {
@@ -35,6 +38,7 @@ impl Network {
         self.direction.as_ref()
     }
     /// <p>The protocol of network-related information about a finding.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 16.</p>
     pub fn protocol(&self) -> ::std::option::Option<&str> {
         self.protocol.as_deref()
     }
@@ -55,6 +59,7 @@ impl Network {
         self.source_port
     }
     /// <p>The source domain of network-related information about a finding.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
     pub fn source_domain(&self) -> ::std::option::Option<&str> {
         self.source_domain.as_deref()
     }
@@ -75,6 +80,7 @@ impl Network {
         self.destination_port
     }
     /// <p>The destination domain of network-related information about a finding.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
     pub fn destination_domain(&self) -> ::std::option::Option<&str> {
         self.destination_domain.as_deref()
     }
@@ -119,16 +125,19 @@ impl NetworkBuilder {
         &self.direction
     }
     /// <p>The protocol of network-related information about a finding.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 16.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The protocol of network-related information about a finding.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 16.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
     }
     /// <p>The protocol of network-related information about a finding.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 16.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
         &self.protocol
     }
@@ -189,16 +198,19 @@ impl NetworkBuilder {
         &self.source_port
     }
     /// <p>The source domain of network-related information about a finding.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
     pub fn source_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source domain of network-related information about a finding.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
     pub fn set_source_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_domain = input;
         self
     }
     /// <p>The source domain of network-related information about a finding.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
     pub fn get_source_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_domain
     }
@@ -259,16 +271,19 @@ impl NetworkBuilder {
         &self.destination_port
     }
     /// <p>The destination domain of network-related information about a finding.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
     pub fn destination_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination domain of network-related information about a finding.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
     pub fn set_destination_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_domain = input;
         self
     }
     /// <p>The destination domain of network-related information about a finding.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
     pub fn get_destination_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_domain
     }

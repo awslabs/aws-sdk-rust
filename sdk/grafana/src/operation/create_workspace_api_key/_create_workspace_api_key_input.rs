@@ -6,7 +6,7 @@ pub struct CreateWorkspaceApiKeyInput {
     /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the permission level of the key.</p>
-    /// <p>Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code></p>
+    /// <p>Valid values: <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code></p>
     pub key_role: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
     pub seconds_to_live: ::std::option::Option<i32>,
@@ -19,7 +19,7 @@ impl CreateWorkspaceApiKeyInput {
         self.key_name.as_deref()
     }
     /// <p>Specifies the permission level of the key.</p>
-    /// <p>Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code></p>
+    /// <p>Valid values: <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code></p>
     pub fn key_role(&self) -> ::std::option::Option<&str> {
         self.key_role.as_deref()
     }
@@ -65,20 +65,20 @@ impl CreateWorkspaceApiKeyInputBuilder {
         &self.key_name
     }
     /// <p>Specifies the permission level of the key.</p>
-    /// <p>Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code></p>
+    /// <p>Valid values: <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code></p>
     /// This field is required.
     pub fn key_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the permission level of the key.</p>
-    /// <p>Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code></p>
+    /// <p>Valid values: <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code></p>
     pub fn set_key_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_role = input;
         self
     }
     /// <p>Specifies the permission level of the key.</p>
-    /// <p>Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code></p>
+    /// <p>Valid values: <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code></p>
     pub fn get_key_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_role
     }

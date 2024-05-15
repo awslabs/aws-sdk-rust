@@ -16,11 +16,12 @@ pub struct Compliance {
     /// <li>
     /// <p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
     /// <li>
-    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
+    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub automatically archives the finding after 3 days.</p></li>
     /// </ul></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>For a control, the industry or regulatory framework requirements that are related to the control. The check for that control is aligned with these requirements.</p>
+    /// <p>Array Members: Maximum number of 32 items.</p>
     pub related_requirements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>.</p>
     pub status_reasons: ::std::option::Option<::std::vec::Vec<crate::types::StatusReason>>,
@@ -44,13 +45,14 @@ impl Compliance {
     /// <li>
     /// <p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
     /// <li>
-    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
+    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub automatically archives the finding after 3 days.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ComplianceStatus> {
         self.status.as_ref()
     }
     /// <p>For a control, the industry or regulatory framework requirements that are related to the control. The check for that control is aligned with these requirements.</p>
+    /// <p>Array Members: Maximum number of 32 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_requirements.is_none()`.
     pub fn related_requirements(&self) -> &[::std::string::String] {
@@ -110,7 +112,7 @@ impl ComplianceBuilder {
     /// <li>
     /// <p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
     /// <li>
-    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
+    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub automatically archives the finding after 3 days.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ComplianceStatus) -> Self {
@@ -129,7 +131,7 @@ impl ComplianceBuilder {
     /// <li>
     /// <p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
     /// <li>
-    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
+    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub automatically archives the finding after 3 days.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
@@ -148,7 +150,7 @@ impl ComplianceBuilder {
     /// <li>
     /// <p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
     /// <li>
-    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
+    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub automatically archives the finding after 3 days.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {
@@ -159,6 +161,7 @@ impl ComplianceBuilder {
     /// To override the contents of this collection use [`set_related_requirements`](Self::set_related_requirements).
     ///
     /// <p>For a control, the industry or regulatory framework requirements that are related to the control. The check for that control is aligned with these requirements.</p>
+    /// <p>Array Members: Maximum number of 32 items.</p>
     pub fn related_requirements(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.related_requirements.unwrap_or_default();
         v.push(input.into());
@@ -166,11 +169,13 @@ impl ComplianceBuilder {
         self
     }
     /// <p>For a control, the industry or regulatory framework requirements that are related to the control. The check for that control is aligned with these requirements.</p>
+    /// <p>Array Members: Maximum number of 32 items.</p>
     pub fn set_related_requirements(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.related_requirements = input;
         self
     }
     /// <p>For a control, the industry or regulatory framework requirements that are related to the control. The check for that control is aligned with these requirements.</p>
+    /// <p>Array Members: Maximum number of 32 items.</p>
     pub fn get_related_requirements(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.related_requirements
     }

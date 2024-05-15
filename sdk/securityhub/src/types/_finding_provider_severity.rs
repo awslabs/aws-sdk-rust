@@ -7,6 +7,7 @@ pub struct FindingProviderSeverity {
     /// <p>The severity label assigned to the finding by the finding provider.</p>
     pub label: ::std::option::Option<crate::types::SeverityLabel>,
     /// <p>The finding provider's original value for the severity.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub original: ::std::option::Option<::std::string::String>,
 }
 impl FindingProviderSeverity {
@@ -15,6 +16,7 @@ impl FindingProviderSeverity {
         self.label.as_ref()
     }
     /// <p>The finding provider's original value for the severity.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub fn original(&self) -> ::std::option::Option<&str> {
         self.original.as_deref()
     }
@@ -49,16 +51,19 @@ impl FindingProviderSeverityBuilder {
         &self.label
     }
     /// <p>The finding provider's original value for the severity.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub fn original(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.original = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The finding provider's original value for the severity.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub fn set_original(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.original = input;
         self
     }
     /// <p>The finding provider's original value for the severity.</p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
     pub fn get_original(&self) -> &::std::option::Option<::std::string::String> {
         &self.original
     }

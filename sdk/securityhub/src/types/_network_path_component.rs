@@ -5,8 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkPathComponent {
     /// <p>The identifier of a component in the network path.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 32.</p>
     pub component_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of component.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 32.</p>
     pub component_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about the component that comes after the current component in the network path.</p>
     pub egress: ::std::option::Option<crate::types::NetworkHeader>,
@@ -15,10 +17,12 @@ pub struct NetworkPathComponent {
 }
 impl NetworkPathComponent {
     /// <p>The identifier of a component in the network path.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 32.</p>
     pub fn component_id(&self) -> ::std::option::Option<&str> {
         self.component_id.as_deref()
     }
     /// <p>The type of component.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 32.</p>
     pub fn component_type(&self) -> ::std::option::Option<&str> {
         self.component_type.as_deref()
     }
@@ -49,30 +53,36 @@ pub struct NetworkPathComponentBuilder {
 }
 impl NetworkPathComponentBuilder {
     /// <p>The identifier of a component in the network path.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 32.</p>
     pub fn component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of a component in the network path.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 32.</p>
     pub fn set_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_id = input;
         self
     }
     /// <p>The identifier of a component in the network path.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 32.</p>
     pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_id
     }
     /// <p>The type of component.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 32.</p>
     pub fn component_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of component.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 32.</p>
     pub fn set_component_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_type = input;
         self
     }
     /// <p>The type of component.</p>
+    /// <p>Length Constraints: Minimum of 1. Maximum of 32.</p>
     pub fn get_component_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_type
     }

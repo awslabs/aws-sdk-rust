@@ -315,7 +315,9 @@ impl UpdateFleetFluentBuilder {
     /// <li>
     /// <p>For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance to become available.</p></li>
     /// <li>
-    /// <p>For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p></li>
+    /// <p>For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p><note>
+    /// <p>If you choose to set your overflow behavior to on-demand while creating a VPC-connected fleet, make sure that you add the required VPC permissions to your project service role. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface">Example policy statement to allow CodeBuild access to Amazon Web Services services required to create a VPC network interface</a>.</p>
+    /// </note></li>
     /// </ul>
     pub fn overflow_behavior(mut self, input: crate::types::FleetOverflowBehavior) -> Self {
         self.inner = self.inner.overflow_behavior(input);
@@ -326,7 +328,9 @@ impl UpdateFleetFluentBuilder {
     /// <li>
     /// <p>For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance to become available.</p></li>
     /// <li>
-    /// <p>For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p></li>
+    /// <p>For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p><note>
+    /// <p>If you choose to set your overflow behavior to on-demand while creating a VPC-connected fleet, make sure that you add the required VPC permissions to your project service role. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface">Example policy statement to allow CodeBuild access to Amazon Web Services services required to create a VPC network interface</a>.</p>
+    /// </note></li>
     /// </ul>
     pub fn set_overflow_behavior(mut self, input: ::std::option::Option<crate::types::FleetOverflowBehavior>) -> Self {
         self.inner = self.inner.set_overflow_behavior(input);
@@ -337,10 +341,40 @@ impl UpdateFleetFluentBuilder {
     /// <li>
     /// <p>For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance to become available.</p></li>
     /// <li>
-    /// <p>For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p></li>
+    /// <p>For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p><note>
+    /// <p>If you choose to set your overflow behavior to on-demand while creating a VPC-connected fleet, make sure that you add the required VPC permissions to your project service role. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface">Example policy statement to allow CodeBuild access to Amazon Web Services services required to create a VPC network interface</a>.</p>
+    /// </note></li>
     /// </ul>
     pub fn get_overflow_behavior(&self) -> &::std::option::Option<crate::types::FleetOverflowBehavior> {
         self.inner.get_overflow_behavior()
+    }
+    /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
+    pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
+        self.inner = self.inner.vpc_config(input);
+        self
+    }
+    /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
+        self.inner = self.inner.set_vpc_config(input);
+        self
+    }
+    /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        self.inner.get_vpc_config()
+    }
+    /// <p>The service role associated with the compute fleet.</p>
+    pub fn fleet_service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.fleet_service_role(input.into());
+        self
+    }
+    /// <p>The service role associated with the compute fleet.</p>
+    pub fn set_fleet_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_fleet_service_role(input);
+        self
+    }
+    /// <p>The service role associated with the compute fleet.</p>
+    pub fn get_fleet_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_service_role()
     }
     ///
     /// Appends an item to `tags`.

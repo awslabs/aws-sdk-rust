@@ -45,7 +45,7 @@ pub struct CreateWorkspaceInput {
     /// <p>When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace. Standard Grafana authentication and authorization will still be required.</p>
     /// <p>If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
     pub network_access_control: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
-    /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 9.4).</p>
+    /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 10.4).</p>
     /// <p>To get a list of supported versions, use the <code>ListVersions</code> operation.</p>
     pub grafana_version: ::std::option::Option<::std::string::String>,
 }
@@ -132,7 +132,7 @@ impl CreateWorkspaceInput {
     pub fn network_access_control(&self) -> ::std::option::Option<&crate::types::NetworkAccessConfiguration> {
         self.network_access_control.as_ref()
     }
-    /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 9.4).</p>
+    /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 10.4).</p>
     /// <p>To get a list of supported versions, use the <code>ListVersions</code> operation.</p>
     pub fn grafana_version(&self) -> ::std::option::Option<&str> {
         self.grafana_version.as_deref()
@@ -480,19 +480,19 @@ impl CreateWorkspaceInputBuilder {
     pub fn get_network_access_control(&self) -> &::std::option::Option<crate::types::NetworkAccessConfiguration> {
         &self.network_access_control
     }
-    /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 9.4).</p>
+    /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 10.4).</p>
     /// <p>To get a list of supported versions, use the <code>ListVersions</code> operation.</p>
     pub fn grafana_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grafana_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 9.4).</p>
+    /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 10.4).</p>
     /// <p>To get a list of supported versions, use the <code>ListVersions</code> operation.</p>
     pub fn set_grafana_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grafana_version = input;
         self
     }
-    /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 9.4).</p>
+    /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 10.4).</p>
     /// <p>To get a list of supported versions, use the <code>ListVersions</code> operation.</p>
     pub fn get_grafana_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.grafana_version
