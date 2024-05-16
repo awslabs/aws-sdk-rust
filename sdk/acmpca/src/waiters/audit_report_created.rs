@@ -68,6 +68,10 @@ impl AuditReportCreatedFluentBuilder {
             if crate::waiters::matchers::match_describe_certificate_authority_audit_report_d47b9d2161156a467(result) {
                 return ::aws_smithy_runtime::client::waiters::AcceptorState::Failure;
             }
+            // Matches: {"errorType":"AccessDeniedException"}
+            if crate::waiters::matchers::match_describe_certificate_authority_audit_report_f0e284baa63d31667(result) {
+                return ::aws_smithy_runtime::client::waiters::AcceptorState::Failure;
+            }
             ::aws_smithy_runtime::client::waiters::AcceptorState::NoAcceptorsMatched
         };
         let operation = move || {

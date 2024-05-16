@@ -72,6 +72,11 @@ where
                                 crate::protocol_serde::shape_notification_configuration::de_notification_configuration(tokens)?,
                             );
                         }
+                        "WorkerAccessConfiguration" => {
+                            builder = builder.set_worker_access_configuration(
+                                crate::protocol_serde::shape_worker_access_configuration::de_worker_access_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

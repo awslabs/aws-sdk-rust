@@ -30,17 +30,23 @@ pub fn ser_create_workteam_input_input(
         crate::protocol_serde::shape_notification_configuration::ser_notification_configuration(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.tags {
-        let mut array_11 = object.key("Tags").start_array();
-        for item_12 in var_10 {
+    if let Some(var_10) = &input.worker_access_configuration {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("WorkerAccessConfiguration").start_object();
+        crate::protocol_serde::shape_worker_access_configuration::ser_worker_access_configuration(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.tags {
+        let mut array_13 = object.key("Tags").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_11.finish();
+        array_13.finish();
     }
     Ok(())
 }

@@ -27,5 +27,11 @@ pub fn ser_update_workteam_input_input(
         crate::protocol_serde::shape_notification_configuration::ser_notification_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.worker_access_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("WorkerAccessConfiguration").start_object();
+        crate::protocol_serde::shape_worker_access_configuration::ser_worker_access_configuration(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }

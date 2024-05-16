@@ -2981,6 +2981,42 @@ impl From<crate::operation::describe_ip_restriction::DescribeIpRestrictionError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_key_registration::DescribeKeyRegistrationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_key_registration::DescribeKeyRegistrationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_key_registration::DescribeKeyRegistrationError> for Error {
+    fn from(err: crate::operation::describe_key_registration::DescribeKeyRegistrationError) -> Self {
+        match err {
+            crate::operation::describe_key_registration::DescribeKeyRegistrationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_key_registration::DescribeKeyRegistrationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::describe_key_registration::DescribeKeyRegistrationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_key_registration::DescribeKeyRegistrationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_key_registration::DescribeKeyRegistrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_namespace::DescribeNamespaceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5998,6 +6034,39 @@ impl From<crate::operation::update_ip_restriction::UpdateIpRestrictionError> for
             }
             crate::operation::update_ip_restriction::UpdateIpRestrictionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_ip_restriction::UpdateIpRestrictionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_key_registration::UpdateKeyRegistrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_key_registration::UpdateKeyRegistrationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_key_registration::UpdateKeyRegistrationError> for Error {
+    fn from(err: crate::operation::update_key_registration::UpdateKeyRegistrationError) -> Self {
+        match err {
+            crate::operation::update_key_registration::UpdateKeyRegistrationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_key_registration::UpdateKeyRegistrationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_key_registration::UpdateKeyRegistrationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_key_registration::UpdateKeyRegistrationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_key_registration::UpdateKeyRegistrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

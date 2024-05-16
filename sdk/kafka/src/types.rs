@@ -151,6 +151,8 @@ pub use crate::types::_user_identity_type::UserIdentityType;
 
 pub use crate::types::_mutable_cluster_info::MutableClusterInfo;
 
+pub use crate::types::_broker_count_update_info::BrokerCountUpdateInfo;
+
 pub use crate::types::_cluster_operation_step::ClusterOperationStep;
 
 pub use crate::types::_cluster_operation_step_info::ClusterOperationStepInfo;
@@ -200,6 +202,8 @@ pub use crate::types::_unprocessed_scram_secret::UnprocessedScramSecret;
 mod _amazon_msk_cluster;
 
 mod _broker_az_distribution;
+
+mod _broker_count_update_info;
 
 mod _broker_ebs_volume_info;
 

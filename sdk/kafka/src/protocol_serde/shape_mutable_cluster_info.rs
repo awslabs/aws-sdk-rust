@@ -73,6 +73,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "brokerCountUpdateInfo" => {
+                            builder = builder.set_broker_count_update_info(
+                                crate::protocol_serde::shape_broker_count_update_info::de_broker_count_update_info(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

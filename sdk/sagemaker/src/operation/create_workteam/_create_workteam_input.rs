@@ -16,6 +16,8 @@ pub struct CreateWorkteamInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configures notification of workers regarding available or expiring work items.</p>
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
+    /// <p>Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+    pub worker_access_configuration: ::std::option::Option<crate::types::WorkerAccessConfiguration>,
     /// <p>An array of key-value pairs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -46,6 +48,10 @@ impl CreateWorkteamInput {
     pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
+    /// <p>Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+    pub fn worker_access_configuration(&self) -> ::std::option::Option<&crate::types::WorkerAccessConfiguration> {
+        self.worker_access_configuration.as_ref()
+    }
     /// <p>An array of key-value pairs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     ///
@@ -70,6 +76,7 @@ pub struct CreateWorkteamInputBuilder {
     pub(crate) member_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
+    pub(crate) worker_access_configuration: ::std::option::Option<crate::types::WorkerAccessConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateWorkteamInputBuilder {
@@ -160,6 +167,20 @@ impl CreateWorkteamInputBuilder {
     pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         &self.notification_configuration
     }
+    /// <p>Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+    pub fn worker_access_configuration(mut self, input: crate::types::WorkerAccessConfiguration) -> Self {
+        self.worker_access_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+    pub fn set_worker_access_configuration(mut self, input: ::std::option::Option<crate::types::WorkerAccessConfiguration>) -> Self {
+        self.worker_access_configuration = input;
+        self
+    }
+    /// <p>Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+    pub fn get_worker_access_configuration(&self) -> &::std::option::Option<crate::types::WorkerAccessConfiguration> {
+        &self.worker_access_configuration
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -193,6 +214,7 @@ impl CreateWorkteamInputBuilder {
             member_definitions: self.member_definitions,
             description: self.description,
             notification_configuration: self.notification_configuration,
+            worker_access_configuration: self.worker_access_configuration,
             tags: self.tags,
         })
     }

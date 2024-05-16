@@ -125,6 +125,8 @@ pub use crate::types::_user_identity::UserIdentityBuilder;
 
 pub use crate::types::_mutable_cluster_info::MutableClusterInfoBuilder;
 
+pub use crate::types::_broker_count_update_info::BrokerCountUpdateInfoBuilder;
+
 pub use crate::types::_cluster_operation_step::ClusterOperationStepBuilder;
 
 pub use crate::types::_cluster_operation_step_info::ClusterOperationStepInfoBuilder;

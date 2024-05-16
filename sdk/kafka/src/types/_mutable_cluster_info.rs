@@ -28,6 +28,8 @@ pub struct MutableClusterInfo {
     pub connectivity_info: ::std::option::Option<crate::types::ConnectivityInfo>,
     /// <p>This controls storage mode for supported storage tiers.</p>
     pub storage_mode: ::std::option::Option<crate::types::StorageMode>,
+    /// <p>Describes brokers being changed during a broker count update.</p>
+    pub broker_count_update_info: ::std::option::Option<crate::types::BrokerCountUpdateInfo>,
 }
 impl MutableClusterInfo {
     /// <p>Specifies the size of the EBS volume and the ID of the associated broker.</p>
@@ -80,6 +82,10 @@ impl MutableClusterInfo {
     pub fn storage_mode(&self) -> ::std::option::Option<&crate::types::StorageMode> {
         self.storage_mode.as_ref()
     }
+    /// <p>Describes brokers being changed during a broker count update.</p>
+    pub fn broker_count_update_info(&self) -> ::std::option::Option<&crate::types::BrokerCountUpdateInfo> {
+        self.broker_count_update_info.as_ref()
+    }
 }
 impl MutableClusterInfo {
     /// Creates a new builder-style object to manufacture [`MutableClusterInfo`](crate::types::MutableClusterInfo).
@@ -104,6 +110,7 @@ pub struct MutableClusterInfoBuilder {
     pub(crate) encryption_info: ::std::option::Option<crate::types::EncryptionInfo>,
     pub(crate) connectivity_info: ::std::option::Option<crate::types::ConnectivityInfo>,
     pub(crate) storage_mode: ::std::option::Option<crate::types::StorageMode>,
+    pub(crate) broker_count_update_info: ::std::option::Option<crate::types::BrokerCountUpdateInfo>,
 }
 impl MutableClusterInfoBuilder {
     /// Appends an item to `broker_ebs_volume_info`.
@@ -280,6 +287,20 @@ impl MutableClusterInfoBuilder {
     pub fn get_storage_mode(&self) -> &::std::option::Option<crate::types::StorageMode> {
         &self.storage_mode
     }
+    /// <p>Describes brokers being changed during a broker count update.</p>
+    pub fn broker_count_update_info(mut self, input: crate::types::BrokerCountUpdateInfo) -> Self {
+        self.broker_count_update_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes brokers being changed during a broker count update.</p>
+    pub fn set_broker_count_update_info(mut self, input: ::std::option::Option<crate::types::BrokerCountUpdateInfo>) -> Self {
+        self.broker_count_update_info = input;
+        self
+    }
+    /// <p>Describes brokers being changed during a broker count update.</p>
+    pub fn get_broker_count_update_info(&self) -> &::std::option::Option<crate::types::BrokerCountUpdateInfo> {
+        &self.broker_count_update_info
+    }
     /// Consumes the builder and constructs a [`MutableClusterInfo`](crate::types::MutableClusterInfo).
     pub fn build(self) -> crate::types::MutableClusterInfo {
         crate::types::MutableClusterInfo {
@@ -295,6 +316,7 @@ impl MutableClusterInfoBuilder {
             encryption_info: self.encryption_info,
             connectivity_info: self.connectivity_info,
             storage_mode: self.storage_mode,
+            broker_count_update_info: self.broker_count_update_info,
         }
     }
 }

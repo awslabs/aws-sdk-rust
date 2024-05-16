@@ -22,7 +22,7 @@ impl crate::operation::create_space::builders::CreateSpaceInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSpace`.
 ///
-/// <p>Creates a space used for real time collaboration in a domain.</p>
+/// <p>Creates a private space or a space used for real time collaboration in a domain.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSpaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

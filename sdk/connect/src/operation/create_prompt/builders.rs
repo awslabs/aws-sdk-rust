@@ -22,7 +22,7 @@ impl crate::operation::create_prompt::builders::CreatePromptInputBuilder {
 }
 /// Fluent builder constructing a request to `CreatePrompt`.
 ///
-/// <p>Creates a prompt. For more information about prompts, such as supported file types and maximum length, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html">Create prompts</a> in the <i>Amazon Connect Administrator's Guide</i>.</p>
+/// <p>Creates a prompt. For more information about prompts, such as supported file types and maximum length, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html">Create prompts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePromptFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

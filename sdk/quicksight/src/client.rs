@@ -313,6 +313,8 @@ mod describe_ingestion;
 
 mod describe_ip_restriction;
 
+mod describe_key_registration;
+
 mod describe_namespace;
 
 mod describe_refresh_schedule;
@@ -476,6 +478,8 @@ mod update_iam_policy_assignment;
 mod update_identity_propagation_config;
 
 mod update_ip_restriction;
+
+mod update_key_registration;
 
 mod update_public_sharing_settings;
 

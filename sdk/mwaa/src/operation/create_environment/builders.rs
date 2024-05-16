@@ -302,17 +302,17 @@ impl CreateEnvironmentFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_airflow_configuration_options()
     }
-    /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
+    /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>, <code>mw1.xlarge</code>, and <code>mw1.2xlarge</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
     pub fn environment_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_class(input.into());
         self
     }
-    /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
+    /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>, <code>mw1.xlarge</code>, and <code>mw1.2xlarge</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
     pub fn set_environment_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_class(input);
         self
     }
-    /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
+    /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>, <code>mw1.xlarge</code>, and <code>mw1.2xlarge</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
     pub fn get_environment_class(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_class()
     }
@@ -439,9 +439,9 @@ impl CreateEnvironmentFluentBuilder {
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
+    /// <p>v2 - Accepts between <code>2</code> to <code>5</code>. Defaults to <code>2</code>.</p></li>
     /// <li>
-    /// <p>v1 - Accepts 1.</p></li>
+    /// <p>v1 - Accepts <code>1</code>.</p></li>
     /// </ul>
     pub fn schedulers(mut self, input: i32) -> Self {
         self.inner = self.inner.schedulers(input);
@@ -450,9 +450,9 @@ impl CreateEnvironmentFluentBuilder {
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
+    /// <p>v2 - Accepts between <code>2</code> to <code>5</code>. Defaults to <code>2</code>.</p></li>
     /// <li>
-    /// <p>v1 - Accepts 1.</p></li>
+    /// <p>v1 - Accepts <code>1</code>.</p></li>
     /// </ul>
     pub fn set_schedulers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_schedulers(input);
@@ -461,9 +461,9 @@ impl CreateEnvironmentFluentBuilder {
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
+    /// <p>v2 - Accepts between <code>2</code> to <code>5</code>. Defaults to <code>2</code>.</p></li>
     /// <li>
-    /// <p>v1 - Accepts 1.</p></li>
+    /// <p>v1 - Accepts <code>1</code>.</p></li>
     /// </ul>
     pub fn get_schedulers(&self) -> &::std::option::Option<i32> {
         self.inner.get_schedulers()
@@ -481,5 +481,39 @@ impl CreateEnvironmentFluentBuilder {
     /// <p>Defines whether the VPC endpoints configured for the environment are created, and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>, Amazon MWAA will create and manage the required VPC endpoints in your VPC. If set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints for your VPC. If you choose to create an environment in a shared VPC, you must set this value to <code>CUSTOMER</code>. In a shared VPC deployment, the environment will remain in <code>PENDING</code> status until you create the VPC endpoints. If you do not take action to create the endpoints within 72 hours, the status will change to <code>CREATE_FAILED</code>. You can delete the failed environment and create a new one.</p>
     pub fn get_endpoint_management(&self) -> &::std::option::Option<crate::types::EndpointManagement> {
         self.inner.get_endpoint_management()
+    }
+    /// <p>The minimum number of web servers that you want to run in your environment. Amazon MWAA scales the number of Apache Airflow web servers up to the number you specify for <code>MaxWebservers</code> when you interact with your Apache Airflow environment using Apache Airflow REST API, or the Apache Airflow CLI. As the transaction-per-second rate, and the network load, decrease, Amazon MWAA disposes of the additional web servers, and scales down to the number set in <code>MinxWebserers</code>.</p>
+    /// <p>Valid values: Accepts between <code>2</code> and <code>5</code>. Defaults to <code>2</code>.</p>
+    pub fn min_webservers(mut self, input: i32) -> Self {
+        self.inner = self.inner.min_webservers(input);
+        self
+    }
+    /// <p>The minimum number of web servers that you want to run in your environment. Amazon MWAA scales the number of Apache Airflow web servers up to the number you specify for <code>MaxWebservers</code> when you interact with your Apache Airflow environment using Apache Airflow REST API, or the Apache Airflow CLI. As the transaction-per-second rate, and the network load, decrease, Amazon MWAA disposes of the additional web servers, and scales down to the number set in <code>MinxWebserers</code>.</p>
+    /// <p>Valid values: Accepts between <code>2</code> and <code>5</code>. Defaults to <code>2</code>.</p>
+    pub fn set_min_webservers(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_min_webservers(input);
+        self
+    }
+    /// <p>The minimum number of web servers that you want to run in your environment. Amazon MWAA scales the number of Apache Airflow web servers up to the number you specify for <code>MaxWebservers</code> when you interact with your Apache Airflow environment using Apache Airflow REST API, or the Apache Airflow CLI. As the transaction-per-second rate, and the network load, decrease, Amazon MWAA disposes of the additional web servers, and scales down to the number set in <code>MinxWebserers</code>.</p>
+    /// <p>Valid values: Accepts between <code>2</code> and <code>5</code>. Defaults to <code>2</code>.</p>
+    pub fn get_min_webservers(&self) -> &::std::option::Option<i32> {
+        self.inner.get_min_webservers()
+    }
+    /// <p>The maximum number of web servers that you want to run in your environment. Amazon MWAA scales the number of Apache Airflow web servers up to the number you specify for <code>MaxWebservers</code> when you interact with your Apache Airflow environment using Apache Airflow REST API, or the Apache Airflow CLI. For example, in scenarios where your workload requires network calls to the Apache Airflow REST API with a high transaction-per-second (TPS) rate, Amazon MWAA will increase the number of web servers up to the number set in <code>MaxWebserers</code>. As TPS rates decrease Amazon MWAA disposes of the additional web servers, and scales down to the number set in <code>MinxWebserers</code>.</p>
+    /// <p>Valid values: Accepts between <code>2</code> and <code>5</code>. Defaults to <code>2</code>.</p>
+    pub fn max_webservers(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_webservers(input);
+        self
+    }
+    /// <p>The maximum number of web servers that you want to run in your environment. Amazon MWAA scales the number of Apache Airflow web servers up to the number you specify for <code>MaxWebservers</code> when you interact with your Apache Airflow environment using Apache Airflow REST API, or the Apache Airflow CLI. For example, in scenarios where your workload requires network calls to the Apache Airflow REST API with a high transaction-per-second (TPS) rate, Amazon MWAA will increase the number of web servers up to the number set in <code>MaxWebserers</code>. As TPS rates decrease Amazon MWAA disposes of the additional web servers, and scales down to the number set in <code>MinxWebserers</code>.</p>
+    /// <p>Valid values: Accepts between <code>2</code> and <code>5</code>. Defaults to <code>2</code>.</p>
+    pub fn set_max_webservers(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_webservers(input);
+        self
+    }
+    /// <p>The maximum number of web servers that you want to run in your environment. Amazon MWAA scales the number of Apache Airflow web servers up to the number you specify for <code>MaxWebservers</code> when you interact with your Apache Airflow environment using Apache Airflow REST API, or the Apache Airflow CLI. For example, in scenarios where your workload requires network calls to the Apache Airflow REST API with a high transaction-per-second (TPS) rate, Amazon MWAA will increase the number of web servers up to the number set in <code>MaxWebserers</code>. As TPS rates decrease Amazon MWAA disposes of the additional web servers, and scales down to the number set in <code>MinxWebserers</code>.</p>
+    /// <p>Valid values: Accepts between <code>2</code> and <code>5</code>. Defaults to <code>2</code>.</p>
+    pub fn get_max_webservers(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_webservers()
     }
 }

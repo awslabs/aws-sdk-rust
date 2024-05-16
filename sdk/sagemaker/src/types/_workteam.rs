@@ -25,6 +25,8 @@ pub struct Workteam {
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Configures SNS notifications of available or expiring work items for work teams.</p>
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
+    /// <p>Describes any access constraints that have been defined for Amazon S3 resources.</p>
+    pub worker_access_configuration: ::std::option::Option<crate::types::WorkerAccessConfiguration>,
 }
 impl Workteam {
     /// <p>The name of the work team.</p>
@@ -72,6 +74,10 @@ impl Workteam {
     pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
+    /// <p>Describes any access constraints that have been defined for Amazon S3 resources.</p>
+    pub fn worker_access_configuration(&self) -> ::std::option::Option<&crate::types::WorkerAccessConfiguration> {
+        self.worker_access_configuration.as_ref()
+    }
 }
 impl Workteam {
     /// Creates a new builder-style object to manufacture [`Workteam`](crate::types::Workteam).
@@ -94,6 +100,7 @@ pub struct WorkteamBuilder {
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
+    pub(crate) worker_access_configuration: ::std::option::Option<crate::types::WorkerAccessConfiguration>,
 }
 impl WorkteamBuilder {
     /// <p>The name of the work team.</p>
@@ -254,6 +261,20 @@ impl WorkteamBuilder {
     pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         &self.notification_configuration
     }
+    /// <p>Describes any access constraints that have been defined for Amazon S3 resources.</p>
+    pub fn worker_access_configuration(mut self, input: crate::types::WorkerAccessConfiguration) -> Self {
+        self.worker_access_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes any access constraints that have been defined for Amazon S3 resources.</p>
+    pub fn set_worker_access_configuration(mut self, input: ::std::option::Option<crate::types::WorkerAccessConfiguration>) -> Self {
+        self.worker_access_configuration = input;
+        self
+    }
+    /// <p>Describes any access constraints that have been defined for Amazon S3 resources.</p>
+    pub fn get_worker_access_configuration(&self) -> &::std::option::Option<crate::types::WorkerAccessConfiguration> {
+        &self.worker_access_configuration
+    }
     /// Consumes the builder and constructs a [`Workteam`](crate::types::Workteam).
     pub fn build(self) -> crate::types::Workteam {
         crate::types::Workteam {
@@ -267,6 +288,7 @@ impl WorkteamBuilder {
             create_date: self.create_date,
             last_updated_date: self.last_updated_date,
             notification_configuration: self.notification_configuration,
+            worker_access_configuration: self.worker_access_configuration,
         }
     }
 }

@@ -1359,6 +1359,12 @@ pub use crate::types::_day_of_week::DayOfWeek;
 
 pub use crate::types::_refresh_interval::RefreshInterval;
 
+pub use crate::types::_successful_key_registration_entry::SuccessfulKeyRegistrationEntry;
+
+pub use crate::types::_failed_key_registration_entry::FailedKeyRegistrationEntry;
+
+pub use crate::types::_registered_customer_managed_key::RegisteredCustomerManagedKey;
+
 pub use crate::types::_service_type::ServiceType;
 
 pub use crate::types::_assignment_status::AssignmentStatus;
@@ -2641,6 +2647,8 @@ mod _export_to_csv_option;
 
 mod _export_with_hidden_fields_option;
 
+mod _failed_key_registration_entry;
+
 mod _field_based_tooltip;
 
 mod _field_folder;
@@ -3329,6 +3337,8 @@ mod _refresh_interval;
 
 mod _refresh_schedule;
 
+mod _registered_customer_managed_key;
+
 mod _registered_user_console_feature_configurations;
 
 mod _registered_user_dashboard_embedding_configuration;
@@ -3592,6 +3602,8 @@ mod _string_value_when_unset_configuration;
 mod _styled_cell_type;
 
 mod _subtotal_options;
+
+mod _successful_key_registration_entry;
 
 mod _table_aggregated_field_wells;
 

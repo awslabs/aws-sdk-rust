@@ -347,6 +347,8 @@ pub(crate) mod shape_vpc_connection_info;
 
 pub(crate) mod shape_vpc_connectivity;
 
+pub(crate) mod shape_broker_count_update_info;
+
 pub(crate) mod shape_broker_node_info;
 
 pub(crate) mod shape_cloud_watch_logs;
@@ -394,6 +396,8 @@ pub(crate) mod shape_cluster_operation_step_info;
 pub(crate) mod shape_jmx_exporter;
 
 pub(crate) mod shape_kafka_cluster_summary;
+
+pub(crate) mod shape_list_of_double;
 
 pub(crate) mod shape_list_of_string_max249;
 

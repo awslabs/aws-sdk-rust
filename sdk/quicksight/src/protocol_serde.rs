@@ -173,6 +173,8 @@ pub(crate) mod shape_describe_ingestion;
 
 pub(crate) mod shape_describe_ip_restriction;
 
+pub(crate) mod shape_describe_key_registration;
+
 pub(crate) mod shape_describe_namespace;
 
 pub(crate) mod shape_describe_refresh_schedule;
@@ -336,6 +338,8 @@ pub(crate) mod shape_update_iam_policy_assignment;
 pub(crate) mod shape_update_identity_propagation_config;
 
 pub(crate) mod shape_update_ip_restriction;
+
+pub(crate) mod shape_update_key_registration;
 
 pub(crate) mod shape_update_public_sharing_settings;
 
@@ -513,6 +517,8 @@ pub(crate) mod shape_update_identity_propagation_config_input;
 
 pub(crate) mod shape_update_ip_restriction_input;
 
+pub(crate) mod shape_update_key_registration_input;
+
 pub(crate) mod shape_update_public_sharing_settings_input;
 
 pub(crate) mod shape_update_refresh_schedule_input;
@@ -641,6 +647,8 @@ pub(crate) mod shape_data_source_summary_list;
 
 pub(crate) mod shape_dataset_parameter;
 
+pub(crate) mod shape_failed_key_registration_entries;
+
 pub(crate) mod shape_field_folder;
 
 pub(crate) mod shape_folder;
@@ -677,6 +685,8 @@ pub(crate) mod shape_ingestions;
 
 pub(crate) mod shape_ip_restriction_rule_map;
 
+pub(crate) mod shape_key_registration;
+
 pub(crate) mod shape_link_entity_arn_list;
 
 pub(crate) mod shape_link_sharing_configuration;
@@ -694,6 +704,8 @@ pub(crate) mod shape_physical_table;
 pub(crate) mod shape_refresh_schedule;
 
 pub(crate) mod shape_refresh_schedules;
+
+pub(crate) mod shape_registered_customer_managed_key;
 
 pub(crate) mod shape_registered_user_embedding_experience_configuration;
 
@@ -720,6 +732,8 @@ pub(crate) mod shape_snapshot_user_configuration;
 pub(crate) mod shape_snapshot_user_configuration_redacted;
 
 pub(crate) mod shape_ssl_properties;
+
+pub(crate) mod shape_successful_key_registration_entries;
 
 pub(crate) mod shape_tag;
 
@@ -1013,6 +1027,8 @@ pub(crate) mod shape_export_to_csv_option;
 
 pub(crate) mod shape_export_with_hidden_fields_option;
 
+pub(crate) mod shape_failed_key_registration_entry;
+
 pub(crate) mod shape_field_folder_map;
 
 pub(crate) mod shape_filter_group;
@@ -1132,6 +1148,8 @@ pub(crate) mod shape_string_dataset_parameter;
 pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_string_parameter;
+
+pub(crate) mod shape_successful_key_registration_entry;
 
 pub(crate) mod shape_template_error;
 

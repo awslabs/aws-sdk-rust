@@ -1065,6 +1065,12 @@ pub use crate::types::_refresh_frequency::RefreshFrequencyBuilder;
 
 pub use crate::types::_schedule_refresh_on_entity::ScheduleRefreshOnEntityBuilder;
 
+pub use crate::types::_successful_key_registration_entry::SuccessfulKeyRegistrationEntryBuilder;
+
+pub use crate::types::_failed_key_registration_entry::FailedKeyRegistrationEntryBuilder;
+
+pub use crate::types::_registered_customer_managed_key::RegisteredCustomerManagedKeyBuilder;
+
 pub use crate::types::_group::GroupBuilder;
 
 pub use crate::types::_ssl_properties::SslPropertiesBuilder;

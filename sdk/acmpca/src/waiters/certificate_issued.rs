@@ -65,6 +65,10 @@ impl CertificateIssuedFluentBuilder {
             if crate::waiters::matchers::match_get_certificate_26f47168a2045510f(result) {
                 return ::aws_smithy_runtime::client::waiters::AcceptorState::Retry;
             }
+            // Matches: {"errorType":"AccessDeniedException"}
+            if crate::waiters::matchers::match_get_certificate_f0e284baa63d31667(result) {
+                return ::aws_smithy_runtime::client::waiters::AcceptorState::Failure;
+            }
             ::aws_smithy_runtime::client::waiters::AcceptorState::NoAcceptorsMatched
         };
         let operation = move || {

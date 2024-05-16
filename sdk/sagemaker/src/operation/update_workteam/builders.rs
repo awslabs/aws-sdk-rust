@@ -178,4 +178,18 @@ impl UpdateWorkteamFluentBuilder {
     pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         self.inner.get_notification_configuration()
     }
+    /// <p>Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+    pub fn worker_access_configuration(mut self, input: crate::types::WorkerAccessConfiguration) -> Self {
+        self.inner = self.inner.worker_access_configuration(input);
+        self
+    }
+    /// <p>Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+    pub fn set_worker_access_configuration(mut self, input: ::std::option::Option<crate::types::WorkerAccessConfiguration>) -> Self {
+        self.inner = self.inner.set_worker_access_configuration(input);
+        self
+    }
+    /// <p>Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+    pub fn get_worker_access_configuration(&self) -> &::std::option::Option<crate::types::WorkerAccessConfiguration> {
+        self.inner.get_worker_access_configuration()
+    }
 }

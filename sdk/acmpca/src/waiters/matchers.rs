@@ -52,6 +52,21 @@ pub(crate) fn match_describe_certificate_authority_audit_report_d47b9d2161156a46
         .unwrap_or_default()
 }
 
+/// Matcher union: {"errorType":"AccessDeniedException"}
+pub(crate) fn match_describe_certificate_authority_audit_report_f0e284baa63d31667(
+    _result: ::std::result::Result<
+        &crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportOutput,
+        &crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "AccessDeniedException";
+        }
+    }
+    false
+}
+
 /// Matcher union: {"success":true}
 pub(crate) fn match_get_certificate_authority_csr_c955e57777ec0d736(
     _result: ::std::result::Result<
@@ -77,6 +92,21 @@ pub(crate) fn match_get_certificate_authority_csr_26f47168a2045510f(
     false
 }
 
+/// Matcher union: {"errorType":"AccessDeniedException"}
+pub(crate) fn match_get_certificate_authority_csr_f0e284baa63d31667(
+    _result: ::std::result::Result<
+        &crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrOutput,
+        &crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "AccessDeniedException";
+        }
+    }
+    false
+}
+
 /// Matcher union: {"success":true}
 pub(crate) fn match_get_certificate_c955e57777ec0d736(
     _result: ::std::result::Result<&crate::operation::get_certificate::GetCertificateOutput, &crate::operation::get_certificate::GetCertificateError>,
@@ -91,6 +121,18 @@ pub(crate) fn match_get_certificate_26f47168a2045510f(
     if let ::std::result::Result::Err(err) = _result {
         if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
             return code == "RequestInProgressException";
+        }
+    }
+    false
+}
+
+/// Matcher union: {"errorType":"AccessDeniedException"}
+pub(crate) fn match_get_certificate_f0e284baa63d31667(
+    _result: ::std::result::Result<&crate::operation::get_certificate::GetCertificateOutput, &crate::operation::get_certificate::GetCertificateError>,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "AccessDeniedException";
         }
     }
     false

@@ -226,6 +226,9 @@ pub mod describe_ingestion;
 /// Types for the `DescribeIpRestriction` operation.
 pub mod describe_ip_restriction;
 
+/// Types for the `DescribeKeyRegistration` operation.
+pub mod describe_key_registration;
+
 /// Types for the `DescribeNamespace` operation.
 pub mod describe_namespace;
 
@@ -471,6 +474,9 @@ pub mod update_identity_propagation_config;
 
 /// Types for the `UpdateIpRestriction` operation.
 pub mod update_ip_restriction;
+
+/// Types for the `UpdateKeyRegistration` operation.
+pub mod update_key_registration;
 
 /// Types for the `UpdatePublicSharingSettings` operation.
 pub mod update_public_sharing_settings;

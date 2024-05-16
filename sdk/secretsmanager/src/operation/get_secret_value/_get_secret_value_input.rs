@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSecretValueInput {
-    /// <p>The ARN or name of the secret to retrieve.</p>
+    /// <p>The ARN or name of the secret to retrieve. To retrieve a secret from another account, you must use an ARN.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the version of the secret to retrieve. If you include both this parameter and <code>VersionStage</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, then Secrets Manager returns the <code>AWSCURRENT</code> version.</p>
@@ -14,7 +14,7 @@ pub struct GetSecretValueInput {
     pub version_stage: ::std::option::Option<::std::string::String>,
 }
 impl GetSecretValueInput {
-    /// <p>The ARN or name of the secret to retrieve.</p>
+    /// <p>The ARN or name of the secret to retrieve. To retrieve a secret from another account, you must use an ARN.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(&self) -> ::std::option::Option<&str> {
         self.secret_id.as_deref()
@@ -46,20 +46,20 @@ pub struct GetSecretValueInputBuilder {
     pub(crate) version_stage: ::std::option::Option<::std::string::String>,
 }
 impl GetSecretValueInputBuilder {
-    /// <p>The ARN or name of the secret to retrieve.</p>
+    /// <p>The ARN or name of the secret to retrieve. To retrieve a secret from another account, you must use an ARN.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     /// This field is required.
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN or name of the secret to retrieve.</p>
+    /// <p>The ARN or name of the secret to retrieve. To retrieve a secret from another account, you must use an ARN.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_id = input;
         self
     }
-    /// <p>The ARN or name of the secret to retrieve.</p>
+    /// <p>The ARN or name of the secret to retrieve. To retrieve a secret from another account, you must use an ARN.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_id

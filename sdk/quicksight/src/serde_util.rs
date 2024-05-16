@@ -135,6 +135,21 @@ pub(crate) fn analysis_defaults_correct_errors(
     builder
 }
 
+pub(crate) fn failed_key_registration_entry_correct_errors(
+    mut builder: crate::types::builders::FailedKeyRegistrationEntryBuilder,
+) -> crate::types::builders::FailedKeyRegistrationEntryBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.status_code.is_none() {
+        builder.status_code = Some(Default::default())
+    }
+    if builder.sender_fault.is_none() {
+        builder.sender_fault = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn queue_info_correct_errors(mut builder: crate::types::builders::QueueInfoBuilder) -> crate::types::builders::QueueInfoBuilder {
     if builder.waiting_on_ingestion.is_none() {
         builder.waiting_on_ingestion = Some(Default::default())
@@ -195,6 +210,18 @@ pub(crate) fn row_level_permission_tag_configuration_correct_errors(
 ) -> crate::types::builders::RowLevelPermissionTagConfigurationBuilder {
     if builder.tag_rules.is_none() {
         builder.tag_rules = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn successful_key_registration_entry_correct_errors(
+    mut builder: crate::types::builders::SuccessfulKeyRegistrationEntryBuilder,
+) -> crate::types::builders::SuccessfulKeyRegistrationEntryBuilder {
+    if builder.key_arn.is_none() {
+        builder.key_arn = Some(Default::default())
+    }
+    if builder.status_code.is_none() {
+        builder.status_code = Some(Default::default())
     }
     builder
 }
@@ -1121,9 +1148,6 @@ pub(crate) fn redshift_iam_parameters_correct_errors(
 ) -> crate::types::builders::RedshiftIamParametersBuilder {
     if builder.role_arn.is_none() {
         builder.role_arn = Some(Default::default())
-    }
-    if builder.database_user.is_none() {
-        builder.database_user = Some(Default::default())
     }
     builder
 }

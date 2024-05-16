@@ -6,17 +6,17 @@ pub fn ser_redshift_iam_parameters(
     {
         object.key("RoleArn").string(input.role_arn.as_str());
     }
-    {
-        object.key("DatabaseUser").string(input.database_user.as_str());
+    if let Some(var_1) = &input.database_user {
+        object.key("DatabaseUser").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.database_groups {
-        let mut array_2 = object.key("DatabaseGroups").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.database_groups {
+        let mut array_3 = object.key("DatabaseGroups").start_array();
+        for item_4 in var_2 {
             {
-                array_2.value().string(item_3.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
     if input.auto_create_database_user {
         object.key("AutoCreateDatabaseUser").boolean(input.auto_create_database_user);

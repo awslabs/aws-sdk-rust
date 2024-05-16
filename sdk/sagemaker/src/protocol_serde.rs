@@ -1957,6 +1957,8 @@ pub(crate) mod shape_vpc_config;
 
 pub(crate) mod shape_warm_pool_status;
 
+pub(crate) mod shape_worker_access_configuration;
+
 pub(crate) mod shape_workforce;
 
 pub(crate) mod shape_workforce_vpc_config_request;
@@ -2431,6 +2433,8 @@ pub(crate) mod shape_response_mime_types;
 
 pub(crate) mod shape_rolling_update_policy;
 
+pub(crate) mod shape_s3_presign;
+
 pub(crate) mod shape_s3_storage_config;
 
 pub(crate) mod shape_scaling_policies;
@@ -2636,6 +2640,8 @@ pub(crate) mod shape_hyper_parameter_tuning_instance_configs;
 pub(crate) mod shape_hyper_parameter_tuning_job_search_entity;
 
 pub(crate) mod shape_hyperband_strategy_config;
+
+pub(crate) mod shape_iam_policy_constraints;
 
 pub(crate) mod shape_identity_provider_o_auth_setting;
 

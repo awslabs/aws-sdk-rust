@@ -14,6 +14,8 @@ pub struct UpdateWorkteamInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configures SNS topic notifications for available or expiring work items</p>
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
+    /// <p>Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+    pub worker_access_configuration: ::std::option::Option<crate::types::WorkerAccessConfiguration>,
 }
 impl UpdateWorkteamInput {
     /// <p>The name of the work team to update.</p>
@@ -37,6 +39,10 @@ impl UpdateWorkteamInput {
     pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
+    /// <p>Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+    pub fn worker_access_configuration(&self) -> ::std::option::Option<&crate::types::WorkerAccessConfiguration> {
+        self.worker_access_configuration.as_ref()
+    }
 }
 impl UpdateWorkteamInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkteamInput`](crate::operation::update_workteam::UpdateWorkteamInput).
@@ -53,6 +59,7 @@ pub struct UpdateWorkteamInputBuilder {
     pub(crate) member_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
+    pub(crate) worker_access_configuration: ::std::option::Option<crate::types::WorkerAccessConfiguration>,
 }
 impl UpdateWorkteamInputBuilder {
     /// <p>The name of the work team to update.</p>
@@ -127,6 +134,20 @@ impl UpdateWorkteamInputBuilder {
     pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         &self.notification_configuration
     }
+    /// <p>Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+    pub fn worker_access_configuration(mut self, input: crate::types::WorkerAccessConfiguration) -> Self {
+        self.worker_access_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+    pub fn set_worker_access_configuration(mut self, input: ::std::option::Option<crate::types::WorkerAccessConfiguration>) -> Self {
+        self.worker_access_configuration = input;
+        self
+    }
+    /// <p>Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+    pub fn get_worker_access_configuration(&self) -> &::std::option::Option<crate::types::WorkerAccessConfiguration> {
+        &self.worker_access_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateWorkteamInput`](crate::operation::update_workteam::UpdateWorkteamInput).
     pub fn build(
         self,
@@ -136,6 +157,7 @@ impl UpdateWorkteamInputBuilder {
             member_definitions: self.member_definitions,
             description: self.description,
             notification_configuration: self.notification_configuration,
+            worker_access_configuration: self.worker_access_configuration,
         })
     }
 }
