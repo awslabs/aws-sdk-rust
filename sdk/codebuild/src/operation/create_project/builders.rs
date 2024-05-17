@@ -319,17 +319,17 @@ impl CreateProjectFluentBuilder {
     pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_role()
     }
-    /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
+    /// <p>How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
     pub fn timeout_in_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.timeout_in_minutes(input);
         self
     }
-    /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
+    /// <p>How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
     pub fn set_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_timeout_in_minutes(input);
         self
     }
-    /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
+    /// <p>How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
     pub fn get_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
         self.inner.get_timeout_in_minutes()
     }

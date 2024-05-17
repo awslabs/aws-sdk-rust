@@ -20,7 +20,7 @@ pub struct DescribedServer {
     /// <p><code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p></li>
     /// </ul>
     pub protocol_details: ::std::option::Option<crate::types::ProtocolDetails>,
-    /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
+    /// <p>Specifies the domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p>
     pub domain: ::std::option::Option<crate::types::Domain>,
     /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     pub endpoint_details: ::std::option::Option<crate::types::EndpointDetails>,
@@ -121,7 +121,7 @@ impl DescribedServer {
     pub fn protocol_details(&self) -> ::std::option::Option<&crate::types::ProtocolDetails> {
         self.protocol_details.as_ref()
     }
-    /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
+    /// <p>Specifies the domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p>
     pub fn domain(&self) -> ::std::option::Option<&crate::types::Domain> {
         self.domain.as_ref()
     }
@@ -352,17 +352,17 @@ impl DescribedServerBuilder {
     pub fn get_protocol_details(&self) -> &::std::option::Option<crate::types::ProtocolDetails> {
         &self.protocol_details
     }
-    /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
+    /// <p>Specifies the domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p>
     pub fn domain(mut self, input: crate::types::Domain) -> Self {
         self.domain = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
+    /// <p>Specifies the domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::Domain>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
+    /// <p>Specifies the domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p>
     pub fn get_domain(&self) -> &::std::option::Option<crate::types::Domain> {
         &self.domain
     }

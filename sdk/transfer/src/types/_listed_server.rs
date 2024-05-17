@@ -6,7 +6,7 @@
 pub struct ListedServer {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for a server to be listed.</p>
     pub arn: ::std::string::String,
-    /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
+    /// <p>Specifies the domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p>
     pub domain: ::std::option::Option<crate::types::Domain>,
     /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
     /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
@@ -31,7 +31,7 @@ impl ListedServer {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
+    /// <p>Specifies the domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p>
     pub fn domain(&self) -> ::std::option::Option<&crate::types::Domain> {
         self.domain.as_ref()
     }
@@ -100,17 +100,17 @@ impl ListedServerBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
+    /// <p>Specifies the domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p>
     pub fn domain(mut self, input: crate::types::Domain) -> Self {
         self.domain = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
+    /// <p>Specifies the domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::Domain>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
+    /// <p>Specifies the domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p>
     pub fn get_domain(&self) -> &::std::option::Option<crate::types::Domain> {
         &self.domain
     }

@@ -5,6 +5,7 @@
 pub struct SetSubnetsOutput {
     /// <p>Information about the subnets.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
+    /// <p>[Application Load Balancers] The IP address type.</p>
     /// <p>[Network Load Balancers] The IP address type.</p>
     /// <p>[Gateway Load Balancers] The IP address type.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
@@ -17,6 +18,7 @@ impl SetSubnetsOutput {
     pub fn availability_zones(&self) -> &[crate::types::AvailabilityZone] {
         self.availability_zones.as_deref().unwrap_or_default()
     }
+    /// <p>[Application Load Balancers] The IP address type.</p>
     /// <p>[Network Load Balancers] The IP address type.</p>
     /// <p>[Gateway Load Balancers] The IP address type.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
@@ -64,18 +66,21 @@ impl SetSubnetsOutputBuilder {
     pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
         &self.availability_zones
     }
+    /// <p>[Application Load Balancers] The IP address type.</p>
     /// <p>[Network Load Balancers] The IP address type.</p>
     /// <p>[Gateway Load Balancers] The IP address type.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
+    /// <p>[Application Load Balancers] The IP address type.</p>
     /// <p>[Network Load Balancers] The IP address type.</p>
     /// <p>[Gateway Load Balancers] The IP address type.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
+    /// <p>[Application Load Balancers] The IP address type.</p>
     /// <p>[Network Load Balancers] The IP address type.</p>
     /// <p>[Gateway Load Balancers] The IP address type.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {

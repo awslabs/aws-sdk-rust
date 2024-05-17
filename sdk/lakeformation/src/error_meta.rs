@@ -841,6 +841,36 @@ impl From<crate::operation::get_data_cells_filter::GetDataCellsFilterError> for 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_lake_principal::GetDataLakePrincipalError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_lake_principal::GetDataLakePrincipalError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_data_lake_principal::GetDataLakePrincipalError> for Error {
+    fn from(err: crate::operation::get_data_lake_principal::GetDataLakePrincipalError) -> Self {
+        match err {
+            crate::operation::get_data_lake_principal::GetDataLakePrincipalError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_data_lake_principal::GetDataLakePrincipalError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_data_lake_principal::GetDataLakePrincipalError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::get_data_lake_principal::GetDataLakePrincipalError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_lake_settings::GetDataLakeSettingsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

@@ -65,6 +65,8 @@ pub(crate) mod shape_extend_transaction;
 
 pub(crate) mod shape_get_data_cells_filter;
 
+pub(crate) mod shape_get_data_lake_principal;
+
 pub(crate) mod shape_get_data_lake_settings;
 
 pub(crate) mod shape_get_effective_permissions_for_path;

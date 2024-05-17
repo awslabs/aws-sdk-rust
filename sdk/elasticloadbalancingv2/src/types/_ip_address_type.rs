@@ -13,6 +13,7 @@
 /// # let ipaddresstype = unimplemented!();
 /// match ipaddresstype {
 ///     IpAddressType::Dualstack => { /* ... */ },
+///     IpAddressType::DualstackWithoutPublicIpv4 => { /* ... */ },
 ///     IpAddressType::Ipv4 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum IpAddressType {
     #[allow(missing_docs)] // documentation missing in model
     Dualstack,
     #[allow(missing_docs)] // documentation missing in model
+    DualstackWithoutPublicIpv4,
+    #[allow(missing_docs)] // documentation missing in model
     Ipv4,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -53,6 +56,7 @@ impl ::std::convert::From<&str> for IpAddressType {
     fn from(s: &str) -> Self {
         match s {
             "dualstack" => IpAddressType::Dualstack,
+            "dualstack-without-public-ipv4" => IpAddressType::DualstackWithoutPublicIpv4,
             "ipv4" => IpAddressType::Ipv4,
             other => IpAddressType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,13 +74,14 @@ impl IpAddressType {
     pub fn as_str(&self) -> &str {
         match self {
             IpAddressType::Dualstack => "dualstack",
+            IpAddressType::DualstackWithoutPublicIpv4 => "dualstack-without-public-ipv4",
             IpAddressType::Ipv4 => "ipv4",
             IpAddressType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["dualstack", "ipv4"]
+        &["dualstack", "dualstack-without-public-ipv4", "ipv4"]
     }
 }
 impl ::std::convert::AsRef<str> for IpAddressType {
@@ -100,6 +105,7 @@ impl ::std::fmt::Display for IpAddressType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IpAddressType::Dualstack => write!(f, "dualstack"),
+            IpAddressType::DualstackWithoutPublicIpv4 => write!(f, "dualstack-without-public-ipv4"),
             IpAddressType::Ipv4 => write!(f, "ipv4"),
             IpAddressType::Unknown(value) => write!(f, "{}", value),
         }

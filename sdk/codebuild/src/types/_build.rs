@@ -77,7 +77,7 @@ pub struct Build {
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>Information about the build's logs in CloudWatch Logs.</p>
     pub logs: ::std::option::Option<crate::types::LogsLocation>,
-    /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out this build if it does not get marked as completed.</p>
+    /// <p>How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out this build if it does not get marked as completed.</p>
     pub timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>The number of minutes a build is allowed to be queued before it times out.</p>
     pub queued_timeout_in_minutes: ::std::option::Option<i32>,
@@ -236,7 +236,7 @@ impl Build {
     pub fn logs(&self) -> ::std::option::Option<&crate::types::LogsLocation> {
         self.logs.as_ref()
     }
-    /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out this build if it does not get marked as completed.</p>
+    /// <p>How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out this build if it does not get marked as completed.</p>
     pub fn timeout_in_minutes(&self) -> ::std::option::Option<i32> {
         self.timeout_in_minutes
     }
@@ -751,17 +751,17 @@ impl BuildBuilder {
     pub fn get_logs(&self) -> &::std::option::Option<crate::types::LogsLocation> {
         &self.logs
     }
-    /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out this build if it does not get marked as completed.</p>
+    /// <p>How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out this build if it does not get marked as completed.</p>
     pub fn timeout_in_minutes(mut self, input: i32) -> Self {
         self.timeout_in_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out this build if it does not get marked as completed.</p>
+    /// <p>How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out this build if it does not get marked as completed.</p>
     pub fn set_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_in_minutes = input;
         self
     }
-    /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out this build if it does not get marked as completed.</p>
+    /// <p>How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out this build if it does not get marked as completed.</p>
     pub fn get_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
         &self.timeout_in_minutes
     }

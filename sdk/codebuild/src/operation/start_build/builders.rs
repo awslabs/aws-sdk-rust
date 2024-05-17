@@ -574,17 +574,17 @@ impl StartBuildFluentBuilder {
     pub fn get_privileged_mode_override(&self) -> &::std::option::Option<bool> {
         self.inner.get_privileged_mode_override()
     }
-    /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
+    /// <p>The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
     pub fn timeout_in_minutes_override(mut self, input: i32) -> Self {
         self.inner = self.inner.timeout_in_minutes_override(input);
         self
     }
-    /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
+    /// <p>The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
     pub fn set_timeout_in_minutes_override(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_timeout_in_minutes_override(input);
         self
     }
-    /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
+    /// <p>The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
     pub fn get_timeout_in_minutes_override(&self) -> &::std::option::Option<i32> {
         self.inner.get_timeout_in_minutes_override()
     }

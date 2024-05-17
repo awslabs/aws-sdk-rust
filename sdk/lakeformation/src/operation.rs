@@ -64,6 +64,9 @@ pub mod extend_transaction;
 /// Types for the `GetDataCellsFilter` operation.
 pub mod get_data_cells_filter;
 
+/// Types for the `GetDataLakePrincipal` operation.
+pub mod get_data_lake_principal;
+
 /// Types for the `GetDataLakeSettings` operation.
 pub mod get_data_lake_settings;
 

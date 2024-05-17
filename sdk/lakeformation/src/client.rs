@@ -205,6 +205,8 @@ mod extend_transaction;
 
 mod get_data_cells_filter;
 
+mod get_data_lake_principal;
+
 mod get_data_lake_settings;
 
 mod get_effective_permissions_for_path;

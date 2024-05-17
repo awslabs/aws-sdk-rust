@@ -89,7 +89,7 @@ pub struct StartBuildInput {
     pub service_role_override: ::std::option::Option<::std::string::String>,
     /// <p>Enable this flag to override privileged mode in the build project.</p>
     pub privileged_mode_override: ::std::option::Option<bool>,
-    /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
+    /// <p>The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
     pub timeout_in_minutes_override: ::std::option::Option<i32>,
     /// <p>The number of minutes a build is allowed to be queued before it times out.</p>
     pub queued_timeout_in_minutes_override: ::std::option::Option<i32>,
@@ -267,7 +267,7 @@ impl StartBuildInput {
     pub fn privileged_mode_override(&self) -> ::std::option::Option<bool> {
         self.privileged_mode_override
     }
-    /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
+    /// <p>The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
     pub fn timeout_in_minutes_override(&self) -> ::std::option::Option<i32> {
         self.timeout_in_minutes_override
     }
@@ -837,17 +837,17 @@ impl StartBuildInputBuilder {
     pub fn get_privileged_mode_override(&self) -> &::std::option::Option<bool> {
         &self.privileged_mode_override
     }
-    /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
+    /// <p>The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
     pub fn timeout_in_minutes_override(mut self, input: i32) -> Self {
         self.timeout_in_minutes_override = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
+    /// <p>The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
     pub fn set_timeout_in_minutes_override(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_in_minutes_override = input;
         self
     }
-    /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
+    /// <p>The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
     pub fn get_timeout_in_minutes_override(&self) -> &::std::option::Option<i32> {
         &self.timeout_in_minutes_override
     }
