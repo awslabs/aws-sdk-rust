@@ -254,6 +254,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetPipelineCh
 pub enum GetPipelineChangeProgressError {
     /// <p>You don't have permissions to access the resource.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>Exception is thrown when an operation has been disabled.</p>
+    DisabledOperationException(crate::types::error::DisabledOperationException),
     /// <p>The request failed because of an unknown error, exception, or failure (the failure is internal to the service).</p>
     InternalException(crate::types::error::InternalException),
     /// <p>You attempted to access or delete a resource that does not exist.</p>
@@ -294,6 +296,7 @@ impl GetPipelineChangeProgressError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DisabledOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -303,6 +306,10 @@ impl GetPipelineChangeProgressError {
     /// Returns `true` if the error kind is `GetPipelineChangeProgressError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetPipelineChangeProgressError::DisabledOperationException`.
+    pub fn is_disabled_operation_exception(&self) -> bool {
+        matches!(self, Self::DisabledOperationException(_))
     }
     /// Returns `true` if the error kind is `GetPipelineChangeProgressError::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
@@ -321,6 +328,7 @@ impl ::std::error::Error for GetPipelineChangeProgressError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DisabledOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
@@ -332,6 +340,7 @@ impl ::std::fmt::Display for GetPipelineChangeProgressError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::DisabledOperationException(_inner) => _inner.fmt(f),
             Self::InternalException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
@@ -357,6 +366,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetPipelineCh
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DisabledOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

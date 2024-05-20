@@ -8,6 +8,14 @@ pub struct PipelineBlueprint {
     pub blueprint_name: ::std::option::Option<::std::string::String>,
     /// <p>The YAML configuration of the blueprint.</p>
     pub pipeline_configuration_body: ::std::option::Option<::std::string::String>,
+    /// <p>The display name of the blueprint.</p>
+    pub display_name: ::std::option::Option<::std::string::String>,
+    /// <p>A description of the blueprint.</p>
+    pub display_description: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the service that the blueprint is associated with.</p>
+    pub service: ::std::option::Option<::std::string::String>,
+    /// <p>The use case that the blueprint relates to.</p>
+    pub use_case: ::std::option::Option<::std::string::String>,
 }
 impl PipelineBlueprint {
     /// <p>The name of the blueprint.</p>
@@ -17,6 +25,22 @@ impl PipelineBlueprint {
     /// <p>The YAML configuration of the blueprint.</p>
     pub fn pipeline_configuration_body(&self) -> ::std::option::Option<&str> {
         self.pipeline_configuration_body.as_deref()
+    }
+    /// <p>The display name of the blueprint.</p>
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>A description of the blueprint.</p>
+    pub fn display_description(&self) -> ::std::option::Option<&str> {
+        self.display_description.as_deref()
+    }
+    /// <p>The name of the service that the blueprint is associated with.</p>
+    pub fn service(&self) -> ::std::option::Option<&str> {
+        self.service.as_deref()
+    }
+    /// <p>The use case that the blueprint relates to.</p>
+    pub fn use_case(&self) -> ::std::option::Option<&str> {
+        self.use_case.as_deref()
     }
 }
 impl PipelineBlueprint {
@@ -32,6 +56,10 @@ impl PipelineBlueprint {
 pub struct PipelineBlueprintBuilder {
     pub(crate) blueprint_name: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_configuration_body: ::std::option::Option<::std::string::String>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) display_description: ::std::option::Option<::std::string::String>,
+    pub(crate) service: ::std::option::Option<::std::string::String>,
+    pub(crate) use_case: ::std::option::Option<::std::string::String>,
 }
 impl PipelineBlueprintBuilder {
     /// <p>The name of the blueprint.</p>
@@ -62,11 +90,71 @@ impl PipelineBlueprintBuilder {
     pub fn get_pipeline_configuration_body(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_configuration_body
     }
+    /// <p>The display name of the blueprint.</p>
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The display name of the blueprint.</p>
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.display_name = input;
+        self
+    }
+    /// <p>The display name of the blueprint.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
+    /// <p>A description of the blueprint.</p>
+    pub fn display_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A description of the blueprint.</p>
+    pub fn set_display_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.display_description = input;
+        self
+    }
+    /// <p>A description of the blueprint.</p>
+    pub fn get_display_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_description
+    }
+    /// <p>The name of the service that the blueprint is associated with.</p>
+    pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the service that the blueprint is associated with.</p>
+    pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service = input;
+        self
+    }
+    /// <p>The name of the service that the blueprint is associated with.</p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service
+    }
+    /// <p>The use case that the blueprint relates to.</p>
+    pub fn use_case(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.use_case = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The use case that the blueprint relates to.</p>
+    pub fn set_use_case(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.use_case = input;
+        self
+    }
+    /// <p>The use case that the blueprint relates to.</p>
+    pub fn get_use_case(&self) -> &::std::option::Option<::std::string::String> {
+        &self.use_case
+    }
     /// Consumes the builder and constructs a [`PipelineBlueprint`](crate::types::PipelineBlueprint).
     pub fn build(self) -> crate::types::PipelineBlueprint {
         crate::types::PipelineBlueprint {
             blueprint_name: self.blueprint_name,
             pipeline_configuration_body: self.pipeline_configuration_body,
+            display_name: self.display_name,
+            display_description: self.display_description,
+            service: self.service,
+            use_case: self.use_case,
         }
     }
 }

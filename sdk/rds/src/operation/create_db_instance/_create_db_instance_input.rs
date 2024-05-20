@@ -829,6 +829,14 @@ pub struct CreateDbInstanceInput {
     /// <p>If you specify the multi-tenant configuration when you create your DB instance, you can't later modify this DB instance to use the single-tenant configuration.</p></li>
     /// </ul>
     pub multi_tenant: ::std::option::Option<bool>,
+    /// <p>The life cycle type for this DB instance.</p><note>
+    /// <p>By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB instance into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, creating the DB instance will fail if the DB major version is past its end of standard support date.</p>
+    /// </note>
+    /// <p>This setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora DB instances, the life cycle type is managed by the DB cluster.</p>
+    /// <p>You can use this setting to enroll your DB instance into Amazon RDS Extended Support. With RDS Extended Support, you can run the selected major engine version on your DB instance past the end of standard support for that engine version. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code></p>
+    /// <p>Default: <code>open-source-rds-extended-support</code></p>
+    pub engine_lifecycle_support: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbInstanceInput {
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -1792,6 +1800,16 @@ impl CreateDbInstanceInput {
     pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
         self.multi_tenant
     }
+    /// <p>The life cycle type for this DB instance.</p><note>
+    /// <p>By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB instance into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, creating the DB instance will fail if the DB major version is past its end of standard support date.</p>
+    /// </note>
+    /// <p>This setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora DB instances, the life cycle type is managed by the DB cluster.</p>
+    /// <p>You can use this setting to enroll your DB instance into Amazon RDS Extended Support. With RDS Extended Support, you can run the selected major engine version on your DB instance past the end of standard support for that engine version. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code></p>
+    /// <p>Default: <code>open-source-rds-extended-support</code></p>
+    pub fn engine_lifecycle_support(&self) -> ::std::option::Option<&str> {
+        self.engine_lifecycle_support.as_deref()
+    }
 }
 impl CreateDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
@@ -1866,6 +1884,7 @@ pub struct CreateDbInstanceInputBuilder {
     pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) multi_tenant: ::std::option::Option<bool>,
+    pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbInstanceInputBuilder {
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -4878,6 +4897,38 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
         &self.multi_tenant
     }
+    /// <p>The life cycle type for this DB instance.</p><note>
+    /// <p>By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB instance into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, creating the DB instance will fail if the DB major version is past its end of standard support date.</p>
+    /// </note>
+    /// <p>This setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora DB instances, the life cycle type is managed by the DB cluster.</p>
+    /// <p>You can use this setting to enroll your DB instance into Amazon RDS Extended Support. With RDS Extended Support, you can run the selected major engine version on your DB instance past the end of standard support for that engine version. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code></p>
+    /// <p>Default: <code>open-source-rds-extended-support</code></p>
+    pub fn engine_lifecycle_support(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine_lifecycle_support = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The life cycle type for this DB instance.</p><note>
+    /// <p>By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB instance into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, creating the DB instance will fail if the DB major version is past its end of standard support date.</p>
+    /// </note>
+    /// <p>This setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora DB instances, the life cycle type is managed by the DB cluster.</p>
+    /// <p>You can use this setting to enroll your DB instance into Amazon RDS Extended Support. With RDS Extended Support, you can run the selected major engine version on your DB instance past the end of standard support for that engine version. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code></p>
+    /// <p>Default: <code>open-source-rds-extended-support</code></p>
+    pub fn set_engine_lifecycle_support(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine_lifecycle_support = input;
+        self
+    }
+    /// <p>The life cycle type for this DB instance.</p><note>
+    /// <p>By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB instance into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, creating the DB instance will fail if the DB major version is past its end of standard support date.</p>
+    /// </note>
+    /// <p>This setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora DB instances, the life cycle type is managed by the DB cluster.</p>
+    /// <p>You can use this setting to enroll your DB instance into Amazon RDS Extended Support. With RDS Extended Support, you can run the selected major engine version on your DB instance past the end of standard support for that engine version. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code></p>
+    /// <p>Default: <code>open-source-rds-extended-support</code></p>
+    pub fn get_engine_lifecycle_support(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_lifecycle_support
+    }
     /// Consumes the builder and constructs a [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
     pub fn build(
         self,
@@ -4945,6 +4996,7 @@ impl CreateDbInstanceInputBuilder {
             db_system_id: self.db_system_id,
             dedicated_log_volume: self.dedicated_log_volume,
             multi_tenant: self.multi_tenant,
+            engine_lifecycle_support: self.engine_lifecycle_support,
         })
     }
 }

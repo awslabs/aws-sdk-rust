@@ -22,7 +22,7 @@ impl crate::operation::disable_baseline::builders::DisableBaselineInputBuilder {
 }
 /// Fluent builder constructing a request to `DisableBaseline`.
 ///
-/// <p>Disable an <code>EnabledBaseline</code> resource on the specified Target. This API starts an asynchronous operation to remove all resources deployed as part of the baseline enablement. The resource will vary depending on the enabled baseline.</p>
+/// <p>Disable an <code>EnabledBaseline</code> resource on the specified Target. This API starts an asynchronous operation to remove all resources deployed as part of the baseline enablement. The resource will vary depending on the enabled baseline. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html"> <i>the Amazon Web Services Control Tower User Guide</i> </a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableBaselineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

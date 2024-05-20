@@ -107,6 +107,30 @@ pub use crate::types::_pre_processing_model_invocation_output::PreProcessingMode
 
 pub use crate::types::_pre_processing_parsed_response::PreProcessingParsedResponseBuilder;
 
+pub use crate::types::_guardrail_trace::GuardrailTraceBuilder;
+
+pub use crate::types::_guardrail_assessment::GuardrailAssessmentBuilder;
+
+pub use crate::types::_guardrail_sensitive_information_policy_assessment::GuardrailSensitiveInformationPolicyAssessmentBuilder;
+
+pub use crate::types::_guardrail_regex_filter::GuardrailRegexFilterBuilder;
+
+pub use crate::types::_guardrail_pii_entity_filter::GuardrailPiiEntityFilterBuilder;
+
+pub use crate::types::_guardrail_word_policy_assessment::GuardrailWordPolicyAssessmentBuilder;
+
+pub use crate::types::_guardrail_managed_word::GuardrailManagedWordBuilder;
+
+pub use crate::types::_guardrail_custom_word::GuardrailCustomWordBuilder;
+
+pub use crate::types::_guardrail_content_policy_assessment::GuardrailContentPolicyAssessmentBuilder;
+
+pub use crate::types::_guardrail_content_filter::GuardrailContentFilterBuilder;
+
+pub use crate::types::_guardrail_topic_policy_assessment::GuardrailTopicPolicyAssessmentBuilder;
+
+pub use crate::types::_guardrail_topic::GuardrailTopicBuilder;
+
 pub use crate::types::_payload_part::PayloadPartBuilder;
 
 pub use crate::types::_attribution::AttributionBuilder;

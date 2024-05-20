@@ -29,6 +29,11 @@ where
                         ));
                     }
                     variant = match key.as_ref() {
+                        "guardrailTrace" => Some(crate::types::Trace::GuardrailTrace(
+                            crate::protocol_serde::shape_guardrail_trace::de_guardrail_trace(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'guardrailTrace' cannot be null")
+                            })?,
+                        )),
                         "preProcessingTrace" => Some(crate::types::Trace::PreProcessingTrace(
                             crate::protocol_serde::shape_pre_processing_trace::de_pre_processing_trace(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'preProcessingTrace' cannot be null")

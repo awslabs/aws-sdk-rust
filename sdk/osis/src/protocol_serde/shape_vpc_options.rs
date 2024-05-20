@@ -21,6 +21,12 @@ pub fn ser_vpc_options(
         }
         array_4.finish();
     }
+    if let Some(var_6) = &input.vpc_attachment_options {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("VpcAttachmentOptions").start_object();
+        crate::protocol_serde::shape_vpc_attachment_options::ser_vpc_attachment_options(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -44,6 +50,10 @@ where
                         }
                         "SecurityGroupIds" => {
                             builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_ids::de_security_group_ids(tokens)?);
+                        }
+                        "VpcAttachmentOptions" => {
+                            builder = builder
+                                .set_vpc_attachment_options(crate::protocol_serde::shape_vpc_attachment_options::de_vpc_attachment_options(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

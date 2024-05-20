@@ -21,30 +21,36 @@ pub fn ser_create_agent_input_input(
     if let Some(var_6) = &input.foundation_model {
         object.key("foundationModel").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.idle_session_ttl_in_seconds {
+    if let Some(var_7) = &input.guardrail_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("guardrailConfiguration").start_object();
+        crate::protocol_serde::shape_guardrail_configuration::ser_guardrail_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.idle_session_ttl_in_seconds {
         object.key("idleSessionTTLInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_8) = &input.instruction {
-        object.key("instruction").string(var_8.as_str());
+    if let Some(var_10) = &input.instruction {
+        object.key("instruction").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.prompt_override_configuration {
+    if let Some(var_11) = &input.prompt_override_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("promptOverrideConfiguration").start_object();
-        crate::protocol_serde::shape_prompt_override_configuration::ser_prompt_override_configuration(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_12 = object.key("promptOverrideConfiguration").start_object();
+        crate::protocol_serde::shape_prompt_override_configuration::ser_prompt_override_configuration(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_11) = &input.tags {
+    if let Some(var_13) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("tags").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_14 = object.key("tags").start_object();
+        for (key_15, value_16) in var_13 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
-        object_12.finish();
+        object_14.finish();
     }
     Ok(())
 }

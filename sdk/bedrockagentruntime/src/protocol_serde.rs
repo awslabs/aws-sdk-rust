@@ -154,6 +154,8 @@ pub(crate) mod shape_trace;
 
 pub(crate) mod shape_failure_trace;
 
+pub(crate) mod shape_guardrail_trace;
+
 pub(crate) mod shape_invocation_input_member;
 
 pub(crate) mod shape_orchestration_trace;
@@ -169,6 +171,8 @@ pub(crate) mod shape_text_inference_config;
 pub(crate) mod shape_api_invocation_input;
 
 pub(crate) mod shape_function_invocation_input;
+
+pub(crate) mod shape_guardrail_assessment_list;
 
 pub(crate) mod shape_invocation_input;
 
@@ -194,6 +198,8 @@ pub(crate) mod shape_final_response;
 
 pub(crate) mod shape_function_parameters;
 
+pub(crate) mod shape_guardrail_assessment;
+
 pub(crate) mod shape_inference_configuration;
 
 pub(crate) mod shape_knowledge_base_lookup_input;
@@ -212,6 +218,14 @@ pub(crate) mod shape_api_parameter;
 
 pub(crate) mod shape_function_parameter;
 
+pub(crate) mod shape_guardrail_content_policy_assessment;
+
+pub(crate) mod shape_guardrail_sensitive_information_policy_assessment;
+
+pub(crate) mod shape_guardrail_topic_policy_assessment;
+
+pub(crate) mod shape_guardrail_word_policy_assessment;
+
 pub(crate) mod shape_parameters;
 
 pub(crate) mod shape_request_body;
@@ -220,8 +234,32 @@ pub(crate) mod shape_stop_sequences;
 
 pub(crate) mod shape_content_map;
 
+pub(crate) mod shape_guardrail_content_filter_list;
+
+pub(crate) mod shape_guardrail_custom_word_list;
+
+pub(crate) mod shape_guardrail_managed_word_list;
+
+pub(crate) mod shape_guardrail_pii_entity_filter_list;
+
+pub(crate) mod shape_guardrail_regex_filter_list;
+
+pub(crate) mod shape_guardrail_topic_list;
+
 pub(crate) mod shape_parameter;
 
 pub(crate) mod shape_property_parameters;
+
+pub(crate) mod shape_guardrail_content_filter;
+
+pub(crate) mod shape_guardrail_custom_word;
+
+pub(crate) mod shape_guardrail_managed_word;
+
+pub(crate) mod shape_guardrail_pii_entity_filter;
+
+pub(crate) mod shape_guardrail_regex_filter;
+
+pub(crate) mod shape_guardrail_topic;
 
 pub(crate) mod shape_parameter_list;

@@ -4,8 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`blueprint_name(impl Into<String>)`](crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintFluentBuilder::blueprint_name) / [`set_blueprint_name(Option<String>)`](crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintFluentBuilder::set_blueprint_name):<br>required: **true**<br><p>The name of the blueprint to retrieve.</p><br>
+    ///   - [`format(impl Into<String>)`](crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintFluentBuilder::format) / [`set_format(Option<String>)`](crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintFluentBuilder::set_format):<br>required: **false**<br><p>The format format of the blueprint to retrieve.</p><br>
     /// - On success, responds with [`GetPipelineBlueprintOutput`](crate::operation::get_pipeline_blueprint::GetPipelineBlueprintOutput) with field(s):
     ///   - [`blueprint(Option<PipelineBlueprint>)`](crate::operation::get_pipeline_blueprint::GetPipelineBlueprintOutput::blueprint): <p>The requested blueprint in YAML format.</p>
+    ///   - [`format(Option<String>)`](crate::operation::get_pipeline_blueprint::GetPipelineBlueprintOutput::format): <p>The format of the blueprint.</p>
     /// - On failure, responds with [`SdkError<GetPipelineBlueprintError>`](crate::operation::get_pipeline_blueprint::GetPipelineBlueprintError)
     pub fn get_pipeline_blueprint(&self) -> crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintFluentBuilder {
         crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintFluentBuilder::new(self.handle.clone())

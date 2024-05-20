@@ -3,6 +3,8 @@ pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 
 pub use crate::types::error::_internal_exception::InternalExceptionBuilder;
 
+pub use crate::types::error::_disabled_operation_exception::DisabledOperationExceptionBuilder;
+
 pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;

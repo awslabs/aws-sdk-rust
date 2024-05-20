@@ -378,6 +378,11 @@ pub fn ser_create_db_instance_input_input_input(
     if let Some(var_142) = &input.multi_tenant {
         scope_141.boolean(*var_142);
     }
+    #[allow(unused_mut)]
+    let mut scope_143 = writer.prefix("EngineLifecycleSupport");
+    if let Some(var_144) = &input.engine_lifecycle_support {
+        scope_143.string(var_144);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

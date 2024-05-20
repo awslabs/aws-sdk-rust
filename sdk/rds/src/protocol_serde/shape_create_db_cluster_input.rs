@@ -315,6 +315,11 @@ pub fn ser_create_db_cluster_input_input_input(
     if let Some(var_118) = &input.ca_certificate_identifier {
         scope_117.string(var_118);
     }
+    #[allow(unused_mut)]
+    let mut scope_119 = writer.prefix("EngineLifecycleSupport");
+    if let Some(var_120) = &input.engine_lifecycle_support {
+        scope_119.string(var_120);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

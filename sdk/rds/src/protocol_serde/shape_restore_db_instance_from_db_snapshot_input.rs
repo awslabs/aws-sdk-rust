@@ -252,6 +252,11 @@ pub fn ser_restore_db_instance_from_db_snapshot_input_input_input(
     if let Some(var_97) = &input.ca_certificate_identifier {
         scope_96.string(var_97);
     }
+    #[allow(unused_mut)]
+    let mut scope_98 = writer.prefix("EngineLifecycleSupport");
+    if let Some(var_99) = &input.engine_lifecycle_support {
+        scope_98.string(var_99);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -156,4 +156,18 @@ impl ListEnabledControlsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control operations to view.</p>
+    pub fn filter(mut self, input: crate::types::EnabledControlFilter) -> Self {
+        self.inner = self.inner.filter(input);
+        self
+    }
+    /// <p>An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control operations to view.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::EnabledControlFilter>) -> Self {
+        self.inner = self.inner.set_filter(input);
+        self
+    }
+    /// <p>An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control operations to view.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::EnabledControlFilter> {
+        self.inner.get_filter()
+    }
 }

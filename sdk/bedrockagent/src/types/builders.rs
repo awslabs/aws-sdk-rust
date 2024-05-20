@@ -3,6 +3,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_agent_version_summary::AgentVersionSummaryBuilder;
 
+pub use crate::types::_guardrail_configuration::GuardrailConfigurationBuilder;
+
 pub use crate::types::_agent_version::AgentVersionBuilder;
 
 pub use crate::types::_prompt_override_configuration::PromptOverrideConfigurationBuilder;

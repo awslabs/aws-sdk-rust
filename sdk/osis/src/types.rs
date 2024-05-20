@@ -5,6 +5,8 @@ pub use crate::types::_pipeline::Pipeline;
 
 pub use crate::types::_tag::Tag;
 
+pub use crate::types::_pipeline_destination::PipelineDestination;
+
 pub use crate::types::_service_vpc_endpoint::ServiceVpcEndpoint;
 
 pub use crate::types::_vpc_endpoint_service_name::VpcEndpointServiceName;
@@ -16,6 +18,8 @@ pub use crate::types::_buffer_options::BufferOptions;
 pub use crate::types::_vpc_endpoint::VpcEndpoint;
 
 pub use crate::types::_vpc_options::VpcOptions;
+
+pub use crate::types::_vpc_attachment_options::VpcAttachmentOptions;
 
 pub use crate::types::_log_publishing_options::LogPublishingOptions;
 
@@ -61,6 +65,8 @@ mod _pipeline_blueprint;
 
 mod _pipeline_blueprint_summary;
 
+mod _pipeline_destination;
+
 mod _pipeline_status;
 
 mod _pipeline_status_reason;
@@ -72,6 +78,8 @@ mod _service_vpc_endpoint;
 mod _tag;
 
 mod _validation_message;
+
+mod _vpc_attachment_options;
 
 mod _vpc_endpoint;
 

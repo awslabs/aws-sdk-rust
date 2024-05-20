@@ -7,6 +7,8 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The client attempted to remove a resource that is currently in use.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>Exception is thrown when an operation has been disabled.</p>
+    DisabledOperationException(crate::types::error::DisabledOperationException),
     /// <p>The request failed because of an unknown error, exception, or failure (the failure is internal to the service).</p>
     InternalException(crate::types::error::InternalException),
     /// <p>An invalid pagination token provided in the request.</p>
@@ -33,6 +35,7 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::DisabledOperationException(inner) => inner.fmt(f),
             Error::InternalException(inner) => inner.fmt(f),
             Error::InvalidPaginationTokenException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
@@ -62,6 +65,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
+            Self::DisabledOperationException(inner) => inner.meta(),
             Self::InternalException(inner) => inner.meta(),
             Self::InvalidPaginationTokenException(inner) => inner.meta(),
             Self::LimitExceededException(inner) => inner.meta(),
@@ -90,6 +94,7 @@ impl From<crate::operation::create_pipeline::CreatePipelineError> for Error {
     fn from(err: crate::operation::create_pipeline::CreatePipelineError) -> Self {
         match err {
             crate::operation::create_pipeline::CreatePipelineError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_pipeline::CreatePipelineError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
             crate::operation::create_pipeline::CreatePipelineError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::create_pipeline::CreatePipelineError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_pipeline::CreatePipelineError::ResourceAlreadyExistsException(inner) => {
@@ -120,6 +125,7 @@ impl From<crate::operation::delete_pipeline::DeletePipelineError> for Error {
         match err {
             crate::operation::delete_pipeline::DeletePipelineError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_pipeline::DeletePipelineError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_pipeline::DeletePipelineError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
             crate::operation::delete_pipeline::DeletePipelineError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::delete_pipeline::DeletePipelineError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_pipeline::DeletePipelineError::ValidationException(inner) => Error::ValidationException(inner),
@@ -145,6 +151,7 @@ impl From<crate::operation::get_pipeline::GetPipelineError> for Error {
     fn from(err: crate::operation::get_pipeline::GetPipelineError) -> Self {
         match err {
             crate::operation::get_pipeline::GetPipelineError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_pipeline::GetPipelineError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
             crate::operation::get_pipeline::GetPipelineError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::get_pipeline::GetPipelineError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_pipeline::GetPipelineError::ValidationException(inner) => Error::ValidationException(inner),
@@ -170,6 +177,9 @@ impl From<crate::operation::get_pipeline_blueprint::GetPipelineBlueprintError> f
     fn from(err: crate::operation::get_pipeline_blueprint::GetPipelineBlueprintError) -> Self {
         match err {
             crate::operation::get_pipeline_blueprint::GetPipelineBlueprintError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_pipeline_blueprint::GetPipelineBlueprintError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
             crate::operation::get_pipeline_blueprint::GetPipelineBlueprintError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::get_pipeline_blueprint::GetPipelineBlueprintError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -201,6 +211,9 @@ impl From<crate::operation::get_pipeline_change_progress::GetPipelineChangeProgr
         match err {
             crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
             }
             crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressError::InternalException(inner) => {
                 Error::InternalException(inner)
@@ -237,6 +250,9 @@ impl From<crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsErro
             crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
             crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsError::InvalidPaginationTokenException(inner) => {
                 Error::InvalidPaginationTokenException(inner)
@@ -264,6 +280,7 @@ impl From<crate::operation::list_pipelines::ListPipelinesError> for Error {
     fn from(err: crate::operation::list_pipelines::ListPipelinesError) -> Self {
         match err {
             crate::operation::list_pipelines::ListPipelinesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_pipelines::ListPipelinesError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
             crate::operation::list_pipelines::ListPipelinesError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::list_pipelines::ListPipelinesError::InvalidPaginationTokenException(inner) => {
                 Error::InvalidPaginationTokenException(inner)
@@ -291,6 +308,9 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
             crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -319,6 +339,7 @@ impl From<crate::operation::start_pipeline::StartPipelineError> for Error {
         match err {
             crate::operation::start_pipeline::StartPipelineError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::start_pipeline::StartPipelineError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_pipeline::StartPipelineError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
             crate::operation::start_pipeline::StartPipelineError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::start_pipeline::StartPipelineError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::start_pipeline::StartPipelineError::ValidationException(inner) => Error::ValidationException(inner),
@@ -345,6 +366,7 @@ impl From<crate::operation::stop_pipeline::StopPipelineError> for Error {
         match err {
             crate::operation::stop_pipeline::StopPipelineError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::stop_pipeline::StopPipelineError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_pipeline::StopPipelineError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
             crate::operation::stop_pipeline::StopPipelineError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::stop_pipeline::StopPipelineError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::stop_pipeline::StopPipelineError::ValidationException(inner) => Error::ValidationException(inner),
@@ -370,6 +392,7 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
             crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::tag_resource::TagResourceError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
             crate::operation::tag_resource::TagResourceError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::tag_resource::TagResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -396,6 +419,7 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
             crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::untag_resource::UntagResourceError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
             crate::operation::untag_resource::UntagResourceError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
@@ -422,6 +446,7 @@ impl From<crate::operation::update_pipeline::UpdatePipelineError> for Error {
         match err {
             crate::operation::update_pipeline::UpdatePipelineError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_pipeline::UpdatePipelineError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_pipeline::UpdatePipelineError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
             crate::operation::update_pipeline::UpdatePipelineError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::update_pipeline::UpdatePipelineError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_pipeline::UpdatePipelineError::ValidationException(inner) => Error::ValidationException(inner),
@@ -447,6 +472,7 @@ impl From<crate::operation::validate_pipeline::ValidatePipelineError> for Error 
     fn from(err: crate::operation::validate_pipeline::ValidatePipelineError) -> Self {
         match err {
             crate::operation::validate_pipeline::ValidatePipelineError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::validate_pipeline::ValidatePipelineError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
             crate::operation::validate_pipeline::ValidatePipelineError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::validate_pipeline::ValidatePipelineError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::validate_pipeline::ValidatePipelineError::Unhandled(inner) => Error::Unhandled(inner),
@@ -458,6 +484,7 @@ impl ::std::error::Error for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
+            Error::DisabledOperationException(inner) => inner.source(),
             Error::InternalException(inner) => inner.source(),
             Error::InvalidPaginationTokenException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
@@ -473,6 +500,7 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
+            Self::DisabledOperationException(e) => e.request_id(),
             Self::InternalException(e) => e.request_id(),
             Self::InvalidPaginationTokenException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),

@@ -16,6 +16,8 @@ pub struct AgentSummary {
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The latest version of the agent.</p>
     pub latest_agent_version: ::std::option::Option<::std::string::String>,
+    /// <p>The details of the guardrails configuration in the agent summary.</p>
+    pub guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
 }
 impl AgentSummary {
     /// <p>The unique identifier of the agent.</p>
@@ -44,6 +46,10 @@ impl AgentSummary {
     pub fn latest_agent_version(&self) -> ::std::option::Option<&str> {
         self.latest_agent_version.as_deref()
     }
+    /// <p>The details of the guardrails configuration in the agent summary.</p>
+    pub fn guardrail_configuration(&self) -> ::std::option::Option<&crate::types::GuardrailConfiguration> {
+        self.guardrail_configuration.as_ref()
+    }
 }
 impl AgentSummary {
     /// Creates a new builder-style object to manufacture [`AgentSummary`](crate::types::AgentSummary).
@@ -62,6 +68,7 @@ pub struct AgentSummaryBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) latest_agent_version: ::std::option::Option<::std::string::String>,
+    pub(crate) guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
 }
 impl AgentSummaryBuilder {
     /// <p>The unique identifier of the agent.</p>
@@ -152,6 +159,20 @@ impl AgentSummaryBuilder {
     pub fn get_latest_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_agent_version
     }
+    /// <p>The details of the guardrails configuration in the agent summary.</p>
+    pub fn guardrail_configuration(mut self, input: crate::types::GuardrailConfiguration) -> Self {
+        self.guardrail_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The details of the guardrails configuration in the agent summary.</p>
+    pub fn set_guardrail_configuration(mut self, input: ::std::option::Option<crate::types::GuardrailConfiguration>) -> Self {
+        self.guardrail_configuration = input;
+        self
+    }
+    /// <p>The details of the guardrails configuration in the agent summary.</p>
+    pub fn get_guardrail_configuration(&self) -> &::std::option::Option<crate::types::GuardrailConfiguration> {
+        &self.guardrail_configuration
+    }
     /// Consumes the builder and constructs a [`AgentSummary`](crate::types::AgentSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`agent_id`](crate::types::builders::AgentSummaryBuilder::agent_id)
@@ -186,6 +207,7 @@ impl AgentSummaryBuilder {
                 )
             })?,
             latest_agent_version: self.latest_agent_version,
+            guardrail_configuration: self.guardrail_configuration,
         })
     }
 }

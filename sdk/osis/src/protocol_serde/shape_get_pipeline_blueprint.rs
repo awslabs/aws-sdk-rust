@@ -35,6 +35,21 @@ pub fn de_get_pipeline_blueprint_http_error(
             }
             tmp
         }),
+        "DisabledOperationException" => crate::operation::get_pipeline_blueprint::GetPipelineBlueprintError::DisabledOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DisabledOperationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_pipeline_blueprint::GetPipelineBlueprintError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalException" => crate::operation::get_pipeline_blueprint::GetPipelineBlueprintError::InternalException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -119,6 +134,13 @@ pub(crate) fn de_get_pipeline_blueprint(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Blueprint" => {
                     builder = builder.set_blueprint(crate::protocol_serde::shape_pipeline_blueprint::de_pipeline_blueprint(tokens)?);
+                }
+                "Format" => {
+                    builder = builder.set_format(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

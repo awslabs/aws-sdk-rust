@@ -248,6 +248,8 @@ pub enum DeletePipelineError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The client attempted to remove a resource that is currently in use.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>Exception is thrown when an operation has been disabled.</p>
+    DisabledOperationException(crate::types::error::DisabledOperationException),
     /// <p>The request failed because of an unknown error, exception, or failure (the failure is internal to the service).</p>
     InternalException(crate::types::error::InternalException),
     /// <p>You attempted to access or delete a resource that does not exist.</p>
@@ -289,6 +291,7 @@ impl DeletePipelineError {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DisabledOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -302,6 +305,10 @@ impl DeletePipelineError {
     /// Returns `true` if the error kind is `DeletePipelineError::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(self, Self::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `DeletePipelineError::DisabledOperationException`.
+    pub fn is_disabled_operation_exception(&self) -> bool {
+        matches!(self, Self::DisabledOperationException(_))
     }
     /// Returns `true` if the error kind is `DeletePipelineError::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
@@ -321,6 +328,7 @@ impl ::std::error::Error for DeletePipelineError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DisabledOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
@@ -333,6 +341,7 @@ impl ::std::fmt::Display for DeletePipelineError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
+            Self::DisabledOperationException(_inner) => _inner.fmt(f),
             Self::InternalException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
@@ -359,6 +368,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeletePipelin
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DisabledOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

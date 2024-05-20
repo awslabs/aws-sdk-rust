@@ -191,6 +191,8 @@ mod get_landing_zone_operation;
 
 mod list_baselines;
 
+mod list_control_operations;
+
 mod list_enabled_baselines;
 
 mod list_enabled_controls;

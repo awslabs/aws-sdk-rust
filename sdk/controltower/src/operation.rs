@@ -43,6 +43,9 @@ pub mod get_landing_zone_operation;
 /// Types for the `ListBaselines` operation.
 pub mod list_baselines;
 
+/// Types for the `ListControlOperations` operation.
+pub mod list_control_operations;
+
 /// Types for the `ListEnabledBaselines` operation.
 pub mod list_enabled_baselines;
 

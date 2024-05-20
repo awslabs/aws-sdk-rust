@@ -3,6 +3,8 @@ pub use crate::types::error::_validation_exception::ValidationException;
 
 pub use crate::types::error::_internal_exception::InternalException;
 
+pub use crate::types::error::_disabled_operation_exception::DisabledOperationException;
+
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
@@ -18,6 +20,8 @@ pub use crate::types::error::_resource_already_exists_exception::ResourceAlready
 mod _access_denied_exception;
 
 mod _conflict_exception;
+
+mod _disabled_operation_exception;
 
 mod _internal_exception;
 

@@ -141,6 +141,50 @@ pub use crate::types::_pre_processing_model_invocation_output::PreProcessingMode
 
 pub use crate::types::_pre_processing_parsed_response::PreProcessingParsedResponse;
 
+pub use crate::types::_guardrail_trace::GuardrailTrace;
+
+pub use crate::types::_guardrail_assessment::GuardrailAssessment;
+
+pub use crate::types::_guardrail_sensitive_information_policy_assessment::GuardrailSensitiveInformationPolicyAssessment;
+
+pub use crate::types::_guardrail_regex_filter::GuardrailRegexFilter;
+
+pub use crate::types::_guardrail_sensitive_information_policy_action::GuardrailSensitiveInformationPolicyAction;
+
+pub use crate::types::_guardrail_pii_entity_filter::GuardrailPiiEntityFilter;
+
+pub use crate::types::_guardrail_pii_entity_type::GuardrailPiiEntityType;
+
+pub use crate::types::_guardrail_word_policy_assessment::GuardrailWordPolicyAssessment;
+
+pub use crate::types::_guardrail_managed_word::GuardrailManagedWord;
+
+pub use crate::types::_guardrail_word_policy_action::GuardrailWordPolicyAction;
+
+pub use crate::types::_guardrail_managed_word_type::GuardrailManagedWordType;
+
+pub use crate::types::_guardrail_custom_word::GuardrailCustomWord;
+
+pub use crate::types::_guardrail_content_policy_assessment::GuardrailContentPolicyAssessment;
+
+pub use crate::types::_guardrail_content_filter::GuardrailContentFilter;
+
+pub use crate::types::_guardrail_content_policy_action::GuardrailContentPolicyAction;
+
+pub use crate::types::_guardrail_content_filter_confidence::GuardrailContentFilterConfidence;
+
+pub use crate::types::_guardrail_content_filter_type::GuardrailContentFilterType;
+
+pub use crate::types::_guardrail_topic_policy_assessment::GuardrailTopicPolicyAssessment;
+
+pub use crate::types::_guardrail_topic::GuardrailTopic;
+
+pub use crate::types::_guardrail_topic_policy_action::GuardrailTopicPolicyAction;
+
+pub use crate::types::_guardrail_topic_type::GuardrailTopicType;
+
+pub use crate::types::_guardrail_action::GuardrailAction;
+
 pub use crate::types::_payload_part::PayloadPart;
 
 pub use crate::types::_attribution::Attribution;
@@ -205,7 +249,51 @@ mod _generation_configuration;
 
 mod _guadrail_action;
 
+mod _guardrail_action;
+
+mod _guardrail_assessment;
+
 mod _guardrail_configuration;
+
+mod _guardrail_content_filter;
+
+mod _guardrail_content_filter_confidence;
+
+mod _guardrail_content_filter_type;
+
+mod _guardrail_content_policy_action;
+
+mod _guardrail_content_policy_assessment;
+
+mod _guardrail_custom_word;
+
+mod _guardrail_managed_word;
+
+mod _guardrail_managed_word_type;
+
+mod _guardrail_pii_entity_filter;
+
+mod _guardrail_pii_entity_type;
+
+mod _guardrail_regex_filter;
+
+mod _guardrail_sensitive_information_policy_action;
+
+mod _guardrail_sensitive_information_policy_assessment;
+
+mod _guardrail_topic;
+
+mod _guardrail_topic_policy_action;
+
+mod _guardrail_topic_policy_assessment;
+
+mod _guardrail_topic_type;
+
+mod _guardrail_trace;
+
+mod _guardrail_word_policy_action;
+
+mod _guardrail_word_policy_assessment;
 
 mod _inference_config;
 

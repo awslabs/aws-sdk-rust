@@ -218,6 +218,9 @@ pub struct DbInstance {
     pub is_storage_config_upgrade_available: ::std::option::Option<bool>,
     /// <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
     pub multi_tenant: ::std::option::Option<bool>,
+    /// <p>The life cycle type for the DB instance.</p>
+    /// <p>For more information, see CreateDBInstance.</p>
+    pub engine_lifecycle_support: ::std::option::Option<::std::string::String>,
 }
 impl DbInstance {
     /// <p>The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -629,6 +632,11 @@ impl DbInstance {
     pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
         self.multi_tenant
     }
+    /// <p>The life cycle type for the DB instance.</p>
+    /// <p>For more information, see CreateDBInstance.</p>
+    pub fn engine_lifecycle_support(&self) -> ::std::option::Option<&str> {
+        self.engine_lifecycle_support.as_deref()
+    }
 }
 impl DbInstance {
     /// Creates a new builder-style object to manufacture [`DbInstance`](crate::types::DbInstance).
@@ -727,6 +735,7 @@ pub struct DbInstanceBuilder {
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) is_storage_config_upgrade_available: ::std::option::Option<bool>,
     pub(crate) multi_tenant: ::std::option::Option<bool>,
+    pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
 }
 impl DbInstanceBuilder {
     /// <p>The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -2131,6 +2140,23 @@ impl DbInstanceBuilder {
     pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
         &self.multi_tenant
     }
+    /// <p>The life cycle type for the DB instance.</p>
+    /// <p>For more information, see CreateDBInstance.</p>
+    pub fn engine_lifecycle_support(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine_lifecycle_support = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The life cycle type for the DB instance.</p>
+    /// <p>For more information, see CreateDBInstance.</p>
+    pub fn set_engine_lifecycle_support(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine_lifecycle_support = input;
+        self
+    }
+    /// <p>The life cycle type for the DB instance.</p>
+    /// <p>For more information, see CreateDBInstance.</p>
+    pub fn get_engine_lifecycle_support(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_lifecycle_support
+    }
     /// Consumes the builder and constructs a [`DbInstance`](crate::types::DbInstance).
     pub fn build(self) -> crate::types::DbInstance {
         crate::types::DbInstance {
@@ -2219,6 +2245,7 @@ impl DbInstanceBuilder {
             dedicated_log_volume: self.dedicated_log_volume,
             is_storage_config_upgrade_available: self.is_storage_config_upgrade_available,
             multi_tenant: self.multi_tenant,
+            engine_lifecycle_support: self.engine_lifecycle_support,
         }
     }
 }

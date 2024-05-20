@@ -203,6 +203,15 @@ pub(crate) fn list_baselines_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_control_operations_output_output_correct_errors(
+    mut builder: crate::operation::list_control_operations::builders::ListControlOperationsOutputBuilder,
+) -> crate::operation::list_control_operations::builders::ListControlOperationsOutputBuilder {
+    if builder.control_operations.is_none() {
+        builder.control_operations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_enabled_baselines_output_output_correct_errors(
     mut builder: crate::operation::list_enabled_baselines::builders::ListEnabledBaselinesOutputBuilder,
 ) -> crate::operation::list_enabled_baselines::builders::ListEnabledBaselinesOutputBuilder {

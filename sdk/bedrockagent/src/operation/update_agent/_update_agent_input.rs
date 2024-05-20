@@ -22,6 +22,8 @@ pub struct UpdateAgentInput {
     pub customer_encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Contains configurations to override prompts in different parts of an agent sequence. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced prompts</a>.</p>
     pub prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
+    /// <p>The unique Guardrail configuration assigned to the agent when it is updated.</p>
+    pub guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
 }
 impl UpdateAgentInput {
     /// <p>The unique identifier of the agent.</p>
@@ -61,6 +63,10 @@ impl UpdateAgentInput {
     pub fn prompt_override_configuration(&self) -> ::std::option::Option<&crate::types::PromptOverrideConfiguration> {
         self.prompt_override_configuration.as_ref()
     }
+    /// <p>The unique Guardrail configuration assigned to the agent when it is updated.</p>
+    pub fn guardrail_configuration(&self) -> ::std::option::Option<&crate::types::GuardrailConfiguration> {
+        self.guardrail_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateAgentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -74,6 +80,7 @@ impl ::std::fmt::Debug for UpdateAgentInput {
         formatter.field("agent_resource_role_arn", &self.agent_resource_role_arn);
         formatter.field("customer_encryption_key_arn", &self.customer_encryption_key_arn);
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("guardrail_configuration", &self.guardrail_configuration);
         formatter.finish()
     }
 }
@@ -97,6 +104,7 @@ pub struct UpdateAgentInputBuilder {
     pub(crate) agent_resource_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) customer_encryption_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
+    pub(crate) guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
 }
 impl UpdateAgentInputBuilder {
     /// <p>The unique identifier of the agent.</p>
@@ -232,6 +240,20 @@ impl UpdateAgentInputBuilder {
     pub fn get_prompt_override_configuration(&self) -> &::std::option::Option<crate::types::PromptOverrideConfiguration> {
         &self.prompt_override_configuration
     }
+    /// <p>The unique Guardrail configuration assigned to the agent when it is updated.</p>
+    pub fn guardrail_configuration(mut self, input: crate::types::GuardrailConfiguration) -> Self {
+        self.guardrail_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The unique Guardrail configuration assigned to the agent when it is updated.</p>
+    pub fn set_guardrail_configuration(mut self, input: ::std::option::Option<crate::types::GuardrailConfiguration>) -> Self {
+        self.guardrail_configuration = input;
+        self
+    }
+    /// <p>The unique Guardrail configuration assigned to the agent when it is updated.</p>
+    pub fn get_guardrail_configuration(&self) -> &::std::option::Option<crate::types::GuardrailConfiguration> {
+        &self.guardrail_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateAgentInput`](crate::operation::update_agent::UpdateAgentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_agent::UpdateAgentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_agent::UpdateAgentInput {
@@ -244,6 +266,7 @@ impl UpdateAgentInputBuilder {
             agent_resource_role_arn: self.agent_resource_role_arn,
             customer_encryption_key_arn: self.customer_encryption_key_arn,
             prompt_override_configuration: self.prompt_override_configuration,
+            guardrail_configuration: self.guardrail_configuration,
         })
     }
 }
@@ -259,6 +282,7 @@ impl ::std::fmt::Debug for UpdateAgentInputBuilder {
         formatter.field("agent_resource_role_arn", &self.agent_resource_role_arn);
         formatter.field("customer_encryption_key_arn", &self.customer_encryption_key_arn);
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("guardrail_configuration", &self.guardrail_configuration);
         formatter.finish()
     }
 }

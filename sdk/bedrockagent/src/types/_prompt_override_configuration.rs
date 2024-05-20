@@ -6,7 +6,7 @@
 pub struct PromptOverrideConfiguration {
     /// <p>Contains configurations to override a prompt template in one part of an agent sequence. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced prompts</a>.</p>
     pub prompt_configurations: ::std::vec::Vec<crate::types::PromptConfiguration>,
-    /// <p>The ARN of the Lambda function to use when parsing the raw foundation model output in parts of the agent sequence. If you specify this field, at least one of the <code>promptConfigurations</code> must contain a <code>parserMode</code> value that is set to <code>OVERRIDDEN</code>.</p>
+    /// <p>The ARN of the Lambda function to use when parsing the raw foundation model output in parts of the agent sequence. If you specify this field, at least one of the <code>promptConfigurations</code> must contain a <code>parserMode</code> value that is set to <code>OVERRIDDEN</code>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser Lambda function in Agents for Amazon Bedrock</a>.</p>
     pub override_lambda: ::std::option::Option<::std::string::String>,
 }
 impl PromptOverrideConfiguration {
@@ -15,7 +15,7 @@ impl PromptOverrideConfiguration {
         use std::ops::Deref;
         self.prompt_configurations.deref()
     }
-    /// <p>The ARN of the Lambda function to use when parsing the raw foundation model output in parts of the agent sequence. If you specify this field, at least one of the <code>promptConfigurations</code> must contain a <code>parserMode</code> value that is set to <code>OVERRIDDEN</code>.</p>
+    /// <p>The ARN of the Lambda function to use when parsing the raw foundation model output in parts of the agent sequence. If you specify this field, at least one of the <code>promptConfigurations</code> must contain a <code>parserMode</code> value that is set to <code>OVERRIDDEN</code>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser Lambda function in Agents for Amazon Bedrock</a>.</p>
     pub fn override_lambda(&self) -> ::std::option::Option<&str> {
         self.override_lambda.as_deref()
     }
@@ -63,17 +63,17 @@ impl PromptOverrideConfigurationBuilder {
     pub fn get_prompt_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PromptConfiguration>> {
         &self.prompt_configurations
     }
-    /// <p>The ARN of the Lambda function to use when parsing the raw foundation model output in parts of the agent sequence. If you specify this field, at least one of the <code>promptConfigurations</code> must contain a <code>parserMode</code> value that is set to <code>OVERRIDDEN</code>.</p>
+    /// <p>The ARN of the Lambda function to use when parsing the raw foundation model output in parts of the agent sequence. If you specify this field, at least one of the <code>promptConfigurations</code> must contain a <code>parserMode</code> value that is set to <code>OVERRIDDEN</code>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser Lambda function in Agents for Amazon Bedrock</a>.</p>
     pub fn override_lambda(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.override_lambda = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Lambda function to use when parsing the raw foundation model output in parts of the agent sequence. If you specify this field, at least one of the <code>promptConfigurations</code> must contain a <code>parserMode</code> value that is set to <code>OVERRIDDEN</code>.</p>
+    /// <p>The ARN of the Lambda function to use when parsing the raw foundation model output in parts of the agent sequence. If you specify this field, at least one of the <code>promptConfigurations</code> must contain a <code>parserMode</code> value that is set to <code>OVERRIDDEN</code>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser Lambda function in Agents for Amazon Bedrock</a>.</p>
     pub fn set_override_lambda(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.override_lambda = input;
         self
     }
-    /// <p>The ARN of the Lambda function to use when parsing the raw foundation model output in parts of the agent sequence. If you specify this field, at least one of the <code>promptConfigurations</code> must contain a <code>parserMode</code> value that is set to <code>OVERRIDDEN</code>.</p>
+    /// <p>The ARN of the Lambda function to use when parsing the raw foundation model output in parts of the agent sequence. If you specify this field, at least one of the <code>promptConfigurations</code> must contain a <code>parserMode</code> value that is set to <code>OVERRIDDEN</code>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser Lambda function in Agents for Amazon Bedrock</a>.</p>
     pub fn get_override_lambda(&self) -> &::std::option::Option<::std::string::String> {
         &self.override_lambda
     }

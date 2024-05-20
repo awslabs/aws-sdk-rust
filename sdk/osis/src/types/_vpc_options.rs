@@ -8,6 +8,8 @@ pub struct VpcOptions {
     pub subnet_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>A list of security groups associated with the VPC endpoint.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Options for attaching a VPC to a pipeline.</p>
+    pub vpc_attachment_options: ::std::option::Option<crate::types::VpcAttachmentOptions>,
 }
 impl VpcOptions {
     /// <p>A list of subnet IDs associated with the VPC endpoint.</p>
@@ -20,6 +22,10 @@ impl VpcOptions {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Options for attaching a VPC to a pipeline.</p>
+    pub fn vpc_attachment_options(&self) -> ::std::option::Option<&crate::types::VpcAttachmentOptions> {
+        self.vpc_attachment_options.as_ref()
     }
 }
 impl VpcOptions {
@@ -35,6 +41,7 @@ impl VpcOptions {
 pub struct VpcOptionsBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_attachment_options: ::std::option::Option<crate::types::VpcAttachmentOptions>,
 }
 impl VpcOptionsBuilder {
     /// Appends an item to `subnet_ids`.
@@ -77,6 +84,20 @@ impl VpcOptionsBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
+    /// <p>Options for attaching a VPC to a pipeline.</p>
+    pub fn vpc_attachment_options(mut self, input: crate::types::VpcAttachmentOptions) -> Self {
+        self.vpc_attachment_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Options for attaching a VPC to a pipeline.</p>
+    pub fn set_vpc_attachment_options(mut self, input: ::std::option::Option<crate::types::VpcAttachmentOptions>) -> Self {
+        self.vpc_attachment_options = input;
+        self
+    }
+    /// <p>Options for attaching a VPC to a pipeline.</p>
+    pub fn get_vpc_attachment_options(&self) -> &::std::option::Option<crate::types::VpcAttachmentOptions> {
+        &self.vpc_attachment_options
+    }
     /// Consumes the builder and constructs a [`VpcOptions`](crate::types::VpcOptions).
     /// This method will fail if any of the following fields are not set:
     /// - [`subnet_ids`](crate::types::builders::VpcOptionsBuilder::subnet_ids)
@@ -89,6 +110,7 @@ impl VpcOptionsBuilder {
                 )
             })?,
             security_group_ids: self.security_group_ids,
+            vpc_attachment_options: self.vpc_attachment_options,
         })
     }
 }

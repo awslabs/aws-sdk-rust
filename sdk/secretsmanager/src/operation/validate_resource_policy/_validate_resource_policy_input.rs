@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateResourcePolicyInput {
-    /// <p>The ARN or name of the secret with the resource-based policy you want to validate.</p>
+    /// <p>This field is reserved for internal use.</p>
     pub secret_id: ::std::option::Option<::std::string::String>,
     /// <p>A JSON-formatted string that contains an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
     pub resource_policy: ::std::option::Option<::std::string::String>,
 }
 impl ValidateResourcePolicyInput {
-    /// <p>The ARN or name of the secret with the resource-based policy you want to validate.</p>
+    /// <p>This field is reserved for internal use.</p>
     pub fn secret_id(&self) -> ::std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct ValidateResourcePolicyInputBuilder {
     pub(crate) resource_policy: ::std::option::Option<::std::string::String>,
 }
 impl ValidateResourcePolicyInputBuilder {
-    /// <p>The ARN or name of the secret with the resource-based policy you want to validate.</p>
+    /// <p>This field is reserved for internal use.</p>
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN or name of the secret with the resource-based policy you want to validate.</p>
+    /// <p>This field is reserved for internal use.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_id = input;
         self
     }
-    /// <p>The ARN or name of the secret with the resource-based policy you want to validate.</p>
+    /// <p>This field is reserved for internal use.</p>
     pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_id
     }

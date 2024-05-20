@@ -24,6 +24,8 @@ pub struct CreateAgentInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Contains configurations to override prompts in different parts of an agent sequence. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced prompts</a>.</p>
     pub prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
+    /// <p>The unique Guardrail configuration assigned to the agent when it is created.</p>
+    pub guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
 }
 impl CreateAgentInput {
     /// <p>A name for the agent that you create.</p>
@@ -67,6 +69,10 @@ impl CreateAgentInput {
     pub fn prompt_override_configuration(&self) -> ::std::option::Option<&crate::types::PromptOverrideConfiguration> {
         self.prompt_override_configuration.as_ref()
     }
+    /// <p>The unique Guardrail configuration assigned to the agent when it is created.</p>
+    pub fn guardrail_configuration(&self) -> ::std::option::Option<&crate::types::GuardrailConfiguration> {
+        self.guardrail_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateAgentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -81,6 +87,7 @@ impl ::std::fmt::Debug for CreateAgentInput {
         formatter.field("customer_encryption_key_arn", &self.customer_encryption_key_arn);
         formatter.field("tags", &self.tags);
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("guardrail_configuration", &self.guardrail_configuration);
         formatter.finish()
     }
 }
@@ -105,6 +112,7 @@ pub struct CreateAgentInputBuilder {
     pub(crate) customer_encryption_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
+    pub(crate) guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
 }
 impl CreateAgentInputBuilder {
     /// <p>A name for the agent that you create.</p>
@@ -257,6 +265,20 @@ impl CreateAgentInputBuilder {
     pub fn get_prompt_override_configuration(&self) -> &::std::option::Option<crate::types::PromptOverrideConfiguration> {
         &self.prompt_override_configuration
     }
+    /// <p>The unique Guardrail configuration assigned to the agent when it is created.</p>
+    pub fn guardrail_configuration(mut self, input: crate::types::GuardrailConfiguration) -> Self {
+        self.guardrail_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The unique Guardrail configuration assigned to the agent when it is created.</p>
+    pub fn set_guardrail_configuration(mut self, input: ::std::option::Option<crate::types::GuardrailConfiguration>) -> Self {
+        self.guardrail_configuration = input;
+        self
+    }
+    /// <p>The unique Guardrail configuration assigned to the agent when it is created.</p>
+    pub fn get_guardrail_configuration(&self) -> &::std::option::Option<crate::types::GuardrailConfiguration> {
+        &self.guardrail_configuration
+    }
     /// Consumes the builder and constructs a [`CreateAgentInput`](crate::operation::create_agent::CreateAgentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_agent::CreateAgentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_agent::CreateAgentInput {
@@ -270,6 +292,7 @@ impl CreateAgentInputBuilder {
             customer_encryption_key_arn: self.customer_encryption_key_arn,
             tags: self.tags,
             prompt_override_configuration: self.prompt_override_configuration,
+            guardrail_configuration: self.guardrail_configuration,
         })
     }
 }
@@ -286,6 +309,7 @@ impl ::std::fmt::Debug for CreateAgentInputBuilder {
         formatter.field("customer_encryption_key_arn", &self.customer_encryption_key_arn);
         formatter.field("tags", &self.tags);
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("guardrail_configuration", &self.guardrail_configuration);
         formatter.finish()
     }
 }

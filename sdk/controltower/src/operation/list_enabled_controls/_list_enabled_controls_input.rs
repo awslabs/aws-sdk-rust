@@ -9,6 +9,8 @@ pub struct ListEnabledControlsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>How many results to return per API call.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control operations to view.</p>
+    pub filter: ::std::option::Option<crate::types::EnabledControlFilter>,
 }
 impl ListEnabledControlsInput {
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
@@ -22,6 +24,10 @@ impl ListEnabledControlsInput {
     /// <p>How many results to return per API call.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control operations to view.</p>
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::EnabledControlFilter> {
+        self.filter.as_ref()
     }
 }
 impl ListEnabledControlsInput {
@@ -38,10 +44,10 @@ pub struct ListEnabledControlsInputBuilder {
     pub(crate) target_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) filter: ::std::option::Option<crate::types::EnabledControlFilter>,
 }
 impl ListEnabledControlsInputBuilder {
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
-    /// This field is required.
     pub fn target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +89,20 @@ impl ListEnabledControlsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control operations to view.</p>
+    pub fn filter(mut self, input: crate::types::EnabledControlFilter) -> Self {
+        self.filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control operations to view.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::EnabledControlFilter>) -> Self {
+        self.filter = input;
+        self
+    }
+    /// <p>An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control operations to view.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::EnabledControlFilter> {
+        &self.filter
+    }
     /// Consumes the builder and constructs a [`ListEnabledControlsInput`](crate::operation::list_enabled_controls::ListEnabledControlsInput).
     pub fn build(
         self,
@@ -92,6 +112,7 @@ impl ListEnabledControlsInputBuilder {
             target_identifier: self.target_identifier,
             next_token: self.next_token,
             max_results: self.max_results,
+            filter: self.filter,
         })
     }
 }

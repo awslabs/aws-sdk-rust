@@ -203,6 +203,8 @@ pub(crate) mod shape_data_source_summaries;
 
 pub(crate) mod shape_function_schema;
 
+pub(crate) mod shape_guardrail_configuration;
+
 pub(crate) mod shape_ingestion_job;
 
 pub(crate) mod shape_ingestion_job_filter;

@@ -22,7 +22,7 @@ impl crate::operation::enable_baseline::builders::EnableBaselineInputBuilder {
 }
 /// Fluent builder constructing a request to `EnableBaseline`.
 ///
-/// <p>Enable (apply) a <code>Baseline</code> to a Target. This API starts an asynchronous operation to deploy resources specified by the <code>Baseline</code> to the specified Target.</p>
+/// <p>Enable (apply) a <code>Baseline</code> to a Target. This API starts an asynchronous operation to deploy resources specified by the <code>Baseline</code> to the specified Target. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html"> <i>the Amazon Web Services Control Tower User Guide</i> </a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableBaselineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -6,7 +6,7 @@
 pub struct ServiceVpcEndpoint {
     /// <p>The name of the service for which a VPC endpoint was created.</p>
     pub service_name: ::std::option::Option<crate::types::VpcEndpointServiceName>,
-    /// <p>The ID of the VPC endpoint that was created.</p>
+    /// <p>The unique identifier of the VPC endpoint that was created.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl ServiceVpcEndpoint {
@@ -14,7 +14,7 @@ impl ServiceVpcEndpoint {
     pub fn service_name(&self) -> ::std::option::Option<&crate::types::VpcEndpointServiceName> {
         self.service_name.as_ref()
     }
-    /// <p>The ID of the VPC endpoint that was created.</p>
+    /// <p>The unique identifier of the VPC endpoint that was created.</p>
     pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
@@ -48,17 +48,17 @@ impl ServiceVpcEndpointBuilder {
     pub fn get_service_name(&self) -> &::std::option::Option<crate::types::VpcEndpointServiceName> {
         &self.service_name
     }
-    /// <p>The ID of the VPC endpoint that was created.</p>
+    /// <p>The unique identifier of the VPC endpoint that was created.</p>
     pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the VPC endpoint that was created.</p>
+    /// <p>The unique identifier of the VPC endpoint that was created.</p>
     pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_endpoint_id = input;
         self
     }
-    /// <p>The ID of the VPC endpoint that was created.</p>
+    /// <p>The unique identifier of the VPC endpoint that was created.</p>
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_endpoint_id
     }

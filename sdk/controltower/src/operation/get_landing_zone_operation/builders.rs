@@ -22,7 +22,7 @@ impl crate::operation::get_landing_zone_operation::builders::GetLandingZoneOpera
 }
 /// Fluent builder constructing a request to `GetLandingZoneOperation`.
 ///
-/// <p>Returns the status of the specified landing zone operation. Details for an operation are available for 60 days.</p>
+/// <p>Returns the status of the specified landing zone operation. Details for an operation are available for 90 days.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLandingZoneOperationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
