@@ -272,4 +272,18 @@ impl CreateAgentFluentBuilder {
     pub fn get_prompt_override_configuration(&self) -> &::std::option::Option<crate::types::PromptOverrideConfiguration> {
         self.inner.get_prompt_override_configuration()
     }
+    /// <p>The unique Guardrail configuration assigned to the agent when it is created.</p>
+    pub fn guardrail_configuration(mut self, input: crate::types::GuardrailConfiguration) -> Self {
+        self.inner = self.inner.guardrail_configuration(input);
+        self
+    }
+    /// <p>The unique Guardrail configuration assigned to the agent when it is created.</p>
+    pub fn set_guardrail_configuration(mut self, input: ::std::option::Option<crate::types::GuardrailConfiguration>) -> Self {
+        self.inner = self.inner.set_guardrail_configuration(input);
+        self
+    }
+    /// <p>The unique Guardrail configuration assigned to the agent when it is created.</p>
+    pub fn get_guardrail_configuration(&self) -> &::std::option::Option<crate::types::GuardrailConfiguration> {
+        self.inner.get_guardrail_configuration()
+    }
 }

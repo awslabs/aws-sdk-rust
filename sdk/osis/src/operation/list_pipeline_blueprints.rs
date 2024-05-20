@@ -237,6 +237,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListPipelineB
 pub enum ListPipelineBlueprintsError {
     /// <p>You don't have permissions to access the resource.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>Exception is thrown when an operation has been disabled.</p>
+    DisabledOperationException(crate::types::error::DisabledOperationException),
     /// <p>The request failed because of an unknown error, exception, or failure (the failure is internal to the service).</p>
     InternalException(crate::types::error::InternalException),
     /// <p>An invalid pagination token provided in the request.</p>
@@ -277,6 +279,7 @@ impl ListPipelineBlueprintsError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DisabledOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidPaginationTokenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -286,6 +289,10 @@ impl ListPipelineBlueprintsError {
     /// Returns `true` if the error kind is `ListPipelineBlueprintsError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `ListPipelineBlueprintsError::DisabledOperationException`.
+    pub fn is_disabled_operation_exception(&self) -> bool {
+        matches!(self, Self::DisabledOperationException(_))
     }
     /// Returns `true` if the error kind is `ListPipelineBlueprintsError::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
@@ -304,6 +311,7 @@ impl ::std::error::Error for ListPipelineBlueprintsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DisabledOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidPaginationTokenException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
@@ -315,6 +323,7 @@ impl ::std::fmt::Display for ListPipelineBlueprintsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::DisabledOperationException(_inner) => _inner.fmt(f),
             Self::InternalException(_inner) => _inner.fmt(f),
             Self::InvalidPaginationTokenException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
@@ -340,6 +349,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListPipelineB
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DisabledOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidPaginationTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

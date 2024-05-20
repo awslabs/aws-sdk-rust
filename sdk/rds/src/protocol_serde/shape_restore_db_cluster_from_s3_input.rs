@@ -218,6 +218,11 @@ pub fn ser_restore_db_cluster_from_s3_input_input_input(
     if let Some(var_84) = &input.storage_type {
         scope_83.string(var_84);
     }
+    #[allow(unused_mut)]
+    let mut scope_85 = writer.prefix("EngineLifecycleSupport");
+    if let Some(var_86) = &input.engine_lifecycle_support {
+        scope_85.string(var_86);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

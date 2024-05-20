@@ -3,6 +3,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_agent_version_summary::AgentVersionSummary;
 
+pub use crate::types::_guardrail_configuration::GuardrailConfiguration;
+
 pub use crate::types::_agent_status::AgentStatus;
 
 pub use crate::types::_agent_version::AgentVersion;
@@ -204,6 +206,8 @@ mod _fixed_size_chunking_configuration;
 mod _function;
 
 mod _function_schema;
+
+mod _guardrail_configuration;
 
 mod _inference_configuration;
 

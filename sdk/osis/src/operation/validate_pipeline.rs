@@ -238,6 +238,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ValidatePipel
 pub enum ValidatePipelineError {
     /// <p>You don't have permissions to access the resource.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>Exception is thrown when an operation has been disabled.</p>
+    DisabledOperationException(crate::types::error::DisabledOperationException),
     /// <p>The request failed because of an unknown error, exception, or failure (the failure is internal to the service).</p>
     InternalException(crate::types::error::InternalException),
     /// <p>An exception for missing or invalid input fields.</p>
@@ -276,6 +278,7 @@ impl ValidatePipelineError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DisabledOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -284,6 +287,10 @@ impl ValidatePipelineError {
     /// Returns `true` if the error kind is `ValidatePipelineError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `ValidatePipelineError::DisabledOperationException`.
+    pub fn is_disabled_operation_exception(&self) -> bool {
+        matches!(self, Self::DisabledOperationException(_))
     }
     /// Returns `true` if the error kind is `ValidatePipelineError::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
@@ -298,6 +305,7 @@ impl ::std::error::Error for ValidatePipelineError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DisabledOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -308,6 +316,7 @@ impl ::std::fmt::Display for ValidatePipelineError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::DisabledOperationException(_inner) => _inner.fmt(f),
             Self::InternalException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -332,6 +341,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ValidatePipel
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DisabledOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

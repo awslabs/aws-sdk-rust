@@ -1032,6 +1032,19 @@ pub fn de_db_cluster(
                 builder = builder.set_certificate_details(var_79);
             }
             ,
+            s if s.matches("EngineLifecycleSupport") /* EngineLifecycleSupport com.amazonaws.rds#DBCluster$EngineLifecycleSupport */ =>  {
+                let var_80 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_engine_lifecycle_support(var_80);
+            }
+            ,
             _ => {}
         }
     }

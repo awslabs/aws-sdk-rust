@@ -5,12 +5,18 @@
 pub struct GetPipelineBlueprintOutput {
     /// <p>The requested blueprint in YAML format.</p>
     pub blueprint: ::std::option::Option<crate::types::PipelineBlueprint>,
+    /// <p>The format of the blueprint.</p>
+    pub format: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPipelineBlueprintOutput {
     /// <p>The requested blueprint in YAML format.</p>
     pub fn blueprint(&self) -> ::std::option::Option<&crate::types::PipelineBlueprint> {
         self.blueprint.as_ref()
+    }
+    /// <p>The format of the blueprint.</p>
+    pub fn format(&self) -> ::std::option::Option<&str> {
+        self.format.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPipelineBlueprintOutput {
@@ -30,6 +36,7 @@ impl GetPipelineBlueprintOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPipelineBlueprintOutputBuilder {
     pub(crate) blueprint: ::std::option::Option<crate::types::PipelineBlueprint>,
+    pub(crate) format: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPipelineBlueprintOutputBuilder {
@@ -47,6 +54,20 @@ impl GetPipelineBlueprintOutputBuilder {
     pub fn get_blueprint(&self) -> &::std::option::Option<crate::types::PipelineBlueprint> {
         &self.blueprint
     }
+    /// <p>The format of the blueprint.</p>
+    pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.format = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The format of the blueprint.</p>
+    pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.format = input;
+        self
+    }
+    /// <p>The format of the blueprint.</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl GetPipelineBlueprintOutputBuilder {
     pub fn build(self) -> crate::operation::get_pipeline_blueprint::GetPipelineBlueprintOutput {
         crate::operation::get_pipeline_blueprint::GetPipelineBlueprintOutput {
             blueprint: self.blueprint,
+            format: self.format,
             _request_id: self._request_id,
         }
     }

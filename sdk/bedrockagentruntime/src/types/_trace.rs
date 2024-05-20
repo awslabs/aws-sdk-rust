@@ -6,6 +6,8 @@
 pub enum Trace {
     /// <p>Contains information about the failure of the interaction.</p>
     FailureTrace(crate::types::FailureTrace),
+    /// <p>The trace details for a trace defined in the Guardrail filter.</p>
+    GuardrailTrace(crate::types::GuardrailTrace),
     /// <p>Details about the orchestration step, in which the agent determines the order in which actions are executed and which knowledge bases are retrieved.</p>
     OrchestrationTrace(crate::types::OrchestrationTrace),
     /// <p>Details about the post-processing step, in which the agent shapes the response..</p>
@@ -35,6 +37,19 @@ impl Trace {
     /// Returns true if this is a [`FailureTrace`](crate::types::Trace::FailureTrace).
     pub fn is_failure_trace(&self) -> bool {
         self.as_failure_trace().is_ok()
+    }
+    /// Tries to convert the enum instance into [`GuardrailTrace`](crate::types::Trace::GuardrailTrace), extracting the inner [`GuardrailTrace`](crate::types::GuardrailTrace).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_guardrail_trace(&self) -> ::std::result::Result<&crate::types::GuardrailTrace, &Self> {
+        if let Trace::GuardrailTrace(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`GuardrailTrace`](crate::types::Trace::GuardrailTrace).
+    pub fn is_guardrail_trace(&self) -> bool {
+        self.as_guardrail_trace().is_ok()
     }
     /// Tries to convert the enum instance into [`OrchestrationTrace`](crate::types::Trace::OrchestrationTrace), extracting the inner [`OrchestrationTrace`](crate::types::OrchestrationTrace).
     /// Returns `Err(&Self)` if it can't be converted.

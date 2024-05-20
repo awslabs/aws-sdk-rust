@@ -33,6 +33,14 @@ pub struct CreateGlobalClusterInput {
     /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine version of the source DB cluster.</p></li>
     /// </ul>
     pub engine_version: ::std::option::Option<::std::string::String>,
+    /// <p>The life cycle type for this global database cluster.</p><note>
+    /// <p>By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your global cluster into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, creating the global cluster will fail if the DB major version is past its end of standard support date.</p>
+    /// </note>
+    /// <p>This setting only applies to Aurora PostgreSQL-based global databases.</p>
+    /// <p>You can use this setting to enroll your global cluster into Amazon RDS Extended Support. With RDS Extended Support, you can run the selected major engine version on your global cluster past the end of standard support for that engine version. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code></p>
+    /// <p>Default: <code>open-source-rds-extended-support</code></p>
+    pub engine_lifecycle_support: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to enable deletion protection for the new global database cluster. The global database can't be deleted when deletion protection is enabled.</p>
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The name for your database of up to 64 alphanumeric characters. If you don't specify a name, Amazon Aurora doesn't create a database in the global database cluster.</p>
@@ -89,6 +97,16 @@ impl CreateGlobalClusterInput {
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
+    /// <p>The life cycle type for this global database cluster.</p><note>
+    /// <p>By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your global cluster into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, creating the global cluster will fail if the DB major version is past its end of standard support date.</p>
+    /// </note>
+    /// <p>This setting only applies to Aurora PostgreSQL-based global databases.</p>
+    /// <p>You can use this setting to enroll your global cluster into Amazon RDS Extended Support. With RDS Extended Support, you can run the selected major engine version on your global cluster past the end of standard support for that engine version. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code></p>
+    /// <p>Default: <code>open-source-rds-extended-support</code></p>
+    pub fn engine_lifecycle_support(&self) -> ::std::option::Option<&str> {
+        self.engine_lifecycle_support.as_deref()
+    }
     /// <p>Specifies whether to enable deletion protection for the new global database cluster. The global database can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
@@ -127,6 +145,7 @@ pub struct CreateGlobalClusterInputBuilder {
     pub(crate) source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) storage_encrypted: ::std::option::Option<bool>,
@@ -254,6 +273,38 @@ impl CreateGlobalClusterInputBuilder {
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
+    /// <p>The life cycle type for this global database cluster.</p><note>
+    /// <p>By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your global cluster into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, creating the global cluster will fail if the DB major version is past its end of standard support date.</p>
+    /// </note>
+    /// <p>This setting only applies to Aurora PostgreSQL-based global databases.</p>
+    /// <p>You can use this setting to enroll your global cluster into Amazon RDS Extended Support. With RDS Extended Support, you can run the selected major engine version on your global cluster past the end of standard support for that engine version. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code></p>
+    /// <p>Default: <code>open-source-rds-extended-support</code></p>
+    pub fn engine_lifecycle_support(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine_lifecycle_support = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The life cycle type for this global database cluster.</p><note>
+    /// <p>By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your global cluster into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, creating the global cluster will fail if the DB major version is past its end of standard support date.</p>
+    /// </note>
+    /// <p>This setting only applies to Aurora PostgreSQL-based global databases.</p>
+    /// <p>You can use this setting to enroll your global cluster into Amazon RDS Extended Support. With RDS Extended Support, you can run the selected major engine version on your global cluster past the end of standard support for that engine version. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code></p>
+    /// <p>Default: <code>open-source-rds-extended-support</code></p>
+    pub fn set_engine_lifecycle_support(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine_lifecycle_support = input;
+        self
+    }
+    /// <p>The life cycle type for this global database cluster.</p><note>
+    /// <p>By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your global cluster into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, creating the global cluster will fail if the DB major version is past its end of standard support date.</p>
+    /// </note>
+    /// <p>This setting only applies to Aurora PostgreSQL-based global databases.</p>
+    /// <p>You can use this setting to enroll your global cluster into Amazon RDS Extended Support. With RDS Extended Support, you can run the selected major engine version on your global cluster past the end of standard support for that engine version. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code></p>
+    /// <p>Default: <code>open-source-rds-extended-support</code></p>
+    pub fn get_engine_lifecycle_support(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_lifecycle_support
+    }
     /// <p>Specifies whether to enable deletion protection for the new global database cluster. The global database can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = ::std::option::Option::Some(input);
@@ -336,6 +387,7 @@ impl CreateGlobalClusterInputBuilder {
             source_db_cluster_identifier: self.source_db_cluster_identifier,
             engine: self.engine,
             engine_version: self.engine_version,
+            engine_lifecycle_support: self.engine_lifecycle_support,
             deletion_protection: self.deletion_protection,
             database_name: self.database_name,
             storage_encrypted: self.storage_encrypted,

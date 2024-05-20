@@ -309,6 +309,11 @@ pub fn ser_restore_db_instance_from_s3_input_input_input(
     if let Some(var_115) = &input.ca_certificate_identifier {
         scope_114.string(var_115);
     }
+    #[allow(unused_mut)]
+    let mut scope_116 = writer.prefix("EngineLifecycleSupport");
+    if let Some(var_117) = &input.engine_lifecycle_support {
+        scope_116.string(var_117);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -22,7 +22,7 @@ impl crate::operation::reset_enabled_baseline::builders::ResetEnabledBaselineInp
 }
 /// Fluent builder constructing a request to `ResetEnabledBaseline`.
 ///
-/// <p>Re-enables an <code>EnabledBaseline</code> resource. For example, this API can re-apply the existing <code>Baseline</code> after a new member account is moved to the target OU.</p>
+/// <p>Re-enables an <code>EnabledBaseline</code> resource. For example, this API can re-apply the existing <code>Baseline</code> after a new member account is moved to the target OU. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html"> <i>the Amazon Web Services Control Tower User Guide</i> </a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetEnabledBaselineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

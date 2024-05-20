@@ -192,6 +192,18 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetPipelineB
                 .expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
+            fn uri_query(
+                _input: &crate::operation::get_pipeline_blueprint::GetPipelineBlueprintInput,
+                mut output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+                let mut query = ::aws_smithy_http::query::Writer::new(output);
+                if let ::std::option::Option::Some(inner_2) = &_input.format {
+                    {
+                        query.push_kv("format", &::aws_smithy_http::query::fmt_string(inner_2));
+                    }
+                }
+                ::std::result::Result::Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::get_pipeline_blueprint::GetPipelineBlueprintInput,
@@ -199,6 +211,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetPipelineB
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
@@ -253,6 +266,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetPipelineBl
 pub enum GetPipelineBlueprintError {
     /// <p>You don't have permissions to access the resource.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>Exception is thrown when an operation has been disabled.</p>
+    DisabledOperationException(crate::types::error::DisabledOperationException),
     /// <p>The request failed because of an unknown error, exception, or failure (the failure is internal to the service).</p>
     InternalException(crate::types::error::InternalException),
     /// <p>You attempted to access or delete a resource that does not exist.</p>
@@ -293,6 +308,7 @@ impl GetPipelineBlueprintError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DisabledOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -302,6 +318,10 @@ impl GetPipelineBlueprintError {
     /// Returns `true` if the error kind is `GetPipelineBlueprintError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetPipelineBlueprintError::DisabledOperationException`.
+    pub fn is_disabled_operation_exception(&self) -> bool {
+        matches!(self, Self::DisabledOperationException(_))
     }
     /// Returns `true` if the error kind is `GetPipelineBlueprintError::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
@@ -320,6 +340,7 @@ impl ::std::error::Error for GetPipelineBlueprintError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DisabledOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
@@ -331,6 +352,7 @@ impl ::std::fmt::Display for GetPipelineBlueprintError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::DisabledOperationException(_inner) => _inner.fmt(f),
             Self::InternalException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
@@ -356,6 +378,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetPipelineBl
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DisabledOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

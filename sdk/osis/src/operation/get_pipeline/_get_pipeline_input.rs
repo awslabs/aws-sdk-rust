@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPipelineInput {
-    /// <p>The name of the pipeline to get information about.</p>
+    /// <p>The name of the pipeline.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
 }
 impl GetPipelineInput {
-    /// <p>The name of the pipeline to get information about.</p>
+    /// <p>The name of the pipeline.</p>
     pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetPipelineInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
 }
 impl GetPipelineInputBuilder {
-    /// <p>The name of the pipeline to get information about.</p>
+    /// <p>The name of the pipeline.</p>
     /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the pipeline to get information about.</p>
+    /// <p>The name of the pipeline.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
-    /// <p>The name of the pipeline to get information about.</p>
+    /// <p>The name of the pipeline.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_name
     }

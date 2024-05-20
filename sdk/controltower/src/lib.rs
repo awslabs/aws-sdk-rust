@@ -17,6 +17,15 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
+//! Amazon Web Services Control Tower offers application programming interface (API) operations that support programmatic interaction with these types of resources:
+//!   - [_controls_](https://docs.aws.amazon.com/controltower/latest/userguide/controls.html)
+//!   - [_landing zones_](https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch.html)
+//!   - [_baselines_](https://docs.aws.amazon.com/controltower/latest/userguide/types-of-baselines.html)
+//!
+//! For more information about these types of resources, see the [_Amazon Web Services Control Tower User Guide_](https://docs.aws.amazon.com/controltower/latest/userguide/what-is-control-tower.html).
+//!
+//! __About control APIs__
+//!
 //! These interfaces allow you to apply the Amazon Web Services library of pre-defined _controls_ to your organizational units, programmatically. In Amazon Web Services Control Tower, the terms "control" and "guardrail" are synonyms.
 //!
 //! To call these APIs, you'll need to know:
@@ -28,7 +37,7 @@
 //!
 //! The controlIdentifier is an ARN that is specified for each control. You can view the controlIdentifier in the console on the __Control details__ page, as well as in the documentation.
 //!
-//! The controlIdentifier is unique in each Amazon Web Services Region for each control. You can find the controlIdentifier for each Region and control in the [Tables of control metadata](https://docs.aws.amazon.com/controltower/latest/userguide/control-metadata-tables.html) in the _Amazon Web Services Control Tower User Guide._
+//! The controlIdentifier is unique in each Amazon Web Services Region for each control. You can find the controlIdentifier for each Region and control in the [Tables of control metadata](https://docs.aws.amazon.com/controltower/latest/userguide/control-metadata-tables.html) or the [Control availability by Region tables](https://docs.aws.amazon.com/controltower/latest/userguide/control-region-tables.html) in the _Amazon Web Services Control Tower User Guide._
 //!
 //! A quick-reference list of control identifers for the Amazon Web Services Control Tower legacy _Strongly recommended_ and _Elective_ controls is given in [Resource identifiers for APIs and controls](https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html.html) in the [Controls reference guide section](https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html) of the _Amazon Web Services Control Tower User Guide_. Remember that _Mandatory_ controls cannot be added or removed.
 //!
@@ -38,10 +47,27 @@
 //!
 //! In the Amazon Web Services Organizations console, you can find the ARN for the OU on the __Organizational unit details__ page associated with that OU.
 //!
+//! __ About landing zone APIs__
+//!
+//! You can configure and launch an Amazon Web Services Control Tower landing zone with APIs. For an introduction and steps, see [Getting started with Amazon Web Services Control Tower using APIs](https://docs.aws.amazon.com/controltower/latest/userguide/getting-started-apis.html).
+//!
+//! For an overview of landing zone API operations, see [Amazon Web Services Control Tower supports landing zone APIs](https://docs.aws.amazon.com/controltower/latest/userguide/2023-all.html#landing-zone-apis). The individual API operations for landing zones are detailed in this document, the [API reference manual](https://docs.aws.amazon.com/controltower/latest/APIReference/API_Operations.html), in the "Actions" section.
+//!
+//! __About baseline APIs__
+//!
+//! You can apply the AWSControlTowerBaseline baseline to an organizational unit (OU) as a way to register the OU with Amazon Web Services Control Tower, programmatically. For a general overview of this capability, see [Amazon Web Services Control Tower supports APIs for OU registration and configuration with baselines](https://docs.aws.amazon.com/controltower/latest/userguide/2024-all.html#baseline-apis).
+//!
+//! You can call the baseline API operations to view the baselines that Amazon Web Services Control Tower enables for your landing zone, on your behalf, when setting up the landing zone. These baselines are read-only baselines.
+//!
+//! The individual API operations for baselines are detailed in this document, the [API reference manual](https://docs.aws.amazon.com/controltower/latest/APIReference/API_Operations.html), in the "Actions" section. For usage examples, see [Baseline API input and output examples with CLI](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html).
+//!
 //! __Details and examples__
 //!   - [Control API input and output examples with CLI](https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html)
+//!   - [Baseline API input and output examples with CLI](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html)
 //!   - [Enable controls with CloudFormation](https://docs.aws.amazon.com/controltower/latest/userguide/enable-controls.html)
-//!   - [Control metadata tables](https://docs.aws.amazon.com/controltower/latest/userguide/control-metadata-tables.html)
+//!   - [Launch a landing zone with CloudFormation](https://docs.aws.amazon.com/controltower/latest/userguide/lz-apis-cfn-setup.html)
+//!   - [Control metadata tables (large page)](https://docs.aws.amazon.com/controltower/latest/userguide/control-metadata-tables.html)
+//!   - [Control availability by Region tables (large page)](https://docs.aws.amazon.com/controltower/latest/userguide/control-region-tables.html)
 //!   - [List of identifiers for legacy controls](https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html)
 //!   - [Controls reference guide](https://docs.aws.amazon.com/controltower/latest/userguide/controls.html)
 //!   - [Controls library groupings](https://docs.aws.amazon.com/controltower/latest/userguide/controls-reference.html)
@@ -65,7 +91,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-controltower = "1.26.0"
+//! aws-sdk-controltower = "1.27.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

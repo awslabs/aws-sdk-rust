@@ -26,19 +26,24 @@ pub fn ser_create_global_cluster_input_input_input(
         scope_7.string(var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("DeletionProtection");
-    if let Some(var_10) = &input.deletion_protection {
-        scope_9.boolean(*var_10);
+    let mut scope_9 = writer.prefix("EngineLifecycleSupport");
+    if let Some(var_10) = &input.engine_lifecycle_support {
+        scope_9.string(var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("DatabaseName");
-    if let Some(var_12) = &input.database_name {
-        scope_11.string(var_12);
+    let mut scope_11 = writer.prefix("DeletionProtection");
+    if let Some(var_12) = &input.deletion_protection {
+        scope_11.boolean(*var_12);
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("StorageEncrypted");
-    if let Some(var_14) = &input.storage_encrypted {
-        scope_13.boolean(*var_14);
+    let mut scope_13 = writer.prefix("DatabaseName");
+    if let Some(var_14) = &input.database_name {
+        scope_13.string(var_14);
+    }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("StorageEncrypted");
+    if let Some(var_16) = &input.storage_encrypted {
+        scope_15.boolean(*var_16);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

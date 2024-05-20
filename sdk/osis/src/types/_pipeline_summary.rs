@@ -20,6 +20,8 @@ pub struct PipelineSummary {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the pipeline was last updated.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A list of destinations to which the pipeline writes data.</p>
+    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDestination>>,
     /// <p>A list of tags associated with the given pipeline.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -56,6 +58,12 @@ impl PipelineSummary {
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
+    /// <p>A list of destinations to which the pipeline writes data.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::PipelineDestination] {
+        self.destinations.as_deref().unwrap_or_default()
+    }
     /// <p>A list of tags associated with the given pipeline.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -82,6 +90,7 @@ pub struct PipelineSummaryBuilder {
     pub(crate) max_units: ::std::option::Option<i32>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDestination>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PipelineSummaryBuilder {
@@ -197,6 +206,26 @@ impl PipelineSummaryBuilder {
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
+    /// Appends an item to `destinations`.
+    ///
+    /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+    ///
+    /// <p>A list of destinations to which the pipeline writes data.</p>
+    pub fn destinations(mut self, input: crate::types::PipelineDestination) -> Self {
+        let mut v = self.destinations.unwrap_or_default();
+        v.push(input);
+        self.destinations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of destinations to which the pipeline writes data.</p>
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDestination>>) -> Self {
+        self.destinations = input;
+        self
+    }
+    /// <p>A list of destinations to which the pipeline writes data.</p>
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineDestination>> {
+        &self.destinations
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -228,6 +257,7 @@ impl PipelineSummaryBuilder {
             max_units: self.max_units,
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,
+            destinations: self.destinations,
             tags: self.tags,
         }
     }

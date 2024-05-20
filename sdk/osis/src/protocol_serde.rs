@@ -65,6 +65,8 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_pipeline_input;
 
+pub(crate) mod shape_disabled_operation_exception;
+
 pub(crate) mod shape_internal_exception;
 
 pub(crate) mod shape_invalid_pagination_token_exception;
@@ -117,6 +119,8 @@ pub(crate) mod shape_ingest_endpoint_urls_list;
 
 pub(crate) mod shape_pipeline_blueprint_summary;
 
+pub(crate) mod shape_pipeline_destination_list;
+
 pub(crate) mod shape_pipeline_status_reason;
 
 pub(crate) mod shape_pipeline_summary;
@@ -125,9 +129,13 @@ pub(crate) mod shape_service_vpc_endpoints_list;
 
 pub(crate) mod shape_validation_message;
 
+pub(crate) mod shape_vpc_attachment_options;
+
 pub(crate) mod shape_vpc_endpoints_list;
 
 pub(crate) mod shape_change_progress_stage_list;
+
+pub(crate) mod shape_pipeline_destination;
 
 pub(crate) mod shape_service_vpc_endpoint;
 

@@ -14,6 +14,14 @@ pub struct ControlOperation {
     pub status: ::std::option::Option<crate::types::ControlOperationStatus>,
     /// <p>If the operation result is <code>FAILED</code>, this string contains a message explaining why the operation failed.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the specified operation.</p>
+    pub operation_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The <code>controlIdentifier</code> of the control for the operation.</p>
+    pub control_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The target upon which the control operation is working.</p>
+    pub target_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
+    pub enabled_control_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ControlOperation {
     /// <p>One of <code>ENABLE_CONTROL</code> or <code>DISABLE_CONTROL</code>.</p>
@@ -36,6 +44,22 @@ impl ControlOperation {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
+    /// <p>The identifier of the specified operation.</p>
+    pub fn operation_identifier(&self) -> ::std::option::Option<&str> {
+        self.operation_identifier.as_deref()
+    }
+    /// <p>The <code>controlIdentifier</code> of the control for the operation.</p>
+    pub fn control_identifier(&self) -> ::std::option::Option<&str> {
+        self.control_identifier.as_deref()
+    }
+    /// <p>The target upon which the control operation is working.</p>
+    pub fn target_identifier(&self) -> ::std::option::Option<&str> {
+        self.target_identifier.as_deref()
+    }
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
+    pub fn enabled_control_identifier(&self) -> ::std::option::Option<&str> {
+        self.enabled_control_identifier.as_deref()
+    }
 }
 impl ControlOperation {
     /// Creates a new builder-style object to manufacture [`ControlOperation`](crate::types::ControlOperation).
@@ -53,6 +77,10 @@ pub struct ControlOperationBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ControlOperationStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) operation_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) control_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) target_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) enabled_control_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ControlOperationBuilder {
     /// <p>One of <code>ENABLE_CONTROL</code> or <code>DISABLE_CONTROL</code>.</p>
@@ -125,6 +153,62 @@ impl ControlOperationBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
+    /// <p>The identifier of the specified operation.</p>
+    pub fn operation_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operation_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the specified operation.</p>
+    pub fn set_operation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.operation_identifier = input;
+        self
+    }
+    /// <p>The identifier of the specified operation.</p>
+    pub fn get_operation_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_identifier
+    }
+    /// <p>The <code>controlIdentifier</code> of the control for the operation.</p>
+    pub fn control_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.control_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The <code>controlIdentifier</code> of the control for the operation.</p>
+    pub fn set_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.control_identifier = input;
+        self
+    }
+    /// <p>The <code>controlIdentifier</code> of the control for the operation.</p>
+    pub fn get_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_identifier
+    }
+    /// <p>The target upon which the control operation is working.</p>
+    pub fn target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The target upon which the control operation is working.</p>
+    pub fn set_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_identifier = input;
+        self
+    }
+    /// <p>The target upon which the control operation is working.</p>
+    pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_identifier
+    }
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
+    pub fn enabled_control_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.enabled_control_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
+    pub fn set_enabled_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.enabled_control_identifier = input;
+        self
+    }
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
+    pub fn get_enabled_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.enabled_control_identifier
+    }
     /// Consumes the builder and constructs a [`ControlOperation`](crate::types::ControlOperation).
     pub fn build(self) -> crate::types::ControlOperation {
         crate::types::ControlOperation {
@@ -133,6 +217,10 @@ impl ControlOperationBuilder {
             end_time: self.end_time,
             status: self.status,
             status_message: self.status_message,
+            operation_identifier: self.operation_identifier,
+            control_identifier: self.control_identifier,
+            target_identifier: self.target_identifier,
+            enabled_control_identifier: self.enabled_control_identifier,
         }
     }
 }

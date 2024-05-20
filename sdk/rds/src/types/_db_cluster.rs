@@ -207,6 +207,9 @@ pub struct DbCluster {
     /// <p>Returns the details of the DB instance’s server certificate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
+    /// <p>The life cycle type for the DB cluster.</p>
+    /// <p>For more information, see CreateDBCluster.</p>
+    pub engine_lifecycle_support: ::std::option::Option<::std::string::String>,
 }
 impl DbCluster {
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
@@ -588,6 +591,11 @@ impl DbCluster {
     pub fn certificate_details(&self) -> ::std::option::Option<&crate::types::CertificateDetails> {
         self.certificate_details.as_ref()
     }
+    /// <p>The life cycle type for the DB cluster.</p>
+    /// <p>For more information, see CreateDBCluster.</p>
+    pub fn engine_lifecycle_support(&self) -> ::std::option::Option<&str> {
+        self.engine_lifecycle_support.as_deref()
+    }
 }
 impl DbCluster {
     /// Creates a new builder-style object to manufacture [`DbCluster`](crate::types::DbCluster).
@@ -679,6 +687,7 @@ pub struct DbClusterBuilder {
     pub(crate) limitless_database: ::std::option::Option<crate::types::LimitlessDatabase>,
     pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
+    pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterBuilder {
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
@@ -1982,6 +1991,23 @@ impl DbClusterBuilder {
     pub fn get_certificate_details(&self) -> &::std::option::Option<crate::types::CertificateDetails> {
         &self.certificate_details
     }
+    /// <p>The life cycle type for the DB cluster.</p>
+    /// <p>For more information, see CreateDBCluster.</p>
+    pub fn engine_lifecycle_support(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine_lifecycle_support = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The life cycle type for the DB cluster.</p>
+    /// <p>For more information, see CreateDBCluster.</p>
+    pub fn set_engine_lifecycle_support(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine_lifecycle_support = input;
+        self
+    }
+    /// <p>The life cycle type for the DB cluster.</p>
+    /// <p>For more information, see CreateDBCluster.</p>
+    pub fn get_engine_lifecycle_support(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_lifecycle_support
+    }
     /// Consumes the builder and constructs a [`DbCluster`](crate::types::DbCluster).
     pub fn build(self) -> crate::types::DbCluster {
         crate::types::DbCluster {
@@ -2064,6 +2090,7 @@ impl DbClusterBuilder {
             limitless_database: self.limitless_database,
             storage_throughput: self.storage_throughput,
             certificate_details: self.certificate_details,
+            engine_lifecycle_support: self.engine_lifecycle_support,
         }
     }
 }

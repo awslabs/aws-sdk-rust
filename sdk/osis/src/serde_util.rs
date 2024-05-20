@@ -42,3 +42,12 @@ pub(crate) fn vpc_options_correct_errors(mut builder: crate::types::builders::Vp
     }
     builder
 }
+
+pub(crate) fn vpc_attachment_options_correct_errors(
+    mut builder: crate::types::builders::VpcAttachmentOptionsBuilder,
+) -> crate::types::builders::VpcAttachmentOptionsBuilder {
+    if builder.attach_to_vpc.is_none() {
+        builder.attach_to_vpc = Some(Default::default())
+    }
+    builder
+}

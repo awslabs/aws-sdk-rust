@@ -15,6 +15,26 @@ pub use crate::types::_landing_zone_status::LandingZoneStatus;
 
 pub use crate::types::_landing_zone_summary::LandingZoneSummary;
 
+pub use crate::types::_enabled_control_parameter::EnabledControlParameter;
+
+pub use crate::types::_enabled_control_details::EnabledControlDetails;
+
+pub use crate::types::_enabled_control_parameter_summary::EnabledControlParameterSummary;
+
+pub use crate::types::_drift_status_summary::DriftStatusSummary;
+
+pub use crate::types::_drift_status::DriftStatus;
+
+pub use crate::types::_enablement_status_summary::EnablementStatusSummary;
+
+pub use crate::types::_enablement_status::EnablementStatus;
+
+pub use crate::types::_region::Region;
+
+pub use crate::types::_enabled_control_summary::EnabledControlSummary;
+
+pub use crate::types::_enabled_control_filter::EnabledControlFilter;
+
 pub use crate::types::_baseline_operation::BaselineOperation;
 
 pub use crate::types::_baseline_operation_status::BaselineOperationStatus;
@@ -27,35 +47,21 @@ pub use crate::types::_enabled_baseline_details::EnabledBaselineDetails;
 
 pub use crate::types::_enabled_baseline_parameter_summary::EnabledBaselineParameterSummary;
 
-pub use crate::types::_enablement_status_summary::EnablementStatusSummary;
-
-pub use crate::types::_enablement_status::EnablementStatus;
-
 pub use crate::types::_enabled_baseline_summary::EnabledBaselineSummary;
 
 pub use crate::types::_enabled_baseline_filter::EnabledBaselineFilter;
-
-pub use crate::types::_baseline_summary::BaselineSummary;
-
-pub use crate::types::_enabled_control_parameter::EnabledControlParameter;
-
-pub use crate::types::_enabled_control_summary::EnabledControlSummary;
-
-pub use crate::types::_drift_status_summary::DriftStatusSummary;
-
-pub use crate::types::_drift_status::DriftStatus;
-
-pub use crate::types::_enabled_control_details::EnabledControlDetails;
-
-pub use crate::types::_enabled_control_parameter_summary::EnabledControlParameterSummary;
-
-pub use crate::types::_region::Region;
 
 pub use crate::types::_control_operation::ControlOperation;
 
 pub use crate::types::_control_operation_status::ControlOperationStatus;
 
 pub use crate::types::_control_operation_type::ControlOperationType;
+
+pub use crate::types::_control_operation_summary::ControlOperationSummary;
+
+pub use crate::types::_control_operation_filter::ControlOperationFilter;
+
+pub use crate::types::_baseline_summary::BaselineSummary;
 
 mod _baseline_operation;
 
@@ -67,7 +73,11 @@ mod _baseline_summary;
 
 mod _control_operation;
 
+mod _control_operation_filter;
+
 mod _control_operation_status;
+
+mod _control_operation_summary;
 
 mod _control_operation_type;
 
@@ -86,6 +96,8 @@ mod _enabled_baseline_parameter_summary;
 mod _enabled_baseline_summary;
 
 mod _enabled_control_details;
+
+mod _enabled_control_filter;
 
 mod _enabled_control_parameter;
 

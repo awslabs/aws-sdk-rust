@@ -11,7 +11,7 @@ pub struct DescribeSecretOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets created using the console use an KMS key ID.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether automatic rotation is turned on for this secret. If the secret has never been configured for rotation, Secrets Manager returns null.</p>
+    /// <p>Specifies whether automatic rotation is turned on for this secret.</p>
     /// <p>To turn on rotation, use <code>RotateSecret</code>. To turn off rotation, use <code>CancelRotateSecret</code>.</p>
     pub rotation_enabled: ::std::option::Option<bool>,
     /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret.</p>
@@ -80,7 +80,7 @@ impl DescribeSecretOutput {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>Specifies whether automatic rotation is turned on for this secret. If the secret has never been configured for rotation, Secrets Manager returns null.</p>
+    /// <p>Specifies whether automatic rotation is turned on for this secret.</p>
     /// <p>To turn on rotation, use <code>RotateSecret</code>. To turn off rotation, use <code>CancelRotateSecret</code>.</p>
     pub fn rotation_enabled(&self) -> ::std::option::Option<bool> {
         self.rotation_enabled
@@ -259,19 +259,19 @@ impl DescribeSecretOutputBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
-    /// <p>Specifies whether automatic rotation is turned on for this secret. If the secret has never been configured for rotation, Secrets Manager returns null.</p>
+    /// <p>Specifies whether automatic rotation is turned on for this secret.</p>
     /// <p>To turn on rotation, use <code>RotateSecret</code>. To turn off rotation, use <code>CancelRotateSecret</code>.</p>
     pub fn rotation_enabled(mut self, input: bool) -> Self {
         self.rotation_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether automatic rotation is turned on for this secret. If the secret has never been configured for rotation, Secrets Manager returns null.</p>
+    /// <p>Specifies whether automatic rotation is turned on for this secret.</p>
     /// <p>To turn on rotation, use <code>RotateSecret</code>. To turn off rotation, use <code>CancelRotateSecret</code>.</p>
     pub fn set_rotation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rotation_enabled = input;
         self
     }
-    /// <p>Specifies whether automatic rotation is turned on for this secret. If the secret has never been configured for rotation, Secrets Manager returns null.</p>
+    /// <p>Specifies whether automatic rotation is turned on for this secret.</p>
     /// <p>To turn on rotation, use <code>RotateSecret</code>. To turn off rotation, use <code>CancelRotateSecret</code>.</p>
     pub fn get_rotation_enabled(&self) -> &::std::option::Option<bool> {
         &self.rotation_enabled

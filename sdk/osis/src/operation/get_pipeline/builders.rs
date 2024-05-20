@@ -108,17 +108,17 @@ impl GetPipelineFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the pipeline to get information about.</p>
+    /// <p>The name of the pipeline.</p>
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
-    /// <p>The name of the pipeline to get information about.</p>
+    /// <p>The name of the pipeline.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
-    /// <p>The name of the pipeline to get information about.</p>
+    /// <p>The name of the pipeline.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pipeline_name()
     }

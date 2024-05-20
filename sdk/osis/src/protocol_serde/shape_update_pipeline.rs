@@ -47,6 +47,21 @@ pub fn de_update_pipeline_http_error(
             }
             tmp
         }),
+        "DisabledOperationException" => crate::operation::update_pipeline::UpdatePipelineError::DisabledOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DisabledOperationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_pipeline::UpdatePipelineError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalException" => crate::operation::update_pipeline::UpdatePipelineError::InternalException({
             #[allow(unused_mut)]
             let mut tmp = {

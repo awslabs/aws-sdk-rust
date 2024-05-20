@@ -4,7 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingMaintenanceAction {
-    /// <p>The type of pending maintenance action that is available for the resource. Valid actions are <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
+    /// <p>The type of pending maintenance action that is available for the resource.</p>
+    /// <p>For more information about maintenance actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining a DB instance</a>.</p>
+    /// <p>Valid Values:<code> system-update | db-upgrade | hardware-maintenance | ca-certificate-rotation</code></p>
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date.</p>
     pub auto_applied_after_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -19,7 +21,9 @@ pub struct PendingMaintenanceAction {
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl PendingMaintenanceAction {
-    /// <p>The type of pending maintenance action that is available for the resource. Valid actions are <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
+    /// <p>The type of pending maintenance action that is available for the resource.</p>
+    /// <p>For more information about maintenance actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining a DB instance</a>.</p>
+    /// <p>Valid Values:<code> system-update | db-upgrade | hardware-maintenance | ca-certificate-rotation</code></p>
     pub fn action(&self) -> ::std::option::Option<&str> {
         self.action.as_deref()
     }
@@ -64,17 +68,23 @@ pub struct PendingMaintenanceActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl PendingMaintenanceActionBuilder {
-    /// <p>The type of pending maintenance action that is available for the resource. Valid actions are <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
+    /// <p>The type of pending maintenance action that is available for the resource.</p>
+    /// <p>For more information about maintenance actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining a DB instance</a>.</p>
+    /// <p>Valid Values:<code> system-update | db-upgrade | hardware-maintenance | ca-certificate-rotation</code></p>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of pending maintenance action that is available for the resource. Valid actions are <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
+    /// <p>The type of pending maintenance action that is available for the resource.</p>
+    /// <p>For more information about maintenance actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining a DB instance</a>.</p>
+    /// <p>Valid Values:<code> system-update | db-upgrade | hardware-maintenance | ca-certificate-rotation</code></p>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action = input;
         self
     }
-    /// <p>The type of pending maintenance action that is available for the resource. Valid actions are <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
+    /// <p>The type of pending maintenance action that is available for the resource.</p>
+    /// <p>For more information about maintenance actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining a DB instance</a>.</p>
+    /// <p>Valid Values:<code> system-update | db-upgrade | hardware-maintenance | ca-certificate-rotation</code></p>
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
         &self.action
     }

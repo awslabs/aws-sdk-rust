@@ -11,6 +11,7 @@ pub struct UpgradeTarget {
     /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+    /// <p>This parameter is dynamic, and is set by RDS.</p>
     pub auto_upgrade: ::std::option::Option<bool>,
     /// <p>Indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
     pub is_major_version_upgrade: ::std::option::Option<bool>,
@@ -44,6 +45,7 @@ impl UpgradeTarget {
         self.description.as_deref()
     }
     /// <p>Indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+    /// <p>This parameter is dynamic, and is set by RDS.</p>
     pub fn auto_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_upgrade
     }
@@ -151,16 +153,19 @@ impl UpgradeTargetBuilder {
         &self.description
     }
     /// <p>Indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+    /// <p>This parameter is dynamic, and is set by RDS.</p>
     pub fn auto_upgrade(mut self, input: bool) -> Self {
         self.auto_upgrade = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+    /// <p>This parameter is dynamic, and is set by RDS.</p>
     pub fn set_auto_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_upgrade = input;
         self
     }
     /// <p>Indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+    /// <p>This parameter is dynamic, and is set by RDS.</p>
     pub fn get_auto_upgrade(&self) -> &::std::option::Option<bool> {
         &self.auto_upgrade
     }

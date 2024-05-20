@@ -54,6 +54,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "guardrailConfiguration" => {
+                            builder = builder.set_guardrail_configuration(
+                                crate::protocol_serde::shape_guardrail_configuration::de_guardrail_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

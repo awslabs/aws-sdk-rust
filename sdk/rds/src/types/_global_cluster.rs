@@ -16,6 +16,9 @@ pub struct GlobalCluster {
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the database engine version.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
+    /// <p>The life cycle type for the global cluster.</p>
+    /// <p>For more information, see CreateGlobalCluster.</p>
+    pub engine_lifecycle_support: ::std::option::Option<::std::string::String>,
     /// <p>The default database name within the new global database cluster.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The storage encryption setting for the global database cluster.</p>
@@ -51,6 +54,11 @@ impl GlobalCluster {
     /// <p>Indicates the database engine version.</p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
+    }
+    /// <p>The life cycle type for the global cluster.</p>
+    /// <p>For more information, see CreateGlobalCluster.</p>
+    pub fn engine_lifecycle_support(&self) -> ::std::option::Option<&str> {
+        self.engine_lifecycle_support.as_deref()
     }
     /// <p>The default database name within the new global database cluster.</p>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
@@ -92,6 +100,7 @@ pub struct GlobalClusterBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) storage_encrypted: ::std::option::Option<bool>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
@@ -183,6 +192,23 @@ impl GlobalClusterBuilder {
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
+    /// <p>The life cycle type for the global cluster.</p>
+    /// <p>For more information, see CreateGlobalCluster.</p>
+    pub fn engine_lifecycle_support(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine_lifecycle_support = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The life cycle type for the global cluster.</p>
+    /// <p>For more information, see CreateGlobalCluster.</p>
+    pub fn set_engine_lifecycle_support(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine_lifecycle_support = input;
+        self
+    }
+    /// <p>The life cycle type for the global cluster.</p>
+    /// <p>For more information, see CreateGlobalCluster.</p>
+    pub fn get_engine_lifecycle_support(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_lifecycle_support
+    }
     /// <p>The default database name within the new global database cluster.</p>
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
@@ -268,6 +294,7 @@ impl GlobalClusterBuilder {
             status: self.status,
             engine: self.engine,
             engine_version: self.engine_version,
+            engine_lifecycle_support: self.engine_lifecycle_support,
             database_name: self.database_name,
             storage_encrypted: self.storage_encrypted,
             deletion_protection: self.deletion_protection,

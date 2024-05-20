@@ -275,6 +275,11 @@ pub fn ser_restore_db_instance_to_point_in_time_input_input_input(
     if let Some(var_105) = &input.ca_certificate_identifier {
         scope_104.string(var_105);
     }
+    #[allow(unused_mut)]
+    let mut scope_106 = writer.prefix("EngineLifecycleSupport");
+    if let Some(var_107) = &input.engine_lifecycle_support {
+        scope_106.string(var_107);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

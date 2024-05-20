@@ -5,6 +5,8 @@ pub use crate::types::_pipeline::PipelineBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 
+pub use crate::types::_pipeline_destination::PipelineDestinationBuilder;
+
 pub use crate::types::_service_vpc_endpoint::ServiceVpcEndpointBuilder;
 
 pub use crate::types::_encryption_at_rest_options::EncryptionAtRestOptionsBuilder;
@@ -14,6 +16,8 @@ pub use crate::types::_buffer_options::BufferOptionsBuilder;
 pub use crate::types::_vpc_endpoint::VpcEndpointBuilder;
 
 pub use crate::types::_vpc_options::VpcOptionsBuilder;
+
+pub use crate::types::_vpc_attachment_options::VpcAttachmentOptionsBuilder;
 
 pub use crate::types::_log_publishing_options::LogPublishingOptionsBuilder;
 

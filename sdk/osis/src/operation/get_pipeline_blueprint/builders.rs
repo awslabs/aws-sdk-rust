@@ -122,4 +122,18 @@ impl GetPipelineBlueprintFluentBuilder {
     pub fn get_blueprint_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_blueprint_name()
     }
+    /// <p>The format format of the blueprint to retrieve.</p>
+    pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.format(input.into());
+        self
+    }
+    /// <p>The format format of the blueprint to retrieve.</p>
+    pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_format(input);
+        self
+    }
+    /// <p>The format format of the blueprint to retrieve.</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_format()
+    }
 }

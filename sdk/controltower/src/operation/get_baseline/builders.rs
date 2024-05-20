@@ -22,7 +22,7 @@ impl crate::operation::get_baseline::builders::GetBaselineInputBuilder {
 }
 /// Fluent builder constructing a request to `GetBaseline`.
 ///
-/// <p>Retrieve details about an existing <code>Baseline</code> resource by specifying its identifier.</p>
+/// <p>Retrieve details about an existing <code>Baseline</code> resource by specifying its identifier. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html"> <i>the Amazon Web Services Control Tower User Guide</i> </a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBaselineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

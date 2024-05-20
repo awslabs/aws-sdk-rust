@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_baselines_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_control_operations_output_output_next_token(
+    input: &crate::operation::list_control_operations::ListControlOperationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_enabled_baselines_output_output_next_token(
     input: &crate::operation::list_enabled_baselines::ListEnabledBaselinesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -43,6 +53,13 @@ pub(crate) fn lens_list_baselines_output_output_baselines(
     input: crate::operation::list_baselines::ListBaselinesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BaselineSummary>> {
     let input = input.baselines;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_control_operations_output_output_control_operations(
+    input: crate::operation::list_control_operations::ListControlOperationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ControlOperationSummary>> {
+    let input = input.control_operations;
     ::std::option::Option::Some(input)
 }
 

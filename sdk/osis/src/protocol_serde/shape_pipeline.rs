@@ -97,6 +97,11 @@ where
                                 crate::protocol_serde::shape_service_vpc_endpoints_list::de_service_vpc_endpoints_list(tokens)?,
                             );
                         }
+                        "Destinations" => {
+                            builder = builder.set_destinations(crate::protocol_serde::shape_pipeline_destination_list::de_pipeline_destination_list(
+                                tokens,
+                            )?);
+                        }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
                         }
