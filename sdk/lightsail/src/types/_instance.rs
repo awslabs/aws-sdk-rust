@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Instance {
-    /// <p>The name the user gave the instance (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+    /// <p>The name the user gave the instance (<code>Amazon_Linux_2023-1</code>).</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the instance (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ pub struct Instance {
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
+    /// <p>The blueprint ID (<code>amazon_linux_2023</code>).</p>
     pub blueprint_id: ::std::option::Option<::std::string::String>,
-    /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
+    /// <p>The friendly name of the blueprint (<code>Amazon Linux 2023</code>).</p>
     pub blueprint_name: ::std::option::Option<::std::string::String>,
-    /// <p>The bundle for the instance (<code>micro_1_0</code>).</p>
+    /// <p>The bundle for the instance (<code>micro_x_x</code>).</p>
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects representing the add-ons enabled on the instance.</p>
     pub add_ons: ::std::option::Option<::std::vec::Vec<crate::types::AddOn>>,
@@ -35,7 +35,7 @@ pub struct Instance {
     /// <p>The IPv6 addresses of the instance.</p>
     pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP address type of the instance.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The size of the vCPU and the amount of RAM for the instance.</p>
     pub hardware: ::std::option::Option<crate::types::InstanceHardware>,
@@ -51,7 +51,7 @@ pub struct Instance {
     pub metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
 }
 impl Instance {
-    /// <p>The name the user gave the instance (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+    /// <p>The name the user gave the instance (<code>Amazon_Linux_2023-1</code>).</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -81,15 +81,15 @@ impl Instance {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
+    /// <p>The blueprint ID (<code>amazon_linux_2023</code>).</p>
     pub fn blueprint_id(&self) -> ::std::option::Option<&str> {
         self.blueprint_id.as_deref()
     }
-    /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
+    /// <p>The friendly name of the blueprint (<code>Amazon Linux 2023</code>).</p>
     pub fn blueprint_name(&self) -> ::std::option::Option<&str> {
         self.blueprint_name.as_deref()
     }
-    /// <p>The bundle for the instance (<code>micro_1_0</code>).</p>
+    /// <p>The bundle for the instance (<code>micro_x_x</code>).</p>
     pub fn bundle_id(&self) -> ::std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
@@ -118,7 +118,7 @@ impl Instance {
         self.ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The IP address type of the instance.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
@@ -182,17 +182,17 @@ pub struct InstanceBuilder {
     pub(crate) metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
 }
 impl InstanceBuilder {
-    /// <p>The name the user gave the instance (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+    /// <p>The name the user gave the instance (<code>Amazon_Linux_2023-1</code>).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name the user gave the instance (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+    /// <p>The name the user gave the instance (<code>Amazon_Linux_2023-1</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name the user gave the instance (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+    /// <p>The name the user gave the instance (<code>Amazon_Linux_2023-1</code>).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -286,45 +286,45 @@ impl InstanceBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
+    /// <p>The blueprint ID (<code>amazon_linux_2023</code>).</p>
     pub fn blueprint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
+    /// <p>The blueprint ID (<code>amazon_linux_2023</code>).</p>
     pub fn set_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blueprint_id = input;
         self
     }
-    /// <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
+    /// <p>The blueprint ID (<code>amazon_linux_2023</code>).</p>
     pub fn get_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.blueprint_id
     }
-    /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
+    /// <p>The friendly name of the blueprint (<code>Amazon Linux 2023</code>).</p>
     pub fn blueprint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
+    /// <p>The friendly name of the blueprint (<code>Amazon Linux 2023</code>).</p>
     pub fn set_blueprint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blueprint_name = input;
         self
     }
-    /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
+    /// <p>The friendly name of the blueprint (<code>Amazon Linux 2023</code>).</p>
     pub fn get_blueprint_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.blueprint_name
     }
-    /// <p>The bundle for the instance (<code>micro_1_0</code>).</p>
+    /// <p>The bundle for the instance (<code>micro_x_x</code>).</p>
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The bundle for the instance (<code>micro_1_0</code>).</p>
+    /// <p>The bundle for the instance (<code>micro_x_x</code>).</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bundle_id = input;
         self
     }
-    /// <p>The bundle for the instance (<code>micro_1_0</code>).</p>
+    /// <p>The bundle for the instance (<code>micro_x_x</code>).</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bundle_id
     }
@@ -411,19 +411,19 @@ impl InstanceBuilder {
         &self.ipv6_addresses
     }
     /// <p>The IP address type of the instance.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IP address type of the instance.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
     /// <p>The IP address type of the instance.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type
     }

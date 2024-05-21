@@ -19,7 +19,9 @@ pub struct GatewayInfo {
     pub ec2_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
     pub ec2_instance_region: ::std::option::Option<::std::string::String>,
-    /// <p>The type of hardware or software platform on which the gateway is running.</p>
+    /// <p>The type of hardware or software platform on which the gateway is running.</p><note>
+    /// <p>Tape Gateway is no longer available on Snow Family devices.</p>
+    /// </note>
     pub host_environment: ::std::option::Option<crate::types::HostEnvironment>,
     /// <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
     pub host_environment_id: ::std::option::Option<::std::string::String>,
@@ -58,7 +60,9 @@ impl GatewayInfo {
     pub fn ec2_instance_region(&self) -> ::std::option::Option<&str> {
         self.ec2_instance_region.as_deref()
     }
-    /// <p>The type of hardware or software platform on which the gateway is running.</p>
+    /// <p>The type of hardware or software platform on which the gateway is running.</p><note>
+    /// <p>Tape Gateway is no longer available on Snow Family devices.</p>
+    /// </note>
     pub fn host_environment(&self) -> ::std::option::Option<&crate::types::HostEnvironment> {
         self.host_environment.as_ref()
     }
@@ -200,17 +204,23 @@ impl GatewayInfoBuilder {
     pub fn get_ec2_instance_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.ec2_instance_region
     }
-    /// <p>The type of hardware or software platform on which the gateway is running.</p>
+    /// <p>The type of hardware or software platform on which the gateway is running.</p><note>
+    /// <p>Tape Gateway is no longer available on Snow Family devices.</p>
+    /// </note>
     pub fn host_environment(mut self, input: crate::types::HostEnvironment) -> Self {
         self.host_environment = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of hardware or software platform on which the gateway is running.</p>
+    /// <p>The type of hardware or software platform on which the gateway is running.</p><note>
+    /// <p>Tape Gateway is no longer available on Snow Family devices.</p>
+    /// </note>
     pub fn set_host_environment(mut self, input: ::std::option::Option<crate::types::HostEnvironment>) -> Self {
         self.host_environment = input;
         self
     }
-    /// <p>The type of hardware or software platform on which the gateway is running.</p>
+    /// <p>The type of hardware or software platform on which the gateway is running.</p><note>
+    /// <p>Tape Gateway is no longer available on Snow Family devices.</p>
+    /// </note>
     pub fn get_host_environment(&self) -> &::std::option::Option<crate::types::HostEnvironment> {
         &self.host_environment
     }

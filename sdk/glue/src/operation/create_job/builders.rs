@@ -558,4 +558,21 @@ impl CreateJobFluentBuilder {
     pub fn get_source_control_details(&self) -> &::std::option::Option<crate::types::SourceControlDetails> {
         self.inner.get_source_control_details()
     }
+    /// <p>This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.</p>
+    /// <p>Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+    pub fn maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.maintenance_window(input.into());
+        self
+    }
+    /// <p>This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.</p>
+    /// <p>Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+    pub fn set_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_maintenance_window(input);
+        self
+    }
+    /// <p>This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.</p>
+    /// <p>Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+    pub fn get_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_maintenance_window()
+    }
 }

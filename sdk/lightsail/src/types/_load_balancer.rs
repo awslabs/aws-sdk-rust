@@ -38,7 +38,7 @@ pub struct LoadBalancer {
     /// <p>A string to string map of the configuration options for your load balancer. Valid values are listed below.</p>
     pub configuration_options: ::std::option::Option<::std::collections::HashMap<crate::types::LoadBalancerAttributeName, ::std::string::String>>,
     /// <p>The IP address type of the load balancer.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>A Boolean value that indicates whether HTTPS redirection is enabled for the load balancer.</p>
     pub https_redirection_enabled: ::std::option::Option<bool>,
@@ -122,7 +122,7 @@ impl LoadBalancer {
         self.configuration_options.as_ref()
     }
     /// <p>The IP address type of the load balancer.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
@@ -434,19 +434,19 @@ impl LoadBalancerBuilder {
         &self.configuration_options
     }
     /// <p>The IP address type of the load balancer.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IP address type of the load balancer.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
     /// <p>The IP address type of the load balancer.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type
     }

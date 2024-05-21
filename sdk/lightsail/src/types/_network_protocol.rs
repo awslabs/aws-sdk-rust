@@ -14,6 +14,7 @@
 /// match networkprotocol {
 ///     NetworkProtocol::All => { /* ... */ },
 ///     NetworkProtocol::Icmp => { /* ... */ },
+///     NetworkProtocol::Icmpv6 => { /* ... */ },
 ///     NetworkProtocol::Tcp => { /* ... */ },
 ///     NetworkProtocol::Udp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@ pub enum NetworkProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Icmp,
     #[allow(missing_docs)] // documentation missing in model
+    Icmpv6,
+    #[allow(missing_docs)] // documentation missing in model
     Tcp,
     #[allow(missing_docs)] // documentation missing in model
     Udp,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for NetworkProtocol {
         match s {
             "all" => NetworkProtocol::All,
             "icmp" => NetworkProtocol::Icmp,
+            "icmpv6" => NetworkProtocol::Icmpv6,
             "tcp" => NetworkProtocol::Tcp,
             "udp" => NetworkProtocol::Udp,
             other => NetworkProtocol::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -79,6 +83,7 @@ impl NetworkProtocol {
         match self {
             NetworkProtocol::All => "all",
             NetworkProtocol::Icmp => "icmp",
+            NetworkProtocol::Icmpv6 => "icmpv6",
             NetworkProtocol::Tcp => "tcp",
             NetworkProtocol::Udp => "udp",
             NetworkProtocol::Unknown(value) => value.as_str(),
@@ -86,7 +91,7 @@ impl NetworkProtocol {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["all", "icmp", "tcp", "udp"]
+        &["all", "icmp", "icmpv6", "tcp", "udp"]
     }
 }
 impl ::std::convert::AsRef<str> for NetworkProtocol {
@@ -111,6 +116,7 @@ impl ::std::fmt::Display for NetworkProtocol {
         match self {
             NetworkProtocol::All => write!(f, "all"),
             NetworkProtocol::Icmp => write!(f, "icmp"),
+            NetworkProtocol::Icmpv6 => write!(f, "icmpv6"),
             NetworkProtocol::Tcp => write!(f, "tcp"),
             NetworkProtocol::Udp => write!(f, "udp"),
             NetworkProtocol::Unknown(value) => write!(f, "{}", value),

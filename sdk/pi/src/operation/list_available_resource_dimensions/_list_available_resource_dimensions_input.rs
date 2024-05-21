@@ -13,6 +13,9 @@ pub struct ListAvailableResourceDimensionsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then the response will contain the dimensions common for all the actions.</p>
+    /// <p>When you don't specify this request parameter or provide an empty list, the response contains all the available dimensions for the target database engine whether or not you are authorized to access them.</p>
+    pub authorized_actions: ::std::option::Option<::std::vec::Vec<crate::types::FineGrainedAction>>,
 }
 impl ListAvailableResourceDimensionsInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
@@ -37,6 +40,13 @@ impl ListAvailableResourceDimensionsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then the response will contain the dimensions common for all the actions.</p>
+    /// <p>When you don't specify this request parameter or provide an empty list, the response contains all the available dimensions for the target database engine whether or not you are authorized to access them.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorized_actions.is_none()`.
+    pub fn authorized_actions(&self) -> &[crate::types::FineGrainedAction] {
+        self.authorized_actions.as_deref().unwrap_or_default()
+    }
 }
 impl ListAvailableResourceDimensionsInput {
     /// Creates a new builder-style object to manufacture [`ListAvailableResourceDimensionsInput`](crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsInput).
@@ -54,6 +64,7 @@ pub struct ListAvailableResourceDimensionsInputBuilder {
     pub(crate) metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) authorized_actions: ::std::option::Option<::std::vec::Vec<crate::types::FineGrainedAction>>,
 }
 impl ListAvailableResourceDimensionsInputBuilder {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
@@ -134,6 +145,29 @@ impl ListAvailableResourceDimensionsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// Appends an item to `authorized_actions`.
+    ///
+    /// To override the contents of this collection use [`set_authorized_actions`](Self::set_authorized_actions).
+    ///
+    /// <p>The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then the response will contain the dimensions common for all the actions.</p>
+    /// <p>When you don't specify this request parameter or provide an empty list, the response contains all the available dimensions for the target database engine whether or not you are authorized to access them.</p>
+    pub fn authorized_actions(mut self, input: crate::types::FineGrainedAction) -> Self {
+        let mut v = self.authorized_actions.unwrap_or_default();
+        v.push(input);
+        self.authorized_actions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then the response will contain the dimensions common for all the actions.</p>
+    /// <p>When you don't specify this request parameter or provide an empty list, the response contains all the available dimensions for the target database engine whether or not you are authorized to access them.</p>
+    pub fn set_authorized_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FineGrainedAction>>) -> Self {
+        self.authorized_actions = input;
+        self
+    }
+    /// <p>The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then the response will contain the dimensions common for all the actions.</p>
+    /// <p>When you don't specify this request parameter or provide an empty list, the response contains all the available dimensions for the target database engine whether or not you are authorized to access them.</p>
+    pub fn get_authorized_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FineGrainedAction>> {
+        &self.authorized_actions
+    }
     /// Consumes the builder and constructs a [`ListAvailableResourceDimensionsInput`](crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsInput).
     pub fn build(
         self,
@@ -148,6 +182,7 @@ impl ListAvailableResourceDimensionsInputBuilder {
                 metrics: self.metrics,
                 max_results: self.max_results,
                 next_token: self.next_token,
+                authorized_actions: self.authorized_actions,
             },
         )
     }

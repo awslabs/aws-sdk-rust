@@ -16,7 +16,7 @@ pub struct CreateInstancesFromSnapshotInput {
     /// <p>This parameter cannot be defined together with the <code>source instance name</code> parameter. The <code>instance snapshot name</code> and <code>source instance name</code> parameters are mutually exclusive.</p></li>
     /// </ul>
     pub instance_snapshot_name: ::std::option::Option<::std::string::String>,
-    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_x_x</code>).</p>
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>You can create a launch script that configures a server with additional user data. For example, <code>apt-get -y update</code>.</p><note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
@@ -30,7 +30,7 @@ pub struct CreateInstancesFromSnapshotInput {
     /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
     pub add_ons: ::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>>,
     /// <p>The IP address type for the instance.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The name of the source instance from which the source automatic snapshot was created.</p>
@@ -89,7 +89,7 @@ impl CreateInstancesFromSnapshotInput {
     pub fn instance_snapshot_name(&self) -> ::std::option::Option<&str> {
         self.instance_snapshot_name.as_deref()
     }
-    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_x_x</code>).</p>
     pub fn bundle_id(&self) -> ::std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
@@ -117,7 +117,7 @@ impl CreateInstancesFromSnapshotInput {
         self.add_ons.as_deref().unwrap_or_default()
     }
     /// <p>The IP address type for the instance.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
@@ -274,18 +274,18 @@ impl CreateInstancesFromSnapshotInputBuilder {
     pub fn get_instance_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_snapshot_name
     }
-    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_x_x</code>).</p>
     /// This field is required.
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_x_x</code>).</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bundle_id = input;
         self
     }
-    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_x_x</code>).</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bundle_id
     }
@@ -367,21 +367,21 @@ impl CreateInstancesFromSnapshotInputBuilder {
         &self.add_ons
     }
     /// <p>The IP address type for the instance.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IP address type for the instance.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
     /// <p>The IP address type for the instance.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type

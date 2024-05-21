@@ -14,6 +14,7 @@
 /// match smbsecuritystrategy {
 ///     SmbSecurityStrategy::ClientSpecified => { /* ... */ },
 ///     SmbSecurityStrategy::MandatoryEncryption => { /* ... */ },
+///     SmbSecurityStrategy::MandatoryEncryptionNoAes128 => { /* ... */ },
 ///     SmbSecurityStrategy::MandatorySigning => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum SmbSecurityStrategy {
     #[allow(missing_docs)] // documentation missing in model
     MandatoryEncryption,
     #[allow(missing_docs)] // documentation missing in model
+    MandatoryEncryptionNoAes128,
+    #[allow(missing_docs)] // documentation missing in model
     MandatorySigning,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for SmbSecurityStrategy {
         match s {
             "ClientSpecified" => SmbSecurityStrategy::ClientSpecified,
             "MandatoryEncryption" => SmbSecurityStrategy::MandatoryEncryption,
+            "MandatoryEncryptionNoAes128" => SmbSecurityStrategy::MandatoryEncryptionNoAes128,
             "MandatorySigning" => SmbSecurityStrategy::MandatorySigning,
             other => SmbSecurityStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,13 +79,19 @@ impl SmbSecurityStrategy {
         match self {
             SmbSecurityStrategy::ClientSpecified => "ClientSpecified",
             SmbSecurityStrategy::MandatoryEncryption => "MandatoryEncryption",
+            SmbSecurityStrategy::MandatoryEncryptionNoAes128 => "MandatoryEncryptionNoAes128",
             SmbSecurityStrategy::MandatorySigning => "MandatorySigning",
             SmbSecurityStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ClientSpecified", "MandatoryEncryption", "MandatorySigning"]
+        &[
+            "ClientSpecified",
+            "MandatoryEncryption",
+            "MandatoryEncryptionNoAes128",
+            "MandatorySigning",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for SmbSecurityStrategy {
@@ -106,6 +116,7 @@ impl ::std::fmt::Display for SmbSecurityStrategy {
         match self {
             SmbSecurityStrategy::ClientSpecified => write!(f, "ClientSpecified"),
             SmbSecurityStrategy::MandatoryEncryption => write!(f, "MandatoryEncryption"),
+            SmbSecurityStrategy::MandatoryEncryptionNoAes128 => write!(f, "MandatoryEncryptionNoAes128"),
             SmbSecurityStrategy::MandatorySigning => write!(f, "MandatorySigning"),
             SmbSecurityStrategy::Unknown(value) => write!(f, "{}", value),
         }

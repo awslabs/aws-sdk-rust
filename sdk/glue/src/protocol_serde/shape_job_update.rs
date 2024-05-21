@@ -117,5 +117,8 @@ pub fn ser_job_update(
         crate::protocol_serde::shape_source_control_details::ser_source_control_details(&mut object_33, var_32)?;
         object_33.finish();
     }
+    if let Some(var_34) = &input.maintenance_window {
+        object.key("MaintenanceWindow").string(var_34.as_str());
+    }
     Ok(())
 }

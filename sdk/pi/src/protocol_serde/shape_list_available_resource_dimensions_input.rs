@@ -27,5 +27,14 @@ pub fn ser_list_available_resource_dimensions_input_input(
     if let Some(var_7) = &input.next_token {
         object.key("NextToken").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.authorized_actions {
+        let mut array_9 = object.key("AuthorizedActions").start_array();
+        for item_10 in var_8 {
+            {
+                array_9.value().string(item_10.as_str());
+            }
+        }
+        array_9.finish();
+    }
     Ok(())
 }

@@ -130,5 +130,8 @@ pub fn ser_create_job_input_input(
         crate::protocol_serde::shape_source_control_details::ser_source_control_details(&mut object_40, var_39)?;
         object_40.finish();
     }
+    if let Some(var_41) = &input.maintenance_window {
+        object.key("MaintenanceWindow").string(var_41.as_str());
+    }
     Ok(())
 }

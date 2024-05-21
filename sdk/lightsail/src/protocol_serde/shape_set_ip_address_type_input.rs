@@ -12,5 +12,8 @@ pub fn ser_set_ip_address_type_input_input(
     if let Some(var_3) = &input.ip_address_type {
         object.key("ipAddressType").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.accept_bundle_update {
+        object.key("acceptBundleUpdate").boolean(*var_4);
+    }
     Ok(())
 }

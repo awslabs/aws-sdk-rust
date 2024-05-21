@@ -195,17 +195,17 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     pub fn get_instance_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_snapshot_name()
     }
-    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_x_x</code>).</p>
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bundle_id(input.into());
         self
     }
-    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_x_x</code>).</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bundle_id(input);
         self
     }
-    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_x_x</code>).</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bundle_id()
     }
@@ -285,21 +285,21 @@ impl CreateInstancesFromSnapshotFluentBuilder {
         self.inner.get_add_ons()
     }
     /// <p>The IP address type for the instance.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.inner = self.inner.ip_address_type(input);
         self
     }
     /// <p>The IP address type for the instance.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }
     /// <p>The IP address type for the instance.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         self.inner.get_ip_address_type()

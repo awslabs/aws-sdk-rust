@@ -40,7 +40,9 @@ pub struct JobRun {
     /// <p>The amount of time (in seconds) that the job run consumed resources.</p>
     pub execution_time: i32,
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
-    /// <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>
+    /// <p>The maximum value for timeout for batch jobs is 7 days or 10080 minutes. The default is 2880 minutes (48 hours) for batch jobs.</p>
+    /// <p>Any existing Glue jobs that have a greater timeout value are defaulted to 7 days. For instance you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p>
+    /// <p>Streaming jobs must have timeout values less than 7 days or 10080 minutes. When the value is left blank, the job will be restarted after 7 days based if you have not setup a maintenance window. If you have setup maintenance window, it will be restarted during the maintenance window after 7 days.</p>
     pub timeout: ::std::option::Option<i32>,
     /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/"> Glue pricing page</a>.</p>
     /// <p>For Glue version 2.0+ jobs, you cannot specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
@@ -82,12 +84,15 @@ pub struct JobRun {
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
     pub glue_version: ::std::option::Option<::std::string::String>,
-    /// <p>This field populates only for Auto Scaling job runs, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for <code>G.025X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>
+    /// <p>This field can be set for either job runs with execution class <code>FLEX</code> or when Auto Scaling is enabled, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for <code>G.025X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>
     pub dpu_seconds: ::std::option::Option<f64>,
     /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
     /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.</p>
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
     pub execution_class: ::std::option::Option<crate::types::ExecutionClass>,
+    /// <p>This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.</p>
+    /// <p>Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+    pub maintenance_window: ::std::option::Option<::std::string::String>,
 }
 impl JobRun {
     /// <p>The ID of this job run.</p>
@@ -156,7 +161,9 @@ impl JobRun {
         self.execution_time
     }
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
-    /// <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>
+    /// <p>The maximum value for timeout for batch jobs is 7 days or 10080 minutes. The default is 2880 minutes (48 hours) for batch jobs.</p>
+    /// <p>Any existing Glue jobs that have a greater timeout value are defaulted to 7 days. For instance you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p>
+    /// <p>Streaming jobs must have timeout values less than 7 days or 10080 minutes. When the value is left blank, the job will be restarted after 7 days based if you have not setup a maintenance window. If you have setup maintenance window, it will be restarted during the maintenance window after 7 days.</p>
     pub fn timeout(&self) -> ::std::option::Option<i32> {
         self.timeout
     }
@@ -214,7 +221,7 @@ impl JobRun {
     pub fn glue_version(&self) -> ::std::option::Option<&str> {
         self.glue_version.as_deref()
     }
-    /// <p>This field populates only for Auto Scaling job runs, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for <code>G.025X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>
+    /// <p>This field can be set for either job runs with execution class <code>FLEX</code> or when Auto Scaling is enabled, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for <code>G.025X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>
     pub fn dpu_seconds(&self) -> ::std::option::Option<f64> {
         self.dpu_seconds
     }
@@ -223,6 +230,11 @@ impl JobRun {
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
     pub fn execution_class(&self) -> ::std::option::Option<&crate::types::ExecutionClass> {
         self.execution_class.as_ref()
+    }
+    /// <p>This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.</p>
+    /// <p>Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+    pub fn maintenance_window(&self) -> ::std::option::Option<&str> {
+        self.maintenance_window.as_deref()
     }
 }
 impl JobRun {
@@ -260,6 +272,7 @@ pub struct JobRunBuilder {
     pub(crate) glue_version: ::std::option::Option<::std::string::String>,
     pub(crate) dpu_seconds: ::std::option::Option<f64>,
     pub(crate) execution_class: ::std::option::Option<crate::types::ExecutionClass>,
+    pub(crate) maintenance_window: ::std::option::Option<::std::string::String>,
 }
 impl JobRunBuilder {
     /// <p>The ID of this job run.</p>
@@ -492,19 +505,25 @@ impl JobRunBuilder {
         &self.execution_time
     }
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
-    /// <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>
+    /// <p>The maximum value for timeout for batch jobs is 7 days or 10080 minutes. The default is 2880 minutes (48 hours) for batch jobs.</p>
+    /// <p>Any existing Glue jobs that have a greater timeout value are defaulted to 7 days. For instance you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p>
+    /// <p>Streaming jobs must have timeout values less than 7 days or 10080 minutes. When the value is left blank, the job will be restarted after 7 days based if you have not setup a maintenance window. If you have setup maintenance window, it will be restarted during the maintenance window after 7 days.</p>
     pub fn timeout(mut self, input: i32) -> Self {
         self.timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
-    /// <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>
+    /// <p>The maximum value for timeout for batch jobs is 7 days or 10080 minutes. The default is 2880 minutes (48 hours) for batch jobs.</p>
+    /// <p>Any existing Glue jobs that have a greater timeout value are defaulted to 7 days. For instance you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p>
+    /// <p>Streaming jobs must have timeout values less than 7 days or 10080 minutes. When the value is left blank, the job will be restarted after 7 days based if you have not setup a maintenance window. If you have setup maintenance window, it will be restarted during the maintenance window after 7 days.</p>
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
     }
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
-    /// <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>
+    /// <p>The maximum value for timeout for batch jobs is 7 days or 10080 minutes. The default is 2880 minutes (48 hours) for batch jobs.</p>
+    /// <p>Any existing Glue jobs that have a greater timeout value are defaulted to 7 days. For instance you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p>
+    /// <p>Streaming jobs must have timeout values less than 7 days or 10080 minutes. When the value is left blank, the job will be restarted after 7 days based if you have not setup a maintenance window. If you have setup maintenance window, it will be restarted during the maintenance window after 7 days.</p>
     pub fn get_timeout(&self) -> &::std::option::Option<i32> {
         &self.timeout
     }
@@ -684,17 +703,17 @@ impl JobRunBuilder {
     pub fn get_glue_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.glue_version
     }
-    /// <p>This field populates only for Auto Scaling job runs, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for <code>G.025X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>
+    /// <p>This field can be set for either job runs with execution class <code>FLEX</code> or when Auto Scaling is enabled, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for <code>G.025X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>
     pub fn dpu_seconds(mut self, input: f64) -> Self {
         self.dpu_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This field populates only for Auto Scaling job runs, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for <code>G.025X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>
+    /// <p>This field can be set for either job runs with execution class <code>FLEX</code> or when Auto Scaling is enabled, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for <code>G.025X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>
     pub fn set_dpu_seconds(mut self, input: ::std::option::Option<f64>) -> Self {
         self.dpu_seconds = input;
         self
     }
-    /// <p>This field populates only for Auto Scaling job runs, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for <code>G.025X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>
+    /// <p>This field can be set for either job runs with execution class <code>FLEX</code> or when Auto Scaling is enabled, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for <code>G.025X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>
     pub fn get_dpu_seconds(&self) -> &::std::option::Option<f64> {
         &self.dpu_seconds
     }
@@ -717,6 +736,23 @@ impl JobRunBuilder {
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
     pub fn get_execution_class(&self) -> &::std::option::Option<crate::types::ExecutionClass> {
         &self.execution_class
+    }
+    /// <p>This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.</p>
+    /// <p>Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+    pub fn maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.maintenance_window = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.</p>
+    /// <p>Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+    pub fn set_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.maintenance_window = input;
+        self
+    }
+    /// <p>This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.</p>
+    /// <p>Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+    pub fn get_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_window
     }
     /// Consumes the builder and constructs a [`JobRun`](crate::types::JobRun).
     pub fn build(self) -> crate::types::JobRun {
@@ -745,6 +781,7 @@ impl JobRunBuilder {
             glue_version: self.glue_version,
             dpu_seconds: self.dpu_seconds,
             execution_class: self.execution_class,
+            maintenance_window: self.maintenance_window,
         }
     }
 }

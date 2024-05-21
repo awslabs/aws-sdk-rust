@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Blueprint {
-    /// <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+    /// <p>The ID for the virtual private server image (<code>app_wordpress_x_x</code> or <code>app_lamp_x_x</code>).</p>
     pub blueprint_id: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ pub struct Blueprint {
     pub app_category: ::std::option::Option<crate::types::AppCategory>,
 }
 impl Blueprint {
-    /// <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+    /// <p>The ID for the virtual private server image (<code>app_wordpress_x_x</code> or <code>app_lamp_x_x</code>).</p>
     pub fn blueprint_id(&self) -> ::std::option::Option<&str> {
         self.blueprint_id.as_deref()
     }
@@ -115,17 +115,17 @@ pub struct BlueprintBuilder {
     pub(crate) app_category: ::std::option::Option<crate::types::AppCategory>,
 }
 impl BlueprintBuilder {
-    /// <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+    /// <p>The ID for the virtual private server image (<code>app_wordpress_x_x</code> or <code>app_lamp_x_x</code>).</p>
     pub fn blueprint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+    /// <p>The ID for the virtual private server image (<code>app_wordpress_x_x</code> or <code>app_lamp_x_x</code>).</p>
     pub fn set_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blueprint_id = input;
         self
     }
-    /// <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+    /// <p>The ID for the virtual private server image (<code>app_wordpress_x_x</code> or <code>app_lamp_x_x</code>).</p>
     pub fn get_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.blueprint_id
     }

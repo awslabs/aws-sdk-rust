@@ -10,9 +10,9 @@ pub struct Bundle {
     pub cpu_count: ::std::option::Option<i32>,
     /// <p>The size of the SSD (<code>30</code>).</p>
     pub disk_size_in_gb: ::std::option::Option<i32>,
-    /// <p>The bundle ID (<code>micro_1_0</code>).</p>
+    /// <p>The bundle ID (<code>micro_x_x</code>).</p>
     pub bundle_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon EC2 instance type (<code>t2.micro</code>).</p>
+    /// <p>The instance type (<code>micro</code>).</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the bundle is active.</p>
     pub is_active: ::std::option::Option<bool>,
@@ -46,11 +46,11 @@ impl Bundle {
     pub fn disk_size_in_gb(&self) -> ::std::option::Option<i32> {
         self.disk_size_in_gb
     }
-    /// <p>The bundle ID (<code>micro_1_0</code>).</p>
+    /// <p>The bundle ID (<code>micro_x_x</code>).</p>
     pub fn bundle_id(&self) -> ::std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
-    /// <p>The Amazon EC2 instance type (<code>t2.micro</code>).</p>
+    /// <p>The instance type (<code>micro</code>).</p>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
@@ -161,31 +161,31 @@ impl BundleBuilder {
     pub fn get_disk_size_in_gb(&self) -> &::std::option::Option<i32> {
         &self.disk_size_in_gb
     }
-    /// <p>The bundle ID (<code>micro_1_0</code>).</p>
+    /// <p>The bundle ID (<code>micro_x_x</code>).</p>
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The bundle ID (<code>micro_1_0</code>).</p>
+    /// <p>The bundle ID (<code>micro_x_x</code>).</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bundle_id = input;
         self
     }
-    /// <p>The bundle ID (<code>micro_1_0</code>).</p>
+    /// <p>The bundle ID (<code>micro_x_x</code>).</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bundle_id
     }
-    /// <p>The Amazon EC2 instance type (<code>t2.micro</code>).</p>
+    /// <p>The instance type (<code>micro</code>).</p>
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon EC2 instance type (<code>t2.micro</code>).</p>
+    /// <p>The instance type (<code>micro</code>).</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
-    /// <p>The Amazon EC2 instance type (<code>t2.micro</code>).</p>
+    /// <p>The instance type (<code>micro</code>).</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
     }

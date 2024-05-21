@@ -1851,12 +1851,15 @@ impl CreateDBInstanceFluentBuilder {
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_minor_version_upgrade()
     }
-    /// <p>The license model information for this DB instance.</p>
+    /// <p>The license model information for this DB instance.</p><note>
+    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>The default for RDS for Db2 is <code>bring-your-own-license</code>.</p>
+    /// </note>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
+    /// <p>RDS for Db2 - <code>bring-your-own-license | marketplace-license</code></p></li>
     /// <li>
     /// <p>RDS for MariaDB - <code>general-public-license</code></p></li>
     /// <li>
@@ -1872,12 +1875,15 @@ impl CreateDBInstanceFluentBuilder {
         self.inner = self.inner.license_model(input.into());
         self
     }
-    /// <p>The license model information for this DB instance.</p>
+    /// <p>The license model information for this DB instance.</p><note>
+    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>The default for RDS for Db2 is <code>bring-your-own-license</code>.</p>
+    /// </note>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
+    /// <p>RDS for Db2 - <code>bring-your-own-license | marketplace-license</code></p></li>
     /// <li>
     /// <p>RDS for MariaDB - <code>general-public-license</code></p></li>
     /// <li>
@@ -1893,12 +1899,15 @@ impl CreateDBInstanceFluentBuilder {
         self.inner = self.inner.set_license_model(input);
         self
     }
-    /// <p>The license model information for this DB instance.</p>
+    /// <p>The license model information for this DB instance.</p><note>
+    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>The default for RDS for Db2 is <code>bring-your-own-license</code>.</p>
+    /// </note>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
+    /// <p>RDS for Db2 - <code>bring-your-own-license | marketplace-license</code></p></li>
     /// <li>
     /// <p>RDS for MariaDB - <code>general-public-license</code></p></li>
     /// <li>

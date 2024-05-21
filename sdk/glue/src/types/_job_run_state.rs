@@ -13,6 +13,7 @@
 /// # let jobrunstate = unimplemented!();
 /// match jobrunstate {
 ///     JobRunState::Error => { /* ... */ },
+///     JobRunState::Expired => { /* ... */ },
 ///     JobRunState::Failed => { /* ... */ },
 ///     JobRunState::Running => { /* ... */ },
 ///     JobRunState::Starting => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum JobRunState {
     #[allow(missing_docs)] // documentation missing in model
     Error,
     #[allow(missing_docs)] // documentation missing in model
+    Expired,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Running,
@@ -74,6 +77,7 @@ impl ::std::convert::From<&str> for JobRunState {
     fn from(s: &str) -> Self {
         match s {
             "ERROR" => JobRunState::Error,
+            "EXPIRED" => JobRunState::Expired,
             "FAILED" => JobRunState::Failed,
             "RUNNING" => JobRunState::Running,
             "STARTING" => JobRunState::Starting,
@@ -98,6 +102,7 @@ impl JobRunState {
     pub fn as_str(&self) -> &str {
         match self {
             JobRunState::Error => "ERROR",
+            JobRunState::Expired => "EXPIRED",
             JobRunState::Failed => "FAILED",
             JobRunState::Running => "RUNNING",
             JobRunState::Starting => "STARTING",
@@ -113,6 +118,7 @@ impl JobRunState {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ERROR",
+            "EXPIRED",
             "FAILED",
             "RUNNING",
             "STARTING",
@@ -145,6 +151,7 @@ impl ::std::fmt::Display for JobRunState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             JobRunState::Error => write!(f, "ERROR"),
+            JobRunState::Expired => write!(f, "EXPIRED"),
             JobRunState::Failed => write!(f, "FAILED"),
             JobRunState::Running => write!(f, "RUNNING"),
             JobRunState::Starting => write!(f, "STARTING"),

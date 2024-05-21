@@ -66,7 +66,7 @@ pub struct DbInstance {
     /// <p>This attribute is only supported in RDS for Oracle.</p>
     /// </note>
     pub replica_mode: ::std::option::Option<crate::types::ReplicaMode>,
-    /// <p>The license model information for this DB instance. This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>The license model information for this DB instance. This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The Provisioned IOPS (I/O operations per second) value for the DB instance.</p>
     pub iops: ::std::option::Option<i32>,
@@ -348,7 +348,7 @@ impl DbInstance {
     pub fn replica_mode(&self) -> ::std::option::Option<&crate::types::ReplicaMode> {
         self.replica_mode.as_ref()
     }
-    /// <p>The license model information for this DB instance. This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>The license model information for this DB instance. This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     pub fn license_model(&self) -> ::std::option::Option<&str> {
         self.license_model.as_deref()
     }
@@ -1167,17 +1167,17 @@ impl DbInstanceBuilder {
     pub fn get_replica_mode(&self) -> &::std::option::Option<crate::types::ReplicaMode> {
         &self.replica_mode
     }
-    /// <p>The license model information for this DB instance. This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>The license model information for this DB instance. This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_model = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The license model information for this DB instance. This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>The license model information for this DB instance. This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_model = input;
         self
     }
-    /// <p>The license model information for this DB instance. This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>The license model information for this DB instance. This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_model
     }

@@ -189,4 +189,26 @@ impl ListAvailableResourceDimensionsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    ///
+    /// Appends an item to `AuthorizedActions`.
+    ///
+    /// To override the contents of this collection use [`set_authorized_actions`](Self::set_authorized_actions).
+    ///
+    /// <p>The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then the response will contain the dimensions common for all the actions.</p>
+    /// <p>When you don't specify this request parameter or provide an empty list, the response contains all the available dimensions for the target database engine whether or not you are authorized to access them.</p>
+    pub fn authorized_actions(mut self, input: crate::types::FineGrainedAction) -> Self {
+        self.inner = self.inner.authorized_actions(input);
+        self
+    }
+    /// <p>The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then the response will contain the dimensions common for all the actions.</p>
+    /// <p>When you don't specify this request parameter or provide an empty list, the response contains all the available dimensions for the target database engine whether or not you are authorized to access them.</p>
+    pub fn set_authorized_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FineGrainedAction>>) -> Self {
+        self.inner = self.inner.set_authorized_actions(input);
+        self
+    }
+    /// <p>The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then the response will contain the dimensions common for all the actions.</p>
+    /// <p>When you don't specify this request parameter or provide an empty list, the response contains all the available dimensions for the target database engine whether or not you are authorized to access them.</p>
+    pub fn get_authorized_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FineGrainedAction>> {
+        self.inner.get_authorized_actions()
+    }
 }

@@ -32,7 +32,9 @@ pub struct DescribeGatewayInformationOutput {
     pub vpc_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway. This field only only exist and returns once it have been chosen and set by the SGW service, based on the OS version of the gateway VM</p>
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The type of hardware or software platform on which the gateway is running.</p>
+    /// <p>The type of hardware or software platform on which the gateway is running.</p><note>
+    /// <p>Tape Gateway is no longer available on Snow Family devices.</p>
+    /// </note>
     pub host_environment: ::std::option::Option<crate::types::HostEnvironment>,
     /// <p>The type of endpoint for your gateway.</p>
     /// <p>Valid Values: <code>STANDARD</code> | <code>FIPS</code></p>
@@ -112,7 +114,9 @@ impl DescribeGatewayInformationOutput {
     pub fn cloud_watch_log_group_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
-    /// <p>The type of hardware or software platform on which the gateway is running.</p>
+    /// <p>The type of hardware or software platform on which the gateway is running.</p><note>
+    /// <p>Tape Gateway is no longer available on Snow Family devices.</p>
+    /// </note>
     pub fn host_environment(&self) -> ::std::option::Option<&crate::types::HostEnvironment> {
         self.host_environment.as_ref()
     }
@@ -397,17 +401,23 @@ impl DescribeGatewayInformationOutputBuilder {
     pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_log_group_arn
     }
-    /// <p>The type of hardware or software platform on which the gateway is running.</p>
+    /// <p>The type of hardware or software platform on which the gateway is running.</p><note>
+    /// <p>Tape Gateway is no longer available on Snow Family devices.</p>
+    /// </note>
     pub fn host_environment(mut self, input: crate::types::HostEnvironment) -> Self {
         self.host_environment = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of hardware or software platform on which the gateway is running.</p>
+    /// <p>The type of hardware or software platform on which the gateway is running.</p><note>
+    /// <p>Tape Gateway is no longer available on Snow Family devices.</p>
+    /// </note>
     pub fn set_host_environment(mut self, input: ::std::option::Option<crate::types::HostEnvironment>) -> Self {
         self.host_environment = input;
         self
     }
-    /// <p>The type of hardware or software platform on which the gateway is running.</p>
+    /// <p>The type of hardware or software platform on which the gateway is running.</p><note>
+    /// <p>Tape Gateway is no longer available on Snow Family devices.</p>
+    /// </note>
     pub fn get_host_environment(&self) -> &::std::option::Option<crate::types::HostEnvironment> {
         &self.host_environment
     }

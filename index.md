@@ -369,6 +369,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | IAM Roles Anywhere | [aws-sdk-rolesanywhere](https://crates.io/crates/aws-sdk-rolesanywhere) ([docs](https://docs.rs/aws-sdk-rolesanywhere)) |
 | Inspector Scan | [aws-sdk-inspectorscan](https://crates.io/crates/aws-sdk-inspectorscan) ([docs](https://docs.rs/aws-sdk-inspectorscan)) |
 | Inspector2 | [aws-sdk-inspector2](https://crates.io/crates/aws-sdk-inspector2) ([docs](https://docs.rs/aws-sdk-inspector2)) |
+| MailManager | [aws-sdk-mailmanager](https://crates.io/crates/aws-sdk-mailmanager) ([docs](https://docs.rs/aws-sdk-mailmanager)) |
 | Managed Streaming for Kafka | [aws-sdk-kafka](https://crates.io/crates/aws-sdk-kafka) ([docs](https://docs.rs/aws-sdk-kafka)) |
 | Managed Streaming for Kafka Connect | [aws-sdk-kafkaconnect](https://crates.io/crates/aws-sdk-kafkaconnect) ([docs](https://docs.rs/aws-sdk-kafkaconnect)) |
 | Migration Hub Strategy Recommendations | [aws-sdk-migrationhubstrategy](https://crates.io/crates/aws-sdk-migrationhubstrategy) ([docs](https://docs.rs/aws-sdk-migrationhubstrategy)) |

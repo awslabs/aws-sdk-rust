@@ -143,6 +143,13 @@ where
                             builder = builder
                                 .set_source_control_details(crate::protocol_serde::shape_source_control_details::de_source_control_details(tokens)?);
                         }
+                        "MaintenanceWindow" => {
+                            builder = builder.set_maintenance_window(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

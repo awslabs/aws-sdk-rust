@@ -30,9 +30,9 @@ pub struct InstanceSnapshot {
     pub from_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was created (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
     pub from_instance_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The blueprint ID from which you created the snapshot (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
+    /// <p>The blueprint ID from which you created the snapshot (<code>amazon_linux_2023</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
     pub from_blueprint_id: ::std::option::Option<::std::string::String>,
-    /// <p>The bundle ID from which you created the snapshot (<code>micro_1_0</code>).</p>
+    /// <p>The bundle ID from which you created the snapshot (<code>micro_x_x</code>).</p>
     pub from_bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the snapshot was created from an automatic snapshot.</p>
     pub is_from_auto_snapshot: ::std::option::Option<bool>,
@@ -94,11 +94,11 @@ impl InstanceSnapshot {
     pub fn from_instance_arn(&self) -> ::std::option::Option<&str> {
         self.from_instance_arn.as_deref()
     }
-    /// <p>The blueprint ID from which you created the snapshot (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
+    /// <p>The blueprint ID from which you created the snapshot (<code>amazon_linux_2023</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
     pub fn from_blueprint_id(&self) -> ::std::option::Option<&str> {
         self.from_blueprint_id.as_deref()
     }
-    /// <p>The bundle ID from which you created the snapshot (<code>micro_1_0</code>).</p>
+    /// <p>The bundle ID from which you created the snapshot (<code>micro_x_x</code>).</p>
     pub fn from_bundle_id(&self) -> ::std::option::Option<&str> {
         self.from_bundle_id.as_deref()
     }
@@ -326,31 +326,31 @@ impl InstanceSnapshotBuilder {
     pub fn get_from_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.from_instance_arn
     }
-    /// <p>The blueprint ID from which you created the snapshot (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
+    /// <p>The blueprint ID from which you created the snapshot (<code>amazon_linux_2023</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
     pub fn from_blueprint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_blueprint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The blueprint ID from which you created the snapshot (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
+    /// <p>The blueprint ID from which you created the snapshot (<code>amazon_linux_2023</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
     pub fn set_from_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_blueprint_id = input;
         self
     }
-    /// <p>The blueprint ID from which you created the snapshot (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
+    /// <p>The blueprint ID from which you created the snapshot (<code>amazon_linux_2023</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
     pub fn get_from_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.from_blueprint_id
     }
-    /// <p>The bundle ID from which you created the snapshot (<code>micro_1_0</code>).</p>
+    /// <p>The bundle ID from which you created the snapshot (<code>micro_x_x</code>).</p>
     pub fn from_bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_bundle_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The bundle ID from which you created the snapshot (<code>micro_1_0</code>).</p>
+    /// <p>The bundle ID from which you created the snapshot (<code>micro_x_x</code>).</p>
     pub fn set_from_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_bundle_id = input;
         self
     }
-    /// <p>The bundle ID from which you created the snapshot (<code>micro_1_0</code>).</p>
+    /// <p>The bundle ID from which you created the snapshot (<code>micro_x_x</code>).</p>
     pub fn get_from_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.from_bundle_id
     }

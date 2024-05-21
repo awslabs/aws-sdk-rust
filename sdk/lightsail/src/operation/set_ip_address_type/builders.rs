@@ -147,20 +147,43 @@ impl SetIpAddressTypeFluentBuilder {
         self.inner.get_resource_name()
     }
     /// <p>The IP address type to set for the specified resource.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.inner = self.inner.ip_address_type(input);
         self
     }
     /// <p>The IP address type to set for the specified resource.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }
     /// <p>The IP address type to set for the specified resource.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         self.inner.get_ip_address_type()
+    }
+    /// <p>Required parameter to accept the instance bundle update when changing to, and from, IPv6-only.</p><note>
+    /// <p>An instance bundle will change when switching from <code>dual-stack</code> or <code>ipv4</code>, to <code>ipv6</code>. It also changes when switching from <code>ipv6</code>, to <code>dual-stack</code> or <code>ipv4</code>.</p>
+    /// <p>You must include this parameter in the command to update the bundle. For example, if you switch from <code>dual-stack</code> to <code>ipv6</code>, the bundle will be updated, and billing for the IPv6-only instance bundle begins immediately.</p>
+    /// </note>
+    pub fn accept_bundle_update(mut self, input: bool) -> Self {
+        self.inner = self.inner.accept_bundle_update(input);
+        self
+    }
+    /// <p>Required parameter to accept the instance bundle update when changing to, and from, IPv6-only.</p><note>
+    /// <p>An instance bundle will change when switching from <code>dual-stack</code> or <code>ipv4</code>, to <code>ipv6</code>. It also changes when switching from <code>ipv6</code>, to <code>dual-stack</code> or <code>ipv4</code>.</p>
+    /// <p>You must include this parameter in the command to update the bundle. For example, if you switch from <code>dual-stack</code> to <code>ipv6</code>, the bundle will be updated, and billing for the IPv6-only instance bundle begins immediately.</p>
+    /// </note>
+    pub fn set_accept_bundle_update(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_accept_bundle_update(input);
+        self
+    }
+    /// <p>Required parameter to accept the instance bundle update when changing to, and from, IPv6-only.</p><note>
+    /// <p>An instance bundle will change when switching from <code>dual-stack</code> or <code>ipv4</code>, to <code>ipv6</code>. It also changes when switching from <code>ipv6</code>, to <code>dual-stack</code> or <code>ipv4</code>.</p>
+    /// <p>You must include this parameter in the command to update the bundle. For example, if you switch from <code>dual-stack</code> to <code>ipv6</code>, the bundle will be updated, and billing for the IPv6-only instance bundle begins immediately.</p>
+    /// </note>
+    pub fn get_accept_bundle_update(&self) -> &::std::option::Option<bool> {
+        self.inner.get_accept_bundle_update()
     }
 }

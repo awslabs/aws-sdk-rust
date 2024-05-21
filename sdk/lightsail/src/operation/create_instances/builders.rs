@@ -165,37 +165,37 @@ impl CreateInstancesFluentBuilder {
     pub fn get_custom_image_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_image_name()
     }
-    /// <p>The ID for a virtual private server image (<code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p><note>
+    /// <p>The ID for a virtual private server image (<code>app_wordpress_x_x</code> or <code>app_lamp_x_x</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p><note>
     /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
     /// </note>
     pub fn blueprint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.blueprint_id(input.into());
         self
     }
-    /// <p>The ID for a virtual private server image (<code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p><note>
+    /// <p>The ID for a virtual private server image (<code>app_wordpress_x_x</code> or <code>app_lamp_x_x</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p><note>
     /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
     /// </note>
     pub fn set_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_blueprint_id(input);
         self
     }
-    /// <p>The ID for a virtual private server image (<code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p><note>
+    /// <p>The ID for a virtual private server image (<code>app_wordpress_x_x</code> or <code>app_lamp_x_x</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p><note>
     /// <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
     /// </note>
     pub fn get_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_blueprint_id()
     }
-    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>medium_x_x</code>).</p>
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bundle_id(input.into());
         self
     }
-    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>medium_x_x</code>).</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bundle_id(input);
         self
     }
-    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>medium_x_x</code>).</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bundle_id()
     }
@@ -275,21 +275,21 @@ impl CreateInstancesFluentBuilder {
         self.inner.get_add_ons()
     }
     /// <p>The IP address type for the instance.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.inner = self.inner.ip_address_type(input);
         self
     }
     /// <p>The IP address type for the instance.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }
     /// <p>The IP address type for the instance.</p>
-    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         self.inner.get_ip_address_type()

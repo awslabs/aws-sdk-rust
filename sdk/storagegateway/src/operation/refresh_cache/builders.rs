@@ -141,16 +141,19 @@ impl RefreshCacheFluentBuilder {
     /// To override the contents of this collection use [`set_folder_list`](Self::set_folder_list).
     ///
     /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
+    /// <p>Do not include <code>/</code> when specifying folder names. For example, you would specify <code>samplefolder</code> rather than <code>samplefolder/</code>.</p>
     pub fn folder_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.folder_list(input.into());
         self
     }
     /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
+    /// <p>Do not include <code>/</code> when specifying folder names. For example, you would specify <code>samplefolder</code> rather than <code>samplefolder/</code>.</p>
     pub fn set_folder_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_folder_list(input);
         self
     }
     /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
+    /// <p>Do not include <code>/</code> when specifying folder names. For example, you would specify <code>samplefolder</code> rather than <code>samplefolder/</code>.</p>
     pub fn get_folder_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_folder_list()
     }

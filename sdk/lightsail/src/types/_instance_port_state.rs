@@ -37,6 +37,8 @@ pub struct InstancePortState {
     /// <p><code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or datagrams) to other hosts on an Internet Protocol (IP) network. Prior communications are not required to set up transmission channels or data paths. Applications that don't require reliable data stream service can use UDP, which provides a connectionless datagram service that emphasizes reduced latency over reliability. If you do require reliable data stream service, use TCP instead.</p></li>
     /// <li>
     /// <p><code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and operational information indicating success or failure when communicating with an instance. For example, an error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.</p></li>
+    /// <li>
+    /// <p><code>icmp6</code> - Internet Control Message Protocol (ICMP) for IPv6. When you specify <code>icmp6</code> as the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.</p></li>
     /// </ul>
     pub protocol: ::std::option::Option<crate::types::NetworkProtocol>,
     /// <p>Specifies whether the instance port is <code>open</code> or <code>closed</code>.</p><note>
@@ -95,6 +97,8 @@ impl InstancePortState {
     /// <p><code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or datagrams) to other hosts on an Internet Protocol (IP) network. Prior communications are not required to set up transmission channels or data paths. Applications that don't require reliable data stream service can use UDP, which provides a connectionless datagram service that emphasizes reduced latency over reliability. If you do require reliable data stream service, use TCP instead.</p></li>
     /// <li>
     /// <p><code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and operational information indicating success or failure when communicating with an instance. For example, an error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.</p></li>
+    /// <li>
+    /// <p><code>icmp6</code> - Internet Control Message Protocol (ICMP) for IPv6. When you specify <code>icmp6</code> as the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.</p></li>
     /// </ul>
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::NetworkProtocol> {
         self.protocol.as_ref()
@@ -244,6 +248,8 @@ impl InstancePortStateBuilder {
     /// <p><code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or datagrams) to other hosts on an Internet Protocol (IP) network. Prior communications are not required to set up transmission channels or data paths. Applications that don't require reliable data stream service can use UDP, which provides a connectionless datagram service that emphasizes reduced latency over reliability. If you do require reliable data stream service, use TCP instead.</p></li>
     /// <li>
     /// <p><code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and operational information indicating success or failure when communicating with an instance. For example, an error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.</p></li>
+    /// <li>
+    /// <p><code>icmp6</code> - Internet Control Message Protocol (ICMP) for IPv6. When you specify <code>icmp6</code> as the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.</p></li>
     /// </ul>
     pub fn protocol(mut self, input: crate::types::NetworkProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -260,6 +266,8 @@ impl InstancePortStateBuilder {
     /// <p><code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or datagrams) to other hosts on an Internet Protocol (IP) network. Prior communications are not required to set up transmission channels or data paths. Applications that don't require reliable data stream service can use UDP, which provides a connectionless datagram service that emphasizes reduced latency over reliability. If you do require reliable data stream service, use TCP instead.</p></li>
     /// <li>
     /// <p><code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and operational information indicating success or failure when communicating with an instance. For example, an error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.</p></li>
+    /// <li>
+    /// <p><code>icmp6</code> - Internet Control Message Protocol (ICMP) for IPv6. When you specify <code>icmp6</code> as the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.</p></li>
     /// </ul>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::NetworkProtocol>) -> Self {
         self.protocol = input;
@@ -276,6 +284,8 @@ impl InstancePortStateBuilder {
     /// <p><code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or datagrams) to other hosts on an Internet Protocol (IP) network. Prior communications are not required to set up transmission channels or data paths. Applications that don't require reliable data stream service can use UDP, which provides a connectionless datagram service that emphasizes reduced latency over reliability. If you do require reliable data stream service, use TCP instead.</p></li>
     /// <li>
     /// <p><code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and operational information indicating success or failure when communicating with an instance. For example, an error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.</p></li>
+    /// <li>
+    /// <p><code>icmp6</code> - Internet Control Message Protocol (ICMP) for IPv6. When you specify <code>icmp6</code> as the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.</p></li>
     /// </ul>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::NetworkProtocol> {
         &self.protocol

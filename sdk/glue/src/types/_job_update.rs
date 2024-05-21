@@ -80,6 +80,9 @@ pub struct JobUpdate {
     pub execution_class: ::std::option::Option<crate::types::ExecutionClass>,
     /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
     pub source_control_details: ::std::option::Option<crate::types::SourceControlDetails>,
+    /// <p>This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.</p>
+    /// <p>Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+    pub maintenance_window: ::std::option::Option<::std::string::String>,
 }
 impl JobUpdate {
     /// <p>Description of the job being defined.</p>
@@ -199,6 +202,11 @@ impl JobUpdate {
     pub fn source_control_details(&self) -> ::std::option::Option<&crate::types::SourceControlDetails> {
         self.source_control_details.as_ref()
     }
+    /// <p>This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.</p>
+    /// <p>Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+    pub fn maintenance_window(&self) -> ::std::option::Option<&str> {
+        self.maintenance_window.as_deref()
+    }
 }
 impl ::std::fmt::Debug for JobUpdate {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -223,6 +231,7 @@ impl ::std::fmt::Debug for JobUpdate {
         formatter.field("code_gen_configuration_nodes", &"*** Sensitive Data Redacted ***");
         formatter.field("execution_class", &self.execution_class);
         formatter.field("source_control_details", &self.source_control_details);
+        formatter.field("maintenance_window", &self.maintenance_window);
         formatter.finish()
     }
 }
@@ -258,6 +267,7 @@ pub struct JobUpdateBuilder {
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodeGenConfigurationNode>>,
     pub(crate) execution_class: ::std::option::Option<crate::types::ExecutionClass>,
     pub(crate) source_control_details: ::std::option::Option<crate::types::SourceControlDetails>,
+    pub(crate) maintenance_window: ::std::option::Option<::std::string::String>,
 }
 impl JobUpdateBuilder {
     /// <p>Description of the job being defined.</p>
@@ -686,6 +696,23 @@ impl JobUpdateBuilder {
     pub fn get_source_control_details(&self) -> &::std::option::Option<crate::types::SourceControlDetails> {
         &self.source_control_details
     }
+    /// <p>This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.</p>
+    /// <p>Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+    pub fn maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.maintenance_window = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.</p>
+    /// <p>Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+    pub fn set_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.maintenance_window = input;
+        self
+    }
+    /// <p>This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.</p>
+    /// <p>Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+    pub fn get_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_window
+    }
     /// Consumes the builder and constructs a [`JobUpdate`](crate::types::JobUpdate).
     pub fn build(self) -> crate::types::JobUpdate {
         crate::types::JobUpdate {
@@ -709,6 +736,7 @@ impl JobUpdateBuilder {
             code_gen_configuration_nodes: self.code_gen_configuration_nodes,
             execution_class: self.execution_class,
             source_control_details: self.source_control_details,
+            maintenance_window: self.maintenance_window,
         }
     }
 }
@@ -735,6 +763,7 @@ impl ::std::fmt::Debug for JobUpdateBuilder {
         formatter.field("code_gen_configuration_nodes", &"*** Sensitive Data Redacted ***");
         formatter.field("execution_class", &self.execution_class);
         formatter.field("source_control_details", &self.source_control_details);
+        formatter.field("maintenance_window", &self.maintenance_window);
         formatter.finish()
     }
 }

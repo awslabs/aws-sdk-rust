@@ -15,6 +15,8 @@ pub use crate::types::_dimension_group_detail::DimensionGroupDetail;
 
 pub use crate::types::_dimension_detail::DimensionDetail;
 
+pub use crate::types::_fine_grained_action::FineGrainedAction;
+
 pub use crate::types::_metric_key_data_points::MetricKeyDataPoints;
 
 pub use crate::types::_data_point::DataPoint;
@@ -86,6 +88,8 @@ mod _dimension_key_detail;
 mod _feature_metadata;
 
 mod _feature_status;
+
+mod _fine_grained_action;
 
 mod _insight;
 
