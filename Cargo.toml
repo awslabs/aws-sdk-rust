@@ -53,6 +53,7 @@ members = [
     "sdk/aws-smithy-async",
     "sdk/aws-smithy-checksums",
     "sdk/aws-smithy-client",
+    "sdk/aws-smithy-compression",
     "sdk/aws-smithy-eventstream",
     "sdk/aws-smithy-experimental",
     "sdk/aws-smithy-http",

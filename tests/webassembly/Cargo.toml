@@ -38,7 +38,6 @@ tokio = { version = "1.32.0", features = ["macros", "rt"] }
 [target.'cfg(all(target_family = "wasm", target_os = "wasi"))'.dependencies]
 wit-bindgen = { version = "0.16.0", features = ["macros", "realloc"] }
 
-
 [lib]
 crate-type = ["cdylib"]
 

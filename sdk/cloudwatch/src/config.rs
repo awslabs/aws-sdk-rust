@@ -98,6 +98,19 @@ impl Config {
     pub fn app_name(&self) -> ::std::option::Option<&::aws_types::app_name::AppName> {
         self.config.load::<::aws_types::app_name::AppName>()
     }
+    /// Returns the `disable request compression` setting, if it was provided.
+    pub fn disable_request_compression(&self) -> ::std::option::Option<bool> {
+        self.config
+            .load::<crate::client_request_compression::DisableRequestCompression>()
+            .map(|it| it.0)
+    }
+
+    /// Returns the `request minimum compression size in bytes`, if it was provided.
+    pub fn request_min_compression_size_bytes(&self) -> ::std::option::Option<u32> {
+        self.config
+            .load::<crate::client_request_compression::RequestMinCompressionSizeBytes>()
+            .map(|it| it.0)
+    }
     /// Returns the invocation ID generator if one was given in config.
     ///
     /// The invocation ID generator generates ID values for the `amz-sdk-invocation-id` header. By default, this will be a random UUID. Overriding it may be useful in tests that examine the HTTP request and need to be deterministic.
@@ -160,6 +173,18 @@ impl Builder {
         builder.set_timeout_config(config_bag.load::<::aws_smithy_types::timeout::TimeoutConfig>().cloned());
         builder.set_retry_partition(config_bag.load::<::aws_smithy_runtime::client::retries::RetryPartition>().cloned());
         builder.set_app_name(config_bag.load::<::aws_types::app_name::AppName>().cloned());
+        builder.set_disable_request_compression(
+            config_bag
+                .load::<crate::client_request_compression::DisableRequestCompression>()
+                .cloned()
+                .map(|it| it.0),
+        );
+        builder.set_request_min_compression_size_bytes(
+            config_bag
+                .load::<crate::client_request_compression::RequestMinCompressionSizeBytes>()
+                .cloned()
+                .map(|it| it.0),
+        );
         builder.set_endpoint_url(config_bag.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()));
         builder.set_use_dual_stack(config_bag.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0));
         builder.set_use_fips(config_bag.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0));
@@ -869,6 +894,33 @@ impl Builder {
         self.config.store_or_unset(app_name);
         self
     }
+    /// Sets the `disable request compression` used when making requests.
+    pub fn disable_request_compression(mut self, disable_request_compression: impl ::std::convert::Into<::std::option::Option<bool>>) -> Self {
+        self.set_disable_request_compression(disable_request_compression.into());
+        self
+    }
+
+    /// Sets the `request minimum compression size in bytes` used when making requests.
+    pub fn request_min_compression_size_bytes(
+        mut self,
+        request_min_compression_size_bytes: impl ::std::convert::Into<::std::option::Option<u32>>,
+    ) -> Self {
+        self.set_request_min_compression_size_bytes(request_min_compression_size_bytes.into());
+        self
+    }
+    /// Sets the `disable request compression` used when making requests.
+    pub fn set_disable_request_compression(&mut self, disable_request_compression: ::std::option::Option<bool>) -> &mut Self {
+        self.config
+            .store_or_unset::<crate::client_request_compression::DisableRequestCompression>(disable_request_compression.map(Into::into));
+        self
+    }
+
+    /// Sets the `request minimum compression size in bytes` used when making requests.
+    pub fn set_request_min_compression_size_bytes(&mut self, request_min_compression_size_bytes: ::std::option::Option<u32>) -> &mut Self {
+        self.config
+            .store_or_unset::<crate::client_request_compression::RequestMinCompressionSizeBytes>(request_min_compression_size_bytes.map(Into::into));
+        self
+    }
     /// Overrides the default invocation ID generator.
     ///
     /// The invocation ID generator generates ID values for the `amz-sdk-invocation-id` header. By default, this will be a random UUID. Overriding it may be useful in tests that examine the HTTP request and need to be deterministic.
@@ -1237,6 +1289,8 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         if let Some(cache) = input.identity_cache() {
             builder.set_identity_cache(cache);
         }
+        builder = builder.disable_request_compression(input.disable_request_compression());
+        builder = builder.request_min_compression_size_bytes(input.request_min_compression_size_bytes());
         builder.set_app_name(input.app_name().cloned());
 
         builder

@@ -205,6 +205,8 @@ pub mod types;
 
 mod auth_plugin;
 
+mod client_request_compression;
+
 pub(crate) mod protocol_serde;
 
 mod serialization_settings;
