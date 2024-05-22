@@ -28,6 +28,8 @@ pub struct TeamsChannelConfiguration {
     pub guardrail_policy_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// Enables use of a user role requirement in your chat configuration.
     pub user_authorization_required: ::std::option::Option<bool>,
+    /// A list of tags applied to the configuration.
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TeamsChannelConfiguration {
     /// The ID of the Microsoft Teams channel.
@@ -86,6 +88,12 @@ impl TeamsChannelConfiguration {
     pub fn user_authorization_required(&self) -> ::std::option::Option<bool> {
         self.user_authorization_required
     }
+    /// A list of tags applied to the configuration.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl TeamsChannelConfiguration {
     /// Creates a new builder-style object to manufacture [`TeamsChannelConfiguration`](crate::types::TeamsChannelConfiguration).
@@ -110,6 +118,7 @@ pub struct TeamsChannelConfigurationBuilder {
     pub(crate) logging_level: ::std::option::Option<::std::string::String>,
     pub(crate) guardrail_policy_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) user_authorization_required: ::std::option::Option<bool>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TeamsChannelConfigurationBuilder {
     /// The ID of the Microsoft Teams channel.
@@ -297,6 +306,26 @@ impl TeamsChannelConfigurationBuilder {
     pub fn get_user_authorization_required(&self) -> &::std::option::Option<bool> {
         &self.user_authorization_required
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// A list of tags applied to the configuration.
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// A list of tags applied to the configuration.
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// A list of tags applied to the configuration.
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`TeamsChannelConfiguration`](crate::types::TeamsChannelConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`channel_id`](crate::types::builders::TeamsChannelConfigurationBuilder::channel_id)
@@ -349,6 +378,7 @@ impl TeamsChannelConfigurationBuilder {
             logging_level: self.logging_level,
             guardrail_policy_arns: self.guardrail_policy_arns,
             user_authorization_required: self.user_authorization_required,
+            tags: self.tags,
         })
     }
 }

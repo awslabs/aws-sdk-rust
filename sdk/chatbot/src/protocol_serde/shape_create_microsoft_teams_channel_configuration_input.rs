@@ -36,17 +36,29 @@ pub fn ser_create_microsoft_teams_channel_configuration_input_input(
         }
         array_10.finish();
     }
-    if let Some(var_12) = &input.team_id {
-        object.key("TeamId").string(var_12.as_str());
+    if let Some(var_12) = &input.tags {
+        let mut array_13 = object.key("Tags").start_array();
+        for item_14 in var_12 {
+            {
+                #[allow(unused_mut)]
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
+                object_15.finish();
+            }
+        }
+        array_13.finish();
     }
-    if let Some(var_13) = &input.team_name {
-        object.key("TeamName").string(var_13.as_str());
+    if let Some(var_16) = &input.team_id {
+        object.key("TeamId").string(var_16.as_str());
     }
-    if let Some(var_14) = &input.tenant_id {
-        object.key("TenantId").string(var_14.as_str());
+    if let Some(var_17) = &input.team_name {
+        object.key("TeamName").string(var_17.as_str());
     }
-    if let Some(var_15) = &input.user_authorization_required {
-        object.key("UserAuthorizationRequired").boolean(*var_15);
+    if let Some(var_18) = &input.tenant_id {
+        object.key("TenantId").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.user_authorization_required {
+        object.key("UserAuthorizationRequired").boolean(*var_19);
     }
     Ok(())
 }

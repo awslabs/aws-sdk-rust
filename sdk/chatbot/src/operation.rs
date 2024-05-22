@@ -58,6 +58,15 @@ pub mod list_microsoft_teams_configured_teams;
 /// Types for the `ListMicrosoftTeamsUserIdentities` operation.
 pub mod list_microsoft_teams_user_identities;
 
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;
+
 /// Types for the `UpdateAccountPreferences` operation.
 pub mod update_account_preferences;
 

@@ -181,4 +181,36 @@ impl DeleteStackFluentBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
+    /// <p>Specifies the deletion mode for the stack. Possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STANDARD</code> - Use the standard behavior. Specifying this value is the same as not specifying this parameter.</p></li>
+    /// <li>
+    /// <p><code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due to resource deletion failure.</p></li>
+    /// </ul>
+    pub fn deletion_mode(mut self, input: crate::types::DeletionMode) -> Self {
+        self.inner = self.inner.deletion_mode(input);
+        self
+    }
+    /// <p>Specifies the deletion mode for the stack. Possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STANDARD</code> - Use the standard behavior. Specifying this value is the same as not specifying this parameter.</p></li>
+    /// <li>
+    /// <p><code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due to resource deletion failure.</p></li>
+    /// </ul>
+    pub fn set_deletion_mode(mut self, input: ::std::option::Option<crate::types::DeletionMode>) -> Self {
+        self.inner = self.inner.set_deletion_mode(input);
+        self
+    }
+    /// <p>Specifies the deletion mode for the stack. Possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STANDARD</code> - Use the standard behavior. Specifying this value is the same as not specifying this parameter.</p></li>
+    /// <li>
+    /// <p><code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due to resource deletion failure.</p></li>
+    /// </ul>
+    pub fn get_deletion_mode(&self) -> &::std::option::Option<crate::types::DeletionMode> {
+        self.inner.get_deletion_mode()
+    }
 }

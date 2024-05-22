@@ -10,6 +10,8 @@ pub struct DataSourceDetails {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the data source.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The status of the data source.</p>
+    pub status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
 impl DataSourceDetails {
     /// <p>The type of data source.</p>
@@ -23,6 +25,10 @@ impl DataSourceDetails {
     /// <p>A description of the data source.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The status of the data source.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceStatus> {
+        self.status.as_ref()
     }
 }
 impl DataSourceDetails {
@@ -39,6 +45,7 @@ pub struct DataSourceDetailsBuilder {
     pub(crate) data_source_type: ::std::option::Option<crate::types::DataSourceType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
 impl DataSourceDetailsBuilder {
     /// <p>The type of data source.</p>
@@ -83,12 +90,27 @@ impl DataSourceDetailsBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The status of the data source.</p>
+    pub fn status(mut self, input: crate::types::DataSourceStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the data source.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The status of the data source.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`DataSourceDetails`](crate::types::DataSourceDetails).
     pub fn build(self) -> crate::types::DataSourceDetails {
         crate::types::DataSourceDetails {
             data_source_type: self.data_source_type,
             name: self.name,
             description: self.description,
+            status: self.status,
         }
     }
 }

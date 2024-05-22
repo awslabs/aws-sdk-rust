@@ -13,6 +13,12 @@ pub use crate::types::error::_update_chime_webhook_configuration_exception::Upda
 
 pub use crate::types::error::_update_account_preferences_exception::UpdateAccountPreferencesException;
 
+pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableException;
+
+pub use crate::types::error::_internal_service_error::InternalServiceError;
+
+pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
+
 pub use crate::types::error::_list_microsoft_teams_user_identities_exception::ListMicrosoftTeamsUserIdentitiesException;
 
 pub use crate::types::error::_list_microsoft_teams_configured_teams_exception::ListMicrosoftTeamsConfiguredTeamsException;
@@ -89,6 +95,8 @@ mod _get_account_preferences_exception;
 
 mod _get_teams_channel_configuration_exception;
 
+mod _internal_service_error;
+
 mod _invalid_parameter_exception;
 
 mod _invalid_request_exception;
@@ -102,6 +110,10 @@ mod _list_microsoft_teams_user_identities_exception;
 mod _list_teams_channel_configurations_exception;
 
 mod _resource_not_found_exception;
+
+mod _service_unavailable_exception;
+
+mod _too_many_tags_exception;
 
 mod _update_account_preferences_exception;
 

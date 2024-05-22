@@ -61,6 +61,12 @@ pub(crate) mod shape_list_microsoft_teams_configured_teams;
 
 pub(crate) mod shape_list_microsoft_teams_user_identities;
 
+pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
+
 pub(crate) mod shape_update_account_preferences;
 
 pub(crate) mod shape_update_chime_webhook_configuration;
@@ -141,6 +147,8 @@ pub(crate) mod shape_get_microsoft_teams_channel_configuration_input;
 
 pub(crate) mod shape_get_teams_channel_configuration_exception;
 
+pub(crate) mod shape_internal_service_error;
+
 pub(crate) mod shape_invalid_parameter_exception;
 
 pub(crate) mod shape_invalid_request_exception;
@@ -157,9 +165,19 @@ pub(crate) mod shape_list_microsoft_teams_user_identities_exception;
 
 pub(crate) mod shape_list_microsoft_teams_user_identities_input;
 
+pub(crate) mod shape_list_tags_for_resource_input;
+
 pub(crate) mod shape_list_teams_channel_configurations_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_service_unavailable_exception;
+
+pub(crate) mod shape_tag_resource_input;
+
+pub(crate) mod shape_too_many_tags_exception;
+
+pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_account_preferences_exception;
 
@@ -193,6 +211,10 @@ pub(crate) mod shape_slack_user_identities_list;
 
 pub(crate) mod shape_slack_workspaces_list;
 
+pub(crate) mod shape_tag;
+
+pub(crate) mod shape_tag_list;
+
 pub(crate) mod shape_team_channel_configurations_list;
 
 pub(crate) mod shape_teams_channel_configuration;
@@ -208,5 +230,7 @@ pub(crate) mod shape_slack_user_identity;
 pub(crate) mod shape_slack_workspace;
 
 pub(crate) mod shape_sns_topic_arn_list;
+
+pub(crate) mod shape_tags;
 
 pub(crate) mod shape_teams_user_identity;

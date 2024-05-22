@@ -60,6 +60,14 @@ pub struct Stack {
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
     /// <p>Default: <code>false</code></p>
     pub retain_except_on_create: ::std::option::Option<bool>,
+    /// <p>Specifies the deletion mode for the stack. Possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STANDARD</code> - Use the standard behavior. Specifying this value is the same as not specifying this parameter.</p></li>
+    /// <li>
+    /// <p><code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due to resource deletion failure.</p></li>
+    /// </ul>
+    pub deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
     /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
     pub detailed_status: ::std::option::Option<crate::types::DetailedStatus>,
 }
@@ -176,6 +184,16 @@ impl Stack {
     pub fn retain_except_on_create(&self) -> ::std::option::Option<bool> {
         self.retain_except_on_create
     }
+    /// <p>Specifies the deletion mode for the stack. Possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STANDARD</code> - Use the standard behavior. Specifying this value is the same as not specifying this parameter.</p></li>
+    /// <li>
+    /// <p><code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due to resource deletion failure.</p></li>
+    /// </ul>
+    pub fn deletion_mode(&self) -> ::std::option::Option<&crate::types::DeletionMode> {
+        self.deletion_mode.as_ref()
+    }
     /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn detailed_status(&self) -> ::std::option::Option<&crate::types::DetailedStatus> {
         self.detailed_status.as_ref()
@@ -215,6 +233,7 @@ pub struct StackBuilder {
     pub(crate) root_id: ::std::option::Option<::std::string::String>,
     pub(crate) drift_information: ::std::option::Option<crate::types::StackDriftInformation>,
     pub(crate) retain_except_on_create: ::std::option::Option<bool>,
+    pub(crate) deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
     pub(crate) detailed_status: ::std::option::Option<crate::types::DetailedStatus>,
 }
 impl StackBuilder {
@@ -603,6 +622,38 @@ impl StackBuilder {
     pub fn get_retain_except_on_create(&self) -> &::std::option::Option<bool> {
         &self.retain_except_on_create
     }
+    /// <p>Specifies the deletion mode for the stack. Possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STANDARD</code> - Use the standard behavior. Specifying this value is the same as not specifying this parameter.</p></li>
+    /// <li>
+    /// <p><code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due to resource deletion failure.</p></li>
+    /// </ul>
+    pub fn deletion_mode(mut self, input: crate::types::DeletionMode) -> Self {
+        self.deletion_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the deletion mode for the stack. Possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STANDARD</code> - Use the standard behavior. Specifying this value is the same as not specifying this parameter.</p></li>
+    /// <li>
+    /// <p><code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due to resource deletion failure.</p></li>
+    /// </ul>
+    pub fn set_deletion_mode(mut self, input: ::std::option::Option<crate::types::DeletionMode>) -> Self {
+        self.deletion_mode = input;
+        self
+    }
+    /// <p>Specifies the deletion mode for the stack. Possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STANDARD</code> - Use the standard behavior. Specifying this value is the same as not specifying this parameter.</p></li>
+    /// <li>
+    /// <p><code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due to resource deletion failure.</p></li>
+    /// </ul>
+    pub fn get_deletion_mode(&self) -> &::std::option::Option<crate::types::DeletionMode> {
+        &self.deletion_mode
+    }
     /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn detailed_status(mut self, input: crate::types::DetailedStatus) -> Self {
         self.detailed_status = ::std::option::Option::Some(input);
@@ -643,6 +694,7 @@ impl StackBuilder {
             root_id: self.root_id,
             drift_information: self.drift_information,
             retain_except_on_create: self.retain_except_on_create,
+            deletion_mode: self.deletion_mode,
             detailed_status: self.detailed_status,
         }
     }

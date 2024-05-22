@@ -157,6 +157,8 @@ pub use crate::types::_saml_options_input::SamlOptionsInput;
 
 pub use crate::types::_master_user_options::MasterUserOptions;
 
+pub use crate::types::_data_source_status::DataSourceStatus;
+
 pub use crate::types::_data_source_type::DataSourceType;
 
 pub use crate::types::_s3_glue_data_catalog::S3GlueDataCatalog;
@@ -378,6 +380,8 @@ mod _connection_properties;
 mod _cross_cluster_search_connection_properties;
 
 mod _data_source_details;
+
+mod _data_source_status;
 
 mod _data_source_type;
 

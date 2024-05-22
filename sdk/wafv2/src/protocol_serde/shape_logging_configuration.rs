@@ -36,6 +36,20 @@ where
                         "LoggingFilter" => {
                             builder = builder.set_logging_filter(crate::protocol_serde::shape_logging_filter::de_logging_filter(tokens)?);
                         }
+                        "LogType" => {
+                            builder = builder.set_log_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::LogType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "LogScope" => {
+                            builder = builder.set_log_scope(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::LogScope::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -92,6 +106,12 @@ pub fn ser_logging_configuration(
         let mut object_8 = object.key("LoggingFilter").start_object();
         crate::protocol_serde::shape_logging_filter::ser_logging_filter(&mut object_8, var_7)?;
         object_8.finish();
+    }
+    if let Some(var_9) = &input.log_type {
+        object.key("LogType").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.log_scope {
+        object.key("LogScope").string(var_10.as_str());
     }
     Ok(())
 }

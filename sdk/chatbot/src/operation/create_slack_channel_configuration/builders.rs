@@ -244,4 +244,23 @@ impl CreateSlackChannelConfigurationFluentBuilder {
     pub fn get_user_authorization_required(&self) -> &::std::option::Option<bool> {
         self.inner.get_user_authorization_required()
     }
+    ///
+    /// Appends an item to `Tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// A list of tags to apply to the configuration.
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        self.inner = self.inner.tags(input);
+        self
+    }
+    /// A list of tags to apply to the configuration.
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// A list of tags to apply to the configuration.
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }

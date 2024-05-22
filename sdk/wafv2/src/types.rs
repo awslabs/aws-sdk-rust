@@ -217,6 +217,10 @@ pub use crate::types::_version_to_publish::VersionToPublish;
 
 pub use crate::types::_logging_configuration::LoggingConfiguration;
 
+pub use crate::types::_log_scope::LogScope;
+
+pub use crate::types::_log_type::LogType;
+
 pub use crate::types::_logging_filter::LoggingFilter;
 
 pub use crate::types::_filter_behavior::FilterBehavior;
@@ -434,6 +438,10 @@ mod _label_match_statement;
 mod _label_name_condition;
 
 mod _label_summary;
+
+mod _log_scope;
+
+mod _log_type;
 
 mod _logging_configuration;
 

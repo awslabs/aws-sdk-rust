@@ -10,6 +10,8 @@ pub struct GetDataSourceOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the data source.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The status of the data source response.</p>
+    pub status: ::std::option::Option<crate::types::DataSourceStatus>,
     _request_id: Option<String>,
 }
 impl GetDataSourceOutput {
@@ -24,6 +26,10 @@ impl GetDataSourceOutput {
     /// <p>A description of the data source.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The status of the data source response.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceStatus> {
+        self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDataSourceOutput {
@@ -45,6 +51,7 @@ pub struct GetDataSourceOutputBuilder {
     pub(crate) data_source_type: ::std::option::Option<crate::types::DataSourceType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::DataSourceStatus>,
     _request_id: Option<String>,
 }
 impl GetDataSourceOutputBuilder {
@@ -90,6 +97,20 @@ impl GetDataSourceOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The status of the data source response.</p>
+    pub fn status(mut self, input: crate::types::DataSourceStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the data source response.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The status of the data source response.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
+        &self.status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -105,6 +126,7 @@ impl GetDataSourceOutputBuilder {
             data_source_type: self.data_source_type,
             name: self.name,
             description: self.description,
+            status: self.status,
             _request_id: self._request_id,
         }
     }

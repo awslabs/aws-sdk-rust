@@ -15,6 +15,7 @@
 ///     WrappingKeySpec::Rsa2048 => { /* ... */ },
 ///     WrappingKeySpec::Rsa3072 => { /* ... */ },
 ///     WrappingKeySpec::Rsa4096 => { /* ... */ },
+///     WrappingKeySpec::Sm2 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@ pub enum WrappingKeySpec {
     Rsa3072,
     #[allow(missing_docs)] // documentation missing in model
     Rsa4096,
+    #[allow(missing_docs)] // documentation missing in model
+    Sm2,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for WrappingKeySpec {
             "RSA_2048" => WrappingKeySpec::Rsa2048,
             "RSA_3072" => WrappingKeySpec::Rsa3072,
             "RSA_4096" => WrappingKeySpec::Rsa4096,
+            "SM2" => WrappingKeySpec::Sm2,
             other => WrappingKeySpec::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -76,12 +80,13 @@ impl WrappingKeySpec {
             WrappingKeySpec::Rsa2048 => "RSA_2048",
             WrappingKeySpec::Rsa3072 => "RSA_3072",
             WrappingKeySpec::Rsa4096 => "RSA_4096",
+            WrappingKeySpec::Sm2 => "SM2",
             WrappingKeySpec::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RSA_2048", "RSA_3072", "RSA_4096"]
+        &["RSA_2048", "RSA_3072", "RSA_4096", "SM2"]
     }
 }
 impl ::std::convert::AsRef<str> for WrappingKeySpec {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for WrappingKeySpec {
             WrappingKeySpec::Rsa2048 => write!(f, "RSA_2048"),
             WrappingKeySpec::Rsa3072 => write!(f, "RSA_3072"),
             WrappingKeySpec::Rsa4096 => write!(f, "RSA_4096"),
+            WrappingKeySpec::Sm2 => write!(f, "SM2"),
             WrappingKeySpec::Unknown(value) => write!(f, "{}", value),
         }
     }

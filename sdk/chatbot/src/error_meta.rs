@@ -37,6 +37,8 @@ pub enum Error {
     GetAccountPreferencesException(crate::types::error::GetAccountPreferencesException),
     /// We can’t process your request right now because of a server issue. Try again later.
     GetTeamsChannelConfigurationException(crate::types::error::GetTeamsChannelConfigurationException),
+    /// Customer/consumer-facing internal service exception. https://w.amazon.com/index.php/AWS/API_Standards/Exceptions#InternalServiceError
+    InternalServiceError(crate::types::error::InternalServiceError),
     /// Your request input doesn't meet the constraints that AWS Chatbot requires.
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// Your request input doesn't meet the constraints that AWS Chatbot requires.
@@ -51,6 +53,10 @@ pub enum Error {
     ListTeamsChannelConfigurationsException(crate::types::error::ListTeamsChannelConfigurationsException),
     /// We were not able to find the resource for your request.
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// We can’t process your request right now because of a server issue. Try again later.
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
+    /// The supplied list of tags contains too many tags.
+    TooManyTagsException(crate::types::error::TooManyTagsException),
     /// We can’t process your request right now because of a server issue. Try again later.
     UpdateAccountPreferencesException(crate::types::error::UpdateAccountPreferencesException),
     /// We can’t process your request right now because of a server issue. Try again later.
@@ -88,6 +94,7 @@ impl ::std::fmt::Display for Error {
             Error::DescribeSlackWorkspacesException(inner) => inner.fmt(f),
             Error::GetAccountPreferencesException(inner) => inner.fmt(f),
             Error::GetTeamsChannelConfigurationException(inner) => inner.fmt(f),
+            Error::InternalServiceError(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
@@ -95,6 +102,8 @@ impl ::std::fmt::Display for Error {
             Error::ListMicrosoftTeamsUserIdentitiesException(inner) => inner.fmt(f),
             Error::ListTeamsChannelConfigurationsException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ServiceUnavailableException(inner) => inner.fmt(f),
+            Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::UpdateAccountPreferencesException(inner) => inner.fmt(f),
             Error::UpdateChimeWebhookConfigurationException(inner) => inner.fmt(f),
             Error::UpdateSlackChannelConfigurationException(inner) => inner.fmt(f),
@@ -137,6 +146,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::DescribeSlackWorkspacesException(inner) => inner.meta(),
             Self::GetAccountPreferencesException(inner) => inner.meta(),
             Self::GetTeamsChannelConfigurationException(inner) => inner.meta(),
+            Self::InternalServiceError(inner) => inner.meta(),
             Self::InvalidParameterException(inner) => inner.meta(),
             Self::InvalidRequestException(inner) => inner.meta(),
             Self::LimitExceededException(inner) => inner.meta(),
@@ -144,6 +154,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ListMicrosoftTeamsUserIdentitiesException(inner) => inner.meta(),
             Self::ListTeamsChannelConfigurationsException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ServiceUnavailableException(inner) => inner.meta(),
+            Self::TooManyTagsException(inner) => inner.meta(),
             Self::UpdateAccountPreferencesException(inner) => inner.meta(),
             Self::UpdateChimeWebhookConfigurationException(inner) => inner.meta(),
             Self::UpdateSlackChannelConfigurationException(inner) => inner.meta(),
@@ -858,6 +870,83 @@ impl From<crate::operation::list_microsoft_teams_user_identities::ListMicrosoftT
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::tag_resource::TagResourceError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_account_preferences::UpdateAccountPreferencesError, R>>
     for Error
 where
@@ -1035,6 +1124,7 @@ impl ::std::error::Error for Error {
             Error::DescribeSlackWorkspacesException(inner) => inner.source(),
             Error::GetAccountPreferencesException(inner) => inner.source(),
             Error::GetTeamsChannelConfigurationException(inner) => inner.source(),
+            Error::InternalServiceError(inner) => inner.source(),
             Error::InvalidParameterException(inner) => inner.source(),
             Error::InvalidRequestException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
@@ -1042,6 +1132,8 @@ impl ::std::error::Error for Error {
             Error::ListMicrosoftTeamsUserIdentitiesException(inner) => inner.source(),
             Error::ListTeamsChannelConfigurationsException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServiceUnavailableException(inner) => inner.source(),
+            Error::TooManyTagsException(inner) => inner.source(),
             Error::UpdateAccountPreferencesException(inner) => inner.source(),
             Error::UpdateChimeWebhookConfigurationException(inner) => inner.source(),
             Error::UpdateSlackChannelConfigurationException(inner) => inner.source(),
@@ -1070,6 +1162,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::DescribeSlackWorkspacesException(e) => e.request_id(),
             Self::GetAccountPreferencesException(e) => e.request_id(),
             Self::GetTeamsChannelConfigurationException(e) => e.request_id(),
+            Self::InternalServiceError(e) => e.request_id(),
             Self::InvalidParameterException(e) => e.request_id(),
             Self::InvalidRequestException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),
@@ -1077,6 +1170,8 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ListMicrosoftTeamsUserIdentitiesException(e) => e.request_id(),
             Self::ListTeamsChannelConfigurationsException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
+            Self::TooManyTagsException(e) => e.request_id(),
             Self::UpdateAccountPreferencesException(e) => e.request_id(),
             Self::UpdateChimeWebhookConfigurationException(e) => e.request_id(),
             Self::UpdateSlackChannelConfigurationException(e) => e.request_id(),

@@ -34,7 +34,7 @@ pub struct StackSetOperationPreferences {
     /// <p>Specifies how the concurrency level behaves during the operation execution.</p>
     /// <ul>
     /// <li>
-    /// <p><code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the number of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial actual concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the value of <code>MaxConcurrentCount</code> +1. The actual concurrency is then reduced proportionally by the number of failures. This is the default behavior.</p>
+    /// <p><code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the number of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial actual concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the value of <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced proportionally by the number of failures. This is the default behavior.</p>
     /// <p>If failure tolerance or Maximum concurrent accounts are set to percentages, the behavior is similar.</p></li>
     /// <li>
     /// <p><code>SOFT_FAILURE_TOLERANCE</code>: This option decouples <code>FailureToleranceCount</code> from the actual concurrency. This allows stack set operations to run at the concurrency level set by the <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p></li>
@@ -85,7 +85,7 @@ impl StackSetOperationPreferences {
     /// <p>Specifies how the concurrency level behaves during the operation execution.</p>
     /// <ul>
     /// <li>
-    /// <p><code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the number of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial actual concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the value of <code>MaxConcurrentCount</code> +1. The actual concurrency is then reduced proportionally by the number of failures. This is the default behavior.</p>
+    /// <p><code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the number of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial actual concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the value of <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced proportionally by the number of failures. This is the default behavior.</p>
     /// <p>If failure tolerance or Maximum concurrent accounts are set to percentages, the behavior is similar.</p></li>
     /// <li>
     /// <p><code>SOFT_FAILURE_TOLERANCE</code>: This option decouples <code>FailureToleranceCount</code> from the actual concurrency. This allows stack set operations to run at the concurrency level set by the <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p></li>
@@ -249,7 +249,7 @@ impl StackSetOperationPreferencesBuilder {
     /// <p>Specifies how the concurrency level behaves during the operation execution.</p>
     /// <ul>
     /// <li>
-    /// <p><code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the number of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial actual concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the value of <code>MaxConcurrentCount</code> +1. The actual concurrency is then reduced proportionally by the number of failures. This is the default behavior.</p>
+    /// <p><code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the number of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial actual concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the value of <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced proportionally by the number of failures. This is the default behavior.</p>
     /// <p>If failure tolerance or Maximum concurrent accounts are set to percentages, the behavior is similar.</p></li>
     /// <li>
     /// <p><code>SOFT_FAILURE_TOLERANCE</code>: This option decouples <code>FailureToleranceCount</code> from the actual concurrency. This allows stack set operations to run at the concurrency level set by the <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p></li>
@@ -261,7 +261,7 @@ impl StackSetOperationPreferencesBuilder {
     /// <p>Specifies how the concurrency level behaves during the operation execution.</p>
     /// <ul>
     /// <li>
-    /// <p><code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the number of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial actual concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the value of <code>MaxConcurrentCount</code> +1. The actual concurrency is then reduced proportionally by the number of failures. This is the default behavior.</p>
+    /// <p><code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the number of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial actual concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the value of <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced proportionally by the number of failures. This is the default behavior.</p>
     /// <p>If failure tolerance or Maximum concurrent accounts are set to percentages, the behavior is similar.</p></li>
     /// <li>
     /// <p><code>SOFT_FAILURE_TOLERANCE</code>: This option decouples <code>FailureToleranceCount</code> from the actual concurrency. This allows stack set operations to run at the concurrency level set by the <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p></li>
@@ -273,7 +273,7 @@ impl StackSetOperationPreferencesBuilder {
     /// <p>Specifies how the concurrency level behaves during the operation execution.</p>
     /// <ul>
     /// <li>
-    /// <p><code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the number of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial actual concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the value of <code>MaxConcurrentCount</code> +1. The actual concurrency is then reduced proportionally by the number of failures. This is the default behavior.</p>
+    /// <p><code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the number of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial actual concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the value of <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced proportionally by the number of failures. This is the default behavior.</p>
     /// <p>If failure tolerance or Maximum concurrent accounts are set to percentages, the behavior is similar.</p></li>
     /// <li>
     /// <p><code>SOFT_FAILURE_TOLERANCE</code>: This option decouples <code>FailureToleranceCount</code> from the actual concurrency. This allows stack set operations to run at the concurrency level set by the <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p></li>

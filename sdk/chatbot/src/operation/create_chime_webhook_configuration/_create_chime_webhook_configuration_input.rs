@@ -15,6 +15,8 @@ pub struct CreateChimeWebhookConfigurationInput {
     pub configuration_name: ::std::option::Option<::std::string::String>,
     /// Logging levels include ERROR, INFO, or NONE.
     pub logging_level: ::std::option::Option<::std::string::String>,
+    /// A list of tags to apply to the configuration.
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateChimeWebhookConfigurationInput {
     /// Description of the webhook. Recommend using the convention `RoomName/WebhookName`. See Chime setup tutorial for more details: https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html.
@@ -43,6 +45,12 @@ impl CreateChimeWebhookConfigurationInput {
     pub fn logging_level(&self) -> ::std::option::Option<&str> {
         self.logging_level.as_deref()
     }
+    /// A list of tags to apply to the configuration.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl CreateChimeWebhookConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateChimeWebhookConfigurationInput`](crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationInput).
@@ -61,6 +69,7 @@ pub struct CreateChimeWebhookConfigurationInputBuilder {
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) logging_level: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateChimeWebhookConfigurationInputBuilder {
     /// Description of the webhook. Recommend using the convention `RoomName/WebhookName`. See Chime setup tutorial for more details: https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html.
@@ -157,6 +166,26 @@ impl CreateChimeWebhookConfigurationInputBuilder {
     pub fn get_logging_level(&self) -> &::std::option::Option<::std::string::String> {
         &self.logging_level
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// A list of tags to apply to the configuration.
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// A list of tags to apply to the configuration.
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// A list of tags to apply to the configuration.
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateChimeWebhookConfigurationInput`](crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationInput).
     pub fn build(
         self,
@@ -172,6 +201,7 @@ impl CreateChimeWebhookConfigurationInputBuilder {
                 iam_role_arn: self.iam_role_arn,
                 configuration_name: self.configuration_name,
                 logging_level: self.logging_level,
+                tags: self.tags,
             },
         )
     }

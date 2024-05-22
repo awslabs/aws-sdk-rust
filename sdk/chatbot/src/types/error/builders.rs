@@ -13,6 +13,12 @@ pub use crate::types::error::_update_chime_webhook_configuration_exception::Upda
 
 pub use crate::types::error::_update_account_preferences_exception::UpdateAccountPreferencesExceptionBuilder;
 
+pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableExceptionBuilder;
+
+pub use crate::types::error::_internal_service_error::InternalServiceErrorBuilder;
+
+pub use crate::types::error::_too_many_tags_exception::TooManyTagsExceptionBuilder;
+
 pub use crate::types::error::_list_microsoft_teams_user_identities_exception::ListMicrosoftTeamsUserIdentitiesExceptionBuilder;
 
 pub use crate::types::error::_list_microsoft_teams_configured_teams_exception::ListMicrosoftTeamsConfiguredTeamsExceptionBuilder;

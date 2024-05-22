@@ -12,6 +12,8 @@ pub struct UpdateDataSourceInput {
     pub data_source_type: ::std::option::Option<crate::types::DataSourceType>,
     /// <p>A new description of the data source.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The status of the data source update request.</p>
+    pub status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
 impl UpdateDataSourceInput {
     /// <p>The name of the domain.</p>
@@ -30,6 +32,10 @@ impl UpdateDataSourceInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The status of the data source update request.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceStatus> {
+        self.status.as_ref()
+    }
 }
 impl UpdateDataSourceInput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
@@ -46,6 +52,7 @@ pub struct UpdateDataSourceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_type: ::std::option::Option<crate::types::DataSourceType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
 impl UpdateDataSourceInputBuilder {
     /// <p>The name of the domain.</p>
@@ -107,6 +114,20 @@ impl UpdateDataSourceInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The status of the data source update request.</p>
+    pub fn status(mut self, input: crate::types::DataSourceStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the data source update request.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The status of the data source update request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
     pub fn build(
         self,
@@ -116,6 +137,7 @@ impl UpdateDataSourceInputBuilder {
             name: self.name,
             data_source_type: self.data_source_type,
             description: self.description,
+            status: self.status,
         })
     }
 }

@@ -201,6 +201,12 @@ mod list_microsoft_teams_configured_teams;
 
 mod list_microsoft_teams_user_identities;
 
+mod list_tags_for_resource;
+
+mod tag_resource;
+
+mod untag_resource;
+
 mod update_account_preferences;
 
 mod update_chime_webhook_configuration;

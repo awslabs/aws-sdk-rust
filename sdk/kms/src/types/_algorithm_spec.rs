@@ -17,6 +17,7 @@
 ///     AlgorithmSpec::RsaesPkcs1V15 => { /* ... */ },
 ///     AlgorithmSpec::RsaAesKeyWrapSha1 => { /* ... */ },
 ///     AlgorithmSpec::RsaAesKeyWrapSha256 => { /* ... */ },
+///     AlgorithmSpec::Sm2Pke => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -54,6 +55,8 @@ pub enum AlgorithmSpec {
     RsaAesKeyWrapSha1,
     #[allow(missing_docs)] // documentation missing in model
     RsaAesKeyWrapSha256,
+    #[allow(missing_docs)] // documentation missing in model
+    Sm2Pke,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for AlgorithmSpec {
             "RSAES_PKCS1_V1_5" => AlgorithmSpec::RsaesPkcs1V15,
             "RSA_AES_KEY_WRAP_SHA_1" => AlgorithmSpec::RsaAesKeyWrapSha1,
             "RSA_AES_KEY_WRAP_SHA_256" => AlgorithmSpec::RsaAesKeyWrapSha256,
+            "SM2PKE" => AlgorithmSpec::Sm2Pke,
             other => AlgorithmSpec::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -86,6 +90,7 @@ impl AlgorithmSpec {
             AlgorithmSpec::RsaesPkcs1V15 => "RSAES_PKCS1_V1_5",
             AlgorithmSpec::RsaAesKeyWrapSha1 => "RSA_AES_KEY_WRAP_SHA_1",
             AlgorithmSpec::RsaAesKeyWrapSha256 => "RSA_AES_KEY_WRAP_SHA_256",
+            AlgorithmSpec::Sm2Pke => "SM2PKE",
             AlgorithmSpec::Unknown(value) => value.as_str(),
         }
     }
@@ -97,6 +102,7 @@ impl AlgorithmSpec {
             "RSAES_PKCS1_V1_5",
             "RSA_AES_KEY_WRAP_SHA_1",
             "RSA_AES_KEY_WRAP_SHA_256",
+            "SM2PKE",
         ]
     }
 }
@@ -125,6 +131,7 @@ impl ::std::fmt::Display for AlgorithmSpec {
             AlgorithmSpec::RsaesPkcs1V15 => write!(f, "RSAES_PKCS1_V1_5"),
             AlgorithmSpec::RsaAesKeyWrapSha1 => write!(f, "RSA_AES_KEY_WRAP_SHA_1"),
             AlgorithmSpec::RsaAesKeyWrapSha256 => write!(f, "RSA_AES_KEY_WRAP_SHA_256"),
+            AlgorithmSpec::Sm2Pke => write!(f, "SM2PKE"),
             AlgorithmSpec::Unknown(value) => write!(f, "{}", value),
         }
     }

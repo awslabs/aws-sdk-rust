@@ -16,6 +16,10 @@ pub struct ListLoggingConfigurationsInput {
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub limit: ::std::option::Option<i32>,
+    /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
+    /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>Default: <code>CUSTOMER</code></p>
+    pub log_scope: ::std::option::Option<crate::types::LogScope>,
 }
 impl ListLoggingConfigurationsInput {
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
@@ -37,6 +41,12 @@ impl ListLoggingConfigurationsInput {
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
+    /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
+    /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>Default: <code>CUSTOMER</code></p>
+    pub fn log_scope(&self) -> ::std::option::Option<&crate::types::LogScope> {
+        self.log_scope.as_ref()
+    }
 }
 impl ListLoggingConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsInput`](crate::operation::list_logging_configurations::ListLoggingConfigurationsInput).
@@ -52,6 +62,7 @@ pub struct ListLoggingConfigurationsInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
+    pub(crate) log_scope: ::std::option::Option<crate::types::LogScope>,
 }
 impl ListLoggingConfigurationsInputBuilder {
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
@@ -118,6 +129,26 @@ impl ListLoggingConfigurationsInputBuilder {
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
+    /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
+    /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>Default: <code>CUSTOMER</code></p>
+    pub fn log_scope(mut self, input: crate::types::LogScope) -> Self {
+        self.log_scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
+    /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>Default: <code>CUSTOMER</code></p>
+    pub fn set_log_scope(mut self, input: ::std::option::Option<crate::types::LogScope>) -> Self {
+        self.log_scope = input;
+        self
+    }
+    /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
+    /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>Default: <code>CUSTOMER</code></p>
+    pub fn get_log_scope(&self) -> &::std::option::Option<crate::types::LogScope> {
+        &self.log_scope
+    }
     /// Consumes the builder and constructs a [`ListLoggingConfigurationsInput`](crate::operation::list_logging_configurations::ListLoggingConfigurationsInput).
     pub fn build(
         self,
@@ -129,6 +160,7 @@ impl ListLoggingConfigurationsInputBuilder {
             scope: self.scope,
             next_marker: self.next_marker,
             limit: self.limit,
+            log_scope: self.log_scope,
         })
     }
 }

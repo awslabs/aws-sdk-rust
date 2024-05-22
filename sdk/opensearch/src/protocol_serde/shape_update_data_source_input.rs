@@ -12,5 +12,8 @@ pub fn ser_update_data_source_input_input(
     if let Some(var_3) = &input.description {
         object.key("Description").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.status {
+        object.key("Status").string(var_4.as_str());
+    }
     Ok(())
 }

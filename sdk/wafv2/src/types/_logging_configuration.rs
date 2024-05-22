@@ -27,12 +27,21 @@ pub struct LoggingConfiguration {
     /// <p>For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code> for all rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting.</p>
     /// <p>Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting, so the <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code> <code>FieldToMatch</code>.</p><note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, and <code>Method</code>.</p>
+    /// </note> <note>
+    /// <p>This setting has no impact on request sampling. With request sampling, the only way to exclude fields is by disabling sampling in the web ACL visibility configuration.</p>
     /// </note>
     pub redacted_fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>,
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration.</p>
     pub managed_by_firewall_manager: bool,
     /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation.</p>
     pub logging_filter: ::std::option::Option<crate::types::LoggingFilter>,
+    /// <p>Used to distinguish between various logging options. Currently, there is one option.</p>
+    /// <p>Default: <code>WAF_LOGS</code></p>
+    pub log_type: ::std::option::Option<crate::types::LogType>,
+    /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
+    /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>Default: <code>CUSTOMER</code></p>
+    pub log_scope: ::std::option::Option<crate::types::LogScope>,
 }
 impl LoggingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
@@ -51,6 +60,8 @@ impl LoggingConfiguration {
     /// <p>For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code> for all rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting.</p>
     /// <p>Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting, so the <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code> <code>FieldToMatch</code>.</p><note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, and <code>Method</code>.</p>
+    /// </note> <note>
+    /// <p>This setting has no impact on request sampling. With request sampling, the only way to exclude fields is by disabling sampling in the web ACL visibility configuration.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.redacted_fields.is_none()`.
@@ -64,6 +75,17 @@ impl LoggingConfiguration {
     /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation.</p>
     pub fn logging_filter(&self) -> ::std::option::Option<&crate::types::LoggingFilter> {
         self.logging_filter.as_ref()
+    }
+    /// <p>Used to distinguish between various logging options. Currently, there is one option.</p>
+    /// <p>Default: <code>WAF_LOGS</code></p>
+    pub fn log_type(&self) -> ::std::option::Option<&crate::types::LogType> {
+        self.log_type.as_ref()
+    }
+    /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
+    /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>Default: <code>CUSTOMER</code></p>
+    pub fn log_scope(&self) -> ::std::option::Option<&crate::types::LogScope> {
+        self.log_scope.as_ref()
     }
 }
 impl LoggingConfiguration {
@@ -82,6 +104,8 @@ pub struct LoggingConfigurationBuilder {
     pub(crate) redacted_fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>,
     pub(crate) managed_by_firewall_manager: ::std::option::Option<bool>,
     pub(crate) logging_filter: ::std::option::Option<crate::types::LoggingFilter>,
+    pub(crate) log_type: ::std::option::Option<crate::types::LogType>,
+    pub(crate) log_scope: ::std::option::Option<crate::types::LogScope>,
 }
 impl LoggingConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
@@ -133,6 +157,8 @@ impl LoggingConfigurationBuilder {
     /// <p>For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code> for all rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting.</p>
     /// <p>Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting, so the <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code> <code>FieldToMatch</code>.</p><note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, and <code>Method</code>.</p>
+    /// </note> <note>
+    /// <p>This setting has no impact on request sampling. With request sampling, the only way to exclude fields is by disabling sampling in the web ACL visibility configuration.</p>
     /// </note>
     pub fn redacted_fields(mut self, input: crate::types::FieldToMatch) -> Self {
         let mut v = self.redacted_fields.unwrap_or_default();
@@ -144,6 +170,8 @@ impl LoggingConfigurationBuilder {
     /// <p>For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code> for all rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting.</p>
     /// <p>Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting, so the <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code> <code>FieldToMatch</code>.</p><note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, and <code>Method</code>.</p>
+    /// </note> <note>
+    /// <p>This setting has no impact on request sampling. With request sampling, the only way to exclude fields is by disabling sampling in the web ACL visibility configuration.</p>
     /// </note>
     pub fn set_redacted_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>) -> Self {
         self.redacted_fields = input;
@@ -153,6 +181,8 @@ impl LoggingConfigurationBuilder {
     /// <p>For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code> for all rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting.</p>
     /// <p>Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting, so the <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code> <code>FieldToMatch</code>.</p><note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, and <code>Method</code>.</p>
+    /// </note> <note>
+    /// <p>This setting has no impact on request sampling. With request sampling, the only way to exclude fields is by disabling sampling in the web ACL visibility configuration.</p>
     /// </note>
     pub fn get_redacted_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>> {
         &self.redacted_fields
@@ -185,6 +215,43 @@ impl LoggingConfigurationBuilder {
     pub fn get_logging_filter(&self) -> &::std::option::Option<crate::types::LoggingFilter> {
         &self.logging_filter
     }
+    /// <p>Used to distinguish between various logging options. Currently, there is one option.</p>
+    /// <p>Default: <code>WAF_LOGS</code></p>
+    pub fn log_type(mut self, input: crate::types::LogType) -> Self {
+        self.log_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Used to distinguish between various logging options. Currently, there is one option.</p>
+    /// <p>Default: <code>WAF_LOGS</code></p>
+    pub fn set_log_type(mut self, input: ::std::option::Option<crate::types::LogType>) -> Self {
+        self.log_type = input;
+        self
+    }
+    /// <p>Used to distinguish between various logging options. Currently, there is one option.</p>
+    /// <p>Default: <code>WAF_LOGS</code></p>
+    pub fn get_log_type(&self) -> &::std::option::Option<crate::types::LogType> {
+        &self.log_type
+    }
+    /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
+    /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>Default: <code>CUSTOMER</code></p>
+    pub fn log_scope(mut self, input: crate::types::LogScope) -> Self {
+        self.log_scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
+    /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>Default: <code>CUSTOMER</code></p>
+    pub fn set_log_scope(mut self, input: ::std::option::Option<crate::types::LogScope>) -> Self {
+        self.log_scope = input;
+        self
+    }
+    /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
+    /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>Default: <code>CUSTOMER</code></p>
+    pub fn get_log_scope(&self) -> &::std::option::Option<crate::types::LogScope> {
+        &self.log_scope
+    }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_arn`](crate::types::builders::LoggingConfigurationBuilder::resource_arn)
@@ -206,6 +273,8 @@ impl LoggingConfigurationBuilder {
             redacted_fields: self.redacted_fields,
             managed_by_firewall_manager: self.managed_by_firewall_manager.unwrap_or_default(),
             logging_filter: self.logging_filter,
+            log_type: self.log_type,
+            log_scope: self.log_scope,
         })
     }
 }

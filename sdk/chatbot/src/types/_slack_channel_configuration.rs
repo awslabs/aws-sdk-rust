@@ -26,6 +26,8 @@ pub struct SlackChannelConfiguration {
     pub guardrail_policy_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// Enables use of a user role requirement in your chat configuration.
     pub user_authorization_required: ::std::option::Option<bool>,
+    /// A list of tags applied to the configuration.
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl SlackChannelConfiguration {
     /// Name of the Slack Workspace.
@@ -81,6 +83,12 @@ impl SlackChannelConfiguration {
     pub fn user_authorization_required(&self) -> ::std::option::Option<bool> {
         self.user_authorization_required
     }
+    /// A list of tags applied to the configuration.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl SlackChannelConfiguration {
     /// Creates a new builder-style object to manufacture [`SlackChannelConfiguration`](crate::types::SlackChannelConfiguration).
@@ -104,6 +112,7 @@ pub struct SlackChannelConfigurationBuilder {
     pub(crate) logging_level: ::std::option::Option<::std::string::String>,
     pub(crate) guardrail_policy_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) user_authorization_required: ::std::option::Option<bool>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl SlackChannelConfigurationBuilder {
     /// Name of the Slack Workspace.
@@ -278,6 +287,26 @@ impl SlackChannelConfigurationBuilder {
     pub fn get_user_authorization_required(&self) -> &::std::option::Option<bool> {
         &self.user_authorization_required
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// A list of tags applied to the configuration.
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// A list of tags applied to the configuration.
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// A list of tags applied to the configuration.
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`SlackChannelConfiguration`](crate::types::SlackChannelConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`slack_team_name`](crate::types::builders::SlackChannelConfigurationBuilder::slack_team_name)
@@ -335,6 +364,7 @@ impl SlackChannelConfigurationBuilder {
             logging_level: self.logging_level,
             guardrail_policy_arns: self.guardrail_policy_arns,
             user_authorization_required: self.user_authorization_required,
+            tags: self.tags,
         })
     }
 }

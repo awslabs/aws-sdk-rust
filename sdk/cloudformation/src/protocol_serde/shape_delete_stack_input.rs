@@ -31,6 +31,11 @@ pub fn ser_delete_stack_input_input_input(
     if let Some(var_11) = &input.client_request_token {
         scope_10.string(var_11);
     }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("DeletionMode");
+    if let Some(var_13) = &input.deletion_mode {
+        scope_12.string(var_13.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

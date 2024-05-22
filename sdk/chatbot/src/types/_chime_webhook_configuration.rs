@@ -16,6 +16,8 @@ pub struct ChimeWebhookConfiguration {
     pub configuration_name: ::std::option::Option<::std::string::String>,
     /// Specifies the logging level for this configuration. This property affects the log entries pushed to Amazon CloudWatch Logs.Logging levels include ERROR, INFO, or NONE.
     pub logging_level: ::std::option::Option<::std::string::String>,
+    /// A list of tags applied to the configuration.
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ChimeWebhookConfiguration {
     /// Description of the webhook. Recommend using the convention `RoomName/WebhookName`. See Chime setup tutorial for more details: https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html.
@@ -46,6 +48,12 @@ impl ChimeWebhookConfiguration {
     pub fn logging_level(&self) -> ::std::option::Option<&str> {
         self.logging_level.as_deref()
     }
+    /// A list of tags applied to the configuration.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl ChimeWebhookConfiguration {
     /// Creates a new builder-style object to manufacture [`ChimeWebhookConfiguration`](crate::types::ChimeWebhookConfiguration).
@@ -64,6 +72,7 @@ pub struct ChimeWebhookConfigurationBuilder {
     pub(crate) sns_topic_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) logging_level: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ChimeWebhookConfigurationBuilder {
     /// Description of the webhook. Recommend using the convention `RoomName/WebhookName`. See Chime setup tutorial for more details: https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html.
@@ -159,6 +168,26 @@ impl ChimeWebhookConfigurationBuilder {
     pub fn get_logging_level(&self) -> &::std::option::Option<::std::string::String> {
         &self.logging_level
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// A list of tags applied to the configuration.
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// A list of tags applied to the configuration.
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// A list of tags applied to the configuration.
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`ChimeWebhookConfiguration`](crate::types::ChimeWebhookConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`webhook_description`](crate::types::builders::ChimeWebhookConfigurationBuilder::webhook_description)
@@ -193,6 +222,7 @@ impl ChimeWebhookConfigurationBuilder {
             })?,
             configuration_name: self.configuration_name,
             logging_level: self.logging_level,
+            tags: self.tags,
         })
     }
 }

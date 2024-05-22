@@ -164,4 +164,18 @@ impl UpdateDataSourceFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    /// <p>The status of the data source update request.</p>
+    pub fn status(mut self, input: crate::types::DataSourceStatus) -> Self {
+        self.inner = self.inner.status(input);
+        self
+    }
+    /// <p>The status of the data source update request.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
+        self.inner = self.inner.set_status(input);
+        self
+    }
+    /// <p>The status of the data source update request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
+        self.inner.get_status()
+    }
 }

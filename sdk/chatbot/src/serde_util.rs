@@ -110,6 +110,16 @@ pub(crate) fn slack_workspace_correct_errors(
     builder
 }
 
+pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
+    if builder.tag_key.is_none() {
+        builder.tag_key = Some(Default::default())
+    }
+    if builder.tag_value.is_none() {
+        builder.tag_value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn teams_user_identity_correct_errors(
     mut builder: crate::types::builders::TeamsUserIdentityBuilder,
 ) -> crate::types::builders::TeamsUserIdentityBuilder {

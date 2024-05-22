@@ -26,7 +26,7 @@ pub struct DomainStatus {
     /// <p><b>Dual stack IP addresses</b> - <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code></p></li>
     /// </ul>
     pub endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The DualStack Hosted Zone Id for the domain.</p>
+    /// <p>The dual stack hosted zone ID for the domain.</p>
     pub domain_endpoint_v2_hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the domain configuration. True if OpenSearch Service is processing configuration changes. False if the configuration is active.</p>
     pub processing: ::std::option::Option<bool>,
@@ -117,7 +117,7 @@ impl DomainStatus {
     pub fn endpoints(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.endpoints.as_ref()
     }
-    /// <p>The DualStack Hosted Zone Id for the domain.</p>
+    /// <p>The dual stack hosted zone ID for the domain.</p>
     pub fn domain_endpoint_v2_hosted_zone_id(&self) -> ::std::option::Option<&str> {
         self.domain_endpoint_v2_hosted_zone_id.as_deref()
     }
@@ -402,17 +402,17 @@ impl DomainStatusBuilder {
     pub fn get_endpoints(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.endpoints
     }
-    /// <p>The DualStack Hosted Zone Id for the domain.</p>
+    /// <p>The dual stack hosted zone ID for the domain.</p>
     pub fn domain_endpoint_v2_hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_endpoint_v2_hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The DualStack Hosted Zone Id for the domain.</p>
+    /// <p>The dual stack hosted zone ID for the domain.</p>
     pub fn set_domain_endpoint_v2_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_endpoint_v2_hosted_zone_id = input;
         self
     }
-    /// <p>The DualStack Hosted Zone Id for the domain.</p>
+    /// <p>The dual stack hosted zone ID for the domain.</p>
     pub fn get_domain_endpoint_v2_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_endpoint_v2_hosted_zone_id
     }

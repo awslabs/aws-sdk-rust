@@ -39,8 +39,20 @@ pub fn ser_create_slack_channel_configuration_input_input(
         }
         array_11.finish();
     }
-    if let Some(var_13) = &input.user_authorization_required {
-        object.key("UserAuthorizationRequired").boolean(*var_13);
+    if let Some(var_13) = &input.tags {
+        let mut array_14 = object.key("Tags").start_array();
+        for item_15 in var_13 {
+            {
+                #[allow(unused_mut)]
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_16, item_15)?;
+                object_16.finish();
+            }
+        }
+        array_14.finish();
+    }
+    if let Some(var_17) = &input.user_authorization_required {
+        object.key("UserAuthorizationRequired").boolean(*var_17);
     }
     Ok(())
 }

@@ -185,6 +185,8 @@ pub use crate::types::_stack::Stack;
 
 pub use crate::types::_detailed_status::DetailedStatus;
 
+pub use crate::types::_deletion_mode::DeletionMode;
+
 pub use crate::types::_stack_drift_information::StackDriftInformation;
 
 pub use crate::types::_output::Output;
@@ -320,6 +322,8 @@ mod _change_source;
 mod _change_type;
 
 mod _concurrency_mode;
+
+mod _deletion_mode;
 
 mod _deployment_targets;
 

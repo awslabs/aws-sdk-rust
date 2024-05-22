@@ -295,8 +295,22 @@ pub fn de_stack(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result
                 builder = builder.set_retain_except_on_create(var_23);
             }
             ,
-            s if s.matches("DetailedStatus") /* DetailedStatus com.amazonaws.cloudformation#Stack$DetailedStatus */ =>  {
+            s if s.matches("DeletionMode") /* DeletionMode com.amazonaws.cloudformation#Stack$DeletionMode */ =>  {
                 let var_24 =
+                    Some(
+                        Result::<crate::types::DeletionMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::DeletionMode::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_deletion_mode(var_24);
+            }
+            ,
+            s if s.matches("DetailedStatus") /* DetailedStatus com.amazonaws.cloudformation#Stack$DetailedStatus */ =>  {
+                let var_25 =
                     Some(
                         Result::<crate::types::DetailedStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::DetailedStatus::from(
@@ -306,7 +320,7 @@ pub fn de_stack(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result
                         ?
                     )
                 ;
-                builder = builder.set_detailed_status(var_24);
+                builder = builder.set_detailed_status(var_25);
             }
             ,
             _ => {}

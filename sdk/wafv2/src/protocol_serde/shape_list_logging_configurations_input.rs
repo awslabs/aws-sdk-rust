@@ -15,5 +15,8 @@ pub fn ser_list_logging_configurations_input_input(
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.log_scope {
+        object.key("LogScope").string(var_4.as_str());
+    }
     Ok(())
 }

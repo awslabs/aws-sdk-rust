@@ -5,11 +5,29 @@
 pub struct DeleteLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Used to distinguish between various logging options. Currently, there is one option.</p>
+    /// <p>Default: <code>WAF_LOGS</code></p>
+    pub log_type: ::std::option::Option<crate::types::LogType>,
+    /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
+    /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>Default: <code>CUSTOMER</code></p>
+    pub log_scope: ::std::option::Option<crate::types::LogScope>,
 }
 impl DeleteLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
+    }
+    /// <p>Used to distinguish between various logging options. Currently, there is one option.</p>
+    /// <p>Default: <code>WAF_LOGS</code></p>
+    pub fn log_type(&self) -> ::std::option::Option<&crate::types::LogType> {
+        self.log_type.as_ref()
+    }
+    /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
+    /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>Default: <code>CUSTOMER</code></p>
+    pub fn log_scope(&self) -> ::std::option::Option<&crate::types::LogScope> {
+        self.log_scope.as_ref()
     }
 }
 impl DeleteLoggingConfigurationInput {
@@ -24,6 +42,8 @@ impl DeleteLoggingConfigurationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLoggingConfigurationInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) log_type: ::std::option::Option<crate::types::LogType>,
+    pub(crate) log_scope: ::std::option::Option<crate::types::LogScope>,
 }
 impl DeleteLoggingConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
@@ -41,6 +61,43 @@ impl DeleteLoggingConfigurationInputBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
+    /// <p>Used to distinguish between various logging options. Currently, there is one option.</p>
+    /// <p>Default: <code>WAF_LOGS</code></p>
+    pub fn log_type(mut self, input: crate::types::LogType) -> Self {
+        self.log_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Used to distinguish between various logging options. Currently, there is one option.</p>
+    /// <p>Default: <code>WAF_LOGS</code></p>
+    pub fn set_log_type(mut self, input: ::std::option::Option<crate::types::LogType>) -> Self {
+        self.log_type = input;
+        self
+    }
+    /// <p>Used to distinguish between various logging options. Currently, there is one option.</p>
+    /// <p>Default: <code>WAF_LOGS</code></p>
+    pub fn get_log_type(&self) -> &::std::option::Option<crate::types::LogType> {
+        &self.log_type
+    }
+    /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
+    /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>Default: <code>CUSTOMER</code></p>
+    pub fn log_scope(mut self, input: crate::types::LogScope) -> Self {
+        self.log_scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
+    /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>Default: <code>CUSTOMER</code></p>
+    pub fn set_log_scope(mut self, input: ::std::option::Option<crate::types::LogScope>) -> Self {
+        self.log_scope = input;
+        self
+    }
+    /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
+    /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>Default: <code>CUSTOMER</code></p>
+    pub fn get_log_scope(&self) -> &::std::option::Option<crate::types::LogScope> {
+        &self.log_scope
+    }
     /// Consumes the builder and constructs a [`DeleteLoggingConfigurationInput`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput).
     pub fn build(
         self,
@@ -50,6 +107,8 @@ impl DeleteLoggingConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput {
             resource_arn: self.resource_arn,
+            log_type: self.log_type,
+            log_scope: self.log_scope,
         })
     }
 }

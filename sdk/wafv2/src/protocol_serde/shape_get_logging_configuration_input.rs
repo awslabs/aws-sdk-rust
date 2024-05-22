@@ -6,5 +6,11 @@ pub fn ser_get_logging_configuration_input_input(
     if let Some(var_1) = &input.resource_arn {
         object.key("ResourceArn").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.log_type {
+        object.key("LogType").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.log_scope {
+        object.key("LogScope").string(var_3.as_str());
+    }
     Ok(())
 }
