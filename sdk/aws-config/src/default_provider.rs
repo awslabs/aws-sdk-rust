@@ -57,3 +57,9 @@ pub mod ignore_configured_endpoint_urls;
 
 /// Default endpoint URL provider chain
 pub mod endpoint_url;
+
+/// Default "disable request compression" provider chain
+pub mod disable_request_compression;
+
+/// Default "request minimum compression size bytes" provider chain
+pub mod request_min_compression_size_bytes;
