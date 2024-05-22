@@ -260,6 +260,8 @@ pub(crate) enum ThroughputReport {
     Pending,
     /// The stream transferred this amount of throughput during the time window.
     Transferred(Throughput),
+    /// The stream has completed, no more data is expected.
+    Complete,
 }
 
 const BIN_COUNT: usize = 10;
@@ -285,6 +287,7 @@ pub(super) struct ThroughputLogs {
     resolution: Duration,
     current_tail: SystemTime,
     buffer: LogBuffer<BIN_COUNT>,
+    stream_complete: bool,
 }
 
 impl ThroughputLogs {
@@ -302,6 +305,7 @@ impl ThroughputLogs {
             resolution,
             current_tail: now,
             buffer: LogBuffer::new(),
+            stream_complete: false,
         }
     }
 
@@ -343,8 +347,24 @@ impl ThroughputLogs {
         assert!(self.current_tail >= now);
     }
 
+    /// Mark the stream complete indicating no more data is expected. This is an
+    /// idempotent operation -- subsequent invocations of this function have no effect
+    /// and return false.
+    ///
+    /// After marking a stream complete [report](#method.report) will forever more return
+    /// [ThroughputReport::Complete]
+    pub(super) fn mark_complete(&mut self) -> bool {
+        let prev = self.stream_complete;
+        self.stream_complete = true;
+        !prev
+    }
+
     /// Generates an overall report of the time window.
     pub(super) fn report(&mut self, now: SystemTime) -> ThroughputReport {
+        if self.stream_complete {
+            return ThroughputReport::Complete;
+        }
+
         self.catch_up(now);
         self.buffer.fill_gaps();
 

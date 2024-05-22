@@ -65,6 +65,12 @@ impl Intercept for StalledStreamProtectionInterceptor {
     ) -> Result<(), BoxError> {
         if let Some(sspcfg) = cfg.load::<StalledStreamProtectionConfig>().cloned() {
             if sspcfg.upload_enabled() {
+                if let Some(0) = context.request().body().content_length() {
+                    tracing::trace!(
+                        "skipping stalled stream protection for zero length request body"
+                    );
+                    return Ok(());
+                }
                 let (_async_sleep, time_source) = get_runtime_component_deps(runtime_components)?;
                 let now = time_source.now();
 

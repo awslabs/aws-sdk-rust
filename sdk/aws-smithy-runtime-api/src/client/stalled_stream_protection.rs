@@ -13,7 +13,11 @@
 use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use std::time::Duration;
 
-const DEFAULT_GRACE_PERIOD: Duration = Duration::from_secs(5);
+/// The default grace period for stalled stream protection.
+///
+/// When a stream stalls for longer than this grace period, the stream will
+/// return an error.
+pub const DEFAULT_GRACE_PERIOD: Duration = Duration::from_secs(20);
 
 /// Configuration for stalled stream protection.
 ///

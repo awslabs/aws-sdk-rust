@@ -376,10 +376,12 @@ mod test {
     async fn http_body_consumes_data() {
         let mut body = SdkBody::from("hello!");
         let mut body = Pin::new(&mut body);
+        assert!(!body.is_end_stream());
         let data = body.next().await;
         assert!(data.is_some());
         let data = body.next().await;
         assert!(data.is_none());
+        assert!(body.is_end_stream());
     }
 
     #[tokio::test]

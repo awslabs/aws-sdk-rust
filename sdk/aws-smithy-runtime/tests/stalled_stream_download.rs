@@ -105,9 +105,13 @@ async fn download_stalls() {
     let (time, sleep) = tick_advance_time_and_sleep();
     let (server, response_sender) = channel_server();
     let op = operation(server, time.clone(), sleep);
+    let barrier = Arc::new(Barrier::new(2));
 
+    let c = barrier.clone();
     let server = tokio::spawn(async move {
-        for _ in 1..10 {
+        c.wait().await;
+        for i in 1..10 {
+            tracing::debug!("send {i}");
             response_sender.send(NEAT_DATA).await.unwrap();
             tick!(time, Duration::from_secs(1));
         }
@@ -115,7 +119,10 @@ async fn download_stalls() {
     });
 
     let response_body = op.invoke(()).await.expect("initial success");
-    let result = tokio::spawn(eagerly_consume(response_body));
+    let result = tokio::spawn(async move {
+        barrier.wait().await;
+        eagerly_consume(response_body).await
+    });
     server.await.unwrap();
 
     let err = result
@@ -188,6 +195,7 @@ async fn user_downloads_data_too_slowly() {
 }
 
 use download_test_tools::*;
+use tokio::sync::Barrier;
 mod download_test_tools {
     use crate::stalled_stream_common::*;
 

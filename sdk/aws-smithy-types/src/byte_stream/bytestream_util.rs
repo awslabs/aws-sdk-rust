@@ -44,7 +44,10 @@ impl PathBody {
 
     fn from_file(file: File, length: u64, buffer_size: usize) -> Self {
         PathBody {
-            state: State::Loaded(ReaderStream::with_capacity(file.take(length), buffer_size)),
+            state: State::Loaded {
+                stream: ReaderStream::with_capacity(file.take(length), buffer_size),
+                bytes_left: length,
+            },
             length,
             buffer_size,
             // The file used to create this `PathBody` should have already had an offset applied
@@ -230,7 +233,10 @@ impl FsBuilder {
 enum State {
     Unloaded(PathBuf),
     Loading(Pin<Box<dyn Future<Output = io::Result<File>> + Send + Sync + 'static>>),
-    Loaded(ReaderStream<io::Take<File>>),
+    Loaded {
+        stream: ReaderStream<io::Take<File>>,
+        bytes_left: u64,
+    },
 }
 
 impl http_body_0_4::Body for PathBody {
@@ -238,7 +244,7 @@ impl http_body_0_4::Body for PathBody {
     type Error = Box<dyn std::error::Error + Send + Sync + 'static>;
 
     fn poll_data(
-        mut self: std::pin::Pin<&mut Self>,
+        mut self: Pin<&mut Self>,
         cx: &mut std::task::Context<'_>,
     ) -> std::task::Poll<Option<Result<Self::Data, Self::Error>>> {
         use std::task::Poll;
@@ -260,18 +266,27 @@ impl http_body_0_4::Body for PathBody {
                 State::Loading(ref mut future) => {
                     match futures_core::ready!(Pin::new(future).poll(cx)) {
                         Ok(file) => {
-                            self.state = State::Loaded(ReaderStream::with_capacity(
-                                file.take(self.length),
-                                self.buffer_size,
-                            ));
+                            self.state = State::Loaded {
+                                stream: ReaderStream::with_capacity(
+                                    file.take(self.length),
+                                    self.buffer_size,
+                                ),
+                                bytes_left: self.length,
+                            };
                         }
                         Err(e) => return Poll::Ready(Some(Err(e.into()))),
                     };
                 }
-                State::Loaded(ref mut stream) => {
+                State::Loaded {
+                    ref mut stream,
+                    ref mut bytes_left,
+                } => {
                     use futures_core::Stream;
-                    return match futures_core::ready!(std::pin::Pin::new(stream).poll_next(cx)) {
-                        Some(Ok(bytes)) => Poll::Ready(Some(Ok(bytes))),
+                    return match futures_core::ready!(Pin::new(stream).poll_next(cx)) {
+                        Some(Ok(bytes)) => {
+                            *bytes_left -= bytes.len() as u64;
+                            Poll::Ready(Some(Ok(bytes)))
+                        }
                         None => Poll::Ready(None),
                         Some(Err(e)) => Poll::Ready(Some(Err(e.into()))),
                     };
@@ -281,15 +296,17 @@ impl http_body_0_4::Body for PathBody {
     }
 
     fn poll_trailers(
-        self: std::pin::Pin<&mut Self>,
+        self: Pin<&mut Self>,
         _cx: &mut std::task::Context<'_>,
     ) -> std::task::Poll<Result<Option<http::HeaderMap>, Self::Error>> {
         std::task::Poll::Ready(Ok(None))
     }
 
     fn is_end_stream(&self) -> bool {
-        // fast path end-stream for empty streams
-        self.length == 0
+        match self.state {
+            State::Unloaded(_) | State::Loading(_) => self.length == 0,
+            State::Loaded { bytes_left, .. } => bytes_left == 0,
+        }
     }
 
     fn size_hint(&self) -> http_body_0_4::SizeHint {
@@ -303,6 +320,7 @@ mod test {
     use super::FsBuilder;
     use crate::byte_stream::{ByteStream, Length};
     use bytes::Buf;
+    use http_body_0_4::Body;
     use std::io::Write;
     use tempfile::NamedTempFile;
 
@@ -368,6 +386,29 @@ mod test {
             .into_inner();
 
         assert_eq!(body.content_length(), Some(1));
+    }
+
+    #[tokio::test]
+    async fn fsbuilder_is_end_stream() {
+        let sentence = "A very long sentence that's clearly longer than a single byte.";
+        let mut file = NamedTempFile::new().unwrap();
+        file.write_all(sentence.as_bytes()).unwrap();
+        // Ensure that the file was written to
+        file.flush().expect("flushing is OK");
+
+        let mut body = FsBuilder::new()
+            .path(&file)
+            .build()
+            .await
+            .unwrap()
+            .into_inner();
+
+        assert!(!body.is_end_stream());
+        assert_eq!(body.content_length(), Some(sentence.len() as u64));
+
+        let data = body.data().await.unwrap().unwrap();
+        assert_eq!(data.len(), sentence.len());
+        assert!(body.is_end_stream());
     }
 
     #[tokio::test]
