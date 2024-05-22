@@ -16,7 +16,7 @@ http = "0.2.9"
 [dev-dependencies.aws-config]
 path = "../../sdk/aws-config"
 default-features = false
-version = "1.5.0"
+version = "1.4.1"
 
 [dev-dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
