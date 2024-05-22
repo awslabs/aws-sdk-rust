@@ -114,7 +114,11 @@ impl Intercept for RequestCompressionInterceptor {
         // we check to see if the data is big enough to make compression worthwhile.
         if let Some(known_size) = http_body::Body::size_hint(request.body()).exact() {
             if known_size < options.min_compression_size_bytes() as u64 {
-                tracing::trace!("request body is below minimum size and will not be compressed");
+                tracing::trace!(
+                    min_compression_size_bytes = options.min_compression_size_bytes(),
+                    known_size,
+                    "request body is below minimum size and will not be compressed"
+                );
                 return Ok(());
             }
             tracing::trace!("compressing non-streaming request body...")
