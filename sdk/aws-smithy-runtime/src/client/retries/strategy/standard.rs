@@ -138,7 +138,7 @@ impl StandardRetryStrategy {
                     } else {
                         fastrand::f64()
                     };
-                    let backoff = calculate_exponential_backoff(
+                    Ok(calculate_exponential_backoff(
                         // Generate a random base multiplier to create jitter
                         base,
                         // Get the backoff time multiplier in seconds (with fractional seconds)
@@ -146,8 +146,9 @@ impl StandardRetryStrategy {
                         // `self.local.attempts` tracks number of requests made including the initial request
                         // The initial attempt shouldn't count towards backoff calculations, so we subtract it
                         request_attempts - 1,
-                    );
-                    Ok(Duration::from_secs_f64(backoff).min(retry_cfg.max_backoff()))
+                        // Maximum backoff duration as a fallback to prevent overflow when calculating a power
+                        retry_cfg.max_backoff(),
+                    ))
                 }
             }
             RetryAction::RetryForbidden | RetryAction::NoActionIndicated => {
@@ -288,11 +289,29 @@ fn check_rate_limiter_for_delay(
     None
 }
 
-fn calculate_exponential_backoff(base: f64, initial_backoff: f64, retry_attempts: u32) -> f64 {
-    2_u32
+fn calculate_exponential_backoff(
+    base: f64,
+    initial_backoff: f64,
+    retry_attempts: u32,
+    max_backoff: Duration,
+) -> Duration {
+    let result = match 2_u32
         .checked_pow(retry_attempts)
-        .map(|backoff| (backoff as f64) * base * initial_backoff)
-        .unwrap_or(f64::MAX)
+        .map(|power| (power as f64) * initial_backoff)
+    {
+        Some(backoff) => match Duration::try_from_secs_f64(backoff) {
+            Ok(result) => result.min(max_backoff),
+            Err(e) => {
+                tracing::warn!("falling back to {max_backoff:?} as `Duration` could not be created for exponential backoff: {e}");
+                max_backoff
+            }
+        },
+        None => max_backoff,
+    };
+
+    // Apply jitter to `result`, and note that it can be applied to `max_backoff`.
+    // Won't panic because `base` is either in range 0..1 or a constant 1 in testing (if configured).
+    result.mul_f64(base)
 }
 
 fn get_seconds_since_unix_epoch(runtime_components: &RuntimeComponents) -> f64 {
@@ -423,6 +442,23 @@ mod tests {
             .should_attempt_retry(&ctx, &rc, &cfg)
             .expect("method is infallible for this use");
         assert_eq!(ShouldAttempt::No, actual);
+    }
+
+    #[test]
+    fn should_not_panic_when_exponential_backoff_duration_could_not_be_created() {
+        let (ctx, rc, cfg) = set_up_cfg_and_context(
+            ErrorKind::TransientError,
+            // Greater than 32 when subtracted by 1 in `calculate_backoff`, causing overflow in `calculate_exponential_backoff`
+            33,
+            RetryConfig::standard()
+                .with_use_static_exponential_base(true)
+                .with_max_attempts(100), // Any value greater than 33 will do
+        );
+        let strategy = StandardRetryStrategy::new();
+        let actual = strategy
+            .should_attempt_retry(&ctx, &rc, &cfg)
+            .expect("method is infallible for this use");
+        assert_eq!(ShouldAttempt::YesAfterDelay(MAX_BACKOFF), actual);
     }
 
     #[derive(Debug)]
@@ -868,14 +904,16 @@ mod tests {
         assert_eq!(token_bucket.available_permits(), 480);
     }
 
+    const MAX_BACKOFF: Duration = Duration::from_secs(20);
+
     #[test]
     fn calculate_exponential_backoff_where_initial_backoff_is_one() {
         let initial_backoff = 1.0;
 
         for (attempt, expected_backoff) in [initial_backoff, 2.0, 4.0].into_iter().enumerate() {
             let actual_backoff =
-                calculate_exponential_backoff(1.0, initial_backoff, attempt as u32);
-            assert_eq!(expected_backoff, actual_backoff);
+                calculate_exponential_backoff(1.0, initial_backoff, attempt as u32, MAX_BACKOFF);
+            assert_eq!(Duration::from_secs_f64(expected_backoff), actual_backoff);
         }
     }
 
@@ -885,8 +923,8 @@ mod tests {
 
         for (attempt, expected_backoff) in [initial_backoff, 6.0, 12.0].into_iter().enumerate() {
             let actual_backoff =
-                calculate_exponential_backoff(1.0, initial_backoff, attempt as u32);
-            assert_eq!(expected_backoff, actual_backoff);
+                calculate_exponential_backoff(1.0, initial_backoff, attempt as u32, MAX_BACKOFF);
+            assert_eq!(Duration::from_secs_f64(expected_backoff), actual_backoff);
         }
     }
 
@@ -896,17 +934,17 @@ mod tests {
 
         for (attempt, expected_backoff) in [initial_backoff, 0.06, 0.12].into_iter().enumerate() {
             let actual_backoff =
-                calculate_exponential_backoff(1.0, initial_backoff, attempt as u32);
-            assert_eq!(expected_backoff, actual_backoff);
+                calculate_exponential_backoff(1.0, initial_backoff, attempt as u32, MAX_BACKOFF);
+            assert_eq!(Duration::from_secs_f64(expected_backoff), actual_backoff);
         }
     }
 
     #[test]
-    fn calculate_backoff_overflow() {
+    fn calculate_backoff_overflow_should_gracefully_fallback_to_max_backoff() {
         // avoid overflow for a silly large amount of retry attempts
         assert_eq!(
-            calculate_exponential_backoff(1_f64, 10_f64, 100000),
-            f64::MAX
+            MAX_BACKOFF,
+            calculate_exponential_backoff(1_f64, 10_f64, 100000, MAX_BACKOFF),
         );
     }
 }

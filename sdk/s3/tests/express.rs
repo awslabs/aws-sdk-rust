@@ -270,7 +270,19 @@ async fn default_checksum_should_be_crc32_for_operation_requiring_checksum() {
         .send()
         .await;
 
-    http_client.assert_requests_match(&[""]);
+    let checksum_headers: Vec<_> = http_client
+        .actual_requests()
+        .last()
+        .unwrap()
+        .headers()
+        .iter()
+        .filter(|(key, _)| key.starts_with("x-amz-checksum"))
+        .collect();
+
+    assert_eq!(1, checksum_headers.len());
+    assert_eq!("x-amz-checksum-crc32", checksum_headers[0].0);
+    // FIXME(V1373841114): re-enable assertion after model updates
+    // http_client.assert_requests_match(&[""]);
 }
 
 #[tokio::test]
