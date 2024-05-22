@@ -42,6 +42,25 @@ pub(crate) fn parse_bool(value: &str) -> Result<bool, InvalidBooleanValue> {
 }
 
 #[derive(Debug)]
+pub(crate) struct InvalidUintValue {
+    value: String,
+}
+
+impl fmt::Display for InvalidUintValue {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{} is not a valid u32", self.value)
+    }
+}
+
+impl Error for InvalidUintValue {}
+
+pub(crate) fn parse_uint(value: &str) -> Result<u32, InvalidUintValue> {
+    value.parse::<u32>().map_err(|_| InvalidUintValue {
+        value: value.to_string(),
+    })
+}
+
+#[derive(Debug)]
 pub(crate) struct InvalidUrlValue {
     value: String,
 }
