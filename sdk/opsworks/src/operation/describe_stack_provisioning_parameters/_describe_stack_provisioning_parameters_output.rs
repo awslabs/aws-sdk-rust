@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackProvisioningParametersOutput {
-    /// <p>The AWS OpsWorks Stacks agent installer's URL.</p>
+    /// <p>The OpsWorks Stacks agent installer's URL.</p>
     pub agent_installer_url: ::std::option::Option<::std::string::String>,
     /// <p>An embedded object that contains the provisioning parameters.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeStackProvisioningParametersOutput {
-    /// <p>The AWS OpsWorks Stacks agent installer's URL.</p>
+    /// <p>The OpsWorks Stacks agent installer's URL.</p>
     pub fn agent_installer_url(&self) -> ::std::option::Option<&str> {
         self.agent_installer_url.as_deref()
     }
@@ -41,17 +41,17 @@ pub struct DescribeStackProvisioningParametersOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeStackProvisioningParametersOutputBuilder {
-    /// <p>The AWS OpsWorks Stacks agent installer's URL.</p>
+    /// <p>The OpsWorks Stacks agent installer's URL.</p>
     pub fn agent_installer_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_installer_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS OpsWorks Stacks agent installer's URL.</p>
+    /// <p>The OpsWorks Stacks agent installer's URL.</p>
     pub fn set_agent_installer_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_installer_url = input;
         self
     }
-    /// <p>The AWS OpsWorks Stacks agent installer's URL.</p>
+    /// <p>The OpsWorks Stacks agent installer's URL.</p>
     pub fn get_agent_installer_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_installer_url
     }

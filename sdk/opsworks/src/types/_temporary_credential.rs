@@ -8,9 +8,9 @@ pub struct TemporaryCredential {
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The password.</p>
     pub password: ::std::option::Option<::std::string::String>,
-    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
+    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they are automatically logged out.</p>
     pub valid_for_in_minutes: ::std::option::Option<i32>,
-    /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    /// <p>The instance's OpsWorks Stacks ID.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
 impl TemporaryCredential {
@@ -22,11 +22,11 @@ impl TemporaryCredential {
     pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
+    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they are automatically logged out.</p>
     pub fn valid_for_in_minutes(&self) -> ::std::option::Option<i32> {
         self.valid_for_in_minutes
     }
-    /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    /// <p>The instance's OpsWorks Stacks ID.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -76,31 +76,31 @@ impl TemporaryCredentialBuilder {
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.password
     }
-    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
+    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they are automatically logged out.</p>
     pub fn valid_for_in_minutes(mut self, input: i32) -> Self {
         self.valid_for_in_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
+    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they are automatically logged out.</p>
     pub fn set_valid_for_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.valid_for_in_minutes = input;
         self
     }
-    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
+    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they are automatically logged out.</p>
     pub fn get_valid_for_in_minutes(&self) -> &::std::option::Option<i32> {
         &self.valid_for_in_minutes
     }
-    /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    /// <p>The instance's OpsWorks Stacks ID.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    /// <p>The instance's OpsWorks Stacks ID.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    /// <p>The instance's OpsWorks Stacks ID.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }

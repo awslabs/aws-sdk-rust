@@ -7,9 +7,9 @@ pub struct SetLoadBasedAutoScalingInput {
     pub layer_id: ::std::option::Option<::std::string::String>,
     /// <p>Enables load-based auto scaling for the layer.</p>
     pub enable: ::std::option::Option<bool>,
-    /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, OpsWorks Stacks starts a specified number of instances.</p>
     pub up_scaling: ::std::option::Option<crate::types::AutoScalingThresholds>,
-    /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, OpsWorks Stacks stops a specified number of instances.</p>
     pub down_scaling: ::std::option::Option<crate::types::AutoScalingThresholds>,
 }
 impl SetLoadBasedAutoScalingInput {
@@ -21,11 +21,11 @@ impl SetLoadBasedAutoScalingInput {
     pub fn enable(&self) -> ::std::option::Option<bool> {
         self.enable
     }
-    /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, OpsWorks Stacks starts a specified number of instances.</p>
     pub fn up_scaling(&self) -> ::std::option::Option<&crate::types::AutoScalingThresholds> {
         self.up_scaling.as_ref()
     }
-    /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, OpsWorks Stacks stops a specified number of instances.</p>
     pub fn down_scaling(&self) -> ::std::option::Option<&crate::types::AutoScalingThresholds> {
         self.down_scaling.as_ref()
     }
@@ -76,31 +76,31 @@ impl SetLoadBasedAutoScalingInputBuilder {
     pub fn get_enable(&self) -> &::std::option::Option<bool> {
         &self.enable
     }
-    /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, OpsWorks Stacks starts a specified number of instances.</p>
     pub fn up_scaling(mut self, input: crate::types::AutoScalingThresholds) -> Self {
         self.up_scaling = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, OpsWorks Stacks starts a specified number of instances.</p>
     pub fn set_up_scaling(mut self, input: ::std::option::Option<crate::types::AutoScalingThresholds>) -> Self {
         self.up_scaling = input;
         self
     }
-    /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, OpsWorks Stacks starts a specified number of instances.</p>
     pub fn get_up_scaling(&self) -> &::std::option::Option<crate::types::AutoScalingThresholds> {
         &self.up_scaling
     }
-    /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, OpsWorks Stacks stops a specified number of instances.</p>
     pub fn down_scaling(mut self, input: crate::types::AutoScalingThresholds) -> Self {
         self.down_scaling = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, OpsWorks Stacks stops a specified number of instances.</p>
     pub fn set_down_scaling(mut self, input: ::std::option::Option<crate::types::AutoScalingThresholds>) -> Self {
         self.down_scaling = input;
         self
     }
-    /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, OpsWorks Stacks stops a specified number of instances.</p>
     pub fn get_down_scaling(&self) -> &::std::option::Option<crate::types::AutoScalingThresholds> {
         &self.down_scaling
     }

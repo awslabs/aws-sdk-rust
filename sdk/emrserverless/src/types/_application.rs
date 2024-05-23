@@ -44,6 +44,8 @@ pub struct Application {
     pub runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The configuration setting for monitoring.</p>
     pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    /// <p>The interactive configuration object that enables the interactive use cases for an application.</p>
+    pub interactive_configuration: ::std::option::Option<crate::types::InteractiveConfiguration>,
 }
 impl Application {
     /// <p>The ID of the application.</p>
@@ -136,6 +138,10 @@ impl Application {
     pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
         self.monitoring_configuration.as_ref()
     }
+    /// <p>The interactive configuration object that enables the interactive use cases for an application.</p>
+    pub fn interactive_configuration(&self) -> ::std::option::Option<&crate::types::InteractiveConfiguration> {
+        self.interactive_configuration.as_ref()
+    }
 }
 impl Application {
     /// Creates a new builder-style object to manufacture [`Application`](crate::types::Application).
@@ -169,6 +175,7 @@ pub struct ApplicationBuilder {
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>>,
     pub(crate) runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    pub(crate) interactive_configuration: ::std::option::Option<crate::types::InteractiveConfiguration>,
 }
 impl ApplicationBuilder {
     /// <p>The ID of the application.</p>
@@ -496,6 +503,20 @@ impl ApplicationBuilder {
     pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
         &self.monitoring_configuration
     }
+    /// <p>The interactive configuration object that enables the interactive use cases for an application.</p>
+    pub fn interactive_configuration(mut self, input: crate::types::InteractiveConfiguration) -> Self {
+        self.interactive_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The interactive configuration object that enables the interactive use cases for an application.</p>
+    pub fn set_interactive_configuration(mut self, input: ::std::option::Option<crate::types::InteractiveConfiguration>) -> Self {
+        self.interactive_configuration = input;
+        self
+    }
+    /// <p>The interactive configuration object that enables the interactive use cases for an application.</p>
+    pub fn get_interactive_configuration(&self) -> &::std::option::Option<crate::types::InteractiveConfiguration> {
+        &self.interactive_configuration
+    }
     /// Consumes the builder and constructs a [`Application`](crate::types::Application).
     /// This method will fail if any of the following fields are not set:
     /// - [`application_id`](crate::types::builders::ApplicationBuilder::application_id)
@@ -562,6 +583,7 @@ impl ApplicationBuilder {
             worker_type_specifications: self.worker_type_specifications,
             runtime_configuration: self.runtime_configuration,
             monitoring_configuration: self.monitoring_configuration,
+            interactive_configuration: self.interactive_configuration,
         })
     }
 }

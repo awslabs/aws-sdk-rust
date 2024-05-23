@@ -22,8 +22,8 @@ impl crate::operation::register_instance::builders::RegisterInstanceInputBuilder
 }
 /// Fluent builder constructing a request to `RegisterInstance`.
 ///
-/// <p>Registers instances that were created outside of AWS OpsWorks Stacks with a specified stack.</p><note>
-/// <p>We do not recommend using this action to register instances. The complete registration operation includes two tasks: installing the AWS OpsWorks Stacks agent on the instance, and registering the instance with the stack. <code>RegisterInstance</code> handles only the second step. You should instead use the AWS CLI <code>register</code> command, which performs the entire registration operation. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html"> Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p>
+/// <p>Registers instances that were created outside of OpsWorks Stacks with a specified stack.</p><note>
+/// <p>We do not recommend using this action to register instances. The complete registration operation includes two tasks: installing the OpsWorks Stacks agent on the instance, and registering the instance with the stack. <code>RegisterInstance</code> handles only the second step. You should instead use the CLI <code>register</code> command, which performs the entire registration operation. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html"> Registering an Instance with an OpsWorks Stacks Stack</a>.</p>
 /// </note>
 /// <p>Registered instances have the same requirements as instances that are created by using the <code>CreateInstance</code> API. For example, registered instances must be running a supported Linux-based operating system, and they must have a supported instance type. For more information about requirements for instances that you want to register, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register-registering-preparer.html"> Preparing the Instance</a>.</p>
 /// <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
@@ -126,17 +126,35 @@ impl RegisterInstanceFluentBuilder {
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_id()
     }
-    /// <p>The instance's hostname.</p>
+    /// <p>The instance's host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hostname(input.into());
         self
     }
-    /// <p>The instance's hostname.</p>
+    /// <p>The instance's host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hostname(input);
         self
     }
-    /// <p>The instance's hostname.</p>
+    /// <p>The instance's host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hostname()
     }

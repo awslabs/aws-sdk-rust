@@ -6,11 +6,11 @@
 pub struct ElasticIp {
     /// <p>The IP address.</p>
     pub ip: ::std::option::Option<::std::string::String>,
-    /// <p>The name.</p>
+    /// <p>The name, which can be a maximum of 32 characters.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The domain.</p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <p>The Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance that the address is attached to.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ impl ElasticIp {
     pub fn ip(&self) -> ::std::option::Option<&str> {
         self.ip.as_deref()
     }
-    /// <p>The name.</p>
+    /// <p>The name, which can be a maximum of 32 characters.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -28,7 +28,7 @@ impl ElasticIp {
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The AWS region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <p>The Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
@@ -69,17 +69,17 @@ impl ElasticIpBuilder {
     pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip
     }
-    /// <p>The name.</p>
+    /// <p>The name, which can be a maximum of 32 characters.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name.</p>
+    /// <p>The name, which can be a maximum of 32 characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name.</p>
+    /// <p>The name, which can be a maximum of 32 characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -97,17 +97,17 @@ impl ElasticIpBuilder {
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The AWS region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <p>The Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <p>The Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
-    /// <p>The AWS region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <p>The Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.region
     }

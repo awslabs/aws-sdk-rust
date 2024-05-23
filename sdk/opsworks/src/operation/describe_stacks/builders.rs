@@ -114,17 +114,17 @@ impl DescribeStacksFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_stack_ids`](Self::set_stack_ids).
     ///
-    /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
+    /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, and have permissions to get information about all stacks, <code>DescribeStacks</code> returns a description of every stack. If the IAM policy that is attached to an IAM user limits the <code>DescribeStacks</code> action to specific stack ARNs, this parameter is required, and the user must specify a stack ARN that is allowed by the policy. Otherwise, <code>DescribeStacks</code> returns an <code>AccessDenied</code> error.</p>
     pub fn stack_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_ids(input.into());
         self
     }
-    /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
+    /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, and have permissions to get information about all stacks, <code>DescribeStacks</code> returns a description of every stack. If the IAM policy that is attached to an IAM user limits the <code>DescribeStacks</code> action to specific stack ARNs, this parameter is required, and the user must specify a stack ARN that is allowed by the policy. Otherwise, <code>DescribeStacks</code> returns an <code>AccessDenied</code> error.</p>
     pub fn set_stack_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_stack_ids(input);
         self
     }
-    /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
+    /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, and have permissions to get information about all stacks, <code>DescribeStacks</code> returns a description of every stack. If the IAM policy that is attached to an IAM user limits the <code>DescribeStacks</code> action to specific stack ARNs, this parameter is required, and the user must specify a stack ARN that is allowed by the policy. Otherwise, <code>DescribeStacks</code> returns an <code>AccessDenied</code> error.</p>
     pub fn get_stack_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_stack_ids()
     }

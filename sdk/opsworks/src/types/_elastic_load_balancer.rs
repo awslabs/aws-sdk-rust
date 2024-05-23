@@ -4,15 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticLoadBalancer {
-    /// <p>The Elastic Load Balancing instance's name.</p>
+    /// <p>The Elastic Load Balancing instance name.</p>
     pub elastic_load_balancer_name: ::std::option::Option<::std::string::String>,
-    /// <p>The instance's AWS region.</p>
+    /// <p>The instance's Amazon Web Services Region.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The instance's public DNS name.</p>
     pub dns_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the stack that the instance is associated with.</p>
+    /// <p>The ID of the stack with which the instance is associated.</p>
     pub stack_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the layer that the instance is attached to.</p>
+    /// <p>The ID of the layer to which the instance is attached.</p>
     pub layer_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
@@ -20,15 +20,15 @@ pub struct ElasticLoadBalancer {
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of subnet IDs, if the stack is running in a VPC.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
+    /// <p>A list of the EC2 instances for which the Elastic Load Balancing instance is managing traffic.</p>
     pub ec2_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ElasticLoadBalancer {
-    /// <p>The Elastic Load Balancing instance's name.</p>
+    /// <p>The Elastic Load Balancing instance name.</p>
     pub fn elastic_load_balancer_name(&self) -> ::std::option::Option<&str> {
         self.elastic_load_balancer_name.as_deref()
     }
-    /// <p>The instance's AWS region.</p>
+    /// <p>The instance's Amazon Web Services Region.</p>
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
@@ -36,11 +36,11 @@ impl ElasticLoadBalancer {
     pub fn dns_name(&self) -> ::std::option::Option<&str> {
         self.dns_name.as_deref()
     }
-    /// <p>The ID of the stack that the instance is associated with.</p>
+    /// <p>The ID of the stack with which the instance is associated.</p>
     pub fn stack_id(&self) -> ::std::option::Option<&str> {
         self.stack_id.as_deref()
     }
-    /// <p>The ID of the layer that the instance is attached to.</p>
+    /// <p>The ID of the layer to which the instance is attached.</p>
     pub fn layer_id(&self) -> ::std::option::Option<&str> {
         self.layer_id.as_deref()
     }
@@ -60,7 +60,7 @@ impl ElasticLoadBalancer {
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
-    /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
+    /// <p>A list of the EC2 instances for which the Elastic Load Balancing instance is managing traffic.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_instance_ids.is_none()`.
     pub fn ec2_instance_ids(&self) -> &[::std::string::String] {
@@ -89,31 +89,31 @@ pub struct ElasticLoadBalancerBuilder {
     pub(crate) ec2_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ElasticLoadBalancerBuilder {
-    /// <p>The Elastic Load Balancing instance's name.</p>
+    /// <p>The Elastic Load Balancing instance name.</p>
     pub fn elastic_load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elastic_load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Elastic Load Balancing instance's name.</p>
+    /// <p>The Elastic Load Balancing instance name.</p>
     pub fn set_elastic_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.elastic_load_balancer_name = input;
         self
     }
-    /// <p>The Elastic Load Balancing instance's name.</p>
+    /// <p>The Elastic Load Balancing instance name.</p>
     pub fn get_elastic_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.elastic_load_balancer_name
     }
-    /// <p>The instance's AWS region.</p>
+    /// <p>The instance's Amazon Web Services Region.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The instance's AWS region.</p>
+    /// <p>The instance's Amazon Web Services Region.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
-    /// <p>The instance's AWS region.</p>
+    /// <p>The instance's Amazon Web Services Region.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.region
     }
@@ -131,31 +131,31 @@ impl ElasticLoadBalancerBuilder {
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dns_name
     }
-    /// <p>The ID of the stack that the instance is associated with.</p>
+    /// <p>The ID of the stack with which the instance is associated.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the stack that the instance is associated with.</p>
+    /// <p>The ID of the stack with which the instance is associated.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_id = input;
         self
     }
-    /// <p>The ID of the stack that the instance is associated with.</p>
+    /// <p>The ID of the stack with which the instance is associated.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_id
     }
-    /// <p>The ID of the layer that the instance is attached to.</p>
+    /// <p>The ID of the layer to which the instance is attached.</p>
     pub fn layer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the layer that the instance is attached to.</p>
+    /// <p>The ID of the layer to which the instance is attached.</p>
     pub fn set_layer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layer_id = input;
         self
     }
-    /// <p>The ID of the layer that the instance is attached to.</p>
+    /// <p>The ID of the layer to which the instance is attached.</p>
     pub fn get_layer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.layer_id
     }
@@ -217,19 +217,19 @@ impl ElasticLoadBalancerBuilder {
     ///
     /// To override the contents of this collection use [`set_ec2_instance_ids`](Self::set_ec2_instance_ids).
     ///
-    /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
+    /// <p>A list of the EC2 instances for which the Elastic Load Balancing instance is managing traffic.</p>
     pub fn ec2_instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ec2_instance_ids.unwrap_or_default();
         v.push(input.into());
         self.ec2_instance_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
+    /// <p>A list of the EC2 instances for which the Elastic Load Balancing instance is managing traffic.</p>
     pub fn set_ec2_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ec2_instance_ids = input;
         self
     }
-    /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
+    /// <p>A list of the EC2 instances for which the Elastic Load Balancing instance is managing traffic.</p>
     pub fn get_ec2_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ec2_instance_ids
     }

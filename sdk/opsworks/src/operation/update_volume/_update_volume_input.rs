@@ -5,7 +5,7 @@
 pub struct UpdateVolumeInput {
     /// <p>The volume ID.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
-    /// <p>The new name.</p>
+    /// <p>The new name. Volume names can be a maximum of 128 characters.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The new mount point.</p>
     pub mount_point: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl UpdateVolumeInput {
     pub fn volume_id(&self) -> ::std::option::Option<&str> {
         self.volume_id.as_deref()
     }
-    /// <p>The new name.</p>
+    /// <p>The new name. Volume names can be a maximum of 128 characters.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -55,17 +55,17 @@ impl UpdateVolumeInputBuilder {
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_id
     }
-    /// <p>The new name.</p>
+    /// <p>The new name. Volume names can be a maximum of 128 characters.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new name.</p>
+    /// <p>The new name. Volume names can be a maximum of 128 characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The new name.</p>
+    /// <p>The new name. Volume names can be a maximum of 128 characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

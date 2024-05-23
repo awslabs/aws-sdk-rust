@@ -11,14 +11,20 @@ pub struct CreateInstanceInput {
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
     pub auto_scaling_type: ::std::option::Option<crate::types::AutoScalingType>,
-    /// <p>The instance host name.</p>
+    /// <p>The instance host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The instance's operating system, which must be set to one of the following.</p>
     /// <ul>
     /// <li>
-    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p></li>
+    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2</code>, <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p></li>
     /// <li>
-    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p></li>
+    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 18.04 LTS</code>, <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p></li>
     /// <li>
     /// <p><code>CentOS Linux 7</code></p></li>
     /// <li>
@@ -28,8 +34,8 @@ pub struct CreateInstanceInput {
     /// <li>
     /// <p>A custom AMI: <code>Custom</code>.</p></li>
     /// </ul>
-    /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-    /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
+    /// <p>Not all operating systems are supported with all versions of Chef. For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about how to use custom AMIs with OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
     pub os: ::std::option::Option<::std::string::String>,
     /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p><note>
     /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p>
@@ -41,7 +47,7 @@ pub struct CreateInstanceInput {
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
     pub virtualization_type: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.</p>
+    /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct OpsWorks Stacks to launch the instance in a different subnet.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
     pub architecture: ::std::option::Option<crate::types::Architecture>,
@@ -55,12 +61,12 @@ pub struct CreateInstanceInput {
     pub install_updates_on_boot: ::std::option::Option<bool>,
     /// <p>Whether to create an Amazon EBS-optimized instance.</p>
     pub ebs_optimized: ::std::option::Option<bool>,
-    /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+    /// <p>The default OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
     /// <li>
     /// <p><code>INHERIT</code> - Use the stack's default agent version setting.</p></li>
     /// <li>
-    /// <p><i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p></li>
+    /// <p><i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. OpsWorks Stacks installs that version on the instance.</p></li>
     /// </ul>
     /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p>
     pub agent_version: ::std::option::Option<::std::string::String>,
@@ -86,16 +92,22 @@ impl CreateInstanceInput {
     pub fn auto_scaling_type(&self) -> ::std::option::Option<&crate::types::AutoScalingType> {
         self.auto_scaling_type.as_ref()
     }
-    /// <p>The instance host name.</p>
+    /// <p>The instance host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub fn hostname(&self) -> ::std::option::Option<&str> {
         self.hostname.as_deref()
     }
     /// <p>The instance's operating system, which must be set to one of the following.</p>
     /// <ul>
     /// <li>
-    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p></li>
+    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2</code>, <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p></li>
     /// <li>
-    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p></li>
+    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 18.04 LTS</code>, <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p></li>
     /// <li>
     /// <p><code>CentOS Linux 7</code></p></li>
     /// <li>
@@ -105,8 +117,8 @@ impl CreateInstanceInput {
     /// <li>
     /// <p>A custom AMI: <code>Custom</code>.</p></li>
     /// </ul>
-    /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-    /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
+    /// <p>Not all operating systems are supported with all versions of Chef. For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about how to use custom AMIs with OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
     pub fn os(&self) -> ::std::option::Option<&str> {
         self.os.as_deref()
     }
@@ -128,7 +140,7 @@ impl CreateInstanceInput {
     pub fn virtualization_type(&self) -> ::std::option::Option<&str> {
         self.virtualization_type.as_deref()
     }
-    /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.</p>
+    /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct OpsWorks Stacks to launch the instance in a different subnet.</p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
@@ -156,12 +168,12 @@ impl CreateInstanceInput {
     pub fn ebs_optimized(&self) -> ::std::option::Option<bool> {
         self.ebs_optimized
     }
-    /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+    /// <p>The default OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
     /// <li>
     /// <p><code>INHERIT</code> - Use the stack's default agent version setting.</p></li>
     /// <li>
-    /// <p><i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p></li>
+    /// <p><i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. OpsWorks Stacks installs that version on the instance.</p></li>
     /// </ul>
     /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p>
     pub fn agent_version(&self) -> ::std::option::Option<&str> {
@@ -267,26 +279,44 @@ impl CreateInstanceInputBuilder {
     pub fn get_auto_scaling_type(&self) -> &::std::option::Option<crate::types::AutoScalingType> {
         &self.auto_scaling_type
     }
-    /// <p>The instance host name.</p>
+    /// <p>The instance host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hostname = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The instance host name.</p>
+    /// <p>The instance host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hostname = input;
         self
     }
-    /// <p>The instance host name.</p>
+    /// <p>The instance host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
         &self.hostname
     }
     /// <p>The instance's operating system, which must be set to one of the following.</p>
     /// <ul>
     /// <li>
-    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p></li>
+    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2</code>, <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p></li>
     /// <li>
-    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p></li>
+    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 18.04 LTS</code>, <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p></li>
     /// <li>
     /// <p><code>CentOS Linux 7</code></p></li>
     /// <li>
@@ -296,8 +326,8 @@ impl CreateInstanceInputBuilder {
     /// <li>
     /// <p>A custom AMI: <code>Custom</code>.</p></li>
     /// </ul>
-    /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-    /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
+    /// <p>Not all operating systems are supported with all versions of Chef. For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about how to use custom AMIs with OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
     pub fn os(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.os = ::std::option::Option::Some(input.into());
         self
@@ -305,9 +335,9 @@ impl CreateInstanceInputBuilder {
     /// <p>The instance's operating system, which must be set to one of the following.</p>
     /// <ul>
     /// <li>
-    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p></li>
+    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2</code>, <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p></li>
     /// <li>
-    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p></li>
+    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 18.04 LTS</code>, <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p></li>
     /// <li>
     /// <p><code>CentOS Linux 7</code></p></li>
     /// <li>
@@ -317,8 +347,8 @@ impl CreateInstanceInputBuilder {
     /// <li>
     /// <p>A custom AMI: <code>Custom</code>.</p></li>
     /// </ul>
-    /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-    /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
+    /// <p>Not all operating systems are supported with all versions of Chef. For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about how to use custom AMIs with OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
     pub fn set_os(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.os = input;
         self
@@ -326,9 +356,9 @@ impl CreateInstanceInputBuilder {
     /// <p>The instance's operating system, which must be set to one of the following.</p>
     /// <ul>
     /// <li>
-    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p></li>
+    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2</code>, <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p></li>
     /// <li>
-    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p></li>
+    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 18.04 LTS</code>, <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p></li>
     /// <li>
     /// <p><code>CentOS Linux 7</code></p></li>
     /// <li>
@@ -338,8 +368,8 @@ impl CreateInstanceInputBuilder {
     /// <li>
     /// <p>A custom AMI: <code>Custom</code>.</p></li>
     /// </ul>
-    /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-    /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
+    /// <p>Not all operating systems are supported with all versions of Chef. For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about how to use custom AMIs with OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
     pub fn get_os(&self) -> &::std::option::Option<::std::string::String> {
         &self.os
     }
@@ -405,17 +435,17 @@ impl CreateInstanceInputBuilder {
     pub fn get_virtualization_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtualization_type
     }
-    /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.</p>
+    /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct OpsWorks Stacks to launch the instance in a different subnet.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.</p>
+    /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct OpsWorks Stacks to launch the instance in a different subnet.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }
-    /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.</p>
+    /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct OpsWorks Stacks to launch the instance in a different subnet.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }
@@ -501,36 +531,36 @@ impl CreateInstanceInputBuilder {
     pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
         &self.ebs_optimized
     }
-    /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+    /// <p>The default OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
     /// <li>
     /// <p><code>INHERIT</code> - Use the stack's default agent version setting.</p></li>
     /// <li>
-    /// <p><i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p></li>
+    /// <p><i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. OpsWorks Stacks installs that version on the instance.</p></li>
     /// </ul>
     /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p>
     pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+    /// <p>The default OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
     /// <li>
     /// <p><code>INHERIT</code> - Use the stack's default agent version setting.</p></li>
     /// <li>
-    /// <p><i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p></li>
+    /// <p><i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. OpsWorks Stacks installs that version on the instance.</p></li>
     /// </ul>
     /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p>
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_version = input;
         self
     }
-    /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+    /// <p>The default OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
     /// <li>
     /// <p><code>INHERIT</code> - Use the stack's default agent version setting.</p></li>
     /// <li>
-    /// <p><i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p></li>
+    /// <p><i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. OpsWorks Stacks installs that version on the instance.</p></li>
     /// </ul>
     /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p>
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {

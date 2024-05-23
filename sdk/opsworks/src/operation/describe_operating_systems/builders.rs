@@ -22,7 +22,7 @@ impl crate::operation::describe_operating_systems::builders::DescribeOperatingSy
 }
 /// Fluent builder constructing a request to `DescribeOperatingSystems`.
 ///
-/// <p>Describes the operating systems that are supported by AWS OpsWorks Stacks.</p>
+/// <p>Describes the operating systems that are supported by OpsWorks Stacks.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOperatingSystemsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrantAccessInput {
-    /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    /// <p>The instance's OpsWorks Stacks ID.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
+    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, they are logged out.</p>
     pub valid_for_in_minutes: ::std::option::Option<i32>,
 }
 impl GrantAccessInput {
-    /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    /// <p>The instance's OpsWorks Stacks ID.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
+    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, they are logged out.</p>
     pub fn valid_for_in_minutes(&self) -> ::std::option::Option<i32> {
         self.valid_for_in_minutes
     }
@@ -33,32 +33,32 @@ pub struct GrantAccessInputBuilder {
     pub(crate) valid_for_in_minutes: ::std::option::Option<i32>,
 }
 impl GrantAccessInputBuilder {
-    /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    /// <p>The instance's OpsWorks Stacks ID.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    /// <p>The instance's OpsWorks Stacks ID.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    /// <p>The instance's OpsWorks Stacks ID.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
+    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, they are logged out.</p>
     pub fn valid_for_in_minutes(mut self, input: i32) -> Self {
         self.valid_for_in_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
+    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, they are logged out.</p>
     pub fn set_valid_for_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.valid_for_in_minutes = input;
         self
     }
-    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
+    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, they are logged out.</p>
     pub fn get_valid_for_in_minutes(&self) -> &::std::option::Option<i32> {
         &self.valid_for_in_minutes
     }

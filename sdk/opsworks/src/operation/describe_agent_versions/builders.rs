@@ -22,7 +22,7 @@ impl crate::operation::describe_agent_versions::builders::DescribeAgentVersionsI
 }
 /// Fluent builder constructing a request to `DescribeAgentVersions`.
 ///
-/// <p>Describes the available AWS OpsWorks Stacks agent versions. You must specify a stack ID or a configuration manager. <code>DescribeAgentVersions</code> returns a list of available agent versions for the specified stack or configuration manager.</p>
+/// <p>Describes the available OpsWorks Stacks agent versions. You must specify a stack ID or a configuration manager. <code>DescribeAgentVersions</code> returns a list of available agent versions for the specified stack or configuration manager.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAgentVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

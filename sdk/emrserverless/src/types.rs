@@ -33,6 +33,8 @@ pub use crate::types::_job_run_summary::JobRunSummary;
 
 pub use crate::types::_application::Application;
 
+pub use crate::types::_interactive_configuration::InteractiveConfiguration;
+
 pub use crate::types::_worker_type_specification::WorkerTypeSpecification;
 
 pub use crate::types::_image_configuration::ImageConfiguration;
@@ -82,6 +84,8 @@ mod _image_configuration;
 mod _image_configuration_input;
 
 mod _initial_capacity_config;
+
+mod _interactive_configuration;
 
 mod _job_driver;
 

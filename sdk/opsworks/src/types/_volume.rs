@@ -8,7 +8,7 @@ pub struct Volume {
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 volume ID.</p>
     pub ec2_volume_id: ::std::option::Option<::std::string::String>,
-    /// <p>The volume name.</p>
+    /// <p>The volume name. Volume names are a maximum of 128 characters.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The RAID array ID.</p>
     pub raid_array_id: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ pub struct Volume {
     pub device: ::std::option::Option<::std::string::String>,
     /// <p>The volume mount point. For example, "/mnt/disk1".</p>
     pub mount_point: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS region. For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <p>The Amazon Web Services Region. For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The volume Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
@@ -35,9 +35,9 @@ pub struct Volume {
     /// <li>
     /// <p><code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p></li>
     /// <li>
-    /// <p><code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p></li>
+    /// <p><code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p></li>
     /// <li>
-    /// <p><code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p></li>
+    /// <p><code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p></li>
     /// </ul>
     pub volume_type: ::std::option::Option<::std::string::String>,
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
@@ -54,7 +54,7 @@ impl Volume {
     pub fn ec2_volume_id(&self) -> ::std::option::Option<&str> {
         self.ec2_volume_id.as_deref()
     }
-    /// <p>The volume name.</p>
+    /// <p>The volume name. Volume names are a maximum of 128 characters.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -82,7 +82,7 @@ impl Volume {
     pub fn mount_point(&self) -> ::std::option::Option<&str> {
         self.mount_point.as_deref()
     }
-    /// <p>The AWS region. For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <p>The Amazon Web Services Region. For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
@@ -99,9 +99,9 @@ impl Volume {
     /// <li>
     /// <p><code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p></li>
     /// <li>
-    /// <p><code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p></li>
+    /// <p><code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p></li>
     /// <li>
-    /// <p><code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p></li>
+    /// <p><code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p></li>
     /// </ul>
     pub fn volume_type(&self) -> ::std::option::Option<&str> {
         self.volume_type.as_deref()
@@ -170,17 +170,17 @@ impl VolumeBuilder {
     pub fn get_ec2_volume_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ec2_volume_id
     }
-    /// <p>The volume name.</p>
+    /// <p>The volume name. Volume names are a maximum of 128 characters.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The volume name.</p>
+    /// <p>The volume name. Volume names are a maximum of 128 characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The volume name.</p>
+    /// <p>The volume name. Volume names are a maximum of 128 characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -268,17 +268,17 @@ impl VolumeBuilder {
     pub fn get_mount_point(&self) -> &::std::option::Option<::std::string::String> {
         &self.mount_point
     }
-    /// <p>The AWS region. For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <p>The Amazon Web Services Region. For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS region. For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <p>The Amazon Web Services Region. For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
-    /// <p>The AWS region. For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <p>The Amazon Web Services Region. For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.region
     }
@@ -305,9 +305,9 @@ impl VolumeBuilder {
     /// <li>
     /// <p><code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p></li>
     /// <li>
-    /// <p><code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p></li>
+    /// <p><code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p></li>
     /// <li>
-    /// <p><code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p></li>
+    /// <p><code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p></li>
     /// </ul>
     pub fn volume_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_type = ::std::option::Option::Some(input.into());
@@ -322,9 +322,9 @@ impl VolumeBuilder {
     /// <li>
     /// <p><code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p></li>
     /// <li>
-    /// <p><code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p></li>
+    /// <p><code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p></li>
     /// <li>
-    /// <p><code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p></li>
+    /// <p><code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p></li>
     /// </ul>
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_type = input;
@@ -339,9 +339,9 @@ impl VolumeBuilder {
     /// <li>
     /// <p><code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p></li>
     /// <li>
-    /// <p><code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p></li>
+    /// <p><code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p></li>
     /// <li>
-    /// <p><code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p></li>
+    /// <p><code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p></li>
     /// </ul>
     pub fn get_volume_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_type

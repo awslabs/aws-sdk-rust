@@ -34,6 +34,8 @@ pub struct CreateApplicationInput {
     pub runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The configuration setting for monitoring.</p>
     pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    /// <p>The interactive configuration object that enables the interactive use cases to use when running an application.</p>
+    pub interactive_configuration: ::std::option::Option<crate::types::InteractiveConfiguration>,
 }
 impl CreateApplicationInput {
     /// <p>The name of the application.</p>
@@ -102,6 +104,10 @@ impl CreateApplicationInput {
     pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
         self.monitoring_configuration.as_ref()
     }
+    /// <p>The interactive configuration object that enables the interactive use cases to use when running an application.</p>
+    pub fn interactive_configuration(&self) -> ::std::option::Option<&crate::types::InteractiveConfiguration> {
+        self.interactive_configuration.as_ref()
+    }
 }
 impl CreateApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
@@ -130,6 +136,7 @@ pub struct CreateApplicationInputBuilder {
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>>,
     pub(crate) runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    pub(crate) interactive_configuration: ::std::option::Option<crate::types::InteractiveConfiguration>,
 }
 impl CreateApplicationInputBuilder {
     /// <p>The name of the application.</p>
@@ -383,6 +390,20 @@ impl CreateApplicationInputBuilder {
     pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
         &self.monitoring_configuration
     }
+    /// <p>The interactive configuration object that enables the interactive use cases to use when running an application.</p>
+    pub fn interactive_configuration(mut self, input: crate::types::InteractiveConfiguration) -> Self {
+        self.interactive_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The interactive configuration object that enables the interactive use cases to use when running an application.</p>
+    pub fn set_interactive_configuration(mut self, input: ::std::option::Option<crate::types::InteractiveConfiguration>) -> Self {
+        self.interactive_configuration = input;
+        self
+    }
+    /// <p>The interactive configuration object that enables the interactive use cases to use when running an application.</p>
+    pub fn get_interactive_configuration(&self) -> &::std::option::Option<crate::types::InteractiveConfiguration> {
+        &self.interactive_configuration
+    }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
@@ -403,6 +424,7 @@ impl CreateApplicationInputBuilder {
             worker_type_specifications: self.worker_type_specifications,
             runtime_configuration: self.runtime_configuration,
             monitoring_configuration: self.monitoring_configuration,
+            interactive_configuration: self.interactive_configuration,
         })
     }
 }

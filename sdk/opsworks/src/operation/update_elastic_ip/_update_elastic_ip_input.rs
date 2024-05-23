@@ -5,7 +5,7 @@
 pub struct UpdateElasticIpInput {
     /// <p>The IP address for which you want to update the name.</p>
     pub elastic_ip: ::std::option::Option<::std::string::String>,
-    /// <p>The new name.</p>
+    /// <p>The new name, which can be a maximum of 32 characters.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateElasticIpInput {
@@ -13,7 +13,7 @@ impl UpdateElasticIpInput {
     pub fn elastic_ip(&self) -> ::std::option::Option<&str> {
         self.elastic_ip.as_deref()
     }
-    /// <p>The new name.</p>
+    /// <p>The new name, which can be a maximum of 32 characters.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -48,17 +48,17 @@ impl UpdateElasticIpInputBuilder {
     pub fn get_elastic_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.elastic_ip
     }
-    /// <p>The new name.</p>
+    /// <p>The new name, which can be a maximum of 32 characters.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new name.</p>
+    /// <p>The new name, which can be a maximum of 32 characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The new name.</p>
+    /// <p>The new name, which can be a maximum of 32 characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

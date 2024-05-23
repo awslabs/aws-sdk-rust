@@ -352,4 +352,18 @@ impl CreateApplicationFluentBuilder {
     pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
         self.inner.get_monitoring_configuration()
     }
+    /// <p>The interactive configuration object that enables the interactive use cases to use when running an application.</p>
+    pub fn interactive_configuration(mut self, input: crate::types::InteractiveConfiguration) -> Self {
+        self.inner = self.inner.interactive_configuration(input);
+        self
+    }
+    /// <p>The interactive configuration object that enables the interactive use cases to use when running an application.</p>
+    pub fn set_interactive_configuration(mut self, input: ::std::option::Option<crate::types::InteractiveConfiguration>) -> Self {
+        self.inner = self.inner.set_interactive_configuration(input);
+        self
+    }
+    /// <p>The interactive configuration object that enables the interactive use cases to use when running an application.</p>
+    pub fn get_interactive_configuration(&self) -> &::std::option::Option<crate::types::InteractiveConfiguration> {
+        self.inner.get_interactive_configuration()
+    }
 }

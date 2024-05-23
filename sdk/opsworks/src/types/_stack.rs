@@ -6,17 +6,17 @@
 pub struct Stack {
     /// <p>The stack ID.</p>
     pub stack_id: ::std::option::Option<::std::string::String>,
-    /// <p>The stack name.</p>
+    /// <p>The stack name. Stack names can be a maximum of 64 characters.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The stack's ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <p>The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>. For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID; applicable only if the stack is running in a VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The stack's attributes.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>>,
-    /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
+    /// <p>The stack Identity and Access Management (IAM) role.</p>
     pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub default_instance_profile_arn: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ pub struct Stack {
     pub chef_configuration: ::std::option::Option<crate::types::ChefConfiguration>,
     /// <p>Whether the stack uses custom cookbooks.</p>
     pub use_custom_cookbooks: ::std::option::Option<bool>,
-    /// <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
+    /// <p>Whether the stack automatically associates the OpsWorks Stacks built-in security groups with the stack's layers.</p>
     pub use_opsworks_security_groups: ::std::option::Option<bool>,
     /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
     pub custom_cookbooks_source: ::std::option::Option<crate::types::Source>,
@@ -56,7 +56,7 @@ impl Stack {
     pub fn stack_id(&self) -> ::std::option::Option<&str> {
         self.stack_id.as_deref()
     }
-    /// <p>The stack name.</p>
+    /// <p>The stack name. Stack names can be a maximum of 64 characters.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -64,7 +64,7 @@ impl Stack {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <p>The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>. For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
@@ -76,7 +76,7 @@ impl Stack {
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>> {
         self.attributes.as_ref()
     }
-    /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
+    /// <p>The stack Identity and Access Management (IAM) role.</p>
     pub fn service_role_arn(&self) -> ::std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
@@ -118,7 +118,7 @@ impl Stack {
     pub fn use_custom_cookbooks(&self) -> ::std::option::Option<bool> {
         self.use_custom_cookbooks
     }
-    /// <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
+    /// <p>Whether the stack automatically associates the OpsWorks Stacks built-in security groups with the stack's layers.</p>
     pub fn use_opsworks_security_groups(&self) -> ::std::option::Option<bool> {
         self.use_opsworks_security_groups
     }
@@ -192,17 +192,17 @@ impl StackBuilder {
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_id
     }
-    /// <p>The stack name.</p>
+    /// <p>The stack name. Stack names can be a maximum of 64 characters.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The stack name.</p>
+    /// <p>The stack name. Stack names can be a maximum of 64 characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The stack name.</p>
+    /// <p>The stack name. Stack names can be a maximum of 64 characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -220,17 +220,17 @@ impl StackBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <p>The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>. For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <p>The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>. For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
-    /// <p>The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <p>The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>. For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.region
     }
@@ -271,17 +271,17 @@ impl StackBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>> {
         &self.attributes
     }
-    /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
+    /// <p>The stack Identity and Access Management (IAM) role.</p>
     pub fn service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
+    /// <p>The stack Identity and Access Management (IAM) role.</p>
     pub fn set_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_role_arn = input;
         self
     }
-    /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
+    /// <p>The stack Identity and Access Management (IAM) role.</p>
     pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_role_arn
     }
@@ -417,17 +417,17 @@ impl StackBuilder {
     pub fn get_use_custom_cookbooks(&self) -> &::std::option::Option<bool> {
         &self.use_custom_cookbooks
     }
-    /// <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
+    /// <p>Whether the stack automatically associates the OpsWorks Stacks built-in security groups with the stack's layers.</p>
     pub fn use_opsworks_security_groups(mut self, input: bool) -> Self {
         self.use_opsworks_security_groups = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
+    /// <p>Whether the stack automatically associates the OpsWorks Stacks built-in security groups with the stack's layers.</p>
     pub fn set_use_opsworks_security_groups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_opsworks_security_groups = input;
         self
     }
-    /// <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
+    /// <p>Whether the stack automatically associates the OpsWorks Stacks built-in security groups with the stack's layers.</p>
     pub fn get_use_opsworks_security_groups(&self) -> &::std::option::Option<bool> {
         &self.use_opsworks_security_groups
     }

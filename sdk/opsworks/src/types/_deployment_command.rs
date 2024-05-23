@@ -23,7 +23,7 @@ pub struct DeploymentCommand {
     /// <li>
     /// <p><code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p></li>
     /// <li>
-    /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
+    /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
     /// <li>
     /// <p><code>start</code>: Start the app's web or application server.</p></li>
     /// <li>
@@ -39,12 +39,12 @@ pub struct DeploymentCommand {
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
     /// <ul>
     /// <li>
-    /// <p><code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p></li>
+    /// <p><code>upgrade_os_to</code> - Specifies the Amazon Linux version that you want instances to run, such as <code>Amazon Linux 2</code>. You must also set the <code>allow_reboot</code> argument to true.</p></li>
     /// <li>
-    /// <p><code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
+    /// <p><code>allow_reboot</code> - Specifies whether to allow OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
     /// </ul>
-    /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
-    /// <p><code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code></p>
+    /// <p>For example, to upgrade an instance to Amazon Linux 2018.03, set <code>Args</code> to the following.</p>
+    /// <p><code> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code></p>
     pub args: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl DeploymentCommand {
@@ -67,7 +67,7 @@ impl DeploymentCommand {
     /// <li>
     /// <p><code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p></li>
     /// <li>
-    /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
+    /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
     /// <li>
     /// <p><code>start</code>: Start the app's web or application server.</p></li>
     /// <li>
@@ -85,12 +85,12 @@ impl DeploymentCommand {
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
     /// <ul>
     /// <li>
-    /// <p><code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p></li>
+    /// <p><code>upgrade_os_to</code> - Specifies the Amazon Linux version that you want instances to run, such as <code>Amazon Linux 2</code>. You must also set the <code>allow_reboot</code> argument to true.</p></li>
     /// <li>
-    /// <p><code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
+    /// <p><code>allow_reboot</code> - Specifies whether to allow OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
     /// </ul>
-    /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
-    /// <p><code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code></p>
+    /// <p>For example, to upgrade an instance to Amazon Linux 2018.03, set <code>Args</code> to the following.</p>
+    /// <p><code> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code></p>
     pub fn args(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.args.as_ref()
     }
@@ -129,7 +129,7 @@ impl DeploymentCommandBuilder {
     /// <li>
     /// <p><code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p></li>
     /// <li>
-    /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
+    /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
     /// <li>
     /// <p><code>start</code>: Start the app's web or application server.</p></li>
     /// <li>
@@ -163,7 +163,7 @@ impl DeploymentCommandBuilder {
     /// <li>
     /// <p><code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p></li>
     /// <li>
-    /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
+    /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
     /// <li>
     /// <p><code>start</code>: Start the app's web or application server.</p></li>
     /// <li>
@@ -196,7 +196,7 @@ impl DeploymentCommandBuilder {
     /// <li>
     /// <p><code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p></li>
     /// <li>
-    /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
+    /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
     /// <li>
     /// <p><code>start</code>: Start the app's web or application server.</p></li>
     /// <li>
@@ -218,12 +218,12 @@ impl DeploymentCommandBuilder {
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
     /// <ul>
     /// <li>
-    /// <p><code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p></li>
+    /// <p><code>upgrade_os_to</code> - Specifies the Amazon Linux version that you want instances to run, such as <code>Amazon Linux 2</code>. You must also set the <code>allow_reboot</code> argument to true.</p></li>
     /// <li>
-    /// <p><code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
+    /// <p><code>allow_reboot</code> - Specifies whether to allow OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
     /// </ul>
-    /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
-    /// <p><code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code></p>
+    /// <p>For example, to upgrade an instance to Amazon Linux 2018.03, set <code>Args</code> to the following.</p>
+    /// <p><code> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code></p>
     pub fn args(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.args.unwrap_or_default();
         hash_map.insert(k.into(), v);
@@ -235,12 +235,12 @@ impl DeploymentCommandBuilder {
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
     /// <ul>
     /// <li>
-    /// <p><code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p></li>
+    /// <p><code>upgrade_os_to</code> - Specifies the Amazon Linux version that you want instances to run, such as <code>Amazon Linux 2</code>. You must also set the <code>allow_reboot</code> argument to true.</p></li>
     /// <li>
-    /// <p><code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
+    /// <p><code>allow_reboot</code> - Specifies whether to allow OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
     /// </ul>
-    /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
-    /// <p><code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code></p>
+    /// <p>For example, to upgrade an instance to Amazon Linux 2018.03, set <code>Args</code> to the following.</p>
+    /// <p><code> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code></p>
     pub fn set_args(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -253,12 +253,12 @@ impl DeploymentCommandBuilder {
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
     /// <ul>
     /// <li>
-    /// <p><code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p></li>
+    /// <p><code>upgrade_os_to</code> - Specifies the Amazon Linux version that you want instances to run, such as <code>Amazon Linux 2</code>. You must also set the <code>allow_reboot</code> argument to true.</p></li>
     /// <li>
-    /// <p><code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
+    /// <p><code>allow_reboot</code> - Specifies whether to allow OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
     /// </ul>
-    /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
-    /// <p><code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code></p>
+    /// <p>For example, to upgrade an instance to Amazon Linux 2018.03, set <code>Args</code> to the following.</p>
+    /// <p><code> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code></p>
     pub fn get_args(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.args
     }

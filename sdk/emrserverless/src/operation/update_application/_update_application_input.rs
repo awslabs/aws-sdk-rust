@@ -24,6 +24,8 @@ pub struct UpdateApplicationInput {
     /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
     pub worker_type_specifications:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>>,
+    /// <p>The interactive configuration object that contains new interactive use cases when the application is updated.</p>
+    pub interactive_configuration: ::std::option::Option<crate::types::InteractiveConfiguration>,
     /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when updating an application. Each configuration consists of a classification and properties. This configuration is applied across all the job runs submitted under the application.</p>
@@ -76,6 +78,10 @@ impl UpdateApplicationInput {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>> {
         self.worker_type_specifications.as_ref()
     }
+    /// <p>The interactive configuration object that contains new interactive use cases when the application is updated.</p>
+    pub fn interactive_configuration(&self) -> ::std::option::Option<&crate::types::InteractiveConfiguration> {
+        self.interactive_configuration.as_ref()
+    }
     /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
     pub fn release_label(&self) -> ::std::option::Option<&str> {
         self.release_label.as_deref()
@@ -113,6 +119,7 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) image_configuration: ::std::option::Option<crate::types::ImageConfigurationInput>,
     pub(crate) worker_type_specifications:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>>,
+    pub(crate) interactive_configuration: ::std::option::Option<crate::types::InteractiveConfiguration>,
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
@@ -286,6 +293,20 @@ impl UpdateApplicationInputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>> {
         &self.worker_type_specifications
     }
+    /// <p>The interactive configuration object that contains new interactive use cases when the application is updated.</p>
+    pub fn interactive_configuration(mut self, input: crate::types::InteractiveConfiguration) -> Self {
+        self.interactive_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The interactive configuration object that contains new interactive use cases when the application is updated.</p>
+    pub fn set_interactive_configuration(mut self, input: ::std::option::Option<crate::types::InteractiveConfiguration>) -> Self {
+        self.interactive_configuration = input;
+        self
+    }
+    /// <p>The interactive configuration object that contains new interactive use cases when the application is updated.</p>
+    pub fn get_interactive_configuration(&self) -> &::std::option::Option<crate::types::InteractiveConfiguration> {
+        &self.interactive_configuration
+    }
     /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
     pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
@@ -349,6 +370,7 @@ impl UpdateApplicationInputBuilder {
             architecture: self.architecture,
             image_configuration: self.image_configuration,
             worker_type_specifications: self.worker_type_specifications,
+            interactive_configuration: self.interactive_configuration,
             release_label: self.release_label,
             runtime_configuration: self.runtime_configuration,
             monitoring_configuration: self.monitoring_configuration,

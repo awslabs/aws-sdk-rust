@@ -28,14 +28,20 @@ pub struct Instance {
     pub ecs_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>For container instances, the instance's ARN.</p>
     pub ecs_container_instance_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
+    /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a>.</p>
     pub elastic_ip: ::std::option::Option<::std::string::String>,
-    /// <p>The instance host name.</p>
+    /// <p>The instance host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
     pub infrastructure_class: ::std::option::Option<::std::string::String>,
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.</p><note>
-    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must update instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.</p><note>
+    /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub install_updates_on_boot: ::std::option::Option<bool>,
     /// <p>The instance ID.</p>
@@ -62,7 +68,7 @@ pub struct Instance {
     pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>For registered instances, who performed the registration.</p>
     pub registered_by: ::std::option::Option<::std::string::String>,
-    /// <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
+    /// <p>The instance's reported OpsWorks Stacks agent version.</p>
     pub reported_agent_version: ::std::option::Option<::std::string::String>,
     /// <p>For registered instances, the reported operating system.</p>
     pub reported_os: ::std::option::Option<crate::types::ReportedOs>,
@@ -172,11 +178,17 @@ impl Instance {
     pub fn ecs_container_instance_arn(&self) -> ::std::option::Option<&str> {
         self.ecs_container_instance_arn.as_deref()
     }
-    /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
+    /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a>.</p>
     pub fn elastic_ip(&self) -> ::std::option::Option<&str> {
         self.elastic_ip.as_deref()
     }
-    /// <p>The instance host name.</p>
+    /// <p>The instance host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub fn hostname(&self) -> ::std::option::Option<&str> {
         self.hostname.as_deref()
     }
@@ -184,8 +196,8 @@ impl Instance {
     pub fn infrastructure_class(&self) -> ::std::option::Option<&str> {
         self.infrastructure_class.as_deref()
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.</p><note>
-    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must update instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.</p><note>
+    /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub fn install_updates_on_boot(&self) -> ::std::option::Option<bool> {
         self.install_updates_on_boot
@@ -240,7 +252,7 @@ impl Instance {
     pub fn registered_by(&self) -> ::std::option::Option<&str> {
         self.registered_by.as_deref()
     }
-    /// <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
+    /// <p>The instance's reported OpsWorks Stacks agent version.</p>
     pub fn reported_agent_version(&self) -> ::std::option::Option<&str> {
         self.reported_agent_version.as_deref()
     }
@@ -555,31 +567,49 @@ impl InstanceBuilder {
     pub fn get_ecs_container_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ecs_container_instance_arn
     }
-    /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
+    /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a>.</p>
     pub fn elastic_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elastic_ip = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
+    /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a>.</p>
     pub fn set_elastic_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.elastic_ip = input;
         self
     }
-    /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
+    /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a>.</p>
     pub fn get_elastic_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.elastic_ip
     }
-    /// <p>The instance host name.</p>
+    /// <p>The instance host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hostname = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The instance host name.</p>
+    /// <p>The instance host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hostname = input;
         self
     }
-    /// <p>The instance host name.</p>
+    /// <p>The instance host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
         &self.hostname
     }
@@ -597,22 +627,22 @@ impl InstanceBuilder {
     pub fn get_infrastructure_class(&self) -> &::std::option::Option<::std::string::String> {
         &self.infrastructure_class
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.</p><note>
-    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must update instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.</p><note>
+    /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub fn install_updates_on_boot(mut self, input: bool) -> Self {
         self.install_updates_on_boot = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.</p><note>
-    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must update instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.</p><note>
+    /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub fn set_install_updates_on_boot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.install_updates_on_boot = input;
         self
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.</p><note>
-    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must update instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.</p><note>
+    /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub fn get_install_updates_on_boot(&self) -> &::std::option::Option<bool> {
         &self.install_updates_on_boot
@@ -791,17 +821,17 @@ impl InstanceBuilder {
     pub fn get_registered_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.registered_by
     }
-    /// <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
+    /// <p>The instance's reported OpsWorks Stacks agent version.</p>
     pub fn reported_agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reported_agent_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
+    /// <p>The instance's reported OpsWorks Stacks agent version.</p>
     pub fn set_reported_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reported_agent_version = input;
         self
     }
-    /// <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
+    /// <p>The instance's reported OpsWorks Stacks agent version.</p>
     pub fn get_reported_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.reported_agent_version
     }

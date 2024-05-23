@@ -123,17 +123,17 @@ impl UpdateVolumeFluentBuilder {
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_volume_id()
     }
-    /// <p>The new name.</p>
+    /// <p>The new name. Volume names can be a maximum of 128 characters.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The new name.</p>
+    /// <p>The new name. Volume names can be a maximum of 128 characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The new name.</p>
+    /// <p>The new name. Volume names can be a maximum of 128 characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

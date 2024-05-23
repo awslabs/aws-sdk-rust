@@ -272,6 +272,20 @@ impl UpdateApplicationFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>> {
         self.inner.get_worker_type_specifications()
     }
+    /// <p>The interactive configuration object that contains new interactive use cases when the application is updated.</p>
+    pub fn interactive_configuration(mut self, input: crate::types::InteractiveConfiguration) -> Self {
+        self.inner = self.inner.interactive_configuration(input);
+        self
+    }
+    /// <p>The interactive configuration object that contains new interactive use cases when the application is updated.</p>
+    pub fn set_interactive_configuration(mut self, input: ::std::option::Option<crate::types::InteractiveConfiguration>) -> Self {
+        self.inner = self.inner.set_interactive_configuration(input);
+        self
+    }
+    /// <p>The interactive configuration object that contains new interactive use cases when the application is updated.</p>
+    pub fn get_interactive_configuration(&self) -> &::std::option::Option<crate::types::InteractiveConfiguration> {
+        self.inner.get_interactive_configuration()
+    }
     /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
     pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.release_label(input.into());

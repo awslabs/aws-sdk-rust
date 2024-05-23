@@ -95,6 +95,8 @@ pub(crate) mod shape_image_configuration_input;
 
 pub(crate) mod shape_initial_capacity_config;
 
+pub(crate) mod shape_interactive_configuration;
+
 pub(crate) mod shape_job_driver;
 
 pub(crate) mod shape_job_run;

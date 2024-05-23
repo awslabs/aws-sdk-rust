@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`elastic_ip(impl Into<String>)`](crate::operation::update_elastic_ip::builders::UpdateElasticIpFluentBuilder::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::operation::update_elastic_ip::builders::UpdateElasticIpFluentBuilder::set_elastic_ip):<br>required: **true**<br><p>The IP address for which you want to update the name.</p><br>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_elastic_ip::builders::UpdateElasticIpFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_elastic_ip::builders::UpdateElasticIpFluentBuilder::set_name):<br>required: **false**<br><p>The new name.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_elastic_ip::builders::UpdateElasticIpFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_elastic_ip::builders::UpdateElasticIpFluentBuilder::set_name):<br>required: **false**<br><p>The new name, which can be a maximum of 32 characters.</p><br>
     /// - On success, responds with [`UpdateElasticIpOutput`](crate::operation::update_elastic_ip::UpdateElasticIpOutput)
     /// - On failure, responds with [`SdkError<UpdateElasticIpError>`](crate::operation::update_elastic_ip::UpdateElasticIpError)
     pub fn update_elastic_ip(&self) -> crate::operation::update_elastic_ip::builders::UpdateElasticIpFluentBuilder {

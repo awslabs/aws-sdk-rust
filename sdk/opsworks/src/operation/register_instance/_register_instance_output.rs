@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterInstanceOutput {
-    /// <p>The registered instance's AWS OpsWorks Stacks ID.</p>
+    /// <p>The registered instance's OpsWorks Stacks ID.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RegisterInstanceOutput {
-    /// <p>The registered instance's AWS OpsWorks Stacks ID.</p>
+    /// <p>The registered instance's OpsWorks Stacks ID.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct RegisterInstanceOutputBuilder {
     _request_id: Option<String>,
 }
 impl RegisterInstanceOutputBuilder {
-    /// <p>The registered instance's AWS OpsWorks Stacks ID.</p>
+    /// <p>The registered instance's OpsWorks Stacks ID.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The registered instance's AWS OpsWorks Stacks ID.</p>
+    /// <p>The registered instance's OpsWorks Stacks ID.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The registered instance's AWS OpsWorks Stacks ID.</p>
+    /// <p>The registered instance's OpsWorks Stacks ID.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }

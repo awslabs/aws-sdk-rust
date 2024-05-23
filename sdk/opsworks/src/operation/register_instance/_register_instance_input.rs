@@ -5,7 +5,13 @@
 pub struct RegisterInstanceInput {
     /// <p>The ID of the stack that the instance is to be registered with.</p>
     pub stack_id: ::std::option::Option<::std::string::String>,
-    /// <p>The instance's hostname.</p>
+    /// <p>The instance's host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The instance's public IP address.</p>
     pub public_ip: ::std::option::Option<::std::string::String>,
@@ -23,7 +29,13 @@ impl RegisterInstanceInput {
     pub fn stack_id(&self) -> ::std::option::Option<&str> {
         self.stack_id.as_deref()
     }
-    /// <p>The instance's hostname.</p>
+    /// <p>The instance's host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub fn hostname(&self) -> ::std::option::Option<&str> {
         self.hostname.as_deref()
     }
@@ -83,17 +95,35 @@ impl RegisterInstanceInputBuilder {
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_id
     }
-    /// <p>The instance's hostname.</p>
+    /// <p>The instance's host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hostname = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The instance's hostname.</p>
+    /// <p>The instance's host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hostname = input;
         self
     }
-    /// <p>The instance's hostname.</p>
+    /// <p>The instance's host name. The following are character limits for instance host names.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux-based instances: 63 characters</p></li>
+    /// <li>
+    /// <p>Windows-based instances: 15 characters</p></li>
+    /// </ul>
     pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
         &self.hostname
     }

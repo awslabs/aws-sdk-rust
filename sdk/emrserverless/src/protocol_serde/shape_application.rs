@@ -125,6 +125,11 @@ where
                                 crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(tokens)?,
                             );
                         }
+                        "interactiveConfiguration" => {
+                            builder = builder.set_interactive_configuration(
+                                crate::protocol_serde::shape_interactive_configuration::de_interactive_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

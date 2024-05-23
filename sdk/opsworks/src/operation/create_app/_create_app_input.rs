@@ -13,7 +13,7 @@ pub struct CreateAppInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The app's data source.</p>
     pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
-    /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+    /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
     pub r#type: ::std::option::Option<crate::types::AppType>,
     /// <p>A <code>Source</code> object that specifies the app repository.</p>
     pub app_source: ::std::option::Option<crate::types::Source>,
@@ -54,7 +54,7 @@ impl CreateAppInput {
     pub fn data_sources(&self) -> &[crate::types::DataSource] {
         self.data_sources.as_deref().unwrap_or_default()
     }
-    /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+    /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::AppType> {
         self.r#type.as_ref()
     }
@@ -193,18 +193,18 @@ impl CreateAppInputBuilder {
     pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
         &self.data_sources
     }
-    /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+    /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::AppType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+    /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AppType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+    /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AppType> {
         &self.r#type
     }
