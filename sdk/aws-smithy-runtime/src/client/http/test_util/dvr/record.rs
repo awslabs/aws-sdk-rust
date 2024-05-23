@@ -24,6 +24,48 @@ use tokio::task::JoinHandle;
 /// Recording client
 ///
 /// `RecordingClient` wraps an inner connection and records all traffic, enabling traffic replay.
+///
+/// # Example
+///
+/// ```rust,ignore
+/// use aws_smithy_async::rt::sleep::default_async_sleep;
+/// use aws_smithy_runtime::client::http::hyper_014::default_connector;
+/// use aws_smithy_runtime::client::http::test_util::dvr::RecordingClient;
+/// use aws_smithy_runtime_api::client::http::HttpConnectorSettingsBuilder;
+/// use aws_sdk_s3::{Client, Config};
+///
+/// #[tokio::test]
+/// async fn test_content_length_enforcement_is_not_applied_to_head_request() {
+///     let settings = HttpConnectorSettingsBuilder::default().build();
+///     let http_client = default_connector(&settings, default_async_sleep()).unwrap();
+///     let http_client = RecordingClient::new(http_client);
+///
+///     // Since we need to send a real request for this,
+///     // you'll need to use your real credentials.
+///     let config = aws_config::load_defaults(BehaviorVersion::latest()).await;
+///     let config = Config::from(&config).to_builder()
+///         .http_client(http_client.clone())
+///         .region(Region::new("us-east-1"))
+///         .build();
+///
+///     let client = Client::from_conf(config);
+///     let _resp = client
+///         .head_object()
+///         .key("some-test-file.txt")
+///         .bucket("your-test-bucket")
+///         .send()
+///         .await
+///         .unwrap();
+///
+///     // If the request you want to record has a body, don't forget to poll
+///     // the body to completion BEFORE calling `dump_to_file`. Otherwise, your
+///     // test json won't include the body.
+///     // let _body = _resp.body.collect().await.unwrap();
+///
+///     // This path is relative to your project or workspace `Cargo.toml` file.
+///     http_client.dump_to_file("tests/data/content-length-enforcement/head-object.json").unwrap();
+/// }
+/// ```
 #[derive(Clone, Debug)]
 pub struct RecordingClient {
     pub(crate) data: Arc<Mutex<Vec<Event>>>,

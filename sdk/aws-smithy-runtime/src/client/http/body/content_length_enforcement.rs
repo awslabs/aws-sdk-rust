@@ -6,7 +6,9 @@
 //! RuntimePlugin to ensure that the amount of data received matches the `Content-Length` header
 
 use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::interceptors::context::BeforeDeserializationInterceptorContextMut;
+use aws_smithy_runtime_api::client::interceptors::context::{
+    BeforeDeserializationInterceptorContextMut, BeforeTransmitInterceptorContextRef,
+};
 use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::runtime_components::{
     RuntimeComponents, RuntimeComponentsBuilder,
@@ -14,7 +16,7 @@ use aws_smithy_runtime_api::client::runtime_components::{
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
 use aws_smithy_runtime_api::http::Response;
 use aws_smithy_types::body::SdkBody;
-use aws_smithy_types::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use bytes::Buf;
 use http_body_1::{Frame, SizeHint};
 use pin_project_lite::pin_project;
@@ -113,17 +115,39 @@ impl<
 #[derive(Debug, Default)]
 struct EnforceContentLengthInterceptor {}
 
+#[derive(Debug)]
+struct EnableContentLengthEnforcement;
+impl Storable for EnableContentLengthEnforcement {
+    type Storer = StoreReplace<EnableContentLengthEnforcement>;
+}
+
 impl Intercept for EnforceContentLengthInterceptor {
     fn name(&self) -> &'static str {
         "EnforceContentLength"
     }
 
+    fn read_before_transmit(
+        &self,
+        context: &BeforeTransmitInterceptorContextRef<'_>,
+        _runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        if context.request().method() == "GET" {
+            cfg.interceptor_state()
+                .store_put(EnableContentLengthEnforcement);
+        }
+        Ok(())
+    }
     fn modify_before_deserialization(
         &self,
         context: &mut BeforeDeserializationInterceptorContextMut<'_>,
         _runtime_components: &RuntimeComponents,
-        _cfg: &mut ConfigBag,
+        cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
+        // if we didn't enable it for this request, bail out
+        if cfg.load::<EnableContentLengthEnforcement>().is_none() {
+            return Ok(());
+        }
         let content_length = match extract_content_length(context.response()) {
             Err(err) => {
                 tracing::warn!(err = ?err, "could not parse content length from content-length header. This header will be ignored");
