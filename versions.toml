@@ -2,7 +2,7 @@ smithy_rs_revision = 'cf4e32c9181a8ca761446619de45b80939573ad8'
 aws_doc_sdk_examples_revision = '3632d040d1c9c97569a5274d96203d80adedfabb'
 
 [manual_interventions]
-crates_to_remove = []
+crates_to_remove = ["aws-sdk-alexaforbusiness", "aws-sdk-honeycode"]
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '1.5.0'
