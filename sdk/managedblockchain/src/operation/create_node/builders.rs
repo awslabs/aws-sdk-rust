@@ -128,8 +128,6 @@ impl CreateNodeFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>n-ethereum-mainnet</code></p></li>
-    /// <li>
-    /// <p><code>n-ethereum-goerli</code></p></li>
     /// </ul>
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_id(input.into());
@@ -140,8 +138,6 @@ impl CreateNodeFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>n-ethereum-mainnet</code></p></li>
-    /// <li>
-    /// <p><code>n-ethereum-goerli</code></p></li>
     /// </ul>
     pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_id(input);
@@ -152,8 +148,6 @@ impl CreateNodeFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>n-ethereum-mainnet</code></p></li>
-    /// <li>
-    /// <p><code>n-ethereum-goerli</code></p></li>
     /// </ul>
     pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_id()

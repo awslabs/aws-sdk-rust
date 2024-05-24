@@ -130,6 +130,47 @@ impl ListVehiclesFluentBuilder {
     pub fn get_model_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_manifest_arn()
     }
+    ///
+    /// Appends an item to `attributeNames`.
+    ///
+    /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
+    ///
+    /// <p>The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+    pub fn attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.attribute_names(input.into());
+        self
+    }
+    /// <p>The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_attribute_names(input);
+        self
+    }
+    /// <p>The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_attribute_names()
+    }
+    ///
+    /// Appends an item to `attributeValues`.
+    ///
+    /// To override the contents of this collection use [`set_attribute_values`](Self::set_attribute_values).
+    ///
+    /// <p>Static information about a vehicle attribute value in string format. For example:</p>
+    /// <p><code>"1.3 L R2"</code></p>
+    pub fn attribute_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.attribute_values(input.into());
+        self
+    }
+    /// <p>Static information about a vehicle attribute value in string format. For example:</p>
+    /// <p><code>"1.3 L R2"</code></p>
+    pub fn set_attribute_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_attribute_values(input);
+        self
+    }
+    /// <p>Static information about a vehicle attribute value in string format. For example:</p>
+    /// <p><code>"1.3 L R2"</code></p>
+    pub fn get_attribute_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_attribute_values()
+    }
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

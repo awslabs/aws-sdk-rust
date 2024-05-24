@@ -186,14 +186,28 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListVehicles
                         query.push_kv("modelManifestArn", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
-                if let ::std::option::Option::Some(inner_2) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_2) = &_input.attribute_names {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
+                        for inner_3 in inner_2 {
+                            query.push_kv("attributeNames", &::aws_smithy_http::query::fmt_string(inner_3));
+                        }
                     }
                 }
-                if let ::std::option::Option::Some(inner_3) = &_input.max_results {
+                if let ::std::option::Option::Some(inner_4) = &_input.attribute_values {
                     {
-                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
+                        for inner_5 in inner_4 {
+                            query.push_kv("attributeValues", &::aws_smithy_http::query::fmt_string(inner_5));
+                        }
+                    }
+                }
+                if let ::std::option::Option::Some(inner_6) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_6));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_7) = &_input.max_results {
+                    {
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_7).encode());
                     }
                 }
                 ::std::result::Result::Ok(())

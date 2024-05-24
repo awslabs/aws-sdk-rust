@@ -137,17 +137,17 @@ impl CreateCampaignFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.</p>
     pub fn signal_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.signal_catalog_arn(input.into());
         self
     }
-    /// <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.</p>
     pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_signal_catalog_arn(input);
         self
     }
-    /// <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.</p>
     pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_signal_catalog_arn()
     }

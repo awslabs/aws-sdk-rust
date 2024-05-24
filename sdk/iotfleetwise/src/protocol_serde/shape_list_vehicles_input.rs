@@ -6,13 +6,31 @@ pub fn ser_list_vehicles_input_input(
     if let Some(var_1) = &input.model_manifest_arn {
         object.key("modelManifestArn").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.next_token {
-        object.key("nextToken").string(var_2.as_str());
+    if let Some(var_2) = &input.attribute_names {
+        let mut array_3 = object.key("attributeNames").start_array();
+        for item_4 in var_2 {
+            {
+                array_3.value().string(item_4.as_str());
+            }
+        }
+        array_3.finish();
     }
-    if let Some(var_3) = &input.max_results {
+    if let Some(var_5) = &input.attribute_values {
+        let mut array_6 = object.key("attributeValues").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
+    }
+    if let Some(var_8) = &input.next_token {
+        object.key("nextToken").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
     Ok(())

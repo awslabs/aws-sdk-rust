@@ -7,7 +7,7 @@ pub struct CreateCampaignInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the campaign to help identify its purpose.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.</p>
     pub signal_catalog_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the vehicle or fleet to deploy a campaign to.</p>
     pub target_arn: ::std::option::Option<::std::string::String>,
@@ -56,7 +56,7 @@ impl CreateCampaignInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.</p>
     pub fn signal_catalog_arn(&self) -> ::std::option::Option<&str> {
         self.signal_catalog_arn.as_deref()
     }
@@ -190,18 +190,18 @@ impl CreateCampaignInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.</p>
     /// This field is required.
     pub fn signal_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signal_catalog_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.</p>
     pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signal_catalog_arn = input;
         self
     }
-    /// <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.</p>
+    /// <p>The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.</p>
     pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.signal_catalog_arn
     }

@@ -8,8 +8,6 @@ pub struct NetworkEthereumAttributes {
     /// <ul>
     /// <li>
     /// <p>mainnet = <code>1</code></p></li>
-    /// <li>
-    /// <p>goerli = <code>5</code></p></li>
     /// </ul>
     pub chain_id: ::std::option::Option<::std::string::String>,
 }
@@ -18,8 +16,6 @@ impl NetworkEthereumAttributes {
     /// <ul>
     /// <li>
     /// <p>mainnet = <code>1</code></p></li>
-    /// <li>
-    /// <p>goerli = <code>5</code></p></li>
     /// </ul>
     pub fn chain_id(&self) -> ::std::option::Option<&str> {
         self.chain_id.as_deref()
@@ -43,8 +39,6 @@ impl NetworkEthereumAttributesBuilder {
     /// <ul>
     /// <li>
     /// <p>mainnet = <code>1</code></p></li>
-    /// <li>
-    /// <p>goerli = <code>5</code></p></li>
     /// </ul>
     pub fn chain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chain_id = ::std::option::Option::Some(input.into());
@@ -54,8 +48,6 @@ impl NetworkEthereumAttributesBuilder {
     /// <ul>
     /// <li>
     /// <p>mainnet = <code>1</code></p></li>
-    /// <li>
-    /// <p>goerli = <code>5</code></p></li>
     /// </ul>
     pub fn set_chain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chain_id = input;
@@ -65,8 +57,6 @@ impl NetworkEthereumAttributesBuilder {
     /// <ul>
     /// <li>
     /// <p>mainnet = <code>1</code></p></li>
-    /// <li>
-    /// <p>goerli = <code>5</code></p></li>
     /// </ul>
     pub fn get_chain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.chain_id

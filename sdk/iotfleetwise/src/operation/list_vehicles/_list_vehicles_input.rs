@@ -5,6 +5,11 @@
 pub struct ListVehiclesInput {
     /// <p>The Amazon Resource Name (ARN) of a vehicle model (model manifest). You can use this optional parameter to list only the vehicles created from a certain vehicle model.</p>
     pub model_manifest_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+    pub attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Static information about a vehicle attribute value in string format. For example:</p>
+    /// <p><code>"1.3 L R2"</code></p>
+    pub attribute_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,6 +20,19 @@ impl ListVehiclesInput {
     /// <p>The Amazon Resource Name (ARN) of a vehicle model (model manifest). You can use this optional parameter to list only the vehicles created from a certain vehicle model.</p>
     pub fn model_manifest_arn(&self) -> ::std::option::Option<&str> {
         self.model_manifest_arn.as_deref()
+    }
+    /// <p>The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_names.is_none()`.
+    pub fn attribute_names(&self) -> &[::std::string::String] {
+        self.attribute_names.as_deref().unwrap_or_default()
+    }
+    /// <p>Static information about a vehicle attribute value in string format. For example:</p>
+    /// <p><code>"1.3 L R2"</code></p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_values.is_none()`.
+    pub fn attribute_values(&self) -> &[::std::string::String] {
+        self.attribute_values.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
@@ -38,6 +56,8 @@ impl ListVehiclesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVehiclesInputBuilder {
     pub(crate) model_manifest_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) attribute_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -55,6 +75,49 @@ impl ListVehiclesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of a vehicle model (model manifest). You can use this optional parameter to list only the vehicles created from a certain vehicle model.</p>
     pub fn get_model_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_manifest_arn
+    }
+    /// Appends an item to `attribute_names`.
+    ///
+    /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
+    ///
+    /// <p>The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+    pub fn attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.attribute_names.unwrap_or_default();
+        v.push(input.into());
+        self.attribute_names = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.attribute_names = input;
+        self
+    }
+    /// <p>The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attribute_names
+    }
+    /// Appends an item to `attribute_values`.
+    ///
+    /// To override the contents of this collection use [`set_attribute_values`](Self::set_attribute_values).
+    ///
+    /// <p>Static information about a vehicle attribute value in string format. For example:</p>
+    /// <p><code>"1.3 L R2"</code></p>
+    pub fn attribute_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.attribute_values.unwrap_or_default();
+        v.push(input.into());
+        self.attribute_values = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Static information about a vehicle attribute value in string format. For example:</p>
+    /// <p><code>"1.3 L R2"</code></p>
+    pub fn set_attribute_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.attribute_values = input;
+        self
+    }
+    /// <p>Static information about a vehicle attribute value in string format. For example:</p>
+    /// <p><code>"1.3 L R2"</code></p>
+    pub fn get_attribute_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attribute_values
     }
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
@@ -93,6 +156,8 @@ impl ListVehiclesInputBuilder {
     ) -> ::std::result::Result<crate::operation::list_vehicles::ListVehiclesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_vehicles::ListVehiclesInput {
             model_manifest_arn: self.model_manifest_arn,
+            attribute_names: self.attribute_names,
+            attribute_values: self.attribute_values,
             next_token: self.next_token,
             max_results: self.max_results,
         })

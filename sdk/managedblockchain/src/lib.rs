@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-managedblockchain = "1.27.0"
+//! aws-sdk-managedblockchain = "1.27.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
