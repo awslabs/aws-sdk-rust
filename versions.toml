@@ -2470,6 +2470,10 @@ source_hash = '542a85f8f706d22132370f8b4d616802c2a325b045762762e1870ff4965f0faf'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '1ecd9a3e574ddfa0542073ca7fec7569a7bc4156461223591d19019972cb3ee5'
+
+[release]
+tag = 'release-2024-05-24'
+
 [release.crates]
 aws-sdk-dynamodb = '1.30.1'
 aws-sdk-iotfleetwise = '1.29.0'
