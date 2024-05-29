@@ -14,6 +14,17 @@ pub struct JobRun {
     pub trigger_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the job definition being used in this run.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub job_mode: ::std::option::Option<crate::types::JobMode>,
     /// <p>The date and time at which this job run was started.</p>
     pub started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that this job run was modified.</p>
@@ -114,6 +125,19 @@ impl JobRun {
     /// <p>The name of the job definition being used in this run.</p>
     pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
+    }
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub fn job_mode(&self) -> ::std::option::Option<&crate::types::JobMode> {
+        self.job_mode.as_ref()
     }
     /// <p>The date and time at which this job run was started.</p>
     pub fn started_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -253,6 +277,7 @@ pub struct JobRunBuilder {
     pub(crate) previous_run_id: ::std::option::Option<::std::string::String>,
     pub(crate) trigger_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) job_mode: ::std::option::Option<crate::types::JobMode>,
     pub(crate) started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completed_on: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -344,6 +369,47 @@ impl JobRunBuilder {
     /// <p>The name of the job definition being used in this run.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_name
+    }
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub fn job_mode(mut self, input: crate::types::JobMode) -> Self {
+        self.job_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub fn set_job_mode(mut self, input: ::std::option::Option<crate::types::JobMode>) -> Self {
+        self.job_mode = input;
+        self
+    }
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub fn get_job_mode(&self) -> &::std::option::Option<crate::types::JobMode> {
+        &self.job_mode
     }
     /// <p>The date and time at which this job run was started.</p>
     pub fn started_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -762,6 +828,7 @@ impl JobRunBuilder {
             previous_run_id: self.previous_run_id,
             trigger_name: self.trigger_name,
             job_name: self.job_name,
+            job_mode: self.job_mode,
             started_on: self.started_on,
             last_modified_on: self.last_modified_on,
             completed_on: self.completed_on,

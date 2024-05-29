@@ -21,6 +21,10 @@ pub struct Webhook {
     pub filter_groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
     /// <p>Specifies the type of build this webhook will trigger.</p>
     pub build_type: ::std::option::Option<crate::types::WebhookBuildType>,
+    /// <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns <code>payloadUrl</code> and <code>secret</code> values for the webhook. The <code>payloadUrl</code> and <code>secret</code> values in the output can be used to manually create a webhook within GitHub.</p><note>
+    /// <p>manualCreation is only available for GitHub webhooks.</p>
+    /// </note>
+    pub manual_creation: ::std::option::Option<bool>,
     /// <p>A timestamp that indicates the last time a repository's secret token was modified.</p>
     pub last_modified_secret: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -56,6 +60,12 @@ impl Webhook {
     pub fn build_type(&self) -> ::std::option::Option<&crate::types::WebhookBuildType> {
         self.build_type.as_ref()
     }
+    /// <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns <code>payloadUrl</code> and <code>secret</code> values for the webhook. The <code>payloadUrl</code> and <code>secret</code> values in the output can be used to manually create a webhook within GitHub.</p><note>
+    /// <p>manualCreation is only available for GitHub webhooks.</p>
+    /// </note>
+    pub fn manual_creation(&self) -> ::std::option::Option<bool> {
+        self.manual_creation
+    }
     /// <p>A timestamp that indicates the last time a repository's secret token was modified.</p>
     pub fn last_modified_secret(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_secret.as_ref()
@@ -78,6 +88,7 @@ pub struct WebhookBuilder {
     pub(crate) branch_filter: ::std::option::Option<::std::string::String>,
     pub(crate) filter_groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
     pub(crate) build_type: ::std::option::Option<crate::types::WebhookBuildType>,
+    pub(crate) manual_creation: ::std::option::Option<bool>,
     pub(crate) last_modified_secret: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl WebhookBuilder {
@@ -186,6 +197,26 @@ impl WebhookBuilder {
     pub fn get_build_type(&self) -> &::std::option::Option<crate::types::WebhookBuildType> {
         &self.build_type
     }
+    /// <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns <code>payloadUrl</code> and <code>secret</code> values for the webhook. The <code>payloadUrl</code> and <code>secret</code> values in the output can be used to manually create a webhook within GitHub.</p><note>
+    /// <p>manualCreation is only available for GitHub webhooks.</p>
+    /// </note>
+    pub fn manual_creation(mut self, input: bool) -> Self {
+        self.manual_creation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns <code>payloadUrl</code> and <code>secret</code> values for the webhook. The <code>payloadUrl</code> and <code>secret</code> values in the output can be used to manually create a webhook within GitHub.</p><note>
+    /// <p>manualCreation is only available for GitHub webhooks.</p>
+    /// </note>
+    pub fn set_manual_creation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.manual_creation = input;
+        self
+    }
+    /// <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns <code>payloadUrl</code> and <code>secret</code> values for the webhook. The <code>payloadUrl</code> and <code>secret</code> values in the output can be used to manually create a webhook within GitHub.</p><note>
+    /// <p>manualCreation is only available for GitHub webhooks.</p>
+    /// </note>
+    pub fn get_manual_creation(&self) -> &::std::option::Option<bool> {
+        &self.manual_creation
+    }
     /// <p>A timestamp that indicates the last time a repository's secret token was modified.</p>
     pub fn last_modified_secret(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_secret = ::std::option::Option::Some(input);
@@ -209,6 +240,7 @@ impl WebhookBuilder {
             branch_filter: self.branch_filter,
             filter_groups: self.filter_groups,
             build_type: self.build_type,
+            manual_creation: self.manual_creation,
             last_modified_secret: self.last_modified_secret,
         }
     }

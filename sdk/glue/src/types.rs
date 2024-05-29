@@ -333,6 +333,8 @@ pub use crate::types::_job_command::JobCommand;
 
 pub use crate::types::_execution_property::ExecutionProperty;
 
+pub use crate::types::_job_mode::JobMode;
+
 pub use crate::types::_dev_endpoint_custom_libraries::DevEndpointCustomLibraries;
 
 pub use crate::types::_database_input::DatabaseInput;
@@ -1178,6 +1180,8 @@ mod _job_bookmarks_encryption;
 mod _job_bookmarks_encryption_mode;
 
 mod _job_command;
+
+mod _job_mode;
 
 mod _job_node_details;
 

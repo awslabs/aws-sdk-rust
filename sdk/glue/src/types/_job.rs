@@ -6,6 +6,17 @@
 pub struct Job {
     /// <p>The name you assign to this job definition.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub job_mode: ::std::option::Option<crate::types::JobMode>,
     /// <p>A description of the job.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>This field is reserved for future use.</p>
@@ -95,6 +106,19 @@ impl Job {
     /// <p>The name you assign to this job definition.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub fn job_mode(&self) -> ::std::option::Option<&crate::types::JobMode> {
+        self.job_mode.as_ref()
     }
     /// <p>A description of the job.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -232,6 +256,7 @@ impl ::std::fmt::Debug for Job {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Job");
         formatter.field("name", &self.name);
+        formatter.field("job_mode", &self.job_mode);
         formatter.field("description", &self.description);
         formatter.field("log_uri", &self.log_uri);
         formatter.field("role", &self.role);
@@ -270,6 +295,7 @@ impl Job {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct JobBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) job_mode: ::std::option::Option<crate::types::JobMode>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) log_uri: ::std::option::Option<::std::string::String>,
     pub(crate) role: ::std::option::Option<::std::string::String>,
@@ -309,6 +335,47 @@ impl JobBuilder {
     /// <p>The name you assign to this job definition.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
+    }
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub fn job_mode(mut self, input: crate::types::JobMode) -> Self {
+        self.job_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub fn set_job_mode(mut self, input: ::std::option::Option<crate::types::JobMode>) -> Self {
+        self.job_mode = input;
+        self
+    }
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub fn get_job_mode(&self) -> &::std::option::Option<crate::types::JobMode> {
+        &self.job_mode
     }
     /// <p>A description of the job.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -788,6 +855,7 @@ impl JobBuilder {
     pub fn build(self) -> crate::types::Job {
         crate::types::Job {
             name: self.name,
+            job_mode: self.job_mode,
             description: self.description,
             log_uri: self.log_uri,
             role: self.role,
@@ -818,6 +886,7 @@ impl ::std::fmt::Debug for JobBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("JobBuilder");
         formatter.field("name", &self.name);
+        formatter.field("job_mode", &self.job_mode);
         formatter.field("description", &self.description);
         formatter.field("log_uri", &self.log_uri);
         formatter.field("role", &self.role);

@@ -362,17 +362,17 @@ impl UpdateFleetFluentBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         self.inner.get_vpc_config()
     }
-    /// <p>The service role associated with the compute fleet.</p>
+    /// <p>The service role associated with the compute fleet. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html"> Allow a user to add a permission policy for a fleet service role</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fn fleet_service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_service_role(input.into());
         self
     }
-    /// <p>The service role associated with the compute fleet.</p>
+    /// <p>The service role associated with the compute fleet. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html"> Allow a user to add a permission policy for a fleet service role</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fn set_fleet_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_service_role(input);
         self
     }
-    /// <p>The service role associated with the compute fleet.</p>
+    /// <p>The service role associated with the compute fleet. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html"> Allow a user to add a permission policy for a fleet service role</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fn get_fleet_service_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_service_role()
     }

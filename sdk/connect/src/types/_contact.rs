@@ -50,6 +50,24 @@ pub struct Contact {
     pub queue_priority: ::std::option::Option<i64>,
     /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The timestamp when customer endpoint connected to Amazon Connect.</p>
+    pub connected_to_system_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Latest routing criteria on the contact.</p>
+    pub routing_criteria: ::std::option::Option<crate::types::RoutingCriteria>,
+    /// <p>Information about the Customer on the contact.</p>
+    pub customer: ::std::option::Option<crate::types::Customer>,
+    /// <p>Information associated with a campaign.</p>
+    pub campaign: ::std::option::Option<crate::types::Campaign>,
+    /// <p>Indicates how an <a href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound campaign</a> call is actually disposed if the contact is connected to Amazon Connect.</p>
+    pub answering_machine_detection_status: ::std::option::Option<crate::types::AnsweringMachineDetectionStatus>,
+    /// <p>Information about customer’s voice activity.</p>
+    pub customer_voice_activity: ::std::option::Option<crate::types::CustomerVoiceActivity>,
+    /// <p>Information about the quality of the participant's media connection.</p>
+    pub quality_metrics: ::std::option::Option<crate::types::QualityMetrics>,
+    /// <p>Information about the call disconnect experience.</p>
+    pub disconnect_details: ::std::option::Option<crate::types::DisconnectDetails>,
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes and can be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters. This field can be used to show channel subtype. For example, <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+    pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
 }
 impl Contact {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -144,6 +162,44 @@ impl Contact {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The timestamp when customer endpoint connected to Amazon Connect.</p>
+    pub fn connected_to_system_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.connected_to_system_timestamp.as_ref()
+    }
+    /// <p>Latest routing criteria on the contact.</p>
+    pub fn routing_criteria(&self) -> ::std::option::Option<&crate::types::RoutingCriteria> {
+        self.routing_criteria.as_ref()
+    }
+    /// <p>Information about the Customer on the contact.</p>
+    pub fn customer(&self) -> ::std::option::Option<&crate::types::Customer> {
+        self.customer.as_ref()
+    }
+    /// <p>Information associated with a campaign.</p>
+    pub fn campaign(&self) -> ::std::option::Option<&crate::types::Campaign> {
+        self.campaign.as_ref()
+    }
+    /// <p>Indicates how an <a href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound campaign</a> call is actually disposed if the contact is connected to Amazon Connect.</p>
+    pub fn answering_machine_detection_status(&self) -> ::std::option::Option<&crate::types::AnsweringMachineDetectionStatus> {
+        self.answering_machine_detection_status.as_ref()
+    }
+    /// <p>Information about customer’s voice activity.</p>
+    pub fn customer_voice_activity(&self) -> ::std::option::Option<&crate::types::CustomerVoiceActivity> {
+        self.customer_voice_activity.as_ref()
+    }
+    /// <p>Information about the quality of the participant's media connection.</p>
+    pub fn quality_metrics(&self) -> ::std::option::Option<&crate::types::QualityMetrics> {
+        self.quality_metrics.as_ref()
+    }
+    /// <p>Information about the call disconnect experience.</p>
+    pub fn disconnect_details(&self) -> ::std::option::Option<&crate::types::DisconnectDetails> {
+        self.disconnect_details.as_ref()
+    }
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes and can be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters. This field can be used to show channel subtype. For example, <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+    pub fn segment_attributes(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
+        self.segment_attributes.as_ref()
+    }
 }
 impl ::std::fmt::Debug for Contact {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -171,6 +227,15 @@ impl ::std::fmt::Debug for Contact {
         formatter.field("queue_time_adjustment_seconds", &self.queue_time_adjustment_seconds);
         formatter.field("queue_priority", &self.queue_priority);
         formatter.field("tags", &self.tags);
+        formatter.field("connected_to_system_timestamp", &self.connected_to_system_timestamp);
+        formatter.field("routing_criteria", &self.routing_criteria);
+        formatter.field("customer", &self.customer);
+        formatter.field("campaign", &self.campaign);
+        formatter.field("answering_machine_detection_status", &self.answering_machine_detection_status);
+        formatter.field("customer_voice_activity", &self.customer_voice_activity);
+        formatter.field("quality_metrics", &self.quality_metrics);
+        formatter.field("disconnect_details", &self.disconnect_details);
+        formatter.field("segment_attributes", &self.segment_attributes);
         formatter.finish()
     }
 }
@@ -208,6 +273,15 @@ pub struct ContactBuilder {
     pub(crate) queue_time_adjustment_seconds: ::std::option::Option<i32>,
     pub(crate) queue_priority: ::std::option::Option<i64>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) connected_to_system_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) routing_criteria: ::std::option::Option<crate::types::RoutingCriteria>,
+    pub(crate) customer: ::std::option::Option<crate::types::Customer>,
+    pub(crate) campaign: ::std::option::Option<crate::types::Campaign>,
+    pub(crate) answering_machine_detection_status: ::std::option::Option<crate::types::AnsweringMachineDetectionStatus>,
+    pub(crate) customer_voice_activity: ::std::option::Option<crate::types::CustomerVoiceActivity>,
+    pub(crate) quality_metrics: ::std::option::Option<crate::types::QualityMetrics>,
+    pub(crate) disconnect_details: ::std::option::Option<crate::types::DisconnectDetails>,
+    pub(crate) segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
 }
 impl ContactBuilder {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -538,6 +612,143 @@ impl ContactBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The timestamp when customer endpoint connected to Amazon Connect.</p>
+    pub fn connected_to_system_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.connected_to_system_timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when customer endpoint connected to Amazon Connect.</p>
+    pub fn set_connected_to_system_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.connected_to_system_timestamp = input;
+        self
+    }
+    /// <p>The timestamp when customer endpoint connected to Amazon Connect.</p>
+    pub fn get_connected_to_system_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.connected_to_system_timestamp
+    }
+    /// <p>Latest routing criteria on the contact.</p>
+    pub fn routing_criteria(mut self, input: crate::types::RoutingCriteria) -> Self {
+        self.routing_criteria = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Latest routing criteria on the contact.</p>
+    pub fn set_routing_criteria(mut self, input: ::std::option::Option<crate::types::RoutingCriteria>) -> Self {
+        self.routing_criteria = input;
+        self
+    }
+    /// <p>Latest routing criteria on the contact.</p>
+    pub fn get_routing_criteria(&self) -> &::std::option::Option<crate::types::RoutingCriteria> {
+        &self.routing_criteria
+    }
+    /// <p>Information about the Customer on the contact.</p>
+    pub fn customer(mut self, input: crate::types::Customer) -> Self {
+        self.customer = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the Customer on the contact.</p>
+    pub fn set_customer(mut self, input: ::std::option::Option<crate::types::Customer>) -> Self {
+        self.customer = input;
+        self
+    }
+    /// <p>Information about the Customer on the contact.</p>
+    pub fn get_customer(&self) -> &::std::option::Option<crate::types::Customer> {
+        &self.customer
+    }
+    /// <p>Information associated with a campaign.</p>
+    pub fn campaign(mut self, input: crate::types::Campaign) -> Self {
+        self.campaign = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information associated with a campaign.</p>
+    pub fn set_campaign(mut self, input: ::std::option::Option<crate::types::Campaign>) -> Self {
+        self.campaign = input;
+        self
+    }
+    /// <p>Information associated with a campaign.</p>
+    pub fn get_campaign(&self) -> &::std::option::Option<crate::types::Campaign> {
+        &self.campaign
+    }
+    /// <p>Indicates how an <a href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound campaign</a> call is actually disposed if the contact is connected to Amazon Connect.</p>
+    pub fn answering_machine_detection_status(mut self, input: crate::types::AnsweringMachineDetectionStatus) -> Self {
+        self.answering_machine_detection_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates how an <a href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound campaign</a> call is actually disposed if the contact is connected to Amazon Connect.</p>
+    pub fn set_answering_machine_detection_status(mut self, input: ::std::option::Option<crate::types::AnsweringMachineDetectionStatus>) -> Self {
+        self.answering_machine_detection_status = input;
+        self
+    }
+    /// <p>Indicates how an <a href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound campaign</a> call is actually disposed if the contact is connected to Amazon Connect.</p>
+    pub fn get_answering_machine_detection_status(&self) -> &::std::option::Option<crate::types::AnsweringMachineDetectionStatus> {
+        &self.answering_machine_detection_status
+    }
+    /// <p>Information about customer’s voice activity.</p>
+    pub fn customer_voice_activity(mut self, input: crate::types::CustomerVoiceActivity) -> Self {
+        self.customer_voice_activity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about customer’s voice activity.</p>
+    pub fn set_customer_voice_activity(mut self, input: ::std::option::Option<crate::types::CustomerVoiceActivity>) -> Self {
+        self.customer_voice_activity = input;
+        self
+    }
+    /// <p>Information about customer’s voice activity.</p>
+    pub fn get_customer_voice_activity(&self) -> &::std::option::Option<crate::types::CustomerVoiceActivity> {
+        &self.customer_voice_activity
+    }
+    /// <p>Information about the quality of the participant's media connection.</p>
+    pub fn quality_metrics(mut self, input: crate::types::QualityMetrics) -> Self {
+        self.quality_metrics = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the quality of the participant's media connection.</p>
+    pub fn set_quality_metrics(mut self, input: ::std::option::Option<crate::types::QualityMetrics>) -> Self {
+        self.quality_metrics = input;
+        self
+    }
+    /// <p>Information about the quality of the participant's media connection.</p>
+    pub fn get_quality_metrics(&self) -> &::std::option::Option<crate::types::QualityMetrics> {
+        &self.quality_metrics
+    }
+    /// <p>Information about the call disconnect experience.</p>
+    pub fn disconnect_details(mut self, input: crate::types::DisconnectDetails) -> Self {
+        self.disconnect_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the call disconnect experience.</p>
+    pub fn set_disconnect_details(mut self, input: ::std::option::Option<crate::types::DisconnectDetails>) -> Self {
+        self.disconnect_details = input;
+        self
+    }
+    /// <p>Information about the call disconnect experience.</p>
+    pub fn get_disconnect_details(&self) -> &::std::option::Option<crate::types::DisconnectDetails> {
+        &self.disconnect_details
+    }
+    /// Adds a key-value pair to `segment_attributes`.
+    ///
+    /// To override the contents of this collection use [`set_segment_attributes`](Self::set_segment_attributes).
+    ///
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes and can be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters. This field can be used to show channel subtype. For example, <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+    pub fn segment_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SegmentAttributeValue) -> Self {
+        let mut hash_map = self.segment_attributes.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.segment_attributes = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes and can be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters. This field can be used to show channel subtype. For example, <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+    pub fn set_segment_attributes(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
+    ) -> Self {
+        self.segment_attributes = input;
+        self
+    }
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes and can be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters. This field can be used to show channel subtype. For example, <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+    pub fn get_segment_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
+        &self.segment_attributes
+    }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
     pub fn build(self) -> crate::types::Contact {
         crate::types::Contact {
@@ -564,6 +775,15 @@ impl ContactBuilder {
             queue_time_adjustment_seconds: self.queue_time_adjustment_seconds,
             queue_priority: self.queue_priority,
             tags: self.tags,
+            connected_to_system_timestamp: self.connected_to_system_timestamp,
+            routing_criteria: self.routing_criteria,
+            customer: self.customer,
+            campaign: self.campaign,
+            answering_machine_detection_status: self.answering_machine_detection_status,
+            customer_voice_activity: self.customer_voice_activity,
+            quality_metrics: self.quality_metrics,
+            disconnect_details: self.disconnect_details,
+            segment_attributes: self.segment_attributes,
         }
     }
 }
@@ -593,6 +813,15 @@ impl ::std::fmt::Debug for ContactBuilder {
         formatter.field("queue_time_adjustment_seconds", &self.queue_time_adjustment_seconds);
         formatter.field("queue_priority", &self.queue_priority);
         formatter.field("tags", &self.tags);
+        formatter.field("connected_to_system_timestamp", &self.connected_to_system_timestamp);
+        formatter.field("routing_criteria", &self.routing_criteria);
+        formatter.field("customer", &self.customer);
+        formatter.field("campaign", &self.campaign);
+        formatter.field("answering_machine_detection_status", &self.answering_machine_detection_status);
+        formatter.field("customer_voice_activity", &self.customer_voice_activity);
+        formatter.field("quality_metrics", &self.quality_metrics);
+        formatter.field("disconnect_details", &self.disconnect_details);
+        formatter.field("segment_attributes", &self.segment_attributes);
         formatter.finish()
     }
 }

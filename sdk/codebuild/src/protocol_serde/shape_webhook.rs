@@ -52,6 +52,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "manualCreation" => {
+                            builder = builder.set_manual_creation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "lastModifiedSecret" => {
                             builder = builder.set_last_modified_secret(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

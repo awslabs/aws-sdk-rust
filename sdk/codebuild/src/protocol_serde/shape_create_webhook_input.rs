@@ -30,5 +30,8 @@ pub fn ser_create_webhook_input_input(
     if let Some(var_9) = &input.build_type {
         object.key("buildType").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.manual_creation {
+        object.key("manualCreation").boolean(*var_10);
+    }
     Ok(())
 }

@@ -116,6 +116,47 @@ impl CreateJobFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub fn job_mode(mut self, input: crate::types::JobMode) -> Self {
+        self.inner = self.inner.job_mode(input);
+        self
+    }
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub fn set_job_mode(mut self, input: ::std::option::Option<crate::types::JobMode>) -> Self {
+        self.inner = self.inner.set_job_mode(input);
+        self
+    }
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub fn get_job_mode(&self) -> &::std::option::Option<crate::types::JobMode> {
+        self.inner.get_job_mode()
+    }
     /// <p>Description of the job being defined.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());

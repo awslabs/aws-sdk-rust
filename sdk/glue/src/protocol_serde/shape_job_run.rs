@@ -49,6 +49,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "JobMode" => {
+                            builder = builder.set_job_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::JobMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "StartedOn" => {
                             builder = builder.set_started_on(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

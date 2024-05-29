@@ -153,6 +153,42 @@ where
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_contact_tag_map::de_contact_tag_map(tokens)?);
                         }
+                        "ConnectedToSystemTimestamp" => {
+                            builder = builder.set_connected_to_system_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "RoutingCriteria" => {
+                            builder = builder.set_routing_criteria(crate::protocol_serde::shape_routing_criteria::de_routing_criteria(tokens)?);
+                        }
+                        "Customer" => {
+                            builder = builder.set_customer(crate::protocol_serde::shape_customer::de_customer(tokens)?);
+                        }
+                        "Campaign" => {
+                            builder = builder.set_campaign(crate::protocol_serde::shape_campaign::de_campaign(tokens)?);
+                        }
+                        "AnsweringMachineDetectionStatus" => {
+                            builder = builder.set_answering_machine_detection_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AnsweringMachineDetectionStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CustomerVoiceActivity" => {
+                            builder = builder.set_customer_voice_activity(
+                                crate::protocol_serde::shape_customer_voice_activity::de_customer_voice_activity(tokens)?,
+                            );
+                        }
+                        "QualityMetrics" => {
+                            builder = builder.set_quality_metrics(crate::protocol_serde::shape_quality_metrics::de_quality_metrics(tokens)?);
+                        }
+                        "DisconnectDetails" => {
+                            builder = builder.set_disconnect_details(crate::protocol_serde::shape_disconnect_details::de_disconnect_details(tokens)?);
+                        }
+                        "SegmentAttributes" => {
+                            builder = builder.set_segment_attributes(crate::protocol_serde::shape_segment_attributes::de_segment_attributes(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

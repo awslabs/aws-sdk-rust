@@ -701,9 +701,45 @@ pub use crate::types::_evaluation_metadata::EvaluationMetadata;
 
 pub use crate::types::_contact::Contact;
 
+pub use crate::types::_disconnect_details::DisconnectDetails;
+
+pub use crate::types::_quality_metrics::QualityMetrics;
+
+pub use crate::types::_customer_quality_metrics::CustomerQualityMetrics;
+
+pub use crate::types::_audio_quality_metrics_info::AudioQualityMetricsInfo;
+
+pub use crate::types::_agent_quality_metrics::AgentQualityMetrics;
+
+pub use crate::types::_customer_voice_activity::CustomerVoiceActivity;
+
+pub use crate::types::_answering_machine_detection_status::AnsweringMachineDetectionStatus;
+
+pub use crate::types::_campaign::Campaign;
+
+pub use crate::types::_customer::Customer;
+
+pub use crate::types::_device_info::DeviceInfo;
+
+pub use crate::types::_routing_criteria::RoutingCriteria;
+
+pub use crate::types::_step::Step;
+
+pub use crate::types::_routing_criteria_step_status::RoutingCriteriaStepStatus;
+
+pub use crate::types::_expression::Expression;
+
+pub use crate::types::_attribute_condition::AttributeCondition;
+
+pub use crate::types::_expiry::Expiry;
+
 pub use crate::types::_wisdom_info::WisdomInfo;
 
 pub use crate::types::_agent_info::AgentInfo;
+
+pub use crate::types::_hierarchy_groups::HierarchyGroups;
+
+pub use crate::types::_agent_hierarchy_group::AgentHierarchyGroup;
 
 pub use crate::types::_queue_info::QueueInfo;
 
@@ -720,8 +756,6 @@ pub use crate::types::_failure_reason_code::FailureReasonCode;
 pub use crate::types::_successful_request::SuccessfulRequest;
 
 pub use crate::types::_contact_data_request::ContactDataRequest;
-
-pub use crate::types::_campaign::Campaign;
 
 pub use crate::types::_endpoint::Endpoint;
 
@@ -743,9 +777,13 @@ mod _agent_config;
 
 mod _agent_contact_reference;
 
+mod _agent_hierarchy_group;
+
 mod _agent_hierarchy_groups;
 
 mod _agent_info;
+
+mod _agent_quality_metrics;
 
 mod _agent_status;
 
@@ -762,6 +800,8 @@ mod _allowed_capabilities;
 mod _analytics_data_association_result;
 
 mod _answer_machine_detection_config;
+
+mod _answering_machine_detection_status;
 
 mod _application;
 
@@ -783,7 +823,11 @@ mod _attribute;
 
 mod _attribute_and_condition;
 
+mod _attribute_condition;
+
 mod _audio_features;
+
+mod _audio_quality_metrics_info;
 
 mod _available_number_summary;
 
@@ -875,13 +919,23 @@ mod _current_metric_result;
 
 mod _current_metric_sort_criteria;
 
+mod _customer;
+
+mod _customer_quality_metrics;
+
+mod _customer_voice_activity;
+
 mod _date_reference;
 
 mod _default_vocabulary;
 
+mod _device_info;
+
 mod _dimensions;
 
 mod _directory_type;
+
+mod _disconnect_details;
 
 mod _disconnect_reason;
 
@@ -969,6 +1023,10 @@ mod _event_bridge_action_definition;
 
 mod _event_source_name;
 
+mod _expiry;
+
+mod _expression;
+
 mod _failed_request;
 
 mod _failure_reason_code;
@@ -1000,6 +1058,8 @@ mod _hierarchy_group_match_type;
 mod _hierarchy_group_summary;
 
 mod _hierarchy_group_summary_reference;
+
+mod _hierarchy_groups;
 
 mod _hierarchy_level;
 
@@ -1173,6 +1233,8 @@ mod _property_validation_exception_property;
 
 mod _property_validation_exception_reason;
 
+mod _quality_metrics;
+
 mod _queue;
 
 mod _queue_info;
@@ -1261,6 +1323,10 @@ mod _resource_tags_search_criteria;
 
 mod _resource_type;
 
+mod _routing_criteria;
+
+mod _routing_criteria_step_status;
+
 mod _routing_profile;
 
 mod _routing_profile_queue_config;
@@ -1336,6 +1402,8 @@ mod _sortable_field_name;
 mod _source_type;
 
 mod _statistic;
+
+mod _step;
 
 mod _storage_type;
 

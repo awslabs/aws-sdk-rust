@@ -34,6 +34,17 @@ where
                                     .transpose()?,
                             );
                         }
+                        "HierarchyGroups" => {
+                            builder = builder.set_hierarchy_groups(crate::protocol_serde::shape_hierarchy_groups::de_hierarchy_groups(tokens)?);
+                        }
+                        "DeviceInfo" => {
+                            builder = builder.set_device_info(crate::protocol_serde::shape_device_info::de_device_info(tokens)?);
+                        }
+                        "Capabilities" => {
+                            builder = builder.set_capabilities(crate::protocol_serde::shape_participant_capabilities::de_participant_capabilities(
+                                tokens,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

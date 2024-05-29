@@ -30,6 +30,10 @@ impl crate::operation::stop_contact::builders::StopContactInputBuilder {
 /// <p>TRANSFER</p></li>
 /// <li>
 /// <p>QUEUE_TRANSFER</p></li>
+/// <li>
+/// <p>EXTERNAL_OUTBOUND</p></li>
+/// <li>
+/// <p>MONITOR</p></li>
 /// </ul>
 /// <p>Chat and task contacts can be terminated in any state, regardless of initiation method.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

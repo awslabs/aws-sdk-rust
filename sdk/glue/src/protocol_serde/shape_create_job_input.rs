@@ -6,132 +6,135 @@ pub fn ser_create_job_input_input(
     if let Some(var_1) = &input.name {
         object.key("Name").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("Description").string(var_2.as_str());
+    if let Some(var_2) = &input.job_mode {
+        object.key("JobMode").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.log_uri {
-        object.key("LogUri").string(var_3.as_str());
+    if let Some(var_3) = &input.description {
+        object.key("Description").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.role {
-        object.key("Role").string(var_4.as_str());
+    if let Some(var_4) = &input.log_uri {
+        object.key("LogUri").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.execution_property {
+    if let Some(var_5) = &input.role {
+        object.key("Role").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.execution_property {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("ExecutionProperty").start_object();
-        crate::protocol_serde::shape_execution_property::ser_execution_property(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("ExecutionProperty").start_object();
+        crate::protocol_serde::shape_execution_property::ser_execution_property(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.command {
+    if let Some(var_8) = &input.command {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("Command").start_object();
-        crate::protocol_serde::shape_job_command::ser_job_command(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("Command").start_object();
+        crate::protocol_serde::shape_job_command::ser_job_command(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.default_arguments {
+    if let Some(var_10) = &input.default_arguments {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("DefaultArguments").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_11 = object.key("DefaultArguments").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
-        object_10.finish();
+        object_11.finish();
     }
-    if let Some(var_13) = &input.non_overridable_arguments {
+    if let Some(var_14) = &input.non_overridable_arguments {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("NonOverridableArguments").start_object();
-        for (key_15, value_16) in var_13 {
+        let mut object_15 = object.key("NonOverridableArguments").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
-        object_14.finish();
+        object_15.finish();
     }
-    if let Some(var_17) = &input.connections {
+    if let Some(var_18) = &input.connections {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("Connections").start_object();
-        crate::protocol_serde::shape_connections_list::ser_connections_list(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_19 = object.key("Connections").start_object();
+        crate::protocol_serde::shape_connections_list::ser_connections_list(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_19) = &input.max_retries {
+    if let Some(var_20) = &input.max_retries {
         object.key("MaxRetries").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_19).into()),
-        );
-    }
-    if let Some(var_20) = &input.allocated_capacity {
-        object.key("AllocatedCapacity").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_21) = &input.timeout {
-        object.key("Timeout").number(
+    if let Some(var_21) = &input.allocated_capacity {
+        object.key("AllocatedCapacity").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_21).into()),
         );
     }
-    if let Some(var_22) = &input.max_capacity {
+    if let Some(var_22) = &input.timeout {
+        object.key("Timeout").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_22).into()),
+        );
+    }
+    if let Some(var_23) = &input.max_capacity {
         object.key("MaxCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_22).into()),
+            ::aws_smithy_types::Number::Float((*var_23).into()),
         );
     }
-    if let Some(var_23) = &input.security_configuration {
-        object.key("SecurityConfiguration").string(var_23.as_str());
+    if let Some(var_24) = &input.security_configuration {
+        object.key("SecurityConfiguration").string(var_24.as_str());
     }
-    if let Some(var_24) = &input.tags {
+    if let Some(var_25) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("Tags").start_object();
-        for (key_26, value_27) in var_24 {
+        let mut object_26 = object.key("Tags").start_object();
+        for (key_27, value_28) in var_25 {
             {
-                object_25.key(key_26.as_str()).string(value_27.as_str());
+                object_26.key(key_27.as_str()).string(value_28.as_str());
             }
         }
-        object_25.finish();
+        object_26.finish();
     }
-    if let Some(var_28) = &input.notification_property {
+    if let Some(var_29) = &input.notification_property {
         #[allow(unused_mut)]
-        let mut object_29 = object.key("NotificationProperty").start_object();
-        crate::protocol_serde::shape_notification_property::ser_notification_property(&mut object_29, var_28)?;
-        object_29.finish();
+        let mut object_30 = object.key("NotificationProperty").start_object();
+        crate::protocol_serde::shape_notification_property::ser_notification_property(&mut object_30, var_29)?;
+        object_30.finish();
     }
-    if let Some(var_30) = &input.glue_version {
-        object.key("GlueVersion").string(var_30.as_str());
+    if let Some(var_31) = &input.glue_version {
+        object.key("GlueVersion").string(var_31.as_str());
     }
-    if let Some(var_31) = &input.number_of_workers {
+    if let Some(var_32) = &input.number_of_workers {
         object.key("NumberOfWorkers").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_31).into()),
+            ::aws_smithy_types::Number::NegInt((*var_32).into()),
         );
     }
-    if let Some(var_32) = &input.worker_type {
-        object.key("WorkerType").string(var_32.as_str());
+    if let Some(var_33) = &input.worker_type {
+        object.key("WorkerType").string(var_33.as_str());
     }
-    if let Some(var_33) = &input.code_gen_configuration_nodes {
+    if let Some(var_34) = &input.code_gen_configuration_nodes {
         #[allow(unused_mut)]
-        let mut object_34 = object.key("CodeGenConfigurationNodes").start_object();
-        for (key_35, value_36) in var_33 {
+        let mut object_35 = object.key("CodeGenConfigurationNodes").start_object();
+        for (key_36, value_37) in var_34 {
             {
                 #[allow(unused_mut)]
-                let mut object_37 = object_34.key(key_35.as_str()).start_object();
-                crate::protocol_serde::shape_code_gen_configuration_node::ser_code_gen_configuration_node(&mut object_37, value_36)?;
-                object_37.finish();
+                let mut object_38 = object_35.key(key_36.as_str()).start_object();
+                crate::protocol_serde::shape_code_gen_configuration_node::ser_code_gen_configuration_node(&mut object_38, value_37)?;
+                object_38.finish();
             }
         }
-        object_34.finish();
+        object_35.finish();
     }
-    if let Some(var_38) = &input.execution_class {
-        object.key("ExecutionClass").string(var_38.as_str());
+    if let Some(var_39) = &input.execution_class {
+        object.key("ExecutionClass").string(var_39.as_str());
     }
-    if let Some(var_39) = &input.source_control_details {
+    if let Some(var_40) = &input.source_control_details {
         #[allow(unused_mut)]
-        let mut object_40 = object.key("SourceControlDetails").start_object();
-        crate::protocol_serde::shape_source_control_details::ser_source_control_details(&mut object_40, var_39)?;
-        object_40.finish();
+        let mut object_41 = object.key("SourceControlDetails").start_object();
+        crate::protocol_serde::shape_source_control_details::ser_source_control_details(&mut object_41, var_40)?;
+        object_41.finish();
     }
-    if let Some(var_41) = &input.maintenance_window {
-        object.key("MaintenanceWindow").string(var_41.as_str());
+    if let Some(var_42) = &input.maintenance_window {
+        object.key("MaintenanceWindow").string(var_42.as_str());
     }
     Ok(())
 }

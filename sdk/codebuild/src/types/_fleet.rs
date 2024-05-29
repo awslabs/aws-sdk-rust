@@ -80,7 +80,7 @@ pub struct Fleet {
     pub overflow_behavior: ::std::option::Option<crate::types::FleetOverflowBehavior>,
     /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
-    /// <p>The service role associated with the compute fleet.</p>
+    /// <p>The service role associated with the compute fleet. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html"> Allow a user to add a permission policy for a fleet service role</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fleet_service_role: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag key and value pairs associated with this compute fleet.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
@@ -187,7 +187,7 @@ impl Fleet {
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>The service role associated with the compute fleet.</p>
+    /// <p>The service role associated with the compute fleet. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html"> Allow a user to add a permission policy for a fleet service role</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fn fleet_service_role(&self) -> ::std::option::Option<&str> {
         self.fleet_service_role.as_deref()
     }
@@ -550,17 +550,17 @@ impl FleetBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }
-    /// <p>The service role associated with the compute fleet.</p>
+    /// <p>The service role associated with the compute fleet. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html"> Allow a user to add a permission policy for a fleet service role</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fn fleet_service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_service_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The service role associated with the compute fleet.</p>
+    /// <p>The service role associated with the compute fleet. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html"> Allow a user to add a permission policy for a fleet service role</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fn set_fleet_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_service_role = input;
         self
     }
-    /// <p>The service role associated with the compute fleet.</p>
+    /// <p>The service role associated with the compute fleet. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html"> Allow a user to add a permission policy for a fleet service role</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fn get_fleet_service_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_service_role
     }

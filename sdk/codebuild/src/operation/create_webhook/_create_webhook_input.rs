@@ -14,6 +14,10 @@ pub struct CreateWebhookInput {
     pub filter_groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
     /// <p>Specifies the type of build this webhook will trigger.</p>
     pub build_type: ::std::option::Option<crate::types::WebhookBuildType>,
+    /// <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns <code>payloadUrl</code> and <code>secret</code> values for the webhook. The <code>payloadUrl</code> and <code>secret</code> values in the output can be used to manually create a webhook within GitHub.</p><note>
+    /// <p>manualCreation is only available for GitHub webhooks.</p>
+    /// </note>
+    pub manual_creation: ::std::option::Option<bool>,
 }
 impl CreateWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
@@ -37,6 +41,12 @@ impl CreateWebhookInput {
     pub fn build_type(&self) -> ::std::option::Option<&crate::types::WebhookBuildType> {
         self.build_type.as_ref()
     }
+    /// <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns <code>payloadUrl</code> and <code>secret</code> values for the webhook. The <code>payloadUrl</code> and <code>secret</code> values in the output can be used to manually create a webhook within GitHub.</p><note>
+    /// <p>manualCreation is only available for GitHub webhooks.</p>
+    /// </note>
+    pub fn manual_creation(&self) -> ::std::option::Option<bool> {
+        self.manual_creation
+    }
 }
 impl CreateWebhookInput {
     /// Creates a new builder-style object to manufacture [`CreateWebhookInput`](crate::operation::create_webhook::CreateWebhookInput).
@@ -53,6 +63,7 @@ pub struct CreateWebhookInputBuilder {
     pub(crate) branch_filter: ::std::option::Option<::std::string::String>,
     pub(crate) filter_groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
     pub(crate) build_type: ::std::option::Option<crate::types::WebhookBuildType>,
+    pub(crate) manual_creation: ::std::option::Option<bool>,
 }
 impl CreateWebhookInputBuilder {
     /// <p>The name of the CodeBuild project.</p>
@@ -127,6 +138,26 @@ impl CreateWebhookInputBuilder {
     pub fn get_build_type(&self) -> &::std::option::Option<crate::types::WebhookBuildType> {
         &self.build_type
     }
+    /// <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns <code>payloadUrl</code> and <code>secret</code> values for the webhook. The <code>payloadUrl</code> and <code>secret</code> values in the output can be used to manually create a webhook within GitHub.</p><note>
+    /// <p>manualCreation is only available for GitHub webhooks.</p>
+    /// </note>
+    pub fn manual_creation(mut self, input: bool) -> Self {
+        self.manual_creation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns <code>payloadUrl</code> and <code>secret</code> values for the webhook. The <code>payloadUrl</code> and <code>secret</code> values in the output can be used to manually create a webhook within GitHub.</p><note>
+    /// <p>manualCreation is only available for GitHub webhooks.</p>
+    /// </note>
+    pub fn set_manual_creation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.manual_creation = input;
+        self
+    }
+    /// <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns <code>payloadUrl</code> and <code>secret</code> values for the webhook. The <code>payloadUrl</code> and <code>secret</code> values in the output can be used to manually create a webhook within GitHub.</p><note>
+    /// <p>manualCreation is only available for GitHub webhooks.</p>
+    /// </note>
+    pub fn get_manual_creation(&self) -> &::std::option::Option<bool> {
+        &self.manual_creation
+    }
     /// Consumes the builder and constructs a [`CreateWebhookInput`](crate::operation::create_webhook::CreateWebhookInput).
     pub fn build(
         self,
@@ -136,6 +167,7 @@ impl CreateWebhookInputBuilder {
             branch_filter: self.branch_filter,
             filter_groups: self.filter_groups,
             build_type: self.build_type,
+            manual_creation: self.manual_creation,
         })
     }
 }

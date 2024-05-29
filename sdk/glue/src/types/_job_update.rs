@@ -4,6 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct JobUpdate {
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub job_mode: ::std::option::Option<crate::types::JobMode>,
     /// <p>Description of the job being defined.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>This field is reserved for future use.</p>
@@ -85,6 +96,19 @@ pub struct JobUpdate {
     pub maintenance_window: ::std::option::Option<::std::string::String>,
 }
 impl JobUpdate {
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub fn job_mode(&self) -> ::std::option::Option<&crate::types::JobMode> {
+        self.job_mode.as_ref()
+    }
     /// <p>Description of the job being defined.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
@@ -211,6 +235,7 @@ impl JobUpdate {
 impl ::std::fmt::Debug for JobUpdate {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("JobUpdate");
+        formatter.field("job_mode", &self.job_mode);
         formatter.field("description", &self.description);
         formatter.field("log_uri", &self.log_uri);
         formatter.field("role", &self.role);
@@ -246,6 +271,7 @@ impl JobUpdate {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct JobUpdateBuilder {
+    pub(crate) job_mode: ::std::option::Option<crate::types::JobMode>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) log_uri: ::std::option::Option<::std::string::String>,
     pub(crate) role: ::std::option::Option<::std::string::String>,
@@ -270,6 +296,47 @@ pub struct JobUpdateBuilder {
     pub(crate) maintenance_window: ::std::option::Option<::std::string::String>,
 }
 impl JobUpdateBuilder {
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub fn job_mode(mut self, input: crate::types::JobMode) -> Self {
+        self.job_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub fn set_job_mode(mut self, input: ::std::option::Option<crate::types::JobMode>) -> Self {
+        self.job_mode = input;
+        self
+    }
+    /// <p>A mode that describes how a job was created. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SCRIPT</code> - The job was created using the Glue Studio script editor.</p></li>
+    /// <li>
+    /// <p><code>VISUAL</code> - The job was created using the Glue Studio visual editor.</p></li>
+    /// <li>
+    /// <p><code>NOTEBOOK</code> - The job was created using an interactive sessions notebook.</p></li>
+    /// </ul>
+    /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
+    pub fn get_job_mode(&self) -> &::std::option::Option<crate::types::JobMode> {
+        &self.job_mode
+    }
     /// <p>Description of the job being defined.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -716,6 +783,7 @@ impl JobUpdateBuilder {
     /// Consumes the builder and constructs a [`JobUpdate`](crate::types::JobUpdate).
     pub fn build(self) -> crate::types::JobUpdate {
         crate::types::JobUpdate {
+            job_mode: self.job_mode,
             description: self.description,
             log_uri: self.log_uri,
             role: self.role,
@@ -743,6 +811,7 @@ impl JobUpdateBuilder {
 impl ::std::fmt::Debug for JobUpdateBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("JobUpdateBuilder");
+        formatter.field("job_mode", &self.job_mode);
         formatter.field("description", &self.description);
         formatter.field("log_uri", &self.log_uri);
         formatter.field("role", &self.role);

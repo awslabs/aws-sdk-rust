@@ -10,6 +10,12 @@ pub struct AgentInfo {
     pub connected_to_agent_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Agent pause duration for a contact in seconds.</p>
     pub agent_pause_duration_in_seconds: ::std::option::Option<i32>,
+    /// <p>The agent hierarchy groups for the agent.</p>
+    pub hierarchy_groups: ::std::option::Option<crate::types::HierarchyGroups>,
+    /// <p>Information regarding Agent’s device.</p>
+    pub device_info: ::std::option::Option<crate::types::DeviceInfo>,
+    /// <p>The configuration for the allowed capabilities for participants present over the call.</p>
+    pub capabilities: ::std::option::Option<crate::types::ParticipantCapabilities>,
 }
 impl AgentInfo {
     /// <p>The identifier of the agent who accepted the contact.</p>
@@ -23,6 +29,18 @@ impl AgentInfo {
     /// <p>Agent pause duration for a contact in seconds.</p>
     pub fn agent_pause_duration_in_seconds(&self) -> ::std::option::Option<i32> {
         self.agent_pause_duration_in_seconds
+    }
+    /// <p>The agent hierarchy groups for the agent.</p>
+    pub fn hierarchy_groups(&self) -> ::std::option::Option<&crate::types::HierarchyGroups> {
+        self.hierarchy_groups.as_ref()
+    }
+    /// <p>Information regarding Agent’s device.</p>
+    pub fn device_info(&self) -> ::std::option::Option<&crate::types::DeviceInfo> {
+        self.device_info.as_ref()
+    }
+    /// <p>The configuration for the allowed capabilities for participants present over the call.</p>
+    pub fn capabilities(&self) -> ::std::option::Option<&crate::types::ParticipantCapabilities> {
+        self.capabilities.as_ref()
     }
 }
 impl AgentInfo {
@@ -39,6 +57,9 @@ pub struct AgentInfoBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) connected_to_agent_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) agent_pause_duration_in_seconds: ::std::option::Option<i32>,
+    pub(crate) hierarchy_groups: ::std::option::Option<crate::types::HierarchyGroups>,
+    pub(crate) device_info: ::std::option::Option<crate::types::DeviceInfo>,
+    pub(crate) capabilities: ::std::option::Option<crate::types::ParticipantCapabilities>,
 }
 impl AgentInfoBuilder {
     /// <p>The identifier of the agent who accepted the contact.</p>
@@ -83,12 +104,57 @@ impl AgentInfoBuilder {
     pub fn get_agent_pause_duration_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.agent_pause_duration_in_seconds
     }
+    /// <p>The agent hierarchy groups for the agent.</p>
+    pub fn hierarchy_groups(mut self, input: crate::types::HierarchyGroups) -> Self {
+        self.hierarchy_groups = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The agent hierarchy groups for the agent.</p>
+    pub fn set_hierarchy_groups(mut self, input: ::std::option::Option<crate::types::HierarchyGroups>) -> Self {
+        self.hierarchy_groups = input;
+        self
+    }
+    /// <p>The agent hierarchy groups for the agent.</p>
+    pub fn get_hierarchy_groups(&self) -> &::std::option::Option<crate::types::HierarchyGroups> {
+        &self.hierarchy_groups
+    }
+    /// <p>Information regarding Agent’s device.</p>
+    pub fn device_info(mut self, input: crate::types::DeviceInfo) -> Self {
+        self.device_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information regarding Agent’s device.</p>
+    pub fn set_device_info(mut self, input: ::std::option::Option<crate::types::DeviceInfo>) -> Self {
+        self.device_info = input;
+        self
+    }
+    /// <p>Information regarding Agent’s device.</p>
+    pub fn get_device_info(&self) -> &::std::option::Option<crate::types::DeviceInfo> {
+        &self.device_info
+    }
+    /// <p>The configuration for the allowed capabilities for participants present over the call.</p>
+    pub fn capabilities(mut self, input: crate::types::ParticipantCapabilities) -> Self {
+        self.capabilities = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the allowed capabilities for participants present over the call.</p>
+    pub fn set_capabilities(mut self, input: ::std::option::Option<crate::types::ParticipantCapabilities>) -> Self {
+        self.capabilities = input;
+        self
+    }
+    /// <p>The configuration for the allowed capabilities for participants present over the call.</p>
+    pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::ParticipantCapabilities> {
+        &self.capabilities
+    }
     /// Consumes the builder and constructs a [`AgentInfo`](crate::types::AgentInfo).
     pub fn build(self) -> crate::types::AgentInfo {
         crate::types::AgentInfo {
             id: self.id,
             connected_to_agent_timestamp: self.connected_to_agent_timestamp,
             agent_pause_duration_in_seconds: self.agent_pause_duration_in_seconds,
+            hierarchy_groups: self.hierarchy_groups,
+            device_info: self.device_info,
+            capabilities: self.capabilities,
         }
     }
 }

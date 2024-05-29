@@ -495,9 +495,41 @@ pub use crate::types::_evaluation_metadata::EvaluationMetadataBuilder;
 
 pub use crate::types::_contact::ContactBuilder;
 
+pub use crate::types::_disconnect_details::DisconnectDetailsBuilder;
+
+pub use crate::types::_quality_metrics::QualityMetricsBuilder;
+
+pub use crate::types::_customer_quality_metrics::CustomerQualityMetricsBuilder;
+
+pub use crate::types::_audio_quality_metrics_info::AudioQualityMetricsInfoBuilder;
+
+pub use crate::types::_agent_quality_metrics::AgentQualityMetricsBuilder;
+
+pub use crate::types::_customer_voice_activity::CustomerVoiceActivityBuilder;
+
+pub use crate::types::_campaign::CampaignBuilder;
+
+pub use crate::types::_customer::CustomerBuilder;
+
+pub use crate::types::_device_info::DeviceInfoBuilder;
+
+pub use crate::types::_routing_criteria::RoutingCriteriaBuilder;
+
+pub use crate::types::_step::StepBuilder;
+
+pub use crate::types::_expression::ExpressionBuilder;
+
+pub use crate::types::_attribute_condition::AttributeConditionBuilder;
+
+pub use crate::types::_expiry::ExpiryBuilder;
+
 pub use crate::types::_wisdom_info::WisdomInfoBuilder;
 
 pub use crate::types::_agent_info::AgentInfoBuilder;
+
+pub use crate::types::_hierarchy_groups::HierarchyGroupsBuilder;
+
+pub use crate::types::_agent_hierarchy_group::AgentHierarchyGroupBuilder;
 
 pub use crate::types::_queue_info::QueueInfoBuilder;
 
@@ -512,8 +544,6 @@ pub use crate::types::_failed_request::FailedRequestBuilder;
 pub use crate::types::_successful_request::SuccessfulRequestBuilder;
 
 pub use crate::types::_contact_data_request::ContactDataRequestBuilder;
-
-pub use crate::types::_campaign::CampaignBuilder;
 
 pub use crate::types::_endpoint::EndpointBuilder;
 

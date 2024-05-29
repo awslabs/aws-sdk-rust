@@ -14,6 +14,7 @@
 /// match targettype {
 ///     TargetType::Account => { /* ... */ },
 ///     TargetType::OrganizationalUnit => { /* ... */ },
+///     TargetType::Root => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum TargetType {
     Account,
     #[allow(missing_docs)] // documentation missing in model
     OrganizationalUnit,
+    #[allow(missing_docs)] // documentation missing in model
+    Root,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for TargetType {
         match s {
             "ACCOUNT" => TargetType::Account,
             "ORGANIZATIONAL_UNIT" => TargetType::OrganizationalUnit,
+            "ROOT" => TargetType::Root,
             other => TargetType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl TargetType {
         match self {
             TargetType::Account => "ACCOUNT",
             TargetType::OrganizationalUnit => "ORGANIZATIONAL_UNIT",
+            TargetType::Root => "ROOT",
             TargetType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCOUNT", "ORGANIZATIONAL_UNIT"]
+        &["ACCOUNT", "ORGANIZATIONAL_UNIT", "ROOT"]
     }
 }
 impl ::std::convert::AsRef<str> for TargetType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for TargetType {
         match self {
             TargetType::Account => write!(f, "ACCOUNT"),
             TargetType::OrganizationalUnit => write!(f, "ORGANIZATIONAL_UNIT"),
+            TargetType::Root => write!(f, "ROOT"),
             TargetType::Unknown(value) => write!(f, "{}", value),
         }
     }
