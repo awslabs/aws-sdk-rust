@@ -37,7 +37,7 @@ version = "1.2.1"
 
 [dependencies.aws-smithy-checksums]
 path = "../aws-smithy-checksums"
-version = "0.60.8"
+version = "0.60.9"
 
 [dependencies.aws-smithy-eventstream]
 path = "../aws-smithy-eventstream"
