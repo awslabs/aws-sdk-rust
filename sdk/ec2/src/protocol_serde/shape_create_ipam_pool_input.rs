@@ -72,24 +72,28 @@ pub fn ser_create_ipam_pool_input_input_input(
     #[allow(unused_mut)]
     let mut scope_23 = writer.prefix("AllocationResourceTag");
     if let Some(var_24) = &input.allocation_resource_tags {
-        let mut list_26 = scope_23.start_list(true, Some("item"));
-        for item_25 in var_24 {
-            #[allow(unused_mut)]
-            let mut entry_27 = list_26.entry();
-            crate::protocol_serde::shape_request_ipam_resource_tag::ser_request_ipam_resource_tag(entry_27, item_25)?;
+        if !var_24.is_empty() {
+            let mut list_26 = scope_23.start_list(true, Some("item"));
+            for item_25 in var_24 {
+                #[allow(unused_mut)]
+                let mut entry_27 = list_26.entry();
+                crate::protocol_serde::shape_request_ipam_resource_tag::ser_request_ipam_resource_tag(entry_27, item_25)?;
+            }
+            list_26.finish();
         }
-        list_26.finish();
     }
     #[allow(unused_mut)]
     let mut scope_28 = writer.prefix("TagSpecification");
     if let Some(var_29) = &input.tag_specifications {
-        let mut list_31 = scope_28.start_list(true, Some("item"));
-        for item_30 in var_29 {
-            #[allow(unused_mut)]
-            let mut entry_32 = list_31.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_32, item_30)?;
+        if !var_29.is_empty() {
+            let mut list_31 = scope_28.start_list(true, Some("item"));
+            for item_30 in var_29 {
+                #[allow(unused_mut)]
+                let mut entry_32 = list_31.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_32, item_30)?;
+            }
+            list_31.finish();
         }
-        list_31.finish();
     }
     #[allow(unused_mut)]
     let mut scope_33 = writer.prefix("ClientToken");

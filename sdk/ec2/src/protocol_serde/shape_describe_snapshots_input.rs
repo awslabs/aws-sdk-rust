@@ -8,13 +8,15 @@ pub fn ser_describe_snapshots_input_input_input(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Filter");
     if let Some(var_2) = &input.filters {
-        let mut list_4 = scope_1.start_list(true, Some("Filter"));
-        for item_3 in var_2 {
-            #[allow(unused_mut)]
-            let mut entry_5 = list_4.entry();
-            crate::protocol_serde::shape_filter::ser_filter(entry_5, item_3)?;
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("Filter"));
+            for item_3 in var_2 {
+                #[allow(unused_mut)]
+                let mut entry_5 = list_4.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_5, item_3)?;
+            }
+            list_4.finish();
         }
-        list_4.finish();
     }
     #[allow(unused_mut)]
     let mut scope_6 = writer.prefix("MaxResults");
@@ -32,35 +34,41 @@ pub fn ser_describe_snapshots_input_input_input(
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("Owner");
     if let Some(var_11) = &input.owner_ids {
-        let mut list_13 = scope_10.start_list(true, Some("Owner"));
-        for item_12 in var_11 {
-            #[allow(unused_mut)]
-            let mut entry_14 = list_13.entry();
-            entry_14.string(item_12);
+        if !var_11.is_empty() {
+            let mut list_13 = scope_10.start_list(true, Some("Owner"));
+            for item_12 in var_11 {
+                #[allow(unused_mut)]
+                let mut entry_14 = list_13.entry();
+                entry_14.string(item_12);
+            }
+            list_13.finish();
         }
-        list_13.finish();
     }
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("RestorableBy");
     if let Some(var_16) = &input.restorable_by_user_ids {
-        let mut list_18 = scope_15.start_list(true, None);
-        for item_17 in var_16 {
-            #[allow(unused_mut)]
-            let mut entry_19 = list_18.entry();
-            entry_19.string(item_17);
+        if !var_16.is_empty() {
+            let mut list_18 = scope_15.start_list(true, None);
+            for item_17 in var_16 {
+                #[allow(unused_mut)]
+                let mut entry_19 = list_18.entry();
+                entry_19.string(item_17);
+            }
+            list_18.finish();
         }
-        list_18.finish();
     }
     #[allow(unused_mut)]
     let mut scope_20 = writer.prefix("SnapshotId");
     if let Some(var_21) = &input.snapshot_ids {
-        let mut list_23 = scope_20.start_list(true, Some("SnapshotId"));
-        for item_22 in var_21 {
-            #[allow(unused_mut)]
-            let mut entry_24 = list_23.entry();
-            entry_24.string(item_22);
+        if !var_21.is_empty() {
+            let mut list_23 = scope_20.start_list(true, Some("SnapshotId"));
+            for item_22 in var_21 {
+                #[allow(unused_mut)]
+                let mut entry_24 = list_23.entry();
+                entry_24.string(item_22);
+            }
+            list_23.finish();
         }
-        list_23.finish();
     }
     #[allow(unused_mut)]
     let mut scope_25 = writer.prefix("DryRun");

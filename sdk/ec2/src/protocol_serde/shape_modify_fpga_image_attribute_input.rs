@@ -28,35 +28,41 @@ pub fn ser_modify_fpga_image_attribute_input_input_input(
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("UserId");
     if let Some(var_10) = &input.user_ids {
-        let mut list_12 = scope_9.start_list(true, Some("UserId"));
-        for item_11 in var_10 {
-            #[allow(unused_mut)]
-            let mut entry_13 = list_12.entry();
-            entry_13.string(item_11);
+        if !var_10.is_empty() {
+            let mut list_12 = scope_9.start_list(true, Some("UserId"));
+            for item_11 in var_10 {
+                #[allow(unused_mut)]
+                let mut entry_13 = list_12.entry();
+                entry_13.string(item_11);
+            }
+            list_12.finish();
         }
-        list_12.finish();
     }
     #[allow(unused_mut)]
     let mut scope_14 = writer.prefix("UserGroup");
     if let Some(var_15) = &input.user_groups {
-        let mut list_17 = scope_14.start_list(true, Some("UserGroup"));
-        for item_16 in var_15 {
-            #[allow(unused_mut)]
-            let mut entry_18 = list_17.entry();
-            entry_18.string(item_16);
+        if !var_15.is_empty() {
+            let mut list_17 = scope_14.start_list(true, Some("UserGroup"));
+            for item_16 in var_15 {
+                #[allow(unused_mut)]
+                let mut entry_18 = list_17.entry();
+                entry_18.string(item_16);
+            }
+            list_17.finish();
         }
-        list_17.finish();
     }
     #[allow(unused_mut)]
     let mut scope_19 = writer.prefix("ProductCode");
     if let Some(var_20) = &input.product_codes {
-        let mut list_22 = scope_19.start_list(true, Some("ProductCode"));
-        for item_21 in var_20 {
-            #[allow(unused_mut)]
-            let mut entry_23 = list_22.entry();
-            entry_23.string(item_21);
+        if !var_20.is_empty() {
+            let mut list_22 = scope_19.start_list(true, Some("ProductCode"));
+            for item_21 in var_20 {
+                #[allow(unused_mut)]
+                let mut entry_23 = list_22.entry();
+                entry_23.string(item_21);
+            }
+            list_22.finish();
         }
-        list_22.finish();
     }
     #[allow(unused_mut)]
     let mut scope_24 = writer.prefix("LoadPermission");

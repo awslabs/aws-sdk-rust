@@ -8,13 +8,15 @@ pub fn ser_describe_spot_price_history_input_input_input(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Filter");
     if let Some(var_2) = &input.filters {
-        let mut list_4 = scope_1.start_list(true, Some("Filter"));
-        for item_3 in var_2 {
-            #[allow(unused_mut)]
-            let mut entry_5 = list_4.entry();
-            crate::protocol_serde::shape_filter::ser_filter(entry_5, item_3)?;
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("Filter"));
+            for item_3 in var_2 {
+                #[allow(unused_mut)]
+                let mut entry_5 = list_4.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_5, item_3)?;
+            }
+            list_4.finish();
         }
-        list_4.finish();
     }
     #[allow(unused_mut)]
     let mut scope_6 = writer.prefix("AvailabilityZone");
@@ -34,13 +36,15 @@ pub fn ser_describe_spot_price_history_input_input_input(
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("InstanceType");
     if let Some(var_13) = &input.instance_types {
-        let mut list_15 = scope_12.start_list(true, None);
-        for item_14 in var_13 {
-            #[allow(unused_mut)]
-            let mut entry_16 = list_15.entry();
-            entry_16.string(item_14.as_str());
+        if !var_13.is_empty() {
+            let mut list_15 = scope_12.start_list(true, None);
+            for item_14 in var_13 {
+                #[allow(unused_mut)]
+                let mut entry_16 = list_15.entry();
+                entry_16.string(item_14.as_str());
+            }
+            list_15.finish();
         }
-        list_15.finish();
     }
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("MaxResults");
@@ -58,13 +62,15 @@ pub fn ser_describe_spot_price_history_input_input_input(
     #[allow(unused_mut)]
     let mut scope_21 = writer.prefix("ProductDescription");
     if let Some(var_22) = &input.product_descriptions {
-        let mut list_24 = scope_21.start_list(true, None);
-        for item_23 in var_22 {
-            #[allow(unused_mut)]
-            let mut entry_25 = list_24.entry();
-            entry_25.string(item_23);
+        if !var_22.is_empty() {
+            let mut list_24 = scope_21.start_list(true, None);
+            for item_23 in var_22 {
+                #[allow(unused_mut)]
+                let mut entry_25 = list_24.entry();
+                entry_25.string(item_23);
+            }
+            list_24.finish();
         }
-        list_24.finish();
     }
     #[allow(unused_mut)]
     let mut scope_26 = writer.prefix("StartTime");

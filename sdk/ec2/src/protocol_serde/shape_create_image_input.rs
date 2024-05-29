@@ -8,13 +8,15 @@ pub fn ser_create_image_input_input_input(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("BlockDeviceMapping");
     if let Some(var_2) = &input.block_device_mappings {
-        let mut list_4 = scope_1.start_list(true, Some("BlockDeviceMapping"));
-        for item_3 in var_2 {
-            #[allow(unused_mut)]
-            let mut entry_5 = list_4.entry();
-            crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_5, item_3)?;
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("BlockDeviceMapping"));
+            for item_3 in var_2 {
+                #[allow(unused_mut)]
+                let mut entry_5 = list_4.entry();
+                crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_5, item_3)?;
+            }
+            list_4.finish();
         }
-        list_4.finish();
     }
     #[allow(unused_mut)]
     let mut scope_6 = writer.prefix("Description");
@@ -44,13 +46,15 @@ pub fn ser_create_image_input_input_input(
     #[allow(unused_mut)]
     let mut scope_16 = writer.prefix("TagSpecification");
     if let Some(var_17) = &input.tag_specifications {
-        let mut list_19 = scope_16.start_list(true, Some("item"));
-        for item_18 in var_17 {
-            #[allow(unused_mut)]
-            let mut entry_20 = list_19.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_20, item_18)?;
+        if !var_17.is_empty() {
+            let mut list_19 = scope_16.start_list(true, Some("item"));
+            for item_18 in var_17 {
+                #[allow(unused_mut)]
+                let mut entry_20 = list_19.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_20, item_18)?;
+            }
+            list_19.finish();
         }
-        list_19.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

@@ -46,24 +46,28 @@ pub fn ser_allocate_ipam_pool_cidr_input_input_input(
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("AllowedCidr");
     if let Some(var_16) = &input.allowed_cidrs {
-        let mut list_18 = scope_15.start_list(true, Some("item"));
-        for item_17 in var_16 {
-            #[allow(unused_mut)]
-            let mut entry_19 = list_18.entry();
-            entry_19.string(item_17);
+        if !var_16.is_empty() {
+            let mut list_18 = scope_15.start_list(true, Some("item"));
+            for item_17 in var_16 {
+                #[allow(unused_mut)]
+                let mut entry_19 = list_18.entry();
+                entry_19.string(item_17);
+            }
+            list_18.finish();
         }
-        list_18.finish();
     }
     #[allow(unused_mut)]
     let mut scope_20 = writer.prefix("DisallowedCidr");
     if let Some(var_21) = &input.disallowed_cidrs {
-        let mut list_23 = scope_20.start_list(true, Some("item"));
-        for item_22 in var_21 {
-            #[allow(unused_mut)]
-            let mut entry_24 = list_23.entry();
-            entry_24.string(item_22);
+        if !var_21.is_empty() {
+            let mut list_23 = scope_20.start_list(true, Some("item"));
+            for item_22 in var_21 {
+                #[allow(unused_mut)]
+                let mut entry_24 = list_23.entry();
+                entry_24.string(item_22);
+            }
+            list_23.finish();
         }
-        list_23.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

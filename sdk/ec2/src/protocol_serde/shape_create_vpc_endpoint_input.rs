@@ -33,35 +33,41 @@ pub fn ser_create_vpc_endpoint_input_input_input(
     #[allow(unused_mut)]
     let mut scope_11 = writer.prefix("RouteTableId");
     if let Some(var_12) = &input.route_table_ids {
-        let mut list_14 = scope_11.start_list(true, Some("item"));
-        for item_13 in var_12 {
-            #[allow(unused_mut)]
-            let mut entry_15 = list_14.entry();
-            entry_15.string(item_13);
+        if !var_12.is_empty() {
+            let mut list_14 = scope_11.start_list(true, Some("item"));
+            for item_13 in var_12 {
+                #[allow(unused_mut)]
+                let mut entry_15 = list_14.entry();
+                entry_15.string(item_13);
+            }
+            list_14.finish();
         }
-        list_14.finish();
     }
     #[allow(unused_mut)]
     let mut scope_16 = writer.prefix("SubnetId");
     if let Some(var_17) = &input.subnet_ids {
-        let mut list_19 = scope_16.start_list(true, Some("item"));
-        for item_18 in var_17 {
-            #[allow(unused_mut)]
-            let mut entry_20 = list_19.entry();
-            entry_20.string(item_18);
+        if !var_17.is_empty() {
+            let mut list_19 = scope_16.start_list(true, Some("item"));
+            for item_18 in var_17 {
+                #[allow(unused_mut)]
+                let mut entry_20 = list_19.entry();
+                entry_20.string(item_18);
+            }
+            list_19.finish();
         }
-        list_19.finish();
     }
     #[allow(unused_mut)]
     let mut scope_21 = writer.prefix("SecurityGroupId");
     if let Some(var_22) = &input.security_group_ids {
-        let mut list_24 = scope_21.start_list(true, Some("item"));
-        for item_23 in var_22 {
-            #[allow(unused_mut)]
-            let mut entry_25 = list_24.entry();
-            entry_25.string(item_23);
+        if !var_22.is_empty() {
+            let mut list_24 = scope_21.start_list(true, Some("item"));
+            for item_23 in var_22 {
+                #[allow(unused_mut)]
+                let mut entry_25 = list_24.entry();
+                entry_25.string(item_23);
+            }
+            list_24.finish();
         }
-        list_24.finish();
     }
     #[allow(unused_mut)]
     let mut scope_26 = writer.prefix("IpAddressType");
@@ -86,24 +92,28 @@ pub fn ser_create_vpc_endpoint_input_input_input(
     #[allow(unused_mut)]
     let mut scope_34 = writer.prefix("TagSpecification");
     if let Some(var_35) = &input.tag_specifications {
-        let mut list_37 = scope_34.start_list(true, Some("item"));
-        for item_36 in var_35 {
-            #[allow(unused_mut)]
-            let mut entry_38 = list_37.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_38, item_36)?;
+        if !var_35.is_empty() {
+            let mut list_37 = scope_34.start_list(true, Some("item"));
+            for item_36 in var_35 {
+                #[allow(unused_mut)]
+                let mut entry_38 = list_37.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_38, item_36)?;
+            }
+            list_37.finish();
         }
-        list_37.finish();
     }
     #[allow(unused_mut)]
     let mut scope_39 = writer.prefix("SubnetConfiguration");
     if let Some(var_40) = &input.subnet_configurations {
-        let mut list_42 = scope_39.start_list(true, Some("item"));
-        for item_41 in var_40 {
-            #[allow(unused_mut)]
-            let mut entry_43 = list_42.entry();
-            crate::protocol_serde::shape_subnet_configuration::ser_subnet_configuration(entry_43, item_41)?;
+        if !var_40.is_empty() {
+            let mut list_42 = scope_39.start_list(true, Some("item"));
+            for item_41 in var_40 {
+                #[allow(unused_mut)]
+                let mut entry_43 = list_42.entry();
+                crate::protocol_serde::shape_subnet_configuration::ser_subnet_configuration(entry_43, item_41)?;
+            }
+            list_42.finish();
         }
-        list_42.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

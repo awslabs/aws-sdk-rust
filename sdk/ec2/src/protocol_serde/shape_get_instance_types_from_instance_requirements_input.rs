@@ -13,24 +13,28 @@ pub fn ser_get_instance_types_from_instance_requirements_input_input_input(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("ArchitectureType");
     if let Some(var_4) = &input.architecture_types {
-        let mut list_6 = scope_3.start_list(true, Some("item"));
-        for item_5 in var_4 {
-            #[allow(unused_mut)]
-            let mut entry_7 = list_6.entry();
-            entry_7.string(item_5.as_str());
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("item"));
+            for item_5 in var_4 {
+                #[allow(unused_mut)]
+                let mut entry_7 = list_6.entry();
+                entry_7.string(item_5.as_str());
+            }
+            list_6.finish();
         }
-        list_6.finish();
     }
     #[allow(unused_mut)]
     let mut scope_8 = writer.prefix("VirtualizationType");
     if let Some(var_9) = &input.virtualization_types {
-        let mut list_11 = scope_8.start_list(true, Some("item"));
-        for item_10 in var_9 {
-            #[allow(unused_mut)]
-            let mut entry_12 = list_11.entry();
-            entry_12.string(item_10.as_str());
+        if !var_9.is_empty() {
+            let mut list_11 = scope_8.start_list(true, Some("item"));
+            for item_10 in var_9 {
+                #[allow(unused_mut)]
+                let mut entry_12 = list_11.entry();
+                entry_12.string(item_10.as_str());
+            }
+            list_11.finish();
         }
-        list_11.finish();
     }
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("InstanceRequirements");

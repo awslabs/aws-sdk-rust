@@ -33,13 +33,15 @@ pub fn ser_create_subnet_cidr_reservation_input_input_input(
     #[allow(unused_mut)]
     let mut scope_11 = writer.prefix("TagSpecification");
     if let Some(var_12) = &input.tag_specifications {
-        let mut list_14 = scope_11.start_list(true, Some("item"));
-        for item_13 in var_12 {
-            #[allow(unused_mut)]
-            let mut entry_15 = list_14.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_15, item_13)?;
+        if !var_12.is_empty() {
+            let mut list_14 = scope_11.start_list(true, Some("item"));
+            for item_13 in var_12 {
+                #[allow(unused_mut)]
+                let mut entry_15 = list_14.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_15, item_13)?;
+            }
+            list_14.finish();
         }
-        list_14.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

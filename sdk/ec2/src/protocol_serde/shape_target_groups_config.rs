@@ -7,13 +7,15 @@ pub fn ser_target_groups_config(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TargetGroups");
     if let Some(var_2) = &input.target_groups {
-        let mut list_4 = scope_1.start_list(true, Some("item"));
-        for item_3 in var_2 {
-            #[allow(unused_mut)]
-            let mut entry_5 = list_4.entry();
-            crate::protocol_serde::shape_target_group::ser_target_group(entry_5, item_3)?;
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("item"));
+            for item_3 in var_2 {
+                #[allow(unused_mut)]
+                let mut entry_5 = list_4.entry();
+                crate::protocol_serde::shape_target_group::ser_target_group(entry_5, item_3)?;
+            }
+            list_4.finish();
         }
-        list_4.finish();
     }
     Ok(())
 }

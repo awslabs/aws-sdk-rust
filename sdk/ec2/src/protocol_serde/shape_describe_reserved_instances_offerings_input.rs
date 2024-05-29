@@ -13,13 +13,15 @@ pub fn ser_describe_reserved_instances_offerings_input_input_input(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("Filter");
     if let Some(var_4) = &input.filters {
-        let mut list_6 = scope_3.start_list(true, Some("Filter"));
-        for item_5 in var_4 {
-            #[allow(unused_mut)]
-            let mut entry_7 = list_6.entry();
-            crate::protocol_serde::shape_filter::ser_filter(entry_7, item_5)?;
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("Filter"));
+            for item_5 in var_4 {
+                #[allow(unused_mut)]
+                let mut entry_7 = list_6.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_7, item_5)?;
+            }
+            list_6.finish();
         }
-        list_6.finish();
     }
     #[allow(unused_mut)]
     let mut scope_8 = writer.prefix("IncludeMarketplace");
@@ -68,13 +70,15 @@ pub fn ser_describe_reserved_instances_offerings_input_input_input(
     #[allow(unused_mut)]
     let mut scope_22 = writer.prefix("ReservedInstancesOfferingId");
     if let Some(var_23) = &input.reserved_instances_offering_ids {
-        let mut list_25 = scope_22.start_list(true, None);
-        for item_24 in var_23 {
-            #[allow(unused_mut)]
-            let mut entry_26 = list_25.entry();
-            entry_26.string(item_24);
+        if !var_23.is_empty() {
+            let mut list_25 = scope_22.start_list(true, None);
+            for item_24 in var_23 {
+                #[allow(unused_mut)]
+                let mut entry_26 = list_25.entry();
+                entry_26.string(item_24);
+            }
+            list_25.finish();
         }
-        list_25.finish();
     }
     #[allow(unused_mut)]
     let mut scope_27 = writer.prefix("DryRun");

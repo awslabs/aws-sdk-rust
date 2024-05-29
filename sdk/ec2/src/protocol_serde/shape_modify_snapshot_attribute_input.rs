@@ -18,13 +18,15 @@ pub fn ser_modify_snapshot_attribute_input_input_input(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("UserGroup");
     if let Some(var_6) = &input.group_names {
-        let mut list_8 = scope_5.start_list(true, Some("GroupName"));
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            entry_9.string(item_7);
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("GroupName"));
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                entry_9.string(item_7);
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("OperationType");
@@ -39,13 +41,15 @@ pub fn ser_modify_snapshot_attribute_input_input_input(
     #[allow(unused_mut)]
     let mut scope_14 = writer.prefix("UserId");
     if let Some(var_15) = &input.user_ids {
-        let mut list_17 = scope_14.start_list(true, Some("UserId"));
-        for item_16 in var_15 {
-            #[allow(unused_mut)]
-            let mut entry_18 = list_17.entry();
-            entry_18.string(item_16);
+        if !var_15.is_empty() {
+            let mut list_17 = scope_14.start_list(true, Some("UserId"));
+            for item_16 in var_15 {
+                #[allow(unused_mut)]
+                let mut entry_18 = list_17.entry();
+                entry_18.string(item_16);
+            }
+            list_17.finish();
         }
-        list_17.finish();
     }
     #[allow(unused_mut)]
     let mut scope_19 = writer.prefix("DryRun");

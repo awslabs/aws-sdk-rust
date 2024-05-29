@@ -23,13 +23,15 @@ pub fn ser_create_snapshot_input_input_input(
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("TagSpecification");
     if let Some(var_8) = &input.tag_specifications {
-        let mut list_10 = scope_7.start_list(true, Some("item"));
-        for item_9 in var_8 {
-            #[allow(unused_mut)]
-            let mut entry_11 = list_10.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_11, item_9)?;
+        if !var_8.is_empty() {
+            let mut list_10 = scope_7.start_list(true, Some("item"));
+            for item_9 in var_8 {
+                #[allow(unused_mut)]
+                let mut entry_11 = list_10.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_11, item_9)?;
+            }
+            list_10.finish();
         }
-        list_10.finish();
     }
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("DryRun");

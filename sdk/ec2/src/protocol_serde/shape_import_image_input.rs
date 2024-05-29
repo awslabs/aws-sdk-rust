@@ -28,13 +28,15 @@ pub fn ser_import_image_input_input_input(
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("DiskContainer");
     if let Some(var_10) = &input.disk_containers {
-        let mut list_12 = scope_9.start_list(true, Some("item"));
-        for item_11 in var_10 {
-            #[allow(unused_mut)]
-            let mut entry_13 = list_12.entry();
-            crate::protocol_serde::shape_image_disk_container::ser_image_disk_container(entry_13, item_11)?;
+        if !var_10.is_empty() {
+            let mut list_12 = scope_9.start_list(true, Some("item"));
+            for item_11 in var_10 {
+                #[allow(unused_mut)]
+                let mut entry_13 = list_12.entry();
+                crate::protocol_serde::shape_image_disk_container::ser_image_disk_container(entry_13, item_11)?;
+            }
+            list_12.finish();
         }
-        list_12.finish();
     }
     #[allow(unused_mut)]
     let mut scope_14 = writer.prefix("DryRun");
@@ -74,26 +76,30 @@ pub fn ser_import_image_input_input_input(
     #[allow(unused_mut)]
     let mut scope_28 = writer.prefix("LicenseSpecifications");
     if let Some(var_29) = &input.license_specifications {
-        let mut list_31 = scope_28.start_list(true, Some("item"));
-        for item_30 in var_29 {
-            #[allow(unused_mut)]
-            let mut entry_32 = list_31.entry();
-            crate::protocol_serde::shape_import_image_license_configuration_request::ser_import_image_license_configuration_request(
-                entry_32, item_30,
-            )?;
+        if !var_29.is_empty() {
+            let mut list_31 = scope_28.start_list(true, Some("item"));
+            for item_30 in var_29 {
+                #[allow(unused_mut)]
+                let mut entry_32 = list_31.entry();
+                crate::protocol_serde::shape_import_image_license_configuration_request::ser_import_image_license_configuration_request(
+                    entry_32, item_30,
+                )?;
+            }
+            list_31.finish();
         }
-        list_31.finish();
     }
     #[allow(unused_mut)]
     let mut scope_33 = writer.prefix("TagSpecification");
     if let Some(var_34) = &input.tag_specifications {
-        let mut list_36 = scope_33.start_list(true, Some("item"));
-        for item_35 in var_34 {
-            #[allow(unused_mut)]
-            let mut entry_37 = list_36.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_37, item_35)?;
+        if !var_34.is_empty() {
+            let mut list_36 = scope_33.start_list(true, Some("item"));
+            for item_35 in var_34 {
+                #[allow(unused_mut)]
+                let mut entry_37 = list_36.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_37, item_35)?;
+            }
+            list_36.finish();
         }
-        list_36.finish();
     }
     #[allow(unused_mut)]
     let mut scope_38 = writer.prefix("UsageOperation");

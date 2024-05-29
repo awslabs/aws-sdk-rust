@@ -59,13 +59,15 @@ pub fn ser_create_volume_input_input_input(
     #[allow(unused_mut)]
     let mut scope_19 = writer.prefix("TagSpecification");
     if let Some(var_20) = &input.tag_specifications {
-        let mut list_22 = scope_19.start_list(true, Some("item"));
-        for item_21 in var_20 {
-            #[allow(unused_mut)]
-            let mut entry_23 = list_22.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_23, item_21)?;
+        if !var_20.is_empty() {
+            let mut list_22 = scope_19.start_list(true, Some("item"));
+            for item_21 in var_20 {
+                #[allow(unused_mut)]
+                let mut entry_23 = list_22.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_23, item_21)?;
+            }
+            list_22.finish();
         }
-        list_22.finish();
     }
     #[allow(unused_mut)]
     let mut scope_24 = writer.prefix("MultiAttachEnabled");

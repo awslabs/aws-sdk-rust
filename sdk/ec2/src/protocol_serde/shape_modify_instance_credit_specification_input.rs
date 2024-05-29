@@ -18,13 +18,15 @@ pub fn ser_modify_instance_credit_specification_input_input_input(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("InstanceCreditSpecification");
     if let Some(var_6) = &input.instance_credit_specifications {
-        let mut list_8 = scope_5.start_list(true, Some("item"));
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            crate::protocol_serde::shape_instance_credit_specification_request::ser_instance_credit_specification_request(entry_9, item_7)?;
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("item"));
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                crate::protocol_serde::shape_instance_credit_specification_request::ser_instance_credit_specification_request(entry_9, item_7)?;
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

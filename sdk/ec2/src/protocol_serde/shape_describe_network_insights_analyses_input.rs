@@ -8,13 +8,15 @@ pub fn ser_describe_network_insights_analyses_input_input_input(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("NetworkInsightsAnalysisId");
     if let Some(var_2) = &input.network_insights_analysis_ids {
-        let mut list_4 = scope_1.start_list(true, Some("item"));
-        for item_3 in var_2 {
-            #[allow(unused_mut)]
-            let mut entry_5 = list_4.entry();
-            entry_5.string(item_3);
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("item"));
+            for item_3 in var_2 {
+                #[allow(unused_mut)]
+                let mut entry_5 = list_4.entry();
+                entry_5.string(item_3);
+            }
+            list_4.finish();
         }
-        list_4.finish();
     }
     #[allow(unused_mut)]
     let mut scope_6 = writer.prefix("NetworkInsightsPathId");
@@ -34,13 +36,15 @@ pub fn ser_describe_network_insights_analyses_input_input_input(
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("Filter");
     if let Some(var_13) = &input.filters {
-        let mut list_15 = scope_12.start_list(true, Some("Filter"));
-        for item_14 in var_13 {
-            #[allow(unused_mut)]
-            let mut entry_16 = list_15.entry();
-            crate::protocol_serde::shape_filter::ser_filter(entry_16, item_14)?;
+        if !var_13.is_empty() {
+            let mut list_15 = scope_12.start_list(true, Some("Filter"));
+            for item_14 in var_13 {
+                #[allow(unused_mut)]
+                let mut entry_16 = list_15.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_16, item_14)?;
+            }
+            list_15.finish();
         }
-        list_15.finish();
     }
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("MaxResults");

@@ -13,13 +13,15 @@ pub fn ser_describe_nat_gateways_input_input_input(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("Filter");
     if let Some(var_4) = &input.filter {
-        let mut list_6 = scope_3.start_list(true, Some("Filter"));
-        for item_5 in var_4 {
-            #[allow(unused_mut)]
-            let mut entry_7 = list_6.entry();
-            crate::protocol_serde::shape_filter::ser_filter(entry_7, item_5)?;
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("Filter"));
+            for item_5 in var_4 {
+                #[allow(unused_mut)]
+                let mut entry_7 = list_6.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_7, item_5)?;
+            }
+            list_6.finish();
         }
-        list_6.finish();
     }
     #[allow(unused_mut)]
     let mut scope_8 = writer.prefix("MaxResults");
@@ -32,13 +34,15 @@ pub fn ser_describe_nat_gateways_input_input_input(
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("NatGatewayId");
     if let Some(var_11) = &input.nat_gateway_ids {
-        let mut list_13 = scope_10.start_list(true, Some("item"));
-        for item_12 in var_11 {
-            #[allow(unused_mut)]
-            let mut entry_14 = list_13.entry();
-            entry_14.string(item_12);
+        if !var_11.is_empty() {
+            let mut list_13 = scope_10.start_list(true, Some("item"));
+            for item_12 in var_11 {
+                #[allow(unused_mut)]
+                let mut entry_14 = list_13.entry();
+                entry_14.string(item_12);
+            }
+            list_13.finish();
         }
-        list_13.finish();
     }
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("NextToken");

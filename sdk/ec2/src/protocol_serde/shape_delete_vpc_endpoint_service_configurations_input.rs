@@ -13,13 +13,15 @@ pub fn ser_delete_vpc_endpoint_service_configurations_input_input_input(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("ServiceId");
     if let Some(var_4) = &input.service_ids {
-        let mut list_6 = scope_3.start_list(true, Some("item"));
-        for item_5 in var_4 {
-            #[allow(unused_mut)]
-            let mut entry_7 = list_6.entry();
-            entry_7.string(item_5);
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("item"));
+            for item_5 in var_4 {
+                #[allow(unused_mut)]
+                let mut entry_7 = list_6.entry();
+                entry_7.string(item_5);
+            }
+            list_6.finish();
         }
-        list_6.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

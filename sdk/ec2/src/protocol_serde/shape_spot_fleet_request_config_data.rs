@@ -53,24 +53,28 @@ pub fn ser_spot_fleet_request_config_data(
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("LaunchSpecifications");
     if let Some(var_18) = &input.launch_specifications {
-        let mut list_20 = scope_17.start_list(true, Some("item"));
-        for item_19 in var_18 {
-            #[allow(unused_mut)]
-            let mut entry_21 = list_20.entry();
-            crate::protocol_serde::shape_spot_fleet_launch_specification::ser_spot_fleet_launch_specification(entry_21, item_19)?;
+        if !var_18.is_empty() {
+            let mut list_20 = scope_17.start_list(true, Some("item"));
+            for item_19 in var_18 {
+                #[allow(unused_mut)]
+                let mut entry_21 = list_20.entry();
+                crate::protocol_serde::shape_spot_fleet_launch_specification::ser_spot_fleet_launch_specification(entry_21, item_19)?;
+            }
+            list_20.finish();
         }
-        list_20.finish();
     }
     #[allow(unused_mut)]
     let mut scope_22 = writer.prefix("LaunchTemplateConfigs");
     if let Some(var_23) = &input.launch_template_configs {
-        let mut list_25 = scope_22.start_list(true, Some("item"));
-        for item_24 in var_23 {
-            #[allow(unused_mut)]
-            let mut entry_26 = list_25.entry();
-            crate::protocol_serde::shape_launch_template_config::ser_launch_template_config(entry_26, item_24)?;
+        if !var_23.is_empty() {
+            let mut list_25 = scope_22.start_list(true, Some("item"));
+            for item_24 in var_23 {
+                #[allow(unused_mut)]
+                let mut entry_26 = list_25.entry();
+                crate::protocol_serde::shape_launch_template_config::ser_launch_template_config(entry_26, item_24)?;
+            }
+            list_25.finish();
         }
-        list_25.finish();
     }
     #[allow(unused_mut)]
     let mut scope_27 = writer.prefix("SpotPrice");
@@ -159,13 +163,15 @@ pub fn ser_spot_fleet_request_config_data(
     #[allow(unused_mut)]
     let mut scope_57 = writer.prefix("TagSpecification");
     if let Some(var_58) = &input.tag_specifications {
-        let mut list_60 = scope_57.start_list(true, Some("item"));
-        for item_59 in var_58 {
-            #[allow(unused_mut)]
-            let mut entry_61 = list_60.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_61, item_59)?;
+        if !var_58.is_empty() {
+            let mut list_60 = scope_57.start_list(true, Some("item"));
+            for item_59 in var_58 {
+                #[allow(unused_mut)]
+                let mut entry_61 = list_60.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_61, item_59)?;
+            }
+            list_60.finish();
         }
-        list_60.finish();
     }
     Ok(())
 }

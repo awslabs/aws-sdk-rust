@@ -17,13 +17,15 @@ pub fn ser_instance_requirements(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("CpuManufacturerSet");
     if let Some(var_6) = &input.cpu_manufacturers {
-        let mut list_8 = scope_5.start_list(true, Some("item"));
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            entry_9.string(item_7.as_str());
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("item"));
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                entry_9.string(item_7.as_str());
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("MemoryGiBPerVCpu");
@@ -33,24 +35,28 @@ pub fn ser_instance_requirements(
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("ExcludedInstanceTypeSet");
     if let Some(var_13) = &input.excluded_instance_types {
-        let mut list_15 = scope_12.start_list(true, Some("item"));
-        for item_14 in var_13 {
-            #[allow(unused_mut)]
-            let mut entry_16 = list_15.entry();
-            entry_16.string(item_14);
+        if !var_13.is_empty() {
+            let mut list_15 = scope_12.start_list(true, Some("item"));
+            for item_14 in var_13 {
+                #[allow(unused_mut)]
+                let mut entry_16 = list_15.entry();
+                entry_16.string(item_14);
+            }
+            list_15.finish();
         }
-        list_15.finish();
     }
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("InstanceGenerationSet");
     if let Some(var_18) = &input.instance_generations {
-        let mut list_20 = scope_17.start_list(true, Some("item"));
-        for item_19 in var_18 {
-            #[allow(unused_mut)]
-            let mut entry_21 = list_20.entry();
-            entry_21.string(item_19.as_str());
+        if !var_18.is_empty() {
+            let mut list_20 = scope_17.start_list(true, Some("item"));
+            for item_19 in var_18 {
+                #[allow(unused_mut)]
+                let mut entry_21 = list_20.entry();
+                entry_21.string(item_19.as_str());
+            }
+            list_20.finish();
         }
-        list_20.finish();
     }
     #[allow(unused_mut)]
     let mut scope_22 = writer.prefix("SpotMaxPricePercentageOverLowestPrice");
@@ -96,13 +102,15 @@ pub fn ser_instance_requirements(
     #[allow(unused_mut)]
     let mut scope_36 = writer.prefix("LocalStorageTypeSet");
     if let Some(var_37) = &input.local_storage_types {
-        let mut list_39 = scope_36.start_list(true, Some("item"));
-        for item_38 in var_37 {
-            #[allow(unused_mut)]
-            let mut entry_40 = list_39.entry();
-            entry_40.string(item_38.as_str());
+        if !var_37.is_empty() {
+            let mut list_39 = scope_36.start_list(true, Some("item"));
+            for item_38 in var_37 {
+                #[allow(unused_mut)]
+                let mut entry_40 = list_39.entry();
+                entry_40.string(item_38.as_str());
+            }
+            list_39.finish();
         }
-        list_39.finish();
     }
     #[allow(unused_mut)]
     let mut scope_41 = writer.prefix("TotalLocalStorageGB");
@@ -117,13 +125,15 @@ pub fn ser_instance_requirements(
     #[allow(unused_mut)]
     let mut scope_45 = writer.prefix("AcceleratorTypeSet");
     if let Some(var_46) = &input.accelerator_types {
-        let mut list_48 = scope_45.start_list(true, Some("item"));
-        for item_47 in var_46 {
-            #[allow(unused_mut)]
-            let mut entry_49 = list_48.entry();
-            entry_49.string(item_47.as_str());
+        if !var_46.is_empty() {
+            let mut list_48 = scope_45.start_list(true, Some("item"));
+            for item_47 in var_46 {
+                #[allow(unused_mut)]
+                let mut entry_49 = list_48.entry();
+                entry_49.string(item_47.as_str());
+            }
+            list_48.finish();
         }
-        list_48.finish();
     }
     #[allow(unused_mut)]
     let mut scope_50 = writer.prefix("AcceleratorCount");
@@ -133,24 +143,28 @@ pub fn ser_instance_requirements(
     #[allow(unused_mut)]
     let mut scope_52 = writer.prefix("AcceleratorManufacturerSet");
     if let Some(var_53) = &input.accelerator_manufacturers {
-        let mut list_55 = scope_52.start_list(true, Some("item"));
-        for item_54 in var_53 {
-            #[allow(unused_mut)]
-            let mut entry_56 = list_55.entry();
-            entry_56.string(item_54.as_str());
+        if !var_53.is_empty() {
+            let mut list_55 = scope_52.start_list(true, Some("item"));
+            for item_54 in var_53 {
+                #[allow(unused_mut)]
+                let mut entry_56 = list_55.entry();
+                entry_56.string(item_54.as_str());
+            }
+            list_55.finish();
         }
-        list_55.finish();
     }
     #[allow(unused_mut)]
     let mut scope_57 = writer.prefix("AcceleratorNameSet");
     if let Some(var_58) = &input.accelerator_names {
-        let mut list_60 = scope_57.start_list(true, Some("item"));
-        for item_59 in var_58 {
-            #[allow(unused_mut)]
-            let mut entry_61 = list_60.entry();
-            entry_61.string(item_59.as_str());
+        if !var_58.is_empty() {
+            let mut list_60 = scope_57.start_list(true, Some("item"));
+            for item_59 in var_58 {
+                #[allow(unused_mut)]
+                let mut entry_61 = list_60.entry();
+                entry_61.string(item_59.as_str());
+            }
+            list_60.finish();
         }
-        list_60.finish();
     }
     #[allow(unused_mut)]
     let mut scope_62 = writer.prefix("AcceleratorTotalMemoryMiB");
@@ -165,13 +179,15 @@ pub fn ser_instance_requirements(
     #[allow(unused_mut)]
     let mut scope_66 = writer.prefix("AllowedInstanceTypeSet");
     if let Some(var_67) = &input.allowed_instance_types {
-        let mut list_69 = scope_66.start_list(true, Some("item"));
-        for item_68 in var_67 {
-            #[allow(unused_mut)]
-            let mut entry_70 = list_69.entry();
-            entry_70.string(item_68);
+        if !var_67.is_empty() {
+            let mut list_69 = scope_66.start_list(true, Some("item"));
+            for item_68 in var_67 {
+                #[allow(unused_mut)]
+                let mut entry_70 = list_69.entry();
+                entry_70.string(item_68);
+            }
+            list_69.finish();
         }
-        list_69.finish();
     }
     #[allow(unused_mut)]
     let mut scope_71 = writer.prefix("MaxSpotPriceAsPercentageOfOptimalOnDemandPrice");

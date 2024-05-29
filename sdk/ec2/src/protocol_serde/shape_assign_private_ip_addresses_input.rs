@@ -18,13 +18,15 @@ pub fn ser_assign_private_ip_addresses_input_input_input(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("PrivateIpAddress");
     if let Some(var_6) = &input.private_ip_addresses {
-        let mut list_8 = scope_5.start_list(true, Some("PrivateIpAddress"));
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            entry_9.string(item_7);
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("PrivateIpAddress"));
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                entry_9.string(item_7);
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("SecondaryPrivateIpAddressCount");
@@ -37,13 +39,15 @@ pub fn ser_assign_private_ip_addresses_input_input_input(
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("Ipv4Prefix");
     if let Some(var_13) = &input.ipv4_prefixes {
-        let mut list_15 = scope_12.start_list(true, Some("item"));
-        for item_14 in var_13 {
-            #[allow(unused_mut)]
-            let mut entry_16 = list_15.entry();
-            entry_16.string(item_14);
+        if !var_13.is_empty() {
+            let mut list_15 = scope_12.start_list(true, Some("item"));
+            for item_14 in var_13 {
+                #[allow(unused_mut)]
+                let mut entry_16 = list_15.entry();
+                entry_16.string(item_14);
+            }
+            list_15.finish();
         }
-        list_15.finish();
     }
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("Ipv4PrefixCount");

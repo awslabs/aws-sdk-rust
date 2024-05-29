@@ -38,13 +38,15 @@ pub fn ser_create_verified_access_endpoint_input_input_input(
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("SecurityGroupId");
     if let Some(var_14) = &input.security_group_ids {
-        let mut list_16 = scope_13.start_list(true, Some("item"));
-        for item_15 in var_14 {
-            #[allow(unused_mut)]
-            let mut entry_17 = list_16.entry();
-            entry_17.string(item_15);
+        if !var_14.is_empty() {
+            let mut list_16 = scope_13.start_list(true, Some("item"));
+            for item_15 in var_14 {
+                #[allow(unused_mut)]
+                let mut entry_17 = list_16.entry();
+                entry_17.string(item_15);
+            }
+            list_16.finish();
         }
-        list_16.finish();
     }
     #[allow(unused_mut)]
     let mut scope_18 = writer.prefix("LoadBalancerOptions");
@@ -69,13 +71,15 @@ pub fn ser_create_verified_access_endpoint_input_input_input(
     #[allow(unused_mut)]
     let mut scope_26 = writer.prefix("TagSpecification");
     if let Some(var_27) = &input.tag_specifications {
-        let mut list_29 = scope_26.start_list(true, Some("item"));
-        for item_28 in var_27 {
-            #[allow(unused_mut)]
-            let mut entry_30 = list_29.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_30, item_28)?;
+        if !var_27.is_empty() {
+            let mut list_29 = scope_26.start_list(true, Some("item"));
+            for item_28 in var_27 {
+                #[allow(unused_mut)]
+                let mut entry_30 = list_29.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_30, item_28)?;
+            }
+            list_29.finish();
         }
-        list_29.finish();
     }
     #[allow(unused_mut)]
     let mut scope_31 = writer.prefix("ClientToken");

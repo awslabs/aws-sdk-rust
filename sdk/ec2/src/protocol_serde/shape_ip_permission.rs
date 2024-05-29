@@ -20,35 +20,41 @@ pub fn ser_ip_permission(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("IpRanges");
     if let Some(var_6) = &input.ip_ranges {
-        let mut list_8 = scope_5.start_list(true, Some("item"));
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            crate::protocol_serde::shape_ip_range::ser_ip_range(entry_9, item_7)?;
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("item"));
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                crate::protocol_serde::shape_ip_range::ser_ip_range(entry_9, item_7)?;
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("Ipv6Ranges");
     if let Some(var_11) = &input.ipv6_ranges {
-        let mut list_13 = scope_10.start_list(true, Some("item"));
-        for item_12 in var_11 {
-            #[allow(unused_mut)]
-            let mut entry_14 = list_13.entry();
-            crate::protocol_serde::shape_ipv6_range::ser_ipv6_range(entry_14, item_12)?;
+        if !var_11.is_empty() {
+            let mut list_13 = scope_10.start_list(true, Some("item"));
+            for item_12 in var_11 {
+                #[allow(unused_mut)]
+                let mut entry_14 = list_13.entry();
+                crate::protocol_serde::shape_ipv6_range::ser_ipv6_range(entry_14, item_12)?;
+            }
+            list_13.finish();
         }
-        list_13.finish();
     }
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("PrefixListIds");
     if let Some(var_16) = &input.prefix_list_ids {
-        let mut list_18 = scope_15.start_list(true, Some("item"));
-        for item_17 in var_16 {
-            #[allow(unused_mut)]
-            let mut entry_19 = list_18.entry();
-            crate::protocol_serde::shape_prefix_list_id::ser_prefix_list_id(entry_19, item_17)?;
+        if !var_16.is_empty() {
+            let mut list_18 = scope_15.start_list(true, Some("item"));
+            for item_17 in var_16 {
+                #[allow(unused_mut)]
+                let mut entry_19 = list_18.entry();
+                crate::protocol_serde::shape_prefix_list_id::ser_prefix_list_id(entry_19, item_17)?;
+            }
+            list_18.finish();
         }
-        list_18.finish();
     }
     #[allow(unused_mut)]
     let mut scope_20 = writer.prefix("ToPort");
@@ -61,13 +67,15 @@ pub fn ser_ip_permission(
     #[allow(unused_mut)]
     let mut scope_22 = writer.prefix("Groups");
     if let Some(var_23) = &input.user_id_group_pairs {
-        let mut list_25 = scope_22.start_list(true, Some("item"));
-        for item_24 in var_23 {
-            #[allow(unused_mut)]
-            let mut entry_26 = list_25.entry();
-            crate::protocol_serde::shape_user_id_group_pair::ser_user_id_group_pair(entry_26, item_24)?;
+        if !var_23.is_empty() {
+            let mut list_25 = scope_22.start_list(true, Some("item"));
+            for item_24 in var_23 {
+                #[allow(unused_mut)]
+                let mut entry_26 = list_25.entry();
+                crate::protocol_serde::shape_user_id_group_pair::ser_user_id_group_pair(entry_26, item_24)?;
+            }
+            list_25.finish();
         }
-        list_25.finish();
     }
     Ok(())
 }

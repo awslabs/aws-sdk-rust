@@ -41,13 +41,15 @@ pub fn ser_create_network_insights_path_input_input_input(
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("TagSpecification");
     if let Some(var_14) = &input.tag_specifications {
-        let mut list_16 = scope_13.start_list(true, Some("item"));
-        for item_15 in var_14 {
-            #[allow(unused_mut)]
-            let mut entry_17 = list_16.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_17, item_15)?;
+        if !var_14.is_empty() {
+            let mut list_16 = scope_13.start_list(true, Some("item"));
+            for item_15 in var_14 {
+                #[allow(unused_mut)]
+                let mut entry_17 = list_16.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_17, item_15)?;
+            }
+            list_16.finish();
         }
-        list_16.finish();
     }
     #[allow(unused_mut)]
     let mut scope_18 = writer.prefix("DryRun");

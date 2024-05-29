@@ -23,35 +23,41 @@ pub fn ser_create_vpc_endpoint_service_configuration_input_input_input(
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("NetworkLoadBalancerArn");
     if let Some(var_8) = &input.network_load_balancer_arns {
-        let mut list_10 = scope_7.start_list(true, Some("item"));
-        for item_9 in var_8 {
-            #[allow(unused_mut)]
-            let mut entry_11 = list_10.entry();
-            entry_11.string(item_9);
+        if !var_8.is_empty() {
+            let mut list_10 = scope_7.start_list(true, Some("item"));
+            for item_9 in var_8 {
+                #[allow(unused_mut)]
+                let mut entry_11 = list_10.entry();
+                entry_11.string(item_9);
+            }
+            list_10.finish();
         }
-        list_10.finish();
     }
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("GatewayLoadBalancerArn");
     if let Some(var_13) = &input.gateway_load_balancer_arns {
-        let mut list_15 = scope_12.start_list(true, Some("item"));
-        for item_14 in var_13 {
-            #[allow(unused_mut)]
-            let mut entry_16 = list_15.entry();
-            entry_16.string(item_14);
+        if !var_13.is_empty() {
+            let mut list_15 = scope_12.start_list(true, Some("item"));
+            for item_14 in var_13 {
+                #[allow(unused_mut)]
+                let mut entry_16 = list_15.entry();
+                entry_16.string(item_14);
+            }
+            list_15.finish();
         }
-        list_15.finish();
     }
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("SupportedIpAddressType");
     if let Some(var_18) = &input.supported_ip_address_types {
-        let mut list_20 = scope_17.start_list(true, Some("item"));
-        for item_19 in var_18 {
-            #[allow(unused_mut)]
-            let mut entry_21 = list_20.entry();
-            entry_21.string(item_19);
+        if !var_18.is_empty() {
+            let mut list_20 = scope_17.start_list(true, Some("item"));
+            for item_19 in var_18 {
+                #[allow(unused_mut)]
+                let mut entry_21 = list_20.entry();
+                entry_21.string(item_19);
+            }
+            list_20.finish();
         }
-        list_20.finish();
     }
     #[allow(unused_mut)]
     let mut scope_22 = writer.prefix("ClientToken");
@@ -61,13 +67,15 @@ pub fn ser_create_vpc_endpoint_service_configuration_input_input_input(
     #[allow(unused_mut)]
     let mut scope_24 = writer.prefix("TagSpecification");
     if let Some(var_25) = &input.tag_specifications {
-        let mut list_27 = scope_24.start_list(true, Some("item"));
-        for item_26 in var_25 {
-            #[allow(unused_mut)]
-            let mut entry_28 = list_27.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_28, item_26)?;
+        if !var_25.is_empty() {
+            let mut list_27 = scope_24.start_list(true, Some("item"));
+            for item_26 in var_25 {
+                #[allow(unused_mut)]
+                let mut entry_28 = list_27.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_28, item_26)?;
+            }
+            list_27.finish();
         }
-        list_27.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

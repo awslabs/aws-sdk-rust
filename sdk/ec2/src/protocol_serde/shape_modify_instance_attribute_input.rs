@@ -18,15 +18,17 @@ pub fn ser_modify_instance_attribute_input_input_input(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("BlockDeviceMapping");
     if let Some(var_6) = &input.block_device_mappings {
-        let mut list_8 = scope_5.start_list(true, Some("item"));
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            crate::protocol_serde::shape_instance_block_device_mapping_specification::ser_instance_block_device_mapping_specification(
-                entry_9, item_7,
-            )?;
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("item"));
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                crate::protocol_serde::shape_instance_block_device_mapping_specification::ser_instance_block_device_mapping_specification(
+                    entry_9, item_7,
+                )?;
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("DisableApiTermination");
@@ -51,13 +53,15 @@ pub fn ser_modify_instance_attribute_input_input_input(
     #[allow(unused_mut)]
     let mut scope_18 = writer.prefix("GroupId");
     if let Some(var_19) = &input.groups {
-        let mut list_21 = scope_18.start_list(true, Some("groupId"));
-        for item_20 in var_19 {
-            #[allow(unused_mut)]
-            let mut entry_22 = list_21.entry();
-            entry_22.string(item_20);
+        if !var_19.is_empty() {
+            let mut list_21 = scope_18.start_list(true, Some("groupId"));
+            for item_20 in var_19 {
+                #[allow(unused_mut)]
+                let mut entry_22 = list_21.entry();
+                entry_22.string(item_20);
+            }
+            list_21.finish();
         }
-        list_21.finish();
     }
     #[allow(unused_mut)]
     let mut scope_23 = writer.prefix("InstanceId");

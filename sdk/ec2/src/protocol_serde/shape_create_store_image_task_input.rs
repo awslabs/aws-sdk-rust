@@ -18,13 +18,15 @@ pub fn ser_create_store_image_task_input_input_input(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("S3ObjectTag");
     if let Some(var_6) = &input.s3_object_tags {
-        let mut list_8 = scope_5.start_list(true, Some("item"));
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            crate::protocol_serde::shape_s3_object_tag::ser_s3_object_tag(entry_9, item_7)?;
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("item"));
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                crate::protocol_serde::shape_s3_object_tag::ser_s3_object_tag(entry_9, item_7)?;
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("DryRun");

@@ -31,24 +31,28 @@ pub fn ser_modify_managed_prefix_list_input_input_input(
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("AddEntry");
     if let Some(var_10) = &input.add_entries {
-        let mut list_12 = scope_9.start_list(true, None);
-        for item_11 in var_10 {
-            #[allow(unused_mut)]
-            let mut entry_13 = list_12.entry();
-            crate::protocol_serde::shape_add_prefix_list_entry::ser_add_prefix_list_entry(entry_13, item_11)?;
+        if !var_10.is_empty() {
+            let mut list_12 = scope_9.start_list(true, None);
+            for item_11 in var_10 {
+                #[allow(unused_mut)]
+                let mut entry_13 = list_12.entry();
+                crate::protocol_serde::shape_add_prefix_list_entry::ser_add_prefix_list_entry(entry_13, item_11)?;
+            }
+            list_12.finish();
         }
-        list_12.finish();
     }
     #[allow(unused_mut)]
     let mut scope_14 = writer.prefix("RemoveEntry");
     if let Some(var_15) = &input.remove_entries {
-        let mut list_17 = scope_14.start_list(true, None);
-        for item_16 in var_15 {
-            #[allow(unused_mut)]
-            let mut entry_18 = list_17.entry();
-            crate::protocol_serde::shape_remove_prefix_list_entry::ser_remove_prefix_list_entry(entry_18, item_16)?;
+        if !var_15.is_empty() {
+            let mut list_17 = scope_14.start_list(true, None);
+            for item_16 in var_15 {
+                #[allow(unused_mut)]
+                let mut entry_18 = list_17.entry();
+                crate::protocol_serde::shape_remove_prefix_list_entry::ser_remove_prefix_list_entry(entry_18, item_16)?;
+            }
+            list_17.finish();
         }
-        list_17.finish();
     }
     #[allow(unused_mut)]
     let mut scope_19 = writer.prefix("MaxEntries");

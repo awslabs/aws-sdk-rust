@@ -18,13 +18,15 @@ pub fn ser_create_local_gateway_route_table_input_input_input(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("TagSpecification");
     if let Some(var_6) = &input.tag_specifications {
-        let mut list_8 = scope_5.start_list(true, Some("item"));
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_9, item_7)?;
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("item"));
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_9, item_7)?;
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("DryRun");

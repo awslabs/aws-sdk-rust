@@ -75,91 +75,105 @@ pub fn ser_vpn_tunnel_options_specification(
     #[allow(unused_mut)]
     let mut scope_21 = writer.prefix("Phase1EncryptionAlgorithm");
     if let Some(var_22) = &input.phase1_encryption_algorithms {
-        let mut list_24 = scope_21.start_list(true, Some("item"));
-        for item_23 in var_22 {
-            #[allow(unused_mut)]
-            let mut entry_25 = list_24.entry();
-            crate::protocol_serde::shape_phase1_encryption_algorithms_request_list_value::ser_phase1_encryption_algorithms_request_list_value(
-                entry_25, item_23,
-            )?;
+        if !var_22.is_empty() {
+            let mut list_24 = scope_21.start_list(true, Some("item"));
+            for item_23 in var_22 {
+                #[allow(unused_mut)]
+                let mut entry_25 = list_24.entry();
+                crate::protocol_serde::shape_phase1_encryption_algorithms_request_list_value::ser_phase1_encryption_algorithms_request_list_value(
+                    entry_25, item_23,
+                )?;
+            }
+            list_24.finish();
         }
-        list_24.finish();
     }
     #[allow(unused_mut)]
     let mut scope_26 = writer.prefix("Phase2EncryptionAlgorithm");
     if let Some(var_27) = &input.phase2_encryption_algorithms {
-        let mut list_29 = scope_26.start_list(true, Some("item"));
-        for item_28 in var_27 {
-            #[allow(unused_mut)]
-            let mut entry_30 = list_29.entry();
-            crate::protocol_serde::shape_phase2_encryption_algorithms_request_list_value::ser_phase2_encryption_algorithms_request_list_value(
-                entry_30, item_28,
-            )?;
+        if !var_27.is_empty() {
+            let mut list_29 = scope_26.start_list(true, Some("item"));
+            for item_28 in var_27 {
+                #[allow(unused_mut)]
+                let mut entry_30 = list_29.entry();
+                crate::protocol_serde::shape_phase2_encryption_algorithms_request_list_value::ser_phase2_encryption_algorithms_request_list_value(
+                    entry_30, item_28,
+                )?;
+            }
+            list_29.finish();
         }
-        list_29.finish();
     }
     #[allow(unused_mut)]
     let mut scope_31 = writer.prefix("Phase1IntegrityAlgorithm");
     if let Some(var_32) = &input.phase1_integrity_algorithms {
-        let mut list_34 = scope_31.start_list(true, Some("item"));
-        for item_33 in var_32 {
-            #[allow(unused_mut)]
-            let mut entry_35 = list_34.entry();
-            crate::protocol_serde::shape_phase1_integrity_algorithms_request_list_value::ser_phase1_integrity_algorithms_request_list_value(
-                entry_35, item_33,
-            )?;
+        if !var_32.is_empty() {
+            let mut list_34 = scope_31.start_list(true, Some("item"));
+            for item_33 in var_32 {
+                #[allow(unused_mut)]
+                let mut entry_35 = list_34.entry();
+                crate::protocol_serde::shape_phase1_integrity_algorithms_request_list_value::ser_phase1_integrity_algorithms_request_list_value(
+                    entry_35, item_33,
+                )?;
+            }
+            list_34.finish();
         }
-        list_34.finish();
     }
     #[allow(unused_mut)]
     let mut scope_36 = writer.prefix("Phase2IntegrityAlgorithm");
     if let Some(var_37) = &input.phase2_integrity_algorithms {
-        let mut list_39 = scope_36.start_list(true, Some("item"));
-        for item_38 in var_37 {
-            #[allow(unused_mut)]
-            let mut entry_40 = list_39.entry();
-            crate::protocol_serde::shape_phase2_integrity_algorithms_request_list_value::ser_phase2_integrity_algorithms_request_list_value(
-                entry_40, item_38,
-            )?;
+        if !var_37.is_empty() {
+            let mut list_39 = scope_36.start_list(true, Some("item"));
+            for item_38 in var_37 {
+                #[allow(unused_mut)]
+                let mut entry_40 = list_39.entry();
+                crate::protocol_serde::shape_phase2_integrity_algorithms_request_list_value::ser_phase2_integrity_algorithms_request_list_value(
+                    entry_40, item_38,
+                )?;
+            }
+            list_39.finish();
         }
-        list_39.finish();
     }
     #[allow(unused_mut)]
     let mut scope_41 = writer.prefix("Phase1DHGroupNumber");
     if let Some(var_42) = &input.phase1_dh_group_numbers {
-        let mut list_44 = scope_41.start_list(true, Some("item"));
-        for item_43 in var_42 {
-            #[allow(unused_mut)]
-            let mut entry_45 = list_44.entry();
-            crate::protocol_serde::shape_phase1_dh_group_numbers_request_list_value::ser_phase1_dh_group_numbers_request_list_value(
-                entry_45, item_43,
-            )?;
+        if !var_42.is_empty() {
+            let mut list_44 = scope_41.start_list(true, Some("item"));
+            for item_43 in var_42 {
+                #[allow(unused_mut)]
+                let mut entry_45 = list_44.entry();
+                crate::protocol_serde::shape_phase1_dh_group_numbers_request_list_value::ser_phase1_dh_group_numbers_request_list_value(
+                    entry_45, item_43,
+                )?;
+            }
+            list_44.finish();
         }
-        list_44.finish();
     }
     #[allow(unused_mut)]
     let mut scope_46 = writer.prefix("Phase2DHGroupNumber");
     if let Some(var_47) = &input.phase2_dh_group_numbers {
-        let mut list_49 = scope_46.start_list(true, Some("item"));
-        for item_48 in var_47 {
-            #[allow(unused_mut)]
-            let mut entry_50 = list_49.entry();
-            crate::protocol_serde::shape_phase2_dh_group_numbers_request_list_value::ser_phase2_dh_group_numbers_request_list_value(
-                entry_50, item_48,
-            )?;
+        if !var_47.is_empty() {
+            let mut list_49 = scope_46.start_list(true, Some("item"));
+            for item_48 in var_47 {
+                #[allow(unused_mut)]
+                let mut entry_50 = list_49.entry();
+                crate::protocol_serde::shape_phase2_dh_group_numbers_request_list_value::ser_phase2_dh_group_numbers_request_list_value(
+                    entry_50, item_48,
+                )?;
+            }
+            list_49.finish();
         }
-        list_49.finish();
     }
     #[allow(unused_mut)]
     let mut scope_51 = writer.prefix("IKEVersion");
     if let Some(var_52) = &input.ike_versions {
-        let mut list_54 = scope_51.start_list(true, Some("item"));
-        for item_53 in var_52 {
-            #[allow(unused_mut)]
-            let mut entry_55 = list_54.entry();
-            crate::protocol_serde::shape_ike_versions_request_list_value::ser_ike_versions_request_list_value(entry_55, item_53)?;
+        if !var_52.is_empty() {
+            let mut list_54 = scope_51.start_list(true, Some("item"));
+            for item_53 in var_52 {
+                #[allow(unused_mut)]
+                let mut entry_55 = list_54.entry();
+                crate::protocol_serde::shape_ike_versions_request_list_value::ser_ike_versions_request_list_value(entry_55, item_53)?;
+            }
+            list_54.finish();
         }
-        list_54.finish();
     }
     #[allow(unused_mut)]
     let mut scope_56 = writer.prefix("StartupAction");

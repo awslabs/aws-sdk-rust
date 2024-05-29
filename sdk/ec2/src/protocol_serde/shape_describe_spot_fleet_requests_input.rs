@@ -26,13 +26,15 @@ pub fn ser_describe_spot_fleet_requests_input_input_input(
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("SpotFleetRequestId");
     if let Some(var_8) = &input.spot_fleet_request_ids {
-        let mut list_10 = scope_7.start_list(true, Some("item"));
-        for item_9 in var_8 {
-            #[allow(unused_mut)]
-            let mut entry_11 = list_10.entry();
-            entry_11.string(item_9);
+        if !var_8.is_empty() {
+            let mut list_10 = scope_7.start_list(true, Some("item"));
+            for item_9 in var_8 {
+                #[allow(unused_mut)]
+                let mut entry_11 = list_10.entry();
+                entry_11.string(item_9);
+            }
+            list_10.finish();
         }
-        list_10.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

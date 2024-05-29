@@ -18,13 +18,15 @@ pub fn ser_register_image_input_input_input(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("BlockDeviceMapping");
     if let Some(var_6) = &input.block_device_mappings {
-        let mut list_8 = scope_5.start_list(true, Some("BlockDeviceMapping"));
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_9, item_7)?;
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("BlockDeviceMapping"));
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_9, item_7)?;
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("Description");
@@ -54,13 +56,15 @@ pub fn ser_register_image_input_input_input(
     #[allow(unused_mut)]
     let mut scope_20 = writer.prefix("BillingProduct");
     if let Some(var_21) = &input.billing_products {
-        let mut list_23 = scope_20.start_list(true, Some("item"));
-        for item_22 in var_21 {
-            #[allow(unused_mut)]
-            let mut entry_24 = list_23.entry();
-            entry_24.string(item_22);
+        if !var_21.is_empty() {
+            let mut list_23 = scope_20.start_list(true, Some("item"));
+            for item_22 in var_21 {
+                #[allow(unused_mut)]
+                let mut entry_24 = list_23.entry();
+                entry_24.string(item_22);
+            }
+            list_23.finish();
         }
-        list_23.finish();
     }
     #[allow(unused_mut)]
     let mut scope_25 = writer.prefix("RamdiskId");
@@ -105,13 +109,15 @@ pub fn ser_register_image_input_input_input(
     #[allow(unused_mut)]
     let mut scope_41 = writer.prefix("TagSpecification");
     if let Some(var_42) = &input.tag_specifications {
-        let mut list_44 = scope_41.start_list(true, Some("item"));
-        for item_43 in var_42 {
-            #[allow(unused_mut)]
-            let mut entry_45 = list_44.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_45, item_43)?;
+        if !var_42.is_empty() {
+            let mut list_44 = scope_41.start_list(true, Some("item"));
+            for item_43 in var_42 {
+                #[allow(unused_mut)]
+                let mut entry_45 = list_44.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_45, item_43)?;
+            }
+            list_44.finish();
         }
-        list_44.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

@@ -13,24 +13,28 @@ pub fn ser_associate_nat_gateway_address_input_input_input(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("AllocationId");
     if let Some(var_4) = &input.allocation_ids {
-        let mut list_6 = scope_3.start_list(true, Some("AllocationId"));
-        for item_5 in var_4 {
-            #[allow(unused_mut)]
-            let mut entry_7 = list_6.entry();
-            entry_7.string(item_5);
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("AllocationId"));
+            for item_5 in var_4 {
+                #[allow(unused_mut)]
+                let mut entry_7 = list_6.entry();
+                entry_7.string(item_5);
+            }
+            list_6.finish();
         }
-        list_6.finish();
     }
     #[allow(unused_mut)]
     let mut scope_8 = writer.prefix("PrivateIpAddress");
     if let Some(var_9) = &input.private_ip_addresses {
-        let mut list_11 = scope_8.start_list(true, Some("item"));
-        for item_10 in var_9 {
-            #[allow(unused_mut)]
-            let mut entry_12 = list_11.entry();
-            entry_12.string(item_10);
+        if !var_9.is_empty() {
+            let mut list_11 = scope_8.start_list(true, Some("item"));
+            for item_10 in var_9 {
+                #[allow(unused_mut)]
+                let mut entry_12 = list_11.entry();
+                entry_12.string(item_10);
+            }
+            list_11.finish();
         }
-        list_11.finish();
     }
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("DryRun");

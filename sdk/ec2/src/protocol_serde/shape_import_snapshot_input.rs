@@ -48,13 +48,15 @@ pub fn ser_import_snapshot_input_input_input(
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("TagSpecification");
     if let Some(var_18) = &input.tag_specifications {
-        let mut list_20 = scope_17.start_list(true, Some("item"));
-        for item_19 in var_18 {
-            #[allow(unused_mut)]
-            let mut entry_21 = list_20.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_21, item_19)?;
+        if !var_18.is_empty() {
+            let mut list_20 = scope_17.start_list(true, Some("item"));
+            for item_19 in var_18 {
+                #[allow(unused_mut)]
+                let mut entry_21 = list_20.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_21, item_19)?;
+            }
+            list_20.finish();
         }
-        list_20.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

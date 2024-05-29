@@ -23,13 +23,15 @@ pub fn ser_describe_launch_template_versions_input_input_input(
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("LaunchTemplateVersion");
     if let Some(var_8) = &input.versions {
-        let mut list_10 = scope_7.start_list(true, Some("item"));
-        for item_9 in var_8 {
-            #[allow(unused_mut)]
-            let mut entry_11 = list_10.entry();
-            entry_11.string(item_9);
+        if !var_8.is_empty() {
+            let mut list_10 = scope_7.start_list(true, Some("item"));
+            for item_9 in var_8 {
+                #[allow(unused_mut)]
+                let mut entry_11 = list_10.entry();
+                entry_11.string(item_9);
+            }
+            list_10.finish();
         }
-        list_10.finish();
     }
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("MinVersion");
@@ -57,13 +59,15 @@ pub fn ser_describe_launch_template_versions_input_input_input(
     #[allow(unused_mut)]
     let mut scope_20 = writer.prefix("Filter");
     if let Some(var_21) = &input.filters {
-        let mut list_23 = scope_20.start_list(true, Some("Filter"));
-        for item_22 in var_21 {
-            #[allow(unused_mut)]
-            let mut entry_24 = list_23.entry();
-            crate::protocol_serde::shape_filter::ser_filter(entry_24, item_22)?;
+        if !var_21.is_empty() {
+            let mut list_23 = scope_20.start_list(true, Some("Filter"));
+            for item_22 in var_21 {
+                #[allow(unused_mut)]
+                let mut entry_24 = list_23.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_24, item_22)?;
+            }
+            list_23.finish();
         }
-        list_23.finish();
     }
     #[allow(unused_mut)]
     let mut scope_25 = writer.prefix("ResolveAlias");

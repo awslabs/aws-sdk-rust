@@ -35,13 +35,15 @@ pub fn ser_launch_template_instance_network_interface_specification_request(
     #[allow(unused_mut)]
     let mut scope_11 = writer.prefix("SecurityGroupId");
     if let Some(var_12) = &input.groups {
-        let mut list_14 = scope_11.start_list(true, Some("SecurityGroupId"));
-        for item_13 in var_12 {
-            #[allow(unused_mut)]
-            let mut entry_15 = list_14.entry();
-            entry_15.string(item_13);
+        if !var_12.is_empty() {
+            let mut list_14 = scope_11.start_list(true, Some("SecurityGroupId"));
+            for item_13 in var_12 {
+                #[allow(unused_mut)]
+                let mut entry_15 = list_14.entry();
+                entry_15.string(item_13);
+            }
+            list_14.finish();
         }
-        list_14.finish();
     }
     #[allow(unused_mut)]
     let mut scope_16 = writer.prefix("InterfaceType");
@@ -59,13 +61,15 @@ pub fn ser_launch_template_instance_network_interface_specification_request(
     #[allow(unused_mut)]
     let mut scope_20 = writer.prefix("Ipv6Addresses");
     if let Some(var_21) = &input.ipv6_addresses {
-        let mut list_23 = scope_20.start_list(true, Some("InstanceIpv6Address"));
-        for item_22 in var_21 {
-            #[allow(unused_mut)]
-            let mut entry_24 = list_23.entry();
-            crate::protocol_serde::shape_instance_ipv6_address_request::ser_instance_ipv6_address_request(entry_24, item_22)?;
+        if !var_21.is_empty() {
+            let mut list_23 = scope_20.start_list(true, Some("InstanceIpv6Address"));
+            for item_22 in var_21 {
+                #[allow(unused_mut)]
+                let mut entry_24 = list_23.entry();
+                crate::protocol_serde::shape_instance_ipv6_address_request::ser_instance_ipv6_address_request(entry_24, item_22)?;
+            }
+            list_23.finish();
         }
-        list_23.finish();
     }
     #[allow(unused_mut)]
     let mut scope_25 = writer.prefix("NetworkInterfaceId");
@@ -80,13 +84,15 @@ pub fn ser_launch_template_instance_network_interface_specification_request(
     #[allow(unused_mut)]
     let mut scope_29 = writer.prefix("PrivateIpAddresses");
     if let Some(var_30) = &input.private_ip_addresses {
-        let mut list_32 = scope_29.start_list(true, Some("item"));
-        for item_31 in var_30 {
-            #[allow(unused_mut)]
-            let mut entry_33 = list_32.entry();
-            crate::protocol_serde::shape_private_ip_address_specification::ser_private_ip_address_specification(entry_33, item_31)?;
+        if !var_30.is_empty() {
+            let mut list_32 = scope_29.start_list(true, Some("item"));
+            for item_31 in var_30 {
+                #[allow(unused_mut)]
+                let mut entry_33 = list_32.entry();
+                crate::protocol_serde::shape_private_ip_address_specification::ser_private_ip_address_specification(entry_33, item_31)?;
+            }
+            list_32.finish();
         }
-        list_32.finish();
     }
     #[allow(unused_mut)]
     let mut scope_34 = writer.prefix("SecondaryPrivateIpAddressCount");
@@ -112,13 +118,15 @@ pub fn ser_launch_template_instance_network_interface_specification_request(
     #[allow(unused_mut)]
     let mut scope_40 = writer.prefix("Ipv4Prefix");
     if let Some(var_41) = &input.ipv4_prefixes {
-        let mut list_43 = scope_40.start_list(true, Some("item"));
-        for item_42 in var_41 {
-            #[allow(unused_mut)]
-            let mut entry_44 = list_43.entry();
-            crate::protocol_serde::shape_ipv4_prefix_specification_request::ser_ipv4_prefix_specification_request(entry_44, item_42)?;
+        if !var_41.is_empty() {
+            let mut list_43 = scope_40.start_list(true, Some("item"));
+            for item_42 in var_41 {
+                #[allow(unused_mut)]
+                let mut entry_44 = list_43.entry();
+                crate::protocol_serde::shape_ipv4_prefix_specification_request::ser_ipv4_prefix_specification_request(entry_44, item_42)?;
+            }
+            list_43.finish();
         }
-        list_43.finish();
     }
     #[allow(unused_mut)]
     let mut scope_45 = writer.prefix("Ipv4PrefixCount");
@@ -131,13 +139,15 @@ pub fn ser_launch_template_instance_network_interface_specification_request(
     #[allow(unused_mut)]
     let mut scope_47 = writer.prefix("Ipv6Prefix");
     if let Some(var_48) = &input.ipv6_prefixes {
-        let mut list_50 = scope_47.start_list(true, Some("item"));
-        for item_49 in var_48 {
-            #[allow(unused_mut)]
-            let mut entry_51 = list_50.entry();
-            crate::protocol_serde::shape_ipv6_prefix_specification_request::ser_ipv6_prefix_specification_request(entry_51, item_49)?;
+        if !var_48.is_empty() {
+            let mut list_50 = scope_47.start_list(true, Some("item"));
+            for item_49 in var_48 {
+                #[allow(unused_mut)]
+                let mut entry_51 = list_50.entry();
+                crate::protocol_serde::shape_ipv6_prefix_specification_request::ser_ipv6_prefix_specification_request(entry_51, item_49)?;
+            }
+            list_50.finish();
         }
-        list_50.finish();
     }
     #[allow(unused_mut)]
     let mut scope_52 = writer.prefix("Ipv6PrefixCount");

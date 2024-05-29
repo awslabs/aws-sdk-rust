@@ -8,13 +8,15 @@ pub fn ser_get_spot_placement_scores_input_input_input(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("InstanceType");
     if let Some(var_2) = &input.instance_types {
-        let mut list_4 = scope_1.start_list(true, None);
-        for item_3 in var_2 {
-            #[allow(unused_mut)]
-            let mut entry_5 = list_4.entry();
-            entry_5.string(item_3);
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, None);
+            for item_3 in var_2 {
+                #[allow(unused_mut)]
+                let mut entry_5 = list_4.entry();
+                entry_5.string(item_3);
+            }
+            list_4.finish();
         }
-        list_4.finish();
     }
     #[allow(unused_mut)]
     let mut scope_6 = writer.prefix("TargetCapacity");
@@ -37,13 +39,15 @@ pub fn ser_get_spot_placement_scores_input_input_input(
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("RegionName");
     if let Some(var_13) = &input.region_names {
-        let mut list_15 = scope_12.start_list(true, None);
-        for item_14 in var_13 {
-            #[allow(unused_mut)]
-            let mut entry_16 = list_15.entry();
-            entry_16.string(item_14);
+        if !var_13.is_empty() {
+            let mut list_15 = scope_12.start_list(true, None);
+            for item_14 in var_13 {
+                #[allow(unused_mut)]
+                let mut entry_16 = list_15.entry();
+                entry_16.string(item_14);
+            }
+            list_15.finish();
         }
-        list_15.finish();
     }
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("InstanceRequirementsWithMetadata");

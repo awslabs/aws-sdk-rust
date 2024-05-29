@@ -23,24 +23,28 @@ pub fn ser_update_security_group_rule_descriptions_ingress_input_input_input(
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("IpPermissions");
     if let Some(var_8) = &input.ip_permissions {
-        let mut list_10 = scope_7.start_list(true, Some("item"));
-        for item_9 in var_8 {
-            #[allow(unused_mut)]
-            let mut entry_11 = list_10.entry();
-            crate::protocol_serde::shape_ip_permission::ser_ip_permission(entry_11, item_9)?;
+        if !var_8.is_empty() {
+            let mut list_10 = scope_7.start_list(true, Some("item"));
+            for item_9 in var_8 {
+                #[allow(unused_mut)]
+                let mut entry_11 = list_10.entry();
+                crate::protocol_serde::shape_ip_permission::ser_ip_permission(entry_11, item_9)?;
+            }
+            list_10.finish();
         }
-        list_10.finish();
     }
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("SecurityGroupRuleDescription");
     if let Some(var_13) = &input.security_group_rule_descriptions {
-        let mut list_15 = scope_12.start_list(true, Some("item"));
-        for item_14 in var_13 {
-            #[allow(unused_mut)]
-            let mut entry_16 = list_15.entry();
-            crate::protocol_serde::shape_security_group_rule_description::ser_security_group_rule_description(entry_16, item_14)?;
+        if !var_13.is_empty() {
+            let mut list_15 = scope_12.start_list(true, Some("item"));
+            for item_14 in var_13 {
+                #[allow(unused_mut)]
+                let mut entry_16 = list_15.entry();
+                crate::protocol_serde::shape_security_group_rule_description::ser_security_group_rule_description(entry_16, item_14)?;
+            }
+            list_15.finish();
         }
-        list_15.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

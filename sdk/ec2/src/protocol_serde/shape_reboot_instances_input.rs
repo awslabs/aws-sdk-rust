@@ -8,13 +8,15 @@ pub fn ser_reboot_instances_input_input_input(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("InstanceId");
     if let Some(var_2) = &input.instance_ids {
-        let mut list_4 = scope_1.start_list(true, Some("InstanceId"));
-        for item_3 in var_2 {
-            #[allow(unused_mut)]
-            let mut entry_5 = list_4.entry();
-            entry_5.string(item_3);
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("InstanceId"));
+            for item_3 in var_2 {
+                #[allow(unused_mut)]
+                let mut entry_5 = list_4.entry();
+                entry_5.string(item_3);
+            }
+            list_4.finish();
         }
-        list_4.finish();
     }
     #[allow(unused_mut)]
     let mut scope_6 = writer.prefix("DryRun");

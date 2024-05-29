@@ -7,13 +7,15 @@ pub fn ser_spot_fleet_launch_specification(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("GroupSet");
     if let Some(var_2) = &input.security_groups {
-        let mut list_4 = scope_1.start_list(true, Some("item"));
-        for item_3 in var_2 {
-            #[allow(unused_mut)]
-            let mut entry_5 = list_4.entry();
-            crate::protocol_serde::shape_group_identifier::ser_group_identifier(entry_5, item_3)?;
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("item"));
+            for item_3 in var_2 {
+                #[allow(unused_mut)]
+                let mut entry_5 = list_4.entry();
+                crate::protocol_serde::shape_group_identifier::ser_group_identifier(entry_5, item_3)?;
+            }
+            list_4.finish();
         }
-        list_4.finish();
     }
     #[allow(unused_mut)]
     let mut scope_6 = writer.prefix("AddressingType");
@@ -23,13 +25,15 @@ pub fn ser_spot_fleet_launch_specification(
     #[allow(unused_mut)]
     let mut scope_8 = writer.prefix("BlockDeviceMapping");
     if let Some(var_9) = &input.block_device_mappings {
-        let mut list_11 = scope_8.start_list(true, Some("item"));
-        for item_10 in var_9 {
-            #[allow(unused_mut)]
-            let mut entry_12 = list_11.entry();
-            crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_12, item_10)?;
+        if !var_9.is_empty() {
+            let mut list_11 = scope_8.start_list(true, Some("item"));
+            for item_10 in var_9 {
+                #[allow(unused_mut)]
+                let mut entry_12 = list_11.entry();
+                crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_12, item_10)?;
+            }
+            list_11.finish();
         }
-        list_11.finish();
     }
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("EbsOptimized");
@@ -69,13 +73,17 @@ pub fn ser_spot_fleet_launch_specification(
     #[allow(unused_mut)]
     let mut scope_27 = writer.prefix("NetworkInterfaceSet");
     if let Some(var_28) = &input.network_interfaces {
-        let mut list_30 = scope_27.start_list(true, Some("item"));
-        for item_29 in var_28 {
-            #[allow(unused_mut)]
-            let mut entry_31 = list_30.entry();
-            crate::protocol_serde::shape_instance_network_interface_specification::ser_instance_network_interface_specification(entry_31, item_29)?;
+        if !var_28.is_empty() {
+            let mut list_30 = scope_27.start_list(true, Some("item"));
+            for item_29 in var_28 {
+                #[allow(unused_mut)]
+                let mut entry_31 = list_30.entry();
+                crate::protocol_serde::shape_instance_network_interface_specification::ser_instance_network_interface_specification(
+                    entry_31, item_29,
+                )?;
+            }
+            list_30.finish();
         }
-        list_30.finish();
     }
     #[allow(unused_mut)]
     let mut scope_32 = writer.prefix("Placement");
@@ -113,13 +121,15 @@ pub fn ser_spot_fleet_launch_specification(
     #[allow(unused_mut)]
     let mut scope_44 = writer.prefix("TagSpecificationSet");
     if let Some(var_45) = &input.tag_specifications {
-        let mut list_47 = scope_44.start_list(true, Some("item"));
-        for item_46 in var_45 {
-            #[allow(unused_mut)]
-            let mut entry_48 = list_47.entry();
-            crate::protocol_serde::shape_spot_fleet_tag_specification::ser_spot_fleet_tag_specification(entry_48, item_46)?;
+        if !var_45.is_empty() {
+            let mut list_47 = scope_44.start_list(true, Some("item"));
+            for item_46 in var_45 {
+                #[allow(unused_mut)]
+                let mut entry_48 = list_47.entry();
+                crate::protocol_serde::shape_spot_fleet_tag_specification::ser_spot_fleet_tag_specification(entry_48, item_46)?;
+            }
+            list_47.finish();
         }
-        list_47.finish();
     }
     #[allow(unused_mut)]
     let mut scope_49 = writer.prefix("InstanceRequirements");

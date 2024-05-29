@@ -7,13 +7,15 @@ pub fn ser_scheduled_instances_launch_specification(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("BlockDeviceMapping");
     if let Some(var_2) = &input.block_device_mappings {
-        let mut list_4 = scope_1.start_list(true, Some("BlockDeviceMapping"));
-        for item_3 in var_2 {
-            #[allow(unused_mut)]
-            let mut entry_5 = list_4.entry();
-            crate::protocol_serde::shape_scheduled_instances_block_device_mapping::ser_scheduled_instances_block_device_mapping(entry_5, item_3)?;
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("BlockDeviceMapping"));
+            for item_3 in var_2 {
+                #[allow(unused_mut)]
+                let mut entry_5 = list_4.entry();
+                crate::protocol_serde::shape_scheduled_instances_block_device_mapping::ser_scheduled_instances_block_device_mapping(entry_5, item_3)?;
+            }
+            list_4.finish();
         }
-        list_4.finish();
     }
     #[allow(unused_mut)]
     let mut scope_6 = writer.prefix("EbsOptimized");
@@ -53,13 +55,15 @@ pub fn ser_scheduled_instances_launch_specification(
     #[allow(unused_mut)]
     let mut scope_20 = writer.prefix("NetworkInterface");
     if let Some(var_21) = &input.network_interfaces {
-        let mut list_23 = scope_20.start_list(true, Some("NetworkInterface"));
-        for item_22 in var_21 {
-            #[allow(unused_mut)]
-            let mut entry_24 = list_23.entry();
-            crate::protocol_serde::shape_scheduled_instances_network_interface::ser_scheduled_instances_network_interface(entry_24, item_22)?;
+        if !var_21.is_empty() {
+            let mut list_23 = scope_20.start_list(true, Some("NetworkInterface"));
+            for item_22 in var_21 {
+                #[allow(unused_mut)]
+                let mut entry_24 = list_23.entry();
+                crate::protocol_serde::shape_scheduled_instances_network_interface::ser_scheduled_instances_network_interface(entry_24, item_22)?;
+            }
+            list_23.finish();
         }
-        list_23.finish();
     }
     #[allow(unused_mut)]
     let mut scope_25 = writer.prefix("Placement");
@@ -74,13 +78,15 @@ pub fn ser_scheduled_instances_launch_specification(
     #[allow(unused_mut)]
     let mut scope_29 = writer.prefix("SecurityGroupId");
     if let Some(var_30) = &input.security_group_ids {
-        let mut list_32 = scope_29.start_list(true, Some("SecurityGroupId"));
-        for item_31 in var_30 {
-            #[allow(unused_mut)]
-            let mut entry_33 = list_32.entry();
-            entry_33.string(item_31);
+        if !var_30.is_empty() {
+            let mut list_32 = scope_29.start_list(true, Some("SecurityGroupId"));
+            for item_31 in var_30 {
+                #[allow(unused_mut)]
+                let mut entry_33 = list_32.entry();
+                entry_33.string(item_31);
+            }
+            list_32.finish();
         }
-        list_32.finish();
     }
     #[allow(unused_mut)]
     let mut scope_34 = writer.prefix("SubnetId");

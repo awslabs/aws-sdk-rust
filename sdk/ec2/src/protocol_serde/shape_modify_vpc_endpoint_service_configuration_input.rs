@@ -33,68 +33,80 @@ pub fn ser_modify_vpc_endpoint_service_configuration_input_input_input(
     #[allow(unused_mut)]
     let mut scope_11 = writer.prefix("AddNetworkLoadBalancerArn");
     if let Some(var_12) = &input.add_network_load_balancer_arns {
-        let mut list_14 = scope_11.start_list(true, Some("item"));
-        for item_13 in var_12 {
-            #[allow(unused_mut)]
-            let mut entry_15 = list_14.entry();
-            entry_15.string(item_13);
+        if !var_12.is_empty() {
+            let mut list_14 = scope_11.start_list(true, Some("item"));
+            for item_13 in var_12 {
+                #[allow(unused_mut)]
+                let mut entry_15 = list_14.entry();
+                entry_15.string(item_13);
+            }
+            list_14.finish();
         }
-        list_14.finish();
     }
     #[allow(unused_mut)]
     let mut scope_16 = writer.prefix("RemoveNetworkLoadBalancerArn");
     if let Some(var_17) = &input.remove_network_load_balancer_arns {
-        let mut list_19 = scope_16.start_list(true, Some("item"));
-        for item_18 in var_17 {
-            #[allow(unused_mut)]
-            let mut entry_20 = list_19.entry();
-            entry_20.string(item_18);
+        if !var_17.is_empty() {
+            let mut list_19 = scope_16.start_list(true, Some("item"));
+            for item_18 in var_17 {
+                #[allow(unused_mut)]
+                let mut entry_20 = list_19.entry();
+                entry_20.string(item_18);
+            }
+            list_19.finish();
         }
-        list_19.finish();
     }
     #[allow(unused_mut)]
     let mut scope_21 = writer.prefix("AddGatewayLoadBalancerArn");
     if let Some(var_22) = &input.add_gateway_load_balancer_arns {
-        let mut list_24 = scope_21.start_list(true, Some("item"));
-        for item_23 in var_22 {
-            #[allow(unused_mut)]
-            let mut entry_25 = list_24.entry();
-            entry_25.string(item_23);
+        if !var_22.is_empty() {
+            let mut list_24 = scope_21.start_list(true, Some("item"));
+            for item_23 in var_22 {
+                #[allow(unused_mut)]
+                let mut entry_25 = list_24.entry();
+                entry_25.string(item_23);
+            }
+            list_24.finish();
         }
-        list_24.finish();
     }
     #[allow(unused_mut)]
     let mut scope_26 = writer.prefix("RemoveGatewayLoadBalancerArn");
     if let Some(var_27) = &input.remove_gateway_load_balancer_arns {
-        let mut list_29 = scope_26.start_list(true, Some("item"));
-        for item_28 in var_27 {
-            #[allow(unused_mut)]
-            let mut entry_30 = list_29.entry();
-            entry_30.string(item_28);
+        if !var_27.is_empty() {
+            let mut list_29 = scope_26.start_list(true, Some("item"));
+            for item_28 in var_27 {
+                #[allow(unused_mut)]
+                let mut entry_30 = list_29.entry();
+                entry_30.string(item_28);
+            }
+            list_29.finish();
         }
-        list_29.finish();
     }
     #[allow(unused_mut)]
     let mut scope_31 = writer.prefix("AddSupportedIpAddressType");
     if let Some(var_32) = &input.add_supported_ip_address_types {
-        let mut list_34 = scope_31.start_list(true, Some("item"));
-        for item_33 in var_32 {
-            #[allow(unused_mut)]
-            let mut entry_35 = list_34.entry();
-            entry_35.string(item_33);
+        if !var_32.is_empty() {
+            let mut list_34 = scope_31.start_list(true, Some("item"));
+            for item_33 in var_32 {
+                #[allow(unused_mut)]
+                let mut entry_35 = list_34.entry();
+                entry_35.string(item_33);
+            }
+            list_34.finish();
         }
-        list_34.finish();
     }
     #[allow(unused_mut)]
     let mut scope_36 = writer.prefix("RemoveSupportedIpAddressType");
     if let Some(var_37) = &input.remove_supported_ip_address_types {
-        let mut list_39 = scope_36.start_list(true, Some("item"));
-        for item_38 in var_37 {
-            #[allow(unused_mut)]
-            let mut entry_40 = list_39.entry();
-            entry_40.string(item_38);
+        if !var_37.is_empty() {
+            let mut list_39 = scope_36.start_list(true, Some("item"));
+            for item_38 in var_37 {
+                #[allow(unused_mut)]
+                let mut entry_40 = list_39.entry();
+                entry_40.string(item_38);
+            }
+            list_39.finish();
         }
-        list_39.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

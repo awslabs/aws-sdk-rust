@@ -18,13 +18,15 @@ pub fn ser_modify_fleet_input_input_input(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("LaunchTemplateConfig");
     if let Some(var_6) = &input.launch_template_configs {
-        let mut list_8 = scope_5.start_list(true, Some("item"));
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            crate::protocol_serde::shape_fleet_launch_template_config_request::ser_fleet_launch_template_config_request(entry_9, item_7)?;
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("item"));
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                crate::protocol_serde::shape_fleet_launch_template_config_request::ser_fleet_launch_template_config_request(entry_9, item_7)?;
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("FleetId");

@@ -23,24 +23,28 @@ pub fn ser_modify_ipam_resource_discovery_input_input_input(
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("AddOperatingRegion");
     if let Some(var_8) = &input.add_operating_regions {
-        let mut list_10 = scope_7.start_list(true, None);
-        for item_9 in var_8 {
-            #[allow(unused_mut)]
-            let mut entry_11 = list_10.entry();
-            crate::protocol_serde::shape_add_ipam_operating_region::ser_add_ipam_operating_region(entry_11, item_9)?;
+        if !var_8.is_empty() {
+            let mut list_10 = scope_7.start_list(true, None);
+            for item_9 in var_8 {
+                #[allow(unused_mut)]
+                let mut entry_11 = list_10.entry();
+                crate::protocol_serde::shape_add_ipam_operating_region::ser_add_ipam_operating_region(entry_11, item_9)?;
+            }
+            list_10.finish();
         }
-        list_10.finish();
     }
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("RemoveOperatingRegion");
     if let Some(var_13) = &input.remove_operating_regions {
-        let mut list_15 = scope_12.start_list(true, None);
-        for item_14 in var_13 {
-            #[allow(unused_mut)]
-            let mut entry_16 = list_15.entry();
-            crate::protocol_serde::shape_remove_ipam_operating_region::ser_remove_ipam_operating_region(entry_16, item_14)?;
+        if !var_13.is_empty() {
+            let mut list_15 = scope_12.start_list(true, None);
+            for item_14 in var_13 {
+                #[allow(unused_mut)]
+                let mut entry_16 = list_15.entry();
+                crate::protocol_serde::shape_remove_ipam_operating_region::ser_remove_ipam_operating_region(entry_16, item_14)?;
+            }
+            list_15.finish();
         }
-        list_15.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

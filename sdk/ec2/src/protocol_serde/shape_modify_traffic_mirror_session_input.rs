@@ -52,13 +52,15 @@ pub fn ser_modify_traffic_mirror_session_input_input_input(
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("RemoveField");
     if let Some(var_16) = &input.remove_fields {
-        let mut list_18 = scope_15.start_list(true, None);
-        for item_17 in var_16 {
-            #[allow(unused_mut)]
-            let mut entry_19 = list_18.entry();
-            entry_19.string(item_17.as_str());
+        if !var_16.is_empty() {
+            let mut list_18 = scope_15.start_list(true, None);
+            for item_17 in var_16 {
+                #[allow(unused_mut)]
+                let mut entry_19 = list_18.entry();
+                entry_19.string(item_17.as_str());
+            }
+            list_18.finish();
         }
-        list_18.finish();
     }
     #[allow(unused_mut)]
     let mut scope_20 = writer.prefix("DryRun");

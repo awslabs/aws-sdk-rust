@@ -28,13 +28,15 @@ pub fn ser_create_vpc_endpoint_connection_notification_input_input_input(
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("ConnectionEvents");
     if let Some(var_10) = &input.connection_events {
-        let mut list_12 = scope_9.start_list(true, Some("item"));
-        for item_11 in var_10 {
-            #[allow(unused_mut)]
-            let mut entry_13 = list_12.entry();
-            entry_13.string(item_11);
+        if !var_10.is_empty() {
+            let mut list_12 = scope_9.start_list(true, Some("item"));
+            for item_11 in var_10 {
+                #[allow(unused_mut)]
+                let mut entry_13 = list_12.entry();
+                entry_13.string(item_11);
+            }
+            list_12.finish();
         }
-        list_12.finish();
     }
     #[allow(unused_mut)]
     let mut scope_14 = writer.prefix("ClientToken");

@@ -33,13 +33,15 @@ pub fn ser_create_fleet_input_input_input(
     #[allow(unused_mut)]
     let mut scope_11 = writer.prefix("LaunchTemplateConfigs");
     if let Some(var_12) = &input.launch_template_configs {
-        let mut list_14 = scope_11.start_list(true, Some("item"));
-        for item_13 in var_12 {
-            #[allow(unused_mut)]
-            let mut entry_15 = list_14.entry();
-            crate::protocol_serde::shape_fleet_launch_template_config_request::ser_fleet_launch_template_config_request(entry_15, item_13)?;
+        if !var_12.is_empty() {
+            let mut list_14 = scope_11.start_list(true, Some("item"));
+            for item_13 in var_12 {
+                #[allow(unused_mut)]
+                let mut entry_15 = list_14.entry();
+                crate::protocol_serde::shape_fleet_launch_template_config_request::ser_fleet_launch_template_config_request(entry_15, item_13)?;
+            }
+            list_14.finish();
         }
-        list_14.finish();
     }
     #[allow(unused_mut)]
     let mut scope_16 = writer.prefix("TargetCapacitySpecification");
@@ -74,13 +76,15 @@ pub fn ser_create_fleet_input_input_input(
     #[allow(unused_mut)]
     let mut scope_28 = writer.prefix("TagSpecification");
     if let Some(var_29) = &input.tag_specifications {
-        let mut list_31 = scope_28.start_list(true, Some("item"));
-        for item_30 in var_29 {
-            #[allow(unused_mut)]
-            let mut entry_32 = list_31.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_32, item_30)?;
+        if !var_29.is_empty() {
+            let mut list_31 = scope_28.start_list(true, Some("item"));
+            for item_30 in var_29 {
+                #[allow(unused_mut)]
+                let mut entry_32 = list_31.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_32, item_30)?;
+            }
+            list_31.finish();
         }
-        list_31.finish();
     }
     #[allow(unused_mut)]
     let mut scope_33 = writer.prefix("Context");

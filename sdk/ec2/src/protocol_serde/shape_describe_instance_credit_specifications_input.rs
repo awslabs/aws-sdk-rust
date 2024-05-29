@@ -13,24 +13,28 @@ pub fn ser_describe_instance_credit_specifications_input_input_input(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("Filter");
     if let Some(var_4) = &input.filters {
-        let mut list_6 = scope_3.start_list(true, Some("Filter"));
-        for item_5 in var_4 {
-            #[allow(unused_mut)]
-            let mut entry_7 = list_6.entry();
-            crate::protocol_serde::shape_filter::ser_filter(entry_7, item_5)?;
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("Filter"));
+            for item_5 in var_4 {
+                #[allow(unused_mut)]
+                let mut entry_7 = list_6.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_7, item_5)?;
+            }
+            list_6.finish();
         }
-        list_6.finish();
     }
     #[allow(unused_mut)]
     let mut scope_8 = writer.prefix("InstanceId");
     if let Some(var_9) = &input.instance_ids {
-        let mut list_11 = scope_8.start_list(true, Some("InstanceId"));
-        for item_10 in var_9 {
-            #[allow(unused_mut)]
-            let mut entry_12 = list_11.entry();
-            entry_12.string(item_10);
+        if !var_9.is_empty() {
+            let mut list_11 = scope_8.start_list(true, Some("InstanceId"));
+            for item_10 in var_9 {
+                #[allow(unused_mut)]
+                let mut entry_12 = list_11.entry();
+                entry_12.string(item_10);
+            }
+            list_11.finish();
         }
-        list_11.finish();
     }
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("MaxResults");

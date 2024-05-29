@@ -18,13 +18,15 @@ pub fn ser_reject_vpc_endpoint_connections_input_input_input(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("VpcEndpointId");
     if let Some(var_6) = &input.vpc_endpoint_ids {
-        let mut list_8 = scope_5.start_list(true, Some("item"));
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            entry_9.string(item_7);
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("item"));
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                entry_9.string(item_7);
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

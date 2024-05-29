@@ -28,68 +28,80 @@ pub fn ser_modify_vpc_endpoint_input_input_input(
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("AddRouteTableId");
     if let Some(var_10) = &input.add_route_table_ids {
-        let mut list_12 = scope_9.start_list(true, Some("item"));
-        for item_11 in var_10 {
-            #[allow(unused_mut)]
-            let mut entry_13 = list_12.entry();
-            entry_13.string(item_11);
+        if !var_10.is_empty() {
+            let mut list_12 = scope_9.start_list(true, Some("item"));
+            for item_11 in var_10 {
+                #[allow(unused_mut)]
+                let mut entry_13 = list_12.entry();
+                entry_13.string(item_11);
+            }
+            list_12.finish();
         }
-        list_12.finish();
     }
     #[allow(unused_mut)]
     let mut scope_14 = writer.prefix("RemoveRouteTableId");
     if let Some(var_15) = &input.remove_route_table_ids {
-        let mut list_17 = scope_14.start_list(true, Some("item"));
-        for item_16 in var_15 {
-            #[allow(unused_mut)]
-            let mut entry_18 = list_17.entry();
-            entry_18.string(item_16);
+        if !var_15.is_empty() {
+            let mut list_17 = scope_14.start_list(true, Some("item"));
+            for item_16 in var_15 {
+                #[allow(unused_mut)]
+                let mut entry_18 = list_17.entry();
+                entry_18.string(item_16);
+            }
+            list_17.finish();
         }
-        list_17.finish();
     }
     #[allow(unused_mut)]
     let mut scope_19 = writer.prefix("AddSubnetId");
     if let Some(var_20) = &input.add_subnet_ids {
-        let mut list_22 = scope_19.start_list(true, Some("item"));
-        for item_21 in var_20 {
-            #[allow(unused_mut)]
-            let mut entry_23 = list_22.entry();
-            entry_23.string(item_21);
+        if !var_20.is_empty() {
+            let mut list_22 = scope_19.start_list(true, Some("item"));
+            for item_21 in var_20 {
+                #[allow(unused_mut)]
+                let mut entry_23 = list_22.entry();
+                entry_23.string(item_21);
+            }
+            list_22.finish();
         }
-        list_22.finish();
     }
     #[allow(unused_mut)]
     let mut scope_24 = writer.prefix("RemoveSubnetId");
     if let Some(var_25) = &input.remove_subnet_ids {
-        let mut list_27 = scope_24.start_list(true, Some("item"));
-        for item_26 in var_25 {
-            #[allow(unused_mut)]
-            let mut entry_28 = list_27.entry();
-            entry_28.string(item_26);
+        if !var_25.is_empty() {
+            let mut list_27 = scope_24.start_list(true, Some("item"));
+            for item_26 in var_25 {
+                #[allow(unused_mut)]
+                let mut entry_28 = list_27.entry();
+                entry_28.string(item_26);
+            }
+            list_27.finish();
         }
-        list_27.finish();
     }
     #[allow(unused_mut)]
     let mut scope_29 = writer.prefix("AddSecurityGroupId");
     if let Some(var_30) = &input.add_security_group_ids {
-        let mut list_32 = scope_29.start_list(true, Some("item"));
-        for item_31 in var_30 {
-            #[allow(unused_mut)]
-            let mut entry_33 = list_32.entry();
-            entry_33.string(item_31);
+        if !var_30.is_empty() {
+            let mut list_32 = scope_29.start_list(true, Some("item"));
+            for item_31 in var_30 {
+                #[allow(unused_mut)]
+                let mut entry_33 = list_32.entry();
+                entry_33.string(item_31);
+            }
+            list_32.finish();
         }
-        list_32.finish();
     }
     #[allow(unused_mut)]
     let mut scope_34 = writer.prefix("RemoveSecurityGroupId");
     if let Some(var_35) = &input.remove_security_group_ids {
-        let mut list_37 = scope_34.start_list(true, Some("item"));
-        for item_36 in var_35 {
-            #[allow(unused_mut)]
-            let mut entry_38 = list_37.entry();
-            entry_38.string(item_36);
+        if !var_35.is_empty() {
+            let mut list_37 = scope_34.start_list(true, Some("item"));
+            for item_36 in var_35 {
+                #[allow(unused_mut)]
+                let mut entry_38 = list_37.entry();
+                entry_38.string(item_36);
+            }
+            list_37.finish();
         }
-        list_37.finish();
     }
     #[allow(unused_mut)]
     let mut scope_39 = writer.prefix("IpAddressType");
@@ -109,13 +121,15 @@ pub fn ser_modify_vpc_endpoint_input_input_input(
     #[allow(unused_mut)]
     let mut scope_45 = writer.prefix("SubnetConfiguration");
     if let Some(var_46) = &input.subnet_configurations {
-        let mut list_48 = scope_45.start_list(true, Some("item"));
-        for item_47 in var_46 {
-            #[allow(unused_mut)]
-            let mut entry_49 = list_48.entry();
-            crate::protocol_serde::shape_subnet_configuration::ser_subnet_configuration(entry_49, item_47)?;
+        if !var_46.is_empty() {
+            let mut list_48 = scope_45.start_list(true, Some("item"));
+            for item_47 in var_46 {
+                #[allow(unused_mut)]
+                let mut entry_49 = list_48.entry();
+                crate::protocol_serde::shape_subnet_configuration::ser_subnet_configuration(entry_49, item_47)?;
+            }
+            list_48.finish();
         }
-        list_48.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

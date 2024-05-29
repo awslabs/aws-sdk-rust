@@ -64,13 +64,15 @@ pub fn ser_modify_traffic_mirror_filter_rule_input_input_input(
     #[allow(unused_mut)]
     let mut scope_21 = writer.prefix("RemoveField");
     if let Some(var_22) = &input.remove_fields {
-        let mut list_24 = scope_21.start_list(true, None);
-        for item_23 in var_22 {
-            #[allow(unused_mut)]
-            let mut entry_25 = list_24.entry();
-            entry_25.string(item_23.as_str());
+        if !var_22.is_empty() {
+            let mut list_24 = scope_21.start_list(true, None);
+            for item_23 in var_22 {
+                #[allow(unused_mut)]
+                let mut entry_25 = list_24.entry();
+                entry_25.string(item_23.as_str());
+            }
+            list_24.finish();
         }
-        list_24.finish();
     }
     #[allow(unused_mut)]
     let mut scope_26 = writer.prefix("DryRun");

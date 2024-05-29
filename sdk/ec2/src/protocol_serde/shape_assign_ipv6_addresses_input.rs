@@ -16,13 +16,15 @@ pub fn ser_assign_ipv6_addresses_input_input_input(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("Ipv6Addresses");
     if let Some(var_4) = &input.ipv6_addresses {
-        let mut list_6 = scope_3.start_list(true, Some("item"));
-        for item_5 in var_4 {
-            #[allow(unused_mut)]
-            let mut entry_7 = list_6.entry();
-            entry_7.string(item_5);
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("item"));
+            for item_5 in var_4 {
+                #[allow(unused_mut)]
+                let mut entry_7 = list_6.entry();
+                entry_7.string(item_5);
+            }
+            list_6.finish();
         }
-        list_6.finish();
     }
     #[allow(unused_mut)]
     let mut scope_8 = writer.prefix("Ipv6PrefixCount");
@@ -35,13 +37,15 @@ pub fn ser_assign_ipv6_addresses_input_input_input(
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("Ipv6Prefix");
     if let Some(var_11) = &input.ipv6_prefixes {
-        let mut list_13 = scope_10.start_list(true, Some("item"));
-        for item_12 in var_11 {
-            #[allow(unused_mut)]
-            let mut entry_14 = list_13.entry();
-            entry_14.string(item_12);
+        if !var_11.is_empty() {
+            let mut list_13 = scope_10.start_list(true, Some("item"));
+            for item_12 in var_11 {
+                #[allow(unused_mut)]
+                let mut entry_14 = list_13.entry();
+                entry_14.string(item_12);
+            }
+            list_13.finish();
         }
-        list_13.finish();
     }
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("NetworkInterfaceId");

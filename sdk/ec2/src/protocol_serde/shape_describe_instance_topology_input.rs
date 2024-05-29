@@ -26,35 +26,41 @@ pub fn ser_describe_instance_topology_input_input_input(
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("InstanceId");
     if let Some(var_8) = &input.instance_ids {
-        let mut list_10 = scope_7.start_list(true, None);
-        for item_9 in var_8 {
-            #[allow(unused_mut)]
-            let mut entry_11 = list_10.entry();
-            entry_11.string(item_9);
+        if !var_8.is_empty() {
+            let mut list_10 = scope_7.start_list(true, None);
+            for item_9 in var_8 {
+                #[allow(unused_mut)]
+                let mut entry_11 = list_10.entry();
+                entry_11.string(item_9);
+            }
+            list_10.finish();
         }
-        list_10.finish();
     }
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("GroupName");
     if let Some(var_13) = &input.group_names {
-        let mut list_15 = scope_12.start_list(true, None);
-        for item_14 in var_13 {
-            #[allow(unused_mut)]
-            let mut entry_16 = list_15.entry();
-            entry_16.string(item_14);
+        if !var_13.is_empty() {
+            let mut list_15 = scope_12.start_list(true, None);
+            for item_14 in var_13 {
+                #[allow(unused_mut)]
+                let mut entry_16 = list_15.entry();
+                entry_16.string(item_14);
+            }
+            list_15.finish();
         }
-        list_15.finish();
     }
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("Filter");
     if let Some(var_18) = &input.filters {
-        let mut list_20 = scope_17.start_list(true, Some("Filter"));
-        for item_19 in var_18 {
-            #[allow(unused_mut)]
-            let mut entry_21 = list_20.entry();
-            crate::protocol_serde::shape_filter::ser_filter(entry_21, item_19)?;
+        if !var_18.is_empty() {
+            let mut list_20 = scope_17.start_list(true, Some("Filter"));
+            for item_19 in var_18 {
+                #[allow(unused_mut)]
+                let mut entry_21 = list_20.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_21, item_19)?;
+            }
+            list_20.finish();
         }
-        list_20.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

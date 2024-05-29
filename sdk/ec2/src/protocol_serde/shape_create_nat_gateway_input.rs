@@ -28,13 +28,15 @@ pub fn ser_create_nat_gateway_input_input_input(
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("TagSpecification");
     if let Some(var_10) = &input.tag_specifications {
-        let mut list_12 = scope_9.start_list(true, Some("item"));
-        for item_11 in var_10 {
-            #[allow(unused_mut)]
-            let mut entry_13 = list_12.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_13, item_11)?;
+        if !var_10.is_empty() {
+            let mut list_12 = scope_9.start_list(true, Some("item"));
+            for item_11 in var_10 {
+                #[allow(unused_mut)]
+                let mut entry_13 = list_12.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_13, item_11)?;
+            }
+            list_12.finish();
         }
-        list_12.finish();
     }
     #[allow(unused_mut)]
     let mut scope_14 = writer.prefix("ConnectivityType");
@@ -49,24 +51,28 @@ pub fn ser_create_nat_gateway_input_input_input(
     #[allow(unused_mut)]
     let mut scope_18 = writer.prefix("SecondaryAllocationId");
     if let Some(var_19) = &input.secondary_allocation_ids {
-        let mut list_21 = scope_18.start_list(true, Some("AllocationId"));
-        for item_20 in var_19 {
-            #[allow(unused_mut)]
-            let mut entry_22 = list_21.entry();
-            entry_22.string(item_20);
+        if !var_19.is_empty() {
+            let mut list_21 = scope_18.start_list(true, Some("AllocationId"));
+            for item_20 in var_19 {
+                #[allow(unused_mut)]
+                let mut entry_22 = list_21.entry();
+                entry_22.string(item_20);
+            }
+            list_21.finish();
         }
-        list_21.finish();
     }
     #[allow(unused_mut)]
     let mut scope_23 = writer.prefix("SecondaryPrivateIpAddress");
     if let Some(var_24) = &input.secondary_private_ip_addresses {
-        let mut list_26 = scope_23.start_list(true, Some("item"));
-        for item_25 in var_24 {
-            #[allow(unused_mut)]
-            let mut entry_27 = list_26.entry();
-            entry_27.string(item_25);
+        if !var_24.is_empty() {
+            let mut list_26 = scope_23.start_list(true, Some("item"));
+            for item_25 in var_24 {
+                #[allow(unused_mut)]
+                let mut entry_27 = list_26.entry();
+                entry_27.string(item_25);
+            }
+            list_26.finish();
         }
-        list_26.finish();
     }
     #[allow(unused_mut)]
     let mut scope_28 = writer.prefix("SecondaryPrivateIpAddressCount");

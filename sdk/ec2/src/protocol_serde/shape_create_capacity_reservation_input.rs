@@ -71,13 +71,15 @@ pub fn ser_create_capacity_reservation_input_input_input(
     #[allow(unused_mut)]
     let mut scope_25 = writer.prefix("TagSpecifications");
     if let Some(var_26) = &input.tag_specifications {
-        let mut list_28 = scope_25.start_list(true, Some("item"));
-        for item_27 in var_26 {
-            #[allow(unused_mut)]
-            let mut entry_29 = list_28.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_29, item_27)?;
+        if !var_26.is_empty() {
+            let mut list_28 = scope_25.start_list(true, Some("item"));
+            for item_27 in var_26 {
+                #[allow(unused_mut)]
+                let mut entry_29 = list_28.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_29, item_27)?;
+            }
+            list_28.finish();
         }
-        list_28.finish();
     }
     #[allow(unused_mut)]
     let mut scope_30 = writer.prefix("DryRun");

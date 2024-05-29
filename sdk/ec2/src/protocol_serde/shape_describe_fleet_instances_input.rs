@@ -31,13 +31,15 @@ pub fn ser_describe_fleet_instances_input_input_input(
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("Filter");
     if let Some(var_10) = &input.filters {
-        let mut list_12 = scope_9.start_list(true, Some("Filter"));
-        for item_11 in var_10 {
-            #[allow(unused_mut)]
-            let mut entry_13 = list_12.entry();
-            crate::protocol_serde::shape_filter::ser_filter(entry_13, item_11)?;
+        if !var_10.is_empty() {
+            let mut list_12 = scope_9.start_list(true, Some("Filter"));
+            for item_11 in var_10 {
+                #[allow(unused_mut)]
+                let mut entry_13 = list_12.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_13, item_11)?;
+            }
+            list_12.finish();
         }
-        list_12.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

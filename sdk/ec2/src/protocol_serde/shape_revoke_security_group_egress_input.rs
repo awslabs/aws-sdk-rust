@@ -18,24 +18,28 @@ pub fn ser_revoke_security_group_egress_input_input_input(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("IpPermissions");
     if let Some(var_6) = &input.ip_permissions {
-        let mut list_8 = scope_5.start_list(true, Some("item"));
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            crate::protocol_serde::shape_ip_permission::ser_ip_permission(entry_9, item_7)?;
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("item"));
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                crate::protocol_serde::shape_ip_permission::ser_ip_permission(entry_9, item_7)?;
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("SecurityGroupRuleId");
     if let Some(var_11) = &input.security_group_rule_ids {
-        let mut list_13 = scope_10.start_list(true, Some("item"));
-        for item_12 in var_11 {
-            #[allow(unused_mut)]
-            let mut entry_14 = list_13.entry();
-            entry_14.string(item_12);
+        if !var_11.is_empty() {
+            let mut list_13 = scope_10.start_list(true, Some("item"));
+            for item_12 in var_11 {
+                #[allow(unused_mut)]
+                let mut entry_14 = list_13.entry();
+                entry_14.string(item_12);
+            }
+            list_13.finish();
         }
-        list_13.finish();
     }
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("CidrIp");

@@ -12,13 +12,15 @@ pub fn ser_fleet_launch_template_config_request(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("Overrides");
     if let Some(var_4) = &input.overrides {
-        let mut list_6 = scope_3.start_list(true, Some("item"));
-        for item_5 in var_4 {
-            #[allow(unused_mut)]
-            let mut entry_7 = list_6.entry();
-            crate::protocol_serde::shape_fleet_launch_template_overrides_request::ser_fleet_launch_template_overrides_request(entry_7, item_5)?;
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("item"));
+            for item_5 in var_4 {
+                #[allow(unused_mut)]
+                let mut entry_7 = list_6.entry();
+                crate::protocol_serde::shape_fleet_launch_template_overrides_request::ser_fleet_launch_template_overrides_request(entry_7, item_5)?;
+            }
+            list_6.finish();
         }
-        list_6.finish();
     }
     Ok(())
 }

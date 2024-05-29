@@ -26,24 +26,28 @@ pub fn ser_describe_instance_connect_endpoints_input_input_input(
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("Filter");
     if let Some(var_8) = &input.filters {
-        let mut list_10 = scope_7.start_list(true, Some("Filter"));
-        for item_9 in var_8 {
-            #[allow(unused_mut)]
-            let mut entry_11 = list_10.entry();
-            crate::protocol_serde::shape_filter::ser_filter(entry_11, item_9)?;
+        if !var_8.is_empty() {
+            let mut list_10 = scope_7.start_list(true, Some("Filter"));
+            for item_9 in var_8 {
+                #[allow(unused_mut)]
+                let mut entry_11 = list_10.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_11, item_9)?;
+            }
+            list_10.finish();
         }
-        list_10.finish();
     }
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("InstanceConnectEndpointId");
     if let Some(var_13) = &input.instance_connect_endpoint_ids {
-        let mut list_15 = scope_12.start_list(true, Some("item"));
-        for item_14 in var_13 {
-            #[allow(unused_mut)]
-            let mut entry_16 = list_15.entry();
-            entry_16.string(item_14);
+        if !var_13.is_empty() {
+            let mut list_15 = scope_12.start_list(true, Some("item"));
+            for item_14 in var_13 {
+                #[allow(unused_mut)]
+                let mut entry_16 = list_15.entry();
+                entry_16.string(item_14);
+            }
+            list_15.finish();
         }
-        list_15.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

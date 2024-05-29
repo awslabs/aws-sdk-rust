@@ -8,13 +8,15 @@ pub fn ser_get_aws_network_performance_data_input_input_input(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DataQuery");
     if let Some(var_2) = &input.data_queries {
-        let mut list_4 = scope_1.start_list(true, None);
-        for item_3 in var_2 {
-            #[allow(unused_mut)]
-            let mut entry_5 = list_4.entry();
-            crate::protocol_serde::shape_data_query::ser_data_query(entry_5, item_3)?;
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, None);
+            for item_3 in var_2 {
+                #[allow(unused_mut)]
+                let mut entry_5 = list_4.entry();
+                crate::protocol_serde::shape_data_query::ser_data_query(entry_5, item_3)?;
+            }
+            list_4.finish();
         }
-        list_4.finish();
     }
     #[allow(unused_mut)]
     let mut scope_6 = writer.prefix("StartTime");

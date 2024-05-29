@@ -13,24 +13,28 @@ pub fn ser_start_network_insights_analysis_input_input_input(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("AdditionalAccount");
     if let Some(var_4) = &input.additional_accounts {
-        let mut list_6 = scope_3.start_list(true, Some("item"));
-        for item_5 in var_4 {
-            #[allow(unused_mut)]
-            let mut entry_7 = list_6.entry();
-            entry_7.string(item_5);
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("item"));
+            for item_5 in var_4 {
+                #[allow(unused_mut)]
+                let mut entry_7 = list_6.entry();
+                entry_7.string(item_5);
+            }
+            list_6.finish();
         }
-        list_6.finish();
     }
     #[allow(unused_mut)]
     let mut scope_8 = writer.prefix("FilterInArn");
     if let Some(var_9) = &input.filter_in_arns {
-        let mut list_11 = scope_8.start_list(true, Some("item"));
-        for item_10 in var_9 {
-            #[allow(unused_mut)]
-            let mut entry_12 = list_11.entry();
-            entry_12.string(item_10);
+        if !var_9.is_empty() {
+            let mut list_11 = scope_8.start_list(true, Some("item"));
+            for item_10 in var_9 {
+                #[allow(unused_mut)]
+                let mut entry_12 = list_11.entry();
+                entry_12.string(item_10);
+            }
+            list_11.finish();
         }
-        list_11.finish();
     }
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("DryRun");
@@ -40,13 +44,15 @@ pub fn ser_start_network_insights_analysis_input_input_input(
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("TagSpecification");
     if let Some(var_16) = &input.tag_specifications {
-        let mut list_18 = scope_15.start_list(true, Some("item"));
-        for item_17 in var_16 {
-            #[allow(unused_mut)]
-            let mut entry_19 = list_18.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_19, item_17)?;
+        if !var_16.is_empty() {
+            let mut list_18 = scope_15.start_list(true, Some("item"));
+            for item_17 in var_16 {
+                #[allow(unused_mut)]
+                let mut entry_19 = list_18.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_19, item_17)?;
+            }
+            list_18.finish();
         }
-        list_18.finish();
     }
     #[allow(unused_mut)]
     let mut scope_20 = writer.prefix("ClientToken");

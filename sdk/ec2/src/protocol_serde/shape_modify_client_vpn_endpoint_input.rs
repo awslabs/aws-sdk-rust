@@ -51,13 +51,15 @@ pub fn ser_modify_client_vpn_endpoint_input_input_input(
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("SecurityGroupId");
     if let Some(var_18) = &input.security_group_ids {
-        let mut list_20 = scope_17.start_list(true, Some("item"));
-        for item_19 in var_18 {
-            #[allow(unused_mut)]
-            let mut entry_21 = list_20.entry();
-            entry_21.string(item_19);
+        if !var_18.is_empty() {
+            let mut list_20 = scope_17.start_list(true, Some("item"));
+            for item_19 in var_18 {
+                #[allow(unused_mut)]
+                let mut entry_21 = list_20.entry();
+                entry_21.string(item_19);
+            }
+            list_20.finish();
         }
-        list_20.finish();
     }
     #[allow(unused_mut)]
     let mut scope_22 = writer.prefix("VpcId");

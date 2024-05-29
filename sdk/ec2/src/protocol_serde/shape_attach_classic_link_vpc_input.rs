@@ -13,13 +13,15 @@ pub fn ser_attach_classic_link_vpc_input_input_input(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("SecurityGroupId");
     if let Some(var_4) = &input.groups {
-        let mut list_6 = scope_3.start_list(true, Some("groupId"));
-        for item_5 in var_4 {
-            #[allow(unused_mut)]
-            let mut entry_7 = list_6.entry();
-            entry_7.string(item_5);
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("groupId"));
+            for item_5 in var_4 {
+                #[allow(unused_mut)]
+                let mut entry_7 = list_6.entry();
+                entry_7.string(item_5);
+            }
+            list_6.finish();
         }
-        list_6.finish();
     }
     #[allow(unused_mut)]
     let mut scope_8 = writer.prefix("InstanceId");

@@ -23,13 +23,17 @@ pub fn ser_modify_instance_event_window_input_input_input(
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("TimeRange");
     if let Some(var_8) = &input.time_ranges {
-        let mut list_10 = scope_7.start_list(true, None);
-        for item_9 in var_8 {
-            #[allow(unused_mut)]
-            let mut entry_11 = list_10.entry();
-            crate::protocol_serde::shape_instance_event_window_time_range_request::ser_instance_event_window_time_range_request(entry_11, item_9)?;
+        if !var_8.is_empty() {
+            let mut list_10 = scope_7.start_list(true, None);
+            for item_9 in var_8 {
+                #[allow(unused_mut)]
+                let mut entry_11 = list_10.entry();
+                crate::protocol_serde::shape_instance_event_window_time_range_request::ser_instance_event_window_time_range_request(
+                    entry_11, item_9,
+                )?;
+            }
+            list_10.finish();
         }
-        list_10.finish();
     }
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("CronExpression");

@@ -8,13 +8,15 @@ pub fn ser_run_instances_input_input_input(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("BlockDeviceMapping");
     if let Some(var_2) = &input.block_device_mappings {
-        let mut list_4 = scope_1.start_list(true, Some("BlockDeviceMapping"));
-        for item_3 in var_2 {
-            #[allow(unused_mut)]
-            let mut entry_5 = list_4.entry();
-            crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_5, item_3)?;
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("BlockDeviceMapping"));
+            for item_3 in var_2 {
+                #[allow(unused_mut)]
+                let mut entry_5 = list_4.entry();
+                crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_5, item_3)?;
+            }
+            list_4.finish();
         }
-        list_4.finish();
     }
     #[allow(unused_mut)]
     let mut scope_6 = writer.prefix("ImageId");
@@ -37,13 +39,15 @@ pub fn ser_run_instances_input_input_input(
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("Ipv6Address");
     if let Some(var_13) = &input.ipv6_addresses {
-        let mut list_15 = scope_12.start_list(true, Some("item"));
-        for item_14 in var_13 {
-            #[allow(unused_mut)]
-            let mut entry_16 = list_15.entry();
-            crate::protocol_serde::shape_instance_ipv6_address::ser_instance_ipv6_address(entry_16, item_14)?;
+        if !var_13.is_empty() {
+            let mut list_15 = scope_12.start_list(true, Some("item"));
+            for item_14 in var_13 {
+                #[allow(unused_mut)]
+                let mut entry_16 = list_15.entry();
+                crate::protocol_serde::shape_instance_ipv6_address::ser_instance_ipv6_address(entry_16, item_14)?;
+            }
+            list_15.finish();
         }
-        list_15.finish();
     }
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("KernelId");
@@ -89,24 +93,28 @@ pub fn ser_run_instances_input_input_input(
     #[allow(unused_mut)]
     let mut scope_31 = writer.prefix("SecurityGroupId");
     if let Some(var_32) = &input.security_group_ids {
-        let mut list_34 = scope_31.start_list(true, Some("SecurityGroupId"));
-        for item_33 in var_32 {
-            #[allow(unused_mut)]
-            let mut entry_35 = list_34.entry();
-            entry_35.string(item_33);
+        if !var_32.is_empty() {
+            let mut list_34 = scope_31.start_list(true, Some("SecurityGroupId"));
+            for item_33 in var_32 {
+                #[allow(unused_mut)]
+                let mut entry_35 = list_34.entry();
+                entry_35.string(item_33);
+            }
+            list_34.finish();
         }
-        list_34.finish();
     }
     #[allow(unused_mut)]
     let mut scope_36 = writer.prefix("SecurityGroup");
     if let Some(var_37) = &input.security_groups {
-        let mut list_39 = scope_36.start_list(true, Some("SecurityGroup"));
-        for item_38 in var_37 {
-            #[allow(unused_mut)]
-            let mut entry_40 = list_39.entry();
-            entry_40.string(item_38);
+        if !var_37.is_empty() {
+            let mut list_39 = scope_36.start_list(true, Some("SecurityGroup"));
+            for item_38 in var_37 {
+                #[allow(unused_mut)]
+                let mut entry_40 = list_39.entry();
+                entry_40.string(item_38);
+            }
+            list_39.finish();
         }
-        list_39.finish();
     }
     #[allow(unused_mut)]
     let mut scope_41 = writer.prefix("SubnetId");
@@ -156,13 +164,17 @@ pub fn ser_run_instances_input_input_input(
     #[allow(unused_mut)]
     let mut scope_59 = writer.prefix("NetworkInterface");
     if let Some(var_60) = &input.network_interfaces {
-        let mut list_62 = scope_59.start_list(true, Some("item"));
-        for item_61 in var_60 {
-            #[allow(unused_mut)]
-            let mut entry_63 = list_62.entry();
-            crate::protocol_serde::shape_instance_network_interface_specification::ser_instance_network_interface_specification(entry_63, item_61)?;
+        if !var_60.is_empty() {
+            let mut list_62 = scope_59.start_list(true, Some("item"));
+            for item_61 in var_60 {
+                #[allow(unused_mut)]
+                let mut entry_63 = list_62.entry();
+                crate::protocol_serde::shape_instance_network_interface_specification::ser_instance_network_interface_specification(
+                    entry_63, item_61,
+                )?;
+            }
+            list_62.finish();
         }
-        list_62.finish();
     }
     #[allow(unused_mut)]
     let mut scope_64 = writer.prefix("PrivateIpAddress");
@@ -172,35 +184,41 @@ pub fn ser_run_instances_input_input_input(
     #[allow(unused_mut)]
     let mut scope_66 = writer.prefix("ElasticGpuSpecification");
     if let Some(var_67) = &input.elastic_gpu_specification {
-        let mut list_69 = scope_66.start_list(true, Some("item"));
-        for item_68 in var_67 {
-            #[allow(unused_mut)]
-            let mut entry_70 = list_69.entry();
-            crate::protocol_serde::shape_elastic_gpu_specification::ser_elastic_gpu_specification(entry_70, item_68)?;
+        if !var_67.is_empty() {
+            let mut list_69 = scope_66.start_list(true, Some("item"));
+            for item_68 in var_67 {
+                #[allow(unused_mut)]
+                let mut entry_70 = list_69.entry();
+                crate::protocol_serde::shape_elastic_gpu_specification::ser_elastic_gpu_specification(entry_70, item_68)?;
+            }
+            list_69.finish();
         }
-        list_69.finish();
     }
     #[allow(unused_mut)]
     let mut scope_71 = writer.prefix("ElasticInferenceAccelerator");
     if let Some(var_72) = &input.elastic_inference_accelerators {
-        let mut list_74 = scope_71.start_list(true, Some("item"));
-        for item_73 in var_72 {
-            #[allow(unused_mut)]
-            let mut entry_75 = list_74.entry();
-            crate::protocol_serde::shape_elastic_inference_accelerator::ser_elastic_inference_accelerator(entry_75, item_73)?;
+        if !var_72.is_empty() {
+            let mut list_74 = scope_71.start_list(true, Some("item"));
+            for item_73 in var_72 {
+                #[allow(unused_mut)]
+                let mut entry_75 = list_74.entry();
+                crate::protocol_serde::shape_elastic_inference_accelerator::ser_elastic_inference_accelerator(entry_75, item_73)?;
+            }
+            list_74.finish();
         }
-        list_74.finish();
     }
     #[allow(unused_mut)]
     let mut scope_76 = writer.prefix("TagSpecification");
     if let Some(var_77) = &input.tag_specifications {
-        let mut list_79 = scope_76.start_list(true, Some("item"));
-        for item_78 in var_77 {
-            #[allow(unused_mut)]
-            let mut entry_80 = list_79.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_80, item_78)?;
+        if !var_77.is_empty() {
+            let mut list_79 = scope_76.start_list(true, Some("item"));
+            for item_78 in var_77 {
+                #[allow(unused_mut)]
+                let mut entry_80 = list_79.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_80, item_78)?;
+            }
+            list_79.finish();
         }
-        list_79.finish();
     }
     #[allow(unused_mut)]
     let mut scope_81 = writer.prefix("LaunchTemplate");
@@ -235,13 +253,15 @@ pub fn ser_run_instances_input_input_input(
     #[allow(unused_mut)]
     let mut scope_93 = writer.prefix("LicenseSpecification");
     if let Some(var_94) = &input.license_specifications {
-        let mut list_96 = scope_93.start_list(true, Some("item"));
-        for item_95 in var_94 {
-            #[allow(unused_mut)]
-            let mut entry_97 = list_96.entry();
-            crate::protocol_serde::shape_license_configuration_request::ser_license_configuration_request(entry_97, item_95)?;
+        if !var_94.is_empty() {
+            let mut list_96 = scope_93.start_list(true, Some("item"));
+            for item_95 in var_94 {
+                #[allow(unused_mut)]
+                let mut entry_97 = list_96.entry();
+                crate::protocol_serde::shape_license_configuration_request::ser_license_configuration_request(entry_97, item_95)?;
+            }
+            list_96.finish();
         }
-        list_96.finish();
     }
     #[allow(unused_mut)]
     let mut scope_98 = writer.prefix("MetadataOptions");

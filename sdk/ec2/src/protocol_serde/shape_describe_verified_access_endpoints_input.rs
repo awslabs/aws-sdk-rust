@@ -8,13 +8,15 @@ pub fn ser_describe_verified_access_endpoints_input_input_input(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("VerifiedAccessEndpointId");
     if let Some(var_2) = &input.verified_access_endpoint_ids {
-        let mut list_4 = scope_1.start_list(true, Some("item"));
-        for item_3 in var_2 {
-            #[allow(unused_mut)]
-            let mut entry_5 = list_4.entry();
-            entry_5.string(item_3);
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("item"));
+            for item_3 in var_2 {
+                #[allow(unused_mut)]
+                let mut entry_5 = list_4.entry();
+                entry_5.string(item_3);
+            }
+            list_4.finish();
         }
-        list_4.finish();
     }
     #[allow(unused_mut)]
     let mut scope_6 = writer.prefix("VerifiedAccessInstanceId");
@@ -42,13 +44,15 @@ pub fn ser_describe_verified_access_endpoints_input_input_input(
     #[allow(unused_mut)]
     let mut scope_14 = writer.prefix("Filter");
     if let Some(var_15) = &input.filters {
-        let mut list_17 = scope_14.start_list(true, Some("Filter"));
-        for item_16 in var_15 {
-            #[allow(unused_mut)]
-            let mut entry_18 = list_17.entry();
-            crate::protocol_serde::shape_filter::ser_filter(entry_18, item_16)?;
+        if !var_15.is_empty() {
+            let mut list_17 = scope_14.start_list(true, Some("Filter"));
+            for item_16 in var_15 {
+                #[allow(unused_mut)]
+                let mut entry_18 = list_17.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_18, item_16)?;
+            }
+            list_17.finish();
         }
-        list_17.finish();
     }
     #[allow(unused_mut)]
     let mut scope_19 = writer.prefix("DryRun");

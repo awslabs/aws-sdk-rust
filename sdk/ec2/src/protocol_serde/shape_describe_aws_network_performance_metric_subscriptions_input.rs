@@ -21,13 +21,15 @@ pub fn ser_describe_aws_network_performance_metric_subscriptions_input_input_inp
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("Filter");
     if let Some(var_6) = &input.filters {
-        let mut list_8 = scope_5.start_list(true, Some("Filter"));
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            crate::protocol_serde::shape_filter::ser_filter(entry_9, item_7)?;
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("Filter"));
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_9, item_7)?;
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("DryRun");

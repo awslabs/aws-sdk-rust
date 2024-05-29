@@ -28,24 +28,28 @@ pub fn ser_create_transit_gateway_connect_peer_input_input_input(
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("InsideCidrBlocks");
     if let Some(var_10) = &input.inside_cidr_blocks {
-        let mut list_12 = scope_9.start_list(true, Some("item"));
-        for item_11 in var_10 {
-            #[allow(unused_mut)]
-            let mut entry_13 = list_12.entry();
-            entry_13.string(item_11);
+        if !var_10.is_empty() {
+            let mut list_12 = scope_9.start_list(true, Some("item"));
+            for item_11 in var_10 {
+                #[allow(unused_mut)]
+                let mut entry_13 = list_12.entry();
+                entry_13.string(item_11);
+            }
+            list_12.finish();
         }
-        list_12.finish();
     }
     #[allow(unused_mut)]
     let mut scope_14 = writer.prefix("TagSpecification");
     if let Some(var_15) = &input.tag_specifications {
-        let mut list_17 = scope_14.start_list(true, Some("item"));
-        for item_16 in var_15 {
-            #[allow(unused_mut)]
-            let mut entry_18 = list_17.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_18, item_16)?;
+        if !var_15.is_empty() {
+            let mut list_17 = scope_14.start_list(true, Some("item"));
+            for item_16 in var_15 {
+                #[allow(unused_mut)]
+                let mut entry_18 = list_17.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_18, item_16)?;
+            }
+            list_17.finish();
         }
-        list_17.finish();
     }
     #[allow(unused_mut)]
     let mut scope_19 = writer.prefix("DryRun");

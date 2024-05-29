@@ -18,13 +18,15 @@ pub fn ser_create_instance_connect_endpoint_input_input_input(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("SecurityGroupId");
     if let Some(var_6) = &input.security_group_ids {
-        let mut list_8 = scope_5.start_list(true, Some("SecurityGroupId"));
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            entry_9.string(item_7);
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("SecurityGroupId"));
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                entry_9.string(item_7);
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("PreserveClientIp");
@@ -39,13 +41,15 @@ pub fn ser_create_instance_connect_endpoint_input_input_input(
     #[allow(unused_mut)]
     let mut scope_14 = writer.prefix("TagSpecification");
     if let Some(var_15) = &input.tag_specifications {
-        let mut list_17 = scope_14.start_list(true, Some("item"));
-        for item_16 in var_15 {
-            #[allow(unused_mut)]
-            let mut entry_18 = list_17.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_18, item_16)?;
+        if !var_15.is_empty() {
+            let mut list_17 = scope_14.start_list(true, Some("item"));
+            for item_16 in var_15 {
+                #[allow(unused_mut)]
+                let mut entry_18 = list_17.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_18, item_16)?;
+            }
+            list_17.finish();
         }
-        list_17.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

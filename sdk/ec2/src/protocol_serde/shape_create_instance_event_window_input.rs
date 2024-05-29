@@ -18,13 +18,15 @@ pub fn ser_create_instance_event_window_input_input_input(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("TimeRange");
     if let Some(var_6) = &input.time_ranges {
-        let mut list_8 = scope_5.start_list(true, None);
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            crate::protocol_serde::shape_instance_event_window_time_range_request::ser_instance_event_window_time_range_request(entry_9, item_7)?;
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, None);
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                crate::protocol_serde::shape_instance_event_window_time_range_request::ser_instance_event_window_time_range_request(entry_9, item_7)?;
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("CronExpression");
@@ -34,13 +36,15 @@ pub fn ser_create_instance_event_window_input_input_input(
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("TagSpecification");
     if let Some(var_13) = &input.tag_specifications {
-        let mut list_15 = scope_12.start_list(true, Some("item"));
-        for item_14 in var_13 {
-            #[allow(unused_mut)]
-            let mut entry_16 = list_15.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_16, item_14)?;
+        if !var_13.is_empty() {
+            let mut list_15 = scope_12.start_list(true, Some("item"));
+            for item_14 in var_13 {
+                #[allow(unused_mut)]
+                let mut entry_16 = list_15.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_16, item_14)?;
+            }
+            list_15.finish();
         }
-        list_15.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

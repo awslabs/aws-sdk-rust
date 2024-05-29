@@ -22,13 +22,15 @@ pub fn ser_vpn_connection_options_specification(
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("TunnelOptions");
     if let Some(var_8) = &input.tunnel_options {
-        let mut list_10 = scope_7.start_list(true, None);
-        for item_9 in var_8 {
-            #[allow(unused_mut)]
-            let mut entry_11 = list_10.entry();
-            crate::protocol_serde::shape_vpn_tunnel_options_specification::ser_vpn_tunnel_options_specification(entry_11, item_9)?;
+        if !var_8.is_empty() {
+            let mut list_10 = scope_7.start_list(true, None);
+            for item_9 in var_8 {
+                #[allow(unused_mut)]
+                let mut entry_11 = list_10.entry();
+                crate::protocol_serde::shape_vpn_tunnel_options_specification::ser_vpn_tunnel_options_specification(entry_11, item_9)?;
+            }
+            list_10.finish();
         }
-        list_10.finish();
     }
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("LocalIpv4NetworkCidr");

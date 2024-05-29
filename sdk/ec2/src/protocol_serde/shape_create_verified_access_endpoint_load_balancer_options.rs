@@ -25,13 +25,15 @@ pub fn ser_create_verified_access_endpoint_load_balancer_options(
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("SubnetId");
     if let Some(var_8) = &input.subnet_ids {
-        let mut list_10 = scope_7.start_list(true, Some("item"));
-        for item_9 in var_8 {
-            #[allow(unused_mut)]
-            let mut entry_11 = list_10.entry();
-            entry_11.string(item_9);
+        if !var_8.is_empty() {
+            let mut list_10 = scope_7.start_list(true, Some("item"));
+            for item_9 in var_8 {
+                #[allow(unused_mut)]
+                let mut entry_11 = list_10.entry();
+                entry_11.string(item_9);
+            }
+            list_10.finish();
         }
-        list_10.finish();
     }
     Ok(())
 }

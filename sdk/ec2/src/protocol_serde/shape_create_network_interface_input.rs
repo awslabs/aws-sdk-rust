@@ -18,13 +18,15 @@ pub fn ser_create_network_interface_input_input_input(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("SecurityGroupId");
     if let Some(var_6) = &input.groups {
-        let mut list_8 = scope_5.start_list(true, Some("SecurityGroupId"));
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            entry_9.string(item_7);
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("SecurityGroupId"));
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                entry_9.string(item_7);
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("Ipv6AddressCount");
@@ -37,13 +39,15 @@ pub fn ser_create_network_interface_input_input_input(
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("Ipv6Addresses");
     if let Some(var_13) = &input.ipv6_addresses {
-        let mut list_15 = scope_12.start_list(true, Some("item"));
-        for item_14 in var_13 {
-            #[allow(unused_mut)]
-            let mut entry_16 = list_15.entry();
-            crate::protocol_serde::shape_instance_ipv6_address::ser_instance_ipv6_address(entry_16, item_14)?;
+        if !var_13.is_empty() {
+            let mut list_15 = scope_12.start_list(true, Some("item"));
+            for item_14 in var_13 {
+                #[allow(unused_mut)]
+                let mut entry_16 = list_15.entry();
+                crate::protocol_serde::shape_instance_ipv6_address::ser_instance_ipv6_address(entry_16, item_14)?;
+            }
+            list_15.finish();
         }
-        list_15.finish();
     }
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("PrivateIpAddress");
@@ -53,13 +57,15 @@ pub fn ser_create_network_interface_input_input_input(
     #[allow(unused_mut)]
     let mut scope_19 = writer.prefix("PrivateIpAddresses");
     if let Some(var_20) = &input.private_ip_addresses {
-        let mut list_22 = scope_19.start_list(true, Some("item"));
-        for item_21 in var_20 {
-            #[allow(unused_mut)]
-            let mut entry_23 = list_22.entry();
-            crate::protocol_serde::shape_private_ip_address_specification::ser_private_ip_address_specification(entry_23, item_21)?;
+        if !var_20.is_empty() {
+            let mut list_22 = scope_19.start_list(true, Some("item"));
+            for item_21 in var_20 {
+                #[allow(unused_mut)]
+                let mut entry_23 = list_22.entry();
+                crate::protocol_serde::shape_private_ip_address_specification::ser_private_ip_address_specification(entry_23, item_21)?;
+            }
+            list_22.finish();
         }
-        list_22.finish();
     }
     #[allow(unused_mut)]
     let mut scope_24 = writer.prefix("SecondaryPrivateIpAddressCount");
@@ -72,13 +78,15 @@ pub fn ser_create_network_interface_input_input_input(
     #[allow(unused_mut)]
     let mut scope_26 = writer.prefix("Ipv4Prefix");
     if let Some(var_27) = &input.ipv4_prefixes {
-        let mut list_29 = scope_26.start_list(true, Some("item"));
-        for item_28 in var_27 {
-            #[allow(unused_mut)]
-            let mut entry_30 = list_29.entry();
-            crate::protocol_serde::shape_ipv4_prefix_specification_request::ser_ipv4_prefix_specification_request(entry_30, item_28)?;
+        if !var_27.is_empty() {
+            let mut list_29 = scope_26.start_list(true, Some("item"));
+            for item_28 in var_27 {
+                #[allow(unused_mut)]
+                let mut entry_30 = list_29.entry();
+                crate::protocol_serde::shape_ipv4_prefix_specification_request::ser_ipv4_prefix_specification_request(entry_30, item_28)?;
+            }
+            list_29.finish();
         }
-        list_29.finish();
     }
     #[allow(unused_mut)]
     let mut scope_31 = writer.prefix("Ipv4PrefixCount");
@@ -91,13 +99,15 @@ pub fn ser_create_network_interface_input_input_input(
     #[allow(unused_mut)]
     let mut scope_33 = writer.prefix("Ipv6Prefix");
     if let Some(var_34) = &input.ipv6_prefixes {
-        let mut list_36 = scope_33.start_list(true, Some("item"));
-        for item_35 in var_34 {
-            #[allow(unused_mut)]
-            let mut entry_37 = list_36.entry();
-            crate::protocol_serde::shape_ipv6_prefix_specification_request::ser_ipv6_prefix_specification_request(entry_37, item_35)?;
+        if !var_34.is_empty() {
+            let mut list_36 = scope_33.start_list(true, Some("item"));
+            for item_35 in var_34 {
+                #[allow(unused_mut)]
+                let mut entry_37 = list_36.entry();
+                crate::protocol_serde::shape_ipv6_prefix_specification_request::ser_ipv6_prefix_specification_request(entry_37, item_35)?;
+            }
+            list_36.finish();
         }
-        list_36.finish();
     }
     #[allow(unused_mut)]
     let mut scope_38 = writer.prefix("Ipv6PrefixCount");
@@ -120,13 +130,15 @@ pub fn ser_create_network_interface_input_input_input(
     #[allow(unused_mut)]
     let mut scope_44 = writer.prefix("TagSpecification");
     if let Some(var_45) = &input.tag_specifications {
-        let mut list_47 = scope_44.start_list(true, Some("item"));
-        for item_46 in var_45 {
-            #[allow(unused_mut)]
-            let mut entry_48 = list_47.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_48, item_46)?;
+        if !var_45.is_empty() {
+            let mut list_47 = scope_44.start_list(true, Some("item"));
+            for item_46 in var_45 {
+                #[allow(unused_mut)]
+                let mut entry_48 = list_47.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_48, item_46)?;
+            }
+            list_47.finish();
         }
-        list_47.finish();
     }
     #[allow(unused_mut)]
     let mut scope_49 = writer.prefix("ClientToken");

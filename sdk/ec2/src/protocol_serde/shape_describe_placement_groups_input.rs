@@ -8,13 +8,15 @@ pub fn ser_describe_placement_groups_input_input_input(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Filter");
     if let Some(var_2) = &input.filters {
-        let mut list_4 = scope_1.start_list(true, Some("Filter"));
-        for item_3 in var_2 {
-            #[allow(unused_mut)]
-            let mut entry_5 = list_4.entry();
-            crate::protocol_serde::shape_filter::ser_filter(entry_5, item_3)?;
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("Filter"));
+            for item_3 in var_2 {
+                #[allow(unused_mut)]
+                let mut entry_5 = list_4.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_5, item_3)?;
+            }
+            list_4.finish();
         }
-        list_4.finish();
     }
     #[allow(unused_mut)]
     let mut scope_6 = writer.prefix("DryRun");
@@ -24,24 +26,28 @@ pub fn ser_describe_placement_groups_input_input_input(
     #[allow(unused_mut)]
     let mut scope_8 = writer.prefix("GroupName");
     if let Some(var_9) = &input.group_names {
-        let mut list_11 = scope_8.start_list(true, None);
-        for item_10 in var_9 {
-            #[allow(unused_mut)]
-            let mut entry_12 = list_11.entry();
-            entry_12.string(item_10);
+        if !var_9.is_empty() {
+            let mut list_11 = scope_8.start_list(true, None);
+            for item_10 in var_9 {
+                #[allow(unused_mut)]
+                let mut entry_12 = list_11.entry();
+                entry_12.string(item_10);
+            }
+            list_11.finish();
         }
-        list_11.finish();
     }
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("GroupId");
     if let Some(var_14) = &input.group_ids {
-        let mut list_16 = scope_13.start_list(true, Some("GroupId"));
-        for item_15 in var_14 {
-            #[allow(unused_mut)]
-            let mut entry_17 = list_16.entry();
-            entry_17.string(item_15);
+        if !var_14.is_empty() {
+            let mut list_16 = scope_13.start_list(true, Some("GroupId"));
+            for item_15 in var_14 {
+                #[allow(unused_mut)]
+                let mut entry_17 = list_16.entry();
+                entry_17.string(item_15);
+            }
+            list_16.finish();
         }
-        list_16.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

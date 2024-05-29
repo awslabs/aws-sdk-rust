@@ -41,13 +41,15 @@ pub fn ser_allocate_hosts_input_input_input(
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("TagSpecification");
     if let Some(var_14) = &input.tag_specifications {
-        let mut list_16 = scope_13.start_list(true, Some("item"));
-        for item_15 in var_14 {
-            #[allow(unused_mut)]
-            let mut entry_17 = list_16.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_17, item_15)?;
+        if !var_14.is_empty() {
+            let mut list_16 = scope_13.start_list(true, Some("item"));
+            for item_15 in var_14 {
+                #[allow(unused_mut)]
+                let mut entry_17 = list_16.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_17, item_15)?;
+            }
+            list_16.finish();
         }
-        list_16.finish();
     }
     #[allow(unused_mut)]
     let mut scope_18 = writer.prefix("HostRecovery");
@@ -67,13 +69,15 @@ pub fn ser_allocate_hosts_input_input_input(
     #[allow(unused_mut)]
     let mut scope_24 = writer.prefix("AssetId");
     if let Some(var_25) = &input.asset_ids {
-        let mut list_27 = scope_24.start_list(true, None);
-        for item_26 in var_25 {
-            #[allow(unused_mut)]
-            let mut entry_28 = list_27.entry();
-            entry_28.string(item_26);
+        if !var_25.is_empty() {
+            let mut list_27 = scope_24.start_list(true, None);
+            for item_26 in var_25 {
+                #[allow(unused_mut)]
+                let mut entry_28 = list_27.entry();
+                entry_28.string(item_26);
+            }
+            list_27.finish();
         }
-        list_27.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

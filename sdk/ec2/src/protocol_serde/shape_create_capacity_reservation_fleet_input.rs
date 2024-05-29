@@ -18,13 +18,15 @@ pub fn ser_create_capacity_reservation_fleet_input_input_input(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("InstanceTypeSpecification");
     if let Some(var_6) = &input.instance_type_specifications {
-        let mut list_8 = scope_5.start_list(true, None);
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            crate::protocol_serde::shape_reservation_fleet_instance_specification::ser_reservation_fleet_instance_specification(entry_9, item_7)?;
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, None);
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                crate::protocol_serde::shape_reservation_fleet_instance_specification::ser_reservation_fleet_instance_specification(entry_9, item_7)?;
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("Tenancy");
@@ -52,13 +54,15 @@ pub fn ser_create_capacity_reservation_fleet_input_input_input(
     #[allow(unused_mut)]
     let mut scope_18 = writer.prefix("TagSpecification");
     if let Some(var_19) = &input.tag_specifications {
-        let mut list_21 = scope_18.start_list(true, Some("item"));
-        for item_20 in var_19 {
-            #[allow(unused_mut)]
-            let mut entry_22 = list_21.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_22, item_20)?;
+        if !var_19.is_empty() {
+            let mut list_21 = scope_18.start_list(true, Some("item"));
+            for item_20 in var_19 {
+                #[allow(unused_mut)]
+                let mut entry_22 = list_21.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_22, item_20)?;
+            }
+            list_21.finish();
         }
-        list_21.finish();
     }
     #[allow(unused_mut)]
     let mut scope_23 = writer.prefix("DryRun");

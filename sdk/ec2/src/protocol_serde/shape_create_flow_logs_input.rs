@@ -33,13 +33,15 @@ pub fn ser_create_flow_logs_input_input_input(
     #[allow(unused_mut)]
     let mut scope_11 = writer.prefix("ResourceId");
     if let Some(var_12) = &input.resource_ids {
-        let mut list_14 = scope_11.start_list(true, Some("item"));
-        for item_13 in var_12 {
-            #[allow(unused_mut)]
-            let mut entry_15 = list_14.entry();
-            entry_15.string(item_13);
+        if !var_12.is_empty() {
+            let mut list_14 = scope_11.start_list(true, Some("item"));
+            for item_13 in var_12 {
+                #[allow(unused_mut)]
+                let mut entry_15 = list_14.entry();
+                entry_15.string(item_13);
+            }
+            list_14.finish();
         }
-        list_14.finish();
     }
     #[allow(unused_mut)]
     let mut scope_16 = writer.prefix("ResourceType");
@@ -69,13 +71,15 @@ pub fn ser_create_flow_logs_input_input_input(
     #[allow(unused_mut)]
     let mut scope_26 = writer.prefix("TagSpecification");
     if let Some(var_27) = &input.tag_specifications {
-        let mut list_29 = scope_26.start_list(true, Some("item"));
-        for item_28 in var_27 {
-            #[allow(unused_mut)]
-            let mut entry_30 = list_29.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_30, item_28)?;
+        if !var_27.is_empty() {
+            let mut list_29 = scope_26.start_list(true, Some("item"));
+            for item_28 in var_27 {
+                #[allow(unused_mut)]
+                let mut entry_30 = list_29.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_30, item_28)?;
+            }
+            list_29.finish();
         }
-        list_29.finish();
     }
     #[allow(unused_mut)]
     let mut scope_31 = writer.prefix("MaxAggregationInterval");

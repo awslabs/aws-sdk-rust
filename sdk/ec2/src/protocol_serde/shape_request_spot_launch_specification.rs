@@ -7,24 +7,28 @@ pub fn ser_request_spot_launch_specification(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("SecurityGroupId");
     if let Some(var_2) = &input.security_group_ids {
-        let mut list_4 = scope_1.start_list(true, Some("item"));
-        for item_3 in var_2 {
-            #[allow(unused_mut)]
-            let mut entry_5 = list_4.entry();
-            entry_5.string(item_3);
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("item"));
+            for item_3 in var_2 {
+                #[allow(unused_mut)]
+                let mut entry_5 = list_4.entry();
+                entry_5.string(item_3);
+            }
+            list_4.finish();
         }
-        list_4.finish();
     }
     #[allow(unused_mut)]
     let mut scope_6 = writer.prefix("SecurityGroup");
     if let Some(var_7) = &input.security_groups {
-        let mut list_9 = scope_6.start_list(true, Some("item"));
-        for item_8 in var_7 {
-            #[allow(unused_mut)]
-            let mut entry_10 = list_9.entry();
-            entry_10.string(item_8);
+        if !var_7.is_empty() {
+            let mut list_9 = scope_6.start_list(true, Some("item"));
+            for item_8 in var_7 {
+                #[allow(unused_mut)]
+                let mut entry_10 = list_9.entry();
+                entry_10.string(item_8);
+            }
+            list_9.finish();
         }
-        list_9.finish();
     }
     #[allow(unused_mut)]
     let mut scope_11 = writer.prefix("AddressingType");
@@ -34,13 +38,15 @@ pub fn ser_request_spot_launch_specification(
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("BlockDeviceMapping");
     if let Some(var_14) = &input.block_device_mappings {
-        let mut list_16 = scope_13.start_list(true, Some("item"));
-        for item_15 in var_14 {
-            #[allow(unused_mut)]
-            let mut entry_17 = list_16.entry();
-            crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_17, item_15)?;
+        if !var_14.is_empty() {
+            let mut list_16 = scope_13.start_list(true, Some("item"));
+            for item_15 in var_14 {
+                #[allow(unused_mut)]
+                let mut entry_17 = list_16.entry();
+                crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_17, item_15)?;
+            }
+            list_16.finish();
         }
-        list_16.finish();
     }
     #[allow(unused_mut)]
     let mut scope_18 = writer.prefix("EbsOptimized");
@@ -80,13 +86,17 @@ pub fn ser_request_spot_launch_specification(
     #[allow(unused_mut)]
     let mut scope_32 = writer.prefix("NetworkInterface");
     if let Some(var_33) = &input.network_interfaces {
-        let mut list_35 = scope_32.start_list(true, Some("item"));
-        for item_34 in var_33 {
-            #[allow(unused_mut)]
-            let mut entry_36 = list_35.entry();
-            crate::protocol_serde::shape_instance_network_interface_specification::ser_instance_network_interface_specification(entry_36, item_34)?;
+        if !var_33.is_empty() {
+            let mut list_35 = scope_32.start_list(true, Some("item"));
+            for item_34 in var_33 {
+                #[allow(unused_mut)]
+                let mut entry_36 = list_35.entry();
+                crate::protocol_serde::shape_instance_network_interface_specification::ser_instance_network_interface_specification(
+                    entry_36, item_34,
+                )?;
+            }
+            list_35.finish();
         }
-        list_35.finish();
     }
     #[allow(unused_mut)]
     let mut scope_37 = writer.prefix("Placement");

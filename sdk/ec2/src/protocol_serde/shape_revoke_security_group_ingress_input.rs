@@ -31,13 +31,15 @@ pub fn ser_revoke_security_group_ingress_input_input_input(
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("IpPermissions");
     if let Some(var_10) = &input.ip_permissions {
-        let mut list_12 = scope_9.start_list(true, Some("item"));
-        for item_11 in var_10 {
-            #[allow(unused_mut)]
-            let mut entry_13 = list_12.entry();
-            crate::protocol_serde::shape_ip_permission::ser_ip_permission(entry_13, item_11)?;
+        if !var_10.is_empty() {
+            let mut list_12 = scope_9.start_list(true, Some("item"));
+            for item_11 in var_10 {
+                #[allow(unused_mut)]
+                let mut entry_13 = list_12.entry();
+                crate::protocol_serde::shape_ip_permission::ser_ip_permission(entry_13, item_11)?;
+            }
+            list_12.finish();
         }
-        list_12.finish();
     }
     #[allow(unused_mut)]
     let mut scope_14 = writer.prefix("IpProtocol");
@@ -70,13 +72,15 @@ pub fn ser_revoke_security_group_ingress_input_input_input(
     #[allow(unused_mut)]
     let mut scope_24 = writer.prefix("SecurityGroupRuleId");
     if let Some(var_25) = &input.security_group_rule_ids {
-        let mut list_27 = scope_24.start_list(true, Some("item"));
-        for item_26 in var_25 {
-            #[allow(unused_mut)]
-            let mut entry_28 = list_27.entry();
-            entry_28.string(item_26);
+        if !var_25.is_empty() {
+            let mut list_27 = scope_24.start_list(true, Some("item"));
+            for item_26 in var_25 {
+                #[allow(unused_mut)]
+                let mut entry_28 = list_27.entry();
+                entry_28.string(item_26);
+            }
+            list_27.finish();
         }
-        list_27.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

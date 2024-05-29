@@ -18,24 +18,28 @@ pub fn ser_create_ipam_input_input_input(
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("OperatingRegion");
     if let Some(var_6) = &input.operating_regions {
-        let mut list_8 = scope_5.start_list(true, None);
-        for item_7 in var_6 {
-            #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            crate::protocol_serde::shape_add_ipam_operating_region::ser_add_ipam_operating_region(entry_9, item_7)?;
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, None);
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                crate::protocol_serde::shape_add_ipam_operating_region::ser_add_ipam_operating_region(entry_9, item_7)?;
+            }
+            list_8.finish();
         }
-        list_8.finish();
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("TagSpecification");
     if let Some(var_11) = &input.tag_specifications {
-        let mut list_13 = scope_10.start_list(true, Some("item"));
-        for item_12 in var_11 {
-            #[allow(unused_mut)]
-            let mut entry_14 = list_13.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_14, item_12)?;
+        if !var_11.is_empty() {
+            let mut list_13 = scope_10.start_list(true, Some("item"));
+            for item_12 in var_11 {
+                #[allow(unused_mut)]
+                let mut entry_14 = list_13.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_14, item_12)?;
+            }
+            list_13.finish();
         }
-        list_13.finish();
     }
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("ClientToken");

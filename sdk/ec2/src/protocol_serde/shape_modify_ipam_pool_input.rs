@@ -57,24 +57,28 @@ pub fn ser_modify_ipam_pool_input_input_input(
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("AddAllocationResourceTag");
     if let Some(var_18) = &input.add_allocation_resource_tags {
-        let mut list_20 = scope_17.start_list(true, Some("item"));
-        for item_19 in var_18 {
-            #[allow(unused_mut)]
-            let mut entry_21 = list_20.entry();
-            crate::protocol_serde::shape_request_ipam_resource_tag::ser_request_ipam_resource_tag(entry_21, item_19)?;
+        if !var_18.is_empty() {
+            let mut list_20 = scope_17.start_list(true, Some("item"));
+            for item_19 in var_18 {
+                #[allow(unused_mut)]
+                let mut entry_21 = list_20.entry();
+                crate::protocol_serde::shape_request_ipam_resource_tag::ser_request_ipam_resource_tag(entry_21, item_19)?;
+            }
+            list_20.finish();
         }
-        list_20.finish();
     }
     #[allow(unused_mut)]
     let mut scope_22 = writer.prefix("RemoveAllocationResourceTag");
     if let Some(var_23) = &input.remove_allocation_resource_tags {
-        let mut list_25 = scope_22.start_list(true, Some("item"));
-        for item_24 in var_23 {
-            #[allow(unused_mut)]
-            let mut entry_26 = list_25.entry();
-            crate::protocol_serde::shape_request_ipam_resource_tag::ser_request_ipam_resource_tag(entry_26, item_24)?;
+        if !var_23.is_empty() {
+            let mut list_25 = scope_22.start_list(true, Some("item"));
+            for item_24 in var_23 {
+                #[allow(unused_mut)]
+                let mut entry_26 = list_25.entry();
+                crate::protocol_serde::shape_request_ipam_resource_tag::ser_request_ipam_resource_tag(entry_26, item_24)?;
+            }
+            list_25.finish();
         }
-        list_25.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

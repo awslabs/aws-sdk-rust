@@ -47,13 +47,15 @@ pub fn ser_create_verified_access_trust_provider_input_input_input(
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("TagSpecification");
     if let Some(var_16) = &input.tag_specifications {
-        let mut list_18 = scope_15.start_list(true, Some("item"));
-        for item_17 in var_16 {
-            #[allow(unused_mut)]
-            let mut entry_19 = list_18.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_19, item_17)?;
+        if !var_16.is_empty() {
+            let mut list_18 = scope_15.start_list(true, Some("item"));
+            for item_17 in var_16 {
+                #[allow(unused_mut)]
+                let mut entry_19 = list_18.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_19, item_17)?;
+            }
+            list_18.finish();
         }
-        list_18.finish();
     }
     #[allow(unused_mut)]
     let mut scope_20 = writer.prefix("ClientToken");
