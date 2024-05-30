@@ -108,6 +108,19 @@ pub fn de_customer_gateway(
                 builder = builder.set_tags(var_8);
             }
             ,
+            s if s.matches("bgpAsnExtended") /* BgpAsnExtended com.amazonaws.ec2#CustomerGateway$BgpAsnExtended */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_bgp_asn_extended(var_9);
+            }
+            ,
             _ => {}
         }
     }

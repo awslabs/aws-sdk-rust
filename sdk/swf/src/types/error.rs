@@ -19,6 +19,8 @@ pub use crate::types::error::_default_undefined_fault::DefaultUndefinedFault;
 
 pub use crate::types::error::_domain_deprecated_fault::DomainDeprecatedFault;
 
+pub use crate::types::error::_type_not_deprecated_fault::TypeNotDeprecatedFault;
+
 mod _default_undefined_fault;
 
 mod _domain_already_exists_fault;
@@ -34,6 +36,8 @@ mod _too_many_tags_fault;
 mod _type_already_exists_fault;
 
 mod _type_deprecated_fault;
+
+mod _type_not_deprecated_fault;
 
 mod _unknown_resource_fault;
 

@@ -13,6 +13,12 @@ pub mod count_pending_activity_tasks;
 /// Types for the `CountPendingDecisionTasks` operation.
 pub mod count_pending_decision_tasks;
 
+/// Types for the `DeleteActivityType` operation.
+pub mod delete_activity_type;
+
+/// Types for the `DeleteWorkflowType` operation.
+pub mod delete_workflow_type;
+
 /// Types for the `DeprecateActivityType` operation.
 pub mod deprecate_activity_type;
 

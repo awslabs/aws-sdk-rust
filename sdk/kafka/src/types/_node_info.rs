@@ -8,6 +8,8 @@ pub struct NodeInfo {
     pub added_to_cluster_time: ::std::option::Option<::std::string::String>,
     /// <p>The broker node info.</p>
     pub broker_node_info: ::std::option::Option<crate::types::BrokerNodeInfo>,
+    /// <p>The ControllerNodeInfo.</p>
+    pub controller_node_info: ::std::option::Option<crate::types::ControllerNodeInfo>,
     /// <p>The instance type.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the node.</p>
@@ -25,6 +27,10 @@ impl NodeInfo {
     /// <p>The broker node info.</p>
     pub fn broker_node_info(&self) -> ::std::option::Option<&crate::types::BrokerNodeInfo> {
         self.broker_node_info.as_ref()
+    }
+    /// <p>The ControllerNodeInfo.</p>
+    pub fn controller_node_info(&self) -> ::std::option::Option<&crate::types::ControllerNodeInfo> {
+        self.controller_node_info.as_ref()
     }
     /// <p>The instance type.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
@@ -56,6 +62,7 @@ impl NodeInfo {
 pub struct NodeInfoBuilder {
     pub(crate) added_to_cluster_time: ::std::option::Option<::std::string::String>,
     pub(crate) broker_node_info: ::std::option::Option<crate::types::BrokerNodeInfo>,
+    pub(crate) controller_node_info: ::std::option::Option<crate::types::ControllerNodeInfo>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) node_arn: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<crate::types::NodeType>,
@@ -89,6 +96,20 @@ impl NodeInfoBuilder {
     /// <p>The broker node info.</p>
     pub fn get_broker_node_info(&self) -> &::std::option::Option<crate::types::BrokerNodeInfo> {
         &self.broker_node_info
+    }
+    /// <p>The ControllerNodeInfo.</p>
+    pub fn controller_node_info(mut self, input: crate::types::ControllerNodeInfo) -> Self {
+        self.controller_node_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ControllerNodeInfo.</p>
+    pub fn set_controller_node_info(mut self, input: ::std::option::Option<crate::types::ControllerNodeInfo>) -> Self {
+        self.controller_node_info = input;
+        self
+    }
+    /// <p>The ControllerNodeInfo.</p>
+    pub fn get_controller_node_info(&self) -> &::std::option::Option<crate::types::ControllerNodeInfo> {
+        &self.controller_node_info
     }
     /// <p>The instance type.</p>
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,6 +172,7 @@ impl NodeInfoBuilder {
         crate::types::NodeInfo {
             added_to_cluster_time: self.added_to_cluster_time,
             broker_node_info: self.broker_node_info,
+            controller_node_info: self.controller_node_info,
             instance_type: self.instance_type,
             node_arn: self.node_arn,
             node_type: self.node_type,

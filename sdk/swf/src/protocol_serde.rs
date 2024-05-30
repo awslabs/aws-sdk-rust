@@ -31,6 +31,10 @@ pub(crate) mod shape_count_pending_activity_tasks;
 
 pub(crate) mod shape_count_pending_decision_tasks;
 
+pub(crate) mod shape_delete_activity_type;
+
+pub(crate) mod shape_delete_workflow_type;
+
 pub(crate) mod shape_deprecate_activity_type;
 
 pub(crate) mod shape_deprecate_domain;
@@ -115,6 +119,10 @@ pub(crate) mod shape_count_pending_decision_tasks_input;
 
 pub(crate) mod shape_default_undefined_fault;
 
+pub(crate) mod shape_delete_activity_type_input;
+
+pub(crate) mod shape_delete_workflow_type_input;
+
 pub(crate) mod shape_deprecate_activity_type_input;
 
 pub(crate) mod shape_deprecate_domain_input;
@@ -186,6 +194,8 @@ pub(crate) mod shape_too_many_tags_fault;
 pub(crate) mod shape_type_already_exists_fault;
 
 pub(crate) mod shape_type_deprecated_fault;
+
+pub(crate) mod shape_type_not_deprecated_fault;
 
 pub(crate) mod shape_undeprecate_activity_type_input;
 

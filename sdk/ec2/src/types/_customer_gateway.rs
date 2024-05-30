@@ -4,11 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerGateway {
-    /// <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+    /// <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+    /// <p>Valid values: <code>1</code> to <code>2,147,483,647</code></p>
     pub bgp_asn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the customer gateway.</p>
     pub customer_gateway_id: ::std::option::Option<::std::string::String>,
-    /// <p>The IP address of the customer gateway device's outside interface.</p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>PublicIpv4</code>, you can use a public IPv4 address.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
@@ -20,9 +21,13 @@ pub struct CustomerGateway {
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the customer gateway.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+    /// <p>Valid values: <code>2,147,483,648</code> to <code>4,294,967,295</code></p>
+    pub bgp_asn_extended: ::std::option::Option<::std::string::String>,
 }
 impl CustomerGateway {
-    /// <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+    /// <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+    /// <p>Valid values: <code>1</code> to <code>2,147,483,647</code></p>
     pub fn bgp_asn(&self) -> ::std::option::Option<&str> {
         self.bgp_asn.as_deref()
     }
@@ -30,7 +35,7 @@ impl CustomerGateway {
     pub fn customer_gateway_id(&self) -> ::std::option::Option<&str> {
         self.customer_gateway_id.as_deref()
     }
-    /// <p>The IP address of the customer gateway device's outside interface.</p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>PublicIpv4</code>, you can use a public IPv4 address.</p>
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
@@ -56,6 +61,11 @@ impl CustomerGateway {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+    /// <p>Valid values: <code>2,147,483,648</code> to <code>4,294,967,295</code></p>
+    pub fn bgp_asn_extended(&self) -> ::std::option::Option<&str> {
+        self.bgp_asn_extended.as_deref()
+    }
 }
 impl CustomerGateway {
     /// Creates a new builder-style object to manufacture [`CustomerGateway`](crate::types::CustomerGateway).
@@ -76,19 +86,23 @@ pub struct CustomerGatewayBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) bgp_asn_extended: ::std::option::Option<::std::string::String>,
 }
 impl CustomerGatewayBuilder {
-    /// <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+    /// <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+    /// <p>Valid values: <code>1</code> to <code>2,147,483,647</code></p>
     pub fn bgp_asn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bgp_asn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+    /// <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+    /// <p>Valid values: <code>1</code> to <code>2,147,483,647</code></p>
     pub fn set_bgp_asn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bgp_asn = input;
         self
     }
-    /// <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+    /// <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+    /// <p>Valid values: <code>1</code> to <code>2,147,483,647</code></p>
     pub fn get_bgp_asn(&self) -> &::std::option::Option<::std::string::String> {
         &self.bgp_asn
     }
@@ -106,17 +120,17 @@ impl CustomerGatewayBuilder {
     pub fn get_customer_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_gateway_id
     }
-    /// <p>The IP address of the customer gateway device's outside interface.</p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>PublicIpv4</code>, you can use a public IPv4 address.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IP address of the customer gateway device's outside interface.</p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>PublicIpv4</code>, you can use a public IPv4 address.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
     }
-    /// <p>The IP address of the customer gateway device's outside interface.</p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>PublicIpv4</code>, you can use a public IPv4 address.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
     }
@@ -196,6 +210,23 @@ impl CustomerGatewayBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+    /// <p>Valid values: <code>2,147,483,648</code> to <code>4,294,967,295</code></p>
+    pub fn bgp_asn_extended(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bgp_asn_extended = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+    /// <p>Valid values: <code>2,147,483,648</code> to <code>4,294,967,295</code></p>
+    pub fn set_bgp_asn_extended(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bgp_asn_extended = input;
+        self
+    }
+    /// <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+    /// <p>Valid values: <code>2,147,483,648</code> to <code>4,294,967,295</code></p>
+    pub fn get_bgp_asn_extended(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bgp_asn_extended
+    }
     /// Consumes the builder and constructs a [`CustomerGateway`](crate::types::CustomerGateway).
     pub fn build(self) -> crate::types::CustomerGateway {
         crate::types::CustomerGateway {
@@ -207,6 +238,7 @@ impl CustomerGatewayBuilder {
             r#type: self.r#type,
             device_name: self.device_name,
             tags: self.tags,
+            bgp_asn_extended: self.bgp_asn_extended,
         }
     }
 }

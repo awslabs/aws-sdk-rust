@@ -355,6 +355,8 @@ pub(crate) mod shape_cloud_watch_logs;
 
 pub(crate) mod shape_cluster_operation_step;
 
+pub(crate) mod shape_controller_node_info;
+
 pub(crate) mod shape_ebs_storage_info;
 
 pub(crate) mod shape_firehose;

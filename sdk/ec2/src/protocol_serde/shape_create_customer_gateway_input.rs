@@ -56,6 +56,14 @@ pub fn ser_create_customer_gateway_input_input_input(
     if let Some(var_19) = &input.dry_run {
         scope_18.boolean(*var_19);
     }
+    #[allow(unused_mut)]
+    let mut scope_20 = writer.prefix("BgpAsnExtended");
+    if let Some(var_21) = &input.bgp_asn_extended {
+        scope_20.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_21).into()),
+        );
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

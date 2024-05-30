@@ -89,6 +89,8 @@ pub use crate::types::_zookeeper_node_info::ZookeeperNodeInfo;
 
 pub use crate::types::_node_type::NodeType;
 
+pub use crate::types::_controller_node_info::ControllerNodeInfo;
+
 pub use crate::types::_broker_node_info::BrokerNodeInfo;
 
 pub use crate::types::_broker_software_info::BrokerSoftwareInfo;
@@ -260,6 +262,8 @@ mod _connectivity_info;
 mod _consumer_group_replication;
 
 mod _consumer_group_replication_update;
+
+mod _controller_node_info;
 
 mod _customer_action_status;
 

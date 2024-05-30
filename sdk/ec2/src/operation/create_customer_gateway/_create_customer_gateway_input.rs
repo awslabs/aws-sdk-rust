@@ -4,8 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomerGatewayInput {
-    /// <p>For devices that support BGP, the customer gateway's BGP ASN.</p>
+    /// <p>For customer gateway devices that support BGP, specify the device's ASN. You must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when creating the customer gateway. If the ASN is larger than <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
     /// <p>Default: 65000</p>
+    /// <p>Valid values: <code>1</code> to <code>2,147,483,647</code></p>
     pub bgp_asn: ::std::option::Option<i32>,
     /// <p><i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
     pub public_ip: ::std::option::Option<::std::string::String>,
@@ -18,14 +19,18 @@ pub struct CreateCustomerGatewayInput {
     /// <p>A name for the customer gateway device.</p>
     /// <p>Length Constraints: Up to 255 characters.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
-    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static.</p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>PublicIpv4</code>, you can use a public IPv4 address.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
+    /// <p>For customer gateway devices that support BGP, specify the device's ASN. You must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when creating the customer gateway. If the ASN is larger than <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
+    /// <p>Valid values: <code>2,147,483,648</code> to <code>4,294,967,295</code></p>
+    pub bgp_asn_extended: ::std::option::Option<i64>,
 }
 impl CreateCustomerGatewayInput {
-    /// <p>For devices that support BGP, the customer gateway's BGP ASN.</p>
+    /// <p>For customer gateway devices that support BGP, specify the device's ASN. You must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when creating the customer gateway. If the ASN is larger than <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
     /// <p>Default: 65000</p>
+    /// <p>Valid values: <code>1</code> to <code>2,147,483,647</code></p>
     pub fn bgp_asn(&self) -> ::std::option::Option<i32> {
         self.bgp_asn
     }
@@ -52,13 +57,18 @@ impl CreateCustomerGatewayInput {
     pub fn device_name(&self) -> ::std::option::Option<&str> {
         self.device_name.as_deref()
     }
-    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static.</p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>PublicIpv4</code>, you can use a public IPv4 address.</p>
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
+    }
+    /// <p>For customer gateway devices that support BGP, specify the device's ASN. You must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when creating the customer gateway. If the ASN is larger than <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
+    /// <p>Valid values: <code>2,147,483,648</code> to <code>4,294,967,295</code></p>
+    pub fn bgp_asn_extended(&self) -> ::std::option::Option<i64> {
+        self.bgp_asn_extended
     }
 }
 impl CreateCustomerGatewayInput {
@@ -80,22 +90,26 @@ pub struct CreateCustomerGatewayInputBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) bgp_asn_extended: ::std::option::Option<i64>,
 }
 impl CreateCustomerGatewayInputBuilder {
-    /// <p>For devices that support BGP, the customer gateway's BGP ASN.</p>
+    /// <p>For customer gateway devices that support BGP, specify the device's ASN. You must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when creating the customer gateway. If the ASN is larger than <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
     /// <p>Default: 65000</p>
+    /// <p>Valid values: <code>1</code> to <code>2,147,483,647</code></p>
     pub fn bgp_asn(mut self, input: i32) -> Self {
         self.bgp_asn = ::std::option::Option::Some(input);
         self
     }
-    /// <p>For devices that support BGP, the customer gateway's BGP ASN.</p>
+    /// <p>For customer gateway devices that support BGP, specify the device's ASN. You must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when creating the customer gateway. If the ASN is larger than <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
     /// <p>Default: 65000</p>
+    /// <p>Valid values: <code>1</code> to <code>2,147,483,647</code></p>
     pub fn set_bgp_asn(mut self, input: ::std::option::Option<i32>) -> Self {
         self.bgp_asn = input;
         self
     }
-    /// <p>For devices that support BGP, the customer gateway's BGP ASN.</p>
+    /// <p>For customer gateway devices that support BGP, specify the device's ASN. You must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when creating the customer gateway. If the ASN is larger than <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
     /// <p>Default: 65000</p>
+    /// <p>Valid values: <code>1</code> to <code>2,147,483,647</code></p>
     pub fn get_bgp_asn(&self) -> &::std::option::Option<i32> {
         &self.bgp_asn
     }
@@ -179,17 +193,17 @@ impl CreateCustomerGatewayInputBuilder {
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_name
     }
-    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static.</p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>PublicIpv4</code>, you can use a public IPv4 address.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static.</p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>PublicIpv4</code>, you can use a public IPv4 address.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
     }
-    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static.</p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static. If <code>OutsideIpAddressType</code> in your VPN connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to <code>PublicIpv4</code>, you can use a public IPv4 address.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
     }
@@ -207,6 +221,23 @@ impl CreateCustomerGatewayInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
+    /// <p>For customer gateway devices that support BGP, specify the device's ASN. You must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when creating the customer gateway. If the ASN is larger than <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
+    /// <p>Valid values: <code>2,147,483,648</code> to <code>4,294,967,295</code></p>
+    pub fn bgp_asn_extended(mut self, input: i64) -> Self {
+        self.bgp_asn_extended = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>For customer gateway devices that support BGP, specify the device's ASN. You must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when creating the customer gateway. If the ASN is larger than <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
+    /// <p>Valid values: <code>2,147,483,648</code> to <code>4,294,967,295</code></p>
+    pub fn set_bgp_asn_extended(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.bgp_asn_extended = input;
+        self
+    }
+    /// <p>For customer gateway devices that support BGP, specify the device's ASN. You must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when creating the customer gateway. If the ASN is larger than <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
+    /// <p>Valid values: <code>2,147,483,648</code> to <code>4,294,967,295</code></p>
+    pub fn get_bgp_asn_extended(&self) -> &::std::option::Option<i64> {
+        &self.bgp_asn_extended
+    }
     /// Consumes the builder and constructs a [`CreateCustomerGatewayInput`](crate::operation::create_customer_gateway::CreateCustomerGatewayInput).
     pub fn build(
         self,
@@ -221,6 +252,7 @@ impl CreateCustomerGatewayInputBuilder {
             device_name: self.device_name,
             ip_address: self.ip_address,
             dry_run: self.dry_run,
+            bgp_asn_extended: self.bgp_asn_extended,
         })
     }
 }

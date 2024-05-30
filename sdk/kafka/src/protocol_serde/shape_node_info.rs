@@ -24,6 +24,10 @@ where
                         "brokerNodeInfo" => {
                             builder = builder.set_broker_node_info(crate::protocol_serde::shape_broker_node_info::de_broker_node_info(tokens)?);
                         }
+                        "controllerNodeInfo" => {
+                            builder =
+                                builder.set_controller_node_info(crate::protocol_serde::shape_controller_node_info::de_controller_node_info(tokens)?);
+                        }
                         "instanceType" => {
                             builder = builder.set_instance_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

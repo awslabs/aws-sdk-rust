@@ -171,6 +171,10 @@ mod count_pending_decision_tasks;
 /// ```
 pub mod customize;
 
+mod delete_activity_type;
+
+mod delete_workflow_type;
+
 mod deprecate_activity_type;
 
 mod deprecate_domain;

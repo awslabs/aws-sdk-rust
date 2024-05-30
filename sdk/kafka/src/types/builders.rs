@@ -77,6 +77,8 @@ pub use crate::types::_node_info::NodeInfoBuilder;
 
 pub use crate::types::_zookeeper_node_info::ZookeeperNodeInfoBuilder;
 
+pub use crate::types::_controller_node_info::ControllerNodeInfoBuilder;
+
 pub use crate::types::_broker_node_info::BrokerNodeInfoBuilder;
 
 pub use crate::types::_broker_software_info::BrokerSoftwareInfoBuilder;

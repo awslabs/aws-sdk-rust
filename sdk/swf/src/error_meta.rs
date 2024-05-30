@@ -22,6 +22,8 @@ pub enum Error {
     TypeAlreadyExistsFault(crate::types::error::TypeAlreadyExistsFault),
     /// <p>Returned when the specified activity or workflow type was already deprecated.</p>
     TypeDeprecatedFault(crate::types::error::TypeDeprecatedFault),
+    /// <p>Returned when the resource type has not been deprecated.</p>
+    TypeNotDeprecatedFault(crate::types::error::TypeNotDeprecatedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::types::error::UnknownResourceFault),
     /// <p>Returned by <code>StartWorkflowExecution</code> when an open execution with the same workflowId is already running in the specified domain.</p>
@@ -46,6 +48,7 @@ impl ::std::fmt::Display for Error {
             Error::TooManyTagsFault(inner) => inner.fmt(f),
             Error::TypeAlreadyExistsFault(inner) => inner.fmt(f),
             Error::TypeDeprecatedFault(inner) => inner.fmt(f),
+            Error::TypeNotDeprecatedFault(inner) => inner.fmt(f),
             Error::UnknownResourceFault(inner) => inner.fmt(f),
             Error::WorkflowExecutionAlreadyStartedFault(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -77,6 +80,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::TooManyTagsFault(inner) => inner.meta(),
             Self::TypeAlreadyExistsFault(inner) => inner.meta(),
             Self::TypeDeprecatedFault(inner) => inner.meta(),
+            Self::TypeNotDeprecatedFault(inner) => inner.meta(),
             Self::UnknownResourceFault(inner) => inner.meta(),
             Self::WorkflowExecutionAlreadyStartedFault(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -209,6 +213,58 @@ impl From<crate::operation::count_pending_decision_tasks::CountPendingDecisionTa
                 Error::UnknownResourceFault(inner)
             }
             crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_activity_type::DeleteActivityTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_activity_type::DeleteActivityTypeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_activity_type::DeleteActivityTypeError> for Error {
+    fn from(err: crate::operation::delete_activity_type::DeleteActivityTypeError) -> Self {
+        match err {
+            crate::operation::delete_activity_type::DeleteActivityTypeError::OperationNotPermittedFault(inner) => {
+                Error::OperationNotPermittedFault(inner)
+            }
+            crate::operation::delete_activity_type::DeleteActivityTypeError::TypeNotDeprecatedFault(inner) => Error::TypeNotDeprecatedFault(inner),
+            crate::operation::delete_activity_type::DeleteActivityTypeError::UnknownResourceFault(inner) => Error::UnknownResourceFault(inner),
+            crate::operation::delete_activity_type::DeleteActivityTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_workflow_type::DeleteWorkflowTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_workflow_type::DeleteWorkflowTypeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_workflow_type::DeleteWorkflowTypeError> for Error {
+    fn from(err: crate::operation::delete_workflow_type::DeleteWorkflowTypeError) -> Self {
+        match err {
+            crate::operation::delete_workflow_type::DeleteWorkflowTypeError::OperationNotPermittedFault(inner) => {
+                Error::OperationNotPermittedFault(inner)
+            }
+            crate::operation::delete_workflow_type::DeleteWorkflowTypeError::TypeNotDeprecatedFault(inner) => Error::TypeNotDeprecatedFault(inner),
+            crate::operation::delete_workflow_type::DeleteWorkflowTypeError::UnknownResourceFault(inner) => Error::UnknownResourceFault(inner),
+            crate::operation::delete_workflow_type::DeleteWorkflowTypeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1179,6 +1235,7 @@ impl ::std::error::Error for Error {
             Error::TooManyTagsFault(inner) => inner.source(),
             Error::TypeAlreadyExistsFault(inner) => inner.source(),
             Error::TypeDeprecatedFault(inner) => inner.source(),
+            Error::TypeNotDeprecatedFault(inner) => inner.source(),
             Error::UnknownResourceFault(inner) => inner.source(),
             Error::WorkflowExecutionAlreadyStartedFault(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -1196,6 +1253,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::TooManyTagsFault(e) => e.request_id(),
             Self::TypeAlreadyExistsFault(e) => e.request_id(),
             Self::TypeDeprecatedFault(e) => e.request_id(),
+            Self::TypeNotDeprecatedFault(e) => e.request_id(),
             Self::UnknownResourceFault(e) => e.request_id(),
             Self::WorkflowExecutionAlreadyStartedFault(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

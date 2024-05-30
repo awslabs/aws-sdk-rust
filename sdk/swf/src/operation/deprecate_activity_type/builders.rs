@@ -22,9 +22,7 @@ impl crate::operation::deprecate_activity_type::builders::DeprecateActivityTypeI
 }
 /// Fluent builder constructing a request to `DeprecateActivityType`.
 ///
-/// <p>Deprecates the specified <i>activity type</i>. After an activity type has been deprecated, you cannot create new tasks of that activity type. Tasks of this type that were scheduled before the type was deprecated continue to run.</p><note>
-/// <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p>
-/// </note>
+/// <p>Deprecates the specified <i>activity type</i>. After an activity type has been deprecated, you cannot create new tasks of that activity type. Tasks of this type that were scheduled before the type was deprecated continue to run.</p>
 /// <p><b>Access Control</b></p>
 /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
 /// <ul>
