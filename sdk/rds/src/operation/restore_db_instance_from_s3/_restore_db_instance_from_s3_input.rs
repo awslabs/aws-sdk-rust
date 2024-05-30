@@ -168,7 +168,7 @@ pub struct RestoreDbInstanceFromS3Input {
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The prefix of your Amazon S3 bucket.</p>
     pub s3_prefix: ::std::option::Option<::std::string::String>,
-    /// <p>An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.</p>
+    /// <p>An Amazon Web Services Identity and Access Management (IAM) role with a trust policy and a permissions policy that allows Amazon RDS to access your Amazon S3 bucket. For information about this role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Enabling.IAM"> Creating an IAM role manually</a> in the <i>Amazon RDS User Guide.</i></p>
     pub s3_ingestion_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to enable Performance Insights for the DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -495,7 +495,7 @@ impl RestoreDbInstanceFromS3Input {
     pub fn s3_prefix(&self) -> ::std::option::Option<&str> {
         self.s3_prefix.as_deref()
     }
-    /// <p>An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.</p>
+    /// <p>An Amazon Web Services Identity and Access Management (IAM) role with a trust policy and a permissions policy that allows Amazon RDS to access your Amazon S3 bucket. For information about this role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Enabling.IAM"> Creating an IAM role manually</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn s3_ingestion_role_arn(&self) -> ::std::option::Option<&str> {
         self.s3_ingestion_role_arn.as_deref()
     }
@@ -1479,18 +1479,18 @@ impl RestoreDbInstanceFromS3InputBuilder {
     pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_prefix
     }
-    /// <p>An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.</p>
+    /// <p>An Amazon Web Services Identity and Access Management (IAM) role with a trust policy and a permissions policy that allows Amazon RDS to access your Amazon S3 bucket. For information about this role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Enabling.IAM"> Creating an IAM role manually</a> in the <i>Amazon RDS User Guide.</i></p>
     /// This field is required.
     pub fn s3_ingestion_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_ingestion_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.</p>
+    /// <p>An Amazon Web Services Identity and Access Management (IAM) role with a trust policy and a permissions policy that allows Amazon RDS to access your Amazon S3 bucket. For information about this role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Enabling.IAM"> Creating an IAM role manually</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_s3_ingestion_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_ingestion_role_arn = input;
         self
     }
-    /// <p>An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.</p>
+    /// <p>An Amazon Web Services Identity and Access Management (IAM) role with a trust policy and a permissions policy that allows Amazon RDS to access your Amazon S3 bucket. For information about this role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Enabling.IAM"> Creating an IAM role manually</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_s3_ingestion_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_ingestion_role_arn
     }

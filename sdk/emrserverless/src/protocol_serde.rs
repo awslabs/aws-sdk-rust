@@ -37,6 +37,8 @@ pub(crate) mod shape_get_job_run;
 
 pub(crate) mod shape_list_applications;
 
+pub(crate) mod shape_list_job_run_attempts;
+
 pub(crate) mod shape_list_job_runs;
 
 pub(crate) mod shape_list_tags_for_resource;
@@ -101,6 +103,8 @@ pub(crate) mod shape_job_driver;
 
 pub(crate) mod shape_job_run;
 
+pub(crate) mod shape_job_run_attempts;
+
 pub(crate) mod shape_job_runs;
 
 pub(crate) mod shape_maximum_allowed_resources;
@@ -108,6 +112,8 @@ pub(crate) mod shape_maximum_allowed_resources;
 pub(crate) mod shape_monitoring_configuration;
 
 pub(crate) mod shape_network_configuration;
+
+pub(crate) mod shape_retry_policy;
 
 pub(crate) mod shape_tag_map;
 
@@ -124,6 +130,8 @@ pub(crate) mod shape_hive;
 pub(crate) mod shape_image_configuration;
 
 pub(crate) mod shape_initial_capacity_config_map;
+
+pub(crate) mod shape_job_run_attempt_summary;
 
 pub(crate) mod shape_job_run_summary;
 

@@ -225,4 +225,32 @@ impl StartJobRunFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    /// <p>The mode of the job run when it starts.</p>
+    pub fn mode(mut self, input: crate::types::JobRunMode) -> Self {
+        self.inner = self.inner.mode(input);
+        self
+    }
+    /// <p>The mode of the job run when it starts.</p>
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::JobRunMode>) -> Self {
+        self.inner = self.inner.set_mode(input);
+        self
+    }
+    /// <p>The mode of the job run when it starts.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::JobRunMode> {
+        self.inner.get_mode()
+    }
+    /// <p>The retry policy when job run starts.</p>
+    pub fn retry_policy(mut self, input: crate::types::RetryPolicy) -> Self {
+        self.inner = self.inner.retry_policy(input);
+        self
+    }
+    /// <p>The retry policy when job run starts.</p>
+    pub fn set_retry_policy(mut self, input: ::std::option::Option<crate::types::RetryPolicy>) -> Self {
+        self.inner = self.inner.set_retry_policy(input);
+        self
+    }
+    /// <p>The retry policy when job run starts.</p>
+    pub fn get_retry_policy(&self) -> &::std::option::Option<crate::types::RetryPolicy> {
+        self.inner.get_retry_policy()
+    }
 }

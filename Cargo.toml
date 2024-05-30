@@ -2,19 +2,18 @@
 resolver = "2"
 exclude = [
     "examples/examples",
-    "examples/lambda",
-    "examples/webassembly",
-    "examples/test-utils",
     "examples/cross_service",
-    "tests/webassembly",
-    "tests/no-default-features"
+    "examples/lambda",
+    "examples/test-utils",
+    "examples/webassembly",
+    "tests/no-default-features",
+    "tests/webassembly"
 ]
 members = [
     "sdk/accessanalyzer",
     "sdk/account",
     "sdk/acm",
     "sdk/acmpca",
-    "sdk/alexaforbusiness",
     "sdk/amp",
     "sdk/amplify",
     "sdk/amplifybackend",
@@ -200,7 +199,6 @@ members = [
     "sdk/guardduty",
     "sdk/health",
     "sdk/healthlake",
-    "sdk/honeycode",
     "sdk/iam",
     "sdk/identitystore",
     "sdk/imagebuilder",

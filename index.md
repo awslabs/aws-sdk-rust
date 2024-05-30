@@ -175,7 +175,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Access Analyzer | [aws-sdk-accessanalyzer](https://crates.io/crates/aws-sdk-accessanalyzer) ([docs](https://docs.rs/aws-sdk-accessanalyzer)) |
 | Agents for Amazon Bedrock | [aws-sdk-bedrockagent](https://crates.io/crates/aws-sdk-bedrockagent) ([docs](https://docs.rs/aws-sdk-bedrockagent)) |
 | Agents for Amazon Bedrock Runtime | [aws-sdk-bedrockagentruntime](https://crates.io/crates/aws-sdk-bedrockagentruntime) ([docs](https://docs.rs/aws-sdk-bedrockagentruntime)) |
-| Alexa For Business | [aws-sdk-alexaforbusiness](https://crates.io/crates/aws-sdk-alexaforbusiness) ([docs](https://docs.rs/aws-sdk-alexaforbusiness)) |
 | Amazon API Gateway | [aws-sdk-apigateway](https://crates.io/crates/aws-sdk-apigateway) ([docs](https://docs.rs/aws-sdk-apigateway)) |
 | Amazon AppConfig | [aws-sdk-appconfig](https://crates.io/crates/aws-sdk-appconfig) ([docs](https://docs.rs/aws-sdk-appconfig)) |
 | Amazon AppIntegrations Service | [aws-sdk-appintegrations](https://crates.io/crates/aws-sdk-appintegrations) ([docs](https://docs.rs/aws-sdk-appintegrations)) |
@@ -252,7 +251,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Glacier | [aws-sdk-glacier](https://crates.io/crates/aws-sdk-glacier) ([docs](https://docs.rs/aws-sdk-glacier)) |
 | Amazon GuardDuty | [aws-sdk-guardduty](https://crates.io/crates/aws-sdk-guardduty) ([docs](https://docs.rs/aws-sdk-guardduty)) |
 | Amazon HealthLake | [aws-sdk-healthlake](https://crates.io/crates/aws-sdk-healthlake) ([docs](https://docs.rs/aws-sdk-healthlake)) |
-| Amazon Honeycode | [aws-sdk-honeycode](https://crates.io/crates/aws-sdk-honeycode) ([docs](https://docs.rs/aws-sdk-honeycode)) |
 | Amazon Import/Export Snowball | [aws-sdk-snowball](https://crates.io/crates/aws-sdk-snowball) ([docs](https://docs.rs/aws-sdk-snowball)) |
 | Amazon Inspector | [aws-sdk-inspector](https://crates.io/crates/aws-sdk-inspector) ([docs](https://docs.rs/aws-sdk-inspector)) |
 | Amazon Interactive Video Service | [aws-sdk-ivs](https://crates.io/crates/aws-sdk-ivs) ([docs](https://docs.rs/aws-sdk-ivs)) |

@@ -153,6 +153,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SecurityConfig" => {
+                            builder = builder.set_security_config(
+                                crate::protocol_serde::shape_model_package_security_config::de_model_package_security_config(tokens)?,
+                            );
+                        }
+                        "ModelCard" => {
+                            builder = builder.set_model_card(crate::protocol_serde::shape_model_package_model_card::de_model_package_model_card(
+                                tokens,
+                            )?);
+                        }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
                         }

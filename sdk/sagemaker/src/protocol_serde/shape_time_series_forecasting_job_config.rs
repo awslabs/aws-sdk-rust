@@ -54,6 +54,12 @@ pub fn ser_time_series_forecasting_job_config(
         }
         array_14.finish();
     }
+    if let Some(var_17) = &input.candidate_generation_config {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("CandidateGenerationConfig").start_object();
+        crate::protocol_serde::shape_candidate_generation_config::ser_candidate_generation_config(&mut object_18, var_17)?;
+        object_18.finish();
+    }
     Ok(())
 }
 
@@ -111,6 +117,11 @@ where
                         }
                         "HolidayConfig" => {
                             builder = builder.set_holiday_config(crate::protocol_serde::shape_holiday_config::de_holiday_config(tokens)?);
+                        }
+                        "CandidateGenerationConfig" => {
+                            builder = builder.set_candidate_generation_config(
+                                crate::protocol_serde::shape_candidate_generation_config::de_candidate_generation_config(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

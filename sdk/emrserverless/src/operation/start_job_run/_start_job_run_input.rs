@@ -19,6 +19,10 @@ pub struct StartJobRunInput {
     pub execution_timeout_minutes: ::std::option::Option<i64>,
     /// <p>The optional job run name. This doesn't have to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The mode of the job run when it starts.</p>
+    pub mode: ::std::option::Option<crate::types::JobRunMode>,
+    /// <p>The retry policy when job run starts.</p>
+    pub retry_policy: ::std::option::Option<crate::types::RetryPolicy>,
 }
 impl StartJobRunInput {
     /// <p>The ID of the application on which to run the job.</p>
@@ -53,6 +57,14 @@ impl StartJobRunInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>The mode of the job run when it starts.</p>
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::JobRunMode> {
+        self.mode.as_ref()
+    }
+    /// <p>The retry policy when job run starts.</p>
+    pub fn retry_policy(&self) -> ::std::option::Option<&crate::types::RetryPolicy> {
+        self.retry_policy.as_ref()
+    }
 }
 impl StartJobRunInput {
     /// Creates a new builder-style object to manufacture [`StartJobRunInput`](crate::operation::start_job_run::StartJobRunInput).
@@ -73,6 +85,8 @@ pub struct StartJobRunInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) execution_timeout_minutes: ::std::option::Option<i64>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) mode: ::std::option::Option<crate::types::JobRunMode>,
+    pub(crate) retry_policy: ::std::option::Option<crate::types::RetryPolicy>,
 }
 impl StartJobRunInputBuilder {
     /// <p>The ID of the application on which to run the job.</p>
@@ -196,6 +210,34 @@ impl StartJobRunInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>The mode of the job run when it starts.</p>
+    pub fn mode(mut self, input: crate::types::JobRunMode) -> Self {
+        self.mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode of the job run when it starts.</p>
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::JobRunMode>) -> Self {
+        self.mode = input;
+        self
+    }
+    /// <p>The mode of the job run when it starts.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::JobRunMode> {
+        &self.mode
+    }
+    /// <p>The retry policy when job run starts.</p>
+    pub fn retry_policy(mut self, input: crate::types::RetryPolicy) -> Self {
+        self.retry_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The retry policy when job run starts.</p>
+    pub fn set_retry_policy(mut self, input: ::std::option::Option<crate::types::RetryPolicy>) -> Self {
+        self.retry_policy = input;
+        self
+    }
+    /// <p>The retry policy when job run starts.</p>
+    pub fn get_retry_policy(&self) -> &::std::option::Option<crate::types::RetryPolicy> {
+        &self.retry_policy
+    }
     /// Consumes the builder and constructs a [`StartJobRunInput`](crate::operation::start_job_run::StartJobRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_job_run::StartJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_job_run::StartJobRunInput {
@@ -207,6 +249,8 @@ impl StartJobRunInputBuilder {
             tags: self.tags,
             execution_timeout_minutes: self.execution_timeout_minutes,
             name: self.name,
+            mode: self.mode,
+            retry_policy: self.retry_policy,
         })
     }
 }

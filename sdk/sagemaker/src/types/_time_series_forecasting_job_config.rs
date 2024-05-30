@@ -43,6 +43,8 @@ pub struct TimeSeriesForecastingJobConfig {
     pub time_series_config: ::std::option::Option<crate::types::TimeSeriesConfig>,
     /// <p>The collection of holiday featurization attributes used to incorporate national holiday information into your forecasting model.</p>
     pub holiday_config: ::std::option::Option<::std::vec::Vec<crate::types::HolidayConfigAttributes>>,
+    /// <p>Stores the configuration information for how model candidates are generated using an AutoML job V2.</p>
+    pub candidate_generation_config: ::std::option::Option<crate::types::CandidateGenerationConfig>,
 }
 impl TimeSeriesForecastingJobConfig {
     /// <p>A URL to the Amazon S3 data source containing additional selected features that complement the target, itemID, timestamp, and grouped columns set in <code>TimeSeriesConfig</code>. When not provided, the AutoML job V2 includes all the columns from the original dataset that are not already declared in <code>TimeSeriesConfig</code>. If provided, the AutoML job V2 only considers these additional columns as a complement to the ones declared in <code>TimeSeriesConfig</code>.</p>
@@ -104,6 +106,10 @@ impl TimeSeriesForecastingJobConfig {
     pub fn holiday_config(&self) -> &[crate::types::HolidayConfigAttributes] {
         self.holiday_config.as_deref().unwrap_or_default()
     }
+    /// <p>Stores the configuration information for how model candidates are generated using an AutoML job V2.</p>
+    pub fn candidate_generation_config(&self) -> ::std::option::Option<&crate::types::CandidateGenerationConfig> {
+        self.candidate_generation_config.as_ref()
+    }
 }
 impl TimeSeriesForecastingJobConfig {
     /// Creates a new builder-style object to manufacture [`TimeSeriesForecastingJobConfig`](crate::types::TimeSeriesForecastingJobConfig).
@@ -124,6 +130,7 @@ pub struct TimeSeriesForecastingJobConfigBuilder {
     pub(crate) transformations: ::std::option::Option<crate::types::TimeSeriesTransformations>,
     pub(crate) time_series_config: ::std::option::Option<crate::types::TimeSeriesConfig>,
     pub(crate) holiday_config: ::std::option::Option<::std::vec::Vec<crate::types::HolidayConfigAttributes>>,
+    pub(crate) candidate_generation_config: ::std::option::Option<crate::types::CandidateGenerationConfig>,
 }
 impl TimeSeriesForecastingJobConfigBuilder {
     /// <p>A URL to the Amazon S3 data source containing additional selected features that complement the target, itemID, timestamp, and grouped columns set in <code>TimeSeriesConfig</code>. When not provided, the AutoML job V2 includes all the columns from the original dataset that are not already declared in <code>TimeSeriesConfig</code>. If provided, the AutoML job V2 only considers these additional columns as a complement to the ones declared in <code>TimeSeriesConfig</code>.</p>
@@ -322,6 +329,20 @@ impl TimeSeriesForecastingJobConfigBuilder {
     pub fn get_holiday_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HolidayConfigAttributes>> {
         &self.holiday_config
     }
+    /// <p>Stores the configuration information for how model candidates are generated using an AutoML job V2.</p>
+    pub fn candidate_generation_config(mut self, input: crate::types::CandidateGenerationConfig) -> Self {
+        self.candidate_generation_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Stores the configuration information for how model candidates are generated using an AutoML job V2.</p>
+    pub fn set_candidate_generation_config(mut self, input: ::std::option::Option<crate::types::CandidateGenerationConfig>) -> Self {
+        self.candidate_generation_config = input;
+        self
+    }
+    /// <p>Stores the configuration information for how model candidates are generated using an AutoML job V2.</p>
+    pub fn get_candidate_generation_config(&self) -> &::std::option::Option<crate::types::CandidateGenerationConfig> {
+        &self.candidate_generation_config
+    }
     /// Consumes the builder and constructs a [`TimeSeriesForecastingJobConfig`](crate::types::TimeSeriesForecastingJobConfig).
     pub fn build(self) -> crate::types::TimeSeriesForecastingJobConfig {
         crate::types::TimeSeriesForecastingJobConfig {
@@ -333,6 +354,7 @@ impl TimeSeriesForecastingJobConfigBuilder {
             transformations: self.transformations,
             time_series_config: self.time_series_config,
             holiday_config: self.holiday_config,
+            candidate_generation_config: self.candidate_generation_config,
         }
     }
 }

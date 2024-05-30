@@ -53,6 +53,10 @@ pub use crate::types::_knowledge_base_configuration::KnowledgeBaseConfiguration;
 
 pub use crate::types::_vector_knowledge_base_configuration::VectorKnowledgeBaseConfiguration;
 
+pub use crate::types::_embedding_model_configuration::EmbeddingModelConfiguration;
+
+pub use crate::types::_bedrock_embedding_model_configuration::BedrockEmbeddingModelConfiguration;
+
 pub use crate::types::_knowledge_base_type::KnowledgeBaseType;
 
 pub use crate::types::_agent_knowledge_base::AgentKnowledgeBase;
@@ -181,6 +185,8 @@ mod _agent_version_summary;
 
 mod _api_schema;
 
+mod _bedrock_embedding_model_configuration;
+
 mod _chunking_configuration;
 
 mod _chunking_strategy;
@@ -200,6 +206,8 @@ mod _data_source_status;
 mod _data_source_summary;
 
 mod _data_source_type;
+
+mod _embedding_model_configuration;
 
 mod _fixed_size_chunking_configuration;
 

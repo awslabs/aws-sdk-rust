@@ -7,6 +7,8 @@ pub struct GetDashboardForJobRunInput {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job run.</p>
     pub job_run_id: ::std::option::Option<::std::string::String>,
+    /// <p>An optimal parameter that indicates the amount of attempts for the job. If not specified, this value defaults to the attempt of the latest job.</p>
+    pub attempt: ::std::option::Option<i32>,
 }
 impl GetDashboardForJobRunInput {
     /// <p>The ID of the application.</p>
@@ -16,6 +18,10 @@ impl GetDashboardForJobRunInput {
     /// <p>The ID of the job run.</p>
     pub fn job_run_id(&self) -> ::std::option::Option<&str> {
         self.job_run_id.as_deref()
+    }
+    /// <p>An optimal parameter that indicates the amount of attempts for the job. If not specified, this value defaults to the attempt of the latest job.</p>
+    pub fn attempt(&self) -> ::std::option::Option<i32> {
+        self.attempt
     }
 }
 impl GetDashboardForJobRunInput {
@@ -31,6 +37,7 @@ impl GetDashboardForJobRunInput {
 pub struct GetDashboardForJobRunInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_run_id: ::std::option::Option<::std::string::String>,
+    pub(crate) attempt: ::std::option::Option<i32>,
 }
 impl GetDashboardForJobRunInputBuilder {
     /// <p>The ID of the application.</p>
@@ -63,6 +70,20 @@ impl GetDashboardForJobRunInputBuilder {
     pub fn get_job_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_run_id
     }
+    /// <p>An optimal parameter that indicates the amount of attempts for the job. If not specified, this value defaults to the attempt of the latest job.</p>
+    pub fn attempt(mut self, input: i32) -> Self {
+        self.attempt = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An optimal parameter that indicates the amount of attempts for the job. If not specified, this value defaults to the attempt of the latest job.</p>
+    pub fn set_attempt(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.attempt = input;
+        self
+    }
+    /// <p>An optimal parameter that indicates the amount of attempts for the job. If not specified, this value defaults to the attempt of the latest job.</p>
+    pub fn get_attempt(&self) -> &::std::option::Option<i32> {
+        &self.attempt
+    }
     /// Consumes the builder and constructs a [`GetDashboardForJobRunInput`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput).
     pub fn build(
         self,
@@ -73,6 +94,7 @@ impl GetDashboardForJobRunInputBuilder {
         ::std::result::Result::Ok(crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput {
             application_id: self.application_id,
             job_run_id: self.job_run_id,
+            attempt: self.attempt,
         })
     }
 }

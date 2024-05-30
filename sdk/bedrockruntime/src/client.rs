@@ -118,6 +118,10 @@ impl Client {
     }
 }
 
+mod converse;
+
+mod converse_stream;
+
 /// Operation customization and supporting types.
 ///
 pub mod customize;

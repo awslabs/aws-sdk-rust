@@ -106,6 +106,8 @@ pub struct AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::PCAConnectorAD::Connector</code></p></li>
     /// <li>
+    /// <p><code>AWS::QApps:QApp</code></p></li>
+    /// <li>
     /// <p><code>AWS::QBusiness::Application</code></p></li>
     /// <li>
     /// <p><code>AWS::QBusiness::DataSource</code></p></li>
@@ -138,11 +140,13 @@ pub struct AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::SNS::Topic</code></p></li>
     /// <li>
-    /// <p><code>AWS::SWF::Domain</code></p></li>
-    /// <li>
     /// <p><code>AWS::SQS::Queue</code></p></li>
     /// <li>
+    /// <p><code>AWS::SSM::ManagedNode</code></p></li>
+    /// <li>
     /// <p><code>AWS::SSMMessages::ControlChannel</code></p></li>
+    /// <li>
+    /// <p><code>AWS::SWF::Domain</code></p></li>
     /// <li>
     /// <p><code>AWS::ThinClient::Device</code></p></li>
     /// <li>
@@ -153,10 +157,16 @@ pub struct AdvancedFieldSelector {
     /// <p><code>AWS::Timestream::Table</code></p></li>
     /// <li>
     /// <p><code>AWS::VerifiedPermissions::PolicyStore</code></p></li>
+    /// <li>
+    /// <p><code>AWS::XRay::Trace</code></p></li>
     /// </ul>
     /// <p>You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p></li>
     /// <li>
-    /// <p><b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p>
+    /// <p><b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type.</p><note>
+    /// <p>You can't use the <code>resources.ARN</code> field to filter resource types that do not have ARNs.</p>
+    /// </note>
+    /// <p>The <code>resources.ARN</code> field can be set one of the following.</p>
+    /// <p>If resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p>
     /// <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information.</p>
     /// <ul>
     /// <li>
@@ -654,6 +664,23 @@ pub struct AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QApps:QApp</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qapps:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_uuid>
+    /// /qapp/
+    /// <qapp_uuid></qapp_uuid>
+    /// </application_uuid>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::Application</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -910,20 +937,6 @@ pub struct AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :swf:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :domain/
-    /// <domain_name></domain_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -938,6 +951,31 @@ pub struct AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SSM::ManagedNode</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :ssm:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :managed-instance/
+    /// <instance_id></instance_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :ec2:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :instance/
+    /// <instance_id></instance_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -948,6 +986,20 @@ pub struct AdvancedFieldSelector {
     /// <account_id>
     /// :control-channel/
     /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :swf:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :domain/
+    /// <domain_name></domain_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -1143,6 +1195,8 @@ impl AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::PCAConnectorAD::Connector</code></p></li>
     /// <li>
+    /// <p><code>AWS::QApps:QApp</code></p></li>
+    /// <li>
     /// <p><code>AWS::QBusiness::Application</code></p></li>
     /// <li>
     /// <p><code>AWS::QBusiness::DataSource</code></p></li>
@@ -1175,11 +1229,13 @@ impl AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::SNS::Topic</code></p></li>
     /// <li>
-    /// <p><code>AWS::SWF::Domain</code></p></li>
-    /// <li>
     /// <p><code>AWS::SQS::Queue</code></p></li>
     /// <li>
+    /// <p><code>AWS::SSM::ManagedNode</code></p></li>
+    /// <li>
     /// <p><code>AWS::SSMMessages::ControlChannel</code></p></li>
+    /// <li>
+    /// <p><code>AWS::SWF::Domain</code></p></li>
     /// <li>
     /// <p><code>AWS::ThinClient::Device</code></p></li>
     /// <li>
@@ -1190,10 +1246,16 @@ impl AdvancedFieldSelector {
     /// <p><code>AWS::Timestream::Table</code></p></li>
     /// <li>
     /// <p><code>AWS::VerifiedPermissions::PolicyStore</code></p></li>
+    /// <li>
+    /// <p><code>AWS::XRay::Trace</code></p></li>
     /// </ul>
     /// <p>You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p></li>
     /// <li>
-    /// <p><b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p>
+    /// <p><b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type.</p><note>
+    /// <p>You can't use the <code>resources.ARN</code> field to filter resource types that do not have ARNs.</p>
+    /// </note>
+    /// <p>The <code>resources.ARN</code> field can be set one of the following.</p>
+    /// <p>If resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p>
     /// <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information.</p>
     /// <ul>
     /// <li>
@@ -1691,6 +1753,23 @@ impl AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QApps:QApp</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qapps:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_uuid>
+    /// /qapp/
+    /// <qapp_uuid></qapp_uuid>
+    /// </application_uuid>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::Application</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -1947,20 +2026,6 @@ impl AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :swf:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :domain/
-    /// <domain_name></domain_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -1975,6 +2040,31 @@ impl AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SSM::ManagedNode</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :ssm:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :managed-instance/
+    /// <instance_id></instance_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :ec2:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :instance/
+    /// <instance_id></instance_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -1985,6 +2075,20 @@ impl AdvancedFieldSelector {
     /// <account_id>
     /// :control-channel/
     /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :swf:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :domain/
+    /// <domain_name></domain_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -2226,6 +2330,8 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::PCAConnectorAD::Connector</code></p></li>
     /// <li>
+    /// <p><code>AWS::QApps:QApp</code></p></li>
+    /// <li>
     /// <p><code>AWS::QBusiness::Application</code></p></li>
     /// <li>
     /// <p><code>AWS::QBusiness::DataSource</code></p></li>
@@ -2258,11 +2364,13 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::SNS::Topic</code></p></li>
     /// <li>
-    /// <p><code>AWS::SWF::Domain</code></p></li>
-    /// <li>
     /// <p><code>AWS::SQS::Queue</code></p></li>
     /// <li>
+    /// <p><code>AWS::SSM::ManagedNode</code></p></li>
+    /// <li>
     /// <p><code>AWS::SSMMessages::ControlChannel</code></p></li>
+    /// <li>
+    /// <p><code>AWS::SWF::Domain</code></p></li>
     /// <li>
     /// <p><code>AWS::ThinClient::Device</code></p></li>
     /// <li>
@@ -2273,10 +2381,16 @@ impl AdvancedFieldSelectorBuilder {
     /// <p><code>AWS::Timestream::Table</code></p></li>
     /// <li>
     /// <p><code>AWS::VerifiedPermissions::PolicyStore</code></p></li>
+    /// <li>
+    /// <p><code>AWS::XRay::Trace</code></p></li>
     /// </ul>
     /// <p>You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p></li>
     /// <li>
-    /// <p><b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p>
+    /// <p><b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type.</p><note>
+    /// <p>You can't use the <code>resources.ARN</code> field to filter resource types that do not have ARNs.</p>
+    /// </note>
+    /// <p>The <code>resources.ARN</code> field can be set one of the following.</p>
+    /// <p>If resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p>
     /// <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information.</p>
     /// <ul>
     /// <li>
@@ -2774,6 +2888,23 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QApps:QApp</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qapps:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_uuid>
+    /// /qapp/
+    /// <qapp_uuid></qapp_uuid>
+    /// </application_uuid>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::Application</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -3030,20 +3161,6 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :swf:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :domain/
-    /// <domain_name></domain_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -3058,6 +3175,31 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SSM::ManagedNode</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :ssm:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :managed-instance/
+    /// <instance_id></instance_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :ec2:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :instance/
+    /// <instance_id></instance_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -3068,6 +3210,20 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :control-channel/
     /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :swf:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :domain/
+    /// <domain_name></domain_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -3253,6 +3409,8 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::PCAConnectorAD::Connector</code></p></li>
     /// <li>
+    /// <p><code>AWS::QApps:QApp</code></p></li>
+    /// <li>
     /// <p><code>AWS::QBusiness::Application</code></p></li>
     /// <li>
     /// <p><code>AWS::QBusiness::DataSource</code></p></li>
@@ -3285,11 +3443,13 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::SNS::Topic</code></p></li>
     /// <li>
-    /// <p><code>AWS::SWF::Domain</code></p></li>
-    /// <li>
     /// <p><code>AWS::SQS::Queue</code></p></li>
     /// <li>
+    /// <p><code>AWS::SSM::ManagedNode</code></p></li>
+    /// <li>
     /// <p><code>AWS::SSMMessages::ControlChannel</code></p></li>
+    /// <li>
+    /// <p><code>AWS::SWF::Domain</code></p></li>
     /// <li>
     /// <p><code>AWS::ThinClient::Device</code></p></li>
     /// <li>
@@ -3300,10 +3460,16 @@ impl AdvancedFieldSelectorBuilder {
     /// <p><code>AWS::Timestream::Table</code></p></li>
     /// <li>
     /// <p><code>AWS::VerifiedPermissions::PolicyStore</code></p></li>
+    /// <li>
+    /// <p><code>AWS::XRay::Trace</code></p></li>
     /// </ul>
     /// <p>You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p></li>
     /// <li>
-    /// <p><b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p>
+    /// <p><b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type.</p><note>
+    /// <p>You can't use the <code>resources.ARN</code> field to filter resource types that do not have ARNs.</p>
+    /// </note>
+    /// <p>The <code>resources.ARN</code> field can be set one of the following.</p>
+    /// <p>If resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p>
     /// <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information.</p>
     /// <ul>
     /// <li>
@@ -3801,6 +3967,23 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QApps:QApp</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qapps:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_uuid>
+    /// /qapp/
+    /// <qapp_uuid></qapp_uuid>
+    /// </application_uuid>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::Application</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -4057,20 +4240,6 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :swf:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :domain/
-    /// <domain_name></domain_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -4085,6 +4254,31 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SSM::ManagedNode</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :ssm:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :managed-instance/
+    /// <instance_id></instance_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :ec2:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :instance/
+    /// <instance_id></instance_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -4095,6 +4289,20 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :control-channel/
     /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :swf:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :domain/
+    /// <domain_name></domain_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -4279,6 +4487,8 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::PCAConnectorAD::Connector</code></p></li>
     /// <li>
+    /// <p><code>AWS::QApps:QApp</code></p></li>
+    /// <li>
     /// <p><code>AWS::QBusiness::Application</code></p></li>
     /// <li>
     /// <p><code>AWS::QBusiness::DataSource</code></p></li>
@@ -4311,11 +4521,13 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::SNS::Topic</code></p></li>
     /// <li>
-    /// <p><code>AWS::SWF::Domain</code></p></li>
-    /// <li>
     /// <p><code>AWS::SQS::Queue</code></p></li>
     /// <li>
+    /// <p><code>AWS::SSM::ManagedNode</code></p></li>
+    /// <li>
     /// <p><code>AWS::SSMMessages::ControlChannel</code></p></li>
+    /// <li>
+    /// <p><code>AWS::SWF::Domain</code></p></li>
     /// <li>
     /// <p><code>AWS::ThinClient::Device</code></p></li>
     /// <li>
@@ -4326,10 +4538,16 @@ impl AdvancedFieldSelectorBuilder {
     /// <p><code>AWS::Timestream::Table</code></p></li>
     /// <li>
     /// <p><code>AWS::VerifiedPermissions::PolicyStore</code></p></li>
+    /// <li>
+    /// <p><code>AWS::XRay::Trace</code></p></li>
     /// </ul>
     /// <p>You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p></li>
     /// <li>
-    /// <p><b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p>
+    /// <p><b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type.</p><note>
+    /// <p>You can't use the <code>resources.ARN</code> field to filter resource types that do not have ARNs.</p>
+    /// </note>
+    /// <p>The <code>resources.ARN</code> field can be set one of the following.</p>
+    /// <p>If resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p>
     /// <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information.</p>
     /// <ul>
     /// <li>
@@ -4827,6 +5045,23 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QApps:QApp</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qapps:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_uuid>
+    /// /qapp/
+    /// <qapp_uuid></qapp_uuid>
+    /// </application_uuid>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::Application</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -5083,20 +5318,6 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :swf:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :domain/
-    /// <domain_name></domain_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -5111,6 +5332,31 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SSM::ManagedNode</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :ssm:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :managed-instance/
+    /// <instance_id></instance_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :ec2:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :instance/
+    /// <instance_id></instance_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -5121,6 +5367,20 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :control-channel/
     /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :swf:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :domain/
+    /// <domain_name></domain_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>

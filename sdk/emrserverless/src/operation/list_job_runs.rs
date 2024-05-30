@@ -225,6 +225,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListJobRunsR
                         }
                     }
                 }
+                if let ::std::option::Option::Some(inner_8) = &_input.mode {
+                    {
+                        query.push_kv("mode", &::aws_smithy_http::query::fmt_string(inner_8));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

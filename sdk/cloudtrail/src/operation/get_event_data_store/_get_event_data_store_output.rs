@@ -32,6 +32,8 @@ pub struct GetEventDataStoreOutput {
     pub federation_status: ::std::option::Option<crate::types::FederationStatus>,
     /// <p>If Lake query federation is enabled, provides the ARN of the federation role used to access the resources for the federated event data store.</p>
     pub federation_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The partition keys for the event data store. To improve query performance and efficiency, CloudTrail Lake organizes event data into partitions based on values derived from partition keys.</p>
+    pub partition_keys: ::std::option::Option<::std::vec::Vec<crate::types::PartitionKey>>,
     _request_id: Option<String>,
 }
 impl GetEventDataStoreOutput {
@@ -94,6 +96,12 @@ impl GetEventDataStoreOutput {
     pub fn federation_role_arn(&self) -> ::std::option::Option<&str> {
         self.federation_role_arn.as_deref()
     }
+    /// <p>The partition keys for the event data store. To improve query performance and efficiency, CloudTrail Lake organizes event data into partitions based on values derived from partition keys.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_keys.is_none()`.
+    pub fn partition_keys(&self) -> &[crate::types::PartitionKey] {
+        self.partition_keys.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetEventDataStoreOutput {
     fn request_id(&self) -> Option<&str> {
@@ -125,6 +133,7 @@ pub struct GetEventDataStoreOutputBuilder {
     pub(crate) billing_mode: ::std::option::Option<crate::types::BillingMode>,
     pub(crate) federation_status: ::std::option::Option<crate::types::FederationStatus>,
     pub(crate) federation_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) partition_keys: ::std::option::Option<::std::vec::Vec<crate::types::PartitionKey>>,
     _request_id: Option<String>,
 }
 impl GetEventDataStoreOutputBuilder {
@@ -333,6 +342,26 @@ impl GetEventDataStoreOutputBuilder {
     pub fn get_federation_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.federation_role_arn
     }
+    /// Appends an item to `partition_keys`.
+    ///
+    /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
+    ///
+    /// <p>The partition keys for the event data store. To improve query performance and efficiency, CloudTrail Lake organizes event data into partitions based on values derived from partition keys.</p>
+    pub fn partition_keys(mut self, input: crate::types::PartitionKey) -> Self {
+        let mut v = self.partition_keys.unwrap_or_default();
+        v.push(input);
+        self.partition_keys = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The partition keys for the event data store. To improve query performance and efficiency, CloudTrail Lake organizes event data into partitions based on values derived from partition keys.</p>
+    pub fn set_partition_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionKey>>) -> Self {
+        self.partition_keys = input;
+        self
+    }
+    /// <p>The partition keys for the event data store. To improve query performance and efficiency, CloudTrail Lake organizes event data into partitions based on values derived from partition keys.</p>
+    pub fn get_partition_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionKey>> {
+        &self.partition_keys
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -359,6 +388,7 @@ impl GetEventDataStoreOutputBuilder {
             billing_mode: self.billing_mode,
             federation_status: self.federation_status,
             federation_role_arn: self.federation_role_arn,
+            partition_keys: self.partition_keys,
             _request_id: self._request_id,
         }
     }

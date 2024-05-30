@@ -92,6 +92,15 @@ pub(crate) fn list_applications_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_job_run_attempts_output_output_correct_errors(
+    mut builder: crate::operation::list_job_run_attempts::builders::ListJobRunAttemptsOutputBuilder,
+) -> crate::operation::list_job_run_attempts::builders::ListJobRunAttemptsOutputBuilder {
+    if builder.job_run_attempts.is_none() {
+        builder.job_run_attempts = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_job_runs_output_output_correct_errors(
     mut builder: crate::operation::list_job_runs::builders::ListJobRunsOutputBuilder,
 ) -> crate::operation::list_job_runs::builders::ListJobRunsOutputBuilder {
@@ -231,6 +240,45 @@ pub(crate) fn image_configuration_correct_errors(
 ) -> crate::types::builders::ImageConfigurationBuilder {
     if builder.image_uri.is_none() {
         builder.image_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn job_run_attempt_summary_correct_errors(
+    mut builder: crate::types::builders::JobRunAttemptSummaryBuilder,
+) -> crate::types::builders::JobRunAttemptSummaryBuilder {
+    if builder.application_id.is_none() {
+        builder.application_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    if builder.job_created_at.is_none() {
+        builder.job_created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.execution_role.is_none() {
+        builder.execution_role = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::JobRunState>().ok()
+    }
+    if builder.state_details.is_none() {
+        builder.state_details = Some(Default::default())
+    }
+    if builder.release_label.is_none() {
+        builder.release_label = Some(Default::default())
     }
     builder
 }

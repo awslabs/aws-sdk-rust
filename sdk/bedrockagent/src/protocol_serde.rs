@@ -283,6 +283,8 @@ pub(crate) mod shape_vector_knowledge_base_configuration;
 
 pub(crate) mod shape_agent_alias_history_event;
 
+pub(crate) mod shape_embedding_model_configuration;
+
 pub(crate) mod shape_fixed_size_chunking_configuration;
 
 pub(crate) mod shape_functions;
@@ -302,6 +304,8 @@ pub(crate) mod shape_prompt_configurations;
 pub(crate) mod shape_rds_field_mapping;
 
 pub(crate) mod shape_redis_enterprise_cloud_field_mapping;
+
+pub(crate) mod shape_bedrock_embedding_model_configuration;
 
 pub(crate) mod shape_s3_prefixes;
 

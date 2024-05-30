@@ -1233,6 +1233,8 @@ pub(crate) mod shape_analytics_data_association_result;
 
 pub(crate) mod shape_assign_contact_category_action_definition;
 
+pub(crate) mod shape_associated_queue_id_list;
+
 pub(crate) mod shape_attached_file;
 
 pub(crate) mod shape_attached_file_error;

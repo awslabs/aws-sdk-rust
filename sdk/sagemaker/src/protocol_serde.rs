@@ -1677,6 +1677,10 @@ pub(crate) mod shape_model_metrics;
 
 pub(crate) mod shape_model_package_group_summary_list;
 
+pub(crate) mod shape_model_package_model_card;
+
+pub(crate) mod shape_model_package_security_config;
+
 pub(crate) mod shape_model_package_status_details;
 
 pub(crate) mod shape_model_package_summaries;

@@ -22,6 +22,9 @@ pub mod get_job_run;
 /// Types for the `ListApplications` operation.
 pub mod list_applications;
 
+/// Types for the `ListJobRunAttempts` operation.
+pub mod list_job_run_attempts;
+
 /// Types for the `ListJobRuns` operation.
 pub mod list_job_runs;
 

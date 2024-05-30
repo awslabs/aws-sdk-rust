@@ -248,6 +248,9 @@ pub(crate) fn de_get_event_data_store(
                             .transpose()?,
                     );
                 }
+                "PartitionKeys" => {
+                    builder = builder.set_partition_keys(crate::protocol_serde::shape_partition_key_list::de_partition_key_list(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

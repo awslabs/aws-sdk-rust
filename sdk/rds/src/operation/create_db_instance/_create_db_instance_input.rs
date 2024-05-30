@@ -23,7 +23,7 @@ pub struct CreateDbInstanceInput {
     /// Amazon Aurora PostgreSQL
     /// </dt>
     /// <dd>
-    /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created in the DB cluster.</p>
+    /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -117,7 +117,7 @@ pub struct CreateDbInstanceInput {
     /// RDS for PostgreSQL
     /// </dt>
     /// <dd>
-    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the DB instance.</p>
+    /// <p>The name of the database to create when the DB instance is created. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -861,7 +861,7 @@ impl CreateDbInstanceInput {
     /// Amazon Aurora PostgreSQL
     /// </dt>
     /// <dd>
-    /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created in the DB cluster.</p>
+    /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -955,7 +955,7 @@ impl CreateDbInstanceInput {
     /// RDS for PostgreSQL
     /// </dt>
     /// <dd>
-    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the DB instance.</p>
+    /// <p>The name of the database to create when the DB instance is created. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -1912,7 +1912,7 @@ impl CreateDbInstanceInputBuilder {
     /// Amazon Aurora PostgreSQL
     /// </dt>
     /// <dd>
-    /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created in the DB cluster.</p>
+    /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -2006,7 +2006,7 @@ impl CreateDbInstanceInputBuilder {
     /// RDS for PostgreSQL
     /// </dt>
     /// <dd>
-    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the DB instance.</p>
+    /// <p>The name of the database to create when the DB instance is created. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -2047,7 +2047,7 @@ impl CreateDbInstanceInputBuilder {
     /// Amazon Aurora PostgreSQL
     /// </dt>
     /// <dd>
-    /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created in the DB cluster.</p>
+    /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -2141,7 +2141,7 @@ impl CreateDbInstanceInputBuilder {
     /// RDS for PostgreSQL
     /// </dt>
     /// <dd>
-    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the DB instance.</p>
+    /// <p>The name of the database to create when the DB instance is created. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -2182,7 +2182,7 @@ impl CreateDbInstanceInputBuilder {
     /// Amazon Aurora PostgreSQL
     /// </dt>
     /// <dd>
-    /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created in the DB cluster.</p>
+    /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -2276,7 +2276,7 @@ impl CreateDbInstanceInputBuilder {
     /// RDS for PostgreSQL
     /// </dt>
     /// <dd>
-    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the DB instance.</p>
+    /// <p>The name of the database to create when the DB instance is created. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>

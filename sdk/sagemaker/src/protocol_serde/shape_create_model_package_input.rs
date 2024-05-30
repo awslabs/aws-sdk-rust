@@ -109,5 +109,17 @@ pub fn ser_create_model_package_input_input(
     if let Some(var_35) = &input.source_uri {
         object.key("SourceUri").string(var_35.as_str());
     }
+    if let Some(var_36) = &input.security_config {
+        #[allow(unused_mut)]
+        let mut object_37 = object.key("SecurityConfig").start_object();
+        crate::protocol_serde::shape_model_package_security_config::ser_model_package_security_config(&mut object_37, var_36)?;
+        object_37.finish();
+    }
+    if let Some(var_38) = &input.model_card {
+        #[allow(unused_mut)]
+        let mut object_39 = object.key("ModelCard").start_object();
+        crate::protocol_serde::shape_model_package_model_card::ser_model_package_model_card(&mut object_39, var_38)?;
+        object_39.finish();
+    }
     Ok(())
 }

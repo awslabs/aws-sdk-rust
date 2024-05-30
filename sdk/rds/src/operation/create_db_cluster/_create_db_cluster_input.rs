@@ -25,7 +25,7 @@ pub struct CreateDbClusterInput {
     /// <p>The name of the character set (<code>CharacterSet</code>) to associate the DB cluster with.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
     pub character_set_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name for your database of up to 64 alphanumeric characters. If you don't provide a name, Amazon RDS doesn't create a database in the DB cluster you are creating.</p>
+    /// <p>The name for your database of up to 64 alphanumeric characters. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for this DB cluster. This parameter is stored as a lowercase string.</p>
@@ -466,7 +466,7 @@ impl CreateDbClusterInput {
     pub fn character_set_name(&self) -> ::std::option::Option<&str> {
         self.character_set_name.as_deref()
     }
-    /// <p>The name for your database of up to 64 alphanumeric characters. If you don't provide a name, Amazon RDS doesn't create a database in the DB cluster you are creating.</p>
+    /// <p>The name for your database of up to 64 alphanumeric characters. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
@@ -1145,19 +1145,19 @@ impl CreateDbClusterInputBuilder {
     pub fn get_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.character_set_name
     }
-    /// <p>The name for your database of up to 64 alphanumeric characters. If you don't provide a name, Amazon RDS doesn't create a database in the DB cluster you are creating.</p>
+    /// <p>The name for your database of up to 64 alphanumeric characters. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name for your database of up to 64 alphanumeric characters. If you don't provide a name, Amazon RDS doesn't create a database in the DB cluster you are creating.</p>
+    /// <p>The name for your database of up to 64 alphanumeric characters. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
-    /// <p>The name for your database of up to 64 alphanumeric characters. If you don't provide a name, Amazon RDS doesn't create a database in the DB cluster you are creating.</p>
+    /// <p>The name for your database of up to 64 alphanumeric characters. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name

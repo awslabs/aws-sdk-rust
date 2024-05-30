@@ -10,6 +10,8 @@ pub struct JobRunSummary {
     pub id: ::std::string::String,
     /// <p>The optional job run name. This doesn't have to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The mode of the job run.</p>
+    pub mode: ::std::option::Option<crate::types::JobRunMode>,
     /// <p>The ARN of the job run.</p>
     pub arn: ::std::string::String,
     /// <p>The user who created the job run.</p>
@@ -28,6 +30,12 @@ pub struct JobRunSummary {
     pub release_label: ::std::string::String,
     /// <p>The type of job run, such as Spark or Hive.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
+    /// <p>The attempt number of the job run execution.</p>
+    pub attempt: ::std::option::Option<i32>,
+    /// <p>The date and time of when the job run attempt was created.</p>
+    pub attempt_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The date and time of when the job run attempt was last updated.</p>
+    pub attempt_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl JobRunSummary {
     /// <p>The ID of the application the job is running on.</p>
@@ -43,6 +51,10 @@ impl JobRunSummary {
     /// <p>The optional job run name. This doesn't have to be unique.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>The mode of the job run.</p>
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::JobRunMode> {
+        self.mode.as_ref()
     }
     /// <p>The ARN of the job run.</p>
     pub fn arn(&self) -> &str {
@@ -85,6 +97,18 @@ impl JobRunSummary {
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
+    /// <p>The attempt number of the job run execution.</p>
+    pub fn attempt(&self) -> ::std::option::Option<i32> {
+        self.attempt
+    }
+    /// <p>The date and time of when the job run attempt was created.</p>
+    pub fn attempt_created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.attempt_created_at.as_ref()
+    }
+    /// <p>The date and time of when the job run attempt was last updated.</p>
+    pub fn attempt_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.attempt_updated_at.as_ref()
+    }
 }
 impl JobRunSummary {
     /// Creates a new builder-style object to manufacture [`JobRunSummary`](crate::types::JobRunSummary).
@@ -100,6 +124,7 @@ pub struct JobRunSummaryBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) mode: ::std::option::Option<crate::types::JobRunMode>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -109,6 +134,9 @@ pub struct JobRunSummaryBuilder {
     pub(crate) state_details: ::std::option::Option<::std::string::String>,
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) attempt: ::std::option::Option<i32>,
+    pub(crate) attempt_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) attempt_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl JobRunSummaryBuilder {
     /// <p>The ID of the application the job is running on.</p>
@@ -154,6 +182,20 @@ impl JobRunSummaryBuilder {
     /// <p>The optional job run name. This doesn't have to be unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
+    }
+    /// <p>The mode of the job run.</p>
+    pub fn mode(mut self, input: crate::types::JobRunMode) -> Self {
+        self.mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode of the job run.</p>
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::JobRunMode>) -> Self {
+        self.mode = input;
+        self
+    }
+    /// <p>The mode of the job run.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::JobRunMode> {
+        &self.mode
     }
     /// <p>The ARN of the job run.</p>
     /// This field is required.
@@ -289,6 +331,48 @@ impl JobRunSummaryBuilder {
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
+    /// <p>The attempt number of the job run execution.</p>
+    pub fn attempt(mut self, input: i32) -> Self {
+        self.attempt = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The attempt number of the job run execution.</p>
+    pub fn set_attempt(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.attempt = input;
+        self
+    }
+    /// <p>The attempt number of the job run execution.</p>
+    pub fn get_attempt(&self) -> &::std::option::Option<i32> {
+        &self.attempt
+    }
+    /// <p>The date and time of when the job run attempt was created.</p>
+    pub fn attempt_created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.attempt_created_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time of when the job run attempt was created.</p>
+    pub fn set_attempt_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.attempt_created_at = input;
+        self
+    }
+    /// <p>The date and time of when the job run attempt was created.</p>
+    pub fn get_attempt_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.attempt_created_at
+    }
+    /// <p>The date and time of when the job run attempt was last updated.</p>
+    pub fn attempt_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.attempt_updated_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time of when the job run attempt was last updated.</p>
+    pub fn set_attempt_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.attempt_updated_at = input;
+        self
+    }
+    /// <p>The date and time of when the job run attempt was last updated.</p>
+    pub fn get_attempt_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.attempt_updated_at
+    }
     /// Consumes the builder and constructs a [`JobRunSummary`](crate::types::JobRunSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`application_id`](crate::types::builders::JobRunSummaryBuilder::application_id)
@@ -316,6 +400,7 @@ impl JobRunSummaryBuilder {
                 )
             })?,
             name: self.name,
+            mode: self.mode,
             arn: self.arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
@@ -365,6 +450,9 @@ impl JobRunSummaryBuilder {
                 )
             })?,
             r#type: self.r#type,
+            attempt: self.attempt,
+            attempt_created_at: self.attempt_created_at,
+            attempt_updated_at: self.attempt_updated_at,
         })
     }
 }

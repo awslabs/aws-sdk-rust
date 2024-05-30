@@ -203,19 +203,19 @@ impl CreateDBClusterFluentBuilder {
     pub fn get_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_character_set_name()
     }
-    /// <p>The name for your database of up to 64 alphanumeric characters. If you don't provide a name, Amazon RDS doesn't create a database in the DB cluster you are creating.</p>
+    /// <p>The name for your database of up to 64 alphanumeric characters. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
-    /// <p>The name for your database of up to 64 alphanumeric characters. If you don't provide a name, Amazon RDS doesn't create a database in the DB cluster you are creating.</p>
+    /// <p>The name for your database of up to 64 alphanumeric characters. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
-    /// <p>The name for your database of up to 64 alphanumeric characters. If you don't provide a name, Amazon RDS doesn't create a database in the DB cluster you are creating.</p>
+    /// <p>The name for your database of up to 64 alphanumeric characters. A database named <code>postgres</code> is always created. If this parameter is specified, an additional database with this name is created.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database_name()

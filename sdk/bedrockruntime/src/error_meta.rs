@@ -80,6 +80,65 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::converse::ConverseError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::converse::ConverseError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::converse::ConverseError> for Error {
+    fn from(err: crate::operation::converse::ConverseError) -> Self {
+        match err {
+            crate::operation::converse::ConverseError::ModelTimeoutException(inner) => Error::ModelTimeoutException(inner),
+            crate::operation::converse::ConverseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::converse::ConverseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::converse::ConverseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::converse::ConverseError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::converse::ConverseError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::converse::ConverseError::ModelNotReadyException(inner) => Error::ModelNotReadyException(inner),
+            crate::operation::converse::ConverseError::ModelErrorException(inner) => Error::ModelErrorException(inner),
+            crate::operation::converse::ConverseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::converse_stream::ConverseStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::converse_stream::ConverseStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::converse_stream::ConverseStreamError> for Error {
+    fn from(err: crate::operation::converse_stream::ConverseStreamError) -> Self {
+        match err {
+            crate::operation::converse_stream::ConverseStreamError::ModelTimeoutException(inner) => Error::ModelTimeoutException(inner),
+            crate::operation::converse_stream::ConverseStreamError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::converse_stream::ConverseStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::converse_stream::ConverseStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::converse_stream::ConverseStreamError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::converse_stream::ConverseStreamError::ModelStreamErrorException(inner) => Error::ModelStreamErrorException(inner),
+            crate::operation::converse_stream::ConverseStreamError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::converse_stream::ConverseStreamError::ModelNotReadyException(inner) => Error::ModelNotReadyException(inner),
+            crate::operation::converse_stream::ConverseStreamError::ModelErrorException(inner) => Error::ModelErrorException(inner),
+            crate::operation::converse_stream::ConverseStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_model::InvokeModelError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -169,6 +228,31 @@ impl From<crate::operation::invoke_model_with_response_stream::InvokeModelWithRe
                 Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::ConverseStreamOutputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::ConverseStreamOutputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::ConverseStreamOutputError> for Error {
+    fn from(err: crate::types::error::ConverseStreamOutputError) -> Self {
+        match err {
+            crate::types::error::ConverseStreamOutputError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::types::error::ConverseStreamOutputError::ModelStreamErrorException(inner) => Error::ModelStreamErrorException(inner),
+            crate::types::error::ConverseStreamOutputError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::types::error::ConverseStreamOutputError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::types::error::ConverseStreamOutputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

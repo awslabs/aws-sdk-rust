@@ -42,6 +42,16 @@ pub struct JobRun {
     pub execution_timeout_minutes: ::std::option::Option<i64>,
     /// <p>The aggregate vCPU, memory, and storage that Amazon Web Services has billed for the job run. The billed resources include a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed resources do not include usage for idle pre-initialized workers.</p>
     pub billed_resource_utilization: ::std::option::Option<crate::types::ResourceUtilization>,
+    /// <p>The mode of the job run.</p>
+    pub mode: ::std::option::Option<crate::types::JobRunMode>,
+    /// <p>The retry policy of the job run.</p>
+    pub retry_policy: ::std::option::Option<crate::types::RetryPolicy>,
+    /// <p>The attempt of the job run.</p>
+    pub attempt: ::std::option::Option<i32>,
+    /// <p>The date and time of when the job run attempt was created.</p>
+    pub attempt_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The date and time of when the job run attempt was last updated.</p>
+    pub attempt_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl JobRun {
     /// <p>The ID of the application the job is running on.</p>
@@ -127,6 +137,26 @@ impl JobRun {
     pub fn billed_resource_utilization(&self) -> ::std::option::Option<&crate::types::ResourceUtilization> {
         self.billed_resource_utilization.as_ref()
     }
+    /// <p>The mode of the job run.</p>
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::JobRunMode> {
+        self.mode.as_ref()
+    }
+    /// <p>The retry policy of the job run.</p>
+    pub fn retry_policy(&self) -> ::std::option::Option<&crate::types::RetryPolicy> {
+        self.retry_policy.as_ref()
+    }
+    /// <p>The attempt of the job run.</p>
+    pub fn attempt(&self) -> ::std::option::Option<i32> {
+        self.attempt
+    }
+    /// <p>The date and time of when the job run attempt was created.</p>
+    pub fn attempt_created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.attempt_created_at.as_ref()
+    }
+    /// <p>The date and time of when the job run attempt was last updated.</p>
+    pub fn attempt_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.attempt_updated_at.as_ref()
+    }
 }
 impl JobRun {
     /// Creates a new builder-style object to manufacture [`JobRun`](crate::types::JobRun).
@@ -158,6 +188,11 @@ pub struct JobRunBuilder {
     pub(crate) total_execution_duration_seconds: ::std::option::Option<i32>,
     pub(crate) execution_timeout_minutes: ::std::option::Option<i64>,
     pub(crate) billed_resource_utilization: ::std::option::Option<crate::types::ResourceUtilization>,
+    pub(crate) mode: ::std::option::Option<crate::types::JobRunMode>,
+    pub(crate) retry_policy: ::std::option::Option<crate::types::RetryPolicy>,
+    pub(crate) attempt: ::std::option::Option<i32>,
+    pub(crate) attempt_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) attempt_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl JobRunBuilder {
     /// <p>The ID of the application the job is running on.</p>
@@ -443,6 +478,76 @@ impl JobRunBuilder {
     pub fn get_billed_resource_utilization(&self) -> &::std::option::Option<crate::types::ResourceUtilization> {
         &self.billed_resource_utilization
     }
+    /// <p>The mode of the job run.</p>
+    pub fn mode(mut self, input: crate::types::JobRunMode) -> Self {
+        self.mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode of the job run.</p>
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::JobRunMode>) -> Self {
+        self.mode = input;
+        self
+    }
+    /// <p>The mode of the job run.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::JobRunMode> {
+        &self.mode
+    }
+    /// <p>The retry policy of the job run.</p>
+    pub fn retry_policy(mut self, input: crate::types::RetryPolicy) -> Self {
+        self.retry_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The retry policy of the job run.</p>
+    pub fn set_retry_policy(mut self, input: ::std::option::Option<crate::types::RetryPolicy>) -> Self {
+        self.retry_policy = input;
+        self
+    }
+    /// <p>The retry policy of the job run.</p>
+    pub fn get_retry_policy(&self) -> &::std::option::Option<crate::types::RetryPolicy> {
+        &self.retry_policy
+    }
+    /// <p>The attempt of the job run.</p>
+    pub fn attempt(mut self, input: i32) -> Self {
+        self.attempt = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The attempt of the job run.</p>
+    pub fn set_attempt(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.attempt = input;
+        self
+    }
+    /// <p>The attempt of the job run.</p>
+    pub fn get_attempt(&self) -> &::std::option::Option<i32> {
+        &self.attempt
+    }
+    /// <p>The date and time of when the job run attempt was created.</p>
+    pub fn attempt_created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.attempt_created_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time of when the job run attempt was created.</p>
+    pub fn set_attempt_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.attempt_created_at = input;
+        self
+    }
+    /// <p>The date and time of when the job run attempt was created.</p>
+    pub fn get_attempt_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.attempt_created_at
+    }
+    /// <p>The date and time of when the job run attempt was last updated.</p>
+    pub fn attempt_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.attempt_updated_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time of when the job run attempt was last updated.</p>
+    pub fn set_attempt_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.attempt_updated_at = input;
+        self
+    }
+    /// <p>The date and time of when the job run attempt was last updated.</p>
+    pub fn get_attempt_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.attempt_updated_at
+    }
     /// Consumes the builder and constructs a [`JobRun`](crate::types::JobRun).
     /// This method will fail if any of the following fields are not set:
     /// - [`application_id`](crate::types::builders::JobRunBuilder::application_id)
@@ -526,6 +631,11 @@ impl JobRunBuilder {
             total_execution_duration_seconds: self.total_execution_duration_seconds,
             execution_timeout_minutes: self.execution_timeout_minutes,
             billed_resource_utilization: self.billed_resource_utilization,
+            mode: self.mode,
+            retry_policy: self.retry_policy,
+            attempt: self.attempt,
+            attempt_created_at: self.attempt_created_at,
+            attempt_updated_at: self.attempt_updated_at,
         })
     }
 }

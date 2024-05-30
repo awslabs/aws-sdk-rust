@@ -27,18 +27,27 @@ pub fn ser_start_job_run_input_input(
         crate::protocol_serde::shape_job_driver::ser_job_driver(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.name {
-        object.key("name").string(var_8.as_str());
+    if let Some(var_8) = &input.mode {
+        object.key("mode").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.tags {
+    if let Some(var_9) = &input.name {
+        object.key("name").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.retry_policy {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("tags").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_11 = object.key("retryPolicy").start_object();
+        crate::protocol_serde::shape_retry_policy::ser_retry_policy(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("tags").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_10.finish();
+        object_13.finish();
     }
     Ok(())
 }

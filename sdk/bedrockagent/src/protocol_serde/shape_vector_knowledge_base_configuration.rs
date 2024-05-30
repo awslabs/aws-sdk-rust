@@ -6,6 +6,12 @@ pub fn ser_vector_knowledge_base_configuration(
     {
         object.key("embeddingModelArn").string(input.embedding_model_arn.as_str());
     }
+    if let Some(var_1) = &input.embedding_model_configuration {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("embeddingModelConfiguration").start_object();
+        crate::protocol_serde::shape_embedding_model_configuration::ser_embedding_model_configuration(&mut object_2, var_1)?;
+        object_2.finish();
+    }
     Ok(())
 }
 
@@ -29,6 +35,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "embeddingModelConfiguration" => {
+                            builder = builder.set_embedding_model_configuration(
+                                crate::protocol_serde::shape_embedding_model_configuration::de_embedding_model_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

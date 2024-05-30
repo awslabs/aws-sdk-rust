@@ -57,6 +57,10 @@ pub struct DescribeModelPackageOutput {
     pub skip_model_validation: ::std::option::Option<crate::types::SkipModelValidation>,
     /// <p>The URI of the source for the model package.</p>
     pub source_uri: ::std::option::Option<::std::string::String>,
+    /// <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package information.</p>
+    pub security_config: ::std::option::Option<crate::types::ModelPackageSecurityConfig>,
+    /// <p>The model card associated with the model package. Since <code>ModelPackageModelCard</code> is tied to a model package, it is a specific usage of a model card and its schema is simplified compared to the schema of <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not include <code>model_package_details</code>, and <code>model_overview</code> is composed of the <code>model_creator</code> and <code>model_artifact</code> properties. For more information about the model card associated with the model package, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View the Details of a Model Version</a>.</p>
+    pub model_card: ::std::option::Option<crate::types::ModelPackageModelCard>,
     _request_id: Option<String>,
 }
 impl DescribeModelPackageOutput {
@@ -170,6 +174,14 @@ impl DescribeModelPackageOutput {
     pub fn source_uri(&self) -> ::std::option::Option<&str> {
         self.source_uri.as_deref()
     }
+    /// <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package information.</p>
+    pub fn security_config(&self) -> ::std::option::Option<&crate::types::ModelPackageSecurityConfig> {
+        self.security_config.as_ref()
+    }
+    /// <p>The model card associated with the model package. Since <code>ModelPackageModelCard</code> is tied to a model package, it is a specific usage of a model card and its schema is simplified compared to the schema of <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not include <code>model_package_details</code>, and <code>model_overview</code> is composed of the <code>model_creator</code> and <code>model_artifact</code> properties. For more information about the model card associated with the model package, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View the Details of a Model Version</a>.</p>
+    pub fn model_card(&self) -> ::std::option::Option<&crate::types::ModelPackageModelCard> {
+        self.model_card.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeModelPackageOutput {
     fn request_id(&self) -> Option<&str> {
@@ -214,6 +226,8 @@ pub struct DescribeModelPackageOutputBuilder {
     pub(crate) additional_inference_specifications: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
     pub(crate) skip_model_validation: ::std::option::Option<crate::types::SkipModelValidation>,
     pub(crate) source_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) security_config: ::std::option::Option<crate::types::ModelPackageSecurityConfig>,
+    pub(crate) model_card: ::std::option::Option<crate::types::ModelPackageModelCard>,
     _request_id: Option<String>,
 }
 impl DescribeModelPackageOutputBuilder {
@@ -626,6 +640,34 @@ impl DescribeModelPackageOutputBuilder {
     pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_uri
     }
+    /// <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package information.</p>
+    pub fn security_config(mut self, input: crate::types::ModelPackageSecurityConfig) -> Self {
+        self.security_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package information.</p>
+    pub fn set_security_config(mut self, input: ::std::option::Option<crate::types::ModelPackageSecurityConfig>) -> Self {
+        self.security_config = input;
+        self
+    }
+    /// <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package information.</p>
+    pub fn get_security_config(&self) -> &::std::option::Option<crate::types::ModelPackageSecurityConfig> {
+        &self.security_config
+    }
+    /// <p>The model card associated with the model package. Since <code>ModelPackageModelCard</code> is tied to a model package, it is a specific usage of a model card and its schema is simplified compared to the schema of <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not include <code>model_package_details</code>, and <code>model_overview</code> is composed of the <code>model_creator</code> and <code>model_artifact</code> properties. For more information about the model card associated with the model package, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View the Details of a Model Version</a>.</p>
+    pub fn model_card(mut self, input: crate::types::ModelPackageModelCard) -> Self {
+        self.model_card = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The model card associated with the model package. Since <code>ModelPackageModelCard</code> is tied to a model package, it is a specific usage of a model card and its schema is simplified compared to the schema of <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not include <code>model_package_details</code>, and <code>model_overview</code> is composed of the <code>model_creator</code> and <code>model_artifact</code> properties. For more information about the model card associated with the model package, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View the Details of a Model Version</a>.</p>
+    pub fn set_model_card(mut self, input: ::std::option::Option<crate::types::ModelPackageModelCard>) -> Self {
+        self.model_card = input;
+        self
+    }
+    /// <p>The model card associated with the model package. Since <code>ModelPackageModelCard</code> is tied to a model package, it is a specific usage of a model card and its schema is simplified compared to the schema of <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not include <code>model_package_details</code>, and <code>model_overview</code> is composed of the <code>model_creator</code> and <code>model_artifact</code> properties. For more information about the model card associated with the model package, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View the Details of a Model Version</a>.</p>
+    pub fn get_model_card(&self) -> &::std::option::Option<crate::types::ModelPackageModelCard> {
+        &self.model_card
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -665,6 +707,8 @@ impl DescribeModelPackageOutputBuilder {
             additional_inference_specifications: self.additional_inference_specifications,
             skip_model_validation: self.skip_model_validation,
             source_uri: self.source_uri,
+            security_config: self.security_config,
+            model_card: self.model_card,
             _request_id: self._request_id,
         }
     }

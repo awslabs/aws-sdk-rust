@@ -41,6 +41,10 @@ pub use crate::types::_knowledge_base_configuration::KnowledgeBaseConfigurationB
 
 pub use crate::types::_vector_knowledge_base_configuration::VectorKnowledgeBaseConfigurationBuilder;
 
+pub use crate::types::_embedding_model_configuration::EmbeddingModelConfigurationBuilder;
+
+pub use crate::types::_bedrock_embedding_model_configuration::BedrockEmbeddingModelConfigurationBuilder;
+
 pub use crate::types::_agent_knowledge_base::AgentKnowledgeBaseBuilder;
 
 pub use crate::types::_knowledge_base_summary::KnowledgeBaseSummaryBuilder;

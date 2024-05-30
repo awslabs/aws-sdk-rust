@@ -45,6 +45,8 @@ pub use crate::types::_trail::TrailBuilder;
 
 pub use crate::types::_query_statistics::QueryStatisticsBuilder;
 
+pub use crate::types::_partition_key::PartitionKeyBuilder;
+
 pub use crate::types::_ingestion_status::IngestionStatusBuilder;
 
 pub use crate::types::_source_config::SourceConfigBuilder;

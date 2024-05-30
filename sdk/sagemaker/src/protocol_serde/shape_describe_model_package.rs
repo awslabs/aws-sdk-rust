@@ -209,6 +209,15 @@ pub(crate) fn de_describe_model_package(
                             .transpose()?,
                     );
                 }
+                "SecurityConfig" => {
+                    builder = builder
+                        .set_security_config(crate::protocol_serde::shape_model_package_security_config::de_model_package_security_config(tokens)?);
+                }
+                "ModelCard" => {
+                    builder = builder.set_model_card(crate::protocol_serde::shape_model_package_model_card::de_model_package_model_card(
+                        tokens,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

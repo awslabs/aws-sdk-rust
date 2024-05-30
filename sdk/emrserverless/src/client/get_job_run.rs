@@ -5,6 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`application_id(impl Into<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::set_application_id):<br>required: **true**<br><p>The ID of the application on which the job run is submitted.</p><br>
     ///   - [`job_run_id(impl Into<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::job_run_id) / [`set_job_run_id(Option<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::set_job_run_id):<br>required: **true**<br><p>The ID of the job run.</p><br>
+    ///   - [`attempt(i32)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::attempt) / [`set_attempt(Option<i32>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::set_attempt):<br>required: **false**<br><p>An optimal parameter that indicates the amount of attempts for the job. If not specified, this value defaults to the attempt of the latest job.</p><br>
     /// - On success, responds with [`GetJobRunOutput`](crate::operation::get_job_run::GetJobRunOutput) with field(s):
     ///   - [`job_run(Option<JobRun>)`](crate::operation::get_job_run::GetJobRunOutput::job_run): <p>The output displays information about the job run.</p>
     /// - On failure, responds with [`SdkError<GetJobRunError>`](crate::operation::get_job_run::GetJobRunError)

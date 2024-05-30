@@ -234,6 +234,32 @@ impl From<crate::operation::list_applications::ListApplicationsError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_job_run_attempts::ListJobRunAttemptsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_job_run_attempts::ListJobRunAttemptsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_job_run_attempts::ListJobRunAttemptsError> for Error {
+    fn from(err: crate::operation::list_job_run_attempts::ListJobRunAttemptsError) -> Self {
+        match err {
+            crate::operation::list_job_run_attempts::ListJobRunAttemptsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_job_run_attempts::ListJobRunAttemptsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_job_run_attempts::ListJobRunAttemptsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_job_run_attempts::ListJobRunAttemptsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_job_runs::ListJobRunsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

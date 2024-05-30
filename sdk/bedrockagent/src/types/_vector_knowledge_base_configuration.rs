@@ -6,12 +6,18 @@
 pub struct VectorKnowledgeBaseConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings for the knowledge base.</p>
     pub embedding_model_arn: ::std::string::String,
+    /// <p>The embeddings model configuration details for the vector model used in Knowledge Base.</p>
+    pub embedding_model_configuration: ::std::option::Option<crate::types::EmbeddingModelConfiguration>,
 }
 impl VectorKnowledgeBaseConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings for the knowledge base.</p>
     pub fn embedding_model_arn(&self) -> &str {
         use std::ops::Deref;
         self.embedding_model_arn.deref()
+    }
+    /// <p>The embeddings model configuration details for the vector model used in Knowledge Base.</p>
+    pub fn embedding_model_configuration(&self) -> ::std::option::Option<&crate::types::EmbeddingModelConfiguration> {
+        self.embedding_model_configuration.as_ref()
     }
 }
 impl VectorKnowledgeBaseConfiguration {
@@ -26,6 +32,7 @@ impl VectorKnowledgeBaseConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VectorKnowledgeBaseConfigurationBuilder {
     pub(crate) embedding_model_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) embedding_model_configuration: ::std::option::Option<crate::types::EmbeddingModelConfiguration>,
 }
 impl VectorKnowledgeBaseConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings for the knowledge base.</p>
@@ -43,6 +50,20 @@ impl VectorKnowledgeBaseConfigurationBuilder {
     pub fn get_embedding_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.embedding_model_arn
     }
+    /// <p>The embeddings model configuration details for the vector model used in Knowledge Base.</p>
+    pub fn embedding_model_configuration(mut self, input: crate::types::EmbeddingModelConfiguration) -> Self {
+        self.embedding_model_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The embeddings model configuration details for the vector model used in Knowledge Base.</p>
+    pub fn set_embedding_model_configuration(mut self, input: ::std::option::Option<crate::types::EmbeddingModelConfiguration>) -> Self {
+        self.embedding_model_configuration = input;
+        self
+    }
+    /// <p>The embeddings model configuration details for the vector model used in Knowledge Base.</p>
+    pub fn get_embedding_model_configuration(&self) -> &::std::option::Option<crate::types::EmbeddingModelConfiguration> {
+        &self.embedding_model_configuration
+    }
     /// Consumes the builder and constructs a [`VectorKnowledgeBaseConfiguration`](crate::types::VectorKnowledgeBaseConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`embedding_model_arn`](crate::types::builders::VectorKnowledgeBaseConfigurationBuilder::embedding_model_arn)
@@ -54,6 +75,7 @@ impl VectorKnowledgeBaseConfigurationBuilder {
                     "embedding_model_arn was not specified but it is required when building VectorKnowledgeBaseConfiguration",
                 )
             })?,
+            embedding_model_configuration: self.embedding_model_configuration,
         })
     }
 }

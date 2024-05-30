@@ -431,6 +431,8 @@ pub(crate) mod shape_insights_metric_values;
 
 pub(crate) mod shape_lookup_attribute;
 
+pub(crate) mod shape_partition_key_list;
+
 pub(crate) mod shape_public_key_list;
 
 pub(crate) mod shape_queries;
@@ -470,6 +472,8 @@ pub(crate) mod shape_event_data_store;
 pub(crate) mod shape_import_failure_list_item;
 
 pub(crate) mod shape_imports_list_item;
+
+pub(crate) mod shape_partition_key;
 
 pub(crate) mod shape_public_key;
 

@@ -2848,6 +2848,15 @@ pub(crate) fn model_card_export_artifacts_correct_errors(
     builder
 }
 
+pub(crate) fn model_package_security_config_correct_errors(
+    mut builder: crate::types::builders::ModelPackageSecurityConfigBuilder,
+) -> crate::types::builders::ModelPackageSecurityConfigBuilder {
+    if builder.kms_key_id.is_none() {
+        builder.kms_key_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn model_package_validation_specification_correct_errors(
     mut builder: crate::types::builders::ModelPackageValidationSpecificationBuilder,
 ) -> crate::types::builders::ModelPackageValidationSpecificationBuilder {

@@ -55,5 +55,11 @@ pub fn ser_update_model_package_input_input(
     if let Some(var_17) = &input.source_uri {
         object.key("SourceUri").string(var_17.as_str());
     }
+    if let Some(var_18) = &input.model_card {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("ModelCard").start_object();
+        crate::protocol_serde::shape_model_package_model_card::ser_model_package_model_card(&mut object_19, var_18)?;
+        object_19.finish();
+    }
     Ok(())
 }

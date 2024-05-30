@@ -203,6 +203,10 @@ pub use crate::types::_monitoring_constraints_resource::MonitoringConstraintsRes
 
 pub use crate::types::_schedule_config::ScheduleConfig;
 
+pub use crate::types::_model_package_model_card::ModelPackageModelCard;
+
+pub use crate::types::_model_card_status::ModelCardStatus;
+
 pub use crate::types::_inference_specification::InferenceSpecification;
 
 pub use crate::types::_production_variant_instance_type::ProductionVariantInstanceType;
@@ -232,8 +236,6 @@ pub use crate::types::_s3_model_data_type::S3ModelDataType;
 pub use crate::types::_additional_inference_specification_definition::AdditionalInferenceSpecificationDefinition;
 
 pub use crate::types::_model_approval_status::ModelApprovalStatus;
-
-pub use crate::types::_model_card_status::ModelCardStatus;
 
 pub use crate::types::_shadow_mode_config::ShadowModeConfig;
 
@@ -640,6 +642,8 @@ pub use crate::types::_drift_check_explainability::DriftCheckExplainability;
 pub use crate::types::_file_source::FileSource;
 
 pub use crate::types::_drift_check_bias::DriftCheckBias;
+
+pub use crate::types::_model_package_security_config::ModelPackageSecurityConfig;
 
 pub use crate::types::_model_metrics::ModelMetrics;
 
@@ -2610,6 +2614,10 @@ mod _model_package_group_sort_by;
 mod _model_package_group_status;
 
 mod _model_package_group_summary;
+
+mod _model_package_model_card;
+
+mod _model_package_security_config;
 
 mod _model_package_sort_by;
 

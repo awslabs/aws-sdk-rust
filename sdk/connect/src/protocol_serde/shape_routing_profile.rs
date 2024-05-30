@@ -100,6 +100,11 @@ where
                         "IsDefault" => {
                             builder = builder.set_is_default(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "AssociatedQueueIds" => {
+                            builder = builder.set_associated_queue_ids(
+                                crate::protocol_serde::shape_associated_queue_id_list::de_associated_queue_id_list(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

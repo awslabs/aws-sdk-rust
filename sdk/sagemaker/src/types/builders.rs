@@ -159,6 +159,8 @@ pub use crate::types::_monitoring_constraints_resource::MonitoringConstraintsRes
 
 pub use crate::types::_schedule_config::ScheduleConfigBuilder;
 
+pub use crate::types::_model_package_model_card::ModelPackageModelCardBuilder;
+
 pub use crate::types::_inference_specification::InferenceSpecificationBuilder;
 
 pub use crate::types::_model_package_container_definition::ModelPackageContainerDefinitionBuilder;
@@ -456,6 +458,8 @@ pub use crate::types::_drift_check_explainability::DriftCheckExplainabilityBuild
 pub use crate::types::_file_source::FileSourceBuilder;
 
 pub use crate::types::_drift_check_bias::DriftCheckBiasBuilder;
+
+pub use crate::types::_model_package_security_config::ModelPackageSecurityConfigBuilder;
 
 pub use crate::types::_model_metrics::ModelMetricsBuilder;
 

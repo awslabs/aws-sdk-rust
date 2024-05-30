@@ -203,4 +203,18 @@ impl ListJobRunsFluentBuilder {
     pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobRunState>> {
         self.inner.get_states()
     }
+    /// <p>The mode of the job runs to list.</p>
+    pub fn mode(mut self, input: crate::types::JobRunMode) -> Self {
+        self.inner = self.inner.mode(input);
+        self
+    }
+    /// <p>The mode of the job runs to list.</p>
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::JobRunMode>) -> Self {
+        self.inner = self.inner.set_mode(input);
+        self
+    }
+    /// <p>The mode of the job runs to list.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::JobRunMode> {
+        self.inner.get_mode()
+    }
 }

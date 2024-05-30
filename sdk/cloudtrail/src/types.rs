@@ -69,6 +69,8 @@ pub use crate::types::_trail::Trail;
 
 pub use crate::types::_query_statistics::QueryStatistics;
 
+pub use crate::types::_partition_key::PartitionKey;
+
 pub use crate::types::_ingestion_status::IngestionStatus;
 
 pub use crate::types::_source_config::SourceConfig;
@@ -128,6 +130,8 @@ mod _insights_metric_data_type;
 mod _lookup_attribute;
 
 mod _lookup_attribute_key;
+
+mod _partition_key;
 
 mod _public_key;
 

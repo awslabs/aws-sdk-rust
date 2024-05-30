@@ -27,6 +27,8 @@ pub struct UpdateModelPackageInput {
     pub inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
     /// <p>The URI of the source for the model package.</p>
     pub source_uri: ::std::option::Option<::std::string::String>,
+    /// <p>The model card associated with the model package. Since <code>ModelPackageModelCard</code> is tied to a model package, it is a specific usage of a model card and its schema is simplified compared to the schema of <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not include <code>model_package_details</code>, and <code>model_overview</code> is composed of the <code>model_creator</code> and <code>model_artifact</code> properties. For more information about the model card associated with the model package, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View the Details of a Model Version</a>.</p>
+    pub model_card: ::std::option::Option<crate::types::ModelPackageModelCard>,
 }
 impl UpdateModelPackageInput {
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
@@ -73,6 +75,10 @@ impl UpdateModelPackageInput {
     pub fn source_uri(&self) -> ::std::option::Option<&str> {
         self.source_uri.as_deref()
     }
+    /// <p>The model card associated with the model package. Since <code>ModelPackageModelCard</code> is tied to a model package, it is a specific usage of a model card and its schema is simplified compared to the schema of <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not include <code>model_package_details</code>, and <code>model_overview</code> is composed of the <code>model_creator</code> and <code>model_artifact</code> properties. For more information about the model card associated with the model package, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View the Details of a Model Version</a>.</p>
+    pub fn model_card(&self) -> ::std::option::Option<&crate::types::ModelPackageModelCard> {
+        self.model_card.as_ref()
+    }
 }
 impl UpdateModelPackageInput {
     /// Creates a new builder-style object to manufacture [`UpdateModelPackageInput`](crate::operation::update_model_package::UpdateModelPackageInput).
@@ -94,6 +100,7 @@ pub struct UpdateModelPackageInputBuilder {
         ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
     pub(crate) inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
     pub(crate) source_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) model_card: ::std::option::Option<crate::types::ModelPackageModelCard>,
 }
 impl UpdateModelPackageInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
@@ -265,6 +272,20 @@ impl UpdateModelPackageInputBuilder {
     pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_uri
     }
+    /// <p>The model card associated with the model package. Since <code>ModelPackageModelCard</code> is tied to a model package, it is a specific usage of a model card and its schema is simplified compared to the schema of <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not include <code>model_package_details</code>, and <code>model_overview</code> is composed of the <code>model_creator</code> and <code>model_artifact</code> properties. For more information about the model card associated with the model package, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View the Details of a Model Version</a>.</p>
+    pub fn model_card(mut self, input: crate::types::ModelPackageModelCard) -> Self {
+        self.model_card = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The model card associated with the model package. Since <code>ModelPackageModelCard</code> is tied to a model package, it is a specific usage of a model card and its schema is simplified compared to the schema of <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not include <code>model_package_details</code>, and <code>model_overview</code> is composed of the <code>model_creator</code> and <code>model_artifact</code> properties. For more information about the model card associated with the model package, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View the Details of a Model Version</a>.</p>
+    pub fn set_model_card(mut self, input: ::std::option::Option<crate::types::ModelPackageModelCard>) -> Self {
+        self.model_card = input;
+        self
+    }
+    /// <p>The model card associated with the model package. Since <code>ModelPackageModelCard</code> is tied to a model package, it is a specific usage of a model card and its schema is simplified compared to the schema of <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not include <code>model_package_details</code>, and <code>model_overview</code> is composed of the <code>model_creator</code> and <code>model_artifact</code> properties. For more information about the model card associated with the model package, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View the Details of a Model Version</a>.</p>
+    pub fn get_model_card(&self) -> &::std::option::Option<crate::types::ModelPackageModelCard> {
+        &self.model_card
+    }
     /// Consumes the builder and constructs a [`UpdateModelPackageInput`](crate::operation::update_model_package::UpdateModelPackageInput).
     pub fn build(
         self,
@@ -279,6 +300,7 @@ impl UpdateModelPackageInputBuilder {
             additional_inference_specifications_to_add: self.additional_inference_specifications_to_add,
             inference_specification: self.inference_specification,
             source_uri: self.source_uri,
+            model_card: self.model_card,
         })
     }
 }

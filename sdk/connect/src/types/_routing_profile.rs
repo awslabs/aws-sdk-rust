@@ -32,6 +32,8 @@ pub struct RoutingProfile {
     pub last_modified_region: ::std::option::Option<::std::string::String>,
     /// <p>Whether this a default routing profile.</p>
     pub is_default: bool,
+    /// <p>The IDs of the associated queue.</p>
+    pub associated_queue_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RoutingProfile {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -92,6 +94,12 @@ impl RoutingProfile {
     pub fn is_default(&self) -> bool {
         self.is_default
     }
+    /// <p>The IDs of the associated queue.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_queue_ids.is_none()`.
+    pub fn associated_queue_ids(&self) -> &[::std::string::String] {
+        self.associated_queue_ids.as_deref().unwrap_or_default()
+    }
 }
 impl RoutingProfile {
     /// Creates a new builder-style object to manufacture [`RoutingProfile`](crate::types::RoutingProfile).
@@ -118,6 +126,7 @@ pub struct RoutingProfileBuilder {
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
     pub(crate) is_default: ::std::option::Option<bool>,
+    pub(crate) associated_queue_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RoutingProfileBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -328,6 +337,26 @@ impl RoutingProfileBuilder {
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
         &self.is_default
     }
+    /// Appends an item to `associated_queue_ids`.
+    ///
+    /// To override the contents of this collection use [`set_associated_queue_ids`](Self::set_associated_queue_ids).
+    ///
+    /// <p>The IDs of the associated queue.</p>
+    pub fn associated_queue_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.associated_queue_ids.unwrap_or_default();
+        v.push(input.into());
+        self.associated_queue_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IDs of the associated queue.</p>
+    pub fn set_associated_queue_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.associated_queue_ids = input;
+        self
+    }
+    /// <p>The IDs of the associated queue.</p>
+    pub fn get_associated_queue_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.associated_queue_ids
+    }
     /// Consumes the builder and constructs a [`RoutingProfile`](crate::types::RoutingProfile).
     pub fn build(self) -> crate::types::RoutingProfile {
         crate::types::RoutingProfile {
@@ -345,6 +374,7 @@ impl RoutingProfileBuilder {
             last_modified_time: self.last_modified_time,
             last_modified_region: self.last_modified_region,
             is_default: self.is_default.unwrap_or_default(),
+            associated_queue_ids: self.associated_queue_ids,
         }
     }
 }

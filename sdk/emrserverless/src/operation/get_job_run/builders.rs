@@ -133,4 +133,18 @@ impl GetJobRunFluentBuilder {
     pub fn get_job_run_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_run_id()
     }
+    /// <p>An optimal parameter that indicates the amount of attempts for the job. If not specified, this value defaults to the attempt of the latest job.</p>
+    pub fn attempt(mut self, input: i32) -> Self {
+        self.inner = self.inner.attempt(input);
+        self
+    }
+    /// <p>An optimal parameter that indicates the amount of attempts for the job. If not specified, this value defaults to the attempt of the latest job.</p>
+    pub fn set_attempt(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_attempt(input);
+        self
+    }
+    /// <p>An optimal parameter that indicates the amount of attempts for the job. If not specified, this value defaults to the attempt of the latest job.</p>
+    pub fn get_attempt(&self) -> &::std::option::Option<i32> {
+        self.inner.get_attempt()
+    }
 }

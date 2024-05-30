@@ -15,6 +15,8 @@ pub struct ListJobRunsInput {
     pub created_at_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
     pub states: ::std::option::Option<::std::vec::Vec<crate::types::JobRunState>>,
+    /// <p>The mode of the job runs to list.</p>
+    pub mode: ::std::option::Option<crate::types::JobRunMode>,
 }
 impl ListJobRunsInput {
     /// <p>The ID of the application for which to list the job run.</p>
@@ -43,6 +45,10 @@ impl ListJobRunsInput {
     pub fn states(&self) -> &[crate::types::JobRunState] {
         self.states.as_deref().unwrap_or_default()
     }
+    /// <p>The mode of the job runs to list.</p>
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::JobRunMode> {
+        self.mode.as_ref()
+    }
 }
 impl ListJobRunsInput {
     /// Creates a new builder-style object to manufacture [`ListJobRunsInput`](crate::operation::list_job_runs::ListJobRunsInput).
@@ -61,6 +67,7 @@ pub struct ListJobRunsInputBuilder {
     pub(crate) created_at_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_at_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::JobRunState>>,
+    pub(crate) mode: ::std::option::Option<crate::types::JobRunMode>,
 }
 impl ListJobRunsInputBuilder {
     /// <p>The ID of the application for which to list the job run.</p>
@@ -154,6 +161,20 @@ impl ListJobRunsInputBuilder {
     pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobRunState>> {
         &self.states
     }
+    /// <p>The mode of the job runs to list.</p>
+    pub fn mode(mut self, input: crate::types::JobRunMode) -> Self {
+        self.mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode of the job runs to list.</p>
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::JobRunMode>) -> Self {
+        self.mode = input;
+        self
+    }
+    /// <p>The mode of the job runs to list.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::JobRunMode> {
+        &self.mode
+    }
     /// Consumes the builder and constructs a [`ListJobRunsInput`](crate::operation::list_job_runs::ListJobRunsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_job_runs::ListJobRunsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_job_runs::ListJobRunsInput {
@@ -163,6 +184,7 @@ impl ListJobRunsInputBuilder {
             created_at_after: self.created_at_after,
             created_at_before: self.created_at_before,
             states: self.states,
+            mode: self.mode,
         })
     }
 }

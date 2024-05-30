@@ -23,6 +23,10 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_converse;
+
+pub(crate) mod shape_converse_stream;
+
 pub(crate) mod shape_invoke_model;
 
 pub(crate) mod shape_invoke_model_input;
@@ -40,6 +44,12 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_converse_input;
+
+pub(crate) mod shape_converse_stream_input;
+
+pub(crate) mod shape_converse_stream_output;
 
 pub(crate) mod shape_internal_server_exception;
 
@@ -70,4 +80,70 @@ pub fn parse_event_stream_error_metadata(
     crate::json_errors::parse_error_metadata(payload, &::aws_smithy_runtime_api::http::Headers::new())
 }
 
+pub(crate) mod shape_converse_metrics;
+
+pub(crate) mod shape_converse_output;
+
+pub(crate) mod shape_inference_configuration;
+
+pub(crate) mod shape_message;
+
+pub(crate) mod shape_system_content_block;
+
+pub(crate) mod shape_token_usage;
+
+pub(crate) mod shape_tool_configuration;
+
+pub(crate) mod shape_content_block;
+
+pub(crate) mod shape_content_block_delta_event;
+
+pub(crate) mod shape_content_block_start_event;
+
+pub(crate) mod shape_content_block_stop_event;
+
+pub(crate) mod shape_converse_stream_metadata_event;
+
+pub(crate) mod shape_message_start_event;
+
+pub(crate) mod shape_message_stop_event;
+
 pub(crate) mod shape_payload_part;
+
+pub(crate) mod shape_tool;
+
+pub(crate) mod shape_tool_choice;
+
+pub(crate) mod shape_any_tool_choice;
+
+pub(crate) mod shape_auto_tool_choice;
+
+pub(crate) mod shape_content_blocks;
+
+pub(crate) mod shape_image_block;
+
+pub(crate) mod shape_specific_tool_choice;
+
+pub(crate) mod shape_tool_result_block;
+
+pub(crate) mod shape_tool_specification;
+
+pub(crate) mod shape_tool_use_block;
+
+pub(crate) mod shape_content_block_delta;
+
+pub(crate) mod shape_content_block_start;
+
+pub(crate) mod shape_converse_stream_metrics;
+
+pub(crate) mod shape_image_source;
+
+pub(crate) mod shape_tool_input_schema;
+
+pub(crate) mod shape_tool_result_content_block;
+
+pub(crate) mod shape_tool_use_block_delta;
+
+pub(crate) mod shape_tool_use_block_start;
+
+pub(crate) mod shape_tool_result_content_blocks;

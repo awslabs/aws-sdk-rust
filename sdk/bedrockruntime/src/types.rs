@@ -5,9 +5,153 @@ pub use crate::types::_payload_part::PayloadPart;
 
 pub use crate::types::_trace::Trace;
 
+pub use crate::types::_converse_stream_output::ConverseStreamOutput;
+
+pub use crate::types::_converse_stream_metadata_event::ConverseStreamMetadataEvent;
+
+pub use crate::types::_converse_stream_metrics::ConverseStreamMetrics;
+
+pub use crate::types::_token_usage::TokenUsage;
+
+pub use crate::types::_message_stop_event::MessageStopEvent;
+
+pub use crate::types::_stop_reason::StopReason;
+
+pub use crate::types::_content_block_stop_event::ContentBlockStopEvent;
+
+pub use crate::types::_content_block_delta_event::ContentBlockDeltaEvent;
+
+pub use crate::types::_content_block_delta::ContentBlockDelta;
+
+pub use crate::types::_tool_use_block_delta::ToolUseBlockDelta;
+
+pub use crate::types::_content_block_start_event::ContentBlockStartEvent;
+
+pub use crate::types::_content_block_start::ContentBlockStart;
+
+pub use crate::types::_tool_use_block_start::ToolUseBlockStart;
+
+pub use crate::types::_message_start_event::MessageStartEvent;
+
+pub use crate::types::_conversation_role::ConversationRole;
+
+pub use crate::types::_tool_configuration::ToolConfiguration;
+
+pub use crate::types::_tool_choice::ToolChoice;
+
+pub use crate::types::_specific_tool_choice::SpecificToolChoice;
+
+pub use crate::types::_any_tool_choice::AnyToolChoice;
+
+pub use crate::types::_auto_tool_choice::AutoToolChoice;
+
+pub use crate::types::_tool::Tool;
+
+pub use crate::types::_tool_specification::ToolSpecification;
+
+pub use crate::types::_tool_input_schema::ToolInputSchema;
+
+pub use crate::types::_inference_configuration::InferenceConfiguration;
+
+pub use crate::types::_system_content_block::SystemContentBlock;
+
+pub use crate::types::_message::Message;
+
+pub use crate::types::_content_block::ContentBlock;
+
+pub use crate::types::_tool_result_block::ToolResultBlock;
+
+pub use crate::types::_tool_result_status::ToolResultStatus;
+
+pub use crate::types::_tool_result_content_block::ToolResultContentBlock;
+
+pub use crate::types::_image_block::ImageBlock;
+
+pub use crate::types::_image_source::ImageSource;
+
+pub use crate::types::_image_format::ImageFormat;
+
+pub use crate::types::_tool_use_block::ToolUseBlock;
+
+pub use crate::types::_converse_metrics::ConverseMetrics;
+
+pub use crate::types::_converse_output::ConverseOutput;
+
+mod _any_tool_choice;
+
+mod _auto_tool_choice;
+
+mod _content_block;
+
+mod _content_block_delta;
+
+mod _content_block_delta_event;
+
+mod _content_block_start;
+
+mod _content_block_start_event;
+
+mod _content_block_stop_event;
+
+mod _conversation_role;
+
+mod _converse_metrics;
+
+mod _converse_output;
+
+mod _converse_stream_metadata_event;
+
+mod _converse_stream_metrics;
+
+mod _converse_stream_output;
+
+mod _image_block;
+
+mod _image_format;
+
+mod _image_source;
+
+mod _inference_configuration;
+
+mod _message;
+
+mod _message_start_event;
+
+mod _message_stop_event;
+
 mod _payload_part;
 
 mod _response_stream;
+
+mod _specific_tool_choice;
+
+mod _stop_reason;
+
+mod _system_content_block;
+
+mod _token_usage;
+
+mod _tool;
+
+mod _tool_choice;
+
+mod _tool_configuration;
+
+mod _tool_input_schema;
+
+mod _tool_result_block;
+
+mod _tool_result_content_block;
+
+mod _tool_result_status;
+
+mod _tool_specification;
+
+mod _tool_use_block;
+
+mod _tool_use_block_delta;
+
+mod _tool_use_block_start;
 
 mod _trace;
 

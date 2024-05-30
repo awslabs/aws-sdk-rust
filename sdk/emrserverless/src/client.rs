@@ -177,6 +177,8 @@ mod get_job_run;
 
 mod list_applications;
 
+mod list_job_run_attempts;
+
 mod list_job_runs;
 
 mod list_tags_for_resource;

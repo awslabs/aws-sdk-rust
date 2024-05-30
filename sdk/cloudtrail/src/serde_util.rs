@@ -40,6 +40,16 @@ pub(crate) fn destination_correct_errors(mut builder: crate::types::builders::De
     builder
 }
 
+pub(crate) fn partition_key_correct_errors(mut builder: crate::types::builders::PartitionKeyBuilder) -> crate::types::builders::PartitionKeyBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_import_source_correct_errors(
     mut builder: crate::types::builders::S3ImportSourceBuilder,
 ) -> crate::types::builders::S3ImportSourceBuilder {
