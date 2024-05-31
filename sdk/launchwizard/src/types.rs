@@ -5,9 +5,15 @@ pub use crate::types::_workload_status::WorkloadStatus;
 
 pub use crate::types::_workload_data_summary::WorkloadDataSummary;
 
-pub use crate::types::_workload_deployment_pattern_data_summary::WorkloadDeploymentPatternDataSummary;
+pub use crate::types::_workload_deployment_pattern_data::WorkloadDeploymentPatternData;
+
+pub use crate::types::_deployment_specifications_field::DeploymentSpecificationsField;
+
+pub use crate::types::_deployment_conditional_field::DeploymentConditionalField;
 
 pub use crate::types::_workload_deployment_pattern_status::WorkloadDeploymentPatternStatus;
+
+pub use crate::types::_workload_deployment_pattern_data_summary::WorkloadDeploymentPatternDataSummary;
 
 pub use crate::types::_deployment_status::DeploymentStatus;
 
@@ -23,6 +29,8 @@ pub use crate::types::_deployment_event_data_summary::DeploymentEventDataSummary
 
 pub use crate::types::_event_status::EventStatus;
 
+mod _deployment_conditional_field;
+
 mod _deployment_data;
 
 mod _deployment_data_summary;
@@ -33,6 +41,8 @@ mod _deployment_filter;
 
 mod _deployment_filter_key;
 
+mod _deployment_specifications_field;
+
 mod _deployment_status;
 
 mod _event_status;
@@ -40,6 +50,8 @@ mod _event_status;
 mod _workload_data;
 
 mod _workload_data_summary;
+
+mod _workload_deployment_pattern_data;
 
 mod _workload_deployment_pattern_data_summary;
 

@@ -22,8 +22,8 @@ impl crate::operation::create_upload_url::builders::CreateUploadUrlInputBuilder 
 }
 /// Fluent builder constructing a request to `CreateUploadUrl`.
 ///
-/// <p>Generates a pre-signed URL and request headers used to upload a code resource.</p>
-/// <p>You can upload your code resource to the URL and add the request headers using any HTTP client.</p>
+/// <p>Generates a pre-signed URL, request headers used to upload a code resource, and code artifact identifier for the uploaded resource.</p>
+/// <p>You can upload your code resource to the URL with the request headers using any HTTP client.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUploadUrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

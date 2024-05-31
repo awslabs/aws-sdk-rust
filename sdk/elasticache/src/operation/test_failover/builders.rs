@@ -22,12 +22,12 @@ impl crate::operation::test_failover::builders::TestFailoverInputBuilder {
 }
 /// Fluent builder constructing a request to `TestFailover`.
 ///
-/// <p>Represents the input of a <code>TestFailover</code> operation which test automatic failover on a specified node group (called shard in the console) in a replication group (called cluster in the console).</p>
+/// <p>Represents the input of a <code>TestFailover</code> operation which tests automatic failover on a specified node group (called shard in the console) in a replication group (called cluster in the console).</p>
 /// <p>This API is designed for testing the behavior of your application in case of ElastiCache failover. It is not designed to be an operational tool for initiating a failover to overcome a problem you may have with the cluster. Moreover, in certain conditions such as large-scale operational events, Amazon may block this API.</p>
 /// <p class="title"><b>Note the following</b></p>
 /// <ul>
 /// <li>
-/// <p>A customer can use this operation to test automatic failover on up to 5 shards (called node groups in the ElastiCache API and Amazon CLI) in any rolling 24-hour period.</p></li>
+/// <p>A customer can use this operation to test automatic failover on up to 15 shards (called node groups in the ElastiCache API and Amazon CLI) in any rolling 24-hour period.</p></li>
 /// <li>
 /// <p>If calling this operation on shards in different clusters (called replication groups in the API and CLI), the calls can be made concurrently.</p>
 /// <p></p></li>
@@ -165,17 +165,17 @@ impl TestFailoverFluentBuilder {
     pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_replication_group_id()
     }
-    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
+    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 15 node groups in any rolling 24-hour period.</p>
     pub fn node_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_group_id(input.into());
         self
     }
-    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
+    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 15 node groups in any rolling 24-hour period.</p>
     pub fn set_node_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_group_id(input);
         self
     }
-    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
+    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 15 node groups in any rolling 24-hour period.</p>
     pub fn get_node_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_node_group_id()
     }

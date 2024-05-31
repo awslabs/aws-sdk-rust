@@ -8,7 +8,7 @@ pub struct Finding {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A description of the finding.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier for the component that generated a finding such as AWSCodeGuruSecurity or AWSInspector.</p>
+    /// <p>The identifier for the component that generated a finding such as AmazonCodeGuruSecurity.</p>
     pub generator_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a finding.</p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ pub struct Finding {
     pub resource: ::std::option::Option<crate::types::Resource>,
     /// <p>An object that describes the detected security vulnerability.</p>
     pub vulnerability: ::std::option::Option<crate::types::Vulnerability>,
-    /// <p>The severity of the finding.</p>
+    /// <p>The severity of the finding. Severity can be critical, high, medium, low, or informational. For information on severity levels, see <a href="https://docs.aws.amazon.com/codeguru/latest/security-ug/findings-overview.html#severity-distribution">Finding severity</a> in the <i>Amazon CodeGuru Security User Guide</i>.</p>
     pub severity: ::std::option::Option<crate::types::Severity>,
     /// <p>An object that contains the details about how to remediate a finding.</p>
     pub remediation: ::std::option::Option<crate::types::Remediation>,
@@ -46,7 +46,7 @@ impl Finding {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The identifier for the component that generated a finding such as AWSCodeGuruSecurity or AWSInspector.</p>
+    /// <p>The identifier for the component that generated a finding such as AmazonCodeGuruSecurity.</p>
     pub fn generator_id(&self) -> ::std::option::Option<&str> {
         self.generator_id.as_deref()
     }
@@ -74,7 +74,7 @@ impl Finding {
     pub fn vulnerability(&self) -> ::std::option::Option<&crate::types::Vulnerability> {
         self.vulnerability.as_ref()
     }
-    /// <p>The severity of the finding.</p>
+    /// <p>The severity of the finding. Severity can be critical, high, medium, low, or informational. For information on severity levels, see <a href="https://docs.aws.amazon.com/codeguru/latest/security-ug/findings-overview.html#severity-distribution">Finding severity</a> in the <i>Amazon CodeGuru Security User Guide</i>.</p>
     pub fn severity(&self) -> ::std::option::Option<&crate::types::Severity> {
         self.severity.as_ref()
     }
@@ -162,17 +162,17 @@ impl FindingBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The identifier for the component that generated a finding such as AWSCodeGuruSecurity or AWSInspector.</p>
+    /// <p>The identifier for the component that generated a finding such as AmazonCodeGuruSecurity.</p>
     pub fn generator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generator_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the component that generated a finding such as AWSCodeGuruSecurity or AWSInspector.</p>
+    /// <p>The identifier for the component that generated a finding such as AmazonCodeGuruSecurity.</p>
     pub fn set_generator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generator_id = input;
         self
     }
-    /// <p>The identifier for the component that generated a finding such as AWSCodeGuruSecurity or AWSInspector.</p>
+    /// <p>The identifier for the component that generated a finding such as AmazonCodeGuruSecurity.</p>
     pub fn get_generator_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.generator_id
     }
@@ -260,17 +260,17 @@ impl FindingBuilder {
     pub fn get_vulnerability(&self) -> &::std::option::Option<crate::types::Vulnerability> {
         &self.vulnerability
     }
-    /// <p>The severity of the finding.</p>
+    /// <p>The severity of the finding. Severity can be critical, high, medium, low, or informational. For information on severity levels, see <a href="https://docs.aws.amazon.com/codeguru/latest/security-ug/findings-overview.html#severity-distribution">Finding severity</a> in the <i>Amazon CodeGuru Security User Guide</i>.</p>
     pub fn severity(mut self, input: crate::types::Severity) -> Self {
         self.severity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The severity of the finding.</p>
+    /// <p>The severity of the finding. Severity can be critical, high, medium, low, or informational. For information on severity levels, see <a href="https://docs.aws.amazon.com/codeguru/latest/security-ug/findings-overview.html#severity-distribution">Finding severity</a> in the <i>Amazon CodeGuru Security User Guide</i>.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<crate::types::Severity>) -> Self {
         self.severity = input;
         self
     }
-    /// <p>The severity of the finding.</p>
+    /// <p>The severity of the finding. Severity can be critical, high, medium, low, or informational. For information on severity levels, see <a href="https://docs.aws.amazon.com/codeguru/latest/security-ug/findings-overview.html#severity-distribution">Finding severity</a> in the <i>Amazon CodeGuru Security User Guide</i>.</p>
     pub fn get_severity(&self) -> &::std::option::Option<crate::types::Severity> {
         &self.severity
     }

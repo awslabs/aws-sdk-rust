@@ -6,7 +6,7 @@
 pub struct SuggestedFix {
     /// <p>A description of the suggested code fix and why it is being suggested.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The suggested code to add to your file.</p>
+    /// <p>The suggested code fix. If applicable, includes code patch to replace your source code.</p>
     pub code: ::std::option::Option<::std::string::String>,
 }
 impl SuggestedFix {
@@ -14,7 +14,7 @@ impl SuggestedFix {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The suggested code to add to your file.</p>
+    /// <p>The suggested code fix. If applicable, includes code patch to replace your source code.</p>
     pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
@@ -48,17 +48,17 @@ impl SuggestedFixBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The suggested code to add to your file.</p>
+    /// <p>The suggested code fix. If applicable, includes code patch to replace your source code.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The suggested code to add to your file.</p>
+    /// <p>The suggested code fix. If applicable, includes code patch to replace your source code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
     }
-    /// <p>The suggested code to add to your file.</p>
+    /// <p>The suggested code fix. If applicable, includes code patch to replace your source code.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.code
     }

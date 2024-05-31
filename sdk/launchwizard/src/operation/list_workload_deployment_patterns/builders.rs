@@ -22,7 +22,7 @@ impl crate::operation::list_workload_deployment_patterns::builders::ListWorkload
 }
 /// Fluent builder constructing a request to `ListWorkloadDeploymentPatterns`.
 ///
-/// <p>Lists the workload deployment patterns.</p>
+/// <p>Lists the workload deployment patterns for a given workload name. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">ListWorkloads</a> operation to discover the available workload names.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWorkloadDeploymentPatternsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

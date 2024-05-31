@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMetricsSummaryInput {
-    /// <p>The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years since metrics data is only stored for two years. If a date outside of this range is passed, the response will be empty.</p>
+    /// <p>The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years.</p>
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GetMetricsSummaryInput {
-    /// <p>The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years since metrics data is only stored for two years. If a date outside of this range is passed, the response will be empty.</p>
+    /// <p>The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years.</p>
     pub fn date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
@@ -26,18 +26,18 @@ pub struct GetMetricsSummaryInputBuilder {
     pub(crate) date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GetMetricsSummaryInputBuilder {
-    /// <p>The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years since metrics data is only stored for two years. If a date outside of this range is passed, the response will be empty.</p>
+    /// <p>The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years.</p>
     /// This field is required.
     pub fn date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years since metrics data is only stored for two years. If a date outside of this range is passed, the response will be empty.</p>
+    /// <p>The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years.</p>
     pub fn set_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date = input;
         self
     }
-    /// <p>The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years since metrics data is only stored for two years. If a date outside of this range is passed, the response will be empty.</p>
+    /// <p>The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years.</p>
     pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.date
     }

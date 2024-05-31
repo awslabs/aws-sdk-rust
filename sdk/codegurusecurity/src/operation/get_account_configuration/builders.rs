@@ -22,7 +22,7 @@ impl crate::operation::get_account_configuration::builders::GetAccountConfigurat
 }
 /// Fluent builder constructing a request to `GetAccountConfiguration`.
 ///
-/// <p>Use to get account level configuration.</p>
+/// <p>Use to get the encryption configuration for an account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccountConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

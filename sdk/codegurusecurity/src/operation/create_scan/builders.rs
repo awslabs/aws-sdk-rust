@@ -22,7 +22,7 @@ impl crate::operation::create_scan::builders::CreateScanInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateScan`.
 ///
-/// <p>Use to create a scan using code uploaded to an S3 bucket.</p>
+/// <p>Use to create a scan using code uploaded to an Amazon S3 bucket.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateScanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,31 +122,31 @@ impl CreateScanFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The identifier for an input resource used to create a scan.</p>
+    /// <p>The identifier for the resource object to be scanned.</p>
     pub fn resource_id(mut self, input: crate::types::ResourceId) -> Self {
         self.inner = self.inner.resource_id(input);
         self
     }
-    /// <p>The identifier for an input resource used to create a scan.</p>
+    /// <p>The identifier for the resource object to be scanned.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<crate::types::ResourceId>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
     }
-    /// <p>The identifier for an input resource used to create a scan.</p>
+    /// <p>The identifier for the resource object to be scanned.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<crate::types::ResourceId> {
         self.inner.get_resource_id()
     }
-    /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type. If not specified, it will be auto generated.</p>
+    /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type.</p>
     pub fn scan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scan_name(input.into());
         self
     }
-    /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type. If not specified, it will be auto generated.</p>
+    /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type.</p>
     pub fn set_scan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scan_name(input);
         self
     }
-    /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type. If not specified, it will be auto generated.</p>
+    /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type.</p>
     pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_scan_name()
     }

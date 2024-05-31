@@ -22,7 +22,7 @@ impl crate::operation::batch_get_findings::builders::BatchGetFindingsInputBuilde
 }
 /// Fluent builder constructing a request to `BatchGetFindings`.
 ///
-/// <p>Returns a list of all requested findings.</p>
+/// <p>Returns a list of requested findings from standard scans.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetFindingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

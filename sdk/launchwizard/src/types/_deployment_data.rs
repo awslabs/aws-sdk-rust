@@ -16,12 +16,16 @@ pub struct DeploymentData {
     pub status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>The time the deployment was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The specifications of the deployment. For more information on specifications for each deployment, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload specifications</a>.</p>
+    /// <p>The settings specified for the deployment. These settings define how to deploy and configure your resources created by the deployment. For more information about the specifications required for creating a deployment for a SAP workload, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP deployment specifications</a>. To retrieve the specifications required to create a deployment for other workloads, use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html"> <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
     pub specifications: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The resource group of the deployment.</p>
     pub resource_group: ::std::option::Option<::std::string::String>,
     /// <p>The time the deployment was deleted.</p>
     pub deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Information about the tags attached to a deployment.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The Amazon Resource Name (ARN) of the deployment.</p>
+    pub deployment_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeploymentData {
     /// <p>The name of the deployment.</p>
@@ -48,7 +52,7 @@ impl DeploymentData {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The specifications of the deployment. For more information on specifications for each deployment, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload specifications</a>.</p>
+    /// <p>The settings specified for the deployment. These settings define how to deploy and configure your resources created by the deployment. For more information about the specifications required for creating a deployment for a SAP workload, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP deployment specifications</a>. To retrieve the specifications required to create a deployment for other workloads, use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html"> <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
     pub fn specifications(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.specifications.as_ref()
     }
@@ -59,6 +63,14 @@ impl DeploymentData {
     /// <p>The time the deployment was deleted.</p>
     pub fn deleted_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.deleted_at.as_ref()
+    }
+    /// <p>Information about the tags attached to a deployment.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the deployment.</p>
+    pub fn deployment_arn(&self) -> ::std::option::Option<&str> {
+        self.deployment_arn.as_deref()
     }
 }
 impl ::std::fmt::Debug for DeploymentData {
@@ -73,6 +85,8 @@ impl ::std::fmt::Debug for DeploymentData {
         formatter.field("specifications", &"*** Sensitive Data Redacted ***");
         formatter.field("resource_group", &self.resource_group);
         formatter.field("deleted_at", &self.deleted_at);
+        formatter.field("tags", &self.tags);
+        formatter.field("deployment_arn", &self.deployment_arn);
         formatter.finish()
     }
 }
@@ -96,6 +110,8 @@ pub struct DeploymentDataBuilder {
     pub(crate) specifications: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) resource_group: ::std::option::Option<::std::string::String>,
     pub(crate) deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) deployment_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeploymentDataBuilder {
     /// <p>The name of the deployment.</p>
@@ -186,7 +202,7 @@ impl DeploymentDataBuilder {
     ///
     /// To override the contents of this collection use [`set_specifications`](Self::set_specifications).
     ///
-    /// <p>The specifications of the deployment. For more information on specifications for each deployment, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload specifications</a>.</p>
+    /// <p>The settings specified for the deployment. These settings define how to deploy and configure your resources created by the deployment. For more information about the specifications required for creating a deployment for a SAP workload, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP deployment specifications</a>. To retrieve the specifications required to create a deployment for other workloads, use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html"> <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
     pub fn specifications(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -197,7 +213,7 @@ impl DeploymentDataBuilder {
         self.specifications = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The specifications of the deployment. For more information on specifications for each deployment, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload specifications</a>.</p>
+    /// <p>The settings specified for the deployment. These settings define how to deploy and configure your resources created by the deployment. For more information about the specifications required for creating a deployment for a SAP workload, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP deployment specifications</a>. To retrieve the specifications required to create a deployment for other workloads, use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html"> <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
     pub fn set_specifications(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -205,7 +221,7 @@ impl DeploymentDataBuilder {
         self.specifications = input;
         self
     }
-    /// <p>The specifications of the deployment. For more information on specifications for each deployment, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload specifications</a>.</p>
+    /// <p>The settings specified for the deployment. These settings define how to deploy and configure your resources created by the deployment. For more information about the specifications required for creating a deployment for a SAP workload, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP deployment specifications</a>. To retrieve the specifications required to create a deployment for other workloads, use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html"> <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
     pub fn get_specifications(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.specifications
     }
@@ -237,6 +253,40 @@ impl DeploymentDataBuilder {
     pub fn get_deleted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.deleted_at
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Information about the tags attached to a deployment.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Information about the tags attached to a deployment.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Information about the tags attached to a deployment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
+    /// <p>The Amazon Resource Name (ARN) of the deployment.</p>
+    pub fn deployment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.deployment_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the deployment.</p>
+    pub fn set_deployment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.deployment_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the deployment.</p>
+    pub fn get_deployment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_arn
+    }
     /// Consumes the builder and constructs a [`DeploymentData`](crate::types::DeploymentData).
     pub fn build(self) -> crate::types::DeploymentData {
         crate::types::DeploymentData {
@@ -249,6 +299,8 @@ impl DeploymentDataBuilder {
             specifications: self.specifications,
             resource_group: self.resource_group,
             deleted_at: self.deleted_at,
+            tags: self.tags,
+            deployment_arn: self.deployment_arn,
         }
     }
 }
@@ -264,6 +316,8 @@ impl ::std::fmt::Debug for DeploymentDataBuilder {
         formatter.field("specifications", &"*** Sensitive Data Redacted ***");
         formatter.field("resource_group", &self.resource_group);
         formatter.field("deleted_at", &self.deleted_at);
+        formatter.field("tags", &self.tags);
+        formatter.field("deployment_arn", &self.deployment_arn);
         formatter.finish()
     }
 }

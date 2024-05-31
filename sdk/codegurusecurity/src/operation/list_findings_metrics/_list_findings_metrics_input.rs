@@ -5,11 +5,11 @@
 pub struct ListFindingsMetricsInput {
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
+    /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results. If not specified, returns 1000 results.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The start date of the interval which you want to retrieve metrics from.</p>
+    /// <p>The start date of the interval which you want to retrieve metrics from. Rounds to the nearest day.</p>
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The end date of the interval which you want to retrieve metrics from.</p>
+    /// <p>The end date of the interval which you want to retrieve metrics from. Round to the nearest day.</p>
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListFindingsMetricsInput {
@@ -17,15 +17,15 @@ impl ListFindingsMetricsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
+    /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results. If not specified, returns 1000 results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The start date of the interval which you want to retrieve metrics from.</p>
+    /// <p>The start date of the interval which you want to retrieve metrics from. Rounds to the nearest day.</p>
     pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
-    /// <p>The end date of the interval which you want to retrieve metrics from.</p>
+    /// <p>The end date of the interval which you want to retrieve metrics from. Round to the nearest day.</p>
     pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
@@ -61,47 +61,47 @@ impl ListFindingsMetricsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
+    /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results. If not specified, returns 1000 results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
+    /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results. If not specified, returns 1000 results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
+    /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results. If not specified, returns 1000 results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The start date of the interval which you want to retrieve metrics from.</p>
+    /// <p>The start date of the interval which you want to retrieve metrics from. Rounds to the nearest day.</p>
     /// This field is required.
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start date of the interval which you want to retrieve metrics from.</p>
+    /// <p>The start date of the interval which you want to retrieve metrics from. Rounds to the nearest day.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
-    /// <p>The start date of the interval which you want to retrieve metrics from.</p>
+    /// <p>The start date of the interval which you want to retrieve metrics from. Rounds to the nearest day.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_date
     }
-    /// <p>The end date of the interval which you want to retrieve metrics from.</p>
+    /// <p>The end date of the interval which you want to retrieve metrics from. Round to the nearest day.</p>
     /// This field is required.
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end date of the interval which you want to retrieve metrics from.</p>
+    /// <p>The end date of the interval which you want to retrieve metrics from. Round to the nearest day.</p>
     pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date = input;
         self
     }
-    /// <p>The end date of the interval which you want to retrieve metrics from.</p>
+    /// <p>The end date of the interval which you want to retrieve metrics from. Round to the nearest day.</p>
     pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_date
     }

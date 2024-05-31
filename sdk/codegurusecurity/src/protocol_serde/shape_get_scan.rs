@@ -74,6 +74,20 @@ pub fn de_get_scan_http_error(
             };
             tmp
         }),
+        "ValidationException" => crate::operation::get_scan::GetScanError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_scan::GetScanError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_scan::GetScanError::unhandled)?
+            };
+            tmp
+        }),
         _ => crate::operation::get_scan::GetScanError::generic(generic),
     })
 }
@@ -119,6 +133,13 @@ pub(crate) fn de_get_scan(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
+                }
+                "errorMessage" => {
+                    builder = builder.set_error_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 "numberOfRevisions" => {
                     builder = builder.set_number_of_revisions(

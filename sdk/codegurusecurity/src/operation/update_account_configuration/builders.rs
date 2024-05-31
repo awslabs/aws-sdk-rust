@@ -22,7 +22,7 @@ impl crate::operation::update_account_configuration::builders::UpdateAccountConf
 }
 /// Fluent builder constructing a request to `UpdateAccountConfiguration`.
 ///
-/// <p>Use to update account-level configuration with an encryption key.</p>
+/// <p>Use to update the encryption configuration for an account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAccountConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UpdateAccountConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
+    /// <p>The customer-managed KMS key ARN you want to use for encryption. If not specified, CodeGuru Security will use an AWS-managed key for encryption. If you previously specified a customer-managed KMS key and want CodeGuru Security to use an AWS-managed key for encryption instead, pass nothing.</p>
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         self.inner = self.inner.encryption_config(input);
         self
     }
-    /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
+    /// <p>The customer-managed KMS key ARN you want to use for encryption. If not specified, CodeGuru Security will use an AWS-managed key for encryption. If you previously specified a customer-managed KMS key and want CodeGuru Security to use an AWS-managed key for encryption instead, pass nothing.</p>
     pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
         self.inner = self.inner.set_encryption_config(input);
         self
     }
-    /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
+    /// <p>The customer-managed KMS key ARN you want to use for encryption. If not specified, CodeGuru Security will use an AWS-managed key for encryption. If you previously specified a customer-managed KMS key and want CodeGuru Security to use an AWS-managed key for encryption instead, pass nothing.</p>
     pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
         self.inner.get_encryption_config()
     }

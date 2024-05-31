@@ -8,12 +8,13 @@ impl super::Client {
     /// - On success, responds with [`GetScanOutput`](crate::operation::get_scan::GetScanOutput) with field(s):
     ///   - [`scan_name(String)`](crate::operation::get_scan::GetScanOutput::scan_name): <p>The name of the scan.</p>
     ///   - [`run_id(String)`](crate::operation::get_scan::GetScanOutput::run_id): <p>UUID that identifies the individual scan run.</p>
-    ///   - [`scan_state(ScanState)`](crate::operation::get_scan::GetScanOutput::scan_state): <p>The current state of the scan. Pass either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
+    ///   - [`scan_state(ScanState)`](crate::operation::get_scan::GetScanOutput::scan_state): <p>The current state of the scan. Returns either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_scan::GetScanOutput::created_at): <p>The time the scan was created.</p>
     ///   - [`analysis_type(AnalysisType)`](crate::operation::get_scan::GetScanOutput::analysis_type): <p>The type of analysis CodeGuru Security performed in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_scan::GetScanOutput::updated_at): <p>The time when the scan was last updated. Only available for <code>STANDARD</code> scan types.</p>
     ///   - [`number_of_revisions(Option<i64>)`](crate::operation::get_scan::GetScanOutput::number_of_revisions): <p>The number of times a scan has been re-run on a revised resource.</p>
     ///   - [`scan_name_arn(Option<String>)`](crate::operation::get_scan::GetScanOutput::scan_name_arn): <p>The ARN for the scan name.</p>
+    ///   - [`error_message(Option<String>)`](crate::operation::get_scan::GetScanOutput::error_message): <p>Details about the error that causes a scan to fail to be retrieved.</p>
     /// - On failure, responds with [`SdkError<GetScanError>`](crate::operation::get_scan::GetScanError)
     pub fn get_scan(&self) -> crate::operation::get_scan::builders::GetScanFluentBuilder {
         crate::operation::get_scan::builders::GetScanFluentBuilder::new(self.handle.clone())

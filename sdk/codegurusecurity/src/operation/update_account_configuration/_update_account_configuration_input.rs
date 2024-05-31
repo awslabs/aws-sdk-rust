@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountConfigurationInput {
-    /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
+    /// <p>The customer-managed KMS key ARN you want to use for encryption. If not specified, CodeGuru Security will use an AWS-managed key for encryption. If you previously specified a customer-managed KMS key and want CodeGuru Security to use an AWS-managed key for encryption instead, pass nothing.</p>
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
 }
 impl UpdateAccountConfigurationInput {
-    /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
+    /// <p>The customer-managed KMS key ARN you want to use for encryption. If not specified, CodeGuru Security will use an AWS-managed key for encryption. If you previously specified a customer-managed KMS key and want CodeGuru Security to use an AWS-managed key for encryption instead, pass nothing.</p>
     pub fn encryption_config(&self) -> ::std::option::Option<&crate::types::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
@@ -26,18 +26,18 @@ pub struct UpdateAccountConfigurationInputBuilder {
     pub(crate) encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
 }
 impl UpdateAccountConfigurationInputBuilder {
-    /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
+    /// <p>The customer-managed KMS key ARN you want to use for encryption. If not specified, CodeGuru Security will use an AWS-managed key for encryption. If you previously specified a customer-managed KMS key and want CodeGuru Security to use an AWS-managed key for encryption instead, pass nothing.</p>
     /// This field is required.
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         self.encryption_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
+    /// <p>The customer-managed KMS key ARN you want to use for encryption. If not specified, CodeGuru Security will use an AWS-managed key for encryption. If you previously specified a customer-managed KMS key and want CodeGuru Security to use an AWS-managed key for encryption instead, pass nothing.</p>
     pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
         self.encryption_config = input;
         self
     }
-    /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
+    /// <p>The customer-managed KMS key ARN you want to use for encryption. If not specified, CodeGuru Security will use an AWS-managed key for encryption. If you previously specified a customer-managed KMS key and want CodeGuru Security to use an AWS-managed key for encryption instead, pass nothing.</p>
     pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
         &self.encryption_config
     }

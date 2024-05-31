@@ -89,9 +89,11 @@ pub struct ModifyReplicationGroupInput {
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
     /// <li>
-    /// <p>Rotate</p></li>
+    /// <p>ROTATE - default, if no update strategy is provided</p></li>
     /// <li>
-    /// <p>Set</p></li>
+    /// <p>SET - allowed only after ROTATE</p></li>
+    /// <li>
+    /// <p>DELETE - allowed only when transitioning to RBAC</p></li>
     /// </ul>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
     pub auth_token_update_strategy: ::std::option::Option<crate::types::AuthTokenUpdateStrategyType>,
@@ -244,9 +246,11 @@ impl ModifyReplicationGroupInput {
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
     /// <li>
-    /// <p>Rotate</p></li>
+    /// <p>ROTATE - default, if no update strategy is provided</p></li>
     /// <li>
-    /// <p>Set</p></li>
+    /// <p>SET - allowed only after ROTATE</p></li>
+    /// <li>
+    /// <p>DELETE - allowed only when transitioning to RBAC</p></li>
     /// </ul>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
     pub fn auth_token_update_strategy(&self) -> ::std::option::Option<&crate::types::AuthTokenUpdateStrategyType> {
@@ -757,9 +761,11 @@ impl ModifyReplicationGroupInputBuilder {
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
     /// <li>
-    /// <p>Rotate</p></li>
+    /// <p>ROTATE - default, if no update strategy is provided</p></li>
     /// <li>
-    /// <p>Set</p></li>
+    /// <p>SET - allowed only after ROTATE</p></li>
+    /// <li>
+    /// <p>DELETE - allowed only when transitioning to RBAC</p></li>
     /// </ul>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
     pub fn auth_token_update_strategy(mut self, input: crate::types::AuthTokenUpdateStrategyType) -> Self {
@@ -769,9 +775,11 @@ impl ModifyReplicationGroupInputBuilder {
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
     /// <li>
-    /// <p>Rotate</p></li>
+    /// <p>ROTATE - default, if no update strategy is provided</p></li>
     /// <li>
-    /// <p>Set</p></li>
+    /// <p>SET - allowed only after ROTATE</p></li>
+    /// <li>
+    /// <p>DELETE - allowed only when transitioning to RBAC</p></li>
     /// </ul>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
     pub fn set_auth_token_update_strategy(mut self, input: ::std::option::Option<crate::types::AuthTokenUpdateStrategyType>) -> Self {
@@ -781,9 +789,11 @@ impl ModifyReplicationGroupInputBuilder {
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
     /// <li>
-    /// <p>Rotate</p></li>
+    /// <p>ROTATE - default, if no update strategy is provided</p></li>
     /// <li>
-    /// <p>Set</p></li>
+    /// <p>SET - allowed only after ROTATE</p></li>
+    /// <li>
+    /// <p>DELETE - allowed only when transitioning to RBAC</p></li>
     /// </ul>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
     pub fn get_auth_token_update_strategy(&self) -> &::std::option::Option<crate::types::AuthTokenUpdateStrategyType> {

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountConfigurationOutput {
-    /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption.</p>
+    /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN that is used for encryption. If you did not specify a customer-managed KMS key in the request, returns empty.</p>
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
     _request_id: Option<String>,
 }
 impl UpdateAccountConfigurationOutput {
-    /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption.</p>
+    /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN that is used for encryption. If you did not specify a customer-managed KMS key in the request, returns empty.</p>
     pub fn encryption_config(&self) -> ::std::option::Option<&crate::types::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct UpdateAccountConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateAccountConfigurationOutputBuilder {
-    /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption.</p>
+    /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN that is used for encryption. If you did not specify a customer-managed KMS key in the request, returns empty.</p>
     /// This field is required.
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         self.encryption_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption.</p>
+    /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN that is used for encryption. If you did not specify a customer-managed KMS key in the request, returns empty.</p>
     pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
         self.encryption_config = input;
         self
     }
-    /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption.</p>
+    /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN that is used for encryption. If you did not specify a customer-managed KMS key in the request, returns empty.</p>
     pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
         &self.encryption_config
     }

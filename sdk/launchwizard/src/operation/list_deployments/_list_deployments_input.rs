@@ -6,9 +6,9 @@ pub struct ListDeploymentsInput {
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
     /// <li>
-    /// <p><code>WORKLOAD_NAME</code></p></li>
+    /// <p><code>WORKLOAD_NAME</code> - The name used in deployments.</p></li>
     /// <li>
-    /// <p><code>DEPLOYMENT_STATUS</code></p></li>
+    /// <p><code>DEPLOYMENT_STATUS</code> - <code>COMPLETED</code> | <code>CREATING</code> | <code>DELETE_IN_PROGRESS</code> | <code>DELETE_INITIATING</code> | <code>DELETE_FAILED</code> | <code>DELETED</code> | <code>FAILED</code> | <code>IN_PROGRESS</code> | <code>VALIDATING</code></p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentFilter>>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output.</p>
@@ -20,9 +20,9 @@ impl ListDeploymentsInput {
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
     /// <li>
-    /// <p><code>WORKLOAD_NAME</code></p></li>
+    /// <p><code>WORKLOAD_NAME</code> - The name used in deployments.</p></li>
     /// <li>
-    /// <p><code>DEPLOYMENT_STATUS</code></p></li>
+    /// <p><code>DEPLOYMENT_STATUS</code> - <code>COMPLETED</code> | <code>CREATING</code> | <code>DELETE_IN_PROGRESS</code> | <code>DELETE_INITIATING</code> | <code>DELETE_FAILED</code> | <code>DELETED</code> | <code>FAILED</code> | <code>IN_PROGRESS</code> | <code>VALIDATING</code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -61,9 +61,9 @@ impl ListDeploymentsInputBuilder {
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
     /// <li>
-    /// <p><code>WORKLOAD_NAME</code></p></li>
+    /// <p><code>WORKLOAD_NAME</code> - The name used in deployments.</p></li>
     /// <li>
-    /// <p><code>DEPLOYMENT_STATUS</code></p></li>
+    /// <p><code>DEPLOYMENT_STATUS</code> - <code>COMPLETED</code> | <code>CREATING</code> | <code>DELETE_IN_PROGRESS</code> | <code>DELETE_INITIATING</code> | <code>DELETE_FAILED</code> | <code>DELETED</code> | <code>FAILED</code> | <code>IN_PROGRESS</code> | <code>VALIDATING</code></p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::DeploymentFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -74,9 +74,9 @@ impl ListDeploymentsInputBuilder {
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
     /// <li>
-    /// <p><code>WORKLOAD_NAME</code></p></li>
+    /// <p><code>WORKLOAD_NAME</code> - The name used in deployments.</p></li>
     /// <li>
-    /// <p><code>DEPLOYMENT_STATUS</code></p></li>
+    /// <p><code>DEPLOYMENT_STATUS</code> - <code>COMPLETED</code> | <code>CREATING</code> | <code>DELETE_IN_PROGRESS</code> | <code>DELETE_INITIATING</code> | <code>DELETE_FAILED</code> | <code>DELETED</code> | <code>FAILED</code> | <code>IN_PROGRESS</code> | <code>VALIDATING</code></p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentFilter>>) -> Self {
         self.filters = input;
@@ -85,9 +85,9 @@ impl ListDeploymentsInputBuilder {
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
     /// <li>
-    /// <p><code>WORKLOAD_NAME</code></p></li>
+    /// <p><code>WORKLOAD_NAME</code> - The name used in deployments.</p></li>
     /// <li>
-    /// <p><code>DEPLOYMENT_STATUS</code></p></li>
+    /// <p><code>DEPLOYMENT_STATUS</code> - <code>COMPLETED</code> | <code>CREATING</code> | <code>DELETE_IN_PROGRESS</code> | <code>DELETE_INITIATING</code> | <code>DELETE_FAILED</code> | <code>DELETED</code> | <code>FAILED</code> | <code>IN_PROGRESS</code> | <code>VALIDATING</code></p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentFilter>> {
         &self.filters

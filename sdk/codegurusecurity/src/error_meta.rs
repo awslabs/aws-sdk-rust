@@ -250,6 +250,7 @@ impl From<crate::operation::get_scan::GetScanError> for Error {
             crate::operation::get_scan::GetScanError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_scan::GetScanError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_scan::GetScanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_scan::GetScanError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_scan::GetScanError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

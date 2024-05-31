@@ -3,16 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateUploadUrlOutput {
-    /// <p>A pre-signed S3 URL. You can upload the code file you want to scan and add the required <code>requestHeaders</code> using any HTTP client.</p>
+    /// <p>A pre-signed S3 URL. You can upload the code file you want to scan with the required <code>requestHeaders</code> using any HTTP client.</p>
     pub s3_url: ::std::string::String,
     /// <p>A set of key-value pairs that contain the required headers when uploading your resource.</p>
     pub request_headers: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    /// <p>The identifier for the uploaded code resource.</p>
+    /// <p>The identifier for the uploaded code resource. Pass this to <code>CreateScan</code> to use the uploaded resources.</p>
     pub code_artifact_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateUploadUrlOutput {
-    /// <p>A pre-signed S3 URL. You can upload the code file you want to scan and add the required <code>requestHeaders</code> using any HTTP client.</p>
+    /// <p>A pre-signed S3 URL. You can upload the code file you want to scan with the required <code>requestHeaders</code> using any HTTP client.</p>
     pub fn s3_url(&self) -> &str {
         use std::ops::Deref;
         self.s3_url.deref()
@@ -21,7 +21,7 @@ impl CreateUploadUrlOutput {
     pub fn request_headers(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
         &self.request_headers
     }
-    /// <p>The identifier for the uploaded code resource.</p>
+    /// <p>The identifier for the uploaded code resource. Pass this to <code>CreateScan</code> to use the uploaded resources.</p>
     pub fn code_artifact_id(&self) -> &str {
         use std::ops::Deref;
         self.code_artifact_id.deref()
@@ -59,18 +59,18 @@ pub struct CreateUploadUrlOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateUploadUrlOutputBuilder {
-    /// <p>A pre-signed S3 URL. You can upload the code file you want to scan and add the required <code>requestHeaders</code> using any HTTP client.</p>
+    /// <p>A pre-signed S3 URL. You can upload the code file you want to scan with the required <code>requestHeaders</code> using any HTTP client.</p>
     /// This field is required.
     pub fn s3_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A pre-signed S3 URL. You can upload the code file you want to scan and add the required <code>requestHeaders</code> using any HTTP client.</p>
+    /// <p>A pre-signed S3 URL. You can upload the code file you want to scan with the required <code>requestHeaders</code> using any HTTP client.</p>
     pub fn set_s3_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_url = input;
         self
     }
-    /// <p>A pre-signed S3 URL. You can upload the code file you want to scan and add the required <code>requestHeaders</code> using any HTTP client.</p>
+    /// <p>A pre-signed S3 URL. You can upload the code file you want to scan with the required <code>requestHeaders</code> using any HTTP client.</p>
     pub fn get_s3_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_url
     }
@@ -101,18 +101,18 @@ impl CreateUploadUrlOutputBuilder {
     pub fn get_request_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.request_headers
     }
-    /// <p>The identifier for the uploaded code resource.</p>
+    /// <p>The identifier for the uploaded code resource. Pass this to <code>CreateScan</code> to use the uploaded resources.</p>
     /// This field is required.
     pub fn code_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_artifact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the uploaded code resource.</p>
+    /// <p>The identifier for the uploaded code resource. Pass this to <code>CreateScan</code> to use the uploaded resources.</p>
     pub fn set_code_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_artifact_id = input;
         self
     }
-    /// <p>The identifier for the uploaded code resource.</p>
+    /// <p>The identifier for the uploaded code resource. Pass this to <code>CreateScan</code> to use the uploaded resources.</p>
     pub fn get_code_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.code_artifact_id
     }

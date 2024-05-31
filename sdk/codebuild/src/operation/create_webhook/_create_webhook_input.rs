@@ -15,7 +15,7 @@ pub struct CreateWebhookInput {
     /// <p>Specifies the type of build this webhook will trigger.</p>
     pub build_type: ::std::option::Option<crate::types::WebhookBuildType>,
     /// <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns <code>payloadUrl</code> and <code>secret</code> values for the webhook. The <code>payloadUrl</code> and <code>secret</code> values in the output can be used to manually create a webhook within GitHub.</p><note>
-    /// <p>manualCreation is only available for GitHub webhooks.</p>
+    /// <p><code>manualCreation</code> is only available for GitHub webhooks.</p>
     /// </note>
     pub manual_creation: ::std::option::Option<bool>,
 }
@@ -42,7 +42,7 @@ impl CreateWebhookInput {
         self.build_type.as_ref()
     }
     /// <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns <code>payloadUrl</code> and <code>secret</code> values for the webhook. The <code>payloadUrl</code> and <code>secret</code> values in the output can be used to manually create a webhook within GitHub.</p><note>
-    /// <p>manualCreation is only available for GitHub webhooks.</p>
+    /// <p><code>manualCreation</code> is only available for GitHub webhooks.</p>
     /// </note>
     pub fn manual_creation(&self) -> ::std::option::Option<bool> {
         self.manual_creation
@@ -139,21 +139,21 @@ impl CreateWebhookInputBuilder {
         &self.build_type
     }
     /// <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns <code>payloadUrl</code> and <code>secret</code> values for the webhook. The <code>payloadUrl</code> and <code>secret</code> values in the output can be used to manually create a webhook within GitHub.</p><note>
-    /// <p>manualCreation is only available for GitHub webhooks.</p>
+    /// <p><code>manualCreation</code> is only available for GitHub webhooks.</p>
     /// </note>
     pub fn manual_creation(mut self, input: bool) -> Self {
         self.manual_creation = ::std::option::Option::Some(input);
         self
     }
     /// <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns <code>payloadUrl</code> and <code>secret</code> values for the webhook. The <code>payloadUrl</code> and <code>secret</code> values in the output can be used to manually create a webhook within GitHub.</p><note>
-    /// <p>manualCreation is only available for GitHub webhooks.</p>
+    /// <p><code>manualCreation</code> is only available for GitHub webhooks.</p>
     /// </note>
     pub fn set_manual_creation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.manual_creation = input;
         self
     }
     /// <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns <code>payloadUrl</code> and <code>secret</code> values for the webhook. The <code>payloadUrl</code> and <code>secret</code> values in the output can be used to manually create a webhook within GitHub.</p><note>
-    /// <p>manualCreation is only available for GitHub webhooks.</p>
+    /// <p><code>manualCreation</code> is only available for GitHub webhooks.</p>
     /// </note>
     pub fn get_manual_creation(&self) -> &::std::option::Option<bool> {
         &self.manual_creation

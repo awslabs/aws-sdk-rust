@@ -31,13 +31,21 @@ pub(crate) mod shape_get_deployment;
 
 pub(crate) mod shape_get_workload;
 
+pub(crate) mod shape_get_workload_deployment_pattern;
+
 pub(crate) mod shape_list_deployment_events;
 
 pub(crate) mod shape_list_deployments;
 
+pub(crate) mod shape_list_tags_for_resource;
+
 pub(crate) mod shape_list_workload_deployment_patterns;
 
 pub(crate) mod shape_list_workloads;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -52,6 +60,8 @@ pub(crate) mod shape_create_deployment_input;
 pub(crate) mod shape_delete_deployment_input;
 
 pub(crate) mod shape_get_deployment_input;
+
+pub(crate) mod shape_get_workload_deployment_pattern_input;
 
 pub(crate) mod shape_get_workload_input;
 
@@ -69,6 +79,8 @@ pub(crate) mod shape_resource_limit_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_tag_resource_input;
+
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_deployment_data;
@@ -79,9 +91,13 @@ pub(crate) mod shape_deployment_event_data_summary_list;
 
 pub(crate) mod shape_deployment_filter;
 
+pub(crate) mod shape_tags;
+
 pub(crate) mod shape_workload_data;
 
 pub(crate) mod shape_workload_data_summary_list;
+
+pub(crate) mod shape_workload_deployment_pattern_data;
 
 pub(crate) mod shape_workload_deployment_pattern_data_summary_list;
 
@@ -91,6 +107,16 @@ pub(crate) mod shape_deployment_event_data_summary;
 
 pub(crate) mod shape_deployment_specifications;
 
+pub(crate) mod shape_deployment_specifications_data;
+
 pub(crate) mod shape_workload_data_summary;
 
 pub(crate) mod shape_workload_deployment_pattern_data_summary;
+
+pub(crate) mod shape_deployment_specifications_field;
+
+pub(crate) mod shape_allowed_values;
+
+pub(crate) mod shape_specifications_conditional_data;
+
+pub(crate) mod shape_deployment_conditional_field;

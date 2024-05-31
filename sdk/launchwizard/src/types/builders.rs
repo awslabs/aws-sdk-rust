@@ -3,6 +3,12 @@ pub use crate::types::_workload_data::WorkloadDataBuilder;
 
 pub use crate::types::_workload_data_summary::WorkloadDataSummaryBuilder;
 
+pub use crate::types::_workload_deployment_pattern_data::WorkloadDeploymentPatternDataBuilder;
+
+pub use crate::types::_deployment_specifications_field::DeploymentSpecificationsFieldBuilder;
+
+pub use crate::types::_deployment_conditional_field::DeploymentConditionalFieldBuilder;
+
 pub use crate::types::_workload_deployment_pattern_data_summary::WorkloadDeploymentPatternDataSummaryBuilder;
 
 pub use crate::types::_deployment_data::DeploymentDataBuilder;

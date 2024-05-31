@@ -11,7 +11,7 @@ pub struct WebhookFilter {
     /// <ul>
     /// <li>
     /// <p>A webhook event triggers a build when the provided <code>pattern</code> matches one of nine event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>, <code>PULL_REQUEST_CLOSED</code>, <code>PULL_REQUEST_REOPENED</code>, <code>PULL_REQUEST_MERGED</code>, <code>RELEASED</code>, <code>PRERELEASED</code>, and <code>WORKFLOW_JOB_QUEUED</code>. The <code>EVENT</code> patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request updated events.</p><note>
-    /// <p>The <code>PULL_REQUEST_REOPENED</code> works with GitHub and GitHub Enterprise only. The <code>RELEASED</code>, <code>PRERELEASED</code>, and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub only.</p>
+    /// <p>Types <code>PULL_REQUEST_REOPENED</code> and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub and GitHub Enterprise only. Types <code>RELEASED</code> and <code>PRERELEASED</code> work with GitHub only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -92,7 +92,7 @@ impl WebhookFilter {
     /// <ul>
     /// <li>
     /// <p>A webhook event triggers a build when the provided <code>pattern</code> matches one of nine event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>, <code>PULL_REQUEST_CLOSED</code>, <code>PULL_REQUEST_REOPENED</code>, <code>PULL_REQUEST_MERGED</code>, <code>RELEASED</code>, <code>PRERELEASED</code>, and <code>WORKFLOW_JOB_QUEUED</code>. The <code>EVENT</code> patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request updated events.</p><note>
-    /// <p>The <code>PULL_REQUEST_REOPENED</code> works with GitHub and GitHub Enterprise only. The <code>RELEASED</code>, <code>PRERELEASED</code>, and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub only.</p>
+    /// <p>Types <code>PULL_REQUEST_REOPENED</code> and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub and GitHub Enterprise only. Types <code>RELEASED</code> and <code>PRERELEASED</code> work with GitHub only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -195,7 +195,7 @@ impl WebhookFilterBuilder {
     /// <ul>
     /// <li>
     /// <p>A webhook event triggers a build when the provided <code>pattern</code> matches one of nine event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>, <code>PULL_REQUEST_CLOSED</code>, <code>PULL_REQUEST_REOPENED</code>, <code>PULL_REQUEST_MERGED</code>, <code>RELEASED</code>, <code>PRERELEASED</code>, and <code>WORKFLOW_JOB_QUEUED</code>. The <code>EVENT</code> patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request updated events.</p><note>
-    /// <p>The <code>PULL_REQUEST_REOPENED</code> works with GitHub and GitHub Enterprise only. The <code>RELEASED</code>, <code>PRERELEASED</code>, and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub only.</p>
+    /// <p>Types <code>PULL_REQUEST_REOPENED</code> and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub and GitHub Enterprise only. Types <code>RELEASED</code> and <code>PRERELEASED</code> work with GitHub only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -273,7 +273,7 @@ impl WebhookFilterBuilder {
     /// <ul>
     /// <li>
     /// <p>A webhook event triggers a build when the provided <code>pattern</code> matches one of nine event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>, <code>PULL_REQUEST_CLOSED</code>, <code>PULL_REQUEST_REOPENED</code>, <code>PULL_REQUEST_MERGED</code>, <code>RELEASED</code>, <code>PRERELEASED</code>, and <code>WORKFLOW_JOB_QUEUED</code>. The <code>EVENT</code> patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request updated events.</p><note>
-    /// <p>The <code>PULL_REQUEST_REOPENED</code> works with GitHub and GitHub Enterprise only. The <code>RELEASED</code>, <code>PRERELEASED</code>, and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub only.</p>
+    /// <p>Types <code>PULL_REQUEST_REOPENED</code> and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub and GitHub Enterprise only. Types <code>RELEASED</code> and <code>PRERELEASED</code> work with GitHub only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -350,7 +350,7 @@ impl WebhookFilterBuilder {
     /// <ul>
     /// <li>
     /// <p>A webhook event triggers a build when the provided <code>pattern</code> matches one of nine event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>, <code>PULL_REQUEST_CLOSED</code>, <code>PULL_REQUEST_REOPENED</code>, <code>PULL_REQUEST_MERGED</code>, <code>RELEASED</code>, <code>PRERELEASED</code>, and <code>WORKFLOW_JOB_QUEUED</code>. The <code>EVENT</code> patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request updated events.</p><note>
-    /// <p>The <code>PULL_REQUEST_REOPENED</code> works with GitHub and GitHub Enterprise only. The <code>RELEASED</code>, <code>PRERELEASED</code>, and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub only.</p>
+    /// <p>Types <code>PULL_REQUEST_REOPENED</code> and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub and GitHub Enterprise only. Types <code>RELEASED</code> and <code>PRERELEASED</code> work with GitHub only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>

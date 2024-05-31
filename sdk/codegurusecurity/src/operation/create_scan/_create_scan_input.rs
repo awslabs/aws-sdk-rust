@@ -5,9 +5,9 @@
 pub struct CreateScanInput {
     /// <p>The idempotency token for the request. Amazon CodeGuru Security uses this value to prevent the accidental creation of duplicate scans if there are failures and retries.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier for an input resource used to create a scan.</p>
+    /// <p>The identifier for the resource object to be scanned.</p>
     pub resource_id: ::std::option::Option<crate::types::ResourceId>,
-    /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type. If not specified, it will be auto generated.</p>
+    /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type.</p>
     pub scan_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of scan, either <code>Standard</code> or <code>Express</code>. Defaults to <code>Standard</code> type if missing.</p>
     /// <p><code>Express</code> scans run on limited resources and use a limited set of detectors to analyze your code in near-real time. <code>Standard</code> scans have standard resource limits and use the full set of detectors to analyze your code.</p>
@@ -28,11 +28,11 @@ impl CreateScanInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The identifier for an input resource used to create a scan.</p>
+    /// <p>The identifier for the resource object to be scanned.</p>
     pub fn resource_id(&self) -> ::std::option::Option<&crate::types::ResourceId> {
         self.resource_id.as_ref()
     }
-    /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type. If not specified, it will be auto generated.</p>
+    /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type.</p>
     pub fn scan_name(&self) -> ::std::option::Option<&str> {
         self.scan_name.as_deref()
     }
@@ -89,33 +89,33 @@ impl CreateScanInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The identifier for an input resource used to create a scan.</p>
+    /// <p>The identifier for the resource object to be scanned.</p>
     /// This field is required.
     pub fn resource_id(mut self, input: crate::types::ResourceId) -> Self {
         self.resource_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The identifier for an input resource used to create a scan.</p>
+    /// <p>The identifier for the resource object to be scanned.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<crate::types::ResourceId>) -> Self {
         self.resource_id = input;
         self
     }
-    /// <p>The identifier for an input resource used to create a scan.</p>
+    /// <p>The identifier for the resource object to be scanned.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<crate::types::ResourceId> {
         &self.resource_id
     }
-    /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type. If not specified, it will be auto generated.</p>
+    /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type.</p>
     /// This field is required.
     pub fn scan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scan_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type. If not specified, it will be auto generated.</p>
+    /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type.</p>
     pub fn set_scan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scan_name = input;
         self
     }
-    /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type. If not specified, it will be auto generated.</p>
+    /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type.</p>
     pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.scan_name
     }

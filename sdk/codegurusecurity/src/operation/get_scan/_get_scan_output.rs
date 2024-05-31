@@ -7,7 +7,7 @@ pub struct GetScanOutput {
     pub scan_name: ::std::string::String,
     /// <p>UUID that identifies the individual scan run.</p>
     pub run_id: ::std::string::String,
-    /// <p>The current state of the scan. Pass either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
+    /// <p>The current state of the scan. Returns either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
     pub scan_state: crate::types::ScanState,
     /// <p>The time the scan was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -19,6 +19,8 @@ pub struct GetScanOutput {
     pub number_of_revisions: ::std::option::Option<i64>,
     /// <p>The ARN for the scan name.</p>
     pub scan_name_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Details about the error that causes a scan to fail to be retrieved.</p>
+    pub error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetScanOutput {
@@ -32,7 +34,7 @@ impl GetScanOutput {
         use std::ops::Deref;
         self.run_id.deref()
     }
-    /// <p>The current state of the scan. Pass either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
+    /// <p>The current state of the scan. Returns either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
     pub fn scan_state(&self) -> &crate::types::ScanState {
         &self.scan_state
     }
@@ -55,6 +57,10 @@ impl GetScanOutput {
     /// <p>The ARN for the scan name.</p>
     pub fn scan_name_arn(&self) -> ::std::option::Option<&str> {
         self.scan_name_arn.as_deref()
+    }
+    /// <p>Details about the error that causes a scan to fail to be retrieved.</p>
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
+        self.error_message.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetScanOutput {
@@ -81,6 +87,7 @@ pub struct GetScanOutputBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) number_of_revisions: ::std::option::Option<i64>,
     pub(crate) scan_name_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetScanOutputBuilder {
@@ -114,18 +121,18 @@ impl GetScanOutputBuilder {
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.run_id
     }
-    /// <p>The current state of the scan. Pass either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
+    /// <p>The current state of the scan. Returns either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
     /// This field is required.
     pub fn scan_state(mut self, input: crate::types::ScanState) -> Self {
         self.scan_state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current state of the scan. Pass either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
+    /// <p>The current state of the scan. Returns either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
     pub fn set_scan_state(mut self, input: ::std::option::Option<crate::types::ScanState>) -> Self {
         self.scan_state = input;
         self
     }
-    /// <p>The current state of the scan. Pass either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
+    /// <p>The current state of the scan. Returns either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
     pub fn get_scan_state(&self) -> &::std::option::Option<crate::types::ScanState> {
         &self.scan_state
     }
@@ -201,6 +208,20 @@ impl GetScanOutputBuilder {
     pub fn get_scan_name_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.scan_name_arn
     }
+    /// <p>Details about the error that causes a scan to fail to be retrieved.</p>
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Details about the error that causes a scan to fail to be retrieved.</p>
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error_message = input;
+        self
+    }
+    /// <p>Details about the error that causes a scan to fail to be retrieved.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -252,6 +273,7 @@ impl GetScanOutputBuilder {
             updated_at: self.updated_at,
             number_of_revisions: self.number_of_revisions,
             scan_name_arn: self.scan_name_arn,
+            error_message: self.error_message,
             _request_id: self._request_id,
         })
     }

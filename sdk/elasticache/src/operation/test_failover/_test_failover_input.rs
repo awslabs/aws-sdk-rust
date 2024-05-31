@@ -5,7 +5,7 @@
 pub struct TestFailoverInput {
     /// <p>The name of the replication group (console: cluster) whose automatic failover is being tested by this operation.</p>
     pub replication_group_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
+    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 15 node groups in any rolling 24-hour period.</p>
     pub node_group_id: ::std::option::Option<::std::string::String>,
 }
 impl TestFailoverInput {
@@ -13,7 +13,7 @@ impl TestFailoverInput {
     pub fn replication_group_id(&self) -> ::std::option::Option<&str> {
         self.replication_group_id.as_deref()
     }
-    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
+    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 15 node groups in any rolling 24-hour period.</p>
     pub fn node_group_id(&self) -> ::std::option::Option<&str> {
         self.node_group_id.as_deref()
     }
@@ -48,18 +48,18 @@ impl TestFailoverInputBuilder {
     pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_group_id
     }
-    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
+    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 15 node groups in any rolling 24-hour period.</p>
     /// This field is required.
     pub fn node_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
+    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 15 node groups in any rolling 24-hour period.</p>
     pub fn set_node_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_group_id = input;
         self
     }
-    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
+    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 15 node groups in any rolling 24-hour period.</p>
     pub fn get_node_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_group_id
     }
