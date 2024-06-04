@@ -11,6 +11,16 @@ pub use crate::types::_s3_log_destination_parameters::S3LogDestinationParameters
 
 pub use crate::types::_pipe_target_parameters::PipeTargetParametersBuilder;
 
+pub use crate::types::_pipe_target_timestream_parameters::PipeTargetTimestreamParametersBuilder;
+
+pub use crate::types::_multi_measure_mapping::MultiMeasureMappingBuilder;
+
+pub use crate::types::_multi_measure_attribute_mapping::MultiMeasureAttributeMappingBuilder;
+
+pub use crate::types::_single_measure_mapping::SingleMeasureMappingBuilder;
+
+pub use crate::types::_dimension_mapping::DimensionMappingBuilder;
+
 pub use crate::types::_pipe_target_cloud_watch_logs_parameters::PipeTargetCloudWatchLogsParametersBuilder;
 
 pub use crate::types::_pipe_target_event_bridge_event_bus_parameters::PipeTargetEventBridgeEventBusParametersBuilder;

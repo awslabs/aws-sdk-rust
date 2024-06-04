@@ -2053,6 +2053,8 @@ pub(crate) mod shape_clarify_explainer_config;
 
 pub(crate) mod shape_cluster_instance_group_details;
 
+pub(crate) mod shape_cluster_instance_placement;
+
 pub(crate) mod shape_cluster_instance_status_details;
 
 pub(crate) mod shape_cluster_life_cycle_config;

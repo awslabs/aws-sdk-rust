@@ -1555,6 +1555,8 @@ pub use crate::types::_model_digests::ModelDigests;
 
 pub use crate::types::_cluster_node_details::ClusterNodeDetails;
 
+pub use crate::types::_cluster_instance_placement::ClusterInstancePlacement;
+
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetails;
 
 pub use crate::types::_auto_ml_security_config::AutoMlSecurityConfig;
@@ -1928,6 +1930,8 @@ mod _clarify_text_language;
 mod _cluster_instance_group_details;
 
 mod _cluster_instance_group_specification;
+
+mod _cluster_instance_placement;
 
 mod _cluster_instance_status;
 

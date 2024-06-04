@@ -21,6 +21,7 @@ pub struct PipeSourceParameters {
     /// <p>The parameters for using an MSK stream as a source.</p>
     pub managed_streaming_kafka_parameters: ::std::option::Option<crate::types::PipeSourceManagedStreamingKafkaParameters>,
     /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
+    /// <p>A <i>self managed</i> cluster refers to any Apache Kafka cluster not hosted by Amazon Web Services. This includes both clusters you manage yourself, as well as those hosted by a third-party provider, such as <a href="https://www.confluent.io/">Confluent Cloud</a>, <a href="https://www.cloudkarafka.com/">CloudKarafka</a>, or <a href="https://redpanda.com/">Redpanda</a>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-kafka.html">Apache Kafka streams as a source</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub self_managed_kafka_parameters: ::std::option::Option<crate::types::PipeSourceSelfManagedKafkaParameters>,
 }
 impl PipeSourceParameters {
@@ -55,6 +56,7 @@ impl PipeSourceParameters {
         self.managed_streaming_kafka_parameters.as_ref()
     }
     /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
+    /// <p>A <i>self managed</i> cluster refers to any Apache Kafka cluster not hosted by Amazon Web Services. This includes both clusters you manage yourself, as well as those hosted by a third-party provider, such as <a href="https://www.confluent.io/">Confluent Cloud</a>, <a href="https://www.cloudkarafka.com/">CloudKarafka</a>, or <a href="https://redpanda.com/">Redpanda</a>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-kafka.html">Apache Kafka streams as a source</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn self_managed_kafka_parameters(&self) -> ::std::option::Option<&crate::types::PipeSourceSelfManagedKafkaParameters> {
         self.self_managed_kafka_parameters.as_ref()
     }
@@ -188,16 +190,19 @@ impl PipeSourceParametersBuilder {
         &self.managed_streaming_kafka_parameters
     }
     /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
+    /// <p>A <i>self managed</i> cluster refers to any Apache Kafka cluster not hosted by Amazon Web Services. This includes both clusters you manage yourself, as well as those hosted by a third-party provider, such as <a href="https://www.confluent.io/">Confluent Cloud</a>, <a href="https://www.cloudkarafka.com/">CloudKarafka</a>, or <a href="https://redpanda.com/">Redpanda</a>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-kafka.html">Apache Kafka streams as a source</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn self_managed_kafka_parameters(mut self, input: crate::types::PipeSourceSelfManagedKafkaParameters) -> Self {
         self.self_managed_kafka_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
+    /// <p>A <i>self managed</i> cluster refers to any Apache Kafka cluster not hosted by Amazon Web Services. This includes both clusters you manage yourself, as well as those hosted by a third-party provider, such as <a href="https://www.confluent.io/">Confluent Cloud</a>, <a href="https://www.cloudkarafka.com/">CloudKarafka</a>, or <a href="https://redpanda.com/">Redpanda</a>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-kafka.html">Apache Kafka streams as a source</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn set_self_managed_kafka_parameters(mut self, input: ::std::option::Option<crate::types::PipeSourceSelfManagedKafkaParameters>) -> Self {
         self.self_managed_kafka_parameters = input;
         self
     }
     /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
+    /// <p>A <i>self managed</i> cluster refers to any Apache Kafka cluster not hosted by Amazon Web Services. This includes both clusters you manage yourself, as well as those hosted by a third-party provider, such as <a href="https://www.confluent.io/">Confluent Cloud</a>, <a href="https://www.cloudkarafka.com/">CloudKarafka</a>, or <a href="https://redpanda.com/">Redpanda</a>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-kafka.html">Apache Kafka streams as a source</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn get_self_managed_kafka_parameters(&self) -> &::std::option::Option<crate::types::PipeSourceSelfManagedKafkaParameters> {
         &self.self_managed_kafka_parameters
     }

@@ -6,7 +6,7 @@
 pub struct PipeLogConfiguration {
     /// <p>The Amazon S3 logging configuration settings for the pipe.</p>
     pub s3_log_destination: ::std::option::Option<crate::types::S3LogDestination>,
-    /// <p>The Amazon Kinesis Data Firehose logging configuration settings for the pipe.</p>
+    /// <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
     pub firehose_log_destination: ::std::option::Option<crate::types::FirehoseLogDestination>,
     /// <p>The Amazon CloudWatch Logs logging configuration settings for the pipe.</p>
     pub cloudwatch_logs_log_destination: ::std::option::Option<crate::types::CloudwatchLogsLogDestination>,
@@ -22,7 +22,7 @@ impl PipeLogConfiguration {
     pub fn s3_log_destination(&self) -> ::std::option::Option<&crate::types::S3LogDestination> {
         self.s3_log_destination.as_ref()
     }
-    /// <p>The Amazon Kinesis Data Firehose logging configuration settings for the pipe.</p>
+    /// <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
     pub fn firehose_log_destination(&self) -> ::std::option::Option<&crate::types::FirehoseLogDestination> {
         self.firehose_log_destination.as_ref()
     }
@@ -75,17 +75,17 @@ impl PipeLogConfigurationBuilder {
     pub fn get_s3_log_destination(&self) -> &::std::option::Option<crate::types::S3LogDestination> {
         &self.s3_log_destination
     }
-    /// <p>The Amazon Kinesis Data Firehose logging configuration settings for the pipe.</p>
+    /// <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
     pub fn firehose_log_destination(mut self, input: crate::types::FirehoseLogDestination) -> Self {
         self.firehose_log_destination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon Kinesis Data Firehose logging configuration settings for the pipe.</p>
+    /// <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
     pub fn set_firehose_log_destination(mut self, input: ::std::option::Option<crate::types::FirehoseLogDestination>) -> Self {
         self.firehose_log_destination = input;
         self
     }
-    /// <p>The Amazon Kinesis Data Firehose logging configuration settings for the pipe.</p>
+    /// <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
     pub fn get_firehose_log_destination(&self) -> &::std::option::Option<crate::types::FirehoseLogDestination> {
         &self.firehose_log_destination
     }

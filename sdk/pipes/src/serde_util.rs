@@ -155,6 +155,21 @@ pub(crate) fn pipe_target_redshift_data_parameters_correct_errors(
     builder
 }
 
+pub(crate) fn pipe_target_timestream_parameters_correct_errors(
+    mut builder: crate::types::builders::PipeTargetTimestreamParametersBuilder,
+) -> crate::types::builders::PipeTargetTimestreamParametersBuilder {
+    if builder.time_value.is_none() {
+        builder.time_value = Some(Default::default())
+    }
+    if builder.version_value.is_none() {
+        builder.version_value = Some(Default::default())
+    }
+    if builder.dimension_mappings.is_none() {
+        builder.dimension_mappings = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn validation_exception_field_correct_errors(
     mut builder: crate::types::builders::ValidationExceptionFieldBuilder,
 ) -> crate::types::builders::ValidationExceptionFieldBuilder {
@@ -185,11 +200,38 @@ pub(crate) fn capacity_provider_strategy_item_correct_errors(
     builder
 }
 
+pub(crate) fn dimension_mapping_correct_errors(
+    mut builder: crate::types::builders::DimensionMappingBuilder,
+) -> crate::types::builders::DimensionMappingBuilder {
+    if builder.dimension_value.is_none() {
+        builder.dimension_value = Some(Default::default())
+    }
+    if builder.dimension_value_type.is_none() {
+        builder.dimension_value_type = "no value was set".parse::<crate::types::DimensionValueType>().ok()
+    }
+    if builder.dimension_name.is_none() {
+        builder.dimension_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn ecs_ephemeral_storage_correct_errors(
     mut builder: crate::types::builders::EcsEphemeralStorageBuilder,
 ) -> crate::types::builders::EcsEphemeralStorageBuilder {
     if builder.size_in_gib.is_none() {
         builder.size_in_gib = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn multi_measure_mapping_correct_errors(
+    mut builder: crate::types::builders::MultiMeasureMappingBuilder,
+) -> crate::types::builders::MultiMeasureMappingBuilder {
+    if builder.multi_measure_name.is_none() {
+        builder.multi_measure_name = Some(Default::default())
+    }
+    if builder.multi_measure_attribute_mappings.is_none() {
+        builder.multi_measure_attribute_mappings = Some(Default::default())
     }
     builder
 }
@@ -202,6 +244,21 @@ pub(crate) fn sage_maker_pipeline_parameter_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn single_measure_mapping_correct_errors(
+    mut builder: crate::types::builders::SingleMeasureMappingBuilder,
+) -> crate::types::builders::SingleMeasureMappingBuilder {
+    if builder.measure_value.is_none() {
+        builder.measure_value = Some(Default::default())
+    }
+    if builder.measure_value_type.is_none() {
+        builder.measure_value_type = "no value was set".parse::<crate::types::MeasureValueType>().ok()
+    }
+    if builder.measure_name.is_none() {
+        builder.measure_name = Some(Default::default())
     }
     builder
 }
@@ -224,6 +281,21 @@ pub(crate) fn batch_resource_requirement_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn multi_measure_attribute_mapping_correct_errors(
+    mut builder: crate::types::builders::MultiMeasureAttributeMappingBuilder,
+) -> crate::types::builders::MultiMeasureAttributeMappingBuilder {
+    if builder.measure_value.is_none() {
+        builder.measure_value = Some(Default::default())
+    }
+    if builder.measure_value_type.is_none() {
+        builder.measure_value_type = "no value was set".parse::<crate::types::MeasureValueType>().ok()
+    }
+    if builder.multi_measure_attribute_name.is_none() {
+        builder.multi_measure_attribute_name = Some(Default::default())
     }
     builder
 }

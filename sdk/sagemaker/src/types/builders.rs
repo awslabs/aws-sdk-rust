@@ -1037,6 +1037,8 @@ pub use crate::types::_model_digests::ModelDigestsBuilder;
 
 pub use crate::types::_cluster_node_details::ClusterNodeDetailsBuilder;
 
+pub use crate::types::_cluster_instance_placement::ClusterInstancePlacementBuilder;
+
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetailsBuilder;
 
 pub use crate::types::_auto_ml_security_config::AutoMlSecurityConfigBuilder;

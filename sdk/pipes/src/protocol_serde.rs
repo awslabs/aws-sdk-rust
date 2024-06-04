@@ -139,6 +139,8 @@ pub(crate) mod shape_pipe_target_sqs_queue_parameters;
 
 pub(crate) mod shape_pipe_target_state_machine_parameters;
 
+pub(crate) mod shape_pipe_target_timestream_parameters;
+
 pub(crate) mod shape_s3_log_destination;
 
 pub(crate) mod shape_s3_log_destination_parameters;
@@ -177,6 +179,10 @@ pub(crate) mod shape_capacity_provider_strategy_item;
 
 pub(crate) mod shape_dead_letter_config;
 
+pub(crate) mod shape_dimension_mapping;
+
+pub(crate) mod shape_dimension_mappings;
+
 pub(crate) mod shape_ecs_task_override;
 
 pub(crate) mod shape_event_bridge_event_resource_list;
@@ -192,6 +198,10 @@ pub(crate) mod shape_kafka_bootstrap_servers;
 pub(crate) mod shape_mq_broker_access_credentials;
 
 pub(crate) mod shape_msk_access_credentials;
+
+pub(crate) mod shape_multi_measure_mapping;
+
+pub(crate) mod shape_multi_measure_mappings;
 
 pub(crate) mod shape_network_configuration;
 
@@ -214,6 +224,10 @@ pub(crate) mod shape_sage_maker_pipeline_parameter_list;
 pub(crate) mod shape_self_managed_kafka_access_configuration_credentials;
 
 pub(crate) mod shape_self_managed_kafka_access_configuration_vpc;
+
+pub(crate) mod shape_single_measure_mapping;
+
+pub(crate) mod shape_single_measure_mappings;
 
 pub(crate) mod shape_sqls;
 
@@ -241,6 +255,8 @@ pub(crate) mod shape_ecs_inference_accelerator_override;
 
 pub(crate) mod shape_ecs_inference_accelerator_override_list;
 
+pub(crate) mod shape_multi_measure_attribute_mapping;
+
 pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_string_list;
@@ -252,6 +268,8 @@ pub(crate) mod shape_ecs_environment_file;
 pub(crate) mod shape_ecs_environment_variable;
 
 pub(crate) mod shape_ecs_resource_requirement;
+
+pub(crate) mod shape_multi_measure_attribute_mappings;
 
 pub(crate) mod shape_security_groups;
 

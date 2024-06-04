@@ -22,7 +22,7 @@ impl crate::operation::describe_cluster_node::builders::DescribeClusterNodeInput
 }
 /// Fluent builder constructing a request to `DescribeClusterNode`.
 ///
-/// <p>Retrieves information of an instance (also called a <i>node</i> interchangeably) of a SageMaker HyperPod cluster.</p>
+/// <p>Retrieves information of a node (also called a <i>instance</i> interchangeably) of a SageMaker HyperPod cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeClusterNodeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DescribeClusterNodeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the instance is.</p>
+    /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the node is.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
         self
     }
-    /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the instance is.</p>
+    /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the node is.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
-    /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the instance is.</p>
+    /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the node is.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_name()
     }
-    /// <p>The ID of the instance.</p>
+    /// <p>The ID of the SageMaker HyperPod cluster node.</p>
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_id(input.into());
         self
     }
-    /// <p>The ID of the instance.</p>
+    /// <p>The ID of the SageMaker HyperPod cluster node.</p>
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_id(input);
         self
     }
-    /// <p>The ID of the instance.</p>
+    /// <p>The ID of the SageMaker HyperPod cluster node.</p>
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_node_id()
     }

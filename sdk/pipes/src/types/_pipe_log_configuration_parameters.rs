@@ -2,24 +2,24 @@
 
 /// <p>Specifies the logging configuration settings for the pipe.</p>
 /// <p>When you call <code>UpdatePipe</code>, EventBridge updates the fields in the <code>PipeLogConfigurationParameters</code> object atomically as one and overrides existing values. This is by design. If you don't specify an optional field in any of the Amazon Web Services service parameters objects (<code>CloudwatchLogsLogDestinationParameters</code>, <code>FirehoseLogDestinationParameters</code>, or <code>S3LogDestinationParameters</code>), EventBridge sets that field to its system-default value during the update.</p>
-/// <p>For example, suppose when you created the pipe you specified a Kinesis Data Firehose stream log destination. You then update the pipe to add an Amazon S3 log destination. In addition to specifying the <code>S3LogDestinationParameters</code> for the new log destination, you must also specify the fields in the <code>FirehoseLogDestinationParameters</code> object in order to retain the Kinesis Data Firehose stream log destination.</p>
+/// <p>For example, suppose when you created the pipe you specified a Firehose stream log destination. You then update the pipe to add an Amazon S3 log destination. In addition to specifying the <code>S3LogDestinationParameters</code> for the new log destination, you must also specify the fields in the <code>FirehoseLogDestinationParameters</code> object in order to retain the Firehose stream log destination.</p>
 /// <p>For more information on generating pipe log records, see <a href="eventbridge/latest/userguide/eb-pipes-logs.html">Log EventBridge Pipes</a> in the <i>Amazon EventBridge User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipeLogConfigurationParameters {
     /// <p>The Amazon S3 logging configuration settings for the pipe.</p>
     pub s3_log_destination: ::std::option::Option<crate::types::S3LogDestinationParameters>,
-    /// <p>The Amazon Kinesis Data Firehose logging configuration settings for the pipe.</p>
+    /// <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
     pub firehose_log_destination: ::std::option::Option<crate::types::FirehoseLogDestinationParameters>,
     /// <p>The Amazon CloudWatch Logs logging configuration settings for the pipe.</p>
     pub cloudwatch_logs_log_destination: ::std::option::Option<crate::types::CloudwatchLogsLogDestinationParameters>,
     /// <p>The level of logging detail to include. This applies to all log destinations for the pipe.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-level">Specifying EventBridge Pipes log level</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub level: crate::types::LogLevel,
-    /// <p>Specify <code>ON</code> to include the execution data (specifically, the <code>payload</code> and <code>awsRequest</code> fields) in the log messages for this pipe.</p>
+    /// <p>Specify <code>ALL</code> to include the execution data (specifically, the <code>payload</code>, <code>awsRequest</code>, and <code>awsResponse</code> fields) in the log messages for this pipe.</p>
     /// <p>This applies to all log destinations for the pipe.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-execution-data">Including execution data in logs</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    /// <p>The default is <code>OFF</code>.</p>
+    /// <p>By default, execution data is not included.</p>
     pub include_execution_data: ::std::option::Option<::std::vec::Vec<crate::types::IncludeExecutionDataOption>>,
 }
 impl PipeLogConfigurationParameters {
@@ -27,7 +27,7 @@ impl PipeLogConfigurationParameters {
     pub fn s3_log_destination(&self) -> ::std::option::Option<&crate::types::S3LogDestinationParameters> {
         self.s3_log_destination.as_ref()
     }
-    /// <p>The Amazon Kinesis Data Firehose logging configuration settings for the pipe.</p>
+    /// <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
     pub fn firehose_log_destination(&self) -> ::std::option::Option<&crate::types::FirehoseLogDestinationParameters> {
         self.firehose_log_destination.as_ref()
     }
@@ -40,10 +40,10 @@ impl PipeLogConfigurationParameters {
     pub fn level(&self) -> &crate::types::LogLevel {
         &self.level
     }
-    /// <p>Specify <code>ON</code> to include the execution data (specifically, the <code>payload</code> and <code>awsRequest</code> fields) in the log messages for this pipe.</p>
+    /// <p>Specify <code>ALL</code> to include the execution data (specifically, the <code>payload</code>, <code>awsRequest</code>, and <code>awsResponse</code> fields) in the log messages for this pipe.</p>
     /// <p>This applies to all log destinations for the pipe.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-execution-data">Including execution data in logs</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    /// <p>The default is <code>OFF</code>.</p>
+    /// <p>By default, execution data is not included.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_execution_data.is_none()`.
     pub fn include_execution_data(&self) -> &[crate::types::IncludeExecutionDataOption] {
@@ -82,17 +82,17 @@ impl PipeLogConfigurationParametersBuilder {
     pub fn get_s3_log_destination(&self) -> &::std::option::Option<crate::types::S3LogDestinationParameters> {
         &self.s3_log_destination
     }
-    /// <p>The Amazon Kinesis Data Firehose logging configuration settings for the pipe.</p>
+    /// <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
     pub fn firehose_log_destination(mut self, input: crate::types::FirehoseLogDestinationParameters) -> Self {
         self.firehose_log_destination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon Kinesis Data Firehose logging configuration settings for the pipe.</p>
+    /// <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
     pub fn set_firehose_log_destination(mut self, input: ::std::option::Option<crate::types::FirehoseLogDestinationParameters>) -> Self {
         self.firehose_log_destination = input;
         self
     }
-    /// <p>The Amazon Kinesis Data Firehose logging configuration settings for the pipe.</p>
+    /// <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
     pub fn get_firehose_log_destination(&self) -> &::std::option::Option<crate::types::FirehoseLogDestinationParameters> {
         &self.firehose_log_destination
     }
@@ -132,28 +132,28 @@ impl PipeLogConfigurationParametersBuilder {
     ///
     /// To override the contents of this collection use [`set_include_execution_data`](Self::set_include_execution_data).
     ///
-    /// <p>Specify <code>ON</code> to include the execution data (specifically, the <code>payload</code> and <code>awsRequest</code> fields) in the log messages for this pipe.</p>
+    /// <p>Specify <code>ALL</code> to include the execution data (specifically, the <code>payload</code>, <code>awsRequest</code>, and <code>awsResponse</code> fields) in the log messages for this pipe.</p>
     /// <p>This applies to all log destinations for the pipe.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-execution-data">Including execution data in logs</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    /// <p>The default is <code>OFF</code>.</p>
+    /// <p>By default, execution data is not included.</p>
     pub fn include_execution_data(mut self, input: crate::types::IncludeExecutionDataOption) -> Self {
         let mut v = self.include_execution_data.unwrap_or_default();
         v.push(input);
         self.include_execution_data = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specify <code>ON</code> to include the execution data (specifically, the <code>payload</code> and <code>awsRequest</code> fields) in the log messages for this pipe.</p>
+    /// <p>Specify <code>ALL</code> to include the execution data (specifically, the <code>payload</code>, <code>awsRequest</code>, and <code>awsResponse</code> fields) in the log messages for this pipe.</p>
     /// <p>This applies to all log destinations for the pipe.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-execution-data">Including execution data in logs</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    /// <p>The default is <code>OFF</code>.</p>
+    /// <p>By default, execution data is not included.</p>
     pub fn set_include_execution_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IncludeExecutionDataOption>>) -> Self {
         self.include_execution_data = input;
         self
     }
-    /// <p>Specify <code>ON</code> to include the execution data (specifically, the <code>payload</code> and <code>awsRequest</code> fields) in the log messages for this pipe.</p>
+    /// <p>Specify <code>ALL</code> to include the execution data (specifically, the <code>payload</code>, <code>awsRequest</code>, and <code>awsResponse</code> fields) in the log messages for this pipe.</p>
     /// <p>This applies to all log destinations for the pipe.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-execution-data">Including execution data in logs</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    /// <p>The default is <code>OFF</code>.</p>
+    /// <p>By default, execution data is not included.</p>
     pub fn get_include_execution_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IncludeExecutionDataOption>> {
         &self.include_execution_data
     }

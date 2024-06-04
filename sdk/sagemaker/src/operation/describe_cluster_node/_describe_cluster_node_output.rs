@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClusterNodeOutput {
-    /// <p>The details of the instance.</p>
+    /// <p>The details of the SageMaker HyperPod cluster node.</p>
     pub node_details: ::std::option::Option<crate::types::ClusterNodeDetails>,
     _request_id: Option<String>,
 }
 impl DescribeClusterNodeOutput {
-    /// <p>The details of the instance.</p>
+    /// <p>The details of the SageMaker HyperPod cluster node.</p>
     pub fn node_details(&self) -> ::std::option::Option<&crate::types::ClusterNodeDetails> {
         self.node_details.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct DescribeClusterNodeOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeClusterNodeOutputBuilder {
-    /// <p>The details of the instance.</p>
+    /// <p>The details of the SageMaker HyperPod cluster node.</p>
     /// This field is required.
     pub fn node_details(mut self, input: crate::types::ClusterNodeDetails) -> Self {
         self.node_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details of the instance.</p>
+    /// <p>The details of the SageMaker HyperPod cluster node.</p>
     pub fn set_node_details(mut self, input: ::std::option::Option<crate::types::ClusterNodeDetails>) -> Self {
         self.node_details = input;
         self
     }
-    /// <p>The details of the instance.</p>
+    /// <p>The details of the SageMaker HyperPod cluster node.</p>
     pub fn get_node_details(&self) -> &::std::option::Option<crate::types::ClusterNodeDetails> {
         &self.node_details
     }

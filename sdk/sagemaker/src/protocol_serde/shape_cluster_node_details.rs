@@ -58,6 +58,25 @@ where
                                     .transpose()?,
                             );
                         }
+                        "PrivatePrimaryIp" => {
+                            builder = builder.set_private_primary_ip(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "PrivateDnsHostname" => {
+                            builder = builder.set_private_dns_hostname(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Placement" => {
+                            builder = builder.set_placement(crate::protocol_serde::shape_cluster_instance_placement::de_cluster_instance_placement(
+                                tokens,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

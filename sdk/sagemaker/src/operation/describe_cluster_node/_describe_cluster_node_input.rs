@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClusterNodeInput {
-    /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the instance is.</p>
+    /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the node is.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the instance.</p>
+    /// <p>The ID of the SageMaker HyperPod cluster node.</p>
     pub node_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeClusterNodeInput {
-    /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the instance is.</p>
+    /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the node is.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>The ID of the instance.</p>
+    /// <p>The ID of the SageMaker HyperPod cluster node.</p>
     pub fn node_id(&self) -> ::std::option::Option<&str> {
         self.node_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DescribeClusterNodeInputBuilder {
     pub(crate) node_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeClusterNodeInputBuilder {
-    /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the instance is.</p>
+    /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the node is.</p>
     /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the instance is.</p>
+    /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the node is.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
-    /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the instance is.</p>
+    /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the node is.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
-    /// <p>The ID of the instance.</p>
+    /// <p>The ID of the SageMaker HyperPod cluster node.</p>
     /// This field is required.
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the instance.</p>
+    /// <p>The ID of the SageMaker HyperPod cluster node.</p>
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_id = input;
         self
     }
-    /// <p>The ID of the instance.</p>
+    /// <p>The ID of the SageMaker HyperPod cluster node.</p>
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_id
     }

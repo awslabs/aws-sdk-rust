@@ -23,6 +23,24 @@ pub use crate::types::_s3_output_format::S3OutputFormat;
 
 pub use crate::types::_pipe_target_parameters::PipeTargetParameters;
 
+pub use crate::types::_pipe_target_timestream_parameters::PipeTargetTimestreamParameters;
+
+pub use crate::types::_multi_measure_mapping::MultiMeasureMapping;
+
+pub use crate::types::_multi_measure_attribute_mapping::MultiMeasureAttributeMapping;
+
+pub use crate::types::_measure_value_type::MeasureValueType;
+
+pub use crate::types::_single_measure_mapping::SingleMeasureMapping;
+
+pub use crate::types::_dimension_mapping::DimensionMapping;
+
+pub use crate::types::_dimension_value_type::DimensionValueType;
+
+pub use crate::types::_time_field_type::TimeFieldType;
+
+pub use crate::types::_epoch_time_unit::EpochTimeUnit;
+
 pub use crate::types::_pipe_target_cloud_watch_logs_parameters::PipeTargetCloudWatchLogsParameters;
 
 pub use crate::types::_pipe_target_event_bridge_event_bus_parameters::PipeTargetEventBridgeEventBusParameters;
@@ -203,6 +221,10 @@ mod _cloudwatch_logs_log_destination_parameters;
 
 mod _dead_letter_config;
 
+mod _dimension_mapping;
+
+mod _dimension_value_type;
+
 mod _dynamo_db_stream_start_position;
 
 mod _ecs_container_override;
@@ -223,6 +245,8 @@ mod _ecs_resource_requirement_type;
 
 mod _ecs_task_override;
 
+mod _epoch_time_unit;
+
 mod _filter;
 
 mod _filter_criteria;
@@ -239,11 +263,17 @@ mod _launch_type;
 
 mod _log_level;
 
+mod _measure_value_type;
+
 mod _mq_broker_access_credentials;
 
 mod _msk_access_credentials;
 
 mod _msk_start_position;
+
+mod _multi_measure_attribute_mapping;
+
+mod _multi_measure_mapping;
 
 mod _network_configuration;
 
@@ -303,6 +333,8 @@ mod _pipe_target_sqs_queue_parameters;
 
 mod _pipe_target_state_machine_parameters;
 
+mod _pipe_target_timestream_parameters;
+
 mod _placement_constraint;
 
 mod _placement_constraint_type;
@@ -331,7 +363,11 @@ mod _self_managed_kafka_access_configuration_vpc;
 
 mod _self_managed_kafka_start_position;
 
+mod _single_measure_mapping;
+
 mod _tag;
+
+mod _time_field_type;
 
 mod _update_pipe_source_active_mq_broker_parameters;
 

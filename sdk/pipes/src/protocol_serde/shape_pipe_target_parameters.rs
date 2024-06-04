@@ -78,6 +78,12 @@ pub fn ser_pipe_target_parameters(
         crate::protocol_serde::shape_pipe_target_cloud_watch_logs_parameters::ser_pipe_target_cloud_watch_logs_parameters(&mut object_23, var_22)?;
         object_23.finish();
     }
+    if let Some(var_24) = &input.timestream_parameters {
+        #[allow(unused_mut)]
+        let mut object_25 = object.key("TimestreamParameters").start_object();
+        crate::protocol_serde::shape_pipe_target_timestream_parameters::ser_pipe_target_timestream_parameters(&mut object_25, var_24)?;
+        object_25.finish();
+    }
     Ok(())
 }
 
@@ -160,6 +166,11 @@ where
                                 crate::protocol_serde::shape_pipe_target_cloud_watch_logs_parameters::de_pipe_target_cloud_watch_logs_parameters(
                                     tokens,
                                 )?,
+                            );
+                        }
+                        "TimestreamParameters" => {
+                            builder = builder.set_timestream_parameters(
+                                crate::protocol_serde::shape_pipe_target_timestream_parameters::de_pipe_target_timestream_parameters(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

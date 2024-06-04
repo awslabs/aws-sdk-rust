@@ -30,6 +30,8 @@ pub struct PipeTargetParameters {
     pub event_bridge_event_bus_parameters: ::std::option::Option<crate::types::PipeTargetEventBridgeEventBusParameters>,
     /// <p>The parameters for using an CloudWatch Logs log stream as a target.</p>
     pub cloud_watch_logs_parameters: ::std::option::Option<crate::types::PipeTargetCloudWatchLogsParameters>,
+    /// <p>The parameters for using a Timestream for LiveAnalytics table as a target.</p>
+    pub timestream_parameters: ::std::option::Option<crate::types::PipeTargetTimestreamParameters>,
 }
 impl PipeTargetParameters {
     /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
@@ -81,6 +83,10 @@ impl PipeTargetParameters {
     pub fn cloud_watch_logs_parameters(&self) -> ::std::option::Option<&crate::types::PipeTargetCloudWatchLogsParameters> {
         self.cloud_watch_logs_parameters.as_ref()
     }
+    /// <p>The parameters for using a Timestream for LiveAnalytics table as a target.</p>
+    pub fn timestream_parameters(&self) -> ::std::option::Option<&crate::types::PipeTargetTimestreamParameters> {
+        self.timestream_parameters.as_ref()
+    }
 }
 impl ::std::fmt::Debug for PipeTargetParameters {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -97,6 +103,7 @@ impl ::std::fmt::Debug for PipeTargetParameters {
         formatter.field("sage_maker_pipeline_parameters", &self.sage_maker_pipeline_parameters);
         formatter.field("event_bridge_event_bus_parameters", &self.event_bridge_event_bus_parameters);
         formatter.field("cloud_watch_logs_parameters", &self.cloud_watch_logs_parameters);
+        formatter.field("timestream_parameters", &self.timestream_parameters);
         formatter.finish()
     }
 }
@@ -123,6 +130,7 @@ pub struct PipeTargetParametersBuilder {
     pub(crate) sage_maker_pipeline_parameters: ::std::option::Option<crate::types::PipeTargetSageMakerPipelineParameters>,
     pub(crate) event_bridge_event_bus_parameters: ::std::option::Option<crate::types::PipeTargetEventBridgeEventBusParameters>,
     pub(crate) cloud_watch_logs_parameters: ::std::option::Option<crate::types::PipeTargetCloudWatchLogsParameters>,
+    pub(crate) timestream_parameters: ::std::option::Option<crate::types::PipeTargetTimestreamParameters>,
 }
 impl PipeTargetParametersBuilder {
     /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
@@ -302,6 +310,20 @@ impl PipeTargetParametersBuilder {
     pub fn get_cloud_watch_logs_parameters(&self) -> &::std::option::Option<crate::types::PipeTargetCloudWatchLogsParameters> {
         &self.cloud_watch_logs_parameters
     }
+    /// <p>The parameters for using a Timestream for LiveAnalytics table as a target.</p>
+    pub fn timestream_parameters(mut self, input: crate::types::PipeTargetTimestreamParameters) -> Self {
+        self.timestream_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The parameters for using a Timestream for LiveAnalytics table as a target.</p>
+    pub fn set_timestream_parameters(mut self, input: ::std::option::Option<crate::types::PipeTargetTimestreamParameters>) -> Self {
+        self.timestream_parameters = input;
+        self
+    }
+    /// <p>The parameters for using a Timestream for LiveAnalytics table as a target.</p>
+    pub fn get_timestream_parameters(&self) -> &::std::option::Option<crate::types::PipeTargetTimestreamParameters> {
+        &self.timestream_parameters
+    }
     /// Consumes the builder and constructs a [`PipeTargetParameters`](crate::types::PipeTargetParameters).
     pub fn build(self) -> crate::types::PipeTargetParameters {
         crate::types::PipeTargetParameters {
@@ -317,6 +339,7 @@ impl PipeTargetParametersBuilder {
             sage_maker_pipeline_parameters: self.sage_maker_pipeline_parameters,
             event_bridge_event_bus_parameters: self.event_bridge_event_bus_parameters,
             cloud_watch_logs_parameters: self.cloud_watch_logs_parameters,
+            timestream_parameters: self.timestream_parameters,
         }
     }
 }
@@ -335,6 +358,7 @@ impl ::std::fmt::Debug for PipeTargetParametersBuilder {
         formatter.field("sage_maker_pipeline_parameters", &self.sage_maker_pipeline_parameters);
         formatter.field("event_bridge_event_bus_parameters", &self.event_bridge_event_bus_parameters);
         formatter.field("cloud_watch_logs_parameters", &self.cloud_watch_logs_parameters);
+        formatter.field("timestream_parameters", &self.timestream_parameters);
         formatter.finish()
     }
 }
