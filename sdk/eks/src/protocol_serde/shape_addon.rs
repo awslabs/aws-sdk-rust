@@ -100,6 +100,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "podIdentityAssociations" => {
+                            builder = builder.set_pod_identity_associations(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

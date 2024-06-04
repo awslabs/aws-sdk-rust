@@ -40,7 +40,7 @@ pub struct Cluster {
     pub connector_config: ::std::option::Option<crate::types::ConnectorConfigResponse>,
     /// <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available for an Amazon EKS cluster on the Amazon Web Services cloud.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
+    /// <p>An object representing the health of your Amazon EKS cluster.</p>
     pub health: ::std::option::Option<crate::types::ClusterHealth>,
     /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
     pub outpost_config: ::std::option::Option<crate::types::OutpostConfigResponse>,
@@ -122,7 +122,7 @@ impl Cluster {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
+    /// <p>An object representing the health of your Amazon EKS cluster.</p>
     pub fn health(&self) -> ::std::option::Option<&crate::types::ClusterHealth> {
         self.health.as_ref()
     }
@@ -433,17 +433,17 @@ impl ClusterBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
+    /// <p>An object representing the health of your Amazon EKS cluster.</p>
     pub fn health(mut self, input: crate::types::ClusterHealth) -> Self {
         self.health = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
+    /// <p>An object representing the health of your Amazon EKS cluster.</p>
     pub fn set_health(mut self, input: ::std::option::Option<crate::types::ClusterHealth>) -> Self {
         self.health = input;
         self
     }
-    /// <p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
+    /// <p>An object representing the health of your Amazon EKS cluster.</p>
     pub fn get_health(&self) -> &::std::option::Option<crate::types::ClusterHealth> {
         &self.health
     }

@@ -13,6 +13,8 @@
 /// # let addonissuecode = unimplemented!();
 /// match addonissuecode {
 ///     AddonIssueCode::AccessDenied => { /* ... */ },
+///     AddonIssueCode::AddonPermissionFailure => { /* ... */ },
+///     AddonIssueCode::AddonSubscriptionNeeded => { /* ... */ },
 ///     AddonIssueCode::AdmissionRequestDenied => { /* ... */ },
 ///     AddonIssueCode::ClusterUnreachable => { /* ... */ },
 ///     AddonIssueCode::ConfigurationConflict => { /* ... */ },
@@ -50,6 +52,10 @@ pub enum AddonIssueCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
     #[allow(missing_docs)] // documentation missing in model
+    AddonPermissionFailure,
+    #[allow(missing_docs)] // documentation missing in model
+    AddonSubscriptionNeeded,
+    #[allow(missing_docs)] // documentation missing in model
     AdmissionRequestDenied,
     #[allow(missing_docs)] // documentation missing in model
     ClusterUnreachable,
@@ -71,6 +77,8 @@ impl ::std::convert::From<&str> for AddonIssueCode {
     fn from(s: &str) -> Self {
         match s {
             "AccessDenied" => AddonIssueCode::AccessDenied,
+            "AddonPermissionFailure" => AddonIssueCode::AddonPermissionFailure,
+            "AddonSubscriptionNeeded" => AddonIssueCode::AddonSubscriptionNeeded,
             "AdmissionRequestDenied" => AddonIssueCode::AdmissionRequestDenied,
             "ClusterUnreachable" => AddonIssueCode::ClusterUnreachable,
             "ConfigurationConflict" => AddonIssueCode::ConfigurationConflict,
@@ -94,6 +102,8 @@ impl AddonIssueCode {
     pub fn as_str(&self) -> &str {
         match self {
             AddonIssueCode::AccessDenied => "AccessDenied",
+            AddonIssueCode::AddonPermissionFailure => "AddonPermissionFailure",
+            AddonIssueCode::AddonSubscriptionNeeded => "AddonSubscriptionNeeded",
             AddonIssueCode::AdmissionRequestDenied => "AdmissionRequestDenied",
             AddonIssueCode::ClusterUnreachable => "ClusterUnreachable",
             AddonIssueCode::ConfigurationConflict => "ConfigurationConflict",
@@ -108,6 +118,8 @@ impl AddonIssueCode {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
+            "AddonPermissionFailure",
+            "AddonSubscriptionNeeded",
             "AdmissionRequestDenied",
             "ClusterUnreachable",
             "ConfigurationConflict",
@@ -139,6 +151,8 @@ impl ::std::fmt::Display for AddonIssueCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AddonIssueCode::AccessDenied => write!(f, "AccessDenied"),
+            AddonIssueCode::AddonPermissionFailure => write!(f, "AddonPermissionFailure"),
+            AddonIssueCode::AddonSubscriptionNeeded => write!(f, "AddonSubscriptionNeeded"),
             AddonIssueCode::AdmissionRequestDenied => write!(f, "AdmissionRequestDenied"),
             AddonIssueCode::ClusterUnreachable => write!(f, "ClusterUnreachable"),
             AddonIssueCode::ConfigurationConflict => write!(f, "ConfigurationConflict"),

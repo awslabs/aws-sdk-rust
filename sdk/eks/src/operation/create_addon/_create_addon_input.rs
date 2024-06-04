@@ -30,6 +30,9 @@ pub struct CreateAddonInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema returned by <code>DescribeAddonConfiguration</code>.</p>
     pub configuration_values: ::std::option::Option<::std::string::String>,
+    /// <p>An array of Pod Identity Assocations to be created. Each EKS Pod Identity association maps a Kubernetes service account to an IAM Role.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User Guide.</p>
+    pub pod_identity_associations: ::std::option::Option<::std::vec::Vec<crate::types::AddonPodIdentityAssociations>>,
 }
 impl CreateAddonInput {
     /// <p>The name of your cluster.</p>
@@ -75,6 +78,13 @@ impl CreateAddonInput {
     pub fn configuration_values(&self) -> ::std::option::Option<&str> {
         self.configuration_values.as_deref()
     }
+    /// <p>An array of Pod Identity Assocations to be created. Each EKS Pod Identity association maps a Kubernetes service account to an IAM Role.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User Guide.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pod_identity_associations.is_none()`.
+    pub fn pod_identity_associations(&self) -> &[crate::types::AddonPodIdentityAssociations] {
+        self.pod_identity_associations.as_deref().unwrap_or_default()
+    }
 }
 impl CreateAddonInput {
     /// Creates a new builder-style object to manufacture [`CreateAddonInput`](crate::operation::create_addon::CreateAddonInput).
@@ -95,6 +105,7 @@ pub struct CreateAddonInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) configuration_values: ::std::option::Option<::std::string::String>,
+    pub(crate) pod_identity_associations: ::std::option::Option<::std::vec::Vec<crate::types::AddonPodIdentityAssociations>>,
 }
 impl CreateAddonInputBuilder {
     /// <p>The name of your cluster.</p>
@@ -250,6 +261,32 @@ impl CreateAddonInputBuilder {
     pub fn get_configuration_values(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_values
     }
+    /// Appends an item to `pod_identity_associations`.
+    ///
+    /// To override the contents of this collection use [`set_pod_identity_associations`](Self::set_pod_identity_associations).
+    ///
+    /// <p>An array of Pod Identity Assocations to be created. Each EKS Pod Identity association maps a Kubernetes service account to an IAM Role.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User Guide.</p>
+    pub fn pod_identity_associations(mut self, input: crate::types::AddonPodIdentityAssociations) -> Self {
+        let mut v = self.pod_identity_associations.unwrap_or_default();
+        v.push(input);
+        self.pod_identity_associations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of Pod Identity Assocations to be created. Each EKS Pod Identity association maps a Kubernetes service account to an IAM Role.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User Guide.</p>
+    pub fn set_pod_identity_associations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AddonPodIdentityAssociations>>,
+    ) -> Self {
+        self.pod_identity_associations = input;
+        self
+    }
+    /// <p>An array of Pod Identity Assocations to be created. Each EKS Pod Identity association maps a Kubernetes service account to an IAM Role.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User Guide.</p>
+    pub fn get_pod_identity_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddonPodIdentityAssociations>> {
+        &self.pod_identity_associations
+    }
     /// Consumes the builder and constructs a [`CreateAddonInput`](crate::operation::create_addon::CreateAddonInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_addon::CreateAddonInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_addon::CreateAddonInput {
@@ -261,6 +298,7 @@ impl CreateAddonInputBuilder {
             client_request_token: self.client_request_token,
             tags: self.tags,
             configuration_values: self.configuration_values,
+            pod_identity_associations: self.pod_identity_associations,
         })
     }
 }

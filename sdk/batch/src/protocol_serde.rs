@@ -49,6 +49,8 @@ pub(crate) mod shape_describe_jobs;
 
 pub(crate) mod shape_describe_scheduling_policies;
 
+pub(crate) mod shape_get_job_queue_snapshot;
+
 pub(crate) mod shape_list_jobs;
 
 pub(crate) mod shape_list_scheduling_policies;
@@ -107,6 +109,8 @@ pub(crate) mod shape_describe_jobs_input;
 
 pub(crate) mod shape_describe_scheduling_policies_input;
 
+pub(crate) mod shape_get_job_queue_snapshot_input;
+
 pub(crate) mod shape_list_jobs_input;
 
 pub(crate) mod shape_list_scheduling_policies_input;
@@ -153,6 +157,8 @@ pub(crate) mod shape_eks_properties_override;
 
 pub(crate) mod shape_fairshare_policy;
 
+pub(crate) mod shape_front_of_queue_detail;
+
 pub(crate) mod shape_job_definition_list;
 
 pub(crate) mod shape_job_dependency;
@@ -198,6 +204,8 @@ pub(crate) mod shape_ephemeral_storage;
 pub(crate) mod shape_evaluate_on_exit;
 
 pub(crate) mod shape_fargate_platform_configuration;
+
+pub(crate) mod shape_front_of_queue_job_summary_list;
 
 pub(crate) mod shape_job_definition;
 
@@ -272,6 +280,8 @@ pub(crate) mod shape_eks_metadata;
 pub(crate) mod shape_eks_properties_detail;
 
 pub(crate) mod shape_eks_volume;
+
+pub(crate) mod shape_front_of_queue_job_summary;
 
 pub(crate) mod shape_host;
 

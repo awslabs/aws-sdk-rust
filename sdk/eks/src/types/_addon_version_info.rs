@@ -12,6 +12,8 @@ pub struct AddonVersionInfo {
     pub compatibilities: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
     /// <p>Whether the add-on requires configuration.</p>
     pub requires_configuration: bool,
+    /// <p>Indicates if the Addon requires IAM Permissions to operate, such as networking permissions.</p>
+    pub requires_iam_permissions: bool,
 }
 impl AddonVersionInfo {
     /// <p>The version of the add-on.</p>
@@ -34,6 +36,10 @@ impl AddonVersionInfo {
     pub fn requires_configuration(&self) -> bool {
         self.requires_configuration
     }
+    /// <p>Indicates if the Addon requires IAM Permissions to operate, such as networking permissions.</p>
+    pub fn requires_iam_permissions(&self) -> bool {
+        self.requires_iam_permissions
+    }
 }
 impl AddonVersionInfo {
     /// Creates a new builder-style object to manufacture [`AddonVersionInfo`](crate::types::AddonVersionInfo).
@@ -50,6 +56,7 @@ pub struct AddonVersionInfoBuilder {
     pub(crate) architecture: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) compatibilities: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
     pub(crate) requires_configuration: ::std::option::Option<bool>,
+    pub(crate) requires_iam_permissions: ::std::option::Option<bool>,
 }
 impl AddonVersionInfoBuilder {
     /// <p>The version of the add-on.</p>
@@ -120,6 +127,20 @@ impl AddonVersionInfoBuilder {
     pub fn get_requires_configuration(&self) -> &::std::option::Option<bool> {
         &self.requires_configuration
     }
+    /// <p>Indicates if the Addon requires IAM Permissions to operate, such as networking permissions.</p>
+    pub fn requires_iam_permissions(mut self, input: bool) -> Self {
+        self.requires_iam_permissions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if the Addon requires IAM Permissions to operate, such as networking permissions.</p>
+    pub fn set_requires_iam_permissions(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.requires_iam_permissions = input;
+        self
+    }
+    /// <p>Indicates if the Addon requires IAM Permissions to operate, such as networking permissions.</p>
+    pub fn get_requires_iam_permissions(&self) -> &::std::option::Option<bool> {
+        &self.requires_iam_permissions
+    }
     /// Consumes the builder and constructs a [`AddonVersionInfo`](crate::types::AddonVersionInfo).
     pub fn build(self) -> crate::types::AddonVersionInfo {
         crate::types::AddonVersionInfo {
@@ -127,6 +148,7 @@ impl AddonVersionInfoBuilder {
             architecture: self.architecture,
             compatibilities: self.compatibilities,
             requires_configuration: self.requires_configuration.unwrap_or_default(),
+            requires_iam_permissions: self.requires_iam_permissions.unwrap_or_default(),
         }
     }
 }

@@ -12,11 +12,23 @@ pub fn ser_update_addon_input_input(
     if let Some(var_3) = &input.configuration_values {
         object.key("configurationValues").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.resolve_conflicts {
-        object.key("resolveConflicts").string(var_4.as_str());
+    if let Some(var_4) = &input.pod_identity_associations {
+        let mut array_5 = object.key("podIdentityAssociations").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_addon_pod_identity_associations::ser_addon_pod_identity_associations(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
     }
-    if let Some(var_5) = &input.service_account_role_arn {
-        object.key("serviceAccountRoleArn").string(var_5.as_str());
+    if let Some(var_8) = &input.resolve_conflicts {
+        object.key("resolveConflicts").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.service_account_role_arn {
+        object.key("serviceAccountRoleArn").string(var_9.as_str());
     }
     Ok(())
 }

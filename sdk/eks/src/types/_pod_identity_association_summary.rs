@@ -25,6 +25,8 @@ pub struct PodIdentityAssociationSummary {
     pub association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the association.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
+    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    pub owner_arn: ::std::option::Option<::std::string::String>,
 }
 impl PodIdentityAssociationSummary {
     /// <p>The name of the cluster that the association is in.</p>
@@ -47,6 +49,10 @@ impl PodIdentityAssociationSummary {
     pub fn association_id(&self) -> ::std::option::Option<&str> {
         self.association_id.as_deref()
     }
+    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    pub fn owner_arn(&self) -> ::std::option::Option<&str> {
+        self.owner_arn.as_deref()
+    }
 }
 impl PodIdentityAssociationSummary {
     /// Creates a new builder-style object to manufacture [`PodIdentityAssociationSummary`](crate::types::PodIdentityAssociationSummary).
@@ -64,6 +70,7 @@ pub struct PodIdentityAssociationSummaryBuilder {
     pub(crate) service_account: ::std::option::Option<::std::string::String>,
     pub(crate) association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_arn: ::std::option::Option<::std::string::String>,
 }
 impl PodIdentityAssociationSummaryBuilder {
     /// <p>The name of the cluster that the association is in.</p>
@@ -136,6 +143,20 @@ impl PodIdentityAssociationSummaryBuilder {
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.association_id
     }
+    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    pub fn owner_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    pub fn set_owner_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_arn = input;
+        self
+    }
+    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    pub fn get_owner_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_arn
+    }
     /// Consumes the builder and constructs a [`PodIdentityAssociationSummary`](crate::types::PodIdentityAssociationSummary).
     pub fn build(self) -> crate::types::PodIdentityAssociationSummary {
         crate::types::PodIdentityAssociationSummary {
@@ -144,6 +165,7 @@ impl PodIdentityAssociationSummaryBuilder {
             service_account: self.service_account,
             association_arn: self.association_arn,
             association_id: self.association_id,
+            owner_arn: self.owner_arn,
         }
     }
 }

@@ -189,6 +189,8 @@ mod describe_jobs;
 
 mod describe_scheduling_policies;
 
+mod get_job_queue_snapshot;
+
 mod list_jobs;
 
 mod list_scheduling_policies;

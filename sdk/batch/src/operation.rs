@@ -40,6 +40,9 @@ pub mod describe_jobs;
 /// Types for the `DescribeSchedulingPolicies` operation.
 pub mod describe_scheduling_policies;
 
+/// Types for the `GetJobQueueSnapshot` operation.
+pub mod get_job_queue_snapshot;
+
 /// Types for the `ListJobs` operation.
 pub mod list_jobs;
 

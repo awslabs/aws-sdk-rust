@@ -14,6 +14,7 @@
 /// match propertyupdatetype {
 ///     PropertyUpdateType::Create => { /* ... */ },
 ///     PropertyUpdateType::Delete => { /* ... */ },
+///     PropertyUpdateType::ResetValue => { /* ... */ },
 ///     PropertyUpdateType::Update => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum PropertyUpdateType {
     #[allow(missing_docs)] // documentation missing in model
     Delete,
     #[allow(missing_docs)] // documentation missing in model
+    ResetValue,
+    #[allow(missing_docs)] // documentation missing in model
     Update,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for PropertyUpdateType {
         match s {
             "CREATE" => PropertyUpdateType::Create,
             "DELETE" => PropertyUpdateType::Delete,
+            "RESET_VALUE" => PropertyUpdateType::ResetValue,
             "UPDATE" => PropertyUpdateType::Update,
             other => PropertyUpdateType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,13 +79,14 @@ impl PropertyUpdateType {
         match self {
             PropertyUpdateType::Create => "CREATE",
             PropertyUpdateType::Delete => "DELETE",
+            PropertyUpdateType::ResetValue => "RESET_VALUE",
             PropertyUpdateType::Update => "UPDATE",
             PropertyUpdateType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATE", "DELETE", "UPDATE"]
+        &["CREATE", "DELETE", "RESET_VALUE", "UPDATE"]
     }
 }
 impl ::std::convert::AsRef<str> for PropertyUpdateType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for PropertyUpdateType {
         match self {
             PropertyUpdateType::Create => write!(f, "CREATE"),
             PropertyUpdateType::Delete => write!(f, "DELETE"),
+            PropertyUpdateType::ResetValue => write!(f, "RESET_VALUE"),
             PropertyUpdateType::Update => write!(f, "UPDATE"),
             PropertyUpdateType::Unknown(value) => write!(f, "{}", value),
         }

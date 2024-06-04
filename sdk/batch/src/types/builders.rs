@@ -131,6 +131,10 @@ pub use crate::types::_container_summary::ContainerSummaryBuilder;
 
 pub use crate::types::_key_values_pair::KeyValuesPairBuilder;
 
+pub use crate::types::_front_of_queue_detail::FrontOfQueueDetailBuilder;
+
+pub use crate::types::_front_of_queue_job_summary::FrontOfQueueJobSummaryBuilder;
+
 pub use crate::types::_scheduling_policy_detail::SchedulingPolicyDetailBuilder;
 
 pub use crate::types::_job_detail::JobDetailBuilder;

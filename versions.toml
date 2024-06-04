@@ -71,8 +71,8 @@ model_hash = 'b09b164e9949d95279b977fd962cc347c565b275f84f50e5501256a4d663a525'
 [crates.aws-sdk-amplify]
 category = 'AwsSdk'
 version = '1.31.0'
-source_hash = '7991536ffb5ee89e136ea8d664b7fd1c14cf30a59353d5928975809120266c8a'
-model_hash = 'a6d5d1e0da870e8794b111e90c6499de0188f1c16c31fed82eff7d36d05057a4'
+source_hash = '190533746c8cdd65ec685d37513178bb7a4fadff659e989f417af1f540f4ac29'
+model_hash = 'abf1b372f6e92b5fab9e58d5b53653c858116d98891f98cd4764edb411ca126b'
 
 [crates.aws-sdk-amplifybackend]
 category = 'AwsSdk'
@@ -245,8 +245,8 @@ model_hash = '5deeed67469310f49246f94be4da914563959d5d88e75198e61deb441274d7df'
 [crates.aws-sdk-batch]
 category = 'AwsSdk'
 version = '1.34.0'
-source_hash = '8daf6bf705960b4466a1126b176022260c278e29e35883ca594fef2509af9e5c'
-model_hash = 'fd132f43a5f93bd557149ffff35d4a4c83bce15dd19709007ba8ca161f10b256'
+source_hash = 'e1c2241e51604ad45496cc72daafa4a5e30788747cf860b0e9d95443d28e89c9'
+model_hash = '18642b363953f242f8edc3e02c794ef1085b714c86861dae2067adc712dabc34'
 
 [crates.aws-sdk-bcmdataexports]
 category = 'AwsSdk'
@@ -785,8 +785,8 @@ model_hash = 'a3ff29f5cabd9f1ed7450a466688e598f58f792814996b7301c3bb806f9d4c00'
 [crates.aws-sdk-eks]
 category = 'AwsSdk'
 version = '1.32.0'
-source_hash = 'a9bf7b4780f81c7cc05983e403b7ef0b065c0758a0cf9c959712c93c749038e7'
-model_hash = '6b54288aaf955ea1fd8115f5efd806a45b1f75f218a839b7639450b2fa6d1bac'
+source_hash = '83d1e2780eb7e16dd6c5b11fbde498652989a1f0304b7b688d745abb1a90a46d'
+model_hash = '71ab836c2b1fbf9214a4b2577c820431d692df0294755eb9455360c819ac9adb'
 
 [crates.aws-sdk-eksauth]
 category = 'AwsSdk'
@@ -1127,8 +1127,8 @@ model_hash = 'd6c9b8a53d9eef739f2a7aa03c80b5bf7d572b551172dabbd429d06975d9855b'
 [crates.aws-sdk-iottwinmaker]
 category = 'AwsSdk'
 version = '1.29.0'
-source_hash = '305739527d9fe6b44ec79b9e0d764795e11d501c45c95b21f905287d24f23490'
-model_hash = '6bfa0636935d7d200325e2f1cc7b16a11e5085d98b61b78b7a6bae4c0cbb3d48'
+source_hash = '0a81e5f6c156703a351f4a5ce55a38439c685fdf1daf80cf2b284711c5b15be8'
+model_hash = '98b47a7ac187f7010d7e41ab484e78c12e1968053677f414c2c854bd2401cac0'
 
 [crates.aws-sdk-iotwireless]
 category = 'AwsSdk'

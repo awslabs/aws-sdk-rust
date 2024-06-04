@@ -30,6 +30,7 @@
 ///     UpdateParamType::MaxUnavailablePercentage => { /* ... */ },
 ///     UpdateParamType::MinSize => { /* ... */ },
 ///     UpdateParamType::PlatformVersion => { /* ... */ },
+///     UpdateParamType::PodIdentityAssociations => { /* ... */ },
 ///     UpdateParamType::PublicAccessCidrs => { /* ... */ },
 ///     UpdateParamType::ReleaseVersion => { /* ... */ },
 ///     UpdateParamType::ResolveConflicts => { /* ... */ },
@@ -103,6 +104,8 @@ pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     PlatformVersion,
     #[allow(missing_docs)] // documentation missing in model
+    PodIdentityAssociations,
+    #[allow(missing_docs)] // documentation missing in model
     PublicAccessCidrs,
     #[allow(missing_docs)] // documentation missing in model
     ReleaseVersion,
@@ -145,6 +148,7 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "MaxUnavailablePercentage" => UpdateParamType::MaxUnavailablePercentage,
             "MinSize" => UpdateParamType::MinSize,
             "PlatformVersion" => UpdateParamType::PlatformVersion,
+            "PodIdentityAssociations" => UpdateParamType::PodIdentityAssociations,
             "PublicAccessCidrs" => UpdateParamType::PublicAccessCidrs,
             "ReleaseVersion" => UpdateParamType::ReleaseVersion,
             "ResolveConflicts" => UpdateParamType::ResolveConflicts,
@@ -187,6 +191,7 @@ impl UpdateParamType {
             UpdateParamType::MaxUnavailablePercentage => "MaxUnavailablePercentage",
             UpdateParamType::MinSize => "MinSize",
             UpdateParamType::PlatformVersion => "PlatformVersion",
+            UpdateParamType::PodIdentityAssociations => "PodIdentityAssociations",
             UpdateParamType::PublicAccessCidrs => "PublicAccessCidrs",
             UpdateParamType::ReleaseVersion => "ReleaseVersion",
             UpdateParamType::ResolveConflicts => "ResolveConflicts",
@@ -220,6 +225,7 @@ impl UpdateParamType {
             "MaxUnavailablePercentage",
             "MinSize",
             "PlatformVersion",
+            "PodIdentityAssociations",
             "PublicAccessCidrs",
             "ReleaseVersion",
             "ResolveConflicts",
@@ -270,6 +276,7 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::MaxUnavailablePercentage => write!(f, "MaxUnavailablePercentage"),
             UpdateParamType::MinSize => write!(f, "MinSize"),
             UpdateParamType::PlatformVersion => write!(f, "PlatformVersion"),
+            UpdateParamType::PodIdentityAssociations => write!(f, "PodIdentityAssociations"),
             UpdateParamType::PublicAccessCidrs => write!(f, "PublicAccessCidrs"),
             UpdateParamType::ReleaseVersion => write!(f, "ReleaseVersion"),
             UpdateParamType::ResolveConflicts => write!(f, "ResolveConflicts"),

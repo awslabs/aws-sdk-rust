@@ -12,7 +12,18 @@ pub struct ListJobsInput {
     pub multi_node_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p>
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
-    /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListJobs</code> in a paginated output. When this parameter is used, <code>ListJobs</code> returns up to <code>maxResults</code> results in a single page and a <code>nextToken</code> response element, if applicable. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value.</p>
+    /// <p>The following outlines key parameters and limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The minimum value is 1.</p></li>
+    /// <li>
+    /// <p>When <code>--job-status</code> is used, Batch returns up to 1000 values.</p></li>
+    /// <li>
+    /// <p>When <code>--filters</code> is used, Batch returns up to 100 values.</p></li>
+    /// <li>
+    /// <p>If neither parameter is used, then <code>ListJobs</code> returns up to 1000 results (jobs that are in the <code>RUNNING</code> status) and a <code>nextToken</code> value, if applicable.</p></li>
+    /// </ul>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListJobs</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p><note>
     /// <p>Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -64,7 +75,18 @@ impl ListJobsInput {
     pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
     }
-    /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListJobs</code> in a paginated output. When this parameter is used, <code>ListJobs</code> returns up to <code>maxResults</code> results in a single page and a <code>nextToken</code> response element, if applicable. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value.</p>
+    /// <p>The following outlines key parameters and limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The minimum value is 1.</p></li>
+    /// <li>
+    /// <p>When <code>--job-status</code> is used, Batch returns up to 1000 values.</p></li>
+    /// <li>
+    /// <p>When <code>--filters</code> is used, Batch returns up to 100 values.</p></li>
+    /// <li>
+    /// <p>If neither parameter is used, then <code>ListJobs</code> returns up to 1000 results (jobs that are in the <code>RUNNING</code> status) and a <code>nextToken</code> value, if applicable.</p></li>
+    /// </ul>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -183,17 +205,50 @@ impl ListJobsInputBuilder {
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
         &self.job_status
     }
-    /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListJobs</code> in a paginated output. When this parameter is used, <code>ListJobs</code> returns up to <code>maxResults</code> results in a single page and a <code>nextToken</code> response element, if applicable. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value.</p>
+    /// <p>The following outlines key parameters and limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The minimum value is 1.</p></li>
+    /// <li>
+    /// <p>When <code>--job-status</code> is used, Batch returns up to 1000 values.</p></li>
+    /// <li>
+    /// <p>When <code>--filters</code> is used, Batch returns up to 100 values.</p></li>
+    /// <li>
+    /// <p>If neither parameter is used, then <code>ListJobs</code> returns up to 1000 results (jobs that are in the <code>RUNNING</code> status) and a <code>nextToken</code> value, if applicable.</p></li>
+    /// </ul>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListJobs</code> in a paginated output. When this parameter is used, <code>ListJobs</code> returns up to <code>maxResults</code> results in a single page and a <code>nextToken</code> response element, if applicable. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value.</p>
+    /// <p>The following outlines key parameters and limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The minimum value is 1.</p></li>
+    /// <li>
+    /// <p>When <code>--job-status</code> is used, Batch returns up to 1000 values.</p></li>
+    /// <li>
+    /// <p>When <code>--filters</code> is used, Batch returns up to 100 values.</p></li>
+    /// <li>
+    /// <p>If neither parameter is used, then <code>ListJobs</code> returns up to 1000 results (jobs that are in the <code>RUNNING</code> status) and a <code>nextToken</code> value, if applicable.</p></li>
+    /// </ul>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListJobs</code> in a paginated output. When this parameter is used, <code>ListJobs</code> returns up to <code>maxResults</code> results in a single page and a <code>nextToken</code> response element, if applicable. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value.</p>
+    /// <p>The following outlines key parameters and limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The minimum value is 1.</p></li>
+    /// <li>
+    /// <p>When <code>--job-status</code> is used, Batch returns up to 1000 values.</p></li>
+    /// <li>
+    /// <p>When <code>--filters</code> is used, Batch returns up to 100 values.</p></li>
+    /// <li>
+    /// <p>If neither parameter is used, then <code>ListJobs</code> returns up to 1000 results (jobs that are in the <code>RUNNING</code> status) and a <code>nextToken</code> value, if applicable.</p></li>
+    /// </ul>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

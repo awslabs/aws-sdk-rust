@@ -236,4 +236,29 @@ impl UpdateAddonFluentBuilder {
     pub fn get_configuration_values(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_values()
     }
+    ///
+    /// Appends an item to `podIdentityAssociations`.
+    ///
+    /// To override the contents of this collection use [`set_pod_identity_associations`](Self::set_pod_identity_associations).
+    ///
+    /// <p>An array of Pod Identity Assocations to be updated. Each EKS Pod Identity association maps a Kubernetes service account to an IAM Role. If this value is left blank, no change. If an empty array is provided, existing Pod Identity Assocations owned by the Addon are deleted.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User Guide.</p>
+    pub fn pod_identity_associations(mut self, input: crate::types::AddonPodIdentityAssociations) -> Self {
+        self.inner = self.inner.pod_identity_associations(input);
+        self
+    }
+    /// <p>An array of Pod Identity Assocations to be updated. Each EKS Pod Identity association maps a Kubernetes service account to an IAM Role. If this value is left blank, no change. If an empty array is provided, existing Pod Identity Assocations owned by the Addon are deleted.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User Guide.</p>
+    pub fn set_pod_identity_associations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AddonPodIdentityAssociations>>,
+    ) -> Self {
+        self.inner = self.inner.set_pod_identity_associations(input);
+        self
+    }
+    /// <p>An array of Pod Identity Assocations to be updated. Each EKS Pod Identity association maps a Kubernetes service account to an IAM Role. If this value is left blank, no change. If an empty array is provided, existing Pod Identity Assocations owned by the Addon are deleted.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User Guide.</p>
+    pub fn get_pod_identity_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddonPodIdentityAssociations>> {
+        self.inner.get_pod_identity_associations()
+    }
 }

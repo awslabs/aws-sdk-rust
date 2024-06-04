@@ -49,6 +49,8 @@ pub use crate::types::_log_type::LogType;
 
 pub use crate::types::_vpc_config_request::VpcConfigRequest;
 
+pub use crate::types::_addon_pod_identity_associations::AddonPodIdentityAssociations;
+
 pub use crate::types::_resolve_conflicts::ResolveConflicts;
 
 pub use crate::types::_access_entry::AccessEntry;
@@ -165,6 +167,8 @@ pub use crate::types::_addon_version_info::AddonVersionInfo;
 
 pub use crate::types::_compatibility::Compatibility;
 
+pub use crate::types::_addon_pod_identity_configuration::AddonPodIdentityConfiguration;
+
 pub use crate::types::_addon::Addon;
 
 pub use crate::types::_addon_health::AddonHealth;
@@ -204,6 +208,10 @@ mod _addon_info;
 mod _addon_issue;
 
 mod _addon_issue_code;
+
+mod _addon_pod_identity_associations;
+
+mod _addon_pod_identity_configuration;
 
 mod _addon_status;
 

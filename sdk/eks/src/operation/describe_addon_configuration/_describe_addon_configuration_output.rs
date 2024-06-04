@@ -9,6 +9,8 @@ pub struct DescribeAddonConfigurationOutput {
     pub addon_version: ::std::option::Option<::std::string::String>,
     /// <p>A JSON schema that's used to validate the configuration values you provide when an add-on is created or updated.</p>
     pub configuration_schema: ::std::option::Option<::std::string::String>,
+    /// <p>The Kubernetes service account name used by the addon, and any suggested IAM policies. Use this information to create an IAM Role for the Addon.</p>
+    pub pod_identity_configuration: ::std::option::Option<::std::vec::Vec<crate::types::AddonPodIdentityConfiguration>>,
     _request_id: Option<String>,
 }
 impl DescribeAddonConfigurationOutput {
@@ -23,6 +25,12 @@ impl DescribeAddonConfigurationOutput {
     /// <p>A JSON schema that's used to validate the configuration values you provide when an add-on is created or updated.</p>
     pub fn configuration_schema(&self) -> ::std::option::Option<&str> {
         self.configuration_schema.as_deref()
+    }
+    /// <p>The Kubernetes service account name used by the addon, and any suggested IAM policies. Use this information to create an IAM Role for the Addon.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pod_identity_configuration.is_none()`.
+    pub fn pod_identity_configuration(&self) -> &[crate::types::AddonPodIdentityConfiguration] {
+        self.pod_identity_configuration.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAddonConfigurationOutput {
@@ -44,6 +52,7 @@ pub struct DescribeAddonConfigurationOutputBuilder {
     pub(crate) addon_name: ::std::option::Option<::std::string::String>,
     pub(crate) addon_version: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_schema: ::std::option::Option<::std::string::String>,
+    pub(crate) pod_identity_configuration: ::std::option::Option<::std::vec::Vec<crate::types::AddonPodIdentityConfiguration>>,
     _request_id: Option<String>,
 }
 impl DescribeAddonConfigurationOutputBuilder {
@@ -89,6 +98,29 @@ impl DescribeAddonConfigurationOutputBuilder {
     pub fn get_configuration_schema(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_schema
     }
+    /// Appends an item to `pod_identity_configuration`.
+    ///
+    /// To override the contents of this collection use [`set_pod_identity_configuration`](Self::set_pod_identity_configuration).
+    ///
+    /// <p>The Kubernetes service account name used by the addon, and any suggested IAM policies. Use this information to create an IAM Role for the Addon.</p>
+    pub fn pod_identity_configuration(mut self, input: crate::types::AddonPodIdentityConfiguration) -> Self {
+        let mut v = self.pod_identity_configuration.unwrap_or_default();
+        v.push(input);
+        self.pod_identity_configuration = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Kubernetes service account name used by the addon, and any suggested IAM policies. Use this information to create an IAM Role for the Addon.</p>
+    pub fn set_pod_identity_configuration(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AddonPodIdentityConfiguration>>,
+    ) -> Self {
+        self.pod_identity_configuration = input;
+        self
+    }
+    /// <p>The Kubernetes service account name used by the addon, and any suggested IAM policies. Use this information to create an IAM Role for the Addon.</p>
+    pub fn get_pod_identity_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddonPodIdentityConfiguration>> {
+        &self.pod_identity_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -104,6 +136,7 @@ impl DescribeAddonConfigurationOutputBuilder {
             addon_name: self.addon_name,
             addon_version: self.addon_version,
             configuration_schema: self.configuration_schema,
+            pod_identity_configuration: self.pod_identity_configuration,
             _request_id: self._request_id,
         }
     }

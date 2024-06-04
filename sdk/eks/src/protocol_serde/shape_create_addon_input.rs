@@ -15,21 +15,33 @@ pub fn ser_create_addon_input_input(
     if let Some(var_4) = &input.configuration_values {
         object.key("configurationValues").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.resolve_conflicts {
-        object.key("resolveConflicts").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.service_account_role_arn {
-        object.key("serviceAccountRoleArn").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_8 = object.key("tags").start_object();
-        for (key_9, value_10) in var_7 {
+    if let Some(var_5) = &input.pod_identity_associations {
+        let mut array_6 = object.key("podIdentityAssociations").start_array();
+        for item_7 in var_5 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_addon_pod_identity_associations::ser_addon_pod_identity_associations(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        object_8.finish();
+        array_6.finish();
+    }
+    if let Some(var_9) = &input.resolve_conflicts {
+        object.key("resolveConflicts").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.service_account_role_arn {
+        object.key("serviceAccountRoleArn").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("tags").start_object();
+        for (key_13, value_14) in var_11 {
+            {
+                object_12.key(key_13.as_str()).string(value_14.as_str());
+            }
+        }
+        object_12.finish();
     }
     Ok(())
 }

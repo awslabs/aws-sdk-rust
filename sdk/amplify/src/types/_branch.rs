@@ -58,8 +58,10 @@ pub struct Branch {
     /// <p>The source branch if the branch is a pull request branch.</p>
     pub source_branch: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.</p>
+    /// <p>This property is available to Amplify Gen 1 apps only. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
     pub backend_environment_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Describes the backend properties associated with an Amplify <code>Branch</code>.</p>
+    /// <p>Describes the backend associated with an Amplify <code>Branch</code>.</p>
+    /// <p>This property is available to Amplify Gen 2 apps only. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
     pub backend: ::std::option::Option<crate::types::Backend>,
 }
 impl Branch {
@@ -180,10 +182,12 @@ impl Branch {
         self.source_branch.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.</p>
+    /// <p>This property is available to Amplify Gen 1 apps only. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
     pub fn backend_environment_arn(&self) -> ::std::option::Option<&str> {
         self.backend_environment_arn.as_deref()
     }
-    /// <p>Describes the backend properties associated with an Amplify <code>Branch</code>.</p>
+    /// <p>Describes the backend associated with an Amplify <code>Branch</code>.</p>
+    /// <p>This property is available to Amplify Gen 2 apps only. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
     pub fn backend(&self) -> ::std::option::Option<&crate::types::Backend> {
         self.backend.as_ref()
     }
@@ -677,30 +681,36 @@ impl BranchBuilder {
         &self.source_branch
     }
     /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.</p>
+    /// <p>This property is available to Amplify Gen 1 apps only. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
     pub fn backend_environment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.</p>
+    /// <p>This property is available to Amplify Gen 1 apps only. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
     pub fn set_backend_environment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_environment_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.</p>
+    /// <p>This property is available to Amplify Gen 1 apps only. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
     pub fn get_backend_environment_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.backend_environment_arn
     }
-    /// <p>Describes the backend properties associated with an Amplify <code>Branch</code>.</p>
+    /// <p>Describes the backend associated with an Amplify <code>Branch</code>.</p>
+    /// <p>This property is available to Amplify Gen 2 apps only. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
     pub fn backend(mut self, input: crate::types::Backend) -> Self {
         self.backend = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the backend properties associated with an Amplify <code>Branch</code>.</p>
+    /// <p>Describes the backend associated with an Amplify <code>Branch</code>.</p>
+    /// <p>This property is available to Amplify Gen 2 apps only. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
     pub fn set_backend(mut self, input: ::std::option::Option<crate::types::Backend>) -> Self {
         self.backend = input;
         self
     }
-    /// <p>Describes the backend properties associated with an Amplify <code>Branch</code>.</p>
+    /// <p>Describes the backend associated with an Amplify <code>Branch</code>.</p>
+    /// <p>This property is available to Amplify Gen 2 apps only. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
     pub fn get_backend(&self) -> &::std::option::Option<crate::types::Backend> {
         &self.backend
     }

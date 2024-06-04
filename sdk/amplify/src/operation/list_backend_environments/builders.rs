@@ -23,7 +23,7 @@ impl crate::operation::list_backend_environments::builders::ListBackendEnvironme
 /// Fluent builder constructing a request to `ListBackendEnvironments`.
 ///
 /// <p>Lists the backend environments for an Amplify app.</p>
-/// <p>This API is available only to Amplify Gen 1 applications where the backend was created using Amplify Studio or the Amplify command line interface (CLI). This API isn’t available to applications created using the Amplify Gen 2 public preview. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
+/// <p>This API is available only to Amplify Gen 1 applications where the backend is created using Amplify Studio or the Amplify command line interface (CLI). This API isn’t available to Amplify Gen 2 applications. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBackendEnvironmentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

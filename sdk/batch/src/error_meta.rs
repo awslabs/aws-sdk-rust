@@ -372,6 +372,29 @@ impl From<crate::operation::describe_scheduling_policies::DescribeSchedulingPoli
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_job_queue_snapshot::GetJobQueueSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_job_queue_snapshot::GetJobQueueSnapshotError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_job_queue_snapshot::GetJobQueueSnapshotError> for Error {
+    fn from(err: crate::operation::get_job_queue_snapshot::GetJobQueueSnapshotError) -> Self {
+        match err {
+            crate::operation::get_job_queue_snapshot::GetJobQueueSnapshotError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::get_job_queue_snapshot::GetJobQueueSnapshotError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::get_job_queue_snapshot::GetJobQueueSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_jobs::ListJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

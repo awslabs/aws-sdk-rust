@@ -165,6 +165,10 @@ pub use crate::types::_job_status::JobStatus;
 
 pub use crate::types::_key_values_pair::KeyValuesPair;
 
+pub use crate::types::_front_of_queue_detail::FrontOfQueueDetail;
+
+pub use crate::types::_front_of_queue_job_summary::FrontOfQueueJobSummary;
+
 pub use crate::types::_scheduling_policy_detail::SchedulingPolicyDetail;
 
 pub use crate::types::_job_detail::JobDetail;
@@ -340,6 +344,10 @@ mod _evaluate_on_exit;
 mod _fairshare_policy;
 
 mod _fargate_platform_configuration;
+
+mod _front_of_queue_detail;
+
+mod _front_of_queue_job_summary;
 
 mod _host;
 

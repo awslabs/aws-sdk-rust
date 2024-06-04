@@ -39,6 +39,8 @@ pub struct PodIdentityAssociation {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The most recent timestamp that the association was modified at</p>
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    pub owner_arn: ::std::option::Option<::std::string::String>,
 }
 impl PodIdentityAssociation {
     /// <p>The name of the cluster that the association is in.</p>
@@ -94,6 +96,10 @@ impl PodIdentityAssociation {
     pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
+    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    pub fn owner_arn(&self) -> ::std::option::Option<&str> {
+        self.owner_arn.as_deref()
+    }
 }
 impl PodIdentityAssociation {
     /// Creates a new builder-style object to manufacture [`PodIdentityAssociation`](crate::types::PodIdentityAssociation).
@@ -115,6 +121,7 @@ pub struct PodIdentityAssociationBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) owner_arn: ::std::option::Option<::std::string::String>,
 }
 impl PodIdentityAssociationBuilder {
     /// <p>The name of the cluster that the association is in.</p>
@@ -300,6 +307,20 @@ impl PodIdentityAssociationBuilder {
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_at
     }
+    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    pub fn owner_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    pub fn set_owner_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_arn = input;
+        self
+    }
+    /// <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+    pub fn get_owner_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_arn
+    }
     /// Consumes the builder and constructs a [`PodIdentityAssociation`](crate::types::PodIdentityAssociation).
     pub fn build(self) -> crate::types::PodIdentityAssociation {
         crate::types::PodIdentityAssociation {
@@ -312,6 +333,7 @@ impl PodIdentityAssociationBuilder {
             tags: self.tags,
             created_at: self.created_at,
             modified_at: self.modified_at,
+            owner_arn: self.owner_arn,
         }
     }
 }

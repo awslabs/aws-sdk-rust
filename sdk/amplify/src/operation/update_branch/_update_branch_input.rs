@@ -37,9 +37,11 @@ pub struct UpdateBranchInput {
     pub enable_pull_request_preview: ::std::option::Option<bool>,
     /// <p>The Amplify environment name for the pull request.</p>
     pub pull_request_environment_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of a Gen 1 Amplify app.</p>
+    /// <p>This field is available to Amplify Gen 1 apps only where the backend is created using Amplify Studio or the Amplify command line interface (CLI).</p>
     pub backend_environment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.</p>
+    /// <p>This field is available to Amplify Gen 2 apps only. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
     pub backend: ::std::option::Option<crate::types::Backend>,
 }
 impl UpdateBranchInput {
@@ -108,11 +110,13 @@ impl UpdateBranchInput {
     pub fn pull_request_environment_name(&self) -> ::std::option::Option<&str> {
         self.pull_request_environment_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of a Gen 1 Amplify app.</p>
+    /// <p>This field is available to Amplify Gen 1 apps only where the backend is created using Amplify Studio or the Amplify command line interface (CLI).</p>
     pub fn backend_environment_arn(&self) -> ::std::option::Option<&str> {
         self.backend_environment_arn.as_deref()
     }
     /// <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.</p>
+    /// <p>This field is available to Amplify Gen 2 apps only. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
     pub fn backend(&self) -> ::std::option::Option<&crate::types::Backend> {
         self.backend.as_ref()
     }
@@ -414,31 +418,37 @@ impl UpdateBranchInputBuilder {
     pub fn get_pull_request_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.pull_request_environment_name
     }
-    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of a Gen 1 Amplify app.</p>
+    /// <p>This field is available to Amplify Gen 1 apps only where the backend is created using Amplify Studio or the Amplify command line interface (CLI).</p>
     pub fn backend_environment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of a Gen 1 Amplify app.</p>
+    /// <p>This field is available to Amplify Gen 1 apps only where the backend is created using Amplify Studio or the Amplify command line interface (CLI).</p>
     pub fn set_backend_environment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_environment_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) for a backend environment that is part of a Gen 1 Amplify app.</p>
+    /// <p>This field is available to Amplify Gen 1 apps only where the backend is created using Amplify Studio or the Amplify command line interface (CLI).</p>
     pub fn get_backend_environment_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.backend_environment_arn
     }
     /// <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.</p>
+    /// <p>This field is available to Amplify Gen 2 apps only. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
     pub fn backend(mut self, input: crate::types::Backend) -> Self {
         self.backend = ::std::option::Option::Some(input);
         self
     }
     /// <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.</p>
+    /// <p>This field is available to Amplify Gen 2 apps only. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
     pub fn set_backend(mut self, input: ::std::option::Option<crate::types::Backend>) -> Self {
         self.backend = input;
         self
     }
     /// <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.</p>
+    /// <p>This field is available to Amplify Gen 2 apps only. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
     pub fn get_backend(&self) -> &::std::option::Option<crate::types::Backend> {
         &self.backend
     }

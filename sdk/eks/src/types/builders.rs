@@ -31,6 +31,8 @@ pub use crate::types::_log_setup::LogSetupBuilder;
 
 pub use crate::types::_vpc_config_request::VpcConfigRequestBuilder;
 
+pub use crate::types::_addon_pod_identity_associations::AddonPodIdentityAssociationsBuilder;
+
 pub use crate::types::_access_entry::AccessEntryBuilder;
 
 pub use crate::types::_cluster::ClusterBuilder;
@@ -116,6 +118,8 @@ pub use crate::types::_marketplace_information::MarketplaceInformationBuilder;
 pub use crate::types::_addon_version_info::AddonVersionInfoBuilder;
 
 pub use crate::types::_compatibility::CompatibilityBuilder;
+
+pub use crate::types::_addon_pod_identity_configuration::AddonPodIdentityConfigurationBuilder;
 
 pub use crate::types::_addon::AddonBuilder;
 

@@ -30,6 +30,10 @@ where
                         "requiresConfiguration" => {
                             builder = builder.set_requires_configuration(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "requiresIamPermissions" => {
+                            builder =
+                                builder.set_requires_iam_permissions(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

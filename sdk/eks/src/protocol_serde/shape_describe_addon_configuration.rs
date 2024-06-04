@@ -123,6 +123,11 @@ pub(crate) fn de_describe_addon_configuration(
                             .transpose()?,
                     );
                 }
+                "podIdentityConfiguration" => {
+                    builder = builder.set_pod_identity_configuration(
+                        crate::protocol_serde::shape_addon_pod_identity_configuration_list::de_addon_pod_identity_configuration_list(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {
