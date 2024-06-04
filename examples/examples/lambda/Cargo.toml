@@ -17,7 +17,7 @@ aws-sdk-iam= { version = "1.30.0", path = "../../../sdk/iam" }
 aws-sdk-lambda= { version = "1.30.0", path = "../../../sdk/lambda" }
 aws-sdk-s3= { version = "1.33.0", path = "../../../sdk/s3" }
 aws-smithy-types= { version = "1.1.10", path = "../../../sdk/aws-smithy-types" }
-aws-types= { version = "1.3.0", path = "../../../sdk/aws-types" }
+aws-types= { version = "1.3.1", path = "../../../sdk/aws-types" }
 
 [dependencies.clap]
 version = "~4.4"

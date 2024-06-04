@@ -140,7 +140,7 @@ mod tests {
 
         // HACK: there's no way to reset tracing-test, so just
         // reach into its internals and clear it manually
-        tracing_test::internal::GLOBAL_BUF.lock().unwrap().clear();
+        tracing_test::internal::global_buf().lock().unwrap().clear();
 
         AppName::new("greaterthanfiftycharactersgreaterthanfiftycharacters").unwrap();
         assert!(!logs_contain(
