@@ -12,7 +12,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-kafkaconnect = "1.29.0"
+aws-sdk-kafkaconnect = "1.30.0"
 tokio = { version = "1", features = ["full"] }
 ```
 
