@@ -9,6 +9,7 @@ use aws_credential_types::{
 };
 use aws_smithy_types::error::display::DisplayErrorContext;
 use std::borrow::Cow;
+use std::fmt::Debug;
 use tracing::Instrument;
 
 /// Credentials provider that checks a series of inner providers
@@ -31,9 +32,23 @@ use tracing::Instrument;
 ///     .or_else("Profile", ProfileFileCredentialsProvider::builder().build());
 /// # }
 /// ```
-#[derive(Debug)]
 pub struct CredentialsProviderChain {
     providers: Vec<(Cow<'static, str>, Box<dyn ProvideCredentials>)>,
+}
+
+impl Debug for CredentialsProviderChain {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("CredentialsProviderChain")
+            .field(
+                "providers",
+                &self
+                    .providers
+                    .iter()
+                    .map(|provider| &provider.0)
+                    .collect::<Vec<&Cow<'static, str>>>(),
+            )
+            .finish()
+    }
 }
 
 impl CredentialsProviderChain {

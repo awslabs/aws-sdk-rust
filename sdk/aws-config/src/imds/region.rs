@@ -14,15 +14,24 @@ use crate::provider_config::ProviderConfig;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::os_shim_internal::Env;
 use aws_types::region::Region;
+use std::fmt::Debug;
 use tracing::Instrument;
 
 /// IMDSv2 Region Provider
 ///
 /// This provider is included in the default region chain, so it does not need to be used manually.
-#[derive(Debug)]
 pub struct ImdsRegionProvider {
     client: Client,
     env: Env,
+}
+
+impl Debug for ImdsRegionProvider {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("ImdsRegionProvider")
+            .field("client", &"IMDS client truncated for readability")
+            .field("env", &self.env)
+            .finish()
+    }
 }
 
 const REGION_PATH: &str = "/latest/meta-data/placement/region";

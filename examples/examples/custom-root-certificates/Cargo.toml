@@ -9,9 +9,9 @@ publish = false
 
 [dependencies]
 rustls = "0.21.9"
-aws-config= { version = "1.5.0", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-config= { version = "1.5.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-sdk-s3= { version = "1.33.0", path = "../../../sdk/s3", default-features = false }
-aws-smithy-runtime= { version = "1.5.4", path = "../../../sdk/aws-smithy-runtime", features = ["tls-rustls"] }
+aws-smithy-runtime= { version = "1.5.5", path = "../../../sdk/aws-smithy-runtime", features = ["tls-rustls"] }
 
 [dependencies.tokio]
 version = "1.21.2"
