@@ -18,6 +18,7 @@
 ///     ConnectionType::Marketplace => { /* ... */ },
 ///     ConnectionType::Mongodb => { /* ... */ },
 ///     ConnectionType::Network => { /* ... */ },
+///     ConnectionType::Salesforce => { /* ... */ },
 ///     ConnectionType::Sftp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum ConnectionType {
     #[allow(missing_docs)] // documentation missing in model
     Network,
     #[allow(missing_docs)] // documentation missing in model
+    Salesforce,
+    #[allow(missing_docs)] // documentation missing in model
     Sftp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -73,6 +76,7 @@ impl ::std::convert::From<&str> for ConnectionType {
             "MARKETPLACE" => ConnectionType::Marketplace,
             "MONGODB" => ConnectionType::Mongodb,
             "NETWORK" => ConnectionType::Network,
+            "SALESFORCE" => ConnectionType::Salesforce,
             "SFTP" => ConnectionType::Sftp,
             other => ConnectionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -95,13 +99,14 @@ impl ConnectionType {
             ConnectionType::Marketplace => "MARKETPLACE",
             ConnectionType::Mongodb => "MONGODB",
             ConnectionType::Network => "NETWORK",
+            ConnectionType::Salesforce => "SALESFORCE",
             ConnectionType::Sftp => "SFTP",
             ConnectionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOM", "JDBC", "KAFKA", "MARKETPLACE", "MONGODB", "NETWORK", "SFTP"]
+        &["CUSTOM", "JDBC", "KAFKA", "MARKETPLACE", "MONGODB", "NETWORK", "SALESFORCE", "SFTP"]
     }
 }
 impl ::std::convert::AsRef<str> for ConnectionType {
@@ -130,6 +135,7 @@ impl ::std::fmt::Display for ConnectionType {
             ConnectionType::Marketplace => write!(f, "MARKETPLACE"),
             ConnectionType::Mongodb => write!(f, "MONGODB"),
             ConnectionType::Network => write!(f, "NETWORK"),
+            ConnectionType::Salesforce => write!(f, "SALESFORCE"),
             ConnectionType::Sftp => write!(f, "SFTP"),
             ConnectionType::Unknown(value) => write!(f, "{}", value),
         }

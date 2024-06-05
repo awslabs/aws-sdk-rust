@@ -12,8 +12,17 @@ pub fn ser_update_accelerator_input_input(
     if let Some(var_3) = &input.ip_address_type {
         object.key("IpAddressType").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.enabled {
-        object.key("Enabled").boolean(*var_4);
+    if let Some(var_4) = &input.ip_addresses {
+        let mut array_5 = object.key("IpAddresses").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
+    }
+    if let Some(var_7) = &input.enabled {
+        object.key("Enabled").boolean(*var_7);
     }
     Ok(())
 }

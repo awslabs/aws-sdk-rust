@@ -1325,6 +1325,10 @@ pub(crate) mod shape_apply_mapping;
 
 pub(crate) mod shape_athena_connector_source;
 
+pub(crate) mod shape_authentication_configuration;
+
+pub(crate) mod shape_authentication_configuration_input;
+
 pub(crate) mod shape_basic_catalog_target;
 
 pub(crate) mod shape_batch_get_table_optimizer_error;
@@ -1737,6 +1741,10 @@ pub(crate) mod shape_null_check_box_list;
 
 pub(crate) mod shape_null_value_field;
 
+pub(crate) mod shape_o_auth2_properties;
+
+pub(crate) mod shape_o_auth2_properties_input;
+
 pub(crate) mod shape_orchestration_string_list;
 
 pub(crate) mod shape_order;
@@ -1787,6 +1795,8 @@ pub(crate) mod shape_view_sub_objects_list;
 
 pub(crate) mod shape_amazon_redshift_advanced_option;
 
+pub(crate) mod shape_authorization_code_properties;
+
 pub(crate) mod shape_backfill_error;
 
 pub(crate) mod shape_column_importance;
@@ -1813,9 +1823,13 @@ pub(crate) mod shape_new_rules;
 
 pub(crate) mod shape_node;
 
+pub(crate) mod shape_o_auth2_client_application;
+
 pub(crate) mod shape_option;
 
 pub(crate) mod shape_other_metadata_value_list_item;
+
+pub(crate) mod shape_token_url_parameters_map;
 
 pub(crate) mod shape_view_representation;
 

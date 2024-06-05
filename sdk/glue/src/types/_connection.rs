@@ -100,14 +100,22 @@ pub struct Connection {
     /// <p><code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> - The name of the Kerberos princial used by Glue. For more information, see <a href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka Documentation: Configuring Kafka Brokers</a>.</p></li>
     /// </ul>
     pub connection_properties: ::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>>,
-    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
+    /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
     pub physical_connection_requirements: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
-    /// <p>The time that this connection definition was created.</p>
+    /// <p>The timestamp of the time that this connection definition was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The last time that this connection definition was updated.</p>
+    /// <p>The timestamp of the last time the connection definition was updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user, group, or role that last updated this connection definition.</p>
     pub last_updated_by: ::std::option::Option<::std::string::String>,
+    /// <p>The status of the connection. Can be one of: <code>READY</code>, <code>IN_PROGRESS</code>, or <code>FAILED</code>.</p>
+    pub status: ::std::option::Option<crate::types::ConnectionStatus>,
+    /// <p>The reason for the connection status.</p>
+    pub status_reason: ::std::option::Option<::std::string::String>,
+    /// <p>A timestamp of the time this connection was last validated.</p>
+    pub last_connection_validation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The authentication properties of the connection.</p>
+    pub authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfiguration>,
 }
 impl Connection {
     /// <p>The name of the connection definition.</p>
@@ -220,21 +228,37 @@ impl Connection {
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>> {
         self.connection_properties.as_ref()
     }
-    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
+    /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
     pub fn physical_connection_requirements(&self) -> ::std::option::Option<&crate::types::PhysicalConnectionRequirements> {
         self.physical_connection_requirements.as_ref()
     }
-    /// <p>The time that this connection definition was created.</p>
+    /// <p>The timestamp of the time that this connection definition was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The last time that this connection definition was updated.</p>
+    /// <p>The timestamp of the last time the connection definition was updated.</p>
     pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The user, group, or role that last updated this connection definition.</p>
     pub fn last_updated_by(&self) -> ::std::option::Option<&str> {
         self.last_updated_by.as_deref()
+    }
+    /// <p>The status of the connection. Can be one of: <code>READY</code>, <code>IN_PROGRESS</code>, or <code>FAILED</code>.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ConnectionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The reason for the connection status.</p>
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>A timestamp of the time this connection was last validated.</p>
+    pub fn last_connection_validation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_connection_validation_time.as_ref()
+    }
+    /// <p>The authentication properties of the connection.</p>
+    pub fn authentication_configuration(&self) -> ::std::option::Option<&crate::types::AuthenticationConfiguration> {
+        self.authentication_configuration.as_ref()
     }
 }
 impl Connection {
@@ -257,6 +281,10 @@ pub struct ConnectionBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_by: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ConnectionStatus>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) last_connection_validation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfiguration>,
 }
 impl ConnectionBuilder {
     /// <p>The name of the connection definition.</p>
@@ -604,45 +632,45 @@ impl ConnectionBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>> {
         &self.connection_properties
     }
-    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
+    /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
     pub fn physical_connection_requirements(mut self, input: crate::types::PhysicalConnectionRequirements) -> Self {
         self.physical_connection_requirements = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
+    /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
     pub fn set_physical_connection_requirements(mut self, input: ::std::option::Option<crate::types::PhysicalConnectionRequirements>) -> Self {
         self.physical_connection_requirements = input;
         self
     }
-    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
+    /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
     pub fn get_physical_connection_requirements(&self) -> &::std::option::Option<crate::types::PhysicalConnectionRequirements> {
         &self.physical_connection_requirements
     }
-    /// <p>The time that this connection definition was created.</p>
+    /// <p>The timestamp of the time that this connection definition was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time that this connection definition was created.</p>
+    /// <p>The timestamp of the time that this connection definition was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>The time that this connection definition was created.</p>
+    /// <p>The timestamp of the time that this connection definition was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The last time that this connection definition was updated.</p>
+    /// <p>The timestamp of the last time the connection definition was updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The last time that this connection definition was updated.</p>
+    /// <p>The timestamp of the last time the connection definition was updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
-    /// <p>The last time that this connection definition was updated.</p>
+    /// <p>The timestamp of the last time the connection definition was updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }
@@ -660,6 +688,62 @@ impl ConnectionBuilder {
     pub fn get_last_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_updated_by
     }
+    /// <p>The status of the connection. Can be one of: <code>READY</code>, <code>IN_PROGRESS</code>, or <code>FAILED</code>.</p>
+    pub fn status(mut self, input: crate::types::ConnectionStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the connection. Can be one of: <code>READY</code>, <code>IN_PROGRESS</code>, or <code>FAILED</code>.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ConnectionStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The status of the connection. Can be one of: <code>READY</code>, <code>IN_PROGRESS</code>, or <code>FAILED</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ConnectionStatus> {
+        &self.status
+    }
+    /// <p>The reason for the connection status.</p>
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The reason for the connection status.</p>
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_reason = input;
+        self
+    }
+    /// <p>The reason for the connection status.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
+    /// <p>A timestamp of the time this connection was last validated.</p>
+    pub fn last_connection_validation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_connection_validation_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A timestamp of the time this connection was last validated.</p>
+    pub fn set_last_connection_validation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_connection_validation_time = input;
+        self
+    }
+    /// <p>A timestamp of the time this connection was last validated.</p>
+    pub fn get_last_connection_validation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_connection_validation_time
+    }
+    /// <p>The authentication properties of the connection.</p>
+    pub fn authentication_configuration(mut self, input: crate::types::AuthenticationConfiguration) -> Self {
+        self.authentication_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The authentication properties of the connection.</p>
+    pub fn set_authentication_configuration(mut self, input: ::std::option::Option<crate::types::AuthenticationConfiguration>) -> Self {
+        self.authentication_configuration = input;
+        self
+    }
+    /// <p>The authentication properties of the connection.</p>
+    pub fn get_authentication_configuration(&self) -> &::std::option::Option<crate::types::AuthenticationConfiguration> {
+        &self.authentication_configuration
+    }
     /// Consumes the builder and constructs a [`Connection`](crate::types::Connection).
     pub fn build(self) -> crate::types::Connection {
         crate::types::Connection {
@@ -672,6 +756,10 @@ impl ConnectionBuilder {
             creation_time: self.creation_time,
             last_updated_time: self.last_updated_time,
             last_updated_by: self.last_updated_by,
+            status: self.status,
+            status_reason: self.status_reason,
+            last_connection_validation_time: self.last_connection_validation_time,
+            authentication_configuration: self.authentication_configuration,
         }
     }
 }

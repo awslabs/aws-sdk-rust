@@ -66,6 +66,31 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ConnectionStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "StatusReason" => {
+                            builder = builder.set_status_reason(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "LastConnectionValidationTime" => {
+                            builder = builder.set_last_connection_validation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "AuthenticationConfiguration" => {
+                            builder = builder.set_authentication_configuration(
+                                crate::protocol_serde::shape_authentication_configuration::de_authentication_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

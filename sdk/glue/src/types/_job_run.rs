@@ -51,8 +51,6 @@ pub struct JobRun {
     /// <p>The amount of time (in seconds) that the job run consumed resources.</p>
     pub execution_time: i32,
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
-    /// <p>The maximum value for timeout for batch jobs is 7 days or 10080 minutes. The default is 2880 minutes (48 hours) for batch jobs.</p>
-    /// <p>Any existing Glue jobs that have a greater timeout value are defaulted to 7 days. For instance you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p>
     /// <p>Streaming jobs must have timeout values less than 7 days or 10080 minutes. When the value is left blank, the job will be restarted after 7 days based if you have not setup a maintenance window. If you have setup maintenance window, it will be restarted during the maintenance window after 7 days.</p>
     pub timeout: ::std::option::Option<i32>,
     /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/"> Glue pricing page</a>.</p>
@@ -185,8 +183,6 @@ impl JobRun {
         self.execution_time
     }
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
-    /// <p>The maximum value for timeout for batch jobs is 7 days or 10080 minutes. The default is 2880 minutes (48 hours) for batch jobs.</p>
-    /// <p>Any existing Glue jobs that have a greater timeout value are defaulted to 7 days. For instance you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p>
     /// <p>Streaming jobs must have timeout values less than 7 days or 10080 minutes. When the value is left blank, the job will be restarted after 7 days based if you have not setup a maintenance window. If you have setup maintenance window, it will be restarted during the maintenance window after 7 days.</p>
     pub fn timeout(&self) -> ::std::option::Option<i32> {
         self.timeout
@@ -571,24 +567,18 @@ impl JobRunBuilder {
         &self.execution_time
     }
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
-    /// <p>The maximum value for timeout for batch jobs is 7 days or 10080 minutes. The default is 2880 minutes (48 hours) for batch jobs.</p>
-    /// <p>Any existing Glue jobs that have a greater timeout value are defaulted to 7 days. For instance you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p>
     /// <p>Streaming jobs must have timeout values less than 7 days or 10080 minutes. When the value is left blank, the job will be restarted after 7 days based if you have not setup a maintenance window. If you have setup maintenance window, it will be restarted during the maintenance window after 7 days.</p>
     pub fn timeout(mut self, input: i32) -> Self {
         self.timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
-    /// <p>The maximum value for timeout for batch jobs is 7 days or 10080 minutes. The default is 2880 minutes (48 hours) for batch jobs.</p>
-    /// <p>Any existing Glue jobs that have a greater timeout value are defaulted to 7 days. For instance you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p>
     /// <p>Streaming jobs must have timeout values less than 7 days or 10080 minutes. When the value is left blank, the job will be restarted after 7 days based if you have not setup a maintenance window. If you have setup maintenance window, it will be restarted during the maintenance window after 7 days.</p>
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
     }
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
-    /// <p>The maximum value for timeout for batch jobs is 7 days or 10080 minutes. The default is 2880 minutes (48 hours) for batch jobs.</p>
-    /// <p>Any existing Glue jobs that have a greater timeout value are defaulted to 7 days. For instance you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p>
     /// <p>Streaming jobs must have timeout values less than 7 days or 10080 minutes. When the value is left blank, the job will be restarted after 7 days based if you have not setup a maintenance window. If you have setup maintenance window, it will be restarted during the maintenance window after 7 days.</p>
     pub fn get_timeout(&self) -> &::std::option::Option<i32> {
         &self.timeout

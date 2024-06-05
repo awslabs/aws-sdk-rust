@@ -3,7 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectionOutput {
+    /// <p>The status of the connection creation request. The request can take some time for certain authentication types, for example when creating an OAuth connection with token exchange over VPC.</p>
+    pub create_connection_status: ::std::option::Option<crate::types::ConnectionStatus>,
     _request_id: Option<String>,
+}
+impl CreateConnectionOutput {
+    /// <p>The status of the connection creation request. The request can take some time for certain authentication types, for example when creating an OAuth connection with token exchange over VPC.</p>
+    pub fn create_connection_status(&self) -> ::std::option::Option<&crate::types::ConnectionStatus> {
+        self.create_connection_status.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateConnectionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +29,24 @@ impl CreateConnectionOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectionOutputBuilder {
+    pub(crate) create_connection_status: ::std::option::Option<crate::types::ConnectionStatus>,
     _request_id: Option<String>,
 }
 impl CreateConnectionOutputBuilder {
+    /// <p>The status of the connection creation request. The request can take some time for certain authentication types, for example when creating an OAuth connection with token exchange over VPC.</p>
+    pub fn create_connection_status(mut self, input: crate::types::ConnectionStatus) -> Self {
+        self.create_connection_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the connection creation request. The request can take some time for certain authentication types, for example when creating an OAuth connection with token exchange over VPC.</p>
+    pub fn set_create_connection_status(mut self, input: ::std::option::Option<crate::types::ConnectionStatus>) -> Self {
+        self.create_connection_status = input;
+        self
+    }
+    /// <p>The status of the connection creation request. The request can take some time for certain authentication types, for example when creating an OAuth connection with token exchange over VPC.</p>
+    pub fn get_create_connection_status(&self) -> &::std::option::Option<crate::types::ConnectionStatus> {
+        &self.create_connection_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +59,7 @@ impl CreateConnectionOutputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectionOutput`](crate::operation::create_connection::CreateConnectionOutput).
     pub fn build(self) -> crate::operation::create_connection::CreateConnectionOutput {
         crate::operation::create_connection::CreateConnectionOutput {
+            create_connection_status: self.create_connection_status,
             _request_id: self._request_id,
         }
     }

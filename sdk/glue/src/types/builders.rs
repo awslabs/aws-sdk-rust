@@ -297,6 +297,14 @@ pub use crate::types::_s3_target::S3TargetBuilder;
 
 pub use crate::types::_connection_input::ConnectionInputBuilder;
 
+pub use crate::types::_authentication_configuration_input::AuthenticationConfigurationInputBuilder;
+
+pub use crate::types::_o_auth2_properties_input::OAuth2PropertiesInputBuilder;
+
+pub use crate::types::_authorization_code_properties::AuthorizationCodePropertiesBuilder;
+
+pub use crate::types::_o_auth2_client_application::OAuth2ClientApplicationBuilder;
+
 pub use crate::types::_physical_connection_requirements::PhysicalConnectionRequirementsBuilder;
 
 pub use crate::types::_column_statistics_error::ColumnStatisticsErrorBuilder;
@@ -548,6 +556,10 @@ pub use crate::types::_schedule::ScheduleBuilder;
 pub use crate::types::_crawler_metrics::CrawlerMetricsBuilder;
 
 pub use crate::types::_connection::ConnectionBuilder;
+
+pub use crate::types::_authentication_configuration::AuthenticationConfigurationBuilder;
+
+pub use crate::types::_o_auth2_properties::OAuth2PropertiesBuilder;
 
 pub use crate::types::_get_connections_filter::GetConnectionsFilterBuilder;
 

@@ -12,10 +12,15 @@
 /// ```text
 /// # let federationsourceerrorcode = unimplemented!();
 /// match federationsourceerrorcode {
+///     FederationSourceErrorCode::AccessDeniedException => { /* ... */ },
+///     FederationSourceErrorCode::EntityNotFoundException => { /* ... */ },
 ///     FederationSourceErrorCode::InternalServiceException => { /* ... */ },
+///     FederationSourceErrorCode::InvalidCredentialsException => { /* ... */ },
+///     FederationSourceErrorCode::InvalidInputException => { /* ... */ },
 ///     FederationSourceErrorCode::InvalidResponseException => { /* ... */ },
 ///     FederationSourceErrorCode::OperationNotSupportedException => { /* ... */ },
 ///     FederationSourceErrorCode::OperationTimeoutException => { /* ... */ },
+///     FederationSourceErrorCode::PartialFailureException => { /* ... */ },
 ///     FederationSourceErrorCode::ThrottlingException => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,13 +50,23 @@
 )]
 pub enum FederationSourceErrorCode {
     #[allow(missing_docs)] // documentation missing in model
+    AccessDeniedException,
+    #[allow(missing_docs)] // documentation missing in model
+    EntityNotFoundException,
+    #[allow(missing_docs)] // documentation missing in model
     InternalServiceException,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidCredentialsException,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidInputException,
     #[allow(missing_docs)] // documentation missing in model
     InvalidResponseException,
     #[allow(missing_docs)] // documentation missing in model
     OperationNotSupportedException,
     #[allow(missing_docs)] // documentation missing in model
     OperationTimeoutException,
+    #[allow(missing_docs)] // documentation missing in model
+    PartialFailureException,
     #[allow(missing_docs)] // documentation missing in model
     ThrottlingException,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -61,10 +76,15 @@ pub enum FederationSourceErrorCode {
 impl ::std::convert::From<&str> for FederationSourceErrorCode {
     fn from(s: &str) -> Self {
         match s {
+            "AccessDeniedException" => FederationSourceErrorCode::AccessDeniedException,
+            "EntityNotFoundException" => FederationSourceErrorCode::EntityNotFoundException,
             "InternalServiceException" => FederationSourceErrorCode::InternalServiceException,
+            "InvalidCredentialsException" => FederationSourceErrorCode::InvalidCredentialsException,
+            "InvalidInputException" => FederationSourceErrorCode::InvalidInputException,
             "InvalidResponseException" => FederationSourceErrorCode::InvalidResponseException,
             "OperationNotSupportedException" => FederationSourceErrorCode::OperationNotSupportedException,
             "OperationTimeoutException" => FederationSourceErrorCode::OperationTimeoutException,
+            "PartialFailureException" => FederationSourceErrorCode::PartialFailureException,
             "ThrottlingException" => FederationSourceErrorCode::ThrottlingException,
             other => FederationSourceErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -81,10 +101,15 @@ impl FederationSourceErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            FederationSourceErrorCode::AccessDeniedException => "AccessDeniedException",
+            FederationSourceErrorCode::EntityNotFoundException => "EntityNotFoundException",
             FederationSourceErrorCode::InternalServiceException => "InternalServiceException",
+            FederationSourceErrorCode::InvalidCredentialsException => "InvalidCredentialsException",
+            FederationSourceErrorCode::InvalidInputException => "InvalidInputException",
             FederationSourceErrorCode::InvalidResponseException => "InvalidResponseException",
             FederationSourceErrorCode::OperationNotSupportedException => "OperationNotSupportedException",
             FederationSourceErrorCode::OperationTimeoutException => "OperationTimeoutException",
+            FederationSourceErrorCode::PartialFailureException => "PartialFailureException",
             FederationSourceErrorCode::ThrottlingException => "ThrottlingException",
             FederationSourceErrorCode::Unknown(value) => value.as_str(),
         }
@@ -92,10 +117,15 @@ impl FederationSourceErrorCode {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AccessDeniedException",
+            "EntityNotFoundException",
             "InternalServiceException",
+            "InvalidCredentialsException",
+            "InvalidInputException",
             "InvalidResponseException",
             "OperationNotSupportedException",
             "OperationTimeoutException",
+            "PartialFailureException",
             "ThrottlingException",
         ]
     }
@@ -120,10 +150,15 @@ impl FederationSourceErrorCode {
 impl ::std::fmt::Display for FederationSourceErrorCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            FederationSourceErrorCode::AccessDeniedException => write!(f, "AccessDeniedException"),
+            FederationSourceErrorCode::EntityNotFoundException => write!(f, "EntityNotFoundException"),
             FederationSourceErrorCode::InternalServiceException => write!(f, "InternalServiceException"),
+            FederationSourceErrorCode::InvalidCredentialsException => write!(f, "InvalidCredentialsException"),
+            FederationSourceErrorCode::InvalidInputException => write!(f, "InvalidInputException"),
             FederationSourceErrorCode::InvalidResponseException => write!(f, "InvalidResponseException"),
             FederationSourceErrorCode::OperationNotSupportedException => write!(f, "OperationNotSupportedException"),
             FederationSourceErrorCode::OperationTimeoutException => write!(f, "OperationTimeoutException"),
+            FederationSourceErrorCode::PartialFailureException => write!(f, "PartialFailureException"),
             FederationSourceErrorCode::ThrottlingException => write!(f, "ThrottlingException"),
             FederationSourceErrorCode::Unknown(value) => write!(f, "{}", value),
         }

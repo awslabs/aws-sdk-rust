@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionInput {
-    /// <p>The name of the connection. Connection will not function as expected without a name.</p>
+    /// <p>The name of the connection.</p>
     pub name: ::std::string::String,
     /// <p>The description of the connection.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -48,6 +48,12 @@ pub struct ConnectionInput {
     /// <p>Required: All of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p></li>
     /// </ul></li>
     /// <li>
+    /// <p><code>SALESFORCE</code> - Designates a connection to Salesforce using OAuth authencation.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Requires the <code>AuthenticationConfiguration</code> member to be configured.</p></li>
+    /// </ul></li>
+    /// <li>
     /// <p><code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
     /// <p><code>NETWORK</code> Connections do not require ConnectionParameters. Instead, provide a PhysicalConnectionRequirements.</p></li>
     /// <li>
@@ -70,11 +76,15 @@ pub struct ConnectionInput {
     pub match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>These key-value pairs define parameters for the connection.</p>
     pub connection_properties: ::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>,
-    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
+    /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
     pub physical_connection_requirements: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
+    /// <p>The authentication properties of the connection. Used for a Salesforce connection.</p>
+    pub authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfigurationInput>,
+    /// <p>A flag to validate the credentials during create connection. Used for a Salesforce connection. Default is true.</p>
+    pub validate_credentials: bool,
 }
 impl ConnectionInput {
-    /// <p>The name of the connection. Connection will not function as expected without a name.</p>
+    /// <p>The name of the connection.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -123,6 +133,12 @@ impl ConnectionInput {
     /// <p>Required: All of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p></li>
     /// </ul></li>
     /// <li>
+    /// <p><code>SALESFORCE</code> - Designates a connection to Salesforce using OAuth authencation.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Requires the <code>AuthenticationConfiguration</code> member to be configured.</p></li>
+    /// </ul></li>
+    /// <li>
     /// <p><code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
     /// <p><code>NETWORK</code> Connections do not require ConnectionParameters. Instead, provide a PhysicalConnectionRequirements.</p></li>
     /// <li>
@@ -153,9 +169,17 @@ impl ConnectionInput {
     pub fn connection_properties(&self) -> &::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String> {
         &self.connection_properties
     }
-    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
+    /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
     pub fn physical_connection_requirements(&self) -> ::std::option::Option<&crate::types::PhysicalConnectionRequirements> {
         self.physical_connection_requirements.as_ref()
+    }
+    /// <p>The authentication properties of the connection. Used for a Salesforce connection.</p>
+    pub fn authentication_configuration(&self) -> ::std::option::Option<&crate::types::AuthenticationConfigurationInput> {
+        self.authentication_configuration.as_ref()
+    }
+    /// <p>A flag to validate the credentials during create connection. Used for a Salesforce connection. Default is true.</p>
+    pub fn validate_credentials(&self) -> bool {
+        self.validate_credentials
     }
 }
 impl ConnectionInput {
@@ -175,20 +199,22 @@ pub struct ConnectionInputBuilder {
     pub(crate) match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) connection_properties: ::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>>,
     pub(crate) physical_connection_requirements: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
+    pub(crate) authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfigurationInput>,
+    pub(crate) validate_credentials: ::std::option::Option<bool>,
 }
 impl ConnectionInputBuilder {
-    /// <p>The name of the connection. Connection will not function as expected without a name.</p>
+    /// <p>The name of the connection.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the connection. Connection will not function as expected without a name.</p>
+    /// <p>The name of the connection.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the connection. Connection will not function as expected without a name.</p>
+    /// <p>The name of the connection.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -244,6 +270,12 @@ impl ConnectionInputBuilder {
     /// <p>Required: <code>CONNECTION_URL</code>.</p></li>
     /// <li>
     /// <p>Required: All of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>SALESFORCE</code> - Designates a connection to Salesforce using OAuth authencation.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Requires the <code>AuthenticationConfiguration</code> member to be configured.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
@@ -308,6 +340,12 @@ impl ConnectionInputBuilder {
     /// <p>Required: All of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p></li>
     /// </ul></li>
     /// <li>
+    /// <p><code>SALESFORCE</code> - Designates a connection to Salesforce using OAuth authencation.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Requires the <code>AuthenticationConfiguration</code> member to be configured.</p></li>
+    /// </ul></li>
+    /// <li>
     /// <p><code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
     /// <p><code>NETWORK</code> Connections do not require ConnectionParameters. Instead, provide a PhysicalConnectionRequirements.</p></li>
     /// <li>
@@ -367,6 +405,12 @@ impl ConnectionInputBuilder {
     /// <p>Required: <code>CONNECTION_URL</code>.</p></li>
     /// <li>
     /// <p>Required: All of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>SALESFORCE</code> - Designates a connection to Salesforce using OAuth authencation.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Requires the <code>AuthenticationConfiguration</code> member to be configured.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
@@ -434,19 +478,47 @@ impl ConnectionInputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>> {
         &self.connection_properties
     }
-    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
+    /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
     pub fn physical_connection_requirements(mut self, input: crate::types::PhysicalConnectionRequirements) -> Self {
         self.physical_connection_requirements = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
+    /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
     pub fn set_physical_connection_requirements(mut self, input: ::std::option::Option<crate::types::PhysicalConnectionRequirements>) -> Self {
         self.physical_connection_requirements = input;
         self
     }
-    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
+    /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
     pub fn get_physical_connection_requirements(&self) -> &::std::option::Option<crate::types::PhysicalConnectionRequirements> {
         &self.physical_connection_requirements
+    }
+    /// <p>The authentication properties of the connection. Used for a Salesforce connection.</p>
+    pub fn authentication_configuration(mut self, input: crate::types::AuthenticationConfigurationInput) -> Self {
+        self.authentication_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The authentication properties of the connection. Used for a Salesforce connection.</p>
+    pub fn set_authentication_configuration(mut self, input: ::std::option::Option<crate::types::AuthenticationConfigurationInput>) -> Self {
+        self.authentication_configuration = input;
+        self
+    }
+    /// <p>The authentication properties of the connection. Used for a Salesforce connection.</p>
+    pub fn get_authentication_configuration(&self) -> &::std::option::Option<crate::types::AuthenticationConfigurationInput> {
+        &self.authentication_configuration
+    }
+    /// <p>A flag to validate the credentials during create connection. Used for a Salesforce connection. Default is true.</p>
+    pub fn validate_credentials(mut self, input: bool) -> Self {
+        self.validate_credentials = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A flag to validate the credentials during create connection. Used for a Salesforce connection. Default is true.</p>
+    pub fn set_validate_credentials(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.validate_credentials = input;
+        self
+    }
+    /// <p>A flag to validate the credentials during create connection. Used for a Salesforce connection. Default is true.</p>
+    pub fn get_validate_credentials(&self) -> &::std::option::Option<bool> {
+        &self.validate_credentials
     }
     /// Consumes the builder and constructs a [`ConnectionInput`](crate::types::ConnectionInput).
     /// This method will fail if any of the following fields are not set:
@@ -476,6 +548,8 @@ impl ConnectionInputBuilder {
                 )
             })?,
             physical_connection_requirements: self.physical_connection_requirements,
+            authentication_configuration: self.authentication_configuration,
+            validate_credentials: self.validate_credentials.unwrap_or_default(),
         })
     }
 }

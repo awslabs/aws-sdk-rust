@@ -150,6 +150,25 @@ impl UpdateCustomRoutingAcceleratorFluentBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         self.inner.get_ip_address_type()
     }
+    ///
+    /// Appends an item to `IpAddresses`.
+    ///
+    /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
+    ///
+    /// <p>The IP addresses for an accelerator.</p>
+    pub fn ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ip_addresses(input.into());
+        self
+    }
+    /// <p>The IP addresses for an accelerator.</p>
+    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_ip_addresses(input);
+        self
+    }
+    /// <p>The IP addresses for an accelerator.</p>
+    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ip_addresses()
+    }
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub fn enabled(mut self, input: bool) -> Self {

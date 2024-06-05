@@ -13,7 +13,7 @@ pub struct ViewRepresentation {
     /// <p>The expanded SQL for the view. This SQL is used by engines while processing a query on a view. Engines may perform operations during view creation to transform <code>ViewOriginalText</code> to <code>ViewExpandedText</code>. For example:</p>
     /// <ul>
     /// <li>
-    /// <p>Fully qualify identifiers: <code>SELECT * from table1 → SELECT * from db1.table1</code></p></li>
+    /// <p>Fully qualified identifiers: <code>SELECT * from table1 -&gt; SELECT * from db1.table1</code></p></li>
     /// </ul>
     pub view_expanded_text: ::std::option::Option<::std::string::String>,
     /// <p>Dialects marked as stale are no longer valid and must be updated before they can be queried in their respective query engines.</p>
@@ -35,7 +35,7 @@ impl ViewRepresentation {
     /// <p>The expanded SQL for the view. This SQL is used by engines while processing a query on a view. Engines may perform operations during view creation to transform <code>ViewOriginalText</code> to <code>ViewExpandedText</code>. For example:</p>
     /// <ul>
     /// <li>
-    /// <p>Fully qualify identifiers: <code>SELECT * from table1 → SELECT * from db1.table1</code></p></li>
+    /// <p>Fully qualified identifiers: <code>SELECT * from table1 -&gt; SELECT * from db1.table1</code></p></li>
     /// </ul>
     pub fn view_expanded_text(&self) -> ::std::option::Option<&str> {
         self.view_expanded_text.as_deref()
@@ -108,7 +108,7 @@ impl ViewRepresentationBuilder {
     /// <p>The expanded SQL for the view. This SQL is used by engines while processing a query on a view. Engines may perform operations during view creation to transform <code>ViewOriginalText</code> to <code>ViewExpandedText</code>. For example:</p>
     /// <ul>
     /// <li>
-    /// <p>Fully qualify identifiers: <code>SELECT * from table1 → SELECT * from db1.table1</code></p></li>
+    /// <p>Fully qualified identifiers: <code>SELECT * from table1 -&gt; SELECT * from db1.table1</code></p></li>
     /// </ul>
     pub fn view_expanded_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.view_expanded_text = ::std::option::Option::Some(input.into());
@@ -117,7 +117,7 @@ impl ViewRepresentationBuilder {
     /// <p>The expanded SQL for the view. This SQL is used by engines while processing a query on a view. Engines may perform operations during view creation to transform <code>ViewOriginalText</code> to <code>ViewExpandedText</code>. For example:</p>
     /// <ul>
     /// <li>
-    /// <p>Fully qualify identifiers: <code>SELECT * from table1 → SELECT * from db1.table1</code></p></li>
+    /// <p>Fully qualified identifiers: <code>SELECT * from table1 -&gt; SELECT * from db1.table1</code></p></li>
     /// </ul>
     pub fn set_view_expanded_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.view_expanded_text = input;
@@ -126,7 +126,7 @@ impl ViewRepresentationBuilder {
     /// <p>The expanded SQL for the view. This SQL is used by engines while processing a query on a view. Engines may perform operations during view creation to transform <code>ViewOriginalText</code> to <code>ViewExpandedText</code>. For example:</p>
     /// <ul>
     /// <li>
-    /// <p>Fully qualify identifiers: <code>SELECT * from table1 → SELECT * from db1.table1</code></p></li>
+    /// <p>Fully qualified identifiers: <code>SELECT * from table1 -&gt; SELECT * from db1.table1</code></p></li>
     /// </ul>
     pub fn get_view_expanded_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.view_expanded_text

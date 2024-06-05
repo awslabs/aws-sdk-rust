@@ -37,5 +37,14 @@ pub fn ser_connection_input(
         crate::protocol_serde::shape_physical_connection_requirements::ser_physical_connection_requirements(&mut object_9, var_8)?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.authentication_configuration {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("AuthenticationConfiguration").start_object();
+        crate::protocol_serde::shape_authentication_configuration_input::ser_authentication_configuration_input(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if input.validate_credentials {
+        object.key("ValidateCredentials").boolean(input.validate_credentials);
+    }
     Ok(())
 }

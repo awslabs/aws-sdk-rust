@@ -51,6 +51,7 @@
 ///     ConnectionPropertyKey::KafkaSslEnabled => { /* ... */ },
 ///     ConnectionPropertyKey::Password => { /* ... */ },
 ///     ConnectionPropertyKey::Port => { /* ... */ },
+///     ConnectionPropertyKey::RoleArn => { /* ... */ },
 ///     ConnectionPropertyKey::SecretId => { /* ... */ },
 ///     ConnectionPropertyKey::SkipCustomJdbcCertValidation => { /* ... */ },
 ///     ConnectionPropertyKey::UserName => { /* ... */ },
@@ -160,6 +161,8 @@ pub enum ConnectionPropertyKey {
     #[allow(missing_docs)] // documentation missing in model
     Port,
     #[allow(missing_docs)] // documentation missing in model
+    RoleArn,
+    #[allow(missing_docs)] // documentation missing in model
     SecretId,
     #[allow(missing_docs)] // documentation missing in model
     SkipCustomJdbcCertValidation,
@@ -211,6 +214,7 @@ impl ::std::convert::From<&str> for ConnectionPropertyKey {
             "KAFKA_SSL_ENABLED" => ConnectionPropertyKey::KafkaSslEnabled,
             "PASSWORD" => ConnectionPropertyKey::Password,
             "PORT" => ConnectionPropertyKey::Port,
+            "ROLE_ARN" => ConnectionPropertyKey::RoleArn,
             "SECRET_ID" => ConnectionPropertyKey::SecretId,
             "SKIP_CUSTOM_JDBC_CERT_VALIDATION" => ConnectionPropertyKey::SkipCustomJdbcCertValidation,
             "USERNAME" => ConnectionPropertyKey::UserName,
@@ -268,6 +272,7 @@ impl ConnectionPropertyKey {
             ConnectionPropertyKey::KafkaSslEnabled => "KAFKA_SSL_ENABLED",
             ConnectionPropertyKey::Password => "PASSWORD",
             ConnectionPropertyKey::Port => "PORT",
+            ConnectionPropertyKey::RoleArn => "ROLE_ARN",
             ConnectionPropertyKey::SecretId => "SECRET_ID",
             ConnectionPropertyKey::SkipCustomJdbcCertValidation => "SKIP_CUSTOM_JDBC_CERT_VALIDATION",
             ConnectionPropertyKey::UserName => "USERNAME",
@@ -316,6 +321,7 @@ impl ConnectionPropertyKey {
             "KAFKA_SSL_ENABLED",
             "PASSWORD",
             "PORT",
+            "ROLE_ARN",
             "SECRET_ID",
             "SKIP_CUSTOM_JDBC_CERT_VALIDATION",
             "USERNAME",
@@ -381,6 +387,7 @@ impl ::std::fmt::Display for ConnectionPropertyKey {
             ConnectionPropertyKey::KafkaSslEnabled => write!(f, "KAFKA_SSL_ENABLED"),
             ConnectionPropertyKey::Password => write!(f, "PASSWORD"),
             ConnectionPropertyKey::Port => write!(f, "PORT"),
+            ConnectionPropertyKey::RoleArn => write!(f, "ROLE_ARN"),
             ConnectionPropertyKey::SecretId => write!(f, "SECRET_ID"),
             ConnectionPropertyKey::SkipCustomJdbcCertValidation => write!(f, "SKIP_CUSTOM_JDBC_CERT_VALIDATION"),
             ConnectionPropertyKey::UserName => write!(f, "USERNAME"),

@@ -387,6 +387,18 @@ pub use crate::types::_s3_target::S3Target;
 
 pub use crate::types::_connection_input::ConnectionInput;
 
+pub use crate::types::_authentication_configuration_input::AuthenticationConfigurationInput;
+
+pub use crate::types::_o_auth2_properties_input::OAuth2PropertiesInput;
+
+pub use crate::types::_authorization_code_properties::AuthorizationCodeProperties;
+
+pub use crate::types::_o_auth2_client_application::OAuth2ClientApplication;
+
+pub use crate::types::_o_auth2_grant_type::OAuth2GrantType;
+
+pub use crate::types::_authentication_type::AuthenticationType;
+
 pub use crate::types::_physical_connection_requirements::PhysicalConnectionRequirements;
 
 pub use crate::types::_connection_property_key::ConnectionPropertyKey;
@@ -727,6 +739,12 @@ pub use crate::types::_crawler_metrics::CrawlerMetrics;
 
 pub use crate::types::_connection::Connection;
 
+pub use crate::types::_authentication_configuration::AuthenticationConfiguration;
+
+pub use crate::types::_o_auth2_properties::OAuth2Properties;
+
+pub use crate::types::_connection_status::ConnectionStatus;
+
 pub use crate::types::_get_connections_filter::GetConnectionsFilter;
 
 pub use crate::types::_column_statistics_task_run::ColumnStatisticsTaskRun;
@@ -822,6 +840,14 @@ mod _apply_mapping;
 mod _athena_connector_source;
 
 mod _audit_context;
+
+mod _authentication_configuration;
+
+mod _authentication_configuration_input;
+
+mod _authentication_type;
+
+mod _authorization_code_properties;
 
 mod _backfill_error;
 
@@ -928,6 +954,8 @@ mod _connection_input;
 mod _connection_password_encryption;
 
 mod _connection_property_key;
+
+mod _connection_status;
 
 mod _connection_type;
 
@@ -1266,6 +1294,14 @@ mod _notification_property;
 mod _null_check_box_list;
 
 mod _null_value_field;
+
+mod _o_auth2_client_application;
+
+mod _o_auth2_grant_type;
+
+mod _o_auth2_properties;
+
+mod _o_auth2_properties_input;
 
 mod _open_table_format_input;
 
