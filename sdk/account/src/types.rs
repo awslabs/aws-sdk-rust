@@ -7,6 +7,8 @@ pub use crate::types::_region::Region;
 
 pub use crate::types::_region_opt_status::RegionOptStatus;
 
+pub use crate::types::_primary_email_update_status::PrimaryEmailUpdateStatus;
+
 pub use crate::types::_contact_information::ContactInformation;
 
 pub use crate::types::_alternate_contact_type::AlternateContactType;
@@ -18,6 +20,8 @@ mod _alternate_contact;
 mod _alternate_contact_type;
 
 mod _contact_information;
+
+mod _primary_email_update_status;
 
 mod _region;
 

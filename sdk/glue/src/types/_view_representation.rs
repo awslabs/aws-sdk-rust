@@ -16,6 +16,8 @@ pub struct ViewRepresentation {
     /// <p>Fully qualified identifiers: <code>SELECT * from table1 -&gt; SELECT * from db1.table1</code></p></li>
     /// </ul>
     pub view_expanded_text: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the connection to be used to validate the specific representation of the view.</p>
+    pub validation_connection: ::std::option::Option<::std::string::String>,
     /// <p>Dialects marked as stale are no longer valid and must be updated before they can be queried in their respective query engines.</p>
     pub is_stale: ::std::option::Option<bool>,
 }
@@ -40,6 +42,10 @@ impl ViewRepresentation {
     pub fn view_expanded_text(&self) -> ::std::option::Option<&str> {
         self.view_expanded_text.as_deref()
     }
+    /// <p>The name of the connection to be used to validate the specific representation of the view.</p>
+    pub fn validation_connection(&self) -> ::std::option::Option<&str> {
+        self.validation_connection.as_deref()
+    }
     /// <p>Dialects marked as stale are no longer valid and must be updated before they can be queried in their respective query engines.</p>
     pub fn is_stale(&self) -> ::std::option::Option<bool> {
         self.is_stale
@@ -60,6 +66,7 @@ pub struct ViewRepresentationBuilder {
     pub(crate) dialect_version: ::std::option::Option<::std::string::String>,
     pub(crate) view_original_text: ::std::option::Option<::std::string::String>,
     pub(crate) view_expanded_text: ::std::option::Option<::std::string::String>,
+    pub(crate) validation_connection: ::std::option::Option<::std::string::String>,
     pub(crate) is_stale: ::std::option::Option<bool>,
 }
 impl ViewRepresentationBuilder {
@@ -131,6 +138,20 @@ impl ViewRepresentationBuilder {
     pub fn get_view_expanded_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.view_expanded_text
     }
+    /// <p>The name of the connection to be used to validate the specific representation of the view.</p>
+    pub fn validation_connection(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.validation_connection = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the connection to be used to validate the specific representation of the view.</p>
+    pub fn set_validation_connection(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.validation_connection = input;
+        self
+    }
+    /// <p>The name of the connection to be used to validate the specific representation of the view.</p>
+    pub fn get_validation_connection(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_connection
+    }
     /// <p>Dialects marked as stale are no longer valid and must be updated before they can be queried in their respective query engines.</p>
     pub fn is_stale(mut self, input: bool) -> Self {
         self.is_stale = ::std::option::Option::Some(input);
@@ -152,6 +173,7 @@ impl ViewRepresentationBuilder {
             dialect_version: self.dialect_version,
             view_original_text: self.view_original_text,
             view_expanded_text: self.view_expanded_text,
+            validation_connection: self.validation_connection,
             is_stale: self.is_stale,
         }
     }

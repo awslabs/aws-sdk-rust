@@ -30,5 +30,11 @@ pub fn ser_update_maintenance_start_time_input_input(
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
+    if let Some(var_6) = &input.software_update_preferences {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("SoftwareUpdatePreferences").start_object();
+        crate::protocol_serde::shape_software_update_preferences::ser_software_update_preferences(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }

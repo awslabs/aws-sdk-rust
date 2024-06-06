@@ -34,10 +34,10 @@ pub struct CreateFileSystemLustreConfiguration {
     pub imported_file_chunk_size: ::std::option::Option<i32>,
     /// <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
     /// <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for throughput-focused workloads that aren’t latency-sensitive. <code>PERSISTENT_1</code> supports encryption of data in transit, and is available in all Amazon Web Services Regions in which FSx for Lustre is available.</p>
-    /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p><note>
+    /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). You can optionally specify a metadata configuration mode for <code>PERSISTENT_2</code> which supports increasing metadata performance. <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p><note>
     /// <p>If you choose <code>PERSISTENT_2</code>, and you set <code>FileSystemTypeVersion</code> to <code>2.10</code>, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
-    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
+    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     /// <p>(Default = <code>SCRATCH_1</code>)</p>
     pub deployment_type: ::std::option::Option<crate::types::LustreDeploymentType>,
     /// <p>(Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use this parameter to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
@@ -90,6 +90,8 @@ pub struct CreateFileSystemLustreConfiguration {
     pub log_configuration: ::std::option::Option<crate::types::LustreLogCreateConfiguration>,
     /// <p>The Lustre root squash configuration used when creating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
     pub root_squash_configuration: ::std::option::Option<crate::types::LustreRootSquashConfiguration>,
+    /// <p>The Lustre metadata performance configuration for the creation of an FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p>
+    pub metadata_configuration: ::std::option::Option<crate::types::CreateFileSystemLustreMetadataConfiguration>,
 }
 impl CreateFileSystemLustreConfiguration {
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -118,10 +120,10 @@ impl CreateFileSystemLustreConfiguration {
     }
     /// <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
     /// <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for throughput-focused workloads that aren’t latency-sensitive. <code>PERSISTENT_1</code> supports encryption of data in transit, and is available in all Amazon Web Services Regions in which FSx for Lustre is available.</p>
-    /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p><note>
+    /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). You can optionally specify a metadata configuration mode for <code>PERSISTENT_2</code> which supports increasing metadata performance. <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p><note>
     /// <p>If you choose <code>PERSISTENT_2</code>, and you set <code>FileSystemTypeVersion</code> to <code>2.10</code>, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
-    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
+    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     /// <p>(Default = <code>SCRATCH_1</code>)</p>
     pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::LustreDeploymentType> {
         self.deployment_type.as_ref()
@@ -194,6 +196,10 @@ impl CreateFileSystemLustreConfiguration {
     pub fn root_squash_configuration(&self) -> ::std::option::Option<&crate::types::LustreRootSquashConfiguration> {
         self.root_squash_configuration.as_ref()
     }
+    /// <p>The Lustre metadata performance configuration for the creation of an FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p>
+    pub fn metadata_configuration(&self) -> ::std::option::Option<&crate::types::CreateFileSystemLustreMetadataConfiguration> {
+        self.metadata_configuration.as_ref()
+    }
 }
 impl CreateFileSystemLustreConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateFileSystemLustreConfiguration`](crate::types::CreateFileSystemLustreConfiguration).
@@ -220,6 +226,7 @@ pub struct CreateFileSystemLustreConfigurationBuilder {
     pub(crate) data_compression_type: ::std::option::Option<crate::types::DataCompressionType>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::LustreLogCreateConfiguration>,
     pub(crate) root_squash_configuration: ::std::option::Option<crate::types::LustreRootSquashConfiguration>,
+    pub(crate) metadata_configuration: ::std::option::Option<crate::types::CreateFileSystemLustreMetadataConfiguration>,
 }
 impl CreateFileSystemLustreConfigurationBuilder {
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -304,10 +311,10 @@ impl CreateFileSystemLustreConfigurationBuilder {
     }
     /// <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
     /// <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for throughput-focused workloads that aren’t latency-sensitive. <code>PERSISTENT_1</code> supports encryption of data in transit, and is available in all Amazon Web Services Regions in which FSx for Lustre is available.</p>
-    /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p><note>
+    /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). You can optionally specify a metadata configuration mode for <code>PERSISTENT_2</code> which supports increasing metadata performance. <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p><note>
     /// <p>If you choose <code>PERSISTENT_2</code>, and you set <code>FileSystemTypeVersion</code> to <code>2.10</code>, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
-    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
+    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     /// <p>(Default = <code>SCRATCH_1</code>)</p>
     pub fn deployment_type(mut self, input: crate::types::LustreDeploymentType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
@@ -315,10 +322,10 @@ impl CreateFileSystemLustreConfigurationBuilder {
     }
     /// <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
     /// <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for throughput-focused workloads that aren’t latency-sensitive. <code>PERSISTENT_1</code> supports encryption of data in transit, and is available in all Amazon Web Services Regions in which FSx for Lustre is available.</p>
-    /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p><note>
+    /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). You can optionally specify a metadata configuration mode for <code>PERSISTENT_2</code> which supports increasing metadata performance. <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p><note>
     /// <p>If you choose <code>PERSISTENT_2</code>, and you set <code>FileSystemTypeVersion</code> to <code>2.10</code>, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
-    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
+    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     /// <p>(Default = <code>SCRATCH_1</code>)</p>
     pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::LustreDeploymentType>) -> Self {
         self.deployment_type = input;
@@ -326,10 +333,10 @@ impl CreateFileSystemLustreConfigurationBuilder {
     }
     /// <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
     /// <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for throughput-focused workloads that aren’t latency-sensitive. <code>PERSISTENT_1</code> supports encryption of data in transit, and is available in all Amazon Web Services Regions in which FSx for Lustre is available.</p>
-    /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p><note>
+    /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). You can optionally specify a metadata configuration mode for <code>PERSISTENT_2</code> which supports increasing metadata performance. <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p><note>
     /// <p>If you choose <code>PERSISTENT_2</code>, and you set <code>FileSystemTypeVersion</code> to <code>2.10</code>, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
-    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
+    /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     /// <p>(Default = <code>SCRATCH_1</code>)</p>
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::LustreDeploymentType> {
         &self.deployment_type
@@ -556,6 +563,20 @@ impl CreateFileSystemLustreConfigurationBuilder {
     pub fn get_root_squash_configuration(&self) -> &::std::option::Option<crate::types::LustreRootSquashConfiguration> {
         &self.root_squash_configuration
     }
+    /// <p>The Lustre metadata performance configuration for the creation of an FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p>
+    pub fn metadata_configuration(mut self, input: crate::types::CreateFileSystemLustreMetadataConfiguration) -> Self {
+        self.metadata_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Lustre metadata performance configuration for the creation of an FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p>
+    pub fn set_metadata_configuration(mut self, input: ::std::option::Option<crate::types::CreateFileSystemLustreMetadataConfiguration>) -> Self {
+        self.metadata_configuration = input;
+        self
+    }
+    /// <p>The Lustre metadata performance configuration for the creation of an FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p>
+    pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemLustreMetadataConfiguration> {
+        &self.metadata_configuration
+    }
     /// Consumes the builder and constructs a [`CreateFileSystemLustreConfiguration`](crate::types::CreateFileSystemLustreConfiguration).
     pub fn build(self) -> crate::types::CreateFileSystemLustreConfiguration {
         crate::types::CreateFileSystemLustreConfiguration {
@@ -573,6 +594,7 @@ impl CreateFileSystemLustreConfigurationBuilder {
             data_compression_type: self.data_compression_type,
             log_configuration: self.log_configuration,
             root_squash_configuration: self.root_squash_configuration,
+            metadata_configuration: self.metadata_configuration,
         }
     }
 }

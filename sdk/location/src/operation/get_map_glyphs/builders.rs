@@ -134,7 +134,7 @@ impl GetMapGlyphsFluentBuilder {
     /// <li>
     /// <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code></p></li>
     /// <li>
-    /// <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> | <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code></p></li>
+    /// <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code></p></li>
     /// </ul>
     /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles:</p>
     /// <ul>
@@ -171,7 +171,7 @@ impl GetMapGlyphsFluentBuilder {
     /// <li>
     /// <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code></p></li>
     /// <li>
-    /// <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> | <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code></p></li>
+    /// <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code></p></li>
     /// </ul>
     /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles:</p>
     /// <ul>
@@ -208,7 +208,7 @@ impl GetMapGlyphsFluentBuilder {
     /// <li>
     /// <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code></p></li>
     /// <li>
-    /// <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> | <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code></p></li>
+    /// <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code></p></li>
     /// </ul>
     /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles:</p>
     /// <ul>

@@ -69,6 +69,11 @@ where
                                 crate::protocol_serde::shape_cloud_watch_logging_options::de_cloud_watch_logging_options(tokens)?,
                             );
                         }
+                        "SecretsManagerConfiguration" => {
+                            builder = builder.set_secrets_manager_configuration(
+                                crate::protocol_serde::shape_secrets_manager_configuration::de_secrets_manager_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

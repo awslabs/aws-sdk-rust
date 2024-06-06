@@ -47,6 +47,8 @@ pub struct TableInput {
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
     pub target_table: ::std::option::Option<crate::types::TableIdentifier>,
+    /// <p>A structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query.</p>
+    pub view_definition: ::std::option::Option<crate::types::ViewDefinitionInput>,
 }
 impl TableInput {
     /// <p>The table name. For Hive compatibility, this is folded to lowercase when it is stored.</p>
@@ -121,6 +123,10 @@ impl TableInput {
     pub fn target_table(&self) -> ::std::option::Option<&crate::types::TableIdentifier> {
         self.target_table.as_ref()
     }
+    /// <p>A structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query.</p>
+    pub fn view_definition(&self) -> ::std::option::Option<&crate::types::ViewDefinitionInput> {
+        self.view_definition.as_ref()
+    }
 }
 impl TableInput {
     /// Creates a new builder-style object to manufacture [`TableInput`](crate::types::TableInput).
@@ -146,6 +152,7 @@ pub struct TableInputBuilder {
     pub(crate) table_type: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) target_table: ::std::option::Option<crate::types::TableIdentifier>,
+    pub(crate) view_definition: ::std::option::Option<crate::types::ViewDefinitionInput>,
 }
 impl TableInputBuilder {
     /// <p>The table name. For Hive compatibility, this is folded to lowercase when it is stored.</p>
@@ -394,6 +401,20 @@ impl TableInputBuilder {
     pub fn get_target_table(&self) -> &::std::option::Option<crate::types::TableIdentifier> {
         &self.target_table
     }
+    /// <p>A structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query.</p>
+    pub fn view_definition(mut self, input: crate::types::ViewDefinitionInput) -> Self {
+        self.view_definition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query.</p>
+    pub fn set_view_definition(mut self, input: ::std::option::Option<crate::types::ViewDefinitionInput>) -> Self {
+        self.view_definition = input;
+        self
+    }
+    /// <p>A structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query.</p>
+    pub fn get_view_definition(&self) -> &::std::option::Option<crate::types::ViewDefinitionInput> {
+        &self.view_definition
+    }
     /// Consumes the builder and constructs a [`TableInput`](crate::types::TableInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::TableInputBuilder::name)
@@ -417,6 +438,7 @@ impl TableInputBuilder {
             table_type: self.table_type,
             parameters: self.parameters,
             target_table: self.target_table,
+            view_definition: self.view_definition,
         })
     }
 }

@@ -144,6 +144,11 @@ pub(crate) fn de_describe_maintenance_start_time(
                             .transpose()?,
                     );
                 }
+                "SoftwareUpdatePreferences" => {
+                    builder = builder.set_software_update_preferences(
+                        crate::protocol_serde::shape_software_update_preferences::de_software_update_preferences(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -45,7 +45,7 @@ pub struct CreateFileSystemOntapConfiguration {
     /// <p><code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour.</p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies how many high-availability (HA) pairs of file servers will power your file system. Scale-up file systems are powered by 1 HA pair. The default value is 1. FSx for ONTAP scale-out file systems are powered by up to 12 HA pairs. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability (HA) pairs</a> in the FSx for ONTAP user guide.</p>
+    /// <p>Specifies how many high-availability (HA) pairs of file servers will power your file system. Scale-up file systems are powered by 1 HA pair. The default value is 1. FSx for ONTAP scale-out file systems are powered by up to 12 HA pairs. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability (HA) pairs</a> in the FSx for ONTAP user guide.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
@@ -138,7 +138,7 @@ impl CreateFileSystemOntapConfiguration {
     pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<&str> {
         self.weekly_maintenance_start_time.as_deref()
     }
-    /// <p>Specifies how many high-availability (HA) pairs of file servers will power your file system. Scale-up file systems are powered by 1 HA pair. The default value is 1. FSx for ONTAP scale-out file systems are powered by up to 12 HA pairs. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability (HA) pairs</a> in the FSx for ONTAP user guide.</p>
+    /// <p>Specifies how many high-availability (HA) pairs of file servers will power your file system. Scale-up file systems are powered by 1 HA pair. The default value is 1. FSx for ONTAP scale-out file systems are powered by up to 12 HA pairs. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability (HA) pairs</a> in the FSx for ONTAP user guide.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
@@ -424,7 +424,7 @@ impl CreateFileSystemOntapConfigurationBuilder {
     pub fn get_weekly_maintenance_start_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.weekly_maintenance_start_time
     }
-    /// <p>Specifies how many high-availability (HA) pairs of file servers will power your file system. Scale-up file systems are powered by 1 HA pair. The default value is 1. FSx for ONTAP scale-out file systems are powered by up to 12 HA pairs. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability (HA) pairs</a> in the FSx for ONTAP user guide.</p>
+    /// <p>Specifies how many high-availability (HA) pairs of file servers will power your file system. Scale-up file systems are powered by 1 HA pair. The default value is 1. FSx for ONTAP scale-out file systems are powered by up to 12 HA pairs. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability (HA) pairs</a> in the FSx for ONTAP user guide.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
@@ -436,7 +436,7 @@ impl CreateFileSystemOntapConfigurationBuilder {
         self.ha_pairs = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies how many high-availability (HA) pairs of file servers will power your file system. Scale-up file systems are powered by 1 HA pair. The default value is 1. FSx for ONTAP scale-out file systems are powered by up to 12 HA pairs. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability (HA) pairs</a> in the FSx for ONTAP user guide.</p>
+    /// <p>Specifies how many high-availability (HA) pairs of file servers will power your file system. Scale-up file systems are powered by 1 HA pair. The default value is 1. FSx for ONTAP scale-out file systems are powered by up to 12 HA pairs. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability (HA) pairs</a> in the FSx for ONTAP user guide.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
@@ -448,7 +448,7 @@ impl CreateFileSystemOntapConfigurationBuilder {
         self.ha_pairs = input;
         self
     }
-    /// <p>Specifies how many high-availability (HA) pairs of file servers will power your file system. Scale-up file systems are powered by 1 HA pair. The default value is 1. FSx for ONTAP scale-out file systems are powered by up to 12 HA pairs. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability (HA) pairs</a> in the FSx for ONTAP user guide.</p>
+    /// <p>Specifies how many high-availability (HA) pairs of file servers will power your file system. Scale-up file systems are powered by 1 HA pair. The default value is 1. FSx for ONTAP scale-out file systems are powered by up to 12 HA pairs. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability (HA) pairs</a> in the FSx for ONTAP user guide.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>

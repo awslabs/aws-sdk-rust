@@ -64,6 +64,46 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::accept_primary_email_update::AcceptPrimaryEmailUpdateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::accept_primary_email_update::AcceptPrimaryEmailUpdateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::accept_primary_email_update::AcceptPrimaryEmailUpdateError> for Error {
+    fn from(err: crate::operation::accept_primary_email_update::AcceptPrimaryEmailUpdateError) -> Self {
+        match err {
+            crate::operation::accept_primary_email_update::AcceptPrimaryEmailUpdateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::accept_primary_email_update::AcceptPrimaryEmailUpdateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::accept_primary_email_update::AcceptPrimaryEmailUpdateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::accept_primary_email_update::AcceptPrimaryEmailUpdateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::accept_primary_email_update::AcceptPrimaryEmailUpdateError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::accept_primary_email_update::AcceptPrimaryEmailUpdateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::accept_primary_email_update::AcceptPrimaryEmailUpdateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_alternate_contact::DeleteAlternateContactError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -220,6 +260,32 @@ impl From<crate::operation::get_contact_information::GetContactInformationError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_primary_email::GetPrimaryEmailError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_primary_email::GetPrimaryEmailError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_primary_email::GetPrimaryEmailError> for Error {
+    fn from(err: crate::operation::get_primary_email::GetPrimaryEmailError) -> Self {
+        match err {
+            crate::operation::get_primary_email::GetPrimaryEmailError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_primary_email::GetPrimaryEmailError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_primary_email::GetPrimaryEmailError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_primary_email::GetPrimaryEmailError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_primary_email::GetPrimaryEmailError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_primary_email::GetPrimaryEmailError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_region_opt_status::GetRegionOptStatusError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -331,6 +397,46 @@ impl From<crate::operation::put_contact_information::PutContactInformationError>
             }
             crate::operation::put_contact_information::PutContactInformationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_contact_information::PutContactInformationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_primary_email_update::StartPrimaryEmailUpdateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_primary_email_update::StartPrimaryEmailUpdateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_primary_email_update::StartPrimaryEmailUpdateError> for Error {
+    fn from(err: crate::operation::start_primary_email_update::StartPrimaryEmailUpdateError) -> Self {
+        match err {
+            crate::operation::start_primary_email_update::StartPrimaryEmailUpdateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_primary_email_update::StartPrimaryEmailUpdateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_primary_email_update::StartPrimaryEmailUpdateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_primary_email_update::StartPrimaryEmailUpdateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_primary_email_update::StartPrimaryEmailUpdateError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::start_primary_email_update::StartPrimaryEmailUpdateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_primary_email_update::StartPrimaryEmailUpdateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

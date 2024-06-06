@@ -7,11 +7,11 @@ pub struct SnowflakeDestinationConfiguration {
     /// <p>URL for accessing your Snowflake account. This URL must include your <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>
     pub account_url: ::std::string::String,
     /// <p>The private key used to encrypt your Snowflake client. For information, see <a href="https://docs.snowflake.com/en/user-guide/data-load-snowpipe-streaming-configuration#using-key-pair-authentication-key-rotation">Using Key Pair Authentication &amp; Key Rotation</a>.</p>
-    pub private_key: ::std::string::String,
+    pub private_key: ::std::option::Option<::std::string::String>,
     /// <p>Passphrase to decrypt the private key when the key is encrypted. For information, see <a href="https://docs.snowflake.com/en/user-guide/data-load-snowpipe-streaming-configuration#using-key-pair-authentication-key-rotation">Using Key Pair Authentication &amp; Key Rotation</a>.</p>
     pub key_passphrase: ::std::option::Option<::std::string::String>,
     /// <p>User login name for the Snowflake account.</p>
-    pub user: ::std::string::String,
+    pub user: ::std::option::Option<::std::string::String>,
     /// <p>All data in Snowflake is maintained in databases.</p>
     pub database: ::std::string::String,
     /// <p>Each database consists of one or more schemas, which are logical groupings of database objects, such as tables and views</p>
@@ -40,6 +40,8 @@ pub struct SnowflakeDestinationConfiguration {
     pub s3_backup_mode: ::std::option::Option<crate::types::SnowflakeS3BackupMode>,
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
     pub s3_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
+    /// <p>The configuration that defines how you access secrets for Snowflake.</p>
+    pub secrets_manager_configuration: ::std::option::Option<crate::types::SecretsManagerConfiguration>,
 }
 impl SnowflakeDestinationConfiguration {
     /// <p>URL for accessing your Snowflake account. This URL must include your <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>
@@ -48,18 +50,16 @@ impl SnowflakeDestinationConfiguration {
         self.account_url.deref()
     }
     /// <p>The private key used to encrypt your Snowflake client. For information, see <a href="https://docs.snowflake.com/en/user-guide/data-load-snowpipe-streaming-configuration#using-key-pair-authentication-key-rotation">Using Key Pair Authentication &amp; Key Rotation</a>.</p>
-    pub fn private_key(&self) -> &str {
-        use std::ops::Deref;
-        self.private_key.deref()
+    pub fn private_key(&self) -> ::std::option::Option<&str> {
+        self.private_key.as_deref()
     }
     /// <p>Passphrase to decrypt the private key when the key is encrypted. For information, see <a href="https://docs.snowflake.com/en/user-guide/data-load-snowpipe-streaming-configuration#using-key-pair-authentication-key-rotation">Using Key Pair Authentication &amp; Key Rotation</a>.</p>
     pub fn key_passphrase(&self) -> ::std::option::Option<&str> {
         self.key_passphrase.as_deref()
     }
     /// <p>User login name for the Snowflake account.</p>
-    pub fn user(&self) -> &str {
-        use std::ops::Deref;
-        self.user.deref()
+    pub fn user(&self) -> ::std::option::Option<&str> {
+        self.user.as_deref()
     }
     /// <p>All data in Snowflake is maintained in databases.</p>
     pub fn database(&self) -> &str {
@@ -121,6 +121,10 @@ impl SnowflakeDestinationConfiguration {
     pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::S3DestinationConfiguration> {
         self.s3_configuration.as_ref()
     }
+    /// <p>The configuration that defines how you access secrets for Snowflake.</p>
+    pub fn secrets_manager_configuration(&self) -> ::std::option::Option<&crate::types::SecretsManagerConfiguration> {
+        self.secrets_manager_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for SnowflakeDestinationConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -143,6 +147,7 @@ impl ::std::fmt::Debug for SnowflakeDestinationConfiguration {
         formatter.field("retry_options", &self.retry_options);
         formatter.field("s3_backup_mode", &self.s3_backup_mode);
         formatter.field("s3_configuration", &self.s3_configuration);
+        formatter.field("secrets_manager_configuration", &self.secrets_manager_configuration);
         formatter.finish()
     }
 }
@@ -175,6 +180,7 @@ pub struct SnowflakeDestinationConfigurationBuilder {
     pub(crate) retry_options: ::std::option::Option<crate::types::SnowflakeRetryOptions>,
     pub(crate) s3_backup_mode: ::std::option::Option<crate::types::SnowflakeS3BackupMode>,
     pub(crate) s3_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
+    pub(crate) secrets_manager_configuration: ::std::option::Option<crate::types::SecretsManagerConfiguration>,
 }
 impl SnowflakeDestinationConfigurationBuilder {
     /// <p>URL for accessing your Snowflake account. This URL must include your <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>
@@ -193,7 +199,6 @@ impl SnowflakeDestinationConfigurationBuilder {
         &self.account_url
     }
     /// <p>The private key used to encrypt your Snowflake client. For information, see <a href="https://docs.snowflake.com/en/user-guide/data-load-snowpipe-streaming-configuration#using-key-pair-authentication-key-rotation">Using Key Pair Authentication &amp; Key Rotation</a>.</p>
-    /// This field is required.
     pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_key = ::std::option::Option::Some(input.into());
         self
@@ -222,7 +227,6 @@ impl SnowflakeDestinationConfigurationBuilder {
         &self.key_passphrase
     }
     /// <p>User login name for the Snowflake account.</p>
-    /// This field is required.
     pub fn user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user = ::std::option::Option::Some(input.into());
         self
@@ -437,11 +441,23 @@ impl SnowflakeDestinationConfigurationBuilder {
     pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
         &self.s3_configuration
     }
+    /// <p>The configuration that defines how you access secrets for Snowflake.</p>
+    pub fn secrets_manager_configuration(mut self, input: crate::types::SecretsManagerConfiguration) -> Self {
+        self.secrets_manager_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that defines how you access secrets for Snowflake.</p>
+    pub fn set_secrets_manager_configuration(mut self, input: ::std::option::Option<crate::types::SecretsManagerConfiguration>) -> Self {
+        self.secrets_manager_configuration = input;
+        self
+    }
+    /// <p>The configuration that defines how you access secrets for Snowflake.</p>
+    pub fn get_secrets_manager_configuration(&self) -> &::std::option::Option<crate::types::SecretsManagerConfiguration> {
+        &self.secrets_manager_configuration
+    }
     /// Consumes the builder and constructs a [`SnowflakeDestinationConfiguration`](crate::types::SnowflakeDestinationConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`account_url`](crate::types::builders::SnowflakeDestinationConfigurationBuilder::account_url)
-    /// - [`private_key`](crate::types::builders::SnowflakeDestinationConfigurationBuilder::private_key)
-    /// - [`user`](crate::types::builders::SnowflakeDestinationConfigurationBuilder::user)
     /// - [`database`](crate::types::builders::SnowflakeDestinationConfigurationBuilder::database)
     /// - [`schema`](crate::types::builders::SnowflakeDestinationConfigurationBuilder::schema)
     /// - [`table`](crate::types::builders::SnowflakeDestinationConfigurationBuilder::table)
@@ -454,19 +470,9 @@ impl SnowflakeDestinationConfigurationBuilder {
                     "account_url was not specified but it is required when building SnowflakeDestinationConfiguration",
                 )
             })?,
-            private_key: self.private_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "private_key",
-                    "private_key was not specified but it is required when building SnowflakeDestinationConfiguration",
-                )
-            })?,
+            private_key: self.private_key,
             key_passphrase: self.key_passphrase,
-            user: self.user.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user",
-                    "user was not specified but it is required when building SnowflakeDestinationConfiguration",
-                )
-            })?,
+            user: self.user,
             database: self.database.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
@@ -501,6 +507,7 @@ impl SnowflakeDestinationConfigurationBuilder {
             retry_options: self.retry_options,
             s3_backup_mode: self.s3_backup_mode,
             s3_configuration: self.s3_configuration,
+            secrets_manager_configuration: self.secrets_manager_configuration,
         })
     }
 }
@@ -525,6 +532,7 @@ impl ::std::fmt::Debug for SnowflakeDestinationConfigurationBuilder {
         formatter.field("retry_options", &self.retry_options);
         formatter.field("s3_backup_mode", &self.s3_backup_mode);
         formatter.field("s3_configuration", &self.s3_configuration);
+        formatter.field("secrets_manager_configuration", &self.secrets_manager_configuration);
         formatter.finish()
     }
 }

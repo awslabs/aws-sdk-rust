@@ -264,19 +264,19 @@ impl PublishFluentBuilder {
         self.inner.get_message()
     }
     /// <p>Optional parameter to be used as the "Subject" line when the message is delivered to email endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints.</p>
-    /// <p>Constraints: Subjects must be ASCII text that begins with a letter, number, or punctuation mark; must not include line breaks or control characters; and must be less than 100 characters long.</p>
+    /// <p>Constraints: Subjects must be UTF-8 text with no line breaks or control characters, and less than 100 characters long.</p>
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subject(input.into());
         self
     }
     /// <p>Optional parameter to be used as the "Subject" line when the message is delivered to email endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints.</p>
-    /// <p>Constraints: Subjects must be ASCII text that begins with a letter, number, or punctuation mark; must not include line breaks or control characters; and must be less than 100 characters long.</p>
+    /// <p>Constraints: Subjects must be UTF-8 text with no line breaks or control characters, and less than 100 characters long.</p>
     pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subject(input);
         self
     }
     /// <p>Optional parameter to be used as the "Subject" line when the message is delivered to email endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints.</p>
-    /// <p>Constraints: Subjects must be ASCII text that begins with a letter, number, or punctuation mark; must not include line breaks or control characters; and must be less than 100 characters long.</p>
+    /// <p>Constraints: Subjects must be UTF-8 text with no line breaks or control characters, and less than 100 characters long.</p>
     pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subject()
     }

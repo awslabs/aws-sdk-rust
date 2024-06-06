@@ -10,7 +10,7 @@ publish = false
 http = "0.2"
 aws-config= { version = "1.5.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-sdk-s3= { version = "1.34.0", path = "../../../sdk/s3" }
-aws-sdk-sqs= { version = "1.29.0", path = "../../../sdk/sqs" }
+aws-sdk-sqs= { version = "1.29.1", path = "../../../sdk/sqs" }
 
 [dependencies.tokio]
 version = "1.20.1"

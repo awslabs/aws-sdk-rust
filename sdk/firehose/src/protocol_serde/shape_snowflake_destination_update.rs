@@ -69,5 +69,11 @@ pub fn ser_snowflake_destination_update(
         crate::protocol_serde::shape_s3_destination_update::ser_s3_destination_update(&mut object_22, var_21)?;
         object_22.finish();
     }
+    if let Some(var_23) = &input.secrets_manager_configuration {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("SecretsManagerConfiguration").start_object();
+        crate::protocol_serde::shape_secrets_manager_configuration::ser_secrets_manager_configuration(&mut object_24, var_23)?;
+        object_24.finish();
+    }
     Ok(())
 }

@@ -965,6 +965,40 @@ impl From<crate::operation::disassociate_tracker_consumer::DisassociateTrackerCo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::forecast_geofence_events::ForecastGeofenceEventsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::forecast_geofence_events::ForecastGeofenceEventsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::forecast_geofence_events::ForecastGeofenceEventsError> for Error {
+    fn from(err: crate::operation::forecast_geofence_events::ForecastGeofenceEventsError) -> Self {
+        match err {
+            crate::operation::forecast_geofence_events::ForecastGeofenceEventsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::forecast_geofence_events::ForecastGeofenceEventsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::forecast_geofence_events::ForecastGeofenceEventsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::forecast_geofence_events::ForecastGeofenceEventsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::forecast_geofence_events::ForecastGeofenceEventsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::forecast_geofence_events::ForecastGeofenceEventsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_device_position::GetDevicePositionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1854,6 +1888,36 @@ impl From<crate::operation::update_tracker::UpdateTrackerError> for Error {
             crate::operation::update_tracker::UpdateTrackerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_tracker::UpdateTrackerError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_tracker::UpdateTrackerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_device_position::VerifyDevicePositionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_device_position::VerifyDevicePositionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::verify_device_position::VerifyDevicePositionError> for Error {
+    fn from(err: crate::operation::verify_device_position::VerifyDevicePositionError) -> Self {
+        match err {
+            crate::operation::verify_device_position::VerifyDevicePositionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::verify_device_position::VerifyDevicePositionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::verify_device_position::VerifyDevicePositionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::verify_device_position::VerifyDevicePositionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::verify_device_position::VerifyDevicePositionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::verify_device_position::VerifyDevicePositionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

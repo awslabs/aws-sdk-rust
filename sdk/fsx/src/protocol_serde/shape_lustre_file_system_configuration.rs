@@ -88,6 +88,13 @@ where
                                 crate::protocol_serde::shape_lustre_root_squash_configuration::de_lustre_root_squash_configuration(tokens)?,
                             );
                         }
+                        "MetadataConfiguration" => {
+                            builder = builder.set_metadata_configuration(
+                                crate::protocol_serde::shape_file_system_lustre_metadata_configuration::de_file_system_lustre_metadata_configuration(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

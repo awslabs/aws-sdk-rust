@@ -20,6 +20,9 @@ where
                         "Circle" => {
                             builder = builder.set_circle(crate::protocol_serde::shape_circle::de_circle(tokens)?);
                         }
+                        "Geobuf" => {
+                            builder = builder.set_geobuf(::aws_smithy_json::deserialize::token::expect_blob_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -71,6 +74,9 @@ pub fn ser_geofence_geometry(
         let mut object_9 = object.key("Circle").start_object();
         crate::protocol_serde::shape_circle::ser_circle(&mut object_9, var_8)?;
         object_9.finish();
+    }
+    if let Some(var_10) = &input.geobuf {
+        object.key("Geobuf").string_unchecked(&::aws_smithy_types::base64::encode(var_10));
     }
     Ok(())
 }

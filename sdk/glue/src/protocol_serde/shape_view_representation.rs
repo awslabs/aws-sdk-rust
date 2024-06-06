@@ -42,6 +42,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ValidationConnection" => {
+                            builder = builder.set_validation_connection(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "IsStale" => {
                             builder = builder.set_is_stale(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }

@@ -192,4 +192,32 @@ impl UpdateTableFluentBuilder {
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version_id()
     }
+    /// <p>The operation to be performed when updating the view.</p>
+    pub fn view_update_action(mut self, input: crate::types::ViewUpdateAction) -> Self {
+        self.inner = self.inner.view_update_action(input);
+        self
+    }
+    /// <p>The operation to be performed when updating the view.</p>
+    pub fn set_view_update_action(mut self, input: ::std::option::Option<crate::types::ViewUpdateAction>) -> Self {
+        self.inner = self.inner.set_view_update_action(input);
+        self
+    }
+    /// <p>The operation to be performed when updating the view.</p>
+    pub fn get_view_update_action(&self) -> &::std::option::Option<crate::types::ViewUpdateAction> {
+        self.inner.get_view_update_action()
+    }
+    /// <p>A flag that can be set to true to ignore matching storage descriptor and subobject matching requirements.</p>
+    pub fn force(mut self, input: bool) -> Self {
+        self.inner = self.inner.force(input);
+        self
+    }
+    /// <p>A flag that can be set to true to ignore matching storage descriptor and subobject matching requirements.</p>
+    pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_force(input);
+        self
+    }
+    /// <p>A flag that can be set to true to ignore matching storage descriptor and subobject matching requirements.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
+    }
 }

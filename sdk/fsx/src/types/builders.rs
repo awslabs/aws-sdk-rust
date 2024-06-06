@@ -35,6 +35,8 @@ pub use crate::types::_file_system_endpoint::FileSystemEndpointBuilder;
 
 pub use crate::types::_lustre_file_system_configuration::LustreFileSystemConfigurationBuilder;
 
+pub use crate::types::_file_system_lustre_metadata_configuration::FileSystemLustreMetadataConfigurationBuilder;
+
 pub use crate::types::_lustre_root_squash_configuration::LustreRootSquashConfigurationBuilder;
 
 pub use crate::types::_lustre_log_configuration::LustreLogConfigurationBuilder;
@@ -90,6 +92,8 @@ pub use crate::types::_update_file_system_open_zfs_configuration::UpdateFileSyst
 pub use crate::types::_update_file_system_ontap_configuration::UpdateFileSystemOntapConfigurationBuilder;
 
 pub use crate::types::_update_file_system_lustre_configuration::UpdateFileSystemLustreConfigurationBuilder;
+
+pub use crate::types::_update_file_system_lustre_metadata_configuration::UpdateFileSystemLustreMetadataConfigurationBuilder;
 
 pub use crate::types::_lustre_log_create_configuration::LustreLogCreateConfigurationBuilder;
 
@@ -182,6 +186,8 @@ pub use crate::types::_create_file_system_open_zfs_configuration::CreateFileSyst
 pub use crate::types::_open_zfs_create_root_volume_configuration::OpenZfsCreateRootVolumeConfigurationBuilder;
 
 pub use crate::types::_create_file_system_lustre_configuration::CreateFileSystemLustreConfigurationBuilder;
+
+pub use crate::types::_create_file_system_lustre_metadata_configuration::CreateFileSystemLustreMetadataConfigurationBuilder;
 
 pub use crate::types::_create_file_system_windows_configuration::CreateFileSystemWindowsConfigurationBuilder;
 

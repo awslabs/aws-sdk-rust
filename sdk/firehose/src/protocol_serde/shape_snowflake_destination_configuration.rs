@@ -6,14 +6,14 @@ pub fn ser_snowflake_destination_configuration(
     {
         object.key("AccountUrl").string(input.account_url.as_str());
     }
-    {
-        object.key("PrivateKey").string(input.private_key.as_str());
+    if let Some(var_1) = &input.private_key {
+        object.key("PrivateKey").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.key_passphrase {
-        object.key("KeyPassphrase").string(var_1.as_str());
+    if let Some(var_2) = &input.key_passphrase {
+        object.key("KeyPassphrase").string(var_2.as_str());
     }
-    {
-        object.key("User").string(input.user.as_str());
+    if let Some(var_3) = &input.user {
+        object.key("User").string(var_3.as_str());
     }
     {
         object.key("Database").string(input.database.as_str());
@@ -24,56 +24,62 @@ pub fn ser_snowflake_destination_configuration(
     {
         object.key("Table").string(input.table.as_str());
     }
-    if let Some(var_2) = &input.snowflake_role_configuration {
+    if let Some(var_4) = &input.snowflake_role_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("SnowflakeRoleConfiguration").start_object();
-        crate::protocol_serde::shape_snowflake_role_configuration::ser_snowflake_role_configuration(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_5 = object.key("SnowflakeRoleConfiguration").start_object();
+        crate::protocol_serde::shape_snowflake_role_configuration::ser_snowflake_role_configuration(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_4) = &input.data_loading_option {
-        object.key("DataLoadingOption").string(var_4.as_str());
+    if let Some(var_6) = &input.data_loading_option {
+        object.key("DataLoadingOption").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.meta_data_column_name {
-        object.key("MetaDataColumnName").string(var_5.as_str());
+    if let Some(var_7) = &input.meta_data_column_name {
+        object.key("MetaDataColumnName").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.content_column_name {
-        object.key("ContentColumnName").string(var_6.as_str());
+    if let Some(var_8) = &input.content_column_name {
+        object.key("ContentColumnName").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.snowflake_vpc_configuration {
+    if let Some(var_9) = &input.snowflake_vpc_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("SnowflakeVpcConfiguration").start_object();
-        crate::protocol_serde::shape_snowflake_vpc_configuration::ser_snowflake_vpc_configuration(&mut object_8, var_7)?;
-        object_8.finish();
-    }
-    if let Some(var_9) = &input.cloud_watch_logging_options {
-        #[allow(unused_mut)]
-        let mut object_10 = object.key("CloudWatchLoggingOptions").start_object();
-        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(&mut object_10, var_9)?;
+        let mut object_10 = object.key("SnowflakeVpcConfiguration").start_object();
+        crate::protocol_serde::shape_snowflake_vpc_configuration::ser_snowflake_vpc_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.processing_configuration {
+    if let Some(var_11) = &input.cloud_watch_logging_options {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("ProcessingConfiguration").start_object();
-        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(&mut object_12, var_11)?;
+        let mut object_12 = object.key("CloudWatchLoggingOptions").start_object();
+        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(&mut object_12, var_11)?;
         object_12.finish();
+    }
+    if let Some(var_13) = &input.processing_configuration {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("ProcessingConfiguration").start_object();
+        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(&mut object_14, var_13)?;
+        object_14.finish();
     }
     {
         object.key("RoleARN").string(input.role_arn.as_str());
     }
-    if let Some(var_13) = &input.retry_options {
+    if let Some(var_15) = &input.retry_options {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("RetryOptions").start_object();
-        crate::protocol_serde::shape_snowflake_retry_options::ser_snowflake_retry_options(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_16 = object.key("RetryOptions").start_object();
+        crate::protocol_serde::shape_snowflake_retry_options::ser_snowflake_retry_options(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_15) = &input.s3_backup_mode {
-        object.key("S3BackupMode").string(var_15.as_str());
+    if let Some(var_17) = &input.s3_backup_mode {
+        object.key("S3BackupMode").string(var_17.as_str());
     }
-    if let Some(var_16) = &input.s3_configuration {
+    if let Some(var_18) = &input.s3_configuration {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("S3Configuration").start_object();
-        crate::protocol_serde::shape_s3_destination_configuration::ser_s3_destination_configuration(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_19 = object.key("S3Configuration").start_object();
+        crate::protocol_serde::shape_s3_destination_configuration::ser_s3_destination_configuration(&mut object_19, var_18)?;
+        object_19.finish();
+    }
+    if let Some(var_20) = &input.secrets_manager_configuration {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("SecretsManagerConfiguration").start_object();
+        crate::protocol_serde::shape_secrets_manager_configuration::ser_secrets_manager_configuration(&mut object_21, var_20)?;
+        object_21.finish();
     }
     Ok(())
 }

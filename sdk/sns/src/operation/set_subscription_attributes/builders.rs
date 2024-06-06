@@ -142,17 +142,17 @@ impl SetSubscriptionAttributesFluentBuilder {
     /// <li>
     /// <p><code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p></li>
     /// </ul>
-    /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
+    /// <p>The following attribute applies only to Amazon Data Firehose delivery stream subscriptions:</p>
     /// <ul>
     /// <li>
     /// <p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
     /// <ul>
     /// <li>
-    /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
+    /// <p>Permission to write to the Firehose delivery stream</p></li>
     /// <li>
     /// <p>Amazon SNS listed as a trusted entity</p></li>
     /// </ul>
-    /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
+    /// <p>Specifying a valid ARN for this attribute is required for Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
     /// </ul>
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_name(input.into());
@@ -178,17 +178,17 @@ impl SetSubscriptionAttributesFluentBuilder {
     /// <li>
     /// <p><code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p></li>
     /// </ul>
-    /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
+    /// <p>The following attribute applies only to Amazon Data Firehose delivery stream subscriptions:</p>
     /// <ul>
     /// <li>
     /// <p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
     /// <ul>
     /// <li>
-    /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
+    /// <p>Permission to write to the Firehose delivery stream</p></li>
     /// <li>
     /// <p>Amazon SNS listed as a trusted entity</p></li>
     /// </ul>
-    /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
+    /// <p>Specifying a valid ARN for this attribute is required for Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
     /// </ul>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_name(input);
@@ -214,17 +214,17 @@ impl SetSubscriptionAttributesFluentBuilder {
     /// <li>
     /// <p><code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p></li>
     /// </ul>
-    /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
+    /// <p>The following attribute applies only to Amazon Data Firehose delivery stream subscriptions:</p>
     /// <ul>
     /// <li>
     /// <p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
     /// <ul>
     /// <li>
-    /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
+    /// <p>Permission to write to the Firehose delivery stream</p></li>
     /// <li>
     /// <p>Amazon SNS listed as a trusted entity</p></li>
     /// </ul>
-    /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
+    /// <p>Specifying a valid ARN for this attribute is required for Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
     /// </ul>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_attribute_name()

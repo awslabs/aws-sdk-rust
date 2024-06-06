@@ -51,5 +51,11 @@ pub fn ser_splunk_destination_update(
         crate::protocol_serde::shape_splunk_buffering_hints::ser_splunk_buffering_hints(&mut object_15, var_14)?;
         object_15.finish();
     }
+    if let Some(var_16) = &input.secrets_manager_configuration {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("SecretsManagerConfiguration").start_object();
+        crate::protocol_serde::shape_secrets_manager_configuration::ser_secrets_manager_configuration(&mut object_17, var_16)?;
+        object_17.finish();
+    }
     Ok(())
 }

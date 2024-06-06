@@ -197,6 +197,8 @@ pub(crate) mod shape_put_record_batch_response_entry;
 
 pub(crate) mod shape_redshift_retry_options;
 
+pub(crate) mod shape_secrets_manager_configuration;
+
 pub(crate) mod shape_snowflake_retry_options;
 
 pub(crate) mod shape_snowflake_role_configuration;

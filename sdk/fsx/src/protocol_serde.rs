@@ -403,6 +403,8 @@ pub(crate) mod shape_backup_failure_details;
 
 pub(crate) mod shape_create_aggregate_configuration;
 
+pub(crate) mod shape_create_file_system_lustre_metadata_configuration;
+
 pub(crate) mod shape_create_open_zfs_origin_snapshot_configuration;
 
 pub(crate) mod shape_create_snaplock_configuration;
@@ -471,6 +473,8 @@ pub(crate) mod shape_svm_endpoints;
 
 pub(crate) mod shape_tiering_policy;
 
+pub(crate) mod shape_update_file_system_lustre_metadata_configuration;
+
 pub(crate) mod shape_update_snaplock_configuration;
 
 pub(crate) mod shape_windows_audit_log_create_configuration;
@@ -486,6 +490,8 @@ pub(crate) mod shape_autocommit_period;
 pub(crate) mod shape_data_repository_configuration;
 
 pub(crate) mod shape_file_system_endpoints;
+
+pub(crate) mod shape_file_system_lustre_metadata_configuration;
 
 pub(crate) mod shape_file_system_maintenance_operations;
 

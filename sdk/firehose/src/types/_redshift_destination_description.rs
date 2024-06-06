@@ -11,7 +11,7 @@ pub struct RedshiftDestinationDescription {
     /// <p>The <code>COPY</code> command.</p>
     pub copy_command: ::std::option::Option<crate::types::CopyCommand>,
     /// <p>The name of the user.</p>
-    pub username: ::std::string::String,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
     pub retry_options: ::std::option::Option<crate::types::RedshiftRetryOptions>,
     /// <p>The Amazon S3 destination.</p>
@@ -24,6 +24,8 @@ pub struct RedshiftDestinationDescription {
     pub s3_backup_description: ::std::option::Option<crate::types::S3DestinationDescription>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    /// <p>The configuration that defines how you access secrets for Amazon Redshift.</p>
+    pub secrets_manager_configuration: ::std::option::Option<crate::types::SecretsManagerConfiguration>,
 }
 impl RedshiftDestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -41,9 +43,8 @@ impl RedshiftDestinationDescription {
         self.copy_command.as_ref()
     }
     /// <p>The name of the user.</p>
-    pub fn username(&self) -> &str {
-        use std::ops::Deref;
-        self.username.deref()
+    pub fn username(&self) -> ::std::option::Option<&str> {
+        self.username.as_deref()
     }
     /// <p>The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
     pub fn retry_options(&self) -> ::std::option::Option<&crate::types::RedshiftRetryOptions> {
@@ -69,6 +70,10 @@ impl RedshiftDestinationDescription {
     pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
+    /// <p>The configuration that defines how you access secrets for Amazon Redshift.</p>
+    pub fn secrets_manager_configuration(&self) -> ::std::option::Option<&crate::types::SecretsManagerConfiguration> {
+        self.secrets_manager_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RedshiftDestinationDescription {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -83,6 +88,7 @@ impl ::std::fmt::Debug for RedshiftDestinationDescription {
         formatter.field("s3_backup_mode", &self.s3_backup_mode);
         formatter.field("s3_backup_description", &self.s3_backup_description);
         formatter.field("cloud_watch_logging_options", &self.cloud_watch_logging_options);
+        formatter.field("secrets_manager_configuration", &self.secrets_manager_configuration);
         formatter.finish()
     }
 }
@@ -107,6 +113,7 @@ pub struct RedshiftDestinationDescriptionBuilder {
     pub(crate) s3_backup_mode: ::std::option::Option<crate::types::RedshiftS3BackupMode>,
     pub(crate) s3_backup_description: ::std::option::Option<crate::types::S3DestinationDescription>,
     pub(crate) cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    pub(crate) secrets_manager_configuration: ::std::option::Option<crate::types::SecretsManagerConfiguration>,
 }
 impl RedshiftDestinationDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -155,7 +162,6 @@ impl RedshiftDestinationDescriptionBuilder {
         &self.copy_command
     }
     /// <p>The name of the user.</p>
-    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -254,11 +260,24 @@ impl RedshiftDestinationDescriptionBuilder {
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }
+    /// <p>The configuration that defines how you access secrets for Amazon Redshift.</p>
+    pub fn secrets_manager_configuration(mut self, input: crate::types::SecretsManagerConfiguration) -> Self {
+        self.secrets_manager_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that defines how you access secrets for Amazon Redshift.</p>
+    pub fn set_secrets_manager_configuration(mut self, input: ::std::option::Option<crate::types::SecretsManagerConfiguration>) -> Self {
+        self.secrets_manager_configuration = input;
+        self
+    }
+    /// <p>The configuration that defines how you access secrets for Amazon Redshift.</p>
+    pub fn get_secrets_manager_configuration(&self) -> &::std::option::Option<crate::types::SecretsManagerConfiguration> {
+        &self.secrets_manager_configuration
+    }
     /// Consumes the builder and constructs a [`RedshiftDestinationDescription`](crate::types::RedshiftDestinationDescription).
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::RedshiftDestinationDescriptionBuilder::role_arn)
     /// - [`cluster_jdbcurl`](crate::types::builders::RedshiftDestinationDescriptionBuilder::cluster_jdbcurl)
-    /// - [`username`](crate::types::builders::RedshiftDestinationDescriptionBuilder::username)
     pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDestinationDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RedshiftDestinationDescription {
             role_arn: self.role_arn.ok_or_else(|| {
@@ -274,18 +293,14 @@ impl RedshiftDestinationDescriptionBuilder {
                 )
             })?,
             copy_command: self.copy_command,
-            username: self.username.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "username",
-                    "username was not specified but it is required when building RedshiftDestinationDescription",
-                )
-            })?,
+            username: self.username,
             retry_options: self.retry_options,
             s3_destination_description: self.s3_destination_description,
             processing_configuration: self.processing_configuration,
             s3_backup_mode: self.s3_backup_mode,
             s3_backup_description: self.s3_backup_description,
             cloud_watch_logging_options: self.cloud_watch_logging_options,
+            secrets_manager_configuration: self.secrets_manager_configuration,
         })
     }
 }
@@ -302,6 +317,7 @@ impl ::std::fmt::Debug for RedshiftDestinationDescriptionBuilder {
         formatter.field("s3_backup_mode", &self.s3_backup_mode);
         formatter.field("s3_backup_description", &self.s3_backup_description);
         formatter.field("cloud_watch_logging_options", &self.cloud_watch_logging_options);
+        formatter.field("secrets_manager_configuration", &self.secrets_manager_configuration);
         formatter.finish()
     }
 }

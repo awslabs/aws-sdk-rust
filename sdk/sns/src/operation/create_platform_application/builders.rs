@@ -26,21 +26,21 @@ impl crate::operation::create_platform_application::builders::CreatePlatformAppl
 /// <p><code>PlatformPrincipal</code> and <code>PlatformCredential</code> are received from the notification service.</p>
 /// <ul>
 /// <li>
-/// <p>For <code>ADM</code>, <code>PlatformPrincipal</code> is <code>client id</code> and <code>PlatformCredential</code> is <code>client secret</code>.</p></li>
+/// <p>For ADM, <code>PlatformPrincipal</code> is <code>client id</code> and <code>PlatformCredential</code> is <code>client secret</code>.</p></li>
 /// <li>
-/// <p>For <code>Baidu</code>, <code>PlatformPrincipal</code> is <code>API key</code> and <code>PlatformCredential</code> is <code>secret key</code>.</p></li>
+/// <p>For APNS and <code>APNS_SANDBOX</code> using certificate credentials, <code>PlatformPrincipal</code> is <code>SSL certificate</code> and <code>PlatformCredential</code> is <code>private key</code>.</p></li>
 /// <li>
-/// <p>For <code>APNS</code> and <code>APNS_SANDBOX</code> using certificate credentials, <code>PlatformPrincipal</code> is <code>SSL certificate</code> and <code>PlatformCredential</code> is <code>private key</code>.</p></li>
+/// <p>For APNS and <code>APNS_SANDBOX</code> using token credentials, <code>PlatformPrincipal</code> is <code>signing key ID</code> and <code>PlatformCredential</code> is <code>signing key</code>.</p></li>
 /// <li>
-/// <p>For <code>APNS</code> and <code>APNS_SANDBOX</code> using token credentials, <code>PlatformPrincipal</code> is <code>signing key ID</code> and <code>PlatformCredential</code> is <code>signing key</code>.</p></li>
+/// <p>For Baidu, <code>PlatformPrincipal</code> is <code>API key</code> and <code>PlatformCredential</code> is <code>secret key</code>.</p></li>
 /// <li>
 /// <p>For GCM (Firebase Cloud Messaging) using key credentials, there is no <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API key</code>.</p></li>
 /// <li>
 /// <p>For GCM (Firebase Cloud Messaging) using token credentials, there is no <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is a JSON formatted private key file. When using the Amazon Web Services CLI, the file must be in string format and special characters must be ignored. To format the file correctly, Amazon SNS recommends using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat service.json`</code>.</p></li>
 /// <li>
-/// <p>For <code>MPNS</code>, <code>PlatformPrincipal</code> is <code>TLS certificate</code> and <code>PlatformCredential</code> is <code>private key</code>.</p></li>
+/// <p>For MPNS, <code>PlatformPrincipal</code> is <code>TLS certificate</code> and <code>PlatformCredential</code> is <code>private key</code>.</p></li>
 /// <li>
-/// <p>For <code>WNS</code>, <code>PlatformPrincipal</code> is <code>Package Security Identifier</code> and <code>PlatformCredential</code> is <code>secret key</code>.</p></li>
+/// <p>For WNS, <code>PlatformPrincipal</code> is <code>Package Security Identifier</code> and <code>PlatformCredential</code> is <code>secret key</code>.</p></li>
 /// </ul>
 /// <p>You can use the returned <code>PlatformApplicationArn</code> as an attribute for the <code>CreatePlatformEndpoint</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

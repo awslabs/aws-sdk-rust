@@ -63,6 +63,11 @@ where
                                 crate::protocol_serde::shape_s3_destination_description::de_s3_destination_description(tokens)?,
                             );
                         }
+                        "SecretsManagerConfiguration" => {
+                            builder = builder.set_secrets_manager_configuration(
+                                crate::protocol_serde::shape_secrets_manager_configuration::de_secrets_manager_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -407,6 +407,21 @@ pub(crate) fn describe_tracker_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn forecast_geofence_events_output_output_correct_errors(
+    mut builder: crate::operation::forecast_geofence_events::builders::ForecastGeofenceEventsOutputBuilder,
+) -> crate::operation::forecast_geofence_events::builders::ForecastGeofenceEventsOutputBuilder {
+    if builder.forecasted_events.is_none() {
+        builder.forecasted_events = Some(Default::default())
+    }
+    if builder.distance_unit.is_none() {
+        builder.distance_unit = "no value was set".parse::<crate::types::DistanceUnit>().ok()
+    }
+    if builder.speed_unit.is_none() {
+        builder.speed_unit = "no value was set".parse::<crate::types::SpeedUnit>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_device_position_output_output_correct_errors(
     mut builder: crate::operation::get_device_position::builders::GetDevicePositionOutputBuilder,
 ) -> crate::operation::get_device_position::builders::GetDevicePositionOutputBuilder {
@@ -704,6 +719,30 @@ pub(crate) fn update_tracker_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn verify_device_position_output_output_correct_errors(
+    mut builder: crate::operation::verify_device_position::builders::VerifyDevicePositionOutputBuilder,
+) -> crate::operation::verify_device_position::builders::VerifyDevicePositionOutputBuilder {
+    if builder.inferred_state.is_none() {
+        builder.inferred_state = {
+            let builder = crate::types::builders::InferredStateBuilder::default();
+            crate::serde_util::inferred_state_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.device_id.is_none() {
+        builder.device_id = Some(Default::default())
+    }
+    if builder.sample_time.is_none() {
+        builder.sample_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.received_time.is_none() {
+        builder.received_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.distance_unit.is_none() {
+        builder.distance_unit = "no value was set".parse::<crate::types::DistanceUnit>().ok()
+    }
+    builder
+}
+
 pub(crate) fn calculate_route_summary_correct_errors(
     mut builder: crate::types::builders::CalculateRouteSummaryBuilder,
 ) -> crate::types::builders::CalculateRouteSummaryBuilder {
@@ -806,6 +845,15 @@ pub(crate) fn search_place_index_for_text_summary_correct_errors(
     }
     if builder.data_source.is_none() {
         builder.data_source = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn inferred_state_correct_errors(
+    mut builder: crate::types::builders::InferredStateBuilder,
+) -> crate::types::builders::InferredStateBuilder {
+    if builder.proxy_detected.is_none() {
+        builder.proxy_detected = Some(Default::default())
     }
     builder
 }
@@ -951,6 +999,27 @@ pub(crate) fn device_position_correct_errors(
     }
     if builder.position.is_none() {
         builder.position = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn forecasted_event_correct_errors(
+    mut builder: crate::types::builders::ForecastedEventBuilder,
+) -> crate::types::builders::ForecastedEventBuilder {
+    if builder.event_id.is_none() {
+        builder.event_id = Some(Default::default())
+    }
+    if builder.geofence_id.is_none() {
+        builder.geofence_id = Some(Default::default())
+    }
+    if builder.is_device_in_geofence.is_none() {
+        builder.is_device_in_geofence = Some(Default::default())
+    }
+    if builder.nearest_distance.is_none() {
+        builder.nearest_distance = Some(Default::default())
+    }
+    if builder.event_type.is_none() {
+        builder.event_type = "no value was set".parse::<crate::types::ForecastedGeofenceEventType>().ok()
     }
     builder
 }

@@ -9,47 +9,53 @@ pub fn ser_splunk_destination_configuration(
     {
         object.key("HECEndpointType").string(input.hec_endpoint_type.as_str());
     }
-    {
-        object.key("HECToken").string(input.hec_token.as_str());
+    if let Some(var_1) = &input.hec_token {
+        object.key("HECToken").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.hec_acknowledgment_timeout_in_seconds {
+    if let Some(var_2) = &input.hec_acknowledgment_timeout_in_seconds {
         object.key("HECAcknowledgmentTimeoutInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.retry_options {
+    if let Some(var_3) = &input.retry_options {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("RetryOptions").start_object();
-        crate::protocol_serde::shape_splunk_retry_options::ser_splunk_retry_options(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("RetryOptions").start_object();
+        crate::protocol_serde::shape_splunk_retry_options::ser_splunk_retry_options(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.s3_backup_mode {
-        object.key("S3BackupMode").string(var_4.as_str());
+    if let Some(var_5) = &input.s3_backup_mode {
+        object.key("S3BackupMode").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.s3_configuration {
+    if let Some(var_6) = &input.s3_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("S3Configuration").start_object();
-        crate::protocol_serde::shape_s3_destination_configuration::ser_s3_destination_configuration(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("S3Configuration").start_object();
+        crate::protocol_serde::shape_s3_destination_configuration::ser_s3_destination_configuration(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.processing_configuration {
+    if let Some(var_8) = &input.processing_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("ProcessingConfiguration").start_object();
-        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("ProcessingConfiguration").start_object();
+        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.cloud_watch_logging_options {
+    if let Some(var_10) = &input.cloud_watch_logging_options {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("CloudWatchLoggingOptions").start_object();
-        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("CloudWatchLoggingOptions").start_object();
+        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_11) = &input.buffering_hints {
+    if let Some(var_12) = &input.buffering_hints {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("BufferingHints").start_object();
-        crate::protocol_serde::shape_splunk_buffering_hints::ser_splunk_buffering_hints(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_13 = object.key("BufferingHints").start_object();
+        crate::protocol_serde::shape_splunk_buffering_hints::ser_splunk_buffering_hints(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.secrets_manager_configuration {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("SecretsManagerConfiguration").start_object();
+        crate::protocol_serde::shape_secrets_manager_configuration::ser_secrets_manager_configuration(&mut object_15, var_14)?;
+        object_15.finish();
     }
     Ok(())
 }

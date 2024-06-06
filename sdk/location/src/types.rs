@@ -3,9 +3,25 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
-pub use crate::types::_list_device_positions_response_entry::ListDevicePositionsResponseEntry;
+pub use crate::types::_distance_unit::DistanceUnit;
+
+pub use crate::types::_inferred_state::InferredState;
 
 pub use crate::types::_positional_accuracy::PositionalAccuracy;
+
+pub use crate::types::_device_state::DeviceState;
+
+pub use crate::types::_cell_signals::CellSignals;
+
+pub use crate::types::_lte_cell_details::LteCellDetails;
+
+pub use crate::types::_lte_network_measurements::LteNetworkMeasurements;
+
+pub use crate::types::_lte_local_id::LteLocalId;
+
+pub use crate::types::_wi_fi_access_point::WiFiAccessPoint;
+
+pub use crate::types::_list_device_positions_response_entry::ListDevicePositionsResponseEntry;
 
 pub use crate::types::_tracking_filter_geometry::TrackingFilterGeometry;
 
@@ -30,8 +46,6 @@ pub use crate::types::_pricing_plan::PricingPlan;
 pub use crate::types::_list_trackers_response_entry::ListTrackersResponseEntry;
 
 pub use crate::types::_calculate_route_matrix_summary::CalculateRouteMatrixSummary;
-
-pub use crate::types::_distance_unit::DistanceUnit;
 
 pub use crate::types::_route_matrix_entry::RouteMatrixEntry;
 
@@ -101,6 +115,14 @@ pub use crate::types::_circle::Circle;
 
 pub use crate::types::_list_geofence_response_entry::ListGeofenceResponseEntry;
 
+pub use crate::types::_speed_unit::SpeedUnit;
+
+pub use crate::types::_forecasted_event::ForecastedEvent;
+
+pub use crate::types::_forecasted_geofence_event_type::ForecastedGeofenceEventType;
+
+pub use crate::types::_forecast_geofence_events_device_state::ForecastGeofenceEventsDeviceState;
+
 pub use crate::types::_batch_put_geofence_error::BatchPutGeofenceError;
 
 pub use crate::types::_batch_put_geofence_success::BatchPutGeofenceSuccess;
@@ -153,6 +175,8 @@ mod _calculate_route_summary;
 
 mod _calculate_route_truck_mode_options;
 
+mod _cell_signals;
+
 mod _circle;
 
 mod _data_source_configuration;
@@ -161,11 +185,21 @@ mod _device_position;
 
 mod _device_position_update;
 
+mod _device_state;
+
 mod _dimension_unit;
 
 mod _distance_unit;
 
+mod _forecast_geofence_events_device_state;
+
+mod _forecasted_event;
+
+mod _forecasted_geofence_event_type;
+
 mod _geofence_geometry;
+
+mod _inferred_state;
 
 mod _intended_use;
 
@@ -188,6 +222,12 @@ mod _list_place_indexes_response_entry;
 mod _list_route_calculators_response_entry;
 
 mod _list_trackers_response_entry;
+
+mod _lte_cell_details;
+
+mod _lte_local_id;
+
+mod _lte_network_measurements;
 
 mod _map_configuration;
 
@@ -223,6 +263,8 @@ mod _search_place_index_for_suggestions_summary;
 
 mod _search_place_index_for_text_summary;
 
+mod _speed_unit;
+
 mod _status;
 
 mod _step;
@@ -242,6 +284,8 @@ mod _validation_exception_field;
 mod _validation_exception_reason;
 
 mod _vehicle_weight_unit;
+
+mod _wi_fi_access_point;
 
 /// Builders
 pub mod builders;

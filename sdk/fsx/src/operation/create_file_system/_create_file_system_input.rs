@@ -12,7 +12,7 @@ pub struct CreateFileSystemInput {
     /// <p><b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p></li>
+    /// <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code>, and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p></li>
     /// <li>
     /// <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p></li>
     /// <li>
@@ -78,16 +78,22 @@ pub struct CreateFileSystemInput {
     pub lustre_configuration: ::std::option::Option<crate::types::CreateFileSystemLustreConfiguration>,
     /// <p>The ONTAP configuration properties of the FSx for ONTAP file system that you are creating.</p>
     pub ontap_configuration: ::std::option::Option<crate::types::CreateFileSystemOntapConfiguration>,
-    /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
+    /// <p>For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
     /// <ul>
     /// <li>
-    /// <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p></li>
+    /// <p><code>2.10</code> is supported by the Scratch and Persistent_1 Lustre deployment types.</p></li>
     /// <li>
-    /// <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p></li>
+    /// <p><code>2.12</code> is supported by all Lustre deployment types, except for <code>PERSISTENT_2</code> with a metadata configuration mode.</p></li>
+    /// <li>
+    /// <p><code>2.15</code> is supported by all Lustre deployment types and is recommended for all new file systems.</p></li>
     /// </ul>
-    /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p><note>
-    /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
-    /// </note>
+    /// <p>Default value is <code>2.10</code>, except for the following deployments:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Default value is <code>2.12</code> when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code> without a metadata configuration mode.</p></li>
+    /// <li>
+    /// <p>Default value is <code>2.15</code> when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code> with a metadata configuration mode.</p></li>
+    /// </ul>
     pub file_system_type_version: ::std::option::Option<::std::string::String>,
     /// <p>The OpenZFS configuration for the file system that's being created.</p>
     pub open_zfs_configuration: ::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration>,
@@ -105,7 +111,7 @@ impl CreateFileSystemInput {
     /// <p><b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p></li>
+    /// <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code>, and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p></li>
     /// <li>
     /// <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p></li>
     /// <li>
@@ -195,16 +201,22 @@ impl CreateFileSystemInput {
     pub fn ontap_configuration(&self) -> ::std::option::Option<&crate::types::CreateFileSystemOntapConfiguration> {
         self.ontap_configuration.as_ref()
     }
-    /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
+    /// <p>For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
     /// <ul>
     /// <li>
-    /// <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p></li>
+    /// <p><code>2.10</code> is supported by the Scratch and Persistent_1 Lustre deployment types.</p></li>
     /// <li>
-    /// <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p></li>
+    /// <p><code>2.12</code> is supported by all Lustre deployment types, except for <code>PERSISTENT_2</code> with a metadata configuration mode.</p></li>
+    /// <li>
+    /// <p><code>2.15</code> is supported by all Lustre deployment types and is recommended for all new file systems.</p></li>
     /// </ul>
-    /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p><note>
-    /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
-    /// </note>
+    /// <p>Default value is <code>2.10</code>, except for the following deployments:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Default value is <code>2.12</code> when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code> without a metadata configuration mode.</p></li>
+    /// <li>
+    /// <p>Default value is <code>2.15</code> when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code> with a metadata configuration mode.</p></li>
+    /// </ul>
     pub fn file_system_type_version(&self) -> ::std::option::Option<&str> {
         self.file_system_type_version.as_deref()
     }
@@ -272,7 +284,7 @@ impl CreateFileSystemInputBuilder {
     /// <p><b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p></li>
+    /// <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code>, and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p></li>
     /// <li>
     /// <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p></li>
     /// <li>
@@ -296,7 +308,7 @@ impl CreateFileSystemInputBuilder {
     /// <p><b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p></li>
+    /// <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code>, and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p></li>
     /// <li>
     /// <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p></li>
     /// <li>
@@ -319,7 +331,7 @@ impl CreateFileSystemInputBuilder {
     /// <p><b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p></li>
+    /// <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code>, and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p></li>
     /// <li>
     /// <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p></li>
     /// <li>
@@ -569,44 +581,62 @@ impl CreateFileSystemInputBuilder {
     pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemOntapConfiguration> {
         &self.ontap_configuration
     }
-    /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
+    /// <p>For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
     /// <ul>
     /// <li>
-    /// <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p></li>
+    /// <p><code>2.10</code> is supported by the Scratch and Persistent_1 Lustre deployment types.</p></li>
     /// <li>
-    /// <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p></li>
+    /// <p><code>2.12</code> is supported by all Lustre deployment types, except for <code>PERSISTENT_2</code> with a metadata configuration mode.</p></li>
+    /// <li>
+    /// <p><code>2.15</code> is supported by all Lustre deployment types and is recommended for all new file systems.</p></li>
     /// </ul>
-    /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p><note>
-    /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
-    /// </note>
+    /// <p>Default value is <code>2.10</code>, except for the following deployments:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Default value is <code>2.12</code> when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code> without a metadata configuration mode.</p></li>
+    /// <li>
+    /// <p>Default value is <code>2.15</code> when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code> with a metadata configuration mode.</p></li>
+    /// </ul>
     pub fn file_system_type_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_type_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
+    /// <p>For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
     /// <ul>
     /// <li>
-    /// <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p></li>
+    /// <p><code>2.10</code> is supported by the Scratch and Persistent_1 Lustre deployment types.</p></li>
     /// <li>
-    /// <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p></li>
+    /// <p><code>2.12</code> is supported by all Lustre deployment types, except for <code>PERSISTENT_2</code> with a metadata configuration mode.</p></li>
+    /// <li>
+    /// <p><code>2.15</code> is supported by all Lustre deployment types and is recommended for all new file systems.</p></li>
     /// </ul>
-    /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p><note>
-    /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
-    /// </note>
+    /// <p>Default value is <code>2.10</code>, except for the following deployments:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Default value is <code>2.12</code> when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code> without a metadata configuration mode.</p></li>
+    /// <li>
+    /// <p>Default value is <code>2.15</code> when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code> with a metadata configuration mode.</p></li>
+    /// </ul>
     pub fn set_file_system_type_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_type_version = input;
         self
     }
-    /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
+    /// <p>For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
     /// <ul>
     /// <li>
-    /// <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p></li>
+    /// <p><code>2.10</code> is supported by the Scratch and Persistent_1 Lustre deployment types.</p></li>
     /// <li>
-    /// <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p></li>
+    /// <p><code>2.12</code> is supported by all Lustre deployment types, except for <code>PERSISTENT_2</code> with a metadata configuration mode.</p></li>
+    /// <li>
+    /// <p><code>2.15</code> is supported by all Lustre deployment types and is recommended for all new file systems.</p></li>
     /// </ul>
-    /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p><note>
-    /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
-    /// </note>
+    /// <p>Default value is <code>2.10</code>, except for the following deployments:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Default value is <code>2.12</code> when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code> without a metadata configuration mode.</p></li>
+    /// <li>
+    /// <p>Default value is <code>2.15</code> when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code> with a metadata configuration mode.</p></li>
+    /// </ul>
     pub fn get_file_system_type_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_type_version
     }

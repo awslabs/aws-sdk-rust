@@ -1645,6 +1645,8 @@ pub(crate) mod shape_value_string_list;
 
 pub(crate) mod shape_view_definition;
 
+pub(crate) mod shape_view_definition_input;
+
 pub(crate) mod shape_workflow_graph;
 
 pub(crate) mod shape_workflow_run_statistics;
@@ -1788,6 +1790,8 @@ pub(crate) mod shape_string_column_statistics_data;
 pub(crate) mod shape_transform_config_parameter;
 
 pub(crate) mod shape_upsert_redshift_target_options;
+
+pub(crate) mod shape_view_representation_input;
 
 pub(crate) mod shape_view_representation_list;
 

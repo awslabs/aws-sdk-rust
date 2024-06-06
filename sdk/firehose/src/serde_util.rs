@@ -165,9 +165,6 @@ pub(crate) fn redshift_destination_description_correct_errors(
             crate::serde_util::copy_command_correct_errors(builder).build().ok()
         }
     }
-    if builder.username.is_none() {
-        builder.username = Some(Default::default())
-    }
     if builder.s3_destination_description.is_none() {
         builder.s3_destination_description = {
             let builder = crate::types::builders::S3DestinationDescriptionBuilder::default();
@@ -216,6 +213,15 @@ pub(crate) fn document_id_options_correct_errors(
 ) -> crate::types::builders::DocumentIdOptionsBuilder {
     if builder.default_document_id_format.is_none() {
         builder.default_document_id_format = "no value was set".parse::<crate::types::DefaultDocumentIdFormat>().ok()
+    }
+    builder
+}
+
+pub(crate) fn secrets_manager_configuration_correct_errors(
+    mut builder: crate::types::builders::SecretsManagerConfigurationBuilder,
+) -> crate::types::builders::SecretsManagerConfigurationBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
     }
     builder
 }

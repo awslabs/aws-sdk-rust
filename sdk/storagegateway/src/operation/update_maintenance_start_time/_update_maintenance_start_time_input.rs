@@ -3,6 +3,8 @@
 /// <p>A JSON object containing the following fields:</p>
 /// <ul>
 /// <li>
+/// <p><code>UpdateMaintenanceStartTimeInput$SoftwareUpdatePreferences</code></p></li>
+/// <li>
 /// <p><code>UpdateMaintenanceStartTimeInput$DayOfMonth</code></p></li>
 /// <li>
 /// <p><code>UpdateMaintenanceStartTimeInput$DayOfWeek</code></p></li>
@@ -20,10 +22,15 @@ pub struct UpdateMaintenanceStartTimeInput {
     pub hour_of_day: ::std::option::Option<i32>,
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the hour is in the time zone of the gateway.</p>
     pub minute_of_hour: ::std::option::Option<i32>,
-    /// <p>The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6, where 0 represents Sunday and 6 Saturday.</p>
+    /// <p>The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6, where 0 represents Sunday and 6 represents Saturday.</p>
     pub day_of_week: ::std::option::Option<i32>,
-    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
+    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month. It is not possible to set the maintenance schedule to start on days 29 through 31.</p>
     pub day_of_month: ::std::option::Option<i32>,
+    /// <p>A set of variables indicating the software update preferences for the gateway.</p>
+    /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
+    /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    pub software_update_preferences: ::std::option::Option<crate::types::SoftwareUpdatePreferences>,
 }
 impl UpdateMaintenanceStartTimeInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
@@ -38,13 +45,20 @@ impl UpdateMaintenanceStartTimeInput {
     pub fn minute_of_hour(&self) -> ::std::option::Option<i32> {
         self.minute_of_hour
     }
-    /// <p>The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6, where 0 represents Sunday and 6 Saturday.</p>
+    /// <p>The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6, where 0 represents Sunday and 6 represents Saturday.</p>
     pub fn day_of_week(&self) -> ::std::option::Option<i32> {
         self.day_of_week
     }
-    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
+    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month. It is not possible to set the maintenance schedule to start on days 29 through 31.</p>
     pub fn day_of_month(&self) -> ::std::option::Option<i32> {
         self.day_of_month
+    }
+    /// <p>A set of variables indicating the software update preferences for the gateway.</p>
+    /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
+    /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    pub fn software_update_preferences(&self) -> ::std::option::Option<&crate::types::SoftwareUpdatePreferences> {
+        self.software_update_preferences.as_ref()
     }
 }
 impl UpdateMaintenanceStartTimeInput {
@@ -63,6 +77,7 @@ pub struct UpdateMaintenanceStartTimeInputBuilder {
     pub(crate) minute_of_hour: ::std::option::Option<i32>,
     pub(crate) day_of_week: ::std::option::Option<i32>,
     pub(crate) day_of_month: ::std::option::Option<i32>,
+    pub(crate) software_update_preferences: ::std::option::Option<crate::types::SoftwareUpdatePreferences>,
 }
 impl UpdateMaintenanceStartTimeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
@@ -81,7 +96,6 @@ impl UpdateMaintenanceStartTimeInputBuilder {
         &self.gateway_arn
     }
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day is in the time zone of the gateway.</p>
-    /// This field is required.
     pub fn hour_of_day(mut self, input: i32) -> Self {
         self.hour_of_day = ::std::option::Option::Some(input);
         self
@@ -96,7 +110,6 @@ impl UpdateMaintenanceStartTimeInputBuilder {
         &self.hour_of_day
     }
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the hour is in the time zone of the gateway.</p>
-    /// This field is required.
     pub fn minute_of_hour(mut self, input: i32) -> Self {
         self.minute_of_hour = ::std::option::Option::Some(input);
         self
@@ -110,33 +123,56 @@ impl UpdateMaintenanceStartTimeInputBuilder {
     pub fn get_minute_of_hour(&self) -> &::std::option::Option<i32> {
         &self.minute_of_hour
     }
-    /// <p>The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6, where 0 represents Sunday and 6 Saturday.</p>
+    /// <p>The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6, where 0 represents Sunday and 6 represents Saturday.</p>
     pub fn day_of_week(mut self, input: i32) -> Self {
         self.day_of_week = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6, where 0 represents Sunday and 6 Saturday.</p>
+    /// <p>The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6, where 0 represents Sunday and 6 represents Saturday.</p>
     pub fn set_day_of_week(mut self, input: ::std::option::Option<i32>) -> Self {
         self.day_of_week = input;
         self
     }
-    /// <p>The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6, where 0 represents Sunday and 6 Saturday.</p>
+    /// <p>The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6, where 0 represents Sunday and 6 represents Saturday.</p>
     pub fn get_day_of_week(&self) -> &::std::option::Option<i32> {
         &self.day_of_week
     }
-    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
+    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month. It is not possible to set the maintenance schedule to start on days 29 through 31.</p>
     pub fn day_of_month(mut self, input: i32) -> Self {
         self.day_of_month = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
+    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month. It is not possible to set the maintenance schedule to start on days 29 through 31.</p>
     pub fn set_day_of_month(mut self, input: ::std::option::Option<i32>) -> Self {
         self.day_of_month = input;
         self
     }
-    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
+    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month. It is not possible to set the maintenance schedule to start on days 29 through 31.</p>
     pub fn get_day_of_month(&self) -> &::std::option::Option<i32> {
         &self.day_of_month
+    }
+    /// <p>A set of variables indicating the software update preferences for the gateway.</p>
+    /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
+    /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    pub fn software_update_preferences(mut self, input: crate::types::SoftwareUpdatePreferences) -> Self {
+        self.software_update_preferences = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A set of variables indicating the software update preferences for the gateway.</p>
+    /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
+    /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    pub fn set_software_update_preferences(mut self, input: ::std::option::Option<crate::types::SoftwareUpdatePreferences>) -> Self {
+        self.software_update_preferences = input;
+        self
+    }
+    /// <p>A set of variables indicating the software update preferences for the gateway.</p>
+    /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
+    /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    pub fn get_software_update_preferences(&self) -> &::std::option::Option<crate::types::SoftwareUpdatePreferences> {
+        &self.software_update_preferences
     }
     /// Consumes the builder and constructs a [`UpdateMaintenanceStartTimeInput`](crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeInput).
     pub fn build(
@@ -151,6 +187,7 @@ impl UpdateMaintenanceStartTimeInputBuilder {
             minute_of_hour: self.minute_of_hour,
             day_of_week: self.day_of_week,
             day_of_month: self.day_of_month,
+            software_update_preferences: self.software_update_preferences,
         })
     }
 }

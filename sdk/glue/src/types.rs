@@ -37,7 +37,15 @@ pub use crate::types::_table_optimizer_configuration::TableOptimizerConfiguratio
 
 pub use crate::types::_table_optimizer_type::TableOptimizerType;
 
+pub use crate::types::_view_update_action::ViewUpdateAction;
+
 pub use crate::types::_table_input::TableInput;
+
+pub use crate::types::_view_definition_input::ViewDefinitionInput;
+
+pub use crate::types::_view_representation_input::ViewRepresentationInput;
+
+pub use crate::types::_view_dialect::ViewDialect;
 
 pub use crate::types::_table_identifier::TableIdentifier;
 
@@ -454,8 +462,6 @@ pub use crate::types::_table::Table;
 pub use crate::types::_view_definition::ViewDefinition;
 
 pub use crate::types::_view_representation::ViewRepresentation;
-
-pub use crate::types::_view_dialect::ViewDialect;
 
 pub use crate::types::_federated_table::FederatedTable;
 
@@ -1617,9 +1623,15 @@ mod _user_defined_function_input;
 
 mod _view_definition;
 
+mod _view_definition_input;
+
 mod _view_dialect;
 
 mod _view_representation;
+
+mod _view_representation_input;
+
+mod _view_update_action;
 
 mod _worker_type;
 

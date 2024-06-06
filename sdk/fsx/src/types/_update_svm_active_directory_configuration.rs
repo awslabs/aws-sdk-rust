@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSvmActiveDirectoryConfiguration {
-    /// <p>Specifies changes you are making to the self-managed Microsoft Active Directory (AD) configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.</p>
+    /// <p>Specifies changes you are making to the self-managed Microsoft Active Directory configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.</p>
     pub self_managed_active_directory_configuration: ::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
     /// <p>Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code> to which an SVM is joined.</p>
     pub net_bios_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSvmActiveDirectoryConfiguration {
-    /// <p>Specifies changes you are making to the self-managed Microsoft Active Directory (AD) configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.</p>
+    /// <p>Specifies changes you are making to the self-managed Microsoft Active Directory configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.</p>
     pub fn self_managed_active_directory_configuration(
         &self,
     ) -> ::std::option::Option<&crate::types::SelfManagedActiveDirectoryConfigurationUpdates> {
@@ -36,12 +36,12 @@ pub struct UpdateSvmActiveDirectoryConfigurationBuilder {
     pub(crate) net_bios_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSvmActiveDirectoryConfigurationBuilder {
-    /// <p>Specifies changes you are making to the self-managed Microsoft Active Directory (AD) configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.</p>
+    /// <p>Specifies changes you are making to the self-managed Microsoft Active Directory configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.</p>
     pub fn self_managed_active_directory_configuration(mut self, input: crate::types::SelfManagedActiveDirectoryConfigurationUpdates) -> Self {
         self.self_managed_active_directory_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies changes you are making to the self-managed Microsoft Active Directory (AD) configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.</p>
+    /// <p>Specifies changes you are making to the self-managed Microsoft Active Directory configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.</p>
     pub fn set_self_managed_active_directory_configuration(
         mut self,
         input: ::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
@@ -49,7 +49,7 @@ impl UpdateSvmActiveDirectoryConfigurationBuilder {
         self.self_managed_active_directory_configuration = input;
         self
     }
-    /// <p>Specifies changes you are making to the self-managed Microsoft Active Directory (AD) configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.</p>
+    /// <p>Specifies changes you are making to the self-managed Microsoft Active Directory configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.</p>
     pub fn get_self_managed_active_directory_configuration(
         &self,
     ) -> &::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates> {

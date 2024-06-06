@@ -50,6 +50,8 @@ pub struct LustreFileSystemConfiguration {
     pub log_configuration: ::std::option::Option<crate::types::LustreLogConfiguration>,
     /// <p>The Lustre root squash configuration for an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
     pub root_squash_configuration: ::std::option::Option<crate::types::LustreRootSquashConfiguration>,
+    /// <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p>
+    pub metadata_configuration: ::std::option::Option<crate::types::FileSystemLustreMetadataConfiguration>,
 }
 impl LustreFileSystemConfiguration {
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -122,6 +124,10 @@ impl LustreFileSystemConfiguration {
     pub fn root_squash_configuration(&self) -> ::std::option::Option<&crate::types::LustreRootSquashConfiguration> {
         self.root_squash_configuration.as_ref()
     }
+    /// <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p>
+    pub fn metadata_configuration(&self) -> ::std::option::Option<&crate::types::FileSystemLustreMetadataConfiguration> {
+        self.metadata_configuration.as_ref()
+    }
 }
 impl LustreFileSystemConfiguration {
     /// Creates a new builder-style object to manufacture [`LustreFileSystemConfiguration`](crate::types::LustreFileSystemConfiguration).
@@ -146,6 +152,7 @@ pub struct LustreFileSystemConfigurationBuilder {
     pub(crate) data_compression_type: ::std::option::Option<crate::types::DataCompressionType>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::LustreLogConfiguration>,
     pub(crate) root_squash_configuration: ::std::option::Option<crate::types::LustreRootSquashConfiguration>,
+    pub(crate) metadata_configuration: ::std::option::Option<crate::types::FileSystemLustreMetadataConfiguration>,
 }
 impl LustreFileSystemConfigurationBuilder {
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -382,6 +389,20 @@ impl LustreFileSystemConfigurationBuilder {
     pub fn get_root_squash_configuration(&self) -> &::std::option::Option<crate::types::LustreRootSquashConfiguration> {
         &self.root_squash_configuration
     }
+    /// <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p>
+    pub fn metadata_configuration(mut self, input: crate::types::FileSystemLustreMetadataConfiguration) -> Self {
+        self.metadata_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p>
+    pub fn set_metadata_configuration(mut self, input: ::std::option::Option<crate::types::FileSystemLustreMetadataConfiguration>) -> Self {
+        self.metadata_configuration = input;
+        self
+    }
+    /// <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p>
+    pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::FileSystemLustreMetadataConfiguration> {
+        &self.metadata_configuration
+    }
     /// Consumes the builder and constructs a [`LustreFileSystemConfiguration`](crate::types::LustreFileSystemConfiguration).
     pub fn build(self) -> crate::types::LustreFileSystemConfiguration {
         crate::types::LustreFileSystemConfiguration {
@@ -397,6 +418,7 @@ impl LustreFileSystemConfigurationBuilder {
             data_compression_type: self.data_compression_type,
             log_configuration: self.log_configuration,
             root_squash_configuration: self.root_squash_configuration,
+            metadata_configuration: self.metadata_configuration,
         }
     }
 }

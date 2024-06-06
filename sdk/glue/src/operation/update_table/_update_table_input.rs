@@ -15,6 +15,10 @@ pub struct UpdateTableInput {
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The version ID at which to update the table contents.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
+    /// <p>The operation to be performed when updating the view.</p>
+    pub view_update_action: ::std::option::Option<crate::types::ViewUpdateAction>,
+    /// <p>A flag that can be set to true to ignore matching storage descriptor and subobject matching requirements.</p>
+    pub force: ::std::option::Option<bool>,
 }
 impl UpdateTableInput {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -41,6 +45,14 @@ impl UpdateTableInput {
     pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
+    /// <p>The operation to be performed when updating the view.</p>
+    pub fn view_update_action(&self) -> ::std::option::Option<&crate::types::ViewUpdateAction> {
+        self.view_update_action.as_ref()
+    }
+    /// <p>A flag that can be set to true to ignore matching storage descriptor and subobject matching requirements.</p>
+    pub fn force(&self) -> ::std::option::Option<bool> {
+        self.force
+    }
 }
 impl UpdateTableInput {
     /// Creates a new builder-style object to manufacture [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
@@ -59,6 +71,8 @@ pub struct UpdateTableInputBuilder {
     pub(crate) skip_archive: ::std::option::Option<bool>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
+    pub(crate) view_update_action: ::std::option::Option<crate::types::ViewUpdateAction>,
+    pub(crate) force: ::std::option::Option<bool>,
 }
 impl UpdateTableInputBuilder {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -147,6 +161,34 @@ impl UpdateTableInputBuilder {
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_id
     }
+    /// <p>The operation to be performed when updating the view.</p>
+    pub fn view_update_action(mut self, input: crate::types::ViewUpdateAction) -> Self {
+        self.view_update_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The operation to be performed when updating the view.</p>
+    pub fn set_view_update_action(mut self, input: ::std::option::Option<crate::types::ViewUpdateAction>) -> Self {
+        self.view_update_action = input;
+        self
+    }
+    /// <p>The operation to be performed when updating the view.</p>
+    pub fn get_view_update_action(&self) -> &::std::option::Option<crate::types::ViewUpdateAction> {
+        &self.view_update_action
+    }
+    /// <p>A flag that can be set to true to ignore matching storage descriptor and subobject matching requirements.</p>
+    pub fn force(mut self, input: bool) -> Self {
+        self.force = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A flag that can be set to true to ignore matching storage descriptor and subobject matching requirements.</p>
+    pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.force = input;
+        self
+    }
+    /// <p>A flag that can be set to true to ignore matching storage descriptor and subobject matching requirements.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
+    }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_table::UpdateTableInput {
@@ -156,6 +198,8 @@ impl UpdateTableInputBuilder {
             skip_archive: self.skip_archive,
             transaction_id: self.transaction_id,
             version_id: self.version_id,
+            view_update_action: self.view_update_action,
+            force: self.force,
         })
     }
 }

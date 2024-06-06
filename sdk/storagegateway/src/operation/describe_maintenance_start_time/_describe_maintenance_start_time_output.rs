@@ -3,6 +3,8 @@
 /// <p>A JSON object containing the following fields:</p>
 /// <ul>
 /// <li>
+/// <p><code>DescribeMaintenanceStartTimeOutput$SoftwareUpdatePreferences</code></p></li>
+/// <li>
 /// <p><code>DescribeMaintenanceStartTimeOutput$DayOfMonth</code></p></li>
 /// <li>
 /// <p><code>DescribeMaintenanceStartTimeOutput$DayOfWeek</code></p></li>
@@ -24,10 +26,15 @@ pub struct DescribeMaintenanceStartTimeOutput {
     pub minute_of_hour: ::std::option::Option<i32>,
     /// <p>An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.</p>
     pub day_of_week: ::std::option::Option<i32>,
-    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
+    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month. It is not possible to set the maintenance schedule to start on days 29 through 31.</p>
     pub day_of_month: ::std::option::Option<i32>,
     /// <p>A value that indicates the time zone that is set for the gateway. The start time and day of week specified should be in the time zone of the gateway.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
+    /// <p>A set of variables indicating the software update preferences for the gateway.</p>
+    /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
+    /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    pub software_update_preferences: ::std::option::Option<crate::types::SoftwareUpdatePreferences>,
     _request_id: Option<String>,
 }
 impl DescribeMaintenanceStartTimeOutput {
@@ -47,13 +54,20 @@ impl DescribeMaintenanceStartTimeOutput {
     pub fn day_of_week(&self) -> ::std::option::Option<i32> {
         self.day_of_week
     }
-    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
+    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month. It is not possible to set the maintenance schedule to start on days 29 through 31.</p>
     pub fn day_of_month(&self) -> ::std::option::Option<i32> {
         self.day_of_month
     }
     /// <p>A value that indicates the time zone that is set for the gateway. The start time and day of week specified should be in the time zone of the gateway.</p>
     pub fn timezone(&self) -> ::std::option::Option<&str> {
         self.timezone.as_deref()
+    }
+    /// <p>A set of variables indicating the software update preferences for the gateway.</p>
+    /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
+    /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    pub fn software_update_preferences(&self) -> ::std::option::Option<&crate::types::SoftwareUpdatePreferences> {
+        self.software_update_preferences.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeMaintenanceStartTimeOutput {
@@ -78,6 +92,7 @@ pub struct DescribeMaintenanceStartTimeOutputBuilder {
     pub(crate) day_of_week: ::std::option::Option<i32>,
     pub(crate) day_of_month: ::std::option::Option<i32>,
     pub(crate) timezone: ::std::option::Option<::std::string::String>,
+    pub(crate) software_update_preferences: ::std::option::Option<crate::types::SoftwareUpdatePreferences>,
     _request_id: Option<String>,
 }
 impl DescribeMaintenanceStartTimeOutputBuilder {
@@ -137,17 +152,17 @@ impl DescribeMaintenanceStartTimeOutputBuilder {
     pub fn get_day_of_week(&self) -> &::std::option::Option<i32> {
         &self.day_of_week
     }
-    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
+    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month. It is not possible to set the maintenance schedule to start on days 29 through 31.</p>
     pub fn day_of_month(mut self, input: i32) -> Self {
         self.day_of_month = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
+    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month. It is not possible to set the maintenance schedule to start on days 29 through 31.</p>
     pub fn set_day_of_month(mut self, input: ::std::option::Option<i32>) -> Self {
         self.day_of_month = input;
         self
     }
-    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
+    /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month. It is not possible to set the maintenance schedule to start on days 29 through 31.</p>
     pub fn get_day_of_month(&self) -> &::std::option::Option<i32> {
         &self.day_of_month
     }
@@ -164,6 +179,29 @@ impl DescribeMaintenanceStartTimeOutputBuilder {
     /// <p>A value that indicates the time zone that is set for the gateway. The start time and day of week specified should be in the time zone of the gateway.</p>
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
         &self.timezone
+    }
+    /// <p>A set of variables indicating the software update preferences for the gateway.</p>
+    /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
+    /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    pub fn software_update_preferences(mut self, input: crate::types::SoftwareUpdatePreferences) -> Self {
+        self.software_update_preferences = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A set of variables indicating the software update preferences for the gateway.</p>
+    /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
+    /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    pub fn set_software_update_preferences(mut self, input: ::std::option::Option<crate::types::SoftwareUpdatePreferences>) -> Self {
+        self.software_update_preferences = input;
+        self
+    }
+    /// <p>A set of variables indicating the software update preferences for the gateway.</p>
+    /// <p>Includes <code>AutomaticUpdatePolicy</code> field with the following inputs:</p>
+    /// <p><code>ALL_VERSIONS</code> - Enables regular gateway maintenance updates.</p>
+    /// <p><code>EMERGENCY_VERSIONS_ONLY</code> - Disables regular gateway maintenance updates.</p>
+    pub fn get_software_update_preferences(&self) -> &::std::option::Option<crate::types::SoftwareUpdatePreferences> {
+        &self.software_update_preferences
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -183,6 +221,7 @@ impl DescribeMaintenanceStartTimeOutputBuilder {
             day_of_week: self.day_of_week,
             day_of_month: self.day_of_month,
             timezone: self.timezone,
+            software_update_preferences: self.software_update_preferences,
             _request_id: self._request_id,
         }
     }

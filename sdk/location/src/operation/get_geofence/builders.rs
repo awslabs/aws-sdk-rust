@@ -22,7 +22,9 @@ impl crate::operation::get_geofence::builders::GetGeofenceInputBuilder {
 }
 /// Fluent builder constructing a request to `GetGeofence`.
 ///
-/// <p>Retrieves the geofence details from a geofence collection.</p>
+/// <p>Retrieves the geofence details from a geofence collection.</p><note>
+/// <p>The returned geometry will always match the geometry format used when the geofence was created.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGeofenceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

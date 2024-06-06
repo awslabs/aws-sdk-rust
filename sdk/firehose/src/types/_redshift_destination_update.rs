@@ -27,6 +27,8 @@ pub struct RedshiftDestinationUpdate {
     pub s3_backup_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    /// <p>The configuration that defines how you access secrets for Amazon Redshift.</p>
+    pub secrets_manager_configuration: ::std::option::Option<crate::types::SecretsManagerConfiguration>,
 }
 impl RedshiftDestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -74,6 +76,10 @@ impl RedshiftDestinationUpdate {
     pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
+    /// <p>The configuration that defines how you access secrets for Amazon Redshift.</p>
+    pub fn secrets_manager_configuration(&self) -> ::std::option::Option<&crate::types::SecretsManagerConfiguration> {
+        self.secrets_manager_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RedshiftDestinationUpdate {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -89,6 +95,7 @@ impl ::std::fmt::Debug for RedshiftDestinationUpdate {
         formatter.field("s3_backup_mode", &self.s3_backup_mode);
         formatter.field("s3_backup_update", &self.s3_backup_update);
         formatter.field("cloud_watch_logging_options", &self.cloud_watch_logging_options);
+        formatter.field("secrets_manager_configuration", &self.secrets_manager_configuration);
         formatter.finish()
     }
 }
@@ -114,6 +121,7 @@ pub struct RedshiftDestinationUpdateBuilder {
     pub(crate) s3_backup_mode: ::std::option::Option<crate::types::RedshiftS3BackupMode>,
     pub(crate) s3_backup_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
     pub(crate) cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    pub(crate) secrets_manager_configuration: ::std::option::Option<crate::types::SecretsManagerConfiguration>,
 }
 impl RedshiftDestinationUpdateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -273,6 +281,20 @@ impl RedshiftDestinationUpdateBuilder {
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }
+    /// <p>The configuration that defines how you access secrets for Amazon Redshift.</p>
+    pub fn secrets_manager_configuration(mut self, input: crate::types::SecretsManagerConfiguration) -> Self {
+        self.secrets_manager_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that defines how you access secrets for Amazon Redshift.</p>
+    pub fn set_secrets_manager_configuration(mut self, input: ::std::option::Option<crate::types::SecretsManagerConfiguration>) -> Self {
+        self.secrets_manager_configuration = input;
+        self
+    }
+    /// <p>The configuration that defines how you access secrets for Amazon Redshift.</p>
+    pub fn get_secrets_manager_configuration(&self) -> &::std::option::Option<crate::types::SecretsManagerConfiguration> {
+        &self.secrets_manager_configuration
+    }
     /// Consumes the builder and constructs a [`RedshiftDestinationUpdate`](crate::types::RedshiftDestinationUpdate).
     pub fn build(self) -> crate::types::RedshiftDestinationUpdate {
         crate::types::RedshiftDestinationUpdate {
@@ -287,6 +309,7 @@ impl RedshiftDestinationUpdateBuilder {
             s3_backup_mode: self.s3_backup_mode,
             s3_backup_update: self.s3_backup_update,
             cloud_watch_logging_options: self.cloud_watch_logging_options,
+            secrets_manager_configuration: self.secrets_manager_configuration,
         }
     }
 }
@@ -304,6 +327,7 @@ impl ::std::fmt::Debug for RedshiftDestinationUpdateBuilder {
         formatter.field("s3_backup_mode", &self.s3_backup_mode);
         formatter.field("s3_backup_update", &self.s3_backup_update);
         formatter.field("cloud_watch_logging_options", &self.cloud_watch_logging_options);
+        formatter.field("secrets_manager_configuration", &self.secrets_manager_configuration);
         formatter.finish()
     }
 }

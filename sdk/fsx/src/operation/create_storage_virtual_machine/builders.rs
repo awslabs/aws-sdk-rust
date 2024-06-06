@@ -204,7 +204,7 @@ impl CreateStorageVirtualMachineFluentBuilder {
     /// <li>
     /// <p><code>NTFS</code> if the file system is managed by a Microsoft Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Microsoft Windows user as the service account.</p></li>
     /// <li>
-    /// <p><code>MIXED</code> This is an advanced setting. For more information, see <a href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p></li>
+    /// <p><code>MIXED</code> This is an advanced setting. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p></li>
     /// </ul>
     /// <p></p>
     pub fn root_volume_security_style(mut self, input: crate::types::StorageVirtualMachineRootVolumeSecurityStyle) -> Self {
@@ -218,7 +218,7 @@ impl CreateStorageVirtualMachineFluentBuilder {
     /// <li>
     /// <p><code>NTFS</code> if the file system is managed by a Microsoft Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Microsoft Windows user as the service account.</p></li>
     /// <li>
-    /// <p><code>MIXED</code> This is an advanced setting. For more information, see <a href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p></li>
+    /// <p><code>MIXED</code> This is an advanced setting. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p></li>
     /// </ul>
     /// <p></p>
     pub fn set_root_volume_security_style(
@@ -235,7 +235,7 @@ impl CreateStorageVirtualMachineFluentBuilder {
     /// <li>
     /// <p><code>NTFS</code> if the file system is managed by a Microsoft Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Microsoft Windows user as the service account.</p></li>
     /// <li>
-    /// <p><code>MIXED</code> This is an advanced setting. For more information, see <a href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p></li>
+    /// <p><code>MIXED</code> This is an advanced setting. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p></li>
     /// </ul>
     /// <p></p>
     pub fn get_root_volume_security_style(&self) -> &::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {

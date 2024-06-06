@@ -10,7 +10,7 @@ pub struct HttpEndpointDestinationConfiguration {
     pub buffering_hints: ::std::option::Option<crate::types::HttpEndpointBufferingHints>,
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
-    /// <p>The configuration of the requeste sent to the HTTP endpoint specified as the destination.</p>
+    /// <p>The configuration of the request sent to the HTTP endpoint that is specified as the destination.</p>
     pub request_configuration: ::std::option::Option<crate::types::HttpEndpointRequestConfiguration>,
     /// <p>Describes a data processing configuration.</p>
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
@@ -22,6 +22,8 @@ pub struct HttpEndpointDestinationConfiguration {
     pub s3_backup_mode: ::std::option::Option<crate::types::HttpEndpointS3BackupMode>,
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
     pub s3_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
+    /// <p>The configuration that defines how you access secrets for HTTP Endpoint destination.</p>
+    pub secrets_manager_configuration: ::std::option::Option<crate::types::SecretsManagerConfiguration>,
 }
 impl HttpEndpointDestinationConfiguration {
     /// <p>The configuration of the HTTP endpoint selected as the destination.</p>
@@ -36,7 +38,7 @@ impl HttpEndpointDestinationConfiguration {
     pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
-    /// <p>The configuration of the requeste sent to the HTTP endpoint specified as the destination.</p>
+    /// <p>The configuration of the request sent to the HTTP endpoint that is specified as the destination.</p>
     pub fn request_configuration(&self) -> ::std::option::Option<&crate::types::HttpEndpointRequestConfiguration> {
         self.request_configuration.as_ref()
     }
@@ -60,6 +62,10 @@ impl HttpEndpointDestinationConfiguration {
     pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::S3DestinationConfiguration> {
         self.s3_configuration.as_ref()
     }
+    /// <p>The configuration that defines how you access secrets for HTTP Endpoint destination.</p>
+    pub fn secrets_manager_configuration(&self) -> ::std::option::Option<&crate::types::SecretsManagerConfiguration> {
+        self.secrets_manager_configuration.as_ref()
+    }
 }
 impl HttpEndpointDestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`HttpEndpointDestinationConfiguration`](crate::types::HttpEndpointDestinationConfiguration).
@@ -81,6 +87,7 @@ pub struct HttpEndpointDestinationConfigurationBuilder {
     pub(crate) retry_options: ::std::option::Option<crate::types::HttpEndpointRetryOptions>,
     pub(crate) s3_backup_mode: ::std::option::Option<crate::types::HttpEndpointS3BackupMode>,
     pub(crate) s3_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
+    pub(crate) secrets_manager_configuration: ::std::option::Option<crate::types::SecretsManagerConfiguration>,
 }
 impl HttpEndpointDestinationConfigurationBuilder {
     /// <p>The configuration of the HTTP endpoint selected as the destination.</p>
@@ -126,17 +133,17 @@ impl HttpEndpointDestinationConfigurationBuilder {
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }
-    /// <p>The configuration of the requeste sent to the HTTP endpoint specified as the destination.</p>
+    /// <p>The configuration of the request sent to the HTTP endpoint that is specified as the destination.</p>
     pub fn request_configuration(mut self, input: crate::types::HttpEndpointRequestConfiguration) -> Self {
         self.request_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration of the requeste sent to the HTTP endpoint specified as the destination.</p>
+    /// <p>The configuration of the request sent to the HTTP endpoint that is specified as the destination.</p>
     pub fn set_request_configuration(mut self, input: ::std::option::Option<crate::types::HttpEndpointRequestConfiguration>) -> Self {
         self.request_configuration = input;
         self
     }
-    /// <p>The configuration of the requeste sent to the HTTP endpoint specified as the destination.</p>
+    /// <p>The configuration of the request sent to the HTTP endpoint that is specified as the destination.</p>
     pub fn get_request_configuration(&self) -> &::std::option::Option<crate::types::HttpEndpointRequestConfiguration> {
         &self.request_configuration
     }
@@ -211,6 +218,20 @@ impl HttpEndpointDestinationConfigurationBuilder {
     pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
         &self.s3_configuration
     }
+    /// <p>The configuration that defines how you access secrets for HTTP Endpoint destination.</p>
+    pub fn secrets_manager_configuration(mut self, input: crate::types::SecretsManagerConfiguration) -> Self {
+        self.secrets_manager_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that defines how you access secrets for HTTP Endpoint destination.</p>
+    pub fn set_secrets_manager_configuration(mut self, input: ::std::option::Option<crate::types::SecretsManagerConfiguration>) -> Self {
+        self.secrets_manager_configuration = input;
+        self
+    }
+    /// <p>The configuration that defines how you access secrets for HTTP Endpoint destination.</p>
+    pub fn get_secrets_manager_configuration(&self) -> &::std::option::Option<crate::types::SecretsManagerConfiguration> {
+        &self.secrets_manager_configuration
+    }
     /// Consumes the builder and constructs a [`HttpEndpointDestinationConfiguration`](crate::types::HttpEndpointDestinationConfiguration).
     pub fn build(self) -> crate::types::HttpEndpointDestinationConfiguration {
         crate::types::HttpEndpointDestinationConfiguration {
@@ -223,6 +244,7 @@ impl HttpEndpointDestinationConfigurationBuilder {
             retry_options: self.retry_options,
             s3_backup_mode: self.s3_backup_mode,
             s3_configuration: self.s3_configuration,
+            secrets_manager_configuration: self.secrets_manager_configuration,
         }
     }
 }

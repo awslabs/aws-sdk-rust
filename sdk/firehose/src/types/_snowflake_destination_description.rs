@@ -36,6 +36,8 @@ pub struct SnowflakeDestinationDescription {
     pub s3_backup_mode: ::std::option::Option<crate::types::SnowflakeS3BackupMode>,
     /// <p>Describes a destination in Amazon S3.</p>
     pub s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
+    /// <p>The configuration that defines how you access secrets for Snowflake.</p>
+    pub secrets_manager_configuration: ::std::option::Option<crate::types::SecretsManagerConfiguration>,
 }
 impl SnowflakeDestinationDescription {
     /// <p>URL for accessing your Snowflake account. This URL must include your <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>
@@ -102,6 +104,10 @@ impl SnowflakeDestinationDescription {
     pub fn s3_destination_description(&self) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
         self.s3_destination_description.as_ref()
     }
+    /// <p>The configuration that defines how you access secrets for Snowflake.</p>
+    pub fn secrets_manager_configuration(&self) -> ::std::option::Option<&crate::types::SecretsManagerConfiguration> {
+        self.secrets_manager_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for SnowflakeDestinationDescription {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -122,6 +128,7 @@ impl ::std::fmt::Debug for SnowflakeDestinationDescription {
         formatter.field("retry_options", &self.retry_options);
         formatter.field("s3_backup_mode", &self.s3_backup_mode);
         formatter.field("s3_destination_description", &self.s3_destination_description);
+        formatter.field("secrets_manager_configuration", &self.secrets_manager_configuration);
         formatter.finish()
     }
 }
@@ -152,6 +159,7 @@ pub struct SnowflakeDestinationDescriptionBuilder {
     pub(crate) retry_options: ::std::option::Option<crate::types::SnowflakeRetryOptions>,
     pub(crate) s3_backup_mode: ::std::option::Option<crate::types::SnowflakeS3BackupMode>,
     pub(crate) s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
+    pub(crate) secrets_manager_configuration: ::std::option::Option<crate::types::SecretsManagerConfiguration>,
 }
 impl SnowflakeDestinationDescriptionBuilder {
     /// <p>URL for accessing your Snowflake account. This URL must include your <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>
@@ -378,6 +386,20 @@ impl SnowflakeDestinationDescriptionBuilder {
     pub fn get_s3_destination_description(&self) -> &::std::option::Option<crate::types::S3DestinationDescription> {
         &self.s3_destination_description
     }
+    /// <p>The configuration that defines how you access secrets for Snowflake.</p>
+    pub fn secrets_manager_configuration(mut self, input: crate::types::SecretsManagerConfiguration) -> Self {
+        self.secrets_manager_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that defines how you access secrets for Snowflake.</p>
+    pub fn set_secrets_manager_configuration(mut self, input: ::std::option::Option<crate::types::SecretsManagerConfiguration>) -> Self {
+        self.secrets_manager_configuration = input;
+        self
+    }
+    /// <p>The configuration that defines how you access secrets for Snowflake.</p>
+    pub fn get_secrets_manager_configuration(&self) -> &::std::option::Option<crate::types::SecretsManagerConfiguration> {
+        &self.secrets_manager_configuration
+    }
     /// Consumes the builder and constructs a [`SnowflakeDestinationDescription`](crate::types::SnowflakeDestinationDescription).
     pub fn build(self) -> crate::types::SnowflakeDestinationDescription {
         crate::types::SnowflakeDestinationDescription {
@@ -397,6 +419,7 @@ impl SnowflakeDestinationDescriptionBuilder {
             retry_options: self.retry_options,
             s3_backup_mode: self.s3_backup_mode,
             s3_destination_description: self.s3_destination_description,
+            secrets_manager_configuration: self.secrets_manager_configuration,
         }
     }
 }
@@ -419,6 +442,7 @@ impl ::std::fmt::Debug for SnowflakeDestinationDescriptionBuilder {
         formatter.field("retry_options", &self.retry_options);
         formatter.field("s3_backup_mode", &self.s3_backup_mode);
         formatter.field("s3_destination_description", &self.s3_destination_description);
+        formatter.field("secrets_manager_configuration", &self.secrets_manager_configuration);
         formatter.finish()
     }
 }

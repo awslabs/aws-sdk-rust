@@ -59,6 +59,8 @@ impl crate::operation::update_file_system::builders::UpdateFileSystemInputBuilde
 /// <li>
 /// <p><code>LustreRootSquashConfiguration</code></p></li>
 /// <li>
+/// <p><code>MetadataConfiguration</code></p></li>
+/// <li>
 /// <p><code>PerUnitStorageThroughput</code></p></li>
 /// <li>
 /// <p><code>StorageCapacity</code></p></li>

@@ -278,17 +278,17 @@ impl UpdateDestinationFluentBuilder {
     ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationUpdate> {
         self.inner.get_amazon_open_search_serverless_destination_update()
     }
-    /// <p>Update to the Snowflake destination condiguration settings</p>
+    /// <p>Update to the Snowflake destination configuration settings.</p>
     pub fn snowflake_destination_update(mut self, input: crate::types::SnowflakeDestinationUpdate) -> Self {
         self.inner = self.inner.snowflake_destination_update(input);
         self
     }
-    /// <p>Update to the Snowflake destination condiguration settings</p>
+    /// <p>Update to the Snowflake destination configuration settings.</p>
     pub fn set_snowflake_destination_update(mut self, input: ::std::option::Option<crate::types::SnowflakeDestinationUpdate>) -> Self {
         self.inner = self.inner.set_snowflake_destination_update(input);
         self
     }
-    /// <p>Update to the Snowflake destination condiguration settings</p>
+    /// <p>Update to the Snowflake destination configuration settings.</p>
     pub fn get_snowflake_destination_update(&self) -> &::std::option::Option<crate::types::SnowflakeDestinationUpdate> {
         self.inner.get_snowflake_destination_update()
     }

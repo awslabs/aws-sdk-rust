@@ -178,6 +178,8 @@ mod describe_tracker;
 
 mod disassociate_tracker_consumer;
 
+mod forecast_geofence_events;
+
 mod get_device_position;
 
 mod get_device_position_history;
@@ -237,3 +239,5 @@ mod update_place_index;
 mod update_route_calculator;
 
 mod update_tracker;
+
+mod verify_device_position;

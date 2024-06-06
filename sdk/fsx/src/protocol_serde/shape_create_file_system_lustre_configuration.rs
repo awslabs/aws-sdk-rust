@@ -60,5 +60,14 @@ pub fn ser_create_file_system_lustre_configuration(
         crate::protocol_serde::shape_lustre_root_squash_configuration::ser_lustre_root_squash_configuration(&mut object_16, var_15)?;
         object_16.finish();
     }
+    if let Some(var_17) = &input.metadata_configuration {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("MetadataConfiguration").start_object();
+        crate::protocol_serde::shape_create_file_system_lustre_metadata_configuration::ser_create_file_system_lustre_metadata_configuration(
+            &mut object_18,
+            var_17,
+        )?;
+        object_18.finish();
+    }
     Ok(())
 }

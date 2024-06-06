@@ -9,6 +9,8 @@ pub use crate::types::_cache_attributes::CacheAttributesBuilder;
 
 pub use crate::types::_nfs_file_share_defaults::NfsFileShareDefaultsBuilder;
 
+pub use crate::types::_software_update_preferences::SoftwareUpdatePreferencesBuilder;
+
 pub use crate::types::_bandwidth_rate_limit_interval::BandwidthRateLimitIntervalBuilder;
 
 pub use crate::types::_automatic_tape_creation_rule::AutomaticTapeCreationRuleBuilder;

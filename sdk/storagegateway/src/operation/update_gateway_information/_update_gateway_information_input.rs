@@ -12,7 +12,7 @@ pub struct UpdateGatewayInformationInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs?</a></p>
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the size of the gateway's metadata cache.</p>
+    /// <p>Specifies the size of the gateway's metadata cache. This setting impacts gateway performance and hardware recommendations. For more information, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/performance-multiple-file-shares.html">Performance guidance for gateways with multiple file shares</a> in the <i>Amazon S3 File Gateway User Guide</i>.</p>
     pub gateway_capacity: ::std::option::Option<crate::types::GatewayCapacity>,
 }
 impl UpdateGatewayInformationInput {
@@ -33,7 +33,7 @@ impl UpdateGatewayInformationInput {
     pub fn cloud_watch_log_group_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
-    /// <p>Specifies the size of the gateway's metadata cache.</p>
+    /// <p>Specifies the size of the gateway's metadata cache. This setting impacts gateway performance and hardware recommendations. For more information, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/performance-multiple-file-shares.html">Performance guidance for gateways with multiple file shares</a> in the <i>Amazon S3 File Gateway User Guide</i>.</p>
     pub fn gateway_capacity(&self) -> ::std::option::Option<&crate::types::GatewayCapacity> {
         self.gateway_capacity.as_ref()
     }
@@ -116,17 +116,17 @@ impl UpdateGatewayInformationInputBuilder {
     pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_log_group_arn
     }
-    /// <p>Specifies the size of the gateway's metadata cache.</p>
+    /// <p>Specifies the size of the gateway's metadata cache. This setting impacts gateway performance and hardware recommendations. For more information, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/performance-multiple-file-shares.html">Performance guidance for gateways with multiple file shares</a> in the <i>Amazon S3 File Gateway User Guide</i>.</p>
     pub fn gateway_capacity(mut self, input: crate::types::GatewayCapacity) -> Self {
         self.gateway_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the size of the gateway's metadata cache.</p>
+    /// <p>Specifies the size of the gateway's metadata cache. This setting impacts gateway performance and hardware recommendations. For more information, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/performance-multiple-file-shares.html">Performance guidance for gateways with multiple file shares</a> in the <i>Amazon S3 File Gateway User Guide</i>.</p>
     pub fn set_gateway_capacity(mut self, input: ::std::option::Option<crate::types::GatewayCapacity>) -> Self {
         self.gateway_capacity = input;
         self
     }
-    /// <p>Specifies the size of the gateway's metadata cache.</p>
+    /// <p>Specifies the size of the gateway's metadata cache. This setting impacts gateway performance and hardware recommendations. For more information, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/performance-multiple-file-shares.html">Performance guidance for gateways with multiple file shares</a> in the <i>Amazon S3 File Gateway User Guide</i>.</p>
     pub fn get_gateway_capacity(&self) -> &::std::option::Option<crate::types::GatewayCapacity> {
         &self.gateway_capacity
     }

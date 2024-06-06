@@ -22,6 +22,8 @@ pub struct HttpEndpointDestinationDescription {
     pub s3_backup_mode: ::std::option::Option<crate::types::HttpEndpointS3BackupMode>,
     /// <p>Describes a destination in Amazon S3.</p>
     pub s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
+    /// <p>The configuration that defines how you access secrets for HTTP Endpoint destination.</p>
+    pub secrets_manager_configuration: ::std::option::Option<crate::types::SecretsManagerConfiguration>,
 }
 impl HttpEndpointDestinationDescription {
     /// <p>The configuration of the specified HTTP endpoint destination.</p>
@@ -60,6 +62,10 @@ impl HttpEndpointDestinationDescription {
     pub fn s3_destination_description(&self) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
         self.s3_destination_description.as_ref()
     }
+    /// <p>The configuration that defines how you access secrets for HTTP Endpoint destination.</p>
+    pub fn secrets_manager_configuration(&self) -> ::std::option::Option<&crate::types::SecretsManagerConfiguration> {
+        self.secrets_manager_configuration.as_ref()
+    }
 }
 impl HttpEndpointDestinationDescription {
     /// Creates a new builder-style object to manufacture [`HttpEndpointDestinationDescription`](crate::types::HttpEndpointDestinationDescription).
@@ -81,6 +87,7 @@ pub struct HttpEndpointDestinationDescriptionBuilder {
     pub(crate) retry_options: ::std::option::Option<crate::types::HttpEndpointRetryOptions>,
     pub(crate) s3_backup_mode: ::std::option::Option<crate::types::HttpEndpointS3BackupMode>,
     pub(crate) s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
+    pub(crate) secrets_manager_configuration: ::std::option::Option<crate::types::SecretsManagerConfiguration>,
 }
 impl HttpEndpointDestinationDescriptionBuilder {
     /// <p>The configuration of the specified HTTP endpoint destination.</p>
@@ -209,6 +216,20 @@ impl HttpEndpointDestinationDescriptionBuilder {
     pub fn get_s3_destination_description(&self) -> &::std::option::Option<crate::types::S3DestinationDescription> {
         &self.s3_destination_description
     }
+    /// <p>The configuration that defines how you access secrets for HTTP Endpoint destination.</p>
+    pub fn secrets_manager_configuration(mut self, input: crate::types::SecretsManagerConfiguration) -> Self {
+        self.secrets_manager_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that defines how you access secrets for HTTP Endpoint destination.</p>
+    pub fn set_secrets_manager_configuration(mut self, input: ::std::option::Option<crate::types::SecretsManagerConfiguration>) -> Self {
+        self.secrets_manager_configuration = input;
+        self
+    }
+    /// <p>The configuration that defines how you access secrets for HTTP Endpoint destination.</p>
+    pub fn get_secrets_manager_configuration(&self) -> &::std::option::Option<crate::types::SecretsManagerConfiguration> {
+        &self.secrets_manager_configuration
+    }
     /// Consumes the builder and constructs a [`HttpEndpointDestinationDescription`](crate::types::HttpEndpointDestinationDescription).
     pub fn build(self) -> crate::types::HttpEndpointDestinationDescription {
         crate::types::HttpEndpointDestinationDescription {
@@ -221,6 +242,7 @@ impl HttpEndpointDestinationDescriptionBuilder {
             retry_options: self.retry_options,
             s3_backup_mode: self.s3_backup_mode,
             s3_destination_description: self.s3_destination_description,
+            secrets_manager_configuration: self.secrets_manager_configuration,
         }
     }
 }

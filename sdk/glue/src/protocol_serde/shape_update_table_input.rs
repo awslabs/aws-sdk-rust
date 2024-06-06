@@ -24,5 +24,11 @@ pub fn ser_update_table_input_input(
     if let Some(var_7) = &input.version_id {
         object.key("VersionId").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.view_update_action {
+        object.key("ViewUpdateAction").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.force {
+        object.key("Force").boolean(*var_9);
+    }
     Ok(())
 }

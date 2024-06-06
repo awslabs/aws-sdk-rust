@@ -22,7 +22,7 @@ impl crate::operation::describe_maintenance_start_time::builders::DescribeMainte
 }
 /// Fluent builder constructing a request to `DescribeMaintenanceStartTime`.
 ///
-/// <p>Returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone.</p>
+/// <p>Returns your gateway's maintenance window schedule information, with values for monthly or weekly cadence, specific day and time to begin maintenance, and which types of updates to apply. Time values returned are for the gateway's time zone.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceStartTimeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

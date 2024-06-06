@@ -22,9 +22,9 @@ impl crate::operation::update_smb_security_strategy::builders::UpdateSmbSecurity
 }
 /// Fluent builder constructing a request to `UpdateSMBSecurityStrategy`.
 ///
-/// <p>Updates the SMB security strategy on a file gateway. This action is only supported in file gateways.</p><note>
-/// <p>This API is called Security level in the User Guide.</p>
-/// <p>A higher security level can affect performance of the gateway.</p>
+/// <p>Updates the SMB security strategy level for an Amazon S3 file gateway. This action is only supported for Amazon S3 file gateways.</p><note>
+/// <p>For information about configuring this setting using the Amazon Web Services console, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/security-strategy.html">Setting a security level for your gateway</a> in the <i>Amazon S3 File Gateway User Guide</i>.</p>
+/// <p>A higher security strategy level can affect performance of the gateway.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSMBSecurityStrategyFluentBuilder {
@@ -126,25 +126,28 @@ impl UpdateSMBSecurityStrategyFluentBuilder {
         self.inner.get_gateway_arn()
     }
     /// <p>Specifies the type of security strategy.</p>
-    /// <p>ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Supported only in S3 File Gateway.</p>
-    /// <p>MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p>
-    /// <p>MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
+    /// <p><code>ClientSpecified</code>: If you choose this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Supported only for S3 File Gateway.</p>
+    /// <p><code>MandatorySigning</code>: If you choose this option, File Gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p>
+    /// <p><code>MandatoryEncryption</code>: If you choose this option, File Gateway only allows connections from SMBv3 clients that have encryption enabled. This option is recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
+    /// <p><code>MandatoryEncryptionNoAes128</code>: If you choose this option, File Gateway only allows connections from SMBv3 clients that use 256-bit AES encryption algorithms. 128-bit algorithms are not allowed. This option is recommended for environments that handle sensitive data. It works with SMB clients on Microsoft Windows 8, Windows Server 2012, or later.</p>
     pub fn smb_security_strategy(mut self, input: crate::types::SmbSecurityStrategy) -> Self {
         self.inner = self.inner.smb_security_strategy(input);
         self
     }
     /// <p>Specifies the type of security strategy.</p>
-    /// <p>ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Supported only in S3 File Gateway.</p>
-    /// <p>MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p>
-    /// <p>MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
+    /// <p><code>ClientSpecified</code>: If you choose this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Supported only for S3 File Gateway.</p>
+    /// <p><code>MandatorySigning</code>: If you choose this option, File Gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p>
+    /// <p><code>MandatoryEncryption</code>: If you choose this option, File Gateway only allows connections from SMBv3 clients that have encryption enabled. This option is recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
+    /// <p><code>MandatoryEncryptionNoAes128</code>: If you choose this option, File Gateway only allows connections from SMBv3 clients that use 256-bit AES encryption algorithms. 128-bit algorithms are not allowed. This option is recommended for environments that handle sensitive data. It works with SMB clients on Microsoft Windows 8, Windows Server 2012, or later.</p>
     pub fn set_smb_security_strategy(mut self, input: ::std::option::Option<crate::types::SmbSecurityStrategy>) -> Self {
         self.inner = self.inner.set_smb_security_strategy(input);
         self
     }
     /// <p>Specifies the type of security strategy.</p>
-    /// <p>ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Supported only in S3 File Gateway.</p>
-    /// <p>MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p>
-    /// <p>MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
+    /// <p><code>ClientSpecified</code>: If you choose this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Supported only for S3 File Gateway.</p>
+    /// <p><code>MandatorySigning</code>: If you choose this option, File Gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p>
+    /// <p><code>MandatoryEncryption</code>: If you choose this option, File Gateway only allows connections from SMBv3 clients that have encryption enabled. This option is recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
+    /// <p><code>MandatoryEncryptionNoAes128</code>: If you choose this option, File Gateway only allows connections from SMBv3 clients that use 256-bit AES encryption algorithms. 128-bit algorithms are not allowed. This option is recommended for environments that handle sensitive data. It works with SMB clients on Microsoft Windows 8, Windows Server 2012, or later.</p>
     pub fn get_smb_security_strategy(&self) -> &::std::option::Option<crate::types::SmbSecurityStrategy> {
         self.inner.get_smb_security_strategy()
     }

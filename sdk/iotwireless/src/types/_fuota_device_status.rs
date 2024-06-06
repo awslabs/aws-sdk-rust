@@ -12,6 +12,7 @@
 /// ```text
 /// # let fuotadevicestatus = unimplemented!();
 /// match fuotadevicestatus {
+///     FuotaDeviceStatus::DeviceExistInConflictFuotaTask => { /* ... */ },
 ///     FuotaDeviceStatus::FragAlgoUnsupported => { /* ... */ },
 ///     FuotaDeviceStatus::FragIndexUnsupported => { /* ... */ },
 ///     FuotaDeviceStatus::Initial => { /* ... */ },
@@ -51,6 +52,8 @@
 )]
 pub enum FuotaDeviceStatus {
     #[allow(missing_docs)] // documentation missing in model
+    DeviceExistInConflictFuotaTask,
+    #[allow(missing_docs)] // documentation missing in model
     FragAlgoUnsupported,
     #[allow(missing_docs)] // documentation missing in model
     FragIndexUnsupported,
@@ -79,6 +82,7 @@ pub enum FuotaDeviceStatus {
 impl ::std::convert::From<&str> for FuotaDeviceStatus {
     fn from(s: &str) -> Self {
         match s {
+            "Device_exist_in_conflict_fuota_task" => FuotaDeviceStatus::DeviceExistInConflictFuotaTask,
             "FragAlgo_unsupported" => FuotaDeviceStatus::FragAlgoUnsupported,
             "FragIndex_unsupported" => FuotaDeviceStatus::FragIndexUnsupported,
             "Initial" => FuotaDeviceStatus::Initial,
@@ -105,6 +109,7 @@ impl FuotaDeviceStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            FuotaDeviceStatus::DeviceExistInConflictFuotaTask => "Device_exist_in_conflict_fuota_task",
             FuotaDeviceStatus::FragAlgoUnsupported => "FragAlgo_unsupported",
             FuotaDeviceStatus::FragIndexUnsupported => "FragIndex_unsupported",
             FuotaDeviceStatus::Initial => "Initial",
@@ -122,6 +127,7 @@ impl FuotaDeviceStatus {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "Device_exist_in_conflict_fuota_task",
             "FragAlgo_unsupported",
             "FragIndex_unsupported",
             "Initial",
@@ -156,6 +162,7 @@ impl FuotaDeviceStatus {
 impl ::std::fmt::Display for FuotaDeviceStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            FuotaDeviceStatus::DeviceExistInConflictFuotaTask => write!(f, "Device_exist_in_conflict_fuota_task"),
             FuotaDeviceStatus::FragAlgoUnsupported => write!(f, "FragAlgo_unsupported"),
             FuotaDeviceStatus::FragIndexUnsupported => write!(f, "FragIndex_unsupported"),
             FuotaDeviceStatus::Initial => write!(f, "Initial"),

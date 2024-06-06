@@ -1,6 +1,6 @@
 # aws-sdk-firehose
 
-Amazon Data Firehose is a fully managed service that delivers real-time streaming data to destinations such as Amazon Simple Storage Service (Amazon S3), Amazon OpenSearch Service, Amazon Redshift, Splunk, and various other supportd destinations.
+Amazon Data Firehose is a fully managed service that delivers real-time streaming data to destinations such as Amazon Simple Storage Service (Amazon S3), Amazon OpenSearch Service, Amazon Redshift, Splunk, and various other supported destinations.
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-firehose = "1.31.0"
+aws-sdk-firehose = "1.32.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

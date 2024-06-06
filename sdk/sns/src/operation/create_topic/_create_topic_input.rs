@@ -9,7 +9,7 @@ pub struct CreateTopicInput {
     /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code> suffix.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A map of attributes with their corresponding values.</p>
-    /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>
+    /// <p>The following lists names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>
     /// <ul>
     /// <li>
     /// <p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>
@@ -64,7 +64,7 @@ impl CreateTopicInput {
         self.name.as_deref()
     }
     /// <p>A map of attributes with their corresponding values.</p>
-    /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>
+    /// <p>The following lists names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>
     /// <ul>
     /// <li>
     /// <p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>
@@ -162,7 +162,7 @@ impl CreateTopicInputBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>A map of attributes with their corresponding values.</p>
-    /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>
+    /// <p>The following lists names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>
     /// <ul>
     /// <li>
     /// <p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>
@@ -205,7 +205,7 @@ impl CreateTopicInputBuilder {
         self
     }
     /// <p>A map of attributes with their corresponding values.</p>
-    /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>
+    /// <p>The following lists names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>
     /// <ul>
     /// <li>
     /// <p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>
@@ -246,7 +246,7 @@ impl CreateTopicInputBuilder {
         self
     }
     /// <p>A map of attributes with their corresponding values.</p>
-    /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>
+    /// <p>The following lists names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>
     /// <ul>
     /// <li>
     /// <p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>

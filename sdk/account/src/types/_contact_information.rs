@@ -14,7 +14,7 @@ pub struct ContactInformation {
     pub address_line3: ::std::option::Option<::std::string::String>,
     /// <p>The city of the primary contact address.</p>
     pub city: ::std::string::String,
-    /// <p>The state or region of the primary contact address. This field is required in selected countries.</p>
+    /// <p>The state or region of the primary contact address. If the mailing address is within the United States (US), the value in this field can be either a two character state code (for example, <code>NJ</code>) or the full state name (for example, <code>New Jersey</code>). This field is required in the following countries: <code>US</code>, <code>CA</code>, <code>GB</code>, <code>DE</code>, <code>JP</code>, <code>IN</code>, and <code>BR</code>.</p>
     pub state_or_region: ::std::option::Option<::std::string::String>,
     /// <p>The district or county of the primary contact address, if any.</p>
     pub district_or_county: ::std::option::Option<::std::string::String>,
@@ -53,7 +53,7 @@ impl ContactInformation {
         use std::ops::Deref;
         self.city.deref()
     }
-    /// <p>The state or region of the primary contact address. This field is required in selected countries.</p>
+    /// <p>The state or region of the primary contact address. If the mailing address is within the United States (US), the value in this field can be either a two character state code (for example, <code>NJ</code>) or the full state name (for example, <code>New Jersey</code>). This field is required in the following countries: <code>US</code>, <code>CA</code>, <code>GB</code>, <code>DE</code>, <code>JP</code>, <code>IN</code>, and <code>BR</code>.</p>
     pub fn state_or_region(&self) -> ::std::option::Option<&str> {
         self.state_or_region.as_deref()
     }
@@ -201,17 +201,17 @@ impl ContactInformationBuilder {
     pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
         &self.city
     }
-    /// <p>The state or region of the primary contact address. This field is required in selected countries.</p>
+    /// <p>The state or region of the primary contact address. If the mailing address is within the United States (US), the value in this field can be either a two character state code (for example, <code>NJ</code>) or the full state name (for example, <code>New Jersey</code>). This field is required in the following countries: <code>US</code>, <code>CA</code>, <code>GB</code>, <code>DE</code>, <code>JP</code>, <code>IN</code>, and <code>BR</code>.</p>
     pub fn state_or_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_or_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The state or region of the primary contact address. This field is required in selected countries.</p>
+    /// <p>The state or region of the primary contact address. If the mailing address is within the United States (US), the value in this field can be either a two character state code (for example, <code>NJ</code>) or the full state name (for example, <code>New Jersey</code>). This field is required in the following countries: <code>US</code>, <code>CA</code>, <code>GB</code>, <code>DE</code>, <code>JP</code>, <code>IN</code>, and <code>BR</code>.</p>
     pub fn set_state_or_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_or_region = input;
         self
     }
-    /// <p>The state or region of the primary contact address. This field is required in selected countries.</p>
+    /// <p>The state or region of the primary contact address. If the mailing address is within the United States (US), the value in this field can be either a two character state code (for example, <code>NJ</code>) or the full state name (for example, <code>New Jersey</code>). This field is required in the following countries: <code>US</code>, <code>CA</code>, <code>GB</code>, <code>DE</code>, <code>JP</code>, <code>IN</code>, and <code>BR</code>.</p>
     pub fn get_state_or_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_or_region
     }

@@ -35,17 +35,17 @@ pub struct GetSubscriptionAttributesOutput {
     /// <li>
     /// <p><code>TopicArn</code> – The topic ARN that the subscription is associated with.</p></li>
     /// </ul>
-    /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
+    /// <p>The following attribute applies only to Amazon Data Firehose delivery stream subscriptions:</p>
     /// <ul>
     /// <li>
     /// <p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
     /// <ul>
     /// <li>
-    /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
+    /// <p>Permission to write to the Firehose delivery stream</p></li>
     /// <li>
     /// <p>Amazon SNS listed as a trusted entity</p></li>
     /// </ul>
-    /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
+    /// <p>Specifying a valid ARN for this attribute is required for Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
     /// </ul>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
@@ -82,17 +82,17 @@ impl GetSubscriptionAttributesOutput {
     /// <li>
     /// <p><code>TopicArn</code> – The topic ARN that the subscription is associated with.</p></li>
     /// </ul>
-    /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
+    /// <p>The following attribute applies only to Amazon Data Firehose delivery stream subscriptions:</p>
     /// <ul>
     /// <li>
     /// <p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
     /// <ul>
     /// <li>
-    /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
+    /// <p>Permission to write to the Firehose delivery stream</p></li>
     /// <li>
     /// <p>Amazon SNS listed as a trusted entity</p></li>
     /// </ul>
-    /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
+    /// <p>Specifying a valid ARN for this attribute is required for Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
     /// </ul>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
@@ -153,17 +153,17 @@ impl GetSubscriptionAttributesOutputBuilder {
     /// <li>
     /// <p><code>TopicArn</code> – The topic ARN that the subscription is associated with.</p></li>
     /// </ul>
-    /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
+    /// <p>The following attribute applies only to Amazon Data Firehose delivery stream subscriptions:</p>
     /// <ul>
     /// <li>
     /// <p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
     /// <ul>
     /// <li>
-    /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
+    /// <p>Permission to write to the Firehose delivery stream</p></li>
     /// <li>
     /// <p>Amazon SNS listed as a trusted entity</p></li>
     /// </ul>
-    /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
+    /// <p>Specifying a valid ARN for this attribute is required for Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
     /// </ul>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
@@ -202,17 +202,17 @@ impl GetSubscriptionAttributesOutputBuilder {
     /// <li>
     /// <p><code>TopicArn</code> – The topic ARN that the subscription is associated with.</p></li>
     /// </ul>
-    /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
+    /// <p>The following attribute applies only to Amazon Data Firehose delivery stream subscriptions:</p>
     /// <ul>
     /// <li>
     /// <p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
     /// <ul>
     /// <li>
-    /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
+    /// <p>Permission to write to the Firehose delivery stream</p></li>
     /// <li>
     /// <p>Amazon SNS listed as a trusted entity</p></li>
     /// </ul>
-    /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
+    /// <p>Specifying a valid ARN for this attribute is required for Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
     /// </ul>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
@@ -249,17 +249,17 @@ impl GetSubscriptionAttributesOutputBuilder {
     /// <li>
     /// <p><code>TopicArn</code> – The topic ARN that the subscription is associated with.</p></li>
     /// </ul>
-    /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
+    /// <p>The following attribute applies only to Amazon Data Firehose delivery stream subscriptions:</p>
     /// <ul>
     /// <li>
     /// <p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
     /// <ul>
     /// <li>
-    /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
+    /// <p>Permission to write to the Firehose delivery stream</p></li>
     /// <li>
     /// <p>Amazon SNS listed as a trusted entity</p></li>
     /// </ul>
-    /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
+    /// <p>Specifying a valid ARN for this attribute is required for Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
     /// </ul>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes

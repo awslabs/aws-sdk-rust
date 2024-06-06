@@ -118,6 +118,8 @@ impl Client {
     }
 }
 
+mod accept_primary_email_update;
+
 /// Operation customization and supporting types.
 ///
 pub mod customize;
@@ -132,6 +134,8 @@ mod get_alternate_contact;
 
 mod get_contact_information;
 
+mod get_primary_email;
+
 mod get_region_opt_status;
 
 mod list_regions;
@@ -139,3 +143,5 @@ mod list_regions;
 mod put_alternate_contact;
 
 mod put_contact_information;
+
+mod start_primary_email_update;

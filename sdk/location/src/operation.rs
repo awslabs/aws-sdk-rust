@@ -85,6 +85,9 @@ pub mod describe_tracker;
 /// Types for the `DisassociateTrackerConsumer` operation.
 pub mod disassociate_tracker_consumer;
 
+/// Types for the `ForecastGeofenceEvents` operation.
+pub mod forecast_geofence_events;
+
 /// Types for the `GetDevicePosition` operation.
 pub mod get_device_position;
 
@@ -174,3 +177,6 @@ pub mod update_route_calculator;
 
 /// Types for the `UpdateTracker` operation.
 pub mod update_tracker;
+
+/// Types for the `VerifyDevicePosition` operation.
+pub mod verify_device_position;

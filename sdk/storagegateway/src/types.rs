@@ -17,6 +17,10 @@ pub use crate::types::_object_acl::ObjectAcl;
 
 pub use crate::types::_nfs_file_share_defaults::NfsFileShareDefaults;
 
+pub use crate::types::_software_update_preferences::SoftwareUpdatePreferences;
+
+pub use crate::types::_automatic_update_policy::AutomaticUpdatePolicy;
+
 pub use crate::types::_gateway_capacity::GatewayCapacity;
 
 pub use crate::types::_bandwidth_rate_limit_interval::BandwidthRateLimitInterval;
@@ -91,6 +95,8 @@ mod _automatic_tape_creation_policy_info;
 
 mod _automatic_tape_creation_rule;
 
+mod _automatic_update_policy;
+
 mod _availability_monitor_test_status;
 
 mod _bandwidth_rate_limit_interval;
@@ -146,6 +152,8 @@ mod _smb_file_share_info;
 mod _smb_local_groups;
 
 mod _smb_security_strategy;
+
+mod _software_update_preferences;
 
 mod _storage_gateway_error;
 

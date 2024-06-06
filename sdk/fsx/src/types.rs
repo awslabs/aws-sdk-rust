@@ -49,6 +49,10 @@ pub use crate::types::_ontap_deployment_type::OntapDeploymentType;
 
 pub use crate::types::_lustre_file_system_configuration::LustreFileSystemConfiguration;
 
+pub use crate::types::_file_system_lustre_metadata_configuration::FileSystemLustreMetadataConfiguration;
+
+pub use crate::types::_metadata_configuration_mode::MetadataConfigurationMode;
+
 pub use crate::types::_lustre_root_squash_configuration::LustreRootSquashConfiguration;
 
 pub use crate::types::_lustre_log_configuration::LustreLogConfiguration;
@@ -164,6 +168,8 @@ pub use crate::types::_update_file_system_open_zfs_configuration::UpdateFileSyst
 pub use crate::types::_update_file_system_ontap_configuration::UpdateFileSystemOntapConfiguration;
 
 pub use crate::types::_update_file_system_lustre_configuration::UpdateFileSystemLustreConfiguration;
+
+pub use crate::types::_update_file_system_lustre_metadata_configuration::UpdateFileSystemLustreMetadataConfiguration;
 
 pub use crate::types::_lustre_log_create_configuration::LustreLogCreateConfiguration;
 
@@ -303,6 +309,8 @@ pub use crate::types::_open_zfs_create_root_volume_configuration::OpenZfsCreateR
 
 pub use crate::types::_create_file_system_lustre_configuration::CreateFileSystemLustreConfiguration;
 
+pub use crate::types::_create_file_system_lustre_metadata_configuration::CreateFileSystemLustreMetadataConfiguration;
+
 pub use crate::types::_create_file_system_windows_configuration::CreateFileSystemWindowsConfiguration;
 
 pub use crate::types::_create_file_system_ontap_configuration::CreateFileSystemOntapConfiguration;
@@ -358,6 +366,8 @@ mod _create_aggregate_configuration;
 mod _create_file_cache_lustre_configuration;
 
 mod _create_file_system_lustre_configuration;
+
+mod _create_file_system_lustre_metadata_configuration;
 
 mod _create_file_system_ontap_configuration;
 
@@ -461,6 +471,8 @@ mod _file_system_failure_details;
 
 mod _file_system_lifecycle;
 
+mod _file_system_lustre_metadata_configuration;
+
 mod _file_system_maintenance_operation;
 
 mod _file_system_type;
@@ -486,6 +498,8 @@ mod _lustre_log_configuration;
 mod _lustre_log_create_configuration;
 
 mod _lustre_root_squash_configuration;
+
+mod _metadata_configuration_mode;
 
 mod _nfs_data_repository_configuration;
 
@@ -596,6 +610,8 @@ mod _unit;
 mod _update_file_cache_lustre_configuration;
 
 mod _update_file_system_lustre_configuration;
+
+mod _update_file_system_lustre_metadata_configuration;
 
 mod _update_file_system_ontap_configuration;
 

@@ -38,6 +38,8 @@ pub struct SnowflakeDestinationUpdate {
     pub s3_backup_mode: ::std::option::Option<crate::types::SnowflakeS3BackupMode>,
     /// <p>Describes an update for a destination in Amazon S3.</p>
     pub s3_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
+    /// <p>Describes the Secrets Manager configuration in Snowflake.</p>
+    pub secrets_manager_configuration: ::std::option::Option<crate::types::SecretsManagerConfiguration>,
 }
 impl SnowflakeDestinationUpdate {
     /// <p>URL for accessing your Snowflake account. This URL must include your <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>
@@ -108,6 +110,10 @@ impl SnowflakeDestinationUpdate {
     pub fn s3_update(&self) -> ::std::option::Option<&crate::types::S3DestinationUpdate> {
         self.s3_update.as_ref()
     }
+    /// <p>Describes the Secrets Manager configuration in Snowflake.</p>
+    pub fn secrets_manager_configuration(&self) -> ::std::option::Option<&crate::types::SecretsManagerConfiguration> {
+        self.secrets_manager_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for SnowflakeDestinationUpdate {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -129,6 +135,7 @@ impl ::std::fmt::Debug for SnowflakeDestinationUpdate {
         formatter.field("retry_options", &self.retry_options);
         formatter.field("s3_backup_mode", &self.s3_backup_mode);
         formatter.field("s3_update", &self.s3_update);
+        formatter.field("secrets_manager_configuration", &self.secrets_manager_configuration);
         formatter.finish()
     }
 }
@@ -160,6 +167,7 @@ pub struct SnowflakeDestinationUpdateBuilder {
     pub(crate) retry_options: ::std::option::Option<crate::types::SnowflakeRetryOptions>,
     pub(crate) s3_backup_mode: ::std::option::Option<crate::types::SnowflakeS3BackupMode>,
     pub(crate) s3_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
+    pub(crate) secrets_manager_configuration: ::std::option::Option<crate::types::SecretsManagerConfiguration>,
 }
 impl SnowflakeDestinationUpdateBuilder {
     /// <p>URL for accessing your Snowflake account. This URL must include your <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>
@@ -400,6 +408,20 @@ impl SnowflakeDestinationUpdateBuilder {
     pub fn get_s3_update(&self) -> &::std::option::Option<crate::types::S3DestinationUpdate> {
         &self.s3_update
     }
+    /// <p>Describes the Secrets Manager configuration in Snowflake.</p>
+    pub fn secrets_manager_configuration(mut self, input: crate::types::SecretsManagerConfiguration) -> Self {
+        self.secrets_manager_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the Secrets Manager configuration in Snowflake.</p>
+    pub fn set_secrets_manager_configuration(mut self, input: ::std::option::Option<crate::types::SecretsManagerConfiguration>) -> Self {
+        self.secrets_manager_configuration = input;
+        self
+    }
+    /// <p>Describes the Secrets Manager configuration in Snowflake.</p>
+    pub fn get_secrets_manager_configuration(&self) -> &::std::option::Option<crate::types::SecretsManagerConfiguration> {
+        &self.secrets_manager_configuration
+    }
     /// Consumes the builder and constructs a [`SnowflakeDestinationUpdate`](crate::types::SnowflakeDestinationUpdate).
     pub fn build(self) -> crate::types::SnowflakeDestinationUpdate {
         crate::types::SnowflakeDestinationUpdate {
@@ -420,6 +442,7 @@ impl SnowflakeDestinationUpdateBuilder {
             retry_options: self.retry_options,
             s3_backup_mode: self.s3_backup_mode,
             s3_update: self.s3_update,
+            secrets_manager_configuration: self.secrets_manager_configuration,
         }
     }
 }
@@ -443,6 +466,7 @@ impl ::std::fmt::Debug for SnowflakeDestinationUpdateBuilder {
         formatter.field("retry_options", &self.retry_options);
         formatter.field("s3_backup_mode", &self.s3_backup_mode);
         formatter.field("s3_update", &self.s3_update);
+        formatter.field("secrets_manager_configuration", &self.secrets_manager_configuration);
         formatter.finish()
     }
 }

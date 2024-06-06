@@ -21,6 +21,10 @@ pub use crate::types::_table_optimizer_configuration::TableOptimizerConfiguratio
 
 pub use crate::types::_table_input::TableInputBuilder;
 
+pub use crate::types::_view_definition_input::ViewDefinitionInputBuilder;
+
+pub use crate::types::_view_representation_input::ViewRepresentationInputBuilder;
+
 pub use crate::types::_table_identifier::TableIdentifierBuilder;
 
 pub use crate::types::_column::ColumnBuilder;

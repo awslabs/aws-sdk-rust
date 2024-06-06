@@ -26,7 +26,7 @@ pub struct UpdateDestinationInput {
     pub http_endpoint_destination_update: ::std::option::Option<crate::types::HttpEndpointDestinationUpdate>,
     /// <p>Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.</p>
     pub amazon_open_search_serverless_destination_update: ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationUpdate>,
-    /// <p>Update to the Snowflake destination condiguration settings</p>
+    /// <p>Update to the Snowflake destination configuration settings.</p>
     pub snowflake_destination_update: ::std::option::Option<crate::types::SnowflakeDestinationUpdate>,
 }
 impl UpdateDestinationInput {
@@ -77,7 +77,7 @@ impl UpdateDestinationInput {
     ) -> ::std::option::Option<&crate::types::AmazonOpenSearchServerlessDestinationUpdate> {
         self.amazon_open_search_serverless_destination_update.as_ref()
     }
-    /// <p>Update to the Snowflake destination condiguration settings</p>
+    /// <p>Update to the Snowflake destination configuration settings.</p>
     pub fn snowflake_destination_update(&self) -> ::std::option::Option<&crate::types::SnowflakeDestinationUpdate> {
         self.snowflake_destination_update.as_ref()
     }
@@ -275,17 +275,17 @@ impl UpdateDestinationInputBuilder {
     ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationUpdate> {
         &self.amazon_open_search_serverless_destination_update
     }
-    /// <p>Update to the Snowflake destination condiguration settings</p>
+    /// <p>Update to the Snowflake destination configuration settings.</p>
     pub fn snowflake_destination_update(mut self, input: crate::types::SnowflakeDestinationUpdate) -> Self {
         self.snowflake_destination_update = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Update to the Snowflake destination condiguration settings</p>
+    /// <p>Update to the Snowflake destination configuration settings.</p>
     pub fn set_snowflake_destination_update(mut self, input: ::std::option::Option<crate::types::SnowflakeDestinationUpdate>) -> Self {
         self.snowflake_destination_update = input;
         self
     }
-    /// <p>Update to the Snowflake destination condiguration settings</p>
+    /// <p>Update to the Snowflake destination configuration settings.</p>
     pub fn get_snowflake_destination_update(&self) -> &::std::option::Option<crate::types::SnowflakeDestinationUpdate> {
         &self.snowflake_destination_update
     }

@@ -130,6 +130,15 @@ pub(crate) fn file_cache_lustre_metadata_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn file_system_lustre_metadata_configuration_correct_errors(
+    mut builder: crate::types::builders::FileSystemLustreMetadataConfigurationBuilder,
+) -> crate::types::builders::FileSystemLustreMetadataConfigurationBuilder {
+    if builder.mode.is_none() {
+        builder.mode = "no value was set".parse::<crate::types::MetadataConfigurationMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn lustre_log_configuration_correct_errors(
     mut builder: crate::types::builders::LustreLogConfigurationBuilder,
 ) -> crate::types::builders::LustreLogConfigurationBuilder {

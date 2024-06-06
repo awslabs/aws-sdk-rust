@@ -8,8 +8,7 @@ pub struct MapConfiguration {
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices. It also includes a richer set of places, such as shops, services, restaurants, attractions, and other points of interest. Enable the <code>POI</code> layer by setting it in CustomLayers to leverage the additional places data.</p>
-    /// <p></p></li>
+    /// <p><code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content.</p></li>
     /// <li>
     /// <p><code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap that provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide.</p></li>
     /// <li>
@@ -19,24 +18,24 @@ pub struct MapConfiguration {
     /// <li>
     /// <p><code>VectorEsriStreets</code> – The Esri Street Map style, which provides a detailed vector basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to the World Street Map raster map.</p></li>
     /// <li>
-    /// <p><code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content.</p></li>
+    /// <p><code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p></li>
     /// </ul>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
     /// <ul>
     /// <li>
+    /// <p><code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p><note>
+    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
+    /// </note></li>
+    /// <li>
     /// <p><code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p></li>
+    /// <li>
+    /// <p><code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p></li>
     /// <li>
     /// <p><code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p></li>
     /// <li>
     /// <p><code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p><note>
     /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
     /// </note></li>
-    /// <li>
-    /// <p><code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p><note>
-    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
-    /// </note></li>
-    /// <li>
-    /// <p><code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p></li>
     /// </ul>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
     /// <ul>
@@ -64,8 +63,8 @@ pub struct MapConfiguration {
     /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
     /// </note>
     pub political_view: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as <code>POI</code> layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p><note>
-    /// <p>Currenlty only <code>VectorEsriNavigation</code> supports CustomLayers. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#map-custom-layers">Custom Layers</a>.</p>
+    /// <p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p><note>
+    /// <p>Not all map resources or styles support custom layers. See Custom Layers for more information.</p>
     /// </note>
     pub custom_layers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -74,8 +73,7 @@ impl MapConfiguration {
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices. It also includes a richer set of places, such as shops, services, restaurants, attractions, and other points of interest. Enable the <code>POI</code> layer by setting it in CustomLayers to leverage the additional places data.</p>
-    /// <p></p></li>
+    /// <p><code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content.</p></li>
     /// <li>
     /// <p><code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap that provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide.</p></li>
     /// <li>
@@ -85,24 +83,24 @@ impl MapConfiguration {
     /// <li>
     /// <p><code>VectorEsriStreets</code> – The Esri Street Map style, which provides a detailed vector basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to the World Street Map raster map.</p></li>
     /// <li>
-    /// <p><code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content.</p></li>
+    /// <p><code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p></li>
     /// </ul>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
     /// <ul>
     /// <li>
+    /// <p><code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p><note>
+    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
+    /// </note></li>
+    /// <li>
     /// <p><code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p></li>
+    /// <li>
+    /// <p><code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p></li>
     /// <li>
     /// <p><code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p></li>
     /// <li>
     /// <p><code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p><note>
     /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
     /// </note></li>
-    /// <li>
-    /// <p><code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p><note>
-    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
-    /// </note></li>
-    /// <li>
-    /// <p><code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p></li>
     /// </ul>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
     /// <ul>
@@ -135,8 +133,8 @@ impl MapConfiguration {
     pub fn political_view(&self) -> ::std::option::Option<&str> {
         self.political_view.as_deref()
     }
-    /// <p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as <code>POI</code> layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p><note>
-    /// <p>Currenlty only <code>VectorEsriNavigation</code> supports CustomLayers. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#map-custom-layers">Custom Layers</a>.</p>
+    /// <p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p><note>
+    /// <p>Not all map resources or styles support custom layers. See Custom Layers for more information.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_layers.is_none()`.
@@ -164,8 +162,7 @@ impl MapConfigurationBuilder {
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices. It also includes a richer set of places, such as shops, services, restaurants, attractions, and other points of interest. Enable the <code>POI</code> layer by setting it in CustomLayers to leverage the additional places data.</p>
-    /// <p></p></li>
+    /// <p><code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content.</p></li>
     /// <li>
     /// <p><code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap that provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide.</p></li>
     /// <li>
@@ -175,24 +172,24 @@ impl MapConfigurationBuilder {
     /// <li>
     /// <p><code>VectorEsriStreets</code> – The Esri Street Map style, which provides a detailed vector basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to the World Street Map raster map.</p></li>
     /// <li>
-    /// <p><code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content.</p></li>
+    /// <p><code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p></li>
     /// </ul>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
     /// <ul>
     /// <li>
+    /// <p><code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p><note>
+    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
+    /// </note></li>
+    /// <li>
     /// <p><code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p></li>
+    /// <li>
+    /// <p><code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p></li>
     /// <li>
     /// <p><code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p></li>
     /// <li>
     /// <p><code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p><note>
     /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
     /// </note></li>
-    /// <li>
-    /// <p><code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p><note>
-    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
-    /// </note></li>
-    /// <li>
-    /// <p><code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p></li>
     /// </ul>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
     /// <ul>
@@ -223,8 +220,7 @@ impl MapConfigurationBuilder {
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices. It also includes a richer set of places, such as shops, services, restaurants, attractions, and other points of interest. Enable the <code>POI</code> layer by setting it in CustomLayers to leverage the additional places data.</p>
-    /// <p></p></li>
+    /// <p><code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content.</p></li>
     /// <li>
     /// <p><code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap that provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide.</p></li>
     /// <li>
@@ -234,24 +230,24 @@ impl MapConfigurationBuilder {
     /// <li>
     /// <p><code>VectorEsriStreets</code> – The Esri Street Map style, which provides a detailed vector basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to the World Street Map raster map.</p></li>
     /// <li>
-    /// <p><code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content.</p></li>
+    /// <p><code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p></li>
     /// </ul>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
     /// <ul>
     /// <li>
+    /// <p><code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p><note>
+    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
+    /// </note></li>
+    /// <li>
     /// <p><code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p></li>
+    /// <li>
+    /// <p><code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p></li>
     /// <li>
     /// <p><code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p></li>
     /// <li>
     /// <p><code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p><note>
     /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
     /// </note></li>
-    /// <li>
-    /// <p><code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p><note>
-    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
-    /// </note></li>
-    /// <li>
-    /// <p><code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p></li>
     /// </ul>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
     /// <ul>
@@ -281,8 +277,7 @@ impl MapConfigurationBuilder {
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices. It also includes a richer set of places, such as shops, services, restaurants, attractions, and other points of interest. Enable the <code>POI</code> layer by setting it in CustomLayers to leverage the additional places data.</p>
-    /// <p></p></li>
+    /// <p><code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content.</p></li>
     /// <li>
     /// <p><code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap that provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide.</p></li>
     /// <li>
@@ -292,24 +287,24 @@ impl MapConfigurationBuilder {
     /// <li>
     /// <p><code>VectorEsriStreets</code> – The Esri Street Map style, which provides a detailed vector basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to the World Street Map raster map.</p></li>
     /// <li>
-    /// <p><code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content.</p></li>
+    /// <p><code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p></li>
     /// </ul>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
     /// <ul>
     /// <li>
+    /// <p><code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p><note>
+    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
+    /// </note></li>
+    /// <li>
     /// <p><code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p></li>
+    /// <li>
+    /// <p><code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p></li>
     /// <li>
     /// <p><code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p></li>
     /// <li>
     /// <p><code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p><note>
     /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
     /// </note></li>
-    /// <li>
-    /// <p><code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p><note>
-    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
-    /// </note></li>
-    /// <li>
-    /// <p><code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p></li>
     /// </ul>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
     /// <ul>
@@ -361,8 +356,8 @@ impl MapConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_custom_layers`](Self::set_custom_layers).
     ///
-    /// <p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as <code>POI</code> layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p><note>
-    /// <p>Currenlty only <code>VectorEsriNavigation</code> supports CustomLayers. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#map-custom-layers">Custom Layers</a>.</p>
+    /// <p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p><note>
+    /// <p>Not all map resources or styles support custom layers. See Custom Layers for more information.</p>
     /// </note>
     pub fn custom_layers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.custom_layers.unwrap_or_default();
@@ -370,15 +365,15 @@ impl MapConfigurationBuilder {
         self.custom_layers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as <code>POI</code> layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p><note>
-    /// <p>Currenlty only <code>VectorEsriNavigation</code> supports CustomLayers. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#map-custom-layers">Custom Layers</a>.</p>
+    /// <p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p><note>
+    /// <p>Not all map resources or styles support custom layers. See Custom Layers for more information.</p>
     /// </note>
     pub fn set_custom_layers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.custom_layers = input;
         self
     }
-    /// <p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as <code>POI</code> layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p><note>
-    /// <p>Currenlty only <code>VectorEsriNavigation</code> supports CustomLayers. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#map-custom-layers">Custom Layers</a>.</p>
+    /// <p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p><note>
+    /// <p>Not all map resources or styles support custom layers. See Custom Layers for more information.</p>
     /// </note>
     pub fn get_custom_layers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.custom_layers

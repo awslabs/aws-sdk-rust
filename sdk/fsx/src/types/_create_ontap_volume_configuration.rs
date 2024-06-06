@@ -6,7 +6,7 @@
 pub struct CreateOntapVolumeConfiguration {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
     pub junction_path: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style">Volume security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one of the following values:</p>
+    /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. Specify one of the following values:</p>
     /// <ul>
     /// <li>
     /// <p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
@@ -15,7 +15,7 @@ pub struct CreateOntapVolumeConfiguration {
     /// <li>
     /// <p><code>MIXED</code> This is an advanced setting. For more information, see the topic <a href="https://docs.netapp.com/us-en/ontap/nfs-admin/security-styles-their-effects-concept.html">What the security styles and their effects are</a> in the NetApp Documentation Center.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume security style</a> in the FSx for ONTAP User Guide.</p>
     pub security_style: ::std::option::Option<crate::types::SecurityStyle>,
     /// <p>Use <code>SizeInBytes</code> instead. Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
     #[deprecated(note = "This property is deprecated, use SizeInBytes instead")]
@@ -51,7 +51,7 @@ pub struct CreateOntapVolumeConfiguration {
     /// <li>
     /// <p><code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume types</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-types">Volume types</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
     pub ontap_volume_type: ::std::option::Option<crate::types::InputOntapVolumeType>,
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
@@ -69,7 +69,7 @@ pub struct CreateOntapVolumeConfiguration {
     pub copy_tags_to_backups: ::std::option::Option<bool>,
     /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume.</p>
     pub snaplock_configuration: ::std::option::Option<crate::types::CreateSnaplockConfiguration>,
-    /// <p>Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles of volumes that you can use for different purposes, FlexVol and FlexGroup volumes. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-styles.html">Volume styles</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
+    /// <p>Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles of volumes that you can use for different purposes, FlexVol and FlexGroup volumes. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-styles">Volume styles</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
     pub volume_style: ::std::option::Option<crate::types::VolumeStyle>,
     /// <p>Use to specify configuration options for a volume’s storage aggregate or aggregates.</p>
     pub aggregate_configuration: ::std::option::Option<crate::types::CreateAggregateConfiguration>,
@@ -81,7 +81,7 @@ impl CreateOntapVolumeConfiguration {
     pub fn junction_path(&self) -> ::std::option::Option<&str> {
         self.junction_path.as_deref()
     }
-    /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style">Volume security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one of the following values:</p>
+    /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. Specify one of the following values:</p>
     /// <ul>
     /// <li>
     /// <p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
@@ -90,7 +90,7 @@ impl CreateOntapVolumeConfiguration {
     /// <li>
     /// <p><code>MIXED</code> This is an advanced setting. For more information, see the topic <a href="https://docs.netapp.com/us-en/ontap/nfs-admin/security-styles-their-effects-concept.html">What the security styles and their effects are</a> in the NetApp Documentation Center.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume security style</a> in the FSx for ONTAP User Guide.</p>
     pub fn security_style(&self) -> ::std::option::Option<&crate::types::SecurityStyle> {
         self.security_style.as_ref()
     }
@@ -136,7 +136,7 @@ impl CreateOntapVolumeConfiguration {
     /// <li>
     /// <p><code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume types</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-types">Volume types</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
     pub fn ontap_volume_type(&self) -> ::std::option::Option<&crate::types::InputOntapVolumeType> {
         self.ontap_volume_type.as_ref()
     }
@@ -162,7 +162,7 @@ impl CreateOntapVolumeConfiguration {
     pub fn snaplock_configuration(&self) -> ::std::option::Option<&crate::types::CreateSnaplockConfiguration> {
         self.snaplock_configuration.as_ref()
     }
-    /// <p>Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles of volumes that you can use for different purposes, FlexVol and FlexGroup volumes. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-styles.html">Volume styles</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
+    /// <p>Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles of volumes that you can use for different purposes, FlexVol and FlexGroup volumes. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-styles">Volume styles</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
     pub fn volume_style(&self) -> ::std::option::Option<&crate::types::VolumeStyle> {
         self.volume_style.as_ref()
     }
@@ -215,7 +215,7 @@ impl CreateOntapVolumeConfigurationBuilder {
     pub fn get_junction_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.junction_path
     }
-    /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style">Volume security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one of the following values:</p>
+    /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. Specify one of the following values:</p>
     /// <ul>
     /// <li>
     /// <p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
@@ -224,12 +224,12 @@ impl CreateOntapVolumeConfigurationBuilder {
     /// <li>
     /// <p><code>MIXED</code> This is an advanced setting. For more information, see the topic <a href="https://docs.netapp.com/us-en/ontap/nfs-admin/security-styles-their-effects-concept.html">What the security styles and their effects are</a> in the NetApp Documentation Center.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume security style</a> in the FSx for ONTAP User Guide.</p>
     pub fn security_style(mut self, input: crate::types::SecurityStyle) -> Self {
         self.security_style = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style">Volume security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one of the following values:</p>
+    /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. Specify one of the following values:</p>
     /// <ul>
     /// <li>
     /// <p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
@@ -238,12 +238,12 @@ impl CreateOntapVolumeConfigurationBuilder {
     /// <li>
     /// <p><code>MIXED</code> This is an advanced setting. For more information, see the topic <a href="https://docs.netapp.com/us-en/ontap/nfs-admin/security-styles-their-effects-concept.html">What the security styles and their effects are</a> in the NetApp Documentation Center.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume security style</a> in the FSx for ONTAP User Guide.</p>
     pub fn set_security_style(mut self, input: ::std::option::Option<crate::types::SecurityStyle>) -> Self {
         self.security_style = input;
         self
     }
-    /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style">Volume security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one of the following values:</p>
+    /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. Specify one of the following values:</p>
     /// <ul>
     /// <li>
     /// <p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
@@ -252,7 +252,7 @@ impl CreateOntapVolumeConfigurationBuilder {
     /// <li>
     /// <p><code>MIXED</code> This is an advanced setting. For more information, see the topic <a href="https://docs.netapp.com/us-en/ontap/nfs-admin/security-styles-their-effects-concept.html">What the security styles and their effects are</a> in the NetApp Documentation Center.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume security style</a> in the FSx for ONTAP User Guide.</p>
     pub fn get_security_style(&self) -> &::std::option::Option<crate::types::SecurityStyle> {
         &self.security_style
     }
@@ -377,7 +377,7 @@ impl CreateOntapVolumeConfigurationBuilder {
     /// <li>
     /// <p><code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume types</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-types">Volume types</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
     pub fn ontap_volume_type(mut self, input: crate::types::InputOntapVolumeType) -> Self {
         self.ontap_volume_type = ::std::option::Option::Some(input);
         self
@@ -389,7 +389,7 @@ impl CreateOntapVolumeConfigurationBuilder {
     /// <li>
     /// <p><code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume types</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-types">Volume types</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
     pub fn set_ontap_volume_type(mut self, input: ::std::option::Option<crate::types::InputOntapVolumeType>) -> Self {
         self.ontap_volume_type = input;
         self
@@ -401,7 +401,7 @@ impl CreateOntapVolumeConfigurationBuilder {
     /// <li>
     /// <p><code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume types</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-types">Volume types</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
     pub fn get_ontap_volume_type(&self) -> &::std::option::Option<crate::types::InputOntapVolumeType> {
         &self.ontap_volume_type
     }
@@ -477,17 +477,17 @@ impl CreateOntapVolumeConfigurationBuilder {
     pub fn get_snaplock_configuration(&self) -> &::std::option::Option<crate::types::CreateSnaplockConfiguration> {
         &self.snaplock_configuration
     }
-    /// <p>Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles of volumes that you can use for different purposes, FlexVol and FlexGroup volumes. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-styles.html">Volume styles</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
+    /// <p>Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles of volumes that you can use for different purposes, FlexVol and FlexGroup volumes. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-styles">Volume styles</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
     pub fn volume_style(mut self, input: crate::types::VolumeStyle) -> Self {
         self.volume_style = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles of volumes that you can use for different purposes, FlexVol and FlexGroup volumes. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-styles.html">Volume styles</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
+    /// <p>Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles of volumes that you can use for different purposes, FlexVol and FlexGroup volumes. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-styles">Volume styles</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
     pub fn set_volume_style(mut self, input: ::std::option::Option<crate::types::VolumeStyle>) -> Self {
         self.volume_style = input;
         self
     }
-    /// <p>Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles of volumes that you can use for different purposes, FlexVol and FlexGroup volumes. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-styles.html">Volume styles</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
+    /// <p>Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles of volumes that you can use for different purposes, FlexVol and FlexGroup volumes. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-styles">Volume styles</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
     pub fn get_volume_style(&self) -> &::std::option::Option<crate::types::VolumeStyle> {
         &self.volume_style
     }

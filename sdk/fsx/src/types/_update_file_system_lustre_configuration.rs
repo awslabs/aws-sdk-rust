@@ -46,6 +46,8 @@ pub struct UpdateFileSystemLustreConfiguration {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing throughput capacity</a>.</p>
     pub per_unit_storage_throughput: ::std::option::Option<i32>,
+    /// <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type. When this configuration is enabled, the file system supports increasing metadata performance.</p>
+    pub metadata_configuration: ::std::option::Option<crate::types::UpdateFileSystemLustreMetadataConfiguration>,
 }
 impl UpdateFileSystemLustreConfiguration {
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -106,6 +108,10 @@ impl UpdateFileSystemLustreConfiguration {
     pub fn per_unit_storage_throughput(&self) -> ::std::option::Option<i32> {
         self.per_unit_storage_throughput
     }
+    /// <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type. When this configuration is enabled, the file system supports increasing metadata performance.</p>
+    pub fn metadata_configuration(&self) -> ::std::option::Option<&crate::types::UpdateFileSystemLustreMetadataConfiguration> {
+        self.metadata_configuration.as_ref()
+    }
 }
 impl UpdateFileSystemLustreConfiguration {
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemLustreConfiguration`](crate::types::UpdateFileSystemLustreConfiguration).
@@ -126,6 +132,7 @@ pub struct UpdateFileSystemLustreConfigurationBuilder {
     pub(crate) log_configuration: ::std::option::Option<crate::types::LustreLogCreateConfiguration>,
     pub(crate) root_squash_configuration: ::std::option::Option<crate::types::LustreRootSquashConfiguration>,
     pub(crate) per_unit_storage_throughput: ::std::option::Option<i32>,
+    pub(crate) metadata_configuration: ::std::option::Option<crate::types::UpdateFileSystemLustreMetadataConfiguration>,
 }
 impl UpdateFileSystemLustreConfigurationBuilder {
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -318,6 +325,20 @@ impl UpdateFileSystemLustreConfigurationBuilder {
     pub fn get_per_unit_storage_throughput(&self) -> &::std::option::Option<i32> {
         &self.per_unit_storage_throughput
     }
+    /// <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type. When this configuration is enabled, the file system supports increasing metadata performance.</p>
+    pub fn metadata_configuration(mut self, input: crate::types::UpdateFileSystemLustreMetadataConfiguration) -> Self {
+        self.metadata_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type. When this configuration is enabled, the file system supports increasing metadata performance.</p>
+    pub fn set_metadata_configuration(mut self, input: ::std::option::Option<crate::types::UpdateFileSystemLustreMetadataConfiguration>) -> Self {
+        self.metadata_configuration = input;
+        self
+    }
+    /// <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type. When this configuration is enabled, the file system supports increasing metadata performance.</p>
+    pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::UpdateFileSystemLustreMetadataConfiguration> {
+        &self.metadata_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateFileSystemLustreConfiguration`](crate::types::UpdateFileSystemLustreConfiguration).
     pub fn build(self) -> crate::types::UpdateFileSystemLustreConfiguration {
         crate::types::UpdateFileSystemLustreConfiguration {
@@ -329,6 +350,7 @@ impl UpdateFileSystemLustreConfigurationBuilder {
             log_configuration: self.log_configuration,
             root_squash_configuration: self.root_squash_configuration,
             per_unit_storage_throughput: self.per_unit_storage_throughput,
+            metadata_configuration: self.metadata_configuration,
         }
     }
 }

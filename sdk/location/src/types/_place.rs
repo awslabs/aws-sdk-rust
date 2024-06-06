@@ -33,11 +33,11 @@ pub struct Place {
     /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the selected partner.</p>
     pub time_zone: ::std::option::Option<crate::types::TimeZone>,
     /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p><note>
-    /// <p>This property is returned only for a place index that uses Esri as a data provider.</p>
+    /// <p>Returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
     pub unit_type: ::std::option::Option<::std::string::String>,
     /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p><note>
-    /// <p>This property is returned only for a place index that uses Esri or Grab as a data provider. It is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
+    /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub unit_number: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Location categories that describe this Place.</p>
@@ -45,10 +45,9 @@ pub struct Place {
     pub categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
     pub supplemental_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>An area that's part of a larger municipality. For example, <code>Blissville</code> is a submunicipality in the Queen County in New York.</p><note>
-    /// <p>This property is only returned for a place index that uses Esri as a data provider. The property is represented as a <code>district</code>.</p>
+    /// <p>An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the Queen County in New York.</p><note>
+    /// <p>This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData property is <code>borough</code>.</p>
     /// </note>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub sub_municipality: ::std::option::Option<::std::string::String>,
 }
 impl Place {
@@ -104,13 +103,13 @@ impl Place {
         self.time_zone.as_ref()
     }
     /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p><note>
-    /// <p>This property is returned only for a place index that uses Esri as a data provider.</p>
+    /// <p>Returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
     pub fn unit_type(&self) -> ::std::option::Option<&str> {
         self.unit_type.as_deref()
     }
     /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p><note>
-    /// <p>This property is returned only for a place index that uses Esri or Grab as a data provider. It is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
+    /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub fn unit_number(&self) -> ::std::option::Option<&str> {
         self.unit_number.as_deref()
@@ -128,10 +127,9 @@ impl Place {
     pub fn supplemental_categories(&self) -> &[::std::string::String] {
         self.supplemental_categories.as_deref().unwrap_or_default()
     }
-    /// <p>An area that's part of a larger municipality. For example, <code>Blissville</code> is a submunicipality in the Queen County in New York.</p><note>
-    /// <p>This property is only returned for a place index that uses Esri as a data provider. The property is represented as a <code>district</code>.</p>
+    /// <p>An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the Queen County in New York.</p><note>
+    /// <p>This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData property is <code>borough</code>.</p>
     /// </note>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn sub_municipality(&self) -> ::std::option::Option<&str> {
         self.sub_municipality.as_deref()
     }
@@ -345,41 +343,41 @@ impl PlaceBuilder {
         &self.time_zone
     }
     /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p><note>
-    /// <p>This property is returned only for a place index that uses Esri as a data provider.</p>
+    /// <p>Returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
     pub fn unit_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p><note>
-    /// <p>This property is returned only for a place index that uses Esri as a data provider.</p>
+    /// <p>Returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
     pub fn set_unit_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit_type = input;
         self
     }
     /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p><note>
-    /// <p>This property is returned only for a place index that uses Esri as a data provider.</p>
+    /// <p>Returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
     pub fn get_unit_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.unit_type
     }
     /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p><note>
-    /// <p>This property is returned only for a place index that uses Esri or Grab as a data provider. It is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
+    /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub fn unit_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p><note>
-    /// <p>This property is returned only for a place index that uses Esri or Grab as a data provider. It is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
+    /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub fn set_unit_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit_number = input;
         self
     }
     /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p><note>
-    /// <p>This property is returned only for a place index that uses Esri or Grab as a data provider. It is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
+    /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub fn get_unit_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.unit_number
@@ -427,26 +425,23 @@ impl PlaceBuilder {
     pub fn get_supplemental_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supplemental_categories
     }
-    /// <p>An area that's part of a larger municipality. For example, <code>Blissville</code> is a submunicipality in the Queen County in New York.</p><note>
-    /// <p>This property is only returned for a place index that uses Esri as a data provider. The property is represented as a <code>district</code>.</p>
+    /// <p>An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the Queen County in New York.</p><note>
+    /// <p>This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData property is <code>borough</code>.</p>
     /// </note>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn sub_municipality(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_municipality = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An area that's part of a larger municipality. For example, <code>Blissville</code> is a submunicipality in the Queen County in New York.</p><note>
-    /// <p>This property is only returned for a place index that uses Esri as a data provider. The property is represented as a <code>district</code>.</p>
+    /// <p>An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the Queen County in New York.</p><note>
+    /// <p>This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData property is <code>borough</code>.</p>
     /// </note>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn set_sub_municipality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_municipality = input;
         self
     }
-    /// <p>An area that's part of a larger municipality. For example, <code>Blissville</code> is a submunicipality in the Queen County in New York.</p><note>
-    /// <p>This property is only returned for a place index that uses Esri as a data provider. The property is represented as a <code>district</code>.</p>
+    /// <p>An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the Queen County in New York.</p><note>
+    /// <p>This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData property is <code>borough</code>.</p>
     /// </note>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn get_sub_municipality(&self) -> &::std::option::Option<::std::string::String> {
         &self.sub_municipality
     }

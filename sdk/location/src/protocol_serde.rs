@@ -79,6 +79,8 @@ pub(crate) mod shape_describe_tracker;
 
 pub(crate) mod shape_disassociate_tracker_consumer;
 
+pub(crate) mod shape_forecast_geofence_events;
+
 pub(crate) mod shape_get_device_position;
 
 pub(crate) mod shape_get_device_position_history;
@@ -139,6 +141,8 @@ pub(crate) mod shape_update_route_calculator;
 
 pub(crate) mod shape_update_tracker;
 
+pub(crate) mod shape_verify_device_position;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -180,6 +184,8 @@ pub(crate) mod shape_create_place_index_input;
 pub(crate) mod shape_create_route_calculator_input;
 
 pub(crate) mod shape_create_tracker_input;
+
+pub(crate) mod shape_forecast_geofence_events_input;
 
 pub(crate) mod shape_get_device_position_history_input;
 
@@ -241,6 +247,8 @@ pub(crate) mod shape_update_tracker_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_verify_device_position_input;
+
 pub(crate) mod shape_api_key_filter;
 
 pub(crate) mod shape_api_key_restrictions;
@@ -277,7 +285,15 @@ pub(crate) mod shape_device_position_list;
 
 pub(crate) mod shape_device_position_update;
 
+pub(crate) mod shape_device_state;
+
+pub(crate) mod shape_forecast_geofence_events_device_state;
+
+pub(crate) mod shape_forecasted_events_list;
+
 pub(crate) mod shape_geofence_geometry;
+
+pub(crate) mod shape_inferred_state;
 
 pub(crate) mod shape_leg_list;
 
@@ -349,6 +365,8 @@ pub(crate) mod shape_batch_update_device_position_error;
 
 pub(crate) mod shape_bounding_box;
 
+pub(crate) mod shape_cell_signals;
+
 pub(crate) mod shape_circle;
 
 pub(crate) mod shape_country_code_list;
@@ -358,6 +376,8 @@ pub(crate) mod shape_custom_layer_list;
 pub(crate) mod shape_device_position;
 
 pub(crate) mod shape_filter_place_category_list;
+
+pub(crate) mod shape_forecasted_event;
 
 pub(crate) mod shape_geo_arn_list;
 
@@ -405,17 +425,25 @@ pub(crate) mod shape_truck_weight;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_wi_fi_access_point;
+
 pub(crate) mod shape_batch_item_error;
 
 pub(crate) mod shape_leg_geometry;
 
 pub(crate) mod shape_linear_ring;
 
+pub(crate) mod shape_lte_cell_details;
+
 pub(crate) mod shape_route_matrix_entry;
 
 pub(crate) mod shape_step_list;
 
 pub(crate) mod shape_line_string;
+
+pub(crate) mod shape_lte_local_id;
+
+pub(crate) mod shape_lte_network_measurements;
 
 pub(crate) mod shape_route_matrix_entry_error;
 

@@ -439,6 +439,8 @@ pub(crate) mod shape_smb_file_share_info_list;
 
 pub(crate) mod shape_smb_local_groups;
 
+pub(crate) mod shape_software_update_preferences;
+
 pub(crate) mod shape_storage_gateway_error;
 
 pub(crate) mod shape_storedi_scsi_volumes;
