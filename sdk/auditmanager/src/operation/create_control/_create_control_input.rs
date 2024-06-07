@@ -54,7 +54,7 @@ impl ::std::fmt::Debug for CreateControlInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateControlInput");
         formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("testing_information", &"*** Sensitive Data Redacted ***");
         formatter.field("action_plan_title", &"*** Sensitive Data Redacted ***");
         formatter.field("action_plan_instructions", &"*** Sensitive Data Redacted ***");
@@ -213,7 +213,7 @@ impl ::std::fmt::Debug for CreateControlInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateControlInputBuilder");
         formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("testing_information", &"*** Sensitive Data Redacted ***");
         formatter.field("action_plan_title", &"*** Sensitive Data Redacted ***");
         formatter.field("action_plan_instructions", &"*** Sensitive Data Redacted ***");

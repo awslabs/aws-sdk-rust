@@ -10,6 +10,12 @@ pub fn ser_update_configuration(
             crate::protocol_serde::shape_update_cognito_user_pool_configuration::ser_update_cognito_user_pool_configuration(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::UpdateConfiguration::OpenIdConnectConfiguration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_4.key("openIdConnectConfiguration").start_object();
+            crate::protocol_serde::shape_update_open_id_connect_configuration::ser_update_open_id_connect_configuration(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::UpdateConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "UpdateConfiguration",

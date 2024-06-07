@@ -443,6 +443,10 @@ where
 impl From<crate::operation::list_capabilities::ListCapabilitiesError> for Error {
     fn from(err: crate::operation::list_capabilities::ListCapabilitiesError) -> Self {
         match err {
+            crate::operation::list_capabilities::ListCapabilitiesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_capabilities::ListCapabilitiesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_capabilities::ListCapabilitiesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_capabilities::ListCapabilitiesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_capabilities::ListCapabilitiesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -490,6 +494,10 @@ where
 impl From<crate::operation::list_profiles::ListProfilesError> for Error {
     fn from(err: crate::operation::list_profiles::ListProfilesError) -> Self {
         match err {
+            crate::operation::list_profiles::ListProfilesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_profiles::ListProfilesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_profiles::ListProfilesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_profiles::ListProfilesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_profiles::ListProfilesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -539,6 +547,10 @@ where
 impl From<crate::operation::list_transformers::ListTransformersError> for Error {
     fn from(err: crate::operation::list_transformers::ListTransformersError) -> Self {
         match err {
+            crate::operation::list_transformers::ListTransformersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_transformers::ListTransformersError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_transformers::ListTransformersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_transformers::ListTransformersError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_transformers::ListTransformersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -561,6 +573,7 @@ impl From<crate::operation::start_transformer_job::StartTransformerJobError> for
     fn from(err: crate::operation::start_transformer_job::StartTransformerJobError) -> Self {
         match err {
             crate::operation::start_transformer_job::StartTransformerJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_transformer_job::StartTransformerJobError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::start_transformer_job::StartTransformerJobError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }

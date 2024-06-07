@@ -229,6 +229,10 @@ pub(crate) mod shape_evaluation_error_item;
 
 pub(crate) mod shape_identity_source_item;
 
+pub(crate) mod shape_open_id_connect_configuration;
+
+pub(crate) mod shape_open_id_connect_configuration_detail;
+
 pub(crate) mod shape_policy_item;
 
 pub(crate) mod shape_policy_store_item;
@@ -247,6 +251,8 @@ pub(crate) mod shape_template_linked_policy_definition_detail;
 
 pub(crate) mod shape_update_cognito_user_pool_configuration;
 
+pub(crate) mod shape_update_open_id_connect_configuration;
+
 pub(crate) mod shape_update_static_policy_definition;
 
 pub(crate) mod shape_validation_exception_field;
@@ -259,19 +265,55 @@ pub(crate) mod shape_configuration_item;
 
 pub(crate) mod shape_identity_source_item_details;
 
+pub(crate) mod shape_open_id_connect_group_configuration;
+
+pub(crate) mod shape_open_id_connect_group_configuration_detail;
+
+pub(crate) mod shape_open_id_connect_token_selection;
+
+pub(crate) mod shape_open_id_connect_token_selection_detail;
+
 pub(crate) mod shape_policy_definition_item;
 
 pub(crate) mod shape_update_cognito_group_configuration;
 
+pub(crate) mod shape_update_open_id_connect_group_configuration;
+
+pub(crate) mod shape_update_open_id_connect_token_selection;
+
 pub(crate) mod shape_cognito_user_pool_configuration_item;
+
+pub(crate) mod shape_open_id_connect_access_token_configuration;
+
+pub(crate) mod shape_open_id_connect_access_token_configuration_detail;
+
+pub(crate) mod shape_open_id_connect_configuration_item;
+
+pub(crate) mod shape_open_id_connect_identity_token_configuration;
+
+pub(crate) mod shape_open_id_connect_identity_token_configuration_detail;
 
 pub(crate) mod shape_static_policy_definition_item;
 
 pub(crate) mod shape_template_linked_policy_definition_item;
 
+pub(crate) mod shape_update_open_id_connect_access_token_configuration;
+
+pub(crate) mod shape_update_open_id_connect_identity_token_configuration;
+
+pub(crate) mod shape_audiences;
+
 pub(crate) mod shape_cognito_group_configuration_item;
 
 pub(crate) mod shape_context_map;
+
+pub(crate) mod shape_open_id_connect_group_configuration_item;
+
+pub(crate) mod shape_open_id_connect_token_selection_item;
+
+pub(crate) mod shape_open_id_connect_access_token_configuration_item;
+
+pub(crate) mod shape_open_id_connect_identity_token_configuration_item;
 
 pub(crate) mod shape_record_attribute;
 

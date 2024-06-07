@@ -45,9 +45,25 @@ pub use crate::types::_static_policy_definition_item::StaticPolicyDefinitionItem
 
 pub use crate::types::_policy_filter::PolicyFilterBuilder;
 
+pub use crate::types::_update_open_id_connect_configuration::UpdateOpenIdConnectConfigurationBuilder;
+
+pub use crate::types::_update_open_id_connect_identity_token_configuration::UpdateOpenIdConnectIdentityTokenConfigurationBuilder;
+
+pub use crate::types::_update_open_id_connect_access_token_configuration::UpdateOpenIdConnectAccessTokenConfigurationBuilder;
+
+pub use crate::types::_update_open_id_connect_group_configuration::UpdateOpenIdConnectGroupConfigurationBuilder;
+
 pub use crate::types::_update_cognito_user_pool_configuration::UpdateCognitoUserPoolConfigurationBuilder;
 
 pub use crate::types::_update_cognito_group_configuration::UpdateCognitoGroupConfigurationBuilder;
+
+pub use crate::types::_open_id_connect_configuration_detail::OpenIdConnectConfigurationDetailBuilder;
+
+pub use crate::types::_open_id_connect_identity_token_configuration_detail::OpenIdConnectIdentityTokenConfigurationDetailBuilder;
+
+pub use crate::types::_open_id_connect_access_token_configuration_detail::OpenIdConnectAccessTokenConfigurationDetailBuilder;
+
+pub use crate::types::_open_id_connect_group_configuration_detail::OpenIdConnectGroupConfigurationDetailBuilder;
 
 pub use crate::types::_cognito_user_pool_configuration_detail::CognitoUserPoolConfigurationDetailBuilder;
 
@@ -55,11 +71,27 @@ pub use crate::types::_cognito_group_configuration_detail::CognitoGroupConfigura
 
 pub use crate::types::_identity_source_details::IdentitySourceDetailsBuilder;
 
+pub use crate::types::_open_id_connect_configuration::OpenIdConnectConfigurationBuilder;
+
+pub use crate::types::_open_id_connect_identity_token_configuration::OpenIdConnectIdentityTokenConfigurationBuilder;
+
+pub use crate::types::_open_id_connect_access_token_configuration::OpenIdConnectAccessTokenConfigurationBuilder;
+
+pub use crate::types::_open_id_connect_group_configuration::OpenIdConnectGroupConfigurationBuilder;
+
 pub use crate::types::_cognito_user_pool_configuration::CognitoUserPoolConfigurationBuilder;
 
 pub use crate::types::_cognito_group_configuration::CognitoGroupConfigurationBuilder;
 
 pub use crate::types::_identity_source_item::IdentitySourceItemBuilder;
+
+pub use crate::types::_open_id_connect_configuration_item::OpenIdConnectConfigurationItemBuilder;
+
+pub use crate::types::_open_id_connect_identity_token_configuration_item::OpenIdConnectIdentityTokenConfigurationItemBuilder;
+
+pub use crate::types::_open_id_connect_access_token_configuration_item::OpenIdConnectAccessTokenConfigurationItemBuilder;
+
+pub use crate::types::_open_id_connect_group_configuration_item::OpenIdConnectGroupConfigurationItemBuilder;
 
 pub use crate::types::_cognito_user_pool_configuration_item::CognitoUserPoolConfigurationItemBuilder;
 

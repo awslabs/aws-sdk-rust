@@ -259,6 +259,14 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListProfilesE
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListProfilesError {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>This exception is thrown when an error occurs in the Amazon Web Services B2B Data Interchange service.</p>
+    InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The request was denied due to throttling: the data speed and rendering may be limited depending on various parameters and conditions.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
+    /// <p>Occurs when a B2BI object cannot be validated against a request from another object.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -292,13 +300,37 @@ impl ListProfilesError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `ListProfilesError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `ListProfilesError::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(self, Self::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `ListProfilesError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ListProfilesError::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(self, Self::ValidationException(_))
     }
 }
 impl ::std::error::Error for ListProfilesError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -306,6 +338,10 @@ impl ::std::error::Error for ListProfilesError {
 impl ::std::fmt::Display for ListProfilesError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
+            Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -321,12 +357,20 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ListProfilesError {
         ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
     fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
-        ::std::option::Option::None
+        match self {
+            Self::InternalServerException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            Self::ThrottlingException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            _ => ::std::option::Option::None,
+        }
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListProfilesError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

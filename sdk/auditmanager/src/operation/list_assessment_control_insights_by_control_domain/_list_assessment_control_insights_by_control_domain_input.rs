@@ -4,6 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssessmentControlInsightsByControlDomainInput {
     /// <p>The unique identifier for the control domain.</p>
+    /// <p>Audit Manager supports the control domains that are provided by Amazon Web Services Control Catalog. For information about how to find a list of available control domains, see <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html"> <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API Reference.</p>
     pub control_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the active assessment.</p>
     pub assessment_id: ::std::option::Option<::std::string::String>,
@@ -14,6 +15,7 @@ pub struct ListAssessmentControlInsightsByControlDomainInput {
 }
 impl ListAssessmentControlInsightsByControlDomainInput {
     /// <p>The unique identifier for the control domain.</p>
+    /// <p>Audit Manager supports the control domains that are provided by Amazon Web Services Control Catalog. For information about how to find a list of available control domains, see <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html"> <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API Reference.</p>
     pub fn control_domain_id(&self) -> ::std::option::Option<&str> {
         self.control_domain_id.as_deref()
     }
@@ -50,17 +52,20 @@ pub struct ListAssessmentControlInsightsByControlDomainInputBuilder {
 }
 impl ListAssessmentControlInsightsByControlDomainInputBuilder {
     /// <p>The unique identifier for the control domain.</p>
+    /// <p>Audit Manager supports the control domains that are provided by Amazon Web Services Control Catalog. For information about how to find a list of available control domains, see <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html"> <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API Reference.</p>
     /// This field is required.
     pub fn control_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the control domain.</p>
+    /// <p>Audit Manager supports the control domains that are provided by Amazon Web Services Control Catalog. For information about how to find a list of available control domains, see <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html"> <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API Reference.</p>
     pub fn set_control_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_domain_id = input;
         self
     }
     /// <p>The unique identifier for the control domain.</p>
+    /// <p>Audit Manager supports the control domains that are provided by Amazon Web Services Control Catalog. For information about how to find a list of available control domains, see <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html"> <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API Reference.</p>
     pub fn get_control_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.control_domain_id
     }

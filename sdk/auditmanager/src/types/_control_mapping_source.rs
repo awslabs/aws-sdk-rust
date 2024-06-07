@@ -10,9 +10,15 @@ pub struct ControlMappingSource {
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the source.</p>
     pub source_description: ::std::option::Option<::std::string::String>,
-    /// <p>The setup option for the data source. This option reflects if the evidence collection is automated or manual.</p>
+    /// <p>The setup option for the data source. This option reflects if the evidence collection method is automated or manual. If you don’t provide a value for <code>sourceSetUpOption</code>, Audit Manager automatically infers and populates the correct value based on the <code>sourceType</code> that you specify.</p>
     pub source_set_up_option: ::std::option::Option<crate::types::SourceSetUpOption>,
-    /// <p>Specifies one of the five data source types for evidence collection.</p>
+    /// <p>Specifies which type of data source is used to collect evidence.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The source can be an individual data source type, such as <code>AWS_Cloudtrail</code>, <code>AWS_Config</code>, <code>AWS_Security_Hub</code>, <code>AWS_API_Call</code>, or <code>MANUAL</code>.</p></li>
+    /// <li>
+    /// <p>The source can also be a managed grouping of data sources, such as a <code>Core_Control</code> or a <code>Common_Control</code>.</p></li>
+    /// </ul>
     pub source_type: ::std::option::Option<crate::types::SourceType>,
     /// <p>A keyword that relates to the control data source.</p>
     /// <p>For manual evidence, this keyword indicates if the manual evidence is a file or text.</p>
@@ -47,11 +53,17 @@ impl ControlMappingSource {
     pub fn source_description(&self) -> ::std::option::Option<&str> {
         self.source_description.as_deref()
     }
-    /// <p>The setup option for the data source. This option reflects if the evidence collection is automated or manual.</p>
+    /// <p>The setup option for the data source. This option reflects if the evidence collection method is automated or manual. If you don’t provide a value for <code>sourceSetUpOption</code>, Audit Manager automatically infers and populates the correct value based on the <code>sourceType</code> that you specify.</p>
     pub fn source_set_up_option(&self) -> ::std::option::Option<&crate::types::SourceSetUpOption> {
         self.source_set_up_option.as_ref()
     }
-    /// <p>Specifies one of the five data source types for evidence collection.</p>
+    /// <p>Specifies which type of data source is used to collect evidence.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The source can be an individual data source type, such as <code>AWS_Cloudtrail</code>, <code>AWS_Config</code>, <code>AWS_Security_Hub</code>, <code>AWS_API_Call</code>, or <code>MANUAL</code>.</p></li>
+    /// <li>
+    /// <p>The source can also be a managed grouping of data sources, such as a <code>Core_Control</code> or a <code>Common_Control</code>.</p></li>
+    /// </ul>
     pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
         self.source_type.as_ref()
     }
@@ -158,31 +170,49 @@ impl ControlMappingSourceBuilder {
     pub fn get_source_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_description
     }
-    /// <p>The setup option for the data source. This option reflects if the evidence collection is automated or manual.</p>
+    /// <p>The setup option for the data source. This option reflects if the evidence collection method is automated or manual. If you don’t provide a value for <code>sourceSetUpOption</code>, Audit Manager automatically infers and populates the correct value based on the <code>sourceType</code> that you specify.</p>
     pub fn source_set_up_option(mut self, input: crate::types::SourceSetUpOption) -> Self {
         self.source_set_up_option = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The setup option for the data source. This option reflects if the evidence collection is automated or manual.</p>
+    /// <p>The setup option for the data source. This option reflects if the evidence collection method is automated or manual. If you don’t provide a value for <code>sourceSetUpOption</code>, Audit Manager automatically infers and populates the correct value based on the <code>sourceType</code> that you specify.</p>
     pub fn set_source_set_up_option(mut self, input: ::std::option::Option<crate::types::SourceSetUpOption>) -> Self {
         self.source_set_up_option = input;
         self
     }
-    /// <p>The setup option for the data source. This option reflects if the evidence collection is automated or manual.</p>
+    /// <p>The setup option for the data source. This option reflects if the evidence collection method is automated or manual. If you don’t provide a value for <code>sourceSetUpOption</code>, Audit Manager automatically infers and populates the correct value based on the <code>sourceType</code> that you specify.</p>
     pub fn get_source_set_up_option(&self) -> &::std::option::Option<crate::types::SourceSetUpOption> {
         &self.source_set_up_option
     }
-    /// <p>Specifies one of the five data source types for evidence collection.</p>
+    /// <p>Specifies which type of data source is used to collect evidence.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The source can be an individual data source type, such as <code>AWS_Cloudtrail</code>, <code>AWS_Config</code>, <code>AWS_Security_Hub</code>, <code>AWS_API_Call</code>, or <code>MANUAL</code>.</p></li>
+    /// <li>
+    /// <p>The source can also be a managed grouping of data sources, such as a <code>Core_Control</code> or a <code>Common_Control</code>.</p></li>
+    /// </ul>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies one of the five data source types for evidence collection.</p>
+    /// <p>Specifies which type of data source is used to collect evidence.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The source can be an individual data source type, such as <code>AWS_Cloudtrail</code>, <code>AWS_Config</code>, <code>AWS_Security_Hub</code>, <code>AWS_API_Call</code>, or <code>MANUAL</code>.</p></li>
+    /// <li>
+    /// <p>The source can also be a managed grouping of data sources, such as a <code>Core_Control</code> or a <code>Common_Control</code>.</p></li>
+    /// </ul>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.source_type = input;
         self
     }
-    /// <p>Specifies one of the five data source types for evidence collection.</p>
+    /// <p>Specifies which type of data source is used to collect evidence.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The source can be an individual data source type, such as <code>AWS_Cloudtrail</code>, <code>AWS_Config</code>, <code>AWS_Security_Hub</code>, <code>AWS_API_Call</code>, or <code>MANUAL</code>.</p></li>
+    /// <li>
+    /// <p>The source can also be a managed grouping of data sources, such as a <code>Core_Control</code> or a <code>Common_Control</code>.</p></li>
+    /// </ul>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
         &self.source_type
     }

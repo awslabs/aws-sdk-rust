@@ -8,6 +8,9 @@ pub enum ConfigurationItem {
     /// <p>Contains configuration details of a Amazon Cognito user pool that Verified Permissions can use as a source of authenticated identities as entities. It specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a Amazon Cognito user pool, the policy store entity that you want to assign to user groups, and one or more application client IDs.</p>
     /// <p>Example: <code>"configuration":{"cognitoUserPoolConfiguration":{"userPoolArn":"arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5","clientIds": ["a1b2c3d4e5f6g7h8i9j0kalbmc"],"groupConfiguration": {"groupEntityType": "MyCorp::Group"}}}</code></p>
     CognitoUserPoolConfiguration(crate::types::CognitoUserPoolConfigurationItem),
+    /// <p>Contains configuration details of an OpenID Connect (OIDC) identity provider, or identity source, that Verified Permissions can use to generate entities from authenticated identities. It specifies the issuer URL, token type that you want to use, and policy store entity details.</p>
+    /// <p>Example:<code>"configuration":{"openIdConnectConfiguration":{"issuer":"https://auth.example.com","tokenSelection":{"accessTokenOnly":{"audiences":["https://myapp.example.com","https://myapp2.example.com"],"principalIdClaim":"sub"}},"entityIdPrefix":"MyOIDCProvider","groupConfiguration":{"groupClaim":"groups","groupEntityType":"MyCorp::UserGroup"}}}</code></p>
+    OpenIdConnectConfiguration(crate::types::OpenIdConnectConfigurationItem),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -19,7 +22,6 @@ pub enum ConfigurationItem {
     Unknown,
 }
 impl ConfigurationItem {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`CognitoUserPoolConfiguration`](crate::types::ConfigurationItem::CognitoUserPoolConfiguration), extracting the inner [`CognitoUserPoolConfigurationItem`](crate::types::CognitoUserPoolConfigurationItem).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_cognito_user_pool_configuration(&self) -> ::std::result::Result<&crate::types::CognitoUserPoolConfigurationItem, &Self> {
@@ -32,6 +34,19 @@ impl ConfigurationItem {
     /// Returns true if this is a [`CognitoUserPoolConfiguration`](crate::types::ConfigurationItem::CognitoUserPoolConfiguration).
     pub fn is_cognito_user_pool_configuration(&self) -> bool {
         self.as_cognito_user_pool_configuration().is_ok()
+    }
+    /// Tries to convert the enum instance into [`OpenIdConnectConfiguration`](crate::types::ConfigurationItem::OpenIdConnectConfiguration), extracting the inner [`OpenIdConnectConfigurationItem`](crate::types::OpenIdConnectConfigurationItem).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_open_id_connect_configuration(&self) -> ::std::result::Result<&crate::types::OpenIdConnectConfigurationItem, &Self> {
+        if let ConfigurationItem::OpenIdConnectConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`OpenIdConnectConfiguration`](crate::types::ConfigurationItem::OpenIdConnectConfiguration).
+    pub fn is_open_id_connect_configuration(&self) -> bool {
+        self.as_open_id_connect_configuration().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

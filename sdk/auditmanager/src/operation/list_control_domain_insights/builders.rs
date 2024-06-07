@@ -22,7 +22,8 @@ impl crate::operation::list_control_domain_insights::builders::ListControlDomain
 }
 /// Fluent builder constructing a request to `ListControlDomainInsights`.
 ///
-/// <p>Lists the latest analytics data for control domains across all of your active assessments.</p><note>
+/// <p>Lists the latest analytics data for control domains across all of your active assessments.</p>
+/// <p>Audit Manager supports the control domains that are provided by Amazon Web Services Control Catalog. For information about how to find a list of available control domains, see <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html"> <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API Reference.</p><note>
 /// <p>A control domain is listed only if at least one of the controls within that domain collected evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If this condition isn’t met, no data is listed for that control domain.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

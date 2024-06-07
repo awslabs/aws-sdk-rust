@@ -10,10 +10,7 @@ pub struct CreateIdentitySourceInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the policy store in which you want to store this identity source. Only policies and requests made using this policy store can reference identities from the identity provider configured in the new identity source.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
-    /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
-    /// <p>You must specify a <code>UserPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
-    /// </note>
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p>
     pub configuration: ::std::option::Option<crate::types::Configuration>,
     /// <p>Specifies the namespace and data type of the principals generated for identities authenticated by the new identity source.</p>
     pub principal_entity_type: ::std::option::Option<::std::string::String>,
@@ -30,10 +27,7 @@ impl CreateIdentitySourceInput {
     pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
         self.policy_store_id.as_deref()
     }
-    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
-    /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
-    /// <p>You must specify a <code>UserPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
-    /// </note>
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::Configuration> {
         self.configuration.as_ref()
     }
@@ -107,27 +101,18 @@ impl CreateIdentitySourceInputBuilder {
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_store_id
     }
-    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
-    /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
-    /// <p>You must specify a <code>UserPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
-    /// </note>
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p>
     /// This field is required.
     pub fn configuration(mut self, input: crate::types::Configuration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
-    /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
-    /// <p>You must specify a <code>UserPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
-    /// </note>
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::Configuration>) -> Self {
         self.configuration = input;
         self
     }
-    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
-    /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
-    /// <p>You must specify a <code>UserPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
-    /// </note>
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::Configuration> {
         &self.configuration
     }

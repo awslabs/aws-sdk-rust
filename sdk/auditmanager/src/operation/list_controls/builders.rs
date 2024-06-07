@@ -114,17 +114,17 @@ impl ListControlsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_controls::paginator::ListControlsPaginator {
         crate::operation::list_controls::paginator::ListControlsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The type of control, such as a standard control or a custom control.</p>
+    /// <p>A filter that narrows the list of controls to a specific type.</p>
     pub fn control_type(mut self, input: crate::types::ControlType) -> Self {
         self.inner = self.inner.control_type(input);
         self
     }
-    /// <p>The type of control, such as a standard control or a custom control.</p>
+    /// <p>A filter that narrows the list of controls to a specific type.</p>
     pub fn set_control_type(mut self, input: ::std::option::Option<crate::types::ControlType>) -> Self {
         self.inner = self.inner.set_control_type(input);
         self
     }
-    /// <p>The type of control, such as a standard control or a custom control.</p>
+    /// <p>A filter that narrows the list of controls to a specific type.</p>
     pub fn get_control_type(&self) -> &::std::option::Option<crate::types::ControlType> {
         self.inner.get_control_type()
     }
@@ -142,18 +142,44 @@ impl ListControlsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
+    /// <p>The maximum number of results on a page or for an API request call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
+    /// <p>The maximum number of results on a page or for an API request call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Represents the maximum number of results on a page or for an API request call.</p>
+    /// <p>The maximum number of results on a page or for an API request call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// <p>A filter that narrows the list of controls to a specific resource from the Amazon Web Services Control Catalog.</p>
+    /// <p>To use this parameter, specify the ARN of the Control Catalog resource. You can specify either a control domain, a control objective, or a common control. For information about how to find the ARNs for these resources, see <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html"> <code>ListDomains</code> </a>, <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListObjectives.html"> <code>ListObjectives</code> </a>, and <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListCommonControls.html"> <code>ListCommonControls</code> </a>.</p><note>
+    /// <p>You can only filter by one Control Catalog resource at a time. Specifying multiple resource ARNs isn’t currently supported. If you want to filter by more than one ARN, we recommend that you run the <code>ListControls</code> operation separately for each ARN.</p>
+    /// </note>
+    /// <p>Alternatively, specify <code>UNCATEGORIZED</code> to list controls that aren't mapped to a Control Catalog resource. For example, this operation might return a list of custom controls that don't belong to any control domain or control objective.</p>
+    pub fn control_catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.control_catalog_id(input.into());
+        self
+    }
+    /// <p>A filter that narrows the list of controls to a specific resource from the Amazon Web Services Control Catalog.</p>
+    /// <p>To use this parameter, specify the ARN of the Control Catalog resource. You can specify either a control domain, a control objective, or a common control. For information about how to find the ARNs for these resources, see <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html"> <code>ListDomains</code> </a>, <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListObjectives.html"> <code>ListObjectives</code> </a>, and <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListCommonControls.html"> <code>ListCommonControls</code> </a>.</p><note>
+    /// <p>You can only filter by one Control Catalog resource at a time. Specifying multiple resource ARNs isn’t currently supported. If you want to filter by more than one ARN, we recommend that you run the <code>ListControls</code> operation separately for each ARN.</p>
+    /// </note>
+    /// <p>Alternatively, specify <code>UNCATEGORIZED</code> to list controls that aren't mapped to a Control Catalog resource. For example, this operation might return a list of custom controls that don't belong to any control domain or control objective.</p>
+    pub fn set_control_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_control_catalog_id(input);
+        self
+    }
+    /// <p>A filter that narrows the list of controls to a specific resource from the Amazon Web Services Control Catalog.</p>
+    /// <p>To use this parameter, specify the ARN of the Control Catalog resource. You can specify either a control domain, a control objective, or a common control. For information about how to find the ARNs for these resources, see <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html"> <code>ListDomains</code> </a>, <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListObjectives.html"> <code>ListObjectives</code> </a>, and <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListCommonControls.html"> <code>ListCommonControls</code> </a>.</p><note>
+    /// <p>You can only filter by one Control Catalog resource at a time. Specifying multiple resource ARNs isn’t currently supported. If you want to filter by more than one ARN, we recommend that you run the <code>ListControls</code> operation separately for each ARN.</p>
+    /// </note>
+    /// <p>Alternatively, specify <code>UNCATEGORIZED</code> to list controls that aren't mapped to a Control Catalog resource. For example, this operation might return a list of custom controls that don't belong to any control domain or control objective.</p>
+    pub fn get_control_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_control_catalog_id()
     }
 }

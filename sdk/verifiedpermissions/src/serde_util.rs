@@ -563,6 +563,18 @@ pub(crate) fn identity_source_item_correct_errors(
     builder
 }
 
+pub(crate) fn open_id_connect_configuration_detail_correct_errors(
+    mut builder: crate::types::builders::OpenIdConnectConfigurationDetailBuilder,
+) -> crate::types::builders::OpenIdConnectConfigurationDetailBuilder {
+    if builder.issuer.is_none() {
+        builder.issuer = Some(Default::default())
+    }
+    if builder.token_selection.is_none() {
+        builder.token_selection = Some(crate::types::OpenIdConnectTokenSelectionDetail::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn policy_item_correct_errors(mut builder: crate::types::builders::PolicyItemBuilder) -> crate::types::builders::PolicyItemBuilder {
     if builder.policy_store_id.is_none() {
         builder.policy_store_id = Some(Default::default())
@@ -660,6 +672,18 @@ pub(crate) fn validation_exception_field_correct_errors(
     builder
 }
 
+pub(crate) fn open_id_connect_group_configuration_detail_correct_errors(
+    mut builder: crate::types::builders::OpenIdConnectGroupConfigurationDetailBuilder,
+) -> crate::types::builders::OpenIdConnectGroupConfigurationDetailBuilder {
+    if builder.group_claim.is_none() {
+        builder.group_claim = Some(Default::default())
+    }
+    if builder.group_entity_type.is_none() {
+        builder.group_entity_type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn cognito_user_pool_configuration_item_correct_errors(
     mut builder: crate::types::builders::CognitoUserPoolConfigurationItemBuilder,
 ) -> crate::types::builders::CognitoUserPoolConfigurationItemBuilder {
@@ -675,11 +699,35 @@ pub(crate) fn cognito_user_pool_configuration_item_correct_errors(
     builder
 }
 
+pub(crate) fn open_id_connect_configuration_item_correct_errors(
+    mut builder: crate::types::builders::OpenIdConnectConfigurationItemBuilder,
+) -> crate::types::builders::OpenIdConnectConfigurationItemBuilder {
+    if builder.issuer.is_none() {
+        builder.issuer = Some(Default::default())
+    }
+    if builder.token_selection.is_none() {
+        builder.token_selection = Some(crate::types::OpenIdConnectTokenSelectionItem::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn template_linked_policy_definition_item_correct_errors(
     mut builder: crate::types::builders::TemplateLinkedPolicyDefinitionItemBuilder,
 ) -> crate::types::builders::TemplateLinkedPolicyDefinitionItemBuilder {
     if builder.policy_template_id.is_none() {
         builder.policy_template_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn open_id_connect_group_configuration_item_correct_errors(
+    mut builder: crate::types::builders::OpenIdConnectGroupConfigurationItemBuilder,
+) -> crate::types::builders::OpenIdConnectGroupConfigurationItemBuilder {
+    if builder.group_claim.is_none() {
+        builder.group_claim = Some(Default::default())
+    }
+    if builder.group_entity_type.is_none() {
+        builder.group_entity_type = Some(Default::default())
     }
     builder
 }

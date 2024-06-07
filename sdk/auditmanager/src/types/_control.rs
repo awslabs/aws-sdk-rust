@@ -34,6 +34,8 @@ pub struct Control {
     pub last_updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the control.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The state of the control. The <code>END_OF_SUPPORT</code> state is applicable to standard controls only. This state indicates that the standard control can still be used to collect evidence, but Audit Manager is no longer updating or maintaining that control.</p>
+    pub state: ::std::option::Option<crate::types::ControlState>,
 }
 impl Control {
     /// <p>The Amazon Resource Name (ARN) of the control.</p>
@@ -98,6 +100,10 @@ impl Control {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The state of the control. The <code>END_OF_SUPPORT</code> state is applicable to standard controls only. This state indicates that the standard control can still be used to collect evidence, but Audit Manager is no longer updating or maintaining that control.</p>
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ControlState> {
+        self.state.as_ref()
+    }
 }
 impl ::std::fmt::Debug for Control {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -106,7 +112,7 @@ impl ::std::fmt::Debug for Control {
         formatter.field("id", &self.id);
         formatter.field("r#type", &self.r#type);
         formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("testing_information", &"*** Sensitive Data Redacted ***");
         formatter.field("action_plan_title", &"*** Sensitive Data Redacted ***");
         formatter.field("action_plan_instructions", &"*** Sensitive Data Redacted ***");
@@ -117,6 +123,7 @@ impl ::std::fmt::Debug for Control {
         formatter.field("created_by", &"*** Sensitive Data Redacted ***");
         formatter.field("last_updated_by", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
+        formatter.field("state", &self.state);
         formatter.finish()
     }
 }
@@ -146,6 +153,7 @@ pub struct ControlBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_by: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) state: ::std::option::Option<crate::types::ControlState>,
 }
 impl ControlBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control.</p>
@@ -370,6 +378,20 @@ impl ControlBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The state of the control. The <code>END_OF_SUPPORT</code> state is applicable to standard controls only. This state indicates that the standard control can still be used to collect evidence, but Audit Manager is no longer updating or maintaining that control.</p>
+    pub fn state(mut self, input: crate::types::ControlState) -> Self {
+        self.state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The state of the control. The <code>END_OF_SUPPORT</code> state is applicable to standard controls only. This state indicates that the standard control can still be used to collect evidence, but Audit Manager is no longer updating or maintaining that control.</p>
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ControlState>) -> Self {
+        self.state = input;
+        self
+    }
+    /// <p>The state of the control. The <code>END_OF_SUPPORT</code> state is applicable to standard controls only. This state indicates that the standard control can still be used to collect evidence, but Audit Manager is no longer updating or maintaining that control.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ControlState> {
+        &self.state
+    }
     /// Consumes the builder and constructs a [`Control`](crate::types::Control).
     pub fn build(self) -> crate::types::Control {
         crate::types::Control {
@@ -388,6 +410,7 @@ impl ControlBuilder {
             created_by: self.created_by,
             last_updated_by: self.last_updated_by,
             tags: self.tags,
+            state: self.state,
         }
     }
 }
@@ -398,7 +421,7 @@ impl ::std::fmt::Debug for ControlBuilder {
         formatter.field("id", &self.id);
         formatter.field("r#type", &self.r#type);
         formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("testing_information", &"*** Sensitive Data Redacted ***");
         formatter.field("action_plan_title", &"*** Sensitive Data Redacted ***");
         formatter.field("action_plan_instructions", &"*** Sensitive Data Redacted ***");
@@ -409,6 +432,7 @@ impl ::std::fmt::Debug for ControlBuilder {
         formatter.field("created_by", &"*** Sensitive Data Redacted ***");
         formatter.field("last_updated_by", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
+        formatter.field("state", &self.state);
         formatter.finish()
     }
 }

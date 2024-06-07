@@ -75,6 +75,9 @@ pub fn ser_production_variant(
         crate::protocol_serde::shape_production_variant_routing_config::ser_production_variant_routing_config(&mut object_18, var_17)?;
         object_18.finish();
     }
+    if let Some(var_19) = &input.inference_ami_version {
+        object.key("InferenceAmiVersion").string(var_19.as_str());
+    }
     Ok(())
 }
 
@@ -175,6 +178,16 @@ where
                         "RoutingConfig" => {
                             builder = builder.set_routing_config(
                                 crate::protocol_serde::shape_production_variant_routing_config::de_production_variant_routing_config(tokens)?,
+                            );
+                        }
+                        "InferenceAmiVersion" => {
+                            builder = builder.set_inference_ami_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::ProductionVariantInferenceAmiVersion::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -22,7 +22,9 @@ impl crate::operation::list_pipeline_executions::builders::ListPipelineExecution
 }
 /// Fluent builder constructing a request to `ListPipelineExecutions`.
 ///
-/// <p>Gets a summary of the most recent executions for a pipeline.</p>
+/// <p>Gets a summary of the most recent executions for a pipeline.</p><note>
+/// <p>When applying the filter for pipeline executions that have succeeded in the stage, the operation returns all executions in the current pipeline version beginning on February 1, 2024.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPipelineExecutionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

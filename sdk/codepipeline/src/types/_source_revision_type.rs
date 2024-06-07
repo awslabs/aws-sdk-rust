@@ -14,6 +14,7 @@
 /// match sourcerevisiontype {
 ///     SourceRevisionType::CommitId => { /* ... */ },
 ///     SourceRevisionType::ImageDigest => { /* ... */ },
+///     SourceRevisionType::S3ObjectKey => { /* ... */ },
 ///     SourceRevisionType::S3ObjectVersionId => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum SourceRevisionType {
     #[allow(missing_docs)] // documentation missing in model
     ImageDigest,
     #[allow(missing_docs)] // documentation missing in model
+    S3ObjectKey,
+    #[allow(missing_docs)] // documentation missing in model
     S3ObjectVersionId,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for SourceRevisionType {
         match s {
             "COMMIT_ID" => SourceRevisionType::CommitId,
             "IMAGE_DIGEST" => SourceRevisionType::ImageDigest,
+            "S3_OBJECT_KEY" => SourceRevisionType::S3ObjectKey,
             "S3_OBJECT_VERSION_ID" => SourceRevisionType::S3ObjectVersionId,
             other => SourceRevisionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,13 +79,14 @@ impl SourceRevisionType {
         match self {
             SourceRevisionType::CommitId => "COMMIT_ID",
             SourceRevisionType::ImageDigest => "IMAGE_DIGEST",
+            SourceRevisionType::S3ObjectKey => "S3_OBJECT_KEY",
             SourceRevisionType::S3ObjectVersionId => "S3_OBJECT_VERSION_ID",
             SourceRevisionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMMIT_ID", "IMAGE_DIGEST", "S3_OBJECT_VERSION_ID"]
+        &["COMMIT_ID", "IMAGE_DIGEST", "S3_OBJECT_KEY", "S3_OBJECT_VERSION_ID"]
     }
 }
 impl ::std::convert::AsRef<str> for SourceRevisionType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for SourceRevisionType {
         match self {
             SourceRevisionType::CommitId => write!(f, "COMMIT_ID"),
             SourceRevisionType::ImageDigest => write!(f, "IMAGE_DIGEST"),
+            SourceRevisionType::S3ObjectKey => write!(f, "S3_OBJECT_KEY"),
             SourceRevisionType::S3ObjectVersionId => write!(f, "S3_OBJECT_VERSION_ID"),
             SourceRevisionType::Unknown(value) => write!(f, "{}", value),
         }

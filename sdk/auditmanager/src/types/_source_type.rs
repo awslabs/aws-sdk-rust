@@ -16,6 +16,8 @@
 ///     SourceType::AwsCloudtrail => { /* ... */ },
 ///     SourceType::AwsConfig => { /* ... */ },
 ///     SourceType::AwsSecurityHub => { /* ... */ },
+///     SourceType::CommonControl => { /* ... */ },
+///     SourceType::CoreControl => { /* ... */ },
 ///     SourceType::Manual => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -53,6 +55,10 @@ pub enum SourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsSecurityHub,
     #[allow(missing_docs)] // documentation missing in model
+    CommonControl,
+    #[allow(missing_docs)] // documentation missing in model
+    CoreControl,
+    #[allow(missing_docs)] // documentation missing in model
     Manual,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -65,6 +71,8 @@ impl ::std::convert::From<&str> for SourceType {
             "AWS_Cloudtrail" => SourceType::AwsCloudtrail,
             "AWS_Config" => SourceType::AwsConfig,
             "AWS_Security_Hub" => SourceType::AwsSecurityHub,
+            "Common_Control" => SourceType::CommonControl,
+            "Core_Control" => SourceType::CoreControl,
             "MANUAL" => SourceType::Manual,
             other => SourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -85,13 +93,23 @@ impl SourceType {
             SourceType::AwsCloudtrail => "AWS_Cloudtrail",
             SourceType::AwsConfig => "AWS_Config",
             SourceType::AwsSecurityHub => "AWS_Security_Hub",
+            SourceType::CommonControl => "Common_Control",
+            SourceType::CoreControl => "Core_Control",
             SourceType::Manual => "MANUAL",
             SourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_API_Call", "AWS_Cloudtrail", "AWS_Config", "AWS_Security_Hub", "MANUAL"]
+        &[
+            "AWS_API_Call",
+            "AWS_Cloudtrail",
+            "AWS_Config",
+            "AWS_Security_Hub",
+            "Common_Control",
+            "Core_Control",
+            "MANUAL",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for SourceType {
@@ -118,6 +136,8 @@ impl ::std::fmt::Display for SourceType {
             SourceType::AwsCloudtrail => write!(f, "AWS_Cloudtrail"),
             SourceType::AwsConfig => write!(f, "AWS_Config"),
             SourceType::AwsSecurityHub => write!(f, "AWS_Security_Hub"),
+            SourceType::CommonControl => write!(f, "Common_Control"),
+            SourceType::CoreControl => write!(f, "Core_Control"),
             SourceType::Manual => write!(f, "MANUAL"),
             SourceType::Unknown(value) => write!(f, "{}", value),
         }

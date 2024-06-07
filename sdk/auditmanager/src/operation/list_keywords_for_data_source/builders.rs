@@ -115,17 +115,17 @@ impl ListKeywordsForDataSourceFluentBuilder {
         crate::operation::list_keywords_for_data_source::paginator::ListKeywordsForDataSourcePaginator::new(self.handle, self.inner)
     }
     /// <p>The control mapping data source that the keywords apply to.</p>
-    pub fn source(mut self, input: crate::types::SourceType) -> Self {
+    pub fn source(mut self, input: crate::types::DataSourceType) -> Self {
         self.inner = self.inner.source(input);
         self
     }
     /// <p>The control mapping data source that the keywords apply to.</p>
-    pub fn set_source(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
     /// <p>The control mapping data source that the keywords apply to.</p>
-    pub fn get_source(&self) -> &::std::option::Option<crate::types::SourceType> {
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::DataSourceType> {
         self.inner.get_source()
     }
     /// <p>The pagination token that's used to fetch the next set of results.</p>

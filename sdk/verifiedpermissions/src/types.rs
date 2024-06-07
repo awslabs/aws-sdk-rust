@@ -75,11 +75,31 @@ pub use crate::types::_entity_reference::EntityReference;
 
 pub use crate::types::_update_configuration::UpdateConfiguration;
 
+pub use crate::types::_update_open_id_connect_configuration::UpdateOpenIdConnectConfiguration;
+
+pub use crate::types::_update_open_id_connect_token_selection::UpdateOpenIdConnectTokenSelection;
+
+pub use crate::types::_update_open_id_connect_identity_token_configuration::UpdateOpenIdConnectIdentityTokenConfiguration;
+
+pub use crate::types::_update_open_id_connect_access_token_configuration::UpdateOpenIdConnectAccessTokenConfiguration;
+
+pub use crate::types::_update_open_id_connect_group_configuration::UpdateOpenIdConnectGroupConfiguration;
+
 pub use crate::types::_update_cognito_user_pool_configuration::UpdateCognitoUserPoolConfiguration;
 
 pub use crate::types::_update_cognito_group_configuration::UpdateCognitoGroupConfiguration;
 
 pub use crate::types::_configuration_detail::ConfigurationDetail;
+
+pub use crate::types::_open_id_connect_configuration_detail::OpenIdConnectConfigurationDetail;
+
+pub use crate::types::_open_id_connect_token_selection_detail::OpenIdConnectTokenSelectionDetail;
+
+pub use crate::types::_open_id_connect_identity_token_configuration_detail::OpenIdConnectIdentityTokenConfigurationDetail;
+
+pub use crate::types::_open_id_connect_access_token_configuration_detail::OpenIdConnectAccessTokenConfigurationDetail;
+
+pub use crate::types::_open_id_connect_group_configuration_detail::OpenIdConnectGroupConfigurationDetail;
 
 pub use crate::types::_cognito_user_pool_configuration_detail::CognitoUserPoolConfigurationDetail;
 
@@ -91,6 +111,16 @@ pub use crate::types::_open_id_issuer::OpenIdIssuer;
 
 pub use crate::types::_configuration::Configuration;
 
+pub use crate::types::_open_id_connect_configuration::OpenIdConnectConfiguration;
+
+pub use crate::types::_open_id_connect_token_selection::OpenIdConnectTokenSelection;
+
+pub use crate::types::_open_id_connect_identity_token_configuration::OpenIdConnectIdentityTokenConfiguration;
+
+pub use crate::types::_open_id_connect_access_token_configuration::OpenIdConnectAccessTokenConfiguration;
+
+pub use crate::types::_open_id_connect_group_configuration::OpenIdConnectGroupConfiguration;
+
 pub use crate::types::_cognito_user_pool_configuration::CognitoUserPoolConfiguration;
 
 pub use crate::types::_cognito_group_configuration::CognitoGroupConfiguration;
@@ -98,6 +128,16 @@ pub use crate::types::_cognito_group_configuration::CognitoGroupConfiguration;
 pub use crate::types::_identity_source_item::IdentitySourceItem;
 
 pub use crate::types::_configuration_item::ConfigurationItem;
+
+pub use crate::types::_open_id_connect_configuration_item::OpenIdConnectConfigurationItem;
+
+pub use crate::types::_open_id_connect_token_selection_item::OpenIdConnectTokenSelectionItem;
+
+pub use crate::types::_open_id_connect_identity_token_configuration_item::OpenIdConnectIdentityTokenConfigurationItem;
+
+pub use crate::types::_open_id_connect_access_token_configuration_item::OpenIdConnectAccessTokenConfigurationItem;
+
+pub use crate::types::_open_id_connect_group_configuration_item::OpenIdConnectGroupConfigurationItem;
 
 pub use crate::types::_cognito_user_pool_configuration_item::CognitoUserPoolConfigurationItem;
 
@@ -161,6 +201,36 @@ mod _identity_source_item;
 
 mod _identity_source_item_details;
 
+mod _open_id_connect_access_token_configuration;
+
+mod _open_id_connect_access_token_configuration_detail;
+
+mod _open_id_connect_access_token_configuration_item;
+
+mod _open_id_connect_configuration;
+
+mod _open_id_connect_configuration_detail;
+
+mod _open_id_connect_configuration_item;
+
+mod _open_id_connect_group_configuration;
+
+mod _open_id_connect_group_configuration_detail;
+
+mod _open_id_connect_group_configuration_item;
+
+mod _open_id_connect_identity_token_configuration;
+
+mod _open_id_connect_identity_token_configuration_detail;
+
+mod _open_id_connect_identity_token_configuration_item;
+
+mod _open_id_connect_token_selection;
+
+mod _open_id_connect_token_selection_detail;
+
+mod _open_id_connect_token_selection_item;
+
 mod _open_id_issuer;
 
 mod _policy_definition;
@@ -204,6 +274,16 @@ mod _update_cognito_group_configuration;
 mod _update_cognito_user_pool_configuration;
 
 mod _update_configuration;
+
+mod _update_open_id_connect_access_token_configuration;
+
+mod _update_open_id_connect_configuration;
+
+mod _update_open_id_connect_group_configuration;
+
+mod _update_open_id_connect_identity_token_configuration;
+
+mod _update_open_id_connect_token_selection;
 
 mod _update_policy_definition;
 

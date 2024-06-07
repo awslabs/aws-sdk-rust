@@ -37,6 +37,14 @@ where
                                     )
                                 })?,
                         )),
+                        "openIdConnectConfiguration" => Some(crate::types::ConfigurationItem::OpenIdConnectConfiguration(
+                            crate::protocol_serde::shape_open_id_connect_configuration_item::de_open_id_connect_configuration_item(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'openIdConnectConfiguration' cannot be null",
+                                    )
+                                })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ConfigurationItem::Unknown)

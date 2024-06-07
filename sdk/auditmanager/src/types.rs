@@ -29,6 +29,8 @@ pub use crate::types::_assessment_report_destination_type::AssessmentReportDesti
 
 pub use crate::types::_control::Control;
 
+pub use crate::types::_control_state::ControlState;
+
 pub use crate::types::_control_mapping_source::ControlMappingSource;
 
 pub use crate::types::_source_frequency::SourceFrequency;
@@ -96,6 +98,8 @@ pub use crate::types::_create_assessment_framework_control::CreateAssessmentFram
 pub use crate::types::_account_status::AccountStatus;
 
 pub use crate::types::_notification::Notification;
+
+pub use crate::types::_data_source_type::DataSourceType;
 
 pub use crate::types::_control_metadata::ControlMetadata;
 
@@ -225,6 +229,8 @@ mod _control_set;
 
 mod _control_set_status;
 
+mod _control_state;
+
 mod _control_status;
 
 mod _control_type;
@@ -236,6 +242,8 @@ mod _create_assessment_framework_control_set;
 mod _create_control_mapping_source;
 
 mod _create_delegation_request;
+
+mod _data_source_type;
 
 mod _default_export_destination;
 

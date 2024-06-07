@@ -2,7 +2,7 @@
 
 /// <p>The control entity that represents a standard control or a custom control in an Audit Manager assessment.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssessmentControl {
     /// <p>The identifier for the control.</p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -65,6 +65,21 @@ impl AssessmentControl {
         self.assessment_report_evidence_count
     }
 }
+impl ::std::fmt::Debug for AssessmentControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentControl");
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &self.status);
+        formatter.field("response", &self.response);
+        formatter.field("comments", &self.comments);
+        formatter.field("evidence_sources", &self.evidence_sources);
+        formatter.field("evidence_count", &self.evidence_count);
+        formatter.field("assessment_report_evidence_count", &self.assessment_report_evidence_count);
+        formatter.finish()
+    }
+}
 impl AssessmentControl {
     /// Creates a new builder-style object to manufacture [`AssessmentControl`](crate::types::AssessmentControl).
     pub fn builder() -> crate::types::builders::AssessmentControlBuilder {
@@ -74,7 +89,7 @@ impl AssessmentControl {
 
 /// A builder for [`AssessmentControl`](crate::types::AssessmentControl).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AssessmentControlBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -238,5 +253,20 @@ impl AssessmentControlBuilder {
             evidence_count: self.evidence_count.unwrap_or_default(),
             assessment_report_evidence_count: self.assessment_report_evidence_count.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for AssessmentControlBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentControlBuilder");
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &self.status);
+        formatter.field("response", &self.response);
+        formatter.field("comments", &self.comments);
+        formatter.field("evidence_sources", &self.evidence_sources);
+        formatter.field("evidence_count", &self.evidence_count);
+        formatter.field("assessment_report_evidence_count", &self.assessment_report_evidence_count);
+        formatter.finish()
     }
 }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKeywordsForDataSourceOutput {
-    /// <p>The list of keywords for the event mapping source.</p>
+    /// <p>The list of keywords for the control mapping source.</p>
     pub keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListKeywordsForDataSourceOutput {
-    /// <p>The list of keywords for the event mapping source.</p>
+    /// <p>The list of keywords for the control mapping source.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keywords.is_none()`.
     pub fn keywords(&self) -> &[::std::string::String] {
@@ -46,19 +46,19 @@ impl ListKeywordsForDataSourceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
     ///
-    /// <p>The list of keywords for the event mapping source.</p>
+    /// <p>The list of keywords for the control mapping source.</p>
     pub fn keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.keywords.unwrap_or_default();
         v.push(input.into());
         self.keywords = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of keywords for the event mapping source.</p>
+    /// <p>The list of keywords for the control mapping source.</p>
     pub fn set_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.keywords = input;
         self
     }
-    /// <p>The list of keywords for the event mapping source.</p>
+    /// <p>The list of keywords for the control mapping source.</p>
     pub fn get_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.keywords
     }

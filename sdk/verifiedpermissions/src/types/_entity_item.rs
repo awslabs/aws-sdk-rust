@@ -10,7 +10,8 @@ pub struct EntityItem {
     pub identifier: ::std::option::Option<crate::types::EntityIdentifier>,
     /// <p>A list of attributes for the entity.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-    /// <p>The parents in the hierarchy that contains the entity.</p>
+    /// <p>The parent entities in the hierarchy that contains the entity. A principal or resource entity can be defined with at most 99 <i>transitive parents</i> per authorization request.</p>
+    /// <p>A transitive parent is an entity in the hierarchy of entities including all direct parents, and parents of parents. For example, a user can be a member of 91 groups if one of those groups is a member of eight groups, for a total of 100: one entity, 91 entity parents, and eight parents of parents.</p>
     pub parents: ::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>>,
 }
 impl EntityItem {
@@ -22,7 +23,8 @@ impl EntityItem {
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
         self.attributes.as_ref()
     }
-    /// <p>The parents in the hierarchy that contains the entity.</p>
+    /// <p>The parent entities in the hierarchy that contains the entity. A principal or resource entity can be defined with at most 99 <i>transitive parents</i> per authorization request.</p>
+    /// <p>A transitive parent is an entity in the hierarchy of entities including all direct parents, and parents of parents. For example, a user can be a member of 91 groups if one of those groups is a member of eight groups, for a total of 100: one entity, 91 entity parents, and eight parents of parents.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parents.is_none()`.
     pub fn parents(&self) -> &[crate::types::EntityIdentifier] {
@@ -87,19 +89,22 @@ impl EntityItemBuilder {
     ///
     /// To override the contents of this collection use [`set_parents`](Self::set_parents).
     ///
-    /// <p>The parents in the hierarchy that contains the entity.</p>
+    /// <p>The parent entities in the hierarchy that contains the entity. A principal or resource entity can be defined with at most 99 <i>transitive parents</i> per authorization request.</p>
+    /// <p>A transitive parent is an entity in the hierarchy of entities including all direct parents, and parents of parents. For example, a user can be a member of 91 groups if one of those groups is a member of eight groups, for a total of 100: one entity, 91 entity parents, and eight parents of parents.</p>
     pub fn parents(mut self, input: crate::types::EntityIdentifier) -> Self {
         let mut v = self.parents.unwrap_or_default();
         v.push(input);
         self.parents = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The parents in the hierarchy that contains the entity.</p>
+    /// <p>The parent entities in the hierarchy that contains the entity. A principal or resource entity can be defined with at most 99 <i>transitive parents</i> per authorization request.</p>
+    /// <p>A transitive parent is an entity in the hierarchy of entities including all direct parents, and parents of parents. For example, a user can be a member of 91 groups if one of those groups is a member of eight groups, for a total of 100: one entity, 91 entity parents, and eight parents of parents.</p>
     pub fn set_parents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>>) -> Self {
         self.parents = input;
         self
     }
-    /// <p>The parents in the hierarchy that contains the entity.</p>
+    /// <p>The parent entities in the hierarchy that contains the entity. A principal or resource entity can be defined with at most 99 <i>transitive parents</i> per authorization request.</p>
+    /// <p>A transitive parent is an entity in the hierarchy of entities including all direct parents, and parents of parents. For example, a user can be a member of 91 groups if one of those groups is a member of eight groups, for a total of 100: one entity, 91 entity parents, and eight parents of parents.</p>
     pub fn get_parents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>> {
         &self.parents
     }

@@ -1463,6 +1463,8 @@ pub use crate::types::_throughput_config_description::ThroughputConfigDescriptio
 
 pub use crate::types::_production_variant::ProductionVariant;
 
+pub use crate::types::_production_variant_inference_ami_version::ProductionVariantInferenceAmiVersion;
+
 pub use crate::types::_production_variant_core_dump_config::ProductionVariantCoreDumpConfig;
 
 pub use crate::types::_production_variant_accelerator_type::ProductionVariantAcceleratorType;
@@ -2886,6 +2888,8 @@ mod _production_variant;
 mod _production_variant_accelerator_type;
 
 mod _production_variant_core_dump_config;
+
+mod _production_variant_inference_ami_version;
 
 mod _production_variant_instance_type;
 

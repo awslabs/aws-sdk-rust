@@ -55,7 +55,7 @@ impl ::std::fmt::Debug for UpdateControlInput {
         let mut formatter = f.debug_struct("UpdateControlInput");
         formatter.field("control_id", &self.control_id);
         formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("testing_information", &"*** Sensitive Data Redacted ***");
         formatter.field("action_plan_title", &"*** Sensitive Data Redacted ***");
         formatter.field("action_plan_instructions", &"*** Sensitive Data Redacted ***");
@@ -209,7 +209,7 @@ impl ::std::fmt::Debug for UpdateControlInputBuilder {
         let mut formatter = f.debug_struct("UpdateControlInputBuilder");
         formatter.field("control_id", &self.control_id);
         formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("testing_information", &"*** Sensitive Data Redacted ***");
         formatter.field("action_plan_title", &"*** Sensitive Data Redacted ***");
         formatter.field("action_plan_instructions", &"*** Sensitive Data Redacted ***");

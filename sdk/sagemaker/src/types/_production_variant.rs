@@ -32,6 +32,9 @@ pub struct ProductionVariant {
     pub managed_instance_scaling: ::std::option::Option<crate::types::ProductionVariantManagedInstanceScaling>,
     /// <p>Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.</p>
     pub routing_config: ::std::option::Option<crate::types::ProductionVariantRoutingConfig>,
+    /// <p>Specifies an option from a collection of preconfigured Amazon Machine Image (AMI) images. Each image is configured by Amazon Web Services with a set of software and driver versions. Amazon Web Services optimizes these configurations for different machine learning workloads.</p>
+    /// <p>By selecting an AMI version, you can ensure that your inference environment is compatible with specific software requirements, such as CUDA driver versions, Linux kernel versions, or Amazon Web Services Neuron driver versions.</p>
+    pub inference_ami_version: ::std::option::Option<crate::types::ProductionVariantInferenceAmiVersion>,
 }
 impl ProductionVariant {
     /// <p>The name of the production variant.</p>
@@ -90,6 +93,11 @@ impl ProductionVariant {
     pub fn routing_config(&self) -> ::std::option::Option<&crate::types::ProductionVariantRoutingConfig> {
         self.routing_config.as_ref()
     }
+    /// <p>Specifies an option from a collection of preconfigured Amazon Machine Image (AMI) images. Each image is configured by Amazon Web Services with a set of software and driver versions. Amazon Web Services optimizes these configurations for different machine learning workloads.</p>
+    /// <p>By selecting an AMI version, you can ensure that your inference environment is compatible with specific software requirements, such as CUDA driver versions, Linux kernel versions, or Amazon Web Services Neuron driver versions.</p>
+    pub fn inference_ami_version(&self) -> ::std::option::Option<&crate::types::ProductionVariantInferenceAmiVersion> {
+        self.inference_ami_version.as_ref()
+    }
 }
 impl ProductionVariant {
     /// Creates a new builder-style object to manufacture [`ProductionVariant`](crate::types::ProductionVariant).
@@ -116,6 +124,7 @@ pub struct ProductionVariantBuilder {
     pub(crate) enable_ssm_access: ::std::option::Option<bool>,
     pub(crate) managed_instance_scaling: ::std::option::Option<crate::types::ProductionVariantManagedInstanceScaling>,
     pub(crate) routing_config: ::std::option::Option<crate::types::ProductionVariantRoutingConfig>,
+    pub(crate) inference_ami_version: ::std::option::Option<crate::types::ProductionVariantInferenceAmiVersion>,
 }
 impl ProductionVariantBuilder {
     /// <p>The name of the production variant.</p>
@@ -315,6 +324,23 @@ impl ProductionVariantBuilder {
     pub fn get_routing_config(&self) -> &::std::option::Option<crate::types::ProductionVariantRoutingConfig> {
         &self.routing_config
     }
+    /// <p>Specifies an option from a collection of preconfigured Amazon Machine Image (AMI) images. Each image is configured by Amazon Web Services with a set of software and driver versions. Amazon Web Services optimizes these configurations for different machine learning workloads.</p>
+    /// <p>By selecting an AMI version, you can ensure that your inference environment is compatible with specific software requirements, such as CUDA driver versions, Linux kernel versions, or Amazon Web Services Neuron driver versions.</p>
+    pub fn inference_ami_version(mut self, input: crate::types::ProductionVariantInferenceAmiVersion) -> Self {
+        self.inference_ami_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies an option from a collection of preconfigured Amazon Machine Image (AMI) images. Each image is configured by Amazon Web Services with a set of software and driver versions. Amazon Web Services optimizes these configurations for different machine learning workloads.</p>
+    /// <p>By selecting an AMI version, you can ensure that your inference environment is compatible with specific software requirements, such as CUDA driver versions, Linux kernel versions, or Amazon Web Services Neuron driver versions.</p>
+    pub fn set_inference_ami_version(mut self, input: ::std::option::Option<crate::types::ProductionVariantInferenceAmiVersion>) -> Self {
+        self.inference_ami_version = input;
+        self
+    }
+    /// <p>Specifies an option from a collection of preconfigured Amazon Machine Image (AMI) images. Each image is configured by Amazon Web Services with a set of software and driver versions. Amazon Web Services optimizes these configurations for different machine learning workloads.</p>
+    /// <p>By selecting an AMI version, you can ensure that your inference environment is compatible with specific software requirements, such as CUDA driver versions, Linux kernel versions, or Amazon Web Services Neuron driver versions.</p>
+    pub fn get_inference_ami_version(&self) -> &::std::option::Option<crate::types::ProductionVariantInferenceAmiVersion> {
+        &self.inference_ami_version
+    }
     /// Consumes the builder and constructs a [`ProductionVariant`](crate::types::ProductionVariant).
     pub fn build(self) -> crate::types::ProductionVariant {
         crate::types::ProductionVariant {
@@ -332,6 +358,7 @@ impl ProductionVariantBuilder {
             enable_ssm_access: self.enable_ssm_access,
             managed_instance_scaling: self.managed_instance_scaling,
             routing_config: self.routing_config,
+            inference_ami_version: self.inference_ami_version,
         }
     }
 }

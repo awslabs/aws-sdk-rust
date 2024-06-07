@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKeywordsForDataSourceInput {
     /// <p>The control mapping data source that the keywords apply to.</p>
-    pub source: ::std::option::Option<crate::types::SourceType>,
+    pub source: ::std::option::Option<crate::types::DataSourceType>,
     /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Represents the maximum number of results on a page or for an API request call.</p>
@@ -12,7 +12,7 @@ pub struct ListKeywordsForDataSourceInput {
 }
 impl ListKeywordsForDataSourceInput {
     /// <p>The control mapping data source that the keywords apply to.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::SourceType> {
+    pub fn source(&self) -> ::std::option::Option<&crate::types::DataSourceType> {
         self.source.as_ref()
     }
     /// <p>The pagination token that's used to fetch the next set of results.</p>
@@ -35,24 +35,24 @@ impl ListKeywordsForDataSourceInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKeywordsForDataSourceInputBuilder {
-    pub(crate) source: ::std::option::Option<crate::types::SourceType>,
+    pub(crate) source: ::std::option::Option<crate::types::DataSourceType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListKeywordsForDataSourceInputBuilder {
     /// <p>The control mapping data source that the keywords apply to.</p>
     /// This field is required.
-    pub fn source(mut self, input: crate::types::SourceType) -> Self {
+    pub fn source(mut self, input: crate::types::DataSourceType) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The control mapping data source that the keywords apply to.</p>
-    pub fn set_source(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
         self.source = input;
         self
     }
     /// <p>The control mapping data source that the keywords apply to.</p>
-    pub fn get_source(&self) -> &::std::option::Option<crate::types::SourceType> {
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::DataSourceType> {
         &self.source
     }
     /// <p>The pagination token that's used to fetch the next set of results.</p>
