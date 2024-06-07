@@ -2464,6 +2464,10 @@ source_hash = '3f256731d2d47928ad77c9e45e2ead9930665c9667de56e139d2869058186086'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'f9324c0fe054ca9c79483155ccb1dd27b9e34f77095a232788c76e40dcaf6db6'
+
+[release]
+tag = 'release-2024-06-07'
+
 [release.crates]
 aws-sdk-auditmanager = '1.30.0'
 aws-sdk-b2bi = '1.30.0'
