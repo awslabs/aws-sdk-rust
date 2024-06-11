@@ -11,6 +11,8 @@ use bytes::Bytes;
 
 impl ByteStream {
     /// Construct a `ByteStream` from a type that implements [`http_body_1_0::Body<Data = Bytes>`](http_body_1_0::Body).
+    ///
+    /// _Note: This is only available when the `http-body-1-x` feature is enabled._
     pub fn from_body_1_x<T, E>(body: T) -> Self
     where
         T: http_body_1_0::Body<Data = Bytes, Error = E> + Send + Sync + 'static,

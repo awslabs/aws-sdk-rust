@@ -149,6 +149,7 @@ pub use self::bytestream_util::FsBuilder;
 /// The name has a suffix `_x` to avoid name collision with a third-party `http-body-0-4`.
 #[cfg(feature = "http-body-0-4-x")]
 pub mod http_body_0_4_x;
+
 #[cfg(feature = "http-body-1-x")]
 pub mod http_body_1_x;
 

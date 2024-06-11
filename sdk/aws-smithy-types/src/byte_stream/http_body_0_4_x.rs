@@ -10,7 +10,7 @@ use bytes::Bytes;
 impl ByteStream {
     /// Construct a `ByteStream` from a type that implements [`http_body_0_4::Body<Data = Bytes>`](http_body_0_4::Body).
     ///
-    /// _Note: This is only available with `http-body-0-4-x` enabled._
+    /// _Note: This is only available when the `http-body-0-4-x` feature is enabled._
     pub fn from_body_0_4<T, E>(body: T) -> Self
     where
         T: http_body_0_4::Body<Data = Bytes, Error = E> + Send + Sync + 'static,
