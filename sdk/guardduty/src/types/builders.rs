@@ -43,6 +43,14 @@ pub use crate::types::_scan_condition::ScanConditionBuilder;
 
 pub use crate::types::_scan_condition_pair::ScanConditionPairBuilder;
 
+pub use crate::types::_update_protected_resource::UpdateProtectedResourceBuilder;
+
+pub use crate::types::_update_s3_bucket_resource::UpdateS3BucketResourceBuilder;
+
+pub use crate::types::_malware_protection_plan_actions::MalwareProtectionPlanActionsBuilder;
+
+pub use crate::types::_malware_protection_plan_tagging_action::MalwareProtectionPlanTaggingActionBuilder;
+
 pub use crate::types::_finding_criteria::FindingCriteriaBuilder;
 
 pub use crate::types::_condition::ConditionBuilder;
@@ -56,6 +64,8 @@ pub use crate::types::_destination::DestinationBuilder;
 pub use crate::types::_admin_account::AdminAccountBuilder;
 
 pub use crate::types::_member::MemberBuilder;
+
+pub use crate::types::_malware_protection_plan_summary::MalwareProtectionPlanSummaryBuilder;
 
 pub use crate::types::_invitation::InvitationBuilder;
 
@@ -153,11 +163,23 @@ pub use crate::types::_cloud_trail_configuration_result::CloudTrailConfiguration
 
 pub use crate::types::_master::MasterBuilder;
 
+pub use crate::types::_malware_protection_plan_status_reason::MalwareProtectionPlanStatusReasonBuilder;
+
+pub use crate::types::_create_protected_resource::CreateProtectedResourceBuilder;
+
+pub use crate::types::_create_s3_bucket_resource::CreateS3BucketResourceBuilder;
+
 pub use crate::types::_finding_statistics::FindingStatisticsBuilder;
 
 pub use crate::types::_finding::FindingBuilder;
 
 pub use crate::types::_service::ServiceBuilder;
+
+pub use crate::types::_malware_scan_details::MalwareScanDetailsBuilder;
+
+pub use crate::types::_threat::ThreatBuilder;
+
+pub use crate::types::_item_path::ItemPathBuilder;
 
 pub use crate::types::_detection::DetectionBuilder;
 
@@ -296,6 +318,8 @@ pub use crate::types::_private_ip_address_details::PrivateIpAddressDetailsBuilde
 pub use crate::types::_iam_instance_profile::IamInstanceProfileBuilder;
 
 pub use crate::types::_s3_bucket_detail::S3BucketDetailBuilder;
+
+pub use crate::types::_s3_object_detail::S3ObjectDetailBuilder;
 
 pub use crate::types::_public_access::PublicAccessBuilder;
 

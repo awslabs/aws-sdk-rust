@@ -184,39 +184,12 @@ impl GetNetworkTelemetryFluentBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }
-    /// <p>The resource type.</p>
-    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <p>The resource type. The following are the supported resource types:</p>
     /// <ul>
     /// <li>
-    /// <p><code>dxcon</code></p></li>
-    /// <li>
-    /// <p><code>dx-gateway</code></p></li>
-    /// <li>
-    /// <p><code>dx-vif</code></p></li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Network Manager:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>connection</code></p></li>
-    /// <li>
-    /// <p><code>device</code></p></li>
-    /// <li>
-    /// <p><code>link</code></p></li>
-    /// <li>
-    /// <p><code>site</code></p></li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Amazon VPC:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>customer-gateway</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway-attachment</code></p></li>
+    /// <p><code>connect-peer</code></p></li>
     /// <li>
     /// <p><code>transit-gateway-connect-peer</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway-route-table</code></p></li>
     /// <li>
     /// <p><code>vpn-connection</code></p></li>
     /// </ul>
@@ -224,39 +197,12 @@ impl GetNetworkTelemetryFluentBuilder {
         self.inner = self.inner.resource_type(input.into());
         self
     }
-    /// <p>The resource type.</p>
-    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <p>The resource type. The following are the supported resource types:</p>
     /// <ul>
     /// <li>
-    /// <p><code>dxcon</code></p></li>
-    /// <li>
-    /// <p><code>dx-gateway</code></p></li>
-    /// <li>
-    /// <p><code>dx-vif</code></p></li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Network Manager:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>connection</code></p></li>
-    /// <li>
-    /// <p><code>device</code></p></li>
-    /// <li>
-    /// <p><code>link</code></p></li>
-    /// <li>
-    /// <p><code>site</code></p></li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Amazon VPC:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>customer-gateway</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway-attachment</code></p></li>
+    /// <p><code>connect-peer</code></p></li>
     /// <li>
     /// <p><code>transit-gateway-connect-peer</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway-route-table</code></p></li>
     /// <li>
     /// <p><code>vpn-connection</code></p></li>
     /// </ul>
@@ -264,39 +210,12 @@ impl GetNetworkTelemetryFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
-    /// <p>The resource type.</p>
-    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <p>The resource type. The following are the supported resource types:</p>
     /// <ul>
     /// <li>
-    /// <p><code>dxcon</code></p></li>
-    /// <li>
-    /// <p><code>dx-gateway</code></p></li>
-    /// <li>
-    /// <p><code>dx-vif</code></p></li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Network Manager:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>connection</code></p></li>
-    /// <li>
-    /// <p><code>device</code></p></li>
-    /// <li>
-    /// <p><code>link</code></p></li>
-    /// <li>
-    /// <p><code>site</code></p></li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Amazon VPC:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>customer-gateway</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway-attachment</code></p></li>
+    /// <p><code>connect-peer</code></p></li>
     /// <li>
     /// <p><code>transit-gateway-connect-peer</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway-route-table</code></p></li>
     /// <li>
     /// <p><code>vpn-connection</code></p></li>
     /// </ul>

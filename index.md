@@ -376,6 +376,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Payment Cryptography Control Plane | [aws-sdk-paymentcryptography](https://crates.io/crates/aws-sdk-paymentcryptography) ([docs](https://docs.rs/aws-sdk-paymentcryptography)) |
 | Payment Cryptography Data Plane | [aws-sdk-paymentcryptographydata](https://crates.io/crates/aws-sdk-paymentcryptographydata) ([docs](https://docs.rs/aws-sdk-paymentcryptographydata)) |
 | PcaConnectorAd | [aws-sdk-pcaconnectorad](https://crates.io/crates/aws-sdk-pcaconnectorad) ([docs](https://docs.rs/aws-sdk-pcaconnectorad)) |
+| Private CA Connector for SCEP | [aws-sdk-pcaconnectorscep](https://crates.io/crates/aws-sdk-pcaconnectorscep) ([docs](https://docs.rs/aws-sdk-pcaconnectorscep)) |
 | QBusiness | [aws-sdk-qbusiness](https://crates.io/crates/aws-sdk-qbusiness) ([docs](https://docs.rs/aws-sdk-qbusiness)) |
 | Redshift Data API Service | [aws-sdk-redshiftdata](https://crates.io/crates/aws-sdk-redshiftdata) ([docs](https://docs.rs/aws-sdk-redshiftdata)) |
 | Redshift Serverless | [aws-sdk-redshiftserverless](https://crates.io/crates/aws-sdk-redshiftserverless) ([docs](https://docs.rs/aws-sdk-redshiftserverless)) |

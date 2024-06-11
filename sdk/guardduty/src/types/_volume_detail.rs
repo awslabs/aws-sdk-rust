@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeDetail {
-    /// <p>EBS volume Arn information.</p>
+    /// <p>EBS volume ARN information.</p>
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The EBS volume type.</p>
     pub volume_type: ::std::option::Option<::std::string::String>,
@@ -14,13 +14,13 @@ pub struct VolumeDetail {
     pub volume_size_in_gb: ::std::option::Option<i32>,
     /// <p>EBS volume encryption type.</p>
     pub encryption_type: ::std::option::Option<::std::string::String>,
-    /// <p>Snapshot Arn of the EBS volume.</p>
+    /// <p>Snapshot ARN of the EBS volume.</p>
     pub snapshot_arn: ::std::option::Option<::std::string::String>,
-    /// <p>KMS key Arn used to encrypt the EBS volume.</p>
+    /// <p>KMS key ARN used to encrypt the EBS volume.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl VolumeDetail {
-    /// <p>EBS volume Arn information.</p>
+    /// <p>EBS volume ARN information.</p>
     pub fn volume_arn(&self) -> ::std::option::Option<&str> {
         self.volume_arn.as_deref()
     }
@@ -40,11 +40,11 @@ impl VolumeDetail {
     pub fn encryption_type(&self) -> ::std::option::Option<&str> {
         self.encryption_type.as_deref()
     }
-    /// <p>Snapshot Arn of the EBS volume.</p>
+    /// <p>Snapshot ARN of the EBS volume.</p>
     pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
         self.snapshot_arn.as_deref()
     }
-    /// <p>KMS key Arn used to encrypt the EBS volume.</p>
+    /// <p>KMS key ARN used to encrypt the EBS volume.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -69,17 +69,17 @@ pub struct VolumeDetailBuilder {
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl VolumeDetailBuilder {
-    /// <p>EBS volume Arn information.</p>
+    /// <p>EBS volume ARN information.</p>
     pub fn volume_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>EBS volume Arn information.</p>
+    /// <p>EBS volume ARN information.</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_arn = input;
         self
     }
-    /// <p>EBS volume Arn information.</p>
+    /// <p>EBS volume ARN information.</p>
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_arn
     }
@@ -139,31 +139,31 @@ impl VolumeDetailBuilder {
     pub fn get_encryption_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_type
     }
-    /// <p>Snapshot Arn of the EBS volume.</p>
+    /// <p>Snapshot ARN of the EBS volume.</p>
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Snapshot Arn of the EBS volume.</p>
+    /// <p>Snapshot ARN of the EBS volume.</p>
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_arn = input;
         self
     }
-    /// <p>Snapshot Arn of the EBS volume.</p>
+    /// <p>Snapshot ARN of the EBS volume.</p>
     pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_arn
     }
-    /// <p>KMS key Arn used to encrypt the EBS volume.</p>
+    /// <p>KMS key ARN used to encrypt the EBS volume.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>KMS key Arn used to encrypt the EBS volume.</p>
+    /// <p>KMS key ARN used to encrypt the EBS volume.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
-    /// <p>KMS key Arn used to encrypt the EBS volume.</p>
+    /// <p>KMS key ARN used to encrypt the EBS volume.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }

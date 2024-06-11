@@ -20,7 +20,7 @@ pub struct ConnectPeer {
     pub configuration: ::std::option::Option<crate::types::ConnectPeerConfiguration>,
     /// <p>The list of key-value tags associated with the Connect peer.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The subnet ARN for the Connect peer.</p>
+    /// <p>The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.</p>
     pub subnet_arn: ::std::option::Option<::std::string::String>,
 }
 impl ConnectPeer {
@@ -58,7 +58,7 @@ impl ConnectPeer {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The subnet ARN for the Connect peer.</p>
+    /// <p>The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.</p>
     pub fn subnet_arn(&self) -> ::std::option::Option<&str> {
         self.subnet_arn.as_deref()
     }
@@ -203,17 +203,17 @@ impl ConnectPeerBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>The subnet ARN for the Connect peer.</p>
+    /// <p>The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.</p>
     pub fn subnet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The subnet ARN for the Connect peer.</p>
+    /// <p>The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.</p>
     pub fn set_subnet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_arn = input;
         self
     }
-    /// <p>The subnet ARN for the Connect peer.</p>
+    /// <p>The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.</p>
     pub fn get_subnet_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_arn
     }

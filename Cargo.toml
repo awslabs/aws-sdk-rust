@@ -1,11 +1,11 @@
 [workspace]
 resolver = "2"
 exclude = [
+    "examples/examples",
+    "examples/lambda",
+    "examples/webassembly",
     "examples/cross_service",
     "examples/test-utils",
-    "examples/webassembly",
-    "examples/lambda",
-    "examples/examples",
     "tests/webassembly",
     "tests/no-default-features"
 ]
@@ -308,6 +308,7 @@ members = [
     "sdk/paymentcryptography",
     "sdk/paymentcryptographydata",
     "sdk/pcaconnectorad",
+    "sdk/pcaconnectorscep",
     "sdk/personalize",
     "sdk/personalizeevents",
     "sdk/personalizeruntime",

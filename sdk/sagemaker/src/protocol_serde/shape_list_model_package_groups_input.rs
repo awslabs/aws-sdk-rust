@@ -31,5 +31,8 @@ pub fn ser_list_model_package_groups_input_input(
     if let Some(var_7) = &input.sort_order {
         object.key("SortOrder").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.cross_account_filter_option {
+        object.key("CrossAccountFilterOption").string(var_8.as_str());
+    }
     Ok(())
 }

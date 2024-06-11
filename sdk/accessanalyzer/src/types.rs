@@ -119,6 +119,18 @@ pub use crate::types::_unused_action::UnusedAction;
 
 pub use crate::types::_external_access_details::ExternalAccessDetails;
 
+pub use crate::types::_status::Status;
+
+pub use crate::types::_recommendation_type::RecommendationType;
+
+pub use crate::types::_recommended_step::RecommendedStep;
+
+pub use crate::types::_unused_permissions_recommended_step::UnusedPermissionsRecommendedStep;
+
+pub use crate::types::_recommended_remediation_action::RecommendedRemediationAction;
+
+pub use crate::types::_recommendation_error::RecommendationError;
+
 pub use crate::types::_finding::Finding;
 
 pub use crate::types::_analyzed_resource::AnalyzedResource;
@@ -183,6 +195,10 @@ pub use crate::types::_ebs_snapshot_configuration::EbsSnapshotConfiguration;
 
 pub use crate::types::_reason_summary::ReasonSummary;
 
+pub use crate::types::_check_no_public_access_result::CheckNoPublicAccessResult;
+
+pub use crate::types::_access_check_resource_type::AccessCheckResourceType;
+
 pub use crate::types::_check_no_new_access_result::CheckNoNewAccessResult;
 
 pub use crate::types::_access_check_policy_type::AccessCheckPolicyType;
@@ -194,6 +210,8 @@ pub use crate::types::_access::Access;
 mod _access;
 
 mod _access_check_policy_type;
+
+mod _access_check_resource_type;
 
 mod _access_preview;
 
@@ -226,6 +244,8 @@ mod _archive_rule_summary;
 mod _check_access_not_granted_result;
 
 mod _check_no_new_access_result;
+
+mod _check_no_public_access_result;
 
 mod _cloud_trail_details;
 
@@ -327,6 +347,14 @@ mod _reason_code;
 
 mod _reason_summary;
 
+mod _recommendation_error;
+
+mod _recommendation_type;
+
+mod _recommended_remediation_action;
+
+mod _recommended_step;
+
 mod _resource_type;
 
 mod _s3_access_point_configuration;
@@ -349,6 +377,8 @@ mod _span;
 
 mod _sqs_queue_configuration;
 
+mod _status;
+
 mod _status_reason;
 
 mod _substring;
@@ -370,6 +400,8 @@ mod _unused_iam_user_access_key_details;
 mod _unused_iam_user_password_details;
 
 mod _unused_permission_details;
+
+mod _unused_permissions_recommended_step;
 
 mod _validate_policy_finding;
 

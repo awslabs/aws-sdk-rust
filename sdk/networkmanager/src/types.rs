@@ -9,9 +9,11 @@ pub use crate::types::_vpc_options::VpcOptions;
 
 pub use crate::types::_attachment::Attachment;
 
-pub use crate::types::_proposed_segment_change::ProposedSegmentChange;
+pub use crate::types::_proposed_network_function_group_change::ProposedNetworkFunctionGroupChange;
 
 pub use crate::types::_tag::Tag;
+
+pub use crate::types::_proposed_segment_change::ProposedSegmentChange;
 
 pub use crate::types::_attachment_state::AttachmentState;
 
@@ -42,6 +44,10 @@ pub use crate::types::_aws_location::AwsLocation;
 pub use crate::types::_core_network::CoreNetwork;
 
 pub use crate::types::_core_network_edge::CoreNetworkEdge;
+
+pub use crate::types::_core_network_network_function_group::CoreNetworkNetworkFunctionGroup;
+
+pub use crate::types::_service_insertion_segments::ServiceInsertionSegments;
 
 pub use crate::types::_core_network_segment::CoreNetworkSegment;
 
@@ -135,6 +141,8 @@ pub use crate::types::_core_network_segment_edge_identifier::CoreNetworkSegmentE
 
 pub use crate::types::_route_table_identifier::RouteTableIdentifier;
 
+pub use crate::types::_core_network_network_function_group_identifier::CoreNetworkNetworkFunctionGroupIdentifier;
+
 pub use crate::types::_network_resource::NetworkResource;
 
 pub use crate::types::_relationship::Relationship;
@@ -152,6 +160,20 @@ pub use crate::types::_customer_gateway_association_state::CustomerGatewayAssoci
 pub use crate::types::_core_network_change::CoreNetworkChange;
 
 pub use crate::types::_core_network_change_values::CoreNetworkChangeValues;
+
+pub use crate::types::_service_insertion_action::ServiceInsertionAction;
+
+pub use crate::types::_via::Via;
+
+pub use crate::types::_edge_override::EdgeOverride;
+
+pub use crate::types::_network_function_group::NetworkFunctionGroup;
+
+pub use crate::types::_when_sent_to::WhenSentTo;
+
+pub use crate::types::_send_via_mode::SendViaMode;
+
+pub use crate::types::_segment_action_service_insertion::SegmentActionServiceInsertion;
 
 pub use crate::types::_change_action::ChangeAction;
 
@@ -243,6 +265,10 @@ mod _core_network_change_values;
 
 mod _core_network_edge;
 
+mod _core_network_network_function_group;
+
+mod _core_network_network_function_group_identifier;
+
 mod _core_network_policy;
 
 mod _core_network_policy_alias;
@@ -267,6 +293,8 @@ mod _device;
 
 mod _device_state;
 
+mod _edge_override;
+
 mod _global_network;
 
 mod _global_network_state;
@@ -280,6 +308,8 @@ mod _link_association_state;
 mod _link_state;
 
 mod _location;
+
+mod _network_function_group;
 
 mod _network_resource;
 
@@ -302,6 +332,8 @@ mod _peering;
 mod _peering_state;
 
 mod _peering_type;
+
+mod _proposed_network_function_group_change;
 
 mod _proposed_segment_change;
 
@@ -331,6 +363,14 @@ mod _route_table_type;
 
 mod _route_type;
 
+mod _segment_action_service_insertion;
+
+mod _send_via_mode;
+
+mod _service_insertion_action;
+
+mod _service_insertion_segments;
+
 mod _site;
 
 mod _site_state;
@@ -359,9 +399,13 @@ mod _validation_exception_field;
 
 mod _validation_exception_reason;
 
+mod _via;
+
 mod _vpc_attachment;
 
 mod _vpc_options;
+
+mod _when_sent_to;
 
 /// Builders
 pub mod builders;

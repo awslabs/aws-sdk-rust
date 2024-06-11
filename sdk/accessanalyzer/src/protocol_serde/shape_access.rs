@@ -12,5 +12,14 @@ pub fn ser_access(
         }
         array_1.finish();
     }
+    {
+        let mut array_3 = object.key("resources").start_array();
+        for item_4 in &input.resources {
+            {
+                array_3.value().string(item_4.as_str());
+            }
+        }
+        array_3.finish();
+    }
     Ok(())
 }

@@ -6,7 +6,7 @@
 pub struct ScanFilePath {
     /// <p>The file path of the infected file.</p>
     pub file_path: ::std::option::Option<::std::string::String>,
-    /// <p>EBS volume Arn details of the infected file.</p>
+    /// <p>EBS volume ARN details of the infected file.</p>
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The hash value of the infected file.</p>
     pub hash: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl ScanFilePath {
     pub fn file_path(&self) -> ::std::option::Option<&str> {
         self.file_path.as_deref()
     }
-    /// <p>EBS volume Arn details of the infected file.</p>
+    /// <p>EBS volume ARN details of the infected file.</p>
     pub fn volume_arn(&self) -> ::std::option::Option<&str> {
         self.volume_arn.as_deref()
     }
@@ -62,17 +62,17 @@ impl ScanFilePathBuilder {
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_path
     }
-    /// <p>EBS volume Arn details of the infected file.</p>
+    /// <p>EBS volume ARN details of the infected file.</p>
     pub fn volume_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>EBS volume Arn details of the infected file.</p>
+    /// <p>EBS volume ARN details of the infected file.</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_arn = input;
         self
     }
-    /// <p>EBS volume Arn details of the infected file.</p>
+    /// <p>EBS volume ARN details of the infected file.</p>
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_arn
     }

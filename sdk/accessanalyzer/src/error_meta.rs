@@ -199,6 +199,39 @@ impl From<crate::operation::check_no_new_access::CheckNoNewAccessError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::check_no_public_access::CheckNoPublicAccessError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::check_no_public_access::CheckNoPublicAccessError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::check_no_public_access::CheckNoPublicAccessError> for Error {
+    fn from(err: crate::operation::check_no_public_access::CheckNoPublicAccessError) -> Self {
+        match err {
+            crate::operation::check_no_public_access::CheckNoPublicAccessError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::check_no_public_access::CheckNoPublicAccessError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::check_no_public_access::CheckNoPublicAccessError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::check_no_public_access::CheckNoPublicAccessError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::check_no_public_access::CheckNoPublicAccessError::UnprocessableEntityException(inner) => {
+                Error::UnprocessableEntityException(inner)
+            }
+            crate::operation::check_no_public_access::CheckNoPublicAccessError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::check_no_public_access::CheckNoPublicAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_access_preview::CreateAccessPreviewError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -348,6 +381,46 @@ impl From<crate::operation::delete_archive_rule::DeleteArchiveRuleError> for Err
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_finding_recommendation::GenerateFindingRecommendationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::generate_finding_recommendation::GenerateFindingRecommendationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::generate_finding_recommendation::GenerateFindingRecommendationError> for Error {
+    fn from(err: crate::operation::generate_finding_recommendation::GenerateFindingRecommendationError) -> Self {
+        match err {
+            crate::operation::generate_finding_recommendation::GenerateFindingRecommendationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::generate_finding_recommendation::GenerateFindingRecommendationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::generate_finding_recommendation::GenerateFindingRecommendationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::generate_finding_recommendation::GenerateFindingRecommendationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::generate_finding_recommendation::GenerateFindingRecommendationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_access_preview::GetAccessPreviewError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -479,6 +552,45 @@ impl From<crate::operation::get_finding::GetFindingError> for Error {
             crate::operation::get_finding::GetFindingError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_finding::GetFindingError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_finding::GetFindingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_finding_recommendation::GetFindingRecommendationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_finding_recommendation::GetFindingRecommendationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_finding_recommendation::GetFindingRecommendationError> for Error {
+    fn from(err: crate::operation::get_finding_recommendation::GetFindingRecommendationError) -> Self {
+        match err {
+            crate::operation::get_finding_recommendation::GetFindingRecommendationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_finding_recommendation::GetFindingRecommendationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_finding_recommendation::GetFindingRecommendationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_finding_recommendation::GetFindingRecommendationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_finding_recommendation::GetFindingRecommendationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_finding_recommendation::GetFindingRecommendationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

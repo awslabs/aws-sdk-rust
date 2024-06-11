@@ -18,6 +18,8 @@ pub struct CoreNetwork {
     pub state: ::std::option::Option<crate::types::CoreNetworkState>,
     /// <p>The segments within a core network.</p>
     pub segments: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkSegment>>,
+    /// <p>The network function groups associated with a core network.</p>
+    pub network_function_groups: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkNetworkFunctionGroup>>,
     /// <p>The edges within a core network.</p>
     pub edges: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkEdge>>,
     /// <p>The list of key-value tags associated with a core network.</p>
@@ -54,6 +56,12 @@ impl CoreNetwork {
     pub fn segments(&self) -> &[crate::types::CoreNetworkSegment] {
         self.segments.as_deref().unwrap_or_default()
     }
+    /// <p>The network function groups associated with a core network.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_function_groups.is_none()`.
+    pub fn network_function_groups(&self) -> &[crate::types::CoreNetworkNetworkFunctionGroup] {
+        self.network_function_groups.as_deref().unwrap_or_default()
+    }
     /// <p>The edges within a core network.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edges.is_none()`.
@@ -85,6 +93,7 @@ pub struct CoreNetworkBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) state: ::std::option::Option<crate::types::CoreNetworkState>,
     pub(crate) segments: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkSegment>>,
+    pub(crate) network_function_groups: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkNetworkFunctionGroup>>,
     pub(crate) edges: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkEdge>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -193,6 +202,29 @@ impl CoreNetworkBuilder {
     pub fn get_segments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkSegment>> {
         &self.segments
     }
+    /// Appends an item to `network_function_groups`.
+    ///
+    /// To override the contents of this collection use [`set_network_function_groups`](Self::set_network_function_groups).
+    ///
+    /// <p>The network function groups associated with a core network.</p>
+    pub fn network_function_groups(mut self, input: crate::types::CoreNetworkNetworkFunctionGroup) -> Self {
+        let mut v = self.network_function_groups.unwrap_or_default();
+        v.push(input);
+        self.network_function_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The network function groups associated with a core network.</p>
+    pub fn set_network_function_groups(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkNetworkFunctionGroup>>,
+    ) -> Self {
+        self.network_function_groups = input;
+        self
+    }
+    /// <p>The network function groups associated with a core network.</p>
+    pub fn get_network_function_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkNetworkFunctionGroup>> {
+        &self.network_function_groups
+    }
     /// Appends an item to `edges`.
     ///
     /// To override the contents of this collection use [`set_edges`](Self::set_edges).
@@ -243,6 +275,7 @@ impl CoreNetworkBuilder {
             created_at: self.created_at,
             state: self.state,
             segments: self.segments,
+            network_function_groups: self.network_function_groups,
             edges: self.edges,
             tags: self.tags,
         }

@@ -84,12 +84,26 @@ where
                                     .transpose()?,
                             );
                         }
+                        "NetworkFunctionGroupName" => {
+                            builder = builder.set_network_function_group_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
                         }
                         "ProposedSegmentChange" => {
                             builder = builder.set_proposed_segment_change(
                                 crate::protocol_serde::shape_proposed_segment_change::de_proposed_segment_change(tokens)?,
+                            );
+                        }
+                        "ProposedNetworkFunctionGroupChange" => {
+                            builder = builder.set_proposed_network_function_group_change(
+                                crate::protocol_serde::shape_proposed_network_function_group_change::de_proposed_network_function_group_change(
+                                    tokens,
+                                )?,
                             );
                         }
                         "CreatedAt" => {

@@ -12,5 +12,14 @@ pub fn ser_route_table_identifier(
         crate::protocol_serde::shape_core_network_segment_edge_identifier::ser_core_network_segment_edge_identifier(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.core_network_network_function_group {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("CoreNetworkNetworkFunctionGroup").start_object();
+        crate::protocol_serde::shape_core_network_network_function_group_identifier::ser_core_network_network_function_group_identifier(
+            &mut object_5,
+            var_4,
+        )?;
+        object_5.finish();
+    }
     Ok(())
 }

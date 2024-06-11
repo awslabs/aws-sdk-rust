@@ -19,6 +19,9 @@ pub mod create_filter;
 /// Types for the `CreateIPSet` operation.
 pub mod create_ip_set;
 
+/// Types for the `CreateMalwareProtectionPlan` operation.
+pub mod create_malware_protection_plan;
+
 /// Types for the `CreateMembers` operation.
 pub mod create_members;
 
@@ -45,6 +48,9 @@ pub mod delete_invitations;
 
 /// Types for the `DeleteIPSet` operation.
 pub mod delete_ip_set;
+
+/// Types for the `DeleteMalwareProtectionPlan` operation.
+pub mod delete_malware_protection_plan;
 
 /// Types for the `DeleteMembers` operation.
 pub mod delete_members;
@@ -103,6 +109,9 @@ pub mod get_invitations_count;
 /// Types for the `GetIPSet` operation.
 pub mod get_ip_set;
 
+/// Types for the `GetMalwareProtectionPlan` operation.
+pub mod get_malware_protection_plan;
+
 /// Types for the `GetMalwareScanSettings` operation.
 pub mod get_malware_scan_settings;
 
@@ -148,6 +157,9 @@ pub mod list_invitations;
 /// Types for the `ListIPSets` operation.
 pub mod list_ip_sets;
 
+/// Types for the `ListMalwareProtectionPlans` operation.
+pub mod list_malware_protection_plans;
+
 /// Types for the `ListMembers` operation.
 pub mod list_members;
 
@@ -192,6 +204,9 @@ pub mod update_findings_feedback;
 
 /// Types for the `UpdateIPSet` operation.
 pub mod update_ip_set;
+
+/// Types for the `UpdateMalwareProtectionPlan` operation.
+pub mod update_malware_protection_plan;
 
 /// Types for the `UpdateMalwareScanSettings` operation.
 pub mod update_malware_scan_settings;

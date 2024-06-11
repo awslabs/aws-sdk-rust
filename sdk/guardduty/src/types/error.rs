@@ -3,6 +3,8 @@ pub use crate::types::error::_internal_server_error_exception::InternalServerErr
 
 pub use crate::types::error::_bad_request_exception::BadRequestException;
 
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
+
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_conflict_exception::ConflictException;
@@ -14,6 +16,8 @@ mod _bad_request_exception;
 mod _conflict_exception;
 
 mod _internal_server_error_exception;
+
+mod _resource_not_found_exception;
 
 /// Builders
 pub mod builders;

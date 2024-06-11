@@ -148,6 +148,8 @@ mod create_filter;
 
 mod create_ip_set;
 
+mod create_malware_protection_plan;
+
 mod create_members;
 
 mod create_publishing_destination;
@@ -193,6 +195,8 @@ mod delete_invitations;
 
 mod delete_ip_set;
 
+mod delete_malware_protection_plan;
+
 mod delete_members;
 
 mod delete_publishing_destination;
@@ -231,6 +235,8 @@ mod get_invitations_count;
 
 mod get_ip_set;
 
+mod get_malware_protection_plan;
+
 mod get_malware_scan_settings;
 
 mod get_master_account;
@@ -261,6 +267,8 @@ mod list_invitations;
 
 mod list_ip_sets;
 
+mod list_malware_protection_plans;
+
 mod list_members;
 
 mod list_organization_admin_accounts;
@@ -290,6 +298,8 @@ mod update_filter;
 mod update_findings_feedback;
 
 mod update_ip_set;
+
+mod update_malware_protection_plan;
 
 mod update_malware_scan_settings;
 

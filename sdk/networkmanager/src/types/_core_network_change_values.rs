@@ -6,6 +6,8 @@
 pub struct CoreNetworkChangeValues {
     /// <p>The names of the segments in a core network.</p>
     pub segment_name: ::std::option::Option<::std::string::String>,
+    /// <p>The network function group name if the change event is associated with a network function group.</p>
+    pub network_function_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Regions where edges are located in a core network.</p>
     pub edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ASN of a core network.</p>
@@ -18,11 +20,17 @@ pub struct CoreNetworkChangeValues {
     pub inside_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The shared segments for a core network change value.</p>
     pub shared_segments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Describes the service insertion action.</p>
+    pub service_insertion_actions: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInsertionAction>>,
 }
 impl CoreNetworkChangeValues {
     /// <p>The names of the segments in a core network.</p>
     pub fn segment_name(&self) -> ::std::option::Option<&str> {
         self.segment_name.as_deref()
+    }
+    /// <p>The network function group name if the change event is associated with a network function group.</p>
+    pub fn network_function_group_name(&self) -> ::std::option::Option<&str> {
+        self.network_function_group_name.as_deref()
     }
     /// <p>The Regions where edges are located in a core network.</p>
     ///
@@ -54,6 +62,12 @@ impl CoreNetworkChangeValues {
     pub fn shared_segments(&self) -> &[::std::string::String] {
         self.shared_segments.as_deref().unwrap_or_default()
     }
+    /// <p>Describes the service insertion action.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_insertion_actions.is_none()`.
+    pub fn service_insertion_actions(&self) -> &[crate::types::ServiceInsertionAction] {
+        self.service_insertion_actions.as_deref().unwrap_or_default()
+    }
 }
 impl CoreNetworkChangeValues {
     /// Creates a new builder-style object to manufacture [`CoreNetworkChangeValues`](crate::types::CoreNetworkChangeValues).
@@ -67,12 +81,14 @@ impl CoreNetworkChangeValues {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoreNetworkChangeValuesBuilder {
     pub(crate) segment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) network_function_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) asn: ::std::option::Option<i64>,
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) destination_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) inside_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) shared_segments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) service_insertion_actions: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInsertionAction>>,
 }
 impl CoreNetworkChangeValuesBuilder {
     /// <p>The names of the segments in a core network.</p>
@@ -88,6 +104,20 @@ impl CoreNetworkChangeValuesBuilder {
     /// <p>The names of the segments in a core network.</p>
     pub fn get_segment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.segment_name
+    }
+    /// <p>The network function group name if the change event is associated with a network function group.</p>
+    pub fn network_function_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_function_group_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The network function group name if the change event is associated with a network function group.</p>
+    pub fn set_network_function_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_function_group_name = input;
+        self
+    }
+    /// <p>The network function group name if the change event is associated with a network function group.</p>
+    pub fn get_network_function_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_function_group_name
     }
     /// Appends an item to `edge_locations`.
     ///
@@ -191,16 +221,38 @@ impl CoreNetworkChangeValuesBuilder {
     pub fn get_shared_segments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.shared_segments
     }
+    /// Appends an item to `service_insertion_actions`.
+    ///
+    /// To override the contents of this collection use [`set_service_insertion_actions`](Self::set_service_insertion_actions).
+    ///
+    /// <p>Describes the service insertion action.</p>
+    pub fn service_insertion_actions(mut self, input: crate::types::ServiceInsertionAction) -> Self {
+        let mut v = self.service_insertion_actions.unwrap_or_default();
+        v.push(input);
+        self.service_insertion_actions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Describes the service insertion action.</p>
+    pub fn set_service_insertion_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInsertionAction>>) -> Self {
+        self.service_insertion_actions = input;
+        self
+    }
+    /// <p>Describes the service insertion action.</p>
+    pub fn get_service_insertion_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceInsertionAction>> {
+        &self.service_insertion_actions
+    }
     /// Consumes the builder and constructs a [`CoreNetworkChangeValues`](crate::types::CoreNetworkChangeValues).
     pub fn build(self) -> crate::types::CoreNetworkChangeValues {
         crate::types::CoreNetworkChangeValues {
             segment_name: self.segment_name,
+            network_function_group_name: self.network_function_group_name,
             edge_locations: self.edge_locations,
             asn: self.asn,
             cidr: self.cidr,
             destination_identifier: self.destination_identifier,
             inside_cidr_blocks: self.inside_cidr_blocks,
             shared_segments: self.shared_segments,
+            service_insertion_actions: self.service_insertion_actions,
         }
     }
 }

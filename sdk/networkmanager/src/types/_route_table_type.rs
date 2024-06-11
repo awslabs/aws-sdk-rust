@@ -13,6 +13,7 @@
 /// # let routetabletype = unimplemented!();
 /// match routetabletype {
 ///     RouteTableType::CoreNetworkSegment => { /* ... */ },
+///     RouteTableType::NetworkFunctionGroup => { /* ... */ },
 ///     RouteTableType::TransitGatewayRouteTable => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum RouteTableType {
     #[allow(missing_docs)] // documentation missing in model
     CoreNetworkSegment,
     #[allow(missing_docs)] // documentation missing in model
+    NetworkFunctionGroup,
+    #[allow(missing_docs)] // documentation missing in model
     TransitGatewayRouteTable,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -53,6 +56,7 @@ impl ::std::convert::From<&str> for RouteTableType {
     fn from(s: &str) -> Self {
         match s {
             "CORE_NETWORK_SEGMENT" => RouteTableType::CoreNetworkSegment,
+            "NETWORK_FUNCTION_GROUP" => RouteTableType::NetworkFunctionGroup,
             "TRANSIT_GATEWAY_ROUTE_TABLE" => RouteTableType::TransitGatewayRouteTable,
             other => RouteTableType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,13 +74,14 @@ impl RouteTableType {
     pub fn as_str(&self) -> &str {
         match self {
             RouteTableType::CoreNetworkSegment => "CORE_NETWORK_SEGMENT",
+            RouteTableType::NetworkFunctionGroup => "NETWORK_FUNCTION_GROUP",
             RouteTableType::TransitGatewayRouteTable => "TRANSIT_GATEWAY_ROUTE_TABLE",
             RouteTableType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CORE_NETWORK_SEGMENT", "TRANSIT_GATEWAY_ROUTE_TABLE"]
+        &["CORE_NETWORK_SEGMENT", "NETWORK_FUNCTION_GROUP", "TRANSIT_GATEWAY_ROUTE_TABLE"]
     }
 }
 impl ::std::convert::AsRef<str> for RouteTableType {
@@ -100,6 +105,7 @@ impl ::std::fmt::Display for RouteTableType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RouteTableType::CoreNetworkSegment => write!(f, "CORE_NETWORK_SEGMENT"),
+            RouteTableType::NetworkFunctionGroup => write!(f, "NETWORK_FUNCTION_GROUP"),
             RouteTableType::TransitGatewayRouteTable => write!(f, "TRANSIT_GATEWAY_ROUTE_TABLE"),
             RouteTableType::Unknown(value) => write!(f, "{}", value),
         }

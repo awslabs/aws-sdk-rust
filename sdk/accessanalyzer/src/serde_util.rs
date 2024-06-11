@@ -146,6 +146,24 @@ pub(crate) fn get_archive_rule_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_finding_recommendation_output_output_correct_errors(
+    mut builder: crate::operation::get_finding_recommendation::builders::GetFindingRecommendationOutputBuilder,
+) -> crate::operation::get_finding_recommendation::builders::GetFindingRecommendationOutputBuilder {
+    if builder.started_at.is_none() {
+        builder.started_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    if builder.recommendation_type.is_none() {
+        builder.recommendation_type = "no value was set".parse::<crate::types::RecommendationType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::Status>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_finding_v2_output_output_correct_errors(
     mut builder: crate::operation::get_finding_v2::builders::GetFindingV2OutputBuilder,
 ) -> crate::operation::get_finding_v2::builders::GetFindingV2OutputBuilder {
@@ -424,6 +442,18 @@ pub(crate) fn finding_correct_errors(mut builder: crate::types::builders::Findin
     builder
 }
 
+pub(crate) fn recommendation_error_correct_errors(
+    mut builder: crate::types::builders::RecommendationErrorBuilder,
+) -> crate::types::builders::RecommendationErrorBuilder {
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn generated_policy_properties_correct_errors(
     mut builder: crate::types::builders::GeneratedPolicyPropertiesBuilder,
 ) -> crate::types::builders::GeneratedPolicyPropertiesBuilder {
@@ -680,6 +710,15 @@ pub(crate) fn unused_permission_details_correct_errors(
 ) -> crate::types::builders::UnusedPermissionDetailsBuilder {
     if builder.service_namespace.is_none() {
         builder.service_namespace = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn unused_permissions_recommended_step_correct_errors(
+    mut builder: crate::types::builders::UnusedPermissionsRecommendedStepBuilder,
+) -> crate::types::builders::UnusedPermissionsRecommendedStepBuilder {
+    if builder.recommended_action.is_none() {
+        builder.recommended_action = "no value was set".parse::<crate::types::RecommendedRemediationAction>().ok()
     }
     builder
 }

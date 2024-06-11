@@ -35,6 +35,8 @@ pub(crate) mod shape_create_filter;
 
 pub(crate) mod shape_create_ip_set;
 
+pub(crate) mod shape_create_malware_protection_plan;
+
 pub(crate) mod shape_create_members;
 
 pub(crate) mod shape_create_publishing_destination;
@@ -52,6 +54,8 @@ pub(crate) mod shape_delete_filter;
 pub(crate) mod shape_delete_invitations;
 
 pub(crate) mod shape_delete_ip_set;
+
+pub(crate) mod shape_delete_malware_protection_plan;
 
 pub(crate) mod shape_delete_members;
 
@@ -91,6 +95,8 @@ pub(crate) mod shape_get_invitations_count;
 
 pub(crate) mod shape_get_ip_set;
 
+pub(crate) mod shape_get_malware_protection_plan;
+
 pub(crate) mod shape_get_malware_scan_settings;
 
 pub(crate) mod shape_get_master_account;
@@ -121,6 +127,8 @@ pub(crate) mod shape_list_invitations;
 
 pub(crate) mod shape_list_ip_sets;
 
+pub(crate) mod shape_list_malware_protection_plans;
+
 pub(crate) mod shape_list_members;
 
 pub(crate) mod shape_list_organization_admin_accounts;
@@ -150,6 +158,8 @@ pub(crate) mod shape_update_filter;
 pub(crate) mod shape_update_findings_feedback;
 
 pub(crate) mod shape_update_ip_set;
+
+pub(crate) mod shape_update_malware_protection_plan;
 
 pub(crate) mod shape_update_malware_scan_settings;
 
@@ -186,6 +196,8 @@ pub(crate) mod shape_create_detector_input;
 pub(crate) mod shape_create_filter_input;
 
 pub(crate) mod shape_create_ip_set_input;
+
+pub(crate) mod shape_create_malware_protection_plan_input;
 
 pub(crate) mod shape_create_members_input;
 
@@ -231,6 +243,8 @@ pub(crate) mod shape_list_coverage_input;
 
 pub(crate) mod shape_list_findings_input;
 
+pub(crate) mod shape_resource_not_found_exception;
+
 pub(crate) mod shape_start_malware_scan_input;
 
 pub(crate) mod shape_start_monitoring_members_input;
@@ -248,6 +262,8 @@ pub(crate) mod shape_update_filter_input;
 pub(crate) mod shape_update_findings_feedback_input;
 
 pub(crate) mod shape_update_ip_set_input;
+
+pub(crate) mod shape_update_malware_protection_plan_input;
 
 pub(crate) mod shape_update_malware_scan_settings_input;
 
@@ -274,6 +290,8 @@ pub(crate) mod shape_coverage_resources;
 pub(crate) mod shape_coverage_sort_criteria;
 
 pub(crate) mod shape_coverage_statistics;
+
+pub(crate) mod shape_create_protected_resource;
 
 pub(crate) mod shape_data_source_configurations;
 
@@ -304,6 +322,12 @@ pub(crate) mod shape_findings;
 pub(crate) mod shape_invitations;
 
 pub(crate) mod shape_ip_set_ids;
+
+pub(crate) mod shape_malware_protection_plan_actions;
+
+pub(crate) mod shape_malware_protection_plan_status_reasons_list;
+
+pub(crate) mod shape_malware_protection_plans_summary;
 
 pub(crate) mod shape_master;
 
@@ -337,6 +361,8 @@ pub(crate) mod shape_unprocessed_accounts;
 
 pub(crate) mod shape_unprocessed_data_sources_result;
 
+pub(crate) mod shape_update_protected_resource;
+
 pub(crate) mod shape_usage_criteria;
 
 pub(crate) mod shape_usage_statistics;
@@ -358,6 +384,8 @@ pub(crate) mod shape_count_by_severity;
 pub(crate) mod shape_coverage_filter_criterion;
 
 pub(crate) mod shape_coverage_resource;
+
+pub(crate) mod shape_create_s3_bucket_resource;
 
 pub(crate) mod shape_criterion;
 
@@ -384,6 +412,12 @@ pub(crate) mod shape_kubernetes_configuration_result;
 pub(crate) mod shape_malware_protection_configuration;
 
 pub(crate) mod shape_malware_protection_configuration_result;
+
+pub(crate) mod shape_malware_protection_plan_status_reason;
+
+pub(crate) mod shape_malware_protection_plan_summary;
+
+pub(crate) mod shape_malware_protection_plan_tagging_action;
 
 pub(crate) mod shape_member;
 
@@ -421,6 +455,8 @@ pub(crate) mod shape_scan_criterion;
 
 pub(crate) mod shape_unprocessed_account;
 
+pub(crate) mod shape_update_s3_bucket_resource;
+
 pub(crate) mod shape_usage_account_result_list;
 
 pub(crate) mod shape_usage_data_source_result_list;
@@ -446,6 +482,8 @@ pub(crate) mod shape_free_trial_feature_configurations_results;
 pub(crate) mod shape_kubernetes_audit_logs_configuration;
 
 pub(crate) mod shape_kubernetes_audit_logs_configuration_result;
+
+pub(crate) mod shape_malware_protection_plan_object_prefixes_list;
 
 pub(crate) mod shape_member_features_configurations_results;
 
@@ -534,6 +572,8 @@ pub(crate) mod shape_kubernetes_details;
 pub(crate) mod shape_lambda_details;
 
 pub(crate) mod shape_malware_protection_data_source_free_trial;
+
+pub(crate) mod shape_malware_scan_details;
 
 pub(crate) mod shape_map_equals;
 
@@ -627,6 +667,8 @@ pub(crate) mod shape_tags;
 
 pub(crate) mod shape_threat_intelligence_details;
 
+pub(crate) mod shape_threats;
+
 pub(crate) mod shape_usage_top_account_result;
 
 pub(crate) mod shape_volume_mounts;
@@ -685,6 +727,8 @@ pub(crate) mod shape_remote_ip_details;
 
 pub(crate) mod shape_remote_port_details;
 
+pub(crate) mod shape_s3_object_details;
+
 pub(crate) mod shape_scanned_item_count;
 
 pub(crate) mod shape_security_groups;
@@ -696,6 +740,8 @@ pub(crate) mod shape_source_ips;
 pub(crate) mod shape_subnet_ids;
 
 pub(crate) mod shape_tag;
+
+pub(crate) mod shape_threat;
 
 pub(crate) mod shape_threat_detected_by_name;
 
@@ -719,6 +765,8 @@ pub(crate) mod shape_geo_location;
 
 pub(crate) mod shape_ipv6_addresses;
 
+pub(crate) mod shape_item_paths;
+
 pub(crate) mod shape_lineage_object;
 
 pub(crate) mod shape_login_attribute;
@@ -730,6 +778,8 @@ pub(crate) mod shape_permission_configuration;
 pub(crate) mod shape_port_probe_detail;
 
 pub(crate) mod shape_private_ip_addresses;
+
+pub(crate) mod shape_s3_object_detail;
 
 pub(crate) mod shape_scan_threat_names;
 
@@ -748,6 +798,8 @@ pub(crate) mod shape_anomaly_unusual_behavior_feature;
 pub(crate) mod shape_bucket_level_permissions;
 
 pub(crate) mod shape_host_path;
+
+pub(crate) mod shape_item_path;
 
 pub(crate) mod shape_private_ip_address_details;
 

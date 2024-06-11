@@ -8,7 +8,7 @@ pub struct UnusedPermissionDetails {
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::UnusedAction>>,
     /// <p>The namespace of the Amazon Web Services service that contains the unused actions.</p>
     pub service_namespace: ::std::string::String,
-    /// <p>The time at which the permission last accessed.</p>
+    /// <p>The time at which the permission was last accessed.</p>
     pub last_accessed: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl UnusedPermissionDetails {
@@ -23,7 +23,7 @@ impl UnusedPermissionDetails {
         use std::ops::Deref;
         self.service_namespace.deref()
     }
-    /// <p>The time at which the permission last accessed.</p>
+    /// <p>The time at which the permission was last accessed.</p>
     pub fn last_accessed(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_accessed.as_ref()
     }
@@ -79,17 +79,17 @@ impl UnusedPermissionDetailsBuilder {
     pub fn get_service_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_namespace
     }
-    /// <p>The time at which the permission last accessed.</p>
+    /// <p>The time at which the permission was last accessed.</p>
     pub fn last_accessed(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_accessed = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time at which the permission last accessed.</p>
+    /// <p>The time at which the permission was last accessed.</p>
     pub fn set_last_accessed(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_accessed = input;
         self
     }
-    /// <p>The time at which the permission last accessed.</p>
+    /// <p>The time at which the permission was last accessed.</p>
     pub fn get_last_accessed(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_accessed
     }

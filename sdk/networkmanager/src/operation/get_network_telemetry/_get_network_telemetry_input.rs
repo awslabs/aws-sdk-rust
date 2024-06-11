@@ -13,39 +13,12 @@ pub struct GetNetworkTelemetryInput {
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The resource type.</p>
-    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <p>The resource type. The following are the supported resource types:</p>
     /// <ul>
     /// <li>
-    /// <p><code>dxcon</code></p></li>
-    /// <li>
-    /// <p><code>dx-gateway</code></p></li>
-    /// <li>
-    /// <p><code>dx-vif</code></p></li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Network Manager:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>connection</code></p></li>
-    /// <li>
-    /// <p><code>device</code></p></li>
-    /// <li>
-    /// <p><code>link</code></p></li>
-    /// <li>
-    /// <p><code>site</code></p></li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Amazon VPC:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>customer-gateway</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway-attachment</code></p></li>
+    /// <p><code>connect-peer</code></p></li>
     /// <li>
     /// <p><code>transit-gateway-connect-peer</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway-route-table</code></p></li>
     /// <li>
     /// <p><code>vpn-connection</code></p></li>
     /// </ul>
@@ -78,39 +51,12 @@ impl GetNetworkTelemetryInput {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The resource type.</p>
-    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <p>The resource type. The following are the supported resource types:</p>
     /// <ul>
     /// <li>
-    /// <p><code>dxcon</code></p></li>
-    /// <li>
-    /// <p><code>dx-gateway</code></p></li>
-    /// <li>
-    /// <p><code>dx-vif</code></p></li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Network Manager:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>connection</code></p></li>
-    /// <li>
-    /// <p><code>device</code></p></li>
-    /// <li>
-    /// <p><code>link</code></p></li>
-    /// <li>
-    /// <p><code>site</code></p></li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Amazon VPC:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>customer-gateway</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway-attachment</code></p></li>
+    /// <p><code>connect-peer</code></p></li>
     /// <li>
     /// <p><code>transit-gateway-connect-peer</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway-route-table</code></p></li>
     /// <li>
     /// <p><code>vpn-connection</code></p></li>
     /// </ul>
@@ -223,39 +169,12 @@ impl GetNetworkTelemetryInputBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>The resource type.</p>
-    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <p>The resource type. The following are the supported resource types:</p>
     /// <ul>
     /// <li>
-    /// <p><code>dxcon</code></p></li>
-    /// <li>
-    /// <p><code>dx-gateway</code></p></li>
-    /// <li>
-    /// <p><code>dx-vif</code></p></li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Network Manager:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>connection</code></p></li>
-    /// <li>
-    /// <p><code>device</code></p></li>
-    /// <li>
-    /// <p><code>link</code></p></li>
-    /// <li>
-    /// <p><code>site</code></p></li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Amazon VPC:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>customer-gateway</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway-attachment</code></p></li>
+    /// <p><code>connect-peer</code></p></li>
     /// <li>
     /// <p><code>transit-gateway-connect-peer</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway-route-table</code></p></li>
     /// <li>
     /// <p><code>vpn-connection</code></p></li>
     /// </ul>
@@ -263,39 +182,12 @@ impl GetNetworkTelemetryInputBuilder {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The resource type.</p>
-    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <p>The resource type. The following are the supported resource types:</p>
     /// <ul>
     /// <li>
-    /// <p><code>dxcon</code></p></li>
-    /// <li>
-    /// <p><code>dx-gateway</code></p></li>
-    /// <li>
-    /// <p><code>dx-vif</code></p></li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Network Manager:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>connection</code></p></li>
-    /// <li>
-    /// <p><code>device</code></p></li>
-    /// <li>
-    /// <p><code>link</code></p></li>
-    /// <li>
-    /// <p><code>site</code></p></li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Amazon VPC:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>customer-gateway</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway-attachment</code></p></li>
+    /// <p><code>connect-peer</code></p></li>
     /// <li>
     /// <p><code>transit-gateway-connect-peer</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway-route-table</code></p></li>
     /// <li>
     /// <p><code>vpn-connection</code></p></li>
     /// </ul>
@@ -303,39 +195,12 @@ impl GetNetworkTelemetryInputBuilder {
         self.resource_type = input;
         self
     }
-    /// <p>The resource type.</p>
-    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <p>The resource type. The following are the supported resource types:</p>
     /// <ul>
     /// <li>
-    /// <p><code>dxcon</code></p></li>
-    /// <li>
-    /// <p><code>dx-gateway</code></p></li>
-    /// <li>
-    /// <p><code>dx-vif</code></p></li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Network Manager:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>connection</code></p></li>
-    /// <li>
-    /// <p><code>device</code></p></li>
-    /// <li>
-    /// <p><code>link</code></p></li>
-    /// <li>
-    /// <p><code>site</code></p></li>
-    /// </ul>
-    /// <p>The following are the supported resource types for Amazon VPC:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>customer-gateway</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway-attachment</code></p></li>
+    /// <p><code>connect-peer</code></p></li>
     /// <li>
     /// <p><code>transit-gateway-connect-peer</code></p></li>
-    /// <li>
-    /// <p><code>transit-gateway-route-table</code></p></li>
     /// <li>
     /// <p><code>vpn-connection</code></p></li>
     /// </ul>

@@ -19,6 +19,7 @@
 ///     ChangeType::CoreNetworkConfiguration => { /* ... */ },
 ///     ChangeType::CoreNetworkEdge => { /* ... */ },
 ///     ChangeType::CoreNetworkSegment => { /* ... */ },
+///     ChangeType::NetworkFunctionGroup => { /* ... */ },
 ///     ChangeType::SegmentsConfiguration => { /* ... */ },
 ///     ChangeType::SegmentActionsConfiguration => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -63,6 +64,8 @@ pub enum ChangeType {
     #[allow(missing_docs)] // documentation missing in model
     CoreNetworkSegment,
     #[allow(missing_docs)] // documentation missing in model
+    NetworkFunctionGroup,
+    #[allow(missing_docs)] // documentation missing in model
     SegmentsConfiguration,
     #[allow(missing_docs)] // documentation missing in model
     SegmentActionsConfiguration,
@@ -80,6 +83,7 @@ impl ::std::convert::From<&str> for ChangeType {
             "CORE_NETWORK_CONFIGURATION" => ChangeType::CoreNetworkConfiguration,
             "CORE_NETWORK_EDGE" => ChangeType::CoreNetworkEdge,
             "CORE_NETWORK_SEGMENT" => ChangeType::CoreNetworkSegment,
+            "NETWORK_FUNCTION_GROUP" => ChangeType::NetworkFunctionGroup,
             "SEGMENTS_CONFIGURATION" => ChangeType::SegmentsConfiguration,
             "SEGMENT_ACTIONS_CONFIGURATION" => ChangeType::SegmentActionsConfiguration,
             other => ChangeType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -104,6 +108,7 @@ impl ChangeType {
             ChangeType::CoreNetworkConfiguration => "CORE_NETWORK_CONFIGURATION",
             ChangeType::CoreNetworkEdge => "CORE_NETWORK_EDGE",
             ChangeType::CoreNetworkSegment => "CORE_NETWORK_SEGMENT",
+            ChangeType::NetworkFunctionGroup => "NETWORK_FUNCTION_GROUP",
             ChangeType::SegmentsConfiguration => "SEGMENTS_CONFIGURATION",
             ChangeType::SegmentActionsConfiguration => "SEGMENT_ACTIONS_CONFIGURATION",
             ChangeType::Unknown(value) => value.as_str(),
@@ -119,6 +124,7 @@ impl ChangeType {
             "CORE_NETWORK_CONFIGURATION",
             "CORE_NETWORK_EDGE",
             "CORE_NETWORK_SEGMENT",
+            "NETWORK_FUNCTION_GROUP",
             "SEGMENTS_CONFIGURATION",
             "SEGMENT_ACTIONS_CONFIGURATION",
         ]
@@ -151,6 +157,7 @@ impl ::std::fmt::Display for ChangeType {
             ChangeType::CoreNetworkConfiguration => write!(f, "CORE_NETWORK_CONFIGURATION"),
             ChangeType::CoreNetworkEdge => write!(f, "CORE_NETWORK_EDGE"),
             ChangeType::CoreNetworkSegment => write!(f, "CORE_NETWORK_SEGMENT"),
+            ChangeType::NetworkFunctionGroup => write!(f, "NETWORK_FUNCTION_GROUP"),
             ChangeType::SegmentsConfiguration => write!(f, "SEGMENTS_CONFIGURATION"),
             ChangeType::SegmentActionsConfiguration => write!(f, "SEGMENT_ACTIONS_CONFIGURATION"),
             ChangeType::Unknown(value) => write!(f, "{}", value),

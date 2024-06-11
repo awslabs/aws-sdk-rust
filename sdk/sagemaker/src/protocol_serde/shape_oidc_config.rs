@@ -27,5 +27,18 @@ pub fn ser_oidc_config(
     if let Some(var_8) = &input.jwks_uri {
         object.key("JwksUri").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.scope {
+        object.key("Scope").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.authentication_request_extra_params {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("AuthenticationRequestExtraParams").start_object();
+        for (key_12, value_13) in var_10 {
+            {
+                object_11.key(key_12.as_str()).string(value_13.as_str());
+            }
+        }
+        object_11.finish();
+    }
     Ok(())
 }

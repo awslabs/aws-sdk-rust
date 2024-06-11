@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "NetworkFunctionGroupName" => {
+                            builder = builder.set_network_function_group_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "EdgeLocations" => {
                             builder = builder.set_edge_locations(
                                 crate::protocol_serde::shape_external_region_code_list::de_external_region_code_list(tokens)?,
@@ -54,6 +61,11 @@ where
                         "SharedSegments" => {
                             builder = builder
                                 .set_shared_segments(crate::protocol_serde::shape_constrained_string_list::de_constrained_string_list(tokens)?);
+                        }
+                        "ServiceInsertionActions" => {
+                            builder = builder.set_service_insertion_actions(
+                                crate::protocol_serde::shape_service_insertion_action_list::de_service_insertion_action_list(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

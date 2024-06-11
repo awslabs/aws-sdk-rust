@@ -31,6 +31,8 @@ pub(crate) mod shape_check_access_not_granted;
 
 pub(crate) mod shape_check_no_new_access;
 
+pub(crate) mod shape_check_no_public_access;
+
 pub(crate) mod shape_create_access_preview;
 
 pub(crate) mod shape_create_analyzer;
@@ -41,6 +43,8 @@ pub(crate) mod shape_delete_analyzer;
 
 pub(crate) mod shape_delete_archive_rule;
 
+pub(crate) mod shape_generate_finding_recommendation;
+
 pub(crate) mod shape_get_access_preview;
 
 pub(crate) mod shape_get_analyzed_resource;
@@ -50,6 +54,8 @@ pub(crate) mod shape_get_analyzer;
 pub(crate) mod shape_get_archive_rule;
 
 pub(crate) mod shape_get_finding;
+
+pub(crate) mod shape_get_finding_recommendation;
 
 pub(crate) mod shape_get_finding_v2;
 
@@ -102,6 +108,8 @@ pub(crate) mod shape_apply_archive_rule_input;
 pub(crate) mod shape_check_access_not_granted_input;
 
 pub(crate) mod shape_check_no_new_access_input;
+
+pub(crate) mod shape_check_no_public_access_input;
 
 pub(crate) mod shape_conflict_exception;
 
@@ -193,6 +201,10 @@ pub(crate) mod shape_policy_generation_list;
 
 pub(crate) mod shape_reason_summary_list;
 
+pub(crate) mod shape_recommendation_error;
+
+pub(crate) mod shape_recommended_step_list;
+
 pub(crate) mod shape_sort_criteria;
 
 pub(crate) mod shape_tags_map;
@@ -255,6 +267,8 @@ pub(crate) mod shape_rds_db_snapshot_configuration;
 
 pub(crate) mod shape_reason_summary;
 
+pub(crate) mod shape_recommended_step;
+
 pub(crate) mod shape_s3_bucket_configuration;
 
 pub(crate) mod shape_s3_express_directory_bucket_configuration;
@@ -306,6 +320,8 @@ pub(crate) mod shape_unused_iam_user_access_key_details;
 pub(crate) mod shape_unused_iam_user_password_details;
 
 pub(crate) mod shape_unused_permission_details;
+
+pub(crate) mod shape_unused_permissions_recommended_step;
 
 pub(crate) mod shape_acl_grantee;
 

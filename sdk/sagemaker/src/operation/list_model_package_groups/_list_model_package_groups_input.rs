@@ -17,6 +17,8 @@ pub struct ListModelPackageGroupsInput {
     pub sort_by: ::std::option::Option<crate::types::ModelPackageGroupSortBy>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
+    /// <p>A filter that returns either model groups shared with you or model groups in your own account. When the value is <code>CrossAccount</code>, the results show the resources made discoverable to you from other accounts. When the value is <code>SameAccount</code> or <code>null</code>, the results show resources from your account. The default is <code>SameAccount</code>.</p>
+    pub cross_account_filter_option: ::std::option::Option<crate::types::CrossAccountFilterOption>,
 }
 impl ListModelPackageGroupsInput {
     /// <p>A filter that returns only model groups created after the specified time.</p>
@@ -47,6 +49,10 @@ impl ListModelPackageGroupsInput {
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
+    /// <p>A filter that returns either model groups shared with you or model groups in your own account. When the value is <code>CrossAccount</code>, the results show the resources made discoverable to you from other accounts. When the value is <code>SameAccount</code> or <code>null</code>, the results show resources from your account. The default is <code>SameAccount</code>.</p>
+    pub fn cross_account_filter_option(&self) -> ::std::option::Option<&crate::types::CrossAccountFilterOption> {
+        self.cross_account_filter_option.as_ref()
+    }
 }
 impl ListModelPackageGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListModelPackageGroupsInput`](crate::operation::list_model_package_groups::ListModelPackageGroupsInput).
@@ -66,6 +72,7 @@ pub struct ListModelPackageGroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::ModelPackageGroupSortBy>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
+    pub(crate) cross_account_filter_option: ::std::option::Option<crate::types::CrossAccountFilterOption>,
 }
 impl ListModelPackageGroupsInputBuilder {
     /// <p>A filter that returns only model groups created after the specified time.</p>
@@ -166,6 +173,20 @@ impl ListModelPackageGroupsInputBuilder {
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         &self.sort_order
     }
+    /// <p>A filter that returns either model groups shared with you or model groups in your own account. When the value is <code>CrossAccount</code>, the results show the resources made discoverable to you from other accounts. When the value is <code>SameAccount</code> or <code>null</code>, the results show resources from your account. The default is <code>SameAccount</code>.</p>
+    pub fn cross_account_filter_option(mut self, input: crate::types::CrossAccountFilterOption) -> Self {
+        self.cross_account_filter_option = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A filter that returns either model groups shared with you or model groups in your own account. When the value is <code>CrossAccount</code>, the results show the resources made discoverable to you from other accounts. When the value is <code>SameAccount</code> or <code>null</code>, the results show resources from your account. The default is <code>SameAccount</code>.</p>
+    pub fn set_cross_account_filter_option(mut self, input: ::std::option::Option<crate::types::CrossAccountFilterOption>) -> Self {
+        self.cross_account_filter_option = input;
+        self
+    }
+    /// <p>A filter that returns either model groups shared with you or model groups in your own account. When the value is <code>CrossAccount</code>, the results show the resources made discoverable to you from other accounts. When the value is <code>SameAccount</code> or <code>null</code>, the results show resources from your account. The default is <code>SameAccount</code>.</p>
+    pub fn get_cross_account_filter_option(&self) -> &::std::option::Option<crate::types::CrossAccountFilterOption> {
+        &self.cross_account_filter_option
+    }
     /// Consumes the builder and constructs a [`ListModelPackageGroupsInput`](crate::operation::list_model_package_groups::ListModelPackageGroupsInput).
     pub fn build(
         self,
@@ -181,6 +202,7 @@ impl ListModelPackageGroupsInputBuilder {
             next_token: self.next_token,
             sort_by: self.sort_by,
             sort_order: self.sort_order,
+            cross_account_filter_option: self.cross_account_filter_option,
         })
     }
 }

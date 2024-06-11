@@ -55,6 +55,9 @@ where
                         "publicAccess" => {
                             builder = builder.set_public_access(crate::protocol_serde::shape_public_access::de_public_access(tokens)?);
                         }
+                        "s3ObjectDetails" => {
+                            builder = builder.set_s3_object_details(crate::protocol_serde::shape_s3_object_details::de_s3_object_details(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

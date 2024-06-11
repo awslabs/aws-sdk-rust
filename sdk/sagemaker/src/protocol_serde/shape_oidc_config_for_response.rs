@@ -63,6 +63,18 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Scope" => {
+                            builder = builder.set_scope(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "AuthenticationRequestExtraParams" => {
+                            builder = builder.set_authentication_request_extra_params(
+                                crate::protocol_serde::shape_authentication_request_extra_params::de_authentication_request_extra_params(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

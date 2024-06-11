@@ -14,6 +14,7 @@
 /// match validationexceptionreason {
 ///     ValidationExceptionReason::CannotParse => { /* ... */ },
 ///     ValidationExceptionReason::FieldValidationFailed => { /* ... */ },
+///     ValidationExceptionReason::NotSupported => { /* ... */ },
 ///     ValidationExceptionReason::Other => { /* ... */ },
 ///     ValidationExceptionReason::UnknownOperation => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
     #[allow(missing_docs)] // documentation missing in model
+    NotSupported,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
         match s {
             "cannotParse" => ValidationExceptionReason::CannotParse,
             "fieldValidationFailed" => ValidationExceptionReason::FieldValidationFailed,
+            "notSupported" => ValidationExceptionReason::NotSupported,
             "other" => ValidationExceptionReason::Other,
             "unknownOperation" => ValidationExceptionReason::UnknownOperation,
             other => ValidationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -79,6 +83,7 @@ impl ValidationExceptionReason {
         match self {
             ValidationExceptionReason::CannotParse => "cannotParse",
             ValidationExceptionReason::FieldValidationFailed => "fieldValidationFailed",
+            ValidationExceptionReason::NotSupported => "notSupported",
             ValidationExceptionReason::Other => "other",
             ValidationExceptionReason::UnknownOperation => "unknownOperation",
             ValidationExceptionReason::Unknown(value) => value.as_str(),
@@ -86,7 +91,7 @@ impl ValidationExceptionReason {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["cannotParse", "fieldValidationFailed", "other", "unknownOperation"]
+        &["cannotParse", "fieldValidationFailed", "notSupported", "other", "unknownOperation"]
     }
 }
 impl ::std::convert::AsRef<str> for ValidationExceptionReason {
@@ -111,6 +116,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
         match self {
             ValidationExceptionReason::CannotParse => write!(f, "cannotParse"),
             ValidationExceptionReason::FieldValidationFailed => write!(f, "fieldValidationFailed"),
+            ValidationExceptionReason::NotSupported => write!(f, "notSupported"),
             ValidationExceptionReason::Other => write!(f, "other"),
             ValidationExceptionReason::UnknownOperation => write!(f, "unknownOperation"),
             ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),

@@ -20,6 +20,8 @@ pub struct S3BucketDetail {
     pub default_server_side_encryption: ::std::option::Option<crate::types::DefaultServerSideEncryption>,
     /// <p>Describes the public access policies that apply to the S3 bucket.</p>
     pub public_access: ::std::option::Option<crate::types::PublicAccess>,
+    /// <p>Information about the S3 object that was scanned.</p>
+    pub s3_object_details: ::std::option::Option<::std::vec::Vec<crate::types::S3ObjectDetail>>,
 }
 impl S3BucketDetail {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
@@ -56,6 +58,12 @@ impl S3BucketDetail {
     pub fn public_access(&self) -> ::std::option::Option<&crate::types::PublicAccess> {
         self.public_access.as_ref()
     }
+    /// <p>Information about the S3 object that was scanned.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_object_details.is_none()`.
+    pub fn s3_object_details(&self) -> &[crate::types::S3ObjectDetail] {
+        self.s3_object_details.as_deref().unwrap_or_default()
+    }
 }
 impl S3BucketDetail {
     /// Creates a new builder-style object to manufacture [`S3BucketDetail`](crate::types::S3BucketDetail).
@@ -76,6 +84,7 @@ pub struct S3BucketDetailBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) default_server_side_encryption: ::std::option::Option<crate::types::DefaultServerSideEncryption>,
     pub(crate) public_access: ::std::option::Option<crate::types::PublicAccess>,
+    pub(crate) s3_object_details: ::std::option::Option<::std::vec::Vec<crate::types::S3ObjectDetail>>,
 }
 impl S3BucketDetailBuilder {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
@@ -196,6 +205,26 @@ impl S3BucketDetailBuilder {
     pub fn get_public_access(&self) -> &::std::option::Option<crate::types::PublicAccess> {
         &self.public_access
     }
+    /// Appends an item to `s3_object_details`.
+    ///
+    /// To override the contents of this collection use [`set_s3_object_details`](Self::set_s3_object_details).
+    ///
+    /// <p>Information about the S3 object that was scanned.</p>
+    pub fn s3_object_details(mut self, input: crate::types::S3ObjectDetail) -> Self {
+        let mut v = self.s3_object_details.unwrap_or_default();
+        v.push(input);
+        self.s3_object_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about the S3 object that was scanned.</p>
+    pub fn set_s3_object_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3ObjectDetail>>) -> Self {
+        self.s3_object_details = input;
+        self
+    }
+    /// <p>Information about the S3 object that was scanned.</p>
+    pub fn get_s3_object_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ObjectDetail>> {
+        &self.s3_object_details
+    }
     /// Consumes the builder and constructs a [`S3BucketDetail`](crate::types::S3BucketDetail).
     pub fn build(self) -> crate::types::S3BucketDetail {
         crate::types::S3BucketDetail {
@@ -207,6 +236,7 @@ impl S3BucketDetailBuilder {
             tags: self.tags,
             default_server_side_encryption: self.default_server_side_encryption,
             public_access: self.public_access,
+            s3_object_details: self.s3_object_details,
         }
     }
 }

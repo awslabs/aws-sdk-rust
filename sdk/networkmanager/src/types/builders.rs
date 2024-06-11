@@ -7,9 +7,11 @@ pub use crate::types::_vpc_options::VpcOptionsBuilder;
 
 pub use crate::types::_attachment::AttachmentBuilder;
 
-pub use crate::types::_proposed_segment_change::ProposedSegmentChangeBuilder;
+pub use crate::types::_proposed_network_function_group_change::ProposedNetworkFunctionGroupChangeBuilder;
 
 pub use crate::types::_tag::TagBuilder;
+
+pub use crate::types::_proposed_segment_change::ProposedSegmentChangeBuilder;
 
 pub use crate::types::_site::SiteBuilder;
 
@@ -28,6 +30,10 @@ pub use crate::types::_aws_location::AwsLocationBuilder;
 pub use crate::types::_core_network::CoreNetworkBuilder;
 
 pub use crate::types::_core_network_edge::CoreNetworkEdgeBuilder;
+
+pub use crate::types::_core_network_network_function_group::CoreNetworkNetworkFunctionGroupBuilder;
+
+pub use crate::types::_service_insertion_segments::ServiceInsertionSegmentsBuilder;
 
 pub use crate::types::_core_network_segment::CoreNetworkSegmentBuilder;
 
@@ -87,6 +93,8 @@ pub use crate::types::_core_network_segment_edge_identifier::CoreNetworkSegmentE
 
 pub use crate::types::_route_table_identifier::RouteTableIdentifierBuilder;
 
+pub use crate::types::_core_network_network_function_group_identifier::CoreNetworkNetworkFunctionGroupIdentifierBuilder;
+
 pub use crate::types::_network_resource::NetworkResourceBuilder;
 
 pub use crate::types::_relationship::RelationshipBuilder;
@@ -100,6 +108,16 @@ pub use crate::types::_customer_gateway_association::CustomerGatewayAssociationB
 pub use crate::types::_core_network_change::CoreNetworkChangeBuilder;
 
 pub use crate::types::_core_network_change_values::CoreNetworkChangeValuesBuilder;
+
+pub use crate::types::_service_insertion_action::ServiceInsertionActionBuilder;
+
+pub use crate::types::_via::ViaBuilder;
+
+pub use crate::types::_edge_override::EdgeOverrideBuilder;
+
+pub use crate::types::_network_function_group::NetworkFunctionGroupBuilder;
+
+pub use crate::types::_when_sent_to::WhenSentToBuilder;
 
 pub use crate::types::_core_network_change_event::CoreNetworkChangeEventBuilder;
 

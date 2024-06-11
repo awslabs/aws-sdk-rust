@@ -75,6 +75,10 @@ pub use crate::types::_unused_action::UnusedActionBuilder;
 
 pub use crate::types::_external_access_details::ExternalAccessDetailsBuilder;
 
+pub use crate::types::_unused_permissions_recommended_step::UnusedPermissionsRecommendedStepBuilder;
+
+pub use crate::types::_recommendation_error::RecommendationErrorBuilder;
+
 pub use crate::types::_finding::FindingBuilder;
 
 pub use crate::types::_analyzed_resource::AnalyzedResourceBuilder;

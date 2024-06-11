@@ -212,4 +212,18 @@ impl ListModelPackageGroupsFluentBuilder {
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         self.inner.get_sort_order()
     }
+    /// <p>A filter that returns either model groups shared with you or model groups in your own account. When the value is <code>CrossAccount</code>, the results show the resources made discoverable to you from other accounts. When the value is <code>SameAccount</code> or <code>null</code>, the results show resources from your account. The default is <code>SameAccount</code>.</p>
+    pub fn cross_account_filter_option(mut self, input: crate::types::CrossAccountFilterOption) -> Self {
+        self.inner = self.inner.cross_account_filter_option(input);
+        self
+    }
+    /// <p>A filter that returns either model groups shared with you or model groups in your own account. When the value is <code>CrossAccount</code>, the results show the resources made discoverable to you from other accounts. When the value is <code>SameAccount</code> or <code>null</code>, the results show resources from your account. The default is <code>SameAccount</code>.</p>
+    pub fn set_cross_account_filter_option(mut self, input: ::std::option::Option<crate::types::CrossAccountFilterOption>) -> Self {
+        self.inner = self.inner.set_cross_account_filter_option(input);
+        self
+    }
+    /// <p>A filter that returns either model groups shared with you or model groups in your own account. When the value is <code>CrossAccount</code>, the results show the resources made discoverable to you from other accounts. When the value is <code>SameAccount</code> or <code>null</code>, the results show resources from your account. The default is <code>SameAccount</code>.</p>
+    pub fn get_cross_account_filter_option(&self) -> &::std::option::Option<crate::types::CrossAccountFilterOption> {
+        self.inner.get_cross_account_filter_option()
+    }
 }

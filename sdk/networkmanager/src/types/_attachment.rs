@@ -24,10 +24,14 @@ pub struct Attachment {
     pub attachment_policy_rule_number: ::std::option::Option<i32>,
     /// <p>The name of the segment attachment.</p>
     pub segment_name: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the network function group.</p>
+    pub network_function_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the attachment.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The attachment to move from one segment to another.</p>
     pub proposed_segment_change: ::std::option::Option<crate::types::ProposedSegmentChange>,
+    /// <p>Describes a proposed change to a network function group associated with the attachment.</p>
+    pub proposed_network_function_group_change: ::std::option::Option<crate::types::ProposedNetworkFunctionGroupChange>,
     /// <p>The timestamp when the attachment was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the attachment was last updated.</p>
@@ -74,6 +78,10 @@ impl Attachment {
     pub fn segment_name(&self) -> ::std::option::Option<&str> {
         self.segment_name.as_deref()
     }
+    /// <p>The name of the network function group.</p>
+    pub fn network_function_group_name(&self) -> ::std::option::Option<&str> {
+        self.network_function_group_name.as_deref()
+    }
     /// <p>The tags associated with the attachment.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -83,6 +91,10 @@ impl Attachment {
     /// <p>The attachment to move from one segment to another.</p>
     pub fn proposed_segment_change(&self) -> ::std::option::Option<&crate::types::ProposedSegmentChange> {
         self.proposed_segment_change.as_ref()
+    }
+    /// <p>Describes a proposed change to a network function group associated with the attachment.</p>
+    pub fn proposed_network_function_group_change(&self) -> ::std::option::Option<&crate::types::ProposedNetworkFunctionGroupChange> {
+        self.proposed_network_function_group_change.as_ref()
     }
     /// <p>The timestamp when the attachment was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -114,8 +126,10 @@ pub struct AttachmentBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) attachment_policy_rule_number: ::std::option::Option<i32>,
     pub(crate) segment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) network_function_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) proposed_segment_change: ::std::option::Option<crate::types::ProposedSegmentChange>,
+    pub(crate) proposed_network_function_group_change: ::std::option::Option<crate::types::ProposedNetworkFunctionGroupChange>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -260,6 +274,20 @@ impl AttachmentBuilder {
     pub fn get_segment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.segment_name
     }
+    /// <p>The name of the network function group.</p>
+    pub fn network_function_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_function_group_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the network function group.</p>
+    pub fn set_network_function_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_function_group_name = input;
+        self
+    }
+    /// <p>The name of the network function group.</p>
+    pub fn get_network_function_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_function_group_name
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -293,6 +321,23 @@ impl AttachmentBuilder {
     /// <p>The attachment to move from one segment to another.</p>
     pub fn get_proposed_segment_change(&self) -> &::std::option::Option<crate::types::ProposedSegmentChange> {
         &self.proposed_segment_change
+    }
+    /// <p>Describes a proposed change to a network function group associated with the attachment.</p>
+    pub fn proposed_network_function_group_change(mut self, input: crate::types::ProposedNetworkFunctionGroupChange) -> Self {
+        self.proposed_network_function_group_change = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes a proposed change to a network function group associated with the attachment.</p>
+    pub fn set_proposed_network_function_group_change(
+        mut self,
+        input: ::std::option::Option<crate::types::ProposedNetworkFunctionGroupChange>,
+    ) -> Self {
+        self.proposed_network_function_group_change = input;
+        self
+    }
+    /// <p>Describes a proposed change to a network function group associated with the attachment.</p>
+    pub fn get_proposed_network_function_group_change(&self) -> &::std::option::Option<crate::types::ProposedNetworkFunctionGroupChange> {
+        &self.proposed_network_function_group_change
     }
     /// <p>The timestamp when the attachment was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -335,8 +380,10 @@ impl AttachmentBuilder {
             resource_arn: self.resource_arn,
             attachment_policy_rule_number: self.attachment_policy_rule_number,
             segment_name: self.segment_name,
+            network_function_group_name: self.network_function_group_name,
             tags: self.tags,
             proposed_segment_change: self.proposed_segment_change,
+            proposed_network_function_group_change: self.proposed_network_function_group_change,
             created_at: self.created_at,
             updated_at: self.updated_at,
         }

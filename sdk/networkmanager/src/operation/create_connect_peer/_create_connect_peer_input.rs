@@ -5,11 +5,11 @@
 pub struct CreateConnectPeerInput {
     /// <p>The ID of the connection attachment.</p>
     pub connect_attachment_id: ::std::option::Option<::std::string::String>,
-    /// <p>A Connect peer core network address.</p>
+    /// <p>A Connect peer core network address. This only applies only when the protocol is <code>GRE</code>.</p>
     pub core_network_address: ::std::option::Option<::std::string::String>,
     /// <p>The Connect peer address.</p>
     pub peer_address: ::std::option::Option<::std::string::String>,
-    /// <p>The Connect peer BGP options.</p>
+    /// <p>The Connect peer BGP options. This only applies only when the protocol is <code>GRE</code>.</p>
     pub bgp_options: ::std::option::Option<crate::types::BgpOptions>,
     /// <p>The inside IP addresses used for BGP peering.</p>
     pub inside_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -17,7 +17,7 @@ pub struct CreateConnectPeerInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The client token associated with the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The subnet ARN for the Connect peer.</p>
+    /// <p>The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.</p>
     pub subnet_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectPeerInput {
@@ -25,7 +25,7 @@ impl CreateConnectPeerInput {
     pub fn connect_attachment_id(&self) -> ::std::option::Option<&str> {
         self.connect_attachment_id.as_deref()
     }
-    /// <p>A Connect peer core network address.</p>
+    /// <p>A Connect peer core network address. This only applies only when the protocol is <code>GRE</code>.</p>
     pub fn core_network_address(&self) -> ::std::option::Option<&str> {
         self.core_network_address.as_deref()
     }
@@ -33,7 +33,7 @@ impl CreateConnectPeerInput {
     pub fn peer_address(&self) -> ::std::option::Option<&str> {
         self.peer_address.as_deref()
     }
-    /// <p>The Connect peer BGP options.</p>
+    /// <p>The Connect peer BGP options. This only applies only when the protocol is <code>GRE</code>.</p>
     pub fn bgp_options(&self) -> ::std::option::Option<&crate::types::BgpOptions> {
         self.bgp_options.as_ref()
     }
@@ -53,7 +53,7 @@ impl CreateConnectPeerInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The subnet ARN for the Connect peer.</p>
+    /// <p>The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.</p>
     pub fn subnet_arn(&self) -> ::std::option::Option<&str> {
         self.subnet_arn.as_deref()
     }
@@ -94,17 +94,17 @@ impl CreateConnectPeerInputBuilder {
     pub fn get_connect_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connect_attachment_id
     }
-    /// <p>A Connect peer core network address.</p>
+    /// <p>A Connect peer core network address. This only applies only when the protocol is <code>GRE</code>.</p>
     pub fn core_network_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A Connect peer core network address.</p>
+    /// <p>A Connect peer core network address. This only applies only when the protocol is <code>GRE</code>.</p>
     pub fn set_core_network_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_address = input;
         self
     }
-    /// <p>A Connect peer core network address.</p>
+    /// <p>A Connect peer core network address. This only applies only when the protocol is <code>GRE</code>.</p>
     pub fn get_core_network_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.core_network_address
     }
@@ -123,17 +123,17 @@ impl CreateConnectPeerInputBuilder {
     pub fn get_peer_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.peer_address
     }
-    /// <p>The Connect peer BGP options.</p>
+    /// <p>The Connect peer BGP options. This only applies only when the protocol is <code>GRE</code>.</p>
     pub fn bgp_options(mut self, input: crate::types::BgpOptions) -> Self {
         self.bgp_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Connect peer BGP options.</p>
+    /// <p>The Connect peer BGP options. This only applies only when the protocol is <code>GRE</code>.</p>
     pub fn set_bgp_options(mut self, input: ::std::option::Option<crate::types::BgpOptions>) -> Self {
         self.bgp_options = input;
         self
     }
-    /// <p>The Connect peer BGP options.</p>
+    /// <p>The Connect peer BGP options. This only applies only when the protocol is <code>GRE</code>.</p>
     pub fn get_bgp_options(&self) -> &::std::option::Option<crate::types::BgpOptions> {
         &self.bgp_options
     }
@@ -191,17 +191,17 @@ impl CreateConnectPeerInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The subnet ARN for the Connect peer.</p>
+    /// <p>The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.</p>
     pub fn subnet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The subnet ARN for the Connect peer.</p>
+    /// <p>The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.</p>
     pub fn set_subnet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_arn = input;
         self
     }
-    /// <p>The subnet ARN for the Connect peer.</p>
+    /// <p>The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.</p>
     pub fn get_subnet_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_arn
     }

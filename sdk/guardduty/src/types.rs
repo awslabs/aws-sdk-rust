@@ -57,6 +57,16 @@ pub use crate::types::_scan_condition_pair::ScanConditionPair;
 
 pub use crate::types::_scan_criterion_key::ScanCriterionKey;
 
+pub use crate::types::_update_protected_resource::UpdateProtectedResource;
+
+pub use crate::types::_update_s3_bucket_resource::UpdateS3BucketResource;
+
+pub use crate::types::_malware_protection_plan_actions::MalwareProtectionPlanActions;
+
+pub use crate::types::_malware_protection_plan_tagging_action::MalwareProtectionPlanTaggingAction;
+
+pub use crate::types::_malware_protection_plan_tagging_action_status::MalwareProtectionPlanTaggingActionStatus;
+
 pub use crate::types::_feedback::Feedback;
 
 pub use crate::types::_finding_criteria::FindingCriteria;
@@ -86,6 +96,8 @@ pub use crate::types::_admin_account::AdminAccount;
 pub use crate::types::_admin_status::AdminStatus;
 
 pub use crate::types::_member::Member;
+
+pub use crate::types::_malware_protection_plan_summary::MalwareProtectionPlanSummary;
 
 pub use crate::types::_invitation::Invitation;
 
@@ -209,6 +221,14 @@ pub use crate::types::_cloud_trail_configuration_result::CloudTrailConfiguration
 
 pub use crate::types::_master::Master;
 
+pub use crate::types::_malware_protection_plan_status_reason::MalwareProtectionPlanStatusReason;
+
+pub use crate::types::_malware_protection_plan_status::MalwareProtectionPlanStatus;
+
+pub use crate::types::_create_protected_resource::CreateProtectedResource;
+
+pub use crate::types::_create_s3_bucket_resource::CreateS3BucketResource;
+
 pub use crate::types::_ip_set_status::IpSetStatus;
 
 pub use crate::types::_ip_set_format::IpSetFormat;
@@ -220,6 +240,12 @@ pub use crate::types::_finding_statistic_type::FindingStatisticType;
 pub use crate::types::_finding::Finding;
 
 pub use crate::types::_service::Service;
+
+pub use crate::types::_malware_scan_details::MalwareScanDetails;
+
+pub use crate::types::_threat::Threat;
+
+pub use crate::types::_item_path::ItemPath;
 
 pub use crate::types::_detection::Detection;
 
@@ -364,6 +390,8 @@ pub use crate::types::_private_ip_address_details::PrivateIpAddressDetails;
 pub use crate::types::_iam_instance_profile::IamInstanceProfile;
 
 pub use crate::types::_s3_bucket_detail::S3BucketDetail;
+
+pub use crate::types::_s3_object_detail::S3ObjectDetail;
 
 pub use crate::types::_public_access::PublicAccess;
 
@@ -519,6 +547,10 @@ mod _coverage_statistics_type;
 
 mod _coverage_status;
 
+mod _create_protected_resource;
+
+mod _create_s3_bucket_resource;
+
 mod _criterion_key;
 
 mod _data_source;
@@ -629,6 +661,8 @@ mod _ip_set_format;
 
 mod _ip_set_status;
 
+mod _item_path;
+
 mod _kubernetes_api_call_action;
 
 mod _kubernetes_audit_logs_configuration;
@@ -668,6 +702,20 @@ mod _malware_protection_configuration;
 mod _malware_protection_configuration_result;
 
 mod _malware_protection_data_source_free_trial;
+
+mod _malware_protection_plan_actions;
+
+mod _malware_protection_plan_status;
+
+mod _malware_protection_plan_status_reason;
+
+mod _malware_protection_plan_summary;
+
+mod _malware_protection_plan_tagging_action;
+
+mod _malware_protection_plan_tagging_action_status;
+
+mod _malware_scan_details;
 
 mod _management_type;
 
@@ -795,6 +843,8 @@ mod _s3_logs_configuration;
 
 mod _s3_logs_configuration_result;
 
+mod _s3_object_detail;
+
 mod _scan;
 
 mod _scan_condition;
@@ -837,6 +887,8 @@ mod _sort_criteria;
 
 mod _tag;
 
+mod _threat;
+
 mod _threat_detected_by_name;
 
 mod _threat_intel_set_format;
@@ -854,6 +906,10 @@ mod _trigger_details;
 mod _unprocessed_account;
 
 mod _unprocessed_data_sources_result;
+
+mod _update_protected_resource;
+
+mod _update_s3_bucket_resource;
 
 mod _usage_account_result;
 

@@ -2539,6 +2539,8 @@ pub(crate) mod shape_async_inference_notification_config;
 
 pub(crate) mod shape_athena_dataset_definition;
 
+pub(crate) mod shape_authentication_request_extra_params;
+
 pub(crate) mod shape_auto_ml_algorithm_config;
 
 pub(crate) mod shape_auto_ml_algorithms_config;

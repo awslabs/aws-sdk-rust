@@ -8,6 +8,8 @@ pub struct CoreNetworkChangeEventValues {
     pub edge_location: ::std::option::Option<::std::string::String>,
     /// <p>The segment name if the change event is associated with a segment.</p>
     pub segment_name: ::std::option::Option<::std::string::String>,
+    /// <p>The changed network function group name.</p>
+    pub network_function_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the attachment if the change event is associated with an attachment.</p>
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
@@ -21,6 +23,10 @@ impl CoreNetworkChangeEventValues {
     /// <p>The segment name if the change event is associated with a segment.</p>
     pub fn segment_name(&self) -> ::std::option::Option<&str> {
         self.segment_name.as_deref()
+    }
+    /// <p>The changed network function group name.</p>
+    pub fn network_function_group_name(&self) -> ::std::option::Option<&str> {
+        self.network_function_group_name.as_deref()
     }
     /// <p>The ID of the attachment if the change event is associated with an attachment.</p>
     pub fn attachment_id(&self) -> ::std::option::Option<&str> {
@@ -44,6 +50,7 @@ impl CoreNetworkChangeEventValues {
 pub struct CoreNetworkChangeEventValuesBuilder {
     pub(crate) edge_location: ::std::option::Option<::std::string::String>,
     pub(crate) segment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) network_function_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
 }
@@ -75,6 +82,20 @@ impl CoreNetworkChangeEventValuesBuilder {
     /// <p>The segment name if the change event is associated with a segment.</p>
     pub fn get_segment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.segment_name
+    }
+    /// <p>The changed network function group name.</p>
+    pub fn network_function_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_function_group_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The changed network function group name.</p>
+    pub fn set_network_function_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_function_group_name = input;
+        self
+    }
+    /// <p>The changed network function group name.</p>
+    pub fn get_network_function_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_function_group_name
     }
     /// <p>The ID of the attachment if the change event is associated with an attachment.</p>
     pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,6 +130,7 @@ impl CoreNetworkChangeEventValuesBuilder {
         crate::types::CoreNetworkChangeEventValues {
             edge_location: self.edge_location,
             segment_name: self.segment_name,
+            network_function_group_name: self.network_function_group_name,
             attachment_id: self.attachment_id,
             cidr: self.cidr,
         }

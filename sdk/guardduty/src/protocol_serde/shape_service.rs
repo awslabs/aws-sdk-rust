@@ -94,6 +94,10 @@ where
                         "detection" => {
                             builder = builder.set_detection(crate::protocol_serde::shape_detection::de_detection(tokens)?);
                         }
+                        "malwareScanDetails" => {
+                            builder =
+                                builder.set_malware_scan_details(crate::protocol_serde::shape_malware_scan_details::de_malware_scan_details(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

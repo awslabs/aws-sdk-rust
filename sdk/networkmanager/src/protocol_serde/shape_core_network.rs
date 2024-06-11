@@ -13,61 +13,68 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "GlobalNetworkId" => {
-                            builder = builder.set_global_network_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "GlobalNetworkId" => {
+                                builder = builder.set_global_network_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "CoreNetworkId" => {
+                                builder = builder.set_core_network_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "CoreNetworkArn" => {
+                                builder = builder.set_core_network_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Description" => {
+                                builder = builder.set_description(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "CreatedAt" => {
+                                builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                            }
+                            "State" => {
+                                builder = builder.set_state(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::CoreNetworkState::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "Segments" => {
+                                builder = builder.set_segments(crate::protocol_serde::shape_core_network_segment_list::de_core_network_segment_list(
+                                    tokens,
+                                )?);
+                            }
+                            "NetworkFunctionGroups" => {
+                                builder = builder.set_network_function_groups(
+                                    crate::protocol_serde::shape_core_network_network_function_group_list::de_core_network_network_function_group_list(tokens)?
+                                );
+                            }
+                            "Edges" => {
+                                builder = builder.set_edges(crate::protocol_serde::shape_core_network_edge_list::de_core_network_edge_list(tokens)?);
+                            }
+                            "Tags" => {
+                                builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "CoreNetworkId" => {
-                            builder = builder.set_core_network_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "CoreNetworkArn" => {
-                            builder = builder.set_core_network_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Description" => {
-                            builder = builder.set_description(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "CreatedAt" => {
-                            builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?);
-                        }
-                        "State" => {
-                            builder = builder.set_state(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::CoreNetworkState::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "Segments" => {
-                            builder = builder.set_segments(crate::protocol_serde::shape_core_network_segment_list::de_core_network_segment_list(
-                                tokens,
-                            )?);
-                        }
-                        "Edges" => {
-                            builder = builder.set_edges(crate::protocol_serde::shape_core_network_edge_list::de_core_network_edge_list(tokens)?);
-                        }
-                        "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {:?}",

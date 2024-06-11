@@ -5,7 +5,7 @@
 pub struct CheckAccessNotGrantedInput {
     /// <p>The JSON policy document to use as the content for the policy.</p>
     pub policy_document: ::std::option::Option<::std::string::String>,
-    /// <p>An access object containing the permissions that shouldn't be granted by the specified policy.</p>
+    /// <p>An access object containing the permissions that shouldn't be granted by the specified policy. If only actions are specified, IAM Access Analyzer checks for access of the actions on all resources in the policy. If only resources are specified, then IAM Access Analyzer checks which actions have access to the specified resources. If both actions and resources are specified, then IAM Access Analyzer checks which of the specified actions have access to the specified resources.</p>
     pub access: ::std::option::Option<::std::vec::Vec<crate::types::Access>>,
     /// <p>The type of policy. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups.</p>
     /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy.</p>
@@ -16,7 +16,7 @@ impl CheckAccessNotGrantedInput {
     pub fn policy_document(&self) -> ::std::option::Option<&str> {
         self.policy_document.as_deref()
     }
-    /// <p>An access object containing the permissions that shouldn't be granted by the specified policy.</p>
+    /// <p>An access object containing the permissions that shouldn't be granted by the specified policy. If only actions are specified, IAM Access Analyzer checks for access of the actions on all resources in the policy. If only resources are specified, then IAM Access Analyzer checks which actions have access to the specified resources. If both actions and resources are specified, then IAM Access Analyzer checks which of the specified actions have access to the specified resources.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access.is_none()`.
     pub fn access(&self) -> &[crate::types::Access] {
@@ -72,19 +72,19 @@ impl CheckAccessNotGrantedInputBuilder {
     ///
     /// To override the contents of this collection use [`set_access`](Self::set_access).
     ///
-    /// <p>An access object containing the permissions that shouldn't be granted by the specified policy.</p>
+    /// <p>An access object containing the permissions that shouldn't be granted by the specified policy. If only actions are specified, IAM Access Analyzer checks for access of the actions on all resources in the policy. If only resources are specified, then IAM Access Analyzer checks which actions have access to the specified resources. If both actions and resources are specified, then IAM Access Analyzer checks which of the specified actions have access to the specified resources.</p>
     pub fn access(mut self, input: crate::types::Access) -> Self {
         let mut v = self.access.unwrap_or_default();
         v.push(input);
         self.access = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An access object containing the permissions that shouldn't be granted by the specified policy.</p>
+    /// <p>An access object containing the permissions that shouldn't be granted by the specified policy. If only actions are specified, IAM Access Analyzer checks for access of the actions on all resources in the policy. If only resources are specified, then IAM Access Analyzer checks which actions have access to the specified resources. If both actions and resources are specified, then IAM Access Analyzer checks which of the specified actions have access to the specified resources.</p>
     pub fn set_access(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Access>>) -> Self {
         self.access = input;
         self
     }
-    /// <p>An access object containing the permissions that shouldn't be granted by the specified policy.</p>
+    /// <p>An access object containing the permissions that shouldn't be granted by the specified policy. If only actions are specified, IAM Access Analyzer checks for access of the actions on all resources in the policy. If only resources are specified, then IAM Access Analyzer checks which actions have access to the specified resources. If both actions and resources are specified, then IAM Access Analyzer checks which of the specified actions have access to the specified resources.</p>
     pub fn get_access(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Access>> {
         &self.access
     }

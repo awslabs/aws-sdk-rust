@@ -141,11 +141,19 @@ impl GetNetworkResourceCountsFluentBuilder {
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
     /// <li>
+    /// <p><code>attachment</code></p></li>
+    /// <li>
+    /// <p><code>connect-peer</code></p></li>
+    /// <li>
     /// <p><code>connection</code></p></li>
+    /// <li>
+    /// <p><code>core-network</code></p></li>
     /// <li>
     /// <p><code>device</code></p></li>
     /// <li>
     /// <p><code>link</code></p></li>
+    /// <li>
+    /// <p><code>peering</code></p></li>
     /// <li>
     /// <p><code>site</code></p></li>
     /// </ul>
@@ -181,11 +189,19 @@ impl GetNetworkResourceCountsFluentBuilder {
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
     /// <li>
+    /// <p><code>attachment</code></p></li>
+    /// <li>
+    /// <p><code>connect-peer</code></p></li>
+    /// <li>
     /// <p><code>connection</code></p></li>
+    /// <li>
+    /// <p><code>core-network</code></p></li>
     /// <li>
     /// <p><code>device</code></p></li>
     /// <li>
     /// <p><code>link</code></p></li>
+    /// <li>
+    /// <p><code>peering</code></p></li>
     /// <li>
     /// <p><code>site</code></p></li>
     /// </ul>
@@ -221,11 +237,19 @@ impl GetNetworkResourceCountsFluentBuilder {
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
     /// <li>
+    /// <p><code>attachment</code></p></li>
+    /// <li>
+    /// <p><code>connect-peer</code></p></li>
+    /// <li>
     /// <p><code>connection</code></p></li>
+    /// <li>
+    /// <p><code>core-network</code></p></li>
     /// <li>
     /// <p><code>device</code></p></li>
     /// <li>
     /// <p><code>link</code></p></li>
+    /// <li>
+    /// <p><code>peering</code></p></li>
     /// <li>
     /// <p><code>site</code></p></li>
     /// </ul>

@@ -409,6 +409,10 @@ pub(crate) mod shape_core_network_change_event;
 
 pub(crate) mod shape_core_network_edge_list;
 
+pub(crate) mod shape_core_network_network_function_group_identifier;
+
+pub(crate) mod shape_core_network_network_function_group_list;
+
 pub(crate) mod shape_core_network_policy_error;
 
 pub(crate) mod shape_core_network_policy_version;
@@ -424,6 +428,8 @@ pub(crate) mod shape_network_resource_count;
 pub(crate) mod shape_network_route;
 
 pub(crate) mod shape_network_telemetry;
+
+pub(crate) mod shape_proposed_network_function_group_change;
 
 pub(crate) mod shape_proposed_segment_change;
 
@@ -453,6 +459,8 @@ pub(crate) mod shape_core_network_change_values;
 
 pub(crate) mod shape_core_network_edge;
 
+pub(crate) mod shape_core_network_network_function_group;
+
 pub(crate) mod shape_core_network_segment;
 
 pub(crate) mod shape_network_route_destination_list;
@@ -471,4 +479,28 @@ pub(crate) mod shape_path_component;
 
 pub(crate) mod shape_reason_context_map;
 
+pub(crate) mod shape_service_insertion_action_list;
+
+pub(crate) mod shape_service_insertion_segments;
+
 pub(crate) mod shape_network_resource_summary;
+
+pub(crate) mod shape_service_insertion_action;
+
+pub(crate) mod shape_via;
+
+pub(crate) mod shape_when_sent_to;
+
+pub(crate) mod shape_network_function_group_list;
+
+pub(crate) mod shape_when_sent_to_segments_list;
+
+pub(crate) mod shape_with_edge_overrides_list;
+
+pub(crate) mod shape_edge_override;
+
+pub(crate) mod shape_network_function_group;
+
+pub(crate) mod shape_edge_set_list;
+
+pub(crate) mod shape_edge_set;

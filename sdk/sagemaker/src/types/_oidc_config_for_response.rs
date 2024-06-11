@@ -18,6 +18,10 @@ pub struct OidcConfigForResponse {
     pub logout_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The OIDC IdP JSON Web Key Set (Jwks) URI used to configure your private workforce.</p>
     pub jwks_uri: ::std::option::Option<::std::string::String>,
+    /// <p>An array of string identifiers used to refer to the specific pieces of user data or claims that the client application wants to access.</p>
+    pub scope: ::std::option::Option<::std::string::String>,
+    /// <p>A string to string map of identifiers specific to the custom identity provider (IdP) being used.</p>
+    pub authentication_request_extra_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OidcConfigForResponse {
     /// <p>The OIDC IdP client ID used to configure your private workforce.</p>
@@ -48,6 +52,16 @@ impl OidcConfigForResponse {
     pub fn jwks_uri(&self) -> ::std::option::Option<&str> {
         self.jwks_uri.as_deref()
     }
+    /// <p>An array of string identifiers used to refer to the specific pieces of user data or claims that the client application wants to access.</p>
+    pub fn scope(&self) -> ::std::option::Option<&str> {
+        self.scope.as_deref()
+    }
+    /// <p>A string to string map of identifiers specific to the custom identity provider (IdP) being used.</p>
+    pub fn authentication_request_extra_params(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.authentication_request_extra_params.as_ref()
+    }
 }
 impl OidcConfigForResponse {
     /// Creates a new builder-style object to manufacture [`OidcConfigForResponse`](crate::types::OidcConfigForResponse).
@@ -67,6 +81,8 @@ pub struct OidcConfigForResponseBuilder {
     pub(crate) user_info_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) logout_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) jwks_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) scope: ::std::option::Option<::std::string::String>,
+    pub(crate) authentication_request_extra_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OidcConfigForResponseBuilder {
     /// <p>The OIDC IdP client ID used to configure your private workforce.</p>
@@ -167,6 +183,49 @@ impl OidcConfigForResponseBuilder {
     pub fn get_jwks_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.jwks_uri
     }
+    /// <p>An array of string identifiers used to refer to the specific pieces of user data or claims that the client application wants to access.</p>
+    pub fn scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.scope = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An array of string identifiers used to refer to the specific pieces of user data or claims that the client application wants to access.</p>
+    pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.scope = input;
+        self
+    }
+    /// <p>An array of string identifiers used to refer to the specific pieces of user data or claims that the client application wants to access.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scope
+    }
+    /// Adds a key-value pair to `authentication_request_extra_params`.
+    ///
+    /// To override the contents of this collection use [`set_authentication_request_extra_params`](Self::set_authentication_request_extra_params).
+    ///
+    /// <p>A string to string map of identifiers specific to the custom identity provider (IdP) being used.</p>
+    pub fn authentication_request_extra_params(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.authentication_request_extra_params.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.authentication_request_extra_params = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A string to string map of identifiers specific to the custom identity provider (IdP) being used.</p>
+    pub fn set_authentication_request_extra_params(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.authentication_request_extra_params = input;
+        self
+    }
+    /// <p>A string to string map of identifiers specific to the custom identity provider (IdP) being used.</p>
+    pub fn get_authentication_request_extra_params(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.authentication_request_extra_params
+    }
     /// Consumes the builder and constructs a [`OidcConfigForResponse`](crate::types::OidcConfigForResponse).
     pub fn build(self) -> crate::types::OidcConfigForResponse {
         crate::types::OidcConfigForResponse {
@@ -177,6 +236,8 @@ impl OidcConfigForResponseBuilder {
             user_info_endpoint: self.user_info_endpoint,
             logout_endpoint: self.logout_endpoint,
             jwks_uri: self.jwks_uri,
+            scope: self.scope,
+            authentication_request_extra_params: self.authentication_request_extra_params,
         }
     }
 }

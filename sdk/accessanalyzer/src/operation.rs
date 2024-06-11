@@ -13,6 +13,9 @@ pub mod check_access_not_granted;
 /// Types for the `CheckNoNewAccess` operation.
 pub mod check_no_new_access;
 
+/// Types for the `CheckNoPublicAccess` operation.
+pub mod check_no_public_access;
+
 /// Types for the `CreateAccessPreview` operation.
 pub mod create_access_preview;
 
@@ -28,6 +31,9 @@ pub mod delete_analyzer;
 /// Types for the `DeleteArchiveRule` operation.
 pub mod delete_archive_rule;
 
+/// Types for the `GenerateFindingRecommendation` operation.
+pub mod generate_finding_recommendation;
+
 /// Types for the `GetAccessPreview` operation.
 pub mod get_access_preview;
 
@@ -42,6 +48,9 @@ pub mod get_archive_rule;
 
 /// Types for the `GetFinding` operation.
 pub mod get_finding;
+
+/// Types for the `GetFindingRecommendation` operation.
+pub mod get_finding_recommendation;
 
 /// Types for the `GetFindingV2` operation.
 pub mod get_finding_v2;

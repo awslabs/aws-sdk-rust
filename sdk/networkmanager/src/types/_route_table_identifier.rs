@@ -8,6 +8,8 @@ pub struct RouteTableIdentifier {
     pub transit_gateway_route_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>The segment edge in a core network.</p>
     pub core_network_segment_edge: ::std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier>,
+    /// <p>The route table identifier associated with the network function group.</p>
+    pub core_network_network_function_group: ::std::option::Option<crate::types::CoreNetworkNetworkFunctionGroupIdentifier>,
 }
 impl RouteTableIdentifier {
     /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
@@ -17,6 +19,10 @@ impl RouteTableIdentifier {
     /// <p>The segment edge in a core network.</p>
     pub fn core_network_segment_edge(&self) -> ::std::option::Option<&crate::types::CoreNetworkSegmentEdgeIdentifier> {
         self.core_network_segment_edge.as_ref()
+    }
+    /// <p>The route table identifier associated with the network function group.</p>
+    pub fn core_network_network_function_group(&self) -> ::std::option::Option<&crate::types::CoreNetworkNetworkFunctionGroupIdentifier> {
+        self.core_network_network_function_group.as_ref()
     }
 }
 impl RouteTableIdentifier {
@@ -32,6 +38,7 @@ impl RouteTableIdentifier {
 pub struct RouteTableIdentifierBuilder {
     pub(crate) transit_gateway_route_table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_segment_edge: ::std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier>,
+    pub(crate) core_network_network_function_group: ::std::option::Option<crate::types::CoreNetworkNetworkFunctionGroupIdentifier>,
 }
 impl RouteTableIdentifierBuilder {
     /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
@@ -62,11 +69,29 @@ impl RouteTableIdentifierBuilder {
     pub fn get_core_network_segment_edge(&self) -> &::std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier> {
         &self.core_network_segment_edge
     }
+    /// <p>The route table identifier associated with the network function group.</p>
+    pub fn core_network_network_function_group(mut self, input: crate::types::CoreNetworkNetworkFunctionGroupIdentifier) -> Self {
+        self.core_network_network_function_group = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The route table identifier associated with the network function group.</p>
+    pub fn set_core_network_network_function_group(
+        mut self,
+        input: ::std::option::Option<crate::types::CoreNetworkNetworkFunctionGroupIdentifier>,
+    ) -> Self {
+        self.core_network_network_function_group = input;
+        self
+    }
+    /// <p>The route table identifier associated with the network function group.</p>
+    pub fn get_core_network_network_function_group(&self) -> &::std::option::Option<crate::types::CoreNetworkNetworkFunctionGroupIdentifier> {
+        &self.core_network_network_function_group
+    }
     /// Consumes the builder and constructs a [`RouteTableIdentifier`](crate::types::RouteTableIdentifier).
     pub fn build(self) -> crate::types::RouteTableIdentifier {
         crate::types::RouteTableIdentifier {
             transit_gateway_route_table_arn: self.transit_gateway_route_table_arn,
             core_network_segment_edge: self.core_network_segment_edge,
+            core_network_network_function_group: self.core_network_network_function_group,
         }
     }
 }

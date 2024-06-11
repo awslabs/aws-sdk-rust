@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDetails {
-    /// <p>InstanceArn that was scanned in the scan entry.</p>
+    /// <p>Instance ARN that was scanned in the scan entry.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceDetails {
-    /// <p>InstanceArn that was scanned in the scan entry.</p>
+    /// <p>Instance ARN that was scanned in the scan entry.</p>
     pub fn instance_arn(&self) -> ::std::option::Option<&str> {
         self.instance_arn.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct ResourceDetailsBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceDetailsBuilder {
-    /// <p>InstanceArn that was scanned in the scan entry.</p>
+    /// <p>Instance ARN that was scanned in the scan entry.</p>
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>InstanceArn that was scanned in the scan entry.</p>
+    /// <p>Instance ARN that was scanned in the scan entry.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_arn = input;
         self
     }
-    /// <p>InstanceArn that was scanned in the scan entry.</p>
+    /// <p>Instance ARN that was scanned in the scan entry.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_arn
     }

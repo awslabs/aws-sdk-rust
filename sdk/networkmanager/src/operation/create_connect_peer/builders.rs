@@ -122,17 +122,17 @@ impl CreateConnectPeerFluentBuilder {
     pub fn get_connect_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connect_attachment_id()
     }
-    /// <p>A Connect peer core network address.</p>
+    /// <p>A Connect peer core network address. This only applies only when the protocol is <code>GRE</code>.</p>
     pub fn core_network_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_address(input.into());
         self
     }
-    /// <p>A Connect peer core network address.</p>
+    /// <p>A Connect peer core network address. This only applies only when the protocol is <code>GRE</code>.</p>
     pub fn set_core_network_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_address(input);
         self
     }
-    /// <p>A Connect peer core network address.</p>
+    /// <p>A Connect peer core network address. This only applies only when the protocol is <code>GRE</code>.</p>
     pub fn get_core_network_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_core_network_address()
     }
@@ -150,17 +150,17 @@ impl CreateConnectPeerFluentBuilder {
     pub fn get_peer_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_peer_address()
     }
-    /// <p>The Connect peer BGP options.</p>
+    /// <p>The Connect peer BGP options. This only applies only when the protocol is <code>GRE</code>.</p>
     pub fn bgp_options(mut self, input: crate::types::BgpOptions) -> Self {
         self.inner = self.inner.bgp_options(input);
         self
     }
-    /// <p>The Connect peer BGP options.</p>
+    /// <p>The Connect peer BGP options. This only applies only when the protocol is <code>GRE</code>.</p>
     pub fn set_bgp_options(mut self, input: ::std::option::Option<crate::types::BgpOptions>) -> Self {
         self.inner = self.inner.set_bgp_options(input);
         self
     }
-    /// <p>The Connect peer BGP options.</p>
+    /// <p>The Connect peer BGP options. This only applies only when the protocol is <code>GRE</code>.</p>
     pub fn get_bgp_options(&self) -> &::std::option::Option<crate::types::BgpOptions> {
         self.inner.get_bgp_options()
     }
@@ -216,17 +216,17 @@ impl CreateConnectPeerFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The subnet ARN for the Connect peer.</p>
+    /// <p>The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.</p>
     pub fn subnet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_arn(input.into());
         self
     }
-    /// <p>The subnet ARN for the Connect peer.</p>
+    /// <p>The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.</p>
     pub fn set_subnet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_arn(input);
         self
     }
-    /// <p>The subnet ARN for the Connect peer.</p>
+    /// <p>The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.</p>
     pub fn get_subnet_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subnet_arn()
     }

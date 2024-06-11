@@ -10,6 +10,8 @@ pub struct NetworkRouteDestination {
     pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the segment.</p>
     pub segment_name: ::std::option::Option<::std::string::String>,
+    /// <p>The network function group name associated with the destination.</p>
+    pub network_function_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The edge location for the network destination.</p>
     pub edge_location: ::std::option::Option<::std::string::String>,
     /// <p>The resource type.</p>
@@ -29,6 +31,10 @@ impl NetworkRouteDestination {
     /// <p>The name of the segment.</p>
     pub fn segment_name(&self) -> ::std::option::Option<&str> {
         self.segment_name.as_deref()
+    }
+    /// <p>The network function group name associated with the destination.</p>
+    pub fn network_function_group_name(&self) -> ::std::option::Option<&str> {
+        self.network_function_group_name.as_deref()
     }
     /// <p>The edge location for the network destination.</p>
     pub fn edge_location(&self) -> ::std::option::Option<&str> {
@@ -57,6 +63,7 @@ pub struct NetworkRouteDestinationBuilder {
     pub(crate) core_network_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) segment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) network_function_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) edge_location: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -103,6 +110,20 @@ impl NetworkRouteDestinationBuilder {
     /// <p>The name of the segment.</p>
     pub fn get_segment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.segment_name
+    }
+    /// <p>The network function group name associated with the destination.</p>
+    pub fn network_function_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_function_group_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The network function group name associated with the destination.</p>
+    pub fn set_network_function_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_function_group_name = input;
+        self
+    }
+    /// <p>The network function group name associated with the destination.</p>
+    pub fn get_network_function_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_function_group_name
     }
     /// <p>The edge location for the network destination.</p>
     pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +173,7 @@ impl NetworkRouteDestinationBuilder {
             core_network_attachment_id: self.core_network_attachment_id,
             transit_gateway_attachment_id: self.transit_gateway_attachment_id,
             segment_name: self.segment_name,
+            network_function_group_name: self.network_function_group_name,
             edge_location: self.edge_location,
             resource_type: self.resource_type,
             resource_id: self.resource_id,

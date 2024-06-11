@@ -144,6 +144,8 @@ mod check_access_not_granted;
 
 mod check_no_new_access;
 
+mod check_no_public_access;
+
 mod create_access_preview;
 
 mod create_analyzer;
@@ -181,6 +183,8 @@ mod delete_analyzer;
 
 mod delete_archive_rule;
 
+mod generate_finding_recommendation;
+
 mod get_access_preview;
 
 mod get_analyzed_resource;
@@ -190,6 +194,8 @@ mod get_analyzer;
 mod get_archive_rule;
 
 mod get_finding;
+
+mod get_finding_recommendation;
 
 mod get_finding_v2;
 

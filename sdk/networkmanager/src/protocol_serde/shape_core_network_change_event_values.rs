@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "NetworkFunctionGroupName" => {
+                            builder = builder.set_network_function_group_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "AttachmentId" => {
                             builder = builder.set_attachment_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
