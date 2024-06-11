@@ -219,7 +219,7 @@ impl UploadReport for ThroughputReport {
 pin_project_lite::pin_project! {
     /// Future that pairs with [`UploadThroughput`] to add a minimum throughput
     /// requirement to a request upload stream.
-    struct UploadThroughputCheckFuture {
+    pub(crate) struct UploadThroughputCheckFuture {
         #[pin]
         response: HttpConnectorFuture,
         #[pin]
