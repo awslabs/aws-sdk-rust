@@ -57,10 +57,24 @@ impl From<http0::StatusCode> for StatusCode {
     }
 }
 
+#[cfg(feature = "http-02x")]
+impl From<StatusCode> for http0::StatusCode {
+    fn from(value: StatusCode) -> Self {
+        Self::from_u16(value.0).unwrap()
+    }
+}
+
 #[cfg(feature = "http-1x")]
 impl From<http1::StatusCode> for StatusCode {
     fn from(value: http1::StatusCode) -> Self {
         Self(value.as_u16())
+    }
+}
+
+#[cfg(feature = "http-1x")]
+impl From<StatusCode> for http1::StatusCode {
+    fn from(value: StatusCode) -> Self {
+        Self::from_u16(value.0).unwrap()
     }
 }
 

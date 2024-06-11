@@ -46,7 +46,7 @@ version = "1.5.6"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "http-02x"]
-version = "1.6.2"
+version = "1.6.3"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
@@ -102,7 +102,7 @@ version = "1.5.6"
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["test-util"]
-version = "1.6.2"
+version = "1.6.3"
 
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
@@ -118,7 +118,7 @@ default-features = false
 version = "1.0.0"
 
 [dev-dependencies.tokio]
-version = "=1.37.0"
+version = "1.23.1"
 features = ["macros", "test-util", "rt-multi-thread"]
 
 [dev-dependencies.tracing-subscriber]

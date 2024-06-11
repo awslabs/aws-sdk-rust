@@ -53,7 +53,7 @@ version = "1.2.0"
 [dependencies.aws-smithy-runtime-api]
 features = ["client", "http-1x"]
 path = "../aws-smithy-runtime-api"
-version = "1.6.2"
+version = "1.6.3"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
