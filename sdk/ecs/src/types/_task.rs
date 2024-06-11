@@ -138,6 +138,8 @@ pub struct Task {
     pub version: i64,
     /// <p>The ephemeral storage settings for the task.</p>
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
+    /// <p>The Fargate ephemeral storage settings for the task.</p>
+    pub fargate_ephemeral_storage: ::std::option::Option<crate::types::TaskEphemeralStorage>,
 }
 impl Task {
     /// <p>The Elastic Network Adapter that's associated with the task if the task uses the <code>awsvpc</code> network mode.</p>
@@ -356,6 +358,10 @@ impl Task {
     pub fn ephemeral_storage(&self) -> ::std::option::Option<&crate::types::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
+    /// <p>The Fargate ephemeral storage settings for the task.</p>
+    pub fn fargate_ephemeral_storage(&self) -> ::std::option::Option<&crate::types::TaskEphemeralStorage> {
+        self.fargate_ephemeral_storage.as_ref()
+    }
 }
 impl Task {
     /// Creates a new builder-style object to manufacture [`Task`](crate::types::Task).
@@ -404,6 +410,7 @@ pub struct TaskBuilder {
     pub(crate) task_definition_arn: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i64>,
     pub(crate) ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
+    pub(crate) fargate_ephemeral_storage: ::std::option::Option<crate::types::TaskEphemeralStorage>,
 }
 impl TaskBuilder {
     /// Appends an item to `attachments`.
@@ -1126,6 +1133,20 @@ impl TaskBuilder {
     pub fn get_ephemeral_storage(&self) -> &::std::option::Option<crate::types::EphemeralStorage> {
         &self.ephemeral_storage
     }
+    /// <p>The Fargate ephemeral storage settings for the task.</p>
+    pub fn fargate_ephemeral_storage(mut self, input: crate::types::TaskEphemeralStorage) -> Self {
+        self.fargate_ephemeral_storage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Fargate ephemeral storage settings for the task.</p>
+    pub fn set_fargate_ephemeral_storage(mut self, input: ::std::option::Option<crate::types::TaskEphemeralStorage>) -> Self {
+        self.fargate_ephemeral_storage = input;
+        self
+    }
+    /// <p>The Fargate ephemeral storage settings for the task.</p>
+    pub fn get_fargate_ephemeral_storage(&self) -> &::std::option::Option<crate::types::TaskEphemeralStorage> {
+        &self.fargate_ephemeral_storage
+    }
     /// Consumes the builder and constructs a [`Task`](crate::types::Task).
     pub fn build(self) -> crate::types::Task {
         crate::types::Task {
@@ -1165,6 +1186,7 @@ impl TaskBuilder {
             task_definition_arn: self.task_definition_arn,
             version: self.version.unwrap_or_default(),
             ephemeral_storage: self.ephemeral_storage,
+            fargate_ephemeral_storage: self.fargate_ephemeral_storage,
         }
     }
 }

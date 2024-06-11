@@ -54,11 +54,9 @@
 /// <p>The following are notes about container health check support:</p>
 /// <ul>
 /// <li>
-/// <p>When the Amazon ECS agent cannot connect to the Amazon ECS service, the service reports the container as <code>UNHEALTHY</code>.</p></li>
+/// <p>If the Amazon ECS container agent becomes disconnected from the Amazon ECS service, this won't cause a container to transition to an <code>UNHEALTHY</code> status. This is by design, to ensure that containers remain running during agent restarts or temporary unavailability. The health check status is the "last heard from" response from the Amazon ECS agent, so if the container was considered <code>HEALTHY</code> prior to the disconnect, that status will remain until the agent reconnects and another health check occurs. There are no assumptions made about the status of the container health checks.</p></li>
 /// <li>
-/// <p>The health check statuses are the "last heard from" response from the Amazon ECS agent. There are no assumptions made about the status of the container health checks.</p></li>
-/// <li>
-/// <p>Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS container agent</a>.</p></li>
+/// <p>Container health checks require version <code>1.17.0</code> or greater of the Amazon ECS container agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS container agent</a>.</p></li>
 /// <li>
 /// <p>Container health checks are supported for Fargate tasks if you're using platform version <code>1.1.0</code> or greater. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a>.</p></li>
 /// <li>

@@ -198,6 +198,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon CloudSearch Domain | [aws-sdk-cloudsearchdomain](https://crates.io/crates/aws-sdk-cloudsearchdomain) ([docs](https://docs.rs/aws-sdk-cloudsearchdomain)) |
 | Amazon CloudWatch | [aws-sdk-cloudwatch](https://crates.io/crates/aws-sdk-cloudwatch) ([docs](https://docs.rs/aws-sdk-cloudwatch)) |
 | Amazon CloudWatch Application Insights | [aws-sdk-applicationinsights](https://crates.io/crates/aws-sdk-applicationinsights) ([docs](https://docs.rs/aws-sdk-applicationinsights)) |
+| Amazon CloudWatch Application Signals | [aws-sdk-applicationsignals](https://crates.io/crates/aws-sdk-applicationsignals) ([docs](https://docs.rs/aws-sdk-applicationsignals)) |
 | Amazon CloudWatch Events | [aws-sdk-cloudwatchevents](https://crates.io/crates/aws-sdk-cloudwatchevents) ([docs](https://docs.rs/aws-sdk-cloudwatchevents)) |
 | Amazon CloudWatch Evidently | [aws-sdk-evidently](https://crates.io/crates/aws-sdk-evidently) ([docs](https://docs.rs/aws-sdk-evidently)) |
 | Amazon CloudWatch Internet Monitor | [aws-sdk-internetmonitor](https://crates.io/crates/aws-sdk-internetmonitor) ([docs](https://docs.rs/aws-sdk-internetmonitor)) |

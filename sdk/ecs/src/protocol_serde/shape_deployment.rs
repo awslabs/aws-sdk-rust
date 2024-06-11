@@ -134,6 +134,11 @@ where
                                 crate::protocol_serde::shape_service_volume_configurations::de_service_volume_configurations(tokens)?,
                             );
                         }
+                        "fargateEphemeralStorage" => {
+                            builder = builder.set_fargate_ephemeral_storage(
+                                crate::protocol_serde::shape_deployment_ephemeral_storage::de_deployment_ephemeral_storage(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

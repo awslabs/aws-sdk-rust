@@ -103,6 +103,8 @@ pub struct TaskSet {
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The Fargate ephemeral storage settings for the task set.</p>
+    pub fargate_ephemeral_storage: ::std::option::Option<crate::types::DeploymentEphemeralStorage>,
 }
 impl TaskSet {
     /// <p>The ID of the task set.</p>
@@ -260,6 +262,10 @@ impl TaskSet {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The Fargate ephemeral storage settings for the task set.</p>
+    pub fn fargate_ephemeral_storage(&self) -> ::std::option::Option<&crate::types::DeploymentEphemeralStorage> {
+        self.fargate_ephemeral_storage.as_ref()
+    }
 }
 impl TaskSet {
     /// Creates a new builder-style object to manufacture [`TaskSet`](crate::types::TaskSet).
@@ -296,6 +302,7 @@ pub struct TaskSetBuilder {
     pub(crate) stability_status: ::std::option::Option<crate::types::StabilityStatus>,
     pub(crate) stability_status_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) fargate_ephemeral_storage: ::std::option::Option<crate::types::DeploymentEphemeralStorage>,
 }
 impl TaskSetBuilder {
     /// <p>The ID of the task set.</p>
@@ -814,6 +821,20 @@ impl TaskSetBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The Fargate ephemeral storage settings for the task set.</p>
+    pub fn fargate_ephemeral_storage(mut self, input: crate::types::DeploymentEphemeralStorage) -> Self {
+        self.fargate_ephemeral_storage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Fargate ephemeral storage settings for the task set.</p>
+    pub fn set_fargate_ephemeral_storage(mut self, input: ::std::option::Option<crate::types::DeploymentEphemeralStorage>) -> Self {
+        self.fargate_ephemeral_storage = input;
+        self
+    }
+    /// <p>The Fargate ephemeral storage settings for the task set.</p>
+    pub fn get_fargate_ephemeral_storage(&self) -> &::std::option::Option<crate::types::DeploymentEphemeralStorage> {
+        &self.fargate_ephemeral_storage
+    }
     /// Consumes the builder and constructs a [`TaskSet`](crate::types::TaskSet).
     pub fn build(self) -> crate::types::TaskSet {
         crate::types::TaskSet {
@@ -841,6 +862,7 @@ impl TaskSetBuilder {
             stability_status: self.stability_status,
             stability_status_at: self.stability_status_at,
             tags: self.tags,
+            fargate_ephemeral_storage: self.fargate_ephemeral_storage,
         }
     }
 }

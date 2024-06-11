@@ -227,6 +227,11 @@ where
                         "ephemeralStorage" => {
                             builder = builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens)?);
                         }
+                        "fargateEphemeralStorage" => {
+                            builder = builder.set_fargate_ephemeral_storage(
+                                crate::protocol_serde::shape_task_ephemeral_storage::de_task_ephemeral_storage(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -70,6 +70,8 @@ pub struct Deployment {
     pub service_connect_resources: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectServiceResource>>,
     /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure different settings like the size, throughput, volumeType, and ecryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html">ServiceManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
     pub volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>>,
+    /// <p>The Fargate ephemeral storage settings for the deployment.</p>
+    pub fargate_ephemeral_storage: ::std::option::Option<crate::types::DeploymentEphemeralStorage>,
 }
 impl Deployment {
     /// <p>The ID of the deployment.</p>
@@ -182,6 +184,10 @@ impl Deployment {
     pub fn volume_configurations(&self) -> &[crate::types::ServiceVolumeConfiguration] {
         self.volume_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The Fargate ephemeral storage settings for the deployment.</p>
+    pub fn fargate_ephemeral_storage(&self) -> ::std::option::Option<&crate::types::DeploymentEphemeralStorage> {
+        self.fargate_ephemeral_storage.as_ref()
+    }
 }
 impl Deployment {
     /// Creates a new builder-style object to manufacture [`Deployment`](crate::types::Deployment).
@@ -213,6 +219,7 @@ pub struct DeploymentBuilder {
     pub(crate) service_connect_configuration: ::std::option::Option<crate::types::ServiceConnectConfiguration>,
     pub(crate) service_connect_resources: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectServiceResource>>,
     pub(crate) volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>>,
+    pub(crate) fargate_ephemeral_storage: ::std::option::Option<crate::types::DeploymentEphemeralStorage>,
 }
 impl DeploymentBuilder {
     /// <p>The ID of the deployment.</p>
@@ -589,6 +596,20 @@ impl DeploymentBuilder {
     pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>> {
         &self.volume_configurations
     }
+    /// <p>The Fargate ephemeral storage settings for the deployment.</p>
+    pub fn fargate_ephemeral_storage(mut self, input: crate::types::DeploymentEphemeralStorage) -> Self {
+        self.fargate_ephemeral_storage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Fargate ephemeral storage settings for the deployment.</p>
+    pub fn set_fargate_ephemeral_storage(mut self, input: ::std::option::Option<crate::types::DeploymentEphemeralStorage>) -> Self {
+        self.fargate_ephemeral_storage = input;
+        self
+    }
+    /// <p>The Fargate ephemeral storage settings for the deployment.</p>
+    pub fn get_fargate_ephemeral_storage(&self) -> &::std::option::Option<crate::types::DeploymentEphemeralStorage> {
+        &self.fargate_ephemeral_storage
+    }
     /// Consumes the builder and constructs a [`Deployment`](crate::types::Deployment).
     pub fn build(self) -> crate::types::Deployment {
         crate::types::Deployment {
@@ -611,6 +632,7 @@ impl DeploymentBuilder {
             service_connect_configuration: self.service_connect_configuration,
             service_connect_resources: self.service_connect_resources,
             volume_configurations: self.volume_configurations,
+            fargate_ephemeral_storage: self.fargate_ephemeral_storage,
         }
     }
 }

@@ -9,6 +9,12 @@ pub fn ser_cluster_configuration(
         crate::protocol_serde::shape_execute_command_configuration::ser_execute_command_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.managed_storage_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("managedStorageConfiguration").start_object();
+        crate::protocol_serde::shape_managed_storage_configuration::ser_managed_storage_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +36,11 @@ where
                         "executeCommandConfiguration" => {
                             builder = builder.set_execute_command_configuration(
                                 crate::protocol_serde::shape_execute_command_configuration::de_execute_command_configuration(tokens)?,
+                            );
+                        }
+                        "managedStorageConfiguration" => {
+                            builder = builder.set_managed_storage_configuration(
+                                crate::protocol_serde::shape_managed_storage_configuration::de_managed_storage_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

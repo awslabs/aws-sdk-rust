@@ -447,6 +447,8 @@ pub(crate) mod shape_deployment_alarms;
 
 pub(crate) mod shape_deployment_circuit_breaker;
 
+pub(crate) mod shape_deployment_ephemeral_storage;
+
 pub(crate) mod shape_deployments;
 
 pub(crate) mod shape_docker_volume_configuration;
@@ -483,6 +485,8 @@ pub(crate) mod shape_log_configuration;
 
 pub(crate) mod shape_managed_scaling;
 
+pub(crate) mod shape_managed_storage_configuration;
+
 pub(crate) mod shape_mount_point;
 
 pub(crate) mod shape_placement_constraints;
@@ -516,6 +520,8 @@ pub(crate) mod shape_statistics;
 pub(crate) mod shape_system_control;
 
 pub(crate) mod shape_task_definition_placement_constraints;
+
+pub(crate) mod shape_task_ephemeral_storage;
 
 pub(crate) mod shape_task_managed_ebs_volume_configuration;
 

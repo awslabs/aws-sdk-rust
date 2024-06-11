@@ -659,19 +659,16 @@ impl RegisterTaskDefinitionFluentBuilder {
         self.inner.get_ephemeral_storage()
     }
     /// <p>The operating system that your tasks definitions run on. A platform family is specified only for tasks using the Fargate launch type.</p>
-    /// <p>When you specify a task definition in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
     pub fn runtime_platform(mut self, input: crate::types::RuntimePlatform) -> Self {
         self.inner = self.inner.runtime_platform(input);
         self
     }
     /// <p>The operating system that your tasks definitions run on. A platform family is specified only for tasks using the Fargate launch type.</p>
-    /// <p>When you specify a task definition in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
     pub fn set_runtime_platform(mut self, input: ::std::option::Option<crate::types::RuntimePlatform>) -> Self {
         self.inner = self.inner.set_runtime_platform(input);
         self
     }
     /// <p>The operating system that your tasks definitions run on. A platform family is specified only for tasks using the Fargate launch type.</p>
-    /// <p>When you specify a task definition in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
     pub fn get_runtime_platform(&self) -> &::std::option::Option<crate::types::RuntimePlatform> {
         self.inner.get_runtime_platform()
     }

@@ -30,6 +30,7 @@ members = [
     "sdk/applicationcostprofiler",
     "sdk/applicationdiscovery",
     "sdk/applicationinsights",
+    "sdk/applicationsignals",
     "sdk/appmesh",
     "sdk/apprunner",
     "sdk/appstream",
