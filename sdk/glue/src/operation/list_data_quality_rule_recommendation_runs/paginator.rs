@@ -87,6 +87,7 @@ impl ListDataQualityRuleRecommendationRunsPaginator {
                         let done = match resp {
                             ::std::result::Result::Ok(ref resp) => {
                                 let new_token = crate::lens::reflens_list_data_quality_rule_recommendation_runs_output_output_next_token(resp);
+                                // Pagination is exhausted when the next token is an empty string
                                 let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                 if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                     true

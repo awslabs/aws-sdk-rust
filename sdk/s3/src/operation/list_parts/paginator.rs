@@ -87,7 +87,8 @@ impl ListPartsPaginator {
                         let done = match resp {
                             ::std::result::Result::Ok(ref resp) => {
                                 let new_token = crate::lens::reflens_list_parts_output_output_next_part_number_marker(resp);
-                                let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
+                                // Pagination is exhausted when `is_truncated` is false
+                                let is_empty = !resp.is_truncated.unwrap_or(false);
                                 if !is_empty && new_token == input.part_number_marker.as_ref() && self.stop_on_duplicate_token {
                                     true
                                 } else {

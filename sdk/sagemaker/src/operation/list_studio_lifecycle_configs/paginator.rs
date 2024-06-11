@@ -92,6 +92,7 @@ impl ListStudioLifecycleConfigsPaginator {
                         let done = match resp {
                             ::std::result::Result::Ok(ref resp) => {
                                 let new_token = crate::lens::reflens_list_studio_lifecycle_configs_output_output_next_token(resp);
+                                // Pagination is exhausted when the next token is an empty string
                                 let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                                 if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                     true
