@@ -2476,6 +2476,10 @@ source_hash = '986dd4463acd27a421f8c2a400e97870c5fabf0ec4df0dc46b3a1be7fdcad993'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'f9324c0fe054ca9c79483155ccb1dd27b9e34f77095a232788c76e40dcaf6db6'
+
+[release]
+tag = 'release-2024-06-12'
+
 [release.crates]
 aws-sdk-apptest = '1.0.0'
 aws-sdk-ec2 = '1.50.0'
