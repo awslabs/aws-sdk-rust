@@ -40,6 +40,11 @@ where
                         "SnsDestination" => {
                             builder = builder.set_sns_destination(crate::protocol_serde::shape_sns_destination::de_sns_destination(tokens)?);
                         }
+                        "EventBridgeDestination" => {
+                            builder = builder.set_event_bridge_destination(
+                                crate::protocol_serde::shape_event_bridge_destination::de_event_bridge_destination(tokens)?,
+                            );
+                        }
                         "PinpointDestination" => {
                             builder =
                                 builder.set_pinpoint_destination(crate::protocol_serde::shape_pinpoint_destination::de_pinpoint_destination(tokens)?);

@@ -10,6 +10,8 @@ pub struct VpcOptions {
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Options for attaching a VPC to a pipeline.</p>
     pub vpc_attachment_options: ::std::option::Option<crate::types::VpcAttachmentOptions>,
+    /// <p>Defines whether you or Amazon OpenSearch Ingestion service create and manage the VPC endpoint configured for the pipeline.</p>
+    pub vpc_endpoint_management: ::std::option::Option<crate::types::VpcEndpointManagement>,
 }
 impl VpcOptions {
     /// <p>A list of subnet IDs associated with the VPC endpoint.</p>
@@ -27,6 +29,10 @@ impl VpcOptions {
     pub fn vpc_attachment_options(&self) -> ::std::option::Option<&crate::types::VpcAttachmentOptions> {
         self.vpc_attachment_options.as_ref()
     }
+    /// <p>Defines whether you or Amazon OpenSearch Ingestion service create and manage the VPC endpoint configured for the pipeline.</p>
+    pub fn vpc_endpoint_management(&self) -> ::std::option::Option<&crate::types::VpcEndpointManagement> {
+        self.vpc_endpoint_management.as_ref()
+    }
 }
 impl VpcOptions {
     /// Creates a new builder-style object to manufacture [`VpcOptions`](crate::types::VpcOptions).
@@ -42,6 +48,7 @@ pub struct VpcOptionsBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) vpc_attachment_options: ::std::option::Option<crate::types::VpcAttachmentOptions>,
+    pub(crate) vpc_endpoint_management: ::std::option::Option<crate::types::VpcEndpointManagement>,
 }
 impl VpcOptionsBuilder {
     /// Appends an item to `subnet_ids`.
@@ -98,6 +105,20 @@ impl VpcOptionsBuilder {
     pub fn get_vpc_attachment_options(&self) -> &::std::option::Option<crate::types::VpcAttachmentOptions> {
         &self.vpc_attachment_options
     }
+    /// <p>Defines whether you or Amazon OpenSearch Ingestion service create and manage the VPC endpoint configured for the pipeline.</p>
+    pub fn vpc_endpoint_management(mut self, input: crate::types::VpcEndpointManagement) -> Self {
+        self.vpc_endpoint_management = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines whether you or Amazon OpenSearch Ingestion service create and manage the VPC endpoint configured for the pipeline.</p>
+    pub fn set_vpc_endpoint_management(mut self, input: ::std::option::Option<crate::types::VpcEndpointManagement>) -> Self {
+        self.vpc_endpoint_management = input;
+        self
+    }
+    /// <p>Defines whether you or Amazon OpenSearch Ingestion service create and manage the VPC endpoint configured for the pipeline.</p>
+    pub fn get_vpc_endpoint_management(&self) -> &::std::option::Option<crate::types::VpcEndpointManagement> {
+        &self.vpc_endpoint_management
+    }
     /// Consumes the builder and constructs a [`VpcOptions`](crate::types::VpcOptions).
     /// This method will fail if any of the following fields are not set:
     /// - [`subnet_ids`](crate::types::builders::VpcOptionsBuilder::subnet_ids)
@@ -111,6 +132,7 @@ impl VpcOptionsBuilder {
             })?,
             security_group_ids: self.security_group_ids,
             vpc_attachment_options: self.vpc_attachment_options,
+            vpc_endpoint_management: self.vpc_endpoint_management,
         })
     }
 }

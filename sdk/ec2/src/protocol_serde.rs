@@ -1355,6 +1355,10 @@ pub(crate) mod shape_describe_tags;
 
 pub(crate) mod shape_describe_tags_input;
 
+pub(crate) mod shape_describe_traffic_mirror_filter_rules;
+
+pub(crate) mod shape_describe_traffic_mirror_filter_rules_input;
+
 pub(crate) mod shape_describe_traffic_mirror_filters;
 
 pub(crate) mod shape_describe_traffic_mirror_filters_input;
@@ -3408,6 +3412,8 @@ pub(crate) mod shape_total_local_storage_gb_request;
 pub(crate) mod shape_traffic_mirror_filter;
 
 pub(crate) mod shape_traffic_mirror_filter_rule;
+
+pub(crate) mod shape_traffic_mirror_filter_rule_set;
 
 pub(crate) mod shape_traffic_mirror_filter_set;
 

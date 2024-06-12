@@ -32,10 +32,12 @@ pub struct CreateSecretInput {
     /// <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>This parameter is not available in the Secrets Manager console.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub secret_binary: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The text data to encrypt and store in this new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that a Lambda rotation function can parse.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub secret_string: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to attach to the secret. Each tag is a key and value pair of strings in a JSON text string, for example:</p>
     /// <p><code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code></p>
@@ -87,12 +89,14 @@ impl CreateSecretInput {
     /// <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>This parameter is not available in the Secrets Manager console.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn secret_binary(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.secret_binary.as_ref()
     }
     /// <p>The text data to encrypt and store in this new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that a Lambda rotation function can parse.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn secret_string(&self) -> ::std::option::Option<&str> {
         self.secret_string.as_deref()
     }
@@ -269,6 +273,7 @@ impl CreateSecretInputBuilder {
     /// <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>This parameter is not available in the Secrets Manager console.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn secret_binary(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.secret_binary = ::std::option::Option::Some(input);
         self
@@ -276,6 +281,7 @@ impl CreateSecretInputBuilder {
     /// <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>This parameter is not available in the Secrets Manager console.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn set_secret_binary(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.secret_binary = input;
         self
@@ -283,12 +289,14 @@ impl CreateSecretInputBuilder {
     /// <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>This parameter is not available in the Secrets Manager console.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn get_secret_binary(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.secret_binary
     }
     /// <p>The text data to encrypt and store in this new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that a Lambda rotation function can parse.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn secret_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_string = ::std::option::Option::Some(input.into());
         self
@@ -296,6 +304,7 @@ impl CreateSecretInputBuilder {
     /// <p>The text data to encrypt and store in this new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that a Lambda rotation function can parse.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn set_secret_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_string = input;
         self
@@ -303,6 +312,7 @@ impl CreateSecretInputBuilder {
     /// <p>The text data to encrypt and store in this new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that a Lambda rotation function can parse.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn get_secret_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_string
     }

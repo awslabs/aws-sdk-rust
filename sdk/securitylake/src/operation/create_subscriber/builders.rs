@@ -108,17 +108,17 @@ impl CreateSubscriberFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The AWS identity used to access your data.</p>
+    /// <p>The Amazon Web Services identity used to access your data.</p>
     pub fn subscriber_identity(mut self, input: crate::types::AwsIdentity) -> Self {
         self.inner = self.inner.subscriber_identity(input);
         self
     }
-    /// <p>The AWS identity used to access your data.</p>
+    /// <p>The Amazon Web Services identity used to access your data.</p>
     pub fn set_subscriber_identity(mut self, input: ::std::option::Option<crate::types::AwsIdentity>) -> Self {
         self.inner = self.inner.set_subscriber_identity(input);
         self
     }
-    /// <p>The AWS identity used to access your data.</p>
+    /// <p>The Amazon Web Services identity used to access your data.</p>
     pub fn get_subscriber_identity(&self) -> &::std::option::Option<crate::types::AwsIdentity> {
         self.inner.get_subscriber_identity()
     }

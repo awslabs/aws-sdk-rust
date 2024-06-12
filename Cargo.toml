@@ -2,10 +2,10 @@
 resolver = "2"
 exclude = [
     "examples/examples",
-    "examples/lambda",
     "examples/webassembly",
-    "examples/cross_service",
     "examples/test-utils",
+    "examples/cross_service",
+    "examples/lambda",
     "tests/webassembly",
     "tests/no-default-features"
 ]
@@ -35,6 +35,7 @@ members = [
     "sdk/apprunner",
     "sdk/appstream",
     "sdk/appsync",
+    "sdk/apptest",
     "sdk/arczonalshift",
     "sdk/artifact",
     "sdk/athena",
@@ -73,7 +74,6 @@ members = [
     "sdk/b2bi",
     "sdk/backup",
     "sdk/backupgateway",
-    "sdk/backupstorage",
     "sdk/batch",
     "sdk/bcmdataexports",
     "sdk/bedrock",

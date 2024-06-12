@@ -33,11 +33,17 @@ pub fn ser_event_destination_definition(
         crate::protocol_serde::shape_sns_destination::ser_sns_destination(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.pinpoint_destination {
+    if let Some(var_10) = &input.event_bridge_destination {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("PinpointDestination").start_object();
-        crate::protocol_serde::shape_pinpoint_destination::ser_pinpoint_destination(&mut object_11, var_10)?;
+        let mut object_11 = object.key("EventBridgeDestination").start_object();
+        crate::protocol_serde::shape_event_bridge_destination::ser_event_bridge_destination(&mut object_11, var_10)?;
         object_11.finish();
+    }
+    if let Some(var_12) = &input.pinpoint_destination {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("PinpointDestination").start_object();
+        crate::protocol_serde::shape_pinpoint_destination::ser_pinpoint_destination(&mut object_13, var_12)?;
+        object_13.finish();
     }
     Ok(())
 }

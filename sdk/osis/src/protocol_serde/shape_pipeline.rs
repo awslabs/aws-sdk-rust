@@ -92,6 +92,13 @@ where
                                 crate::protocol_serde::shape_encryption_at_rest_options::de_encryption_at_rest_options(tokens)?,
                             );
                         }
+                        "VpcEndpointService" => {
+                            builder = builder.set_vpc_endpoint_service(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "ServiceVpcEndpoints" => {
                             builder = builder.set_service_vpc_endpoints(
                                 crate::protocol_serde::shape_service_vpc_endpoints_list::de_service_vpc_endpoints_list(tokens)?,

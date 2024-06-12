@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSubscriberInput {
-    /// <p>The AWS identity used to access your data.</p>
+    /// <p>The Amazon Web Services identity used to access your data.</p>
     pub subscriber_identity: ::std::option::Option<crate::types::AwsIdentity>,
     /// <p>The name of your Security Lake subscriber account.</p>
     pub subscriber_name: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ pub struct CreateSubscriberInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSubscriberInput {
-    /// <p>The AWS identity used to access your data.</p>
+    /// <p>The Amazon Web Services identity used to access your data.</p>
     pub fn subscriber_identity(&self) -> ::std::option::Option<&crate::types::AwsIdentity> {
         self.subscriber_identity.as_ref()
     }
@@ -67,18 +67,18 @@ pub struct CreateSubscriberInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSubscriberInputBuilder {
-    /// <p>The AWS identity used to access your data.</p>
+    /// <p>The Amazon Web Services identity used to access your data.</p>
     /// This field is required.
     pub fn subscriber_identity(mut self, input: crate::types::AwsIdentity) -> Self {
         self.subscriber_identity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The AWS identity used to access your data.</p>
+    /// <p>The Amazon Web Services identity used to access your data.</p>
     pub fn set_subscriber_identity(mut self, input: ::std::option::Option<crate::types::AwsIdentity>) -> Self {
         self.subscriber_identity = input;
         self
     }
-    /// <p>The AWS identity used to access your data.</p>
+    /// <p>The Amazon Web Services identity used to access your data.</p>
     pub fn get_subscriber_identity(&self) -> &::std::option::Option<crate::types::AwsIdentity> {
         &self.subscriber_identity
     }

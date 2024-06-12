@@ -44,7 +44,7 @@ pub struct CreateClusterInput {
     /// <p>Default: <code>multi-node</code></p>
     pub cluster_type: ::std::option::Option<::std::string::String>,
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
@@ -125,7 +125,7 @@ pub struct CreateClusterInput {
     /// <li>
     /// <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p></li>
     /// <li>
-    /// <p>For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
+    /// <p>For clusters with dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
     /// </ul>
     pub port: ::std::option::Option<i32>,
     /// <p>The version of the Amazon Redshift engine software that you want to deploy on the cluster.</p>
@@ -238,7 +238,7 @@ impl CreateClusterInput {
         self.cluster_type.as_deref()
     }
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
@@ -345,7 +345,7 @@ impl CreateClusterInput {
     /// <li>
     /// <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p></li>
     /// <li>
-    /// <p>For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
+    /// <p>For clusters with dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
     /// </ul>
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
@@ -705,20 +705,20 @@ impl CreateClusterInputBuilder {
         &self.cluster_type
     }
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     /// This field is required.
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
     }
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_type
     }
@@ -1036,7 +1036,7 @@ impl CreateClusterInputBuilder {
     /// <li>
     /// <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p></li>
     /// <li>
-    /// <p>For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
+    /// <p>For clusters with dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
     /// </ul>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -1050,7 +1050,7 @@ impl CreateClusterInputBuilder {
     /// <li>
     /// <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p></li>
     /// <li>
-    /// <p>For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
+    /// <p>For clusters with dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
     /// </ul>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
@@ -1064,7 +1064,7 @@ impl CreateClusterInputBuilder {
     /// <li>
     /// <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p></li>
     /// <li>
-    /// <p>For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
+    /// <p>For clusters with dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
     /// </ul>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port

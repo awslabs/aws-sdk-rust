@@ -1000,6 +1000,9 @@ pub mod describe_subnets;
 /// Types for the `DescribeTags` operation.
 pub mod describe_tags;
 
+/// Types for the `DescribeTrafficMirrorFilterRules` operation.
+pub mod describe_traffic_mirror_filter_rules;
+
 /// Types for the `DescribeTrafficMirrorFilters` operation.
 pub mod describe_traffic_mirror_filters;
 

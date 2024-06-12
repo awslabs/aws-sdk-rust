@@ -3,12 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyTrafficMirrorFilterRuleOutput {
-    /// <p>Modifies a Traffic Mirror rule.</p>
+    /// <note>
+    /// <p>Tags are not returned for ModifyTrafficMirrorFilterRule.</p>
+    /// </note>
+    /// <p>A Traffic Mirror rule.</p>
     pub traffic_mirror_filter_rule: ::std::option::Option<crate::types::TrafficMirrorFilterRule>,
     _request_id: Option<String>,
 }
 impl ModifyTrafficMirrorFilterRuleOutput {
-    /// <p>Modifies a Traffic Mirror rule.</p>
+    /// <note>
+    /// <p>Tags are not returned for ModifyTrafficMirrorFilterRule.</p>
+    /// </note>
+    /// <p>A Traffic Mirror rule.</p>
     pub fn traffic_mirror_filter_rule(&self) -> ::std::option::Option<&crate::types::TrafficMirrorFilterRule> {
         self.traffic_mirror_filter_rule.as_ref()
     }
@@ -33,17 +39,26 @@ pub struct ModifyTrafficMirrorFilterRuleOutputBuilder {
     _request_id: Option<String>,
 }
 impl ModifyTrafficMirrorFilterRuleOutputBuilder {
-    /// <p>Modifies a Traffic Mirror rule.</p>
+    /// <note>
+    /// <p>Tags are not returned for ModifyTrafficMirrorFilterRule.</p>
+    /// </note>
+    /// <p>A Traffic Mirror rule.</p>
     pub fn traffic_mirror_filter_rule(mut self, input: crate::types::TrafficMirrorFilterRule) -> Self {
         self.traffic_mirror_filter_rule = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Modifies a Traffic Mirror rule.</p>
+    /// <note>
+    /// <p>Tags are not returned for ModifyTrafficMirrorFilterRule.</p>
+    /// </note>
+    /// <p>A Traffic Mirror rule.</p>
     pub fn set_traffic_mirror_filter_rule(mut self, input: ::std::option::Option<crate::types::TrafficMirrorFilterRule>) -> Self {
         self.traffic_mirror_filter_rule = input;
         self
     }
-    /// <p>Modifies a Traffic Mirror rule.</p>
+    /// <note>
+    /// <p>Tags are not returned for ModifyTrafficMirrorFilterRule.</p>
+    /// </note>
+    /// <p>A Traffic Mirror rule.</p>
     pub fn get_traffic_mirror_filter_rule(&self) -> &::std::option::Option<crate::types::TrafficMirrorFilterRule> {
         &self.traffic_mirror_filter_rule
     }

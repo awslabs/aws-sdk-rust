@@ -509,6 +509,8 @@ pub(crate) mod shape_email_template_metadata;
 
 pub(crate) mod shape_esps;
 
+pub(crate) mod shape_event_bridge_destination;
+
 pub(crate) mod shape_event_destination;
 
 pub(crate) mod shape_export_job_summary;

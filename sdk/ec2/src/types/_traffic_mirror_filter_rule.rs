@@ -26,6 +26,8 @@ pub struct TrafficMirrorFilterRule {
     pub source_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Traffic Mirror rule.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Tags on Traffic Mirroring filter rules.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TrafficMirrorFilterRule {
     /// <p>The ID of the Traffic Mirror rule.</p>
@@ -72,6 +74,12 @@ impl TrafficMirrorFilterRule {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>Tags on Traffic Mirroring filter rules.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl TrafficMirrorFilterRule {
     /// Creates a new builder-style object to manufacture [`TrafficMirrorFilterRule`](crate::types::TrafficMirrorFilterRule).
@@ -95,6 +103,7 @@ pub struct TrafficMirrorFilterRuleBuilder {
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) source_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TrafficMirrorFilterRuleBuilder {
     /// <p>The ID of the Traffic Mirror rule.</p>
@@ -251,6 +260,26 @@ impl TrafficMirrorFilterRuleBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Tags on Traffic Mirroring filter rules.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Tags on Traffic Mirroring filter rules.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Tags on Traffic Mirroring filter rules.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`TrafficMirrorFilterRule`](crate::types::TrafficMirrorFilterRule).
     pub fn build(self) -> crate::types::TrafficMirrorFilterRule {
         crate::types::TrafficMirrorFilterRule {
@@ -265,6 +294,7 @@ impl TrafficMirrorFilterRuleBuilder {
             destination_cidr_block: self.destination_cidr_block,
             source_cidr_block: self.source_cidr_block,
             description: self.description,
+            tags: self.tags,
         }
     }
 }

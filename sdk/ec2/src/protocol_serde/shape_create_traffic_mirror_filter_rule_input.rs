@@ -71,6 +71,19 @@ pub fn ser_create_traffic_mirror_filter_rule_input_input_input(
     if let Some(var_24) = &input.client_token {
         scope_23.string(var_24);
     }
+    #[allow(unused_mut)]
+    let mut scope_25 = writer.prefix("TagSpecification");
+    if let Some(var_26) = &input.tag_specifications {
+        if !var_26.is_empty() {
+            let mut list_28 = scope_25.start_list(true, Some("item"));
+            for item_27 in var_26 {
+                #[allow(unused_mut)]
+                let mut entry_29 = list_28.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_29, item_27)?;
+            }
+            list_28.finish();
+        }
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

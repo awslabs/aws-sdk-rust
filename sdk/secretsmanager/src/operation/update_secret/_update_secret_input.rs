@@ -23,9 +23,11 @@ pub struct UpdateSecretInput {
     /// <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>
     /// <p>Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both.</p>
     /// <p>You can't access this parameter in the Secrets Manager console.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub secret_binary: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The text data to encrypt and store in the new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value.</p>
     /// <p>Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub secret_string: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSecretInput {
@@ -57,11 +59,13 @@ impl UpdateSecretInput {
     /// <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>
     /// <p>Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both.</p>
     /// <p>You can't access this parameter in the Secrets Manager console.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn secret_binary(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.secret_binary.as_ref()
     }
     /// <p>The text data to encrypt and store in the new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value.</p>
     /// <p>Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn secret_string(&self) -> ::std::option::Option<&str> {
         self.secret_string.as_deref()
     }
@@ -184,6 +188,7 @@ impl UpdateSecretInputBuilder {
     /// <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>
     /// <p>Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both.</p>
     /// <p>You can't access this parameter in the Secrets Manager console.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn secret_binary(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.secret_binary = ::std::option::Option::Some(input);
         self
@@ -191,6 +196,7 @@ impl UpdateSecretInputBuilder {
     /// <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>
     /// <p>Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both.</p>
     /// <p>You can't access this parameter in the Secrets Manager console.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn set_secret_binary(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.secret_binary = input;
         self
@@ -198,23 +204,27 @@ impl UpdateSecretInputBuilder {
     /// <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>
     /// <p>Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both.</p>
     /// <p>You can't access this parameter in the Secrets Manager console.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn get_secret_binary(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.secret_binary
     }
     /// <p>The text data to encrypt and store in the new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value.</p>
     /// <p>Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn secret_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text data to encrypt and store in the new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value.</p>
     /// <p>Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn set_secret_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_string = input;
         self
     }
     /// <p>The text data to encrypt and store in the new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value.</p>
     /// <p>Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn get_secret_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_string
     }

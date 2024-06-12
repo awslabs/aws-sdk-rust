@@ -88,6 +88,7 @@
 ///     ResourceType::Volume => { /* ... */ },
 ///     ResourceType::Vpc => { /* ... */ },
 ///     ResourceType::VpcBlockPublicAccessExclusion => { /* ... */ },
+///     ResourceType::VpcEncryptionControl => { /* ... */ },
 ///     ResourceType::VpcEndpoint => { /* ... */ },
 ///     ResourceType::VpcEndpointConnection => { /* ... */ },
 ///     ResourceType::VpcEndpointConnectionDeviceType => { /* ... */ },
@@ -278,6 +279,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     VpcBlockPublicAccessExclusion,
     #[allow(missing_docs)] // documentation missing in model
+    VpcEncryptionControl,
+    #[allow(missing_docs)] // documentation missing in model
     VpcEndpoint,
     #[allow(missing_docs)] // documentation missing in model
     VpcEndpointConnection,
@@ -380,6 +383,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "volume" => ResourceType::Volume,
             "vpc" => ResourceType::Vpc,
             "vpc-block-public-access-exclusion" => ResourceType::VpcBlockPublicAccessExclusion,
+            "vpc-encryption-control" => ResourceType::VpcEncryptionControl,
             "vpc-endpoint" => ResourceType::VpcEndpoint,
             "vpc-endpoint-connection" => ResourceType::VpcEndpointConnection,
             "vpc-endpoint-connection-device-type" => ResourceType::VpcEndpointConnectionDeviceType,
@@ -481,6 +485,7 @@ impl ResourceType {
             ResourceType::Volume => "volume",
             ResourceType::Vpc => "vpc",
             ResourceType::VpcBlockPublicAccessExclusion => "vpc-block-public-access-exclusion",
+            ResourceType::VpcEncryptionControl => "vpc-encryption-control",
             ResourceType::VpcEndpoint => "vpc-endpoint",
             ResourceType::VpcEndpointConnection => "vpc-endpoint-connection",
             ResourceType::VpcEndpointConnectionDeviceType => "vpc-endpoint-connection-device-type",
@@ -573,6 +578,7 @@ impl ResourceType {
             "volume",
             "vpc",
             "vpc-block-public-access-exclusion",
+            "vpc-encryption-control",
             "vpc-endpoint",
             "vpc-endpoint-connection",
             "vpc-endpoint-connection-device-type",
@@ -684,6 +690,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::Volume => write!(f, "volume"),
             ResourceType::Vpc => write!(f, "vpc"),
             ResourceType::VpcBlockPublicAccessExclusion => write!(f, "vpc-block-public-access-exclusion"),
+            ResourceType::VpcEncryptionControl => write!(f, "vpc-encryption-control"),
             ResourceType::VpcEndpoint => write!(f, "vpc-endpoint"),
             ResourceType::VpcEndpointConnection => write!(f, "vpc-endpoint-connection"),
             ResourceType::VpcEndpointConnectionDeviceType => write!(f, "vpc-endpoint-connection-device-type"),

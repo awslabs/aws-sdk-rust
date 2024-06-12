@@ -9,6 +9,8 @@ pub use crate::types::_event_destination_definition::EventDestinationDefinitionB
 
 pub use crate::types::_pinpoint_destination::PinpointDestinationBuilder;
 
+pub use crate::types::_event_bridge_destination::EventBridgeDestinationBuilder;
+
 pub use crate::types::_sns_destination::SnsDestinationBuilder;
 
 pub use crate::types::_cloud_watch_destination::CloudWatchDestinationBuilder;

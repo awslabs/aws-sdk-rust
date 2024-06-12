@@ -11,9 +11,11 @@ pub struct GetSecretValueOutput {
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. When you retrieve a <code>SecretBinary</code> using the HTTP API, the Python SDK, or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>
     /// <p>If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as a string, then this field is omitted. The secret value appears in <code>SecretString</code> instead.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub secret_binary: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
     /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub secret_string: ::std::option::Option<::std::string::String>,
     /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
     pub version_stages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -36,11 +38,13 @@ impl GetSecretValueOutput {
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. When you retrieve a <code>SecretBinary</code> using the HTTP API, the Python SDK, or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>
     /// <p>If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as a string, then this field is omitted. The secret value appears in <code>SecretString</code> instead.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn secret_binary(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.secret_binary.as_ref()
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
     /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn secret_string(&self) -> ::std::option::Option<&str> {
         self.secret_string.as_deref()
     }
@@ -139,35 +143,41 @@ impl GetSecretValueOutputBuilder {
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. When you retrieve a <code>SecretBinary</code> using the HTTP API, the Python SDK, or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>
     /// <p>If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as a string, then this field is omitted. The secret value appears in <code>SecretString</code> instead.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn secret_binary(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.secret_binary = ::std::option::Option::Some(input);
         self
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. When you retrieve a <code>SecretBinary</code> using the HTTP API, the Python SDK, or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>
     /// <p>If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as a string, then this field is omitted. The secret value appears in <code>SecretString</code> instead.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn set_secret_binary(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.secret_binary = input;
         self
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. When you retrieve a <code>SecretBinary</code> using the HTTP API, the Python SDK, or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>
     /// <p>If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as a string, then this field is omitted. The secret value appears in <code>SecretString</code> instead.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn get_secret_binary(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.secret_binary
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
     /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn secret_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
     /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn set_secret_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_string = input;
         self
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
     /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs.</p>
+    /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub fn get_secret_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_string
     }

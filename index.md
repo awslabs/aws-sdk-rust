@@ -20,7 +20,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS B2B Data Interchange | [aws-sdk-b2bi](https://crates.io/crates/aws-sdk-b2bi) ([docs](https://docs.rs/aws-sdk-b2bi)) |
 | AWS Backup | [aws-sdk-backup](https://crates.io/crates/aws-sdk-backup) ([docs](https://docs.rs/aws-sdk-backup)) |
 | AWS Backup Gateway | [aws-sdk-backupgateway](https://crates.io/crates/aws-sdk-backupgateway) ([docs](https://docs.rs/aws-sdk-backupgateway)) |
-| AWS Backup Storage | [aws-sdk-backupstorage](https://crates.io/crates/aws-sdk-backupstorage) ([docs](https://docs.rs/aws-sdk-backupstorage)) |
 | AWS Batch | [aws-sdk-batch](https://crates.io/crates/aws-sdk-batch) ([docs](https://docs.rs/aws-sdk-batch)) |
 | AWS Billing and Cost Management Data Exports | [aws-sdk-bcmdataexports](https://crates.io/crates/aws-sdk-bcmdataexports) ([docs](https://docs.rs/aws-sdk-bcmdataexports)) |
 | AWS Budgets | [aws-sdk-budgets](https://crates.io/crates/aws-sdk-budgets) ([docs](https://docs.rs/aws-sdk-budgets)) |
@@ -102,6 +101,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS License Manager | [aws-sdk-licensemanager](https://crates.io/crates/aws-sdk-licensemanager) ([docs](https://docs.rs/aws-sdk-licensemanager)) |
 | AWS License Manager Linux Subscriptions | [aws-sdk-licensemanagerlinuxsubscriptions](https://crates.io/crates/aws-sdk-licensemanagerlinuxsubscriptions) ([docs](https://docs.rs/aws-sdk-licensemanagerlinuxsubscriptions)) |
 | AWS License Manager User Subscriptions | [aws-sdk-licensemanagerusersubscriptions](https://crates.io/crates/aws-sdk-licensemanagerusersubscriptions) ([docs](https://docs.rs/aws-sdk-licensemanagerusersubscriptions)) |
+| AWS Mainframe Modernization Application Testing | [aws-sdk-apptest](https://crates.io/crates/aws-sdk-apptest) ([docs](https://docs.rs/aws-sdk-apptest)) |
 | AWS Marketplace Agreement Service | [aws-sdk-marketplaceagreement](https://crates.io/crates/aws-sdk-marketplaceagreement) ([docs](https://docs.rs/aws-sdk-marketplaceagreement)) |
 | AWS Marketplace Catalog Service | [aws-sdk-marketplacecatalog](https://crates.io/crates/aws-sdk-marketplacecatalog) ([docs](https://docs.rs/aws-sdk-marketplacecatalog)) |
 | AWS Marketplace Commerce Analytics | [aws-sdk-marketplacecommerceanalytics](https://crates.io/crates/aws-sdk-marketplacecommerceanalytics) ([docs](https://docs.rs/aws-sdk-marketplacecommerceanalytics)) |

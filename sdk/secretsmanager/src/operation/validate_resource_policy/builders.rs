@@ -119,17 +119,17 @@ impl ValidateResourcePolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>This field is reserved for internal use.</p>
+    /// <p>The ARN or name of the secret with the resource-based policy you want to validate.</p>
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.secret_id(input.into());
         self
     }
-    /// <p>This field is reserved for internal use.</p>
+    /// <p>The ARN or name of the secret with the resource-based policy you want to validate.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_secret_id(input);
         self
     }
-    /// <p>This field is reserved for internal use.</p>
+    /// <p>The ARN or name of the secret with the resource-based policy you want to validate.</p>
     pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_secret_id()
     }

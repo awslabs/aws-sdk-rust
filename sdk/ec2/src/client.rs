@@ -1037,6 +1037,8 @@ mod describe_subnets;
 
 mod describe_tags;
 
+mod describe_traffic_mirror_filter_rules;
+
 mod describe_traffic_mirror_filters;
 
 mod describe_traffic_mirror_sessions;

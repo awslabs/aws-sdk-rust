@@ -378,6 +378,15 @@ pub(crate) fn cloud_watch_destination_correct_errors(
     builder
 }
 
+pub(crate) fn event_bridge_destination_correct_errors(
+    mut builder: crate::types::builders::EventBridgeDestinationBuilder,
+) -> crate::types::builders::EventBridgeDestinationBuilder {
+    if builder.event_bus_arn.is_none() {
+        builder.event_bus_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn kinesis_firehose_destination_correct_errors(
     mut builder: crate::types::builders::KinesisFirehoseDestinationBuilder,
 ) -> crate::types::builders::KinesisFirehoseDestinationBuilder {

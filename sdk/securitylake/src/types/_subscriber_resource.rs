@@ -8,7 +8,7 @@ pub struct SubscriberResource {
     pub subscriber_id: ::std::string::String,
     /// <p>The subscriber ARN of the Amazon Security Lake subscriber account.</p>
     pub subscriber_arn: ::std::string::String,
-    /// <p>The AWS identity used to access your data.</p>
+    /// <p>The Amazon Web Services identity used to access your data.</p>
     pub subscriber_identity: ::std::option::Option<crate::types::AwsIdentity>,
     /// <p>The name of your Amazon Security Lake subscriber account.</p>
     pub subscriber_name: ::std::string::String,
@@ -27,7 +27,7 @@ pub struct SubscriberResource {
     pub subscriber_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The subscriber status of the Amazon Security Lake subscriber account.</p>
     pub subscriber_status: ::std::option::Option<crate::types::SubscriberStatus>,
-    /// <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
+    /// <p>The Amazon Resource Name (ARN) which uniquely defines the Amazon Web Services RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
     /// <p>This field is available only for Lake Formation subscribers created after March 8, 2023.</p>
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource share.</p>
@@ -48,7 +48,7 @@ impl SubscriberResource {
         use std::ops::Deref;
         self.subscriber_arn.deref()
     }
-    /// <p>The AWS identity used to access your data.</p>
+    /// <p>The Amazon Web Services identity used to access your data.</p>
     pub fn subscriber_identity(&self) -> ::std::option::Option<&crate::types::AwsIdentity> {
         self.subscriber_identity.as_ref()
     }
@@ -89,7 +89,7 @@ impl SubscriberResource {
     pub fn subscriber_status(&self) -> ::std::option::Option<&crate::types::SubscriberStatus> {
         self.subscriber_status.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
+    /// <p>The Amazon Resource Name (ARN) which uniquely defines the Amazon Web Services RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
     /// <p>This field is available only for Lake Formation subscribers created after March 8, 2023.</p>
     pub fn resource_share_arn(&self) -> ::std::option::Option<&str> {
         self.resource_share_arn.as_deref()
@@ -165,18 +165,18 @@ impl SubscriberResourceBuilder {
     pub fn get_subscriber_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscriber_arn
     }
-    /// <p>The AWS identity used to access your data.</p>
+    /// <p>The Amazon Web Services identity used to access your data.</p>
     /// This field is required.
     pub fn subscriber_identity(mut self, input: crate::types::AwsIdentity) -> Self {
         self.subscriber_identity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The AWS identity used to access your data.</p>
+    /// <p>The Amazon Web Services identity used to access your data.</p>
     pub fn set_subscriber_identity(mut self, input: ::std::option::Option<crate::types::AwsIdentity>) -> Self {
         self.subscriber_identity = input;
         self
     }
-    /// <p>The AWS identity used to access your data.</p>
+    /// <p>The Amazon Web Services identity used to access your data.</p>
     pub fn get_subscriber_identity(&self) -> &::std::option::Option<crate::types::AwsIdentity> {
         &self.subscriber_identity
     }
@@ -308,19 +308,19 @@ impl SubscriberResourceBuilder {
     pub fn get_subscriber_status(&self) -> &::std::option::Option<crate::types::SubscriberStatus> {
         &self.subscriber_status
     }
-    /// <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
+    /// <p>The Amazon Resource Name (ARN) which uniquely defines the Amazon Web Services RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
     /// <p>This field is available only for Lake Formation subscribers created after March 8, 2023.</p>
     pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
+    /// <p>The Amazon Resource Name (ARN) which uniquely defines the Amazon Web Services RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
     /// <p>This field is available only for Lake Formation subscribers created after March 8, 2023.</p>
     pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_share_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
+    /// <p>The Amazon Resource Name (ARN) which uniquely defines the Amazon Web Services RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
     /// <p>This field is available only for Lake Formation subscribers created after March 8, 2023.</p>
     pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_share_arn

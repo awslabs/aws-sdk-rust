@@ -19,6 +19,8 @@ pub use crate::types::_vpc_endpoint::VpcEndpoint;
 
 pub use crate::types::_vpc_options::VpcOptions;
 
+pub use crate::types::_vpc_endpoint_management::VpcEndpointManagement;
+
 pub use crate::types::_vpc_attachment_options::VpcAttachmentOptions;
 
 pub use crate::types::_log_publishing_options::LogPublishingOptions;
@@ -82,6 +84,8 @@ mod _validation_message;
 mod _vpc_attachment_options;
 
 mod _vpc_endpoint;
+
+mod _vpc_endpoint_management;
 
 mod _vpc_endpoint_service_name;
 

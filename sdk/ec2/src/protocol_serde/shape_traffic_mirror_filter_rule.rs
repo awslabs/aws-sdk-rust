@@ -150,6 +150,16 @@ pub fn de_traffic_mirror_filter_rule(
                 builder = builder.set_description(var_11);
             }
             ,
+            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#TrafficMirrorFilterRule$Tags */ =>  {
+                let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tags(var_12);
+            }
+            ,
             _ => {}
         }
     }

@@ -37,8 +37,10 @@ pub struct EventDestination {
     pub kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
     /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
     pub cloud_watch_destination: ::std::option::Option<crate::types::CloudWatchDestination>,
-    /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
+    /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notifications when certain email events occur.</p>
     pub sns_destination: ::std::option::Option<crate::types::SnsDestination>,
+    /// <p>An object that defines an Amazon EventBridge destination for email events. You can use Amazon EventBridge to send notifications when certain email events occur.</p>
+    pub event_bridge_destination: ::std::option::Option<crate::types::EventBridgeDestination>,
     /// <p>An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>.</p>
     pub pinpoint_destination: ::std::option::Option<crate::types::PinpointDestination>,
 }
@@ -88,9 +90,13 @@ impl EventDestination {
     pub fn cloud_watch_destination(&self) -> ::std::option::Option<&crate::types::CloudWatchDestination> {
         self.cloud_watch_destination.as_ref()
     }
-    /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
+    /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notifications when certain email events occur.</p>
     pub fn sns_destination(&self) -> ::std::option::Option<&crate::types::SnsDestination> {
         self.sns_destination.as_ref()
+    }
+    /// <p>An object that defines an Amazon EventBridge destination for email events. You can use Amazon EventBridge to send notifications when certain email events occur.</p>
+    pub fn event_bridge_destination(&self) -> ::std::option::Option<&crate::types::EventBridgeDestination> {
+        self.event_bridge_destination.as_ref()
     }
     /// <p>An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>.</p>
     pub fn pinpoint_destination(&self) -> ::std::option::Option<&crate::types::PinpointDestination> {
@@ -114,6 +120,7 @@ pub struct EventDestinationBuilder {
     pub(crate) kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
     pub(crate) cloud_watch_destination: ::std::option::Option<crate::types::CloudWatchDestination>,
     pub(crate) sns_destination: ::std::option::Option<crate::types::SnsDestination>,
+    pub(crate) event_bridge_destination: ::std::option::Option<crate::types::EventBridgeDestination>,
     pub(crate) pinpoint_destination: ::std::option::Option<crate::types::PinpointDestination>,
 }
 impl EventDestinationBuilder {
@@ -263,19 +270,33 @@ impl EventDestinationBuilder {
     pub fn get_cloud_watch_destination(&self) -> &::std::option::Option<crate::types::CloudWatchDestination> {
         &self.cloud_watch_destination
     }
-    /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
+    /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notifications when certain email events occur.</p>
     pub fn sns_destination(mut self, input: crate::types::SnsDestination) -> Self {
         self.sns_destination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
+    /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notifications when certain email events occur.</p>
     pub fn set_sns_destination(mut self, input: ::std::option::Option<crate::types::SnsDestination>) -> Self {
         self.sns_destination = input;
         self
     }
-    /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
+    /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notifications when certain email events occur.</p>
     pub fn get_sns_destination(&self) -> &::std::option::Option<crate::types::SnsDestination> {
         &self.sns_destination
+    }
+    /// <p>An object that defines an Amazon EventBridge destination for email events. You can use Amazon EventBridge to send notifications when certain email events occur.</p>
+    pub fn event_bridge_destination(mut self, input: crate::types::EventBridgeDestination) -> Self {
+        self.event_bridge_destination = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that defines an Amazon EventBridge destination for email events. You can use Amazon EventBridge to send notifications when certain email events occur.</p>
+    pub fn set_event_bridge_destination(mut self, input: ::std::option::Option<crate::types::EventBridgeDestination>) -> Self {
+        self.event_bridge_destination = input;
+        self
+    }
+    /// <p>An object that defines an Amazon EventBridge destination for email events. You can use Amazon EventBridge to send notifications when certain email events occur.</p>
+    pub fn get_event_bridge_destination(&self) -> &::std::option::Option<crate::types::EventBridgeDestination> {
+        &self.event_bridge_destination
     }
     /// <p>An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>.</p>
     pub fn pinpoint_destination(mut self, input: crate::types::PinpointDestination) -> Self {
@@ -313,6 +334,7 @@ impl EventDestinationBuilder {
             kinesis_firehose_destination: self.kinesis_firehose_destination,
             cloud_watch_destination: self.cloud_watch_destination,
             sns_destination: self.sns_destination,
+            event_bridge_destination: self.event_bridge_destination,
             pinpoint_destination: self.pinpoint_destination,
         })
     }

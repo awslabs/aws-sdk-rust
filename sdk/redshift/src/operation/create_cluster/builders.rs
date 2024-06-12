@@ -251,19 +251,19 @@ impl CreateClusterFluentBuilder {
         self.inner.get_cluster_type()
     }
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_type(input.into());
         self
     }
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_type(input);
         self
     }
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_node_type()
     }
@@ -578,7 +578,7 @@ impl CreateClusterFluentBuilder {
     /// <li>
     /// <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p></li>
     /// <li>
-    /// <p>For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
+    /// <p>For clusters with dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
     /// </ul>
     pub fn port(mut self, input: i32) -> Self {
         self.inner = self.inner.port(input);
@@ -592,7 +592,7 @@ impl CreateClusterFluentBuilder {
     /// <li>
     /// <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p></li>
     /// <li>
-    /// <p>For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
+    /// <p>For clusters with dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
     /// </ul>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
@@ -606,7 +606,7 @@ impl CreateClusterFluentBuilder {
     /// <li>
     /// <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p></li>
     /// <li>
-    /// <p>For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
+    /// <p>For clusters with dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
     /// </ul>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_port()

@@ -12,7 +12,7 @@ pub struct ReservedNodeExchangeStatus {
     pub request_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier of the source reserved node.</p>
     pub source_reserved_node_id: ::std::option::Option<::std::string::String>,
-    /// <p>The source reserved-node type, for example ds2.xlarge.</p>
+    /// <p>The source reserved-node type, for example ra3.4xlarge.</p>
     pub source_reserved_node_type: ::std::option::Option<::std::string::String>,
     /// <p>The source reserved-node count in the cluster.</p>
     pub source_reserved_node_count: ::std::option::Option<i32>,
@@ -40,7 +40,7 @@ impl ReservedNodeExchangeStatus {
     pub fn source_reserved_node_id(&self) -> ::std::option::Option<&str> {
         self.source_reserved_node_id.as_deref()
     }
-    /// <p>The source reserved-node type, for example ds2.xlarge.</p>
+    /// <p>The source reserved-node type, for example ra3.4xlarge.</p>
     pub fn source_reserved_node_type(&self) -> ::std::option::Option<&str> {
         self.source_reserved_node_type.as_deref()
     }
@@ -139,17 +139,17 @@ impl ReservedNodeExchangeStatusBuilder {
     pub fn get_source_reserved_node_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_reserved_node_id
     }
-    /// <p>The source reserved-node type, for example ds2.xlarge.</p>
+    /// <p>The source reserved-node type, for example ra3.4xlarge.</p>
     pub fn source_reserved_node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_reserved_node_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The source reserved-node type, for example ds2.xlarge.</p>
+    /// <p>The source reserved-node type, for example ra3.4xlarge.</p>
     pub fn set_source_reserved_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_reserved_node_type = input;
         self
     }
-    /// <p>The source reserved-node type, for example ds2.xlarge.</p>
+    /// <p>The source reserved-node type, for example ra3.4xlarge.</p>
     pub fn get_source_reserved_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_reserved_node_type
     }

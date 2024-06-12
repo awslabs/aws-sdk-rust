@@ -26,8 +26,10 @@ pub struct CreateTrafficMirrorFilterRuleInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How to ensure idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Traffic Mirroring tags specifications.</p>
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateTrafficMirrorFilterRuleInput {
     /// <p>The ID of the filter that this rule is associated with.</p>
@@ -75,9 +77,15 @@ impl CreateTrafficMirrorFilterRuleInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>Traffic Mirroring tags specifications.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl CreateTrafficMirrorFilterRuleInput {
@@ -103,6 +111,7 @@ pub struct CreateTrafficMirrorFilterRuleInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateTrafficMirrorFilterRuleInputBuilder {
     /// <p>The ID of the filter that this rule is associated with.</p>
@@ -268,19 +277,39 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How to ensure idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How to ensure idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
+    }
+    /// Appends an item to `tag_specifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>Traffic Mirroring tags specifications.</p>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        let mut v = self.tag_specifications.unwrap_or_default();
+        v.push(input);
+        self.tag_specifications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Traffic Mirroring tags specifications.</p>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input;
+        self
+    }
+    /// <p>Traffic Mirroring tags specifications.</p>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateTrafficMirrorFilterRuleInput`](crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleInput).
     pub fn build(
@@ -302,6 +331,7 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
             description: self.description,
             dry_run: self.dry_run,
             client_token: self.client_token,
+            tag_specifications: self.tag_specifications,
         })
     }
 }

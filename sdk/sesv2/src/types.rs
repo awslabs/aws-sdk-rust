@@ -11,6 +11,8 @@ pub use crate::types::_event_destination_definition::EventDestinationDefinition;
 
 pub use crate::types::_pinpoint_destination::PinpointDestination;
 
+pub use crate::types::_event_bridge_destination::EventBridgeDestination;
+
 pub use crate::types::_sns_destination::SnsDestination;
 
 pub use crate::types::_cloud_watch_destination::CloudWatchDestination;
@@ -356,6 +358,8 @@ mod _email_template_content;
 mod _email_template_metadata;
 
 mod _engagement_event_type;
+
+mod _event_bridge_destination;
 
 mod _event_destination;
 

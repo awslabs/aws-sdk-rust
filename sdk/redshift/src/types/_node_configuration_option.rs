@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeConfigurationOption {
-    /// <p>The node type, such as, "ds2.8xlarge".</p>
+    /// <p>The node type, such as, "ra3.4xlarge".</p>
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of nodes.</p>
     pub number_of_nodes: ::std::option::Option<i32>,
@@ -14,7 +14,7 @@ pub struct NodeConfigurationOption {
     pub mode: ::std::option::Option<crate::types::Mode>,
 }
 impl NodeConfigurationOption {
-    /// <p>The node type, such as, "ds2.8xlarge".</p>
+    /// <p>The node type, such as, "ra3.4xlarge".</p>
     pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
@@ -48,17 +48,17 @@ pub struct NodeConfigurationOptionBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::Mode>,
 }
 impl NodeConfigurationOptionBuilder {
-    /// <p>The node type, such as, "ds2.8xlarge".</p>
+    /// <p>The node type, such as, "ra3.4xlarge".</p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The node type, such as, "ds2.8xlarge".</p>
+    /// <p>The node type, such as, "ra3.4xlarge".</p>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
     }
-    /// <p>The node type, such as, "ds2.8xlarge".</p>
+    /// <p>The node type, such as, "ra3.4xlarge".</p>
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_type
     }

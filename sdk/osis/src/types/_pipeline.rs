@@ -32,6 +32,8 @@ pub struct Pipeline {
     pub buffer_options: ::std::option::Option<crate::types::BufferOptions>,
     /// <p>Options to control how OpenSearch encrypts buffer data.</p>
     pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
+    /// <p>The VPC endpoint service name for the pipeline.</p>
+    pub vpc_endpoint_service: ::std::option::Option<::std::string::String>,
     /// <p>A list of VPC endpoints that OpenSearch Ingestion has created to other Amazon Web Services services.</p>
     pub service_vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVpcEndpoint>>,
     /// <p>Destinations to which the pipeline writes data.</p>
@@ -100,6 +102,10 @@ impl Pipeline {
     pub fn encryption_at_rest_options(&self) -> ::std::option::Option<&crate::types::EncryptionAtRestOptions> {
         self.encryption_at_rest_options.as_ref()
     }
+    /// <p>The VPC endpoint service name for the pipeline.</p>
+    pub fn vpc_endpoint_service(&self) -> ::std::option::Option<&str> {
+        self.vpc_endpoint_service.as_deref()
+    }
     /// <p>A list of VPC endpoints that OpenSearch Ingestion has created to other Amazon Web Services services.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_vpc_endpoints.is_none()`.
@@ -144,6 +150,7 @@ pub struct PipelineBuilder {
     pub(crate) vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
     pub(crate) buffer_options: ::std::option::Option<crate::types::BufferOptions>,
     pub(crate) encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
+    pub(crate) vpc_endpoint_service: ::std::option::Option<::std::string::String>,
     pub(crate) service_vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVpcEndpoint>>,
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDestination>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -357,6 +364,20 @@ impl PipelineBuilder {
     pub fn get_encryption_at_rest_options(&self) -> &::std::option::Option<crate::types::EncryptionAtRestOptions> {
         &self.encryption_at_rest_options
     }
+    /// <p>The VPC endpoint service name for the pipeline.</p>
+    pub fn vpc_endpoint_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_endpoint_service = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The VPC endpoint service name for the pipeline.</p>
+    pub fn set_vpc_endpoint_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_endpoint_service = input;
+        self
+    }
+    /// <p>The VPC endpoint service name for the pipeline.</p>
+    pub fn get_vpc_endpoint_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_service
+    }
     /// Appends an item to `service_vpc_endpoints`.
     ///
     /// To override the contents of this collection use [`set_service_vpc_endpoints`](Self::set_service_vpc_endpoints).
@@ -434,6 +455,7 @@ impl PipelineBuilder {
             vpc_endpoints: self.vpc_endpoints,
             buffer_options: self.buffer_options,
             encryption_at_rest_options: self.encryption_at_rest_options,
+            vpc_endpoint_service: self.vpc_endpoint_service,
             service_vpc_endpoints: self.service_vpc_endpoints,
             destinations: self.destinations,
             tags: self.tags,

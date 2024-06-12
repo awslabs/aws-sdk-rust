@@ -27,6 +27,9 @@ pub fn ser_vpc_options(
         crate::protocol_serde::shape_vpc_attachment_options::ser_vpc_attachment_options(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.vpc_endpoint_management {
+        object.key("VpcEndpointManagement").string(var_8.as_str());
+    }
     Ok(())
 }
 
@@ -54,6 +57,13 @@ where
                         "VpcAttachmentOptions" => {
                             builder = builder
                                 .set_vpc_attachment_options(crate::protocol_serde::shape_vpc_attachment_options::de_vpc_attachment_options(tokens)?);
+                        }
+                        "VpcEndpointManagement" => {
+                            builder = builder.set_vpc_endpoint_management(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::VpcEndpointManagement::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -7,7 +7,7 @@ pub struct CreateScheduledActionOutput {
     /// <p>The name of the scheduled action.</p>
     pub scheduled_action_name: ::std::option::Option<::std::string::String>,
     /// <p>A JSON format string of the Amazon Redshift API operation with input parameters.</p>
-    /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>".</p>
+    /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ra3.4xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>".</p>
     pub target_action: ::std::option::Option<crate::types::ScheduledActionType>,
     /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
     /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
@@ -33,7 +33,7 @@ impl CreateScheduledActionOutput {
         self.scheduled_action_name.as_deref()
     }
     /// <p>A JSON format string of the Amazon Redshift API operation with input parameters.</p>
-    /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>".</p>
+    /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ra3.4xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>".</p>
     pub fn target_action(&self) -> ::std::option::Option<&crate::types::ScheduledActionType> {
         self.target_action.as_ref()
     }
@@ -113,19 +113,19 @@ impl CreateScheduledActionOutputBuilder {
         &self.scheduled_action_name
     }
     /// <p>A JSON format string of the Amazon Redshift API operation with input parameters.</p>
-    /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>".</p>
+    /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ra3.4xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>".</p>
     pub fn target_action(mut self, input: crate::types::ScheduledActionType) -> Self {
         self.target_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>A JSON format string of the Amazon Redshift API operation with input parameters.</p>
-    /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>".</p>
+    /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ra3.4xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>".</p>
     pub fn set_target_action(mut self, input: ::std::option::Option<crate::types::ScheduledActionType>) -> Self {
         self.target_action = input;
         self
     }
     /// <p>A JSON format string of the Amazon Redshift API operation with input parameters.</p>
-    /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>".</p>
+    /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ra3.4xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>".</p>
     pub fn get_target_action(&self) -> &::std::option::Option<crate::types::ScheduledActionType> {
         &self.target_action
     }
