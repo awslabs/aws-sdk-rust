@@ -285,6 +285,79 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for HeadObjectEnd
         ::std::result::Result::Ok(())
     }
 }
+#[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
+mod head_object_request_test {
+    /// https://github.com/awslabs/aws-sdk-rust/issues/331
+    /// Test ID: HeadObjectUriEncoding
+    #[::tokio::test]
+    #[allow(unused_mut)]
+    async fn head_object_uri_encoding_request() {
+        let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+        let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");
+        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
+        let mut config_builder = config_builder;
+        config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+
+        let config = config_builder.http_client(http_client).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .head_object()
+            .set_bucket(::std::option::Option::Some("test-bucket".to_owned()))
+            .set_key(::std::option::Option::Some("<> `?🐱".to_owned()))
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
+        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        ::pretty_assertions::assert_eq!(http_request.method(), "HEAD", "method was incorrect");
+        ::pretty_assertions::assert_eq!(uri.path(), "/%3C%3E%20%60%3F%F0%9F%90%B1", "path was incorrect");
+    }
+    /// This test case validates https://github.com/smithy-lang/smithy-rs/issues/456
+    /// Test ID: HeadObjectEmptyBody
+    #[::tokio::test]
+    #[allow(unused_mut)]
+    async fn head_object_empty_body_response() {
+        let expected_output = crate::types::error::NotFound::builder().build();
+        let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(
+            ::http::response::Builder::new()
+                .header("content-type", "application/xml")
+                .header("date", "Thu, 03 Jun 2021 04:05:52 GMT")
+                .header("server", "AmazonS3")
+                .header(
+                    "x-amz-id-2",
+                    "UTniwu6QmCIjVeuK2ZfeWBOnu7SqMQOS3Vac6B/K4H2ZCawYUl+nDbhGTImuyhZ5DFiojR3Kcz4=",
+                )
+                .header("x-amz-request-id", "GRZ6BZ468DF52F2E")
+                .status(404)
+                .body(::aws_smithy_types::body::SdkBody::from(""))
+                .unwrap(),
+        )
+        .unwrap();
+        use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
+        use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
+
+        let op = crate::operation::head_object::HeadObject::new();
+        let config = op.config().expect("the operation has config");
+        let de = config
+            .load::<::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer>()
+            .expect("the config must have a deserializer");
+
+        let parsed = de.deserialize_streaming(&mut http_response);
+        let parsed = parsed.unwrap_or_else(|| {
+            let http_response =
+                http_response.map(|body| ::aws_smithy_types::body::SdkBody::from(::bytes::Bytes::copy_from_slice(body.bytes().unwrap())));
+            de.deserialize_nonstreaming(&http_response)
+        });
+        let parsed = parsed.expect_err("should be error response");
+        let parsed: &crate::operation::head_object::HeadObjectError = parsed.as_operation_error().expect("operation error").downcast_ref().unwrap();
+        if let crate::operation::head_object::HeadObjectError::NotFound(parsed) = parsed {
+            ::pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
+        } else {
+            panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
+        }
+    }
+}
 
 /// Error type for the `HeadObjectError` operation.
 #[non_exhaustive]

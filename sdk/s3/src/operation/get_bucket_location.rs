@@ -260,6 +260,52 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetBucketLoca
         ::std::result::Result::Ok(())
     }
 }
+#[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
+mod get_bucket_location_request_test {
+    /// This test case validates https://github.com/awslabs/aws-sdk-rust/issues/116
+    /// Test ID: GetBucketLocation
+    #[::tokio::test]
+    #[allow(unused_mut)]
+    async fn get_bucket_location_response() {
+        let expected_output = crate::operation::get_bucket_location::GetBucketLocationOutput::builder()
+            .set_location_constraint(::std::option::Option::Some(
+                "us-west-2"
+                    .parse::<crate::types::BucketLocationConstraint>()
+                    .expect("static value validated to member"),
+            ))
+            .build();
+        let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(::http::response::Builder::new()
+        .status(200)
+                    .body(::aws_smithy_types::body::SdkBody::from("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<LocationConstraint xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">us-west-2</LocationConstraint>"))
+                    .unwrap()
+                    ).unwrap();
+        use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
+        use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
+
+        let op = crate::operation::get_bucket_location::GetBucketLocation::new();
+        let config = op.config().expect("the operation has config");
+        let de = config
+            .load::<::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer>()
+            .expect("the config must have a deserializer");
+
+        let parsed = de.deserialize_streaming(&mut http_response);
+        let parsed = parsed.unwrap_or_else(|| {
+            let http_response =
+                http_response.map(|body| ::aws_smithy_types::body::SdkBody::from(::bytes::Bytes::copy_from_slice(body.bytes().unwrap())));
+            de.deserialize_nonstreaming(&http_response)
+        });
+        let parsed = parsed
+            .expect("should be successful response")
+            .downcast::<crate::operation::get_bucket_location::GetBucketLocationOutput>()
+            .unwrap();
+        ::pretty_assertions::assert_eq!(
+            parsed.location_constraint,
+            expected_output.location_constraint,
+            "Unexpected value for `location_constraint`"
+        );
+    }
+}
 
 /// Error type for the `GetBucketLocationError` operation.
 #[non_exhaustive]

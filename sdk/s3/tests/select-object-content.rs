@@ -11,7 +11,9 @@ use aws_sdk_s3::types::{
     OutputSerialization, SelectObjectContentEventStream,
 };
 use aws_sdk_s3::Client;
+use aws_smithy_protocol_test::{assert_ok, validate_body, MediaType};
 use aws_smithy_runtime::client::http::test_util::dvr::{Event, ReplayingClient};
+use std::error::Error;
 
 #[tokio::test]
 async fn test_success() {
@@ -82,17 +84,16 @@ async fn test_success() {
         received
     );
 
-    // FIXME(V1373841114): re-enable assertion after model updates
     // Validate the requests
-    // replayer
-    //     .validate(&["content-type", "content-length"], body_validator)
-    //     .await
-    //     .unwrap();
+    replayer
+        .validate(&["content-type", "content-length"], body_validator)
+        .await
+        .unwrap();
 }
 
-// fn body_validator(expected_body: &[u8], actual_body: &[u8]) -> Result<(), Box<dyn Error>> {
-//     let expected = std::str::from_utf8(expected_body).unwrap();
-//     let actual = std::str::from_utf8(actual_body).unwrap();
-//     assert_ok(validate_body(actual, expected, MediaType::Xml));
-//     Ok(())
-// }
+fn body_validator(expected_body: &[u8], actual_body: &[u8]) -> Result<(), Box<dyn Error>> {
+    let expected = std::str::from_utf8(expected_body).unwrap();
+    let actual = std::str::from_utf8(actual_body).unwrap();
+    assert_ok(validate_body(actual, expected, MediaType::Xml));
+    Ok(())
+}

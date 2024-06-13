@@ -3,30 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use std::collections::HashMap;
-use std::error::Error;
-use std::fmt::Debug;
-use std::future::Future;
-use std::net::SocketAddr;
-use std::pin::Pin;
-use std::sync::RwLock;
-use std::task::{Context, Poll};
-use std::time::Duration;
-use std::{fmt, vec};
-
-use client::connect::Connection;
-use h2::Reason;
-use http::Uri;
-use hyper::rt::{Read, Write};
-use hyper_util::client::legacy as client;
-use hyper_util::client::legacy::connect::dns::Name;
-use hyper_util::client::legacy::connect::Connect;
-use hyper_util::rt::TokioExecutor;
-use rustls::crypto::CryptoProvider;
-
 use aws_smithy_async::future::timeout::TimedOutError;
 use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep, SharedAsyncSleep};
 use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::connector_metadata::ConnectorMetadata;
 use aws_smithy_runtime_api::client::dns::ResolveDns;
 use aws_smithy_runtime_api::client::http::{
     HttpClient, HttpConnector, HttpConnectorFuture, HttpConnectorSettings, SharedHttpClient,
@@ -42,8 +22,26 @@ use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::retry::ErrorKind;
+use client::connect::Connection;
+use h2::Reason;
+use http::Uri;
+use hyper::rt::{Read, Write};
+use hyper_util::client::legacy as client;
+use hyper_util::client::legacy::connect::dns::Name;
+use hyper_util::client::legacy::connect::Connect;
+use hyper_util::rt::TokioExecutor;
+use rustls::crypto::CryptoProvider;
+use std::borrow::Cow;
+use std::collections::HashMap;
+use std::error::Error;
+use std::future::Future;
+use std::net::SocketAddr;
+use std::pin::Pin;
+use std::sync::RwLock;
+use std::task::{Context, Poll};
+use std::time::Duration;
+use std::{fmt, vec};
 
-use crate::hyper_1_0::timeout_middleware::{ConnectTimeout, HttpTimeoutError};
 #[derive(Debug, Eq, PartialEq, Clone, Copy)]
 #[non_exhaustive]
 pub enum CryptoMode {
@@ -107,9 +105,7 @@ impl<R: ResolveDns + Clone + 'static> tower::Service<Name> for HyperUtilResolver
 
 #[allow(unused_imports)]
 mod cached_connectors {
-
     use client::connect::HttpConnector;
-    use hyper_rustls::HttpsConnector;
     use hyper_util::client::legacy as client;
     use hyper_util::client::legacy::connect::dns::GaiResolver;
 
@@ -118,17 +114,17 @@ mod cached_connectors {
 
     #[cfg(feature = "crypto-ring")]
     pub(crate) static HTTPS_NATIVE_ROOTS_RING: once_cell::sync::Lazy<
-        HttpsConnector<HttpConnector>,
+        hyper_rustls::HttpsConnector<HttpConnector>,
     > = once_cell::sync::Lazy::new(|| make_tls(GaiResolver::new(), CryptoMode::Ring.provider()));
 
     #[cfg(feature = "crypto-aws-lc")]
     pub(crate) static HTTPS_NATIVE_ROOTS_AWS_LC: once_cell::sync::Lazy<
-        HttpsConnector<HttpConnector>,
+        hyper_rustls::HttpsConnector<HttpConnector>,
     > = once_cell::sync::Lazy::new(|| make_tls(GaiResolver::new(), CryptoMode::AwsLc.provider()));
 
     #[cfg(feature = "crypto-aws-lc-fips")]
     pub(crate) static HTTPS_NATIVE_ROOTS_AWS_LC_FIPS: once_cell::sync::Lazy<
-        HttpsConnector<HttpConnector>,
+        hyper_rustls::HttpsConnector<HttpConnector>,
     > = once_cell::sync::Lazy::new(|| {
         make_tls(GaiResolver::new(), CryptoMode::AwsLcFips.provider())
     });
@@ -149,16 +145,12 @@ mod cached_connectors {
 }
 
 mod build_connector {
-    use std::sync::Arc;
-
+    use crate::hyper_1_0::{HyperUtilResolver, Inner};
+    use aws_smithy_runtime_api::client::dns::ResolveDns;
     use client::connect::HttpConnector;
-    use hyper_rustls::HttpsConnector;
     use hyper_util::client::legacy as client;
     use rustls::crypto::CryptoProvider;
-
-    use aws_smithy_runtime_api::client::dns::ResolveDns;
-
-    use crate::hyper_1_0::{HyperUtilResolver, Inner};
+    use std::sync::Arc;
 
     fn restrict_ciphers(base: CryptoProvider) -> CryptoProvider {
         let suites = &[
@@ -189,7 +181,7 @@ mod build_connector {
     pub(crate) fn make_tls<R>(
         resolver: R,
         crypto_provider: CryptoProvider,
-    ) -> HttpsConnector<HttpConnector<R>> {
+    ) -> hyper_rustls::HttpsConnector<HttpConnector<R>> {
         use hyper_rustls::ConfigBuilderExt;
         let mut base_connector = HttpConnector::new_with_resolver(resolver);
         base_connector.enforce_http(false);
@@ -210,7 +202,7 @@ mod build_connector {
     pub(super) fn https_with_resolver<R: ResolveDns>(
         crypto_provider: Inner,
         resolver: R,
-    ) -> HttpsConnector<HttpConnector<HyperUtilResolver<R>>> {
+    ) -> hyper_rustls::HttpsConnector<HttpConnector<HyperUtilResolver<R>>> {
         make_tls(HyperUtilResolver { resolver }, crypto_provider.provider())
     }
 }
@@ -292,7 +284,7 @@ impl<Any> HyperConnectorBuilder<Any> {
     where
         C: Send + Sync + 'static,
         C: Clone,
-        C: tower::Service<http::Uri>,
+        C: tower::Service<Uri>,
         C::Response: Read + Write + Connection + Send + Sync + Unpin,
         C: Connect,
         C::Future: Unpin + Send + 'static,
@@ -440,7 +432,7 @@ where
     C: Clone + Send + Sync + 'static,
     C: tower::Service<Uri>,
     C::Response: Connection + Read + Write + Unpin + 'static,
-    ConnectTimeout<C>: Connect,
+    timeout_middleware::ConnectTimeout<C>: Connect,
     C::Future: Unpin + Send + 'static,
     C::Error: Into<BoxError>,
 {
@@ -498,7 +490,7 @@ fn downcast_error(err: BoxError) -> ConnectorError {
 
 /// Convert a [`hyper::Error`] into a [`ConnectorError`]
 fn to_connector_error(err: &hyper::Error) -> fn(BoxError) -> ConnectorError {
-    if err.is_timeout() || find_source::<HttpTimeoutError>(err).is_some() {
+    if err.is_timeout() || find_source::<timeout_middleware::HttpTimeoutError>(err).is_some() {
         return ConnectorError::timeout;
     }
     if err.is_user() {
@@ -536,7 +528,7 @@ fn find_source<'a, E: Error + 'static>(err: &'a (dyn Error + 'static)) -> Option
 }
 
 // TODO(https://github.com/awslabs/aws-sdk-rust/issues/1090): CacheKey must also include ptr equality to any
-// runtime components that are used—sleep_impl as a base (unless we prohibit overridding sleep impl)
+// runtime components that are used—sleep_impl as a base (unless we prohibit overriding sleep impl)
 // If we decide to put a DnsResolver in RuntimeComponents, then we'll need to handle that as well.
 #[derive(Clone, Debug, Eq, PartialEq, Hash)]
 struct CacheKey {
@@ -622,6 +614,10 @@ where
         // the default HTTP client, and it was overridden by a later plugin).
         let _ = (self.tcp_connector_fn)();
         Ok(())
+    }
+
+    fn connector_metadata(&self) -> Option<ConnectorMetadata> {
+        Some(ConnectorMetadata::new("hyper", Some(Cow::Borrowed("1.x"))))
     }
 }
 

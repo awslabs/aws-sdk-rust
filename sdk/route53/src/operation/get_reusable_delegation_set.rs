@@ -245,6 +245,34 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetReusableDe
         ::std::result::Result::Ok(())
     }
 }
+#[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
+mod get_reusable_delegation_set_request_test {
+    /// This test validates that delegation set id is correctly trimmed
+    /// Test ID: GetReusableDelegationSetTrimDelegationSetId
+    #[::tokio::test]
+    #[allow(unused_mut)]
+    async fn get_reusable_delegation_set_trim_delegation_set_id_request() {
+        let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+        let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");
+        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
+        let mut config_builder = config_builder;
+        config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+
+        let config = config_builder.http_client(http_client).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .get_reusable_delegation_set()
+            .set_id(::std::option::Option::Some("/delegationset/DELEGATIONSETID".to_owned()))
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
+        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        ::pretty_assertions::assert_eq!(http_request.method(), "GET", "method was incorrect");
+        ::pretty_assertions::assert_eq!(uri.path(), "/2013-04-01/delegationset/DELEGATIONSETID", "path was incorrect");
+    }
+}
 
 /// Error type for the `GetReusableDelegationSetError` operation.
 #[non_exhaustive]

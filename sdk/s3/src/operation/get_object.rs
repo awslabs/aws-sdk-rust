@@ -335,6 +335,104 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetObjectEndp
         ::std::result::Result::Ok(())
     }
 }
+#[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
+mod get_object_request_test {
+    /// https://github.com/awslabs/aws-sdk-rust/issues/818
+    /// Test ID: GetObjectIfModifiedSince
+    #[::tokio::test]
+    #[allow(unused_mut)]
+    async fn get_object_if_modified_since_request() {
+        let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+        let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");
+        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
+        let mut config_builder = config_builder;
+        config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+
+        let config = config_builder.http_client(http_client).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("test-bucket".to_owned()))
+            .set_key(::std::option::Option::Some("object.txt".to_owned()))
+            .set_if_modified_since(::std::option::Option::Some(::aws_smithy_types::DateTime::from_fractional_secs(
+                1626452453, 0.123_f64,
+            )))
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
+        let expected_headers = [("if-modified-since", "Fri, 16 Jul 2021 16:20:53 GMT")];
+        ::aws_smithy_protocol_test::assert_ok(::aws_smithy_protocol_test::validate_headers(http_request.headers(), expected_headers));
+        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        ::pretty_assertions::assert_eq!(http_request.method(), "GET", "method was incorrect");
+        ::pretty_assertions::assert_eq!(uri.path(), "/object.txt", "path was incorrect");
+    }
+    ///     S3 clients should not remove dot segments from request paths.
+    ///
+    /// Test ID: S3PreservesLeadingDotSegmentInUriLabel
+    #[::tokio::test]
+    #[allow(unused_mut)]
+    async fn s3_preserves_leading_dot_segment_in_uri_label_request() {
+        let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+        let config_builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_url("https://s3.us-west-2.amazonaws.com");
+
+        let mut config_builder = config_builder;
+        config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+
+        let config = config_builder.http_client(http_client).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("mybucket".to_owned()))
+            .set_key(::std::option::Option::Some("../key.txt".to_owned()))
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
+        let body = http_request.body().bytes().expect("body should be strict");
+        // No body
+        ::pretty_assertions::assert_eq!(::std::str::from_utf8(body).unwrap(), "");
+        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        ::pretty_assertions::assert_eq!(http_request.method(), "GET", "method was incorrect");
+        ::pretty_assertions::assert_eq!(uri.path(), "/../key.txt", "path was incorrect");
+        ::pretty_assertions::assert_eq!(uri.host().expect("host should be set"), "mybucket.s3.us-west-2.amazonaws.com");
+    }
+    ///     S3 clients should not remove dot segments from request paths.
+    ///
+    /// Test ID: S3PreservesEmbeddedDotSegmentInUriLabel
+    #[::tokio::test]
+    #[allow(unused_mut)]
+    async fn s3_preserves_embedded_dot_segment_in_uri_label_request() {
+        let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+        let config_builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_url("https://s3.us-west-2.amazonaws.com");
+
+        let mut config_builder = config_builder;
+        config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+
+        let config = config_builder.http_client(http_client).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("mybucket".to_owned()))
+            .set_key(::std::option::Option::Some("foo/../key.txt".to_owned()))
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
+        let body = http_request.body().bytes().expect("body should be strict");
+        // No body
+        ::pretty_assertions::assert_eq!(::std::str::from_utf8(body).unwrap(), "");
+        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        ::pretty_assertions::assert_eq!(http_request.method(), "GET", "method was incorrect");
+        ::pretty_assertions::assert_eq!(uri.path(), "/foo/../key.txt", "path was incorrect");
+        ::pretty_assertions::assert_eq!(uri.host().expect("host should be set"), "mybucket.s3.us-west-2.amazonaws.com");
+    }
+}
 
 /// Error type for the `GetObjectError` operation.
 #[non_exhaustive]

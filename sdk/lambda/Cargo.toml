@@ -21,7 +21,7 @@ version = "1.2.0"
 [dependencies.aws-runtime]
 path = "../aws-runtime"
 features = ["event-stream"]
-version = "1.2.2"
+version = "1.2.3"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
@@ -43,12 +43,12 @@ version = "0.60.7"
 [dependencies.aws-smithy-runtime]
 path = "../aws-smithy-runtime"
 features = ["client"]
-version = "1.5.7"
+version = "1.6.0"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "http-02x"]
-version = "1.6.3"
+version = "1.7.0"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
@@ -84,7 +84,7 @@ version = "1.2.0"
 [dev-dependencies.aws-runtime]
 path = "../aws-runtime"
 features = ["test-util"]
-version = "1.2.2"
+version = "1.2.3"
 
 [dev-dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
@@ -98,12 +98,12 @@ version = "0.60.7"
 [dev-dependencies.aws-smithy-runtime]
 path = "../aws-smithy-runtime"
 features = ["test-util", "wire-mock"]
-version = "1.5.7"
+version = "1.6.0"
 
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["test-util"]
-version = "1.6.3"
+version = "1.7.0"
 
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"

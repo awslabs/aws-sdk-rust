@@ -262,6 +262,115 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListSnapshotB
         ::std::result::Result::Ok(())
     }
 }
+#[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
+mod list_snapshot_blocks_request_test {
+    /// This test case validates case insensitive parsing of `message`
+    /// Test ID: LowercaseMessage
+    #[::tokio::test]
+    #[allow(unused_mut)]
+    async fn lowercase_message_response() {
+        let expected_output = crate::types::error::ValidationException::builder()
+            .set_message(::std::option::Option::Some("1 validation error detected".to_owned()))
+            .build();
+        let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(
+            ::http::response::Builder::new()
+                .header("content-length", "77")
+                .header("content-type", "application/json")
+                .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
+                .header(
+                    "x-amzn-errortype",
+                    "ValidationException:http://internal.amazon.com/coral/com.amazon.coral.validate/",
+                )
+                .header("x-amzn-requestid", "2af8f013-250a-4f6e-88ae-6dd7f6e12807")
+                .status(400)
+                .body(::aws_smithy_types::body::SdkBody::from(
+                    "{\n  \"message\": \"1 validation error detected\"\n}\n",
+                ))
+                .unwrap(),
+        )
+        .unwrap();
+        use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
+        use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
+
+        let op = crate::operation::list_snapshot_blocks::ListSnapshotBlocks::new();
+        let config = op.config().expect("the operation has config");
+        let de = config
+            .load::<::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer>()
+            .expect("the config must have a deserializer");
+
+        let parsed = de.deserialize_streaming(&mut http_response);
+        let parsed = parsed.unwrap_or_else(|| {
+            let http_response =
+                http_response.map(|body| ::aws_smithy_types::body::SdkBody::from(::bytes::Bytes::copy_from_slice(body.bytes().unwrap())));
+            de.deserialize_nonstreaming(&http_response)
+        });
+        let parsed = parsed.expect_err("should be error response");
+        let parsed: &crate::operation::list_snapshot_blocks::ListSnapshotBlocksError =
+            parsed.as_operation_error().expect("operation error").downcast_ref().unwrap();
+        if let crate::operation::list_snapshot_blocks::ListSnapshotBlocksError::ValidationException(parsed) = parsed {
+            ::pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
+            ::pretty_assertions::assert_eq!(parsed.reason, expected_output.reason, "Unexpected value for `reason`");
+        } else {
+            panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
+        }
+    }
+    /// This test case validates case insensitive parsing of `message`
+    /// Test ID: UppercaseMessage
+    #[::tokio::test]
+    #[allow(unused_mut)]
+    async fn uppercase_message_response() {
+        let expected_output = crate::types::error::ValidationException::builder()
+            .set_message(::std::option::Option::Some("Invalid volume size: 99999999999".to_owned()))
+            .set_reason(::std::option::Option::Some(
+                "INVALID_VOLUME_SIZE"
+                    .parse::<crate::types::ValidationExceptionReason>()
+                    .expect("static value validated to member"),
+            ))
+            .build();
+        let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(
+            ::http::response::Builder::new()
+                .header("content-length", "77")
+                .header("content-type", "application/json")
+                .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
+                .header(
+                    "x-amzn-errortype",
+                    "ValidationException:http://internal.amazon.com/coral/com.amazon.zeppelindataservice/",
+                )
+                .header("x-amzn-requestid", "2af8f013-250a-4f6e-88ae-6dd7f6e12807")
+                .status(400)
+                .body(::aws_smithy_types::body::SdkBody::from(
+                    "{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n",
+                ))
+                .unwrap(),
+        )
+        .unwrap();
+        use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
+        use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
+
+        let op = crate::operation::list_snapshot_blocks::ListSnapshotBlocks::new();
+        let config = op.config().expect("the operation has config");
+        let de = config
+            .load::<::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer>()
+            .expect("the config must have a deserializer");
+
+        let parsed = de.deserialize_streaming(&mut http_response);
+        let parsed = parsed.unwrap_or_else(|| {
+            let http_response =
+                http_response.map(|body| ::aws_smithy_types::body::SdkBody::from(::bytes::Bytes::copy_from_slice(body.bytes().unwrap())));
+            de.deserialize_nonstreaming(&http_response)
+        });
+        let parsed = parsed.expect_err("should be error response");
+        let parsed: &crate::operation::list_snapshot_blocks::ListSnapshotBlocksError =
+            parsed.as_operation_error().expect("operation error").downcast_ref().unwrap();
+        if let crate::operation::list_snapshot_blocks::ListSnapshotBlocksError::ValidationException(parsed) = parsed {
+            ::pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
+            ::pretty_assertions::assert_eq!(parsed.reason, expected_output.reason, "Unexpected value for `reason`");
+        } else {
+            panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
+        }
+    }
+}
 
 /// Error type for the `ListSnapshotBlocksError` operation.
 #[non_exhaustive]

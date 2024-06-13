@@ -95,6 +95,8 @@ pub mod auth;
 
 pub mod connection;
 
+pub mod connector_metadata;
+
 pub mod dns;
 
 pub mod endpoint;

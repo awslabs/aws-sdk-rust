@@ -284,6 +284,108 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListObjectsEn
         ::std::result::Result::Ok(())
     }
 }
+#[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
+mod list_objects_request_test {
+    /// This test validates that parsing respects whitespace
+    /// Test ID: KeysWithWhitespace
+    #[::tokio::test]
+    #[allow(unused_mut)]
+    async fn keys_with_whitespace_response() {
+        let expected_output = crate::operation::list_objects::ListObjectsOutput::builder()
+            .set_max_keys(::std::option::Option::Some(1000))
+            .set_is_truncated(::std::option::Option::Some(false))
+            .set_marker(::std::option::Option::Some("".to_owned()))
+            .set_name(::std::option::Option::Some("bucketname".to_owned()))
+            .set_prefix(::std::option::Option::Some("".to_owned()))
+            .set_contents(::std::option::Option::Some(vec![
+                crate::types::Object::builder()
+                    .set_key(::std::option::Option::Some("    ".to_owned()))
+                    .set_last_modified(::std::option::Option::Some(::aws_smithy_types::DateTime::from_fractional_secs(
+                        1626452453, 0_f64,
+                    )))
+                    .set_e_tag(::std::option::Option::Some("\"etag123\"".to_owned()))
+                    .set_size(::std::option::Option::Some(0))
+                    .set_owner(::std::option::Option::Some(
+                        crate::types::Owner::builder()
+                            .set_id(::std::option::Option::Some("owner".to_owned()))
+                            .build(),
+                    ))
+                    .set_storage_class(::std::option::Option::Some(
+                        "STANDARD"
+                            .parse::<crate::types::ObjectStorageClass>()
+                            .expect("static value validated to member"),
+                    ))
+                    .build(),
+                crate::types::Object::builder()
+                    .set_key(::std::option::Option::Some(" a ".to_owned()))
+                    .set_last_modified(::std::option::Option::Some(::aws_smithy_types::DateTime::from_fractional_secs(
+                        1626451330, 0_f64,
+                    )))
+                    .set_e_tag(::std::option::Option::Some("\"etag123\"".to_owned()))
+                    .set_size(::std::option::Option::Some(0))
+                    .set_owner(::std::option::Option::Some(
+                        crate::types::Owner::builder()
+                            .set_id(::std::option::Option::Some("owner".to_owned()))
+                            .build(),
+                    ))
+                    .set_storage_class(::std::option::Option::Some(
+                        "STANDARD"
+                            .parse::<crate::types::ObjectStorageClass>()
+                            .expect("static value validated to member"),
+                    ))
+                    .build(),
+            ]))
+            .build();
+        let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(::http::response::Builder::new()
+        .status(200)
+                    .body(::aws_smithy_types::body::SdkBody::from("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ListBucketResult\n\txmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n\t<Name>bucketname</Name>\n\t<Prefix></Prefix>\n\t<Marker></Marker>\n\t<MaxKeys>1000</MaxKeys>\n\t<IsTruncated>false</IsTruncated>\n\t<Contents>\n\t\t<Key>    </Key>\n\t\t<LastModified>2021-07-16T16:20:53.000Z</LastModified>\n\t\t<ETag>&quot;etag123&quot;</ETag>\n\t\t<Size>0</Size>\n\t\t<Owner>\n\t\t\t<ID>owner</ID>\n\t\t</Owner>\n\t\t<StorageClass>STANDARD</StorageClass>\n\t</Contents>\n\t<Contents>\n\t\t<Key> a </Key>\n\t\t<LastModified>2021-07-16T16:02:10.000Z</LastModified>\n\t\t<ETag>&quot;etag123&quot;</ETag>\n\t\t<Size>0</Size>\n\t\t<Owner>\n\t\t\t<ID>owner</ID>\n\t\t</Owner>\n\t\t<StorageClass>STANDARD</StorageClass>\n\t</Contents>\n</ListBucketResult>\n"))
+                    .unwrap()
+                    ).unwrap();
+        use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
+        use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
+
+        let op = crate::operation::list_objects::ListObjects::new();
+        let config = op.config().expect("the operation has config");
+        let de = config
+            .load::<::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer>()
+            .expect("the config must have a deserializer");
+
+        let parsed = de.deserialize_streaming(&mut http_response);
+        let parsed = parsed.unwrap_or_else(|| {
+            let http_response =
+                http_response.map(|body| ::aws_smithy_types::body::SdkBody::from(::bytes::Bytes::copy_from_slice(body.bytes().unwrap())));
+            de.deserialize_nonstreaming(&http_response)
+        });
+        let parsed = parsed
+            .expect("should be successful response")
+            .downcast::<crate::operation::list_objects::ListObjectsOutput>()
+            .unwrap();
+        ::pretty_assertions::assert_eq!(parsed.is_truncated, expected_output.is_truncated, "Unexpected value for `is_truncated`");
+        ::pretty_assertions::assert_eq!(parsed.marker, expected_output.marker, "Unexpected value for `marker`");
+        ::pretty_assertions::assert_eq!(parsed.next_marker, expected_output.next_marker, "Unexpected value for `next_marker`");
+        ::pretty_assertions::assert_eq!(parsed.contents, expected_output.contents, "Unexpected value for `contents`");
+        ::pretty_assertions::assert_eq!(parsed.name, expected_output.name, "Unexpected value for `name`");
+        ::pretty_assertions::assert_eq!(parsed.prefix, expected_output.prefix, "Unexpected value for `prefix`");
+        ::pretty_assertions::assert_eq!(parsed.delimiter, expected_output.delimiter, "Unexpected value for `delimiter`");
+        ::pretty_assertions::assert_eq!(parsed.max_keys, expected_output.max_keys, "Unexpected value for `max_keys`");
+        ::pretty_assertions::assert_eq!(
+            parsed.common_prefixes,
+            expected_output.common_prefixes,
+            "Unexpected value for `common_prefixes`"
+        );
+        ::pretty_assertions::assert_eq!(
+            parsed.encoding_type,
+            expected_output.encoding_type,
+            "Unexpected value for `encoding_type`"
+        );
+        ::pretty_assertions::assert_eq!(
+            parsed.request_charged,
+            expected_output.request_charged,
+            "Unexpected value for `request_charged`"
+        );
+    }
+}
 
 /// Error type for the `ListObjectsError` operation.
 #[non_exhaustive]

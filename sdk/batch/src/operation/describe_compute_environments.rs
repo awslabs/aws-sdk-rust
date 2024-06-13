@@ -237,6 +237,96 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeCompu
         ::std::result::Result::Ok(())
     }
 }
+#[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
+mod describe_compute_environments_request_test {
+    /// This test case validates a bug where unboxed primitives were incorrectly marked as required
+    /// Test ID: DeserializeDescribeCompute
+    #[::tokio::test]
+    #[allow(unused_mut)]
+    async fn deserialize_describe_compute_response() {
+        let expected_output = crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput::builder()
+            .set_compute_environments(::std::option::Option::Some(vec![crate::types::ComputeEnvironmentDetail::builder()
+                .set_compute_environment_name(::std::option::Option::Some("test-batch-compute".to_owned()))
+                .set_compute_environment_arn(::std::option::Option::Some("arn".to_owned()))
+                .set_ecs_cluster_arn(::std::option::Option::Some("clusteran".to_owned()))
+                .set_tags(::std::option::Option::Some({
+                    let mut ret = ::std::collections::HashMap::new();
+                    ret.insert("foo".to_owned(), "bar".to_owned());
+                    ret
+                }))
+                .set_type(::std::option::Option::Some(
+                    "MANAGED".parse::<crate::types::CeType>().expect("static value validated to member"),
+                ))
+                .set_state(::std::option::Option::Some(
+                    "ENABLED".parse::<crate::types::CeState>().expect("static value validated to member"),
+                ))
+                .set_status(::std::option::Option::Some(
+                    "VALID".parse::<crate::types::CeStatus>().expect("static value validated to member"),
+                ))
+                .set_status_reason(::std::option::Option::Some("ComputeEnvironment Healthy".to_owned()))
+                .set_compute_resources(::std::option::Option::Some(
+                    crate::types::ComputeResource::builder()
+                        .set_type(::std::option::Option::Some(
+                            "EC2".parse::<crate::types::CrType>().expect("static value validated to member"),
+                        ))
+                        .set_minv_cpus(::std::option::Option::Some(0))
+                        .set_maxv_cpus(::std::option::Option::Some(256))
+                        .set_desiredv_cpus(::std::option::Option::Some(0))
+                        .set_instance_types(::std::option::Option::Some(vec!["optimal".to_owned()]))
+                        .set_subnets(::std::option::Option::Some(vec![
+                            "subnet-c745b79c".to_owned(),
+                            "subnet-d4e24fe8".to_owned(),
+                        ]))
+                        .set_security_group_ids(::std::option::Option::Some(vec!["sg-06a55e7b".to_owned()]))
+                        .set_instance_role(::std::option::Option::Some("instancerole".to_owned()))
+                        .set_tags(::std::option::Option::Some({
+                            let mut ret = ::std::collections::HashMap::new();
+                            ret.insert("Name".to_owned(), "batch-compute".to_owned());
+                            ret
+                        }))
+                        .set_ec2_configuration(::std::option::Option::Some(vec![crate::types::Ec2Configuration::builder()
+                            .set_image_type(::std::option::Option::Some("ECS_AL1".to_owned()))
+                            .build()]))
+                        .build(),
+                ))
+                .set_service_role(::std::option::Option::Some(
+                    "arn:aws:iam::432762038596:role/service-role/AWSBatchServiceRole".to_owned(),
+                ))
+                .build()]))
+            .build();
+        let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(::http::response::Builder::new()
+        .status(200)
+                    .body(::aws_smithy_types::body::SdkBody::from("    {\n        \"computeEnvironments\":[{\n            \"computeEnvironmentName\":\"test-batch-compute\",\n            \"computeEnvironmentArn\":\"arn\",\n            \"ecsClusterArn\":\"clusteran\",\n            \"tags\":{\"foo\": \"bar\"},\n            \"type\":\"MANAGED\",\n            \"state\":\"ENABLED\",\n            \"status\":\"VALID\",\n            \"statusReason\":\"ComputeEnvironment Healthy\",\n            \"computeResources\":{\n                \"type\":\"EC2\",\n                \"minvCpus\":0,\n                \"maxvCpus\":256,\n                \"desiredvCpus\":0,\n                \"instanceTypes\":[\"optimal\"],\n                \"subnets\":[\"subnet-c745b79c\",\"subnet-d4e24fe8\"],\n                \"securityGroupIds\":[\"sg-06a55e7b\"],\n                \"instanceRole\":\"instancerole\",\n                \"tags\":{\"Name\":\"batch-compute\"},\n                \"ec2Configuration\":[{\"imageType\":\"ECS_AL1\"}]\n            },\n            \"serviceRole\":\"arn:aws:iam::432762038596:role/service-role/AWSBatchServiceRole\"\n        }]\n    }\n"))
+                    .unwrap()
+                    ).unwrap();
+        use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
+        use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
+
+        let op = crate::operation::describe_compute_environments::DescribeComputeEnvironments::new();
+        let config = op.config().expect("the operation has config");
+        let de = config
+            .load::<::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer>()
+            .expect("the config must have a deserializer");
+
+        let parsed = de.deserialize_streaming(&mut http_response);
+        let parsed = parsed.unwrap_or_else(|| {
+            let http_response =
+                http_response.map(|body| ::aws_smithy_types::body::SdkBody::from(::bytes::Bytes::copy_from_slice(body.bytes().unwrap())));
+            de.deserialize_nonstreaming(&http_response)
+        });
+        let parsed = parsed
+            .expect("should be successful response")
+            .downcast::<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput>()
+            .unwrap();
+        ::pretty_assertions::assert_eq!(
+            parsed.compute_environments,
+            expected_output.compute_environments,
+            "Unexpected value for `compute_environments`"
+        );
+        ::pretty_assertions::assert_eq!(parsed.next_token, expected_output.next_token, "Unexpected value for `next_token`");
+    }
+}
 
 /// Error type for the `DescribeComputeEnvironmentsError` operation.
 #[non_exhaustive]

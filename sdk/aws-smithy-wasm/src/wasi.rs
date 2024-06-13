@@ -5,6 +5,7 @@
 
 //! WASI HTTP Adapter
 use aws_smithy_http::header::ParseError;
+use aws_smithy_runtime_api::client::connector_metadata::ConnectorMetadata;
 use aws_smithy_runtime_api::{
     client::{
         http::{
@@ -61,6 +62,10 @@ impl HttpClient for WasiHttpClient {
         let connector = WasiHttpConnector { options };
 
         connector.into_shared()
+    }
+
+    fn connector_metadata(&self) -> Option<ConnectorMetadata> {
+        Some(ConnectorMetadata::new("wasi-http-client", None))
     }
 }
 

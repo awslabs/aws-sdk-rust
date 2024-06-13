@@ -16,7 +16,7 @@ doc-scrape-examples = true
 
 [package]
 name = "aws-smithy-experimental"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>"]
 description = "Experiments for the smithy-rs ecosystem"
 edition = "2021"
@@ -53,7 +53,7 @@ version = "1.2.0"
 [dependencies.aws-smithy-runtime-api]
 features = ["client", "http-1x"]
 path = "../aws-smithy-runtime-api"
-version = "1.6.3"
+version = "1.7.0"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
@@ -79,7 +79,7 @@ version = "1.2.1"
 [dev-dependencies.aws-smithy-runtime]
 path = "../aws-smithy-runtime"
 features = ["client", "test-util", "connector-hyper-0-14-x"]
-version = "1.5.7"
+version = "1.6.0"
 
 [dev-dependencies.tokio]
 version = "1"

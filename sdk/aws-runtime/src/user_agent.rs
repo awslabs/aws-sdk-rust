@@ -12,6 +12,7 @@ use std::error::Error;
 use std::fmt;
 
 mod interceptor;
+
 pub use interceptor::UserAgentInterceptor;
 
 /// AWS User Agent
@@ -31,6 +32,7 @@ pub struct AwsUserAgent {
     framework_metadata: Vec<FrameworkMetadata>,
     app_name: Option<AppName>,
     build_env_additional_metadata: Option<AdditionalMetadata>,
+    additional_metadata: Vec<AdditionalMetadata>,
 }
 
 impl AwsUserAgent {
@@ -73,6 +75,7 @@ impl AwsUserAgent {
             framework_metadata: Default::default(),
             app_name: Default::default(),
             build_env_additional_metadata,
+            additional_metadata: Default::default(),
         }
     }
 
@@ -104,6 +107,7 @@ impl AwsUserAgent {
             framework_metadata: Vec::new(),
             app_name: None,
             build_env_additional_metadata: None,
+            additional_metadata: Vec::new(),
         }
     }
 
@@ -146,6 +150,18 @@ impl AwsUserAgent {
     /// Adds framework metadata to the user agent.
     pub fn add_framework_metadata(&mut self, metadata: FrameworkMetadata) -> &mut Self {
         self.framework_metadata.push(metadata);
+        self
+    }
+
+    /// Adds additional metadata to the user agent.
+    pub fn with_additional_metadata(mut self, metadata: AdditionalMetadata) -> Self {
+        self.additional_metadata.push(metadata);
+        self
+    }
+
+    /// Adds additional metadata to the user agent.
+    pub fn add_additional_metadata(&mut self, metadata: AdditionalMetadata) -> &mut Self {
+        self.additional_metadata.push(metadata);
         self
     }
 
@@ -195,6 +211,9 @@ impl AwsUserAgent {
         }
         for framework in &self.framework_metadata {
             write!(ua_value, "{} ", framework).unwrap();
+        }
+        for additional_metadata in &self.additional_metadata {
+            write!(ua_value, "{} ", additional_metadata).unwrap();
         }
         if let Some(app_name) = &self.app_name {
             write!(ua_value, "app/{}", app_name).unwrap();

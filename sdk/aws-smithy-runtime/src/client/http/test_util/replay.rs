@@ -4,6 +4,7 @@
  */
 
 use aws_smithy_protocol_test::{assert_ok, validate_body, MediaType};
+use aws_smithy_runtime_api::client::connector_metadata::ConnectorMetadata;
 use aws_smithy_runtime_api::client::http::{
     HttpClient, HttpConnector, HttpConnectorFuture, HttpConnectorSettings, SharedHttpConnector,
 };
@@ -258,6 +259,10 @@ impl HttpClient for StaticReplayClient {
         _: &RuntimeComponents,
     ) -> SharedHttpConnector {
         self.clone().into_shared()
+    }
+
+    fn connector_metadata(&self) -> Option<ConnectorMetadata> {
+        Some(ConnectorMetadata::new("static-replay-client", None))
     }
 }
 

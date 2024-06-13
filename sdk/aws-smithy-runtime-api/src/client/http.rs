@@ -51,6 +51,7 @@
 //! [`aws-smithy-runtime`]: https://crates.io/crates/aws-smithy-runtime
 
 use crate::box_error::BoxError;
+use crate::client::connector_metadata::ConnectorMetadata;
 use crate::client::orchestrator::{HttpRequest, HttpResponse};
 use crate::client::result::ConnectorError;
 use crate::client::runtime_components::sealed::ValidateConfig;
@@ -165,6 +166,15 @@ pub trait HttpClient: Send + Sync + fmt::Debug {
         let _ = (runtime_components, cfg);
         Ok(())
     }
+
+    /// Provide metadata about the crate that this HttpClient uses to make connectors.
+    ///
+    /// If this is implemented and returns metadata, interceptors may inspect it
+    /// for the purpose of inserting that data into the user agent string when
+    /// making a request with this client.
+    fn connector_metadata(&self) -> Option<ConnectorMetadata> {
+        None
+    }
 }
 
 /// Shared HTTP client for use across multiple clients and requests.
@@ -190,14 +200,18 @@ impl HttpClient for SharedHttpClient {
     ) -> SharedHttpConnector {
         self.selector.http_connector(settings, components)
     }
+
+    fn connector_metadata(&self) -> Option<ConnectorMetadata> {
+        self.selector.connector_metadata()
+    }
 }
 
 impl ValidateConfig for SharedHttpClient {
     fn validate_base_client_config(
         &self,
-        runtime_components: &super::runtime_components::RuntimeComponentsBuilder,
-        cfg: &aws_smithy_types::config_bag::ConfigBag,
-    ) -> Result<(), crate::box_error::BoxError> {
+        runtime_components: &RuntimeComponentsBuilder,
+        cfg: &ConfigBag,
+    ) -> Result<(), BoxError> {
         self.selector
             .validate_base_client_config(runtime_components, cfg)
     }
@@ -205,8 +219,8 @@ impl ValidateConfig for SharedHttpClient {
     fn validate_final_config(
         &self,
         runtime_components: &RuntimeComponents,
-        cfg: &aws_smithy_types::config_bag::ConfigBag,
-    ) -> Result<(), crate::box_error::BoxError> {
+        cfg: &ConfigBag,
+    ) -> Result<(), BoxError> {
         self.selector.validate_final_config(runtime_components, cfg)
     }
 }

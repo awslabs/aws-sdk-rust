@@ -290,6 +290,172 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListObjectVer
         ::std::result::Result::Ok(())
     }
 }
+#[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
+mod list_object_versions_request_test {
+    /// Verify that interleaving list elements (DeleteMarker and Version) from different lists works
+    /// Test ID: OutOfOrderVersions
+    #[::tokio::test]
+    #[allow(unused_mut)]
+    async fn out_of_order_versions_response() {
+        let expected_output = crate::operation::list_object_versions::ListObjectVersionsOutput::builder()
+            .set_name(::std::option::Option::Some("sdk-obj-versions-test".to_owned()))
+            .set_prefix(::std::option::Option::Some("".to_owned()))
+            .set_key_marker(::std::option::Option::Some("".to_owned()))
+            .set_version_id_marker(::std::option::Option::Some("".to_owned()))
+            .set_max_keys(::std::option::Option::Some(1000))
+            .set_is_truncated(::std::option::Option::Some(false))
+            .set_delete_markers(::std::option::Option::Some(vec![
+                crate::types::DeleteMarkerEntry::builder()
+                    .set_key(::std::option::Option::Some("build.gradle.kts".to_owned()))
+                    .set_version_id(::std::option::Option::Some("null".to_owned()))
+                    .set_is_latest(::std::option::Option::Some(true))
+                    .set_last_modified(::std::option::Option::Some(::aws_smithy_types::DateTime::from_fractional_secs(
+                        1234567890, 0_f64,
+                    )))
+                    .set_owner(::std::option::Option::Some(
+                        crate::types::Owner::builder()
+                            .set_id(::std::option::Option::Some(
+                                "c1665459250c459f1849ddce9b291fc3a72bcf5220dc8f6391a0a1045c683b34".to_owned(),
+                            ))
+                            .set_display_name(::std::option::Option::Some("test-name".to_owned()))
+                            .build(),
+                    ))
+                    .build(),
+                crate::types::DeleteMarkerEntry::builder()
+                    .set_key(::std::option::Option::Some("file-2".to_owned()))
+                    .set_version_id(::std::option::Option::Some("o98RL6vmlOYiymftbX7wgy_4XWQG4AmY".to_owned()))
+                    .set_is_latest(::std::option::Option::Some(true))
+                    .set_last_modified(::std::option::Option::Some(::aws_smithy_types::DateTime::from_fractional_secs(
+                        1234567890, 0_f64,
+                    )))
+                    .set_owner(::std::option::Option::Some(
+                        crate::types::Owner::builder()
+                            .set_id(::std::option::Option::Some(
+                                "c1665459250c459f1849ddce9b291fc3a72bcf5220dc8f6391a0a1045c683b34".to_owned(),
+                            ))
+                            .set_display_name(::std::option::Option::Some("test-name".to_owned()))
+                            .build(),
+                    ))
+                    .build(),
+            ]))
+            .set_versions(::std::option::Option::Some(vec![
+                crate::types::ObjectVersion::builder()
+                    .set_key(::std::option::Option::Some("build.gradle.kts".to_owned()))
+                    .set_version_id(::std::option::Option::Some("IfK9Z4.H5TLAtMxFrxN_C7rFEZbufF3V".to_owned()))
+                    .set_is_latest(::std::option::Option::Some(false))
+                    .set_last_modified(::std::option::Option::Some(::aws_smithy_types::DateTime::from_fractional_secs(
+                        1234567890, 0_f64,
+                    )))
+                    .set_e_tag(::std::option::Option::Some("\"99613b85e3f38b222c4ee548cde1e59d\"".to_owned()))
+                    .set_size(::std::option::Option::Some(6903))
+                    .set_owner(::std::option::Option::Some(
+                        crate::types::Owner::builder()
+                            .set_id(::std::option::Option::Some(
+                                "c1665459250c459f1849ddce9b291fc3a72bcf5220dc8f6391a0a1045c683b34".to_owned(),
+                            ))
+                            .set_display_name(::std::option::Option::Some("test-name".to_owned()))
+                            .build(),
+                    ))
+                    .set_storage_class(::std::option::Option::Some(
+                        "STANDARD"
+                            .parse::<crate::types::ObjectVersionStorageClass>()
+                            .expect("static value validated to member"),
+                    ))
+                    .build(),
+                crate::types::ObjectVersion::builder()
+                    .set_key(::std::option::Option::Some("file-2".to_owned()))
+                    .set_version_id(::std::option::Option::Some("PSVAbvQihRdsNiktGothjGng7q.5ou9Q".to_owned()))
+                    .set_is_latest(::std::option::Option::Some(false))
+                    .set_last_modified(::std::option::Option::Some(::aws_smithy_types::DateTime::from_fractional_secs(
+                        1234567890, 0_f64,
+                    )))
+                    .set_e_tag(::std::option::Option::Some("\"1727d9cb38dd325d9c12c973ef3675fc\"".to_owned()))
+                    .set_size(::std::option::Option::Some(14))
+                    .set_owner(::std::option::Option::Some(
+                        crate::types::Owner::builder()
+                            .set_id(::std::option::Option::Some(
+                                "c1665459250c459f1849ddce9b291fc3a72bcf5220dc8f6391a0a1045c683b34".to_owned(),
+                            ))
+                            .set_display_name(::std::option::Option::Some("test-name".to_owned()))
+                            .build(),
+                    ))
+                    .set_storage_class(::std::option::Option::Some(
+                        "STANDARD"
+                            .parse::<crate::types::ObjectVersionStorageClass>()
+                            .expect("static value validated to member"),
+                    ))
+                    .build(),
+            ]))
+            .build();
+        let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(::http::response::Builder::new()
+        .status(200)
+                    .body(::aws_smithy_types::body::SdkBody::from("<?xml version=\"1.0\"?>\n<ListVersionsResult xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n  <Name>sdk-obj-versions-test</Name>\n  <Prefix/>\n  <KeyMarker/>\n  <VersionIdMarker/>\n  <MaxKeys>1000</MaxKeys>\n  <IsTruncated>false</IsTruncated>\n  <DeleteMarker>\n    <Key>build.gradle.kts</Key>\n    <VersionId>null</VersionId>\n    <IsLatest>true</IsLatest>\n    <LastModified>2009-02-13T23:31:30Z</LastModified>\n    <Owner>\n      <ID>c1665459250c459f1849ddce9b291fc3a72bcf5220dc8f6391a0a1045c683b34</ID>\n      <DisplayName>test-name</DisplayName>\n    </Owner>\n  </DeleteMarker>\n  <Version>\n    <Key>build.gradle.kts</Key>\n    <VersionId>IfK9Z4.H5TLAtMxFrxN_C7rFEZbufF3V</VersionId>\n    <IsLatest>false</IsLatest>\n    <LastModified>2009-02-13T23:31:30Z</LastModified>\n    <ETag>\"99613b85e3f38b222c4ee548cde1e59d\"</ETag>\n    <Size>6903</Size>\n    <Owner>\n      <ID>c1665459250c459f1849ddce9b291fc3a72bcf5220dc8f6391a0a1045c683b34</ID>\n      <DisplayName>test-name</DisplayName>\n    </Owner>\n    <StorageClass>STANDARD</StorageClass>\n  </Version>\n  <DeleteMarker>\n    <Key>file-2</Key>\n    <VersionId>o98RL6vmlOYiymftbX7wgy_4XWQG4AmY</VersionId>\n    <IsLatest>true</IsLatest>\n    <LastModified>2009-02-13T23:31:30Z</LastModified>\n    <Owner>\n      <ID>c1665459250c459f1849ddce9b291fc3a72bcf5220dc8f6391a0a1045c683b34</ID>\n      <DisplayName>test-name</DisplayName>\n    </Owner>\n  </DeleteMarker>\n  <Version>\n    <Key>file-2</Key>\n    <VersionId>PSVAbvQihRdsNiktGothjGng7q.5ou9Q</VersionId>\n    <IsLatest>false</IsLatest>\n    <LastModified>2009-02-13T23:31:30Z</LastModified>\n    <ETag>\"1727d9cb38dd325d9c12c973ef3675fc\"</ETag>\n    <Size>14</Size>\n    <Owner>\n      <ID>c1665459250c459f1849ddce9b291fc3a72bcf5220dc8f6391a0a1045c683b34</ID>\n      <DisplayName>test-name</DisplayName>\n    </Owner>\n    <StorageClass>STANDARD</StorageClass>\n  </Version>\n</ListVersionsResult>\n"))
+                    .unwrap()
+                    ).unwrap();
+        use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
+        use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
+
+        let op = crate::operation::list_object_versions::ListObjectVersions::new();
+        let config = op.config().expect("the operation has config");
+        let de = config
+            .load::<::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer>()
+            .expect("the config must have a deserializer");
+
+        let parsed = de.deserialize_streaming(&mut http_response);
+        let parsed = parsed.unwrap_or_else(|| {
+            let http_response =
+                http_response.map(|body| ::aws_smithy_types::body::SdkBody::from(::bytes::Bytes::copy_from_slice(body.bytes().unwrap())));
+            de.deserialize_nonstreaming(&http_response)
+        });
+        let parsed = parsed
+            .expect("should be successful response")
+            .downcast::<crate::operation::list_object_versions::ListObjectVersionsOutput>()
+            .unwrap();
+        ::pretty_assertions::assert_eq!(parsed.is_truncated, expected_output.is_truncated, "Unexpected value for `is_truncated`");
+        ::pretty_assertions::assert_eq!(parsed.key_marker, expected_output.key_marker, "Unexpected value for `key_marker`");
+        ::pretty_assertions::assert_eq!(
+            parsed.version_id_marker,
+            expected_output.version_id_marker,
+            "Unexpected value for `version_id_marker`"
+        );
+        ::pretty_assertions::assert_eq!(
+            parsed.next_key_marker,
+            expected_output.next_key_marker,
+            "Unexpected value for `next_key_marker`"
+        );
+        ::pretty_assertions::assert_eq!(
+            parsed.next_version_id_marker,
+            expected_output.next_version_id_marker,
+            "Unexpected value for `next_version_id_marker`"
+        );
+        ::pretty_assertions::assert_eq!(parsed.versions, expected_output.versions, "Unexpected value for `versions`");
+        ::pretty_assertions::assert_eq!(
+            parsed.delete_markers,
+            expected_output.delete_markers,
+            "Unexpected value for `delete_markers`"
+        );
+        ::pretty_assertions::assert_eq!(parsed.name, expected_output.name, "Unexpected value for `name`");
+        ::pretty_assertions::assert_eq!(parsed.prefix, expected_output.prefix, "Unexpected value for `prefix`");
+        ::pretty_assertions::assert_eq!(parsed.delimiter, expected_output.delimiter, "Unexpected value for `delimiter`");
+        ::pretty_assertions::assert_eq!(parsed.max_keys, expected_output.max_keys, "Unexpected value for `max_keys`");
+        ::pretty_assertions::assert_eq!(
+            parsed.common_prefixes,
+            expected_output.common_prefixes,
+            "Unexpected value for `common_prefixes`"
+        );
+        ::pretty_assertions::assert_eq!(
+            parsed.encoding_type,
+            expected_output.encoding_type,
+            "Unexpected value for `encoding_type`"
+        );
+        ::pretty_assertions::assert_eq!(
+            parsed.request_charged,
+            expected_output.request_charged,
+            "Unexpected value for `request_charged`"
+        );
+    }
+}
 
 /// Error type for the `ListObjectVersionsError` operation.
 #[non_exhaustive]

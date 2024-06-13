@@ -275,6 +275,81 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteObjectT
         ::std::result::Result::Ok(())
     }
 }
+#[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
+mod delete_object_tagging_request_test {
+    ///     S3 clients should escape special characters in Object Keys
+    ///     when the Object Key is used as a URI label binding.
+    ///
+    /// Test ID: S3EscapeObjectKeyInUriLabel
+    #[::tokio::test]
+    #[allow(unused_mut)]
+    async fn s3_escape_object_key_in_uri_label_request() {
+        let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+        let config_builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_url("https://s3.us-west-2.amazonaws.com");
+
+        let mut config_builder = config_builder;
+        config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+
+        let config = config_builder.http_client(http_client).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .delete_object_tagging()
+            .set_bucket(::std::option::Option::Some("mybucket".to_owned()))
+            .set_key(::std::option::Option::Some("my key.txt".to_owned()))
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
+        let expected_query_params = &["tagging"];
+        ::aws_smithy_protocol_test::assert_ok(::aws_smithy_protocol_test::validate_query_string(&http_request, expected_query_params));
+        let body = http_request.body().bytes().expect("body should be strict");
+        // No body
+        ::pretty_assertions::assert_eq!(::std::str::from_utf8(body).unwrap(), "");
+        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        ::pretty_assertions::assert_eq!(http_request.method(), "DELETE", "method was incorrect");
+        ::pretty_assertions::assert_eq!(uri.path(), "/my%20key.txt", "path was incorrect");
+        ::pretty_assertions::assert_eq!(uri.host().expect("host should be set"), "mybucket.s3.us-west-2.amazonaws.com");
+    }
+    ///     S3 clients should preserve an Object Key representing a path
+    ///     when the Object Key is used as a URI label binding, but still
+    ///     escape special characters.
+    ///
+    /// Test ID: S3EscapePathObjectKeyInUriLabel
+    #[::tokio::test]
+    #[allow(unused_mut)]
+    async fn s3_escape_path_object_key_in_uri_label_request() {
+        let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+        let config_builder = crate::config::Config::builder()
+            .with_test_defaults()
+            .endpoint_url("https://s3.us-west-2.amazonaws.com");
+
+        let mut config_builder = config_builder;
+        config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+
+        let config = config_builder.http_client(http_client).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .delete_object_tagging()
+            .set_bucket(::std::option::Option::Some("mybucket".to_owned()))
+            .set_key(::std::option::Option::Some("foo/bar/my key.txt".to_owned()))
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
+        let expected_query_params = &["tagging"];
+        ::aws_smithy_protocol_test::assert_ok(::aws_smithy_protocol_test::validate_query_string(&http_request, expected_query_params));
+        let body = http_request.body().bytes().expect("body should be strict");
+        // No body
+        ::pretty_assertions::assert_eq!(::std::str::from_utf8(body).unwrap(), "");
+        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        ::pretty_assertions::assert_eq!(http_request.method(), "DELETE", "method was incorrect");
+        ::pretty_assertions::assert_eq!(uri.path(), "/foo/bar/my%20key.txt", "path was incorrect");
+        ::pretty_assertions::assert_eq!(uri.host().expect("host should be set"), "mybucket.s3.us-west-2.amazonaws.com");
+    }
+}
 
 /// Error type for the `DeleteObjectTaggingError` operation.
 #[non_exhaustive]
