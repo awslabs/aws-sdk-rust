@@ -27,7 +27,7 @@ pub enum RetrievalFilter {
     GreaterThanOrEquals(crate::types::FilterAttribute),
     /// <p>Knowledge base data sources are returned if they contain a metadata attribute whose name matches the <code>key</code> and whose value is in the list specified in the <code>value</code> in this object.</p>
     /// <p>The following example would return data sources with an <code>animal</code> attribute that is either <code>cat</code> or <code>dog</code>:</p>
-    /// <p><code>"in": { "key": "animal", "value": ["cat", "dog"] }</code></p>
+    /// <p><code>"in": { "key": "animal", "value": \["cat", "dog"\] }</code></p>
     In(crate::types::FilterAttribute),
     /// <p>Knowledge base data sources are returned if they contain a metadata attribute whose name matches the <code>key</code> and whose value is less than the <code>value</code> in this object.</p>
     /// <p>The following example would return data sources with an <code>year</code> attribute whose value is less than to <code>1989</code>.</p>
@@ -38,7 +38,7 @@ pub enum RetrievalFilter {
     /// <p><code>"lessThanOrEquals": { "key": "year", "value": 1989 }</code></p>
     LessThanOrEquals(crate::types::FilterAttribute),
     /// <p>Knowledge base data sources are returned if they contain a metadata attribute whose name matches the <code>key</code> and whose value is a list that contains the <code>value</code> as one of its members.</p>
-    /// <p>The following example would return data sources with an <code>animals</code> attribute that is a list containing a <code>cat</code> member (for example <code>["dog", "cat"]</code>).</p>
+    /// <p>The following example would return data sources with an <code>animals</code> attribute that is a list containing a <code>cat</code> member (for example <code>\["dog", "cat"\]</code>).</p>
     /// <p><code>"listContains": { "key": "animals", "value": "cat" }</code></p>
     ListContains(crate::types::FilterAttribute),
     /// <p>Knowledge base data sources that contain a metadata attribute whose name matches the <code>key</code> and whose value doesn't match the <code>value</code> in this object are returned.</p>
@@ -47,7 +47,7 @@ pub enum RetrievalFilter {
     NotEquals(crate::types::FilterAttribute),
     /// <p>Knowledge base data sources are returned if they contain a metadata attribute whose name matches the <code>key</code> and whose value isn't in the list specified in the <code>value</code> in this object.</p>
     /// <p>The following example would return data sources whose <code>animal</code> attribute is neither <code>cat</code> nor <code>dog</code>.</p>
-    /// <p><code>"notIn": { "key": "animal", "value": ["cat", "dog"] }</code></p>
+    /// <p><code>"notIn": { "key": "animal", "value": \["cat", "dog"\] }</code></p>
     NotIn(crate::types::FilterAttribute),
     /// <p>Knowledge base data sources are returned if their metadata attributes fulfill at least one of the filter conditions inside this list.</p>
     OrAll(::std::vec::Vec<crate::types::RetrievalFilter>),
@@ -61,7 +61,7 @@ pub enum RetrievalFilter {
     /// <p>A string that contains the <code>value</code> as a substring. The following example would return data sources with an <code>animal</code> attribute that contains the substring <code>at</code> (for example <code>cat</code>).</p>
     /// <p><code>"stringContains": { "key": "animal", "value": "at" }</code></p></li>
     /// <li>
-    /// <p>A list with a member that contains the <code>value</code> as a substring. The following example would return data sources with an <code>animals</code> attribute that is a list containing a member that contains the substring <code>at</code> (for example <code>["dog", "cat"]</code>).</p>
+    /// <p>A list with a member that contains the <code>value</code> as a substring. The following example would return data sources with an <code>animals</code> attribute that is a list containing a member that contains the substring <code>at</code> (for example <code>\["dog", "cat"\]</code>).</p>
     /// <p><code>"stringContains": { "key": "animals", "value": "at" }</code></p></li>
     /// </ul>
     StringContains(crate::types::FilterAttribute),

@@ -178,41 +178,17 @@ impl CreateAuthorizerFluentBuilder {
     pub fn get_authorizer_type(&self) -> &::std::option::Option<crate::types::AuthorizerType> {
         self.inner.get_authorizer_type()
     }
-    /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
-    /// {account_id}
-    /// </replaceable>:function:<replaceable>
-    /// {lambda_function_name}
-    /// </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>
-    /// {region}
-    /// </replaceable>:lambda:path/<replaceable>
-    /// {service_api}
-    /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+    /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations. In general, the URI has this form: arn:aws:apigateway:{region}:lambda:path/{service_api} , where {region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/\[FunctionARN\]/invocations. Supported only for REQUEST authorizers.</p>
     pub fn authorizer_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authorizer_uri(input.into());
         self
     }
-    /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
-    /// {account_id}
-    /// </replaceable>:function:<replaceable>
-    /// {lambda_function_name}
-    /// </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>
-    /// {region}
-    /// </replaceable>:lambda:path/<replaceable>
-    /// {service_api}
-    /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+    /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations. In general, the URI has this form: arn:aws:apigateway:{region}:lambda:path/{service_api} , where {region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/\[FunctionARN\]/invocations. Supported only for REQUEST authorizers.</p>
     pub fn set_authorizer_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authorizer_uri(input);
         self
     }
-    /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
-    /// {account_id}
-    /// </replaceable>:function:<replaceable>
-    /// {lambda_function_name}
-    /// </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>
-    /// {region}
-    /// </replaceable>:lambda:path/<replaceable>
-    /// {service_api}
-    /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+    /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations. In general, the URI has this form: arn:aws:apigateway:{region}:lambda:path/{service_api} , where {region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/\[FunctionARN\]/invocations. Supported only for REQUEST authorizers.</p>
     pub fn get_authorizer_uri(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_authorizer_uri()
     }

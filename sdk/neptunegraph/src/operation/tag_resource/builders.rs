@@ -129,24 +129,24 @@ impl TagResourceFluentBuilder {
     ///
     /// <p>The tags to be assigned to the Neptune Analytics resource.</p>
     /// <p>The tags are metadata that are specified as a list of key-value pairs:</p>
-    /// <p><b>Key</b> (string) &nbsp; – &nbsp; A key is the required name of the tag. The string value can be from 1 to 128 Unicode characters in length. It can't be prefixed with <code>aws:</code> and can only contain the set of Unicode characters specified by this Java regular expression: <code>"^([\p{L}\p{Z}\p{N}_.:/=+\-]*)$")</code>.</p>
-    /// <p><b>Value</b> (string) &nbsp; – &nbsp; A value is the optional value of the tag. The string value can be from 1 to 256 Unicode characters in length. It can't be prefixed with <code>aws:</code> and can only contain the set of Unicode characters specified by this Java regular expression: <code>"^([\p{L}\p{Z}\p{N}_.:/=+\-]*)$")</code>.</p>
+    /// <p><b>Key</b> (string) &nbsp; – &nbsp; A key is the required name of the tag. The string value can be from 1 to 128 Unicode characters in length. It can't be prefixed with <code>aws:</code> and can only contain the set of Unicode characters specified by this Java regular expression: <code>"^(\[\p{L}\p{Z}\p{N}_.:/=+\-\]*)$")</code>.</p>
+    /// <p><b>Value</b> (string) &nbsp; – &nbsp; A value is the optional value of the tag. The string value can be from 1 to 256 Unicode characters in length. It can't be prefixed with <code>aws:</code> and can only contain the set of Unicode characters specified by this Java regular expression: <code>"^(\[\p{L}\p{Z}\p{N}_.:/=+\-\]*)$")</code>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to be assigned to the Neptune Analytics resource.</p>
     /// <p>The tags are metadata that are specified as a list of key-value pairs:</p>
-    /// <p><b>Key</b> (string) &nbsp; – &nbsp; A key is the required name of the tag. The string value can be from 1 to 128 Unicode characters in length. It can't be prefixed with <code>aws:</code> and can only contain the set of Unicode characters specified by this Java regular expression: <code>"^([\p{L}\p{Z}\p{N}_.:/=+\-]*)$")</code>.</p>
-    /// <p><b>Value</b> (string) &nbsp; – &nbsp; A value is the optional value of the tag. The string value can be from 1 to 256 Unicode characters in length. It can't be prefixed with <code>aws:</code> and can only contain the set of Unicode characters specified by this Java regular expression: <code>"^([\p{L}\p{Z}\p{N}_.:/=+\-]*)$")</code>.</p>
+    /// <p><b>Key</b> (string) &nbsp; – &nbsp; A key is the required name of the tag. The string value can be from 1 to 128 Unicode characters in length. It can't be prefixed with <code>aws:</code> and can only contain the set of Unicode characters specified by this Java regular expression: <code>"^(\[\p{L}\p{Z}\p{N}_.:/=+\-\]*)$")</code>.</p>
+    /// <p><b>Value</b> (string) &nbsp; – &nbsp; A value is the optional value of the tag. The string value can be from 1 to 256 Unicode characters in length. It can't be prefixed with <code>aws:</code> and can only contain the set of Unicode characters specified by this Java regular expression: <code>"^(\[\p{L}\p{Z}\p{N}_.:/=+\-\]*)$")</code>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to be assigned to the Neptune Analytics resource.</p>
     /// <p>The tags are metadata that are specified as a list of key-value pairs:</p>
-    /// <p><b>Key</b> (string) &nbsp; – &nbsp; A key is the required name of the tag. The string value can be from 1 to 128 Unicode characters in length. It can't be prefixed with <code>aws:</code> and can only contain the set of Unicode characters specified by this Java regular expression: <code>"^([\p{L}\p{Z}\p{N}_.:/=+\-]*)$")</code>.</p>
-    /// <p><b>Value</b> (string) &nbsp; – &nbsp; A value is the optional value of the tag. The string value can be from 1 to 256 Unicode characters in length. It can't be prefixed with <code>aws:</code> and can only contain the set of Unicode characters specified by this Java regular expression: <code>"^([\p{L}\p{Z}\p{N}_.:/=+\-]*)$")</code>.</p>
+    /// <p><b>Key</b> (string) &nbsp; – &nbsp; A key is the required name of the tag. The string value can be from 1 to 128 Unicode characters in length. It can't be prefixed with <code>aws:</code> and can only contain the set of Unicode characters specified by this Java regular expression: <code>"^(\[\p{L}\p{Z}\p{N}_.:/=+\-\]*)$")</code>.</p>
+    /// <p><b>Value</b> (string) &nbsp; – &nbsp; A value is the optional value of the tag. The string value can be from 1 to 256 Unicode characters in length. It can't be prefixed with <code>aws:</code> and can only contain the set of Unicode characters specified by this Java regular expression: <code>"^(\[\p{L}\p{Z}\p{N}_.:/=+\-\]*)$")</code>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

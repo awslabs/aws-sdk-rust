@@ -208,7 +208,7 @@ impl GetLifecyclePoliciesFluentBuilder {
     pub fn get_tags_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tags_to_add()
     }
-    /// <p><b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
+    /// <p><b>\[Default policies only\]</b> Specifies the type of default policy to get. Specify one of the following:</p>
     /// <ul>
     /// <li>
     /// <p><code>VOLUME</code> - To get only the default policy for EBS snapshots</p></li>
@@ -221,7 +221,7 @@ impl GetLifecyclePoliciesFluentBuilder {
         self.inner = self.inner.default_policy_type(input);
         self
     }
-    /// <p><b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
+    /// <p><b>\[Default policies only\]</b> Specifies the type of default policy to get. Specify one of the following:</p>
     /// <ul>
     /// <li>
     /// <p><code>VOLUME</code> - To get only the default policy for EBS snapshots</p></li>
@@ -234,7 +234,7 @@ impl GetLifecyclePoliciesFluentBuilder {
         self.inner = self.inner.set_default_policy_type(input);
         self
     }
-    /// <p><b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
+    /// <p><b>\[Default policies only\]</b> Specifies the type of default policy to get. Specify one of the following:</p>
     /// <ul>
     /// <li>
     /// <p><code>VOLUME</code> - To get only the default policy for EBS snapshots</p></li>

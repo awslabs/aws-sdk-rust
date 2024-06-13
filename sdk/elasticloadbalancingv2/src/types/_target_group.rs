@@ -36,7 +36,7 @@ pub struct TargetGroup {
     pub load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of target that you must specify when registering targets with this target group. The possible values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer as a target).</p>
     pub target_type: ::std::option::Option<crate::types::TargetTypeEnum>,
-    /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+    /// <p>\[HTTP/HTTPS protocol\] The protocol version. The possible values are GRPC, HTTP1, and HTTP2.</p>
     pub protocol_version: ::std::option::Option<::std::string::String>,
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
     pub ip_address_type: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>,
@@ -108,7 +108,7 @@ impl TargetGroup {
     pub fn target_type(&self) -> ::std::option::Option<&crate::types::TargetTypeEnum> {
         self.target_type.as_ref()
     }
-    /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+    /// <p>\[HTTP/HTTPS protocol\] The protocol version. The possible values are GRPC, HTTP1, and HTTP2.</p>
     pub fn protocol_version(&self) -> ::std::option::Option<&str> {
         self.protocol_version.as_deref()
     }
@@ -378,17 +378,17 @@ impl TargetGroupBuilder {
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::TargetTypeEnum> {
         &self.target_type
     }
-    /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+    /// <p>\[HTTP/HTTPS protocol\] The protocol version. The possible values are GRPC, HTTP1, and HTTP2.</p>
     pub fn protocol_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+    /// <p>\[HTTP/HTTPS protocol\] The protocol version. The possible values are GRPC, HTTP1, and HTTP2.</p>
     pub fn set_protocol_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol_version = input;
         self
     }
-    /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+    /// <p>\[HTTP/HTTPS protocol\] The protocol version. The possible values are GRPC, HTTP1, and HTTP2.</p>
     pub fn get_protocol_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.protocol_version
     }

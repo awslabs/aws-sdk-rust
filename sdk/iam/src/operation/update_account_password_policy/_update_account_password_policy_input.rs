@@ -7,7 +7,7 @@ pub struct UpdateAccountPasswordPolicyInput {
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>6</code>.</p>
     pub minimum_password_length: ::std::option::Option<i32>,
     /// <p>Specifies whether IAM user passwords must contain at least one of the following non-alphanumeric characters:</p>
-    /// <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
+    /// <p>! @ # $ % ^ &amp; * ( ) _ + - = \[ \] { } | '</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one symbol character.</p>
     pub require_symbols: ::std::option::Option<bool>,
     /// <p>Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).</p>
@@ -41,7 +41,7 @@ impl UpdateAccountPasswordPolicyInput {
         self.minimum_password_length
     }
     /// <p>Specifies whether IAM user passwords must contain at least one of the following non-alphanumeric characters:</p>
-    /// <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
+    /// <p>! @ # $ % ^ &amp; * ( ) _ + - = \[ \] { } | '</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one symbol character.</p>
     pub fn require_symbols(&self) -> ::std::option::Option<bool> {
         self.require_symbols
@@ -124,21 +124,21 @@ impl UpdateAccountPasswordPolicyInputBuilder {
         &self.minimum_password_length
     }
     /// <p>Specifies whether IAM user passwords must contain at least one of the following non-alphanumeric characters:</p>
-    /// <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
+    /// <p>! @ # $ % ^ &amp; * ( ) _ + - = \[ \] { } | '</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one symbol character.</p>
     pub fn require_symbols(mut self, input: bool) -> Self {
         self.require_symbols = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether IAM user passwords must contain at least one of the following non-alphanumeric characters:</p>
-    /// <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
+    /// <p>! @ # $ % ^ &amp; * ( ) _ + - = \[ \] { } | '</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one symbol character.</p>
     pub fn set_require_symbols(mut self, input: ::std::option::Option<bool>) -> Self {
         self.require_symbols = input;
         self
     }
     /// <p>Specifies whether IAM user passwords must contain at least one of the following non-alphanumeric characters:</p>
-    /// <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
+    /// <p>! @ # $ % ^ &amp; * ( ) _ + - = \[ \] { } | '</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one symbol character.</p>
     pub fn get_require_symbols(&self) -> &::std::option::Option<bool> {
         &self.require_symbols

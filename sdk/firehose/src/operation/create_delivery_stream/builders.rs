@@ -204,19 +204,19 @@ impl CreateDeliveryStreamFluentBuilder {
     ) -> &::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput> {
         self.inner.get_delivery_stream_encryption_configuration_input()
     }
-    /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
+    /// <p>\[Deprecated\] The destination in Amazon S3. You can specify only one destination.</p>
     #[deprecated]
     pub fn s3_destination_configuration(mut self, input: crate::types::S3DestinationConfiguration) -> Self {
         self.inner = self.inner.s3_destination_configuration(input);
         self
     }
-    /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
+    /// <p>\[Deprecated\] The destination in Amazon S3. You can specify only one destination.</p>
     #[deprecated]
     pub fn set_s3_destination_configuration(mut self, input: ::std::option::Option<crate::types::S3DestinationConfiguration>) -> Self {
         self.inner = self.inner.set_s3_destination_configuration(input);
         self
     }
-    /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
+    /// <p>\[Deprecated\] The destination in Amazon S3. You can specify only one destination.</p>
     #[deprecated]
     pub fn get_s3_destination_configuration(&self) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
         self.inner.get_s3_destination_configuration()

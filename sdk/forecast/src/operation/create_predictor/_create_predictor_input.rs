@@ -27,7 +27,7 @@ pub struct CreatePredictorInput {
     /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.</p>
     pub forecast_horizon: ::std::option::Option<i32>,
     /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
-    /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
+    /// <p>The default value is <code>\["0.10", "0.50", "0.9"\]</code>.</p>
     pub forecast_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and chooses the best algorithm and configuration for your training dataset.</p>
     /// <p>The default value is <code>false</code>. In this case, you are required to specify an algorithm.</p>
@@ -116,7 +116,7 @@ impl CreatePredictorInput {
         self.forecast_horizon
     }
     /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
-    /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
+    /// <p>The default value is <code>\["0.10", "0.50", "0.9"\]</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_types.is_none()`.
     pub fn forecast_types(&self) -> &[::std::string::String] {
@@ -330,7 +330,7 @@ impl CreatePredictorInputBuilder {
     /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
     ///
     /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
-    /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
+    /// <p>The default value is <code>\["0.10", "0.50", "0.9"\]</code>.</p>
     pub fn forecast_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.forecast_types.unwrap_or_default();
         v.push(input.into());
@@ -338,13 +338,13 @@ impl CreatePredictorInputBuilder {
         self
     }
     /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
-    /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
+    /// <p>The default value is <code>\["0.10", "0.50", "0.9"\]</code>.</p>
     pub fn set_forecast_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.forecast_types = input;
         self
     }
     /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
-    /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
+    /// <p>The default value is <code>\["0.10", "0.50", "0.9"\]</code>.</p>
     pub fn get_forecast_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.forecast_types
     }

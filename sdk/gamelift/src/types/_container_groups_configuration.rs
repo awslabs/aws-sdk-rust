@@ -10,7 +10,7 @@ pub struct ContainerGroupsConfiguration {
     pub container_group_definition_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A set of ports to allow inbound traffic, including game clients, to connect to processes running in the container fleet.</p>
     /// <p>Connection ports are dynamically mapped to container ports, which are assigned to individual processes running in a container. The connection port range must have enough ports to map to all container ports across a fleet instance. To calculate the minimum connection ports needed, use the following formula:</p>
-    /// <p><i>[Total number of container ports as defined for containers in the replica container group] * [Desired or calculated number of replica container groups per instance] + [Total number of container ports as defined for containers in the daemon container group]</i></p>
+    /// <p><i>\[Total number of container ports as defined for containers in the replica container group\] * \[Desired or calculated number of replica container groups per instance\] + \[Total number of container ports as defined for containers in the daemon container group\]</i></p>
     /// <p>As a best practice, double the minimum number of connection ports.</p><note>
     /// <p>Use the fleet's <code>EC2InboundPermissions</code> property to control external access to connection ports. Set this property to the connection port numbers that you want to open access to. See <code>IpPermission</code> for more details.</p>
     /// </note>
@@ -27,7 +27,7 @@ impl ContainerGroupsConfiguration {
     }
     /// <p>A set of ports to allow inbound traffic, including game clients, to connect to processes running in the container fleet.</p>
     /// <p>Connection ports are dynamically mapped to container ports, which are assigned to individual processes running in a container. The connection port range must have enough ports to map to all container ports across a fleet instance. To calculate the minimum connection ports needed, use the following formula:</p>
-    /// <p><i>[Total number of container ports as defined for containers in the replica container group] * [Desired or calculated number of replica container groups per instance] + [Total number of container ports as defined for containers in the daemon container group]</i></p>
+    /// <p><i>\[Total number of container ports as defined for containers in the replica container group\] * \[Desired or calculated number of replica container groups per instance\] + \[Total number of container ports as defined for containers in the daemon container group\]</i></p>
     /// <p>As a best practice, double the minimum number of connection ports.</p><note>
     /// <p>Use the fleet's <code>EC2InboundPermissions</code> property to control external access to connection ports. Set this property to the connection port numbers that you want to open access to. See <code>IpPermission</code> for more details.</p>
     /// </note>
@@ -77,7 +77,7 @@ impl ContainerGroupsConfigurationBuilder {
     }
     /// <p>A set of ports to allow inbound traffic, including game clients, to connect to processes running in the container fleet.</p>
     /// <p>Connection ports are dynamically mapped to container ports, which are assigned to individual processes running in a container. The connection port range must have enough ports to map to all container ports across a fleet instance. To calculate the minimum connection ports needed, use the following formula:</p>
-    /// <p><i>[Total number of container ports as defined for containers in the replica container group] * [Desired or calculated number of replica container groups per instance] + [Total number of container ports as defined for containers in the daemon container group]</i></p>
+    /// <p><i>\[Total number of container ports as defined for containers in the replica container group\] * \[Desired or calculated number of replica container groups per instance\] + \[Total number of container ports as defined for containers in the daemon container group\]</i></p>
     /// <p>As a best practice, double the minimum number of connection ports.</p><note>
     /// <p>Use the fleet's <code>EC2InboundPermissions</code> property to control external access to connection ports. Set this property to the connection port numbers that you want to open access to. See <code>IpPermission</code> for more details.</p>
     /// </note>
@@ -88,7 +88,7 @@ impl ContainerGroupsConfigurationBuilder {
     }
     /// <p>A set of ports to allow inbound traffic, including game clients, to connect to processes running in the container fleet.</p>
     /// <p>Connection ports are dynamically mapped to container ports, which are assigned to individual processes running in a container. The connection port range must have enough ports to map to all container ports across a fleet instance. To calculate the minimum connection ports needed, use the following formula:</p>
-    /// <p><i>[Total number of container ports as defined for containers in the replica container group] * [Desired or calculated number of replica container groups per instance] + [Total number of container ports as defined for containers in the daemon container group]</i></p>
+    /// <p><i>\[Total number of container ports as defined for containers in the replica container group\] * \[Desired or calculated number of replica container groups per instance\] + \[Total number of container ports as defined for containers in the daemon container group\]</i></p>
     /// <p>As a best practice, double the minimum number of connection ports.</p><note>
     /// <p>Use the fleet's <code>EC2InboundPermissions</code> property to control external access to connection ports. Set this property to the connection port numbers that you want to open access to. See <code>IpPermission</code> for more details.</p>
     /// </note>
@@ -98,7 +98,7 @@ impl ContainerGroupsConfigurationBuilder {
     }
     /// <p>A set of ports to allow inbound traffic, including game clients, to connect to processes running in the container fleet.</p>
     /// <p>Connection ports are dynamically mapped to container ports, which are assigned to individual processes running in a container. The connection port range must have enough ports to map to all container ports across a fleet instance. To calculate the minimum connection ports needed, use the following formula:</p>
-    /// <p><i>[Total number of container ports as defined for containers in the replica container group] * [Desired or calculated number of replica container groups per instance] + [Total number of container ports as defined for containers in the daemon container group]</i></p>
+    /// <p><i>\[Total number of container ports as defined for containers in the replica container group\] * \[Desired or calculated number of replica container groups per instance\] + \[Total number of container ports as defined for containers in the daemon container group\]</i></p>
     /// <p>As a best practice, double the minimum number of connection ports.</p><note>
     /// <p>Use the fleet's <code>EC2InboundPermissions</code> property to control external access to connection ports. Set this property to the connection port numbers that you want to open access to. See <code>IpPermission</code> for more details.</p>
     /// </note>

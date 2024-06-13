@@ -123,21 +123,21 @@ impl CreateAttendeeFluentBuilder {
         self.inner.get_meeting_id()
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code></p>
+    /// <p>Pattern: <code>\[-_&amp;@+=,(){}\\[\\]\/«».:|'"#a-zA-Z0-9À-ÿ\s\]*</code></p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.</p>
     pub fn external_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_user_id(input.into());
         self
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code></p>
+    /// <p>Pattern: <code>\[-_&amp;@+=,(){}\\[\\]\/«».:|'"#a-zA-Z0-9À-ÿ\s\]*</code></p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.</p>
     pub fn set_external_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_user_id(input);
         self
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code></p>
+    /// <p>Pattern: <code>\[-_&amp;@+=,(){}\\[\\]\/«».:|'"#a-zA-Z0-9À-ÿ\s\]*</code></p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.</p>
     pub fn get_external_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_external_user_id()

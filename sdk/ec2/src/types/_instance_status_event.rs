@@ -9,7 +9,7 @@ pub struct InstanceStatusEvent {
     /// <p>The event code.</p>
     pub code: ::std::option::Option<crate::types::EventCode>,
     /// <p>A description of the event.</p>
-    /// <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
+    /// <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: \[Completed\].</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The latest scheduled end time for the event.</p>
     pub not_after: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -28,7 +28,7 @@ impl InstanceStatusEvent {
         self.code.as_ref()
     }
     /// <p>A description of the event.</p>
-    /// <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
+    /// <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: \[Completed\].</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -93,19 +93,19 @@ impl InstanceStatusEventBuilder {
         &self.code
     }
     /// <p>A description of the event.</p>
-    /// <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
+    /// <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: \[Completed\].</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the event.</p>
-    /// <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
+    /// <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: \[Completed\].</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>A description of the event.</p>
-    /// <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
+    /// <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: \[Completed\].</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NewSessionDetails {
     /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
-    /// <p>Content types must always contain <code> text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code> [text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p>
+    /// <p>Content types must always contain <code> text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>\[text/plain, text/markdown, application/json\]</code>, <code>\[text/markdown, text/plain\]</code>, <code>\[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response\]</code>.</p>
     pub supported_messaging_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The customer's details.</p>
     pub participant_details: ::std::option::Option<crate::types::ParticipantDetails>,
@@ -17,7 +17,7 @@ pub struct NewSessionDetails {
 }
 impl NewSessionDetails {
     /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
-    /// <p>Content types must always contain <code> text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code> [text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p>
+    /// <p>Content types must always contain <code> text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>\[text/plain, text/markdown, application/json\]</code>, <code>\[text/markdown, text/plain\]</code>, <code>\[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response\]</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_messaging_content_types.is_none()`.
     pub fn supported_messaging_content_types(&self) -> &[::std::string::String] {
@@ -59,7 +59,7 @@ impl NewSessionDetailsBuilder {
     /// To override the contents of this collection use [`set_supported_messaging_content_types`](Self::set_supported_messaging_content_types).
     ///
     /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
-    /// <p>Content types must always contain <code> text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code> [text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p>
+    /// <p>Content types must always contain <code> text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>\[text/plain, text/markdown, application/json\]</code>, <code>\[text/markdown, text/plain\]</code>, <code>\[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response\]</code>.</p>
     pub fn supported_messaging_content_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_messaging_content_types.unwrap_or_default();
         v.push(input.into());
@@ -67,13 +67,13 @@ impl NewSessionDetailsBuilder {
         self
     }
     /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
-    /// <p>Content types must always contain <code> text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code> [text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p>
+    /// <p>Content types must always contain <code> text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>\[text/plain, text/markdown, application/json\]</code>, <code>\[text/markdown, text/plain\]</code>, <code>\[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response\]</code>.</p>
     pub fn set_supported_messaging_content_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_messaging_content_types = input;
         self
     }
     /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
-    /// <p>Content types must always contain <code> text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code> [text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p>
+    /// <p>Content types must always contain <code> text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>\[text/plain, text/markdown, application/json\]</code>, <code>\[text/markdown, text/plain\]</code>, <code>\[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response\]</code>.</p>
     pub fn get_supported_messaging_content_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_messaging_content_types
     }

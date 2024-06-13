@@ -37,7 +37,7 @@ pub struct Event {
     /// <p>The ID of the list of recommendations that contains the item the user interacted with. Provide a <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show your user as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution to measure the impact of recommendations.</p>
     /// <p>For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>. For more information on creating a metric attribution see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
     pub recommendation_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions data for an event. For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>.</p>
+    /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>\["itemId1", "itemId2", "itemId3"\]</code>. Provide a list of items to manually record impressions data for an event. For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>.</p>
     pub impression: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains information about the metric attribution associated with an event. For more information about metric attributions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
     pub metric_attribution: ::std::option::Option<crate::types::MetricAttribution>,
@@ -91,7 +91,7 @@ impl Event {
     pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
-    /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions data for an event. For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>.</p>
+    /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>\["itemId1", "itemId2", "itemId3"\]</code>. Provide a list of items to manually record impressions data for an event. For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.impression.is_none()`.
     pub fn impression(&self) -> &[::std::string::String] {
@@ -300,19 +300,19 @@ impl EventBuilder {
     ///
     /// To override the contents of this collection use [`set_impression`](Self::set_impression).
     ///
-    /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions data for an event. For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>.</p>
+    /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>\["itemId1", "itemId2", "itemId3"\]</code>. Provide a list of items to manually record impressions data for an event. For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>.</p>
     pub fn impression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.impression.unwrap_or_default();
         v.push(input.into());
         self.impression = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions data for an event. For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>.</p>
+    /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>\["itemId1", "itemId2", "itemId3"\]</code>. Provide a list of items to manually record impressions data for an event. For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>.</p>
     pub fn set_impression(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.impression = input;
         self
     }
-    /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions data for an event. For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>.</p>
+    /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>\["itemId1", "itemId2", "itemId3"\]</code>. Provide a list of items to manually record impressions data for an event. For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>.</p>
     pub fn get_impression(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.impression
     }

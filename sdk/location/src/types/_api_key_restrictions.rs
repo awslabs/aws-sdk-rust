@@ -34,7 +34,7 @@ pub struct ApiKeyRestrictions {
     /// <p><code>geo:CalculateRouteMatrix</code> - Allows calculating a matrix of routes.</p></li>
     /// </ul></li>
     /// </ul><note>
-    /// <p>You must use these strings exactly. For example, to provide access to map rendering, the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not. Similarly, you cannot use <code>["geo:SearchPlaceIndexFor*"]</code> - you must list each of the Place actions separately.</p>
+    /// <p>You must use these strings exactly. For example, to provide access to map rendering, the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>\["geo:GetMap*"\]</code> is valid but <code>\["geo:GetMapTile"\]</code> is not. Similarly, you cannot use <code>\["geo:SearchPlaceIndexFor*"\]</code> - you must list each of the Place actions separately.</p>
     /// </note>
     pub allow_actions: ::std::vec::Vec<::std::string::String>,
     /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on.</p>
@@ -97,7 +97,7 @@ impl ApiKeyRestrictions {
     /// <p><code>geo:CalculateRouteMatrix</code> - Allows calculating a matrix of routes.</p></li>
     /// </ul></li>
     /// </ul><note>
-    /// <p>You must use these strings exactly. For example, to provide access to map rendering, the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not. Similarly, you cannot use <code>["geo:SearchPlaceIndexFor*"]</code> - you must list each of the Place actions separately.</p>
+    /// <p>You must use these strings exactly. For example, to provide access to map rendering, the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>\["geo:GetMap*"\]</code> is valid but <code>\["geo:GetMapTile"\]</code> is not. Similarly, you cannot use <code>\["geo:SearchPlaceIndexFor*"\]</code> - you must list each of the Place actions separately.</p>
     /// </note>
     pub fn allow_actions(&self) -> &[::std::string::String] {
         use std::ops::Deref;
@@ -189,7 +189,7 @@ impl ApiKeyRestrictionsBuilder {
     /// <p><code>geo:CalculateRouteMatrix</code> - Allows calculating a matrix of routes.</p></li>
     /// </ul></li>
     /// </ul><note>
-    /// <p>You must use these strings exactly. For example, to provide access to map rendering, the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not. Similarly, you cannot use <code>["geo:SearchPlaceIndexFor*"]</code> - you must list each of the Place actions separately.</p>
+    /// <p>You must use these strings exactly. For example, to provide access to map rendering, the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>\["geo:GetMap*"\]</code> is valid but <code>\["geo:GetMapTile"\]</code> is not. Similarly, you cannot use <code>\["geo:SearchPlaceIndexFor*"\]</code> - you must list each of the Place actions separately.</p>
     /// </note>
     pub fn allow_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allow_actions.unwrap_or_default();
@@ -227,7 +227,7 @@ impl ApiKeyRestrictionsBuilder {
     /// <p><code>geo:CalculateRouteMatrix</code> - Allows calculating a matrix of routes.</p></li>
     /// </ul></li>
     /// </ul><note>
-    /// <p>You must use these strings exactly. For example, to provide access to map rendering, the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not. Similarly, you cannot use <code>["geo:SearchPlaceIndexFor*"]</code> - you must list each of the Place actions separately.</p>
+    /// <p>You must use these strings exactly. For example, to provide access to map rendering, the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>\["geo:GetMap*"\]</code> is valid but <code>\["geo:GetMapTile"\]</code> is not. Similarly, you cannot use <code>\["geo:SearchPlaceIndexFor*"\]</code> - you must list each of the Place actions separately.</p>
     /// </note>
     pub fn set_allow_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allow_actions = input;
@@ -263,7 +263,7 @@ impl ApiKeyRestrictionsBuilder {
     /// <p><code>geo:CalculateRouteMatrix</code> - Allows calculating a matrix of routes.</p></li>
     /// </ul></li>
     /// </ul><note>
-    /// <p>You must use these strings exactly. For example, to provide access to map rendering, the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not. Similarly, you cannot use <code>["geo:SearchPlaceIndexFor*"]</code> - you must list each of the Place actions separately.</p>
+    /// <p>You must use these strings exactly. For example, to provide access to map rendering, the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>\["geo:GetMap*"\]</code> is valid but <code>\["geo:GetMapTile"\]</code> is not. Similarly, you cannot use <code>\["geo:SearchPlaceIndexFor*"\]</code> - you must list each of the Place actions separately.</p>
     /// </note>
     pub fn get_allow_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allow_actions

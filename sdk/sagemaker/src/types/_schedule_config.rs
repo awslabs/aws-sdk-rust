@@ -12,7 +12,7 @@ pub struct ScheduleConfig {
     /// <p><code>Hourly: cron(0 * ? * * *)</code></p></li>
     /// <li>
     /// <p>If you want to start the job daily:</p>
-    /// <p><code>cron(0 [00-23] ? * * *)</code></p></li>
+    /// <p><code>cron(0 \[00-23\] ? * * *)</code></p></li>
     /// <li>
     /// <p>If you want to run the job one time, immediately, use the following keyword:</p>
     /// <p><code>NOW</code></p></li>
@@ -25,7 +25,7 @@ pub struct ScheduleConfig {
     /// <p>Daily at midnight UTC: <code>cron(0 0 ? * * *)</code></p></li>
     /// </ul>
     /// <p>To support running every 6, 12 hours, the following are also supported:</p>
-    /// <p><code>cron(0 [00-23]/[01-24] ? * * *)</code></p>
+    /// <p><code>cron(0 \[00-23\]/\[01-24\] ? * * *)</code></p>
     /// <p>For example, the following are valid cron expressions:</p>
     /// <ul>
     /// <li>
@@ -60,7 +60,7 @@ impl ScheduleConfig {
     /// <p><code>Hourly: cron(0 * ? * * *)</code></p></li>
     /// <li>
     /// <p>If you want to start the job daily:</p>
-    /// <p><code>cron(0 [00-23] ? * * *)</code></p></li>
+    /// <p><code>cron(0 \[00-23\] ? * * *)</code></p></li>
     /// <li>
     /// <p>If you want to run the job one time, immediately, use the following keyword:</p>
     /// <p><code>NOW</code></p></li>
@@ -73,7 +73,7 @@ impl ScheduleConfig {
     /// <p>Daily at midnight UTC: <code>cron(0 0 ? * * *)</code></p></li>
     /// </ul>
     /// <p>To support running every 6, 12 hours, the following are also supported:</p>
-    /// <p><code>cron(0 [00-23]/[01-24] ? * * *)</code></p>
+    /// <p><code>cron(0 \[00-23\]/\[01-24\] ? * * *)</code></p>
     /// <p>For example, the following are valid cron expressions:</p>
     /// <ul>
     /// <li>
@@ -129,7 +129,7 @@ impl ScheduleConfigBuilder {
     /// <p><code>Hourly: cron(0 * ? * * *)</code></p></li>
     /// <li>
     /// <p>If you want to start the job daily:</p>
-    /// <p><code>cron(0 [00-23] ? * * *)</code></p></li>
+    /// <p><code>cron(0 \[00-23\] ? * * *)</code></p></li>
     /// <li>
     /// <p>If you want to run the job one time, immediately, use the following keyword:</p>
     /// <p><code>NOW</code></p></li>
@@ -142,7 +142,7 @@ impl ScheduleConfigBuilder {
     /// <p>Daily at midnight UTC: <code>cron(0 0 ? * * *)</code></p></li>
     /// </ul>
     /// <p>To support running every 6, 12 hours, the following are also supported:</p>
-    /// <p><code>cron(0 [00-23]/[01-24] ? * * *)</code></p>
+    /// <p><code>cron(0 \[00-23\]/\[01-24\] ? * * *)</code></p>
     /// <p>For example, the following are valid cron expressions:</p>
     /// <ul>
     /// <li>
@@ -171,7 +171,7 @@ impl ScheduleConfigBuilder {
     /// <p><code>Hourly: cron(0 * ? * * *)</code></p></li>
     /// <li>
     /// <p>If you want to start the job daily:</p>
-    /// <p><code>cron(0 [00-23] ? * * *)</code></p></li>
+    /// <p><code>cron(0 \[00-23\] ? * * *)</code></p></li>
     /// <li>
     /// <p>If you want to run the job one time, immediately, use the following keyword:</p>
     /// <p><code>NOW</code></p></li>
@@ -184,7 +184,7 @@ impl ScheduleConfigBuilder {
     /// <p>Daily at midnight UTC: <code>cron(0 0 ? * * *)</code></p></li>
     /// </ul>
     /// <p>To support running every 6, 12 hours, the following are also supported:</p>
-    /// <p><code>cron(0 [00-23]/[01-24] ? * * *)</code></p>
+    /// <p><code>cron(0 \[00-23\]/\[01-24\] ? * * *)</code></p>
     /// <p>For example, the following are valid cron expressions:</p>
     /// <ul>
     /// <li>
@@ -212,7 +212,7 @@ impl ScheduleConfigBuilder {
     /// <p><code>Hourly: cron(0 * ? * * *)</code></p></li>
     /// <li>
     /// <p>If you want to start the job daily:</p>
-    /// <p><code>cron(0 [00-23] ? * * *)</code></p></li>
+    /// <p><code>cron(0 \[00-23\] ? * * *)</code></p></li>
     /// <li>
     /// <p>If you want to run the job one time, immediately, use the following keyword:</p>
     /// <p><code>NOW</code></p></li>
@@ -225,7 +225,7 @@ impl ScheduleConfigBuilder {
     /// <p>Daily at midnight UTC: <code>cron(0 0 ? * * *)</code></p></li>
     /// </ul>
     /// <p>To support running every 6, 12 hours, the following are also supported:</p>
-    /// <p><code>cron(0 [00-23]/[01-24] ? * * *)</code></p>
+    /// <p><code>cron(0 \[00-23\]/\[01-24\] ? * * *)</code></p>
     /// <p>For example, the following are valid cron expressions:</p>
     /// <ul>
     /// <li>

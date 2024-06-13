@@ -8,10 +8,10 @@ pub struct ProvisioningArtifactProperties {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the provisioning artifact, including how it differs from the previous provisioning artifact.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
+    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: \[ LoadTemplateFromURL, ImportFromPhysicalId \]</p>
     /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
     /// <p><code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code></p>
-    /// <p><code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code></p>
+    /// <p><code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:\[us-east-1\]:\[accountId\]:stack/\[StackName\]/\[resourceId\]</code></p>
     pub info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
@@ -38,10 +38,10 @@ impl ProvisioningArtifactProperties {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
+    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: \[ LoadTemplateFromURL, ImportFromPhysicalId \]</p>
     /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
     /// <p><code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code></p>
-    /// <p><code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code></p>
+    /// <p><code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:\[us-east-1\]:\[accountId\]:stack/\[StackName\]/\[resourceId\]</code></p>
     pub fn info(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.info.as_ref()
     }
@@ -115,28 +115,28 @@ impl ProvisioningArtifactPropertiesBuilder {
     ///
     /// To override the contents of this collection use [`set_info`](Self::set_info).
     ///
-    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
+    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: \[ LoadTemplateFromURL, ImportFromPhysicalId \]</p>
     /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
     /// <p><code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code></p>
-    /// <p><code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code></p>
+    /// <p><code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:\[us-east-1\]:\[accountId\]:stack/\[StackName\]/\[resourceId\]</code></p>
     pub fn info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.info.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.info = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
+    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: \[ LoadTemplateFromURL, ImportFromPhysicalId \]</p>
     /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
     /// <p><code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code></p>
-    /// <p><code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code></p>
+    /// <p><code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:\[us-east-1\]:\[accountId\]:stack/\[StackName\]/\[resourceId\]</code></p>
     pub fn set_info(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.info = input;
         self
     }
-    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
+    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: \[ LoadTemplateFromURL, ImportFromPhysicalId \]</p>
     /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as follows:</p>
     /// <p><code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code></p>
-    /// <p><code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code></p>
+    /// <p><code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:\[us-east-1\]:\[accountId\]:stack/\[StackName\]/\[resourceId\]</code></p>
     pub fn get_info(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.info
     }

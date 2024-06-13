@@ -17,9 +17,9 @@
 pub struct RestoreTestingSelectionForCreate {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub iam_role_arn: ::std::string::String,
-    /// <p>Each protected resource can be filtered by its specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...", "arn:aws:..."]</code> or by a wildcard: <code>ProtectedResourceArns: ["*"]</code>, but not both.</p>
+    /// <p>Each protected resource can be filtered by its specific ARNs, such as <code>ProtectedResourceArns: \["arn:aws:...", "arn:aws:..."\]</code> or by a wildcard: <code>ProtectedResourceArns: \["*"\]</code>, but not both.</p>
     pub protected_resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>If you have included the wildcard in ProtectedResourceArns, you can include resource conditions, such as <code>ProtectedResourceConditions: { StringEquals: [{ key: "XXXX", value: "YYYY" }]</code>.</p>
+    /// <p>If you have included the wildcard in ProtectedResourceArns, you can include resource conditions, such as <code>ProtectedResourceConditions: { StringEquals: \[{ key: "XXXX", value: "YYYY" }\]</code>.</p>
     pub protected_resource_conditions: ::std::option::Option<crate::types::ProtectedResourceConditions>,
     /// <p>The type of Amazon Web Services resource included in a restore testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     /// <p>Supported resource types accepted include:</p>
@@ -60,13 +60,13 @@ impl RestoreTestingSelectionForCreate {
         use std::ops::Deref;
         self.iam_role_arn.deref()
     }
-    /// <p>Each protected resource can be filtered by its specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...", "arn:aws:..."]</code> or by a wildcard: <code>ProtectedResourceArns: ["*"]</code>, but not both.</p>
+    /// <p>Each protected resource can be filtered by its specific ARNs, such as <code>ProtectedResourceArns: \["arn:aws:...", "arn:aws:..."\]</code> or by a wildcard: <code>ProtectedResourceArns: \["*"\]</code>, but not both.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protected_resource_arns.is_none()`.
     pub fn protected_resource_arns(&self) -> &[::std::string::String] {
         self.protected_resource_arns.as_deref().unwrap_or_default()
     }
-    /// <p>If you have included the wildcard in ProtectedResourceArns, you can include resource conditions, such as <code>ProtectedResourceConditions: { StringEquals: [{ key: "XXXX", value: "YYYY" }]</code>.</p>
+    /// <p>If you have included the wildcard in ProtectedResourceArns, you can include resource conditions, such as <code>ProtectedResourceConditions: { StringEquals: \[{ key: "XXXX", value: "YYYY" }\]</code>.</p>
     pub fn protected_resource_conditions(&self) -> ::std::option::Option<&crate::types::ProtectedResourceConditions> {
         self.protected_resource_conditions.as_ref()
     }
@@ -165,33 +165,33 @@ impl RestoreTestingSelectionForCreateBuilder {
     ///
     /// To override the contents of this collection use [`set_protected_resource_arns`](Self::set_protected_resource_arns).
     ///
-    /// <p>Each protected resource can be filtered by its specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...", "arn:aws:..."]</code> or by a wildcard: <code>ProtectedResourceArns: ["*"]</code>, but not both.</p>
+    /// <p>Each protected resource can be filtered by its specific ARNs, such as <code>ProtectedResourceArns: \["arn:aws:...", "arn:aws:..."\]</code> or by a wildcard: <code>ProtectedResourceArns: \["*"\]</code>, but not both.</p>
     pub fn protected_resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.protected_resource_arns.unwrap_or_default();
         v.push(input.into());
         self.protected_resource_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Each protected resource can be filtered by its specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...", "arn:aws:..."]</code> or by a wildcard: <code>ProtectedResourceArns: ["*"]</code>, but not both.</p>
+    /// <p>Each protected resource can be filtered by its specific ARNs, such as <code>ProtectedResourceArns: \["arn:aws:...", "arn:aws:..."\]</code> or by a wildcard: <code>ProtectedResourceArns: \["*"\]</code>, but not both.</p>
     pub fn set_protected_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.protected_resource_arns = input;
         self
     }
-    /// <p>Each protected resource can be filtered by its specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...", "arn:aws:..."]</code> or by a wildcard: <code>ProtectedResourceArns: ["*"]</code>, but not both.</p>
+    /// <p>Each protected resource can be filtered by its specific ARNs, such as <code>ProtectedResourceArns: \["arn:aws:...", "arn:aws:..."\]</code> or by a wildcard: <code>ProtectedResourceArns: \["*"\]</code>, but not both.</p>
     pub fn get_protected_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.protected_resource_arns
     }
-    /// <p>If you have included the wildcard in ProtectedResourceArns, you can include resource conditions, such as <code>ProtectedResourceConditions: { StringEquals: [{ key: "XXXX", value: "YYYY" }]</code>.</p>
+    /// <p>If you have included the wildcard in ProtectedResourceArns, you can include resource conditions, such as <code>ProtectedResourceConditions: { StringEquals: \[{ key: "XXXX", value: "YYYY" }\]</code>.</p>
     pub fn protected_resource_conditions(mut self, input: crate::types::ProtectedResourceConditions) -> Self {
         self.protected_resource_conditions = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If you have included the wildcard in ProtectedResourceArns, you can include resource conditions, such as <code>ProtectedResourceConditions: { StringEquals: [{ key: "XXXX", value: "YYYY" }]</code>.</p>
+    /// <p>If you have included the wildcard in ProtectedResourceArns, you can include resource conditions, such as <code>ProtectedResourceConditions: { StringEquals: \[{ key: "XXXX", value: "YYYY" }\]</code>.</p>
     pub fn set_protected_resource_conditions(mut self, input: ::std::option::Option<crate::types::ProtectedResourceConditions>) -> Self {
         self.protected_resource_conditions = input;
         self
     }
-    /// <p>If you have included the wildcard in ProtectedResourceArns, you can include resource conditions, such as <code>ProtectedResourceConditions: { StringEquals: [{ key: "XXXX", value: "YYYY" }]</code>.</p>
+    /// <p>If you have included the wildcard in ProtectedResourceArns, you can include resource conditions, such as <code>ProtectedResourceConditions: { StringEquals: \[{ key: "XXXX", value: "YYYY" }\]</code>.</p>
     pub fn get_protected_resource_conditions(&self) -> &::std::option::Option<crate::types::ProtectedResourceConditions> {
         &self.protected_resource_conditions
     }

@@ -155,19 +155,19 @@ impl UpdateDestinationFluentBuilder {
     pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_id()
     }
-    /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+    /// <p>\[Deprecated\] Describes an update for a destination in Amazon S3.</p>
     #[deprecated]
     pub fn s3_destination_update(mut self, input: crate::types::S3DestinationUpdate) -> Self {
         self.inner = self.inner.s3_destination_update(input);
         self
     }
-    /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+    /// <p>\[Deprecated\] Describes an update for a destination in Amazon S3.</p>
     #[deprecated]
     pub fn set_s3_destination_update(mut self, input: ::std::option::Option<crate::types::S3DestinationUpdate>) -> Self {
         self.inner = self.inner.set_s3_destination_update(input);
         self
     }
-    /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+    /// <p>\[Deprecated\] Describes an update for a destination in Amazon S3.</p>
     #[deprecated]
     pub fn get_s3_destination_update(&self) -> &::std::option::Option<crate::types::S3DestinationUpdate> {
         self.inner.get_s3_destination_update()

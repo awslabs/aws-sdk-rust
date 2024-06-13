@@ -67,7 +67,7 @@
 pub struct HealthCheck {
     /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell.</p>
     /// <p>When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
-    /// <p><code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code></p>
+    /// <p><code>\[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" \]</code></p>
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -86,7 +86,7 @@ pub struct HealthCheck {
 impl HealthCheck {
     /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell.</p>
     /// <p>When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
-    /// <p><code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code></p>
+    /// <p><code>\[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" \]</code></p>
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -137,7 +137,7 @@ impl HealthCheckBuilder {
     ///
     /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell.</p>
     /// <p>When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
-    /// <p><code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code></p>
+    /// <p><code>\[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" \]</code></p>
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -149,7 +149,7 @@ impl HealthCheckBuilder {
     }
     /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell.</p>
     /// <p>When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
-    /// <p><code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code></p>
+    /// <p><code>\[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" \]</code></p>
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -159,7 +159,7 @@ impl HealthCheckBuilder {
     }
     /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell.</p>
     /// <p>When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
-    /// <p><code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code></p>
+    /// <p><code>\[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" \]</code></p>
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>

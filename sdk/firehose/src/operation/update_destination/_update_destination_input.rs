@@ -9,7 +9,7 @@ pub struct UpdateDestinationInput {
     pub current_delivery_stream_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the destination.</p>
     pub destination_id: ::std::option::Option<::std::string::String>,
-    /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+    /// <p>\[Deprecated\] Describes an update for a destination in Amazon S3.</p>
     #[deprecated]
     pub s3_destination_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
     /// <p>Describes an update for a destination in Amazon S3.</p>
@@ -42,7 +42,7 @@ impl UpdateDestinationInput {
     pub fn destination_id(&self) -> ::std::option::Option<&str> {
         self.destination_id.as_deref()
     }
-    /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+    /// <p>\[Deprecated\] Describes an update for a destination in Amazon S3.</p>
     #[deprecated]
     pub fn s3_destination_update(&self) -> ::std::option::Option<&crate::types::S3DestinationUpdate> {
         self.s3_destination_update.as_ref()
@@ -152,19 +152,19 @@ impl UpdateDestinationInputBuilder {
     pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_id
     }
-    /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+    /// <p>\[Deprecated\] Describes an update for a destination in Amazon S3.</p>
     #[deprecated]
     pub fn s3_destination_update(mut self, input: crate::types::S3DestinationUpdate) -> Self {
         self.s3_destination_update = ::std::option::Option::Some(input);
         self
     }
-    /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+    /// <p>\[Deprecated\] Describes an update for a destination in Amazon S3.</p>
     #[deprecated]
     pub fn set_s3_destination_update(mut self, input: ::std::option::Option<crate::types::S3DestinationUpdate>) -> Self {
         self.s3_destination_update = input;
         self
     }
-    /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+    /// <p>\[Deprecated\] Describes an update for a destination in Amazon S3.</p>
     #[deprecated]
     pub fn get_s3_destination_update(&self) -> &::std::option::Option<crate::types::S3DestinationUpdate> {
         &self.s3_destination_update

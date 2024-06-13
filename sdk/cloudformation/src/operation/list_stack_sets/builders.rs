@@ -25,11 +25,11 @@ impl crate::operation::list_stack_sets::builders::ListStackSetsInputBuilder {
 /// <p>Returns summary information about stack sets that are associated with the user.</p>
 /// <ul>
 /// <li>
-/// <p>[Self-managed permissions] If you set the <code>CallAs</code> parameter to <code>SELF</code> while signed in to your Amazon Web Services account, <code>ListStackSets</code> returns all self-managed stack sets in your Amazon Web Services account.</p></li>
+/// <p>\[Self-managed permissions\] If you set the CallAs parameter to SELF while signed in to your Amazon Web Services account, ListStackSets returns all self-managed stack sets in your Amazon Web Services account.</p></li>
 /// <li>
-/// <p>[Service-managed permissions] If you set the <code>CallAs</code> parameter to <code>SELF</code> while signed in to the organization's management account, <code>ListStackSets</code> returns all stack sets in the management account.</p></li>
+/// <p>\[Service-managed permissions\] If you set the CallAs parameter to SELF while signed in to the organization's management account, ListStackSets returns all stack sets in the management account.</p></li>
 /// <li>
-/// <p>[Service-managed permissions] If you set the <code>CallAs</code> parameter to <code>DELEGATED_ADMIN</code> while signed in to your member account, <code>ListStackSets</code> returns all stack sets with service-managed permissions in the management account.</p></li>
+/// <p>\[Service-managed permissions\] If you set the CallAs parameter to DELEGATED_ADMIN while signed in to your member account, ListStackSets returns all stack sets with service-managed permissions in the management account.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStackSetsFluentBuilder {
@@ -164,7 +164,7 @@ impl ListStackSetsFluentBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StackSetStatus> {
         self.inner.get_status()
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>
@@ -177,7 +177,7 @@ impl ListStackSetsFluentBuilder {
         self.inner = self.inner.call_as(input);
         self
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>
@@ -190,7 +190,7 @@ impl ListStackSetsFluentBuilder {
         self.inner = self.inner.set_call_as(input);
         self
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>

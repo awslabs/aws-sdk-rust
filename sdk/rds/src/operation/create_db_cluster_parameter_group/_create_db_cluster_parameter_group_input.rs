@@ -23,9 +23,9 @@ pub struct CreateDbClusterParameterGroupInput {
     /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Example: <code>postgres13</code></p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></engine></code></p>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine</code></p>
     /// <p>For example, to list all of the available parameter group families for the Aurora PostgreSQL DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code></p><note>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine aurora-postgresql</code></p><note>
     /// <p>The output contains duplicates.</p>
     /// </note>
     /// <p>The following are the valid DB engine values:</p>
@@ -67,9 +67,9 @@ impl CreateDbClusterParameterGroupInput {
     /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Example: <code>postgres13</code></p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></engine></code></p>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine</code></p>
     /// <p>For example, to list all of the available parameter group families for the Aurora PostgreSQL DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code></p><note>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine aurora-postgresql</code></p><note>
     /// <p>The output contains duplicates.</p>
     /// </note>
     /// <p>The following are the valid DB engine values:</p>
@@ -160,9 +160,9 @@ impl CreateDbClusterParameterGroupInputBuilder {
     /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Example: <code>postgres13</code></p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></engine></code></p>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine</code></p>
     /// <p>For example, to list all of the available parameter group families for the Aurora PostgreSQL DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code></p><note>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine aurora-postgresql</code></p><note>
     /// <p>The output contains duplicates.</p>
     /// </note>
     /// <p>The following are the valid DB engine values:</p>
@@ -191,9 +191,9 @@ impl CreateDbClusterParameterGroupInputBuilder {
     /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Example: <code>postgres13</code></p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></engine></code></p>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine</code></p>
     /// <p>For example, to list all of the available parameter group families for the Aurora PostgreSQL DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code></p><note>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine aurora-postgresql</code></p><note>
     /// <p>The output contains duplicates.</p>
     /// </note>
     /// <p>The following are the valid DB engine values:</p>
@@ -221,9 +221,9 @@ impl CreateDbClusterParameterGroupInputBuilder {
     /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Example: <code>postgres13</code></p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></engine></code></p>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine</code></p>
     /// <p>For example, to list all of the available parameter group families for the Aurora PostgreSQL DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code></p><note>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine aurora-postgresql</code></p><note>
     /// <p>The output contains duplicates.</p>
     /// </note>
     /// <p>The following are the valid DB engine values:</p>

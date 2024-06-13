@@ -100,7 +100,7 @@ pub struct UpdateServerInput {
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
     /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
-    /// <p><code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code></p>
+    /// <p><code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":\[\]}'</code></p>
     pub workflow_details: ::std::option::Option<crate::types::WorkflowDetails>,
     /// <p>Specifies the log groups to which your server logs are sent.</p>
     /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
@@ -237,7 +237,7 @@ impl UpdateServerInput {
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
     /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
-    /// <p><code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code></p>
+    /// <p><code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":\[\]}'</code></p>
     pub fn workflow_details(&self) -> ::std::option::Option<&crate::types::WorkflowDetails> {
         self.workflow_details.as_ref()
     }
@@ -695,7 +695,7 @@ impl UpdateServerInputBuilder {
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
     /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
-    /// <p><code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code></p>
+    /// <p><code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":\[\]}'</code></p>
     pub fn workflow_details(mut self, input: crate::types::WorkflowDetails) -> Self {
         self.workflow_details = ::std::option::Option::Some(input);
         self
@@ -703,7 +703,7 @@ impl UpdateServerInputBuilder {
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
     /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
-    /// <p><code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code></p>
+    /// <p><code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":\[\]}'</code></p>
     pub fn set_workflow_details(mut self, input: ::std::option::Option<crate::types::WorkflowDetails>) -> Self {
         self.workflow_details = input;
         self
@@ -711,7 +711,7 @@ impl UpdateServerInputBuilder {
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
     /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
-    /// <p><code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code></p>
+    /// <p><code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":\[\]}'</code></p>
     pub fn get_workflow_details(&self) -> &::std::option::Option<crate::types::WorkflowDetails> {
         &self.workflow_details
     }

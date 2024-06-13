@@ -9,7 +9,7 @@ pub struct TabularJobConfig {
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
     pub completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
     /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job V2. You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:</p>
-    /// <p><code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+    /// <p><code>{ "FeatureAttributeNames":\["col1", "col2", ...\] }</code>.</p>
     /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
     /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p><note>
     /// <p>These column keys may not include the target column.</p>
@@ -17,7 +17,7 @@ pub struct TabularJobConfig {
     /// <p>In ensembling mode, Autopilot only supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>. In HPO mode, Autopilot can support <code>numeric</code>, <code>categorical</code>, <code>text</code>, <code>datetime</code>, and <code>sequence</code>.</p>
     /// <p>If only <code>FeatureDataTypes</code> is provided, the column keys (<code>col1</code>, <code>col2</code>,..) should be a subset of the column names in the input data.</p>
     /// <p>If both <code>FeatureDataTypes</code> and <code>FeatureAttributeNames</code> are provided, then the column keys should be a subset of the column names provided in <code>FeatureAttributeNames</code>.</p>
-    /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> are case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
+    /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>\["col1", "col2", ...\]</code> are case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
     pub feature_specification_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The method that Autopilot uses to train the data. You can either specify the mode manually or let Autopilot choose for you based on the dataset size by selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses <code>ENSEMBLING</code> for datasets smaller than 100 MB, and <code>HYPERPARAMETER_TUNING</code> for larger ones.</p>
     /// <p>The <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict classification and regression tasks directly from your dataset. This machine learning mode combines several base models to produce an optimal predictive model. It then uses a stacking ensemble method to combine predictions from contributing members. A multi-stack ensemble model can provide better performance over a single model by combining the predictive capabilities of multiple models. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.</p>
@@ -46,7 +46,7 @@ impl TabularJobConfig {
         self.completion_criteria.as_ref()
     }
     /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job V2. You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:</p>
-    /// <p><code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+    /// <p><code>{ "FeatureAttributeNames":\["col1", "col2", ...\] }</code>.</p>
     /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
     /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p><note>
     /// <p>These column keys may not include the target column.</p>
@@ -54,7 +54,7 @@ impl TabularJobConfig {
     /// <p>In ensembling mode, Autopilot only supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>. In HPO mode, Autopilot can support <code>numeric</code>, <code>categorical</code>, <code>text</code>, <code>datetime</code>, and <code>sequence</code>.</p>
     /// <p>If only <code>FeatureDataTypes</code> is provided, the column keys (<code>col1</code>, <code>col2</code>,..) should be a subset of the column names in the input data.</p>
     /// <p>If both <code>FeatureDataTypes</code> and <code>FeatureAttributeNames</code> are provided, then the column keys should be a subset of the column names provided in <code>FeatureAttributeNames</code>.</p>
-    /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> are case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
+    /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>\["col1", "col2", ...\]</code> are case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
     pub fn feature_specification_s3_uri(&self) -> ::std::option::Option<&str> {
         self.feature_specification_s3_uri.as_deref()
     }
@@ -135,7 +135,7 @@ impl TabularJobConfigBuilder {
         &self.completion_criteria
     }
     /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job V2. You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:</p>
-    /// <p><code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+    /// <p><code>{ "FeatureAttributeNames":\["col1", "col2", ...\] }</code>.</p>
     /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
     /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p><note>
     /// <p>These column keys may not include the target column.</p>
@@ -143,13 +143,13 @@ impl TabularJobConfigBuilder {
     /// <p>In ensembling mode, Autopilot only supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>. In HPO mode, Autopilot can support <code>numeric</code>, <code>categorical</code>, <code>text</code>, <code>datetime</code>, and <code>sequence</code>.</p>
     /// <p>If only <code>FeatureDataTypes</code> is provided, the column keys (<code>col1</code>, <code>col2</code>,..) should be a subset of the column names in the input data.</p>
     /// <p>If both <code>FeatureDataTypes</code> and <code>FeatureAttributeNames</code> are provided, then the column keys should be a subset of the column names provided in <code>FeatureAttributeNames</code>.</p>
-    /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> are case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
+    /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>\["col1", "col2", ...\]</code> are case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
     pub fn feature_specification_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_specification_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job V2. You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:</p>
-    /// <p><code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+    /// <p><code>{ "FeatureAttributeNames":\["col1", "col2", ...\] }</code>.</p>
     /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
     /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p><note>
     /// <p>These column keys may not include the target column.</p>
@@ -157,13 +157,13 @@ impl TabularJobConfigBuilder {
     /// <p>In ensembling mode, Autopilot only supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>. In HPO mode, Autopilot can support <code>numeric</code>, <code>categorical</code>, <code>text</code>, <code>datetime</code>, and <code>sequence</code>.</p>
     /// <p>If only <code>FeatureDataTypes</code> is provided, the column keys (<code>col1</code>, <code>col2</code>,..) should be a subset of the column names in the input data.</p>
     /// <p>If both <code>FeatureDataTypes</code> and <code>FeatureAttributeNames</code> are provided, then the column keys should be a subset of the column names provided in <code>FeatureAttributeNames</code>.</p>
-    /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> are case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
+    /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>\["col1", "col2", ...\]</code> are case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
     pub fn set_feature_specification_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_specification_s3_uri = input;
         self
     }
     /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job V2. You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:</p>
-    /// <p><code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+    /// <p><code>{ "FeatureAttributeNames":\["col1", "col2", ...\] }</code>.</p>
     /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
     /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p><note>
     /// <p>These column keys may not include the target column.</p>
@@ -171,7 +171,7 @@ impl TabularJobConfigBuilder {
     /// <p>In ensembling mode, Autopilot only supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>. In HPO mode, Autopilot can support <code>numeric</code>, <code>categorical</code>, <code>text</code>, <code>datetime</code>, and <code>sequence</code>.</p>
     /// <p>If only <code>FeatureDataTypes</code> is provided, the column keys (<code>col1</code>, <code>col2</code>,..) should be a subset of the column names in the input data.</p>
     /// <p>If both <code>FeatureDataTypes</code> and <code>FeatureAttributeNames</code> are provided, then the column keys should be a subset of the column names provided in <code>FeatureAttributeNames</code>.</p>
-    /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> are case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
+    /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>\["col1", "col2", ...\]</code> are case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
     pub fn get_feature_specification_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.feature_specification_s3_uri
     }

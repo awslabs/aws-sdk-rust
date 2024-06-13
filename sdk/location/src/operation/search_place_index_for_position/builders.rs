@@ -129,21 +129,21 @@ impl SearchPlaceIndexForPositionFluentBuilder {
     ///
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn position(mut self, input: f64) -> Self {
         self.inner = self.inner.position(input);
         self
     }
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.inner = self.inner.set_position(input);
         self
     }
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_position()
     }

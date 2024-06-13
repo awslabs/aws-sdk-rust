@@ -9,7 +9,7 @@ pub struct ListStackSetsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The status of the stack sets that you want to get summary information about.</p>
     pub status: ::std::option::Option<crate::types::StackSetStatus>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>
@@ -33,7 +33,7 @@ impl ListStackSetsInput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::StackSetStatus> {
         self.status.as_ref()
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>
@@ -105,7 +105,7 @@ impl ListStackSetsInputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StackSetStatus> {
         &self.status
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>
@@ -118,7 +118,7 @@ impl ListStackSetsInputBuilder {
         self.call_as = ::std::option::Option::Some(input);
         self
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>
@@ -131,7 +131,7 @@ impl ListStackSetsInputBuilder {
         self.call_as = input;
         self
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>

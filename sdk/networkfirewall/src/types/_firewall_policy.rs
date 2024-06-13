@@ -9,11 +9,11 @@ pub struct FirewallPolicy {
     pub stateless_rule_group_references: ::std::option::Option<::std::vec::Vec<crate::types::StatelessRuleGroupReference>>,
     /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the policy. If you want non-matching packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>.</p>
     /// <p>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your standard section choice.</p>
-    /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
+    /// <p>For example, you could specify <code>\["aws:pass"\]</code> or you could specify <code>\["aws:pass", “customActionName”\]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
     pub stateless_default_actions: ::std::vec::Vec<::std::string::String>,
     /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy. Network Firewall only manages UDP packet fragments and silently drops packet fragments for other protocols. If you want non-matching fragmented UDP packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>.</p>
     /// <p>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your standard section choice.</p>
-    /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
+    /// <p>For example, you could specify <code>\["aws:pass"\]</code> or you could specify <code>\["aws:pass", “customActionName”\]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
     pub stateless_fragment_default_actions: ::std::vec::Vec<::std::string::String>,
     /// <p>The custom action definitions that are available for use in the firewall policy's <code>StatelessDefaultActions</code> setting. You name each custom action that you define, and then you can use it by name in your default actions specifications.</p>
     pub stateless_custom_actions: ::std::option::Option<::std::vec::Vec<crate::types::CustomAction>>,
@@ -49,14 +49,14 @@ impl FirewallPolicy {
     }
     /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the policy. If you want non-matching packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>.</p>
     /// <p>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your standard section choice.</p>
-    /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
+    /// <p>For example, you could specify <code>\["aws:pass"\]</code> or you could specify <code>\["aws:pass", “customActionName”\]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
     pub fn stateless_default_actions(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.stateless_default_actions.deref()
     }
     /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy. Network Firewall only manages UDP packet fragments and silently drops packet fragments for other protocols. If you want non-matching fragmented UDP packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>.</p>
     /// <p>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your standard section choice.</p>
-    /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
+    /// <p>For example, you could specify <code>\["aws:pass"\]</code> or you could specify <code>\["aws:pass", “customActionName”\]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
     pub fn stateless_fragment_default_actions(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.stateless_fragment_default_actions.deref()
@@ -155,7 +155,7 @@ impl FirewallPolicyBuilder {
     ///
     /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the policy. If you want non-matching packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>.</p>
     /// <p>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your standard section choice.</p>
-    /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
+    /// <p>For example, you could specify <code>\["aws:pass"\]</code> or you could specify <code>\["aws:pass", “customActionName”\]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
     pub fn stateless_default_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stateless_default_actions.unwrap_or_default();
         v.push(input.into());
@@ -164,14 +164,14 @@ impl FirewallPolicyBuilder {
     }
     /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the policy. If you want non-matching packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>.</p>
     /// <p>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your standard section choice.</p>
-    /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
+    /// <p>For example, you could specify <code>\["aws:pass"\]</code> or you could specify <code>\["aws:pass", “customActionName”\]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
     pub fn set_stateless_default_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.stateless_default_actions = input;
         self
     }
     /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the policy. If you want non-matching packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>.</p>
     /// <p>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your standard section choice.</p>
-    /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
+    /// <p>For example, you could specify <code>\["aws:pass"\]</code> or you could specify <code>\["aws:pass", “customActionName”\]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
     pub fn get_stateless_default_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.stateless_default_actions
     }
@@ -181,7 +181,7 @@ impl FirewallPolicyBuilder {
     ///
     /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy. Network Firewall only manages UDP packet fragments and silently drops packet fragments for other protocols. If you want non-matching fragmented UDP packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>.</p>
     /// <p>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your standard section choice.</p>
-    /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
+    /// <p>For example, you could specify <code>\["aws:pass"\]</code> or you could specify <code>\["aws:pass", “customActionName”\]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
     pub fn stateless_fragment_default_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stateless_fragment_default_actions.unwrap_or_default();
         v.push(input.into());
@@ -190,14 +190,14 @@ impl FirewallPolicyBuilder {
     }
     /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy. Network Firewall only manages UDP packet fragments and silently drops packet fragments for other protocols. If you want non-matching fragmented UDP packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>.</p>
     /// <p>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your standard section choice.</p>
-    /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
+    /// <p>For example, you could specify <code>\["aws:pass"\]</code> or you could specify <code>\["aws:pass", “customActionName”\]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
     pub fn set_stateless_fragment_default_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.stateless_fragment_default_actions = input;
         self
     }
     /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy. Network Firewall only manages UDP packet fragments and silently drops packet fragments for other protocols. If you want non-matching fragmented UDP packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>.</p>
     /// <p>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your standard section choice.</p>
-    /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
+    /// <p>For example, you could specify <code>\["aws:pass"\]</code> or you could specify <code>\["aws:pass", “customActionName”\]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
     pub fn get_stateless_fragment_default_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.stateless_fragment_default_actions
     }

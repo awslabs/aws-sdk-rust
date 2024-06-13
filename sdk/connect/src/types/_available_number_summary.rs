@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailableNumberSummary {
-    /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    /// <p>The phone number. Phone numbers are formatted <code>\[+\] \[country code\] \[subscriber number including area code\]</code>.</p>
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The ISO country code.</p>
     pub phone_number_country_code: ::std::option::Option<crate::types::PhoneNumberCountryCode>,
@@ -12,7 +12,7 @@ pub struct AvailableNumberSummary {
     pub phone_number_type: ::std::option::Option<crate::types::PhoneNumberType>,
 }
 impl AvailableNumberSummary {
-    /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    /// <p>The phone number. Phone numbers are formatted <code>\[+\] \[country code\] \[subscriber number including area code\]</code>.</p>
     pub fn phone_number(&self) -> ::std::option::Option<&str> {
         self.phone_number.as_deref()
     }
@@ -41,17 +41,17 @@ pub struct AvailableNumberSummaryBuilder {
     pub(crate) phone_number_type: ::std::option::Option<crate::types::PhoneNumberType>,
 }
 impl AvailableNumberSummaryBuilder {
-    /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    /// <p>The phone number. Phone numbers are formatted <code>\[+\] \[country code\] \[subscriber number including area code\]</code>.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    /// <p>The phone number. Phone numbers are formatted <code>\[+\] \[country code\] \[subscriber number including area code\]</code>.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
     }
-    /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    /// <p>The phone number. Phone numbers are formatted <code>\[+\] \[country code\] \[subscriber number including area code\]</code>.</p>
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.phone_number
     }

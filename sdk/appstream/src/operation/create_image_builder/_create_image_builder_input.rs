@@ -92,7 +92,7 @@ pub struct CreateImageBuilderInput {
     pub enable_default_internet_access: ::std::option::Option<bool>,
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain.</p>
     pub domain_join_info: ::std::option::Option<crate::types::DomainJoinInfo>,
-    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST].</p>
+    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify \[LATEST\].</p>
     pub appstream_agent_version: ::std::option::Option<::std::string::String>,
     /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
@@ -213,7 +213,7 @@ impl CreateImageBuilderInput {
     pub fn domain_join_info(&self) -> ::std::option::Option<&crate::types::DomainJoinInfo> {
         self.domain_join_info.as_ref()
     }
-    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST].</p>
+    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify \[LATEST\].</p>
     pub fn appstream_agent_version(&self) -> ::std::option::Option<&str> {
         self.appstream_agent_version.as_deref()
     }
@@ -607,17 +607,17 @@ impl CreateImageBuilderInputBuilder {
     pub fn get_domain_join_info(&self) -> &::std::option::Option<crate::types::DomainJoinInfo> {
         &self.domain_join_info
     }
-    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST].</p>
+    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify \[LATEST\].</p>
     pub fn appstream_agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.appstream_agent_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST].</p>
+    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify \[LATEST\].</p>
     pub fn set_appstream_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.appstream_agent_version = input;
         self
     }
-    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST].</p>
+    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify \[LATEST\].</p>
     pub fn get_appstream_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.appstream_agent_version
     }

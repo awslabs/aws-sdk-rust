@@ -127,36 +127,36 @@ impl CreateStackInstancesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
     ///
-    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
+    /// <p>\[Self-managed permissions\] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accounts(input.into());
         self
     }
-    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
+    /// <p>\[Self-managed permissions\] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_accounts(input);
         self
     }
-    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
+    /// <p>\[Self-managed permissions\] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_accounts()
     }
-    /// <p>[Service-managed permissions] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn deployment_targets(mut self, input: crate::types::DeploymentTargets) -> Self {
         self.inner = self.inner.deployment_targets(input);
         self
     }
-    /// <p>[Service-managed permissions] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn set_deployment_targets(mut self, input: ::std::option::Option<crate::types::DeploymentTargets>) -> Self {
         self.inner = self.inner.set_deployment_targets(input);
         self
     }
-    /// <p>[Service-managed permissions] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn get_deployment_targets(&self) -> &::std::option::Option<crate::types::DeploymentTargets> {
         self.inner.get_deployment_targets()
@@ -275,7 +275,7 @@ impl CreateStackInstancesFluentBuilder {
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_operation_id()
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>
@@ -288,7 +288,7 @@ impl CreateStackInstancesFluentBuilder {
         self.inner = self.inner.call_as(input);
         self
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>
@@ -301,7 +301,7 @@ impl CreateStackInstancesFluentBuilder {
         self.inner = self.inner.set_call_as(input);
         self
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>

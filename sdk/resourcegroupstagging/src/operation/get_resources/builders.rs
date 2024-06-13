@@ -145,7 +145,7 @@ impl GetResourcesFluentBuilder {
     /// <p>Note the following when deciding how to use TagFilters:</p>
     /// <ul>
     /// <li>
-    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": []</code>.</p></li>
+    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": \[\]</code>.</p></li>
     /// <li>
     /// <p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p></li>
     /// <li>
@@ -172,7 +172,7 @@ impl GetResourcesFluentBuilder {
     /// <p>Note the following when deciding how to use TagFilters:</p>
     /// <ul>
     /// <li>
-    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": []</code>.</p></li>
+    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": \[\]</code>.</p></li>
     /// <li>
     /// <p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p></li>
     /// <li>
@@ -199,7 +199,7 @@ impl GetResourcesFluentBuilder {
     /// <p>Note the following when deciding how to use TagFilters:</p>
     /// <ul>
     /// <li>
-    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": []</code>.</p></li>
+    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": \[\]</code>.</p></li>
     /// <li>
     /// <p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p></li>
     /// <li>
@@ -263,7 +263,7 @@ impl GetResourcesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_type_filters`](Self::set_resource_type_filters).
     ///
-    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
+    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
     /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). For the list of services whose resources you can use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
     /// <p>You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. For example, the following string would limit the response to only Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p>
     /// <p><code>ec2:instance,s3:bucket,auditmanager</code></p>
@@ -271,7 +271,7 @@ impl GetResourcesFluentBuilder {
         self.inner = self.inner.resource_type_filters(input.into());
         self
     }
-    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
+    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
     /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). For the list of services whose resources you can use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
     /// <p>You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. For example, the following string would limit the response to only Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p>
     /// <p><code>ec2:instance,s3:bucket,auditmanager</code></p>
@@ -279,7 +279,7 @@ impl GetResourcesFluentBuilder {
         self.inner = self.inner.set_resource_type_filters(input);
         self
     }
-    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
+    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
     /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). For the list of services whose resources you can use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
     /// <p>You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. For example, the following string would limit the response to only Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p>
     /// <p><code>ec2:instance,s3:bucket,auditmanager</code></p>

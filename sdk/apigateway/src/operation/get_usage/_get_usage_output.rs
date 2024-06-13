@@ -10,7 +10,7 @@ pub struct GetUsageOutput {
     pub start_date: ::std::option::Option<::std::string::String>,
     /// <p>The ending date of the usage data.</p>
     pub end_date: ::std::option::Option<::std::string::String>,
-    /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
+    /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : \[ \[0, 100\], \[10, 90\], \[100, 10\]\]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>\[used quota, remaining quota\]</code>.</p>
     pub items: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::vec::Vec<i64>>>>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl GetUsageOutput {
     pub fn end_date(&self) -> ::std::option::Option<&str> {
         self.end_date.as_deref()
     }
-    /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
+    /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : \[ \[0, 100\], \[10, 90\], \[100, 10\]\]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>\[used quota, remaining quota\]</code>.</p>
     pub fn items(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::vec::Vec<i64>>>> {
         self.items.as_ref()
     }
@@ -108,14 +108,14 @@ impl GetUsageOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
+    /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : \[ \[0, 100\], \[10, 90\], \[100, 10\]\]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>\[used quota, remaining quota\]</code>.</p>
     pub fn items(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::vec::Vec<i64>>) -> Self {
         let mut hash_map = self.items.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.items = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
+    /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : \[ \[0, 100\], \[10, 90\], \[100, 10\]\]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>\[used quota, remaining quota\]</code>.</p>
     pub fn set_items(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::vec::Vec<i64>>>>,
@@ -123,7 +123,7 @@ impl GetUsageOutputBuilder {
         self.items = input;
         self
     }
-    /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
+    /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : \[ \[0, 100\], \[10, 90\], \[100, 10\]\]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>\[used quota, remaining quota\]</code>.</p>
     pub fn get_items(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::vec::Vec<i64>>>> {
         &self.items
     }

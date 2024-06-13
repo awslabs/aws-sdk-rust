@@ -16,7 +16,7 @@ pub struct PutScheduledActionInput {
     /// </ul>
     /// <p>At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that run periodically at a specified date and time, and rate expressions are useful for scheduled actions that run at a regular interval.</p>
     /// <p>At and cron expressions use Universal Coordinated Time (UTC) by default.</p>
-    /// <p>The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
+    /// <p>The cron format consists of six fields separated by white spaces: \[Minutes\] \[Hours\] \[Day_of_Month\] \[Month\] \[Day_of_Week\] \[Year\].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub schedule: ::std::option::Option<::std::string::String>,
@@ -136,7 +136,7 @@ impl PutScheduledActionInput {
     /// </ul>
     /// <p>At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that run periodically at a specified date and time, and rate expressions are useful for scheduled actions that run at a regular interval.</p>
     /// <p>At and cron expressions use Universal Coordinated Time (UTC) by default.</p>
-    /// <p>The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
+    /// <p>The cron format consists of six fields separated by white spaces: \[Minutes\] \[Hours\] \[Day_of_Month\] \[Month\] \[Day_of_Week\] \[Year\].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn schedule(&self) -> ::std::option::Option<&str> {
@@ -304,7 +304,7 @@ impl PutScheduledActionInputBuilder {
     /// </ul>
     /// <p>At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that run periodically at a specified date and time, and rate expressions are useful for scheduled actions that run at a regular interval.</p>
     /// <p>At and cron expressions use Universal Coordinated Time (UTC) by default.</p>
-    /// <p>The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
+    /// <p>The cron format consists of six fields separated by white spaces: \[Minutes\] \[Hours\] \[Day_of_Month\] \[Month\] \[Day_of_Week\] \[Year\].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn schedule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -322,7 +322,7 @@ impl PutScheduledActionInputBuilder {
     /// </ul>
     /// <p>At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that run periodically at a specified date and time, and rate expressions are useful for scheduled actions that run at a regular interval.</p>
     /// <p>At and cron expressions use Universal Coordinated Time (UTC) by default.</p>
-    /// <p>The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
+    /// <p>The cron format consists of six fields separated by white spaces: \[Minutes\] \[Hours\] \[Day_of_Month\] \[Month\] \[Day_of_Week\] \[Year\].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -340,7 +340,7 @@ impl PutScheduledActionInputBuilder {
     /// </ul>
     /// <p>At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that run periodically at a specified date and time, and rate expressions are useful for scheduled actions that run at a regular interval.</p>
     /// <p>At and cron expressions use Universal Coordinated Time (UTC) by default.</p>
-    /// <p>The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
+    /// <p>The cron format consists of six fields separated by white spaces: \[Minutes\] \[Hours\] \[Day_of_Month\] \[Month\] \[Day_of_Week\] \[Year\].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {

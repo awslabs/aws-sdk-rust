@@ -9,13 +9,13 @@ pub struct SearchPlaceIndexForSuggestionsInput {
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that indicates a preference for place suggestions that are closer to a specified position.</p>
     /// <p>If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p><note>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p><note>
     /// <p><code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error.</p>
     /// </note>
     pub bias_position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>An optional parameter that limits the search results by returning only suggestions within a specified bounding box.</p>
     /// <p>If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
-    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p><note>
+    /// <p>For example, <code>\[-12.7935, -37.4835, -12.0684, -36.9542\]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p><note>
     /// <p><code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.</p>
     /// </note>
     pub filter_b_box: ::std::option::Option<::std::vec::Vec<f64>>,
@@ -51,7 +51,7 @@ impl SearchPlaceIndexForSuggestionsInput {
     }
     /// <p>An optional parameter that indicates a preference for place suggestions that are closer to a specified position.</p>
     /// <p>If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p><note>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p><note>
     /// <p><code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error.</p>
     /// </note>
     ///
@@ -61,7 +61,7 @@ impl SearchPlaceIndexForSuggestionsInput {
     }
     /// <p>An optional parameter that limits the search results by returning only suggestions within a specified bounding box.</p>
     /// <p>If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
-    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p><note>
+    /// <p>For example, <code>\[-12.7935, -37.4835, -12.0684, -36.9542\]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p><note>
     /// <p><code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.</p>
     /// </note>
     ///
@@ -177,7 +177,7 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
     ///
     /// <p>An optional parameter that indicates a preference for place suggestions that are closer to a specified position.</p>
     /// <p>If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p><note>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p><note>
     /// <p><code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error.</p>
     /// </note>
     pub fn bias_position(mut self, input: f64) -> Self {
@@ -188,7 +188,7 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
     }
     /// <p>An optional parameter that indicates a preference for place suggestions that are closer to a specified position.</p>
     /// <p>If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p><note>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p><note>
     /// <p><code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error.</p>
     /// </note>
     pub fn set_bias_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
@@ -197,7 +197,7 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
     }
     /// <p>An optional parameter that indicates a preference for place suggestions that are closer to a specified position.</p>
     /// <p>If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p><note>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p><note>
     /// <p><code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error.</p>
     /// </note>
     pub fn get_bias_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
@@ -209,7 +209,7 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
     ///
     /// <p>An optional parameter that limits the search results by returning only suggestions within a specified bounding box.</p>
     /// <p>If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
-    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p><note>
+    /// <p>For example, <code>\[-12.7935, -37.4835, -12.0684, -36.9542\]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p><note>
     /// <p><code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.</p>
     /// </note>
     pub fn filter_b_box(mut self, input: f64) -> Self {
@@ -220,7 +220,7 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
     }
     /// <p>An optional parameter that limits the search results by returning only suggestions within a specified bounding box.</p>
     /// <p>If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
-    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p><note>
+    /// <p>For example, <code>\[-12.7935, -37.4835, -12.0684, -36.9542\]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p><note>
     /// <p><code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.</p>
     /// </note>
     pub fn set_filter_b_box(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
@@ -229,7 +229,7 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
     }
     /// <p>An optional parameter that limits the search results by returning only suggestions within a specified bounding box.</p>
     /// <p>If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
-    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p><note>
+    /// <p>For example, <code>\[-12.7935, -37.4835, -12.0684, -36.9542\]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p><note>
     /// <p><code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.</p>
     /// </note>
     pub fn get_filter_b_box(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {

@@ -8,7 +8,7 @@ pub struct DeploymentCommand {
     /// <p>For stacks, the following commands are available:</p>
     /// <ul>
     /// <li>
-    /// <p><code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p></li>
+    /// <p><code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":\["phpapp::appsetup"\]}</code>.</p></li>
     /// <li>
     /// <p><code>install_dependencies</code>: Install the stack's dependencies.</p></li>
     /// <li>
@@ -21,7 +21,7 @@ pub struct DeploymentCommand {
     /// <p>For apps, the following commands are available:</p>
     /// <ul>
     /// <li>
-    /// <p><code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p></li>
+    /// <p>deploy: Deploy an app. Ruby on Rails apps have an optional Args parameter named migrate. Set Args to {"migrate":\["true"\]} to migrate the database. The default setting is {"migrate":\["false"\]}.</p></li>
     /// <li>
     /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
     /// <li>
@@ -35,7 +35,7 @@ pub struct DeploymentCommand {
     /// </ul>
     pub name: crate::types::DeploymentCommandName,
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-    /// <p><code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code></p>
+    /// <p><code>{"arg_name1" : \["value1", "value2", ...\], "arg_name2" : \["value1", "value2", ...\], ...}</code></p>
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
     /// <ul>
     /// <li>
@@ -44,7 +44,7 @@ pub struct DeploymentCommand {
     /// <p><code>allow_reboot</code> - Specifies whether to allow OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2018.03, set <code>Args</code> to the following.</p>
-    /// <p><code> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code></p>
+    /// <p><code>{ "upgrade_os_to":\["Amazon Linux 2018.03"\], "allow_reboot":\["true"\] }</code></p>
     pub args: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl DeploymentCommand {
@@ -52,7 +52,7 @@ impl DeploymentCommand {
     /// <p>For stacks, the following commands are available:</p>
     /// <ul>
     /// <li>
-    /// <p><code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p></li>
+    /// <p><code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":\["phpapp::appsetup"\]}</code>.</p></li>
     /// <li>
     /// <p><code>install_dependencies</code>: Install the stack's dependencies.</p></li>
     /// <li>
@@ -65,7 +65,7 @@ impl DeploymentCommand {
     /// <p>For apps, the following commands are available:</p>
     /// <ul>
     /// <li>
-    /// <p><code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p></li>
+    /// <p>deploy: Deploy an app. Ruby on Rails apps have an optional Args parameter named migrate. Set Args to {"migrate":\["true"\]} to migrate the database. The default setting is {"migrate":\["false"\]}.</p></li>
     /// <li>
     /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
     /// <li>
@@ -81,7 +81,7 @@ impl DeploymentCommand {
         &self.name
     }
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-    /// <p><code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code></p>
+    /// <p><code>{"arg_name1" : \["value1", "value2", ...\], "arg_name2" : \["value1", "value2", ...\], ...}</code></p>
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
     /// <ul>
     /// <li>
@@ -90,7 +90,7 @@ impl DeploymentCommand {
     /// <p><code>allow_reboot</code> - Specifies whether to allow OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2018.03, set <code>Args</code> to the following.</p>
-    /// <p><code> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code></p>
+    /// <p><code>{ "upgrade_os_to":\["Amazon Linux 2018.03"\], "allow_reboot":\["true"\] }</code></p>
     pub fn args(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.args.as_ref()
     }
@@ -114,7 +114,7 @@ impl DeploymentCommandBuilder {
     /// <p>For stacks, the following commands are available:</p>
     /// <ul>
     /// <li>
-    /// <p><code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p></li>
+    /// <p><code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":\["phpapp::appsetup"\]}</code>.</p></li>
     /// <li>
     /// <p><code>install_dependencies</code>: Install the stack's dependencies.</p></li>
     /// <li>
@@ -127,7 +127,7 @@ impl DeploymentCommandBuilder {
     /// <p>For apps, the following commands are available:</p>
     /// <ul>
     /// <li>
-    /// <p><code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p></li>
+    /// <p>deploy: Deploy an app. Ruby on Rails apps have an optional Args parameter named migrate. Set Args to {"migrate":\["true"\]} to migrate the database. The default setting is {"migrate":\["false"\]}.</p></li>
     /// <li>
     /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
     /// <li>
@@ -148,7 +148,7 @@ impl DeploymentCommandBuilder {
     /// <p>For stacks, the following commands are available:</p>
     /// <ul>
     /// <li>
-    /// <p><code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p></li>
+    /// <p><code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":\["phpapp::appsetup"\]}</code>.</p></li>
     /// <li>
     /// <p><code>install_dependencies</code>: Install the stack's dependencies.</p></li>
     /// <li>
@@ -161,7 +161,7 @@ impl DeploymentCommandBuilder {
     /// <p>For apps, the following commands are available:</p>
     /// <ul>
     /// <li>
-    /// <p><code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p></li>
+    /// <p>deploy: Deploy an app. Ruby on Rails apps have an optional Args parameter named migrate. Set Args to {"migrate":\["true"\]} to migrate the database. The default setting is {"migrate":\["false"\]}.</p></li>
     /// <li>
     /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
     /// <li>
@@ -181,7 +181,7 @@ impl DeploymentCommandBuilder {
     /// <p>For stacks, the following commands are available:</p>
     /// <ul>
     /// <li>
-    /// <p><code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p></li>
+    /// <p><code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":\["phpapp::appsetup"\]}</code>.</p></li>
     /// <li>
     /// <p><code>install_dependencies</code>: Install the stack's dependencies.</p></li>
     /// <li>
@@ -194,7 +194,7 @@ impl DeploymentCommandBuilder {
     /// <p>For apps, the following commands are available:</p>
     /// <ul>
     /// <li>
-    /// <p><code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p></li>
+    /// <p>deploy: Deploy an app. Ruby on Rails apps have an optional Args parameter named migrate. Set Args to {"migrate":\["true"\]} to migrate the database. The default setting is {"migrate":\["false"\]}.</p></li>
     /// <li>
     /// <p><code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p></li>
     /// <li>
@@ -214,7 +214,7 @@ impl DeploymentCommandBuilder {
     /// To override the contents of this collection use [`set_args`](Self::set_args).
     ///
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-    /// <p><code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code></p>
+    /// <p><code>{"arg_name1" : \["value1", "value2", ...\], "arg_name2" : \["value1", "value2", ...\], ...}</code></p>
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
     /// <ul>
     /// <li>
@@ -223,7 +223,7 @@ impl DeploymentCommandBuilder {
     /// <p><code>allow_reboot</code> - Specifies whether to allow OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2018.03, set <code>Args</code> to the following.</p>
-    /// <p><code> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code></p>
+    /// <p><code>{ "upgrade_os_to":\["Amazon Linux 2018.03"\], "allow_reboot":\["true"\] }</code></p>
     pub fn args(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.args.unwrap_or_default();
         hash_map.insert(k.into(), v);
@@ -231,7 +231,7 @@ impl DeploymentCommandBuilder {
         self
     }
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-    /// <p><code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code></p>
+    /// <p><code>{"arg_name1" : \["value1", "value2", ...\], "arg_name2" : \["value1", "value2", ...\], ...}</code></p>
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
     /// <ul>
     /// <li>
@@ -240,7 +240,7 @@ impl DeploymentCommandBuilder {
     /// <p><code>allow_reboot</code> - Specifies whether to allow OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2018.03, set <code>Args</code> to the following.</p>
-    /// <p><code> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code></p>
+    /// <p><code>{ "upgrade_os_to":\["Amazon Linux 2018.03"\], "allow_reboot":\["true"\] }</code></p>
     pub fn set_args(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -249,7 +249,7 @@ impl DeploymentCommandBuilder {
         self
     }
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-    /// <p><code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code></p>
+    /// <p><code>{"arg_name1" : \["value1", "value2", ...\], "arg_name2" : \["value1", "value2", ...\], ...}</code></p>
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
     /// <ul>
     /// <li>
@@ -258,7 +258,7 @@ impl DeploymentCommandBuilder {
     /// <p><code>allow_reboot</code> - Specifies whether to allow OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p></li>
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2018.03, set <code>Args</code> to the following.</p>
-    /// <p><code> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code></p>
+    /// <p><code>{ "upgrade_os_to":\["Amazon Linux 2018.03"\], "allow_reboot":\["true"\] }</code></p>
     pub fn get_args(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.args
     }

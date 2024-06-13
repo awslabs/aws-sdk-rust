@@ -5,7 +5,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageDsn {
-    /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.[region].amazonaws.com</code>.</p>
+    /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.\[region\].amazonaws.com</code>.</p>
     pub reporting_mta: ::std::string::String,
     /// <p>When the message was received by the reporting mail transfer agent (MTA), in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
     pub arrival_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -13,7 +13,7 @@ pub struct MessageDsn {
     pub extension_fields: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>>,
 }
 impl MessageDsn {
-    /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.[region].amazonaws.com</code>.</p>
+    /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.\[region\].amazonaws.com</code>.</p>
     pub fn reporting_mta(&self) -> &str {
         use std::ops::Deref;
         self.reporting_mta.deref()
@@ -45,18 +45,18 @@ pub struct MessageDsnBuilder {
     pub(crate) extension_fields: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>>,
 }
 impl MessageDsnBuilder {
-    /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.[region].amazonaws.com</code>.</p>
+    /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.\[region\].amazonaws.com</code>.</p>
     /// This field is required.
     pub fn reporting_mta(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reporting_mta = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.[region].amazonaws.com</code>.</p>
+    /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.\[region\].amazonaws.com</code>.</p>
     pub fn set_reporting_mta(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reporting_mta = input;
         self
     }
-    /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.[region].amazonaws.com</code>.</p>
+    /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.\[region\].amazonaws.com</code>.</p>
     pub fn get_reporting_mta(&self) -> &::std::option::Option<::std::string::String> {
         &self.reporting_mta
     }

@@ -27,10 +27,10 @@ pub struct LoadBalancer {
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     /// <p>The IDs of the security groups for the load balancer.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>[Application Load Balancers] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code> (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
-    /// <p>[Network Load Balancers and Gateway Load Balancers] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+    /// <p>\[Application Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses), dualstack (for IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
+    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses).</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
-    /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool.</p>
+    /// <p>\[Application Load Balancers on Outposts\] The ID of the customer-owned address pool.</p>
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
     pub enforce_security_group_inbound_rules_on_private_link_traffic: ::std::option::Option<::std::string::String>,
@@ -85,12 +85,12 @@ impl LoadBalancer {
     pub fn security_groups(&self) -> &[::std::string::String] {
         self.security_groups.as_deref().unwrap_or_default()
     }
-    /// <p>[Application Load Balancers] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code> (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
-    /// <p>[Network Load Balancers and Gateway Load Balancers] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+    /// <p>\[Application Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses), dualstack (for IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
+    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses).</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
-    /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool.</p>
+    /// <p>\[Application Load Balancers on Outposts\] The ID of the customer-owned address pool.</p>
     pub fn customer_owned_ipv4_pool(&self) -> ::std::option::Option<&str> {
         self.customer_owned_ipv4_pool.as_deref()
     }
@@ -295,34 +295,34 @@ impl LoadBalancerBuilder {
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
-    /// <p>[Application Load Balancers] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code> (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
-    /// <p>[Network Load Balancers and Gateway Load Balancers] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+    /// <p>\[Application Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses), dualstack (for IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
+    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses).</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>[Application Load Balancers] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code> (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
-    /// <p>[Network Load Balancers and Gateway Load Balancers] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+    /// <p>\[Application Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses), dualstack (for IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
+    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses).</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
-    /// <p>[Application Load Balancers] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code> (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
-    /// <p>[Network Load Balancers and Gateway Load Balancers] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+    /// <p>\[Application Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses), dualstack (for IPv4 and IPv6 addresses), and dualstack-without-public-ipv4 (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
+    /// <p>\[Network Load Balancers and Gateway Load Balancers\] The type of IP addresses used for public or private connections by the subnets attached to your load balancer. The possible values are ipv4 (for only IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses).</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type
     }
-    /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool.</p>
+    /// <p>\[Application Load Balancers on Outposts\] The ID of the customer-owned address pool.</p>
     pub fn customer_owned_ipv4_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_owned_ipv4_pool = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool.</p>
+    /// <p>\[Application Load Balancers on Outposts\] The ID of the customer-owned address pool.</p>
     pub fn set_customer_owned_ipv4_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_owned_ipv4_pool = input;
         self
     }
-    /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool.</p>
+    /// <p>\[Application Load Balancers on Outposts\] The ID of the customer-owned address pool.</p>
     pub fn get_customer_owned_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_owned_ipv4_pool
     }

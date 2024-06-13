@@ -9,7 +9,7 @@ pub struct Filters {
     /// <p>Specify one or more <code>KeyUsage</code> extension values.</p>
     pub key_usage: ::std::option::Option<::std::vec::Vec<crate::types::KeyUsageName>>,
     /// <p>Specify one or more algorithms that can be used to generate key pairs.</p>
-    /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
+    /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": \["RSA_2048","RSA_4096"\]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
     pub key_types: ::std::option::Option<::std::vec::Vec<crate::types::KeyAlgorithm>>,
 }
 impl Filters {
@@ -26,7 +26,7 @@ impl Filters {
         self.key_usage.as_deref().unwrap_or_default()
     }
     /// <p>Specify one or more algorithms that can be used to generate key pairs.</p>
-    /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
+    /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": \["RSA_2048","RSA_4096"\]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_types.is_none()`.
     pub fn key_types(&self) -> &[crate::types::KeyAlgorithm] {
@@ -94,7 +94,7 @@ impl FiltersBuilder {
     /// To override the contents of this collection use [`set_key_types`](Self::set_key_types).
     ///
     /// <p>Specify one or more algorithms that can be used to generate key pairs.</p>
-    /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
+    /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": \["RSA_2048","RSA_4096"\]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
     pub fn key_types(mut self, input: crate::types::KeyAlgorithm) -> Self {
         let mut v = self.key_types.unwrap_or_default();
         v.push(input);
@@ -102,13 +102,13 @@ impl FiltersBuilder {
         self
     }
     /// <p>Specify one or more algorithms that can be used to generate key pairs.</p>
-    /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
+    /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": \["RSA_2048","RSA_4096"\]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
     pub fn set_key_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyAlgorithm>>) -> Self {
         self.key_types = input;
         self
     }
     /// <p>Specify one or more algorithms that can be used to generate key pairs.</p>
-    /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
+    /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": \["RSA_2048","RSA_4096"\]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
     pub fn get_key_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyAlgorithm>> {
         &self.key_types
     }

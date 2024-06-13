@@ -8,9 +8,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GeofenceGeometry {
     /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p>
-    /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p>
-    /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p>
-    /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p>
+    /// <p>Each vertex is a 2-dimensional point of the form: <code>\[longitude, latitude\]</code>. This is represented as an array of doubles of length 2 (so <code>\[double, double\]</code>).</p>
+    /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>\[\[double, double\], ...\]</code>).</p>
+    /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>\[\[\[double, double\], ...\], ...\]</code>).</p>
     /// <p>A linear ring for use in geofences can consist of between 4 and 1,000 vertices.</p>
     pub polygon: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
     /// <p>A circle on the earth, as defined by a center point and a radius.</p>
@@ -21,9 +21,9 @@ pub struct GeofenceGeometry {
 }
 impl GeofenceGeometry {
     /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p>
-    /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p>
-    /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p>
-    /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p>
+    /// <p>Each vertex is a 2-dimensional point of the form: <code>\[longitude, latitude\]</code>. This is represented as an array of doubles of length 2 (so <code>\[double, double\]</code>).</p>
+    /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>\[\[double, double\], ...\]</code>).</p>
+    /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>\[\[\[double, double\], ...\], ...\]</code>).</p>
     /// <p>A linear ring for use in geofences can consist of between 4 and 1,000 vertices.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.polygon.is_none()`.
@@ -70,9 +70,9 @@ impl GeofenceGeometryBuilder {
     /// To override the contents of this collection use [`set_polygon`](Self::set_polygon).
     ///
     /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p>
-    /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p>
-    /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p>
-    /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p>
+    /// <p>Each vertex is a 2-dimensional point of the form: <code>\[longitude, latitude\]</code>. This is represented as an array of doubles of length 2 (so <code>\[double, double\]</code>).</p>
+    /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>\[\[double, double\], ...\]</code>).</p>
+    /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>\[\[\[double, double\], ...\], ...\]</code>).</p>
     /// <p>A linear ring for use in geofences can consist of between 4 and 1,000 vertices.</p>
     pub fn polygon(mut self, input: ::std::vec::Vec<::std::vec::Vec<f64>>) -> Self {
         let mut v = self.polygon.unwrap_or_default();
@@ -81,18 +81,18 @@ impl GeofenceGeometryBuilder {
         self
     }
     /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p>
-    /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p>
-    /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p>
-    /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p>
+    /// <p>Each vertex is a 2-dimensional point of the form: <code>\[longitude, latitude\]</code>. This is represented as an array of doubles of length 2 (so <code>\[double, double\]</code>).</p>
+    /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>\[\[double, double\], ...\]</code>).</p>
+    /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>\[\[\[double, double\], ...\], ...\]</code>).</p>
     /// <p>A linear ring for use in geofences can consist of between 4 and 1,000 vertices.</p>
     pub fn set_polygon(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>) -> Self {
         self.polygon = input;
         self
     }
     /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p>
-    /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p>
-    /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p>
-    /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p>
+    /// <p>Each vertex is a 2-dimensional point of the form: <code>\[longitude, latitude\]</code>. This is represented as an array of doubles of length 2 (so <code>\[double, double\]</code>).</p>
+    /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>\[\[double, double\], ...\]</code>).</p>
+    /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>\[\[\[double, double\], ...\], ...\]</code>).</p>
     /// <p>A linear ring for use in geofences can consist of between 4 and 1,000 vertices.</p>
     pub fn get_polygon(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>> {
         &self.polygon

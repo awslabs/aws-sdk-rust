@@ -10,8 +10,8 @@ pub struct IndexFacesInput {
     pub image: ::std::option::Option<crate::types::Image>,
     /// <p>The ID you want to assign to all the faces detected in the image.</p>
     pub external_image_id: ::std::option::Option<::std::string::String>,
-    /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using <code>["DEFAULT", "FACE_OCCLUDED"]</code> or just <code>["FACE_OCCLUDED"]</code>. You can request for all facial attributes by using <code>["ALL"]</code>. Requesting more attributes may increase response time.</p>
-    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes).</p>
+    /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using <code>\["DEFAULT", "FACE_OCCLUDED"\]</code> or just <code>\["FACE_OCCLUDED"\]</code>. You can request for all facial attributes by using <code>\["ALL"\]</code>. Requesting more attributes may increase response time.</p>
+    /// <p>If you provide both, <code>\["ALL", "DEFAULT"\]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes).</p>
     pub detection_attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     /// <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to 1. <code>IndexFaces</code> returns no more than 100 detected faces in an image, even if you specify a larger value for <code>MaxFaces</code>.</p>
     /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code> array.</p>
@@ -36,8 +36,8 @@ impl IndexFacesInput {
     pub fn external_image_id(&self) -> ::std::option::Option<&str> {
         self.external_image_id.as_deref()
     }
-    /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using <code>["DEFAULT", "FACE_OCCLUDED"]</code> or just <code>["FACE_OCCLUDED"]</code>. You can request for all facial attributes by using <code>["ALL"]</code>. Requesting more attributes may increase response time.</p>
-    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes).</p>
+    /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using <code>\["DEFAULT", "FACE_OCCLUDED"\]</code> or just <code>\["FACE_OCCLUDED"\]</code>. You can request for all facial attributes by using <code>\["ALL"\]</code>. Requesting more attributes may increase response time.</p>
+    /// <p>If you provide both, <code>\["ALL", "DEFAULT"\]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.detection_attributes.is_none()`.
     pub fn detection_attributes(&self) -> &[crate::types::Attribute] {
@@ -126,22 +126,22 @@ impl IndexFacesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_detection_attributes`](Self::set_detection_attributes).
     ///
-    /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using <code>["DEFAULT", "FACE_OCCLUDED"]</code> or just <code>["FACE_OCCLUDED"]</code>. You can request for all facial attributes by using <code>["ALL"]</code>. Requesting more attributes may increase response time.</p>
-    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes).</p>
+    /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using <code>\["DEFAULT", "FACE_OCCLUDED"\]</code> or just <code>\["FACE_OCCLUDED"\]</code>. You can request for all facial attributes by using <code>\["ALL"\]</code>. Requesting more attributes may increase response time.</p>
+    /// <p>If you provide both, <code>\["ALL", "DEFAULT"\]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes).</p>
     pub fn detection_attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.detection_attributes.unwrap_or_default();
         v.push(input);
         self.detection_attributes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using <code>["DEFAULT", "FACE_OCCLUDED"]</code> or just <code>["FACE_OCCLUDED"]</code>. You can request for all facial attributes by using <code>["ALL"]</code>. Requesting more attributes may increase response time.</p>
-    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes).</p>
+    /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using <code>\["DEFAULT", "FACE_OCCLUDED"\]</code> or just <code>\["FACE_OCCLUDED"\]</code>. You can request for all facial attributes by using <code>\["ALL"\]</code>. Requesting more attributes may increase response time.</p>
+    /// <p>If you provide both, <code>\["ALL", "DEFAULT"\]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes).</p>
     pub fn set_detection_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.detection_attributes = input;
         self
     }
-    /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using <code>["DEFAULT", "FACE_OCCLUDED"]</code> or just <code>["FACE_OCCLUDED"]</code>. You can request for all facial attributes by using <code>["ALL"]</code>. Requesting more attributes may increase response time.</p>
-    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes).</p>
+    /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using <code>\["DEFAULT", "FACE_OCCLUDED"\]</code> or just <code>\["FACE_OCCLUDED"\]</code>. You can request for all facial attributes by using <code>\["ALL"\]</code>. Requesting more attributes may increase response time.</p>
+    /// <p>If you provide both, <code>\["ALL", "DEFAULT"\]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes).</p>
     pub fn get_detection_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.detection_attributes
     }

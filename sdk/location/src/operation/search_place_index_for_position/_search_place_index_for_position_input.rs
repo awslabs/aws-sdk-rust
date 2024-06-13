@@ -7,7 +7,7 @@ pub struct SearchPlaceIndexForPositionInput {
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
     /// <p>Default value: <code>50</code></p>
@@ -28,7 +28,7 @@ impl SearchPlaceIndexForPositionInput {
     }
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.position.is_none()`.
     pub fn position(&self) -> &[f64] {
@@ -102,7 +102,7 @@ impl SearchPlaceIndexForPositionInputBuilder {
     ///
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn position(mut self, input: f64) -> Self {
         let mut v = self.position.unwrap_or_default();
         v.push(input);
@@ -111,14 +111,14 @@ impl SearchPlaceIndexForPositionInputBuilder {
     }
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.position = input;
         self
     }
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.position
     }

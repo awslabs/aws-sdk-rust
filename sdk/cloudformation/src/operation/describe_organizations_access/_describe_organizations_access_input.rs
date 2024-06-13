@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrganizationsAccessInput {
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified.</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct DescribeOrganizationsAccessInput {
     pub call_as: ::std::option::Option<crate::types::CallAs>,
 }
 impl DescribeOrganizationsAccessInput {
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified.</p>
     /// <ul>
     /// <li>
@@ -42,7 +42,7 @@ pub struct DescribeOrganizationsAccessInputBuilder {
     pub(crate) call_as: ::std::option::Option<crate::types::CallAs>,
 }
 impl DescribeOrganizationsAccessInputBuilder {
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified.</p>
     /// <ul>
     /// <li>
@@ -55,7 +55,7 @@ impl DescribeOrganizationsAccessInputBuilder {
         self.call_as = ::std::option::Option::Some(input);
         self
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified.</p>
     /// <ul>
     /// <li>
@@ -68,7 +68,7 @@ impl DescribeOrganizationsAccessInputBuilder {
         self.call_as = input;
         self
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified.</p>
     /// <ul>
     /// <li>

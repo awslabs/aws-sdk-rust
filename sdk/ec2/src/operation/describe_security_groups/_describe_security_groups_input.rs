@@ -66,7 +66,7 @@ pub struct DescribeSecurityGroupsInput {
     /// <p>The IDs of the security groups. Required for security groups in a nondefault VPC.</p>
     /// <p>Default: Describes all of your security groups.</p>
     pub group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
+    /// <p>\[Default VPC\] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
     pub group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -148,7 +148,7 @@ impl DescribeSecurityGroupsInput {
     pub fn group_ids(&self) -> &[::std::string::String] {
         self.group_ids.as_deref().unwrap_or_default()
     }
-    /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
+    /// <p>\[Default VPC\] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_names.is_none()`.
@@ -408,7 +408,7 @@ impl DescribeSecurityGroupsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_group_names`](Self::set_group_names).
     ///
-    /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
+    /// <p>\[Default VPC\] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
     pub fn group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.group_names.unwrap_or_default();
@@ -416,13 +416,13 @@ impl DescribeSecurityGroupsInputBuilder {
         self.group_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
+    /// <p>\[Default VPC\] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
     pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.group_names = input;
         self
     }
-    /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
+    /// <p>\[Default VPC\] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
     pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.group_names

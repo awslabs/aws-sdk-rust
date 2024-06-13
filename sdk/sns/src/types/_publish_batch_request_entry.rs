@@ -49,13 +49,13 @@ pub struct PublishBatchRequestEntry {
     /// <p>Amazon SNS continues to keep track of the message deduplication ID even after the message is received and deleted.</p>
     /// </note>
     /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters.</p>
-    /// <p><code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+    /// <p><code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p>
     pub message_deduplication_id: ::std::option::Option<::std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
     /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion.</p>
     /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
     /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
-    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p><important>
+    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p><important>
     /// <p><code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics.</p>
     /// </important>
     pub message_group_id: ::std::option::Option<::std::string::String>,
@@ -120,7 +120,7 @@ impl PublishBatchRequestEntry {
     /// <p>Amazon SNS continues to keep track of the message deduplication ID even after the message is received and deleted.</p>
     /// </note>
     /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters.</p>
-    /// <p><code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+    /// <p><code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p>
     pub fn message_deduplication_id(&self) -> ::std::option::Option<&str> {
         self.message_deduplication_id.as_deref()
     }
@@ -128,7 +128,7 @@ impl PublishBatchRequestEntry {
     /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion.</p>
     /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
     /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
-    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p><important>
+    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p><important>
     /// <p><code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics.</p>
     /// </important>
     pub fn message_group_id(&self) -> ::std::option::Option<&str> {
@@ -293,7 +293,7 @@ impl PublishBatchRequestEntryBuilder {
     /// <p>Amazon SNS continues to keep track of the message deduplication ID even after the message is received and deleted.</p>
     /// </note>
     /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters.</p>
-    /// <p><code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+    /// <p><code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p>
     pub fn message_deduplication_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_deduplication_id = ::std::option::Option::Some(input.into());
         self
@@ -323,7 +323,7 @@ impl PublishBatchRequestEntryBuilder {
     /// <p>Amazon SNS continues to keep track of the message deduplication ID even after the message is received and deleted.</p>
     /// </note>
     /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters.</p>
-    /// <p><code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+    /// <p><code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p>
     pub fn set_message_deduplication_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_deduplication_id = input;
         self
@@ -353,7 +353,7 @@ impl PublishBatchRequestEntryBuilder {
     /// <p>Amazon SNS continues to keep track of the message deduplication ID even after the message is received and deleted.</p>
     /// </note>
     /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters.</p>
-    /// <p><code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+    /// <p><code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p>
     pub fn get_message_deduplication_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_deduplication_id
     }
@@ -361,7 +361,7 @@ impl PublishBatchRequestEntryBuilder {
     /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion.</p>
     /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
     /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
-    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p><important>
+    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p><important>
     /// <p><code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics.</p>
     /// </important>
     pub fn message_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -372,7 +372,7 @@ impl PublishBatchRequestEntryBuilder {
     /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion.</p>
     /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
     /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
-    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p><important>
+    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p><important>
     /// <p><code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics.</p>
     /// </important>
     pub fn set_message_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -383,7 +383,7 @@ impl PublishBatchRequestEntryBuilder {
     /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion.</p>
     /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
     /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
-    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p><important>
+    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p><important>
     /// <p><code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics.</p>
     /// </important>
     pub fn get_message_group_id(&self) -> &::std::option::Option<::std::string::String> {

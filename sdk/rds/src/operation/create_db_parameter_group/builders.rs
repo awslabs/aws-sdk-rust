@@ -161,9 +161,9 @@ impl CreateDBParameterGroupFluentBuilder {
     }
     /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></engine></code></p>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine</code></p>
     /// <p>For example, to list all of the available parameter group families for the MySQL DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code></p><note>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine mysql</code></p><note>
     /// <p>The output contains duplicates.</p>
     /// </note>
     /// <p>The following are the valid DB engine values:</p>
@@ -203,9 +203,9 @@ impl CreateDBParameterGroupFluentBuilder {
     }
     /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></engine></code></p>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine</code></p>
     /// <p>For example, to list all of the available parameter group families for the MySQL DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code></p><note>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine mysql</code></p><note>
     /// <p>The output contains duplicates.</p>
     /// </note>
     /// <p>The following are the valid DB engine values:</p>
@@ -245,9 +245,9 @@ impl CreateDBParameterGroupFluentBuilder {
     }
     /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></engine></code></p>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine</code></p>
     /// <p>For example, to list all of the available parameter group families for the MySQL DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code></p><note>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine mysql</code></p><note>
     /// <p>The output contains duplicates.</p>
     /// </note>
     /// <p>The following are the valid DB engine values:</p>

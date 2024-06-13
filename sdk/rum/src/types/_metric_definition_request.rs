@@ -9,33 +9,33 @@
 /// <p>Only certain combinations of values for <code>Name</code>, <code>ValueKey</code>, and <code>EventPattern</code> are valid. In addition to what is displayed in the following list, the <code>EventPattern</code> can also include information used by the <code>DimensionKeys</code> field.</p>
 /// <ul>
 /// <li>
-/// <p>If <code>Name</code> is <code>PerformanceNavigationDuration</code>, then <code>ValueKey</code>must be <code>event_details.duration</code> and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.performance_navigation_event"]}</code></p></li>
+/// <p>If <code>Name</code> is <code>PerformanceNavigationDuration</code>, then <code>ValueKey</code>must be <code>event_details.duration</code> and the <code>EventPattern</code> must include <code>{"event_type":\["com.amazon.rum.performance_navigation_event"\]}</code></p></li>
 /// <li>
-/// <p>If <code>Name</code> is <code>PerformanceResourceDuration</code>, then <code>ValueKey</code>must be <code>event_details.duration</code> and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.performance_resource_event"]}</code></p></li>
+/// <p>If <code>Name</code> is <code>PerformanceResourceDuration</code>, then <code>ValueKey</code>must be <code>event_details.duration</code> and the <code>EventPattern</code> must include <code>{"event_type":\["com.amazon.rum.performance_resource_event"\]}</code></p></li>
 /// <li>
-/// <p>If <code>Name</code> is <code>NavigationSatisfiedTransaction</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{ "event_type": ["com.amazon.rum.performance_navigation_event"], "event_details": { "duration": [{ "numeric": ["&gt;",2000] }] } }</code></p></li>
+/// <p>If <code>Name</code> is <code>NavigationSatisfiedTransaction</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{ "event_type": \["com.amazon.rum.performance_navigation_event"\], "event_details": { "duration": \[{ "numeric": \["&gt;",2000\] }\] } }</code></p></li>
 /// <li>
-/// <p>If <code>Name</code> is <code>NavigationToleratedTransaction</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{ "event_type": ["com.amazon.rum.performance_navigation_event"], "event_details": { "duration": [{ "numeric": ["&gt;=",2000,"&lt;"8000] }] } }</code></p></li>
+/// <p>If <code>Name</code> is <code>NavigationToleratedTransaction</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{ "event_type": \["com.amazon.rum.performance_navigation_event"\], "event_details": { "duration": \[{ "numeric": \["&gt;=",2000,"&lt;"8000\] }\] } }</code></p></li>
 /// <li>
-/// <p>If <code>Name</code> is <code>NavigationFrustratedTransaction</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{ "event_type": ["com.amazon.rum.performance_navigation_event"], "event_details": { "duration": [{ "numeric": ["&gt;=",8000] }] } }</code></p></li>
+/// <p>If <code>Name</code> is <code>NavigationFrustratedTransaction</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{ "event_type": \["com.amazon.rum.performance_navigation_event"\], "event_details": { "duration": \[{ "numeric": \["&gt;=",8000\] }\] } }</code></p></li>
 /// <li>
-/// <p>If <code>Name</code> is <code>WebVitalsCumulativeLayoutShift</code>, then <code>ValueKey</code>must be <code>event_details.value</code> and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.cumulative_layout_shift_event"]}</code></p></li>
+/// <p>If <code>Name</code> is <code>WebVitalsCumulativeLayoutShift</code>, then <code>ValueKey</code>must be <code>event_details.value</code> and the <code>EventPattern</code> must include <code>{"event_type":\["com.amazon.rum.cumulative_layout_shift_event"\]}</code></p></li>
 /// <li>
-/// <p>If <code>Name</code> is <code>WebVitalsFirstInputDelay</code>, then <code>ValueKey</code>must be <code>event_details.value</code> and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.first_input_delay_event"]}</code></p></li>
+/// <p>If <code>Name</code> is <code>WebVitalsFirstInputDelay</code>, then <code>ValueKey</code>must be <code>event_details.value</code> and the <code>EventPattern</code> must include <code>{"event_type":\["com.amazon.rum.first_input_delay_event"\]}</code></p></li>
 /// <li>
-/// <p>If <code>Name</code> is <code>WebVitalsLargestContentfulPaint</code>, then <code>ValueKey</code>must be <code>event_details.value</code> and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.largest_contentful_paint_event"]}</code></p></li>
+/// <p>If <code>Name</code> is <code>WebVitalsLargestContentfulPaint</code>, then <code>ValueKey</code>must be <code>event_details.value</code> and the <code>EventPattern</code> must include <code>{"event_type":\["com.amazon.rum.largest_contentful_paint_event"\]}</code></p></li>
 /// <li>
-/// <p>If <code>Name</code> is <code>JsErrorCount</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.js_error_event"]}</code></p></li>
+/// <p>If <code>Name</code> is <code>JsErrorCount</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{"event_type":\["com.amazon.rum.js_error_event"\]}</code></p></li>
 /// <li>
-/// <p>If <code>Name</code> is <code>HttpErrorCount</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.http_event"]}</code></p></li>
+/// <p>If <code>Name</code> is <code>HttpErrorCount</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{"event_type":\["com.amazon.rum.http_event"\]}</code></p></li>
 /// <li>
-/// <p>If <code>Name</code> is <code>SessionCount</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.session_start_event"]}</code></p></li>
+/// <p>If <code>Name</code> is <code>SessionCount</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{"event_type":\["com.amazon.rum.session_start_event"\]}</code></p></li>
 /// <li>
-/// <p>If <code>Name</code> is <code>PageViewCount</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.page_view_event"]}</code></p></li>
+/// <p>If <code>Name</code> is <code>PageViewCount</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{"event_type":\["com.amazon.rum.page_view_event"\]}</code></p></li>
 /// <li>
-/// <p>If <code>Name</code> is <code>Http4xxCount</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{"event_type": ["com.amazon.rum.http_event"],"event_details":{"response":{"status":[{"numeric":["&gt;=",400,"&lt;",500]}]}}} }</code></p></li>
+/// <p>If <code>Name</code> is <code>Http4xxCount</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{"event_type": \["com.amazon.rum.http_event"\],"event_details":{"response":{"status":\[{"numeric":\["&gt;=",400,"&lt;",500\]}\]}}} }</code></p></li>
 /// <li>
-/// <p>If <code>Name</code> is <code>Http5xxCount</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{"event_type": ["com.amazon.rum.http_event"],"event_details":{"response":{"status":[{"numeric":["&gt;=",500,"&lt;=",599]}]}}} }</code></p></li>
+/// <p>If <code>Name</code> is <code>Http5xxCount</code>, then <code>ValueKey</code>must be null and the <code>EventPattern</code> must include <code>{"event_type": \["com.amazon.rum.http_event"\],"event_details":{"response":{"status":\[{"numeric":\["&gt;=",500,"&lt;=",599\]}\]}}} }</code></p></li>
 /// </ul></li>
 /// </ul>
 /// <p>For custom metrics, the following validation rules apply:</p>
@@ -148,11 +148,11 @@ pub struct MetricDefinitionRequest {
     /// <p>Example event patterns:</p>
     /// <ul>
     /// <li>
-    /// <p><code>'{ "event_type": ["com.amazon.rum.js_error_event"], "metadata": { "browserName": [ "Chrome", "Safari" ], } }'</code></p></li>
+    /// <p><code>'{ "event_type": \["com.amazon.rum.js_error_event"\], "metadata": { "browserName": \[ "Chrome", "Safari" \], } }'</code></p></li>
     /// <li>
-    /// <p><code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": { "browserName": [ "Chrome", "Firefox" ] }, "event_details": { "duration": [{ "numeric": [ "&lt;", 2000 ] }] } }'</code></p></li>
+    /// <p><code>'{ "event_type": \["com.amazon.rum.performance_navigation_event"\], "metadata": { "browserName": \[ "Chrome", "Firefox" \] }, "event_details": { "duration": \[{ "numeric": \[ "&lt;", 2000 \] }\] } }'</code></p></li>
     /// <li>
-    /// <p><code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": { "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] }, "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }] } }'</code></p></li>
+    /// <p><code>'{ "event_type": \["com.amazon.rum.performance_navigation_event"\], "metadata": { "browserName": \[ "Chrome", "Safari" \], "countryCode": \[ "US" \] }, "event_details": { "duration": \[{ "numeric": \[ "&gt;=", 2000, "&lt;", 8000 \] }\] } }'</code></p></li>
     /// </ul>
     /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions.</p>
     pub event_pattern: ::std::option::Option<::std::string::String>,
@@ -225,11 +225,11 @@ impl MetricDefinitionRequest {
     /// <p>Example event patterns:</p>
     /// <ul>
     /// <li>
-    /// <p><code>'{ "event_type": ["com.amazon.rum.js_error_event"], "metadata": { "browserName": [ "Chrome", "Safari" ], } }'</code></p></li>
+    /// <p><code>'{ "event_type": \["com.amazon.rum.js_error_event"\], "metadata": { "browserName": \[ "Chrome", "Safari" \], } }'</code></p></li>
     /// <li>
-    /// <p><code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": { "browserName": [ "Chrome", "Firefox" ] }, "event_details": { "duration": [{ "numeric": [ "&lt;", 2000 ] }] } }'</code></p></li>
+    /// <p><code>'{ "event_type": \["com.amazon.rum.performance_navigation_event"\], "metadata": { "browserName": \[ "Chrome", "Firefox" \] }, "event_details": { "duration": \[{ "numeric": \[ "&lt;", 2000 \] }\] } }'</code></p></li>
     /// <li>
-    /// <p><code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": { "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] }, "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }] } }'</code></p></li>
+    /// <p><code>'{ "event_type": \["com.amazon.rum.performance_navigation_event"\], "metadata": { "browserName": \[ "Chrome", "Safari" \], "countryCode": \[ "US" \] }, "event_details": { "duration": \[{ "numeric": \[ "&gt;=", 2000, "&lt;", 8000 \] }\] } }'</code></p></li>
     /// </ul>
     /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions.</p>
     pub fn event_pattern(&self) -> ::std::option::Option<&str> {
@@ -461,11 +461,11 @@ impl MetricDefinitionRequestBuilder {
     /// <p>Example event patterns:</p>
     /// <ul>
     /// <li>
-    /// <p><code>'{ "event_type": ["com.amazon.rum.js_error_event"], "metadata": { "browserName": [ "Chrome", "Safari" ], } }'</code></p></li>
+    /// <p><code>'{ "event_type": \["com.amazon.rum.js_error_event"\], "metadata": { "browserName": \[ "Chrome", "Safari" \], } }'</code></p></li>
     /// <li>
-    /// <p><code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": { "browserName": [ "Chrome", "Firefox" ] }, "event_details": { "duration": [{ "numeric": [ "&lt;", 2000 ] }] } }'</code></p></li>
+    /// <p><code>'{ "event_type": \["com.amazon.rum.performance_navigation_event"\], "metadata": { "browserName": \[ "Chrome", "Firefox" \] }, "event_details": { "duration": \[{ "numeric": \[ "&lt;", 2000 \] }\] } }'</code></p></li>
     /// <li>
-    /// <p><code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": { "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] }, "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }] } }'</code></p></li>
+    /// <p><code>'{ "event_type": \["com.amazon.rum.performance_navigation_event"\], "metadata": { "browserName": \[ "Chrome", "Safari" \], "countryCode": \[ "US" \] }, "event_details": { "duration": \[{ "numeric": \[ "&gt;=", 2000, "&lt;", 8000 \] }\] } }'</code></p></li>
     /// </ul>
     /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions.</p>
     pub fn event_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -477,11 +477,11 @@ impl MetricDefinitionRequestBuilder {
     /// <p>Example event patterns:</p>
     /// <ul>
     /// <li>
-    /// <p><code>'{ "event_type": ["com.amazon.rum.js_error_event"], "metadata": { "browserName": [ "Chrome", "Safari" ], } }'</code></p></li>
+    /// <p><code>'{ "event_type": \["com.amazon.rum.js_error_event"\], "metadata": { "browserName": \[ "Chrome", "Safari" \], } }'</code></p></li>
     /// <li>
-    /// <p><code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": { "browserName": [ "Chrome", "Firefox" ] }, "event_details": { "duration": [{ "numeric": [ "&lt;", 2000 ] }] } }'</code></p></li>
+    /// <p><code>'{ "event_type": \["com.amazon.rum.performance_navigation_event"\], "metadata": { "browserName": \[ "Chrome", "Firefox" \] }, "event_details": { "duration": \[{ "numeric": \[ "&lt;", 2000 \] }\] } }'</code></p></li>
     /// <li>
-    /// <p><code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": { "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] }, "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }] } }'</code></p></li>
+    /// <p><code>'{ "event_type": \["com.amazon.rum.performance_navigation_event"\], "metadata": { "browserName": \[ "Chrome", "Safari" \], "countryCode": \[ "US" \] }, "event_details": { "duration": \[{ "numeric": \[ "&gt;=", 2000, "&lt;", 8000 \] }\] } }'</code></p></li>
     /// </ul>
     /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions.</p>
     pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -493,11 +493,11 @@ impl MetricDefinitionRequestBuilder {
     /// <p>Example event patterns:</p>
     /// <ul>
     /// <li>
-    /// <p><code>'{ "event_type": ["com.amazon.rum.js_error_event"], "metadata": { "browserName": [ "Chrome", "Safari" ], } }'</code></p></li>
+    /// <p><code>'{ "event_type": \["com.amazon.rum.js_error_event"\], "metadata": { "browserName": \[ "Chrome", "Safari" \], } }'</code></p></li>
     /// <li>
-    /// <p><code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": { "browserName": [ "Chrome", "Firefox" ] }, "event_details": { "duration": [{ "numeric": [ "&lt;", 2000 ] }] } }'</code></p></li>
+    /// <p><code>'{ "event_type": \["com.amazon.rum.performance_navigation_event"\], "metadata": { "browserName": \[ "Chrome", "Firefox" \] }, "event_details": { "duration": \[{ "numeric": \[ "&lt;", 2000 \] }\] } }'</code></p></li>
     /// <li>
-    /// <p><code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": { "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] }, "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }] } }'</code></p></li>
+    /// <p><code>'{ "event_type": \["com.amazon.rum.performance_navigation_event"\], "metadata": { "browserName": \[ "Chrome", "Safari" \], "countryCode": \[ "US" \] }, "event_details": { "duration": \[{ "numeric": \[ "&gt;=", 2000, "&lt;", 8000 \] }\] } }'</code></p></li>
     /// </ul>
     /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions.</p>
     pub fn get_event_pattern(&self) -> &::std::option::Option<::std::string::String> {

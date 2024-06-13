@@ -33,7 +33,7 @@ impl crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSet
 /// <li>
 /// <p>The regular expression pattern that you want to insert or delete. For more information, see <code>RegexPatternSet</code>.</p></li>
 /// </ul>
-/// <p>For example, you can create a <code>RegexPatternString</code> such as <code>B[a@]dB[o0]t</code>. AWS WAF will match this <code>RegexPatternString</code> to:</p>
+/// <p>For example, you can create a <code>RegexPatternString</code> such as <code>B\[a@\]dB\[o0\]t</code>. AWS WAF will match this <code>RegexPatternString</code> to:</p>
 /// <ul>
 /// <li>
 /// <p>BadBot</p></li>

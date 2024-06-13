@@ -8,7 +8,7 @@ pub struct SendOtpMessageRequestParameters {
     pub allowed_attempts: ::std::option::Option<i32>,
     /// <p>The brand name that will be substituted into the OTP message body. Should be owned by calling AWS account.</p>
     pub brand_name: ::std::option::Option<::std::string::String>,
-    /// <p>Channel type for the OTP message. Supported values: [SMS].</p>
+    /// <p>Channel type for the OTP message. Supported values: \[SMS\].</p>
     pub channel: ::std::option::Option<::std::string::String>,
     /// <p>The number of characters in the generated OTP.</p>
     pub code_length: ::std::option::Option<i32>,
@@ -36,7 +36,7 @@ impl SendOtpMessageRequestParameters {
     pub fn brand_name(&self) -> ::std::option::Option<&str> {
         self.brand_name.as_deref()
     }
-    /// <p>Channel type for the OTP message. Supported values: [SMS].</p>
+    /// <p>Channel type for the OTP message. Supported values: \[SMS\].</p>
     pub fn channel(&self) -> ::std::option::Option<&str> {
         self.channel.as_deref()
     }
@@ -126,18 +126,18 @@ impl SendOtpMessageRequestParametersBuilder {
     pub fn get_brand_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.brand_name
     }
-    /// <p>Channel type for the OTP message. Supported values: [SMS].</p>
+    /// <p>Channel type for the OTP message. Supported values: \[SMS\].</p>
     /// This field is required.
     pub fn channel(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Channel type for the OTP message. Supported values: [SMS].</p>
+    /// <p>Channel type for the OTP message. Supported values: \[SMS\].</p>
     pub fn set_channel(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel = input;
         self
     }
-    /// <p>Channel type for the OTP message. Supported values: [SMS].</p>
+    /// <p>Channel type for the OTP message. Supported values: \[SMS\].</p>
     pub fn get_channel(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel
     }

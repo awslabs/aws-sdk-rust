@@ -14,7 +14,7 @@ pub struct ListVolumesOutput {
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>Use the marker in your next request to continue pagination of iSCSI volumes. If there are no more volumes to list, this field does not appear in the response body.</p>
     pub marker: ::std::option::Option<::std::string::String>,
-    /// <p>An array of <code>VolumeInfo</code> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".</p>
+    /// <p>An array of VolumeInfo objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then VolumeInfos is an empty array "\[\]".</p>
     pub volume_infos: ::std::option::Option<::std::vec::Vec<crate::types::VolumeInfo>>,
     _request_id: Option<String>,
 }
@@ -27,7 +27,7 @@ impl ListVolumesOutput {
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>An array of <code>VolumeInfo</code> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".</p>
+    /// <p>An array of VolumeInfo objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then VolumeInfos is an empty array "\[\]".</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_infos.is_none()`.
     pub fn volume_infos(&self) -> &[crate::types::VolumeInfo] {
@@ -88,19 +88,19 @@ impl ListVolumesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_volume_infos`](Self::set_volume_infos).
     ///
-    /// <p>An array of <code>VolumeInfo</code> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".</p>
+    /// <p>An array of VolumeInfo objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then VolumeInfos is an empty array "\[\]".</p>
     pub fn volume_infos(mut self, input: crate::types::VolumeInfo) -> Self {
         let mut v = self.volume_infos.unwrap_or_default();
         v.push(input);
         self.volume_infos = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of <code>VolumeInfo</code> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".</p>
+    /// <p>An array of VolumeInfo objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then VolumeInfos is an empty array "\[\]".</p>
     pub fn set_volume_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeInfo>>) -> Self {
         self.volume_infos = input;
         self
     }
-    /// <p>An array of <code>VolumeInfo</code> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".</p>
+    /// <p>An array of VolumeInfo objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then VolumeInfos is an empty array "\[\]".</p>
     pub fn get_volume_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeInfo>> {
         &self.volume_infos
     }

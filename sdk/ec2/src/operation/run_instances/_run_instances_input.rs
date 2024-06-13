@@ -40,7 +40,7 @@ pub struct RunInstancesInput {
     /// <p>The IDs of the security groups. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>[Default VPC] The names of the security groups.</p>
+    /// <p>\[Default VPC\] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -198,7 +198,7 @@ impl RunInstancesInput {
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
     }
-    /// <p>[Default VPC] The names of the security groups.</p>
+    /// <p>\[Default VPC\] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     ///
@@ -694,7 +694,7 @@ impl RunInstancesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
-    /// <p>[Default VPC] The names of the security groups.</p>
+    /// <p>\[Default VPC\] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -703,14 +703,14 @@ impl RunInstancesInputBuilder {
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>[Default VPC] The names of the security groups.</p>
+    /// <p>\[Default VPC\] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
-    /// <p>[Default VPC] The names of the security groups.</p>
+    /// <p>\[Default VPC\] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

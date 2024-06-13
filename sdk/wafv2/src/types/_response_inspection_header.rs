@@ -7,30 +7,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseInspectionHeader {
     /// <p>The name of the header to match against. The name must be an exact match, including case.</p>
-    /// <p>JSON example: <code>"Name": [ "RequestResult" ]</code></p>
+    /// <p>JSON example: <code>"Name": \[ "RequestResult" \]</code></p>
     pub name: ::std::string::String,
     /// <p>Values in the response header with the specified name that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code></p>
+    /// <p>JSON examples: <code>"SuccessValues": \[ "LoginPassed", "Successful login" \]</code> and <code>"SuccessValues": \[ "AccountCreated", "Successful account creation" \]</code></p>
     pub success_values: ::std::vec::Vec<::std::string::String>,
     /// <p>Values in the response header with the specified name that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and <code>"FailureValues": [ "AccountCreationFailed" ]</code></p>
+    /// <p>JSON examples: <code>"FailureValues": \[ "LoginFailed", "Failed login" \]</code> and <code>"FailureValues": \[ "AccountCreationFailed" \]</code></p>
     pub failure_values: ::std::vec::Vec<::std::string::String>,
 }
 impl ResponseInspectionHeader {
     /// <p>The name of the header to match against. The name must be an exact match, including case.</p>
-    /// <p>JSON example: <code>"Name": [ "RequestResult" ]</code></p>
+    /// <p>JSON example: <code>"Name": \[ "RequestResult" \]</code></p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
     /// <p>Values in the response header with the specified name that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code></p>
+    /// <p>JSON examples: <code>"SuccessValues": \[ "LoginPassed", "Successful login" \]</code> and <code>"SuccessValues": \[ "AccountCreated", "Successful account creation" \]</code></p>
     pub fn success_values(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.success_values.deref()
     }
     /// <p>Values in the response header with the specified name that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and <code>"FailureValues": [ "AccountCreationFailed" ]</code></p>
+    /// <p>JSON examples: <code>"FailureValues": \[ "LoginFailed", "Failed login" \]</code> and <code>"FailureValues": \[ "AccountCreationFailed" \]</code></p>
     pub fn failure_values(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.failure_values.deref()
@@ -53,20 +53,20 @@ pub struct ResponseInspectionHeaderBuilder {
 }
 impl ResponseInspectionHeaderBuilder {
     /// <p>The name of the header to match against. The name must be an exact match, including case.</p>
-    /// <p>JSON example: <code>"Name": [ "RequestResult" ]</code></p>
+    /// <p>JSON example: <code>"Name": \[ "RequestResult" \]</code></p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the header to match against. The name must be an exact match, including case.</p>
-    /// <p>JSON example: <code>"Name": [ "RequestResult" ]</code></p>
+    /// <p>JSON example: <code>"Name": \[ "RequestResult" \]</code></p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the header to match against. The name must be an exact match, including case.</p>
-    /// <p>JSON example: <code>"Name": [ "RequestResult" ]</code></p>
+    /// <p>JSON example: <code>"Name": \[ "RequestResult" \]</code></p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -75,7 +75,7 @@ impl ResponseInspectionHeaderBuilder {
     /// To override the contents of this collection use [`set_success_values`](Self::set_success_values).
     ///
     /// <p>Values in the response header with the specified name that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code></p>
+    /// <p>JSON examples: <code>"SuccessValues": \[ "LoginPassed", "Successful login" \]</code> and <code>"SuccessValues": \[ "AccountCreated", "Successful account creation" \]</code></p>
     pub fn success_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.success_values.unwrap_or_default();
         v.push(input.into());
@@ -83,13 +83,13 @@ impl ResponseInspectionHeaderBuilder {
         self
     }
     /// <p>Values in the response header with the specified name that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code></p>
+    /// <p>JSON examples: <code>"SuccessValues": \[ "LoginPassed", "Successful login" \]</code> and <code>"SuccessValues": \[ "AccountCreated", "Successful account creation" \]</code></p>
     pub fn set_success_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.success_values = input;
         self
     }
     /// <p>Values in the response header with the specified name that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code></p>
+    /// <p>JSON examples: <code>"SuccessValues": \[ "LoginPassed", "Successful login" \]</code> and <code>"SuccessValues": \[ "AccountCreated", "Successful account creation" \]</code></p>
     pub fn get_success_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.success_values
     }
@@ -98,7 +98,7 @@ impl ResponseInspectionHeaderBuilder {
     /// To override the contents of this collection use [`set_failure_values`](Self::set_failure_values).
     ///
     /// <p>Values in the response header with the specified name that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and <code>"FailureValues": [ "AccountCreationFailed" ]</code></p>
+    /// <p>JSON examples: <code>"FailureValues": \[ "LoginFailed", "Failed login" \]</code> and <code>"FailureValues": \[ "AccountCreationFailed" \]</code></p>
     pub fn failure_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_values.unwrap_or_default();
         v.push(input.into());
@@ -106,13 +106,13 @@ impl ResponseInspectionHeaderBuilder {
         self
     }
     /// <p>Values in the response header with the specified name that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and <code>"FailureValues": [ "AccountCreationFailed" ]</code></p>
+    /// <p>JSON examples: <code>"FailureValues": \[ "LoginFailed", "Failed login" \]</code> and <code>"FailureValues": \[ "AccountCreationFailed" \]</code></p>
     pub fn set_failure_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.failure_values = input;
         self
     }
     /// <p>Values in the response header with the specified name that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and <code>"FailureValues": [ "AccountCreationFailed" ]</code></p>
+    /// <p>JSON examples: <code>"FailureValues": \[ "LoginFailed", "Failed login" \]</code> and <code>"FailureValues": \[ "AccountCreationFailed" \]</code></p>
     pub fn get_failure_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_values
     }

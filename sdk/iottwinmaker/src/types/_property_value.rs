@@ -10,28 +10,28 @@ pub struct PropertyValue {
     /// <p>An object that specifies a value for a time series property.</p>
     pub value: ::std::option::Option<crate::types::DataValue>,
     /// <p>ISO8601 DateTime of a value for a time series property.</p>
-    /// <p>The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss[.SSSSSSSSS][Z/±HH:mm]</i>.</p>
+    /// <p>The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss\[.SSSSSSSSS\]\[Z/±HH:mm\]</i>.</p>
     /// <ul>
     /// <li>
-    /// <p><i>[YYYY]</i>: year</p></li>
+    /// <p><i>\[YYYY\]</i>: year</p></li>
     /// <li>
-    /// <p><i>[MM]</i>: month</p></li>
+    /// <p><i>\[MM\]</i>: month</p></li>
     /// <li>
-    /// <p><i>[DD]</i>: day</p></li>
+    /// <p><i>\[DD\]</i>: day</p></li>
     /// <li>
-    /// <p><i>[hh]</i>: hour</p></li>
+    /// <p><i>\[hh\]</i>: hour</p></li>
     /// <li>
-    /// <p><i>[mm]</i>: minute</p></li>
+    /// <p><i>\[mm\]</i>: minute</p></li>
     /// <li>
-    /// <p><i>[ss]</i>: seconds</p></li>
+    /// <p><i>\[ss\]</i>: seconds</p></li>
     /// <li>
-    /// <p><i>[.SSSSSSSSS]</i>: additional precision, where precedence is maintained. For example: [.573123] is equal to 573123000 nanoseconds.</p></li>
+    /// <p>\[.SSSSSSSSS\]: additional precision, where precedence is maintained. For example: \[.573123\] is equal to 573123000 nanoseconds.</p></li>
     /// <li>
     /// <p><i>Z</i>: default timezone UTC</p></li>
     /// <li>
     /// <p><i>± HH:mm</i>: time zone offset in Hours and Minutes.</p></li>
     /// </ul>
-    /// <p><i>Required sub-fields</i>: YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]</p>
+    /// <p>Required sub-fields: YYYY-MM-DDThh:mm:ss and \[Z/±HH:mm\]</p>
     pub time: ::std::option::Option<::std::string::String>,
 }
 impl PropertyValue {
@@ -45,28 +45,28 @@ impl PropertyValue {
         self.value.as_ref()
     }
     /// <p>ISO8601 DateTime of a value for a time series property.</p>
-    /// <p>The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss[.SSSSSSSSS][Z/±HH:mm]</i>.</p>
+    /// <p>The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss\[.SSSSSSSSS\]\[Z/±HH:mm\]</i>.</p>
     /// <ul>
     /// <li>
-    /// <p><i>[YYYY]</i>: year</p></li>
+    /// <p><i>\[YYYY\]</i>: year</p></li>
     /// <li>
-    /// <p><i>[MM]</i>: month</p></li>
+    /// <p><i>\[MM\]</i>: month</p></li>
     /// <li>
-    /// <p><i>[DD]</i>: day</p></li>
+    /// <p><i>\[DD\]</i>: day</p></li>
     /// <li>
-    /// <p><i>[hh]</i>: hour</p></li>
+    /// <p><i>\[hh\]</i>: hour</p></li>
     /// <li>
-    /// <p><i>[mm]</i>: minute</p></li>
+    /// <p><i>\[mm\]</i>: minute</p></li>
     /// <li>
-    /// <p><i>[ss]</i>: seconds</p></li>
+    /// <p><i>\[ss\]</i>: seconds</p></li>
     /// <li>
-    /// <p><i>[.SSSSSSSSS]</i>: additional precision, where precedence is maintained. For example: [.573123] is equal to 573123000 nanoseconds.</p></li>
+    /// <p>\[.SSSSSSSSS\]: additional precision, where precedence is maintained. For example: \[.573123\] is equal to 573123000 nanoseconds.</p></li>
     /// <li>
     /// <p><i>Z</i>: default timezone UTC</p></li>
     /// <li>
     /// <p><i>± HH:mm</i>: time zone offset in Hours and Minutes.</p></li>
     /// </ul>
-    /// <p><i>Required sub-fields</i>: YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]</p>
+    /// <p>Required sub-fields: YYYY-MM-DDThh:mm:ss and \[Z/±HH:mm\]</p>
     pub fn time(&self) -> ::std::option::Option<&str> {
         self.time.as_deref()
     }
@@ -120,82 +120,82 @@ impl PropertyValueBuilder {
         &self.value
     }
     /// <p>ISO8601 DateTime of a value for a time series property.</p>
-    /// <p>The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss[.SSSSSSSSS][Z/±HH:mm]</i>.</p>
+    /// <p>The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss\[.SSSSSSSSS\]\[Z/±HH:mm\]</i>.</p>
     /// <ul>
     /// <li>
-    /// <p><i>[YYYY]</i>: year</p></li>
+    /// <p><i>\[YYYY\]</i>: year</p></li>
     /// <li>
-    /// <p><i>[MM]</i>: month</p></li>
+    /// <p><i>\[MM\]</i>: month</p></li>
     /// <li>
-    /// <p><i>[DD]</i>: day</p></li>
+    /// <p><i>\[DD\]</i>: day</p></li>
     /// <li>
-    /// <p><i>[hh]</i>: hour</p></li>
+    /// <p><i>\[hh\]</i>: hour</p></li>
     /// <li>
-    /// <p><i>[mm]</i>: minute</p></li>
+    /// <p><i>\[mm\]</i>: minute</p></li>
     /// <li>
-    /// <p><i>[ss]</i>: seconds</p></li>
+    /// <p><i>\[ss\]</i>: seconds</p></li>
     /// <li>
-    /// <p><i>[.SSSSSSSSS]</i>: additional precision, where precedence is maintained. For example: [.573123] is equal to 573123000 nanoseconds.</p></li>
+    /// <p>\[.SSSSSSSSS\]: additional precision, where precedence is maintained. For example: \[.573123\] is equal to 573123000 nanoseconds.</p></li>
     /// <li>
     /// <p><i>Z</i>: default timezone UTC</p></li>
     /// <li>
     /// <p><i>± HH:mm</i>: time zone offset in Hours and Minutes.</p></li>
     /// </ul>
-    /// <p><i>Required sub-fields</i>: YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]</p>
+    /// <p>Required sub-fields: YYYY-MM-DDThh:mm:ss and \[Z/±HH:mm\]</p>
     pub fn time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ISO8601 DateTime of a value for a time series property.</p>
-    /// <p>The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss[.SSSSSSSSS][Z/±HH:mm]</i>.</p>
+    /// <p>The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss\[.SSSSSSSSS\]\[Z/±HH:mm\]</i>.</p>
     /// <ul>
     /// <li>
-    /// <p><i>[YYYY]</i>: year</p></li>
+    /// <p><i>\[YYYY\]</i>: year</p></li>
     /// <li>
-    /// <p><i>[MM]</i>: month</p></li>
+    /// <p><i>\[MM\]</i>: month</p></li>
     /// <li>
-    /// <p><i>[DD]</i>: day</p></li>
+    /// <p><i>\[DD\]</i>: day</p></li>
     /// <li>
-    /// <p><i>[hh]</i>: hour</p></li>
+    /// <p><i>\[hh\]</i>: hour</p></li>
     /// <li>
-    /// <p><i>[mm]</i>: minute</p></li>
+    /// <p><i>\[mm\]</i>: minute</p></li>
     /// <li>
-    /// <p><i>[ss]</i>: seconds</p></li>
+    /// <p><i>\[ss\]</i>: seconds</p></li>
     /// <li>
-    /// <p><i>[.SSSSSSSSS]</i>: additional precision, where precedence is maintained. For example: [.573123] is equal to 573123000 nanoseconds.</p></li>
+    /// <p>\[.SSSSSSSSS\]: additional precision, where precedence is maintained. For example: \[.573123\] is equal to 573123000 nanoseconds.</p></li>
     /// <li>
     /// <p><i>Z</i>: default timezone UTC</p></li>
     /// <li>
     /// <p><i>± HH:mm</i>: time zone offset in Hours and Minutes.</p></li>
     /// </ul>
-    /// <p><i>Required sub-fields</i>: YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]</p>
+    /// <p>Required sub-fields: YYYY-MM-DDThh:mm:ss and \[Z/±HH:mm\]</p>
     pub fn set_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time = input;
         self
     }
     /// <p>ISO8601 DateTime of a value for a time series property.</p>
-    /// <p>The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss[.SSSSSSSSS][Z/±HH:mm]</i>.</p>
+    /// <p>The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss\[.SSSSSSSSS\]\[Z/±HH:mm\]</i>.</p>
     /// <ul>
     /// <li>
-    /// <p><i>[YYYY]</i>: year</p></li>
+    /// <p><i>\[YYYY\]</i>: year</p></li>
     /// <li>
-    /// <p><i>[MM]</i>: month</p></li>
+    /// <p><i>\[MM\]</i>: month</p></li>
     /// <li>
-    /// <p><i>[DD]</i>: day</p></li>
+    /// <p><i>\[DD\]</i>: day</p></li>
     /// <li>
-    /// <p><i>[hh]</i>: hour</p></li>
+    /// <p><i>\[hh\]</i>: hour</p></li>
     /// <li>
-    /// <p><i>[mm]</i>: minute</p></li>
+    /// <p><i>\[mm\]</i>: minute</p></li>
     /// <li>
-    /// <p><i>[ss]</i>: seconds</p></li>
+    /// <p><i>\[ss\]</i>: seconds</p></li>
     /// <li>
-    /// <p><i>[.SSSSSSSSS]</i>: additional precision, where precedence is maintained. For example: [.573123] is equal to 573123000 nanoseconds.</p></li>
+    /// <p>\[.SSSSSSSSS\]: additional precision, where precedence is maintained. For example: \[.573123\] is equal to 573123000 nanoseconds.</p></li>
     /// <li>
     /// <p><i>Z</i>: default timezone UTC</p></li>
     /// <li>
     /// <p><i>± HH:mm</i>: time zone offset in Hours and Minutes.</p></li>
     /// </ul>
-    /// <p><i>Required sub-fields</i>: YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]</p>
+    /// <p>Required sub-fields: YYYY-MM-DDThh:mm:ss and \[Z/±HH:mm\]</p>
     pub fn get_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.time
     }

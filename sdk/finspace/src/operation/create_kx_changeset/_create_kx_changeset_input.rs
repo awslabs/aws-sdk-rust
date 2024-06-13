@@ -25,13 +25,13 @@ pub struct CreateKxChangesetInput {
     /// <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}</code></p></li>
     /// <li>
     /// <p>This request adds files in the given <code>s3Path</code> under the <i>taq</i> table partition of the database.</p>
-    /// <p><code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <p><code>\[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}\]</code></p></li>
     /// <li>
     /// <p>This request deletes the 2020.01.02 partition of the database.</p>
-    /// <p><code>[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} ]</code></p></li>
+    /// <p><code>\[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} \]</code></p></li>
     /// <li>
     /// <p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p>
-    /// <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <p><code>\[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}\]</code></p></li>
     /// </ol>
     pub change_requests: ::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -64,13 +64,13 @@ impl CreateKxChangesetInput {
     /// <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}</code></p></li>
     /// <li>
     /// <p>This request adds files in the given <code>s3Path</code> under the <i>taq</i> table partition of the database.</p>
-    /// <p><code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <p><code>\[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}\]</code></p></li>
     /// <li>
     /// <p>This request deletes the 2020.01.02 partition of the database.</p>
-    /// <p><code>[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} ]</code></p></li>
+    /// <p><code>\[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} \]</code></p></li>
     /// <li>
     /// <p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p>
-    /// <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <p><code>\[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}\]</code></p></li>
     /// </ol>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.change_requests.is_none()`.
@@ -151,13 +151,13 @@ impl CreateKxChangesetInputBuilder {
     /// <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}</code></p></li>
     /// <li>
     /// <p>This request adds files in the given <code>s3Path</code> under the <i>taq</i> table partition of the database.</p>
-    /// <p><code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <p><code>\[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}\]</code></p></li>
     /// <li>
     /// <p>This request deletes the 2020.01.02 partition of the database.</p>
-    /// <p><code>[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} ]</code></p></li>
+    /// <p><code>\[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} \]</code></p></li>
     /// <li>
     /// <p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p>
-    /// <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <p><code>\[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}\]</code></p></li>
     /// </ol>
     pub fn change_requests(mut self, input: crate::types::ChangeRequest) -> Self {
         let mut v = self.change_requests.unwrap_or_default();
@@ -183,13 +183,13 @@ impl CreateKxChangesetInputBuilder {
     /// <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}</code></p></li>
     /// <li>
     /// <p>This request adds files in the given <code>s3Path</code> under the <i>taq</i> table partition of the database.</p>
-    /// <p><code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <p><code>\[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}\]</code></p></li>
     /// <li>
     /// <p>This request deletes the 2020.01.02 partition of the database.</p>
-    /// <p><code>[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} ]</code></p></li>
+    /// <p><code>\[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} \]</code></p></li>
     /// <li>
     /// <p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p>
-    /// <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <p><code>\[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}\]</code></p></li>
     /// </ol>
     pub fn set_change_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>>) -> Self {
         self.change_requests = input;
@@ -213,13 +213,13 @@ impl CreateKxChangesetInputBuilder {
     /// <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}</code></p></li>
     /// <li>
     /// <p>This request adds files in the given <code>s3Path</code> under the <i>taq</i> table partition of the database.</p>
-    /// <p><code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <p><code>\[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}\]</code></p></li>
     /// <li>
     /// <p>This request deletes the 2020.01.02 partition of the database.</p>
-    /// <p><code>[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} ]</code></p></li>
+    /// <p><code>\[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} \]</code></p></li>
     /// <li>
     /// <p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p>
-    /// <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <p><code>\[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}\]</code></p></li>
     /// </ol>
     pub fn get_change_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>> {
         &self.change_requests

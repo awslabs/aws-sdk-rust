@@ -6,7 +6,7 @@
 pub struct DestinationDescription {
     /// <p>The ID of the destination.</p>
     pub destination_id: ::std::string::String,
-    /// <p>[Deprecated] The destination in Amazon S3.</p>
+    /// <p>\[Deprecated\] The destination in Amazon S3.</p>
     pub s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
     /// <p>The destination in Amazon S3.</p>
     pub extended_s3_destination_description: ::std::option::Option<crate::types::ExtendedS3DestinationDescription>,
@@ -31,7 +31,7 @@ impl DestinationDescription {
         use std::ops::Deref;
         self.destination_id.deref()
     }
-    /// <p>[Deprecated] The destination in Amazon S3.</p>
+    /// <p>\[Deprecated\] The destination in Amazon S3.</p>
     pub fn s3_destination_description(&self) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
         self.s3_destination_description.as_ref()
     }
@@ -111,17 +111,17 @@ impl DestinationDescriptionBuilder {
     pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_id
     }
-    /// <p>[Deprecated] The destination in Amazon S3.</p>
+    /// <p>\[Deprecated\] The destination in Amazon S3.</p>
     pub fn s3_destination_description(mut self, input: crate::types::S3DestinationDescription) -> Self {
         self.s3_destination_description = ::std::option::Option::Some(input);
         self
     }
-    /// <p>[Deprecated] The destination in Amazon S3.</p>
+    /// <p>\[Deprecated\] The destination in Amazon S3.</p>
     pub fn set_s3_destination_description(mut self, input: ::std::option::Option<crate::types::S3DestinationDescription>) -> Self {
         self.s3_destination_description = input;
         self
     }
-    /// <p>[Deprecated] The destination in Amazon S3.</p>
+    /// <p>\[Deprecated\] The destination in Amazon S3.</p>
     pub fn get_s3_destination_description(&self) -> &::std::option::Option<crate::types::S3DestinationDescription> {
         &self.s3_destination_description
     }

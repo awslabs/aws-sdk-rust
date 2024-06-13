@@ -13,7 +13,7 @@ pub struct CreateApiKeyInput {
     /// </ul>
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>The client application domains that you want to use this API key for.</p>
-    /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code></p>
+    /// <p>Example JSON: <code>"TokenDomains": \["abc.com", "store.abc.com"\]</code></p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as token domains.</p>
     pub token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -30,7 +30,7 @@ impl CreateApiKeyInput {
         self.scope.as_ref()
     }
     /// <p>The client application domains that you want to use this API key for.</p>
-    /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code></p>
+    /// <p>Example JSON: <code>"TokenDomains": \["abc.com", "store.abc.com"\]</code></p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as token domains.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.token_domains.is_none()`.
@@ -94,7 +94,7 @@ impl CreateApiKeyInputBuilder {
     /// To override the contents of this collection use [`set_token_domains`](Self::set_token_domains).
     ///
     /// <p>The client application domains that you want to use this API key for.</p>
-    /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code></p>
+    /// <p>Example JSON: <code>"TokenDomains": \["abc.com", "store.abc.com"\]</code></p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as token domains.</p>
     pub fn token_domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.token_domains.unwrap_or_default();
@@ -103,14 +103,14 @@ impl CreateApiKeyInputBuilder {
         self
     }
     /// <p>The client application domains that you want to use this API key for.</p>
-    /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code></p>
+    /// <p>Example JSON: <code>"TokenDomains": \["abc.com", "store.abc.com"\]</code></p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as token domains.</p>
     pub fn set_token_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.token_domains = input;
         self
     }
     /// <p>The client application domains that you want to use this API key for.</p>
-    /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code></p>
+    /// <p>Example JSON: <code>"TokenDomains": \["abc.com", "store.abc.com"\]</code></p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as token domains.</p>
     pub fn get_token_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.token_domains

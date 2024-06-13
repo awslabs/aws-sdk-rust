@@ -221,13 +221,13 @@ impl UpdateAnomalySubscriptionFluentBuilder {
     /// <p>The following are examples of valid ThresholdExpressions:</p>
     /// <ul>
     /// <li>
-    /// <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code></p></li>
+    /// <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } }</code></p></li>
     /// <li>
-    /// <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code></p></li>
+    /// <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } }</code></p></li>
     /// <li>
-    /// <p><code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code></p></li>
+    /// <p><code>AND</code> two thresholds together: <code>{ "And": \[ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } } \] }</code></p></li>
     /// <li>
-    /// <p><code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code></p></li>
+    /// <p><code>OR</code> two thresholds together: <code>{ "Or": \[ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } } \] }</code></p></li>
     /// </ul>
     pub fn threshold_expression(mut self, input: crate::types::Expression) -> Self {
         self.inner = self.inner.threshold_expression(input);
@@ -238,13 +238,13 @@ impl UpdateAnomalySubscriptionFluentBuilder {
     /// <p>The following are examples of valid ThresholdExpressions:</p>
     /// <ul>
     /// <li>
-    /// <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code></p></li>
+    /// <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } }</code></p></li>
     /// <li>
-    /// <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code></p></li>
+    /// <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } }</code></p></li>
     /// <li>
-    /// <p><code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code></p></li>
+    /// <p><code>AND</code> two thresholds together: <code>{ "And": \[ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } } \] }</code></p></li>
     /// <li>
-    /// <p><code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code></p></li>
+    /// <p><code>OR</code> two thresholds together: <code>{ "Or": \[ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } } \] }</code></p></li>
     /// </ul>
     pub fn set_threshold_expression(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.inner = self.inner.set_threshold_expression(input);
@@ -255,13 +255,13 @@ impl UpdateAnomalySubscriptionFluentBuilder {
     /// <p>The following are examples of valid ThresholdExpressions:</p>
     /// <ul>
     /// <li>
-    /// <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code></p></li>
+    /// <p>Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } }</code></p></li>
     /// <li>
-    /// <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code></p></li>
+    /// <p>Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } }</code></p></li>
     /// <li>
-    /// <p><code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code></p></li>
+    /// <p><code>AND</code> two thresholds together: <code>{ "And": \[ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } } \] }</code></p></li>
     /// <li>
-    /// <p><code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code></p></li>
+    /// <p><code>OR</code> two thresholds together: <code>{ "Or": \[ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": \[ "GREATER_THAN_OR_EQUAL" \], "Values": \[ "100" \] } } \] }</code></p></li>
     /// </ul>
     pub fn get_threshold_expression(&self) -> &::std::option::Option<crate::types::Expression> {
         self.inner.get_threshold_expression()

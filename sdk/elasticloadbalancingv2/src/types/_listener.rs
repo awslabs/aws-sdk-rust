@@ -12,13 +12,13 @@ pub struct Listener {
     pub port: ::std::option::Option<i32>,
     /// <p>The protocol for connections from clients to the load balancer.</p>
     pub protocol: ::std::option::Option<crate::types::ProtocolEnum>,
-    /// <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
+    /// <p>\[HTTPS or TLS listener\] The default certificate for the listener.</p>
     pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
-    /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>\[HTTPS or TLS listener\] The security policy that defines which protocols and ciphers are supported.</p>
     pub ssl_policy: ::std::option::Option<::std::string::String>,
     /// <p>The default actions for the listener.</p>
     pub default_actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
+    /// <p>\[TLS listener\] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
     pub alpn_policy: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The mutual authentication configuration information.</p>
     pub mutual_authentication: ::std::option::Option<crate::types::MutualAuthenticationAttributes>,
@@ -40,13 +40,13 @@ impl Listener {
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::ProtocolEnum> {
         self.protocol.as_ref()
     }
-    /// <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
+    /// <p>\[HTTPS or TLS listener\] The default certificate for the listener.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
     pub fn certificates(&self) -> &[crate::types::Certificate] {
         self.certificates.as_deref().unwrap_or_default()
     }
-    /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>\[HTTPS or TLS listener\] The security policy that defines which protocols and ciphers are supported.</p>
     pub fn ssl_policy(&self) -> ::std::option::Option<&str> {
         self.ssl_policy.as_deref()
     }
@@ -56,7 +56,7 @@ impl Listener {
     pub fn default_actions(&self) -> &[crate::types::Action] {
         self.default_actions.as_deref().unwrap_or_default()
     }
-    /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
+    /// <p>\[TLS listener\] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alpn_policy.is_none()`.
     pub fn alpn_policy(&self) -> &[::std::string::String] {
@@ -149,33 +149,33 @@ impl ListenerBuilder {
     ///
     /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
     ///
-    /// <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
+    /// <p>\[HTTPS or TLS listener\] The default certificate for the listener.</p>
     pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
         let mut v = self.certificates.unwrap_or_default();
         v.push(input);
         self.certificates = ::std::option::Option::Some(v);
         self
     }
-    /// <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
+    /// <p>\[HTTPS or TLS listener\] The default certificate for the listener.</p>
     pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
         self.certificates = input;
         self
     }
-    /// <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
+    /// <p>\[HTTPS or TLS listener\] The default certificate for the listener.</p>
     pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
         &self.certificates
     }
-    /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>\[HTTPS or TLS listener\] The security policy that defines which protocols and ciphers are supported.</p>
     pub fn ssl_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssl_policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>\[HTTPS or TLS listener\] The security policy that defines which protocols and ciphers are supported.</p>
     pub fn set_ssl_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssl_policy = input;
         self
     }
-    /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>\[HTTPS or TLS listener\] The security policy that defines which protocols and ciphers are supported.</p>
     pub fn get_ssl_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.ssl_policy
     }
@@ -203,19 +203,19 @@ impl ListenerBuilder {
     ///
     /// To override the contents of this collection use [`set_alpn_policy`](Self::set_alpn_policy).
     ///
-    /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
+    /// <p>\[TLS listener\] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
     pub fn alpn_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alpn_policy.unwrap_or_default();
         v.push(input.into());
         self.alpn_policy = ::std::option::Option::Some(v);
         self
     }
-    /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
+    /// <p>\[TLS listener\] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
     pub fn set_alpn_policy(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.alpn_policy = input;
         self
     }
-    /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
+    /// <p>\[TLS listener\] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
     pub fn get_alpn_policy(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.alpn_policy
     }

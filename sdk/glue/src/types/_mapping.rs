@@ -16,9 +16,9 @@ pub struct Mapping {
     pub dropped: ::std::option::Option<bool>,
     /// <p>Only applicable to nested data structures. If you want to change the parent structure, but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>, but its <code>FromPath</code> will be the parent's <code>FromPath</code> plus the <code>FromPath</code> from this structure.</p>
     /// <p>For the children part, suppose you have the structure:</p>
-    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
+    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": \[{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }\] }</code></p>
     /// <p>You can specify a <code>Mapping</code> that looks like:</p>
-    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
+    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": \[{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }\] }</code></p>
     pub children: ::std::option::Option<::std::vec::Vec<crate::types::Mapping>>,
 }
 impl Mapping {
@@ -46,9 +46,9 @@ impl Mapping {
     }
     /// <p>Only applicable to nested data structures. If you want to change the parent structure, but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>, but its <code>FromPath</code> will be the parent's <code>FromPath</code> plus the <code>FromPath</code> from this structure.</p>
     /// <p>For the children part, suppose you have the structure:</p>
-    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
+    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": \[{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }\] }</code></p>
     /// <p>You can specify a <code>Mapping</code> that looks like:</p>
-    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
+    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": \[{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }\] }</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.children.is_none()`.
     pub fn children(&self) -> &[crate::types::Mapping] {
@@ -156,9 +156,9 @@ impl MappingBuilder {
     ///
     /// <p>Only applicable to nested data structures. If you want to change the parent structure, but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>, but its <code>FromPath</code> will be the parent's <code>FromPath</code> plus the <code>FromPath</code> from this structure.</p>
     /// <p>For the children part, suppose you have the structure:</p>
-    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
+    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": \[{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }\] }</code></p>
     /// <p>You can specify a <code>Mapping</code> that looks like:</p>
-    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
+    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": \[{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }\] }</code></p>
     pub fn children(mut self, input: crate::types::Mapping) -> Self {
         let mut v = self.children.unwrap_or_default();
         v.push(input);
@@ -167,18 +167,18 @@ impl MappingBuilder {
     }
     /// <p>Only applicable to nested data structures. If you want to change the parent structure, but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>, but its <code>FromPath</code> will be the parent's <code>FromPath</code> plus the <code>FromPath</code> from this structure.</p>
     /// <p>For the children part, suppose you have the structure:</p>
-    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
+    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": \[{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }\] }</code></p>
     /// <p>You can specify a <code>Mapping</code> that looks like:</p>
-    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
+    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": \[{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }\] }</code></p>
     pub fn set_children(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Mapping>>) -> Self {
         self.children = input;
         self
     }
     /// <p>Only applicable to nested data structures. If you want to change the parent structure, but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>, but its <code>FromPath</code> will be the parent's <code>FromPath</code> plus the <code>FromPath</code> from this structure.</p>
     /// <p>For the children part, suppose you have the structure:</p>
-    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
+    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": \[{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }\] }</code></p>
     /// <p>You can specify a <code>Mapping</code> that looks like:</p>
-    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code></p>
+    /// <p><code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": \[{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }\] }</code></p>
     pub fn get_children(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Mapping>> {
         &self.children
     }

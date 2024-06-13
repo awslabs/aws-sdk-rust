@@ -151,17 +151,17 @@ impl CreateFleetMetricFluentBuilder {
     pub fn get_aggregation_type(&self) -> &::std::option::Option<crate::types::AggregationType> {
         self.inner.get_aggregation_type()
     }
-    /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    /// <p>The time in seconds between fleet metric emissions. Range \[60(1 min), 86400(1 day)\] and must be multiple of 60.</p>
     pub fn period(mut self, input: i32) -> Self {
         self.inner = self.inner.period(input);
         self
     }
-    /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    /// <p>The time in seconds between fleet metric emissions. Range \[60(1 min), 86400(1 day)\] and must be multiple of 60.</p>
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_period(input);
         self
     }
-    /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    /// <p>The time in seconds between fleet metric emissions. Range \[60(1 min), 86400(1 day)\] and must be multiple of 60.</p>
     pub fn get_period(&self) -> &::std::option::Option<i32> {
         self.inner.get_period()
     }

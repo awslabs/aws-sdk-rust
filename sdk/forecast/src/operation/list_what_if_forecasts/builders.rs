@@ -158,9 +158,7 @@ impl ListWhatIfForecastsFluentBuilder {
     /// <p><code>Value</code> - The value to match.</p></li>
     /// </ul>
     /// <p>For example, to list all jobs that export a forecast named <i>electricityWhatIfForecast</i>, specify the following filter:</p>
-    /// <p><code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastArn", "Value": "arn:aws:forecast:us-west-2:<acct-id>
-    /// :forecast/electricityWhatIfForecast" } ]
-    /// </acct-id></code></p>
+    /// <p><code>"Filters": \[ { "Condition": "IS", "Key": "WhatIfForecastArn", "Value": "arn:aws:forecast:us-west-2::forecast/electricityWhatIfForecast" } \]</code></p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
@@ -176,9 +174,7 @@ impl ListWhatIfForecastsFluentBuilder {
     /// <p><code>Value</code> - The value to match.</p></li>
     /// </ul>
     /// <p>For example, to list all jobs that export a forecast named <i>electricityWhatIfForecast</i>, specify the following filter:</p>
-    /// <p><code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastArn", "Value": "arn:aws:forecast:us-west-2:<acct-id>
-    /// :forecast/electricityWhatIfForecast" } ]
-    /// </acct-id></code></p>
+    /// <p><code>"Filters": \[ { "Condition": "IS", "Key": "WhatIfForecastArn", "Value": "arn:aws:forecast:us-west-2::forecast/electricityWhatIfForecast" } \]</code></p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -194,9 +190,7 @@ impl ListWhatIfForecastsFluentBuilder {
     /// <p><code>Value</code> - The value to match.</p></li>
     /// </ul>
     /// <p>For example, to list all jobs that export a forecast named <i>electricityWhatIfForecast</i>, specify the following filter:</p>
-    /// <p><code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastArn", "Value": "arn:aws:forecast:us-west-2:<acct-id>
-    /// :forecast/electricityWhatIfForecast" } ]
-    /// </acct-id></code></p>
+    /// <p><code>"Filters": \[ { "Condition": "IS", "Key": "WhatIfForecastArn", "Value": "arn:aws:forecast:us-west-2::forecast/electricityWhatIfForecast" } \]</code></p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }

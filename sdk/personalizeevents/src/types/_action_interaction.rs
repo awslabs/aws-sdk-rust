@@ -18,7 +18,7 @@ pub struct ActionInteraction {
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the list of recommendations that contains the action the user interacted with.</p>
     pub recommendation_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>["actionId1", "actionId2", "actionId3"]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type.</p>
+    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>\["actionId1", "actionId2", "actionId3"\]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type.</p>
     pub impression: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A string map of event-specific data that you might choose to record. For example, if a user takes an action, other than the action ID, you might also send the number of actions taken by the user.</p>
     /// <p>Each item in the map consists of a key-value pair. For example,</p>
@@ -73,7 +73,7 @@ impl ActionInteraction {
     pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
-    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>["actionId1", "actionId2", "actionId3"]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type.</p>
+    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>\["actionId1", "actionId2", "actionId3"\]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.impression.is_none()`.
     pub fn impression(&self) -> &[::std::string::String] {
@@ -245,19 +245,19 @@ impl ActionInteractionBuilder {
     ///
     /// To override the contents of this collection use [`set_impression`](Self::set_impression).
     ///
-    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>["actionId1", "actionId2", "actionId3"]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type.</p>
+    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>\["actionId1", "actionId2", "actionId3"\]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type.</p>
     pub fn impression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.impression.unwrap_or_default();
         v.push(input.into());
         self.impression = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>["actionId1", "actionId2", "actionId3"]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type.</p>
+    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>\["actionId1", "actionId2", "actionId3"\]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type.</p>
     pub fn set_impression(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.impression = input;
         self
     }
-    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>["actionId1", "actionId2", "actionId3"]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type.</p>
+    /// <p>A list of action IDs that represents the sequence of actions you have shown the user. For example, <code>\["actionId1", "actionId2", "actionId3"\]</code>. Amazon Personalize doesn't use impressions data from action interaction events. Instead, record multiple events for each action and use the <code>Viewed</code> event type.</p>
     pub fn get_impression(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.impression
     }

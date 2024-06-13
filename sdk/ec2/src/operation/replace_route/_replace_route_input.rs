@@ -13,7 +13,7 @@ pub struct ReplaceRouteInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
-    /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
+    /// <p>\[IPv6 traffic only\] The ID of an egress-only internet gateway.</p>
     pub egress_only_internet_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an internet gateway or virtual private gateway.</p>
     pub gateway_id: ::std::option::Option<::std::string::String>,
@@ -21,13 +21,13 @@ pub struct ReplaceRouteInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to reset the local route to its default target (<code>local</code>).</p>
     pub local_target: ::std::option::Option<bool>,
-    /// <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
+    /// <p>\[IPv4 traffic only\] The ID of a NAT gateway.</p>
     pub nat_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a transit gateway.</p>
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the local gateway.</p>
     pub local_gateway_id: ::std::option::Option<::std::string::String>,
-    /// <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
+    /// <p>\[IPv4 traffic only\] The ID of a carrier gateway.</p>
     pub carrier_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a network interface.</p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
@@ -59,7 +59,7 @@ impl ReplaceRouteInput {
     pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
-    /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
+    /// <p>\[IPv6 traffic only\] The ID of an egress-only internet gateway.</p>
     pub fn egress_only_internet_gateway_id(&self) -> ::std::option::Option<&str> {
         self.egress_only_internet_gateway_id.as_deref()
     }
@@ -75,7 +75,7 @@ impl ReplaceRouteInput {
     pub fn local_target(&self) -> ::std::option::Option<bool> {
         self.local_target
     }
-    /// <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
+    /// <p>\[IPv4 traffic only\] The ID of a NAT gateway.</p>
     pub fn nat_gateway_id(&self) -> ::std::option::Option<&str> {
         self.nat_gateway_id.as_deref()
     }
@@ -87,7 +87,7 @@ impl ReplaceRouteInput {
     pub fn local_gateway_id(&self) -> ::std::option::Option<&str> {
         self.local_gateway_id.as_deref()
     }
-    /// <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
+    /// <p>\[IPv4 traffic only\] The ID of a carrier gateway.</p>
     pub fn carrier_gateway_id(&self) -> ::std::option::Option<&str> {
         self.carrier_gateway_id.as_deref()
     }
@@ -208,17 +208,17 @@ impl ReplaceRouteInputBuilder {
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_endpoint_id
     }
-    /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
+    /// <p>\[IPv6 traffic only\] The ID of an egress-only internet gateway.</p>
     pub fn egress_only_internet_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.egress_only_internet_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
+    /// <p>\[IPv6 traffic only\] The ID of an egress-only internet gateway.</p>
     pub fn set_egress_only_internet_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.egress_only_internet_gateway_id = input;
         self
     }
-    /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
+    /// <p>\[IPv6 traffic only\] The ID of an egress-only internet gateway.</p>
     pub fn get_egress_only_internet_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.egress_only_internet_gateway_id
     }
@@ -264,17 +264,17 @@ impl ReplaceRouteInputBuilder {
     pub fn get_local_target(&self) -> &::std::option::Option<bool> {
         &self.local_target
     }
-    /// <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
+    /// <p>\[IPv4 traffic only\] The ID of a NAT gateway.</p>
     pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nat_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
+    /// <p>\[IPv4 traffic only\] The ID of a NAT gateway.</p>
     pub fn set_nat_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nat_gateway_id = input;
         self
     }
-    /// <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
+    /// <p>\[IPv4 traffic only\] The ID of a NAT gateway.</p>
     pub fn get_nat_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.nat_gateway_id
     }
@@ -306,17 +306,17 @@ impl ReplaceRouteInputBuilder {
     pub fn get_local_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_id
     }
-    /// <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
+    /// <p>\[IPv4 traffic only\] The ID of a carrier gateway.</p>
     pub fn carrier_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.carrier_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
+    /// <p>\[IPv4 traffic only\] The ID of a carrier gateway.</p>
     pub fn set_carrier_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.carrier_gateway_id = input;
         self
     }
-    /// <p>[IPv4 traffic only] The ID of a carrier gateway.</p>
+    /// <p>\[IPv4 traffic only\] The ID of a carrier gateway.</p>
     pub fn get_carrier_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.carrier_gateway_id
     }

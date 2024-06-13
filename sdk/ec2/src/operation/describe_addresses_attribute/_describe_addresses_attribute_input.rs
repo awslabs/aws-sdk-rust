@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAddressesAttributeInput {
-    /// <p>[EC2-VPC] The allocation IDs.</p>
+    /// <p>\[EC2-VPC\] The allocation IDs.</p>
     pub allocation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The attribute of the IP address.</p>
     pub attribute: ::std::option::Option<crate::types::AddressAttributeName>,
@@ -15,7 +15,7 @@ pub struct DescribeAddressesAttributeInput {
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeAddressesAttributeInput {
-    /// <p>[EC2-VPC] The allocation IDs.</p>
+    /// <p>\[EC2-VPC\] The allocation IDs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allocation_ids.is_none()`.
     pub fn allocation_ids(&self) -> &[::std::string::String] {
@@ -60,19 +60,19 @@ impl DescribeAddressesAttributeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_allocation_ids`](Self::set_allocation_ids).
     ///
-    /// <p>[EC2-VPC] The allocation IDs.</p>
+    /// <p>\[EC2-VPC\] The allocation IDs.</p>
     pub fn allocation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allocation_ids.unwrap_or_default();
         v.push(input.into());
         self.allocation_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>[EC2-VPC] The allocation IDs.</p>
+    /// <p>\[EC2-VPC\] The allocation IDs.</p>
     pub fn set_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allocation_ids = input;
         self
     }
-    /// <p>[EC2-VPC] The allocation IDs.</p>
+    /// <p>\[EC2-VPC\] The allocation IDs.</p>
     pub fn get_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allocation_ids
     }

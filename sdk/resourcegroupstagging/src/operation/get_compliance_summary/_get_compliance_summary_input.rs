@@ -7,7 +7,7 @@ pub struct GetComplianceSummaryInput {
     pub target_id_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter, the count of returned noncompliant resources includes only resources in the specified Regions.</p>
     pub region_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
+    /// <p>Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
     /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a> </i> for the following:</p>
     /// <ul>
     /// <li>
@@ -41,7 +41,7 @@ impl GetComplianceSummaryInput {
     pub fn region_filters(&self) -> &[::std::string::String] {
         self.region_filters.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
+    /// <p>Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
     /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a> </i> for the following:</p>
     /// <ul>
     /// <li>
@@ -142,7 +142,7 @@ impl GetComplianceSummaryInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_type_filters`](Self::set_resource_type_filters).
     ///
-    /// <p>Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
+    /// <p>Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
     /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a> </i> for the following:</p>
     /// <ul>
     /// <li>
@@ -159,7 +159,7 @@ impl GetComplianceSummaryInputBuilder {
         self.resource_type_filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
+    /// <p>Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
     /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a> </i> for the following:</p>
     /// <ul>
     /// <li>
@@ -174,7 +174,7 @@ impl GetComplianceSummaryInputBuilder {
         self.resource_type_filters = input;
         self
     }
-    /// <p>Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
+    /// <p>Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
     /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a> </i> for the following:</p>
     /// <ul>
     /// <li>

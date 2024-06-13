@@ -155,7 +155,7 @@ impl CreateDataSourceFromRDSFluentBuilder {
     /// <li>
     /// <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p></li>
     /// <li>
-    /// <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p></li>
+    /// <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a \[SubnetId, SecurityGroupIds\] pair for a VPC-based RDS DB instance.</p></li>
     /// <li>
     /// <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p></li>
     /// <li>
@@ -189,7 +189,7 @@ impl CreateDataSourceFromRDSFluentBuilder {
     /// <li>
     /// <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p></li>
     /// <li>
-    /// <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p></li>
+    /// <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a \[SubnetId, SecurityGroupIds\] pair for a VPC-based RDS DB instance.</p></li>
     /// <li>
     /// <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p></li>
     /// <li>
@@ -223,7 +223,7 @@ impl CreateDataSourceFromRDSFluentBuilder {
     /// <li>
     /// <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p></li>
     /// <li>
-    /// <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p></li>
+    /// <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a \[SubnetId, SecurityGroupIds\] pair for a VPC-based RDS DB instance.</p></li>
     /// <li>
     /// <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p></li>
     /// <li>

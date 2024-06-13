@@ -33,11 +33,11 @@ pub struct DkimAttributes {
     /// <p><code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p></li>
     /// </ul>
     pub signing_attributes_origin: ::std::option::Option<crate::types::DkimSigningAttributesOrigin>,
-    /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
+    /// <p>\[Easy DKIM\] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
     pub next_signing_key_length: ::std::option::Option<crate::types::DkimSigningKeyLength>,
-    /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
+    /// <p>\[Easy DKIM\] The key length of the DKIM key pair in use.</p>
     pub current_signing_key_length: ::std::option::Option<crate::types::DkimSigningKeyLength>,
-    /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
+    /// <p>\[Easy DKIM\] The last time a key pair was generated for this identity.</p>
     pub last_key_generation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DkimAttributes {
@@ -79,15 +79,15 @@ impl DkimAttributes {
     pub fn signing_attributes_origin(&self) -> ::std::option::Option<&crate::types::DkimSigningAttributesOrigin> {
         self.signing_attributes_origin.as_ref()
     }
-    /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
+    /// <p>\[Easy DKIM\] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
     pub fn next_signing_key_length(&self) -> ::std::option::Option<&crate::types::DkimSigningKeyLength> {
         self.next_signing_key_length.as_ref()
     }
-    /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
+    /// <p>\[Easy DKIM\] The key length of the DKIM key pair in use.</p>
     pub fn current_signing_key_length(&self) -> ::std::option::Option<&crate::types::DkimSigningKeyLength> {
         self.current_signing_key_length.as_ref()
     }
-    /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
+    /// <p>\[Easy DKIM\] The last time a key pair was generated for this identity.</p>
     pub fn last_key_generation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_key_generation_timestamp.as_ref()
     }
@@ -234,45 +234,45 @@ impl DkimAttributesBuilder {
     pub fn get_signing_attributes_origin(&self) -> &::std::option::Option<crate::types::DkimSigningAttributesOrigin> {
         &self.signing_attributes_origin
     }
-    /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
+    /// <p>\[Easy DKIM\] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
     pub fn next_signing_key_length(mut self, input: crate::types::DkimSigningKeyLength) -> Self {
         self.next_signing_key_length = ::std::option::Option::Some(input);
         self
     }
-    /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
+    /// <p>\[Easy DKIM\] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
     pub fn set_next_signing_key_length(mut self, input: ::std::option::Option<crate::types::DkimSigningKeyLength>) -> Self {
         self.next_signing_key_length = input;
         self
     }
-    /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
+    /// <p>\[Easy DKIM\] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
     pub fn get_next_signing_key_length(&self) -> &::std::option::Option<crate::types::DkimSigningKeyLength> {
         &self.next_signing_key_length
     }
-    /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
+    /// <p>\[Easy DKIM\] The key length of the DKIM key pair in use.</p>
     pub fn current_signing_key_length(mut self, input: crate::types::DkimSigningKeyLength) -> Self {
         self.current_signing_key_length = ::std::option::Option::Some(input);
         self
     }
-    /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
+    /// <p>\[Easy DKIM\] The key length of the DKIM key pair in use.</p>
     pub fn set_current_signing_key_length(mut self, input: ::std::option::Option<crate::types::DkimSigningKeyLength>) -> Self {
         self.current_signing_key_length = input;
         self
     }
-    /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
+    /// <p>\[Easy DKIM\] The key length of the DKIM key pair in use.</p>
     pub fn get_current_signing_key_length(&self) -> &::std::option::Option<crate::types::DkimSigningKeyLength> {
         &self.current_signing_key_length
     }
-    /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
+    /// <p>\[Easy DKIM\] The last time a key pair was generated for this identity.</p>
     pub fn last_key_generation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_key_generation_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
+    /// <p>\[Easy DKIM\] The last time a key pair was generated for this identity.</p>
     pub fn set_last_key_generation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_key_generation_timestamp = input;
         self
     }
-    /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
+    /// <p>\[Easy DKIM\] The last time a key pair was generated for this identity.</p>
     pub fn get_last_key_generation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_key_generation_timestamp
     }

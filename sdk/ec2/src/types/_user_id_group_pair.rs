@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserIdGroupPair {
     /// <p>A description for the security group rule that references this user ID group pair.</p>
-    /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+    /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@\[\]+=;{}!$*</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the security group.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
-    /// <p>[Default VPC] The name of the security group. For a security group in a nondefault VPC, use the security group ID.</p>
+    /// <p>\[Default VPC\] The name of the security group. For a security group in a nondefault VPC, use the security group ID.</p>
     /// <p>For a referenced security group in another VPC, this value is not returned if the referenced security group is deleted.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of a VPC peering connection, if applicable.</p>
@@ -24,7 +24,7 @@ pub struct UserIdGroupPair {
 }
 impl UserIdGroupPair {
     /// <p>A description for the security group rule that references this user ID group pair.</p>
-    /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+    /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@\[\]+=;{}!$*</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -32,7 +32,7 @@ impl UserIdGroupPair {
     pub fn group_id(&self) -> ::std::option::Option<&str> {
         self.group_id.as_deref()
     }
-    /// <p>[Default VPC] The name of the security group. For a security group in a nondefault VPC, use the security group ID.</p>
+    /// <p>\[Default VPC\] The name of the security group. For a security group in a nondefault VPC, use the security group ID.</p>
     /// <p>For a referenced security group in another VPC, this value is not returned if the referenced security group is deleted.</p>
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
@@ -76,19 +76,19 @@ pub struct UserIdGroupPairBuilder {
 }
 impl UserIdGroupPairBuilder {
     /// <p>A description for the security group rule that references this user ID group pair.</p>
-    /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+    /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@\[\]+=;{}!$*</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the security group rule that references this user ID group pair.</p>
-    /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+    /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@\[\]+=;{}!$*</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>A description for the security group rule that references this user ID group pair.</p>
-    /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+    /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@\[\]+=;{}!$*</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -106,19 +106,19 @@ impl UserIdGroupPairBuilder {
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_id
     }
-    /// <p>[Default VPC] The name of the security group. For a security group in a nondefault VPC, use the security group ID.</p>
+    /// <p>\[Default VPC\] The name of the security group. For a security group in a nondefault VPC, use the security group ID.</p>
     /// <p>For a referenced security group in another VPC, this value is not returned if the referenced security group is deleted.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Default VPC] The name of the security group. For a security group in a nondefault VPC, use the security group ID.</p>
+    /// <p>\[Default VPC\] The name of the security group. For a security group in a nondefault VPC, use the security group ID.</p>
     /// <p>For a referenced security group in another VPC, this value is not returned if the referenced security group is deleted.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }
-    /// <p>[Default VPC] The name of the security group. For a security group in a nondefault VPC, use the security group ID.</p>
+    /// <p>\[Default VPC\] The name of the security group. For a security group in a nondefault VPC, use the security group ID.</p>
     /// <p>For a referenced security group in another VPC, this value is not returned if the referenced security group is deleted.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name

@@ -33,12 +33,12 @@ pub struct ContactDetail {
     /// <p>The zip or postal code of the contact's address.</p>
     pub zip_code: ::std::option::Option<::std::string::String>,
     /// <p>The phone number of the contact.</p>
-    /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+    /// <p>Constraints: Phone number must be specified in the format "+\[country dialing code\].\[number including any area code&gt;\]". For example, a US phone number might appear as "+1.1234567890".</p>
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>Email address of the contact.</p>
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>Fax number of the contact.</p>
-    /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+    /// <p>Constraints: Phone number must be specified in the format "+\[country dialing code\].\[number including any area code\]". For example, a US phone number might appear as "+1.1234567890".</p>
     pub fax: ::std::option::Option<::std::string::String>,
     /// <p>A list of name-value pairs for parameters required by certain top-level domains.</p>
     pub extra_params: ::std::option::Option<::std::vec::Vec<crate::types::ExtraParam>>,
@@ -93,7 +93,7 @@ impl ContactDetail {
         self.zip_code.as_deref()
     }
     /// <p>The phone number of the contact.</p>
-    /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+    /// <p>Constraints: Phone number must be specified in the format "+\[country dialing code\].\[number including any area code&gt;\]". For example, a US phone number might appear as "+1.1234567890".</p>
     pub fn phone_number(&self) -> ::std::option::Option<&str> {
         self.phone_number.as_deref()
     }
@@ -102,7 +102,7 @@ impl ContactDetail {
         self.email.as_deref()
     }
     /// <p>Fax number of the contact.</p>
-    /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+    /// <p>Constraints: Phone number must be specified in the format "+\[country dialing code\].\[number including any area code\]". For example, a US phone number might appear as "+1.1234567890".</p>
     pub fn fax(&self) -> ::std::option::Option<&str> {
         self.fax.as_deref()
     }
@@ -325,19 +325,19 @@ impl ContactDetailBuilder {
         &self.zip_code
     }
     /// <p>The phone number of the contact.</p>
-    /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+    /// <p>Constraints: Phone number must be specified in the format "+\[country dialing code\].\[number including any area code&gt;\]". For example, a US phone number might appear as "+1.1234567890".</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number of the contact.</p>
-    /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+    /// <p>Constraints: Phone number must be specified in the format "+\[country dialing code\].\[number including any area code&gt;\]". For example, a US phone number might appear as "+1.1234567890".</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
     }
     /// <p>The phone number of the contact.</p>
-    /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+    /// <p>Constraints: Phone number must be specified in the format "+\[country dialing code\].\[number including any area code&gt;\]". For example, a US phone number might appear as "+1.1234567890".</p>
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.phone_number
     }
@@ -356,19 +356,19 @@ impl ContactDetailBuilder {
         &self.email
     }
     /// <p>Fax number of the contact.</p>
-    /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+    /// <p>Constraints: Phone number must be specified in the format "+\[country dialing code\].\[number including any area code\]". For example, a US phone number might appear as "+1.1234567890".</p>
     pub fn fax(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fax = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Fax number of the contact.</p>
-    /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+    /// <p>Constraints: Phone number must be specified in the format "+\[country dialing code\].\[number including any area code\]". For example, a US phone number might appear as "+1.1234567890".</p>
     pub fn set_fax(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fax = input;
         self
     }
     /// <p>Fax number of the contact.</p>
-    /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+    /// <p>Constraints: Phone number must be specified in the format "+\[country dialing code\].\[number including any area code\]". For example, a US phone number might appear as "+1.1234567890".</p>
     pub fn get_fax(&self) -> &::std::option::Option<::std::string::String> {
         &self.fax
     }

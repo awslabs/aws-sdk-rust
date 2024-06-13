@@ -27,7 +27,7 @@ impl crate::operation::get_resource_policy::builders::GetResourcePolicyInputBuil
 /// <li>
 /// <p>Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code></p></li>
 /// <li>
-/// <p>Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code></p></li>
+/// <p>Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/\[a-zA-Z0-9_.-\]+\/consumer\/\[a-zA-Z0-9_.-\]+:\[0-9\]+</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourcePolicyFluentBuilder {

@@ -5,10 +5,10 @@
 pub struct CreateStackInstancesInput {
     /// <p>The name or unique ID of the stack set that you want to create stack instances from.</p>
     pub stack_set_name: ::std::option::Option<::std::string::String>,
-    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
+    /// <p>\[Self-managed permissions\] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>[Service-managed permissions] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub deployment_targets: ::std::option::Option<crate::types::DeploymentTargets>,
     /// <p>The names of one or more Amazon Web Services Regions where you want to create stack instances using the specified Amazon Web Services accounts.</p>
@@ -35,7 +35,7 @@ pub struct CreateStackInstancesInput {
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
     /// <p>Repeating this stack set operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
     pub operation_id: ::std::option::Option<::std::string::String>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>
@@ -51,14 +51,14 @@ impl CreateStackInstancesInput {
     pub fn stack_set_name(&self) -> ::std::option::Option<&str> {
         self.stack_set_name.as_deref()
     }
-    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
+    /// <p>\[Self-managed permissions\] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
     pub fn accounts(&self) -> &[::std::string::String] {
         self.accounts.as_deref().unwrap_or_default()
     }
-    /// <p>[Service-managed permissions] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn deployment_targets(&self) -> ::std::option::Option<&crate::types::DeploymentTargets> {
         self.deployment_targets.as_ref()
@@ -99,7 +99,7 @@ impl CreateStackInstancesInput {
     pub fn operation_id(&self) -> ::std::option::Option<&str> {
         self.operation_id.as_deref()
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>
@@ -152,7 +152,7 @@ impl CreateStackInstancesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
     ///
-    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
+    /// <p>\[Self-managed permissions\] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accounts.unwrap_or_default();
@@ -160,30 +160,30 @@ impl CreateStackInstancesInputBuilder {
         self.accounts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
+    /// <p>\[Self-managed permissions\] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.accounts = input;
         self
     }
-    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
+    /// <p>\[Self-managed permissions\] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.accounts
     }
-    /// <p>[Service-managed permissions] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn deployment_targets(mut self, input: crate::types::DeploymentTargets) -> Self {
         self.deployment_targets = ::std::option::Option::Some(input);
         self
     }
-    /// <p>[Service-managed permissions] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn set_deployment_targets(mut self, input: ::std::option::Option<crate::types::DeploymentTargets>) -> Self {
         self.deployment_targets = input;
         self
     }
-    /// <p>[Service-managed permissions] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn get_deployment_targets(&self) -> &::std::option::Option<crate::types::DeploymentTargets> {
         &self.deployment_targets
@@ -304,7 +304,7 @@ impl CreateStackInstancesInputBuilder {
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_id
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>
@@ -317,7 +317,7 @@ impl CreateStackInstancesInputBuilder {
         self.call_as = ::std::option::Option::Some(input);
         self
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>
@@ -330,7 +330,7 @@ impl CreateStackInstancesInputBuilder {
         self.call_as = input;
         self
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>

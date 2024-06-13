@@ -21,7 +21,7 @@ pub struct CreateWorkspaceInput {
     /// <p>This parameter is for internal use only, and should not be used.</p>
     pub workspace_data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceType>>,
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-    /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code></p>
+    /// <p>Pattern: <code>^\[\\p{L}\\p{Z}\\p{N}\\p{P}\]{0,2048}$</code></p>
     pub workspace_description: ::std::option::Option<::std::string::String>,
     /// <p>The name for the workspace. It does not have to be unique.</p>
     pub workspace_name: ::std::option::Option<::std::string::String>,
@@ -82,7 +82,7 @@ impl CreateWorkspaceInput {
         self.workspace_data_sources.as_deref().unwrap_or_default()
     }
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-    /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code></p>
+    /// <p>Pattern: <code>^\[\\p{L}\\p{Z}\\p{N}\\p{P}\]{0,2048}$</code></p>
     pub fn workspace_description(&self) -> ::std::option::Option<&str> {
         self.workspace_description.as_deref()
     }
@@ -299,19 +299,19 @@ impl CreateWorkspaceInputBuilder {
         &self.workspace_data_sources
     }
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-    /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code></p>
+    /// <p>Pattern: <code>^\[\\p{L}\\p{Z}\\p{N}\\p{P}\]{0,2048}$</code></p>
     pub fn workspace_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-    /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code></p>
+    /// <p>Pattern: <code>^\[\\p{L}\\p{Z}\\p{N}\\p{P}\]{0,2048}$</code></p>
     pub fn set_workspace_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_description = input;
         self
     }
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-    /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code></p>
+    /// <p>Pattern: <code>^\[\\p{L}\\p{Z}\\p{N}\\p{P}\]{0,2048}$</code></p>
     pub fn get_workspace_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.workspace_description
     }

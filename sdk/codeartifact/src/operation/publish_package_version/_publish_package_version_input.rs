@@ -20,7 +20,7 @@ pub struct PublishPackageVersionInput {
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>The content of the asset to publish.</p>
     pub asset_content: ::aws_smithy_types::byte_stream::ByteStream,
-    /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code></p>
+    /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + \[ \] { } ; , . `</code></p>
     pub asset_name: ::std::option::Option<::std::string::String>,
     /// <p>The SHA256 hash of the <code>assetContent</code> to publish. This value must be calculated by the caller and provided with the request (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages">Publishing a generic package</a> in the <i>CodeArtifact User Guide</i>).</p>
     /// <p>This value is used as an integrity check to verify that the <code>assetContent</code> has not changed after it was originally sent.</p>
@@ -63,7 +63,7 @@ impl PublishPackageVersionInput {
     pub fn asset_content(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.asset_content
     }
-    /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code></p>
+    /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + \[ \] { } ; , . `</code></p>
     pub fn asset_name(&self) -> ::std::option::Option<&str> {
         self.asset_name.as_deref()
     }
@@ -223,18 +223,18 @@ impl PublishPackageVersionInputBuilder {
     pub fn get_asset_content(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.asset_content
     }
-    /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code></p>
+    /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + \[ \] { } ; , . `</code></p>
     /// This field is required.
     pub fn asset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code></p>
+    /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + \[ \] { } ; , . `</code></p>
     pub fn set_asset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_name = input;
         self
     }
-    /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code></p>
+    /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + \[ \] { } ; , . `</code></p>
     pub fn get_asset_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_name
     }

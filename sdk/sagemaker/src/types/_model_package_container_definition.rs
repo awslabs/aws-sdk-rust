@@ -7,7 +7,7 @@ pub struct ModelPackageContainerDefinition {
     /// <p>The DNS host name for the Docker container.</p>
     pub container_hostname: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
-    /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+    /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository\[:tag\]</code> and <code>registry/repository\[@digest\]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>An MD5 hash of the training algorithm that identifies the Docker image used for training.</p>
     pub image_digest: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl ModelPackageContainerDefinition {
         self.container_hostname.as_deref()
     }
     /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
-    /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+    /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository\[:tag\]</code> and <code>registry/repository\[@digest\]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
     pub fn image(&self) -> ::std::option::Option<&str> {
         self.image.as_deref()
     }
@@ -125,20 +125,20 @@ impl ModelPackageContainerDefinitionBuilder {
         &self.container_hostname
     }
     /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
-    /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+    /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository\[:tag\]</code> and <code>registry/repository\[@digest\]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
     /// This field is required.
     pub fn image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
-    /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+    /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository\[:tag\]</code> and <code>registry/repository\[@digest\]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
     pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image = input;
         self
     }
     /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
-    /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
+    /// <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository\[:tag\]</code> and <code>registry/repository\[@digest\]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
     pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
         &self.image
     }

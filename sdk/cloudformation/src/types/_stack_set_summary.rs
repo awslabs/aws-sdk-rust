@@ -12,7 +12,7 @@ pub struct StackSetSummary {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the stack set.</p>
     pub status: ::std::option::Option<crate::types::StackSetStatus>,
-    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
+    /// <p>\[Service-managed permissions\] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
     pub auto_deployment: ::std::option::Option<crate::types::AutoDeployment>,
     /// <p>Describes how the IAM roles required for stack set operations are created.</p>
     /// <ul>
@@ -56,7 +56,7 @@ impl StackSetSummary {
     pub fn status(&self) -> ::std::option::Option<&crate::types::StackSetStatus> {
         self.status.as_ref()
     }
-    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
+    /// <p>\[Service-managed permissions\] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
     pub fn auto_deployment(&self) -> ::std::option::Option<&crate::types::AutoDeployment> {
         self.auto_deployment.as_ref()
     }
@@ -171,17 +171,17 @@ impl StackSetSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StackSetStatus> {
         &self.status
     }
-    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
+    /// <p>\[Service-managed permissions\] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
     pub fn auto_deployment(mut self, input: crate::types::AutoDeployment) -> Self {
         self.auto_deployment = ::std::option::Option::Some(input);
         self
     }
-    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
+    /// <p>\[Service-managed permissions\] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
     pub fn set_auto_deployment(mut self, input: ::std::option::Option<crate::types::AutoDeployment>) -> Self {
         self.auto_deployment = input;
         self
     }
-    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
+    /// <p>\[Service-managed permissions\] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
     pub fn get_auto_deployment(&self) -> &::std::option::Option<crate::types::AutoDeployment> {
         &self.auto_deployment
     }

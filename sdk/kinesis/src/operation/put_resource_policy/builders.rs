@@ -28,7 +28,7 @@ impl crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuil
 /// <li>
 /// <p>Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code></p></li>
 /// <li>
-/// <p>Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code></p></li>
+/// <p>Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/\[a-zA-Z0-9_.-\]+\/consumer\/\[a-zA-Z0-9_.-\]+:\[0-9\]+</code></p></li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html">Controlling Access to Amazon Kinesis Data Streams Resources Using IAM</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -8,7 +8,7 @@ pub struct RestoreTestingRecoveryPointSelection {
     pub algorithm: ::std::option::Option<crate::types::RestoreTestingRecoveryPointSelectionAlgorithm>,
     /// <p>Accepted values include specific ARNs or list of selectors. Defaults to empty list if not listed.</p>
     pub exclude_vaults: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...] ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
+    /// <p>Accepted values include wildcard \["*"\] or by specific ARNs or ARN wilcard replacement \["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...\] \["arn:aws:backup:*:*:backup-vault:asdf-*", ...\]</p>
     pub include_vaults: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>These are the types of recovery points.</p>
     pub recovery_point_types: ::std::option::Option<::std::vec::Vec<crate::types::RestoreTestingRecoveryPointType>>,
@@ -26,7 +26,7 @@ impl RestoreTestingRecoveryPointSelection {
     pub fn exclude_vaults(&self) -> &[::std::string::String] {
         self.exclude_vaults.as_deref().unwrap_or_default()
     }
-    /// <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...] ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
+    /// <p>Accepted values include wildcard \["*"\] or by specific ARNs or ARN wilcard replacement \["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...\] \["arn:aws:backup:*:*:backup-vault:asdf-*", ...\]</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_vaults.is_none()`.
     pub fn include_vaults(&self) -> &[::std::string::String] {
@@ -99,19 +99,19 @@ impl RestoreTestingRecoveryPointSelectionBuilder {
     ///
     /// To override the contents of this collection use [`set_include_vaults`](Self::set_include_vaults).
     ///
-    /// <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...] ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
+    /// <p>Accepted values include wildcard \["*"\] or by specific ARNs or ARN wilcard replacement \["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...\] \["arn:aws:backup:*:*:backup-vault:asdf-*", ...\]</p>
     pub fn include_vaults(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.include_vaults.unwrap_or_default();
         v.push(input.into());
         self.include_vaults = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...] ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
+    /// <p>Accepted values include wildcard \["*"\] or by specific ARNs or ARN wilcard replacement \["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...\] \["arn:aws:backup:*:*:backup-vault:asdf-*", ...\]</p>
     pub fn set_include_vaults(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.include_vaults = input;
         self
     }
-    /// <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...] ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
+    /// <p>Accepted values include wildcard \["*"\] or by specific ARNs or ARN wilcard replacement \["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...\] \["arn:aws:backup:*:*:backup-vault:asdf-*", ...\]</p>
     pub fn get_include_vaults(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.include_vaults
     }

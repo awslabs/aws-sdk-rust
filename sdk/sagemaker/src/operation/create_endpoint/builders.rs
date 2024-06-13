@@ -38,11 +38,11 @@ impl crate::operation::create_endpoint::builders::CreateEndpointInputBuilder {
 /// <p>Option 1: For a full SageMaker access, search and attach the <code>AmazonSageMakerFullAccess</code> policy.</p></li>
 /// <li>
 /// <p>Option 2: For granting a limited access to an IAM role, paste the following Action elements manually into the JSON file of the IAM role:</p>
-/// <p><code>"Action": ["sagemaker:CreateEndpoint", "sagemaker:CreateEndpointConfig"]</code></p>
-/// <p><code>"Resource": [</code></p>
+/// <p><code>"Action": \["sagemaker:CreateEndpoint", "sagemaker:CreateEndpointConfig"\]</code></p>
+/// <p><code>"Resource": \[</code></p>
 /// <p><code>"arn:aws:sagemaker:region:account-id:endpoint/endpointName"</code></p>
 /// <p><code>"arn:aws:sagemaker:region:account-id:endpoint-config/endpointConfigName"</code></p>
-/// <p><code>]</code></p>
+/// <p><code>\]</code></p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/api-permissions-reference.html">SageMaker API Permissions: Actions, Permissions, and Resources Reference</a>.</p></li>
 /// </ul>
 /// </note>

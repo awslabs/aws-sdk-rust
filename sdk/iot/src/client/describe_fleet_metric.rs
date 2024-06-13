@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`metric_name(Option<String>)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::metric_name): <p>The name of the fleet metric to describe.</p>
     ///   - [`query_string(Option<String>)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::query_string): <p>The search query string.</p>
     ///   - [`aggregation_type(Option<AggregationType>)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::aggregation_type): <p>The type of the aggregation query.</p>
-    ///   - [`period(Option<i32>)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::period): <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    ///   - [`period(Option<i32>)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::period): <p>The time in seconds between fleet metric emissions. Range \[60(1 min), 86400(1 day)\] and must be multiple of 60.</p>
     ///   - [`aggregation_field(Option<String>)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::aggregation_field): <p>The field to aggregate.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::description): <p>The fleet metric description.</p>
     ///   - [`query_version(Option<String>)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::query_version): <p>The query version.</p>

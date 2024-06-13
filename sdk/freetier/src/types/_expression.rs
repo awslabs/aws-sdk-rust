@@ -11,12 +11,12 @@
 /// <p>For <i>simple dimension values</i>, you can set the dimension name, values, and match type for the filters that you plan to use.</p>
 /// <p><b>Example for simple dimension values</b></p>
 /// <p>You can filter to match exactly for <code>REGION==us-east-1 OR REGION==us-west-1</code>.</p>
-/// <p>The corresponding <code>Expression</code> appears like the following: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ], "MatchOptions": ["EQUALS"] } }</code></p>
+/// <p>The corresponding <code>Expression</code> appears like the following: <code>{ "Dimensions": { "Key": "REGION", "Values": \[ "us-east-1", "us-west-1" \], "MatchOptions": \["EQUALS"\] } }</code></p>
 /// <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when you apply the filter.</p>
 /// <p>For <i>complex expressions with logical operators</i>, you can have nested expressions to use the logical operators and specify advanced filtering.</p>
 /// <p><b>Example for complex expressions with logical operators</b></p>
 /// <p>You can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (SERVICE CONTAINS AWSLambda)) AND (USAGE_TYPE !CONTAINS DataTransfer)</code>.</p>
-/// <p>The corresponding <code>Expression</code> appears like the following: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ], "MatchOptions": ["EQUALS"] }}, {"Dimensions": { "Key": "SERVICE", "Values": ["AWSLambda"], "MatchOptions": ["CONTAINS"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"], "MatchOptions": ["CONTAINS"] }}} ] }</code></p>
+/// <p>The corresponding <code>Expression</code> appears like the following: <code>{ "And": \[ {"Or": \[ {"Dimensions": { "Key": "REGION", "Values": \[ "us-east-1", "us-west-1" \], "MatchOptions": \["EQUALS"\] }}, {"Dimensions": { "Key": "SERVICE", "Values": \["AWSLambda"\], "MatchOptions": \["CONTAINS"\] } } \]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": \["DataTransfer"\], "MatchOptions": \["CONTAINS"\] }}} \] }</code></p>
 /// <p>In the following <b>Contents</b>, you must specify exactly one of the following root operators.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

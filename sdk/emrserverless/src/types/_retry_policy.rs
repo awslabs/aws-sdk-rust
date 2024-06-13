@@ -6,7 +6,7 @@
 pub struct RetryPolicy {
     /// <p>Maximum number of attempts for the job run. This parameter is only applicable for <code>BATCH</code> mode.</p>
     pub max_attempts: ::std::option::Option<i32>,
-    /// <p>Maximum number of failed attempts per hour. This [arameter is only applicable for <code>STREAMING</code> mode.</p>
+    /// <p>Maximum number of failed attempts per hour. This \[arameter is only applicable for STREAMING mode.</p>
     pub max_failed_attempts_per_hour: ::std::option::Option<i32>,
 }
 impl RetryPolicy {
@@ -14,7 +14,7 @@ impl RetryPolicy {
     pub fn max_attempts(&self) -> ::std::option::Option<i32> {
         self.max_attempts
     }
-    /// <p>Maximum number of failed attempts per hour. This [arameter is only applicable for <code>STREAMING</code> mode.</p>
+    /// <p>Maximum number of failed attempts per hour. This \[arameter is only applicable for STREAMING mode.</p>
     pub fn max_failed_attempts_per_hour(&self) -> ::std::option::Option<i32> {
         self.max_failed_attempts_per_hour
     }
@@ -48,17 +48,17 @@ impl RetryPolicyBuilder {
     pub fn get_max_attempts(&self) -> &::std::option::Option<i32> {
         &self.max_attempts
     }
-    /// <p>Maximum number of failed attempts per hour. This [arameter is only applicable for <code>STREAMING</code> mode.</p>
+    /// <p>Maximum number of failed attempts per hour. This \[arameter is only applicable for STREAMING mode.</p>
     pub fn max_failed_attempts_per_hour(mut self, input: i32) -> Self {
         self.max_failed_attempts_per_hour = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Maximum number of failed attempts per hour. This [arameter is only applicable for <code>STREAMING</code> mode.</p>
+    /// <p>Maximum number of failed attempts per hour. This \[arameter is only applicable for STREAMING mode.</p>
     pub fn set_max_failed_attempts_per_hour(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_failed_attempts_per_hour = input;
         self
     }
-    /// <p>Maximum number of failed attempts per hour. This [arameter is only applicable for <code>STREAMING</code> mode.</p>
+    /// <p>Maximum number of failed attempts per hour. This \[arameter is only applicable for STREAMING mode.</p>
     pub fn get_max_failed_attempts_per_hour(&self) -> &::std::option::Option<i32> {
         &self.max_failed_attempts_per_hour
     }

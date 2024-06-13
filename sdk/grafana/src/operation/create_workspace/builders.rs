@@ -214,19 +214,19 @@ impl CreateWorkspaceFluentBuilder {
         self.inner.get_workspace_data_sources()
     }
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-    /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code></p>
+    /// <p>Pattern: <code>^\[\\p{L}\\p{Z}\\p{N}\\p{P}\]{0,2048}$</code></p>
     pub fn workspace_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_description(input.into());
         self
     }
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-    /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code></p>
+    /// <p>Pattern: <code>^\[\\p{L}\\p{Z}\\p{N}\\p{P}\]{0,2048}$</code></p>
     pub fn set_workspace_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_description(input);
         self
     }
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-    /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code></p>
+    /// <p>Pattern: <code>^\[\\p{L}\\p{Z}\\p{N}\\p{P}\]{0,2048}$</code></p>
     pub fn get_workspace_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_description()
     }

@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackendAuthMfaConfig {
-    /// <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.</p>
+    /// <p>Describes whether MFA should be \[ON, OFF, or OPTIONAL\] for authentication in your Amplify project.</p>
     pub mfa_mode: ::std::option::Option<crate::types::MfaMode>,
     /// <p>Describes the configuration settings and methods for your Amplify app users to use MFA.</p>
     pub settings: ::std::option::Option<crate::types::Settings>,
 }
 impl CreateBackendAuthMfaConfig {
-    /// <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.</p>
+    /// <p>Describes whether MFA should be \[ON, OFF, or OPTIONAL\] for authentication in your Amplify project.</p>
     pub fn mfa_mode(&self) -> ::std::option::Option<&crate::types::MfaMode> {
         self.mfa_mode.as_ref()
     }
@@ -34,18 +34,18 @@ pub struct CreateBackendAuthMfaConfigBuilder {
     pub(crate) settings: ::std::option::Option<crate::types::Settings>,
 }
 impl CreateBackendAuthMfaConfigBuilder {
-    /// <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.</p>
+    /// <p>Describes whether MFA should be \[ON, OFF, or OPTIONAL\] for authentication in your Amplify project.</p>
     /// This field is required.
     pub fn mfa_mode(mut self, input: crate::types::MfaMode) -> Self {
         self.mfa_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.</p>
+    /// <p>Describes whether MFA should be \[ON, OFF, or OPTIONAL\] for authentication in your Amplify project.</p>
     pub fn set_mfa_mode(mut self, input: ::std::option::Option<crate::types::MfaMode>) -> Self {
         self.mfa_mode = input;
         self
     }
-    /// <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.</p>
+    /// <p>Describes whether MFA should be \[ON, OFF, or OPTIONAL\] for authentication in your Amplify project.</p>
     pub fn get_mfa_mode(&self) -> &::std::option::Option<crate::types::MfaMode> {
         &self.mfa_mode
     }

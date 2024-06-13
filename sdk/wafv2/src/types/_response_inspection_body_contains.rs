@@ -7,21 +7,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseInspectionBodyContains {
     /// <p>Strings in the body of the response that indicate a successful login or account creation attempt. To be counted as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
-    /// <p>JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code></p>
+    /// <p>JSON examples: <code>"SuccessStrings": \[ "Login successful" \]</code> and <code>"SuccessStrings": \[ "Account creation successful", "Welcome to our site!" \]</code></p>
     pub success_strings: ::std::vec::Vec<::std::string::String>,
     /// <p>Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
-    /// <p>JSON example: <code>"FailureStrings": [ "Request failed" ]</code></p>
+    /// <p>JSON example: <code>"FailureStrings": \[ "Request failed" \]</code></p>
     pub failure_strings: ::std::vec::Vec<::std::string::String>,
 }
 impl ResponseInspectionBodyContains {
     /// <p>Strings in the body of the response that indicate a successful login or account creation attempt. To be counted as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
-    /// <p>JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code></p>
+    /// <p>JSON examples: <code>"SuccessStrings": \[ "Login successful" \]</code> and <code>"SuccessStrings": \[ "Account creation successful", "Welcome to our site!" \]</code></p>
     pub fn success_strings(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.success_strings.deref()
     }
     /// <p>Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
-    /// <p>JSON example: <code>"FailureStrings": [ "Request failed" ]</code></p>
+    /// <p>JSON example: <code>"FailureStrings": \[ "Request failed" \]</code></p>
     pub fn failure_strings(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.failure_strings.deref()
@@ -47,7 +47,7 @@ impl ResponseInspectionBodyContainsBuilder {
     /// To override the contents of this collection use [`set_success_strings`](Self::set_success_strings).
     ///
     /// <p>Strings in the body of the response that indicate a successful login or account creation attempt. To be counted as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
-    /// <p>JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code></p>
+    /// <p>JSON examples: <code>"SuccessStrings": \[ "Login successful" \]</code> and <code>"SuccessStrings": \[ "Account creation successful", "Welcome to our site!" \]</code></p>
     pub fn success_strings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.success_strings.unwrap_or_default();
         v.push(input.into());
@@ -55,13 +55,13 @@ impl ResponseInspectionBodyContainsBuilder {
         self
     }
     /// <p>Strings in the body of the response that indicate a successful login or account creation attempt. To be counted as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
-    /// <p>JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code></p>
+    /// <p>JSON examples: <code>"SuccessStrings": \[ "Login successful" \]</code> and <code>"SuccessStrings": \[ "Account creation successful", "Welcome to our site!" \]</code></p>
     pub fn set_success_strings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.success_strings = input;
         self
     }
     /// <p>Strings in the body of the response that indicate a successful login or account creation attempt. To be counted as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
-    /// <p>JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code></p>
+    /// <p>JSON examples: <code>"SuccessStrings": \[ "Login successful" \]</code> and <code>"SuccessStrings": \[ "Account creation successful", "Welcome to our site!" \]</code></p>
     pub fn get_success_strings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.success_strings
     }
@@ -70,7 +70,7 @@ impl ResponseInspectionBodyContainsBuilder {
     /// To override the contents of this collection use [`set_failure_strings`](Self::set_failure_strings).
     ///
     /// <p>Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
-    /// <p>JSON example: <code>"FailureStrings": [ "Request failed" ]</code></p>
+    /// <p>JSON example: <code>"FailureStrings": \[ "Request failed" \]</code></p>
     pub fn failure_strings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_strings.unwrap_or_default();
         v.push(input.into());
@@ -78,13 +78,13 @@ impl ResponseInspectionBodyContainsBuilder {
         self
     }
     /// <p>Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
-    /// <p>JSON example: <code>"FailureStrings": [ "Request failed" ]</code></p>
+    /// <p>JSON example: <code>"FailureStrings": \[ "Request failed" \]</code></p>
     pub fn set_failure_strings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.failure_strings = input;
         self
     }
     /// <p>Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings.</p>
-    /// <p>JSON example: <code>"FailureStrings": [ "Request failed" ]</code></p>
+    /// <p>JSON example: <code>"FailureStrings": \[ "Request failed" \]</code></p>
     pub fn get_failure_strings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_strings
     }

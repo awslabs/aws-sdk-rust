@@ -127,17 +127,17 @@ impl StartPipelineExecutionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
     ///
-    /// <p>A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.</p>
+    /// <p>A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match <code>\[A-Za-z0-9@\-_\]+</code>, and the values can be anything except an empty string.</p>
     pub fn variables(mut self, input: crate::types::PipelineVariable) -> Self {
         self.inner = self.inner.variables(input);
         self
     }
-    /// <p>A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.</p>
+    /// <p>A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match <code>\[A-Za-z0-9@\-_\]+</code>, and the values can be anything except an empty string.</p>
     pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineVariable>>) -> Self {
         self.inner = self.inner.set_variables(input);
         self
     }
-    /// <p>A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.</p>
+    /// <p>A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match <code>\[A-Za-z0-9@\-_\]+</code>, and the values can be anything except an empty string.</p>
     pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineVariable>> {
         self.inner.get_variables()
     }

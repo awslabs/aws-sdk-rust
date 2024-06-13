@@ -12,7 +12,7 @@ pub struct AuthorizeSecurityGroupIngressInput {
     pub from_port: ::std::option::Option<i32>,
     /// <p>The ID of the security group.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
-    /// <p>[Default VPC] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
+    /// <p>\[Default VPC\] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The permissions for the security group rules.</p>
     pub ip_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
@@ -21,7 +21,7 @@ pub struct AuthorizeSecurityGroupIngressInput {
     /// <p>If you specify a protocol other than one of the supported values, traffic is allowed on all ports, regardless of any ports that you specify.</p>
     /// <p>To specify multiple rules and descriptions for the rules, use IP permissions instead.</p>
     pub ip_protocol: ::std::option::Option<::std::string::String>,
-    /// <p>[Default VPC] The name of the source security group.</p>
+    /// <p>\[Default VPC\] The name of the source security group.</p>
     /// <p>The rule grants full ICMP, UDP, and TCP access. To create a rule with a specific protocol and port range, specify a set of IP permissions instead.</p>
     pub source_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID for the source security group, if the source security group is in a different account.</p>
@@ -51,7 +51,7 @@ impl AuthorizeSecurityGroupIngressInput {
     pub fn group_id(&self) -> ::std::option::Option<&str> {
         self.group_id.as_deref()
     }
-    /// <p>[Default VPC] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
+    /// <p>\[Default VPC\] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
@@ -68,7 +68,7 @@ impl AuthorizeSecurityGroupIngressInput {
     pub fn ip_protocol(&self) -> ::std::option::Option<&str> {
         self.ip_protocol.as_deref()
     }
-    /// <p>[Default VPC] The name of the source security group.</p>
+    /// <p>\[Default VPC\] The name of the source security group.</p>
     /// <p>The rule grants full ICMP, UDP, and TCP access. To create a rule with a specific protocol and port range, specify a set of IP permissions instead.</p>
     pub fn source_security_group_name(&self) -> ::std::option::Option<&str> {
         self.source_security_group_name.as_deref()
@@ -169,17 +169,17 @@ impl AuthorizeSecurityGroupIngressInputBuilder {
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_id
     }
-    /// <p>[Default VPC] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
+    /// <p>\[Default VPC\] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Default VPC] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
+    /// <p>\[Default VPC\] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }
-    /// <p>[Default VPC] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
+    /// <p>\[Default VPC\] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name
     }
@@ -226,19 +226,19 @@ impl AuthorizeSecurityGroupIngressInputBuilder {
     pub fn get_ip_protocol(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_protocol
     }
-    /// <p>[Default VPC] The name of the source security group.</p>
+    /// <p>\[Default VPC\] The name of the source security group.</p>
     /// <p>The rule grants full ICMP, UDP, and TCP access. To create a rule with a specific protocol and port range, specify a set of IP permissions instead.</p>
     pub fn source_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Default VPC] The name of the source security group.</p>
+    /// <p>\[Default VPC\] The name of the source security group.</p>
     /// <p>The rule grants full ICMP, UDP, and TCP access. To create a rule with a specific protocol and port range, specify a set of IP permissions instead.</p>
     pub fn set_source_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_security_group_name = input;
         self
     }
-    /// <p>[Default VPC] The name of the source security group.</p>
+    /// <p>\[Default VPC\] The name of the source security group.</p>
     /// <p>The rule grants full ICMP, UDP, and TCP access. To create a rule with a specific protocol and port range, specify a set of IP permissions instead.</p>
     pub fn get_source_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_security_group_name

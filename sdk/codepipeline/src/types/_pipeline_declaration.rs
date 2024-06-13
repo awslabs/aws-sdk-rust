@@ -34,7 +34,7 @@ pub struct PipelineDeclaration {
     /// <p>For information about pricing for CodePipeline, see <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
     /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
     pub pipeline_type: ::std::option::Option<crate::types::PipelineType>,
-    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
+    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>\[A-Za-z0-9@\-_\]+</code>.</p>
     pub variables: ::std::option::Option<::std::vec::Vec<crate::types::PipelineVariableDeclaration>>,
     /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p><note>
     /// <p>When a trigger configuration is specified, default change detection for repository and branch commits is disabled.</p>
@@ -91,7 +91,7 @@ impl PipelineDeclaration {
     pub fn pipeline_type(&self) -> ::std::option::Option<&crate::types::PipelineType> {
         self.pipeline_type.as_ref()
     }
-    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
+    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>\[A-Za-z0-9@\-_\]+</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variables.is_none()`.
     pub fn variables(&self) -> &[crate::types::PipelineVariableDeclaration] {
@@ -304,19 +304,19 @@ impl PipelineDeclarationBuilder {
     ///
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
     ///
-    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
+    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>\[A-Za-z0-9@\-_\]+</code>.</p>
     pub fn variables(mut self, input: crate::types::PipelineVariableDeclaration) -> Self {
         let mut v = self.variables.unwrap_or_default();
         v.push(input);
         self.variables = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
+    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>\[A-Za-z0-9@\-_\]+</code>.</p>
     pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineVariableDeclaration>>) -> Self {
         self.variables = input;
         self
     }
-    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
+    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>\[A-Za-z0-9@\-_\]+</code>.</p>
     pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineVariableDeclaration>> {
         &self.variables
     }

@@ -111,7 +111,7 @@ impl CreateUserFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from \[a-zA-Z0-9_-.\@\]+.</p>
     /// <p>Username can include @ only if used in an email format. For example:</p>
     /// <ul>
     /// <li>
@@ -125,7 +125,7 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.username(input.into());
         self
     }
-    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from \[a-zA-Z0-9_-.\@\]+.</p>
     /// <p>Username can include @ only if used in an email format. For example:</p>
     /// <ul>
     /// <li>
@@ -139,7 +139,7 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_username(input);
         self
     }
-    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from \[a-zA-Z0-9_-.\@\]+.</p>
     /// <p>Username can include @ only if used in an email format. For example:</p>
     /// <ul>
     /// <li>

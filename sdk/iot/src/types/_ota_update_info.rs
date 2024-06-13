@@ -16,7 +16,7 @@ pub struct OtaUpdateInfo {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The targets of the OTA update.</p>
     pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    /// <p>The protocol used to transfer the OTA update image. Valid values are \[HTTP\], \[MQTT\], \[HTTP, MQTT\]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
     /// <p>Configuration for the rollout of OTA updates.</p>
     pub aws_job_executions_rollout_config: ::std::option::Option<crate::types::AwsJobExecutionsRolloutConfig>,
@@ -64,7 +64,7 @@ impl OtaUpdateInfo {
     pub fn targets(&self) -> &[::std::string::String] {
         self.targets.as_deref().unwrap_or_default()
     }
-    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    /// <p>The protocol used to transfer the OTA update image. Valid values are \[HTTP\], \[MQTT\], \[HTTP, MQTT\]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
     pub fn protocols(&self) -> &[crate::types::Protocol] {
@@ -232,19 +232,19 @@ impl OtaUpdateInfoBuilder {
     ///
     /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
     ///
-    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    /// <p>The protocol used to transfer the OTA update image. Valid values are \[HTTP\], \[MQTT\], \[HTTP, MQTT\]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
     pub fn protocols(mut self, input: crate::types::Protocol) -> Self {
         let mut v = self.protocols.unwrap_or_default();
         v.push(input);
         self.protocols = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    /// <p>The protocol used to transfer the OTA update image. Valid values are \[HTTP\], \[MQTT\], \[HTTP, MQTT\]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
     pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>) -> Self {
         self.protocols = input;
         self
     }
-    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    /// <p>The protocol used to transfer the OTA update image. Valid values are \[HTTP\], \[MQTT\], \[HTTP, MQTT\]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
     pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
         &self.protocols
     }

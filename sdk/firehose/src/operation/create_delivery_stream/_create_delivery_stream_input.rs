@@ -17,7 +17,7 @@ pub struct CreateDeliveryStreamInput {
     pub kinesis_stream_source_configuration: ::std::option::Option<crate::types::KinesisStreamSourceConfiguration>,
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
     pub delivery_stream_encryption_configuration_input: ::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput>,
-    /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
+    /// <p>\[Deprecated\] The destination in Amazon S3. You can specify only one destination.</p>
     #[deprecated]
     pub s3_destination_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
     /// <p>The destination in Amazon S3. You can specify only one destination.</p>
@@ -70,7 +70,7 @@ impl CreateDeliveryStreamInput {
     pub fn delivery_stream_encryption_configuration_input(&self) -> ::std::option::Option<&crate::types::DeliveryStreamEncryptionConfigurationInput> {
         self.delivery_stream_encryption_configuration_input.as_ref()
     }
-    /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
+    /// <p>\[Deprecated\] The destination in Amazon S3. You can specify only one destination.</p>
     #[deprecated]
     pub fn s3_destination_configuration(&self) -> ::std::option::Option<&crate::types::S3DestinationConfiguration> {
         self.s3_destination_configuration.as_ref()
@@ -237,19 +237,19 @@ impl CreateDeliveryStreamInputBuilder {
     ) -> &::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput> {
         &self.delivery_stream_encryption_configuration_input
     }
-    /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
+    /// <p>\[Deprecated\] The destination in Amazon S3. You can specify only one destination.</p>
     #[deprecated]
     pub fn s3_destination_configuration(mut self, input: crate::types::S3DestinationConfiguration) -> Self {
         self.s3_destination_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
+    /// <p>\[Deprecated\] The destination in Amazon S3. You can specify only one destination.</p>
     #[deprecated]
     pub fn set_s3_destination_configuration(mut self, input: ::std::option::Option<crate::types::S3DestinationConfiguration>) -> Self {
         self.s3_destination_configuration = input;
         self
     }
-    /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
+    /// <p>\[Deprecated\] The destination in Amazon S3. You can specify only one destination.</p>
     #[deprecated]
     pub fn get_s3_destination_configuration(&self) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
         &self.s3_destination_configuration

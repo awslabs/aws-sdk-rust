@@ -2,7 +2,7 @@
 
 /// <p>Instructions on when and how to check the health of a container in a container fleet. When health check properties are set in a container definition, they override any Docker health checks in the container image. For more information on container health checks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html#ECS-Type-HealthCheck-command">HealthCheck command</a> in the <i>Amazon Elastic Container Service API</i>.</p>
 /// <p>The following example instructions tell the container to wait 100 seconds after launch before counting failed health checks, then initiate the health check command every 60 seconds. After issuing the health check command, wait 10 seconds for it to succeed. If it fails, retry the command 3 times before considering the container to be unhealthy.</p>
-/// <p><code>{"Command": [ "CMD-SHELL", "ps cax | grep "processmanager" || exit 1" ], "Interval": 300, "Timeout": 30, "Retries": 5, "StartPeriod": 100 }</code></p>
+/// <p><code>{"Command": \[ "CMD-SHELL", "ps cax | grep "processmanager" || exit 1" \], "Interval": 300, "Timeout": 30, "Retries": 5, "StartPeriod": 100 }</code></p>
 /// <p><b>Part of:</b> <code>ContainerDefinition$HealthCheck</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

@@ -188,17 +188,17 @@ impl CreateRouteFluentBuilder {
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_endpoint_id()
     }
-    /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
+    /// <p>\[IPv6 traffic only\] The ID of an egress-only internet gateway.</p>
     pub fn egress_only_internet_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.egress_only_internet_gateway_id(input.into());
         self
     }
-    /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
+    /// <p>\[IPv6 traffic only\] The ID of an egress-only internet gateway.</p>
     pub fn set_egress_only_internet_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_egress_only_internet_gateway_id(input);
         self
     }
-    /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
+    /// <p>\[IPv6 traffic only\] The ID of an egress-only internet gateway.</p>
     pub fn get_egress_only_internet_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_egress_only_internet_gateway_id()
     }
@@ -230,17 +230,17 @@ impl CreateRouteFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
+    /// <p>\[IPv4 traffic only\] The ID of a NAT gateway.</p>
     pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nat_gateway_id(input.into());
         self
     }
-    /// <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
+    /// <p>\[IPv4 traffic only\] The ID of a NAT gateway.</p>
     pub fn set_nat_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_nat_gateway_id(input);
         self
     }
-    /// <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
+    /// <p>\[IPv4 traffic only\] The ID of a NAT gateway.</p>
     pub fn get_nat_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_nat_gateway_id()
     }

@@ -9,7 +9,7 @@
 pub struct Headers {
     /// <p>The filter to use to identify the subset of headers to inspect in a web request.</p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
-    /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1", "KeyToExclude2" ] }</code></p>
+    /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": \[ "KeyToExclude1", "KeyToExclude2" \] }</code></p>
     pub match_pattern: ::std::option::Option<crate::types::HeaderMatchPattern>,
     /// <p>The parts of the headers to match with the rule inspection criteria. If you specify <code>ALL</code>, WAF inspects both keys and values.</p>
     /// <p><code>All</code> does not require a match to be found in the keys and a match to be found in the values. It requires a match to be found in the keys or the values or both. To require a match in the keys and in the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that inspects the values.</p>
@@ -29,7 +29,7 @@ pub struct Headers {
 impl Headers {
     /// <p>The filter to use to identify the subset of headers to inspect in a web request.</p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
-    /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1", "KeyToExclude2" ] }</code></p>
+    /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": \[ "KeyToExclude1", "KeyToExclude2" \] }</code></p>
     pub fn match_pattern(&self) -> ::std::option::Option<&crate::types::HeaderMatchPattern> {
         self.match_pattern.as_ref()
     }
@@ -70,7 +70,7 @@ pub struct HeadersBuilder {
 impl HeadersBuilder {
     /// <p>The filter to use to identify the subset of headers to inspect in a web request.</p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
-    /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1", "KeyToExclude2" ] }</code></p>
+    /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": \[ "KeyToExclude1", "KeyToExclude2" \] }</code></p>
     /// This field is required.
     pub fn match_pattern(mut self, input: crate::types::HeaderMatchPattern) -> Self {
         self.match_pattern = ::std::option::Option::Some(input);
@@ -78,14 +78,14 @@ impl HeadersBuilder {
     }
     /// <p>The filter to use to identify the subset of headers to inspect in a web request.</p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
-    /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1", "KeyToExclude2" ] }</code></p>
+    /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": \[ "KeyToExclude1", "KeyToExclude2" \] }</code></p>
     pub fn set_match_pattern(mut self, input: ::std::option::Option<crate::types::HeaderMatchPattern>) -> Self {
         self.match_pattern = input;
         self
     }
     /// <p>The filter to use to identify the subset of headers to inspect in a web request.</p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
-    /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1", "KeyToExclude2" ] }</code></p>
+    /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": \[ "KeyToExclude1", "KeyToExclude2" \] }</code></p>
     pub fn get_match_pattern(&self) -> &::std::option::Option<crate::types::HeaderMatchPattern> {
         &self.match_pattern
     }

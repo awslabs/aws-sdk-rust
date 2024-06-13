@@ -119,17 +119,17 @@ impl ListCodeReviewsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_provider_types`](Self::set_provider_types).
     ///
-    /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.</p>
+    /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=\[GitHub\]</code> lists code reviews from GitHub.</p>
     pub fn provider_types(mut self, input: crate::types::ProviderType) -> Self {
         self.inner = self.inner.provider_types(input);
         self
     }
-    /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.</p>
+    /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=\[GitHub\]</code> lists code reviews from GitHub.</p>
     pub fn set_provider_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>) -> Self {
         self.inner = self.inner.set_provider_types(input);
         self
     }
-    /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.</p>
+    /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=\[GitHub\]</code> lists code reviews from GitHub.</p>
     pub fn get_provider_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProviderType>> {
         self.inner.get_provider_types()
     }
@@ -138,7 +138,7 @@ impl ListCodeReviewsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_states`](Self::set_states).
     ///
-    /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
+    /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=\[Pending\]</code> lists code reviews in the Pending state.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
     /// <li>
@@ -154,7 +154,7 @@ impl ListCodeReviewsFluentBuilder {
         self.inner = self.inner.states(input);
         self
     }
-    /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
+    /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=\[Pending\]</code> lists code reviews in the Pending state.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
     /// <li>
@@ -170,7 +170,7 @@ impl ListCodeReviewsFluentBuilder {
         self.inner = self.inner.set_states(input);
         self
     }
-    /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
+    /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=\[Pending\]</code> lists code reviews in the Pending state.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
     /// <li>

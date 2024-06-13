@@ -31,7 +31,7 @@ impl crate::operation::delete_progress_update_stream::builders::DeleteProgressUp
 /// <li>
 /// <p>If the stream takes time to be deleted, it might still show up on a <code>ListProgressUpdateStreams</code> call.</p></li>
 /// <li>
-/// <p><code>CreateProgressUpdateStream</code>, <code>ImportMigrationTask</code>, <code>NotifyMigrationTaskState</code>, and all Associate[*] APIs related to the tasks belonging to the stream will throw "InvalidInputException" if the stream of the same name is in the process of being deleted.</p></li>
+/// <p>CreateProgressUpdateStream, ImportMigrationTask, NotifyMigrationTaskState, and all Associate\[*\] APIs related to the tasks belonging to the stream will throw "InvalidInputException" if the stream of the same name is in the process of being deleted.</p></li>
 /// <li>
 /// <p>Once the stream and all of its resources are deleted, <code>CreateProgressUpdateStream</code> for a stream of the same name will succeed, and that stream will be an entirely new logical resource (without any resources associated with the old stream).</p></li>
 /// </ul>

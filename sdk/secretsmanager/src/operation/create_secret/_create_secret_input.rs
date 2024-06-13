@@ -40,7 +40,7 @@ pub struct CreateSecretInput {
     /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub secret_string: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to attach to the secret. Each tag is a key and value pair of strings in a JSON text string, for example:</p>
-    /// <p><code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code></p>
+    /// <p><code>\[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}\]</code></p>
     /// <p>Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with key "abc".</p>
     /// <p>If you check tags in permissions policies as part of your security strategy, then adding or removing a tag can change permissions. If the completion of this operation would result in you losing your permissions for this secret, then Secrets Manager blocks the operation and returns an <code>Access Denied</code> error. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#tag-secrets-abac">Control access to secrets using tags</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#auth-and-access_tags2">Limit access to identities with tags that match secrets' tags</a>.</p>
     /// <p>For information about how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a>. If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to avoid confusion with the double quotes required in the JSON text.</p>
@@ -101,7 +101,7 @@ impl CreateSecretInput {
         self.secret_string.as_deref()
     }
     /// <p>A list of tags to attach to the secret. Each tag is a key and value pair of strings in a JSON text string, for example:</p>
-    /// <p><code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code></p>
+    /// <p><code>\[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}\]</code></p>
     /// <p>Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with key "abc".</p>
     /// <p>If you check tags in permissions policies as part of your security strategy, then adding or removing a tag can change permissions. If the completion of this operation would result in you losing your permissions for this secret, then Secrets Manager blocks the operation and returns an <code>Access Denied</code> error. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#tag-secrets-abac">Control access to secrets using tags</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#auth-and-access_tags2">Limit access to identities with tags that match secrets' tags</a>.</p>
     /// <p>For information about how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a>. If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to avoid confusion with the double quotes required in the JSON text.</p>
@@ -321,7 +321,7 @@ impl CreateSecretInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags to attach to the secret. Each tag is a key and value pair of strings in a JSON text string, for example:</p>
-    /// <p><code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code></p>
+    /// <p><code>\[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}\]</code></p>
     /// <p>Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with key "abc".</p>
     /// <p>If you check tags in permissions policies as part of your security strategy, then adding or removing a tag can change permissions. If the completion of this operation would result in you losing your permissions for this secret, then Secrets Manager blocks the operation and returns an <code>Access Denied</code> error. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#tag-secrets-abac">Control access to secrets using tags</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#auth-and-access_tags2">Limit access to identities with tags that match secrets' tags</a>.</p>
     /// <p>For information about how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a>. If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to avoid confusion with the double quotes required in the JSON text.</p>
@@ -333,7 +333,7 @@ impl CreateSecretInputBuilder {
         self
     }
     /// <p>A list of tags to attach to the secret. Each tag is a key and value pair of strings in a JSON text string, for example:</p>
-    /// <p><code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code></p>
+    /// <p><code>\[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}\]</code></p>
     /// <p>Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with key "abc".</p>
     /// <p>If you check tags in permissions policies as part of your security strategy, then adding or removing a tag can change permissions. If the completion of this operation would result in you losing your permissions for this secret, then Secrets Manager blocks the operation and returns an <code>Access Denied</code> error. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#tag-secrets-abac">Control access to secrets using tags</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#auth-and-access_tags2">Limit access to identities with tags that match secrets' tags</a>.</p>
     /// <p>For information about how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a>. If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to avoid confusion with the double quotes required in the JSON text.</p>
@@ -343,7 +343,7 @@ impl CreateSecretInputBuilder {
         self
     }
     /// <p>A list of tags to attach to the secret. Each tag is a key and value pair of strings in a JSON text string, for example:</p>
-    /// <p><code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code></p>
+    /// <p><code>\[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}\]</code></p>
     /// <p>Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with key "abc".</p>
     /// <p>If you check tags in permissions policies as part of your security strategy, then adding or removing a tag can change permissions. If the completion of this operation would result in you losing your permissions for this secret, then Secrets Manager blocks the operation and returns an <code>Access Denied</code> error. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#tag-secrets-abac">Control access to secrets using tags</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#auth-and-access_tags2">Limit access to identities with tags that match secrets' tags</a>.</p>
     /// <p>For information about how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a>. If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to avoid confusion with the double quotes required in the JSON text.</p>

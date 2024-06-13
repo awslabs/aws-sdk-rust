@@ -7,30 +7,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseInspectionJson {
     /// <p>The identifier for the value to match against in the JSON. The identifier must be an exact match, including case.</p>
-    /// <p>JSON examples: <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier": [ "/sign-up/success" ]</code></p>
+    /// <p>JSON examples: <code>"Identifier": \[ "/login/success" \]</code> and <code>"Identifier": \[ "/sign-up/success" \]</code></p>
     pub identifier: ::std::string::String,
     /// <p>Values for the specified identifier in the response JSON that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code></p>
+    /// <p>JSON example: <code>"SuccessValues": \[ "True", "Succeeded" \]</code></p>
     pub success_values: ::std::vec::Vec<::std::string::String>,
     /// <p>Values for the specified identifier in the response JSON that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON example: <code>"FailureValues": [ "False", "Failed" ]</code></p>
+    /// <p>JSON example: <code>"FailureValues": \[ "False", "Failed" \]</code></p>
     pub failure_values: ::std::vec::Vec<::std::string::String>,
 }
 impl ResponseInspectionJson {
     /// <p>The identifier for the value to match against in the JSON. The identifier must be an exact match, including case.</p>
-    /// <p>JSON examples: <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier": [ "/sign-up/success" ]</code></p>
+    /// <p>JSON examples: <code>"Identifier": \[ "/login/success" \]</code> and <code>"Identifier": \[ "/sign-up/success" \]</code></p>
     pub fn identifier(&self) -> &str {
         use std::ops::Deref;
         self.identifier.deref()
     }
     /// <p>Values for the specified identifier in the response JSON that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code></p>
+    /// <p>JSON example: <code>"SuccessValues": \[ "True", "Succeeded" \]</code></p>
     pub fn success_values(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.success_values.deref()
     }
     /// <p>Values for the specified identifier in the response JSON that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON example: <code>"FailureValues": [ "False", "Failed" ]</code></p>
+    /// <p>JSON example: <code>"FailureValues": \[ "False", "Failed" \]</code></p>
     pub fn failure_values(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.failure_values.deref()
@@ -53,20 +53,20 @@ pub struct ResponseInspectionJsonBuilder {
 }
 impl ResponseInspectionJsonBuilder {
     /// <p>The identifier for the value to match against in the JSON. The identifier must be an exact match, including case.</p>
-    /// <p>JSON examples: <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier": [ "/sign-up/success" ]</code></p>
+    /// <p>JSON examples: <code>"Identifier": \[ "/login/success" \]</code> and <code>"Identifier": \[ "/sign-up/success" \]</code></p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the value to match against in the JSON. The identifier must be an exact match, including case.</p>
-    /// <p>JSON examples: <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier": [ "/sign-up/success" ]</code></p>
+    /// <p>JSON examples: <code>"Identifier": \[ "/login/success" \]</code> and <code>"Identifier": \[ "/sign-up/success" \]</code></p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
     /// <p>The identifier for the value to match against in the JSON. The identifier must be an exact match, including case.</p>
-    /// <p>JSON examples: <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier": [ "/sign-up/success" ]</code></p>
+    /// <p>JSON examples: <code>"Identifier": \[ "/login/success" \]</code> and <code>"Identifier": \[ "/sign-up/success" \]</code></p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
@@ -75,7 +75,7 @@ impl ResponseInspectionJsonBuilder {
     /// To override the contents of this collection use [`set_success_values`](Self::set_success_values).
     ///
     /// <p>Values for the specified identifier in the response JSON that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code></p>
+    /// <p>JSON example: <code>"SuccessValues": \[ "True", "Succeeded" \]</code></p>
     pub fn success_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.success_values.unwrap_or_default();
         v.push(input.into());
@@ -83,13 +83,13 @@ impl ResponseInspectionJsonBuilder {
         self
     }
     /// <p>Values for the specified identifier in the response JSON that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code></p>
+    /// <p>JSON example: <code>"SuccessValues": \[ "True", "Succeeded" \]</code></p>
     pub fn set_success_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.success_values = input;
         self
     }
     /// <p>Values for the specified identifier in the response JSON that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code></p>
+    /// <p>JSON example: <code>"SuccessValues": \[ "True", "Succeeded" \]</code></p>
     pub fn get_success_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.success_values
     }
@@ -98,7 +98,7 @@ impl ResponseInspectionJsonBuilder {
     /// To override the contents of this collection use [`set_failure_values`](Self::set_failure_values).
     ///
     /// <p>Values for the specified identifier in the response JSON that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON example: <code>"FailureValues": [ "False", "Failed" ]</code></p>
+    /// <p>JSON example: <code>"FailureValues": \[ "False", "Failed" \]</code></p>
     pub fn failure_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_values.unwrap_or_default();
         v.push(input.into());
@@ -106,13 +106,13 @@ impl ResponseInspectionJsonBuilder {
         self
     }
     /// <p>Values for the specified identifier in the response JSON that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON example: <code>"FailureValues": [ "False", "Failed" ]</code></p>
+    /// <p>JSON example: <code>"FailureValues": \[ "False", "Failed" \]</code></p>
     pub fn set_failure_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.failure_values = input;
         self
     }
     /// <p>Values for the specified identifier in the response JSON that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
-    /// <p>JSON example: <code>"FailureValues": [ "False", "Failed" ]</code></p>
+    /// <p>JSON example: <code>"FailureValues": \[ "False", "Failed" \]</code></p>
     pub fn get_failure_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_values
     }

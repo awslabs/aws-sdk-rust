@@ -303,19 +303,19 @@ impl SecurityGroupExistsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_group_names`](Self::set_group_names).
     ///
-    /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
+    /// <p>\[Default VPC\] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
     pub fn group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_names(input.into());
         self
     }
-    /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
+    /// <p>\[Default VPC\] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
     pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_group_names(input);
         self
     }
-    /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
+    /// <p>\[Default VPC\] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
     pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_group_names()

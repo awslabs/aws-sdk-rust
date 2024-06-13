@@ -14,7 +14,7 @@ pub struct PutScheduledUpdateGroupActionInput {
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time for the recurring schedule to end, in UTC. For example, <code>"2021-06-01T00:00:00Z"</code>.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The recurring schedule for this action. This format consists of five fields separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a href="http://crontab.org">Crontab</a>.</p>
+    /// <p>The recurring schedule for this action. This format consists of five fields separated by white spaces: \[Minute\] \[Hour\] \[Day_of_Month\] \[Month_of_Year\] \[Day_of_Week\]. The value must be in quotes (for example, "30 0 1 1,6,12 *"). For more information about this format, see Crontab.</p>
     /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
     /// <p>Cron expressions use Universal Coordinated Time (UTC) by default.</p>
     pub recurrence: ::std::option::Option<::std::string::String>,
@@ -52,7 +52,7 @@ impl PutScheduledUpdateGroupActionInput {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The recurring schedule for this action. This format consists of five fields separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a href="http://crontab.org">Crontab</a>.</p>
+    /// <p>The recurring schedule for this action. This format consists of five fields separated by white spaces: \[Minute\] \[Hour\] \[Day_of_Month\] \[Month_of_Year\] \[Day_of_Week\]. The value must be in quotes (for example, "30 0 1 1,6,12 *"). For more information about this format, see Crontab.</p>
     /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
     /// <p>Cron expressions use Universal Coordinated Time (UTC) by default.</p>
     pub fn recurrence(&self) -> ::std::option::Option<&str> {
@@ -176,21 +176,21 @@ impl PutScheduledUpdateGroupActionInputBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>The recurring schedule for this action. This format consists of five fields separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a href="http://crontab.org">Crontab</a>.</p>
+    /// <p>The recurring schedule for this action. This format consists of five fields separated by white spaces: \[Minute\] \[Hour\] \[Day_of_Month\] \[Month_of_Year\] \[Day_of_Week\]. The value must be in quotes (for example, "30 0 1 1,6,12 *"). For more information about this format, see Crontab.</p>
     /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
     /// <p>Cron expressions use Universal Coordinated Time (UTC) by default.</p>
     pub fn recurrence(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recurrence = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The recurring schedule for this action. This format consists of five fields separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a href="http://crontab.org">Crontab</a>.</p>
+    /// <p>The recurring schedule for this action. This format consists of five fields separated by white spaces: \[Minute\] \[Hour\] \[Day_of_Month\] \[Month_of_Year\] \[Day_of_Week\]. The value must be in quotes (for example, "30 0 1 1,6,12 *"). For more information about this format, see Crontab.</p>
     /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
     /// <p>Cron expressions use Universal Coordinated Time (UTC) by default.</p>
     pub fn set_recurrence(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recurrence = input;
         self
     }
-    /// <p>The recurring schedule for this action. This format consists of five fields separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a href="http://crontab.org">Crontab</a>.</p>
+    /// <p>The recurring schedule for this action. This format consists of five fields separated by white spaces: \[Minute\] \[Hour\] \[Day_of_Month\] \[Month_of_Year\] \[Day_of_Week\]. The value must be in quotes (for example, "30 0 1 1,6,12 *"). For more information about this format, see Crontab.</p>
     /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
     /// <p>Cron expressions use Universal Coordinated Time (UTC) by default.</p>
     pub fn get_recurrence(&self) -> &::std::option::Option<::std::string::String> {

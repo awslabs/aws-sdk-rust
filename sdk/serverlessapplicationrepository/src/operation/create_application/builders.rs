@@ -110,21 +110,21 @@ impl CreateApplicationFluentBuilder {
     }
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
-    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    /// <p>Pattern "^\[a-z0-9\]((\[a-z0-9\]|-(?!-))*\[a-z0-9\])?$";</p>
     pub fn author(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.author(input.into());
         self
     }
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
-    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    /// <p>Pattern "^\[a-z0-9\]((\[a-z0-9\]|-(?!-))*\[a-z0-9\])?$";</p>
     pub fn set_author(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_author(input);
         self
     }
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
-    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    /// <p>Pattern "^\[a-z0-9\]((\[a-z0-9\]|-(?!-))*\[a-z0-9\])?$";</p>
     pub fn get_author(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_author()
     }
@@ -166,21 +166,21 @@ impl CreateApplicationFluentBuilder {
     ///
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
-    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    /// <p>Pattern: "^\[a-zA-Z0-9+\\-_:\\/@\]+$";</p>
     pub fn labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.labels(input.into());
         self
     }
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
-    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    /// <p>Pattern: "^\[a-zA-Z0-9+\\-_:\\/@\]+$";</p>
     pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_labels(input);
         self
     }
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
-    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    /// <p>Pattern: "^\[a-zA-Z0-9+\\-_:\\/@\]+$";</p>
     pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_labels()
     }
@@ -226,21 +226,21 @@ impl CreateApplicationFluentBuilder {
     }
     /// <p>The name of the application that you want to publish.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
-    /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    /// <p>Pattern: "\[a-zA-Z0-9\\-\]+";</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the application that you want to publish.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
-    /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    /// <p>Pattern: "\[a-zA-Z0-9\\-\]+";</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The name of the application that you want to publish.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
-    /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    /// <p>Pattern: "\[a-zA-Z0-9\\-\]+";</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

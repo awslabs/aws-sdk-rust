@@ -8,7 +8,7 @@ pub struct StackInstance {
     pub stack_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
     pub region: ::std::option::Option<::std::string::String>,
-    /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
+    /// <p>\[Self-managed permissions\] The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the stack instance.</p>
     pub stack_id: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ pub struct StackInstance {
     pub stack_instance_status: ::std::option::Option<crate::types::StackInstanceComprehensiveStatus>,
     /// <p>The explanation for the specific status code that's assigned to this stack instance.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>\[Service-managed permissions\] The organization root ID or organizational unit (OU) IDs that you specified for DeploymentTargets.</p>
     pub organizational_unit_id: ::std::option::Option<::std::string::String>,
     /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p>
     /// <ul>
@@ -62,7 +62,7 @@ impl StackInstance {
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
+    /// <p>\[Self-managed permissions\] The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub fn account(&self) -> ::std::option::Option<&str> {
         self.account.as_deref()
     }
@@ -102,7 +102,7 @@ impl StackInstance {
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>\[Service-managed permissions\] The organization root ID or organizational unit (OU) IDs that you specified for DeploymentTargets.</p>
     pub fn organizational_unit_id(&self) -> ::std::option::Option<&str> {
         self.organizational_unit_id.as_deref()
     }
@@ -182,17 +182,17 @@ impl StackInstanceBuilder {
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.region
     }
-    /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
+    /// <p>\[Self-managed permissions\] The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
+    /// <p>\[Self-managed permissions\] The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account = input;
         self
     }
-    /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
+    /// <p>\[Self-managed permissions\] The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.account
     }
@@ -314,17 +314,17 @@ impl StackInstanceBuilder {
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>\[Service-managed permissions\] The organization root ID or organizational unit (OU) IDs that you specified for DeploymentTargets.</p>
     pub fn organizational_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organizational_unit_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>\[Service-managed permissions\] The organization root ID or organizational unit (OU) IDs that you specified for DeploymentTargets.</p>
     pub fn set_organizational_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organizational_unit_id = input;
         self
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>\[Service-managed permissions\] The organization root ID or organizational unit (OU) IDs that you specified for DeploymentTargets.</p>
     pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.organizational_unit_id
     }

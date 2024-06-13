@@ -7,7 +7,7 @@ pub struct CreateCloudFormationChangeSetOutput {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the change set.</p>
     /// <p>Length constraints: Minimum length of 1.</p>
-    /// <p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
+    /// <p>Pattern: ARN:\[-a-zA-Z0-9:/\]*</p>
     pub change_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The semantic version of the application:</p>
     /// <p><a href="https://semver.org/">https://semver.org/</a></p>
@@ -23,7 +23,7 @@ impl CreateCloudFormationChangeSetOutput {
     }
     /// <p>The Amazon Resource Name (ARN) of the change set.</p>
     /// <p>Length constraints: Minimum length of 1.</p>
-    /// <p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
+    /// <p>Pattern: ARN:\[-a-zA-Z0-9:/\]*</p>
     pub fn change_set_id(&self) -> ::std::option::Option<&str> {
         self.change_set_id.as_deref()
     }
@@ -76,21 +76,21 @@ impl CreateCloudFormationChangeSetOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the change set.</p>
     /// <p>Length constraints: Minimum length of 1.</p>
-    /// <p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
+    /// <p>Pattern: ARN:\[-a-zA-Z0-9:/\]*</p>
     pub fn change_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the change set.</p>
     /// <p>Length constraints: Minimum length of 1.</p>
-    /// <p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
+    /// <p>Pattern: ARN:\[-a-zA-Z0-9:/\]*</p>
     pub fn set_change_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the change set.</p>
     /// <p>Length constraints: Minimum length of 1.</p>
-    /// <p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
+    /// <p>Pattern: ARN:\[-a-zA-Z0-9:/\]*</p>
     pub fn get_change_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_set_id
     }

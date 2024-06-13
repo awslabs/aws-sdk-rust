@@ -37,7 +37,7 @@ impl crate::operation::update_regex_match_set::builders::UpdateRegexMatchSetInpu
 /// <li>
 /// <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
 /// </ul>
-/// <p>For example, you can create a <code>RegexPatternSet</code> that matches any requests with <code>User-Agent</code> headers that contain the string <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those requests.</p>
+/// <p>For example, you can create a <code>RegexPatternSet</code> that matches any requests with <code>User-Agent</code> headers that contain the string <code>B\[a@\]dB\[o0\]t</code>. You can then configure AWS WAF to reject those requests.</p>
 /// <p>To create and configure a <code>RegexMatchSet</code>, perform the following steps:</p>
 /// <ol>
 /// <li>

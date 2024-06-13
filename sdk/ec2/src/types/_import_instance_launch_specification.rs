@@ -20,9 +20,9 @@ pub struct ImportInstanceLaunchSpecification {
     pub monitoring: ::std::option::Option<bool>,
     /// <p>The placement information for the instance.</p>
     pub placement: ::std::option::Option<crate::types::Placement>,
-    /// <p>[EC2-VPC] An available IP address from the IP address range of the subnet.</p>
+    /// <p>\[EC2-VPC\] An available IP address from the IP address range of the subnet.</p>
     pub private_ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
+    /// <p>\[EC2-VPC\] The ID of the subnet in which to launch the instance.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Base64-encoded user data to make available to the instance.</p>
     pub user_data: ::std::option::Option<crate::types::UserData>,
@@ -64,11 +64,11 @@ impl ImportInstanceLaunchSpecification {
     pub fn placement(&self) -> ::std::option::Option<&crate::types::Placement> {
         self.placement.as_ref()
     }
-    /// <p>[EC2-VPC] An available IP address from the IP address range of the subnet.</p>
+    /// <p>\[EC2-VPC\] An available IP address from the IP address range of the subnet.</p>
     pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
         self.private_ip_address.as_deref()
     }
-    /// <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
+    /// <p>\[EC2-VPC\] The ID of the subnet in which to launch the instance.</p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
@@ -242,31 +242,31 @@ impl ImportInstanceLaunchSpecificationBuilder {
     pub fn get_placement(&self) -> &::std::option::Option<crate::types::Placement> {
         &self.placement
     }
-    /// <p>[EC2-VPC] An available IP address from the IP address range of the subnet.</p>
+    /// <p>\[EC2-VPC\] An available IP address from the IP address range of the subnet.</p>
     pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[EC2-VPC] An available IP address from the IP address range of the subnet.</p>
+    /// <p>\[EC2-VPC\] An available IP address from the IP address range of the subnet.</p>
     pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ip_address = input;
         self
     }
-    /// <p>[EC2-VPC] An available IP address from the IP address range of the subnet.</p>
+    /// <p>\[EC2-VPC\] An available IP address from the IP address range of the subnet.</p>
     pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_ip_address
     }
-    /// <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
+    /// <p>\[EC2-VPC\] The ID of the subnet in which to launch the instance.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
+    /// <p>\[EC2-VPC\] The ID of the subnet in which to launch the instance.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }
-    /// <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
+    /// <p>\[EC2-VPC\] The ID of the subnet in which to launch the instance.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }

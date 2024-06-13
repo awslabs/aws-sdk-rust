@@ -164,11 +164,11 @@ impl CreateGovCloudAccountFluentBuilder {
     /// <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
     /// <li>
     /// <p>The local name can't contain any of the following characters:</p>
-    /// <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p></li>
+    /// <p>whitespace, " ' ( ) &lt; &gt; \[ \] : ; , \ | % &amp;</p></li>
     /// <li>
     /// <p>The local name can't begin with a dot (.)</p></li>
     /// <li>
-    /// <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p></li>
+    /// <p>The domain name can consist of only the characters \[a-z\],\[A-Z\],\[0-9\], hyphen (-), or dot (.)</p></li>
     /// <li>
     /// <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p></li>
     /// <li>
@@ -190,11 +190,11 @@ impl CreateGovCloudAccountFluentBuilder {
     /// <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
     /// <li>
     /// <p>The local name can't contain any of the following characters:</p>
-    /// <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p></li>
+    /// <p>whitespace, " ' ( ) &lt; &gt; \[ \] : ; , \ | % &amp;</p></li>
     /// <li>
     /// <p>The local name can't begin with a dot (.)</p></li>
     /// <li>
-    /// <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p></li>
+    /// <p>The domain name can consist of only the characters \[a-z\],\[A-Z\],\[0-9\], hyphen (-), or dot (.)</p></li>
     /// <li>
     /// <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p></li>
     /// <li>
@@ -216,11 +216,11 @@ impl CreateGovCloudAccountFluentBuilder {
     /// <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
     /// <li>
     /// <p>The local name can't contain any of the following characters:</p>
-    /// <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p></li>
+    /// <p>whitespace, " ' ( ) &lt; &gt; \[ \] : ; , \ | % &amp;</p></li>
     /// <li>
     /// <p>The local name can't begin with a dot (.)</p></li>
     /// <li>
-    /// <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p></li>
+    /// <p>The domain name can consist of only the characters \[a-z\],\[A-Z\],\[0-9\], hyphen (-), or dot (.)</p></li>
     /// <li>
     /// <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p></li>
     /// <li>
@@ -231,19 +231,19 @@ impl CreateGovCloudAccountFluentBuilder {
         self.inner.get_email()
     }
     /// <p>The friendly name of the member account.</p>
-    /// <p>The account name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
+    /// <p>The account name can consist of only the characters \[a-z\],\[A-Z\],\[0-9\], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
     pub fn account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_name(input.into());
         self
     }
     /// <p>The friendly name of the member account.</p>
-    /// <p>The account name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
+    /// <p>The account name can consist of only the characters \[a-z\],\[A-Z\],\[0-9\], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
     pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_name(input);
         self
     }
     /// <p>The friendly name of the member account.</p>
-    /// <p>The account name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
+    /// <p>The account name can consist of only the characters \[a-z\],\[A-Z\],\[0-9\], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
     pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_name()
     }

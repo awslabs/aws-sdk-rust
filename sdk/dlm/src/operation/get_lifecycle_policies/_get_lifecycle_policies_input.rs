@@ -16,7 +16,7 @@ pub struct GetLifecyclePoliciesInput {
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
     /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
     pub tags_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p><b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
+    /// <p><b>\[Default policies only\]</b> Specifies the type of default policy to get. Specify one of the following:</p>
     /// <ul>
     /// <li>
     /// <p><code>VOLUME</code> - To get only the default policy for EBS snapshots</p></li>
@@ -59,7 +59,7 @@ impl GetLifecyclePoliciesInput {
     pub fn tags_to_add(&self) -> &[::std::string::String] {
         self.tags_to_add.as_deref().unwrap_or_default()
     }
-    /// <p><b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
+    /// <p><b>\[Default policies only\]</b> Specifies the type of default policy to get. Specify one of the following:</p>
     /// <ul>
     /// <li>
     /// <p><code>VOLUME</code> - To get only the default policy for EBS snapshots</p></li>
@@ -194,7 +194,7 @@ impl GetLifecyclePoliciesInputBuilder {
     pub fn get_tags_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tags_to_add
     }
-    /// <p><b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
+    /// <p><b>\[Default policies only\]</b> Specifies the type of default policy to get. Specify one of the following:</p>
     /// <ul>
     /// <li>
     /// <p><code>VOLUME</code> - To get only the default policy for EBS snapshots</p></li>
@@ -207,7 +207,7 @@ impl GetLifecyclePoliciesInputBuilder {
         self.default_policy_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p><b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
+    /// <p><b>\[Default policies only\]</b> Specifies the type of default policy to get. Specify one of the following:</p>
     /// <ul>
     /// <li>
     /// <p><code>VOLUME</code> - To get only the default policy for EBS snapshots</p></li>
@@ -220,7 +220,7 @@ impl GetLifecyclePoliciesInputBuilder {
         self.default_policy_type = input;
         self
     }
-    /// <p><b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
+    /// <p><b>\[Default policies only\]</b> Specifies the type of default policy to get. Specify one of the following:</p>
     /// <ul>
     /// <li>
     /// <p><code>VOLUME</code> - To get only the default policy for EBS snapshots</p></li>

@@ -11,7 +11,7 @@ pub struct PermissionModel {
     /// <li>
     /// <p>You must have <code>iam:passRole</code> permission for this role while creating or updating the application.</p></li>
     /// <li>
-    /// <p>Currently, <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code> characters.</p></li>
+    /// <p>Currently, <code>invokerRoleName</code> accepts only <code>\[A-Za-z0-9_+=,.@-\]</code> characters.</p></li>
     /// </ul>
     /// </note>
     pub invoker_role_name: ::std::option::Option<::std::string::String>,
@@ -35,7 +35,7 @@ impl PermissionModel {
     /// <li>
     /// <p>You must have <code>iam:passRole</code> permission for this role while creating or updating the application.</p></li>
     /// <li>
-    /// <p>Currently, <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code> characters.</p></li>
+    /// <p>Currently, <code>invokerRoleName</code> accepts only <code>\[A-Za-z0-9_+=,.@-\]</code> characters.</p></li>
     /// </ul>
     /// </note>
     pub fn invoker_role_name(&self) -> ::std::option::Option<&str> {
@@ -91,7 +91,7 @@ impl PermissionModelBuilder {
     /// <li>
     /// <p>You must have <code>iam:passRole</code> permission for this role while creating or updating the application.</p></li>
     /// <li>
-    /// <p>Currently, <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code> characters.</p></li>
+    /// <p>Currently, <code>invokerRoleName</code> accepts only <code>\[A-Za-z0-9_+=,.@-\]</code> characters.</p></li>
     /// </ul>
     /// </note>
     pub fn invoker_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,7 +103,7 @@ impl PermissionModelBuilder {
     /// <li>
     /// <p>You must have <code>iam:passRole</code> permission for this role while creating or updating the application.</p></li>
     /// <li>
-    /// <p>Currently, <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code> characters.</p></li>
+    /// <p>Currently, <code>invokerRoleName</code> accepts only <code>\[A-Za-z0-9_+=,.@-\]</code> characters.</p></li>
     /// </ul>
     /// </note>
     pub fn set_invoker_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -115,7 +115,7 @@ impl PermissionModelBuilder {
     /// <li>
     /// <p>You must have <code>iam:passRole</code> permission for this role while creating or updating the application.</p></li>
     /// <li>
-    /// <p>Currently, <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code> characters.</p></li>
+    /// <p>Currently, <code>invokerRoleName</code> accepts only <code>\[A-Za-z0-9_+=,.@-\]</code> characters.</p></li>
     /// </ul>
     /// </note>
     pub fn get_invoker_role_name(&self) -> &::std::option::Option<::std::string::String> {

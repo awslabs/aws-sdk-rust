@@ -12,7 +12,7 @@ pub struct StateMachineListItem {
     /// <li>
     /// <p>white space</p></li>
     /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <p>brackets <code>&lt; &gt; { } \[ \]</code></p></li>
     /// <li>
     /// <p>wildcard characters <code>? *</code></p></li>
     /// <li>
@@ -39,7 +39,7 @@ impl StateMachineListItem {
     /// <li>
     /// <p>white space</p></li>
     /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <p>brackets <code>&lt; &gt; { } \[ \]</code></p></li>
     /// <li>
     /// <p>wildcard characters <code>? *</code></p></li>
     /// <li>
@@ -99,7 +99,7 @@ impl StateMachineListItemBuilder {
     /// <li>
     /// <p>white space</p></li>
     /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <p>brackets <code>&lt; &gt; { } \[ \]</code></p></li>
     /// <li>
     /// <p>wildcard characters <code>? *</code></p></li>
     /// <li>
@@ -119,7 +119,7 @@ impl StateMachineListItemBuilder {
     /// <li>
     /// <p>white space</p></li>
     /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <p>brackets <code>&lt; &gt; { } \[ \]</code></p></li>
     /// <li>
     /// <p>wildcard characters <code>? *</code></p></li>
     /// <li>
@@ -138,7 +138,7 @@ impl StateMachineListItemBuilder {
     /// <li>
     /// <p>white space</p></li>
     /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <p>brackets <code>&lt; &gt; { } \[ \]</code></p></li>
     /// <li>
     /// <p>wildcard characters <code>? *</code></p></li>
     /// <li>

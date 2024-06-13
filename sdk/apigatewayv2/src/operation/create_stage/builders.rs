@@ -247,7 +247,7 @@ impl CreateStageFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_stage_variables`](Self::set_stage_variables).
     ///
-    /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match \[A-Za-z0-9-._~:/?#&amp;=,\]+.</p>
     pub fn stage_variables(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -256,7 +256,7 @@ impl CreateStageFluentBuilder {
         self.inner = self.inner.stage_variables(k.into(), v.into());
         self
     }
-    /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match \[A-Za-z0-9-._~:/?#&amp;=,\]+.</p>
     pub fn set_stage_variables(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -264,7 +264,7 @@ impl CreateStageFluentBuilder {
         self.inner = self.inner.set_stage_variables(input);
         self
     }
-    /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match \[A-Za-z0-9-._~:/?#&amp;=,\]+.</p>
     pub fn get_stage_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_stage_variables()
     }

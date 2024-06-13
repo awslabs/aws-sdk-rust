@@ -47,7 +47,7 @@ pub struct RestoreDbClusterFromS3Input {
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p><b>Aurora MySQL</b></p>
     /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code></p>
     pub engine_version: ::std::option::Option<::std::string::String>,
@@ -260,7 +260,7 @@ impl RestoreDbClusterFromS3Input {
     }
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p><b>Aurora MySQL</b></p>
     /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code></p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
@@ -730,7 +730,7 @@ impl RestoreDbClusterFromS3InputBuilder {
     }
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p><b>Aurora MySQL</b></p>
     /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code></p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -739,7 +739,7 @@ impl RestoreDbClusterFromS3InputBuilder {
     }
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p><b>Aurora MySQL</b></p>
     /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code></p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -748,7 +748,7 @@ impl RestoreDbClusterFromS3InputBuilder {
     }
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p><b>Aurora MySQL</b></p>
     /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code></p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {

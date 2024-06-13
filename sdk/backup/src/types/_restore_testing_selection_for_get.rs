@@ -11,7 +11,7 @@ pub struct RestoreTestingSelectionForGet {
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example:<code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub iam_role_arn: ::std::string::String,
-    /// <p>You can include specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...", "arn:aws:..."]</code> or you can include a wildcard: <code>ProtectedResourceArns: ["*"]</code>, but not both.</p>
+    /// <p>You can include specific ARNs, such as <code>ProtectedResourceArns: \["arn:aws:...", "arn:aws:..."\]</code> or you can include a wildcard: <code>ProtectedResourceArns: \["*"\]</code>, but not both.</p>
     pub protected_resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>In a resource testing selection, this parameter filters by specific conditions such as <code>StringEquals</code> or <code>StringNotEquals</code>.</p>
     pub protected_resource_conditions: ::std::option::Option<crate::types::ProtectedResourceConditions>,
@@ -42,7 +42,7 @@ impl RestoreTestingSelectionForGet {
         use std::ops::Deref;
         self.iam_role_arn.deref()
     }
-    /// <p>You can include specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...", "arn:aws:..."]</code> or you can include a wildcard: <code>ProtectedResourceArns: ["*"]</code>, but not both.</p>
+    /// <p>You can include specific ARNs, such as <code>ProtectedResourceArns: \["arn:aws:...", "arn:aws:..."\]</code> or you can include a wildcard: <code>ProtectedResourceArns: \["*"\]</code>, but not both.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protected_resource_arns.is_none()`.
     pub fn protected_resource_arns(&self) -> &[::std::string::String] {
@@ -167,19 +167,19 @@ impl RestoreTestingSelectionForGetBuilder {
     ///
     /// To override the contents of this collection use [`set_protected_resource_arns`](Self::set_protected_resource_arns).
     ///
-    /// <p>You can include specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...", "arn:aws:..."]</code> or you can include a wildcard: <code>ProtectedResourceArns: ["*"]</code>, but not both.</p>
+    /// <p>You can include specific ARNs, such as <code>ProtectedResourceArns: \["arn:aws:...", "arn:aws:..."\]</code> or you can include a wildcard: <code>ProtectedResourceArns: \["*"\]</code>, but not both.</p>
     pub fn protected_resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.protected_resource_arns.unwrap_or_default();
         v.push(input.into());
         self.protected_resource_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>You can include specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...", "arn:aws:..."]</code> or you can include a wildcard: <code>ProtectedResourceArns: ["*"]</code>, but not both.</p>
+    /// <p>You can include specific ARNs, such as <code>ProtectedResourceArns: \["arn:aws:...", "arn:aws:..."\]</code> or you can include a wildcard: <code>ProtectedResourceArns: \["*"\]</code>, but not both.</p>
     pub fn set_protected_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.protected_resource_arns = input;
         self
     }
-    /// <p>You can include specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...", "arn:aws:..."]</code> or you can include a wildcard: <code>ProtectedResourceArns: ["*"]</code>, but not both.</p>
+    /// <p>You can include specific ARNs, such as <code>ProtectedResourceArns: \["arn:aws:...", "arn:aws:..."\]</code> or you can include a wildcard: <code>ProtectedResourceArns: \["*"\]</code>, but not both.</p>
     pub fn get_protected_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.protected_resource_arns
     }

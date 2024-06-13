@@ -18,13 +18,13 @@ pub struct CreateDirectoryInput {
     /// <p>AND any 3 of the following password complexity rules required by Active Directory:</p>
     /// <ul>
     /// <li>
-    /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p></li>
+    /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*\[A-Z\])(?=.*\[a-z\])</p></li>
     /// <li>
-    /// <p>Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p></li>
+    /// <p>Numbers and special characters and lower case (?=.*\d)(?=.*\[^A-Za-z0-9\s\])(?=.*\[a-z\])</p></li>
     /// <li>
-    /// <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p></li>
+    /// <p>Special characters and upper case and lower case (?=.*\[^A-Za-z0-9\s\])(?=.*\[A-Z\])(?=.*\[a-z\])</p></li>
     /// <li>
-    /// <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p></li>
+    /// <p>Numbers and upper case and special characters (?=.*\d)(?=.*\[A-Z\])(?=.*\[^A-Za-z0-9\s\])</p></li>
     /// </ul>
     /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
     pub password: ::std::option::Option<::std::string::String>,
@@ -56,13 +56,13 @@ impl CreateDirectoryInput {
     /// <p>AND any 3 of the following password complexity rules required by Active Directory:</p>
     /// <ul>
     /// <li>
-    /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p></li>
+    /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*\[A-Z\])(?=.*\[a-z\])</p></li>
     /// <li>
-    /// <p>Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p></li>
+    /// <p>Numbers and special characters and lower case (?=.*\d)(?=.*\[^A-Za-z0-9\s\])(?=.*\[a-z\])</p></li>
     /// <li>
-    /// <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p></li>
+    /// <p>Special characters and upper case and lower case (?=.*\[^A-Za-z0-9\s\])(?=.*\[A-Z\])(?=.*\[a-z\])</p></li>
     /// <li>
-    /// <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p></li>
+    /// <p>Numbers and upper case and special characters (?=.*\d)(?=.*\[A-Z\])(?=.*\[^A-Za-z0-9\s\])</p></li>
     /// </ul>
     /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
     pub fn password(&self) -> ::std::option::Option<&str> {
@@ -159,13 +159,13 @@ impl CreateDirectoryInputBuilder {
     /// <p>AND any 3 of the following password complexity rules required by Active Directory:</p>
     /// <ul>
     /// <li>
-    /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p></li>
+    /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*\[A-Z\])(?=.*\[a-z\])</p></li>
     /// <li>
-    /// <p>Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p></li>
+    /// <p>Numbers and special characters and lower case (?=.*\d)(?=.*\[^A-Za-z0-9\s\])(?=.*\[a-z\])</p></li>
     /// <li>
-    /// <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p></li>
+    /// <p>Special characters and upper case and lower case (?=.*\[^A-Za-z0-9\s\])(?=.*\[A-Z\])(?=.*\[a-z\])</p></li>
     /// <li>
-    /// <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p></li>
+    /// <p>Numbers and upper case and special characters (?=.*\d)(?=.*\[A-Z\])(?=.*\[^A-Za-z0-9\s\])</p></li>
     /// </ul>
     /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
     /// This field is required.
@@ -183,13 +183,13 @@ impl CreateDirectoryInputBuilder {
     /// <p>AND any 3 of the following password complexity rules required by Active Directory:</p>
     /// <ul>
     /// <li>
-    /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p></li>
+    /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*\[A-Z\])(?=.*\[a-z\])</p></li>
     /// <li>
-    /// <p>Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p></li>
+    /// <p>Numbers and special characters and lower case (?=.*\d)(?=.*\[^A-Za-z0-9\s\])(?=.*\[a-z\])</p></li>
     /// <li>
-    /// <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p></li>
+    /// <p>Special characters and upper case and lower case (?=.*\[^A-Za-z0-9\s\])(?=.*\[A-Z\])(?=.*\[a-z\])</p></li>
     /// <li>
-    /// <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p></li>
+    /// <p>Numbers and upper case and special characters (?=.*\d)(?=.*\[A-Z\])(?=.*\[^A-Za-z0-9\s\])</p></li>
     /// </ul>
     /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -206,13 +206,13 @@ impl CreateDirectoryInputBuilder {
     /// <p>AND any 3 of the following password complexity rules required by Active Directory:</p>
     /// <ul>
     /// <li>
-    /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p></li>
+    /// <p>Numbers and upper case and lowercase (?=.*\d)(?=.*\[A-Z\])(?=.*\[a-z\])</p></li>
     /// <li>
-    /// <p>Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p></li>
+    /// <p>Numbers and special characters and lower case (?=.*\d)(?=.*\[^A-Za-z0-9\s\])(?=.*\[a-z\])</p></li>
     /// <li>
-    /// <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p></li>
+    /// <p>Special characters and upper case and lower case (?=.*\[^A-Za-z0-9\s\])(?=.*\[A-Z\])(?=.*\[a-z\])</p></li>
     /// <li>
-    /// <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p></li>
+    /// <p>Numbers and upper case and special characters (?=.*\d)(?=.*\[A-Z\])(?=.*\[^A-Za-z0-9\s\])</p></li>
     /// </ul>
     /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {

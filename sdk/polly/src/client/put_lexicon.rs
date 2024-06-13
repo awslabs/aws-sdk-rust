@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutLexicon`](crate::operation::put_lexicon::builders::PutLexiconFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::put_lexicon::builders::PutLexiconFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::put_lexicon::builders::PutLexiconFluentBuilder::set_name):<br>required: **true**<br><p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::put_lexicon::builders::PutLexiconFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::put_lexicon::builders::PutLexiconFluentBuilder::set_name):<br>required: **true**<br><p>Name of the lexicon. The name must follow the regular express format \[0-9A-Za-z\]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.</p><br>
     ///   - [`content(impl Into<String>)`](crate::operation::put_lexicon::builders::PutLexiconFluentBuilder::content) / [`set_content(Option<String>)`](crate::operation::put_lexicon::builders::PutLexiconFluentBuilder::set_content):<br>required: **true**<br><p>Content of the PLS lexicon as string data.</p><br>
     /// - On success, responds with [`PutLexiconOutput`](crate::operation::put_lexicon::PutLexiconOutput)
     /// - On failure, responds with [`SdkError<PutLexiconError>`](crate::operation::put_lexicon::PutLexiconError)

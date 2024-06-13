@@ -8,8 +8,8 @@ pub struct ParameterConstraints {
     pub allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A regular expression that represents the patterns that allow for <code>String</code> types. The pattern must match the entire parameter value provided.</p>
     pub allowed_pattern: ::std::option::Option<::std::string::String>,
-    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-    /// <p><code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code></p>
+    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>\[A-Za-z0-9\]+</code> displays the following error message when the user specifies an invalid value:</p>
+    /// <p><code>Malformed input-Parameter MyParameter must match pattern \[A-Za-z0-9\]+</code></p>
     /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
     /// <p><code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code></p>
     pub constraint_description: ::std::option::Option<::std::string::String>,
@@ -33,8 +33,8 @@ impl ParameterConstraints {
     pub fn allowed_pattern(&self) -> ::std::option::Option<&str> {
         self.allowed_pattern.as_deref()
     }
-    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-    /// <p><code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code></p>
+    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>\[A-Za-z0-9\]+</code> displays the following error message when the user specifies an invalid value:</p>
+    /// <p><code>Malformed input-Parameter MyParameter must match pattern \[A-Za-z0-9\]+</code></p>
     /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
     /// <p><code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code></p>
     pub fn constraint_description(&self) -> ::std::option::Option<&str> {
@@ -111,24 +111,24 @@ impl ParameterConstraintsBuilder {
     pub fn get_allowed_pattern(&self) -> &::std::option::Option<::std::string::String> {
         &self.allowed_pattern
     }
-    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-    /// <p><code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code></p>
+    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>\[A-Za-z0-9\]+</code> displays the following error message when the user specifies an invalid value:</p>
+    /// <p><code>Malformed input-Parameter MyParameter must match pattern \[A-Za-z0-9\]+</code></p>
     /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
     /// <p><code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code></p>
     pub fn constraint_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.constraint_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-    /// <p><code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code></p>
+    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>\[A-Za-z0-9\]+</code> displays the following error message when the user specifies an invalid value:</p>
+    /// <p><code>Malformed input-Parameter MyParameter must match pattern \[A-Za-z0-9\]+</code></p>
     /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
     /// <p><code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code></p>
     pub fn set_constraint_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.constraint_description = input;
         self
     }
-    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
-    /// <p><code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code></p>
+    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>\[A-Za-z0-9\]+</code> displays the following error message when the user specifies an invalid value:</p>
+    /// <p><code>Malformed input-Parameter MyParameter must match pattern \[A-Za-z0-9\]+</code></p>
     /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
     /// <p><code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code></p>
     pub fn get_constraint_description(&self) -> &::std::option::Option<::std::string::String> {

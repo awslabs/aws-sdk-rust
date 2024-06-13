@@ -28,7 +28,7 @@ pub struct Stage {
     pub route_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>>,
     /// <p>The name of the stage.</p>
     pub stage_name: ::std::option::Option<::std::string::String>,
-    /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match \[A-Za-z0-9-._~:/?#&amp;=,\]+.</p>
     pub stage_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -82,7 +82,7 @@ impl Stage {
     pub fn stage_name(&self) -> ::std::option::Option<&str> {
         self.stage_name.as_deref()
     }
-    /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match \[A-Za-z0-9-._~:/?#&amp;=,\]+.</p>
     pub fn stage_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.stage_variables.as_ref()
     }
@@ -300,7 +300,7 @@ impl StageBuilder {
     ///
     /// To override the contents of this collection use [`set_stage_variables`](Self::set_stage_variables).
     ///
-    /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match \[A-Za-z0-9-._~:/?#&amp;=,\]+.</p>
     pub fn stage_variables(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -311,7 +311,7 @@ impl StageBuilder {
         self.stage_variables = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match \[A-Za-z0-9-._~:/?#&amp;=,\]+.</p>
     pub fn set_stage_variables(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -319,7 +319,7 @@ impl StageBuilder {
         self.stage_variables = input;
         self
     }
-    /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match \[A-Za-z0-9-._~:/?#&amp;=,\]+.</p>
     pub fn get_stage_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.stage_variables
     }

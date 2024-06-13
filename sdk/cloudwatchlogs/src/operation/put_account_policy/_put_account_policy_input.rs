@@ -48,7 +48,7 @@ pub struct PutAccountPolicyInput {
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
     /// <p>Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data protection policy applies to all log groups in the account. If you omit this parameter, the default of <code>ALL</code> is used.</p>
     pub scope: ::std::option::Option<crate::types::Scope>,
-    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN []</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
+    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN \[\]</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
     /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
     pub selection_criteria: ::std::option::Option<::std::string::String>,
@@ -107,7 +107,7 @@ impl PutAccountPolicyInput {
     pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
     }
-    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN []</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
+    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN \[\]</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
     /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
     pub fn selection_criteria(&self) -> ::std::option::Option<&str> {
@@ -302,21 +302,21 @@ impl PutAccountPolicyInputBuilder {
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         &self.scope
     }
-    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN []</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
+    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN \[\]</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
     /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
     pub fn selection_criteria(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_criteria = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN []</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
+    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN \[\]</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
     /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
     pub fn set_selection_criteria(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.selection_criteria = input;
         self
     }
-    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN []</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
+    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN \[\]</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
     /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
     pub fn get_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {

@@ -16,7 +16,7 @@ pub struct GetCloudFormationTemplateOutput {
     /// <p>Possible values: PREPARING | ACTIVE | EXPIRED</p>
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
-    /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    /// <p>Pattern: \[0-9a-fA-F\]{8}\-\[0-9a-fA-F\]{4}\-\[0-9a-fA-F\]{4}\-\[0-9a-fA-F\]{4}\-\[0-9a-fA-F\]{12}</p>
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
     pub template_url: ::std::option::Option<::std::string::String>,
@@ -46,7 +46,7 @@ impl GetCloudFormationTemplateOutput {
         self.status.as_ref()
     }
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
-    /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    /// <p>Pattern: \[0-9a-fA-F\]{8}\-\[0-9a-fA-F\]{4}\-\[0-9a-fA-F\]{4}\-\[0-9a-fA-F\]{4}\-\[0-9a-fA-F\]{12}</p>
     pub fn template_id(&self) -> ::std::option::Option<&str> {
         self.template_id.as_deref()
     }
@@ -158,19 +158,19 @@ impl GetCloudFormationTemplateOutputBuilder {
         &self.status
     }
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
-    /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    /// <p>Pattern: \[0-9a-fA-F\]{8}\-\[0-9a-fA-F\]{4}\-\[0-9a-fA-F\]{4}\-\[0-9a-fA-F\]{4}\-\[0-9a-fA-F\]{12}</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
-    /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    /// <p>Pattern: \[0-9a-fA-F\]{8}\-\[0-9a-fA-F\]{4}\-\[0-9a-fA-F\]{4}\-\[0-9a-fA-F\]{4}\-\[0-9a-fA-F\]{12}</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
     }
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
-    /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    /// <p>Pattern: \[0-9a-fA-F\]{8}\-\[0-9a-fA-F\]{4}\-\[0-9a-fA-F\]{4}\-\[0-9a-fA-F\]{4}\-\[0-9a-fA-F\]{12}</p>
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_id
     }

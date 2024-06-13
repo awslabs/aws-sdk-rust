@@ -140,32 +140,32 @@ impl CalculateRouteMatrixFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_departure_positions`](Self::set_departure_positions).
     ///
-    /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p><important>
+    /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>\[longitude, latitude\]</code>. For example, <code>\[-123.115, 49.285\]</code>.</p><important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
     /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn departure_positions(mut self, input: ::std::vec::Vec<f64>) -> Self {
         self.inner = self.inner.departure_positions(input);
         self
     }
-    /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p><important>
+    /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>\[longitude, latitude\]</code>. For example, <code>\[-123.115, 49.285\]</code>.</p><important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
     /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn set_departure_positions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>) -> Self {
         self.inner = self.inner.set_departure_positions(input);
         self
     }
-    /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p><important>
+    /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>\[longitude, latitude\]</code>. For example, <code>\[-123.115, 49.285\]</code>.</p><important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
     /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn get_departure_positions(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
         self.inner.get_departure_positions()
     }
@@ -174,32 +174,32 @@ impl CalculateRouteMatrixFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_destination_positions`](Self::set_destination_positions).
     ///
-    /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code></p><important>
+    /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>\[longitude, latitude\]</code>. For example, <code>\[-122.339, 47.615\]</code></p><important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
     /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn destination_positions(mut self, input: ::std::vec::Vec<f64>) -> Self {
         self.inner = self.inner.destination_positions(input);
         self
     }
-    /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code></p><important>
+    /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>\[longitude, latitude\]</code>. For example, <code>\[-122.339, 47.615\]</code></p><important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
     /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn set_destination_positions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>) -> Self {
         self.inner = self.inner.set_destination_positions(input);
         self
     }
-    /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code></p><important>
+    /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>\[longitude, latitude\]</code>. For example, <code>\[-122.339, 47.615\]</code></p><important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
     /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn get_destination_positions(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
         self.inner.get_destination_positions()
     }

@@ -142,17 +142,17 @@ impl ClaimPhoneNumberFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>The phone number you want to claim. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    /// <p>The phone number you want to claim. Phone numbers are formatted <code>\[+\] \[country code\] \[subscriber number including area code\]</code>.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.phone_number(input.into());
         self
     }
-    /// <p>The phone number you want to claim. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    /// <p>The phone number you want to claim. Phone numbers are formatted <code>\[+\] \[country code\] \[subscriber number including area code\]</code>.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_phone_number(input);
         self
     }
-    /// <p>The phone number you want to claim. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    /// <p>The phone number you want to claim. Phone numbers are formatted <code>\[+\] \[country code\] \[subscriber number including area code\]</code>.</p>
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_phone_number()
     }
@@ -190,19 +190,19 @@ impl ClaimPhoneNumberFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    /// <p>Pattern: <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code></p>
+    /// <p>Pattern: <code>^\[a-f0-9\]{8}-\[a-f0-9\]{4}-\[a-f0-9\]{4}-\[a-f0-9\]{4}-\[a-f0-9\]{12}$</code></p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    /// <p>Pattern: <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code></p>
+    /// <p>Pattern: <code>^\[a-f0-9\]{8}-\[a-f0-9\]{4}-\[a-f0-9\]{4}-\[a-f0-9\]{4}-\[a-f0-9\]{12}$</code></p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    /// <p>Pattern: <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code></p>
+    /// <p>Pattern: <code>^\[a-f0-9\]{8}-\[a-f0-9\]{4}-\[a-f0-9\]{4}-\[a-f0-9\]{4}-\[a-f0-9\]{12}$</code></p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
-    /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''\[a-zA-Z0-9:_-\]+''. This must be unique within a Greengrass group.
     pub id: ::std::option::Option<::std::string::String>,
-    /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''\[a-zA-Z0-9:_-\]+''. This must be unique within a Greengrass group.
     pub name: ::std::option::Option<::std::string::String>,
     /// A container of data for all resource types.
     pub resource_data_container: ::std::option::Option<crate::types::ResourceDataContainer>,
 }
 impl Resource {
-    /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''\[a-zA-Z0-9:_-\]+''. This must be unique within a Greengrass group.
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''\[a-zA-Z0-9:_-\]+''. This must be unique within a Greengrass group.
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -41,33 +41,33 @@ pub struct ResourceBuilder {
     pub(crate) resource_data_container: ::std::option::Option<crate::types::ResourceDataContainer>,
 }
 impl ResourceBuilder {
-    /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''\[a-zA-Z0-9:_-\]+''. This must be unique within a Greengrass group.
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''\[a-zA-Z0-9:_-\]+''. This must be unique within a Greengrass group.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''\[a-zA-Z0-9:_-\]+''. This must be unique within a Greengrass group.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''\[a-zA-Z0-9:_-\]+''. This must be unique within a Greengrass group.
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''\[a-zA-Z0-9:_-\]+''. This must be unique within a Greengrass group.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+    /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''\[a-zA-Z0-9:_-\]+''. This must be unique within a Greengrass group.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

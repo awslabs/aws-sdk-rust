@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetadataTransferJobProgress {
-    /// <p>The total count. [of what]</p>
+    /// <p>The total count. \[of what\]</p>
     pub total_count: ::std::option::Option<i32>,
     /// <p>The succeeded count.</p>
     pub succeeded_count: ::std::option::Option<i32>,
@@ -14,7 +14,7 @@ pub struct MetadataTransferJobProgress {
     pub failed_count: ::std::option::Option<i32>,
 }
 impl MetadataTransferJobProgress {
-    /// <p>The total count. [of what]</p>
+    /// <p>The total count. \[of what\]</p>
     pub fn total_count(&self) -> ::std::option::Option<i32> {
         self.total_count
     }
@@ -48,17 +48,17 @@ pub struct MetadataTransferJobProgressBuilder {
     pub(crate) failed_count: ::std::option::Option<i32>,
 }
 impl MetadataTransferJobProgressBuilder {
-    /// <p>The total count. [of what]</p>
+    /// <p>The total count. \[of what\]</p>
     pub fn total_count(mut self, input: i32) -> Self {
         self.total_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total count. [of what]</p>
+    /// <p>The total count. \[of what\]</p>
     pub fn set_total_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_count = input;
         self
     }
-    /// <p>The total count. [of what]</p>
+    /// <p>The total count. \[of what\]</p>
     pub fn get_total_count(&self) -> &::std::option::Option<i32> {
         &self.total_count
     }

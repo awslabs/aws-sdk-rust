@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInstancesInput {
-    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code></p>
+    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>\["MyFirstInstance","MySecondInstance"\]</code></p>
     pub instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
@@ -35,7 +35,7 @@ pub struct CreateInstancesInput {
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl CreateInstancesInput {
-    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code></p>
+    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>\["MyFirstInstance","MySecondInstance"\]</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_names.is_none()`.
     pub fn instance_names(&self) -> &[::std::string::String] {
@@ -119,19 +119,19 @@ impl CreateInstancesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
     ///
-    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code></p>
+    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>\["MyFirstInstance","MySecondInstance"\]</code></p>
     pub fn instance_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_names.unwrap_or_default();
         v.push(input.into());
         self.instance_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code></p>
+    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>\["MyFirstInstance","MySecondInstance"\]</code></p>
     pub fn set_instance_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_names = input;
         self
     }
-    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code></p>
+    /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>\["MyFirstInstance","MySecondInstance"\]</code></p>
     pub fn get_instance_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_names
     }

@@ -7,7 +7,7 @@ pub struct CreateFilterInput {
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric characters. A whitespace is considered to be an invalid character.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
+    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>\[ \]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
     pub action: ::std::option::Option<crate::types::FilterAction>,
@@ -27,11 +27,11 @@ pub struct CreateFilterInput {
     /// <p>To filter on the basis of severity, the API and CLI use the following input list for the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a> condition:</p>
     /// <ul>
     /// <li>
-    /// <p><b>Low</b>: <code>["1", "2", "3"]</code></p></li>
+    /// <p><b>Low</b>: <code>\["1", "2", "3"\]</code></p></li>
     /// <li>
-    /// <p><b>Medium</b>: <code>["4", "5", "6"]</code></p></li>
+    /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
     /// <li>
-    /// <p><b>High</b>: <code>["7", "8", "9"]</code></p></li>
+    /// <p><b>High</b>: <code>\["7", "8", "9"\]</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity">Severity levels for GuardDuty findings</a>.</p></li>
     /// <li>
@@ -233,7 +233,7 @@ impl CreateFilterInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
+    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>\[ \]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -259,11 +259,11 @@ impl CreateFilterInput {
     /// <p>To filter on the basis of severity, the API and CLI use the following input list for the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a> condition:</p>
     /// <ul>
     /// <li>
-    /// <p><b>Low</b>: <code>["1", "2", "3"]</code></p></li>
+    /// <p><b>Low</b>: <code>\["1", "2", "3"\]</code></p></li>
     /// <li>
-    /// <p><b>Medium</b>: <code>["4", "5", "6"]</code></p></li>
+    /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
     /// <li>
-    /// <p><b>High</b>: <code>["7", "8", "9"]</code></p></li>
+    /// <p><b>High</b>: <code>\["7", "8", "9"\]</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity">Severity levels for GuardDuty findings</a>.</p></li>
     /// <li>
@@ -513,17 +513,17 @@ impl CreateFilterInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
+    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>\[ \]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
+    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>\[ \]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
+    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>\[ \]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -569,11 +569,11 @@ impl CreateFilterInputBuilder {
     /// <p>To filter on the basis of severity, the API and CLI use the following input list for the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a> condition:</p>
     /// <ul>
     /// <li>
-    /// <p><b>Low</b>: <code>["1", "2", "3"]</code></p></li>
+    /// <p><b>Low</b>: <code>\["1", "2", "3"\]</code></p></li>
     /// <li>
-    /// <p><b>Medium</b>: <code>["4", "5", "6"]</code></p></li>
+    /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
     /// <li>
-    /// <p><b>High</b>: <code>["7", "8", "9"]</code></p></li>
+    /// <p><b>High</b>: <code>\["7", "8", "9"\]</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity">Severity levels for GuardDuty findings</a>.</p></li>
     /// <li>
@@ -779,11 +779,11 @@ impl CreateFilterInputBuilder {
     /// <p>To filter on the basis of severity, the API and CLI use the following input list for the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a> condition:</p>
     /// <ul>
     /// <li>
-    /// <p><b>Low</b>: <code>["1", "2", "3"]</code></p></li>
+    /// <p><b>Low</b>: <code>\["1", "2", "3"\]</code></p></li>
     /// <li>
-    /// <p><b>Medium</b>: <code>["4", "5", "6"]</code></p></li>
+    /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
     /// <li>
-    /// <p><b>High</b>: <code>["7", "8", "9"]</code></p></li>
+    /// <p><b>High</b>: <code>\["7", "8", "9"\]</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity">Severity levels for GuardDuty findings</a>.</p></li>
     /// <li>
@@ -988,11 +988,11 @@ impl CreateFilterInputBuilder {
     /// <p>To filter on the basis of severity, the API and CLI use the following input list for the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a> condition:</p>
     /// <ul>
     /// <li>
-    /// <p><b>Low</b>: <code>["1", "2", "3"]</code></p></li>
+    /// <p><b>Low</b>: <code>\["1", "2", "3"\]</code></p></li>
     /// <li>
-    /// <p><b>Medium</b>: <code>["4", "5", "6"]</code></p></li>
+    /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
     /// <li>
-    /// <p><b>High</b>: <code>["7", "8", "9"]</code></p></li>
+    /// <p><b>High</b>: <code>\["7", "8", "9"\]</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity">Severity levels for GuardDuty findings</a>.</p></li>
     /// <li>

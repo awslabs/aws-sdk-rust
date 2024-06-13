@@ -31,7 +31,7 @@ pub struct StackSet {
     /// <p>Detailed information about the drift status of the stack set.</p>
     /// <p>For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations currently in progress isn't included.</p>
     pub stack_set_drift_detection_details: ::std::option::Option<crate::types::StackSetDriftDetectionDetails>,
-    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
+    /// <p>\[Service-managed permissions\] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
     pub auto_deployment: ::std::option::Option<crate::types::AutoDeployment>,
     /// <p>Describes how the IAM roles required for stack set operations are created.</p>
     /// <ul>
@@ -41,7 +41,7 @@ pub struct StackSet {
     /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p></li>
     /// </ul>
     pub permission_model: ::std::option::Option<crate::types::PermissionModels>,
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>\[Service-managed permissions\] The organization root ID or organizational unit (OU) IDs that you specified for DeploymentTargets.</p>
     pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub managed_execution: ::std::option::Option<crate::types::ManagedExecution>,
@@ -106,7 +106,7 @@ impl StackSet {
     pub fn stack_set_drift_detection_details(&self) -> ::std::option::Option<&crate::types::StackSetDriftDetectionDetails> {
         self.stack_set_drift_detection_details.as_ref()
     }
-    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
+    /// <p>\[Service-managed permissions\] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
     pub fn auto_deployment(&self) -> ::std::option::Option<&crate::types::AutoDeployment> {
         self.auto_deployment.as_ref()
     }
@@ -120,7 +120,7 @@ impl StackSet {
     pub fn permission_model(&self) -> ::std::option::Option<&crate::types::PermissionModels> {
         self.permission_model.as_ref()
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>\[Service-managed permissions\] The organization root ID or organizational unit (OU) IDs that you specified for DeploymentTargets.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_ids.is_none()`.
     pub fn organizational_unit_ids(&self) -> &[::std::string::String] {
@@ -362,17 +362,17 @@ impl StackSetBuilder {
     pub fn get_stack_set_drift_detection_details(&self) -> &::std::option::Option<crate::types::StackSetDriftDetectionDetails> {
         &self.stack_set_drift_detection_details
     }
-    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
+    /// <p>\[Service-managed permissions\] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
     pub fn auto_deployment(mut self, input: crate::types::AutoDeployment) -> Self {
         self.auto_deployment = ::std::option::Option::Some(input);
         self
     }
-    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
+    /// <p>\[Service-managed permissions\] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
     pub fn set_auto_deployment(mut self, input: ::std::option::Option<crate::types::AutoDeployment>) -> Self {
         self.auto_deployment = input;
         self
     }
-    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
+    /// <p>\[Service-managed permissions\] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
     pub fn get_auto_deployment(&self) -> &::std::option::Option<crate::types::AutoDeployment> {
         &self.auto_deployment
     }
@@ -412,19 +412,19 @@ impl StackSetBuilder {
     ///
     /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
     ///
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>\[Service-managed permissions\] The organization root ID or organizational unit (OU) IDs that you specified for DeploymentTargets.</p>
     pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.organizational_unit_ids.unwrap_or_default();
         v.push(input.into());
         self.organizational_unit_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>\[Service-managed permissions\] The organization root ID or organizational unit (OU) IDs that you specified for DeploymentTargets.</p>
     pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.organizational_unit_ids = input;
         self
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>\[Service-managed permissions\] The organization root ID or organizational unit (OU) IDs that you specified for DeploymentTargets.</p>
     pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.organizational_unit_ids
     }

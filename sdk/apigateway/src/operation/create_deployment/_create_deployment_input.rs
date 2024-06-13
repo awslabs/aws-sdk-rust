@@ -16,7 +16,7 @@ pub struct CreateDeploymentInput {
     pub cache_cluster_enabled: ::std::option::Option<bool>,
     /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     pub cache_cluster_size: ::std::option::Option<crate::types::CacheClusterSize>,
-    /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>\[A-Za-z0-9-._~:/?#&amp;=,\]+</code>.</p>
     pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment.</p>
     pub canary_settings: ::std::option::Option<crate::types::DeploymentCanarySettings>,
@@ -48,7 +48,7 @@ impl CreateDeploymentInput {
     pub fn cache_cluster_size(&self) -> ::std::option::Option<&crate::types::CacheClusterSize> {
         self.cache_cluster_size.as_ref()
     }
-    /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>\[A-Za-z0-9-._~:/?#&amp;=,\]+</code>.</p>
     pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.variables.as_ref()
     }
@@ -172,19 +172,19 @@ impl CreateDeploymentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
     ///
-    /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>\[A-Za-z0-9-._~:/?#&amp;=,\]+</code>.</p>
     pub fn variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.variables.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.variables = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>\[A-Za-z0-9-._~:/?#&amp;=,\]+</code>.</p>
     pub fn set_variables(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.variables = input;
         self
     }
-    /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>\[A-Za-z0-9-._~:/?#&amp;=,\]+</code>.</p>
     pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.variables
     }

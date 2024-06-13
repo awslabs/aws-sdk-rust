@@ -11,7 +11,7 @@ pub struct SwitchoverGlobalClusterInput {
     /// <li>
     /// <p>Minimum length of 1. Maximum length of 255.</p></li>
     /// </ul>
-    /// <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code></p>
+    /// <p>Pattern: <code>\[A-Za-z\]\[0-9A-Za-z-:._\]*</code></p>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the secondary Amazon DocumentDB cluster to promote to the new primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Amazon DocumentDB can locate the cluster in its Amazon Web Services region.</p>
     /// <p>Constraints:</p>
@@ -21,7 +21,7 @@ pub struct SwitchoverGlobalClusterInput {
     /// <li>
     /// <p>Minimum length of 1. Maximum length of 255.</p></li>
     /// </ul>
-    /// <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code></p>
+    /// <p>Pattern: <code>\[A-Za-z\]\[0-9A-Za-z-:._\]*</code></p>
     pub target_db_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl SwitchoverGlobalClusterInput {
@@ -33,7 +33,7 @@ impl SwitchoverGlobalClusterInput {
     /// <li>
     /// <p>Minimum length of 1. Maximum length of 255.</p></li>
     /// </ul>
-    /// <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code></p>
+    /// <p>Pattern: <code>\[A-Za-z\]\[0-9A-Za-z-:._\]*</code></p>
     pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
     }
@@ -45,7 +45,7 @@ impl SwitchoverGlobalClusterInput {
     /// <li>
     /// <p>Minimum length of 1. Maximum length of 255.</p></li>
     /// </ul>
-    /// <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code></p>
+    /// <p>Pattern: <code>\[A-Za-z\]\[0-9A-Za-z-:._\]*</code></p>
     pub fn target_db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.target_db_cluster_identifier.as_deref()
     }
@@ -73,7 +73,7 @@ impl SwitchoverGlobalClusterInputBuilder {
     /// <li>
     /// <p>Minimum length of 1. Maximum length of 255.</p></li>
     /// </ul>
-    /// <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code></p>
+    /// <p>Pattern: <code>\[A-Za-z\]\[0-9A-Za-z-:._\]*</code></p>
     /// This field is required.
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
@@ -87,7 +87,7 @@ impl SwitchoverGlobalClusterInputBuilder {
     /// <li>
     /// <p>Minimum length of 1. Maximum length of 255.</p></li>
     /// </ul>
-    /// <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code></p>
+    /// <p>Pattern: <code>\[A-Za-z\]\[0-9A-Za-z-:._\]*</code></p>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_cluster_identifier = input;
         self
@@ -100,7 +100,7 @@ impl SwitchoverGlobalClusterInputBuilder {
     /// <li>
     /// <p>Minimum length of 1. Maximum length of 255.</p></li>
     /// </ul>
-    /// <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code></p>
+    /// <p>Pattern: <code>\[A-Za-z\]\[0-9A-Za-z-:._\]*</code></p>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_cluster_identifier
     }
@@ -112,7 +112,7 @@ impl SwitchoverGlobalClusterInputBuilder {
     /// <li>
     /// <p>Minimum length of 1. Maximum length of 255.</p></li>
     /// </ul>
-    /// <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code></p>
+    /// <p>Pattern: <code>\[A-Za-z\]\[0-9A-Za-z-:._\]*</code></p>
     /// This field is required.
     pub fn target_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_db_cluster_identifier = ::std::option::Option::Some(input.into());
@@ -126,7 +126,7 @@ impl SwitchoverGlobalClusterInputBuilder {
     /// <li>
     /// <p>Minimum length of 1. Maximum length of 255.</p></li>
     /// </ul>
-    /// <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code></p>
+    /// <p>Pattern: <code>\[A-Za-z\]\[0-9A-Za-z-:._\]*</code></p>
     pub fn set_target_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_db_cluster_identifier = input;
         self
@@ -139,7 +139,7 @@ impl SwitchoverGlobalClusterInputBuilder {
     /// <li>
     /// <p>Minimum length of 1. Maximum length of 255.</p></li>
     /// </ul>
-    /// <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code></p>
+    /// <p>Pattern: <code>\[A-Za-z\]\[0-9A-Za-z-:._\]*</code></p>
     pub fn get_target_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_db_cluster_identifier
     }

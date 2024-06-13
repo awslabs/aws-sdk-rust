@@ -8,11 +8,11 @@ pub struct CreateDomainNameInput {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
     pub certificate_name: ::std::option::Option<::std::string::String>,
-    /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
+    /// <p>\[Deprecated\] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
     pub certificate_body: ::std::option::Option<::std::string::String>,
-    /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
+    /// <p>\[Deprecated\] Your edge-optimized endpoint's domain name certificate's private key.</p>
     pub certificate_private_key: ::std::option::Option<::std::string::String>,
-    /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
+    /// <p>\[Deprecated\] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
     pub certificate_chain: ::std::option::Option<::std::string::String>,
     /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ pub struct CreateDomainNameInput {
     pub regional_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
     pub endpoint_configuration: ::std::option::Option<crate::types::EndpointConfiguration>,
-    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    /// <p>The key-value map of strings. The valid character set is \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not start with aws:. The tag value can be up to 256 characters.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
     pub security_policy: ::std::option::Option<crate::types::SecurityPolicy>,
@@ -40,15 +40,15 @@ impl CreateDomainNameInput {
     pub fn certificate_name(&self) -> ::std::option::Option<&str> {
         self.certificate_name.as_deref()
     }
-    /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
+    /// <p>\[Deprecated\] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
     pub fn certificate_body(&self) -> ::std::option::Option<&str> {
         self.certificate_body.as_deref()
     }
-    /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
+    /// <p>\[Deprecated\] Your edge-optimized endpoint's domain name certificate's private key.</p>
     pub fn certificate_private_key(&self) -> ::std::option::Option<&str> {
         self.certificate_private_key.as_deref()
     }
-    /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
+    /// <p>\[Deprecated\] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
     pub fn certificate_chain(&self) -> ::std::option::Option<&str> {
         self.certificate_chain.as_deref()
     }
@@ -68,7 +68,7 @@ impl CreateDomainNameInput {
     pub fn endpoint_configuration(&self) -> ::std::option::Option<&crate::types::EndpointConfiguration> {
         self.endpoint_configuration.as_ref()
     }
-    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    /// <p>The key-value map of strings. The valid character set is \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not start with aws:. The tag value can be up to 256 characters.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -140,45 +140,45 @@ impl CreateDomainNameInputBuilder {
     pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_name
     }
-    /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
+    /// <p>\[Deprecated\] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
     pub fn certificate_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_body = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
+    /// <p>\[Deprecated\] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
     pub fn set_certificate_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_body = input;
         self
     }
-    /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
+    /// <p>\[Deprecated\] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
     pub fn get_certificate_body(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_body
     }
-    /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
+    /// <p>\[Deprecated\] Your edge-optimized endpoint's domain name certificate's private key.</p>
     pub fn certificate_private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_private_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
+    /// <p>\[Deprecated\] Your edge-optimized endpoint's domain name certificate's private key.</p>
     pub fn set_certificate_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_private_key = input;
         self
     }
-    /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
+    /// <p>\[Deprecated\] Your edge-optimized endpoint's domain name certificate's private key.</p>
     pub fn get_certificate_private_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_private_key
     }
-    /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
+    /// <p>\[Deprecated\] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
     pub fn certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
+    /// <p>\[Deprecated\] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
     pub fn set_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_chain = input;
         self
     }
-    /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
+    /// <p>\[Deprecated\] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
     pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_chain
     }
@@ -242,19 +242,19 @@ impl CreateDomainNameInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    /// <p>The key-value map of strings. The valid character set is \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not start with aws:. The tag value can be up to 256 characters.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    /// <p>The key-value map of strings. The valid character set is \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not start with aws:. The tag value can be up to 256 characters.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    /// <p>The key-value map of strings. The valid character set is \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not start with aws:. The tag value can be up to 256 characters.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

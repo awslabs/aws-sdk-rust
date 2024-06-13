@@ -10,7 +10,7 @@
 pub struct RegexPatternSetUpdate {
     /// <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
     pub action: crate::types::ChangeAction,
-    /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
+    /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B\[a@\]dB\[o0\]t</code>.</p>
     pub regex_pattern_string: ::std::string::String,
 }
 impl RegexPatternSetUpdate {
@@ -18,7 +18,7 @@ impl RegexPatternSetUpdate {
     pub fn action(&self) -> &crate::types::ChangeAction {
         &self.action
     }
-    /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
+    /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B\[a@\]dB\[o0\]t</code>.</p>
     pub fn regex_pattern_string(&self) -> &str {
         use std::ops::Deref;
         self.regex_pattern_string.deref()
@@ -54,18 +54,18 @@ impl RegexPatternSetUpdateBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::ChangeAction> {
         &self.action
     }
-    /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
+    /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B\[a@\]dB\[o0\]t</code>.</p>
     /// This field is required.
     pub fn regex_pattern_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex_pattern_string = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
+    /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B\[a@\]dB\[o0\]t</code>.</p>
     pub fn set_regex_pattern_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regex_pattern_string = input;
         self
     }
-    /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
+    /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B\[a@\]dB\[o0\]t</code>.</p>
     pub fn get_regex_pattern_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.regex_pattern_string
     }

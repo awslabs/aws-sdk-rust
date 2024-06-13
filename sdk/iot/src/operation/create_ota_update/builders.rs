@@ -161,17 +161,17 @@ impl CreateOTAUpdateFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
     ///
-    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    /// <p>The protocol used to transfer the OTA update image. Valid values are \[HTTP\], \[MQTT\], \[HTTP, MQTT\]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
     pub fn protocols(mut self, input: crate::types::Protocol) -> Self {
         self.inner = self.inner.protocols(input);
         self
     }
-    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    /// <p>The protocol used to transfer the OTA update image. Valid values are \[HTTP\], \[MQTT\], \[HTTP, MQTT\]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
     pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>) -> Self {
         self.inner = self.inner.set_protocols(input);
         self
     }
-    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    /// <p>The protocol used to transfer the OTA update image. Valid values are \[HTTP\], \[MQTT\], \[HTTP, MQTT\]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
     pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
         self.inner.get_protocols()
     }

@@ -6,8 +6,8 @@ pub struct DetectFacesInput {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.</p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub image: ::std::option::Option<crate::types::Image>,
-    /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [<code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes by using [<code>"ALL"]</code>. Requesting more attributes may increase response time.</p>
-    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND" operator to determine which attributes to return (in this case, all attributes).</p>
+    /// <p>An array of facial attributes you want to be returned. A DEFAULT subset of facial attributes - BoundingBox, Confidence, Pose, Quality, and Landmarks - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using \["DEFAULT", "FACE_OCCLUDED"\] or just \["FACE_OCCLUDED"\]. You can request for all facial attributes by using \["ALL"\]. Requesting more attributes may increase response time.</p>
+    /// <p>If you provide both, <code>\["ALL", "DEFAULT"\]</code>, the service uses a logical "AND" operator to determine which attributes to return (in this case, all attributes).</p>
     /// <p>Note that while the FaceOccluded and EyeDirection attributes are supported when using <code>DetectFaces</code>, they aren't supported when analyzing videos with <code>StartFaceDetection</code> and <code>GetFaceDetection</code>.</p>
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
 }
@@ -17,8 +17,8 @@ impl DetectFacesInput {
     pub fn image(&self) -> ::std::option::Option<&crate::types::Image> {
         self.image.as_ref()
     }
-    /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [<code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes by using [<code>"ALL"]</code>. Requesting more attributes may increase response time.</p>
-    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND" operator to determine which attributes to return (in this case, all attributes).</p>
+    /// <p>An array of facial attributes you want to be returned. A DEFAULT subset of facial attributes - BoundingBox, Confidence, Pose, Quality, and Landmarks - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using \["DEFAULT", "FACE_OCCLUDED"\] or just \["FACE_OCCLUDED"\]. You can request for all facial attributes by using \["ALL"\]. Requesting more attributes may increase response time.</p>
+    /// <p>If you provide both, <code>\["ALL", "DEFAULT"\]</code>, the service uses a logical "AND" operator to determine which attributes to return (in this case, all attributes).</p>
     /// <p>Note that while the FaceOccluded and EyeDirection attributes are supported when using <code>DetectFaces</code>, they aren't supported when analyzing videos with <code>StartFaceDetection</code> and <code>GetFaceDetection</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
@@ -63,8 +63,8 @@ impl DetectFacesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [<code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes by using [<code>"ALL"]</code>. Requesting more attributes may increase response time.</p>
-    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND" operator to determine which attributes to return (in this case, all attributes).</p>
+    /// <p>An array of facial attributes you want to be returned. A DEFAULT subset of facial attributes - BoundingBox, Confidence, Pose, Quality, and Landmarks - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using \["DEFAULT", "FACE_OCCLUDED"\] or just \["FACE_OCCLUDED"\]. You can request for all facial attributes by using \["ALL"\]. Requesting more attributes may increase response time.</p>
+    /// <p>If you provide both, <code>\["ALL", "DEFAULT"\]</code>, the service uses a logical "AND" operator to determine which attributes to return (in this case, all attributes).</p>
     /// <p>Note that while the FaceOccluded and EyeDirection attributes are supported when using <code>DetectFaces</code>, they aren't supported when analyzing videos with <code>StartFaceDetection</code> and <code>GetFaceDetection</code>.</p>
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
@@ -72,15 +72,15 @@ impl DetectFacesInputBuilder {
         self.attributes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [<code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes by using [<code>"ALL"]</code>. Requesting more attributes may increase response time.</p>
-    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND" operator to determine which attributes to return (in this case, all attributes).</p>
+    /// <p>An array of facial attributes you want to be returned. A DEFAULT subset of facial attributes - BoundingBox, Confidence, Pose, Quality, and Landmarks - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using \["DEFAULT", "FACE_OCCLUDED"\] or just \["FACE_OCCLUDED"\]. You can request for all facial attributes by using \["ALL"\]. Requesting more attributes may increase response time.</p>
+    /// <p>If you provide both, <code>\["ALL", "DEFAULT"\]</code>, the service uses a logical "AND" operator to determine which attributes to return (in this case, all attributes).</p>
     /// <p>Note that while the FaceOccluded and EyeDirection attributes are supported when using <code>DetectFaces</code>, they aren't supported when analyzing videos with <code>StartFaceDetection</code> and <code>GetFaceDetection</code>.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.attributes = input;
         self
     }
-    /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [<code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes by using [<code>"ALL"]</code>. Requesting more attributes may increase response time.</p>
-    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND" operator to determine which attributes to return (in this case, all attributes).</p>
+    /// <p>An array of facial attributes you want to be returned. A DEFAULT subset of facial attributes - BoundingBox, Confidence, Pose, Quality, and Landmarks - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using \["DEFAULT", "FACE_OCCLUDED"\] or just \["FACE_OCCLUDED"\]. You can request for all facial attributes by using \["ALL"\]. Requesting more attributes may increase response time.</p>
+    /// <p>If you provide both, <code>\["ALL", "DEFAULT"\]</code>, the service uses a logical "AND" operator to determine which attributes to return (in this case, all attributes).</p>
     /// <p>Note that while the FaceOccluded and EyeDirection attributes are supported when using <code>DetectFaces</code>, they aren't supported when analyzing videos with <code>StartFaceDetection</code> and <code>GetFaceDetection</code>.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.attributes

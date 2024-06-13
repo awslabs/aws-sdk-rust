@@ -34,7 +34,7 @@ pub struct CreateServiceActionInput {
     /// </dt>
     /// <dd>
     /// <p>The list of parameters in JSON format.</p>
-    /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
+    /// <p>For example: <code>\[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}\]</code> or <code>\[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}\]</code>.</p>
     /// </dd>
     /// </dl>
     pub definition: ::std::option::Option<::std::collections::HashMap<crate::types::ServiceActionDefinitionKey, ::std::string::String>>,
@@ -87,7 +87,7 @@ impl CreateServiceActionInput {
     /// </dt>
     /// <dd>
     /// <p>The list of parameters in JSON format.</p>
-    /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
+    /// <p>For example: <code>\[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}\]</code> or <code>\[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}\]</code>.</p>
     /// </dd>
     /// </dl>
     pub fn definition(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ServiceActionDefinitionKey, ::std::string::String>> {
@@ -192,7 +192,7 @@ impl CreateServiceActionInputBuilder {
     /// </dt>
     /// <dd>
     /// <p>The list of parameters in JSON format.</p>
-    /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
+    /// <p>For example: <code>\[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}\]</code> or <code>\[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}\]</code>.</p>
     /// </dd>
     /// </dl>
     pub fn definition(mut self, k: crate::types::ServiceActionDefinitionKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -228,7 +228,7 @@ impl CreateServiceActionInputBuilder {
     /// </dt>
     /// <dd>
     /// <p>The list of parameters in JSON format.</p>
-    /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
+    /// <p>For example: <code>\[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}\]</code> or <code>\[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}\]</code>.</p>
     /// </dd>
     /// </dl>
     pub fn set_definition(
@@ -265,7 +265,7 @@ impl CreateServiceActionInputBuilder {
     /// </dt>
     /// <dd>
     /// <p>The list of parameters in JSON format.</p>
-    /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
+    /// <p>For example: <code>\[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}\]</code> or <code>\[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}\]</code>.</p>
     /// </dd>
     /// </dl>
     pub fn get_definition(

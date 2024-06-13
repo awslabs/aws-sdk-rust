@@ -119,17 +119,17 @@ impl DescribeAddressesAttributeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_allocation_ids`](Self::set_allocation_ids).
     ///
-    /// <p>[EC2-VPC] The allocation IDs.</p>
+    /// <p>\[EC2-VPC\] The allocation IDs.</p>
     pub fn allocation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allocation_ids(input.into());
         self
     }
-    /// <p>[EC2-VPC] The allocation IDs.</p>
+    /// <p>\[EC2-VPC\] The allocation IDs.</p>
     pub fn set_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_allocation_ids(input);
         self
     }
-    /// <p>[EC2-VPC] The allocation IDs.</p>
+    /// <p>\[EC2-VPC\] The allocation IDs.</p>
     pub fn get_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_allocation_ids()
     }

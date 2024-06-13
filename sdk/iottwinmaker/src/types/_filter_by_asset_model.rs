@@ -8,7 +8,7 @@ pub struct FilterByAssetModel {
     pub asset_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The external-Id property of an asset model.</p>
     pub asset_model_external_id: ::std::option::Option<::std::string::String>,
-    /// <p>Include asset offspring. [need desc.]</p>
+    /// <p>Include asset offspring. \[need desc.\]</p>
     pub include_offspring: ::std::option::Option<bool>,
     /// <p>Bolean to include assets.</p>
     pub include_assets: ::std::option::Option<bool>,
@@ -22,7 +22,7 @@ impl FilterByAssetModel {
     pub fn asset_model_external_id(&self) -> ::std::option::Option<&str> {
         self.asset_model_external_id.as_deref()
     }
-    /// <p>Include asset offspring. [need desc.]</p>
+    /// <p>Include asset offspring. \[need desc.\]</p>
     pub fn include_offspring(&self) -> ::std::option::Option<bool> {
         self.include_offspring
     }
@@ -76,17 +76,17 @@ impl FilterByAssetModelBuilder {
     pub fn get_asset_model_external_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_model_external_id
     }
-    /// <p>Include asset offspring. [need desc.]</p>
+    /// <p>Include asset offspring. \[need desc.\]</p>
     pub fn include_offspring(mut self, input: bool) -> Self {
         self.include_offspring = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Include asset offspring. [need desc.]</p>
+    /// <p>Include asset offspring. \[need desc.\]</p>
     pub fn set_include_offspring(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_offspring = input;
         self
     }
-    /// <p>Include asset offspring. [need desc.]</p>
+    /// <p>Include asset offspring. \[need desc.\]</p>
     pub fn get_include_offspring(&self) -> &::std::option::Option<bool> {
         &self.include_offspring
     }

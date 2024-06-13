@@ -232,19 +232,19 @@ impl CreatePredictorFluentBuilder {
     /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
     ///
     /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
-    /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
+    /// <p>The default value is <code>\["0.10", "0.50", "0.9"\]</code>.</p>
     pub fn forecast_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.forecast_types(input.into());
         self
     }
     /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
-    /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
+    /// <p>The default value is <code>\["0.10", "0.50", "0.9"\]</code>.</p>
     pub fn set_forecast_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_forecast_types(input);
         self
     }
     /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
-    /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
+    /// <p>The default value is <code>\["0.10", "0.50", "0.9"\]</code>.</p>
     pub fn get_forecast_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_forecast_types()
     }

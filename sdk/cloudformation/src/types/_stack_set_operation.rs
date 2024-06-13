@@ -15,7 +15,7 @@ pub struct StackSetOperation {
     /// <li>
     /// <p><code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p></li>
     /// <li>
-    /// <p><code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p></li>
+    /// <p>QUEUED: \[Service-managed permissions\] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the stack set operation status codes in the CloudFormation User Guide.</p></li>
     /// <li>
     /// <p><code>RUNNING</code>: The operation is currently being performed.</p></li>
     /// <li>
@@ -40,7 +40,7 @@ pub struct StackSetOperation {
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the stack set operation ended, across all accounts and Regions specified. Note that this doesn't necessarily mean that the stack set operation was successful, or even attempted, in each account or Region.</p>
     pub end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>[Service-managed permissions] The Organizations accounts affected by the stack operation.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts affected by the stack operation.</p>
     pub deployment_targets: ::std::option::Option<crate::types::DeploymentTargets>,
     /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
     /// <p>This information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
@@ -69,7 +69,7 @@ impl StackSetOperation {
     /// <li>
     /// <p><code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p></li>
     /// <li>
-    /// <p><code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p></li>
+    /// <p>QUEUED: \[Service-managed permissions\] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the stack set operation status codes in the CloudFormation User Guide.</p></li>
     /// <li>
     /// <p><code>RUNNING</code>: The operation is currently being performed.</p></li>
     /// <li>
@@ -108,7 +108,7 @@ impl StackSetOperation {
     pub fn end_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
-    /// <p>[Service-managed permissions] The Organizations accounts affected by the stack operation.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts affected by the stack operation.</p>
     pub fn deployment_targets(&self) -> ::std::option::Option<&crate::types::DeploymentTargets> {
         self.deployment_targets.as_ref()
     }
@@ -201,7 +201,7 @@ impl StackSetOperationBuilder {
     /// <li>
     /// <p><code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p></li>
     /// <li>
-    /// <p><code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p></li>
+    /// <p>QUEUED: \[Service-managed permissions\] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the stack set operation status codes in the CloudFormation User Guide.</p></li>
     /// <li>
     /// <p><code>RUNNING</code>: The operation is currently being performed.</p></li>
     /// <li>
@@ -220,7 +220,7 @@ impl StackSetOperationBuilder {
     /// <li>
     /// <p><code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p></li>
     /// <li>
-    /// <p><code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p></li>
+    /// <p>QUEUED: \[Service-managed permissions\] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the stack set operation status codes in the CloudFormation User Guide.</p></li>
     /// <li>
     /// <p><code>RUNNING</code>: The operation is currently being performed.</p></li>
     /// <li>
@@ -239,7 +239,7 @@ impl StackSetOperationBuilder {
     /// <li>
     /// <p><code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p></li>
     /// <li>
-    /// <p><code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p></li>
+    /// <p>QUEUED: \[Service-managed permissions\] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the stack set operation status codes in the CloudFormation User Guide.</p></li>
     /// <li>
     /// <p><code>RUNNING</code>: The operation is currently being performed.</p></li>
     /// <li>
@@ -342,17 +342,17 @@ impl StackSetOperationBuilder {
     pub fn get_end_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_timestamp
     }
-    /// <p>[Service-managed permissions] The Organizations accounts affected by the stack operation.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts affected by the stack operation.</p>
     pub fn deployment_targets(mut self, input: crate::types::DeploymentTargets) -> Self {
         self.deployment_targets = ::std::option::Option::Some(input);
         self
     }
-    /// <p>[Service-managed permissions] The Organizations accounts affected by the stack operation.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts affected by the stack operation.</p>
     pub fn set_deployment_targets(mut self, input: ::std::option::Option<crate::types::DeploymentTargets>) -> Self {
         self.deployment_targets = input;
         self
     }
-    /// <p>[Service-managed permissions] The Organizations accounts affected by the stack operation.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts affected by the stack operation.</p>
     pub fn get_deployment_targets(&self) -> &::std::option::Option<crate::types::DeploymentTargets> {
         &self.deployment_targets
     }

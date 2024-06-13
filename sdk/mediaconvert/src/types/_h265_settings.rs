@@ -14,7 +14,7 @@ pub struct H265Settings {
     pub bitrate: ::std::option::Option<i32>,
     /// H.265 Level.
     pub codec_level: ::std::option::Option<crate::types::H265CodecLevel>,
-    /// Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
+    /// Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as \[Profile\] / \[Tier\], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
     pub codec_profile: ::std::option::Option<crate::types::H265CodecProfile>,
     /// Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your input video content. To improve the subjective video quality of your output that has high-motion content: Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between reference frames. To use the same number B-frames for all types of content: Choose Static.
     pub dynamic_sub_gop: ::std::option::Option<crate::types::H265DynamicSubGop>,
@@ -112,7 +112,7 @@ impl H265Settings {
     pub fn codec_level(&self) -> ::std::option::Option<&crate::types::H265CodecLevel> {
         self.codec_level.as_ref()
     }
-    /// Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
+    /// Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as \[Profile\] / \[Tier\], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
     pub fn codec_profile(&self) -> ::std::option::Option<&crate::types::H265CodecProfile> {
         self.codec_profile.as_ref()
     }
@@ -391,17 +391,17 @@ impl H265SettingsBuilder {
     pub fn get_codec_level(&self) -> &::std::option::Option<crate::types::H265CodecLevel> {
         &self.codec_level
     }
-    /// Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
+    /// Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as \[Profile\] / \[Tier\], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
     pub fn codec_profile(mut self, input: crate::types::H265CodecProfile) -> Self {
         self.codec_profile = ::std::option::Option::Some(input);
         self
     }
-    /// Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
+    /// Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as \[Profile\] / \[Tier\], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
     pub fn set_codec_profile(mut self, input: ::std::option::Option<crate::types::H265CodecProfile>) -> Self {
         self.codec_profile = input;
         self
     }
-    /// Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
+    /// Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as \[Profile\] / \[Tier\], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
     pub fn get_codec_profile(&self) -> &::std::option::Option<crate::types::H265CodecProfile> {
         &self.codec_profile
     }

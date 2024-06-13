@@ -6,7 +6,7 @@
 pub struct Connector {
     /// The ARN of the connector.
     pub connector_arn: ::std::option::Option<::std::string::String>,
-    /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern [a-zA-Z0-9:_-]+.
+    /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern \[a-zA-Z0-9:_-\]+.
     pub id: ::std::option::Option<::std::string::String>,
     /// The parameters or configuration that the connector uses.
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -16,7 +16,7 @@ impl Connector {
     pub fn connector_arn(&self) -> ::std::option::Option<&str> {
         self.connector_arn.as_deref()
     }
-    /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern [a-zA-Z0-9:_-]+.
+    /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern \[a-zA-Z0-9:_-\]+.
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -56,18 +56,18 @@ impl ConnectorBuilder {
     pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_arn
     }
-    /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern [a-zA-Z0-9:_-]+.
+    /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern \[a-zA-Z0-9:_-\]+.
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern [a-zA-Z0-9:_-]+.
+    /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern \[a-zA-Z0-9:_-\]+.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern [a-zA-Z0-9:_-]+.
+    /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern \[a-zA-Z0-9:_-\]+.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

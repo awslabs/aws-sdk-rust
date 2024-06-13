@@ -52,7 +52,7 @@ pub struct CreateLabelingJobInput {
     /// <p>For all other <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom tasks</a>, your label category configuration file must be a JSON file in the following format. Identify the labels you want to use by replacing <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code> with your label categories.</p>
     /// <p><code>{ </code></p>
     /// <p><code>"document-version": "2018-11-28",</code></p>
-    /// <p><code>"labels": [{"label": "label_1"},{"label": "label_2"},...{"label": "label_n"}]</code></p>
+    /// <p><code>"labels": \[{"label": "label_1"},{"label": "label_2"},...{"label": "label_n"}\]</code></p>
     /// <p><code>}</code></p>
     /// <p>Note the following about the label category configuration file:</p>
     /// <ul>
@@ -133,7 +133,7 @@ impl CreateLabelingJobInput {
     /// <p>For all other <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom tasks</a>, your label category configuration file must be a JSON file in the following format. Identify the labels you want to use by replacing <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code> with your label categories.</p>
     /// <p><code>{ </code></p>
     /// <p><code>"document-version": "2018-11-28",</code></p>
-    /// <p><code>"labels": [{"label": "label_1"},{"label": "label_2"},...{"label": "label_n"}]</code></p>
+    /// <p><code>"labels": \[{"label": "label_1"},{"label": "label_2"},...{"label": "label_n"}\]</code></p>
     /// <p><code>}</code></p>
     /// <p>Note the following about the label category configuration file:</p>
     /// <ul>
@@ -361,7 +361,7 @@ impl CreateLabelingJobInputBuilder {
     /// <p>For all other <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom tasks</a>, your label category configuration file must be a JSON file in the following format. Identify the labels you want to use by replacing <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code> with your label categories.</p>
     /// <p><code>{ </code></p>
     /// <p><code>"document-version": "2018-11-28",</code></p>
-    /// <p><code>"labels": [{"label": "label_1"},{"label": "label_2"},...{"label": "label_n"}]</code></p>
+    /// <p><code>"labels": \[{"label": "label_1"},{"label": "label_2"},...{"label": "label_n"}\]</code></p>
     /// <p><code>}</code></p>
     /// <p>Note the following about the label category configuration file:</p>
     /// <ul>
@@ -386,7 +386,7 @@ impl CreateLabelingJobInputBuilder {
     /// <p>For all other <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom tasks</a>, your label category configuration file must be a JSON file in the following format. Identify the labels you want to use by replacing <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code> with your label categories.</p>
     /// <p><code>{ </code></p>
     /// <p><code>"document-version": "2018-11-28",</code></p>
-    /// <p><code>"labels": [{"label": "label_1"},{"label": "label_2"},...{"label": "label_n"}]</code></p>
+    /// <p><code>"labels": \[{"label": "label_1"},{"label": "label_2"},...{"label": "label_n"}\]</code></p>
     /// <p><code>}</code></p>
     /// <p>Note the following about the label category configuration file:</p>
     /// <ul>
@@ -411,7 +411,7 @@ impl CreateLabelingJobInputBuilder {
     /// <p>For all other <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom tasks</a>, your label category configuration file must be a JSON file in the following format. Identify the labels you want to use by replacing <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code> with your label categories.</p>
     /// <p><code>{ </code></p>
     /// <p><code>"document-version": "2018-11-28",</code></p>
-    /// <p><code>"labels": [{"label": "label_1"},{"label": "label_2"},...{"label": "label_n"}]</code></p>
+    /// <p><code>"labels": \[{"label": "label_1"},{"label": "label_2"},...{"label": "label_n"}\]</code></p>
     /// <p><code>}</code></p>
     /// <p>Note the following about the label category configuration file:</p>
     /// <ul>

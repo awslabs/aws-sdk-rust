@@ -27,8 +27,8 @@ impl crate::operation::create_log_anomaly_detector::builders::CreateLogAnomalyDe
 /// <p>The anomaly detector uses pattern recognition to find <code>anomalies</code>, which are unusual log events. It uses the <code>evaluationFrequency</code> to compare current log events and patterns with trained baselines.</p>
 /// <p>Fields within a pattern are called <i>tokens</i>. Fields that vary within a pattern, such as a request ID or timestamp, are referred to as <i>dynamic tokens</i> and represented by <code>&lt;*&gt;</code>.</p>
 /// <p>The following is an example of a pattern:</p>
-/// <p><code>[INFO] Request time: &lt;*&gt; ms</code></p>
-/// <p>This pattern represents log events like <code>[INFO] Request time: 327 ms</code> and other similar log events that differ only by the number, in this csse 327. When the pattern is displayed, the different numbers are replaced by <code>&lt;*&gt;</code></p><note>
+/// <p><code>\[INFO\] Request time: &lt;*&gt; ms</code></p>
+/// <p>This pattern represents log events like <code>\[INFO\] Request time: 327 ms</code> and other similar log events that differ only by the number, in this csse 327. When the pattern is displayed, the different numbers are replaced by <code>&lt;*&gt;</code></p><note>
 /// <p>Any parts of log events that are masked as sensitive data are not scanned for anomalies. For more information about masking sensitive data, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Help protect sensitive log data with masking</a>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

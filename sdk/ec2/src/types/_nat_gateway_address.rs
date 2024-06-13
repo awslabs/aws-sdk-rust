@@ -4,15 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NatGatewayAddress {
-    /// <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's associated with the NAT gateway.</p>
+    /// <p>\[Public NAT gateway only\] The allocation ID of the Elastic IP address that's associated with the NAT gateway.</p>
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the network interface associated with the NAT gateway.</p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The private IP address associated with the NAT gateway.</p>
     pub private_ip: ::std::option::Option<::std::string::String>,
-    /// <p>[Public NAT gateway only] The Elastic IP address associated with the NAT gateway.</p>
+    /// <p>\[Public NAT gateway only\] The Elastic IP address associated with the NAT gateway.</p>
     pub public_ip: ::std::option::Option<::std::string::String>,
-    /// <p>[Public NAT gateway only] The association ID of the Elastic IP address that's associated with the NAT gateway.</p>
+    /// <p>\[Public NAT gateway only\] The association ID of the Elastic IP address that's associated with the NAT gateway.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>Defines if the IP address is the primary address.</p>
     pub is_primary: ::std::option::Option<bool>,
@@ -22,7 +22,7 @@ pub struct NatGatewayAddress {
     pub status: ::std::option::Option<crate::types::NatGatewayAddressStatus>,
 }
 impl NatGatewayAddress {
-    /// <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's associated with the NAT gateway.</p>
+    /// <p>\[Public NAT gateway only\] The allocation ID of the Elastic IP address that's associated with the NAT gateway.</p>
     pub fn allocation_id(&self) -> ::std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
@@ -34,11 +34,11 @@ impl NatGatewayAddress {
     pub fn private_ip(&self) -> ::std::option::Option<&str> {
         self.private_ip.as_deref()
     }
-    /// <p>[Public NAT gateway only] The Elastic IP address associated with the NAT gateway.</p>
+    /// <p>\[Public NAT gateway only\] The Elastic IP address associated with the NAT gateway.</p>
     pub fn public_ip(&self) -> ::std::option::Option<&str> {
         self.public_ip.as_deref()
     }
-    /// <p>[Public NAT gateway only] The association ID of the Elastic IP address that's associated with the NAT gateway.</p>
+    /// <p>\[Public NAT gateway only\] The association ID of the Elastic IP address that's associated with the NAT gateway.</p>
     pub fn association_id(&self) -> ::std::option::Option<&str> {
         self.association_id.as_deref()
     }
@@ -76,17 +76,17 @@ pub struct NatGatewayAddressBuilder {
     pub(crate) status: ::std::option::Option<crate::types::NatGatewayAddressStatus>,
 }
 impl NatGatewayAddressBuilder {
-    /// <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's associated with the NAT gateway.</p>
+    /// <p>\[Public NAT gateway only\] The allocation ID of the Elastic IP address that's associated with the NAT gateway.</p>
     pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's associated with the NAT gateway.</p>
+    /// <p>\[Public NAT gateway only\] The allocation ID of the Elastic IP address that's associated with the NAT gateway.</p>
     pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allocation_id = input;
         self
     }
-    /// <p>[Public NAT gateway only] The allocation ID of the Elastic IP address that's associated with the NAT gateway.</p>
+    /// <p>\[Public NAT gateway only\] The allocation ID of the Elastic IP address that's associated with the NAT gateway.</p>
     pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.allocation_id
     }
@@ -118,31 +118,31 @@ impl NatGatewayAddressBuilder {
     pub fn get_private_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_ip
     }
-    /// <p>[Public NAT gateway only] The Elastic IP address associated with the NAT gateway.</p>
+    /// <p>\[Public NAT gateway only\] The Elastic IP address associated with the NAT gateway.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Public NAT gateway only] The Elastic IP address associated with the NAT gateway.</p>
+    /// <p>\[Public NAT gateway only\] The Elastic IP address associated with the NAT gateway.</p>
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip = input;
         self
     }
-    /// <p>[Public NAT gateway only] The Elastic IP address associated with the NAT gateway.</p>
+    /// <p>\[Public NAT gateway only\] The Elastic IP address associated with the NAT gateway.</p>
     pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.public_ip
     }
-    /// <p>[Public NAT gateway only] The association ID of the Elastic IP address that's associated with the NAT gateway.</p>
+    /// <p>\[Public NAT gateway only\] The association ID of the Elastic IP address that's associated with the NAT gateway.</p>
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Public NAT gateway only] The association ID of the Elastic IP address that's associated with the NAT gateway.</p>
+    /// <p>\[Public NAT gateway only\] The association ID of the Elastic IP address that's associated with the NAT gateway.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
-    /// <p>[Public NAT gateway only] The association ID of the Elastic IP address that's associated with the NAT gateway.</p>
+    /// <p>\[Public NAT gateway only\] The association ID of the Elastic IP address that's associated with the NAT gateway.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.association_id
     }

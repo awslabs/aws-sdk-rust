@@ -13,7 +13,7 @@ pub struct DescribePredictorOutput {
     pub auto_ml_algorithm_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of time-steps of the forecast. The forecast horizon is also called the prediction length.</p>
     pub forecast_horizon: ::std::option::Option<i32>,
-    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code></p>
+    /// <p>The forecast types used during predictor training. Default value is <code>\["0.1","0.5","0.9"\]</code></p>
     pub forecast_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether the predictor is set to perform AutoML.</p>
     pub perform_auto_ml: ::std::option::Option<bool>,
@@ -104,7 +104,7 @@ impl DescribePredictorOutput {
     pub fn forecast_horizon(&self) -> ::std::option::Option<i32> {
         self.forecast_horizon
     }
-    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code></p>
+    /// <p>The forecast types used during predictor training. Default value is <code>\["0.1","0.5","0.9"\]</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_types.is_none()`.
     pub fn forecast_types(&self) -> &[::std::string::String] {
@@ -336,19 +336,19 @@ impl DescribePredictorOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
     ///
-    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code></p>
+    /// <p>The forecast types used during predictor training. Default value is <code>\["0.1","0.5","0.9"\]</code></p>
     pub fn forecast_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.forecast_types.unwrap_or_default();
         v.push(input.into());
         self.forecast_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code></p>
+    /// <p>The forecast types used during predictor training. Default value is <code>\["0.1","0.5","0.9"\]</code></p>
     pub fn set_forecast_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.forecast_types = input;
         self
     }
-    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code></p>
+    /// <p>The forecast types used during predictor training. Default value is <code>\["0.1","0.5","0.9"\]</code></p>
     pub fn get_forecast_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.forecast_types
     }

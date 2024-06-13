@@ -70,7 +70,7 @@ pub struct ModifyDbClusterInput {
     pub cloudwatch_logs_export_configuration: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>To list all of the available engine versions for Amazon DocumentDB use the following command:</p>
-    /// <p><code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions\[\].EngineVersion"</code></p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether major version upgrades are allowed.</p>
     /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
@@ -174,7 +174,7 @@ impl ModifyDbClusterInput {
     }
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>To list all of the available engine versions for Amazon DocumentDB use the following command:</p>
-    /// <p><code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions\[\].EngineVersion"</code></p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
@@ -512,21 +512,21 @@ impl ModifyDbClusterInputBuilder {
     }
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>To list all of the available engine versions for Amazon DocumentDB use the following command:</p>
-    /// <p><code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions\[\].EngineVersion"</code></p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>To list all of the available engine versions for Amazon DocumentDB use the following command:</p>
-    /// <p><code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions\[\].EngineVersion"</code></p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>To list all of the available engine versions for Amazon DocumentDB use the following command:</p>
-    /// <p><code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions\[\].EngineVersion"</code></p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }

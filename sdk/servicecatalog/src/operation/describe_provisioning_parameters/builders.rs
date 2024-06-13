@@ -23,7 +23,7 @@ impl crate::operation::describe_provisioning_parameters::builders::DescribeProvi
 /// Fluent builder constructing a request to `DescribeProvisioningParameters`.
 ///
 /// <p>Gets information about the configuration required to provision the specified product using the specified provisioning artifact.</p>
-/// <p>If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key. The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to <code>ProvisionProduct</code>, do not include conflicted TagOption keys as tags, or this causes the error "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>". Tag the provisioned product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.</p>
+/// <p>If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key. The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to ProvisionProduct, do not include conflicted TagOption keys as tags, or this causes the error "Parameter validation failed: Missing required parameter in Tags\[N\]:Value". Tag the provisioned product with the value sc-tagoption-conflict-portfolioId-productId.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeProvisioningParametersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

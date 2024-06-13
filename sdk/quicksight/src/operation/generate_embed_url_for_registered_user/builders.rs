@@ -134,17 +134,17 @@ impl GenerateEmbedUrlForRegisteredUserFluentBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
-    /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+    /// <p>How many minutes the session is valid. The session lifetime must be in \[15-600\] minutes range.</p>
     pub fn session_lifetime_in_minutes(mut self, input: i64) -> Self {
         self.inner = self.inner.session_lifetime_in_minutes(input);
         self
     }
-    /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+    /// <p>How many minutes the session is valid. The session lifetime must be in \[15-600\] minutes range.</p>
     pub fn set_session_lifetime_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_session_lifetime_in_minutes(input);
         self
     }
-    /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+    /// <p>How many minutes the session is valid. The session lifetime must be in \[15-600\] minutes range.</p>
     pub fn get_session_lifetime_in_minutes(&self) -> &::std::option::Option<i64> {
         self.inner.get_session_lifetime_in_minutes()
     }

@@ -172,28 +172,28 @@ impl RespondToAuthChallengeFluentBuilder {
     /// SMS_MFA
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "[SMS_code]", "USERNAME": "[username]"}</code></p>
+    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[SMS_code\]", "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// PASSWORD_VERIFIER
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE": "[claim_signature]", "PASSWORD_CLAIM_SECRET_BLOCK": "[secret_block]", "TIMESTAMP": [timestamp], "USERNAME": "[username]"}</code></p>
+    /// <p><code>"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE": "\[claim_signature\]", "PASSWORD_CLAIM_SECRET_BLOCK": "\[secret_block\]", "TIMESTAMP": \[timestamp\], "USERNAME": "\[username\]"}</code></p>
     /// <p>Add <code>"DEVICE_KEY"</code> when you sign in with a remembered device.</p>
     /// </dd>
     /// <dt>
     /// CUSTOM_CHALLENGE
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "CUSTOM_CHALLENGE", "ChallengeResponses": {"USERNAME": "[username]", "ANSWER": "[challenge_answer]"}</code></p>
+    /// <p><code>"ChallengeName": "CUSTOM_CHALLENGE", "ChallengeResponses": {"USERNAME": "\[username\]", "ANSWER": "\[challenge_answer\]"}</code></p>
     /// <p>Add <code>"DEVICE_KEY"</code> when you sign in with a remembered device.</p>
     /// </dd>
     /// <dt>
     /// NEW_PASSWORD_REQUIRED
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "NEW_PASSWORD_REQUIRED", "ChallengeResponses": {"NEW_PASSWORD": "[new_password]", "USERNAME": "[username]"}</code></p>
-    /// <p>To set any required attributes that <code>InitiateAuth</code> returned in an <code>requiredAttributes</code> parameter, add <code>"userAttributes.[attribute_name]": "[attribute_value]"</code>. This parameter can also set values for writable attributes that aren't required by your user pool.</p><note>
+    /// <p><code>"ChallengeName": "NEW_PASSWORD_REQUIRED", "ChallengeResponses": {"NEW_PASSWORD": "\[new_password\]", "USERNAME": "\[username\]"}</code></p>
+    /// <p>To set any required attributes that <code>InitiateAuth</code> returned in an <code>requiredAttributes</code> parameter, add <code>"userAttributes.\[attribute_name\]": "\[attribute_value\]"</code>. This parameter can also set values for writable attributes that aren't required by your user pool.</p><note>
     /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note>
     /// </dd>
@@ -201,31 +201,31 @@ impl RespondToAuthChallengeFluentBuilder {
     /// SOFTWARE_TOKEN_MFA
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SOFTWARE_TOKEN_MFA", "ChallengeResponses": {"USERNAME": "[username]", "SOFTWARE_TOKEN_MFA_CODE": [authenticator_code]}</code></p>
+    /// <p><code>"ChallengeName": "SOFTWARE_TOKEN_MFA", "ChallengeResponses": {"USERNAME": "\[username\]", "SOFTWARE_TOKEN_MFA_CODE": \[authenticator_code\]}</code></p>
     /// </dd>
     /// <dt>
     /// DEVICE_SRP_AUTH
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "DEVICE_SRP_AUTH", "ChallengeResponses": {"USERNAME": "[username]", "DEVICE_KEY": "[device_key]", "SRP_A": "[srp_a]"}</code></p>
+    /// <p><code>"ChallengeName": "DEVICE_SRP_AUTH", "ChallengeResponses": {"USERNAME": "\[username\]", "DEVICE_KEY": "\[device_key\]", "SRP_A": "\[srp_a\]"}</code></p>
     /// </dd>
     /// <dt>
     /// DEVICE_PASSWORD_VERIFIER
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "DEVICE_PASSWORD_VERIFIER", "ChallengeResponses": {"DEVICE_KEY": "[device_key]", "PASSWORD_CLAIM_SIGNATURE": "[claim_signature]", "PASSWORD_CLAIM_SECRET_BLOCK": "[secret_block]", "TIMESTAMP": [timestamp], "USERNAME": "[username]"}</code></p>
+    /// <p><code>"ChallengeName": "DEVICE_PASSWORD_VERIFIER", "ChallengeResponses": {"DEVICE_KEY": "\[device_key\]", "PASSWORD_CLAIM_SIGNATURE": "\[claim_signature\]", "PASSWORD_CLAIM_SECRET_BLOCK": "\[secret_block\]", "TIMESTAMP": \[timestamp\], "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// MFA_SETUP
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "MFA_SETUP", "ChallengeResponses": {"USERNAME": "[username]"}, "SESSION": "[Session ID from VerifySoftwareToken]"</code></p>
+    /// <p><code>"ChallengeName": "MFA_SETUP", "ChallengeResponses": {"USERNAME": "\[username\]"}, "SESSION": "\[Session ID from VerifySoftwareToken\]"</code></p>
     /// </dd>
     /// <dt>
     /// SELECT_MFA_TYPE
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SELECT_MFA_TYPE", "ChallengeResponses": {"USERNAME": "[username]", "ANSWER": "[SMS_MFA or SOFTWARE_TOKEN_MFA]"}</code></p>
+    /// <p><code>"ChallengeName": "SELECT_MFA_TYPE", "ChallengeResponses": {"USERNAME": "\[username\]", "ANSWER": "\[SMS_MFA or SOFTWARE_TOKEN_MFA\]"}</code></p>
     /// </dd>
     /// </dl>
     /// <p>For more information about <code>SECRET_HASH</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working with user devices in your user pool</a>.</p>
@@ -245,28 +245,28 @@ impl RespondToAuthChallengeFluentBuilder {
     /// SMS_MFA
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "[SMS_code]", "USERNAME": "[username]"}</code></p>
+    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[SMS_code\]", "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// PASSWORD_VERIFIER
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE": "[claim_signature]", "PASSWORD_CLAIM_SECRET_BLOCK": "[secret_block]", "TIMESTAMP": [timestamp], "USERNAME": "[username]"}</code></p>
+    /// <p><code>"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE": "\[claim_signature\]", "PASSWORD_CLAIM_SECRET_BLOCK": "\[secret_block\]", "TIMESTAMP": \[timestamp\], "USERNAME": "\[username\]"}</code></p>
     /// <p>Add <code>"DEVICE_KEY"</code> when you sign in with a remembered device.</p>
     /// </dd>
     /// <dt>
     /// CUSTOM_CHALLENGE
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "CUSTOM_CHALLENGE", "ChallengeResponses": {"USERNAME": "[username]", "ANSWER": "[challenge_answer]"}</code></p>
+    /// <p><code>"ChallengeName": "CUSTOM_CHALLENGE", "ChallengeResponses": {"USERNAME": "\[username\]", "ANSWER": "\[challenge_answer\]"}</code></p>
     /// <p>Add <code>"DEVICE_KEY"</code> when you sign in with a remembered device.</p>
     /// </dd>
     /// <dt>
     /// NEW_PASSWORD_REQUIRED
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "NEW_PASSWORD_REQUIRED", "ChallengeResponses": {"NEW_PASSWORD": "[new_password]", "USERNAME": "[username]"}</code></p>
-    /// <p>To set any required attributes that <code>InitiateAuth</code> returned in an <code>requiredAttributes</code> parameter, add <code>"userAttributes.[attribute_name]": "[attribute_value]"</code>. This parameter can also set values for writable attributes that aren't required by your user pool.</p><note>
+    /// <p><code>"ChallengeName": "NEW_PASSWORD_REQUIRED", "ChallengeResponses": {"NEW_PASSWORD": "\[new_password\]", "USERNAME": "\[username\]"}</code></p>
+    /// <p>To set any required attributes that <code>InitiateAuth</code> returned in an <code>requiredAttributes</code> parameter, add <code>"userAttributes.\[attribute_name\]": "\[attribute_value\]"</code>. This parameter can also set values for writable attributes that aren't required by your user pool.</p><note>
     /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note>
     /// </dd>
@@ -274,31 +274,31 @@ impl RespondToAuthChallengeFluentBuilder {
     /// SOFTWARE_TOKEN_MFA
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SOFTWARE_TOKEN_MFA", "ChallengeResponses": {"USERNAME": "[username]", "SOFTWARE_TOKEN_MFA_CODE": [authenticator_code]}</code></p>
+    /// <p><code>"ChallengeName": "SOFTWARE_TOKEN_MFA", "ChallengeResponses": {"USERNAME": "\[username\]", "SOFTWARE_TOKEN_MFA_CODE": \[authenticator_code\]}</code></p>
     /// </dd>
     /// <dt>
     /// DEVICE_SRP_AUTH
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "DEVICE_SRP_AUTH", "ChallengeResponses": {"USERNAME": "[username]", "DEVICE_KEY": "[device_key]", "SRP_A": "[srp_a]"}</code></p>
+    /// <p><code>"ChallengeName": "DEVICE_SRP_AUTH", "ChallengeResponses": {"USERNAME": "\[username\]", "DEVICE_KEY": "\[device_key\]", "SRP_A": "\[srp_a\]"}</code></p>
     /// </dd>
     /// <dt>
     /// DEVICE_PASSWORD_VERIFIER
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "DEVICE_PASSWORD_VERIFIER", "ChallengeResponses": {"DEVICE_KEY": "[device_key]", "PASSWORD_CLAIM_SIGNATURE": "[claim_signature]", "PASSWORD_CLAIM_SECRET_BLOCK": "[secret_block]", "TIMESTAMP": [timestamp], "USERNAME": "[username]"}</code></p>
+    /// <p><code>"ChallengeName": "DEVICE_PASSWORD_VERIFIER", "ChallengeResponses": {"DEVICE_KEY": "\[device_key\]", "PASSWORD_CLAIM_SIGNATURE": "\[claim_signature\]", "PASSWORD_CLAIM_SECRET_BLOCK": "\[secret_block\]", "TIMESTAMP": \[timestamp\], "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// MFA_SETUP
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "MFA_SETUP", "ChallengeResponses": {"USERNAME": "[username]"}, "SESSION": "[Session ID from VerifySoftwareToken]"</code></p>
+    /// <p><code>"ChallengeName": "MFA_SETUP", "ChallengeResponses": {"USERNAME": "\[username\]"}, "SESSION": "\[Session ID from VerifySoftwareToken\]"</code></p>
     /// </dd>
     /// <dt>
     /// SELECT_MFA_TYPE
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SELECT_MFA_TYPE", "ChallengeResponses": {"USERNAME": "[username]", "ANSWER": "[SMS_MFA or SOFTWARE_TOKEN_MFA]"}</code></p>
+    /// <p><code>"ChallengeName": "SELECT_MFA_TYPE", "ChallengeResponses": {"USERNAME": "\[username\]", "ANSWER": "\[SMS_MFA or SOFTWARE_TOKEN_MFA\]"}</code></p>
     /// </dd>
     /// </dl>
     /// <p>For more information about <code>SECRET_HASH</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working with user devices in your user pool</a>.</p>
@@ -317,28 +317,28 @@ impl RespondToAuthChallengeFluentBuilder {
     /// SMS_MFA
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "[SMS_code]", "USERNAME": "[username]"}</code></p>
+    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[SMS_code\]", "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// PASSWORD_VERIFIER
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE": "[claim_signature]", "PASSWORD_CLAIM_SECRET_BLOCK": "[secret_block]", "TIMESTAMP": [timestamp], "USERNAME": "[username]"}</code></p>
+    /// <p><code>"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE": "\[claim_signature\]", "PASSWORD_CLAIM_SECRET_BLOCK": "\[secret_block\]", "TIMESTAMP": \[timestamp\], "USERNAME": "\[username\]"}</code></p>
     /// <p>Add <code>"DEVICE_KEY"</code> when you sign in with a remembered device.</p>
     /// </dd>
     /// <dt>
     /// CUSTOM_CHALLENGE
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "CUSTOM_CHALLENGE", "ChallengeResponses": {"USERNAME": "[username]", "ANSWER": "[challenge_answer]"}</code></p>
+    /// <p><code>"ChallengeName": "CUSTOM_CHALLENGE", "ChallengeResponses": {"USERNAME": "\[username\]", "ANSWER": "\[challenge_answer\]"}</code></p>
     /// <p>Add <code>"DEVICE_KEY"</code> when you sign in with a remembered device.</p>
     /// </dd>
     /// <dt>
     /// NEW_PASSWORD_REQUIRED
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "NEW_PASSWORD_REQUIRED", "ChallengeResponses": {"NEW_PASSWORD": "[new_password]", "USERNAME": "[username]"}</code></p>
-    /// <p>To set any required attributes that <code>InitiateAuth</code> returned in an <code>requiredAttributes</code> parameter, add <code>"userAttributes.[attribute_name]": "[attribute_value]"</code>. This parameter can also set values for writable attributes that aren't required by your user pool.</p><note>
+    /// <p><code>"ChallengeName": "NEW_PASSWORD_REQUIRED", "ChallengeResponses": {"NEW_PASSWORD": "\[new_password\]", "USERNAME": "\[username\]"}</code></p>
+    /// <p>To set any required attributes that <code>InitiateAuth</code> returned in an <code>requiredAttributes</code> parameter, add <code>"userAttributes.\[attribute_name\]": "\[attribute_value\]"</code>. This parameter can also set values for writable attributes that aren't required by your user pool.</p><note>
     /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note>
     /// </dd>
@@ -346,31 +346,31 @@ impl RespondToAuthChallengeFluentBuilder {
     /// SOFTWARE_TOKEN_MFA
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SOFTWARE_TOKEN_MFA", "ChallengeResponses": {"USERNAME": "[username]", "SOFTWARE_TOKEN_MFA_CODE": [authenticator_code]}</code></p>
+    /// <p><code>"ChallengeName": "SOFTWARE_TOKEN_MFA", "ChallengeResponses": {"USERNAME": "\[username\]", "SOFTWARE_TOKEN_MFA_CODE": \[authenticator_code\]}</code></p>
     /// </dd>
     /// <dt>
     /// DEVICE_SRP_AUTH
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "DEVICE_SRP_AUTH", "ChallengeResponses": {"USERNAME": "[username]", "DEVICE_KEY": "[device_key]", "SRP_A": "[srp_a]"}</code></p>
+    /// <p><code>"ChallengeName": "DEVICE_SRP_AUTH", "ChallengeResponses": {"USERNAME": "\[username\]", "DEVICE_KEY": "\[device_key\]", "SRP_A": "\[srp_a\]"}</code></p>
     /// </dd>
     /// <dt>
     /// DEVICE_PASSWORD_VERIFIER
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "DEVICE_PASSWORD_VERIFIER", "ChallengeResponses": {"DEVICE_KEY": "[device_key]", "PASSWORD_CLAIM_SIGNATURE": "[claim_signature]", "PASSWORD_CLAIM_SECRET_BLOCK": "[secret_block]", "TIMESTAMP": [timestamp], "USERNAME": "[username]"}</code></p>
+    /// <p><code>"ChallengeName": "DEVICE_PASSWORD_VERIFIER", "ChallengeResponses": {"DEVICE_KEY": "\[device_key\]", "PASSWORD_CLAIM_SIGNATURE": "\[claim_signature\]", "PASSWORD_CLAIM_SECRET_BLOCK": "\[secret_block\]", "TIMESTAMP": \[timestamp\], "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// MFA_SETUP
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "MFA_SETUP", "ChallengeResponses": {"USERNAME": "[username]"}, "SESSION": "[Session ID from VerifySoftwareToken]"</code></p>
+    /// <p><code>"ChallengeName": "MFA_SETUP", "ChallengeResponses": {"USERNAME": "\[username\]"}, "SESSION": "\[Session ID from VerifySoftwareToken\]"</code></p>
     /// </dd>
     /// <dt>
     /// SELECT_MFA_TYPE
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SELECT_MFA_TYPE", "ChallengeResponses": {"USERNAME": "[username]", "ANSWER": "[SMS_MFA or SOFTWARE_TOKEN_MFA]"}</code></p>
+    /// <p><code>"ChallengeName": "SELECT_MFA_TYPE", "ChallengeResponses": {"USERNAME": "\[username\]", "ANSWER": "\[SMS_MFA or SOFTWARE_TOKEN_MFA\]"}</code></p>
     /// </dd>
     /// </dl>
     /// <p>For more information about <code>SECRET_HASH</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working with user devices in your user pool</a>.</p>

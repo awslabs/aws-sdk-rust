@@ -160,19 +160,19 @@ impl CreateListenerFluentBuilder {
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_port()
     }
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>\[HTTPS and TLS listeners\] The security policy that defines which protocols and ciphers are supported.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn ssl_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ssl_policy(input.into());
         self
     }
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>\[HTTPS and TLS listeners\] The security policy that defines which protocols and ciphers are supported.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn set_ssl_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ssl_policy(input);
         self
     }
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>\[HTTPS and TLS listeners\] The security policy that defines which protocols and ciphers are supported.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn get_ssl_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ssl_policy()
@@ -182,17 +182,17 @@ impl CreateListenerFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
     ///
-    /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    /// <p>\[HTTPS and TLS listeners\] The default certificate for the listener. You must provide exactly one certificate. Set CertificateArn to the certificate ARN but do not set IsDefault.</p>
     pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
         self.inner = self.inner.certificates(input);
         self
     }
-    /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    /// <p>\[HTTPS and TLS listeners\] The default certificate for the listener. You must provide exactly one certificate. Set CertificateArn to the certificate ARN but do not set IsDefault.</p>
     pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
         self.inner = self.inner.set_certificates(input);
         self
     }
-    /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    /// <p>\[HTTPS and TLS listeners\] The default certificate for the listener. You must provide exactly one certificate. Set CertificateArn to the certificate ARN but do not set IsDefault.</p>
     pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
         self.inner.get_certificates()
     }
@@ -220,7 +220,7 @@ impl CreateListenerFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_alpn_policy`](Self::set_alpn_policy).
     ///
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
+    /// <p>\[TLS listeners\] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>HTTP1Only</code></p></li>
@@ -238,7 +238,7 @@ impl CreateListenerFluentBuilder {
         self.inner = self.inner.alpn_policy(input.into());
         self
     }
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
+    /// <p>\[TLS listeners\] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>HTTP1Only</code></p></li>
@@ -256,7 +256,7 @@ impl CreateListenerFluentBuilder {
         self.inner = self.inner.set_alpn_policy(input);
         self
     }
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
+    /// <p>\[TLS listeners\] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>HTTP1Only</code></p></li>

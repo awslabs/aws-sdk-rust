@@ -6,7 +6,7 @@ pub struct PutCompositeAlarmInput {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. The default is <code>TRUE</code>.</p>
     pub actions_enabled: ::std::option::Option<bool>,
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: ]</p>
+    /// <p>Valid Values: \]</p>
     /// <p><b>Amazon SNS actions:</b></p>
     /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
     /// <p><b>Lambda actions:</b></p>
@@ -54,7 +54,7 @@ pub struct PutCompositeAlarmInput {
     /// <p>The <code>AlarmRule</code> can specify as many as 100 "children" alarms. The <code>AlarmRule</code> expression can have as many as 500 elements. Elements are child alarms, TRUE or FALSE statements, and parentheses.</p>
     pub alarm_rule: ::std::option::Option<::std::string::String>,
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: ]</p>
+    /// <p>Valid Values: \]</p>
     /// <p><b>Amazon SNS actions:</b></p>
     /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
     /// <p><b>Lambda actions:</b></p>
@@ -68,7 +68,7 @@ pub struct PutCompositeAlarmInput {
     /// </ul>
     pub insufficient_data_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: ]</p>
+    /// <p>Valid Values: \]</p>
     /// <p><b>Amazon SNS actions:</b></p>
     /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
     /// <p><b>Lambda actions:</b></p>
@@ -102,7 +102,7 @@ impl PutCompositeAlarmInput {
         self.actions_enabled
     }
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: ]</p>
+    /// <p>Valid Values: \]</p>
     /// <p><b>Amazon SNS actions:</b></p>
     /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
     /// <p><b>Lambda actions:</b></p>
@@ -160,7 +160,7 @@ impl PutCompositeAlarmInput {
         self.alarm_rule.as_deref()
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: ]</p>
+    /// <p>Valid Values: \]</p>
     /// <p><b>Amazon SNS actions:</b></p>
     /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
     /// <p><b>Lambda actions:</b></p>
@@ -178,7 +178,7 @@ impl PutCompositeAlarmInput {
         self.insufficient_data_actions.as_deref().unwrap_or_default()
     }
     /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: ]</p>
+    /// <p>Valid Values: \]</p>
     /// <p><b>Amazon SNS actions:</b></p>
     /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
     /// <p><b>Lambda actions:</b></p>
@@ -263,7 +263,7 @@ impl PutCompositeAlarmInputBuilder {
     /// To override the contents of this collection use [`set_alarm_actions`](Self::set_alarm_actions).
     ///
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: ]</p>
+    /// <p>Valid Values: \]</p>
     /// <p><b>Amazon SNS actions:</b></p>
     /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
     /// <p><b>Lambda actions:</b></p>
@@ -284,7 +284,7 @@ impl PutCompositeAlarmInputBuilder {
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: ]</p>
+    /// <p>Valid Values: \]</p>
     /// <p><b>Amazon SNS actions:</b></p>
     /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
     /// <p><b>Lambda actions:</b></p>
@@ -303,7 +303,7 @@ impl PutCompositeAlarmInputBuilder {
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: ]</p>
+    /// <p>Valid Values: \]</p>
     /// <p><b>Amazon SNS actions:</b></p>
     /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
     /// <p><b>Lambda actions:</b></p>
@@ -447,7 +447,7 @@ impl PutCompositeAlarmInputBuilder {
     /// To override the contents of this collection use [`set_insufficient_data_actions`](Self::set_insufficient_data_actions).
     ///
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: ]</p>
+    /// <p>Valid Values: \]</p>
     /// <p><b>Amazon SNS actions:</b></p>
     /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
     /// <p><b>Lambda actions:</b></p>
@@ -466,7 +466,7 @@ impl PutCompositeAlarmInputBuilder {
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: ]</p>
+    /// <p>Valid Values: \]</p>
     /// <p><b>Amazon SNS actions:</b></p>
     /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
     /// <p><b>Lambda actions:</b></p>
@@ -483,7 +483,7 @@ impl PutCompositeAlarmInputBuilder {
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: ]</p>
+    /// <p>Valid Values: \]</p>
     /// <p><b>Amazon SNS actions:</b></p>
     /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
     /// <p><b>Lambda actions:</b></p>
@@ -503,7 +503,7 @@ impl PutCompositeAlarmInputBuilder {
     /// To override the contents of this collection use [`set_ok_actions`](Self::set_ok_actions).
     ///
     /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: ]</p>
+    /// <p>Valid Values: \]</p>
     /// <p><b>Amazon SNS actions:</b></p>
     /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
     /// <p><b>Lambda actions:</b></p>
@@ -522,7 +522,7 @@ impl PutCompositeAlarmInputBuilder {
         self
     }
     /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: ]</p>
+    /// <p>Valid Values: \]</p>
     /// <p><b>Amazon SNS actions:</b></p>
     /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
     /// <p><b>Lambda actions:</b></p>
@@ -539,7 +539,7 @@ impl PutCompositeAlarmInputBuilder {
         self
     }
     /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: ]</p>
+    /// <p>Valid Values: \]</p>
     /// <p><b>Amazon SNS actions:</b></p>
     /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
     /// <p><b>Lambda actions:</b></p>

@@ -5,7 +5,7 @@
 pub struct GenerateEmbedUrlForRegisteredUserInput {
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+    /// <p>How many minutes the session is valid. The session lifetime must be in \[15-600\] minutes range.</p>
     pub session_lifetime_in_minutes: ::std::option::Option<i64>,
     /// <p>The Amazon Resource Name for the registered user.</p>
     pub user_arn: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ impl GenerateEmbedUrlForRegisteredUserInput {
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+    /// <p>How many minutes the session is valid. The session lifetime must be in \[15-600\] minutes range.</p>
     pub fn session_lifetime_in_minutes(&self) -> ::std::option::Option<i64> {
         self.session_lifetime_in_minutes
     }
@@ -73,17 +73,17 @@ impl GenerateEmbedUrlForRegisteredUserInputBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+    /// <p>How many minutes the session is valid. The session lifetime must be in \[15-600\] minutes range.</p>
     pub fn session_lifetime_in_minutes(mut self, input: i64) -> Self {
         self.session_lifetime_in_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+    /// <p>How many minutes the session is valid. The session lifetime must be in \[15-600\] minutes range.</p>
     pub fn set_session_lifetime_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.session_lifetime_in_minutes = input;
         self
     }
-    /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+    /// <p>How many minutes the session is valid. The session lifetime must be in \[15-600\] minutes range.</p>
     pub fn get_session_lifetime_in_minutes(&self) -> &::std::option::Option<i64> {
         &self.session_lifetime_in_minutes
     }

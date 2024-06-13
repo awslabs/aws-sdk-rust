@@ -6,7 +6,7 @@
 pub struct Logger {
     /// The component that will be subject to logging.
     pub component: ::std::option::Option<crate::types::LoggerComponent>,
-    /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''\[a-zA-Z0-9:_-\]+''.
     pub id: ::std::option::Option<::std::string::String>,
     /// The level of the logs.
     pub level: ::std::option::Option<crate::types::LoggerLevel>,
@@ -20,7 +20,7 @@ impl Logger {
     pub fn component(&self) -> ::std::option::Option<&crate::types::LoggerComponent> {
         self.component.as_ref()
     }
-    /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''\[a-zA-Z0-9:_-\]+''.
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -70,18 +70,18 @@ impl LoggerBuilder {
     pub fn get_component(&self) -> &::std::option::Option<crate::types::LoggerComponent> {
         &self.component
     }
-    /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''\[a-zA-Z0-9:_-\]+''.
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''\[a-zA-Z0-9:_-\]+''.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''\[a-zA-Z0-9:_-\]+''.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

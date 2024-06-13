@@ -20,7 +20,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeoMatchStatement {
-    /// <p>An array of two-character country codes that you want to match against, for example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard.</p>
+    /// <p>An array of two-character country codes that you want to match against, for example, <code>\[ "US", "CN" \]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard.</p>
     /// <p>When you use a geo match statement just for the region and country labels that it adds to requests, you still have to supply a country code for the rule to evaluate. In this case, you configure the rule to only count matching requests, but it will still generate logging and count metrics for any matches. You can reduce the logging and metrics that the rule produces by specifying a country that's unlikely to be a source of traffic to your site.</p>
     pub country_codes: ::std::option::Option<::std::vec::Vec<crate::types::CountryCode>>,
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.</p><note>
@@ -29,7 +29,7 @@ pub struct GeoMatchStatement {
     pub forwarded_ip_config: ::std::option::Option<crate::types::ForwardedIpConfig>,
 }
 impl GeoMatchStatement {
-    /// <p>An array of two-character country codes that you want to match against, for example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard.</p>
+    /// <p>An array of two-character country codes that you want to match against, for example, <code>\[ "US", "CN" \]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard.</p>
     /// <p>When you use a geo match statement just for the region and country labels that it adds to requests, you still have to supply a country code for the rule to evaluate. In this case, you configure the rule to only count matching requests, but it will still generate logging and count metrics for any matches. You can reduce the logging and metrics that the rule produces by specifying a country that's unlikely to be a source of traffic to your site.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.country_codes.is_none()`.
@@ -62,7 +62,7 @@ impl GeoMatchStatementBuilder {
     ///
     /// To override the contents of this collection use [`set_country_codes`](Self::set_country_codes).
     ///
-    /// <p>An array of two-character country codes that you want to match against, for example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard.</p>
+    /// <p>An array of two-character country codes that you want to match against, for example, <code>\[ "US", "CN" \]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard.</p>
     /// <p>When you use a geo match statement just for the region and country labels that it adds to requests, you still have to supply a country code for the rule to evaluate. In this case, you configure the rule to only count matching requests, but it will still generate logging and count metrics for any matches. You can reduce the logging and metrics that the rule produces by specifying a country that's unlikely to be a source of traffic to your site.</p>
     pub fn country_codes(mut self, input: crate::types::CountryCode) -> Self {
         let mut v = self.country_codes.unwrap_or_default();
@@ -70,13 +70,13 @@ impl GeoMatchStatementBuilder {
         self.country_codes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of two-character country codes that you want to match against, for example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard.</p>
+    /// <p>An array of two-character country codes that you want to match against, for example, <code>\[ "US", "CN" \]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard.</p>
     /// <p>When you use a geo match statement just for the region and country labels that it adds to requests, you still have to supply a country code for the rule to evaluate. In this case, you configure the rule to only count matching requests, but it will still generate logging and count metrics for any matches. You can reduce the logging and metrics that the rule produces by specifying a country that's unlikely to be a source of traffic to your site.</p>
     pub fn set_country_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CountryCode>>) -> Self {
         self.country_codes = input;
         self
     }
-    /// <p>An array of two-character country codes that you want to match against, for example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard.</p>
+    /// <p>An array of two-character country codes that you want to match against, for example, <code>\[ "US", "CN" \]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard.</p>
     /// <p>When you use a geo match statement just for the region and country labels that it adds to requests, you still have to supply a country code for the rule to evaluate. In this case, you configure the rule to only count matching requests, but it will still generate logging and count metrics for any matches. You can reduce the logging and metrics that the rule produces by specifying a country that's unlikely to be a source of traffic to your site.</p>
     pub fn get_country_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CountryCode>> {
         &self.country_codes

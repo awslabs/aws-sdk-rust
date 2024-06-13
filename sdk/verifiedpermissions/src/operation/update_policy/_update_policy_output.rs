@@ -13,7 +13,7 @@ pub struct UpdatePolicyOutput {
     pub principal: ::std::option::Option<crate::types::EntityIdentifier>,
     /// <p>The resource specified in the policy's scope. This element isn't included in the response when <code>Resource</code> isn't present in the policy content.</p>
     pub resource: ::std::option::Option<crate::types::EntityIdentifier>,
-    /// <p>The action that a policy permits or forbids. For example, <code>{"actions": [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
+    /// <p>The action that a policy permits or forbids. For example, <code>{"actions": \[{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType": "PhotoFlash::Action"}\]}</code>.</p>
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::ActionIdentifier>>,
     /// <p>The date and time that the policy was originally created.</p>
     pub created_date: ::aws_smithy_types::DateTime,
@@ -46,7 +46,7 @@ impl UpdatePolicyOutput {
     pub fn resource(&self) -> ::std::option::Option<&crate::types::EntityIdentifier> {
         self.resource.as_ref()
     }
-    /// <p>The action that a policy permits or forbids. For example, <code>{"actions": [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
+    /// <p>The action that a policy permits or forbids. For example, <code>{"actions": \[{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType": "PhotoFlash::Action"}\]}</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
     pub fn actions(&self) -> &[crate::types::ActionIdentifier] {
@@ -170,19 +170,19 @@ impl UpdatePolicyOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
     ///
-    /// <p>The action that a policy permits or forbids. For example, <code>{"actions": [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
+    /// <p>The action that a policy permits or forbids. For example, <code>{"actions": \[{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType": "PhotoFlash::Action"}\]}</code>.</p>
     pub fn actions(mut self, input: crate::types::ActionIdentifier) -> Self {
         let mut v = self.actions.unwrap_or_default();
         v.push(input);
         self.actions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The action that a policy permits or forbids. For example, <code>{"actions": [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
+    /// <p>The action that a policy permits or forbids. For example, <code>{"actions": \[{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType": "PhotoFlash::Action"}\]}</code>.</p>
     pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionIdentifier>>) -> Self {
         self.actions = input;
         self
     }
-    /// <p>The action that a policy permits or forbids. For example, <code>{"actions": [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
+    /// <p>The action that a policy permits or forbids. For example, <code>{"actions": \[{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType": "PhotoFlash::Action"}\]}</code>.</p>
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionIdentifier>> {
         &self.actions
     }

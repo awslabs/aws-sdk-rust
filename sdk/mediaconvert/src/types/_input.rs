@@ -42,7 +42,7 @@ pub struct Input {
     pub program_number: ::std::option::Option<i32>,
     /// Set PSI control for transport stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
     pub psi_control: ::std::option::Option<crate::types::InputPsiControl>,
-    /// Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You don't need to specify the IMP that contains your input CPL, because the service automatically detects it.
+    /// Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the ASSETMAP.xml files. For example \["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"\]. You don't need to specify the IMP that contains your input CPL, because the service automatically detects it.
     pub supplemental_imps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// Use this Timecode source setting, located under the input settings, to specify how the service counts input video frames. This input frame count affects only the behavior of features that apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded to use the timecodes in your input video. Choose Start at zero to start the first frame at zero. Choose Specified start to start the first frame at the timecode that you specify in the setting Start timecode. If you don't specify a value for Timecode source, the service will use Embedded by default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
     pub timecode_source: ::std::option::Option<crate::types::InputTimecodeSource>,
@@ -136,7 +136,7 @@ impl Input {
     pub fn psi_control(&self) -> ::std::option::Option<&crate::types::InputPsiControl> {
         self.psi_control.as_ref()
     }
-    /// Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You don't need to specify the IMP that contains your input CPL, because the service automatically detects it.
+    /// Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the ASSETMAP.xml files. For example \["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"\]. You don't need to specify the IMP that contains your input CPL, because the service automatically detects it.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supplemental_imps.is_none()`.
     pub fn supplemental_imps(&self) -> &[::std::string::String] {
@@ -508,19 +508,19 @@ impl InputBuilder {
     ///
     /// To override the contents of this collection use [`set_supplemental_imps`](Self::set_supplemental_imps).
     ///
-    /// Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You don't need to specify the IMP that contains your input CPL, because the service automatically detects it.
+    /// Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the ASSETMAP.xml files. For example \["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"\]. You don't need to specify the IMP that contains your input CPL, because the service automatically detects it.
     pub fn supplemental_imps(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supplemental_imps.unwrap_or_default();
         v.push(input.into());
         self.supplemental_imps = ::std::option::Option::Some(v);
         self
     }
-    /// Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You don't need to specify the IMP that contains your input CPL, because the service automatically detects it.
+    /// Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the ASSETMAP.xml files. For example \["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"\]. You don't need to specify the IMP that contains your input CPL, because the service automatically detects it.
     pub fn set_supplemental_imps(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supplemental_imps = input;
         self
     }
-    /// Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You don't need to specify the IMP that contains your input CPL, because the service automatically detects it.
+    /// Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the ASSETMAP.xml files. For example \["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"\]. You don't need to specify the IMP that contains your input CPL, because the service automatically detects it.
     pub fn get_supplemental_imps(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supplemental_imps
     }

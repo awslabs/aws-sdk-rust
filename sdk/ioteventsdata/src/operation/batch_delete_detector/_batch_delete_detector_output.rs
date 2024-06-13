@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteDetectorOutput {
-    /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
+    /// <p>A list of errors associated with the request, or an empty array (<code>\[\]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
     pub batch_delete_detector_error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDetectorErrorEntry>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteDetectorOutput {
-    /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
+    /// <p>A list of errors associated with the request, or an empty array (<code>\[\]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.batch_delete_detector_error_entries.is_none()`.
     pub fn batch_delete_detector_error_entries(&self) -> &[crate::types::BatchDeleteDetectorErrorEntry] {
@@ -39,14 +39,14 @@ impl BatchDeleteDetectorOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_batch_delete_detector_error_entries`](Self::set_batch_delete_detector_error_entries).
     ///
-    /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
+    /// <p>A list of errors associated with the request, or an empty array (<code>\[\]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
     pub fn batch_delete_detector_error_entries(mut self, input: crate::types::BatchDeleteDetectorErrorEntry) -> Self {
         let mut v = self.batch_delete_detector_error_entries.unwrap_or_default();
         v.push(input);
         self.batch_delete_detector_error_entries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
+    /// <p>A list of errors associated with the request, or an empty array (<code>\[\]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
     pub fn set_batch_delete_detector_error_entries(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDetectorErrorEntry>>,
@@ -54,7 +54,7 @@ impl BatchDeleteDetectorOutputBuilder {
         self.batch_delete_detector_error_entries = input;
         self
     }
-    /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
+    /// <p>A list of errors associated with the request, or an empty array (<code>\[\]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
     pub fn get_batch_delete_detector_error_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDetectorErrorEntry>> {
         &self.batch_delete_detector_error_entries
     }

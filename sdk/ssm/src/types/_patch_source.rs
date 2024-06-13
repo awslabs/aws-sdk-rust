@@ -9,7 +9,7 @@ pub struct PatchSource {
     /// <p>The specific operating system versions a patch repository applies to, such as "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7". For lists of supported product values, see <code>PatchFilter</code>.</p>
     pub products: ::std::vec::Vec<::std::string::String>,
     /// <p>The value of the yum repo configuration. For example:</p>
-    /// <p><code>[main]</code></p>
+    /// <p><code>\[main\]</code></p>
     /// <p><code>name=MyCustomRepository</code></p>
     /// <p><code>baseurl=https://my-custom-repository</code></p>
     /// <p><code>enabled=1</code></p><note>
@@ -29,7 +29,7 @@ impl PatchSource {
         self.products.deref()
     }
     /// <p>The value of the yum repo configuration. For example:</p>
-    /// <p><code>[main]</code></p>
+    /// <p><code>\[main\]</code></p>
     /// <p><code>name=MyCustomRepository</code></p>
     /// <p><code>baseurl=https://my-custom-repository</code></p>
     /// <p><code>enabled=1</code></p><note>
@@ -101,7 +101,7 @@ impl PatchSourceBuilder {
         &self.products
     }
     /// <p>The value of the yum repo configuration. For example:</p>
-    /// <p><code>[main]</code></p>
+    /// <p><code>\[main\]</code></p>
     /// <p><code>name=MyCustomRepository</code></p>
     /// <p><code>baseurl=https://my-custom-repository</code></p>
     /// <p><code>enabled=1</code></p><note>
@@ -113,7 +113,7 @@ impl PatchSourceBuilder {
         self
     }
     /// <p>The value of the yum repo configuration. For example:</p>
-    /// <p><code>[main]</code></p>
+    /// <p><code>\[main\]</code></p>
     /// <p><code>name=MyCustomRepository</code></p>
     /// <p><code>baseurl=https://my-custom-repository</code></p>
     /// <p><code>enabled=1</code></p><note>
@@ -124,7 +124,7 @@ impl PatchSourceBuilder {
         self
     }
     /// <p>The value of the yum repo configuration. For example:</p>
-    /// <p><code>[main]</code></p>
+    /// <p><code>\[main\]</code></p>
     /// <p><code>name=MyCustomRepository</code></p>
     /// <p><code>baseurl=https://my-custom-repository</code></p>
     /// <p><code>enabled=1</code></p><note>

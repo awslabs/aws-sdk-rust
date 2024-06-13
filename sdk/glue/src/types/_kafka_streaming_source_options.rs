@@ -34,7 +34,7 @@ pub struct KafkaStreamingSourceOptions {
     pub max_offsets_per_trigger: ::std::option::Option<i64>,
     /// <p>The desired minimum number of partitions to read from Kafka. The default value is null, which means that the number of spark partitions is equal to the number of Kafka partitions.</p>
     pub min_partitions: ::std::option::Option<i32>,
-    /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value: String)]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
+    /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array\[Struct(key: String, value: String)\]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
     pub include_headers: ::std::option::Option<bool>,
     /// <p>When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the topic. The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
     pub add_record_timestamp: ::std::option::Option<::std::string::String>,
@@ -105,7 +105,7 @@ impl KafkaStreamingSourceOptions {
     pub fn min_partitions(&self) -> ::std::option::Option<i32> {
         self.min_partitions
     }
-    /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value: String)]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
+    /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array\[Struct(key: String, value: String)\]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
     pub fn include_headers(&self) -> ::std::option::Option<bool> {
         self.include_headers
     }
@@ -365,17 +365,17 @@ impl KafkaStreamingSourceOptionsBuilder {
     pub fn get_min_partitions(&self) -> &::std::option::Option<i32> {
         &self.min_partitions
     }
-    /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value: String)]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
+    /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array\[Struct(key: String, value: String)\]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
     pub fn include_headers(mut self, input: bool) -> Self {
         self.include_headers = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value: String)]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
+    /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array\[Struct(key: String, value: String)\]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
     pub fn set_include_headers(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_headers = input;
         self
     }
-    /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value: String)]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
+    /// <p>Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array\[Struct(key: String, value: String)\]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.</p>
     pub fn get_include_headers(&self) -> &::std::option::Option<bool> {
         &self.include_headers
     }

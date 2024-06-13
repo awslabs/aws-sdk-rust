@@ -16,12 +16,12 @@ pub struct TransformS3DataSource {
     /// <li>
     /// <p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p>
     /// <p>The manifest is an S3 object which is a JSON file with the following format:</p>
-    /// <p><code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p>
+    /// <p><code>\[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p>
     /// <p><code>"relative/path/to/custdata-1",</code></p>
     /// <p><code>"relative/path/custdata-2",</code></p>
     /// <p><code>...</code></p>
     /// <p><code>"relative/path/custdata-N"</code></p>
-    /// <p><code>]</code></p>
+    /// <p><code>\]</code></p>
     /// <p>The preceding JSON matches the following <code>S3Uris</code>:</p>
     /// <p><code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code></p>
     /// <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code></p>
@@ -46,12 +46,12 @@ impl TransformS3DataSource {
     /// <li>
     /// <p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p>
     /// <p>The manifest is an S3 object which is a JSON file with the following format:</p>
-    /// <p><code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p>
+    /// <p><code>\[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p>
     /// <p><code>"relative/path/to/custdata-1",</code></p>
     /// <p><code>"relative/path/custdata-2",</code></p>
     /// <p><code>...</code></p>
     /// <p><code>"relative/path/custdata-N"</code></p>
-    /// <p><code>]</code></p>
+    /// <p><code>\]</code></p>
     /// <p>The preceding JSON matches the following <code>S3Uris</code>:</p>
     /// <p><code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code></p>
     /// <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code></p>
@@ -109,12 +109,12 @@ impl TransformS3DataSourceBuilder {
     /// <li>
     /// <p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p>
     /// <p>The manifest is an S3 object which is a JSON file with the following format:</p>
-    /// <p><code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p>
+    /// <p><code>\[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p>
     /// <p><code>"relative/path/to/custdata-1",</code></p>
     /// <p><code>"relative/path/custdata-2",</code></p>
     /// <p><code>...</code></p>
     /// <p><code>"relative/path/custdata-N"</code></p>
-    /// <p><code>]</code></p>
+    /// <p><code>\]</code></p>
     /// <p>The preceding JSON matches the following <code>S3Uris</code>:</p>
     /// <p><code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code></p>
     /// <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code></p>
@@ -134,12 +134,12 @@ impl TransformS3DataSourceBuilder {
     /// <li>
     /// <p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p>
     /// <p>The manifest is an S3 object which is a JSON file with the following format:</p>
-    /// <p><code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p>
+    /// <p><code>\[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p>
     /// <p><code>"relative/path/to/custdata-1",</code></p>
     /// <p><code>"relative/path/custdata-2",</code></p>
     /// <p><code>...</code></p>
     /// <p><code>"relative/path/custdata-N"</code></p>
-    /// <p><code>]</code></p>
+    /// <p><code>\]</code></p>
     /// <p>The preceding JSON matches the following <code>S3Uris</code>:</p>
     /// <p><code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code></p>
     /// <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code></p>
@@ -158,12 +158,12 @@ impl TransformS3DataSourceBuilder {
     /// <li>
     /// <p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p>
     /// <p>The manifest is an S3 object which is a JSON file with the following format:</p>
-    /// <p><code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p>
+    /// <p><code>\[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p>
     /// <p><code>"relative/path/to/custdata-1",</code></p>
     /// <p><code>"relative/path/custdata-2",</code></p>
     /// <p><code>...</code></p>
     /// <p><code>"relative/path/custdata-N"</code></p>
-    /// <p><code>]</code></p>
+    /// <p><code>\]</code></p>
     /// <p>The preceding JSON matches the following <code>S3Uris</code>:</p>
     /// <p><code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code></p>
     /// <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code></p>

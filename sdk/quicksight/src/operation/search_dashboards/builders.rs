@@ -135,17 +135,17 @@ impl SearchDashboardsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code></p>
+    /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": \[ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } \]</code></p>
     pub fn filters(mut self, input: crate::types::DashboardSearchFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code></p>
+    /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": \[ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } \]</code></p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DashboardSearchFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code></p>
+    /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": \[ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } \]</code></p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardSearchFilter>> {
         self.inner.get_filters()
     }

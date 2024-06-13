@@ -6,11 +6,11 @@
 pub struct SubnetMapping {
     /// <p>The ID of the subnet.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
-    /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
+    /// <p>\[Network Load Balancers\] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
     pub allocation_id: ::std::option::Option<::std::string::String>,
-    /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
+    /// <p>\[Network Load Balancers\] The private IPv4 address for an internal load balancer.</p>
     pub private_ipv4_address: ::std::option::Option<::std::string::String>,
-    /// <p>[Network Load Balancers] The IPv6 address.</p>
+    /// <p>\[Network Load Balancers\] The IPv6 address.</p>
     pub ipv6_address: ::std::option::Option<::std::string::String>,
 }
 impl SubnetMapping {
@@ -18,15 +18,15 @@ impl SubnetMapping {
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
+    /// <p>\[Network Load Balancers\] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
     pub fn allocation_id(&self) -> ::std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
-    /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
+    /// <p>\[Network Load Balancers\] The private IPv4 address for an internal load balancer.</p>
     pub fn private_ipv4_address(&self) -> ::std::option::Option<&str> {
         self.private_ipv4_address.as_deref()
     }
-    /// <p>[Network Load Balancers] The IPv6 address.</p>
+    /// <p>\[Network Load Balancers\] The IPv6 address.</p>
     pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
         self.ipv6_address.as_deref()
     }
@@ -62,45 +62,45 @@ impl SubnetMappingBuilder {
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }
-    /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
+    /// <p>\[Network Load Balancers\] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
     pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
+    /// <p>\[Network Load Balancers\] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
     pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allocation_id = input;
         self
     }
-    /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
+    /// <p>\[Network Load Balancers\] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
     pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.allocation_id
     }
-    /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
+    /// <p>\[Network Load Balancers\] The private IPv4 address for an internal load balancer.</p>
     pub fn private_ipv4_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ipv4_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
+    /// <p>\[Network Load Balancers\] The private IPv4 address for an internal load balancer.</p>
     pub fn set_private_ipv4_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ipv4_address = input;
         self
     }
-    /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
+    /// <p>\[Network Load Balancers\] The private IPv4 address for an internal load balancer.</p>
     pub fn get_private_ipv4_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_ipv4_address
     }
-    /// <p>[Network Load Balancers] The IPv6 address.</p>
+    /// <p>\[Network Load Balancers\] The IPv6 address.</p>
     pub fn ipv6_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Network Load Balancers] The IPv6 address.</p>
+    /// <p>\[Network Load Balancers\] The IPv6 address.</p>
     pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_address = input;
         self
     }
-    /// <p>[Network Load Balancers] The IPv6 address.</p>
+    /// <p>\[Network Load Balancers\] The IPv6 address.</p>
     pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv6_address
     }

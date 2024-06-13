@@ -6,7 +6,7 @@
 pub struct RefreshCacheInput {
     /// <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
     pub file_share_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
+    /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is \["/"\]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If Recursive is set to true, the entire S3 bucket that the file share has access to is refreshed.</p>
     /// <p>Do not include <code>/</code> when specifying folder names. For example, you would specify <code>samplefolder</code> rather than <code>samplefolder/</code>.</p>
     pub folder_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that specifies whether to recursively refresh folders in the cache. The refresh includes folders that were in the cache the last time the gateway listed the folder's contents. If this value set to <code>true</code>, each folder that is listed in <code>FolderList</code> is recursively updated. Otherwise, subfolders listed in <code>FolderList</code> are not refreshed. Only objects that are in folders listed directly under <code>FolderList</code> are found and used for the update. The default is <code>true</code>.</p>
@@ -18,7 +18,7 @@ impl RefreshCacheInput {
     pub fn file_share_arn(&self) -> ::std::option::Option<&str> {
         self.file_share_arn.as_deref()
     }
-    /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
+    /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is \["/"\]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If Recursive is set to true, the entire S3 bucket that the file share has access to is refreshed.</p>
     /// <p>Do not include <code>/</code> when specifying folder names. For example, you would specify <code>samplefolder</code> rather than <code>samplefolder/</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folder_list.is_none()`.
@@ -66,7 +66,7 @@ impl RefreshCacheInputBuilder {
     ///
     /// To override the contents of this collection use [`set_folder_list`](Self::set_folder_list).
     ///
-    /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
+    /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is \["/"\]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If Recursive is set to true, the entire S3 bucket that the file share has access to is refreshed.</p>
     /// <p>Do not include <code>/</code> when specifying folder names. For example, you would specify <code>samplefolder</code> rather than <code>samplefolder/</code>.</p>
     pub fn folder_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.folder_list.unwrap_or_default();
@@ -74,13 +74,13 @@ impl RefreshCacheInputBuilder {
         self.folder_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
+    /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is \["/"\]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If Recursive is set to true, the entire S3 bucket that the file share has access to is refreshed.</p>
     /// <p>Do not include <code>/</code> when specifying folder names. For example, you would specify <code>samplefolder</code> rather than <code>samplefolder/</code>.</p>
     pub fn set_folder_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.folder_list = input;
         self
     }
-    /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
+    /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is \["/"\]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If Recursive is set to true, the entire S3 bucket that the file share has access to is refreshed.</p>
     /// <p>Do not include <code>/</code> when specifying folder names. For example, you would specify <code>samplefolder</code> rather than <code>samplefolder/</code>.</p>
     pub fn get_folder_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.folder_list

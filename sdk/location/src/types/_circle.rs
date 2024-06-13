@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Circle {
-    /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
+    /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>\[longitude, latitude\]</code>.</p>
     pub center: ::std::vec::Vec<f64>,
     /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
     pub radius: f64,
 }
 impl Circle {
-    /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
+    /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>\[longitude, latitude\]</code>.</p>
     pub fn center(&self) -> &[f64] {
         use std::ops::Deref;
         self.center.deref()
@@ -47,19 +47,19 @@ impl CircleBuilder {
     ///
     /// To override the contents of this collection use [`set_center`](Self::set_center).
     ///
-    /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
+    /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>\[longitude, latitude\]</code>.</p>
     pub fn center(mut self, input: f64) -> Self {
         let mut v = self.center.unwrap_or_default();
         v.push(input);
         self.center = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
+    /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>\[longitude, latitude\]</code>.</p>
     pub fn set_center(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.center = input;
         self
     }
-    /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
+    /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>\[longitude, latitude\]</code>.</p>
     pub fn get_center(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.center
     }

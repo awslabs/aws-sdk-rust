@@ -2,7 +2,7 @@
 
 /// <p>The configuration for an identity source that represents a connection to an Amazon Cognito user pool used as an identity provider for Verified Permissions.</p>
 /// <p>This data type is used as a field that is part of an <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ConfigurationDetail.html">ConfigurationDetail</a> structure that is part of the response to <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_GetIdentitySource.html">GetIdentitySource</a>.</p>
-/// <p>Example:<code>"CognitoUserPoolConfiguration":{"UserPoolArn":"arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5","ClientIds": ["a1b2c3d4e5f6g7h8i9j0kalbmc"],"groupConfiguration": {"groupEntityType": "MyCorp::Group"}}</code></p>
+/// <p>Example:<code>"CognitoUserPoolConfiguration":{"UserPoolArn":"arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5","ClientIds": \["a1b2c3d4e5f6g7h8i9j0kalbmc"\],"groupConfiguration": {"groupEntityType": "MyCorp::Group"}}</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CognitoUserPoolConfigurationDetail {
@@ -10,7 +10,7 @@ pub struct CognitoUserPoolConfigurationDetail {
     /// <p>Example: <code>"userPoolArn": "arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5"</code></p>
     pub user_pool_arn: ::std::string::String,
     /// <p>The unique application client IDs that are associated with the specified Amazon Cognito user pool.</p>
-    /// <p>Example: <code>"clientIds": ["&amp;ExampleCogClientId;"]</code></p>
+    /// <p>Example: <code>"clientIds": \["&amp;ExampleCogClientId;"\]</code></p>
     pub client_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The OpenID Connect (OIDC) <code>issuer</code> ID of the Amazon Cognito user pool that contains the identities to be authorized.</p>
     /// <p>Example: <code>"issuer": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_1a2b3c4d5"</code></p>
@@ -26,7 +26,7 @@ impl CognitoUserPoolConfigurationDetail {
         self.user_pool_arn.deref()
     }
     /// <p>The unique application client IDs that are associated with the specified Amazon Cognito user pool.</p>
-    /// <p>Example: <code>"clientIds": ["&amp;ExampleCogClientId;"]</code></p>
+    /// <p>Example: <code>"clientIds": \["&amp;ExampleCogClientId;"\]</code></p>
     pub fn client_ids(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.client_ids.deref()
@@ -82,7 +82,7 @@ impl CognitoUserPoolConfigurationDetailBuilder {
     /// To override the contents of this collection use [`set_client_ids`](Self::set_client_ids).
     ///
     /// <p>The unique application client IDs that are associated with the specified Amazon Cognito user pool.</p>
-    /// <p>Example: <code>"clientIds": ["&amp;ExampleCogClientId;"]</code></p>
+    /// <p>Example: <code>"clientIds": \["&amp;ExampleCogClientId;"\]</code></p>
     pub fn client_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.client_ids.unwrap_or_default();
         v.push(input.into());
@@ -90,13 +90,13 @@ impl CognitoUserPoolConfigurationDetailBuilder {
         self
     }
     /// <p>The unique application client IDs that are associated with the specified Amazon Cognito user pool.</p>
-    /// <p>Example: <code>"clientIds": ["&amp;ExampleCogClientId;"]</code></p>
+    /// <p>Example: <code>"clientIds": \["&amp;ExampleCogClientId;"\]</code></p>
     pub fn set_client_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.client_ids = input;
         self
     }
     /// <p>The unique application client IDs that are associated with the specified Amazon Cognito user pool.</p>
-    /// <p>Example: <code>"clientIds": ["&amp;ExampleCogClientId;"]</code></p>
+    /// <p>Example: <code>"clientIds": \["&amp;ExampleCogClientId;"\]</code></p>
     pub fn get_client_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.client_ids
     }

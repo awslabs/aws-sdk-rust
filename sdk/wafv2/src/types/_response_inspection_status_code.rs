@@ -7,21 +7,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseInspectionStatusCode {
     /// <p>Status codes in the response that indicate a successful login or account creation attempt. To be counted as a success, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
-    /// <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code></p>
+    /// <p>JSON example: <code>"SuccessCodes": \[ 200, 201 \]</code></p>
     pub success_codes: ::std::vec::Vec<i32>,
     /// <p>Status codes in the response that indicate a failed login or account creation attempt. To be counted as a failure, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
-    /// <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code></p>
+    /// <p>JSON example: <code>"FailureCodes": \[ 400, 404 \]</code></p>
     pub failure_codes: ::std::vec::Vec<i32>,
 }
 impl ResponseInspectionStatusCode {
     /// <p>Status codes in the response that indicate a successful login or account creation attempt. To be counted as a success, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
-    /// <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code></p>
+    /// <p>JSON example: <code>"SuccessCodes": \[ 200, 201 \]</code></p>
     pub fn success_codes(&self) -> &[i32] {
         use std::ops::Deref;
         self.success_codes.deref()
     }
     /// <p>Status codes in the response that indicate a failed login or account creation attempt. To be counted as a failure, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
-    /// <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code></p>
+    /// <p>JSON example: <code>"FailureCodes": \[ 400, 404 \]</code></p>
     pub fn failure_codes(&self) -> &[i32] {
         use std::ops::Deref;
         self.failure_codes.deref()
@@ -47,7 +47,7 @@ impl ResponseInspectionStatusCodeBuilder {
     /// To override the contents of this collection use [`set_success_codes`](Self::set_success_codes).
     ///
     /// <p>Status codes in the response that indicate a successful login or account creation attempt. To be counted as a success, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
-    /// <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code></p>
+    /// <p>JSON example: <code>"SuccessCodes": \[ 200, 201 \]</code></p>
     pub fn success_codes(mut self, input: i32) -> Self {
         let mut v = self.success_codes.unwrap_or_default();
         v.push(input);
@@ -55,13 +55,13 @@ impl ResponseInspectionStatusCodeBuilder {
         self
     }
     /// <p>Status codes in the response that indicate a successful login or account creation attempt. To be counted as a success, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
-    /// <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code></p>
+    /// <p>JSON example: <code>"SuccessCodes": \[ 200, 201 \]</code></p>
     pub fn set_success_codes(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.success_codes = input;
         self
     }
     /// <p>Status codes in the response that indicate a successful login or account creation attempt. To be counted as a success, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
-    /// <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code></p>
+    /// <p>JSON example: <code>"SuccessCodes": \[ 200, 201 \]</code></p>
     pub fn get_success_codes(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.success_codes
     }
@@ -70,7 +70,7 @@ impl ResponseInspectionStatusCodeBuilder {
     /// To override the contents of this collection use [`set_failure_codes`](Self::set_failure_codes).
     ///
     /// <p>Status codes in the response that indicate a failed login or account creation attempt. To be counted as a failure, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
-    /// <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code></p>
+    /// <p>JSON example: <code>"FailureCodes": \[ 400, 404 \]</code></p>
     pub fn failure_codes(mut self, input: i32) -> Self {
         let mut v = self.failure_codes.unwrap_or_default();
         v.push(input);
@@ -78,13 +78,13 @@ impl ResponseInspectionStatusCodeBuilder {
         self
     }
     /// <p>Status codes in the response that indicate a failed login or account creation attempt. To be counted as a failure, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
-    /// <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code></p>
+    /// <p>JSON example: <code>"FailureCodes": \[ 400, 404 \]</code></p>
     pub fn set_failure_codes(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.failure_codes = input;
         self
     }
     /// <p>Status codes in the response that indicate a failed login or account creation attempt. To be counted as a failure, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
-    /// <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code></p>
+    /// <p>JSON example: <code>"FailureCodes": \[ 400, 404 \]</code></p>
     pub fn get_failure_codes(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.failure_codes
     }

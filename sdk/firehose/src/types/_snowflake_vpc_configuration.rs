@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SnowflakeVpcConfiguration {
-    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
+    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.\[region\].vpce-svc-&lt;\[id\]&gt;. For more information, see Amazon PrivateLink &amp; Snowflake</p>
     pub private_link_vpce_id: ::std::string::String,
 }
 impl SnowflakeVpcConfiguration {
-    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
+    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.\[region\].vpce-svc-&lt;\[id\]&gt;. For more information, see Amazon PrivateLink &amp; Snowflake</p>
     pub fn private_link_vpce_id(&self) -> &str {
         use std::ops::Deref;
         self.private_link_vpce_id.deref()
@@ -35,18 +35,18 @@ pub struct SnowflakeVpcConfigurationBuilder {
     pub(crate) private_link_vpce_id: ::std::option::Option<::std::string::String>,
 }
 impl SnowflakeVpcConfigurationBuilder {
-    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
+    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.\[region\].vpce-svc-&lt;\[id\]&gt;. For more information, see Amazon PrivateLink &amp; Snowflake</p>
     /// This field is required.
     pub fn private_link_vpce_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_link_vpce_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
+    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.\[region\].vpce-svc-&lt;\[id\]&gt;. For more information, see Amazon PrivateLink &amp; Snowflake</p>
     pub fn set_private_link_vpce_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_link_vpce_id = input;
         self
     }
-    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
+    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.\[region\].vpce-svc-&lt;\[id\]&gt;. For more information, see Amazon PrivateLink &amp; Snowflake</p>
     pub fn get_private_link_vpce_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_link_vpce_id
     }

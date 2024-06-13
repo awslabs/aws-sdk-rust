@@ -207,9 +207,9 @@ impl CreateRuleGroupFluentBuilder {
     /// <li>
     /// <p>A match setting with <code>Any</code> specified has a value of 1.</p></li>
     /// <li>
-    /// <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.</p></li>
+    /// <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting \["UDP"\] and a source setting \["10.0.0.0/24"\] each have a value of 1. A protocol setting \["UDP","TCP"\] has a value of 2. A source setting \["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"\] has a value of 3.</p></li>
     /// </ul>
-    /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6.</p>
+    /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting \["UDP","TCP"\], source setting \["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"\], and a single specification or no specification for each of the other match settings has a capacity requirement of 6.</p>
     /// <p><b>Capacity for a stateful rule group</b></p>
     /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group.</p>
     pub fn capacity(mut self, input: i32) -> Self {
@@ -229,9 +229,9 @@ impl CreateRuleGroupFluentBuilder {
     /// <li>
     /// <p>A match setting with <code>Any</code> specified has a value of 1.</p></li>
     /// <li>
-    /// <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.</p></li>
+    /// <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting \["UDP"\] and a source setting \["10.0.0.0/24"\] each have a value of 1. A protocol setting \["UDP","TCP"\] has a value of 2. A source setting \["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"\] has a value of 3.</p></li>
     /// </ul>
-    /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6.</p>
+    /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting \["UDP","TCP"\], source setting \["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"\], and a single specification or no specification for each of the other match settings has a capacity requirement of 6.</p>
     /// <p><b>Capacity for a stateful rule group</b></p>
     /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group.</p>
     pub fn set_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -251,9 +251,9 @@ impl CreateRuleGroupFluentBuilder {
     /// <li>
     /// <p>A match setting with <code>Any</code> specified has a value of 1.</p></li>
     /// <li>
-    /// <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.</p></li>
+    /// <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting \["UDP"\] and a source setting \["10.0.0.0/24"\] each have a value of 1. A protocol setting \["UDP","TCP"\] has a value of 2. A source setting \["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"\] has a value of 3.</p></li>
     /// </ul>
-    /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6.</p>
+    /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting \["UDP","TCP"\], source setting \["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"\], and a single specification or no specification for each of the other match settings has a capacity requirement of 6.</p>
     /// <p><b>Capacity for a stateful rule group</b></p>
     /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group.</p>
     pub fn get_capacity(&self) -> &::std::option::Option<i32> {

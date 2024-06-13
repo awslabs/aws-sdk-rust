@@ -15,7 +15,7 @@ pub struct BatchPutMessageInput {
     /// <li>
     /// <p>Cannot contain hyphens (-).</p></li>
     /// <li>
-    /// <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".</p></li>
+    /// <p>In regular expression terms: "^\[A-Za-z_\](\[A-Za-z0-9\]*|\[A-Za-z0-9\]\[A-Za-z0-9_\]*)$".</p></li>
     /// <li>
     /// <p>Cannot be more than 255 characters.</p></li>
     /// <li>
@@ -39,7 +39,7 @@ impl BatchPutMessageInput {
     /// <li>
     /// <p>Cannot contain hyphens (-).</p></li>
     /// <li>
-    /// <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".</p></li>
+    /// <p>In regular expression terms: "^\[A-Za-z_\](\[A-Za-z0-9\]*|\[A-Za-z0-9\]\[A-Za-z0-9_\]*)$".</p></li>
     /// <li>
     /// <p>Cannot be more than 255 characters.</p></li>
     /// <li>
@@ -96,7 +96,7 @@ impl BatchPutMessageInputBuilder {
     /// <li>
     /// <p>Cannot contain hyphens (-).</p></li>
     /// <li>
-    /// <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".</p></li>
+    /// <p>In regular expression terms: "^\[A-Za-z_\](\[A-Za-z0-9\]*|\[A-Za-z0-9\]\[A-Za-z0-9_\]*)$".</p></li>
     /// <li>
     /// <p>Cannot be more than 255 characters.</p></li>
     /// <li>
@@ -119,7 +119,7 @@ impl BatchPutMessageInputBuilder {
     /// <li>
     /// <p>Cannot contain hyphens (-).</p></li>
     /// <li>
-    /// <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".</p></li>
+    /// <p>In regular expression terms: "^\[A-Za-z_\](\[A-Za-z0-9\]*|\[A-Za-z0-9\]\[A-Za-z0-9_\]*)$".</p></li>
     /// <li>
     /// <p>Cannot be more than 255 characters.</p></li>
     /// <li>
@@ -140,7 +140,7 @@ impl BatchPutMessageInputBuilder {
     /// <li>
     /// <p>Cannot contain hyphens (-).</p></li>
     /// <li>
-    /// <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".</p></li>
+    /// <p>In regular expression terms: "^\[A-Za-z_\](\[A-Za-z0-9\]*|\[A-Za-z0-9\]\[A-Za-z0-9_\]*)$".</p></li>
     /// <li>
     /// <p>Cannot be more than 255 characters.</p></li>
     /// <li>

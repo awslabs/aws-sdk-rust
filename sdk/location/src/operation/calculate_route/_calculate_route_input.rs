@@ -5,34 +5,34 @@
 pub struct CalculateRouteInput {
     /// <p>The name of the route calculator resource that you want to use to calculate the route.</p>
     pub calculator_name: ::std::option::Option<::std::string::String>,
-    /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+    /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>\[longitude, latitude\]</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>For example, <code>[-123.115, 49.285]</code></p></li>
+    /// <p>For example, <code>\[-123.115, 49.285\]</code></p></li>
     /// </ul><note>
     /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub departure_position: ::std::option::Option<::std::vec::Vec<f64>>,
-    /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+    /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>\[longitude, latitude\]</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>For example, <code>[-122.339, 47.615]</code></p></li>
+    /// <p>For example, <code>\[-122.339, 47.615\]</code></p></li>
     /// </ul><note>
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub destination_position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position.</p>
     /// <ul>
     /// <li>
-    /// <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code></p></li>
+    /// <p>For example, from the <code>DeparturePosition</code> <code>\[-123.115, 49.285\]</code>, the route follows the order that the waypoint positions are given <code>\[\[-122.757, 49.0021\],\[-122.349, 47.620\]\]</code></p></li>
     /// </ul><note>
     /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub waypoint_positions: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p><note>
     /// <p><code>Bicycle</code> and <code>Motorcycle</code> are only valid when using Grab as a data provider, and only within Southeast Asia.</p>
@@ -85,27 +85,27 @@ impl CalculateRouteInput {
     pub fn calculator_name(&self) -> ::std::option::Option<&str> {
         self.calculator_name.as_deref()
     }
-    /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+    /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>\[longitude, latitude\]</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>For example, <code>[-123.115, 49.285]</code></p></li>
+    /// <p>For example, <code>\[-123.115, 49.285\]</code></p></li>
     /// </ul><note>
     /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.departure_position.is_none()`.
     pub fn departure_position(&self) -> &[f64] {
         self.departure_position.as_deref().unwrap_or_default()
     }
-    /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+    /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>\[longitude, latitude\]</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>For example, <code>[-122.339, 47.615]</code></p></li>
+    /// <p>For example, <code>\[-122.339, 47.615\]</code></p></li>
     /// </ul><note>
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_position.is_none()`.
     pub fn destination_position(&self) -> &[f64] {
@@ -114,13 +114,13 @@ impl CalculateRouteInput {
     /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position.</p>
     /// <ul>
     /// <li>
-    /// <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code></p></li>
+    /// <p>For example, from the <code>DeparturePosition</code> <code>\[-123.115, 49.285\]</code>, the route follows the order that the waypoint positions are given <code>\[\[-122.757, 49.0021\],\[-122.349, 47.620\]\]</code></p></li>
     /// </ul><note>
     /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.waypoint_positions.is_none()`.
     pub fn waypoint_positions(&self) -> &[::std::vec::Vec<f64>] {
@@ -258,40 +258,40 @@ impl CalculateRouteInputBuilder {
     ///
     /// To override the contents of this collection use [`set_departure_position`](Self::set_departure_position).
     ///
-    /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+    /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>\[longitude, latitude\]</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>For example, <code>[-123.115, 49.285]</code></p></li>
+    /// <p>For example, <code>\[-123.115, 49.285\]</code></p></li>
     /// </ul><note>
     /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn departure_position(mut self, input: f64) -> Self {
         let mut v = self.departure_position.unwrap_or_default();
         v.push(input);
         self.departure_position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+    /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>\[longitude, latitude\]</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>For example, <code>[-123.115, 49.285]</code></p></li>
+    /// <p>For example, <code>\[-123.115, 49.285\]</code></p></li>
     /// </ul><note>
     /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn set_departure_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.departure_position = input;
         self
     }
-    /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+    /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>\[longitude, latitude\]</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>For example, <code>[-123.115, 49.285]</code></p></li>
+    /// <p>For example, <code>\[-123.115, 49.285\]</code></p></li>
     /// </ul><note>
     /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn get_departure_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.departure_position
     }
@@ -299,40 +299,40 @@ impl CalculateRouteInputBuilder {
     ///
     /// To override the contents of this collection use [`set_destination_position`](Self::set_destination_position).
     ///
-    /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+    /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>\[longitude, latitude\]</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>For example, <code>[-122.339, 47.615]</code></p></li>
+    /// <p>For example, <code>\[-122.339, 47.615\]</code></p></li>
     /// </ul><note>
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn destination_position(mut self, input: f64) -> Self {
         let mut v = self.destination_position.unwrap_or_default();
         v.push(input);
         self.destination_position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+    /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>\[longitude, latitude\]</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>For example, <code>[-122.339, 47.615]</code></p></li>
+    /// <p>For example, <code>\[-122.339, 47.615\]</code></p></li>
     /// </ul><note>
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn set_destination_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.destination_position = input;
         self
     }
-    /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
+    /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>\[longitude, latitude\]</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>For example, <code>[-122.339, 47.615]</code></p></li>
+    /// <p>For example, <code>\[-122.339, 47.615\]</code></p></li>
     /// </ul><note>
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn get_destination_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.destination_position
     }
@@ -343,13 +343,13 @@ impl CalculateRouteInputBuilder {
     /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position.</p>
     /// <ul>
     /// <li>
-    /// <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code></p></li>
+    /// <p>For example, from the <code>DeparturePosition</code> <code>\[-123.115, 49.285\]</code>, the route follows the order that the waypoint positions are given <code>\[\[-122.757, 49.0021\],\[-122.349, 47.620\]\]</code></p></li>
     /// </ul><note>
     /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn waypoint_positions(mut self, input: ::std::vec::Vec<f64>) -> Self {
         let mut v = self.waypoint_positions.unwrap_or_default();
         v.push(input);
@@ -359,13 +359,13 @@ impl CalculateRouteInputBuilder {
     /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position.</p>
     /// <ul>
     /// <li>
-    /// <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code></p></li>
+    /// <p>For example, from the <code>DeparturePosition</code> <code>\[-123.115, 49.285\]</code>, the route follows the order that the waypoint positions are given <code>\[\[-122.757, 49.0021\],\[-122.349, 47.620\]\]</code></p></li>
     /// </ul><note>
     /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn set_waypoint_positions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>) -> Self {
         self.waypoint_positions = input;
         self
@@ -373,13 +373,13 @@ impl CalculateRouteInputBuilder {
     /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position.</p>
     /// <ul>
     /// <li>
-    /// <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code></p></li>
+    /// <p>For example, from the <code>DeparturePosition</code> <code>\[-123.115, 49.285\]</code>, the route follows the order that the waypoint positions are given <code>\[\[-122.757, 49.0021\],\[-122.349, 47.620\]\]</code></p></li>
     /// </ul><note>
     /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
+    /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn get_waypoint_positions(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
         &self.waypoint_positions
     }

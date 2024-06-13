@@ -11,11 +11,11 @@ pub struct ContainerDefinitionInput {
     /// <p>The location of a container image that $short; will copy and deploy to a container fleet. Images in Amazon Elastic Container Registry private repositories are supported. The repository must be in the same Amazon Web Services account and Amazon Web Services Region where you're creating the container group definition. For limits on image size, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon GameLift endpoints and quotas</a>. You can use any of the following image URI formats:</p>
     /// <ul>
     /// <li>
-    /// <p>Image ID only: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]</code></p></li>
+    /// <p>Image ID only: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]</code></p></li>
     /// <li>
-    /// <p>Image ID and digest: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]@[digest]</code></p></li>
+    /// <p>Image ID and digest: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]@\[digest\]</code></p></li>
     /// <li>
-    /// <p>Image ID and tag: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]:[tag]</code></p></li>
+    /// <p>Image ID and tag: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]:\[tag\]</code></p></li>
     /// </ul>
     pub image_uri: ::std::option::Option<::std::string::String>,
     /// <p>The amount of memory to make available to the container. If you don't specify memory limits for this container, then it shares the container group's total memory allocation.</p>
@@ -63,11 +63,11 @@ impl ContainerDefinitionInput {
     /// <p>The location of a container image that $short; will copy and deploy to a container fleet. Images in Amazon Elastic Container Registry private repositories are supported. The repository must be in the same Amazon Web Services account and Amazon Web Services Region where you're creating the container group definition. For limits on image size, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon GameLift endpoints and quotas</a>. You can use any of the following image URI formats:</p>
     /// <ul>
     /// <li>
-    /// <p>Image ID only: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]</code></p></li>
+    /// <p>Image ID only: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]</code></p></li>
     /// <li>
-    /// <p>Image ID and digest: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]@[digest]</code></p></li>
+    /// <p>Image ID and digest: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]@\[digest\]</code></p></li>
     /// <li>
-    /// <p>Image ID and tag: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]:[tag]</code></p></li>
+    /// <p>Image ID and tag: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]:\[tag\]</code></p></li>
     /// </ul>
     pub fn image_uri(&self) -> ::std::option::Option<&str> {
         self.image_uri.as_deref()
@@ -180,11 +180,11 @@ impl ContainerDefinitionInputBuilder {
     /// <p>The location of a container image that $short; will copy and deploy to a container fleet. Images in Amazon Elastic Container Registry private repositories are supported. The repository must be in the same Amazon Web Services account and Amazon Web Services Region where you're creating the container group definition. For limits on image size, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon GameLift endpoints and quotas</a>. You can use any of the following image URI formats:</p>
     /// <ul>
     /// <li>
-    /// <p>Image ID only: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]</code></p></li>
+    /// <p>Image ID only: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]</code></p></li>
     /// <li>
-    /// <p>Image ID and digest: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]@[digest]</code></p></li>
+    /// <p>Image ID and digest: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]@\[digest\]</code></p></li>
     /// <li>
-    /// <p>Image ID and tag: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]:[tag]</code></p></li>
+    /// <p>Image ID and tag: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]:\[tag\]</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn image_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -194,11 +194,11 @@ impl ContainerDefinitionInputBuilder {
     /// <p>The location of a container image that $short; will copy and deploy to a container fleet. Images in Amazon Elastic Container Registry private repositories are supported. The repository must be in the same Amazon Web Services account and Amazon Web Services Region where you're creating the container group definition. For limits on image size, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon GameLift endpoints and quotas</a>. You can use any of the following image URI formats:</p>
     /// <ul>
     /// <li>
-    /// <p>Image ID only: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]</code></p></li>
+    /// <p>Image ID only: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]</code></p></li>
     /// <li>
-    /// <p>Image ID and digest: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]@[digest]</code></p></li>
+    /// <p>Image ID and digest: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]@\[digest\]</code></p></li>
     /// <li>
-    /// <p>Image ID and tag: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]:[tag]</code></p></li>
+    /// <p>Image ID and tag: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]:\[tag\]</code></p></li>
     /// </ul>
     pub fn set_image_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_uri = input;
@@ -207,11 +207,11 @@ impl ContainerDefinitionInputBuilder {
     /// <p>The location of a container image that $short; will copy and deploy to a container fleet. Images in Amazon Elastic Container Registry private repositories are supported. The repository must be in the same Amazon Web Services account and Amazon Web Services Region where you're creating the container group definition. For limits on image size, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon GameLift endpoints and quotas</a>. You can use any of the following image URI formats:</p>
     /// <ul>
     /// <li>
-    /// <p>Image ID only: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]</code></p></li>
+    /// <p>Image ID only: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]</code></p></li>
     /// <li>
-    /// <p>Image ID and digest: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]@[digest]</code></p></li>
+    /// <p>Image ID and digest: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]@\[digest\]</code></p></li>
     /// <li>
-    /// <p>Image ID and tag: <code>[AWS account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]:[tag]</code></p></li>
+    /// <p>Image ID and tag: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]:\[tag\]</code></p></li>
     /// </ul>
     pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_uri

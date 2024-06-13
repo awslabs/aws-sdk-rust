@@ -33,9 +33,9 @@ impl crate::operation::put_scaling_policy::builders::PutScalingPolicyInputBuilde
 /// <p>A rule-based policy tracks specified fleet metric, sets a threshold value, and specifies the type of action to initiate when triggered. With a rule-based policy, you can select from several available fleet metrics. Each policy specifies whether to scale up or scale down (and by how much), so you need one policy for each type of action.</p>
 /// <p>For example, a policy may make the following statement: "If the percentage of idle instances is greater than 20% for more than 15 minutes, then reduce the fleet capacity by 10%."</p>
 /// <p>A policy's rule statement has the following structure:</p>
-/// <p>If <code>[MetricName]</code> is <code>[ComparisonOperator]</code> <code>[Threshold]</code> for <code>[EvaluationPeriods]</code> minutes, then <code>[ScalingAdjustmentType]</code> to/by <code>[ScalingAdjustment]</code>.</p>
+/// <p>If <code>\[MetricName\]</code> is <code>\[ComparisonOperator\]</code> <code>\[Threshold\]</code> for <code>\[EvaluationPeriods\]</code> minutes, then <code>\[ScalingAdjustmentType\]</code> to/by <code>\[ScalingAdjustment\]</code>.</p>
 /// <p>To implement the example, the rule statement would look like this:</p>
-/// <p>If <code>[PercentIdleInstances]</code> is <code>[GreaterThanThreshold]</code> <code>[20]</code> for <code>[15]</code> minutes, then <code>[PercentChangeInCapacity]</code> to/by <code>[10]</code>.</p>
+/// <p>If <code>\[PercentIdleInstances\]</code> is <code>\[GreaterThanThreshold\]</code> <code>\[20\]</code> for <code>\[15\]</code> minutes, then <code>\[PercentChangeInCapacity\]</code> to/by <code>\[10\]</code>.</p>
 /// <p>To create or update a scaling policy, specify a unique combination of name and fleet ID, and set the policy type to "RuleBased". Specify the parameter values for a policy rule statement. On a successful request, the policy name is returned. Scaling policies are automatically in force as soon as they're successfully created. If the fleet's auto-scaling actions are temporarily suspended, the new policy will be in force once the fleet actions are restarted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutScalingPolicyFluentBuilder {

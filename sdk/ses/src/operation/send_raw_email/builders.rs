@@ -35,7 +35,7 @@ impl crate::operation::send_raw_email::builders::SendRawEmailInputBuilder {
 /// <li>
 /// <p>Each message has to include at least one recipient address. A recipient address includes any address on the To:, CC:, or BCC: lines.</p></li>
 /// <li>
-/// <p>If you send a single message to more than one recipient address, and one of the recipient addresses isn't in a valid format (that is, it's not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), Amazon SES rejects the entire message, even if the other addresses are valid.</p></li>
+/// <p>If you send a single message to more than one recipient address, and one of the recipient addresses isn't in a valid format (that is, it's not in the format <i>UserName@\[SubDomain.\]Domain.TopLevelDomain</i>), Amazon SES rejects the entire message, even if the other addresses are valid.</p></li>
 /// <li>
 /// <p>Each message can include up to 50 recipient addresses across the To:, CC:, or BCC: lines. If you need to send a single message to more than 50 recipients, you have to split the list of recipient addresses into groups of less than 50 recipients, and send separate messages to each group.</p></li>
 /// <li>

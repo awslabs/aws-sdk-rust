@@ -34,7 +34,7 @@ impl crate::operation::send_bulk_templated_email::builders::SendBulkTemplatedEma
 /// <li>
 /// <p>The maximum message size is 10 MB.</p></li>
 /// <li>
-/// <p>Each <code>Destination</code> parameter must include at least one recipient email address. The recipient address can be a To: address, a CC: address, or a BCC: address. If a recipient email address is invalid (that is, it is not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), the entire message is rejected, even if the message contains other recipients that are valid.</p></li>
+/// <p>Each <code>Destination</code> parameter must include at least one recipient email address. The recipient address can be a To: address, a CC: address, or a BCC: address. If a recipient email address is invalid (that is, it is not in the format <i>UserName@\[SubDomain.\]Domain.TopLevelDomain</i>), the entire message is rejected, even if the message contains other recipients that are valid.</p></li>
 /// <li>
 /// <p>The message may not include more than 50 recipients, across the To:, CC: and BCC: fields. If you need to send an email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call the <code>SendBulkTemplatedEmail</code> operation several times to send the message to each group.</p></li>
 /// <li>

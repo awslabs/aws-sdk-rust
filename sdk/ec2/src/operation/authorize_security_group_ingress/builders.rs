@@ -164,17 +164,17 @@ impl AuthorizeSecurityGroupIngressFluentBuilder {
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_id()
     }
-    /// <p>[Default VPC] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
+    /// <p>\[Default VPC\] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
         self
     }
-    /// <p>[Default VPC] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
+    /// <p>\[Default VPC\] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_name(input);
         self
     }
-    /// <p>[Default VPC] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
+    /// <p>\[Default VPC\] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_name()
     }
@@ -220,19 +220,19 @@ impl AuthorizeSecurityGroupIngressFluentBuilder {
     pub fn get_ip_protocol(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ip_protocol()
     }
-    /// <p>[Default VPC] The name of the source security group.</p>
+    /// <p>\[Default VPC\] The name of the source security group.</p>
     /// <p>The rule grants full ICMP, UDP, and TCP access. To create a rule with a specific protocol and port range, specify a set of IP permissions instead.</p>
     pub fn source_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_security_group_name(input.into());
         self
     }
-    /// <p>[Default VPC] The name of the source security group.</p>
+    /// <p>\[Default VPC\] The name of the source security group.</p>
     /// <p>The rule grants full ICMP, UDP, and TCP access. To create a rule with a specific protocol and port range, specify a set of IP permissions instead.</p>
     pub fn set_source_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_security_group_name(input);
         self
     }
-    /// <p>[Default VPC] The name of the source security group.</p>
+    /// <p>\[Default VPC\] The name of the source security group.</p>
     /// <p>The rule grants full ICMP, UDP, and TCP access. To create a rule with a specific protocol and port range, specify a set of IP permissions instead.</p>
     pub fn get_source_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_security_group_name()

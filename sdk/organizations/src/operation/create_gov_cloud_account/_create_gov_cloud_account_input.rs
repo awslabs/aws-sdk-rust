@@ -14,11 +14,11 @@ pub struct CreateGovCloudAccountInput {
     /// <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
     /// <li>
     /// <p>The local name can't contain any of the following characters:</p>
-    /// <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p></li>
+    /// <p>whitespace, " ' ( ) &lt; &gt; \[ \] : ; , \ | % &amp;</p></li>
     /// <li>
     /// <p>The local name can't begin with a dot (.)</p></li>
     /// <li>
-    /// <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p></li>
+    /// <p>The domain name can consist of only the characters \[a-z\],\[A-Z\],\[0-9\], hyphen (-), or dot (.)</p></li>
     /// <li>
     /// <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p></li>
     /// <li>
@@ -27,7 +27,7 @@ pub struct CreateGovCloudAccountInput {
     /// <p>You can't access the root user of the account or remove an account that was created with an invalid email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email address for the Amazon Web Services GovCloud (US) account originates from the commercial Region, not from the Amazon Web Services GovCloud (US) Region.</p>
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the member account.</p>
-    /// <p>The account name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
+    /// <p>The account name can consist of only the characters \[a-z\],\[A-Z\],\[0-9\], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
     pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>(Optional)</p>
     /// <p>The name of an IAM role that Organizations automatically preconfigures in the new member accounts in both the Amazon Web Services GovCloud (US) Region and in the commercial Region. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
@@ -62,11 +62,11 @@ impl CreateGovCloudAccountInput {
     /// <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
     /// <li>
     /// <p>The local name can't contain any of the following characters:</p>
-    /// <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p></li>
+    /// <p>whitespace, " ' ( ) &lt; &gt; \[ \] : ; , \ | % &amp;</p></li>
     /// <li>
     /// <p>The local name can't begin with a dot (.)</p></li>
     /// <li>
-    /// <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p></li>
+    /// <p>The domain name can consist of only the characters \[a-z\],\[A-Z\],\[0-9\], hyphen (-), or dot (.)</p></li>
     /// <li>
     /// <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p></li>
     /// <li>
@@ -77,7 +77,7 @@ impl CreateGovCloudAccountInput {
         self.email.as_deref()
     }
     /// <p>The friendly name of the member account.</p>
-    /// <p>The account name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
+    /// <p>The account name can consist of only the characters \[a-z\],\[A-Z\],\[0-9\], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
     pub fn account_name(&self) -> ::std::option::Option<&str> {
         self.account_name.as_deref()
     }
@@ -150,11 +150,11 @@ impl CreateGovCloudAccountInputBuilder {
     /// <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
     /// <li>
     /// <p>The local name can't contain any of the following characters:</p>
-    /// <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p></li>
+    /// <p>whitespace, " ' ( ) &lt; &gt; \[ \] : ; , \ | % &amp;</p></li>
     /// <li>
     /// <p>The local name can't begin with a dot (.)</p></li>
     /// <li>
-    /// <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p></li>
+    /// <p>The domain name can consist of only the characters \[a-z\],\[A-Z\],\[0-9\], hyphen (-), or dot (.)</p></li>
     /// <li>
     /// <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p></li>
     /// <li>
@@ -177,11 +177,11 @@ impl CreateGovCloudAccountInputBuilder {
     /// <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
     /// <li>
     /// <p>The local name can't contain any of the following characters:</p>
-    /// <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p></li>
+    /// <p>whitespace, " ' ( ) &lt; &gt; \[ \] : ; , \ | % &amp;</p></li>
     /// <li>
     /// <p>The local name can't begin with a dot (.)</p></li>
     /// <li>
-    /// <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p></li>
+    /// <p>The domain name can consist of only the characters \[a-z\],\[A-Z\],\[0-9\], hyphen (-), or dot (.)</p></li>
     /// <li>
     /// <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p></li>
     /// <li>
@@ -203,11 +203,11 @@ impl CreateGovCloudAccountInputBuilder {
     /// <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
     /// <li>
     /// <p>The local name can't contain any of the following characters:</p>
-    /// <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p></li>
+    /// <p>whitespace, " ' ( ) &lt; &gt; \[ \] : ; , \ | % &amp;</p></li>
     /// <li>
     /// <p>The local name can't begin with a dot (.)</p></li>
     /// <li>
-    /// <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p></li>
+    /// <p>The domain name can consist of only the characters \[a-z\],\[A-Z\],\[0-9\], hyphen (-), or dot (.)</p></li>
     /// <li>
     /// <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p></li>
     /// <li>
@@ -218,20 +218,20 @@ impl CreateGovCloudAccountInputBuilder {
         &self.email
     }
     /// <p>The friendly name of the member account.</p>
-    /// <p>The account name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
+    /// <p>The account name can consist of only the characters \[a-z\],\[A-Z\],\[0-9\], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
     /// This field is required.
     pub fn account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The friendly name of the member account.</p>
-    /// <p>The account name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
+    /// <p>The account name can consist of only the characters \[a-z\],\[A-Z\],\[0-9\], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
     pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_name = input;
         self
     }
     /// <p>The friendly name of the member account.</p>
-    /// <p>The account name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
+    /// <p>The account name can consist of only the characters \[a-z\],\[A-Z\],\[0-9\], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
     pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_name
     }

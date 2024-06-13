@@ -9,21 +9,21 @@ pub struct ModifyTargetGroupInput {
     pub health_check_protocol: ::std::option::Option<crate::types::ProtocolEnum>,
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
     pub health_check_port: ::std::option::Option<::std::string::String>,
-    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
-    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
-    /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The destination for health checks on the targets.</p>
+    /// <p>\[HTTP1 or HTTP2 protocol version\] The ping path. The default is /.</p>
+    /// <p>\[GRPC protocol version\] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     pub health_check_path: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether health checks are enabled.</p>
     pub health_check_enabled: ::std::option::Option<bool>,
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
     pub health_check_interval_seconds: ::std::option::Option<i32>,
-    /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The amount of time, in seconds, during which no response means a failed health check.</p>
     pub health_check_timeout_seconds: ::std::option::Option<i32>,
     /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
     pub healthy_threshold_count: ::std::option::Option<i32>,
     /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
     pub unhealthy_threshold_count: ::std::option::Option<i32>,
-    /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
     pub matcher: ::std::option::Option<crate::types::Matcher>,
 }
 impl ModifyTargetGroupInput {
@@ -39,9 +39,9 @@ impl ModifyTargetGroupInput {
     pub fn health_check_port(&self) -> ::std::option::Option<&str> {
         self.health_check_port.as_deref()
     }
-    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
-    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
-    /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The destination for health checks on the targets.</p>
+    /// <p>\[HTTP1 or HTTP2 protocol version\] The ping path. The default is /.</p>
+    /// <p>\[GRPC protocol version\] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     pub fn health_check_path(&self) -> ::std::option::Option<&str> {
         self.health_check_path.as_deref()
     }
@@ -53,7 +53,7 @@ impl ModifyTargetGroupInput {
     pub fn health_check_interval_seconds(&self) -> ::std::option::Option<i32> {
         self.health_check_interval_seconds
     }
-    /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The amount of time, in seconds, during which no response means a failed health check.</p>
     pub fn health_check_timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.health_check_timeout_seconds
     }
@@ -65,7 +65,7 @@ impl ModifyTargetGroupInput {
     pub fn unhealthy_threshold_count(&self) -> ::std::option::Option<i32> {
         self.unhealthy_threshold_count
     }
-    /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
     pub fn matcher(&self) -> ::std::option::Option<&crate::types::Matcher> {
         self.matcher.as_ref()
     }
@@ -136,23 +136,23 @@ impl ModifyTargetGroupInputBuilder {
     pub fn get_health_check_port(&self) -> &::std::option::Option<::std::string::String> {
         &self.health_check_port
     }
-    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
-    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
-    /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The destination for health checks on the targets.</p>
+    /// <p>\[HTTP1 or HTTP2 protocol version\] The ping path. The default is /.</p>
+    /// <p>\[GRPC protocol version\] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     pub fn health_check_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
-    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
-    /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The destination for health checks on the targets.</p>
+    /// <p>\[HTTP1 or HTTP2 protocol version\] The ping path. The default is /.</p>
+    /// <p>\[GRPC protocol version\] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     pub fn set_health_check_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_check_path = input;
         self
     }
-    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
-    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
-    /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The destination for health checks on the targets.</p>
+    /// <p>\[HTTP1 or HTTP2 protocol version\] The ping path. The default is /.</p>
+    /// <p>\[GRPC protocol version\] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     pub fn get_health_check_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.health_check_path
     }
@@ -184,17 +184,17 @@ impl ModifyTargetGroupInputBuilder {
     pub fn get_health_check_interval_seconds(&self) -> &::std::option::Option<i32> {
         &self.health_check_interval_seconds
     }
-    /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The amount of time, in seconds, during which no response means a failed health check.</p>
     pub fn health_check_timeout_seconds(mut self, input: i32) -> Self {
         self.health_check_timeout_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The amount of time, in seconds, during which no response means a failed health check.</p>
     pub fn set_health_check_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.health_check_timeout_seconds = input;
         self
     }
-    /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The amount of time, in seconds, during which no response means a failed health check.</p>
     pub fn get_health_check_timeout_seconds(&self) -> &::std::option::Option<i32> {
         &self.health_check_timeout_seconds
     }
@@ -226,17 +226,17 @@ impl ModifyTargetGroupInputBuilder {
     pub fn get_unhealthy_threshold_count(&self) -> &::std::option::Option<i32> {
         &self.unhealthy_threshold_count
     }
-    /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
     pub fn matcher(mut self, input: crate::types::Matcher) -> Self {
         self.matcher = ::std::option::Option::Some(input);
         self
     }
-    /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
     pub fn set_matcher(mut self, input: ::std::option::Option<crate::types::Matcher>) -> Self {
         self.matcher = input;
         self
     }
-    /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
     pub fn get_matcher(&self) -> &::std::option::Option<crate::types::Matcher> {
         &self.matcher
     }

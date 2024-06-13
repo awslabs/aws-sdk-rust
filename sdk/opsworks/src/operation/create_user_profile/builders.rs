@@ -123,17 +123,17 @@ impl CreateUserProfileFluentBuilder {
     pub fn get_iam_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iam_user_arn()
     }
-    /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, OpsWorks Stacks removes them. For example, <code>my.name</code> is changed to <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks generates one from the IAM user name.</p>
+    /// <p>The user's SSH user name. The allowable characters are \[a-z\], \[A-Z\], \[0-9\], '-', and '_'. If the specified name includes other punctuation marks, OpsWorks Stacks removes them. For example, my.name is changed to myname. If you do not specify an SSH user name, OpsWorks Stacks generates one from the IAM user name.</p>
     pub fn ssh_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ssh_username(input.into());
         self
     }
-    /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, OpsWorks Stacks removes them. For example, <code>my.name</code> is changed to <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks generates one from the IAM user name.</p>
+    /// <p>The user's SSH user name. The allowable characters are \[a-z\], \[A-Z\], \[0-9\], '-', and '_'. If the specified name includes other punctuation marks, OpsWorks Stacks removes them. For example, my.name is changed to myname. If you do not specify an SSH user name, OpsWorks Stacks generates one from the IAM user name.</p>
     pub fn set_ssh_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ssh_username(input);
         self
     }
-    /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, OpsWorks Stacks removes them. For example, <code>my.name</code> is changed to <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks generates one from the IAM user name.</p>
+    /// <p>The user's SSH user name. The allowable characters are \[a-z\], \[A-Z\], \[0-9\], '-', and '_'. If the specified name includes other punctuation marks, OpsWorks Stacks removes them. For example, my.name is changed to myname. If you do not specify an SSH user name, OpsWorks Stacks generates one from the IAM user name.</p>
     pub fn get_ssh_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ssh_username()
     }

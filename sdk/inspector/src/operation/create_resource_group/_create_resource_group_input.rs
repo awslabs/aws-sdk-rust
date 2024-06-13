@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResourceGroupInput {
-    /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
-    /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
+    /// <p>A collection of keys and an array of possible values, '\[{"key":"key1","values":\["Value1","Value2"\]},{"key":"Key2","values":\["Value3"\]}\]'.</p>
+    /// <p>For example,'\[{"key":"Name","values":\["TestEC2Instance"\]}\]'.</p>
     pub resource_group_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>>,
 }
 impl CreateResourceGroupInput {
-    /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
-    /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
+    /// <p>A collection of keys and an array of possible values, '\[{"key":"key1","values":\["Value1","Value2"\]},{"key":"Key2","values":\["Value3"\]}\]'.</p>
+    /// <p>For example,'\[{"key":"Name","values":\["TestEC2Instance"\]}\]'.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_group_tags.is_none()`.
     pub fn resource_group_tags(&self) -> &[crate::types::ResourceGroupTag] {
@@ -34,22 +34,22 @@ impl CreateResourceGroupInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_group_tags`](Self::set_resource_group_tags).
     ///
-    /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
-    /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
+    /// <p>A collection of keys and an array of possible values, '\[{"key":"key1","values":\["Value1","Value2"\]},{"key":"Key2","values":\["Value3"\]}\]'.</p>
+    /// <p>For example,'\[{"key":"Name","values":\["TestEC2Instance"\]}\]'.</p>
     pub fn resource_group_tags(mut self, input: crate::types::ResourceGroupTag) -> Self {
         let mut v = self.resource_group_tags.unwrap_or_default();
         v.push(input);
         self.resource_group_tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
-    /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
+    /// <p>A collection of keys and an array of possible values, '\[{"key":"key1","values":\["Value1","Value2"\]},{"key":"Key2","values":\["Value3"\]}\]'.</p>
+    /// <p>For example,'\[{"key":"Name","values":\["TestEC2Instance"\]}\]'.</p>
     pub fn set_resource_group_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>>) -> Self {
         self.resource_group_tags = input;
         self
     }
-    /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
-    /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
+    /// <p>A collection of keys and an array of possible values, '\[{"key":"key1","values":\["Value1","Value2"\]},{"key":"Key2","values":\["Value3"\]}\]'.</p>
+    /// <p>For example,'\[{"key":"Name","values":\["TestEC2Instance"\]}\]'.</p>
     pub fn get_resource_group_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>> {
         &self.resource_group_tags
     }

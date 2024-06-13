@@ -116,7 +116,7 @@ impl SwitchoverGlobalClusterFluentBuilder {
     /// <li>
     /// <p>Minimum length of 1. Maximum length of 255.</p></li>
     /// </ul>
-    /// <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code></p>
+    /// <p>Pattern: <code>\[A-Za-z\]\[0-9A-Za-z-:._\]*</code></p>
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
         self
@@ -129,7 +129,7 @@ impl SwitchoverGlobalClusterFluentBuilder {
     /// <li>
     /// <p>Minimum length of 1. Maximum length of 255.</p></li>
     /// </ul>
-    /// <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code></p>
+    /// <p>Pattern: <code>\[A-Za-z\]\[0-9A-Za-z-:._\]*</code></p>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
         self
@@ -142,7 +142,7 @@ impl SwitchoverGlobalClusterFluentBuilder {
     /// <li>
     /// <p>Minimum length of 1. Maximum length of 255.</p></li>
     /// </ul>
-    /// <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code></p>
+    /// <p>Pattern: <code>\[A-Za-z\]\[0-9A-Za-z-:._\]*</code></p>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_cluster_identifier()
     }
@@ -154,7 +154,7 @@ impl SwitchoverGlobalClusterFluentBuilder {
     /// <li>
     /// <p>Minimum length of 1. Maximum length of 255.</p></li>
     /// </ul>
-    /// <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code></p>
+    /// <p>Pattern: <code>\[A-Za-z\]\[0-9A-Za-z-:._\]*</code></p>
     pub fn target_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_db_cluster_identifier(input.into());
         self
@@ -167,7 +167,7 @@ impl SwitchoverGlobalClusterFluentBuilder {
     /// <li>
     /// <p>Minimum length of 1. Maximum length of 255.</p></li>
     /// </ul>
-    /// <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code></p>
+    /// <p>Pattern: <code>\[A-Za-z\]\[0-9A-Za-z-:._\]*</code></p>
     pub fn set_target_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_db_cluster_identifier(input);
         self
@@ -180,7 +180,7 @@ impl SwitchoverGlobalClusterFluentBuilder {
     /// <li>
     /// <p>Minimum length of 1. Maximum length of 255.</p></li>
     /// </ul>
-    /// <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code></p>
+    /// <p>Pattern: <code>\[A-Za-z\]\[0-9A-Za-z-:._\]*</code></p>
     pub fn get_target_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_db_cluster_identifier()
     }

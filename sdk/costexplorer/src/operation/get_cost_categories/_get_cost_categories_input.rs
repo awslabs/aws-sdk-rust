@@ -33,7 +33,7 @@ pub struct GetCostCategoriesInput {
     /// <li>
     /// <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p></li>
     /// <li>
-    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code></p></li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": \[ "us-east-1", "us-west-1" \] } }</code></p></li>
     /// <li>
     /// <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p></li>
     /// </ul></li>
@@ -43,7 +43,7 @@ pub struct GetCostCategoriesInput {
     /// <li>
     /// <p>For example, you can filter for linked account names that start with "a".</p></li>
     /// <li>
-    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code></p></li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": \[ "STARTS_WITH" \], "Values": \[ "a" \] } }</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -54,9 +54,9 @@ pub struct GetCostCategoriesInput {
     /// <li>
     /// <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p></li>
     /// <li>
-    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code></p></li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": \[ {"Or": \[ {"Dimensions": { "Key": "REGION", "Values": \[ "us-east-1", "us-west-1" \] }}, {"Tags": { "Key": "TagName", "Values": \["Value1"\] } } \]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": \["DataTransfer"\] }}} \] }</code></p></li>
     /// </ul><note>
-    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code></p>
+    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code>{ "And": \[ ... \], "Dimensions": { "Key": "USAGE_TYPE", "Values": \[ "DataTransfer" \] } }</code></p>
     /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code></p>
     /// </note></li>
     /// </ul><note>
@@ -129,7 +129,7 @@ impl GetCostCategoriesInput {
     /// <li>
     /// <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p></li>
     /// <li>
-    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code></p></li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": \[ "us-east-1", "us-west-1" \] } }</code></p></li>
     /// <li>
     /// <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p></li>
     /// </ul></li>
@@ -139,7 +139,7 @@ impl GetCostCategoriesInput {
     /// <li>
     /// <p>For example, you can filter for linked account names that start with "a".</p></li>
     /// <li>
-    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code></p></li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": \[ "STARTS_WITH" \], "Values": \[ "a" \] } }</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -150,9 +150,9 @@ impl GetCostCategoriesInput {
     /// <li>
     /// <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p></li>
     /// <li>
-    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code></p></li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": \[ {"Or": \[ {"Dimensions": { "Key": "REGION", "Values": \[ "us-east-1", "us-west-1" \] }}, {"Tags": { "Key": "TagName", "Values": \["Value1"\] } } \]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": \["DataTransfer"\] }}} \] }</code></p></li>
     /// </ul><note>
-    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code></p>
+    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code>{ "And": \[ ... \], "Dimensions": { "Key": "USAGE_TYPE", "Values": \[ "DataTransfer" \] } }</code></p>
     /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code></p>
     /// </note></li>
     /// </ul><note>
@@ -287,7 +287,7 @@ impl GetCostCategoriesInputBuilder {
     /// <li>
     /// <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p></li>
     /// <li>
-    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code></p></li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": \[ "us-east-1", "us-west-1" \] } }</code></p></li>
     /// <li>
     /// <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p></li>
     /// </ul></li>
@@ -297,7 +297,7 @@ impl GetCostCategoriesInputBuilder {
     /// <li>
     /// <p>For example, you can filter for linked account names that start with "a".</p></li>
     /// <li>
-    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code></p></li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": \[ "STARTS_WITH" \], "Values": \[ "a" \] } }</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -308,9 +308,9 @@ impl GetCostCategoriesInputBuilder {
     /// <li>
     /// <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p></li>
     /// <li>
-    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code></p></li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": \[ {"Or": \[ {"Dimensions": { "Key": "REGION", "Values": \[ "us-east-1", "us-west-1" \] }}, {"Tags": { "Key": "TagName", "Values": \["Value1"\] } } \]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": \["DataTransfer"\] }}} \] }</code></p></li>
     /// </ul><note>
-    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code></p>
+    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code>{ "And": \[ ... \], "Dimensions": { "Key": "USAGE_TYPE", "Values": \[ "DataTransfer" \] } }</code></p>
     /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code></p>
     /// </note></li>
     /// </ul><note>
@@ -344,7 +344,7 @@ impl GetCostCategoriesInputBuilder {
     /// <li>
     /// <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p></li>
     /// <li>
-    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code></p></li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": \[ "us-east-1", "us-west-1" \] } }</code></p></li>
     /// <li>
     /// <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p></li>
     /// </ul></li>
@@ -354,7 +354,7 @@ impl GetCostCategoriesInputBuilder {
     /// <li>
     /// <p>For example, you can filter for linked account names that start with "a".</p></li>
     /// <li>
-    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code></p></li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": \[ "STARTS_WITH" \], "Values": \[ "a" \] } }</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -365,9 +365,9 @@ impl GetCostCategoriesInputBuilder {
     /// <li>
     /// <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p></li>
     /// <li>
-    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code></p></li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": \[ {"Or": \[ {"Dimensions": { "Key": "REGION", "Values": \[ "us-east-1", "us-west-1" \] }}, {"Tags": { "Key": "TagName", "Values": \["Value1"\] } } \]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": \["DataTransfer"\] }}} \] }</code></p></li>
     /// </ul><note>
-    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code></p>
+    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code>{ "And": \[ ... \], "Dimensions": { "Key": "USAGE_TYPE", "Values": \[ "DataTransfer" \] } }</code></p>
     /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code></p>
     /// </note></li>
     /// </ul><note>
@@ -401,7 +401,7 @@ impl GetCostCategoriesInputBuilder {
     /// <li>
     /// <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p></li>
     /// <li>
-    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code></p></li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": \[ "us-east-1", "us-west-1" \] } }</code></p></li>
     /// <li>
     /// <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p></li>
     /// </ul></li>
@@ -411,7 +411,7 @@ impl GetCostCategoriesInputBuilder {
     /// <li>
     /// <p>For example, you can filter for linked account names that start with "a".</p></li>
     /// <li>
-    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code></p></li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": \[ "STARTS_WITH" \], "Values": \[ "a" \] } }</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -422,9 +422,9 @@ impl GetCostCategoriesInputBuilder {
     /// <li>
     /// <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p></li>
     /// <li>
-    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code></p></li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": \[ {"Or": \[ {"Dimensions": { "Key": "REGION", "Values": \[ "us-east-1", "us-west-1" \] }}, {"Tags": { "Key": "TagName", "Values": \["Value1"\] } } \]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": \["DataTransfer"\] }}} \] }</code></p></li>
     /// </ul><note>
-    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code></p>
+    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code>{ "And": \[ ... \], "Dimensions": { "Key": "USAGE_TYPE", "Values": \[ "DataTransfer" \] } }</code></p>
     /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code></p>
     /// </note></li>
     /// </ul><note>

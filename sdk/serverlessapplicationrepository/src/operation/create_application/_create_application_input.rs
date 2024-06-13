@@ -5,7 +5,7 @@
 pub struct CreateApplicationInput {
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
-    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    /// <p>Pattern "^\[a-z0-9\]((\[a-z0-9\]|-(?!-))*\[a-z0-9\])?$";</p>
     pub author: ::std::option::Option<::std::string::String>,
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
@@ -14,7 +14,7 @@ pub struct CreateApplicationInput {
     pub home_page_url: ::std::option::Option<::std::string::String>,
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
-    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    /// <p>Pattern: "^\[a-zA-Z0-9+\\-_:\\/@\]+$";</p>
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>Maximum size 5 MB</p>
@@ -26,7 +26,7 @@ pub struct CreateApplicationInput {
     pub license_url: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application that you want to publish.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
-    /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    /// <p>Pattern: "\[a-zA-Z0-9\\-\]+";</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>Maximum size 5 MB</p>
@@ -56,7 +56,7 @@ pub struct CreateApplicationInput {
 impl CreateApplicationInput {
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
-    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    /// <p>Pattern "^\[a-z0-9\]((\[a-z0-9\]|-(?!-))*\[a-z0-9\])?$";</p>
     pub fn author(&self) -> ::std::option::Option<&str> {
         self.author.as_deref()
     }
@@ -71,7 +71,7 @@ impl CreateApplicationInput {
     }
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
-    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    /// <p>Pattern: "^\[a-zA-Z0-9+\\-_:\\/@\]+$";</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
     pub fn labels(&self) -> &[::std::string::String] {
@@ -91,7 +91,7 @@ impl CreateApplicationInput {
     }
     /// <p>The name of the application that you want to publish.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
-    /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    /// <p>Pattern: "\[a-zA-Z0-9\\-\]+";</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -166,7 +166,7 @@ pub struct CreateApplicationInputBuilder {
 impl CreateApplicationInputBuilder {
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
-    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    /// <p>Pattern "^\[a-z0-9\]((\[a-z0-9\]|-(?!-))*\[a-z0-9\])?$";</p>
     /// This field is required.
     pub fn author(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.author = ::std::option::Option::Some(input.into());
@@ -174,14 +174,14 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
-    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    /// <p>Pattern "^\[a-z0-9\]((\[a-z0-9\]|-(?!-))*\[a-z0-9\])?$";</p>
     pub fn set_author(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.author = input;
         self
     }
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
-    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    /// <p>Pattern "^\[a-z0-9\]((\[a-z0-9\]|-(?!-))*\[a-z0-9\])?$";</p>
     pub fn get_author(&self) -> &::std::option::Option<::std::string::String> {
         &self.author
     }
@@ -223,7 +223,7 @@ impl CreateApplicationInputBuilder {
     ///
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
-    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    /// <p>Pattern: "^\[a-zA-Z0-9+\\-_:\\/@\]+$";</p>
     pub fn labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
         v.push(input.into());
@@ -232,14 +232,14 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
-    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    /// <p>Pattern: "^\[a-zA-Z0-9+\\-_:\\/@\]+$";</p>
     pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
-    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    /// <p>Pattern: "^\[a-zA-Z0-9+\\-_:\\/@\]+$";</p>
     pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.labels
     }
@@ -285,7 +285,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The name of the application that you want to publish.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
-    /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    /// <p>Pattern: "\[a-zA-Z0-9\\-\]+";</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -293,14 +293,14 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The name of the application that you want to publish.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
-    /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    /// <p>Pattern: "\[a-zA-Z0-9\\-\]+";</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the application that you want to publish.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
-    /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    /// <p>Pattern: "\[a-zA-Z0-9\\-\]+";</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

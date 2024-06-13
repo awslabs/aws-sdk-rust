@@ -16,7 +16,7 @@ pub struct OutputConfig {
     /// <li>
     /// <p>Raspberry Pi 3 Model B+</p>
     /// <p><code>"TargetPlatform": {"Os": "LINUX", "Arch": "ARM_EABIHF"},</code></p>
-    /// <p><code> "CompilerOptions": {'mattr': ['+neon']}</code></p></li>
+    /// <p><code>"CompilerOptions": {'mattr': \['+neon'\]}</code></p></li>
     /// <li>
     /// <p>Jetson TX2</p>
     /// <p><code>"TargetPlatform": {"Os": "LINUX", "Arch": "ARM64", "Accelerator": "NVIDIA"},</code></p>
@@ -31,7 +31,7 @@ pub struct OutputConfig {
     /// <li>
     /// <p>ARMv7 phone (CPU)</p>
     /// <p><code>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM_EABI"},</code></p>
-    /// <p><code> "CompilerOptions": {'ANDROID_PLATFORM': 25, 'mattr': ['+neon']}</code></p></li>
+    /// <p><code>"CompilerOptions": {'ANDROID_PLATFORM': 25, 'mattr': \['+neon'\]}</code></p></li>
     /// <li>
     /// <p>ARMv8 phone (CPU)</p>
     /// <p><code>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM64"},</code></p>
@@ -55,14 +55,14 @@ pub struct OutputConfig {
     /// <li>
     /// <p><code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code></p></li>
     /// <li>
-    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code></p></li>
+    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': \['+neon', '+vfpv4'\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>ARM</code>: Details of ARM CPU compilations.</p>
     /// <ul>
     /// <li>
     /// <p><code>NEON</code>: NEON is an implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
-    /// <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if compiling for ARM 32-bit platform with the NEON support.</p></li>
+    /// <p>For example, add <code>{'mattr': \['+neon'\]}</code> to the compiler options if compiling for ARM 32-bit platform with the NEON support.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>NVIDIA</code>: Compilation for NVIDIA GPU supports the following compiler options.</p>
@@ -81,7 +81,7 @@ pub struct OutputConfig {
     /// <li>
     /// <p><code>ANDROID_PLATFORM</code>: Specifies the Android API levels. Available levels range from 21 to 29. For example, <code>{'ANDROID_PLATFORM': 28}</code>.</p></li>
     /// <li>
-    /// <p><code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if compiling for ARM 32-bit platform with NEON support.</p></li>
+    /// <p><code>mattr</code>: Add <code>{'mattr': \['+neon'\]}</code> to compiler options if compiling for ARM 32-bit platform with NEON support.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler options passed in as a JSON string. For example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.</p>
@@ -102,7 +102,7 @@ pub struct OutputConfig {
     /// <li>
     /// <p><code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set at most one API field, either: <code>signature_def_key</code> or <code>output_names</code>.</p></li>
     /// </ul>
-    /// <p>For example: <code>{"precision_mode": "FP32", "output_names": ["output:0"]}</code></p></li>
+    /// <p>For example: <code>{"precision_mode": "FP32", "output_names": \["output:0"\]}</code></p></li>
     /// </ul>
     pub compiler_options: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS) that Amazon SageMaker uses to encrypt your output models with Amazon S3 server-side encryption after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i></p>
@@ -136,7 +136,7 @@ impl OutputConfig {
     /// <li>
     /// <p>Raspberry Pi 3 Model B+</p>
     /// <p><code>"TargetPlatform": {"Os": "LINUX", "Arch": "ARM_EABIHF"},</code></p>
-    /// <p><code> "CompilerOptions": {'mattr': ['+neon']}</code></p></li>
+    /// <p><code>"CompilerOptions": {'mattr': \['+neon'\]}</code></p></li>
     /// <li>
     /// <p>Jetson TX2</p>
     /// <p><code>"TargetPlatform": {"Os": "LINUX", "Arch": "ARM64", "Accelerator": "NVIDIA"},</code></p>
@@ -151,7 +151,7 @@ impl OutputConfig {
     /// <li>
     /// <p>ARMv7 phone (CPU)</p>
     /// <p><code>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM_EABI"},</code></p>
-    /// <p><code> "CompilerOptions": {'ANDROID_PLATFORM': 25, 'mattr': ['+neon']}</code></p></li>
+    /// <p><code>"CompilerOptions": {'ANDROID_PLATFORM': 25, 'mattr': \['+neon'\]}</code></p></li>
     /// <li>
     /// <p>ARMv8 phone (CPU)</p>
     /// <p><code>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM64"},</code></p>
@@ -177,14 +177,14 @@ impl OutputConfig {
     /// <li>
     /// <p><code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code></p></li>
     /// <li>
-    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code></p></li>
+    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': \['+neon', '+vfpv4'\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>ARM</code>: Details of ARM CPU compilations.</p>
     /// <ul>
     /// <li>
     /// <p><code>NEON</code>: NEON is an implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
-    /// <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if compiling for ARM 32-bit platform with the NEON support.</p></li>
+    /// <p>For example, add <code>{'mattr': \['+neon'\]}</code> to the compiler options if compiling for ARM 32-bit platform with the NEON support.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>NVIDIA</code>: Compilation for NVIDIA GPU supports the following compiler options.</p>
@@ -203,7 +203,7 @@ impl OutputConfig {
     /// <li>
     /// <p><code>ANDROID_PLATFORM</code>: Specifies the Android API levels. Available levels range from 21 to 29. For example, <code>{'ANDROID_PLATFORM': 28}</code>.</p></li>
     /// <li>
-    /// <p><code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if compiling for ARM 32-bit platform with NEON support.</p></li>
+    /// <p><code>mattr</code>: Add <code>{'mattr': \['+neon'\]}</code> to compiler options if compiling for ARM 32-bit platform with NEON support.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler options passed in as a JSON string. For example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.</p>
@@ -224,7 +224,7 @@ impl OutputConfig {
     /// <li>
     /// <p><code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set at most one API field, either: <code>signature_def_key</code> or <code>output_names</code>.</p></li>
     /// </ul>
-    /// <p>For example: <code>{"precision_mode": "FP32", "output_names": ["output:0"]}</code></p></li>
+    /// <p>For example: <code>{"precision_mode": "FP32", "output_names": \["output:0"\]}</code></p></li>
     /// </ul>
     pub fn compiler_options(&self) -> ::std::option::Option<&str> {
         self.compiler_options.as_deref()
@@ -304,7 +304,7 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p>Raspberry Pi 3 Model B+</p>
     /// <p><code>"TargetPlatform": {"Os": "LINUX", "Arch": "ARM_EABIHF"},</code></p>
-    /// <p><code> "CompilerOptions": {'mattr': ['+neon']}</code></p></li>
+    /// <p><code>"CompilerOptions": {'mattr': \['+neon'\]}</code></p></li>
     /// <li>
     /// <p>Jetson TX2</p>
     /// <p><code>"TargetPlatform": {"Os": "LINUX", "Arch": "ARM64", "Accelerator": "NVIDIA"},</code></p>
@@ -319,7 +319,7 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p>ARMv7 phone (CPU)</p>
     /// <p><code>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM_EABI"},</code></p>
-    /// <p><code> "CompilerOptions": {'ANDROID_PLATFORM': 25, 'mattr': ['+neon']}</code></p></li>
+    /// <p><code>"CompilerOptions": {'ANDROID_PLATFORM': 25, 'mattr': \['+neon'\]}</code></p></li>
     /// <li>
     /// <p>ARMv8 phone (CPU)</p>
     /// <p><code>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM64"},</code></p>
@@ -335,7 +335,7 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p>Raspberry Pi 3 Model B+</p>
     /// <p><code>"TargetPlatform": {"Os": "LINUX", "Arch": "ARM_EABIHF"},</code></p>
-    /// <p><code> "CompilerOptions": {'mattr': ['+neon']}</code></p></li>
+    /// <p><code>"CompilerOptions": {'mattr': \['+neon'\]}</code></p></li>
     /// <li>
     /// <p>Jetson TX2</p>
     /// <p><code>"TargetPlatform": {"Os": "LINUX", "Arch": "ARM64", "Accelerator": "NVIDIA"},</code></p>
@@ -350,7 +350,7 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p>ARMv7 phone (CPU)</p>
     /// <p><code>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM_EABI"},</code></p>
-    /// <p><code> "CompilerOptions": {'ANDROID_PLATFORM': 25, 'mattr': ['+neon']}</code></p></li>
+    /// <p><code>"CompilerOptions": {'ANDROID_PLATFORM': 25, 'mattr': \['+neon'\]}</code></p></li>
     /// <li>
     /// <p>ARMv8 phone (CPU)</p>
     /// <p><code>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM64"},</code></p>
@@ -366,7 +366,7 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p>Raspberry Pi 3 Model B+</p>
     /// <p><code>"TargetPlatform": {"Os": "LINUX", "Arch": "ARM_EABIHF"},</code></p>
-    /// <p><code> "CompilerOptions": {'mattr': ['+neon']}</code></p></li>
+    /// <p><code>"CompilerOptions": {'mattr': \['+neon'\]}</code></p></li>
     /// <li>
     /// <p>Jetson TX2</p>
     /// <p><code>"TargetPlatform": {"Os": "LINUX", "Arch": "ARM64", "Accelerator": "NVIDIA"},</code></p>
@@ -381,7 +381,7 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p>ARMv7 phone (CPU)</p>
     /// <p><code>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM_EABI"},</code></p>
-    /// <p><code> "CompilerOptions": {'ANDROID_PLATFORM': 25, 'mattr': ['+neon']}</code></p></li>
+    /// <p><code>"CompilerOptions": {'ANDROID_PLATFORM': 25, 'mattr': \['+neon'\]}</code></p></li>
     /// <li>
     /// <p>ARMv8 phone (CPU)</p>
     /// <p><code>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM64"},</code></p>
@@ -407,14 +407,14 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p><code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code></p></li>
     /// <li>
-    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code></p></li>
+    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': \['+neon', '+vfpv4'\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>ARM</code>: Details of ARM CPU compilations.</p>
     /// <ul>
     /// <li>
     /// <p><code>NEON</code>: NEON is an implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
-    /// <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if compiling for ARM 32-bit platform with the NEON support.</p></li>
+    /// <p>For example, add <code>{'mattr': \['+neon'\]}</code> to the compiler options if compiling for ARM 32-bit platform with the NEON support.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>NVIDIA</code>: Compilation for NVIDIA GPU supports the following compiler options.</p>
@@ -433,7 +433,7 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p><code>ANDROID_PLATFORM</code>: Specifies the Android API levels. Available levels range from 21 to 29. For example, <code>{'ANDROID_PLATFORM': 28}</code>.</p></li>
     /// <li>
-    /// <p><code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if compiling for ARM 32-bit platform with NEON support.</p></li>
+    /// <p><code>mattr</code>: Add <code>{'mattr': \['+neon'\]}</code> to compiler options if compiling for ARM 32-bit platform with NEON support.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler options passed in as a JSON string. For example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.</p>
@@ -454,7 +454,7 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p><code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set at most one API field, either: <code>signature_def_key</code> or <code>output_names</code>.</p></li>
     /// </ul>
-    /// <p>For example: <code>{"precision_mode": "FP32", "output_names": ["output:0"]}</code></p></li>
+    /// <p>For example: <code>{"precision_mode": "FP32", "output_names": \["output:0"\]}</code></p></li>
     /// </ul>
     pub fn compiler_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compiler_options = ::std::option::Option::Some(input.into());
@@ -477,14 +477,14 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p><code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code></p></li>
     /// <li>
-    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code></p></li>
+    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': \['+neon', '+vfpv4'\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>ARM</code>: Details of ARM CPU compilations.</p>
     /// <ul>
     /// <li>
     /// <p><code>NEON</code>: NEON is an implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
-    /// <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if compiling for ARM 32-bit platform with the NEON support.</p></li>
+    /// <p>For example, add <code>{'mattr': \['+neon'\]}</code> to the compiler options if compiling for ARM 32-bit platform with the NEON support.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>NVIDIA</code>: Compilation for NVIDIA GPU supports the following compiler options.</p>
@@ -503,7 +503,7 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p><code>ANDROID_PLATFORM</code>: Specifies the Android API levels. Available levels range from 21 to 29. For example, <code>{'ANDROID_PLATFORM': 28}</code>.</p></li>
     /// <li>
-    /// <p><code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if compiling for ARM 32-bit platform with NEON support.</p></li>
+    /// <p><code>mattr</code>: Add <code>{'mattr': \['+neon'\]}</code> to compiler options if compiling for ARM 32-bit platform with NEON support.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler options passed in as a JSON string. For example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.</p>
@@ -524,7 +524,7 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p><code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set at most one API field, either: <code>signature_def_key</code> or <code>output_names</code>.</p></li>
     /// </ul>
-    /// <p>For example: <code>{"precision_mode": "FP32", "output_names": ["output:0"]}</code></p></li>
+    /// <p>For example: <code>{"precision_mode": "FP32", "output_names": \["output:0"\]}</code></p></li>
     /// </ul>
     pub fn set_compiler_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compiler_options = input;
@@ -547,14 +547,14 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p><code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code></p></li>
     /// <li>
-    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code></p></li>
+    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': \['+neon', '+vfpv4'\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>ARM</code>: Details of ARM CPU compilations.</p>
     /// <ul>
     /// <li>
     /// <p><code>NEON</code>: NEON is an implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
-    /// <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if compiling for ARM 32-bit platform with the NEON support.</p></li>
+    /// <p>For example, add <code>{'mattr': \['+neon'\]}</code> to the compiler options if compiling for ARM 32-bit platform with the NEON support.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>NVIDIA</code>: Compilation for NVIDIA GPU supports the following compiler options.</p>
@@ -573,7 +573,7 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p><code>ANDROID_PLATFORM</code>: Specifies the Android API levels. Available levels range from 21 to 29. For example, <code>{'ANDROID_PLATFORM': 28}</code>.</p></li>
     /// <li>
-    /// <p><code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if compiling for ARM 32-bit platform with NEON support.</p></li>
+    /// <p><code>mattr</code>: Add <code>{'mattr': \['+neon'\]}</code> to compiler options if compiling for ARM 32-bit platform with NEON support.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler options passed in as a JSON string. For example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.</p>
@@ -594,7 +594,7 @@ impl OutputConfigBuilder {
     /// <li>
     /// <p><code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set at most one API field, either: <code>signature_def_key</code> or <code>output_names</code>.</p></li>
     /// </ul>
-    /// <p>For example: <code>{"precision_mode": "FP32", "output_names": ["output:0"]}</code></p></li>
+    /// <p>For example: <code>{"precision_mode": "FP32", "output_names": \["output:0"\]}</code></p></li>
     /// </ul>
     pub fn get_compiler_options(&self) -> &::std::option::Option<::std::string::String> {
         &self.compiler_options

@@ -5,7 +5,7 @@
 pub struct CreateProvisioningArtifactOutput {
     /// <p>Information about the provisioning artifact.</p>
     pub provisioning_artifact_detail: ::std::option::Option<crate::types::ProvisioningArtifactDetail>,
-    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: \[ LoadTemplateFromURL, ImportFromPhysicalId \].</p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     /// <p><code>LoadTemplateFromURL</code></p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
@@ -21,7 +21,7 @@ impl CreateProvisioningArtifactOutput {
     pub fn provisioning_artifact_detail(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactDetail> {
         self.provisioning_artifact_detail.as_ref()
     }
-    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: \[ LoadTemplateFromURL, ImportFromPhysicalId \].</p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     /// <p><code>LoadTemplateFromURL</code></p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
@@ -75,7 +75,7 @@ impl CreateProvisioningArtifactOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_info`](Self::set_info).
     ///
-    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: \[ LoadTemplateFromURL, ImportFromPhysicalId \].</p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     /// <p><code>LoadTemplateFromURL</code></p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
@@ -87,7 +87,7 @@ impl CreateProvisioningArtifactOutputBuilder {
         self.info = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: \[ LoadTemplateFromURL, ImportFromPhysicalId \].</p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     /// <p><code>LoadTemplateFromURL</code></p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
@@ -97,7 +97,7 @@ impl CreateProvisioningArtifactOutputBuilder {
         self.info = input;
         self
     }
-    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: \[ LoadTemplateFromURL, ImportFromPhysicalId \].</p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     /// <p><code>LoadTemplateFromURL</code></p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>

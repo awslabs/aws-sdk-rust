@@ -9,14 +9,14 @@ pub struct ModifyListenerInput {
     pub port: ::std::option::Option<i32>,
     /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
     pub protocol: ::std::option::Option<crate::types::ProtocolEnum>,
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>\[HTTPS and TLS listeners\] The security policy that defines which protocols and ciphers are supported.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub ssl_policy: ::std::option::Option<::std::string::String>,
-    /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    /// <p>\[HTTPS and TLS listeners\] The default certificate for the listener. You must provide exactly one certificate. Set CertificateArn to the certificate ARN but do not set IsDefault.</p>
     pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     /// <p>The actions for the default rule.</p>
     pub default_actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
+    /// <p>\[TLS listeners\] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>HTTP1Only</code></p></li>
@@ -47,12 +47,12 @@ impl ModifyListenerInput {
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::ProtocolEnum> {
         self.protocol.as_ref()
     }
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>\[HTTPS and TLS listeners\] The security policy that defines which protocols and ciphers are supported.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn ssl_policy(&self) -> ::std::option::Option<&str> {
         self.ssl_policy.as_deref()
     }
-    /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    /// <p>\[HTTPS and TLS listeners\] The default certificate for the listener. You must provide exactly one certificate. Set CertificateArn to the certificate ARN but do not set IsDefault.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
     pub fn certificates(&self) -> &[crate::types::Certificate] {
@@ -64,7 +64,7 @@ impl ModifyListenerInput {
     pub fn default_actions(&self) -> &[crate::types::Action] {
         self.default_actions.as_deref().unwrap_or_default()
     }
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
+    /// <p>\[TLS listeners\] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>HTTP1Only</code></p></li>
@@ -152,19 +152,19 @@ impl ModifyListenerInputBuilder {
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ProtocolEnum> {
         &self.protocol
     }
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>\[HTTPS and TLS listeners\] The security policy that defines which protocols and ciphers are supported.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn ssl_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssl_policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>\[HTTPS and TLS listeners\] The security policy that defines which protocols and ciphers are supported.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn set_ssl_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssl_policy = input;
         self
     }
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>\[HTTPS and TLS listeners\] The security policy that defines which protocols and ciphers are supported.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn get_ssl_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.ssl_policy
@@ -173,19 +173,19 @@ impl ModifyListenerInputBuilder {
     ///
     /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
     ///
-    /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    /// <p>\[HTTPS and TLS listeners\] The default certificate for the listener. You must provide exactly one certificate. Set CertificateArn to the certificate ARN but do not set IsDefault.</p>
     pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
         let mut v = self.certificates.unwrap_or_default();
         v.push(input);
         self.certificates = ::std::option::Option::Some(v);
         self
     }
-    /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    /// <p>\[HTTPS and TLS listeners\] The default certificate for the listener. You must provide exactly one certificate. Set CertificateArn to the certificate ARN but do not set IsDefault.</p>
     pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
         self.certificates = input;
         self
     }
-    /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    /// <p>\[HTTPS and TLS listeners\] The default certificate for the listener. You must provide exactly one certificate. Set CertificateArn to the certificate ARN but do not set IsDefault.</p>
     pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
         &self.certificates
     }
@@ -213,7 +213,7 @@ impl ModifyListenerInputBuilder {
     ///
     /// To override the contents of this collection use [`set_alpn_policy`](Self::set_alpn_policy).
     ///
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
+    /// <p>\[TLS listeners\] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>HTTP1Only</code></p></li>
@@ -233,7 +233,7 @@ impl ModifyListenerInputBuilder {
         self.alpn_policy = ::std::option::Option::Some(v);
         self
     }
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
+    /// <p>\[TLS listeners\] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>HTTP1Only</code></p></li>
@@ -251,7 +251,7 @@ impl ModifyListenerInputBuilder {
         self.alpn_policy = input;
         self
     }
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
+    /// <p>\[TLS listeners\] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>HTTP1Only</code></p></li>

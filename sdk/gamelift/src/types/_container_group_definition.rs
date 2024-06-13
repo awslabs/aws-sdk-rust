@@ -8,7 +8,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerGroupDefinition {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift <code>ContainerGroupDefinition</code> resource. It uniquely identifies the resource across all Amazon Web Services Regions. Format is <code>arn:aws:gamelift:<region>
-    /// ::containergroupdefinition/[container group definition name]
+    /// ::containergroupdefinition/\[container group definition name\]
     /// </region></code>.</p>
     pub container_group_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
@@ -62,7 +62,7 @@ pub struct ContainerGroupDefinition {
 }
 impl ContainerGroupDefinition {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift <code>ContainerGroupDefinition</code> resource. It uniquely identifies the resource across all Amazon Web Services Regions. Format is <code>arn:aws:gamelift:<region>
-    /// ::containergroupdefinition/[container group definition name]
+    /// ::containergroupdefinition/\[container group definition name\]
     /// </region></code>.</p>
     pub fn container_group_definition_arn(&self) -> ::std::option::Option<&str> {
         self.container_group_definition_arn.as_deref()
@@ -160,21 +160,21 @@ pub struct ContainerGroupDefinitionBuilder {
 }
 impl ContainerGroupDefinitionBuilder {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift <code>ContainerGroupDefinition</code> resource. It uniquely identifies the resource across all Amazon Web Services Regions. Format is <code>arn:aws:gamelift:<region>
-    /// ::containergroupdefinition/[container group definition name]
+    /// ::containergroupdefinition/\[container group definition name\]
     /// </region></code>.</p>
     pub fn container_group_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_group_definition_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift <code>ContainerGroupDefinition</code> resource. It uniquely identifies the resource across all Amazon Web Services Regions. Format is <code>arn:aws:gamelift:<region>
-    /// ::containergroupdefinition/[container group definition name]
+    /// ::containergroupdefinition/\[container group definition name\]
     /// </region></code>.</p>
     pub fn set_container_group_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_group_definition_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift <code>ContainerGroupDefinition</code> resource. It uniquely identifies the resource across all Amazon Web Services Regions. Format is <code>arn:aws:gamelift:<region>
-    /// ::containergroupdefinition/[container group definition name]
+    /// ::containergroupdefinition/\[container group definition name\]
     /// </region></code>.</p>
     pub fn get_container_group_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_group_definition_arn

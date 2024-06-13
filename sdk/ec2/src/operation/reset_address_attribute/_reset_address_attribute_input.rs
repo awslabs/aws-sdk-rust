@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetAddressAttributeInput {
-    /// <p>[EC2-VPC] The allocation ID.</p>
+    /// <p>\[EC2-VPC\] The allocation ID.</p>
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The attribute of the IP address.</p>
     pub attribute: ::std::option::Option<crate::types::AddressAttributeName>,
@@ -11,7 +11,7 @@ pub struct ResetAddressAttributeInput {
     pub dry_run: ::std::option::Option<bool>,
 }
 impl ResetAddressAttributeInput {
-    /// <p>[EC2-VPC] The allocation ID.</p>
+    /// <p>\[EC2-VPC\] The allocation ID.</p>
     pub fn allocation_id(&self) -> ::std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct ResetAddressAttributeInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl ResetAddressAttributeInputBuilder {
-    /// <p>[EC2-VPC] The allocation ID.</p>
+    /// <p>\[EC2-VPC\] The allocation ID.</p>
     /// This field is required.
     pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[EC2-VPC] The allocation ID.</p>
+    /// <p>\[EC2-VPC\] The allocation ID.</p>
     pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allocation_id = input;
         self
     }
-    /// <p>[EC2-VPC] The allocation ID.</p>
+    /// <p>\[EC2-VPC\] The allocation ID.</p>
     pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.allocation_id
     }

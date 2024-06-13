@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateUserInput {
-    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from \[a-zA-Z0-9_-.\@\]+.</p>
     /// <p>Username can include @ only if used in an email format. For example:</p>
     /// <ul>
     /// <li>
@@ -35,7 +35,7 @@ pub struct CreateUserInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateUserInput {
-    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from \[a-zA-Z0-9_-.\@\]+.</p>
     /// <p>Username can include @ only if used in an email format. For example:</p>
     /// <ul>
     /// <li>
@@ -127,7 +127,7 @@ pub struct CreateUserInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateUserInputBuilder {
-    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from \[a-zA-Z0-9_-.\@\]+.</p>
     /// <p>Username can include @ only if used in an email format. For example:</p>
     /// <ul>
     /// <li>
@@ -142,7 +142,7 @@ impl CreateUserInputBuilder {
         self.username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from \[a-zA-Z0-9_-.\@\]+.</p>
     /// <p>Username can include @ only if used in an email format. For example:</p>
     /// <ul>
     /// <li>
@@ -156,7 +156,7 @@ impl CreateUserInputBuilder {
         self.username = input;
         self
     }
-    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from \[a-zA-Z0-9_-.\@\]+.</p>
     /// <p>Username can include @ only if used in an email format. For example:</p>
     /// <ul>
     /// <li>

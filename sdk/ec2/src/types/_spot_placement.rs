@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpotPlacement {
     /// <p>The Availability Zone.</p>
-    /// <p>[Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
+    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The name of the placement group.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct SpotPlacement {
 }
 impl SpotPlacement {
     /// <p>The Availability Zone.</p>
-    /// <p>[Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
+    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
@@ -44,19 +44,19 @@ pub struct SpotPlacementBuilder {
 }
 impl SpotPlacementBuilder {
     /// <p>The Availability Zone.</p>
-    /// <p>[Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
+    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone.</p>
-    /// <p>[Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
+    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
     /// <p>The Availability Zone.</p>
-    /// <p>[Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
+    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }

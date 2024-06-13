@@ -115,41 +115,41 @@ impl CreateSecurityGroupFluentBuilder {
     }
     /// <p>A description for the security group.</p>
     /// <p>Constraints: Up to 255 characters in length</p>
-    /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
+    /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@\[\]+=&amp;;{}!$*</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description for the security group.</p>
     /// <p>Constraints: Up to 255 characters in length</p>
-    /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
+    /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@\[\]+=&amp;;{}!$*</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>A description for the security group.</p>
     /// <p>Constraints: Up to 255 characters in length</p>
-    /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
+    /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@\[\]+=&amp;;{}!$*</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
     /// <p>The name of the security group.</p>
     /// <p>Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.</p>
-    /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
+    /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@\[\]+=&amp;;{}!$*</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
         self
     }
     /// <p>The name of the security group.</p>
     /// <p>Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.</p>
-    /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
+    /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@\[\]+=&amp;;{}!$*</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_name(input);
         self
     }
     /// <p>The name of the security group.</p>
     /// <p>Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.</p>
-    /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
+    /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@\[\]+=&amp;;{}!$*</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_name()
     }

@@ -194,7 +194,7 @@ impl ReportInstanceStatusFluentBuilder {
     /// <li>
     /// <p><code>performance-other</code>: My instance is experiencing performance problems.</p></li>
     /// <li>
-    /// <p><code>other</code>: [explain using the description parameter]</p></li>
+    /// <p>other: \[explain using the description parameter\]</p></li>
     /// </ul>
     pub fn reason_codes(mut self, input: crate::types::ReportInstanceReasonCodes) -> Self {
         self.inner = self.inner.reason_codes(input);
@@ -219,7 +219,7 @@ impl ReportInstanceStatusFluentBuilder {
     /// <li>
     /// <p><code>performance-other</code>: My instance is experiencing performance problems.</p></li>
     /// <li>
-    /// <p><code>other</code>: [explain using the description parameter]</p></li>
+    /// <p>other: \[explain using the description parameter\]</p></li>
     /// </ul>
     pub fn set_reason_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>>) -> Self {
         self.inner = self.inner.set_reason_codes(input);
@@ -244,7 +244,7 @@ impl ReportInstanceStatusFluentBuilder {
     /// <li>
     /// <p><code>performance-other</code>: My instance is experiencing performance problems.</p></li>
     /// <li>
-    /// <p><code>other</code>: [explain using the description parameter]</p></li>
+    /// <p>other: \[explain using the description parameter\]</p></li>
     /// </ul>
     pub fn get_reason_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>> {
         self.inner.get_reason_codes()

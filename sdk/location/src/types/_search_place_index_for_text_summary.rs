@@ -8,7 +8,7 @@ pub struct SearchPlaceIndexForTextSummary {
     pub text: ::std::string::String,
     /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
     /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub bias_position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
     pub filter_b_box: ::std::option::Option<::std::vec::Vec<f64>>,
@@ -44,7 +44,7 @@ impl SearchPlaceIndexForTextSummary {
     }
     /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
     /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bias_position.is_none()`.
     pub fn bias_position(&self) -> &[f64] {
@@ -157,7 +157,7 @@ impl SearchPlaceIndexForTextSummaryBuilder {
     ///
     /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
     /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn bias_position(mut self, input: f64) -> Self {
         let mut v = self.bias_position.unwrap_or_default();
         v.push(input);
@@ -166,14 +166,14 @@ impl SearchPlaceIndexForTextSummaryBuilder {
     }
     /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
     /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn set_bias_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.bias_position = input;
         self
     }
     /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
     /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    /// <p>For example, <code>\[-123.1174, 49.2847\]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn get_bias_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.bias_position
     }

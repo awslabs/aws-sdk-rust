@@ -14,9 +14,9 @@ pub struct OracleSettings {
     pub additional_archived_log_dest_id: ::std::option::Option<i32>,
     /// <p>Specifies the IDs of one more destinations for one or more archived redo logs. These IDs are the values of the <code>dest_id</code> column in the <code>v$archived_log</code> view. Use this setting with the <code>archivedLogDestId</code> extra connection attribute in a primary-to-single setup or a primary-to-multiple-standby setup.</p>
     /// <p>This setting is useful in a switchover when you use an Oracle Data Guard database as a source. In this case, DMS needs information about what destination to get archive redo logs from to read changes. DMS needs this because after the switchover the previous primary is a standby instance. For example, in a primary-to-single standby setup you might apply the following settings.</p>
-    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2]</code></p>
+    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=\[2\]</code></p>
     /// <p>In a primary-to-multiple-standby setup, you might apply the following settings.</p>
-    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code></p>
+    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=\[2,3,4\]</code></p>
     /// <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use <code>RESETLOGS</code> unless it's necessary. For more information about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"> RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.</p>
     pub extra_archived_log_dest_ids: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>Set this attribute to <code>true</code> to enable replication of Oracle tables containing columns that are nested tables or defined types.</p>
@@ -128,9 +128,9 @@ impl OracleSettings {
     }
     /// <p>Specifies the IDs of one more destinations for one or more archived redo logs. These IDs are the values of the <code>dest_id</code> column in the <code>v$archived_log</code> view. Use this setting with the <code>archivedLogDestId</code> extra connection attribute in a primary-to-single setup or a primary-to-multiple-standby setup.</p>
     /// <p>This setting is useful in a switchover when you use an Oracle Data Guard database as a source. In this case, DMS needs information about what destination to get archive redo logs from to read changes. DMS needs this because after the switchover the previous primary is a standby instance. For example, in a primary-to-single standby setup you might apply the following settings.</p>
-    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2]</code></p>
+    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=\[2\]</code></p>
     /// <p>In a primary-to-multiple-standby setup, you might apply the following settings.</p>
-    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code></p>
+    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=\[2,3,4\]</code></p>
     /// <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use <code>RESETLOGS</code> unless it's necessary. For more information about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"> RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extra_archived_log_dest_ids.is_none()`.
@@ -472,9 +472,9 @@ impl OracleSettingsBuilder {
     ///
     /// <p>Specifies the IDs of one more destinations for one or more archived redo logs. These IDs are the values of the <code>dest_id</code> column in the <code>v$archived_log</code> view. Use this setting with the <code>archivedLogDestId</code> extra connection attribute in a primary-to-single setup or a primary-to-multiple-standby setup.</p>
     /// <p>This setting is useful in a switchover when you use an Oracle Data Guard database as a source. In this case, DMS needs information about what destination to get archive redo logs from to read changes. DMS needs this because after the switchover the previous primary is a standby instance. For example, in a primary-to-single standby setup you might apply the following settings.</p>
-    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2]</code></p>
+    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=\[2\]</code></p>
     /// <p>In a primary-to-multiple-standby setup, you might apply the following settings.</p>
-    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code></p>
+    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=\[2,3,4\]</code></p>
     /// <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use <code>RESETLOGS</code> unless it's necessary. For more information about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"> RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.</p>
     pub fn extra_archived_log_dest_ids(mut self, input: i32) -> Self {
         let mut v = self.extra_archived_log_dest_ids.unwrap_or_default();
@@ -484,9 +484,9 @@ impl OracleSettingsBuilder {
     }
     /// <p>Specifies the IDs of one more destinations for one or more archived redo logs. These IDs are the values of the <code>dest_id</code> column in the <code>v$archived_log</code> view. Use this setting with the <code>archivedLogDestId</code> extra connection attribute in a primary-to-single setup or a primary-to-multiple-standby setup.</p>
     /// <p>This setting is useful in a switchover when you use an Oracle Data Guard database as a source. In this case, DMS needs information about what destination to get archive redo logs from to read changes. DMS needs this because after the switchover the previous primary is a standby instance. For example, in a primary-to-single standby setup you might apply the following settings.</p>
-    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2]</code></p>
+    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=\[2\]</code></p>
     /// <p>In a primary-to-multiple-standby setup, you might apply the following settings.</p>
-    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code></p>
+    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=\[2,3,4\]</code></p>
     /// <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use <code>RESETLOGS</code> unless it's necessary. For more information about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"> RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.</p>
     pub fn set_extra_archived_log_dest_ids(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.extra_archived_log_dest_ids = input;
@@ -494,9 +494,9 @@ impl OracleSettingsBuilder {
     }
     /// <p>Specifies the IDs of one more destinations for one or more archived redo logs. These IDs are the values of the <code>dest_id</code> column in the <code>v$archived_log</code> view. Use this setting with the <code>archivedLogDestId</code> extra connection attribute in a primary-to-single setup or a primary-to-multiple-standby setup.</p>
     /// <p>This setting is useful in a switchover when you use an Oracle Data Guard database as a source. In this case, DMS needs information about what destination to get archive redo logs from to read changes. DMS needs this because after the switchover the previous primary is a standby instance. For example, in a primary-to-single standby setup you might apply the following settings.</p>
-    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2]</code></p>
+    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=\[2\]</code></p>
     /// <p>In a primary-to-multiple-standby setup, you might apply the following settings.</p>
-    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code></p>
+    /// <p><code>archivedLogDestId=1; ExtraArchivedLogDestIds=\[2,3,4\]</code></p>
     /// <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use <code>RESETLOGS</code> unless it's necessary. For more information about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"> RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.</p>
     pub fn get_extra_archived_log_dest_ids(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.extra_archived_log_dest_ids

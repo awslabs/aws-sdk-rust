@@ -8,9 +8,9 @@ pub struct AvailabilityZone {
     pub zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
-    /// <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
+    /// <p>\[Application Load Balancers on Outposts\] The ID of the Outpost.</p>
     pub outpost_id: ::std::option::Option<::std::string::String>,
-    /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
+    /// <p>\[Network Load Balancers\] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
     pub load_balancer_addresses: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAddress>>,
 }
 impl AvailabilityZone {
@@ -22,11 +22,11 @@ impl AvailabilityZone {
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
+    /// <p>\[Application Load Balancers on Outposts\] The ID of the Outpost.</p>
     pub fn outpost_id(&self) -> ::std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
-    /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
+    /// <p>\[Network Load Balancers\] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_addresses.is_none()`.
     pub fn load_balancer_addresses(&self) -> &[crate::types::LoadBalancerAddress] {
@@ -78,17 +78,17 @@ impl AvailabilityZoneBuilder {
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }
-    /// <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
+    /// <p>\[Application Load Balancers on Outposts\] The ID of the Outpost.</p>
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
+    /// <p>\[Application Load Balancers on Outposts\] The ID of the Outpost.</p>
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_id = input;
         self
     }
-    /// <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
+    /// <p>\[Application Load Balancers on Outposts\] The ID of the Outpost.</p>
     pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_id
     }
@@ -96,19 +96,19 @@ impl AvailabilityZoneBuilder {
     ///
     /// To override the contents of this collection use [`set_load_balancer_addresses`](Self::set_load_balancer_addresses).
     ///
-    /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
+    /// <p>\[Network Load Balancers\] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
     pub fn load_balancer_addresses(mut self, input: crate::types::LoadBalancerAddress) -> Self {
         let mut v = self.load_balancer_addresses.unwrap_or_default();
         v.push(input);
         self.load_balancer_addresses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
+    /// <p>\[Network Load Balancers\] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
     pub fn set_load_balancer_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAddress>>) -> Self {
         self.load_balancer_addresses = input;
         self
     }
-    /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
+    /// <p>\[Network Load Balancers\] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
     pub fn get_load_balancer_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAddress>> {
         &self.load_balancer_addresses
     }

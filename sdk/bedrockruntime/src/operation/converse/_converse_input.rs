@@ -27,7 +27,7 @@ pub struct ConverseInput {
     /// <p>Additional inference parameters that the model supports, beyond the base set of inference parameters that <code>Converse</code> supports in the <code>inferenceConfig</code> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Model parameters</a>.</p>
     pub additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResultFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
-    /// <p><code>[ "/stop_sequence" ]</code></p>
+    /// <p><code>\[ "/stop_sequence" \]</code></p>
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
     /// <p><code>Converse</code> rejects an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>Converse</code>.</p>
     pub additional_model_response_field_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -73,7 +73,7 @@ impl ConverseInput {
         self.additional_model_request_fields.as_ref()
     }
     /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResultFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
-    /// <p><code>[ "/stop_sequence" ]</code></p>
+    /// <p><code>\[ "/stop_sequence" \]</code></p>
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
     /// <p><code>Converse</code> rejects an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>Converse</code>.</p>
     ///
@@ -237,7 +237,7 @@ impl ConverseInputBuilder {
     /// To override the contents of this collection use [`set_additional_model_response_field_paths`](Self::set_additional_model_response_field_paths).
     ///
     /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResultFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
-    /// <p><code>[ "/stop_sequence" ]</code></p>
+    /// <p><code>\[ "/stop_sequence" \]</code></p>
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
     /// <p><code>Converse</code> rejects an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>Converse</code>.</p>
     pub fn additional_model_response_field_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -247,7 +247,7 @@ impl ConverseInputBuilder {
         self
     }
     /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResultFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
-    /// <p><code>[ "/stop_sequence" ]</code></p>
+    /// <p><code>\[ "/stop_sequence" \]</code></p>
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
     /// <p><code>Converse</code> rejects an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>Converse</code>.</p>
     pub fn set_additional_model_response_field_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -255,7 +255,7 @@ impl ConverseInputBuilder {
         self
     }
     /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResultFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
-    /// <p><code>[ "/stop_sequence" ]</code></p>
+    /// <p><code>\[ "/stop_sequence" \]</code></p>
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
     /// <p><code>Converse</code> rejects an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>Converse</code>.</p>
     pub fn get_additional_model_response_field_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

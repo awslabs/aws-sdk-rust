@@ -17,7 +17,7 @@ pub struct ResourceChangeDetail {
     /// <li>
     /// <p><code>ParameterReference</code> entities are <code>Ref</code> intrinsic functions that get template parameter values, such as <code>{ "Ref" : "MyPasswordParameter" }</code>.</p></li>
     /// <li>
-    /// <p><code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : [ "MyEC2InstanceResource", "PublicDnsName" ] }</code>.</p></li>
+    /// <p><code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : \[ "MyEC2InstanceResource", "PublicDnsName" \] }</code>.</p></li>
     /// <li>
     /// <p><code>DirectModification</code> entities are changes that are made directly to the template.</p></li>
     /// <li>
@@ -46,7 +46,7 @@ impl ResourceChangeDetail {
     /// <li>
     /// <p><code>ParameterReference</code> entities are <code>Ref</code> intrinsic functions that get template parameter values, such as <code>{ "Ref" : "MyPasswordParameter" }</code>.</p></li>
     /// <li>
-    /// <p><code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : [ "MyEC2InstanceResource", "PublicDnsName" ] }</code>.</p></li>
+    /// <p><code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : \[ "MyEC2InstanceResource", "PublicDnsName" \] }</code>.</p></li>
     /// <li>
     /// <p><code>DirectModification</code> entities are changes that are made directly to the template.</p></li>
     /// <li>
@@ -119,7 +119,7 @@ impl ResourceChangeDetailBuilder {
     /// <li>
     /// <p><code>ParameterReference</code> entities are <code>Ref</code> intrinsic functions that get template parameter values, such as <code>{ "Ref" : "MyPasswordParameter" }</code>.</p></li>
     /// <li>
-    /// <p><code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : [ "MyEC2InstanceResource", "PublicDnsName" ] }</code>.</p></li>
+    /// <p><code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : \[ "MyEC2InstanceResource", "PublicDnsName" \] }</code>.</p></li>
     /// <li>
     /// <p><code>DirectModification</code> entities are changes that are made directly to the template.</p></li>
     /// <li>
@@ -136,7 +136,7 @@ impl ResourceChangeDetailBuilder {
     /// <li>
     /// <p><code>ParameterReference</code> entities are <code>Ref</code> intrinsic functions that get template parameter values, such as <code>{ "Ref" : "MyPasswordParameter" }</code>.</p></li>
     /// <li>
-    /// <p><code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : [ "MyEC2InstanceResource", "PublicDnsName" ] }</code>.</p></li>
+    /// <p><code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : \[ "MyEC2InstanceResource", "PublicDnsName" \] }</code>.</p></li>
     /// <li>
     /// <p><code>DirectModification</code> entities are changes that are made directly to the template.</p></li>
     /// <li>
@@ -153,7 +153,7 @@ impl ResourceChangeDetailBuilder {
     /// <li>
     /// <p><code>ParameterReference</code> entities are <code>Ref</code> intrinsic functions that get template parameter values, such as <code>{ "Ref" : "MyPasswordParameter" }</code>.</p></li>
     /// <li>
-    /// <p><code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : [ "MyEC2InstanceResource", "PublicDnsName" ] }</code>.</p></li>
+    /// <p><code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : \[ "MyEC2InstanceResource", "PublicDnsName" \] }</code>.</p></li>
     /// <li>
     /// <p><code>DirectModification</code> entities are changes that are made directly to the template.</p></li>
     /// <li>

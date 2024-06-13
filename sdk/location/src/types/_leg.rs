@@ -18,11 +18,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Leg {
-    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
+    /// <p>The starting position of the leg. Follows the format <code>\[longitude,latitude\]</code>.</p><note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub start_position: ::std::vec::Vec<f64>,
-    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
+    /// <p>The terminating position of the leg. Follows the format <code>\[longitude,latitude\]</code>.</p><note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub end_position: ::std::vec::Vec<f64>,
@@ -40,14 +40,14 @@ pub struct Leg {
     pub steps: ::std::vec::Vec<crate::types::Step>,
 }
 impl Leg {
-    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
+    /// <p>The starting position of the leg. Follows the format <code>\[longitude,latitude\]</code>.</p><note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub fn start_position(&self) -> &[f64] {
         use std::ops::Deref;
         self.start_position.deref()
     }
-    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
+    /// <p>The terminating position of the leg. Follows the format <code>\[longitude,latitude\]</code>.</p><note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub fn end_position(&self) -> &[f64] {
@@ -111,7 +111,7 @@ impl LegBuilder {
     ///
     /// To override the contents of this collection use [`set_start_position`](Self::set_start_position).
     ///
-    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
+    /// <p>The starting position of the leg. Follows the format <code>\[longitude,latitude\]</code>.</p><note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub fn start_position(mut self, input: f64) -> Self {
@@ -120,14 +120,14 @@ impl LegBuilder {
         self.start_position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
+    /// <p>The starting position of the leg. Follows the format <code>\[longitude,latitude\]</code>.</p><note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub fn set_start_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.start_position = input;
         self
     }
-    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
+    /// <p>The starting position of the leg. Follows the format <code>\[longitude,latitude\]</code>.</p><note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub fn get_start_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
@@ -137,7 +137,7 @@ impl LegBuilder {
     ///
     /// To override the contents of this collection use [`set_end_position`](Self::set_end_position).
     ///
-    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
+    /// <p>The terminating position of the leg. Follows the format <code>\[longitude,latitude\]</code>.</p><note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub fn end_position(mut self, input: f64) -> Self {
@@ -146,14 +146,14 @@ impl LegBuilder {
         self.end_position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
+    /// <p>The terminating position of the leg. Follows the format <code>\[longitude,latitude\]</code>.</p><note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub fn set_end_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.end_position = input;
         self
     }
-    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
+    /// <p>The terminating position of the leg. Follows the format <code>\[longitude,latitude\]</code>.</p><note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub fn get_end_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {

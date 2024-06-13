@@ -19,7 +19,7 @@ pub enum AttributeValue {
     /// <p>Example: <code>{"record": { "keyName": {} } }</code></p>
     Record(::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>),
     /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#set">Set</a> type.</p>
-    /// <p>Example: <code>{"set": [ {} ] }</code></p>
+    /// <p>Example: <code>{"set": \[ {} \] }</code></p>
     Set(::std::vec::Vec<crate::types::AttributeValue>),
     /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#string">String</a> type.</p>
     /// <p>Example: <code>{"string": "abc"}</code></p>

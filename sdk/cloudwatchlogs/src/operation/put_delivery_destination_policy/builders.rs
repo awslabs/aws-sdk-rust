@@ -33,7 +33,7 @@ impl crate::operation::put_delivery_destination_policy::builders::PutDeliveryDes
 /// <li>
 /// <p>Create a <i>delivery</i> by pairing exactly one delivery source and one delivery destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.</p></li>
 /// </ul>
-/// <p>Only some Amazon Web Services services support being configured as a delivery source. These services are listed as <b>Supported [V2 Permissions]</b> in the table at <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling logging from Amazon Web Services services.</a></p>
+/// <p>Only some Amazon Web Services services support being configured as a delivery source. These services are listed as <b>Supported \[V2 Permissions\]</b> in the table at <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling logging from Amazon Web Services services.</a></p>
 /// <p>The contents of the policy must include two statements. One statement enables general logs delivery, and the other allows delivery to the chosen destination. See the examples for the needed policies.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutDeliveryDestinationPolicyFluentBuilder {

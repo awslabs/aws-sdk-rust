@@ -2,7 +2,7 @@
 
 /// <p>A filter that you use with the results of a Amazon CloudWatch Internet Monitor query that you created and ran. The query sets up a repository of data that is a subset of your application's Internet Monitor data. <code>FilterParameter</code> is a string that defines how you want to filter the repository of data to return a set of results, based on your criteria.</p>
 /// <p>The filter parameters that you can specify depend on the query type that you used to create the repository, since each query type returns a different set of Internet Monitor data.</p>
-/// <p>For each filter, you specify a field (such as <code>city</code>), an operator (such as <code>not_equals</code>, and a value or array of values (such as <code>["Seattle", "Redmond"]</code>). Separate values in the array with commas.</p>
+/// <p>For each filter, you specify a field (such as <code>city</code>), an operator (such as <code>not_equals</code>, and a value or array of values (such as <code>\["Seattle", "Redmond"\]</code>). Separate values in the array with commas.</p>
 /// <p>For more information about specifying filter parameters, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-view-cw-tools-cwim-query.html">Using the Amazon CloudWatch Internet Monitor query interface</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -11,7 +11,7 @@ pub struct FilterParameter {
     pub field: ::std::option::Option<::std::string::String>,
     /// <p>The operator to use with the filter field and a value, such as <code>not_equals</code>.</p>
     pub operator: ::std::option::Option<crate::types::Operator>,
-    /// <p>One or more values to be used, together with the specified operator, to filter data for a query. For example, you could specify an array of values such as <code>["Seattle", "Redmond"]</code>. Values in the array are separated by commas.</p>
+    /// <p>One or more values to be used, together with the specified operator, to filter data for a query. For example, you could specify an array of values such as <code>\["Seattle", "Redmond"\]</code>. Values in the array are separated by commas.</p>
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FilterParameter {
@@ -23,7 +23,7 @@ impl FilterParameter {
     pub fn operator(&self) -> ::std::option::Option<&crate::types::Operator> {
         self.operator.as_ref()
     }
-    /// <p>One or more values to be used, together with the specified operator, to filter data for a query. For example, you could specify an array of values such as <code>["Seattle", "Redmond"]</code>. Values in the array are separated by commas.</p>
+    /// <p>One or more values to be used, together with the specified operator, to filter data for a query. For example, you could specify an array of values such as <code>\["Seattle", "Redmond"\]</code>. Values in the array are separated by commas.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
     pub fn values(&self) -> &[::std::string::String] {
@@ -78,19 +78,19 @@ impl FilterParameterBuilder {
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
-    /// <p>One or more values to be used, together with the specified operator, to filter data for a query. For example, you could specify an array of values such as <code>["Seattle", "Redmond"]</code>. Values in the array are separated by commas.</p>
+    /// <p>One or more values to be used, together with the specified operator, to filter data for a query. For example, you could specify an array of values such as <code>\["Seattle", "Redmond"\]</code>. Values in the array are separated by commas.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
         self.values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more values to be used, together with the specified operator, to filter data for a query. For example, you could specify an array of values such as <code>["Seattle", "Redmond"]</code>. Values in the array are separated by commas.</p>
+    /// <p>One or more values to be used, together with the specified operator, to filter data for a query. For example, you could specify an array of values such as <code>\["Seattle", "Redmond"\]</code>. Values in the array are separated by commas.</p>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
-    /// <p>One or more values to be used, together with the specified operator, to filter data for a query. For example, you could specify an array of values such as <code>["Seattle", "Redmond"]</code>. Values in the array are separated by commas.</p>
+    /// <p>One or more values to be used, together with the specified operator, to filter data for a query. For example, you could specify an array of values such as <code>\["Seattle", "Redmond"\]</code>. Values in the array are separated by commas.</p>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.values
     }

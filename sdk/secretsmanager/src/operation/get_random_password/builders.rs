@@ -22,7 +22,7 @@ impl crate::operation::get_random_password::builders::GetRandomPasswordInputBuil
 }
 /// Fluent builder constructing a request to `GetRandomPassword`.
 ///
-/// <p>Generates a random password. We recommend that you specify the maximum length and include every character type that the system you are generating a password for can support. By default, Secrets Manager uses uppercase and lowercase letters, numbers, and the following characters in passwords: <code>!\"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\\]^_`{|}~</code></p>
+/// <p>Generates a random password. We recommend that you specify the maximum length and include every character type that the system you are generating a password for can support. By default, Secrets Manager uses uppercase and lowercase letters, numbers, and the following characters in passwords: <code>!\"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\\]^_`{|}~</code></p>
 /// <p>Secrets Manager generates a CloudTrail log entry when you call this action.</p>
 /// <p><b>Required permissions: </b> <code>secretsmanager:GetRandomPassword</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -152,17 +152,17 @@ impl GetRandomPasswordFluentBuilder {
     pub fn get_exclude_numbers(&self) -> &::std::option::Option<bool> {
         self.inner.get_exclude_numbers()
     }
-    /// <p>Specifies whether to exclude the following punctuation characters from the password: <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code>. If you don't include this switch, the password can contain punctuation.</p>
+    /// <p>Specifies whether to exclude the following punctuation characters from the password: <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ \[ \ \] ^ _ ` { | } ~</code>. If you don't include this switch, the password can contain punctuation.</p>
     pub fn exclude_punctuation(mut self, input: bool) -> Self {
         self.inner = self.inner.exclude_punctuation(input);
         self
     }
-    /// <p>Specifies whether to exclude the following punctuation characters from the password: <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code>. If you don't include this switch, the password can contain punctuation.</p>
+    /// <p>Specifies whether to exclude the following punctuation characters from the password: <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ \[ \ \] ^ _ ` { | } ~</code>. If you don't include this switch, the password can contain punctuation.</p>
     pub fn set_exclude_punctuation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_exclude_punctuation(input);
         self
     }
-    /// <p>Specifies whether to exclude the following punctuation characters from the password: <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code>. If you don't include this switch, the password can contain punctuation.</p>
+    /// <p>Specifies whether to exclude the following punctuation characters from the password: <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ \[ \ \] ^ _ ` { | } ~</code>. If you don't include this switch, the password can contain punctuation.</p>
     pub fn get_exclude_punctuation(&self) -> &::std::option::Option<bool> {
         self.inner.get_exclude_punctuation()
     }

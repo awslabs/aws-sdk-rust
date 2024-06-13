@@ -6,7 +6,7 @@ pub struct DescribePatchGroupsOutput {
     /// <p>Each entry in the array contains:</p>
     /// <ul>
     /// <li>
-    /// <p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code></p></li>
+    /// <p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^(\[\p{L}\p{Z}\p{N}_.:/=+\-@\]*)$)</code></p></li>
     /// <li>
     /// <p><code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p></li>
     /// </ul>
@@ -19,7 +19,7 @@ impl DescribePatchGroupsOutput {
     /// <p>Each entry in the array contains:</p>
     /// <ul>
     /// <li>
-    /// <p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code></p></li>
+    /// <p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^(\[\p{L}\p{Z}\p{N}_.:/=+\-@\]*)$)</code></p></li>
     /// <li>
     /// <p><code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p></li>
     /// </ul>
@@ -61,7 +61,7 @@ impl DescribePatchGroupsOutputBuilder {
     /// <p>Each entry in the array contains:</p>
     /// <ul>
     /// <li>
-    /// <p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code></p></li>
+    /// <p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^(\[\p{L}\p{Z}\p{N}_.:/=+\-@\]*)$)</code></p></li>
     /// <li>
     /// <p><code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p></li>
     /// </ul>
@@ -74,7 +74,7 @@ impl DescribePatchGroupsOutputBuilder {
     /// <p>Each entry in the array contains:</p>
     /// <ul>
     /// <li>
-    /// <p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code></p></li>
+    /// <p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^(\[\p{L}\p{Z}\p{N}_.:/=+\-@\]*)$)</code></p></li>
     /// <li>
     /// <p><code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p></li>
     /// </ul>
@@ -85,7 +85,7 @@ impl DescribePatchGroupsOutputBuilder {
     /// <p>Each entry in the array contains:</p>
     /// <ul>
     /// <li>
-    /// <p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code></p></li>
+    /// <p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^(\[\p{L}\p{Z}\p{N}_.:/=+\-@\]*)$)</code></p></li>
     /// <li>
     /// <p><code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p></li>
     /// </ul>

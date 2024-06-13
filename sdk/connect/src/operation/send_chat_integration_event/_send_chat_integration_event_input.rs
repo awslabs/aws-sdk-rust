@@ -8,7 +8,7 @@ pub struct SendChatIntegrationEventInput {
     /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For SMS, this is the phone number destination of inbound SMS messages represented by an Amazon Pinpoint phone number ARN.</p>
     pub destination_id: ::std::option::Option<::std::string::String>,
     /// <p>Classification of a channel. This is used in part to uniquely identify chat.</p>
-    /// <p>Valid value: <code>["connect:sms"]</code></p>
+    /// <p>Valid value: <code>\["connect:sms"\]</code></p>
     pub subtype: ::std::option::Option<::std::string::String>,
     /// <p>Chat integration event payload</p>
     pub event: ::std::option::Option<crate::types::ChatEvent>,
@@ -25,7 +25,7 @@ impl SendChatIntegrationEventInput {
         self.destination_id.as_deref()
     }
     /// <p>Classification of a channel. This is used in part to uniquely identify chat.</p>
-    /// <p>Valid value: <code>["connect:sms"]</code></p>
+    /// <p>Valid value: <code>\["connect:sms"\]</code></p>
     pub fn subtype(&self) -> ::std::option::Option<&str> {
         self.subtype.as_deref()
     }
@@ -87,19 +87,19 @@ impl SendChatIntegrationEventInputBuilder {
         &self.destination_id
     }
     /// <p>Classification of a channel. This is used in part to uniquely identify chat.</p>
-    /// <p>Valid value: <code>["connect:sms"]</code></p>
+    /// <p>Valid value: <code>\["connect:sms"\]</code></p>
     pub fn subtype(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subtype = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Classification of a channel. This is used in part to uniquely identify chat.</p>
-    /// <p>Valid value: <code>["connect:sms"]</code></p>
+    /// <p>Valid value: <code>\["connect:sms"\]</code></p>
     pub fn set_subtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subtype = input;
         self
     }
     /// <p>Classification of a channel. This is used in part to uniquely identify chat.</p>
-    /// <p>Valid value: <code>["connect:sms"]</code></p>
+    /// <p>Valid value: <code>\["connect:sms"\]</code></p>
     pub fn get_subtype(&self) -> &::std::option::Option<::std::string::String> {
         &self.subtype
     }

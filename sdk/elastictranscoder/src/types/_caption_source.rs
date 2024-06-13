@@ -16,7 +16,7 @@ pub struct CaptionSource {
     /// <p>For more information on ISO language codes and language names, see the List of ISO 639-1 codes.</p>
     pub language: ::std::option::Option<::std::string::String>,
     /// <p>For clip generation or captions that do not start at the same time as the associated video file, the <code>TimeOffset</code> tells Elastic Transcoder how much of the video to encode before including captions.</p>
-    /// <p>Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.</p>
+    /// <p>Specify the TimeOffset in the form \[+-\]SS.sss or \[+-\]HH:mm:SS.ss.</p>
     pub time_offset: ::std::option::Option<::std::string::String>,
     /// <p>The label of the caption shown in the player when choosing a language. We recommend that you put the caption language name here, in the language of the captions.</p>
     pub label: ::std::option::Option<::std::string::String>,
@@ -40,7 +40,7 @@ impl CaptionSource {
         self.language.as_deref()
     }
     /// <p>For clip generation or captions that do not start at the same time as the associated video file, the <code>TimeOffset</code> tells Elastic Transcoder how much of the video to encode before including captions.</p>
-    /// <p>Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.</p>
+    /// <p>Specify the TimeOffset in the form \[+-\]SS.sss or \[+-\]HH:mm:SS.ss.</p>
     pub fn time_offset(&self) -> ::std::option::Option<&str> {
         self.time_offset.as_deref()
     }
@@ -121,19 +121,19 @@ impl CaptionSourceBuilder {
         &self.language
     }
     /// <p>For clip generation or captions that do not start at the same time as the associated video file, the <code>TimeOffset</code> tells Elastic Transcoder how much of the video to encode before including captions.</p>
-    /// <p>Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.</p>
+    /// <p>Specify the TimeOffset in the form \[+-\]SS.sss or \[+-\]HH:mm:SS.ss.</p>
     pub fn time_offset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_offset = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For clip generation or captions that do not start at the same time as the associated video file, the <code>TimeOffset</code> tells Elastic Transcoder how much of the video to encode before including captions.</p>
-    /// <p>Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.</p>
+    /// <p>Specify the TimeOffset in the form \[+-\]SS.sss or \[+-\]HH:mm:SS.ss.</p>
     pub fn set_time_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_offset = input;
         self
     }
     /// <p>For clip generation or captions that do not start at the same time as the associated video file, the <code>TimeOffset</code> tells Elastic Transcoder how much of the video to encode before including captions.</p>
-    /// <p>Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.</p>
+    /// <p>Specify the TimeOffset in the form \[+-\]SS.sss or \[+-\]HH:mm:SS.ss.</p>
     pub fn get_time_offset(&self) -> &::std::option::Option<::std::string::String> {
         &self.time_offset
     }

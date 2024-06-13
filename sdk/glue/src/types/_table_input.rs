@@ -20,7 +20,7 @@ pub struct TableInput {
     pub storage_descriptor: ::std::option::Option<crate::types::StorageDescriptor>,
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
-    /// <p><code>"PartitionKeys": []</code></p>
+    /// <p><code>"PartitionKeys": \[\]</code></p>
     pub partition_keys: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.</p>
     pub view_original_text: ::std::option::Option<::std::string::String>,
@@ -82,7 +82,7 @@ impl TableInput {
     }
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
-    /// <p><code>"PartitionKeys": []</code></p>
+    /// <p><code>"PartitionKeys": \[\]</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_keys.is_none()`.
     pub fn partition_keys(&self) -> &[crate::types::Column] {
@@ -260,7 +260,7 @@ impl TableInputBuilder {
     ///
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
-    /// <p><code>"PartitionKeys": []</code></p>
+    /// <p><code>"PartitionKeys": \[\]</code></p>
     pub fn partition_keys(mut self, input: crate::types::Column) -> Self {
         let mut v = self.partition_keys.unwrap_or_default();
         v.push(input);
@@ -269,14 +269,14 @@ impl TableInputBuilder {
     }
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
-    /// <p><code>"PartitionKeys": []</code></p>
+    /// <p><code>"PartitionKeys": \[\]</code></p>
     pub fn set_partition_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Column>>) -> Self {
         self.partition_keys = input;
         self
     }
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
-    /// <p><code>"PartitionKeys": []</code></p>
+    /// <p><code>"PartitionKeys": \[\]</code></p>
     pub fn get_partition_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Column>> {
         &self.partition_keys
     }

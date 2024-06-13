@@ -113,20 +113,20 @@ impl CreateResourceGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_group_tags`](Self::set_resource_group_tags).
     ///
-    /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
-    /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
+    /// <p>A collection of keys and an array of possible values, '\[{"key":"key1","values":\["Value1","Value2"\]},{"key":"Key2","values":\["Value3"\]}\]'.</p>
+    /// <p>For example,'\[{"key":"Name","values":\["TestEC2Instance"\]}\]'.</p>
     pub fn resource_group_tags(mut self, input: crate::types::ResourceGroupTag) -> Self {
         self.inner = self.inner.resource_group_tags(input);
         self
     }
-    /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
-    /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
+    /// <p>A collection of keys and an array of possible values, '\[{"key":"key1","values":\["Value1","Value2"\]},{"key":"Key2","values":\["Value3"\]}\]'.</p>
+    /// <p>For example,'\[{"key":"Name","values":\["TestEC2Instance"\]}\]'.</p>
     pub fn set_resource_group_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>>) -> Self {
         self.inner = self.inner.set_resource_group_tags(input);
         self
     }
-    /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
-    /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
+    /// <p>A collection of keys and an array of possible values, '\[{"key":"key1","values":\["Value1","Value2"\]},{"key":"Key2","values":\["Value3"\]}\]'.</p>
+    /// <p>For example,'\[{"key":"Name","values":\["TestEC2Instance"\]}\]'.</p>
     pub fn get_resource_group_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>> {
         self.inner.get_resource_group_tags()
     }

@@ -13,7 +13,7 @@ pub struct TargetPlatform {
     /// <li>
     /// <p><code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code></p></li>
     /// <li>
-    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code></p></li>
+    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': \['+neon', '+vfpv4'\]}</code></p></li>
     /// </ul>
     pub accelerator: ::std::option::Option<crate::types::TargetPlatformAccelerator>,
 }
@@ -31,7 +31,7 @@ impl TargetPlatform {
     /// <li>
     /// <p><code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code></p></li>
     /// <li>
-    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code></p></li>
+    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': \['+neon', '+vfpv4'\]}</code></p></li>
     /// </ul>
     pub fn accelerator(&self) -> ::std::option::Option<&crate::types::TargetPlatformAccelerator> {
         self.accelerator.as_ref()
@@ -88,7 +88,7 @@ impl TargetPlatformBuilder {
     /// <li>
     /// <p><code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code></p></li>
     /// <li>
-    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code></p></li>
+    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': \['+neon', '+vfpv4'\]}</code></p></li>
     /// </ul>
     pub fn accelerator(mut self, input: crate::types::TargetPlatformAccelerator) -> Self {
         self.accelerator = ::std::option::Option::Some(input);
@@ -99,7 +99,7 @@ impl TargetPlatformBuilder {
     /// <li>
     /// <p><code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code></p></li>
     /// <li>
-    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code></p></li>
+    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': \['+neon', '+vfpv4'\]}</code></p></li>
     /// </ul>
     pub fn set_accelerator(mut self, input: ::std::option::Option<crate::types::TargetPlatformAccelerator>) -> Self {
         self.accelerator = input;
@@ -110,7 +110,7 @@ impl TargetPlatformBuilder {
     /// <li>
     /// <p><code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code></p></li>
     /// <li>
-    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code></p></li>
+    /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': \['+neon', '+vfpv4'\]}</code></p></li>
     /// </ul>
     pub fn get_accelerator(&self) -> &::std::option::Option<crate::types::TargetPlatformAccelerator> {
         &self.accelerator

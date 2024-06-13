@@ -22,7 +22,7 @@ pub struct SnowflakeDestinationDescription {
     pub meta_data_column_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the record content column</p>
     pub content_column_name: ::std::option::Option<::std::string::String>,
-    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
+    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.\[region\].vpce-svc-&lt;\[id\]&gt;. For more information, see Amazon PrivateLink &amp; Snowflake</p>
     pub snowflake_vpc_configuration: ::std::option::Option<crate::types::SnowflakeVpcConfiguration>,
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
@@ -76,7 +76,7 @@ impl SnowflakeDestinationDescription {
     pub fn content_column_name(&self) -> ::std::option::Option<&str> {
         self.content_column_name.as_deref()
     }
-    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
+    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.\[region\].vpce-svc-&lt;\[id\]&gt;. For more information, see Amazon PrivateLink &amp; Snowflake</p>
     pub fn snowflake_vpc_configuration(&self) -> ::std::option::Option<&crate::types::SnowflakeVpcConfiguration> {
         self.snowflake_vpc_configuration.as_ref()
     }
@@ -288,17 +288,17 @@ impl SnowflakeDestinationDescriptionBuilder {
     pub fn get_content_column_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_column_name
     }
-    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
+    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.\[region\].vpce-svc-&lt;\[id\]&gt;. For more information, see Amazon PrivateLink &amp; Snowflake</p>
     pub fn snowflake_vpc_configuration(mut self, input: crate::types::SnowflakeVpcConfiguration) -> Self {
         self.snowflake_vpc_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
+    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.\[region\].vpce-svc-&lt;\[id\]&gt;. For more information, see Amazon PrivateLink &amp; Snowflake</p>
     pub fn set_snowflake_vpc_configuration(mut self, input: ::std::option::Option<crate::types::SnowflakeVpcConfiguration>) -> Self {
         self.snowflake_vpc_configuration = input;
         self
     }
-    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
+    /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.\[region\].vpce-svc-&lt;\[id\]&gt;. For more information, see Amazon PrivateLink &amp; Snowflake</p>
     pub fn get_snowflake_vpc_configuration(&self) -> &::std::option::Option<crate::types::SnowflakeVpcConfiguration> {
         &self.snowflake_vpc_configuration
     }

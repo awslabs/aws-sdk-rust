@@ -168,7 +168,7 @@ impl CreateServiceActionFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>The list of parameters in JSON format.</p>
-    /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
+    /// <p>For example: <code>\[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}\]</code> or <code>\[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}\]</code>.</p>
     /// </dd>
     /// </dl>
     pub fn definition(mut self, k: crate::types::ServiceActionDefinitionKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -202,7 +202,7 @@ impl CreateServiceActionFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>The list of parameters in JSON format.</p>
-    /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
+    /// <p>For example: <code>\[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}\]</code> or <code>\[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}\]</code>.</p>
     /// </dd>
     /// </dl>
     pub fn set_definition(
@@ -239,7 +239,7 @@ impl CreateServiceActionFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>The list of parameters in JSON format.</p>
-    /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
+    /// <p>For example: <code>\[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}\]</code> or <code>\[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}\]</code>.</p>
     /// </dd>
     /// </dl>
     pub fn get_definition(

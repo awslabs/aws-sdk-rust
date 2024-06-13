@@ -13,7 +13,7 @@ pub struct IpPermission {
     /// <p>For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code> are valid.</p>
     /// <p>For fleets using Windows builds, only ports <code>1026-60000</code> are valid.</p>
     pub to_port: ::std::option::Option<i32>,
-    /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
+    /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/\[subnet mask\]</code>" or optionally the shortened version "<code>0.0.0.0/\[subnet mask\]</code>".</p>
     pub ip_range: ::std::option::Option<::std::string::String>,
     /// <p>The network communication protocol used by the fleet.</p>
     pub protocol: ::std::option::Option<crate::types::IpProtocol>,
@@ -31,7 +31,7 @@ impl IpPermission {
     pub fn to_port(&self) -> ::std::option::Option<i32> {
         self.to_port
     }
-    /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
+    /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/\[subnet mask\]</code>" or optionally the shortened version "<code>0.0.0.0/\[subnet mask\]</code>".</p>
     pub fn ip_range(&self) -> ::std::option::Option<&str> {
         self.ip_range.as_deref()
     }
@@ -109,18 +109,18 @@ impl IpPermissionBuilder {
     pub fn get_to_port(&self) -> &::std::option::Option<i32> {
         &self.to_port
     }
-    /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
+    /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/\[subnet mask\]</code>" or optionally the shortened version "<code>0.0.0.0/\[subnet mask\]</code>".</p>
     /// This field is required.
     pub fn ip_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_range = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
+    /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/\[subnet mask\]</code>" or optionally the shortened version "<code>0.0.0.0/\[subnet mask\]</code>".</p>
     pub fn set_ip_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_range = input;
         self
     }
-    /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
+    /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/\[subnet mask\]</code>" or optionally the shortened version "<code>0.0.0.0/\[subnet mask\]</code>".</p>
     pub fn get_ip_range(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_range
     }

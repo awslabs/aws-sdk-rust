@@ -31,13 +31,13 @@ pub struct IpSet {
     /// <p>Example JSON <code>Addresses</code> specifications:</p>
     /// <ul>
     /// <li>
-    /// <p>Empty array: <code>"Addresses": []</code></p></li>
+    /// <p>Empty array: <code>"Addresses": \[\]</code></p></li>
     /// <li>
-    /// <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code></p></li>
+    /// <p>Array with one address: <code>"Addresses": \["192.0.2.44/32"\]</code></p></li>
     /// <li>
-    /// <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code></p></li>
+    /// <p>Array with three addresses: <code>"Addresses": \["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"\]</code></p></li>
     /// <li>
-    /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
+    /// <p>INVALID specification: <code>"Addresses": \[""\]</code> INVALID</p></li>
     /// </ul>
     pub addresses: ::std::vec::Vec<::std::string::String>,
 }
@@ -81,13 +81,13 @@ impl IpSet {
     /// <p>Example JSON <code>Addresses</code> specifications:</p>
     /// <ul>
     /// <li>
-    /// <p>Empty array: <code>"Addresses": []</code></p></li>
+    /// <p>Empty array: <code>"Addresses": \[\]</code></p></li>
     /// <li>
-    /// <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code></p></li>
+    /// <p>Array with one address: <code>"Addresses": \["192.0.2.44/32"\]</code></p></li>
     /// <li>
-    /// <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code></p></li>
+    /// <p>Array with three addresses: <code>"Addresses": \["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"\]</code></p></li>
     /// <li>
-    /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
+    /// <p>INVALID specification: <code>"Addresses": \[""\]</code> INVALID</p></li>
     /// </ul>
     pub fn addresses(&self) -> &[::std::string::String] {
         use std::ops::Deref;
@@ -207,13 +207,13 @@ impl IpSetBuilder {
     /// <p>Example JSON <code>Addresses</code> specifications:</p>
     /// <ul>
     /// <li>
-    /// <p>Empty array: <code>"Addresses": []</code></p></li>
+    /// <p>Empty array: <code>"Addresses": \[\]</code></p></li>
     /// <li>
-    /// <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code></p></li>
+    /// <p>Array with one address: <code>"Addresses": \["192.0.2.44/32"\]</code></p></li>
     /// <li>
-    /// <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code></p></li>
+    /// <p>Array with three addresses: <code>"Addresses": \["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"\]</code></p></li>
     /// <li>
-    /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
+    /// <p>INVALID specification: <code>"Addresses": \[""\]</code> INVALID</p></li>
     /// </ul>
     pub fn addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.addresses.unwrap_or_default();
@@ -237,13 +237,13 @@ impl IpSetBuilder {
     /// <p>Example JSON <code>Addresses</code> specifications:</p>
     /// <ul>
     /// <li>
-    /// <p>Empty array: <code>"Addresses": []</code></p></li>
+    /// <p>Empty array: <code>"Addresses": \[\]</code></p></li>
     /// <li>
-    /// <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code></p></li>
+    /// <p>Array with one address: <code>"Addresses": \["192.0.2.44/32"\]</code></p></li>
     /// <li>
-    /// <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code></p></li>
+    /// <p>Array with three addresses: <code>"Addresses": \["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"\]</code></p></li>
     /// <li>
-    /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
+    /// <p>INVALID specification: <code>"Addresses": \[""\]</code> INVALID</p></li>
     /// </ul>
     pub fn set_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.addresses = input;
@@ -265,13 +265,13 @@ impl IpSetBuilder {
     /// <p>Example JSON <code>Addresses</code> specifications:</p>
     /// <ul>
     /// <li>
-    /// <p>Empty array: <code>"Addresses": []</code></p></li>
+    /// <p>Empty array: <code>"Addresses": \[\]</code></p></li>
     /// <li>
-    /// <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code></p></li>
+    /// <p>Array with one address: <code>"Addresses": \["192.0.2.44/32"\]</code></p></li>
     /// <li>
-    /// <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code></p></li>
+    /// <p>Array with three addresses: <code>"Addresses": \["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"\]</code></p></li>
     /// <li>
-    /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
+    /// <p>INVALID specification: <code>"Addresses": \[""\]</code> INVALID</p></li>
     /// </ul>
     pub fn get_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.addresses

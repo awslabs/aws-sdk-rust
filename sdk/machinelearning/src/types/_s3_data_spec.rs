@@ -43,9 +43,9 @@ pub struct S3DataSpec {
     /// <p>"targetFieldName": "F3",</p>
     /// <p>"dataFormat": "CSV",</p>
     /// <p>"dataFileContainsHeader": true,</p>
-    /// <p>"attributes": [</p>
-    /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
-    /// <p>"excludedVariableNames": [ "F6" ] }</p>
+    /// <p>"attributes": \[</p>
+    /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } \],</p>
+    /// <p>"excludedVariableNames": \[ "F6" \] }</p>
     pub data_schema: ::std::option::Option<::std::string::String>,
     /// <p>Describes the schema location in Amazon S3. You must provide either the <code>DataSchema</code> or the <code>DataSchemaLocationS3</code>.</p>
     pub data_schema_location_s3: ::std::option::Option<::std::string::String>,
@@ -95,9 +95,9 @@ impl S3DataSpec {
     /// <p>"targetFieldName": "F3",</p>
     /// <p>"dataFormat": "CSV",</p>
     /// <p>"dataFileContainsHeader": true,</p>
-    /// <p>"attributes": [</p>
-    /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
-    /// <p>"excludedVariableNames": [ "F6" ] }</p>
+    /// <p>"attributes": \[</p>
+    /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } \],</p>
+    /// <p>"excludedVariableNames": \[ "F6" \] }</p>
     pub fn data_schema(&self) -> ::std::option::Option<&str> {
         self.data_schema.as_deref()
     }
@@ -239,9 +239,9 @@ impl S3DataSpecBuilder {
     /// <p>"targetFieldName": "F3",</p>
     /// <p>"dataFormat": "CSV",</p>
     /// <p>"dataFileContainsHeader": true,</p>
-    /// <p>"attributes": [</p>
-    /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
-    /// <p>"excludedVariableNames": [ "F6" ] }</p>
+    /// <p>"attributes": \[</p>
+    /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } \],</p>
+    /// <p>"excludedVariableNames": \[ "F6" \] }</p>
     pub fn data_schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_schema = ::std::option::Option::Some(input.into());
         self
@@ -255,9 +255,9 @@ impl S3DataSpecBuilder {
     /// <p>"targetFieldName": "F3",</p>
     /// <p>"dataFormat": "CSV",</p>
     /// <p>"dataFileContainsHeader": true,</p>
-    /// <p>"attributes": [</p>
-    /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
-    /// <p>"excludedVariableNames": [ "F6" ] }</p>
+    /// <p>"attributes": \[</p>
+    /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } \],</p>
+    /// <p>"excludedVariableNames": \[ "F6" \] }</p>
     pub fn set_data_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_schema = input;
         self
@@ -271,9 +271,9 @@ impl S3DataSpecBuilder {
     /// <p>"targetFieldName": "F3",</p>
     /// <p>"dataFormat": "CSV",</p>
     /// <p>"dataFileContainsHeader": true,</p>
-    /// <p>"attributes": [</p>
-    /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
-    /// <p>"excludedVariableNames": [ "F6" ] }</p>
+    /// <p>"attributes": \[</p>
+    /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } \],</p>
+    /// <p>"excludedVariableNames": \[ "F6" \] }</p>
     pub fn get_data_schema(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_schema
     }

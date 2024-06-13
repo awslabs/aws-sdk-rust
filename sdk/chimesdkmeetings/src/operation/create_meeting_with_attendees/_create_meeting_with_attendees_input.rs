@@ -12,7 +12,7 @@ pub struct CreateMeetingWithAttendeesInput {
     /// <p>Reserved.</p>
     pub meeting_host_id: ::std::option::Option<::std::string::String>,
     /// <p>The external meeting ID.</p>
-    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code></p>
+    /// <p>Pattern: <code>\[-_&amp;@+=,(){}\\[\\]\/«».:|'"#a-zA-Z0-9À-ÿ\s\]*</code></p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
     pub external_meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
@@ -44,7 +44,7 @@ impl CreateMeetingWithAttendeesInput {
         self.meeting_host_id.as_deref()
     }
     /// <p>The external meeting ID.</p>
-    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code></p>
+    /// <p>Pattern: <code>\[-_&amp;@+=,(){}\\[\\]\/«».:|'"#a-zA-Z0-9À-ÿ\s\]*</code></p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
     pub fn external_meeting_id(&self) -> ::std::option::Option<&str> {
         self.external_meeting_id.as_deref()
@@ -170,7 +170,7 @@ impl CreateMeetingWithAttendeesInputBuilder {
         &self.meeting_host_id
     }
     /// <p>The external meeting ID.</p>
-    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code></p>
+    /// <p>Pattern: <code>\[-_&amp;@+=,(){}\\[\\]\/«».:|'"#a-zA-Z0-9À-ÿ\s\]*</code></p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
     /// This field is required.
     pub fn external_meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -178,14 +178,14 @@ impl CreateMeetingWithAttendeesInputBuilder {
         self
     }
     /// <p>The external meeting ID.</p>
-    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code></p>
+    /// <p>Pattern: <code>\[-_&amp;@+=,(){}\\[\\]\/«».:|'"#a-zA-Z0-9À-ÿ\s\]*</code></p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
     pub fn set_external_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_meeting_id = input;
         self
     }
     /// <p>The external meeting ID.</p>
-    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code></p>
+    /// <p>Pattern: <code>\[-_&amp;@+=,(){}\\[\\]\/«».:|'"#a-zA-Z0-9À-ÿ\s\]*</code></p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
     pub fn get_external_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_meeting_id

@@ -9,7 +9,7 @@ pub struct CreateStateMachineInput {
     /// <li>
     /// <p>white space</p></li>
     /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <p>brackets <code>&lt; &gt; { } \[ \]</code></p></li>
     /// <li>
     /// <p>wildcard characters <code>? *</code></p></li>
     /// <li>
@@ -47,7 +47,7 @@ impl CreateStateMachineInput {
     /// <li>
     /// <p>white space</p></li>
     /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <p>brackets <code>&lt; &gt; { } \[ \]</code></p></li>
     /// <li>
     /// <p>wildcard characters <code>? *</code></p></li>
     /// <li>
@@ -141,7 +141,7 @@ impl CreateStateMachineInputBuilder {
     /// <li>
     /// <p>white space</p></li>
     /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <p>brackets <code>&lt; &gt; { } \[ \]</code></p></li>
     /// <li>
     /// <p>wildcard characters <code>? *</code></p></li>
     /// <li>
@@ -161,7 +161,7 @@ impl CreateStateMachineInputBuilder {
     /// <li>
     /// <p>white space</p></li>
     /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <p>brackets <code>&lt; &gt; { } \[ \]</code></p></li>
     /// <li>
     /// <p>wildcard characters <code>? *</code></p></li>
     /// <li>
@@ -180,7 +180,7 @@ impl CreateStateMachineInputBuilder {
     /// <li>
     /// <p>white space</p></li>
     /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <p>brackets <code>&lt; &gt; { } \[ \]</code></p></li>
     /// <li>
     /// <p>wildcard characters <code>? *</code></p></li>
     /// <li>

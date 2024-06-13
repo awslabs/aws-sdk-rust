@@ -9,7 +9,7 @@ pub struct UpdateFleetMetricInput {
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The type of the aggregation query.</p>
     pub aggregation_type: ::std::option::Option<crate::types::AggregationType>,
-    /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    /// <p>The time in seconds between fleet metric emissions. Range \[60(1 min), 86400(1 day)\] and must be multiple of 60.</p>
     pub period: ::std::option::Option<i32>,
     /// <p>The field to aggregate.</p>
     pub aggregation_field: ::std::option::Option<::std::string::String>,
@@ -37,7 +37,7 @@ impl UpdateFleetMetricInput {
     pub fn aggregation_type(&self) -> ::std::option::Option<&crate::types::AggregationType> {
         self.aggregation_type.as_ref()
     }
-    /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    /// <p>The time in seconds between fleet metric emissions. Range \[60(1 min), 86400(1 day)\] and must be multiple of 60.</p>
     pub fn period(&self) -> ::std::option::Option<i32> {
         self.period
     }
@@ -132,17 +132,17 @@ impl UpdateFleetMetricInputBuilder {
     pub fn get_aggregation_type(&self) -> &::std::option::Option<crate::types::AggregationType> {
         &self.aggregation_type
     }
-    /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    /// <p>The time in seconds between fleet metric emissions. Range \[60(1 min), 86400(1 day)\] and must be multiple of 60.</p>
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    /// <p>The time in seconds between fleet metric emissions. Range \[60(1 min), 86400(1 day)\] and must be multiple of 60.</p>
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.period = input;
         self
     }
-    /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
+    /// <p>The time in seconds between fleet metric emissions. Range \[60(1 min), 86400(1 day)\] and must be multiple of 60.</p>
     pub fn get_period(&self) -> &::std::option::Option<i32> {
         &self.period
     }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackSetOperationResultSummary {
-    /// <p>[Self-managed permissions] The name of the Amazon Web Services account for this operation result.</p>
+    /// <p>\[Self-managed permissions\] The name of the Amazon Web Services account for this operation result.</p>
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services Region for this operation result.</p>
     pub region: ::std::option::Option<::std::string::String>,
@@ -27,11 +27,11 @@ pub struct StackSetOperationResultSummary {
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with stack set operations in an account.</p>
     pub account_gate_result: ::std::option::Option<crate::types::AccountGateResult>,
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>\[Service-managed permissions\] The organization root ID or organizational unit (OU) IDs that you specified for DeploymentTargets.</p>
     pub organizational_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl StackSetOperationResultSummary {
-    /// <p>[Self-managed permissions] The name of the Amazon Web Services account for this operation result.</p>
+    /// <p>\[Self-managed permissions\] The name of the Amazon Web Services account for this operation result.</p>
     pub fn account(&self) -> ::std::option::Option<&str> {
         self.account.as_deref()
     }
@@ -64,7 +64,7 @@ impl StackSetOperationResultSummary {
     pub fn account_gate_result(&self) -> ::std::option::Option<&crate::types::AccountGateResult> {
         self.account_gate_result.as_ref()
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>\[Service-managed permissions\] The organization root ID or organizational unit (OU) IDs that you specified for DeploymentTargets.</p>
     pub fn organizational_unit_id(&self) -> ::std::option::Option<&str> {
         self.organizational_unit_id.as_deref()
     }
@@ -88,17 +88,17 @@ pub struct StackSetOperationResultSummaryBuilder {
     pub(crate) organizational_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl StackSetOperationResultSummaryBuilder {
-    /// <p>[Self-managed permissions] The name of the Amazon Web Services account for this operation result.</p>
+    /// <p>\[Self-managed permissions\] The name of the Amazon Web Services account for this operation result.</p>
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Self-managed permissions] The name of the Amazon Web Services account for this operation result.</p>
+    /// <p>\[Self-managed permissions\] The name of the Amazon Web Services account for this operation result.</p>
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account = input;
         self
     }
-    /// <p>[Self-managed permissions] The name of the Amazon Web Services account for this operation result.</p>
+    /// <p>\[Self-managed permissions\] The name of the Amazon Web Services account for this operation result.</p>
     pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.account
     }
@@ -197,17 +197,17 @@ impl StackSetOperationResultSummaryBuilder {
     pub fn get_account_gate_result(&self) -> &::std::option::Option<crate::types::AccountGateResult> {
         &self.account_gate_result
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>\[Service-managed permissions\] The organization root ID or organizational unit (OU) IDs that you specified for DeploymentTargets.</p>
     pub fn organizational_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organizational_unit_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>\[Service-managed permissions\] The organization root ID or organizational unit (OU) IDs that you specified for DeploymentTargets.</p>
     pub fn set_organizational_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organizational_unit_id = input;
         self
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>\[Service-managed permissions\] The organization root ID or organizational unit (OU) IDs that you specified for DeploymentTargets.</p>
     pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.organizational_unit_id
     }

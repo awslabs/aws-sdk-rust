@@ -9,7 +9,7 @@ pub struct ContainerProperties {
     /// </note>
     /// <ul>
     /// <li>
-    /// <p>Images in Amazon ECR Public repositories use the full <code>registry/repository[:tag]</code> or <code>registry/repository[@digest]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p></li>
+    /// <p>Images in Amazon ECR Public repositories use the full <code>registry/repository\[:tag\]</code> or <code>registry/repository\[@digest\]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p></li>
     /// <li>
     /// <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>123456789012.dkr.ecr.<region-name>
     /// .amazonaws.com/
@@ -93,7 +93,7 @@ impl ContainerProperties {
     /// </note>
     /// <ul>
     /// <li>
-    /// <p>Images in Amazon ECR Public repositories use the full <code>registry/repository[:tag]</code> or <code>registry/repository[@digest]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p></li>
+    /// <p>Images in Amazon ECR Public repositories use the full <code>registry/repository\[:tag\]</code> or <code>registry/repository\[@digest\]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p></li>
     /// <li>
     /// <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>123456789012.dkr.ecr.<region-name>
     /// .amazonaws.com/
@@ -272,7 +272,7 @@ impl ContainerPropertiesBuilder {
     /// </note>
     /// <ul>
     /// <li>
-    /// <p>Images in Amazon ECR Public repositories use the full <code>registry/repository[:tag]</code> or <code>registry/repository[@digest]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p></li>
+    /// <p>Images in Amazon ECR Public repositories use the full <code>registry/repository\[:tag\]</code> or <code>registry/repository\[@digest\]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p></li>
     /// <li>
     /// <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>123456789012.dkr.ecr.<region-name>
     /// .amazonaws.com/
@@ -294,7 +294,7 @@ impl ContainerPropertiesBuilder {
     /// </note>
     /// <ul>
     /// <li>
-    /// <p>Images in Amazon ECR Public repositories use the full <code>registry/repository[:tag]</code> or <code>registry/repository[@digest]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p></li>
+    /// <p>Images in Amazon ECR Public repositories use the full <code>registry/repository\[:tag\]</code> or <code>registry/repository\[@digest\]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p></li>
     /// <li>
     /// <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>123456789012.dkr.ecr.<region-name>
     /// .amazonaws.com/
@@ -316,7 +316,7 @@ impl ContainerPropertiesBuilder {
     /// </note>
     /// <ul>
     /// <li>
-    /// <p>Images in Amazon ECR Public repositories use the full <code>registry/repository[:tag]</code> or <code>registry/repository[@digest]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p></li>
+    /// <p>Images in Amazon ECR Public repositories use the full <code>registry/repository\[:tag\]</code> or <code>registry/repository\[@digest\]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i> </code>.</p></li>
     /// <li>
     /// <p>Images in Amazon ECR repositories use the full registry and repository URI (for example, <code>123456789012.dkr.ecr.<region-name>
     /// .amazonaws.com/

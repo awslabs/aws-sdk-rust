@@ -190,7 +190,7 @@ impl UpdateConstraintFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-    /// <p><code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code></p>
+    /// <p><code>{"NotificationArns" : \["arn:aws:sns:us-east-1:123456789012:Topic"\]}</code></p>
     /// </dd>
     /// <dt>
     /// RESOURCE_UPDATE
@@ -205,7 +205,7 @@ impl UpdateConstraintFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Specify the <code>Parameters</code> property as follows:</p>
-    /// <p><code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code></p>
+    /// <p><code>{"Version": "String", "Properties": {"AccountList": \[ "String" \], "RegionList": \[ "String" \], "AdminRole": "String", "ExecutionRole": "String"}}</code></p>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
     /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>
@@ -243,7 +243,7 @@ impl UpdateConstraintFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-    /// <p><code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code></p>
+    /// <p><code>{"NotificationArns" : \["arn:aws:sns:us-east-1:123456789012:Topic"\]}</code></p>
     /// </dd>
     /// <dt>
     /// RESOURCE_UPDATE
@@ -258,7 +258,7 @@ impl UpdateConstraintFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Specify the <code>Parameters</code> property as follows:</p>
-    /// <p><code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code></p>
+    /// <p><code>{"Version": "String", "Properties": {"AccountList": \[ "String" \], "RegionList": \[ "String" \], "AdminRole": "String", "ExecutionRole": "String"}}</code></p>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
     /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>
@@ -296,7 +296,7 @@ impl UpdateConstraintFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-    /// <p><code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code></p>
+    /// <p><code>{"NotificationArns" : \["arn:aws:sns:us-east-1:123456789012:Topic"\]}</code></p>
     /// </dd>
     /// <dt>
     /// RESOURCE_UPDATE
@@ -311,7 +311,7 @@ impl UpdateConstraintFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Specify the <code>Parameters</code> property as follows:</p>
-    /// <p><code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code></p>
+    /// <p><code>{"Version": "String", "Properties": {"AccountList": \[ "String" \], "RegionList": \[ "String" \], "AdminRole": "String", "ExecutionRole": "String"}}</code></p>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
     /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
     /// <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>

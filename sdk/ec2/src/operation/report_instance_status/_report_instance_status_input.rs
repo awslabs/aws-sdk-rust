@@ -30,7 +30,7 @@ pub struct ReportInstanceStatusInput {
     /// <li>
     /// <p><code>performance-other</code>: My instance is experiencing performance problems.</p></li>
     /// <li>
-    /// <p><code>other</code>: [explain using the description parameter]</p></li>
+    /// <p>other: \[explain using the description parameter\]</p></li>
     /// </ul>
     pub reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>>,
     /// <p>The time at which the reported instance health state began.</p>
@@ -76,7 +76,7 @@ impl ReportInstanceStatusInput {
     /// <li>
     /// <p><code>performance-other</code>: My instance is experiencing performance problems.</p></li>
     /// <li>
-    /// <p><code>other</code>: [explain using the description parameter]</p></li>
+    /// <p>other: \[explain using the description parameter\]</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reason_codes.is_none()`.
@@ -197,7 +197,7 @@ impl ReportInstanceStatusInputBuilder {
     /// <li>
     /// <p><code>performance-other</code>: My instance is experiencing performance problems.</p></li>
     /// <li>
-    /// <p><code>other</code>: [explain using the description parameter]</p></li>
+    /// <p>other: \[explain using the description parameter\]</p></li>
     /// </ul>
     pub fn reason_codes(mut self, input: crate::types::ReportInstanceReasonCodes) -> Self {
         let mut v = self.reason_codes.unwrap_or_default();
@@ -224,7 +224,7 @@ impl ReportInstanceStatusInputBuilder {
     /// <li>
     /// <p><code>performance-other</code>: My instance is experiencing performance problems.</p></li>
     /// <li>
-    /// <p><code>other</code>: [explain using the description parameter]</p></li>
+    /// <p>other: \[explain using the description parameter\]</p></li>
     /// </ul>
     pub fn set_reason_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>>) -> Self {
         self.reason_codes = input;
@@ -249,7 +249,7 @@ impl ReportInstanceStatusInputBuilder {
     /// <li>
     /// <p><code>performance-other</code>: My instance is experiencing performance problems.</p></li>
     /// <li>
-    /// <p><code>other</code>: [explain using the description parameter]</p></li>
+    /// <p>other: \[explain using the description parameter\]</p></li>
     /// </ul>
     pub fn get_reason_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>> {
         &self.reason_codes

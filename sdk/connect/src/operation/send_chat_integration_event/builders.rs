@@ -145,19 +145,19 @@ impl SendChatIntegrationEventFluentBuilder {
         self.inner.get_destination_id()
     }
     /// <p>Classification of a channel. This is used in part to uniquely identify chat.</p>
-    /// <p>Valid value: <code>["connect:sms"]</code></p>
+    /// <p>Valid value: <code>\["connect:sms"\]</code></p>
     pub fn subtype(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subtype(input.into());
         self
     }
     /// <p>Classification of a channel. This is used in part to uniquely identify chat.</p>
-    /// <p>Valid value: <code>["connect:sms"]</code></p>
+    /// <p>Valid value: <code>\["connect:sms"\]</code></p>
     pub fn set_subtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subtype(input);
         self
     }
     /// <p>Classification of a channel. This is used in part to uniquely identify chat.</p>
-    /// <p>Valid value: <code>["connect:sms"]</code></p>
+    /// <p>Valid value: <code>\["connect:sms"\]</code></p>
     pub fn get_subtype(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subtype()
     }

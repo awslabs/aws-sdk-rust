@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CalculateRouteSummary {
-    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
+    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>\[min x, min y, max x, max y\]</code>.</p>
     /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
     /// <ul>
     /// <li>
@@ -41,7 +41,7 @@ pub struct CalculateRouteSummary {
     pub distance_unit: crate::types::DistanceUnit,
 }
 impl CalculateRouteSummary {
-    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
+    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>\[min x, min y, max x, max y\]</code>.</p>
     /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
     /// <ul>
     /// <li>
@@ -122,7 +122,7 @@ impl CalculateRouteSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_route_b_box`](Self::set_route_b_box).
     ///
-    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
+    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>\[min x, min y, max x, max y\]</code>.</p>
     /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
     /// <ul>
     /// <li>
@@ -143,7 +143,7 @@ impl CalculateRouteSummaryBuilder {
         self.route_b_box = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
+    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>\[min x, min y, max x, max y\]</code>.</p>
     /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
     /// <ul>
     /// <li>
@@ -162,7 +162,7 @@ impl CalculateRouteSummaryBuilder {
         self.route_b_box = input;
         self
     }
-    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
+    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>\[min x, min y, max x, max y\]</code>.</p>
     /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
     /// <ul>
     /// <li>

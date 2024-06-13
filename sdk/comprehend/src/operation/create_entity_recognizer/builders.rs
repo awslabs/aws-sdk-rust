@@ -291,27 +291,27 @@ impl CreateEntityRecognizerFluentBuilder {
     }
     /// <p>The JSON resource-based policy to attach to your custom entity recognizer model. You can use this policy to allow another Amazon Web Services account to import your custom model.</p>
     /// <p>Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
-    /// <p><code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code></p>
+    /// <p><code>"{\"attribute\": \"value\", \"attribute\": \[\"value\"\]}"</code></p>
     /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
-    /// <p><code>'{"attribute": "value", "attribute": ["value"]}'</code></p>
+    /// <p><code>'{"attribute": "value", "attribute": \["value"\]}'</code></p>
     pub fn model_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_policy(input.into());
         self
     }
     /// <p>The JSON resource-based policy to attach to your custom entity recognizer model. You can use this policy to allow another Amazon Web Services account to import your custom model.</p>
     /// <p>Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
-    /// <p><code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code></p>
+    /// <p><code>"{\"attribute\": \"value\", \"attribute\": \[\"value\"\]}"</code></p>
     /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
-    /// <p><code>'{"attribute": "value", "attribute": ["value"]}'</code></p>
+    /// <p><code>'{"attribute": "value", "attribute": \["value"\]}'</code></p>
     pub fn set_model_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_policy(input);
         self
     }
     /// <p>The JSON resource-based policy to attach to your custom entity recognizer model. You can use this policy to allow another Amazon Web Services account to import your custom model.</p>
     /// <p>Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
-    /// <p><code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code></p>
+    /// <p><code>"{\"attribute\": \"value\", \"attribute\": \[\"value\"\]}"</code></p>
     /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
-    /// <p><code>'{"attribute": "value", "attribute": ["value"]}'</code></p>
+    /// <p><code>'{"attribute": "value", "attribute": \["value"\]}'</code></p>
     pub fn get_model_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_policy()
     }

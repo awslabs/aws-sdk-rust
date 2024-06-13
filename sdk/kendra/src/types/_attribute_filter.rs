@@ -11,7 +11,7 @@
 /// <p><code>AndOrFilters</code></p>
 /// <ul>
 /// <li>
-/// <p><code>ContainsAny</code>: "Project Name", ["new hires", "new hiring"]</p></li>
+/// <p>ContainsAny: "Project Name", \["new hires", "new hiring"\]</p></li>
 /// </ul></li>
 /// </ul>
 /// <p>This example filters results or documents that belong to the HR department <i>and</i> belong to projects that contain "new hires" <i>or</i> "new hiring" in the project name (must use <code>ContainAny</code> with <code>StringListValue</code>). This example is filtering with a depth of 2.</p>

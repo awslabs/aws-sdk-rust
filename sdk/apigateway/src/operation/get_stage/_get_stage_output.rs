@@ -20,7 +20,7 @@ pub struct GetStageOutput {
     pub cache_cluster_status: ::std::option::Option<crate::types::CacheClusterStatus>,
     /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.</p>
     pub method_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>>,
-    /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>\[A-Za-z0-9-._~:/?#&amp;=,\]+</code>.</p>
     pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The version of the associated API documentation.</p>
     pub documentation_version: ::std::option::Option<::std::string::String>,
@@ -73,7 +73,7 @@ impl GetStageOutput {
     pub fn method_settings(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>> {
         self.method_settings.as_ref()
     }
-    /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>\[A-Za-z0-9-._~:/?#&amp;=,\]+</code>.</p>
     pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.variables.as_ref()
     }
@@ -271,19 +271,19 @@ impl GetStageOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
     ///
-    /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>\[A-Za-z0-9-._~:/?#&amp;=,\]+</code>.</p>
     pub fn variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.variables.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.variables = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>\[A-Za-z0-9-._~:/?#&amp;=,\]+</code>.</p>
     pub fn set_variables(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.variables = input;
         self
     }
-    /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>\[A-Za-z0-9-._~:/?#&amp;=,\]+</code>.</p>
     pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.variables
     }

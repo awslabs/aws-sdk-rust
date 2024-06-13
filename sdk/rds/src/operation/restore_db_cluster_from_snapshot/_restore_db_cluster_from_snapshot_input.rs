@@ -36,13 +36,13 @@ pub struct RestoreDbClusterFromSnapshotInput {
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version of the database engine to use for the new DB cluster. If you don't specify an engine version, the default version for the database engine in the Amazon Web Services Region is used.</p>
     /// <p>To list all of the available engine versions for Aurora MySQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p><b>Aurora MySQL</b></p>
     /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">Database engine updates for Amazon Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p><b>Aurora PostgreSQL</b></p>
@@ -258,13 +258,13 @@ impl RestoreDbClusterFromSnapshotInput {
     }
     /// <p>The version of the database engine to use for the new DB cluster. If you don't specify an engine version, the default version for the database engine in the Amazon Web Services Region is used.</p>
     /// <p>To list all of the available engine versions for Aurora MySQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p><b>Aurora MySQL</b></p>
     /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">Database engine updates for Amazon Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p><b>Aurora PostgreSQL</b></p>
@@ -671,13 +671,13 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     }
     /// <p>The version of the database engine to use for the new DB cluster. If you don't specify an engine version, the default version for the database engine in the Amazon Web Services Region is used.</p>
     /// <p>To list all of the available engine versions for Aurora MySQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p><b>Aurora MySQL</b></p>
     /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">Database engine updates for Amazon Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p><b>Aurora PostgreSQL</b></p>
@@ -693,13 +693,13 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     }
     /// <p>The version of the database engine to use for the new DB cluster. If you don't specify an engine version, the default version for the database engine in the Amazon Web Services Region is used.</p>
     /// <p>To list all of the available engine versions for Aurora MySQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p><b>Aurora MySQL</b></p>
     /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">Database engine updates for Amazon Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p><b>Aurora PostgreSQL</b></p>
@@ -715,13 +715,13 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     }
     /// <p>The version of the database engine to use for the new DB cluster. If you don't specify an engine version, the default version for the database engine in the Amazon Web Services Region is used.</p>
     /// <p>To list all of the available engine versions for Aurora MySQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p><b>Aurora MySQL</b></p>
     /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">Database engine updates for Amazon Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p><b>Aurora PostgreSQL</b></p>

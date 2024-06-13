@@ -149,7 +149,7 @@ pub struct ExtraParam {
     /// <p><b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b></p>
     /// <ul>
     /// <li>
-    /// <p>Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])</p></li>
+    /// <p>Specify 1 letter + 8 numbers (CIF \[Certificado de Identificación Fiscal\])</p></li>
     /// <li>
     /// <p>Example: B12345678</p></li>
     /// </ul>
@@ -159,7 +159,7 @@ pub struct ExtraParam {
     /// <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):</p>
     /// <ul>
     /// <li>
-    /// <p>Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])</p></li>
+    /// <p>Specify 8 numbers + 1 letter (DNI \[Documento Nacional de Identidad\], NIF \[Número de Identificación Fiscal\])</p></li>
     /// <li>
     /// <p>Example: 12345678M</p></li>
     /// </ul></li>
@@ -167,7 +167,7 @@ pub struct ExtraParam {
     /// <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):</p>
     /// <ul>
     /// <li>
-    /// <p>Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])</p></li>
+    /// <p>Specify 1 letter + 7 numbers + 1 letter ( NIE \[Número de Identidad de Extranjero\])</p></li>
     /// <li>
     /// <p>Example: Y1234567X</p></li>
     /// </ul></li>
@@ -579,7 +579,7 @@ impl ExtraParam {
     /// <p><b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b></p>
     /// <ul>
     /// <li>
-    /// <p>Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])</p></li>
+    /// <p>Specify 1 letter + 8 numbers (CIF \[Certificado de Identificación Fiscal\])</p></li>
     /// <li>
     /// <p>Example: B12345678</p></li>
     /// </ul>
@@ -589,7 +589,7 @@ impl ExtraParam {
     /// <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):</p>
     /// <ul>
     /// <li>
-    /// <p>Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])</p></li>
+    /// <p>Specify 8 numbers + 1 letter (DNI \[Documento Nacional de Identidad\], NIF \[Número de Identificación Fiscal\])</p></li>
     /// <li>
     /// <p>Example: 12345678M</p></li>
     /// </ul></li>
@@ -597,7 +597,7 @@ impl ExtraParam {
     /// <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):</p>
     /// <ul>
     /// <li>
-    /// <p>Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])</p></li>
+    /// <p>Specify 1 letter + 7 numbers + 1 letter ( NIE \[Número de Identidad de Extranjero\])</p></li>
     /// <li>
     /// <p>Example: Y1234567X</p></li>
     /// </ul></li>
@@ -1036,7 +1036,7 @@ impl ExtraParamBuilder {
     /// <p><b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b></p>
     /// <ul>
     /// <li>
-    /// <p>Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])</p></li>
+    /// <p>Specify 1 letter + 8 numbers (CIF \[Certificado de Identificación Fiscal\])</p></li>
     /// <li>
     /// <p>Example: B12345678</p></li>
     /// </ul>
@@ -1046,7 +1046,7 @@ impl ExtraParamBuilder {
     /// <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):</p>
     /// <ul>
     /// <li>
-    /// <p>Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])</p></li>
+    /// <p>Specify 8 numbers + 1 letter (DNI \[Documento Nacional de Identidad\], NIF \[Número de Identificación Fiscal\])</p></li>
     /// <li>
     /// <p>Example: 12345678M</p></li>
     /// </ul></li>
@@ -1054,7 +1054,7 @@ impl ExtraParamBuilder {
     /// <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):</p>
     /// <ul>
     /// <li>
-    /// <p>Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])</p></li>
+    /// <p>Specify 1 letter + 7 numbers + 1 letter ( NIE \[Número de Identidad de Extranjero\])</p></li>
     /// <li>
     /// <p>Example: Y1234567X</p></li>
     /// </ul></li>
@@ -1466,7 +1466,7 @@ impl ExtraParamBuilder {
     /// <p><b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b></p>
     /// <ul>
     /// <li>
-    /// <p>Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])</p></li>
+    /// <p>Specify 1 letter + 8 numbers (CIF \[Certificado de Identificación Fiscal\])</p></li>
     /// <li>
     /// <p>Example: B12345678</p></li>
     /// </ul>
@@ -1476,7 +1476,7 @@ impl ExtraParamBuilder {
     /// <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):</p>
     /// <ul>
     /// <li>
-    /// <p>Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])</p></li>
+    /// <p>Specify 8 numbers + 1 letter (DNI \[Documento Nacional de Identidad\], NIF \[Número de Identificación Fiscal\])</p></li>
     /// <li>
     /// <p>Example: 12345678M</p></li>
     /// </ul></li>
@@ -1484,7 +1484,7 @@ impl ExtraParamBuilder {
     /// <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):</p>
     /// <ul>
     /// <li>
-    /// <p>Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])</p></li>
+    /// <p>Specify 1 letter + 7 numbers + 1 letter ( NIE \[Número de Identidad de Extranjero\])</p></li>
     /// <li>
     /// <p>Example: Y1234567X</p></li>
     /// </ul></li>
@@ -1895,7 +1895,7 @@ impl ExtraParamBuilder {
     /// <p><b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b></p>
     /// <ul>
     /// <li>
-    /// <p>Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])</p></li>
+    /// <p>Specify 1 letter + 8 numbers (CIF \[Certificado de Identificación Fiscal\])</p></li>
     /// <li>
     /// <p>Example: B12345678</p></li>
     /// </ul>
@@ -1905,7 +1905,7 @@ impl ExtraParamBuilder {
     /// <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):</p>
     /// <ul>
     /// <li>
-    /// <p>Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])</p></li>
+    /// <p>Specify 8 numbers + 1 letter (DNI \[Documento Nacional de Identidad\], NIF \[Número de Identificación Fiscal\])</p></li>
     /// <li>
     /// <p>Example: 12345678M</p></li>
     /// </ul></li>
@@ -1913,7 +1913,7 @@ impl ExtraParamBuilder {
     /// <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):</p>
     /// <ul>
     /// <li>
-    /// <p>Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])</p></li>
+    /// <p>Specify 1 letter + 7 numbers + 1 letter ( NIE \[Número de Identidad de Extranjero\])</p></li>
     /// <li>
     /// <p>Example: Y1234567X</p></li>
     /// </ul></li>

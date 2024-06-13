@@ -10,11 +10,11 @@ pub struct AwsEc2SecurityGroupDetails {
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
-    /// <p>[VPC only] The ID of the VPC for the security group.</p>
+    /// <p>\[VPC only\] The ID of the VPC for the security group.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The inbound rules associated with the security group.</p>
     pub ip_permissions: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>,
-    /// <p>[VPC only] The outbound rules associated with the security group.</p>
+    /// <p>\[VPC only\] The outbound rules associated with the security group.</p>
     pub ip_permissions_egress: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>,
 }
 impl AwsEc2SecurityGroupDetails {
@@ -30,7 +30,7 @@ impl AwsEc2SecurityGroupDetails {
     pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
-    /// <p>[VPC only] The ID of the VPC for the security group.</p>
+    /// <p>\[VPC only\] The ID of the VPC for the security group.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -40,7 +40,7 @@ impl AwsEc2SecurityGroupDetails {
     pub fn ip_permissions(&self) -> &[crate::types::AwsEc2SecurityGroupIpPermission] {
         self.ip_permissions.as_deref().unwrap_or_default()
     }
-    /// <p>[VPC only] The outbound rules associated with the security group.</p>
+    /// <p>\[VPC only\] The outbound rules associated with the security group.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_permissions_egress.is_none()`.
     pub fn ip_permissions_egress(&self) -> &[crate::types::AwsEc2SecurityGroupIpPermission] {
@@ -108,17 +108,17 @@ impl AwsEc2SecurityGroupDetailsBuilder {
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_id
     }
-    /// <p>[VPC only] The ID of the VPC for the security group.</p>
+    /// <p>\[VPC only\] The ID of the VPC for the security group.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[VPC only] The ID of the VPC for the security group.</p>
+    /// <p>\[VPC only\] The ID of the VPC for the security group.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
-    /// <p>[VPC only] The ID of the VPC for the security group.</p>
+    /// <p>\[VPC only\] The ID of the VPC for the security group.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
@@ -146,19 +146,19 @@ impl AwsEc2SecurityGroupDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_ip_permissions_egress`](Self::set_ip_permissions_egress).
     ///
-    /// <p>[VPC only] The outbound rules associated with the security group.</p>
+    /// <p>\[VPC only\] The outbound rules associated with the security group.</p>
     pub fn ip_permissions_egress(mut self, input: crate::types::AwsEc2SecurityGroupIpPermission) -> Self {
         let mut v = self.ip_permissions_egress.unwrap_or_default();
         v.push(input);
         self.ip_permissions_egress = ::std::option::Option::Some(v);
         self
     }
-    /// <p>[VPC only] The outbound rules associated with the security group.</p>
+    /// <p>\[VPC only\] The outbound rules associated with the security group.</p>
     pub fn set_ip_permissions_egress(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>) -> Self {
         self.ip_permissions_egress = input;
         self
     }
-    /// <p>[VPC only] The outbound rules associated with the security group.</p>
+    /// <p>\[VPC only\] The outbound rules associated with the security group.</p>
     pub fn get_ip_permissions_egress(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>> {
         &self.ip_permissions_egress
     }

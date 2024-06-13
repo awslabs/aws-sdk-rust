@@ -10,7 +10,7 @@ pub struct EnrollmentFlagsV2 {
     pub user_interaction_required: ::std::option::Option<bool>,
     /// <p>Delete expired or revoked certificates instead of archiving them.</p>
     pub remove_invalid_certificate_from_personal_store: ::std::option::Option<bool>,
-    /// <p>This flag instructs the CA to not include the security extension szOID_NTDS_CA_SECURITY_EXT (OID:1.3.6.1.4.1.311.25.2), as specified in [MS-WCCE] sections 2.2.2.7.7.4 and 3.2.2.6.2.1.4.5.9, in the issued certificate. This addresses a Windows Kerberos elevation-of-privilege vulnerability.</p>
+    /// <p>This flag instructs the CA to not include the security extension szOID_NTDS_CA_SECURITY_EXT (OID:1.3.6.1.4.1.311.25.2), as specified in \[MS-WCCE\] sections 2.2.2.7.7.4 and 3.2.2.6.2.1.4.5.9, in the issued certificate. This addresses a Windows Kerberos elevation-of-privilege vulnerability.</p>
     pub no_security_extension: ::std::option::Option<bool>,
     /// <p>Allow renewal using the same key.</p>
     pub enable_key_reuse_on_nt_token_keyset_storage_full: ::std::option::Option<bool>,
@@ -28,7 +28,7 @@ impl EnrollmentFlagsV2 {
     pub fn remove_invalid_certificate_from_personal_store(&self) -> ::std::option::Option<bool> {
         self.remove_invalid_certificate_from_personal_store
     }
-    /// <p>This flag instructs the CA to not include the security extension szOID_NTDS_CA_SECURITY_EXT (OID:1.3.6.1.4.1.311.25.2), as specified in [MS-WCCE] sections 2.2.2.7.7.4 and 3.2.2.6.2.1.4.5.9, in the issued certificate. This addresses a Windows Kerberos elevation-of-privilege vulnerability.</p>
+    /// <p>This flag instructs the CA to not include the security extension szOID_NTDS_CA_SECURITY_EXT (OID:1.3.6.1.4.1.311.25.2), as specified in \[MS-WCCE\] sections 2.2.2.7.7.4 and 3.2.2.6.2.1.4.5.9, in the issued certificate. This addresses a Windows Kerberos elevation-of-privilege vulnerability.</p>
     pub fn no_security_extension(&self) -> ::std::option::Option<bool> {
         self.no_security_extension
     }
@@ -97,17 +97,17 @@ impl EnrollmentFlagsV2Builder {
     pub fn get_remove_invalid_certificate_from_personal_store(&self) -> &::std::option::Option<bool> {
         &self.remove_invalid_certificate_from_personal_store
     }
-    /// <p>This flag instructs the CA to not include the security extension szOID_NTDS_CA_SECURITY_EXT (OID:1.3.6.1.4.1.311.25.2), as specified in [MS-WCCE] sections 2.2.2.7.7.4 and 3.2.2.6.2.1.4.5.9, in the issued certificate. This addresses a Windows Kerberos elevation-of-privilege vulnerability.</p>
+    /// <p>This flag instructs the CA to not include the security extension szOID_NTDS_CA_SECURITY_EXT (OID:1.3.6.1.4.1.311.25.2), as specified in \[MS-WCCE\] sections 2.2.2.7.7.4 and 3.2.2.6.2.1.4.5.9, in the issued certificate. This addresses a Windows Kerberos elevation-of-privilege vulnerability.</p>
     pub fn no_security_extension(mut self, input: bool) -> Self {
         self.no_security_extension = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This flag instructs the CA to not include the security extension szOID_NTDS_CA_SECURITY_EXT (OID:1.3.6.1.4.1.311.25.2), as specified in [MS-WCCE] sections 2.2.2.7.7.4 and 3.2.2.6.2.1.4.5.9, in the issued certificate. This addresses a Windows Kerberos elevation-of-privilege vulnerability.</p>
+    /// <p>This flag instructs the CA to not include the security extension szOID_NTDS_CA_SECURITY_EXT (OID:1.3.6.1.4.1.311.25.2), as specified in \[MS-WCCE\] sections 2.2.2.7.7.4 and 3.2.2.6.2.1.4.5.9, in the issued certificate. This addresses a Windows Kerberos elevation-of-privilege vulnerability.</p>
     pub fn set_no_security_extension(mut self, input: ::std::option::Option<bool>) -> Self {
         self.no_security_extension = input;
         self
     }
-    /// <p>This flag instructs the CA to not include the security extension szOID_NTDS_CA_SECURITY_EXT (OID:1.3.6.1.4.1.311.25.2), as specified in [MS-WCCE] sections 2.2.2.7.7.4 and 3.2.2.6.2.1.4.5.9, in the issued certificate. This addresses a Windows Kerberos elevation-of-privilege vulnerability.</p>
+    /// <p>This flag instructs the CA to not include the security extension szOID_NTDS_CA_SECURITY_EXT (OID:1.3.6.1.4.1.311.25.2), as specified in \[MS-WCCE\] sections 2.2.2.7.7.4 and 3.2.2.6.2.1.4.5.9, in the issued certificate. This addresses a Windows Kerberos elevation-of-privilege vulnerability.</p>
     pub fn get_no_security_extension(&self) -> &::std::option::Option<bool> {
         &self.no_security_extension
     }

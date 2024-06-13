@@ -6,7 +6,7 @@
 pub struct StartPipelineExecutionInput {
     /// <p>The name of the pipeline to start.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.</p>
+    /// <p>A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match <code>\[A-Za-z0-9@\-_\]+</code>, and the values can be anything except an empty string.</p>
     pub variables: ::std::option::Option<::std::vec::Vec<crate::types::PipelineVariable>>,
     /// <p>The system-generated unique ID used to identify a unique execution request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl StartPipelineExecutionInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.</p>
+    /// <p>A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match <code>\[A-Za-z0-9@\-_\]+</code>, and the values can be anything except an empty string.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variables.is_none()`.
     pub fn variables(&self) -> &[crate::types::PipelineVariable] {
@@ -71,19 +71,19 @@ impl StartPipelineExecutionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
     ///
-    /// <p>A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.</p>
+    /// <p>A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match <code>\[A-Za-z0-9@\-_\]+</code>, and the values can be anything except an empty string.</p>
     pub fn variables(mut self, input: crate::types::PipelineVariable) -> Self {
         let mut v = self.variables.unwrap_or_default();
         v.push(input);
         self.variables = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.</p>
+    /// <p>A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match <code>\[A-Za-z0-9@\-_\]+</code>, and the values can be anything except an empty string.</p>
     pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineVariable>>) -> Self {
         self.variables = input;
         self
     }
-    /// <p>A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything except an empty string.</p>
+    /// <p>A list that overrides pipeline variables for a pipeline execution that's being started. Variable names must match <code>\[A-Za-z0-9@\-_\]+</code>, and the values can be anything except an empty string.</p>
     pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineVariable>> {
         &self.variables
     }

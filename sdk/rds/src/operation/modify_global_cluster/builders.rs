@@ -199,27 +199,27 @@ impl ModifyGlobalClusterFluentBuilder {
     }
     /// <p>The version number of the database engine to which you want to upgrade.</p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global databases), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*\[\]|\[?SupportsGlobalDatabases == `true`\].\[EngineVersion\]'</code></p>
     /// <p>To list all of the available engine versions for <code>aurora-postgresql</code> (for PostgreSQL-based Aurora global databases), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*\[\]|\[?SupportsGlobalDatabases == `true`\].\[EngineVersion\]'</code></p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The version number of the database engine to which you want to upgrade.</p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global databases), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*\[\]|\[?SupportsGlobalDatabases == `true`\].\[EngineVersion\]'</code></p>
     /// <p>To list all of the available engine versions for <code>aurora-postgresql</code> (for PostgreSQL-based Aurora global databases), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*\[\]|\[?SupportsGlobalDatabases == `true`\].\[EngineVersion\]'</code></p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
     /// <p>The version number of the database engine to which you want to upgrade.</p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global databases), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*\[\]|\[?SupportsGlobalDatabases == `true`\].\[EngineVersion\]'</code></p>
     /// <p>To list all of the available engine versions for <code>aurora-postgresql</code> (for PostgreSQL-based Aurora global databases), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*\[\]|\[?SupportsGlobalDatabases == `true`\].\[EngineVersion\]'</code></p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine_version()
     }

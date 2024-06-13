@@ -56,7 +56,7 @@ pub struct StartExecutionInput {
     /// <li>
     /// <p>white space</p></li>
     /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <p>brackets <code>&lt; &gt; { } \[ \]</code></p></li>
     /// <li>
     /// <p>wildcard characters <code>? *</code></p></li>
     /// <li>
@@ -131,7 +131,7 @@ impl StartExecutionInput {
     /// <li>
     /// <p>white space</p></li>
     /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <p>brackets <code>&lt; &gt; { } \[ \]</code></p></li>
     /// <li>
     /// <p>wildcard characters <code>? *</code></p></li>
     /// <li>
@@ -337,7 +337,7 @@ impl StartExecutionInputBuilder {
     /// <li>
     /// <p>white space</p></li>
     /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <p>brackets <code>&lt; &gt; { } \[ \]</code></p></li>
     /// <li>
     /// <p>wildcard characters <code>? *</code></p></li>
     /// <li>
@@ -357,7 +357,7 @@ impl StartExecutionInputBuilder {
     /// <li>
     /// <p>white space</p></li>
     /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <p>brackets <code>&lt; &gt; { } \[ \]</code></p></li>
     /// <li>
     /// <p>wildcard characters <code>? *</code></p></li>
     /// <li>
@@ -377,7 +377,7 @@ impl StartExecutionInputBuilder {
     /// <li>
     /// <p>white space</p></li>
     /// <li>
-    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <p>brackets <code>&lt; &gt; { } \[ \]</code></p></li>
     /// <li>
     /// <p>wildcard characters <code>? *</code></p></li>
     /// <li>

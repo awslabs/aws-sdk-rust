@@ -8,7 +8,7 @@ pub struct CreateForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
     pub predictor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial).</p>
-    /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.</p>
+    /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>\["0.1", "0.5", "0.9"\]</code>.</p>
     pub forecast_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -51,7 +51,7 @@ impl CreateForecastInput {
         self.predictor_arn.as_deref()
     }
     /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial).</p>
-    /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.</p>
+    /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>\["0.1", "0.5", "0.9"\]</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_types.is_none()`.
     pub fn forecast_types(&self) -> &[::std::string::String] {
@@ -147,7 +147,7 @@ impl CreateForecastInputBuilder {
     /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
     ///
     /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial).</p>
-    /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.</p>
+    /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>\["0.1", "0.5", "0.9"\]</code>.</p>
     pub fn forecast_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.forecast_types.unwrap_or_default();
         v.push(input.into());
@@ -155,13 +155,13 @@ impl CreateForecastInputBuilder {
         self
     }
     /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial).</p>
-    /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.</p>
+    /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>\["0.1", "0.5", "0.9"\]</code>.</p>
     pub fn set_forecast_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.forecast_types = input;
         self
     }
     /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial).</p>
-    /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.</p>
+    /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>\["0.1", "0.5", "0.9"\]</code>.</p>
     pub fn get_forecast_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.forecast_types
     }

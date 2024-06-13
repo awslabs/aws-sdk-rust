@@ -37,7 +37,7 @@ pub struct DescribeLabelingJobOutput {
     /// <p>The file is a JSON structure in the following format:</p>
     /// <p><code>{</code></p>
     /// <p><code> "document-version": "2018-11-28"</code></p>
-    /// <p><code> "labels": [</code></p>
+    /// <p><code>"labels": \[</code></p>
     /// <p><code> {</code></p>
     /// <p><code> "label": "<i>label 1</i>"</code></p>
     /// <p><code> },</code></p>
@@ -48,7 +48,7 @@ pub struct DescribeLabelingJobOutput {
     /// <p><code> {</code></p>
     /// <p><code> "label": "<i>label n</i>"</code></p>
     /// <p><code> }</code></p>
-    /// <p><code> ]</code></p>
+    /// <p><code>\]</code></p>
     /// <p><code>}</code></p>
     pub label_category_config_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped.</p>
@@ -122,7 +122,7 @@ impl DescribeLabelingJobOutput {
     /// <p>The file is a JSON structure in the following format:</p>
     /// <p><code>{</code></p>
     /// <p><code> "document-version": "2018-11-28"</code></p>
-    /// <p><code> "labels": [</code></p>
+    /// <p><code>"labels": \[</code></p>
     /// <p><code> {</code></p>
     /// <p><code> "label": "<i>label 1</i>"</code></p>
     /// <p><code> },</code></p>
@@ -133,7 +133,7 @@ impl DescribeLabelingJobOutput {
     /// <p><code> {</code></p>
     /// <p><code> "label": "<i>label n</i>"</code></p>
     /// <p><code> }</code></p>
-    /// <p><code> ]</code></p>
+    /// <p><code>\]</code></p>
     /// <p><code>}</code></p>
     pub fn label_category_config_s3_uri(&self) -> ::std::option::Option<&str> {
         self.label_category_config_s3_uri.as_deref()
@@ -386,7 +386,7 @@ impl DescribeLabelingJobOutputBuilder {
     /// <p>The file is a JSON structure in the following format:</p>
     /// <p><code>{</code></p>
     /// <p><code> "document-version": "2018-11-28"</code></p>
-    /// <p><code> "labels": [</code></p>
+    /// <p><code>"labels": \[</code></p>
     /// <p><code> {</code></p>
     /// <p><code> "label": "<i>label 1</i>"</code></p>
     /// <p><code> },</code></p>
@@ -397,7 +397,7 @@ impl DescribeLabelingJobOutputBuilder {
     /// <p><code> {</code></p>
     /// <p><code> "label": "<i>label n</i>"</code></p>
     /// <p><code> }</code></p>
-    /// <p><code> ]</code></p>
+    /// <p><code>\]</code></p>
     /// <p><code>}</code></p>
     pub fn label_category_config_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_category_config_s3_uri = ::std::option::Option::Some(input.into());
@@ -413,7 +413,7 @@ impl DescribeLabelingJobOutputBuilder {
     /// <p>The file is a JSON structure in the following format:</p>
     /// <p><code>{</code></p>
     /// <p><code> "document-version": "2018-11-28"</code></p>
-    /// <p><code> "labels": [</code></p>
+    /// <p><code>"labels": \[</code></p>
     /// <p><code> {</code></p>
     /// <p><code> "label": "<i>label 1</i>"</code></p>
     /// <p><code> },</code></p>
@@ -424,7 +424,7 @@ impl DescribeLabelingJobOutputBuilder {
     /// <p><code> {</code></p>
     /// <p><code> "label": "<i>label n</i>"</code></p>
     /// <p><code> }</code></p>
-    /// <p><code> ]</code></p>
+    /// <p><code>\]</code></p>
     /// <p><code>}</code></p>
     pub fn set_label_category_config_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_category_config_s3_uri = input;
@@ -440,7 +440,7 @@ impl DescribeLabelingJobOutputBuilder {
     /// <p>The file is a JSON structure in the following format:</p>
     /// <p><code>{</code></p>
     /// <p><code> "document-version": "2018-11-28"</code></p>
-    /// <p><code> "labels": [</code></p>
+    /// <p><code>"labels": \[</code></p>
     /// <p><code> {</code></p>
     /// <p><code> "label": "<i>label 1</i>"</code></p>
     /// <p><code> },</code></p>
@@ -451,7 +451,7 @@ impl DescribeLabelingJobOutputBuilder {
     /// <p><code> {</code></p>
     /// <p><code> "label": "<i>label n</i>"</code></p>
     /// <p><code> }</code></p>
-    /// <p><code> ]</code></p>
+    /// <p><code>\]</code></p>
     /// <p><code>}</code></p>
     pub fn get_label_category_config_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_category_config_s3_uri

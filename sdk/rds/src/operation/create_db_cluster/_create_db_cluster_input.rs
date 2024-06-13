@@ -82,14 +82,14 @@ pub struct CreateDbClusterInput {
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>You can supply either <code>5.7</code> or <code>8.0</code> to use the default engine version for Aurora MySQL version 2 or version 3, respectively.</p>
     /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>For information about a specific engine, see the following topics:</p>
     /// <ul>
     /// <li>
@@ -537,14 +537,14 @@ impl CreateDbClusterInput {
     }
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>You can supply either <code>5.7</code> or <code>8.0</code> to use the default engine version for Aurora MySQL version 2 or version 3, respectively.</p>
     /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>For information about a specific engine, see the following topics:</p>
     /// <ul>
     /// <li>
@@ -1368,14 +1368,14 @@ impl CreateDbClusterInputBuilder {
     }
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>You can supply either <code>5.7</code> or <code>8.0</code> to use the default engine version for Aurora MySQL version 2 or version 3, respectively.</p>
     /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>For information about a specific engine, see the following topics:</p>
     /// <ul>
     /// <li>
@@ -1394,14 +1394,14 @@ impl CreateDbClusterInputBuilder {
     }
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>You can supply either <code>5.7</code> or <code>8.0</code> to use the default engine version for Aurora MySQL version 2 or version 3, respectively.</p>
     /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>For information about a specific engine, see the following topics:</p>
     /// <ul>
     /// <li>
@@ -1420,14 +1420,14 @@ impl CreateDbClusterInputBuilder {
     }
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>You can supply either <code>5.7</code> or <code>8.0</code> to use the default engine version for Aurora MySQL version 2 or version 3, respectively.</p>
     /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions\[\].EngineVersion"</code></p>
     /// <p>For information about a specific engine, see the following topics:</p>
     /// <ul>
     /// <li>

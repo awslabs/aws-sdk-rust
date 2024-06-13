@@ -19,7 +19,7 @@ pub struct RuleDefinition {
     /// <p><b>aws:forward_to_sfe</b> - Discontinues stateless inspection of the packet and forwards it to the stateful rule engine for inspection.</p></li>
     /// </ul>
     /// <p>Additionally, you can specify a custom action. To do this, you define a custom action by name and type, then provide the name you've assigned to the action in this <code>Actions</code> setting. For information about the options, see <code>CustomAction</code>.</p>
-    /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>[“aws:pass”, “MyMetricsAction”]</code>.</p>
+    /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>\[“aws:pass”, “MyMetricsAction”\]</code>.</p>
     pub actions: ::std::vec::Vec<::std::string::String>,
 }
 impl RuleDefinition {
@@ -40,7 +40,7 @@ impl RuleDefinition {
     /// <p><b>aws:forward_to_sfe</b> - Discontinues stateless inspection of the packet and forwards it to the stateful rule engine for inspection.</p></li>
     /// </ul>
     /// <p>Additionally, you can specify a custom action. To do this, you define a custom action by name and type, then provide the name you've assigned to the action in this <code>Actions</code> setting. For information about the options, see <code>CustomAction</code>.</p>
-    /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>[“aws:pass”, “MyMetricsAction”]</code>.</p>
+    /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>\[“aws:pass”, “MyMetricsAction”\]</code>.</p>
     pub fn actions(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.actions.deref()
@@ -93,7 +93,7 @@ impl RuleDefinitionBuilder {
     /// <p><b>aws:forward_to_sfe</b> - Discontinues stateless inspection of the packet and forwards it to the stateful rule engine for inspection.</p></li>
     /// </ul>
     /// <p>Additionally, you can specify a custom action. To do this, you define a custom action by name and type, then provide the name you've assigned to the action in this <code>Actions</code> setting. For information about the options, see <code>CustomAction</code>.</p>
-    /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>[“aws:pass”, “MyMetricsAction”]</code>.</p>
+    /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>\[“aws:pass”, “MyMetricsAction”\]</code>.</p>
     pub fn actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.actions.unwrap_or_default();
         v.push(input.into());
@@ -113,7 +113,7 @@ impl RuleDefinitionBuilder {
     /// <p><b>aws:forward_to_sfe</b> - Discontinues stateless inspection of the packet and forwards it to the stateful rule engine for inspection.</p></li>
     /// </ul>
     /// <p>Additionally, you can specify a custom action. To do this, you define a custom action by name and type, then provide the name you've assigned to the action in this <code>Actions</code> setting. For information about the options, see <code>CustomAction</code>.</p>
-    /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>[“aws:pass”, “MyMetricsAction”]</code>.</p>
+    /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>\[“aws:pass”, “MyMetricsAction”\]</code>.</p>
     pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.actions = input;
         self
@@ -131,7 +131,7 @@ impl RuleDefinitionBuilder {
     /// <p><b>aws:forward_to_sfe</b> - Discontinues stateless inspection of the packet and forwards it to the stateful rule engine for inspection.</p></li>
     /// </ul>
     /// <p>Additionally, you can specify a custom action. To do this, you define a custom action by name and type, then provide the name you've assigned to the action in this <code>Actions</code> setting. For information about the options, see <code>CustomAction</code>.</p>
-    /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>[“aws:pass”, “MyMetricsAction”]</code>.</p>
+    /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>\[“aws:pass”, “MyMetricsAction”\]</code>.</p>
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.actions
     }

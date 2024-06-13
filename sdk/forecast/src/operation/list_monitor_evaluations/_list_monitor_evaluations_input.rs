@@ -20,7 +20,7 @@ pub struct ListMonitorEvaluationsInput {
     /// <p><code>Value</code> - The value to match. Valid values are only <code>SUCCESS</code> or <code>FAILURE</code>.</p></li>
     /// </ul>
     /// <p>For example, to list only successful monitor evaluations, you would specify:</p>
-    /// <p><code>"Filters": [ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } ]</code></p>
+    /// <p><code>"Filters": \[ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } \]</code></p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl ListMonitorEvaluationsInput {
@@ -47,7 +47,7 @@ impl ListMonitorEvaluationsInput {
     /// <p><code>Value</code> - The value to match. Valid values are only <code>SUCCESS</code> or <code>FAILURE</code>.</p></li>
     /// </ul>
     /// <p>For example, to list only successful monitor evaluations, you would specify:</p>
-    /// <p><code>"Filters": [ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } ]</code></p>
+    /// <p><code>"Filters": \[ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } \]</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
@@ -129,7 +129,7 @@ impl ListMonitorEvaluationsInputBuilder {
     /// <p><code>Value</code> - The value to match. Valid values are only <code>SUCCESS</code> or <code>FAILURE</code>.</p></li>
     /// </ul>
     /// <p>For example, to list only successful monitor evaluations, you would specify:</p>
-    /// <p><code>"Filters": [ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } ]</code></p>
+    /// <p><code>"Filters": \[ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } \]</code></p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
@@ -147,7 +147,7 @@ impl ListMonitorEvaluationsInputBuilder {
     /// <p><code>Value</code> - The value to match. Valid values are only <code>SUCCESS</code> or <code>FAILURE</code>.</p></li>
     /// </ul>
     /// <p>For example, to list only successful monitor evaluations, you would specify:</p>
-    /// <p><code>"Filters": [ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } ]</code></p>
+    /// <p><code>"Filters": \[ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } \]</code></p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
@@ -163,7 +163,7 @@ impl ListMonitorEvaluationsInputBuilder {
     /// <p><code>Value</code> - The value to match. Valid values are only <code>SUCCESS</code> or <code>FAILURE</code>.</p></li>
     /// </ul>
     /// <p>For example, to list only successful monitor evaluations, you would specify:</p>
-    /// <p><code>"Filters": [ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } ]</code></p>
+    /// <p><code>"Filters": \[ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } \]</code></p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }

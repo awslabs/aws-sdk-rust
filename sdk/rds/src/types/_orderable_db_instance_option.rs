@@ -58,7 +58,7 @@ pub struct OrderableDbInstanceOption {
     /// <p>Indicates whether a DB instance supports RDS on Outposts.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i></p>
     pub outpost_capable: ::std::option::Option<bool>,
-    /// <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database Activity Streams isn't supported, the return value is an empty list.</p>
+    /// <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value <code>\[sync, async\]</code>. Aurora MySQL and RDS for Oracle return <code>\[async\]</code> only. If Database Activity Streams isn't supported, the return value is an empty list.</p>
     pub supported_activity_stream_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
     pub supports_global_databases: ::std::option::Option<bool>,
@@ -194,7 +194,7 @@ impl OrderableDbInstanceOption {
     pub fn outpost_capable(&self) -> ::std::option::Option<bool> {
         self.outpost_capable
     }
-    /// <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database Activity Streams isn't supported, the return value is an empty list.</p>
+    /// <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value <code>\[sync, async\]</code>. Aurora MySQL and RDS for Oracle return <code>\[async\]</code> only. If Database Activity Streams isn't supported, the return value is an empty list.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_activity_stream_modes.is_none()`.
     pub fn supported_activity_stream_modes(&self) -> &[::std::string::String] {
@@ -683,19 +683,19 @@ impl OrderableDbInstanceOptionBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_activity_stream_modes`](Self::set_supported_activity_stream_modes).
     ///
-    /// <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database Activity Streams isn't supported, the return value is an empty list.</p>
+    /// <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value <code>\[sync, async\]</code>. Aurora MySQL and RDS for Oracle return <code>\[async\]</code> only. If Database Activity Streams isn't supported, the return value is an empty list.</p>
     pub fn supported_activity_stream_modes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_activity_stream_modes.unwrap_or_default();
         v.push(input.into());
         self.supported_activity_stream_modes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database Activity Streams isn't supported, the return value is an empty list.</p>
+    /// <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value <code>\[sync, async\]</code>. Aurora MySQL and RDS for Oracle return <code>\[async\]</code> only. If Database Activity Streams isn't supported, the return value is an empty list.</p>
     pub fn set_supported_activity_stream_modes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_activity_stream_modes = input;
         self
     }
-    /// <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database Activity Streams isn't supported, the return value is an empty list.</p>
+    /// <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value <code>\[sync, async\]</code>. Aurora MySQL and RDS for Oracle return <code>\[async\]</code> only. If Database Activity Streams isn't supported, the return value is an empty list.</p>
     pub fn get_supported_activity_stream_modes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_activity_stream_modes
     }

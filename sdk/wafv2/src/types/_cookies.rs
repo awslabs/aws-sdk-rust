@@ -8,7 +8,7 @@
 pub struct Cookies {
     /// <p>The filter to use to identify the subset of cookies to inspect in a web request.</p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
-    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code></p>
+    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": \[ "session-id-time", "session-id" \] }</code></p>
     pub match_pattern: ::std::option::Option<crate::types::CookieMatchPattern>,
     /// <p>The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>ALL</code>, WAF inspects both keys and values.</p>
     /// <p><code>All</code> does not require a match to be found in the keys and a match to be found in the values. It requires a match to be found in the keys or the values or both. To require a match in the keys and in the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that inspects the values.</p>
@@ -28,7 +28,7 @@ pub struct Cookies {
 impl Cookies {
     /// <p>The filter to use to identify the subset of cookies to inspect in a web request.</p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
-    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code></p>
+    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": \[ "session-id-time", "session-id" \] }</code></p>
     pub fn match_pattern(&self) -> ::std::option::Option<&crate::types::CookieMatchPattern> {
         self.match_pattern.as_ref()
     }
@@ -69,7 +69,7 @@ pub struct CookiesBuilder {
 impl CookiesBuilder {
     /// <p>The filter to use to identify the subset of cookies to inspect in a web request.</p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
-    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code></p>
+    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": \[ "session-id-time", "session-id" \] }</code></p>
     /// This field is required.
     pub fn match_pattern(mut self, input: crate::types::CookieMatchPattern) -> Self {
         self.match_pattern = ::std::option::Option::Some(input);
@@ -77,14 +77,14 @@ impl CookiesBuilder {
     }
     /// <p>The filter to use to identify the subset of cookies to inspect in a web request.</p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
-    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code></p>
+    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": \[ "session-id-time", "session-id" \] }</code></p>
     pub fn set_match_pattern(mut self, input: ::std::option::Option<crate::types::CookieMatchPattern>) -> Self {
         self.match_pattern = input;
         self
     }
     /// <p>The filter to use to identify the subset of cookies to inspect in a web request.</p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
-    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code></p>
+    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": \[ "session-id-time", "session-id" \] }</code></p>
     pub fn get_match_pattern(&self) -> &::std::option::Option<crate::types::CookieMatchPattern> {
         &self.match_pattern
     }

@@ -28,10 +28,10 @@ pub struct Record {
     /// <p>Items that are deleted by the Time to Live process after expiration have the following fields:</p>
     /// <ul>
     /// <li>
-    /// <p>Records[].userIdentity.type</p>
+    /// <p>Records\[\].userIdentity.type</p>
     /// <p>"Service"</p></li>
     /// <li>
-    /// <p>Records[].userIdentity.principalId</p>
+    /// <p>Records\[\].userIdentity.principalId</p>
     /// <p>"dynamodb.amazonaws.com"</p></li>
     /// </ul>
     pub user_identity: ::std::option::Option<crate::types::Identity>,
@@ -73,10 +73,10 @@ impl Record {
     /// <p>Items that are deleted by the Time to Live process after expiration have the following fields:</p>
     /// <ul>
     /// <li>
-    /// <p>Records[].userIdentity.type</p>
+    /// <p>Records\[\].userIdentity.type</p>
     /// <p>"Service"</p></li>
     /// <li>
-    /// <p>Records[].userIdentity.principalId</p>
+    /// <p>Records\[\].userIdentity.principalId</p>
     /// <p>"dynamodb.amazonaws.com"</p></li>
     /// </ul>
     pub fn user_identity(&self) -> ::std::option::Option<&crate::types::Identity> {
@@ -217,10 +217,10 @@ impl RecordBuilder {
     /// <p>Items that are deleted by the Time to Live process after expiration have the following fields:</p>
     /// <ul>
     /// <li>
-    /// <p>Records[].userIdentity.type</p>
+    /// <p>Records\[\].userIdentity.type</p>
     /// <p>"Service"</p></li>
     /// <li>
-    /// <p>Records[].userIdentity.principalId</p>
+    /// <p>Records\[\].userIdentity.principalId</p>
     /// <p>"dynamodb.amazonaws.com"</p></li>
     /// </ul>
     pub fn user_identity(mut self, input: crate::types::Identity) -> Self {
@@ -230,10 +230,10 @@ impl RecordBuilder {
     /// <p>Items that are deleted by the Time to Live process after expiration have the following fields:</p>
     /// <ul>
     /// <li>
-    /// <p>Records[].userIdentity.type</p>
+    /// <p>Records\[\].userIdentity.type</p>
     /// <p>"Service"</p></li>
     /// <li>
-    /// <p>Records[].userIdentity.principalId</p>
+    /// <p>Records\[\].userIdentity.principalId</p>
     /// <p>"dynamodb.amazonaws.com"</p></li>
     /// </ul>
     pub fn set_user_identity(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
@@ -243,10 +243,10 @@ impl RecordBuilder {
     /// <p>Items that are deleted by the Time to Live process after expiration have the following fields:</p>
     /// <ul>
     /// <li>
-    /// <p>Records[].userIdentity.type</p>
+    /// <p>Records\[\].userIdentity.type</p>
     /// <p>"Service"</p></li>
     /// <li>
-    /// <p>Records[].userIdentity.principalId</p>
+    /// <p>Records\[\].userIdentity.principalId</p>
     /// <p>"dynamodb.amazonaws.com"</p></li>
     /// </ul>
     pub fn get_user_identity(&self) -> &::std::option::Option<crate::types::Identity> {

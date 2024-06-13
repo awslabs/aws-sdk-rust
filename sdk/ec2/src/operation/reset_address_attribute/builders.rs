@@ -108,17 +108,17 @@ impl ResetAddressAttributeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>[EC2-VPC] The allocation ID.</p>
+    /// <p>\[EC2-VPC\] The allocation ID.</p>
     pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allocation_id(input.into());
         self
     }
-    /// <p>[EC2-VPC] The allocation ID.</p>
+    /// <p>\[EC2-VPC\] The allocation ID.</p>
     pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_allocation_id(input);
         self
     }
-    /// <p>[EC2-VPC] The allocation ID.</p>
+    /// <p>\[EC2-VPC\] The allocation ID.</p>
     pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_allocation_id()
     }

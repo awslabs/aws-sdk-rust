@@ -15,17 +15,17 @@ pub struct InputConfig {
     /// <p>Examples for one input:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input":[1,1024,1024,3]}</code></p></li>
+    /// <p>If using the console, <code>{"input":\[1,1024,1024,3\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input\":[1,1024,1024,3]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input\":\[1,1024,1024,3\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Examples for two inputs:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"data1": [1,28,28,1], "data2":[1,28,28,1]}</code></p></li>
+    /// <p>If using the console, <code>{"data1": \[1,28,28,1\], "data2":\[1,28,28,1\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"data1\": \[1,28,28,1\], \"data2\":\[1,28,28,1\]}</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -35,17 +35,17 @@ pub struct InputConfig {
     /// <p>Examples for one input:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input_1":[1,3,224,224]}</code></p></li>
+    /// <p>If using the console, <code>{"input_1":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input_1\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Examples for two inputs:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code></p></li>
+    /// <p>If using the console, <code>{"input_1": \[1,3,224,224\], "input_2":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input_1\": [1,3,224,224], \"input_2\":[1,3,224,224]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input_1\": \[1,3,224,224\], \"input_2\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -55,17 +55,17 @@ pub struct InputConfig {
     /// <p>Examples for one input:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"data":[1,3,1024,1024]}</code></p></li>
+    /// <p>If using the console, <code>{"data":\[1,3,1024,1024\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"data\":[1,3,1024,1024]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"data\":\[1,3,1024,1024\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Examples for two inputs:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"var1": [1,1,28,28], "var2":[1,1,28,28]} </code></p></li>
+    /// <p>If using the console, <code>{"var1": \[1,1,28,28\], "var2":\[1,1,28,28\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"var1\": [1,1,28,28], \"var2\":[1,1,28,28]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"var1\": \[1,1,28,28\], \"var2\":\[1,1,28,28\]}</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -75,22 +75,22 @@ pub struct InputConfig {
     /// <p>Examples for one input in dictionary format:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input0":[1,3,224,224]}</code></p></li>
+    /// <p>If using the console, <code>{"input0":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input0\":[1,3,224,224]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input0\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Example for one input in list format: <code>[[1,3,224,224]]</code></p></li>
+    /// <p>Example for one input in list format: <code>\[\[1,3,224,224\]\]</code></p></li>
     /// <li>
     /// <p>Examples for two inputs in dictionary format:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input0":[1,3,224,224], "input1":[1,3,224,224]}</code></p></li>
+    /// <p>If using the console, <code>{"input0":\[1,3,224,224\], "input1":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input0\":[1,3,224,224], \"input1\":[1,3,224,224]} </code></p></li>
+    /// <p>If using the CLI, <code>{\"input0\":\[1,3,224,224\], \"input1\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Example for two inputs in list format: <code>[[1,3,224,224], [1,3,224,224]]</code></p></li>
+    /// <p>Example for two inputs in list format: <code>\[\[1,3,224,224\], \[1,3,224,224\]\]</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>XGBOOST</code>: input data name and shape are not needed.</p></li>
@@ -98,15 +98,15 @@ pub struct InputConfig {
     /// <p><code>DataInputConfig</code> supports the following parameters for <code>CoreML</code> <code>TargetDevice</code> (ML Model format):</p>
     /// <ul>
     /// <li>
-    /// <p><code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to static input shapes, CoreML converter supports Flexible input shapes:</p>
+    /// <p><code>shape</code>: Input shape, for example <code>{"input_1": {"shape": \[1,224,224,3\]}}</code>. In addition to static input shapes, CoreML converter supports Flexible input shapes:</p>
     /// <ul>
     /// <li>
-    /// <p>Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific interval in that dimension, for example: <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code></p></li>
+    /// <p>Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific interval in that dimension, for example: <code>{"input_1": {"shape": \["1..10", 224, 224, 3\]}}</code></p></li>
     /// <li>
-    /// <p>Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate all supported input shapes, for example: <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code></p></li>
+    /// <p>Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate all supported input shapes, for example: <code>{"input_1": {"shape": \[\[1, 224, 224, 3\], \[1, 160, 160, 3\]\]}}</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range Dimension and Enumerated Shapes. For example <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code></p></li>
+    /// <p><code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range Dimension and Enumerated Shapes. For example <code>{"input_1": {"shape": \["1..10", 224, 224, 3\], "default_shape": \[1, 224, 224, 3\]}}</code></p></li>
     /// <li>
     /// <p><code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default, the converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to be Image. Image input type requires additional input parameters such as <code>bias</code> and <code>scale</code>.</p></li>
     /// <li>
@@ -120,19 +120,19 @@ pub struct InputConfig {
     /// <p>Tensor type input:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code></p></li>
+    /// <p><code>"DataInputConfig": {"input_1": {"shape": \[\[1,224,224,3\], \[1,160,160,3\]\], "default_shape": \[1,224,224,3\]}}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Tensor type input without input name (PyTorch):</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code></p></li>
+    /// <p><code>"DataInputConfig": \[{"shape": \[\[1,3,224,224\], \[1,3,160,160\]\], "default_shape": \[1,3,224,224\]}\]</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Image type input:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code></p></li>
+    /// <p><code>"DataInputConfig": {"input_1": {"shape": \[\[1,224,224,3\], \[1,160,160,3\]\], "default_shape": \[1,224,224,3\], "type": "Image", "bias": \[-1,-1,-1\], "scale": 0.007843137255}}</code></p></li>
     /// <li>
     /// <p><code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code></p></li>
     /// </ul></li>
@@ -140,7 +140,7 @@ pub struct InputConfig {
     /// <p>Image type input without input name (PyTorch):</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code></p></li>
+    /// <p><code>"DataInputConfig": \[{"shape": \[\[1,3,224,224\], \[1,3,160,160\]\], "default_shape": \[1,3,224,224\], "type": "Image", "bias": \[-1,-1,-1\], "scale": 0.007843137255}\]</code></p></li>
     /// <li>
     /// <p><code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code></p></li>
     /// </ul></li>
@@ -151,7 +151,7 @@ pub struct InputConfig {
     /// <p>For TensorFlow models saved in the SavedModel format, specify the input names from <code>signature_def_key</code> and the input model shapes for <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"> <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature def key. For example:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code></p></li>
+    /// <p><code>"DataInputConfig": {"inputs": \[1, 224, 224, 3\]}</code></p></li>
     /// <li>
     /// <p><code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code></p></li>
     /// </ul></li>
@@ -159,9 +159,9 @@ pub struct InputConfig {
     /// <p>For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"> <code>OutputConfig:CompilerOptions</code> </a>. For example:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code></p></li>
+    /// <p><code>"DataInputConfig": {"input_tensor:0": \[1, 224, 224, 3\]}</code></p></li>
     /// <li>
-    /// <p><code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code></p></li>
+    /// <p><code>"CompilerOptions": {"output_names": \["output_tensor:0"\]}</code></p></li>
     /// </ul></li>
     /// </ul>
     pub data_input_config: ::std::option::Option<::std::string::String>,
@@ -185,17 +185,17 @@ impl InputConfig {
     /// <p>Examples for one input:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input":[1,1024,1024,3]}</code></p></li>
+    /// <p>If using the console, <code>{"input":\[1,1024,1024,3\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input\":[1,1024,1024,3]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input\":\[1,1024,1024,3\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Examples for two inputs:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"data1": [1,28,28,1], "data2":[1,28,28,1]}</code></p></li>
+    /// <p>If using the console, <code>{"data1": \[1,28,28,1\], "data2":\[1,28,28,1\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"data1\": \[1,28,28,1\], \"data2\":\[1,28,28,1\]}</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -205,17 +205,17 @@ impl InputConfig {
     /// <p>Examples for one input:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input_1":[1,3,224,224]}</code></p></li>
+    /// <p>If using the console, <code>{"input_1":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input_1\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Examples for two inputs:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code></p></li>
+    /// <p>If using the console, <code>{"input_1": \[1,3,224,224\], "input_2":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input_1\": [1,3,224,224], \"input_2\":[1,3,224,224]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input_1\": \[1,3,224,224\], \"input_2\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -225,17 +225,17 @@ impl InputConfig {
     /// <p>Examples for one input:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"data":[1,3,1024,1024]}</code></p></li>
+    /// <p>If using the console, <code>{"data":\[1,3,1024,1024\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"data\":[1,3,1024,1024]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"data\":\[1,3,1024,1024\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Examples for two inputs:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"var1": [1,1,28,28], "var2":[1,1,28,28]} </code></p></li>
+    /// <p>If using the console, <code>{"var1": \[1,1,28,28\], "var2":\[1,1,28,28\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"var1\": [1,1,28,28], \"var2\":[1,1,28,28]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"var1\": \[1,1,28,28\], \"var2\":\[1,1,28,28\]}</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -245,22 +245,22 @@ impl InputConfig {
     /// <p>Examples for one input in dictionary format:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input0":[1,3,224,224]}</code></p></li>
+    /// <p>If using the console, <code>{"input0":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input0\":[1,3,224,224]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input0\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Example for one input in list format: <code>[[1,3,224,224]]</code></p></li>
+    /// <p>Example for one input in list format: <code>\[\[1,3,224,224\]\]</code></p></li>
     /// <li>
     /// <p>Examples for two inputs in dictionary format:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input0":[1,3,224,224], "input1":[1,3,224,224]}</code></p></li>
+    /// <p>If using the console, <code>{"input0":\[1,3,224,224\], "input1":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input0\":[1,3,224,224], \"input1\":[1,3,224,224]} </code></p></li>
+    /// <p>If using the CLI, <code>{\"input0\":\[1,3,224,224\], \"input1\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Example for two inputs in list format: <code>[[1,3,224,224], [1,3,224,224]]</code></p></li>
+    /// <p>Example for two inputs in list format: <code>\[\[1,3,224,224\], \[1,3,224,224\]\]</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>XGBOOST</code>: input data name and shape are not needed.</p></li>
@@ -268,15 +268,15 @@ impl InputConfig {
     /// <p><code>DataInputConfig</code> supports the following parameters for <code>CoreML</code> <code>TargetDevice</code> (ML Model format):</p>
     /// <ul>
     /// <li>
-    /// <p><code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to static input shapes, CoreML converter supports Flexible input shapes:</p>
+    /// <p><code>shape</code>: Input shape, for example <code>{"input_1": {"shape": \[1,224,224,3\]}}</code>. In addition to static input shapes, CoreML converter supports Flexible input shapes:</p>
     /// <ul>
     /// <li>
-    /// <p>Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific interval in that dimension, for example: <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code></p></li>
+    /// <p>Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific interval in that dimension, for example: <code>{"input_1": {"shape": \["1..10", 224, 224, 3\]}}</code></p></li>
     /// <li>
-    /// <p>Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate all supported input shapes, for example: <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code></p></li>
+    /// <p>Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate all supported input shapes, for example: <code>{"input_1": {"shape": \[\[1, 224, 224, 3\], \[1, 160, 160, 3\]\]}}</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range Dimension and Enumerated Shapes. For example <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code></p></li>
+    /// <p><code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range Dimension and Enumerated Shapes. For example <code>{"input_1": {"shape": \["1..10", 224, 224, 3\], "default_shape": \[1, 224, 224, 3\]}}</code></p></li>
     /// <li>
     /// <p><code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default, the converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to be Image. Image input type requires additional input parameters such as <code>bias</code> and <code>scale</code>.</p></li>
     /// <li>
@@ -290,19 +290,19 @@ impl InputConfig {
     /// <p>Tensor type input:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code></p></li>
+    /// <p><code>"DataInputConfig": {"input_1": {"shape": \[\[1,224,224,3\], \[1,160,160,3\]\], "default_shape": \[1,224,224,3\]}}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Tensor type input without input name (PyTorch):</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code></p></li>
+    /// <p><code>"DataInputConfig": \[{"shape": \[\[1,3,224,224\], \[1,3,160,160\]\], "default_shape": \[1,3,224,224\]}\]</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Image type input:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code></p></li>
+    /// <p><code>"DataInputConfig": {"input_1": {"shape": \[\[1,224,224,3\], \[1,160,160,3\]\], "default_shape": \[1,224,224,3\], "type": "Image", "bias": \[-1,-1,-1\], "scale": 0.007843137255}}</code></p></li>
     /// <li>
     /// <p><code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code></p></li>
     /// </ul></li>
@@ -310,7 +310,7 @@ impl InputConfig {
     /// <p>Image type input without input name (PyTorch):</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code></p></li>
+    /// <p><code>"DataInputConfig": \[{"shape": \[\[1,3,224,224\], \[1,3,160,160\]\], "default_shape": \[1,3,224,224\], "type": "Image", "bias": \[-1,-1,-1\], "scale": 0.007843137255}\]</code></p></li>
     /// <li>
     /// <p><code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code></p></li>
     /// </ul></li>
@@ -321,7 +321,7 @@ impl InputConfig {
     /// <p>For TensorFlow models saved in the SavedModel format, specify the input names from <code>signature_def_key</code> and the input model shapes for <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"> <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature def key. For example:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code></p></li>
+    /// <p><code>"DataInputConfig": {"inputs": \[1, 224, 224, 3\]}</code></p></li>
     /// <li>
     /// <p><code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code></p></li>
     /// </ul></li>
@@ -329,9 +329,9 @@ impl InputConfig {
     /// <p>For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"> <code>OutputConfig:CompilerOptions</code> </a>. For example:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code></p></li>
+    /// <p><code>"DataInputConfig": {"input_tensor:0": \[1, 224, 224, 3\]}</code></p></li>
     /// <li>
-    /// <p><code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code></p></li>
+    /// <p><code>"CompilerOptions": {"output_names": \["output_tensor:0"\]}</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn data_input_config(&self) -> ::std::option::Option<&str> {
@@ -388,17 +388,17 @@ impl InputConfigBuilder {
     /// <p>Examples for one input:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input":[1,1024,1024,3]}</code></p></li>
+    /// <p>If using the console, <code>{"input":\[1,1024,1024,3\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input\":[1,1024,1024,3]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input\":\[1,1024,1024,3\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Examples for two inputs:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"data1": [1,28,28,1], "data2":[1,28,28,1]}</code></p></li>
+    /// <p>If using the console, <code>{"data1": \[1,28,28,1\], "data2":\[1,28,28,1\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"data1\": \[1,28,28,1\], \"data2\":\[1,28,28,1\]}</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -408,17 +408,17 @@ impl InputConfigBuilder {
     /// <p>Examples for one input:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input_1":[1,3,224,224]}</code></p></li>
+    /// <p>If using the console, <code>{"input_1":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input_1\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Examples for two inputs:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code></p></li>
+    /// <p>If using the console, <code>{"input_1": \[1,3,224,224\], "input_2":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input_1\": [1,3,224,224], \"input_2\":[1,3,224,224]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input_1\": \[1,3,224,224\], \"input_2\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -428,17 +428,17 @@ impl InputConfigBuilder {
     /// <p>Examples for one input:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"data":[1,3,1024,1024]}</code></p></li>
+    /// <p>If using the console, <code>{"data":\[1,3,1024,1024\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"data\":[1,3,1024,1024]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"data\":\[1,3,1024,1024\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Examples for two inputs:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"var1": [1,1,28,28], "var2":[1,1,28,28]} </code></p></li>
+    /// <p>If using the console, <code>{"var1": \[1,1,28,28\], "var2":\[1,1,28,28\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"var1\": [1,1,28,28], \"var2\":[1,1,28,28]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"var1\": \[1,1,28,28\], \"var2\":\[1,1,28,28\]}</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -448,22 +448,22 @@ impl InputConfigBuilder {
     /// <p>Examples for one input in dictionary format:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input0":[1,3,224,224]}</code></p></li>
+    /// <p>If using the console, <code>{"input0":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input0\":[1,3,224,224]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input0\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Example for one input in list format: <code>[[1,3,224,224]]</code></p></li>
+    /// <p>Example for one input in list format: <code>\[\[1,3,224,224\]\]</code></p></li>
     /// <li>
     /// <p>Examples for two inputs in dictionary format:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input0":[1,3,224,224], "input1":[1,3,224,224]}</code></p></li>
+    /// <p>If using the console, <code>{"input0":\[1,3,224,224\], "input1":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input0\":[1,3,224,224], \"input1\":[1,3,224,224]} </code></p></li>
+    /// <p>If using the CLI, <code>{\"input0\":\[1,3,224,224\], \"input1\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Example for two inputs in list format: <code>[[1,3,224,224], [1,3,224,224]]</code></p></li>
+    /// <p>Example for two inputs in list format: <code>\[\[1,3,224,224\], \[1,3,224,224\]\]</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>XGBOOST</code>: input data name and shape are not needed.</p></li>
@@ -471,15 +471,15 @@ impl InputConfigBuilder {
     /// <p><code>DataInputConfig</code> supports the following parameters for <code>CoreML</code> <code>TargetDevice</code> (ML Model format):</p>
     /// <ul>
     /// <li>
-    /// <p><code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to static input shapes, CoreML converter supports Flexible input shapes:</p>
+    /// <p><code>shape</code>: Input shape, for example <code>{"input_1": {"shape": \[1,224,224,3\]}}</code>. In addition to static input shapes, CoreML converter supports Flexible input shapes:</p>
     /// <ul>
     /// <li>
-    /// <p>Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific interval in that dimension, for example: <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code></p></li>
+    /// <p>Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific interval in that dimension, for example: <code>{"input_1": {"shape": \["1..10", 224, 224, 3\]}}</code></p></li>
     /// <li>
-    /// <p>Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate all supported input shapes, for example: <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code></p></li>
+    /// <p>Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate all supported input shapes, for example: <code>{"input_1": {"shape": \[\[1, 224, 224, 3\], \[1, 160, 160, 3\]\]}}</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range Dimension and Enumerated Shapes. For example <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code></p></li>
+    /// <p><code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range Dimension and Enumerated Shapes. For example <code>{"input_1": {"shape": \["1..10", 224, 224, 3\], "default_shape": \[1, 224, 224, 3\]}}</code></p></li>
     /// <li>
     /// <p><code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default, the converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to be Image. Image input type requires additional input parameters such as <code>bias</code> and <code>scale</code>.</p></li>
     /// <li>
@@ -493,19 +493,19 @@ impl InputConfigBuilder {
     /// <p>Tensor type input:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code></p></li>
+    /// <p><code>"DataInputConfig": {"input_1": {"shape": \[\[1,224,224,3\], \[1,160,160,3\]\], "default_shape": \[1,224,224,3\]}}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Tensor type input without input name (PyTorch):</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code></p></li>
+    /// <p><code>"DataInputConfig": \[{"shape": \[\[1,3,224,224\], \[1,3,160,160\]\], "default_shape": \[1,3,224,224\]}\]</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Image type input:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code></p></li>
+    /// <p><code>"DataInputConfig": {"input_1": {"shape": \[\[1,224,224,3\], \[1,160,160,3\]\], "default_shape": \[1,224,224,3\], "type": "Image", "bias": \[-1,-1,-1\], "scale": 0.007843137255}}</code></p></li>
     /// <li>
     /// <p><code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code></p></li>
     /// </ul></li>
@@ -513,7 +513,7 @@ impl InputConfigBuilder {
     /// <p>Image type input without input name (PyTorch):</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code></p></li>
+    /// <p><code>"DataInputConfig": \[{"shape": \[\[1,3,224,224\], \[1,3,160,160\]\], "default_shape": \[1,3,224,224\], "type": "Image", "bias": \[-1,-1,-1\], "scale": 0.007843137255}\]</code></p></li>
     /// <li>
     /// <p><code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code></p></li>
     /// </ul></li>
@@ -524,7 +524,7 @@ impl InputConfigBuilder {
     /// <p>For TensorFlow models saved in the SavedModel format, specify the input names from <code>signature_def_key</code> and the input model shapes for <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"> <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature def key. For example:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code></p></li>
+    /// <p><code>"DataInputConfig": {"inputs": \[1, 224, 224, 3\]}</code></p></li>
     /// <li>
     /// <p><code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code></p></li>
     /// </ul></li>
@@ -532,9 +532,9 @@ impl InputConfigBuilder {
     /// <p>For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"> <code>OutputConfig:CompilerOptions</code> </a>. For example:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code></p></li>
+    /// <p><code>"DataInputConfig": {"input_tensor:0": \[1, 224, 224, 3\]}</code></p></li>
     /// <li>
-    /// <p><code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code></p></li>
+    /// <p><code>"CompilerOptions": {"output_names": \["output_tensor:0"\]}</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn data_input_config(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -550,17 +550,17 @@ impl InputConfigBuilder {
     /// <p>Examples for one input:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input":[1,1024,1024,3]}</code></p></li>
+    /// <p>If using the console, <code>{"input":\[1,1024,1024,3\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input\":[1,1024,1024,3]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input\":\[1,1024,1024,3\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Examples for two inputs:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"data1": [1,28,28,1], "data2":[1,28,28,1]}</code></p></li>
+    /// <p>If using the console, <code>{"data1": \[1,28,28,1\], "data2":\[1,28,28,1\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"data1\": \[1,28,28,1\], \"data2\":\[1,28,28,1\]}</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -570,17 +570,17 @@ impl InputConfigBuilder {
     /// <p>Examples for one input:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input_1":[1,3,224,224]}</code></p></li>
+    /// <p>If using the console, <code>{"input_1":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input_1\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Examples for two inputs:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code></p></li>
+    /// <p>If using the console, <code>{"input_1": \[1,3,224,224\], "input_2":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input_1\": [1,3,224,224], \"input_2\":[1,3,224,224]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input_1\": \[1,3,224,224\], \"input_2\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -590,17 +590,17 @@ impl InputConfigBuilder {
     /// <p>Examples for one input:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"data":[1,3,1024,1024]}</code></p></li>
+    /// <p>If using the console, <code>{"data":\[1,3,1024,1024\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"data\":[1,3,1024,1024]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"data\":\[1,3,1024,1024\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Examples for two inputs:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"var1": [1,1,28,28], "var2":[1,1,28,28]} </code></p></li>
+    /// <p>If using the console, <code>{"var1": \[1,1,28,28\], "var2":\[1,1,28,28\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"var1\": [1,1,28,28], \"var2\":[1,1,28,28]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"var1\": \[1,1,28,28\], \"var2\":\[1,1,28,28\]}</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -610,22 +610,22 @@ impl InputConfigBuilder {
     /// <p>Examples for one input in dictionary format:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input0":[1,3,224,224]}</code></p></li>
+    /// <p>If using the console, <code>{"input0":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input0\":[1,3,224,224]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input0\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Example for one input in list format: <code>[[1,3,224,224]]</code></p></li>
+    /// <p>Example for one input in list format: <code>\[\[1,3,224,224\]\]</code></p></li>
     /// <li>
     /// <p>Examples for two inputs in dictionary format:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input0":[1,3,224,224], "input1":[1,3,224,224]}</code></p></li>
+    /// <p>If using the console, <code>{"input0":\[1,3,224,224\], "input1":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input0\":[1,3,224,224], \"input1\":[1,3,224,224]} </code></p></li>
+    /// <p>If using the CLI, <code>{\"input0\":\[1,3,224,224\], \"input1\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Example for two inputs in list format: <code>[[1,3,224,224], [1,3,224,224]]</code></p></li>
+    /// <p>Example for two inputs in list format: <code>\[\[1,3,224,224\], \[1,3,224,224\]\]</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>XGBOOST</code>: input data name and shape are not needed.</p></li>
@@ -633,15 +633,15 @@ impl InputConfigBuilder {
     /// <p><code>DataInputConfig</code> supports the following parameters for <code>CoreML</code> <code>TargetDevice</code> (ML Model format):</p>
     /// <ul>
     /// <li>
-    /// <p><code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to static input shapes, CoreML converter supports Flexible input shapes:</p>
+    /// <p><code>shape</code>: Input shape, for example <code>{"input_1": {"shape": \[1,224,224,3\]}}</code>. In addition to static input shapes, CoreML converter supports Flexible input shapes:</p>
     /// <ul>
     /// <li>
-    /// <p>Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific interval in that dimension, for example: <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code></p></li>
+    /// <p>Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific interval in that dimension, for example: <code>{"input_1": {"shape": \["1..10", 224, 224, 3\]}}</code></p></li>
     /// <li>
-    /// <p>Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate all supported input shapes, for example: <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code></p></li>
+    /// <p>Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate all supported input shapes, for example: <code>{"input_1": {"shape": \[\[1, 224, 224, 3\], \[1, 160, 160, 3\]\]}}</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range Dimension and Enumerated Shapes. For example <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code></p></li>
+    /// <p><code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range Dimension and Enumerated Shapes. For example <code>{"input_1": {"shape": \["1..10", 224, 224, 3\], "default_shape": \[1, 224, 224, 3\]}}</code></p></li>
     /// <li>
     /// <p><code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default, the converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to be Image. Image input type requires additional input parameters such as <code>bias</code> and <code>scale</code>.</p></li>
     /// <li>
@@ -655,19 +655,19 @@ impl InputConfigBuilder {
     /// <p>Tensor type input:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code></p></li>
+    /// <p><code>"DataInputConfig": {"input_1": {"shape": \[\[1,224,224,3\], \[1,160,160,3\]\], "default_shape": \[1,224,224,3\]}}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Tensor type input without input name (PyTorch):</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code></p></li>
+    /// <p><code>"DataInputConfig": \[{"shape": \[\[1,3,224,224\], \[1,3,160,160\]\], "default_shape": \[1,3,224,224\]}\]</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Image type input:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code></p></li>
+    /// <p><code>"DataInputConfig": {"input_1": {"shape": \[\[1,224,224,3\], \[1,160,160,3\]\], "default_shape": \[1,224,224,3\], "type": "Image", "bias": \[-1,-1,-1\], "scale": 0.007843137255}}</code></p></li>
     /// <li>
     /// <p><code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code></p></li>
     /// </ul></li>
@@ -675,7 +675,7 @@ impl InputConfigBuilder {
     /// <p>Image type input without input name (PyTorch):</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code></p></li>
+    /// <p><code>"DataInputConfig": \[{"shape": \[\[1,3,224,224\], \[1,3,160,160\]\], "default_shape": \[1,3,224,224\], "type": "Image", "bias": \[-1,-1,-1\], "scale": 0.007843137255}\]</code></p></li>
     /// <li>
     /// <p><code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code></p></li>
     /// </ul></li>
@@ -686,7 +686,7 @@ impl InputConfigBuilder {
     /// <p>For TensorFlow models saved in the SavedModel format, specify the input names from <code>signature_def_key</code> and the input model shapes for <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"> <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature def key. For example:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code></p></li>
+    /// <p><code>"DataInputConfig": {"inputs": \[1, 224, 224, 3\]}</code></p></li>
     /// <li>
     /// <p><code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code></p></li>
     /// </ul></li>
@@ -694,9 +694,9 @@ impl InputConfigBuilder {
     /// <p>For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"> <code>OutputConfig:CompilerOptions</code> </a>. For example:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code></p></li>
+    /// <p><code>"DataInputConfig": {"input_tensor:0": \[1, 224, 224, 3\]}</code></p></li>
     /// <li>
-    /// <p><code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code></p></li>
+    /// <p><code>"CompilerOptions": {"output_names": \["output_tensor:0"\]}</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_data_input_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -712,17 +712,17 @@ impl InputConfigBuilder {
     /// <p>Examples for one input:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input":[1,1024,1024,3]}</code></p></li>
+    /// <p>If using the console, <code>{"input":\[1,1024,1024,3\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input\":[1,1024,1024,3]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input\":\[1,1024,1024,3\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Examples for two inputs:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"data1": [1,28,28,1], "data2":[1,28,28,1]}</code></p></li>
+    /// <p>If using the console, <code>{"data1": \[1,28,28,1\], "data2":\[1,28,28,1\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"data1\": \[1,28,28,1\], \"data2\":\[1,28,28,1\]}</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -732,17 +732,17 @@ impl InputConfigBuilder {
     /// <p>Examples for one input:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input_1":[1,3,224,224]}</code></p></li>
+    /// <p>If using the console, <code>{"input_1":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input_1\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Examples for two inputs:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code></p></li>
+    /// <p>If using the console, <code>{"input_1": \[1,3,224,224\], "input_2":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input_1\": [1,3,224,224], \"input_2\":[1,3,224,224]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input_1\": \[1,3,224,224\], \"input_2\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -752,17 +752,17 @@ impl InputConfigBuilder {
     /// <p>Examples for one input:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"data":[1,3,1024,1024]}</code></p></li>
+    /// <p>If using the console, <code>{"data":\[1,3,1024,1024\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"data\":[1,3,1024,1024]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"data\":\[1,3,1024,1024\]}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Examples for two inputs:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"var1": [1,1,28,28], "var2":[1,1,28,28]} </code></p></li>
+    /// <p>If using the console, <code>{"var1": \[1,1,28,28\], "var2":\[1,1,28,28\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"var1\": [1,1,28,28], \"var2\":[1,1,28,28]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"var1\": \[1,1,28,28\], \"var2\":\[1,1,28,28\]}</code></p></li>
     /// </ul></li>
     /// </ul></li>
     /// <li>
@@ -772,22 +772,22 @@ impl InputConfigBuilder {
     /// <p>Examples for one input in dictionary format:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input0":[1,3,224,224]}</code></p></li>
+    /// <p>If using the console, <code>{"input0":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input0\":[1,3,224,224]}</code></p></li>
+    /// <p>If using the CLI, <code>{\"input0\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Example for one input in list format: <code>[[1,3,224,224]]</code></p></li>
+    /// <p>Example for one input in list format: <code>\[\[1,3,224,224\]\]</code></p></li>
     /// <li>
     /// <p>Examples for two inputs in dictionary format:</p>
     /// <ul>
     /// <li>
-    /// <p>If using the console, <code>{"input0":[1,3,224,224], "input1":[1,3,224,224]}</code></p></li>
+    /// <p>If using the console, <code>{"input0":\[1,3,224,224\], "input1":\[1,3,224,224\]}</code></p></li>
     /// <li>
-    /// <p>If using the CLI, <code>{\"input0\":[1,3,224,224], \"input1\":[1,3,224,224]} </code></p></li>
+    /// <p>If using the CLI, <code>{\"input0\":\[1,3,224,224\], \"input1\":\[1,3,224,224\]}</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Example for two inputs in list format: <code>[[1,3,224,224], [1,3,224,224]]</code></p></li>
+    /// <p>Example for two inputs in list format: <code>\[\[1,3,224,224\], \[1,3,224,224\]\]</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>XGBOOST</code>: input data name and shape are not needed.</p></li>
@@ -795,15 +795,15 @@ impl InputConfigBuilder {
     /// <p><code>DataInputConfig</code> supports the following parameters for <code>CoreML</code> <code>TargetDevice</code> (ML Model format):</p>
     /// <ul>
     /// <li>
-    /// <p><code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to static input shapes, CoreML converter supports Flexible input shapes:</p>
+    /// <p><code>shape</code>: Input shape, for example <code>{"input_1": {"shape": \[1,224,224,3\]}}</code>. In addition to static input shapes, CoreML converter supports Flexible input shapes:</p>
     /// <ul>
     /// <li>
-    /// <p>Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific interval in that dimension, for example: <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code></p></li>
+    /// <p>Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific interval in that dimension, for example: <code>{"input_1": {"shape": \["1..10", 224, 224, 3\]}}</code></p></li>
     /// <li>
-    /// <p>Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate all supported input shapes, for example: <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code></p></li>
+    /// <p>Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate all supported input shapes, for example: <code>{"input_1": {"shape": \[\[1, 224, 224, 3\], \[1, 160, 160, 3\]\]}}</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range Dimension and Enumerated Shapes. For example <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code></p></li>
+    /// <p><code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range Dimension and Enumerated Shapes. For example <code>{"input_1": {"shape": \["1..10", 224, 224, 3\], "default_shape": \[1, 224, 224, 3\]}}</code></p></li>
     /// <li>
     /// <p><code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default, the converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to be Image. Image input type requires additional input parameters such as <code>bias</code> and <code>scale</code>.</p></li>
     /// <li>
@@ -817,19 +817,19 @@ impl InputConfigBuilder {
     /// <p>Tensor type input:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code></p></li>
+    /// <p><code>"DataInputConfig": {"input_1": {"shape": \[\[1,224,224,3\], \[1,160,160,3\]\], "default_shape": \[1,224,224,3\]}}</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Tensor type input without input name (PyTorch):</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code></p></li>
+    /// <p><code>"DataInputConfig": \[{"shape": \[\[1,3,224,224\], \[1,3,160,160\]\], "default_shape": \[1,3,224,224\]}\]</code></p></li>
     /// </ul></li>
     /// <li>
     /// <p>Image type input:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code></p></li>
+    /// <p><code>"DataInputConfig": {"input_1": {"shape": \[\[1,224,224,3\], \[1,160,160,3\]\], "default_shape": \[1,224,224,3\], "type": "Image", "bias": \[-1,-1,-1\], "scale": 0.007843137255}}</code></p></li>
     /// <li>
     /// <p><code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code></p></li>
     /// </ul></li>
@@ -837,7 +837,7 @@ impl InputConfigBuilder {
     /// <p>Image type input without input name (PyTorch):</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code></p></li>
+    /// <p><code>"DataInputConfig": \[{"shape": \[\[1,3,224,224\], \[1,3,160,160\]\], "default_shape": \[1,3,224,224\], "type": "Image", "bias": \[-1,-1,-1\], "scale": 0.007843137255}\]</code></p></li>
     /// <li>
     /// <p><code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code></p></li>
     /// </ul></li>
@@ -848,7 +848,7 @@ impl InputConfigBuilder {
     /// <p>For TensorFlow models saved in the SavedModel format, specify the input names from <code>signature_def_key</code> and the input model shapes for <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"> <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature def key. For example:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code></p></li>
+    /// <p><code>"DataInputConfig": {"inputs": \[1, 224, 224, 3\]}</code></p></li>
     /// <li>
     /// <p><code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code></p></li>
     /// </ul></li>
@@ -856,9 +856,9 @@ impl InputConfigBuilder {
     /// <p>For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"> <code>OutputConfig:CompilerOptions</code> </a>. For example:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code></p></li>
+    /// <p><code>"DataInputConfig": {"input_tensor:0": \[1, 224, 224, 3\]}</code></p></li>
     /// <li>
-    /// <p><code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code></p></li>
+    /// <p><code>"CompilerOptions": {"output_names": \["output_tensor:0"\]}</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_data_input_config(&self) -> &::std::option::Option<::std::string::String> {

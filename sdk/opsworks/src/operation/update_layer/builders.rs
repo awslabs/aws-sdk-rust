@@ -137,19 +137,19 @@ impl UpdateLayerFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 32 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
+    /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 32 characters and must be in the following format: /\A\[a-z0-9\-\_\.\]+\Z/.</p>
     /// <p>Built-in layer short names are defined by OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer reference</a> in the OpsWorks User Guide.</p>
     pub fn shortname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shortname(input.into());
         self
     }
-    /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 32 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
+    /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 32 characters and must be in the following format: /\A\[a-z0-9\-\_\.\]+\Z/.</p>
     /// <p>Built-in layer short names are defined by OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer reference</a> in the OpsWorks User Guide.</p>
     pub fn set_shortname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shortname(input);
         self
     }
-    /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 32 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
+    /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 32 characters and must be in the following format: /\A\[a-z0-9\-\_\.\]+\Z/.</p>
     /// <p>Built-in layer short names are defined by OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer reference</a> in the OpsWorks User Guide.</p>
     pub fn get_shortname(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_shortname()

@@ -7,10 +7,10 @@
 /// <p>For example:</p>
 /// <p><code>{</code></p>
 /// <p><code>"AttributeName": "demand",</code></p>
-/// <p><code>FeaturizationPipeline [ {</code></p>
+/// <p><code>FeaturizationPipeline \[ {</code></p>
 /// <p><code>"FeaturizationMethodName": "filling",</code></p>
 /// <p><code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code></p>
-/// <p><code>} ]</code></p>
+/// <p><code>} \]</code></p>
 /// <p><code>}</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
