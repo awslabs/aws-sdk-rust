@@ -281,37 +281,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateMultipa
         ::std::result::Result::Ok(())
     }
 }
-#[allow(unreachable_code, unused_variables)]
-#[cfg(test)]
-mod create_multipart_upload_request_test {
-    /// This test validates that the URI for CreateMultipartUpload is created correctly
-    /// Test ID: CreateMultipartUploadUriConstruction
-    #[::tokio::test]
-    #[allow(unused_mut)]
-    async fn create_multipart_upload_uri_construction_request() {
-        let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
-        let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");
-        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
-        let mut config_builder = config_builder;
-        config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
-
-        let config = config_builder.http_client(http_client).build();
-        let client = crate::Client::from_conf(config);
-        let result = client
-            .create_multipart_upload()
-            .set_bucket(::std::option::Option::Some("test-bucket".to_owned()))
-            .set_key(::std::option::Option::Some("object.txt".to_owned()))
-            .send()
-            .await;
-        let _ = dbg!(result);
-        let http_request = request_receiver.expect_request();
-        let expected_query_params = &["uploads"];
-        ::aws_smithy_protocol_test::assert_ok(::aws_smithy_protocol_test::validate_query_string(&http_request, expected_query_params));
-        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
-        ::pretty_assertions::assert_eq!(http_request.method(), "POST", "method was incorrect");
-        ::pretty_assertions::assert_eq!(uri.path(), "/object.txt", "path was incorrect");
-    }
-}
 
 /// Error type for the `CreateMultipartUploadError` operation.
 #[non_exhaustive]

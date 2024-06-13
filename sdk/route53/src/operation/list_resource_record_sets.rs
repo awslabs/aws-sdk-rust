@@ -274,34 +274,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListResourceR
         ::std::result::Result::Ok(())
     }
 }
-#[allow(unreachable_code, unused_variables)]
-#[cfg(test)]
-mod list_resource_record_sets_request_test {
-    /// This test validates that hosted zone is correctly trimmed
-    /// Test ID: ListResourceRecordSetsTrimHostedZone
-    #[::tokio::test]
-    #[allow(unused_mut)]
-    async fn list_resource_record_sets_trim_hosted_zone_request() {
-        let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
-        let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");
-        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
-        let mut config_builder = config_builder;
-        config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
-
-        let config = config_builder.http_client(http_client).build();
-        let client = crate::Client::from_conf(config);
-        let result = client
-            .list_resource_record_sets()
-            .set_hosted_zone_id(::std::option::Option::Some("/hostedzone/IDOFMYHOSTEDZONE".to_owned()))
-            .send()
-            .await;
-        let _ = dbg!(result);
-        let http_request = request_receiver.expect_request();
-        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
-        ::pretty_assertions::assert_eq!(http_request.method(), "GET", "method was incorrect");
-        ::pretty_assertions::assert_eq!(uri.path(), "/2013-04-01/hostedzone/IDOFMYHOSTEDZONE/rrset", "path was incorrect");
-    }
-}
 
 /// Error type for the `ListResourceRecordSetsError` operation.
 #[non_exhaustive]

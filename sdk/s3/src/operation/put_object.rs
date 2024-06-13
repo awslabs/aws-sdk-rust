@@ -295,69 +295,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutObjectEndp
         ::std::result::Result::Ok(())
     }
 }
-#[allow(unreachable_code, unused_variables)]
-#[cfg(test)]
-mod put_object_request_test {
-    /// This test validates that if a content-type is specified, that only one content-type header is sent
-    /// Test ID: DontSendDuplicateContentType
-    #[::tokio::test]
-    #[allow(unused_mut)]
-    async fn dont_send_duplicate_content_type_request() {
-        let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
-        let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");
-        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
-        let mut config_builder = config_builder;
-        config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
-
-        let config = config_builder.http_client(http_client).build();
-        let client = crate::Client::from_conf(config);
-        let result = client
-            .put_object()
-            .set_bucket(::std::option::Option::Some("test-bucket".to_owned()))
-            .set_key(::std::option::Option::Some("test-key".to_owned()))
-            .set_content_type(::std::option::Option::Some("text/html".to_owned()))
-            .send()
-            .await;
-        let _ = dbg!(result);
-        let http_request = request_receiver.expect_request();
-        let expected_headers = [("content-type", "text/html")];
-        ::aws_smithy_protocol_test::assert_ok(::aws_smithy_protocol_test::validate_headers(http_request.headers(), expected_headers));
-        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
-        ::pretty_assertions::assert_eq!(http_request.method(), "PUT", "method was incorrect");
-        ::pretty_assertions::assert_eq!(uri.path(), "/test-key", "path was incorrect");
-    }
-    /// This test validates that if a content-length is specified, that only one content-length header is sent
-    /// Test ID: DontSendDuplicateContentLength
-    #[::tokio::test]
-    #[allow(unused_mut)]
-    async fn dont_send_duplicate_content_length_request() {
-        let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
-        let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");
-        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
-        let mut config_builder = config_builder;
-        config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
-
-        let config = config_builder.http_client(http_client).build();
-        let client = crate::Client::from_conf(config);
-        let result = client
-            .put_object()
-            .set_bucket(::std::option::Option::Some("test-bucket".to_owned()))
-            .set_key(::std::option::Option::Some("test-key".to_owned()))
-            .set_content_length(::std::option::Option::Some(2))
-            .set_body(::std::option::Option::Some(::aws_smithy_types::byte_stream::ByteStream::from_static(
-                b"ab",
-            )))
-            .send()
-            .await;
-        let _ = dbg!(result);
-        let http_request = request_receiver.expect_request();
-        let expected_headers = [("content-length", "2")];
-        ::aws_smithy_protocol_test::assert_ok(::aws_smithy_protocol_test::validate_headers(http_request.headers(), expected_headers));
-        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
-        ::pretty_assertions::assert_eq!(http_request.method(), "PUT", "method was incorrect");
-        ::pretty_assertions::assert_eq!(uri.path(), "/test-key", "path was incorrect");
-    }
-}
 
 /// Error type for the `PutObjectError` operation.
 #[non_exhaustive]
