@@ -267,6 +267,20 @@ impl UpdateOriginEndpointFluentBuilder {
     pub fn get_dash_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>> {
         self.inner.get_dash_manifests()
     }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn force_endpoint_error_configuration(mut self, input: crate::types::ForceEndpointErrorConfiguration) -> Self {
+        self.inner = self.inner.force_endpoint_error_configuration(input);
+        self
+    }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn set_force_endpoint_error_configuration(mut self, input: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>) -> Self {
+        self.inner = self.inner.set_force_endpoint_error_configuration(input);
+        self
+    }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn get_force_endpoint_error_configuration(&self) -> &::std::option::Option<crate::types::ForceEndpointErrorConfiguration> {
+        self.inner.get_force_endpoint_error_configuration()
+    }
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.e_tag(input.into());

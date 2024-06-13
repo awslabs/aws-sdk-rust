@@ -49,6 +49,8 @@ pub struct KeyMetadata {
     /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p>
     /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.</p>
     pub signing_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>>,
+    /// <p>The key agreement algorithm used to derive a shared secret.</p>
+    pub key_agreement_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::KeyAgreementAlgorithmSpec>>,
     /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
     /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub multi_region: ::std::option::Option<bool>,
@@ -161,6 +163,12 @@ impl KeyMetadata {
     pub fn signing_algorithms(&self) -> &[crate::types::SigningAlgorithmSpec] {
         self.signing_algorithms.as_deref().unwrap_or_default()
     }
+    /// <p>The key agreement algorithm used to derive a shared secret.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_agreement_algorithms.is_none()`.
+    pub fn key_agreement_algorithms(&self) -> &[crate::types::KeyAgreementAlgorithmSpec] {
+        self.key_agreement_algorithms.as_deref().unwrap_or_default()
+    }
     /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
     /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn multi_region(&self) -> ::std::option::Option<bool> {
@@ -227,6 +235,7 @@ pub struct KeyMetadataBuilder {
     pub(crate) key_spec: ::std::option::Option<crate::types::KeySpec>,
     pub(crate) encryption_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithmSpec>>,
     pub(crate) signing_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>>,
+    pub(crate) key_agreement_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::KeyAgreementAlgorithmSpec>>,
     pub(crate) multi_region: ::std::option::Option<bool>,
     pub(crate) multi_region_configuration: ::std::option::Option<crate::types::MultiRegionConfiguration>,
     pub(crate) pending_deletion_window_in_days: ::std::option::Option<i32>,
@@ -531,6 +540,26 @@ impl KeyMetadataBuilder {
     pub fn get_signing_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>> {
         &self.signing_algorithms
     }
+    /// Appends an item to `key_agreement_algorithms`.
+    ///
+    /// To override the contents of this collection use [`set_key_agreement_algorithms`](Self::set_key_agreement_algorithms).
+    ///
+    /// <p>The key agreement algorithm used to derive a shared secret.</p>
+    pub fn key_agreement_algorithms(mut self, input: crate::types::KeyAgreementAlgorithmSpec) -> Self {
+        let mut v = self.key_agreement_algorithms.unwrap_or_default();
+        v.push(input);
+        self.key_agreement_algorithms = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The key agreement algorithm used to derive a shared secret.</p>
+    pub fn set_key_agreement_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyAgreementAlgorithmSpec>>) -> Self {
+        self.key_agreement_algorithms = input;
+        self
+    }
+    /// <p>The key agreement algorithm used to derive a shared secret.</p>
+    pub fn get_key_agreement_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyAgreementAlgorithmSpec>> {
+        &self.key_agreement_algorithms
+    }
     /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
     /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn multi_region(mut self, input: bool) -> Self {
@@ -675,6 +704,7 @@ impl KeyMetadataBuilder {
             key_spec: self.key_spec,
             encryption_algorithms: self.encryption_algorithms,
             signing_algorithms: self.signing_algorithms,
+            key_agreement_algorithms: self.key_agreement_algorithms,
             multi_region: self.multi_region,
             multi_region_configuration: self.multi_region_configuration,
             pending_deletion_window_in_days: self.pending_deletion_window_in_days,

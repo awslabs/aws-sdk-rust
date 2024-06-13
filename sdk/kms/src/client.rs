@@ -183,6 +183,8 @@ mod delete_custom_key_store;
 
 mod delete_imported_key_material;
 
+mod derive_shared_secret;
+
 mod describe_custom_key_stores;
 
 mod describe_key;

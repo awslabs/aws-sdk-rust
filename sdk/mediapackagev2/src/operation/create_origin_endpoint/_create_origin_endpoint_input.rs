@@ -25,6 +25,8 @@ pub struct CreateOriginEndpointInput {
     pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
     /// <p>A DASH manifest configuration.</p>
     pub dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>>,
+    /// <p>The failover settings for the endpoint.</p>
+    pub force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p><code>"Key1": "Value1",</code></p>
     /// <p><code>"Key2": "Value2"</code></p>
@@ -81,6 +83,10 @@ impl CreateOriginEndpointInput {
     pub fn dash_manifests(&self) -> &[crate::types::CreateDashManifestConfiguration] {
         self.dash_manifests.as_deref().unwrap_or_default()
     }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn force_endpoint_error_configuration(&self) -> ::std::option::Option<&crate::types::ForceEndpointErrorConfiguration> {
+        self.force_endpoint_error_configuration.as_ref()
+    }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p><code>"Key1": "Value1",</code></p>
     /// <p><code>"Key2": "Value2"</code></p>
@@ -110,6 +116,7 @@ pub struct CreateOriginEndpointInputBuilder {
     pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
     pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
     pub(crate) dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>>,
+    pub(crate) force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateOriginEndpointInputBuilder {
@@ -292,6 +299,20 @@ impl CreateOriginEndpointInputBuilder {
     pub fn get_dash_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>> {
         &self.dash_manifests
     }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn force_endpoint_error_configuration(mut self, input: crate::types::ForceEndpointErrorConfiguration) -> Self {
+        self.force_endpoint_error_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn set_force_endpoint_error_configuration(mut self, input: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>) -> Self {
+        self.force_endpoint_error_configuration = input;
+        self
+    }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn get_force_endpoint_error_configuration(&self) -> &::std::option::Option<crate::types::ForceEndpointErrorConfiguration> {
+        &self.force_endpoint_error_configuration
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -335,6 +356,7 @@ impl CreateOriginEndpointInputBuilder {
             hls_manifests: self.hls_manifests,
             low_latency_hls_manifests: self.low_latency_hls_manifests,
             dash_manifests: self.dash_manifests,
+            force_endpoint_error_configuration: self.force_endpoint_error_configuration,
             tags: self.tags,
         })
     }

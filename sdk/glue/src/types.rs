@@ -457,6 +457,8 @@ pub use crate::types::_glue_table::GlueTable;
 
 pub use crate::types::_data_quality_evaluation_run_additional_run_options::DataQualityEvaluationRunAdditionalRunOptions;
 
+pub use crate::types::_dq_composite_rule_evaluation_method::DqCompositeRuleEvaluationMethod;
+
 pub use crate::types::_table::Table;
 
 pub use crate::types::_view_definition::ViewDefinition;
@@ -1084,6 +1086,8 @@ mod _direct_kinesis_source;
 mod _direct_schema_change_policy;
 
 mod _double_column_statistics_data;
+
+mod _dq_composite_rule_evaluation_method;
 
 mod _dq_results_publishing_options;
 

@@ -3,6 +3,8 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_backup::Backup;
 
+pub use crate::types::_cluster_mode::ClusterMode;
+
 pub use crate::types::_backup_state::BackupState;
 
 pub use crate::types::_cluster::Cluster;
@@ -36,6 +38,8 @@ mod _backup_state;
 mod _certificates;
 
 mod _cluster;
+
+mod _cluster_mode;
 
 mod _cluster_state;
 

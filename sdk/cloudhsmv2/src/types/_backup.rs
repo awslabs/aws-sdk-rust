@@ -26,6 +26,10 @@ pub struct Backup {
     pub delete_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of tags for the backup.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The HSM type of the cluster that was backed up.</p>
+    pub hsm_type: ::std::option::Option<::std::string::String>,
+    /// <p>The mode of the cluster that was backed up.</p>
+    pub mode: ::std::option::Option<crate::types::ClusterMode>,
 }
 impl Backup {
     /// <p>The identifier (ID) of the backup.</p>
@@ -75,6 +79,14 @@ impl Backup {
     pub fn tag_list(&self) -> &[crate::types::Tag] {
         self.tag_list.as_deref().unwrap_or_default()
     }
+    /// <p>The HSM type of the cluster that was backed up.</p>
+    pub fn hsm_type(&self) -> ::std::option::Option<&str> {
+        self.hsm_type.as_deref()
+    }
+    /// <p>The mode of the cluster that was backed up.</p>
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::ClusterMode> {
+        self.mode.as_ref()
+    }
 }
 impl Backup {
     /// Creates a new builder-style object to manufacture [`Backup`](crate::types::Backup).
@@ -98,6 +110,8 @@ pub struct BackupBuilder {
     pub(crate) source_cluster: ::std::option::Option<::std::string::String>,
     pub(crate) delete_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) hsm_type: ::std::option::Option<::std::string::String>,
+    pub(crate) mode: ::std::option::Option<crate::types::ClusterMode>,
 }
 impl BackupBuilder {
     /// <p>The identifier (ID) of the backup.</p>
@@ -261,6 +275,34 @@ impl BackupBuilder {
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }
+    /// <p>The HSM type of the cluster that was backed up.</p>
+    pub fn hsm_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hsm_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The HSM type of the cluster that was backed up.</p>
+    pub fn set_hsm_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hsm_type = input;
+        self
+    }
+    /// <p>The HSM type of the cluster that was backed up.</p>
+    pub fn get_hsm_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_type
+    }
+    /// <p>The mode of the cluster that was backed up.</p>
+    pub fn mode(mut self, input: crate::types::ClusterMode) -> Self {
+        self.mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode of the cluster that was backed up.</p>
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ClusterMode>) -> Self {
+        self.mode = input;
+        self
+    }
+    /// <p>The mode of the cluster that was backed up.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::ClusterMode> {
+        &self.mode
+    }
     /// Consumes the builder and constructs a [`Backup`](crate::types::Backup).
     /// This method will fail if any of the following fields are not set:
     /// - [`backup_id`](crate::types::builders::BackupBuilder::backup_id)
@@ -282,6 +324,8 @@ impl BackupBuilder {
             source_cluster: self.source_cluster,
             delete_timestamp: self.delete_timestamp,
             tag_list: self.tag_list,
+            hsm_type: self.hsm_type,
+            mode: self.mode,
         })
     }
 }

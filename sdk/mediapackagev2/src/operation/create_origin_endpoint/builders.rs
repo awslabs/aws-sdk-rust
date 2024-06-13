@@ -280,6 +280,20 @@ impl CreateOriginEndpointFluentBuilder {
     pub fn get_dash_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>> {
         self.inner.get_dash_manifests()
     }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn force_endpoint_error_configuration(mut self, input: crate::types::ForceEndpointErrorConfiguration) -> Self {
+        self.inner = self.inner.force_endpoint_error_configuration(input);
+        self
+    }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn set_force_endpoint_error_configuration(mut self, input: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>) -> Self {
+        self.inner = self.inner.set_force_endpoint_error_configuration(input);
+        self
+    }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn get_force_endpoint_error_configuration(&self) -> &::std::option::Option<crate::types::ForceEndpointErrorConfiguration> {
+        self.inner.get_force_endpoint_error_configuration()
+    }
     ///
     /// Adds a key-value pair to `Tags`.
     ///

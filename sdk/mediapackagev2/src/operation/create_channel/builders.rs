@@ -150,6 +150,41 @@ impl CreateChannelFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub fn input_type(mut self, input: crate::types::InputType) -> Self {
+        self.inner = self.inner.input_type(input);
+        self
+    }
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub fn set_input_type(mut self, input: ::std::option::Option<crate::types::InputType>) -> Self {
+        self.inner = self.inner.set_input_type(input);
+        self
+    }
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub fn get_input_type(&self) -> &::std::option::Option<crate::types::InputType> {
+        self.inner.get_input_type()
+    }
     /// <p>Enter any descriptive text that helps you to identify the channel.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());

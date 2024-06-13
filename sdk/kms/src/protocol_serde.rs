@@ -43,6 +43,8 @@ pub(crate) mod shape_delete_custom_key_store;
 
 pub(crate) mod shape_delete_imported_key_material;
 
+pub(crate) mod shape_derive_shared_secret;
+
 pub(crate) mod shape_describe_custom_key_stores;
 
 pub(crate) mod shape_describe_key;
@@ -178,6 +180,8 @@ pub(crate) mod shape_delete_custom_key_store_input;
 pub(crate) mod shape_delete_imported_key_material_input;
 
 pub(crate) mod shape_dependency_timeout_exception;
+
+pub(crate) mod shape_derive_shared_secret_input;
 
 pub(crate) mod shape_describe_custom_key_stores_input;
 
@@ -344,6 +348,8 @@ pub(crate) mod shape_encryption_algorithm_spec_list;
 pub(crate) mod shape_grant_constraints;
 
 pub(crate) mod shape_grant_list;
+
+pub(crate) mod shape_key_agreement_algorithm_spec_list;
 
 pub(crate) mod shape_key_list;
 

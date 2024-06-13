@@ -122,17 +122,17 @@ impl CreateClusterFluentBuilder {
     pub fn get_backup_retention_policy(&self) -> &::std::option::Option<crate::types::BackupRetentionPolicy> {
         self.inner.get_backup_retention_policy()
     }
-    /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
+    /// <p>The type of HSM to use in the cluster. The allowed values are <code>hsm1.medium</code> and <code>hsm2m.medium</code>.</p>
     pub fn hsm_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hsm_type(input.into());
         self
     }
-    /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
+    /// <p>The type of HSM to use in the cluster. The allowed values are <code>hsm1.medium</code> and <code>hsm2m.medium</code>.</p>
     pub fn set_hsm_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hsm_type(input);
         self
     }
-    /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
+    /// <p>The type of HSM to use in the cluster. The allowed values are <code>hsm1.medium</code> and <code>hsm2m.medium</code>.</p>
     pub fn get_hsm_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hsm_type()
     }
@@ -205,5 +205,19 @@ impl CreateClusterFluentBuilder {
     /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tag_list()
+    }
+    /// <p>The mode to use in the cluster. The allowed values are <code>FIPS</code> and <code>NON_FIPS</code>.</p>
+    pub fn mode(mut self, input: crate::types::ClusterMode) -> Self {
+        self.inner = self.inner.mode(input);
+        self
+    }
+    /// <p>The mode to use in the cluster. The allowed values are <code>FIPS</code> and <code>NON_FIPS</code>.</p>
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ClusterMode>) -> Self {
+        self.inner = self.inner.set_mode(input);
+        self
+    }
+    /// <p>The mode to use in the cluster. The allowed values are <code>FIPS</code> and <code>NON_FIPS</code>.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::ClusterMode> {
+        self.inner.get_mode()
     }
 }

@@ -101,6 +101,13 @@ where
                         "TagList" => {
                             builder = builder.set_tag_list(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
                         }
+                        "Mode" => {
+                            builder = builder.set_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ClusterMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

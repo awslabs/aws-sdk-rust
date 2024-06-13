@@ -29,6 +29,8 @@
 ///     MetricName::DeviceJoinRequestCount => { /* ... */ },
 ///     MetricName::DeviceRssi => { /* ... */ },
 ///     MetricName::DeviceRoamingDownlinkCount => { /* ... */ },
+///     MetricName::DeviceRoamingRssi => { /* ... */ },
+///     MetricName::DeviceRoamingSnr => { /* ... */ },
 ///     MetricName::DeviceRoamingUplinkCount => { /* ... */ },
 ///     MetricName::DeviceSnr => { /* ... */ },
 ///     MetricName::DeviceUplinkCount => { /* ... */ },
@@ -104,6 +106,10 @@ pub enum MetricName {
     #[allow(missing_docs)] // documentation missing in model
     DeviceRoamingDownlinkCount,
     #[allow(missing_docs)] // documentation missing in model
+    DeviceRoamingRssi,
+    #[allow(missing_docs)] // documentation missing in model
+    DeviceRoamingSnr,
+    #[allow(missing_docs)] // documentation missing in model
     DeviceRoamingUplinkCount,
     #[allow(missing_docs)] // documentation missing in model
     DeviceSnr,
@@ -153,6 +159,8 @@ impl ::std::convert::From<&str> for MetricName {
             "DeviceJoinRequestCount" => MetricName::DeviceJoinRequestCount,
             "DeviceRSSI" => MetricName::DeviceRssi,
             "DeviceRoamingDownlinkCount" => MetricName::DeviceRoamingDownlinkCount,
+            "DeviceRoamingRSSI" => MetricName::DeviceRoamingRssi,
+            "DeviceRoamingSNR" => MetricName::DeviceRoamingSnr,
             "DeviceRoamingUplinkCount" => MetricName::DeviceRoamingUplinkCount,
             "DeviceSNR" => MetricName::DeviceSnr,
             "DeviceUplinkCount" => MetricName::DeviceUplinkCount,
@@ -198,6 +206,8 @@ impl MetricName {
             MetricName::DeviceJoinRequestCount => "DeviceJoinRequestCount",
             MetricName::DeviceRssi => "DeviceRSSI",
             MetricName::DeviceRoamingDownlinkCount => "DeviceRoamingDownlinkCount",
+            MetricName::DeviceRoamingRssi => "DeviceRoamingRSSI",
+            MetricName::DeviceRoamingSnr => "DeviceRoamingSNR",
             MetricName::DeviceRoamingUplinkCount => "DeviceRoamingUplinkCount",
             MetricName::DeviceSnr => "DeviceSNR",
             MetricName::DeviceUplinkCount => "DeviceUplinkCount",
@@ -234,6 +244,8 @@ impl MetricName {
             "DeviceJoinRequestCount",
             "DeviceRSSI",
             "DeviceRoamingDownlinkCount",
+            "DeviceRoamingRSSI",
+            "DeviceRoamingSNR",
             "DeviceRoamingUplinkCount",
             "DeviceSNR",
             "DeviceUplinkCount",
@@ -287,6 +299,8 @@ impl ::std::fmt::Display for MetricName {
             MetricName::DeviceJoinRequestCount => write!(f, "DeviceJoinRequestCount"),
             MetricName::DeviceRssi => write!(f, "DeviceRSSI"),
             MetricName::DeviceRoamingDownlinkCount => write!(f, "DeviceRoamingDownlinkCount"),
+            MetricName::DeviceRoamingRssi => write!(f, "DeviceRoamingRSSI"),
+            MetricName::DeviceRoamingSnr => write!(f, "DeviceRoamingSNR"),
             MetricName::DeviceRoamingUplinkCount => write!(f, "DeviceRoamingUplinkCount"),
             MetricName::DeviceSnr => write!(f, "DeviceSNR"),
             MetricName::DeviceUplinkCount => write!(f, "DeviceUplinkCount"),

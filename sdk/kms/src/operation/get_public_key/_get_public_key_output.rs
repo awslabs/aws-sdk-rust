@@ -15,8 +15,8 @@ pub struct GetPublicKeyOutput {
     pub customer_master_key_spec: ::std::option::Option<crate::types::CustomerMasterKeySpec>,
     /// <p>The type of the of the public key that was downloaded.</p>
     pub key_spec: ::std::option::Option<crate::types::KeySpec>,
-    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p>
-    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted.</p>
+    /// <p>The permitted use of the public key. Valid values for asymmetric key pairs are <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, and <code>KEY_AGREEMENT</code>.</p>
+    /// <p>This information is critical. For example, if a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted.</p>
     pub key_usage: ::std::option::Option<crate::types::KeyUsageType>,
     /// <p>The encryption algorithms that KMS supports for this key.</p>
     /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted.</p>
@@ -25,6 +25,8 @@ pub struct GetPublicKeyOutput {
     /// <p>The signing algorithms that KMS supports for this key.</p>
     /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>SIGN_VERIFY</code>.</p>
     pub signing_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>>,
+    /// <p>The key agreement algorithm used to derive a shared secret. This field is present only when the KMS key has a <code>KeyUsage</code> value of <code>KEY_AGREEMENT</code>.</p>
+    pub key_agreement_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::KeyAgreementAlgorithmSpec>>,
     _request_id: Option<String>,
 }
 impl GetPublicKeyOutput {
@@ -48,8 +50,8 @@ impl GetPublicKeyOutput {
     pub fn key_spec(&self) -> ::std::option::Option<&crate::types::KeySpec> {
         self.key_spec.as_ref()
     }
-    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p>
-    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted.</p>
+    /// <p>The permitted use of the public key. Valid values for asymmetric key pairs are <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, and <code>KEY_AGREEMENT</code>.</p>
+    /// <p>This information is critical. For example, if a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted.</p>
     pub fn key_usage(&self) -> ::std::option::Option<&crate::types::KeyUsageType> {
         self.key_usage.as_ref()
     }
@@ -67,6 +69,12 @@ impl GetPublicKeyOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signing_algorithms.is_none()`.
     pub fn signing_algorithms(&self) -> &[crate::types::SigningAlgorithmSpec] {
         self.signing_algorithms.as_deref().unwrap_or_default()
+    }
+    /// <p>The key agreement algorithm used to derive a shared secret. This field is present only when the KMS key has a <code>KeyUsage</code> value of <code>KEY_AGREEMENT</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_agreement_algorithms.is_none()`.
+    pub fn key_agreement_algorithms(&self) -> &[crate::types::KeyAgreementAlgorithmSpec] {
+        self.key_agreement_algorithms.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPublicKeyOutput {
@@ -92,6 +100,7 @@ pub struct GetPublicKeyOutputBuilder {
     pub(crate) key_usage: ::std::option::Option<crate::types::KeyUsageType>,
     pub(crate) encryption_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithmSpec>>,
     pub(crate) signing_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>>,
+    pub(crate) key_agreement_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::KeyAgreementAlgorithmSpec>>,
     _request_id: Option<String>,
 }
 impl GetPublicKeyOutputBuilder {
@@ -163,20 +172,20 @@ impl GetPublicKeyOutputBuilder {
     pub fn get_key_spec(&self) -> &::std::option::Option<crate::types::KeySpec> {
         &self.key_spec
     }
-    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p>
-    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted.</p>
+    /// <p>The permitted use of the public key. Valid values for asymmetric key pairs are <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, and <code>KEY_AGREEMENT</code>.</p>
+    /// <p>This information is critical. For example, if a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted.</p>
     pub fn key_usage(mut self, input: crate::types::KeyUsageType) -> Self {
         self.key_usage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p>
-    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted.</p>
+    /// <p>The permitted use of the public key. Valid values for asymmetric key pairs are <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, and <code>KEY_AGREEMENT</code>.</p>
+    /// <p>This information is critical. For example, if a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted.</p>
     pub fn set_key_usage(mut self, input: ::std::option::Option<crate::types::KeyUsageType>) -> Self {
         self.key_usage = input;
         self
     }
-    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p>
-    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted.</p>
+    /// <p>The permitted use of the public key. Valid values for asymmetric key pairs are <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, and <code>KEY_AGREEMENT</code>.</p>
+    /// <p>This information is critical. For example, if a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted.</p>
     pub fn get_key_usage(&self) -> &::std::option::Option<crate::types::KeyUsageType> {
         &self.key_usage
     }
@@ -229,6 +238,26 @@ impl GetPublicKeyOutputBuilder {
     pub fn get_signing_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>> {
         &self.signing_algorithms
     }
+    /// Appends an item to `key_agreement_algorithms`.
+    ///
+    /// To override the contents of this collection use [`set_key_agreement_algorithms`](Self::set_key_agreement_algorithms).
+    ///
+    /// <p>The key agreement algorithm used to derive a shared secret. This field is present only when the KMS key has a <code>KeyUsage</code> value of <code>KEY_AGREEMENT</code>.</p>
+    pub fn key_agreement_algorithms(mut self, input: crate::types::KeyAgreementAlgorithmSpec) -> Self {
+        let mut v = self.key_agreement_algorithms.unwrap_or_default();
+        v.push(input);
+        self.key_agreement_algorithms = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The key agreement algorithm used to derive a shared secret. This field is present only when the KMS key has a <code>KeyUsage</code> value of <code>KEY_AGREEMENT</code>.</p>
+    pub fn set_key_agreement_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyAgreementAlgorithmSpec>>) -> Self {
+        self.key_agreement_algorithms = input;
+        self
+    }
+    /// <p>The key agreement algorithm used to derive a shared secret. This field is present only when the KMS key has a <code>KeyUsage</code> value of <code>KEY_AGREEMENT</code>.</p>
+    pub fn get_key_agreement_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyAgreementAlgorithmSpec>> {
+        &self.key_agreement_algorithms
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -248,6 +277,7 @@ impl GetPublicKeyOutputBuilder {
             key_usage: self.key_usage,
             encryption_algorithms: self.encryption_algorithms,
             signing_algorithms: self.signing_algorithms,
+            key_agreement_algorithms: self.key_agreement_algorithms,
             _request_id: self._request_id,
         }
     }

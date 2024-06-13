@@ -23,6 +23,8 @@ pub struct UpdateOriginEndpointInput {
     pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
     /// <p>A DASH manifest configuration.</p>
     pub dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>>,
+    /// <p>The failover settings for the endpoint.</p>
+    pub force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
 }
@@ -73,6 +75,10 @@ impl UpdateOriginEndpointInput {
     pub fn dash_manifests(&self) -> &[crate::types::CreateDashManifestConfiguration] {
         self.dash_manifests.as_deref().unwrap_or_default()
     }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn force_endpoint_error_configuration(&self) -> ::std::option::Option<&crate::types::ForceEndpointErrorConfiguration> {
+        self.force_endpoint_error_configuration.as_ref()
+    }
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
@@ -99,6 +105,7 @@ pub struct UpdateOriginEndpointInputBuilder {
     pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
     pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
     pub(crate) dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>>,
+    pub(crate) force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
 }
 impl UpdateOriginEndpointInputBuilder {
@@ -267,6 +274,20 @@ impl UpdateOriginEndpointInputBuilder {
     pub fn get_dash_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>> {
         &self.dash_manifests
     }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn force_endpoint_error_configuration(mut self, input: crate::types::ForceEndpointErrorConfiguration) -> Self {
+        self.force_endpoint_error_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn set_force_endpoint_error_configuration(mut self, input: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>) -> Self {
+        self.force_endpoint_error_configuration = input;
+        self
+    }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn get_force_endpoint_error_configuration(&self) -> &::std::option::Option<crate::types::ForceEndpointErrorConfiguration> {
+        &self.force_endpoint_error_configuration
+    }
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -297,6 +318,7 @@ impl UpdateOriginEndpointInputBuilder {
             hls_manifests: self.hls_manifests,
             low_latency_hls_manifests: self.low_latency_hls_manifests,
             dash_manifests: self.dash_manifests,
+            force_endpoint_error_configuration: self.force_endpoint_error_configuration,
             e_tag: self.e_tag,
         })
     }

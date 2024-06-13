@@ -9,6 +9,15 @@ pub struct CreateChannelInput {
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub input_type: ::std::option::Option<crate::types::InputType>,
     /// <p>Enter any descriptive text that helps you to identify the channel.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
@@ -28,6 +37,17 @@ impl CreateChannelInput {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub fn input_type(&self) -> ::std::option::Option<&crate::types::InputType> {
+        self.input_type.as_ref()
     }
     /// <p>Enter any descriptive text that helps you to identify the channel.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -54,6 +74,7 @@ pub struct CreateChannelInputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) input_type: ::std::option::Option<crate::types::InputType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -101,6 +122,41 @@ impl CreateChannelInputBuilder {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
+    }
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub fn input_type(mut self, input: crate::types::InputType) -> Self {
+        self.input_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub fn set_input_type(mut self, input: ::std::option::Option<crate::types::InputType>) -> Self {
+        self.input_type = input;
+        self
+    }
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub fn get_input_type(&self) -> &::std::option::Option<crate::types::InputType> {
+        &self.input_type
     }
     /// <p>Enter any descriptive text that helps you to identify the channel.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,6 +206,7 @@ impl CreateChannelInputBuilder {
             channel_group_name: self.channel_group_name,
             channel_name: self.channel_name,
             client_token: self.client_token,
+            input_type: self.input_type,
             description: self.description,
             tags: self.tags,
         })

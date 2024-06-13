@@ -41,10 +41,12 @@
 ///     ValidationExceptionType::NoneModeWithTimingSource => { /* ... */ },
 ///     ValidationExceptionType::NumManifestsHigh => { /* ... */ },
 ///     ValidationExceptionType::NumManifestsLow => { /* ... */ },
+///     ValidationExceptionType::OnlyCmafInputTypeAllowForceEndpointErrorConfiguration => { /* ... */ },
 ///     ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => { /* ... */ },
 ///     ValidationExceptionType::RoleArnInvalidFormat => { /* ... */ },
 ///     ValidationExceptionType::RoleArnLengthOutOfRange => { /* ... */ },
 ///     ValidationExceptionType::RoleArnNotAssumable => { /* ... */ },
+///     ValidationExceptionType::SourceDisruptionsEnabledIncorrectly => { /* ... */ },
 ///     ValidationExceptionType::TimingSourceMissing => { /* ... */ },
 ///     ValidationExceptionType::TsContainerTypeWithDashManifest => { /* ... */ },
 ///     ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => { /* ... */ },
@@ -143,6 +145,8 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     NumManifestsLow,
     #[allow(missing_docs)] // documentation missing in model
+    OnlyCmafInputTypeAllowForceEndpointErrorConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     PeriodTriggersNoneSpecifiedWithAdditionalValues,
     #[allow(missing_docs)] // documentation missing in model
     RoleArnInvalidFormat,
@@ -150,6 +154,8 @@ pub enum ValidationExceptionType {
     RoleArnLengthOutOfRange,
     #[allow(missing_docs)] // documentation missing in model
     RoleArnNotAssumable,
+    #[allow(missing_docs)] // documentation missing in model
+    SourceDisruptionsEnabledIncorrectly,
     #[allow(missing_docs)] // documentation missing in model
     TimingSourceMissing,
     #[allow(missing_docs)] // documentation missing in model
@@ -212,10 +218,14 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "NONE_MODE_WITH_TIMING_SOURCE" => ValidationExceptionType::NoneModeWithTimingSource,
             "NUM_MANIFESTS_HIGH" => ValidationExceptionType::NumManifestsHigh,
             "NUM_MANIFESTS_LOW" => ValidationExceptionType::NumManifestsLow,
+            "ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION" => {
+                ValidationExceptionType::OnlyCmafInputTypeAllowForceEndpointErrorConfiguration
+            }
             "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES" => ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues,
             "ROLE_ARN_INVALID_FORMAT" => ValidationExceptionType::RoleArnInvalidFormat,
             "ROLE_ARN_LENGTH_OUT_OF_RANGE" => ValidationExceptionType::RoleArnLengthOutOfRange,
             "ROLE_ARN_NOT_ASSUMABLE" => ValidationExceptionType::RoleArnNotAssumable,
+            "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY" => ValidationExceptionType::SourceDisruptionsEnabledIncorrectly,
             "TIMING_SOURCE_MISSING" => ValidationExceptionType::TimingSourceMissing,
             "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST" => ValidationExceptionType::TsContainerTypeWithDashManifest,
             "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION" => ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration,
@@ -274,10 +284,14 @@ impl ValidationExceptionType {
             ValidationExceptionType::NoneModeWithTimingSource => "NONE_MODE_WITH_TIMING_SOURCE",
             ValidationExceptionType::NumManifestsHigh => "NUM_MANIFESTS_HIGH",
             ValidationExceptionType::NumManifestsLow => "NUM_MANIFESTS_LOW",
+            ValidationExceptionType::OnlyCmafInputTypeAllowForceEndpointErrorConfiguration => {
+                "ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION"
+            }
             ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES",
             ValidationExceptionType::RoleArnInvalidFormat => "ROLE_ARN_INVALID_FORMAT",
             ValidationExceptionType::RoleArnLengthOutOfRange => "ROLE_ARN_LENGTH_OUT_OF_RANGE",
             ValidationExceptionType::RoleArnNotAssumable => "ROLE_ARN_NOT_ASSUMABLE",
+            ValidationExceptionType::SourceDisruptionsEnabledIncorrectly => "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY",
             ValidationExceptionType::TimingSourceMissing => "TIMING_SOURCE_MISSING",
             ValidationExceptionType::TsContainerTypeWithDashManifest => "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST",
             ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION",
@@ -325,10 +339,12 @@ impl ValidationExceptionType {
             "NONE_MODE_WITH_TIMING_SOURCE",
             "NUM_MANIFESTS_HIGH",
             "NUM_MANIFESTS_LOW",
+            "ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION",
             "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES",
             "ROLE_ARN_INVALID_FORMAT",
             "ROLE_ARN_LENGTH_OUT_OF_RANGE",
             "ROLE_ARN_NOT_ASSUMABLE",
+            "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY",
             "TIMING_SOURCE_MISSING",
             "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST",
             "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION",
@@ -395,12 +411,16 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::NoneModeWithTimingSource => write!(f, "NONE_MODE_WITH_TIMING_SOURCE"),
             ValidationExceptionType::NumManifestsHigh => write!(f, "NUM_MANIFESTS_HIGH"),
             ValidationExceptionType::NumManifestsLow => write!(f, "NUM_MANIFESTS_LOW"),
+            ValidationExceptionType::OnlyCmafInputTypeAllowForceEndpointErrorConfiguration => {
+                write!(f, "ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION")
+            }
             ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => {
                 write!(f, "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES")
             }
             ValidationExceptionType::RoleArnInvalidFormat => write!(f, "ROLE_ARN_INVALID_FORMAT"),
             ValidationExceptionType::RoleArnLengthOutOfRange => write!(f, "ROLE_ARN_LENGTH_OUT_OF_RANGE"),
             ValidationExceptionType::RoleArnNotAssumable => write!(f, "ROLE_ARN_NOT_ASSUMABLE"),
+            ValidationExceptionType::SourceDisruptionsEnabledIncorrectly => write!(f, "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY"),
             ValidationExceptionType::TimingSourceMissing => write!(f, "TIMING_SOURCE_MISSING"),
             ValidationExceptionType::TsContainerTypeWithDashManifest => write!(f, "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST"),
             ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => write!(f, "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION"),

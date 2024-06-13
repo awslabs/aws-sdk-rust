@@ -34,6 +34,8 @@ pub struct Cluster {
     pub certificates: ::std::option::Option<crate::types::Certificates>,
     /// <p>The list of tags for the cluster.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The mode of the cluster.</p>
+    pub mode: ::std::option::Option<crate::types::ClusterMode>,
 }
 impl Cluster {
     /// <p>The cluster's backup policy.</p>
@@ -100,6 +102,10 @@ impl Cluster {
     pub fn tag_list(&self) -> &[crate::types::Tag] {
         self.tag_list.as_deref().unwrap_or_default()
     }
+    /// <p>The mode of the cluster.</p>
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::ClusterMode> {
+        self.mode.as_ref()
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -127,6 +133,7 @@ pub struct ClusterBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) certificates: ::std::option::Option<crate::types::Certificates>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) mode: ::std::option::Option<crate::types::ClusterMode>,
 }
 impl ClusterBuilder {
     /// <p>The cluster's backup policy.</p>
@@ -364,6 +371,20 @@ impl ClusterBuilder {
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }
+    /// <p>The mode of the cluster.</p>
+    pub fn mode(mut self, input: crate::types::ClusterMode) -> Self {
+        self.mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode of the cluster.</p>
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ClusterMode>) -> Self {
+        self.mode = input;
+        self
+    }
+    /// <p>The mode of the cluster.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::ClusterMode> {
+        &self.mode
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -382,6 +403,7 @@ impl ClusterBuilder {
             vpc_id: self.vpc_id,
             certificates: self.certificates,
             tag_list: self.tag_list,
+            mode: self.mode,
         }
     }
 }

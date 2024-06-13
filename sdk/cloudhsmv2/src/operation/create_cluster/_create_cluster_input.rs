@@ -5,7 +5,7 @@
 pub struct CreateClusterInput {
     /// <p>A policy that defines how the service retains backups.</p>
     pub backup_retention_policy: ::std::option::Option<crate::types::BackupRetentionPolicy>,
-    /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
+    /// <p>The type of HSM to use in the cluster. The allowed values are <code>hsm1.medium</code> and <code>hsm2m.medium</code>.</p>
     pub hsm_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
     pub source_backup_id: ::std::option::Option<::std::string::String>,
@@ -19,13 +19,15 @@ pub struct CreateClusterInput {
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The mode to use in the cluster. The allowed values are <code>FIPS</code> and <code>NON_FIPS</code>.</p>
+    pub mode: ::std::option::Option<crate::types::ClusterMode>,
 }
 impl CreateClusterInput {
     /// <p>A policy that defines how the service retains backups.</p>
     pub fn backup_retention_policy(&self) -> ::std::option::Option<&crate::types::BackupRetentionPolicy> {
         self.backup_retention_policy.as_ref()
     }
-    /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
+    /// <p>The type of HSM to use in the cluster. The allowed values are <code>hsm1.medium</code> and <code>hsm2m.medium</code>.</p>
     pub fn hsm_type(&self) -> ::std::option::Option<&str> {
         self.hsm_type.as_deref()
     }
@@ -51,6 +53,10 @@ impl CreateClusterInput {
     pub fn tag_list(&self) -> &[crate::types::Tag] {
         self.tag_list.as_deref().unwrap_or_default()
     }
+    /// <p>The mode to use in the cluster. The allowed values are <code>FIPS</code> and <code>NON_FIPS</code>.</p>
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::ClusterMode> {
+        self.mode.as_ref()
+    }
 }
 impl CreateClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
@@ -68,6 +74,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) source_backup_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) mode: ::std::option::Option<crate::types::ClusterMode>,
 }
 impl CreateClusterInputBuilder {
     /// <p>A policy that defines how the service retains backups.</p>
@@ -84,18 +91,18 @@ impl CreateClusterInputBuilder {
     pub fn get_backup_retention_policy(&self) -> &::std::option::Option<crate::types::BackupRetentionPolicy> {
         &self.backup_retention_policy
     }
-    /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
+    /// <p>The type of HSM to use in the cluster. The allowed values are <code>hsm1.medium</code> and <code>hsm2m.medium</code>.</p>
     /// This field is required.
     pub fn hsm_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
+    /// <p>The type of HSM to use in the cluster. The allowed values are <code>hsm1.medium</code> and <code>hsm2m.medium</code>.</p>
     pub fn set_hsm_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hsm_type = input;
         self
     }
-    /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
+    /// <p>The type of HSM to use in the cluster. The allowed values are <code>hsm1.medium</code> and <code>hsm2m.medium</code>.</p>
     pub fn get_hsm_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.hsm_type
     }
@@ -171,6 +178,20 @@ impl CreateClusterInputBuilder {
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }
+    /// <p>The mode to use in the cluster. The allowed values are <code>FIPS</code> and <code>NON_FIPS</code>.</p>
+    pub fn mode(mut self, input: crate::types::ClusterMode) -> Self {
+        self.mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode to use in the cluster. The allowed values are <code>FIPS</code> and <code>NON_FIPS</code>.</p>
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ClusterMode>) -> Self {
+        self.mode = input;
+        self
+    }
+    /// <p>The mode to use in the cluster. The allowed values are <code>FIPS</code> and <code>NON_FIPS</code>.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::ClusterMode> {
+        &self.mode
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -181,6 +202,7 @@ impl CreateClusterInputBuilder {
             source_backup_id: self.source_backup_id,
             subnet_ids: self.subnet_ids,
             tag_list: self.tag_list,
+            mode: self.mode,
         })
     }
 }

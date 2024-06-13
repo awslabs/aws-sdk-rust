@@ -136,6 +136,11 @@ where
                                 crate::protocol_serde::shape_signing_algorithm_spec_list::de_signing_algorithm_spec_list(tokens)?,
                             );
                         }
+                        "KeyAgreementAlgorithms" => {
+                            builder = builder.set_key_agreement_algorithms(
+                                crate::protocol_serde::shape_key_agreement_algorithm_spec_list::de_key_agreement_algorithm_spec_list(tokens)?,
+                            );
+                        }
                         "MultiRegion" => {
                             builder = builder.set_multi_region(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }

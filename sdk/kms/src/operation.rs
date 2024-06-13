@@ -31,6 +31,9 @@ pub mod delete_custom_key_store;
 /// Types for the `DeleteImportedKeyMaterial` operation.
 pub mod delete_imported_key_material;
 
+/// Types for the `DeriveSharedSecret` operation.
+pub mod derive_shared_secret;
+
 /// Types for the `DescribeCustomKeyStores` operation.
 pub mod describe_custom_key_stores;
 

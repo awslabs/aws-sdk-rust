@@ -17,6 +17,15 @@ pub struct UpdateChannelOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The list of ingest endpoints.</p>
     pub ingest_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::IngestEndpoint>>,
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub input_type: ::std::option::Option<crate::types::InputType>,
     /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The comma-separated list of tag key:value pairs assigned to the channel.</p>
@@ -57,6 +66,17 @@ impl UpdateChannelOutput {
     pub fn ingest_endpoints(&self) -> &[crate::types::IngestEndpoint] {
         self.ingest_endpoints.as_deref().unwrap_or_default()
     }
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub fn input_type(&self) -> ::std::option::Option<&crate::types::InputType> {
+        self.input_type.as_ref()
+    }
     /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
     pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
@@ -89,6 +109,7 @@ pub struct UpdateChannelOutputBuilder {
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) ingest_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::IngestEndpoint>>,
+    pub(crate) input_type: ::std::option::Option<crate::types::InputType>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
@@ -203,6 +224,41 @@ impl UpdateChannelOutputBuilder {
     pub fn get_ingest_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IngestEndpoint>> {
         &self.ingest_endpoints
     }
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub fn input_type(mut self, input: crate::types::InputType) -> Self {
+        self.input_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub fn set_input_type(mut self, input: ::std::option::Option<crate::types::InputType>) -> Self {
+        self.input_type = input;
+        self
+    }
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub fn get_input_type(&self) -> &::std::option::Option<crate::types::InputType> {
+        &self.input_type
+    }
     /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -289,6 +345,7 @@ impl UpdateChannelOutputBuilder {
             })?,
             description: self.description,
             ingest_endpoints: self.ingest_endpoints,
+            input_type: self.input_type,
             e_tag: self.e_tag,
             tags: self.tags,
             _request_id: self._request_id,

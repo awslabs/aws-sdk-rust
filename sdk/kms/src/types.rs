@@ -23,6 +23,8 @@ pub use crate::types::_multi_region_key::MultiRegionKey;
 
 pub use crate::types::_multi_region_key_type::MultiRegionKeyType;
 
+pub use crate::types::_key_agreement_algorithm_spec::KeyAgreementAlgorithmSpec;
+
 pub use crate::types::_encryption_algorithm_spec::EncryptionAlgorithmSpec;
 
 pub use crate::types::_key_spec::KeySpec;
@@ -100,6 +102,8 @@ mod _grant_constraints;
 mod _grant_list_entry;
 
 mod _grant_operation;
+
+mod _key_agreement_algorithm_spec;
 
 mod _key_encryption_mechanism;
 

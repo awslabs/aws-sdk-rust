@@ -14,6 +14,7 @@
 /// match keyusagetype {
 ///     KeyUsageType::EncryptDecrypt => { /* ... */ },
 ///     KeyUsageType::GenerateVerifyMac => { /* ... */ },
+///     KeyUsageType::KeyAgreement => { /* ... */ },
 ///     KeyUsageType::SignVerify => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum KeyUsageType {
     #[allow(missing_docs)] // documentation missing in model
     GenerateVerifyMac,
     #[allow(missing_docs)] // documentation missing in model
+    KeyAgreement,
+    #[allow(missing_docs)] // documentation missing in model
     SignVerify,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for KeyUsageType {
         match s {
             "ENCRYPT_DECRYPT" => KeyUsageType::EncryptDecrypt,
             "GENERATE_VERIFY_MAC" => KeyUsageType::GenerateVerifyMac,
+            "KEY_AGREEMENT" => KeyUsageType::KeyAgreement,
             "SIGN_VERIFY" => KeyUsageType::SignVerify,
             other => KeyUsageType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,13 +79,14 @@ impl KeyUsageType {
         match self {
             KeyUsageType::EncryptDecrypt => "ENCRYPT_DECRYPT",
             KeyUsageType::GenerateVerifyMac => "GENERATE_VERIFY_MAC",
+            KeyUsageType::KeyAgreement => "KEY_AGREEMENT",
             KeyUsageType::SignVerify => "SIGN_VERIFY",
             KeyUsageType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ENCRYPT_DECRYPT", "GENERATE_VERIFY_MAC", "SIGN_VERIFY"]
+        &["ENCRYPT_DECRYPT", "GENERATE_VERIFY_MAC", "KEY_AGREEMENT", "SIGN_VERIFY"]
     }
 }
 impl ::std::convert::AsRef<str> for KeyUsageType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for KeyUsageType {
         match self {
             KeyUsageType::EncryptDecrypt => write!(f, "ENCRYPT_DECRYPT"),
             KeyUsageType::GenerateVerifyMac => write!(f, "GENERATE_VERIFY_MAC"),
+            KeyUsageType::KeyAgreement => write!(f, "KEY_AGREEMENT"),
             KeyUsageType::SignVerify => write!(f, "SIGN_VERIFY"),
             KeyUsageType::Unknown(value) => write!(f, "{}", value),
         }

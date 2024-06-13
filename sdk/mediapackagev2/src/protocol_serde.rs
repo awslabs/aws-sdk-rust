@@ -121,6 +121,8 @@ pub(crate) mod shape_create_hls_manifest_configuration;
 
 pub(crate) mod shape_create_low_latency_hls_manifest_configuration;
 
+pub(crate) mod shape_force_endpoint_error_configuration;
+
 pub(crate) mod shape_get_dash_manifests;
 
 pub(crate) mod shape_get_hls_manifests;
@@ -142,6 +144,8 @@ pub(crate) mod shape_channel_list_configuration;
 pub(crate) mod shape_dash_utc_timing;
 
 pub(crate) mod shape_encryption;
+
+pub(crate) mod shape_endpoint_error_conditions;
 
 pub(crate) mod shape_filter_configuration;
 

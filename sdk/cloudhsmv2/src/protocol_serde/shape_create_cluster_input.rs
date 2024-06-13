@@ -36,5 +36,8 @@ pub fn ser_create_cluster_input_input(
         }
         array_9.finish();
     }
+    if let Some(var_12) = &input.mode {
+        object.key("Mode").string(var_12.as_str());
+    }
     Ok(())
 }

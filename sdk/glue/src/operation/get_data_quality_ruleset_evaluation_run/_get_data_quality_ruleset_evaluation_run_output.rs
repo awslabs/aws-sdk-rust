@@ -27,7 +27,7 @@ pub struct GetDataQualityRulesetEvaluationRunOutput {
     pub completed_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The amount of time (in seconds) that the run consumed resources.</p>
     pub execution_time: i32,
-    /// <p>A list of ruleset names for the run.</p>
+    /// <p>A list of ruleset names for the run. Currently, this parameter takes only one Ruleset name.</p>
     pub ruleset_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of result IDs for the data quality results for the run.</p>
     pub result_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -84,7 +84,7 @@ impl GetDataQualityRulesetEvaluationRunOutput {
     pub fn execution_time(&self) -> i32 {
         self.execution_time
     }
-    /// <p>A list of ruleset names for the run.</p>
+    /// <p>A list of ruleset names for the run. Currently, this parameter takes only one Ruleset name.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ruleset_names.is_none()`.
     pub fn ruleset_names(&self) -> &[::std::string::String] {
@@ -307,19 +307,19 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_ruleset_names`](Self::set_ruleset_names).
     ///
-    /// <p>A list of ruleset names for the run.</p>
+    /// <p>A list of ruleset names for the run. Currently, this parameter takes only one Ruleset name.</p>
     pub fn ruleset_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ruleset_names.unwrap_or_default();
         v.push(input.into());
         self.ruleset_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of ruleset names for the run.</p>
+    /// <p>A list of ruleset names for the run. Currently, this parameter takes only one Ruleset name.</p>
     pub fn set_ruleset_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ruleset_names = input;
         self
     }
-    /// <p>A list of ruleset names for the run.</p>
+    /// <p>A list of ruleset names for the run. Currently, this parameter takes only one Ruleset name.</p>
     pub fn get_ruleset_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ruleset_names
     }

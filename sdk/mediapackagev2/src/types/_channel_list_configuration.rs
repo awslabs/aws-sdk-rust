@@ -16,6 +16,15 @@ pub struct ChannelListConfiguration {
     pub modified_at: ::aws_smithy_types::DateTime,
     /// <p>Any descriptive information that you want to add to the channel for future identification purposes.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub input_type: ::std::option::Option<crate::types::InputType>,
 }
 impl ChannelListConfiguration {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
@@ -45,6 +54,17 @@ impl ChannelListConfiguration {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub fn input_type(&self) -> ::std::option::Option<&crate::types::InputType> {
+        self.input_type.as_ref()
+    }
 }
 impl ChannelListConfiguration {
     /// Creates a new builder-style object to manufacture [`ChannelListConfiguration`](crate::types::ChannelListConfiguration).
@@ -63,6 +83,7 @@ pub struct ChannelListConfigurationBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) input_type: ::std::option::Option<crate::types::InputType>,
 }
 impl ChannelListConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
@@ -154,6 +175,41 @@ impl ChannelListConfigurationBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub fn input_type(mut self, input: crate::types::InputType) -> Self {
+        self.input_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub fn set_input_type(mut self, input: ::std::option::Option<crate::types::InputType>) -> Self {
+        self.input_type = input;
+        self
+    }
+    /// <p>The input type will be an immutable field which will be used to define whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS to preserve current behavior.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HLS</code> - The HLS streaming specification (which defines M3U8 manifests and TS segments).</p></li>
+    /// <li>
+    /// <p><code>CMAF</code> - The DASH-IF CMAF Ingest specification (which defines CMAF segments with optional DASH manifests).</p></li>
+    /// </ul>
+    pub fn get_input_type(&self) -> &::std::option::Option<crate::types::InputType> {
+        &self.input_type
+    }
     /// Consumes the builder and constructs a [`ChannelListConfiguration`](crate::types::ChannelListConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::ChannelListConfigurationBuilder::arn)
@@ -194,6 +250,7 @@ impl ChannelListConfigurationBuilder {
                 )
             })?,
             description: self.description,
+            input_type: self.input_type,
         })
     }
 }

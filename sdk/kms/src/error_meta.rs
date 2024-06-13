@@ -86,7 +86,7 @@ pub enum Error {
     /// <li>
     /// <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p></li>
     /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. For deriving key agreement secrets, the <code>KeyUsage</code> must be <code>KEY_AGREEMENT</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
     /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::types::error::InvalidKeyUsageException),
     /// <p>The request was rejected because the marker that specifies where pagination should next begin is not valid.</p>
@@ -643,6 +643,46 @@ impl From<crate::operation::delete_imported_key_material::DeleteImportedKeyMater
                 Error::UnsupportedOperationException(inner)
             }
             crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::derive_shared_secret::DeriveSharedSecretError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::derive_shared_secret::DeriveSharedSecretError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::derive_shared_secret::DeriveSharedSecretError> for Error {
+    fn from(err: crate::operation::derive_shared_secret::DeriveSharedSecretError) -> Self {
+        match err {
+            crate::operation::derive_shared_secret::DeriveSharedSecretError::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::operation::derive_shared_secret::DeriveSharedSecretError::DisabledException(inner) => Error::DisabledException(inner),
+            crate::operation::derive_shared_secret::DeriveSharedSecretError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
+            crate::operation::derive_shared_secret::DeriveSharedSecretError::InvalidGrantTokenException(inner) => {
+                Error::InvalidGrantTokenException(inner)
+            }
+            crate::operation::derive_shared_secret::DeriveSharedSecretError::InvalidKeyUsageException(inner) => {
+                Error::InvalidKeyUsageException(inner)
+            }
+            crate::operation::derive_shared_secret::DeriveSharedSecretError::KeyUnavailableException(inner) => Error::KeyUnavailableException(inner),
+            crate::operation::derive_shared_secret::DeriveSharedSecretError::KmsInternalException(inner) => Error::KmsInternalException(inner),
+            crate::operation::derive_shared_secret::DeriveSharedSecretError::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::operation::derive_shared_secret::DeriveSharedSecretError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::derive_shared_secret::DeriveSharedSecretError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

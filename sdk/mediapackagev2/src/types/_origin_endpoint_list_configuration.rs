@@ -26,6 +26,8 @@ pub struct OriginEndpointListConfiguration {
     pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>>,
     /// <p>A DASH manifest configuration.</p>
     pub dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListDashManifestConfiguration>>,
+    /// <p>The failover settings for the endpoint.</p>
+    pub force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
 }
 impl OriginEndpointListConfiguration {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
@@ -82,6 +84,10 @@ impl OriginEndpointListConfiguration {
     pub fn dash_manifests(&self) -> &[crate::types::ListDashManifestConfiguration] {
         self.dash_manifests.as_deref().unwrap_or_default()
     }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn force_endpoint_error_configuration(&self) -> ::std::option::Option<&crate::types::ForceEndpointErrorConfiguration> {
+        self.force_endpoint_error_configuration.as_ref()
+    }
 }
 impl OriginEndpointListConfiguration {
     /// Creates a new builder-style object to manufacture [`OriginEndpointListConfiguration`](crate::types::OriginEndpointListConfiguration).
@@ -105,6 +111,7 @@ pub struct OriginEndpointListConfigurationBuilder {
     pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListHlsManifestConfiguration>>,
     pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>>,
     pub(crate) dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListDashManifestConfiguration>>,
+    pub(crate) force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
 }
 impl OriginEndpointListConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
@@ -287,6 +294,20 @@ impl OriginEndpointListConfigurationBuilder {
     pub fn get_dash_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListDashManifestConfiguration>> {
         &self.dash_manifests
     }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn force_endpoint_error_configuration(mut self, input: crate::types::ForceEndpointErrorConfiguration) -> Self {
+        self.force_endpoint_error_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn set_force_endpoint_error_configuration(mut self, input: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>) -> Self {
+        self.force_endpoint_error_configuration = input;
+        self
+    }
+    /// <p>The failover settings for the endpoint.</p>
+    pub fn get_force_endpoint_error_configuration(&self) -> &::std::option::Option<crate::types::ForceEndpointErrorConfiguration> {
+        &self.force_endpoint_error_configuration
+    }
     /// Consumes the builder and constructs a [`OriginEndpointListConfiguration`](crate::types::OriginEndpointListConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::OriginEndpointListConfigurationBuilder::arn)
@@ -332,6 +353,7 @@ impl OriginEndpointListConfigurationBuilder {
             hls_manifests: self.hls_manifests,
             low_latency_hls_manifests: self.low_latency_hls_manifests,
             dash_manifests: self.dash_manifests,
+            force_endpoint_error_configuration: self.force_endpoint_error_configuration,
         })
     }
 }

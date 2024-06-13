@@ -248,6 +248,11 @@ pub(crate) fn de_create_origin_endpoint(
                             .transpose()?,
                     );
                 }
+                "ForceEndpointErrorConfiguration" => {
+                    builder = builder.set_force_endpoint_error_configuration(
+                        crate::protocol_serde::shape_force_endpoint_error_configuration::de_force_endpoint_error_configuration(tokens)?,
+                    );
+                }
                 "HlsManifests" => {
                     builder = builder.set_hls_manifests(crate::protocol_serde::shape_get_hls_manifests::de_get_hls_manifests(tokens)?);
                 }

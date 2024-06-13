@@ -28,11 +28,13 @@ pub struct CreateKeyInput {
     /// <li>
     /// <p>For HMAC KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with RSA key pairs, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify <code>SIGN_VERIFY</code> or <code>KEY_AGREEMENT</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <li>
+    /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
     pub key_usage: ::std::option::Option<crate::types::KeyUsageType>,
     /// <p>Instead, use the <code>KeySpec</code> parameter.</p>
@@ -64,7 +66,7 @@ pub struct CreateKeyInput {
     /// <p><code>HMAC_512</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Asymmetric RSA key pairs</p>
+    /// <p>Asymmetric RSA key pairs (encryption and decryption -or- signing and verification)</p>
     /// <ul>
     /// <li>
     /// <p><code>RSA_2048</code></p></li>
@@ -74,7 +76,7 @@ pub struct CreateKeyInput {
     /// <p><code>RSA_4096</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Asymmetric NIST-recommended elliptic curve key pairs</p>
+    /// <p>Asymmetric NIST-recommended elliptic curve key pairs (signing and verification -or- deriving shared secrets)</p>
     /// <ul>
     /// <li>
     /// <p><code>ECC_NIST_P256</code> (secp256r1)</p></li>
@@ -84,16 +86,16 @@ pub struct CreateKeyInput {
     /// <p><code>ECC_NIST_P521</code> (secp521r1)</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Other asymmetric elliptic curve key pairs</p>
+    /// <p>Other asymmetric elliptic curve key pairs (signing and verification)</p>
     /// <ul>
     /// <li>
     /// <p><code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>SM2 key pairs (China Regions only)</p>
+    /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>
     /// <ul>
     /// <li>
-    /// <p><code>SM2</code></p></li>
+    /// <p><code>SM2</code> (China Regions only)</p></li>
     /// </ul></li>
     /// </ul>
     pub key_spec: ::std::option::Option<crate::types::KeySpec>,
@@ -163,11 +165,13 @@ impl CreateKeyInput {
     /// <li>
     /// <p>For HMAC KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with RSA key pairs, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify <code>SIGN_VERIFY</code> or <code>KEY_AGREEMENT</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <li>
+    /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
     pub fn key_usage(&self) -> ::std::option::Option<&crate::types::KeyUsageType> {
         self.key_usage.as_ref()
@@ -203,7 +207,7 @@ impl CreateKeyInput {
     /// <p><code>HMAC_512</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Asymmetric RSA key pairs</p>
+    /// <p>Asymmetric RSA key pairs (encryption and decryption -or- signing and verification)</p>
     /// <ul>
     /// <li>
     /// <p><code>RSA_2048</code></p></li>
@@ -213,7 +217,7 @@ impl CreateKeyInput {
     /// <p><code>RSA_4096</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Asymmetric NIST-recommended elliptic curve key pairs</p>
+    /// <p>Asymmetric NIST-recommended elliptic curve key pairs (signing and verification -or- deriving shared secrets)</p>
     /// <ul>
     /// <li>
     /// <p><code>ECC_NIST_P256</code> (secp256r1)</p></li>
@@ -223,16 +227,16 @@ impl CreateKeyInput {
     /// <p><code>ECC_NIST_P521</code> (secp521r1)</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Other asymmetric elliptic curve key pairs</p>
+    /// <p>Other asymmetric elliptic curve key pairs (signing and verification)</p>
     /// <ul>
     /// <li>
     /// <p><code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>SM2 key pairs (China Regions only)</p>
+    /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>
     /// <ul>
     /// <li>
-    /// <p><code>SM2</code></p></li>
+    /// <p><code>SM2</code> (China Regions only)</p></li>
     /// </ul></li>
     /// </ul>
     pub fn key_spec(&self) -> ::std::option::Option<&crate::types::KeySpec> {
@@ -387,11 +391,13 @@ impl CreateKeyInputBuilder {
     /// <li>
     /// <p>For HMAC KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with RSA key pairs, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify <code>SIGN_VERIFY</code> or <code>KEY_AGREEMENT</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <li>
+    /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
     pub fn key_usage(mut self, input: crate::types::KeyUsageType) -> Self {
         self.key_usage = ::std::option::Option::Some(input);
@@ -405,11 +411,13 @@ impl CreateKeyInputBuilder {
     /// <li>
     /// <p>For HMAC KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with RSA key pairs, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify <code>SIGN_VERIFY</code> or <code>KEY_AGREEMENT</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <li>
+    /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
     pub fn set_key_usage(mut self, input: ::std::option::Option<crate::types::KeyUsageType>) -> Self {
         self.key_usage = input;
@@ -423,11 +431,13 @@ impl CreateKeyInputBuilder {
     /// <li>
     /// <p>For HMAC KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with RSA key pairs, specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify <code>SIGN_VERIFY</code> or <code>KEY_AGREEMENT</code>.</p></li>
     /// <li>
-    /// <p>For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p></li>
+    /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <li>
+    /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
     pub fn get_key_usage(&self) -> &::std::option::Option<crate::types::KeyUsageType> {
         &self.key_usage
@@ -477,7 +487,7 @@ impl CreateKeyInputBuilder {
     /// <p><code>HMAC_512</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Asymmetric RSA key pairs</p>
+    /// <p>Asymmetric RSA key pairs (encryption and decryption -or- signing and verification)</p>
     /// <ul>
     /// <li>
     /// <p><code>RSA_2048</code></p></li>
@@ -487,7 +497,7 @@ impl CreateKeyInputBuilder {
     /// <p><code>RSA_4096</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Asymmetric NIST-recommended elliptic curve key pairs</p>
+    /// <p>Asymmetric NIST-recommended elliptic curve key pairs (signing and verification -or- deriving shared secrets)</p>
     /// <ul>
     /// <li>
     /// <p><code>ECC_NIST_P256</code> (secp256r1)</p></li>
@@ -497,16 +507,16 @@ impl CreateKeyInputBuilder {
     /// <p><code>ECC_NIST_P521</code> (secp521r1)</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Other asymmetric elliptic curve key pairs</p>
+    /// <p>Other asymmetric elliptic curve key pairs (signing and verification)</p>
     /// <ul>
     /// <li>
     /// <p><code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>SM2 key pairs (China Regions only)</p>
+    /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>
     /// <ul>
     /// <li>
-    /// <p><code>SM2</code></p></li>
+    /// <p><code>SM2</code> (China Regions only)</p></li>
     /// </ul></li>
     /// </ul>
     pub fn key_spec(mut self, input: crate::types::KeySpec) -> Self {
@@ -538,7 +548,7 @@ impl CreateKeyInputBuilder {
     /// <p><code>HMAC_512</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Asymmetric RSA key pairs</p>
+    /// <p>Asymmetric RSA key pairs (encryption and decryption -or- signing and verification)</p>
     /// <ul>
     /// <li>
     /// <p><code>RSA_2048</code></p></li>
@@ -548,7 +558,7 @@ impl CreateKeyInputBuilder {
     /// <p><code>RSA_4096</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Asymmetric NIST-recommended elliptic curve key pairs</p>
+    /// <p>Asymmetric NIST-recommended elliptic curve key pairs (signing and verification -or- deriving shared secrets)</p>
     /// <ul>
     /// <li>
     /// <p><code>ECC_NIST_P256</code> (secp256r1)</p></li>
@@ -558,16 +568,16 @@ impl CreateKeyInputBuilder {
     /// <p><code>ECC_NIST_P521</code> (secp521r1)</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Other asymmetric elliptic curve key pairs</p>
+    /// <p>Other asymmetric elliptic curve key pairs (signing and verification)</p>
     /// <ul>
     /// <li>
     /// <p><code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>SM2 key pairs (China Regions only)</p>
+    /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>
     /// <ul>
     /// <li>
-    /// <p><code>SM2</code></p></li>
+    /// <p><code>SM2</code> (China Regions only)</p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_key_spec(mut self, input: ::std::option::Option<crate::types::KeySpec>) -> Self {
@@ -599,7 +609,7 @@ impl CreateKeyInputBuilder {
     /// <p><code>HMAC_512</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Asymmetric RSA key pairs</p>
+    /// <p>Asymmetric RSA key pairs (encryption and decryption -or- signing and verification)</p>
     /// <ul>
     /// <li>
     /// <p><code>RSA_2048</code></p></li>
@@ -609,7 +619,7 @@ impl CreateKeyInputBuilder {
     /// <p><code>RSA_4096</code></p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Asymmetric NIST-recommended elliptic curve key pairs</p>
+    /// <p>Asymmetric NIST-recommended elliptic curve key pairs (signing and verification -or- deriving shared secrets)</p>
     /// <ul>
     /// <li>
     /// <p><code>ECC_NIST_P256</code> (secp256r1)</p></li>
@@ -619,16 +629,16 @@ impl CreateKeyInputBuilder {
     /// <p><code>ECC_NIST_P521</code> (secp521r1)</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Other asymmetric elliptic curve key pairs</p>
+    /// <p>Other asymmetric elliptic curve key pairs (signing and verification)</p>
     /// <ul>
     /// <li>
     /// <p><code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>SM2 key pairs (China Regions only)</p>
+    /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>
     /// <ul>
     /// <li>
-    /// <p><code>SM2</code></p></li>
+    /// <p><code>SM2</code> (China Regions only)</p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_key_spec(&self) -> &::std::option::Option<crate::types::KeySpec> {

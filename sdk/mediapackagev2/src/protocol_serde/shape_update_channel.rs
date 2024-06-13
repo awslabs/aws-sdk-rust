@@ -214,6 +214,13 @@ pub(crate) fn de_update_channel(
                 "IngestEndpoints" => {
                     builder = builder.set_ingest_endpoints(crate::protocol_serde::shape_ingest_endpoint_list::de_ingest_endpoint_list(tokens)?);
                 }
+                "InputType" => {
+                    builder = builder.set_input_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::InputType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "ModifiedAt" => {
                     builder = builder.set_modified_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

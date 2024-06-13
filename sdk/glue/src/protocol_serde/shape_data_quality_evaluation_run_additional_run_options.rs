@@ -25,6 +25,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "CompositeRuleEvaluationMethod" => {
+                            builder = builder.set_composite_rule_evaluation_method(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DqCompositeRuleEvaluationMethod::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -52,6 +59,9 @@ pub fn ser_data_quality_evaluation_run_additional_run_options(
     }
     if let Some(var_2) = &input.results_s3_prefix {
         object.key("ResultsS3Prefix").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.composite_rule_evaluation_method {
+        object.key("CompositeRuleEvaluationMethod").string(var_3.as_str());
     }
     Ok(())
 }

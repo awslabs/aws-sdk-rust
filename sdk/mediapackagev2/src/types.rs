@@ -7,6 +7,8 @@ pub use crate::types::_resource_type_not_found::ResourceTypeNotFound;
 
 pub use crate::types::_channel_group_list_configuration::ChannelGroupListConfiguration;
 
+pub use crate::types::_input_type::InputType;
+
 pub use crate::types::_ingest_endpoint::IngestEndpoint;
 
 pub use crate::types::_channel_list_configuration::ChannelListConfiguration;
@@ -28,6 +30,10 @@ pub use crate::types::_dash_period_trigger::DashPeriodTrigger;
 pub use crate::types::_dash_segment_template_format::DashSegmentTemplateFormat;
 
 pub use crate::types::_filter_configuration::FilterConfiguration;
+
+pub use crate::types::_force_endpoint_error_configuration::ForceEndpointErrorConfiguration;
+
+pub use crate::types::_endpoint_error_condition::EndpointErrorCondition;
 
 pub use crate::types::_get_low_latency_hls_manifest_configuration::GetLowLatencyHlsManifestConfiguration;
 
@@ -115,7 +121,11 @@ mod _encryption_contract_configuration;
 
 mod _encryption_method;
 
+mod _endpoint_error_condition;
+
 mod _filter_configuration;
+
+mod _force_endpoint_error_configuration;
 
 mod _get_dash_manifest_configuration;
 
@@ -124,6 +134,8 @@ mod _get_hls_manifest_configuration;
 mod _get_low_latency_hls_manifest_configuration;
 
 mod _ingest_endpoint;
+
+mod _input_type;
 
 mod _list_dash_manifest_configuration;
 

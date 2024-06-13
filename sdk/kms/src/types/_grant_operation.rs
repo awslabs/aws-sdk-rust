@@ -14,6 +14,7 @@
 /// match grantoperation {
 ///     GrantOperation::CreateGrant => { /* ... */ },
 ///     GrantOperation::Decrypt => { /* ... */ },
+///     GrantOperation::DeriveSharedSecret => { /* ... */ },
 ///     GrantOperation::DescribeKey => { /* ... */ },
 ///     GrantOperation::Encrypt => { /* ... */ },
 ///     GrantOperation::GenerateDataKey => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum GrantOperation {
     #[allow(missing_docs)] // documentation missing in model
     Decrypt,
     #[allow(missing_docs)] // documentation missing in model
+    DeriveSharedSecret,
+    #[allow(missing_docs)] // documentation missing in model
     DescribeKey,
     #[allow(missing_docs)] // documentation missing in model
     Encrypt,
@@ -96,6 +99,7 @@ impl ::std::convert::From<&str> for GrantOperation {
         match s {
             "CreateGrant" => GrantOperation::CreateGrant,
             "Decrypt" => GrantOperation::Decrypt,
+            "DeriveSharedSecret" => GrantOperation::DeriveSharedSecret,
             "DescribeKey" => GrantOperation::DescribeKey,
             "Encrypt" => GrantOperation::Encrypt,
             "GenerateDataKey" => GrantOperation::GenerateDataKey,
@@ -127,6 +131,7 @@ impl GrantOperation {
         match self {
             GrantOperation::CreateGrant => "CreateGrant",
             GrantOperation::Decrypt => "Decrypt",
+            GrantOperation::DeriveSharedSecret => "DeriveSharedSecret",
             GrantOperation::DescribeKey => "DescribeKey",
             GrantOperation::Encrypt => "Encrypt",
             GrantOperation::GenerateDataKey => "GenerateDataKey",
@@ -149,6 +154,7 @@ impl GrantOperation {
         &[
             "CreateGrant",
             "Decrypt",
+            "DeriveSharedSecret",
             "DescribeKey",
             "Encrypt",
             "GenerateDataKey",
@@ -188,6 +194,7 @@ impl ::std::fmt::Display for GrantOperation {
         match self {
             GrantOperation::CreateGrant => write!(f, "CreateGrant"),
             GrantOperation::Decrypt => write!(f, "Decrypt"),
+            GrantOperation::DeriveSharedSecret => write!(f, "DeriveSharedSecret"),
             GrantOperation::DescribeKey => write!(f, "DescribeKey"),
             GrantOperation::Encrypt => write!(f, "Encrypt"),
             GrantOperation::GenerateDataKey => write!(f, "GenerateDataKey"),

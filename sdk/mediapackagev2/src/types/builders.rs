@@ -13,6 +13,8 @@ pub use crate::types::_scte_dash::ScteDashBuilder;
 
 pub use crate::types::_filter_configuration::FilterConfigurationBuilder;
 
+pub use crate::types::_force_endpoint_error_configuration::ForceEndpointErrorConfigurationBuilder;
+
 pub use crate::types::_get_low_latency_hls_manifest_configuration::GetLowLatencyHlsManifestConfigurationBuilder;
 
 pub use crate::types::_scte_hls::ScteHlsBuilder;
