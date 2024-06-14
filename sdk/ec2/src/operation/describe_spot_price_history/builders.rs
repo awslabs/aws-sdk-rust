@@ -22,7 +22,7 @@ impl crate::operation::describe_spot_price_history::builders::DescribeSpotPriceH
 }
 /// Fluent builder constructing a request to `DescribeSpotPriceHistory`.
 ///
-/// <p>Describes the Spot price history. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot Instance pricing history</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+/// <p>Describes the Spot price history. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot Instance pricing history</a> in the <i>Amazon EC2 User Guide</i>.</p>
 /// <p>When you specify a start and end time, the operation returns the prices of the instance types within that time range. It also returns the last price change before the start time, which is the effective price as of the start time.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSpotPriceHistoryFluentBuilder {

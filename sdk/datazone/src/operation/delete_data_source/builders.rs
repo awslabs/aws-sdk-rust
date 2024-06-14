@@ -150,4 +150,18 @@ impl DeleteDataSourceFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>Specifies that the granted permissions are retained in case of a self-subscribe functionality failure for a data source.</p>
+    pub fn retain_permissions_on_revoke_failure(mut self, input: bool) -> Self {
+        self.inner = self.inner.retain_permissions_on_revoke_failure(input);
+        self
+    }
+    /// <p>Specifies that the granted permissions are retained in case of a self-subscribe functionality failure for a data source.</p>
+    pub fn set_retain_permissions_on_revoke_failure(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_retain_permissions_on_revoke_failure(input);
+        self
+    }
+    /// <p>Specifies that the granted permissions are retained in case of a self-subscribe functionality failure for a data source.</p>
+    pub fn get_retain_permissions_on_revoke_failure(&self) -> &::std::option::Option<bool> {
+        self.inner.get_retain_permissions_on_revoke_failure()
+    }
 }

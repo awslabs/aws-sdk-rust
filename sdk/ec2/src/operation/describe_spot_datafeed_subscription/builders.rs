@@ -22,7 +22,7 @@ impl crate::operation::describe_spot_datafeed_subscription::builders::DescribeSp
 }
 /// Fluent builder constructing a request to `DescribeSpotDatafeedSubscription`.
 ///
-/// <p>Describes the data feed for Spot Instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+/// <p>Describes the data feed for Spot Instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance data feed</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSpotDatafeedSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

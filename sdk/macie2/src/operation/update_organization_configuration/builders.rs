@@ -108,17 +108,17 @@ impl UpdateOrganizationConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
+    /// <p>Specifies whether to enable Amazon Macie automatically for accounts that are added to the organization in Organizations.</p>
     pub fn auto_enable(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_enable(input);
         self
     }
-    /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
+    /// <p>Specifies whether to enable Amazon Macie automatically for accounts that are added to the organization in Organizations.</p>
     pub fn set_auto_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_enable(input);
         self
     }
-    /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
+    /// <p>Specifies whether to enable Amazon Macie automatically for accounts that are added to the organization in Organizations.</p>
     pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_enable()
     }

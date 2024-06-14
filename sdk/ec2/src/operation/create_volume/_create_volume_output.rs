@@ -15,7 +15,7 @@ pub struct CreateVolumeOutput {
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the volume is encrypted.</p>
     pub encrypted: ::std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that was used to protect the volume encryption key for the volume.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
@@ -71,7 +71,7 @@ impl CreateVolumeOutput {
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that was used to protect the volume encryption key for the volume.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -239,17 +239,17 @@ impl CreateVolumeOutputBuilder {
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
         &self.encrypted
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that was used to protect the volume encryption key for the volume.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that was used to protect the volume encryption key for the volume.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that was used to protect the volume encryption key for the volume.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

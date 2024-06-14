@@ -45,6 +45,8 @@ pub struct GetDataSourceOutput {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the data source was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Specifies the status of the self-granting functionality.</p>
+    pub self_grant_status: ::std::option::Option<crate::types::SelfGrantStatusOutput>,
     _request_id: Option<String>,
 }
 impl GetDataSourceOutput {
@@ -139,6 +141,10 @@ impl GetDataSourceOutput {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>Specifies the status of the self-granting functionality.</p>
+    pub fn self_grant_status(&self) -> ::std::option::Option<&crate::types::SelfGrantStatusOutput> {
+        self.self_grant_status.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetDataSourceOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -164,6 +170,7 @@ impl ::std::fmt::Debug for GetDataSourceOutput {
         formatter.field("error_message", &self.error_message);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("self_grant_status", &self.self_grant_status);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -205,6 +212,7 @@ pub struct GetDataSourceOutputBuilder {
     pub(crate) error_message: ::std::option::Option<crate::types::DataSourceErrorMessage>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) self_grant_status: ::std::option::Option<crate::types::SelfGrantStatusOutput>,
     _request_id: Option<String>,
 }
 impl GetDataSourceOutputBuilder {
@@ -513,6 +521,20 @@ impl GetDataSourceOutputBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>Specifies the status of the self-granting functionality.</p>
+    pub fn self_grant_status(mut self, input: crate::types::SelfGrantStatusOutput) -> Self {
+        self.self_grant_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the status of the self-granting functionality.</p>
+    pub fn set_self_grant_status(mut self, input: ::std::option::Option<crate::types::SelfGrantStatusOutput>) -> Self {
+        self.self_grant_status = input;
+        self
+    }
+    /// <p>Specifies the status of the self-granting functionality.</p>
+    pub fn get_self_grant_status(&self) -> &::std::option::Option<crate::types::SelfGrantStatusOutput> {
+        &self.self_grant_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -579,6 +601,7 @@ impl GetDataSourceOutputBuilder {
             error_message: self.error_message,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            self_grant_status: self.self_grant_status,
             _request_id: self._request_id,
         })
     }
@@ -607,6 +630,7 @@ impl ::std::fmt::Debug for GetDataSourceOutputBuilder {
         formatter.field("error_message", &self.error_message);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("self_grant_status", &self.self_grant_status);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

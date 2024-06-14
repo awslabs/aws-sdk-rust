@@ -275,11 +275,29 @@ pub(crate) fn create_environment_output_output_correct_errors(
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
-    if builder.environment_profile_id.is_none() {
-        builder.environment_profile_id = Some(Default::default())
-    }
     if builder.provider.is_none() {
         builder.provider = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_environment_action_output_output_correct_errors(
+    mut builder: crate::operation::create_environment_action::builders::CreateEnvironmentActionOutputBuilder,
+) -> crate::operation::create_environment_action::builders::CreateEnvironmentActionOutputBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.environment_id.is_none() {
+        builder.environment_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.parameters.is_none() {
+        builder.parameters = Some(crate::types::ActionParameters::Unknown)
     }
     builder
 }
@@ -692,11 +710,29 @@ pub(crate) fn get_environment_output_output_correct_errors(
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
-    if builder.environment_profile_id.is_none() {
-        builder.environment_profile_id = Some(Default::default())
-    }
     if builder.provider.is_none() {
         builder.provider = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_environment_action_output_output_correct_errors(
+    mut builder: crate::operation::get_environment_action::builders::GetEnvironmentActionOutputBuilder,
+) -> crate::operation::get_environment_action::builders::GetEnvironmentActionOutputBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.environment_id.is_none() {
+        builder.environment_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.parameters.is_none() {
+        builder.parameters = Some(crate::types::ActionParameters::Unknown)
     }
     builder
 }
@@ -1298,11 +1334,29 @@ pub(crate) fn update_environment_output_output_correct_errors(
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
-    if builder.environment_profile_id.is_none() {
-        builder.environment_profile_id = Some(Default::default())
-    }
     if builder.provider.is_none() {
         builder.provider = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_environment_action_output_output_correct_errors(
+    mut builder: crate::operation::update_environment_action::builders::UpdateEnvironmentActionOutputBuilder,
+) -> crate::operation::update_environment_action::builders::UpdateEnvironmentActionOutputBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.environment_id.is_none() {
+        builder.environment_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.parameters.is_none() {
+        builder.parameters = Some(crate::types::ActionParameters::Unknown)
     }
     builder
 }
@@ -1697,6 +1751,27 @@ pub(crate) fn domain_summary_correct_errors(
     builder
 }
 
+pub(crate) fn environment_action_summary_correct_errors(
+    mut builder: crate::types::builders::EnvironmentActionSummaryBuilder,
+) -> crate::types::builders::EnvironmentActionSummaryBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.environment_id.is_none() {
+        builder.environment_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.parameters.is_none() {
+        builder.parameters = Some(crate::types::ActionParameters::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn environment_blueprint_configuration_item_correct_errors(
     mut builder: crate::types::builders::EnvironmentBlueprintConfigurationItemBuilder,
 ) -> crate::types::builders::EnvironmentBlueprintConfigurationItemBuilder {
@@ -1772,9 +1847,6 @@ pub(crate) fn environment_summary_correct_errors(
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
-    if builder.environment_profile_id.is_none() {
-        builder.environment_profile_id = Some(Default::default())
-    }
     if builder.provider.is_none() {
         builder.provider = Some(Default::default())
     }
@@ -1805,6 +1877,15 @@ pub(crate) fn glue_run_configuration_output_correct_errors(
 ) -> crate::types::builders::GlueRunConfigurationOutputBuilder {
     if builder.relational_filter_configurations.is_none() {
         builder.relational_filter_configurations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn glue_self_grant_status_output_correct_errors(
+    mut builder: crate::types::builders::GlueSelfGrantStatusOutputBuilder,
+) -> crate::types::builders::GlueSelfGrantStatusOutputBuilder {
+    if builder.self_grant_status_details.is_none() {
+        builder.self_grant_status_details = Some(Default::default())
     }
     builder
 }
@@ -1926,6 +2007,15 @@ pub(crate) fn redshift_run_configuration_output_correct_errors(
     }
     if builder.redshift_storage.is_none() {
         builder.redshift_storage = Some(crate::types::RedshiftStorage::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn redshift_self_grant_status_output_correct_errors(
+    mut builder: crate::types::builders::RedshiftSelfGrantStatusOutputBuilder,
+) -> crate::types::builders::RedshiftSelfGrantStatusOutputBuilder {
+    if builder.self_grant_status_details.is_none() {
+        builder.self_grant_status_details = Some(Default::default())
     }
     builder
 }
@@ -2304,6 +2394,18 @@ pub(crate) fn relational_filter_configuration_correct_errors(
 ) -> crate::types::builders::RelationalFilterConfigurationBuilder {
     if builder.database_name.is_none() {
         builder.database_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn self_grant_status_detail_correct_errors(
+    mut builder: crate::types::builders::SelfGrantStatusDetailBuilder,
+) -> crate::types::builders::SelfGrantStatusDetailBuilder {
+    if builder.database_name.is_none() {
+        builder.database_name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SelfGrantStatus>().ok()
     }
     builder
 }

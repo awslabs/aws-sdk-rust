@@ -5,9 +5,9 @@
 pub struct GetSensitivityInspectionTemplateOutput {
     /// <p>The custom description of the template.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
+    /// <p>The managed data identifiers that are explicitly excluded (not used) when performing automated sensitive data discovery.</p>
     pub excludes: ::std::option::Option<crate::types::SensitivityInspectionTemplateExcludes>,
-    /// <p>The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used) when analyzing data.</p>
+    /// <p>The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used) when performing automated sensitive data discovery.</p>
     pub includes: ::std::option::Option<crate::types::SensitivityInspectionTemplateIncludes>,
     /// <p>The name of the template: automated-sensitive-data-discovery.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -20,11 +20,11 @@ impl GetSensitivityInspectionTemplateOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
+    /// <p>The managed data identifiers that are explicitly excluded (not used) when performing automated sensitive data discovery.</p>
     pub fn excludes(&self) -> ::std::option::Option<&crate::types::SensitivityInspectionTemplateExcludes> {
         self.excludes.as_ref()
     }
-    /// <p>The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used) when analyzing data.</p>
+    /// <p>The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used) when performing automated sensitive data discovery.</p>
     pub fn includes(&self) -> ::std::option::Option<&crate::types::SensitivityInspectionTemplateIncludes> {
         self.includes.as_ref()
     }
@@ -75,31 +75,31 @@ impl GetSensitivityInspectionTemplateOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
+    /// <p>The managed data identifiers that are explicitly excluded (not used) when performing automated sensitive data discovery.</p>
     pub fn excludes(mut self, input: crate::types::SensitivityInspectionTemplateExcludes) -> Self {
         self.excludes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
+    /// <p>The managed data identifiers that are explicitly excluded (not used) when performing automated sensitive data discovery.</p>
     pub fn set_excludes(mut self, input: ::std::option::Option<crate::types::SensitivityInspectionTemplateExcludes>) -> Self {
         self.excludes = input;
         self
     }
-    /// <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
+    /// <p>The managed data identifiers that are explicitly excluded (not used) when performing automated sensitive data discovery.</p>
     pub fn get_excludes(&self) -> &::std::option::Option<crate::types::SensitivityInspectionTemplateExcludes> {
         &self.excludes
     }
-    /// <p>The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used) when analyzing data.</p>
+    /// <p>The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used) when performing automated sensitive data discovery.</p>
     pub fn includes(mut self, input: crate::types::SensitivityInspectionTemplateIncludes) -> Self {
         self.includes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used) when analyzing data.</p>
+    /// <p>The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used) when performing automated sensitive data discovery.</p>
     pub fn set_includes(mut self, input: ::std::option::Option<crate::types::SensitivityInspectionTemplateIncludes>) -> Self {
         self.includes = input;
         self
     }
-    /// <p>The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used) when analyzing data.</p>
+    /// <p>The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used) when performing automated sensitive data discovery.</p>
     pub fn get_includes(&self) -> &::std::option::Option<crate::types::SensitivityInspectionTemplateIncludes> {
         &self.includes
     }

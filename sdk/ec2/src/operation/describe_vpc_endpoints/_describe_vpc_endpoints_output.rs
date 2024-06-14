@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointsOutput {
-    /// <p>Information about the endpoints.</p>
+    /// <p>Information about the VPC endpoints.</p>
     pub vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeVpcEndpointsOutput {
-    /// <p>Information about the endpoints.</p>
+    /// <p>Information about the VPC endpoints.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_endpoints.is_none()`.
     pub fn vpc_endpoints(&self) -> &[crate::types::VpcEndpoint] {
@@ -46,19 +46,19 @@ impl DescribeVpcEndpointsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_vpc_endpoints`](Self::set_vpc_endpoints).
     ///
-    /// <p>Information about the endpoints.</p>
+    /// <p>Information about the VPC endpoints.</p>
     pub fn vpc_endpoints(mut self, input: crate::types::VpcEndpoint) -> Self {
         let mut v = self.vpc_endpoints.unwrap_or_default();
         v.push(input);
         self.vpc_endpoints = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the endpoints.</p>
+    /// <p>Information about the VPC endpoints.</p>
     pub fn set_vpc_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>) -> Self {
         self.vpc_endpoints = input;
         self
     }
-    /// <p>Information about the endpoints.</p>
+    /// <p>Information about the VPC endpoints.</p>
     pub fn get_vpc_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>> {
         &self.vpc_endpoints
     }

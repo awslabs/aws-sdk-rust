@@ -30,7 +30,7 @@ pub struct SpotInstanceRequest {
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub spot_price: ::std::option::Option<::std::string::String>,
-    /// <p>The state of the Spot Instance request. Spot request status information helps track your Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// <p>The state of the Spot Instance request. Spot request status information helps track your Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub state: ::std::option::Option<crate::types::SpotInstanceState>,
     /// <p>The status code and status message describing the Spot Instance request.</p>
     pub status: ::std::option::Option<crate::types::SpotInstanceStatus>,
@@ -102,7 +102,7 @@ impl SpotInstanceRequest {
     pub fn spot_price(&self) -> ::std::option::Option<&str> {
         self.spot_price.as_deref()
     }
-    /// <p>The state of the Spot Instance request. Spot request status information helps track your Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// <p>The state of the Spot Instance request. Spot request status information helps track your Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::SpotInstanceState> {
         self.state.as_ref()
     }
@@ -345,17 +345,17 @@ impl SpotInstanceRequestBuilder {
     pub fn get_spot_price(&self) -> &::std::option::Option<::std::string::String> {
         &self.spot_price
     }
-    /// <p>The state of the Spot Instance request. Spot request status information helps track your Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// <p>The state of the Spot Instance request. Spot request status information helps track your Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn state(mut self, input: crate::types::SpotInstanceState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state of the Spot Instance request. Spot request status information helps track your Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// <p>The state of the Spot Instance request. Spot request status information helps track your Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SpotInstanceState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The state of the Spot Instance request. Spot request status information helps track your Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// <p>The state of the Spot Instance request. Spot request status information helps track your Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::SpotInstanceState> {
         &self.state
     }

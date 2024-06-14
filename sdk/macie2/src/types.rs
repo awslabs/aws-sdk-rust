@@ -37,6 +37,8 @@ pub use crate::types::_job_status::JobStatus;
 
 pub use crate::types::_automated_discovery_status::AutomatedDiscoveryStatus;
 
+pub use crate::types::_auto_enable_mode::AutoEnableMode;
+
 pub use crate::types::_allow_list_criteria::AllowListCriteria;
 
 pub use crate::types::_s3_words_list::S3WordsList;
@@ -56,6 +58,8 @@ pub use crate::types::_is_monitored_by_job::IsMonitoredByJob;
 pub use crate::types::_is_defined_in_job::IsDefinedInJob;
 
 pub use crate::types::_bucket_metadata_error_code::BucketMetadataErrorCode;
+
+pub use crate::types::_automated_discovery_monitoring_status::AutomatedDiscoveryMonitoringStatus;
 
 pub use crate::types::_search_resources_sort_criteria::SearchResourcesSortCriteria;
 
@@ -150,6 +154,10 @@ pub use crate::types::_list_jobs_filter_criteria::ListJobsFilterCriteria;
 pub use crate::types::_list_jobs_filter_term::ListJobsFilterTerm;
 
 pub use crate::types::_list_jobs_filter_key::ListJobsFilterKey;
+
+pub use crate::types::_automated_discovery_account::AutomatedDiscoveryAccount;
+
+pub use crate::types::_automated_discovery_account_status::AutomatedDiscoveryAccountStatus;
 
 pub use crate::types::_allow_list_summary::AllowListSummary;
 
@@ -387,6 +395,12 @@ pub use crate::types::_error_code::ErrorCode;
 
 pub use crate::types::_account_detail::AccountDetail;
 
+pub use crate::types::_automated_discovery_account_update_error::AutomatedDiscoveryAccountUpdateError;
+
+pub use crate::types::_automated_discovery_account_update_error_code::AutomatedDiscoveryAccountUpdateErrorCode;
+
+pub use crate::types::_automated_discovery_account_update::AutomatedDiscoveryAccountUpdate;
+
 pub use crate::types::_batch_get_custom_data_identifier_summary::BatchGetCustomDataIdentifierSummary;
 
 mod _access_control_list;
@@ -412,6 +426,20 @@ mod _allows_unencrypted_object_uploads;
 mod _api_call_details;
 
 mod _assumed_role;
+
+mod _auto_enable_mode;
+
+mod _automated_discovery_account;
+
+mod _automated_discovery_account_status;
+
+mod _automated_discovery_account_update;
+
+mod _automated_discovery_account_update_error;
+
+mod _automated_discovery_account_update_error_code;
+
+mod _automated_discovery_monitoring_status;
 
 mod _automated_discovery_status;
 

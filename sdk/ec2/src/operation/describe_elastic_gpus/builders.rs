@@ -23,9 +23,9 @@ impl crate::operation::describe_elastic_gpus::builders::DescribeElasticGpusInput
 /// Fluent builder constructing a request to `DescribeElasticGpus`.
 ///
 /// <note>
-/// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+/// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4, G5, or G6 instances.</p>
 /// </note>
-/// <p>Describes the Elastic Graphics accelerator associated with your instances. For more information about Elastic Graphics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon Elastic Graphics</a>.</p>
+/// <p>Describes the Elastic Graphics accelerator associated with your instances.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeElasticGpusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

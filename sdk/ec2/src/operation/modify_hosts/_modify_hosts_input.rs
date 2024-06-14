@@ -7,7 +7,7 @@ pub struct ModifyHostsInput {
     pub auto_placement: ::std::option::Option<crate::types::AutoPlacement>,
     /// <p>The IDs of the Dedicated Hosts to modify.</p>
     pub host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub host_recovery: ::std::option::Option<crate::types::HostRecovery>,
     /// <p>Specifies the instance type to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated Host to support only a specific instance type.</p>
     /// <p>If you want to modify a Dedicated Host to support multiple instance types in its current instance family, omit this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and <b>InstanceFamily</b> in the same request.</p>
@@ -15,7 +15,7 @@ pub struct ModifyHostsInput {
     /// <p>Specifies the instance family to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated Host to support multiple instance types within its current instance family.</p>
     /// <p>If you want to modify a Dedicated Host to support a specific instance type only, omit this parameter and specify <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same request.</p>
     pub instance_family: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub host_maintenance: ::std::option::Option<crate::types::HostMaintenance>,
 }
 impl ModifyHostsInput {
@@ -29,7 +29,7 @@ impl ModifyHostsInput {
     pub fn host_ids(&self) -> &[::std::string::String] {
         self.host_ids.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn host_recovery(&self) -> ::std::option::Option<&crate::types::HostRecovery> {
         self.host_recovery.as_ref()
     }
@@ -43,7 +43,7 @@ impl ModifyHostsInput {
     pub fn instance_family(&self) -> ::std::option::Option<&str> {
         self.instance_family.as_deref()
     }
-    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn host_maintenance(&self) -> ::std::option::Option<&crate::types::HostMaintenance> {
         self.host_maintenance.as_ref()
     }
@@ -101,17 +101,17 @@ impl ModifyHostsInputBuilder {
     pub fn get_host_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.host_ids
     }
-    /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn host_recovery(mut self, input: crate::types::HostRecovery) -> Self {
         self.host_recovery = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_host_recovery(mut self, input: ::std::option::Option<crate::types::HostRecovery>) -> Self {
         self.host_recovery = input;
         self
     }
-    /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_host_recovery(&self) -> &::std::option::Option<crate::types::HostRecovery> {
         &self.host_recovery
     }
@@ -149,17 +149,17 @@ impl ModifyHostsInputBuilder {
     pub fn get_instance_family(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_family
     }
-    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn host_maintenance(mut self, input: crate::types::HostMaintenance) -> Self {
         self.host_maintenance = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_host_maintenance(mut self, input: ::std::option::Option<crate::types::HostMaintenance>) -> Self {
         self.host_maintenance = input;
         self
     }
-    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_host_maintenance(&self) -> &::std::option::Option<crate::types::HostMaintenance> {
         &self.host_maintenance
     }

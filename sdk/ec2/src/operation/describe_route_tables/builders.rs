@@ -22,7 +22,7 @@ impl crate::operation::describe_route_tables::builders::DescribeRouteTablesInput
 }
 /// Fluent builder constructing a request to `DescribeRouteTables`.
 ///
-/// <p>Describes one or more of your route tables.</p>
+/// <p>Describes your route tables. The default is to describe all your route tables. Alternatively, you can specify specific route table IDs or filter the results to include only the route tables that match specific criteria.</p>
 /// <p>Each subnet in your VPC must be associated with a route table. If a subnet is not explicitly associated with any route table, it is implicitly associated with the main route table. This command does not return the subnet ID for implicit associations.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -305,19 +305,16 @@ impl DescribeRouteTablesFluentBuilder {
     /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).
     ///
     /// <p>The IDs of the route tables.</p>
-    /// <p>Default: Describes all your route tables.</p>
     pub fn route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_table_ids(input.into());
         self
     }
     /// <p>The IDs of the route tables.</p>
-    /// <p>Default: Describes all your route tables.</p>
     pub fn set_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_route_table_ids(input);
         self
     }
     /// <p>The IDs of the route tables.</p>
-    /// <p>Default: Describes all your route tables.</p>
     pub fn get_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_route_table_ids()
     }

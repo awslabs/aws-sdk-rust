@@ -22,7 +22,7 @@ impl crate::operation::create_subnet_cidr_reservation::builders::CreateSubnetCid
 }
 /// Fluent builder constructing a request to `CreateSubnetCidrReservation`.
 ///
-/// <p>Creates a subnet CIDR reservation. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User Guide</i> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">Assign prefixes to network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>Creates a subnet CIDR reservation. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet CIDR reservations</a> in the <i>Amazon VPC User Guide</i> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">Assign prefixes to network interfaces</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSubnetCidrReservationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

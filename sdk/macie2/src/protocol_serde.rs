@@ -27,6 +27,8 @@ pub(crate) mod shape_accept_invitation;
 
 pub(crate) mod shape_batch_get_custom_data_identifiers;
 
+pub(crate) mod shape_batch_update_automated_discovery_accounts;
+
 pub(crate) mod shape_create_allow_list;
 
 pub(crate) mod shape_create_classification_job;
@@ -119,6 +121,8 @@ pub(crate) mod shape_get_usage_totals;
 
 pub(crate) mod shape_list_allow_lists;
 
+pub(crate) mod shape_list_automated_discovery_accounts;
+
 pub(crate) mod shape_list_classification_jobs;
 
 pub(crate) mod shape_list_classification_scopes;
@@ -194,6 +198,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_batch_get_custom_data_identifiers_input;
+
+pub(crate) mod shape_batch_update_automated_discovery_accounts_input;
 
 pub(crate) mod shape_conflict_exception;
 
@@ -289,6 +295,8 @@ pub(crate) mod shape_allow_list_criteria;
 
 pub(crate) mod shape_allow_list_status;
 
+pub(crate) mod shape_automated_discovery_account_update;
+
 pub(crate) mod shape_bucket_count_by_effective_permission;
 
 pub(crate) mod shape_bucket_count_by_encryption_type;
@@ -322,6 +330,10 @@ pub(crate) mod shape_list_jobs_sort_criteria;
 pub(crate) mod shape_list_of_admin_account;
 
 pub(crate) mod shape_list_of_allow_list_summary;
+
+pub(crate) mod shape_list_of_automated_discovery_account;
+
+pub(crate) mod shape_list_of_automated_discovery_account_update_error;
 
 pub(crate) mod shape_list_of_batch_get_custom_data_identifier_summary;
 
@@ -412,6 +424,10 @@ pub(crate) mod shape_user_paused_details;
 pub(crate) mod shape_admin_account;
 
 pub(crate) mod shape_allow_list_summary;
+
+pub(crate) mod shape_automated_discovery_account;
+
+pub(crate) mod shape_automated_discovery_account_update_error;
 
 pub(crate) mod shape_batch_get_custom_data_identifier_summary;
 

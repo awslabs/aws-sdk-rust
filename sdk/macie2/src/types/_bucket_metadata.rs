@@ -18,6 +18,8 @@ pub struct BucketMetadata {
     /// </ul>
     /// <p>Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
     pub allows_unencrypted_object_uploads: ::std::option::Option<crate::types::AllowsUnencryptedObjectUploads>,
+    /// <p>Specifies whether automated sensitive data discovery is currently configured to analyze objects in the bucket. Possible values are: MONITORED, the bucket is included in analyses; and, NOT_MONITORED, the bucket is excluded from analyses. If automated sensitive data discovery is disabled for your account, this value is NOT_MONITORED.</p>
+    pub automated_discovery_monitoring_status: ::std::option::Option<crate::types::AutomatedDiscoveryMonitoringStatus>,
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate when changes such as edits to the bucket's policy were most recently made to the bucket.</p>
@@ -33,9 +35,9 @@ pub struct BucketMetadata {
     pub error_code: ::std::option::Option<crate::types::BucketMetadataErrorCode>,
     /// <p>A brief description of the error (errorCode) that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. This value is null if Macie was able to retrieve and process the information.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket, and, if so, the details of the job that ran most recently.</p>
+    /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze objects in the bucket, and, if so, the details of the job that ran most recently.</p>
     pub job_details: ::std::option::Option<crate::types::JobDetails>,
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the bucket while performing automated sensitive data discovery for your account. This value is null if automated sensitive data discovery is currently disabled for your account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed objects in the bucket while performing automated sensitive data discovery. This value is null if automated sensitive data discovery is disabled for your account.</p>
     pub last_automated_discovery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or object metadata from Amazon S3 for the bucket.</p>
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -49,7 +51,8 @@ pub struct BucketMetadata {
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to buckets for other Amazon Web Services accounts and, if so, which accounts.</p>
     pub replication_details: ::std::option::Option<crate::types::ReplicationDetails>,
-    /// <p>The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is null if automated sensitive data discovery is currently disabled for your account.</p>
+    /// <p>The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive).</p>
+    /// <p>If automated sensitive data discovery has never been enabled for your account or it’s been disabled for your organization or your standalone account for more than 30 days, possible values are: 1, the bucket is empty; or, 50, the bucket stores objects but it’s been excluded from recent analyses.</p>
     pub sensitivity_score: ::std::option::Option<i32>,
     /// <p>The default server-side encryption settings for the bucket.</p>
     pub server_side_encryption: ::std::option::Option<crate::types::BucketServerSideEncryption>,
@@ -99,6 +102,10 @@ impl BucketMetadata {
     pub fn allows_unencrypted_object_uploads(&self) -> ::std::option::Option<&crate::types::AllowsUnencryptedObjectUploads> {
         self.allows_unencrypted_object_uploads.as_ref()
     }
+    /// <p>Specifies whether automated sensitive data discovery is currently configured to analyze objects in the bucket. Possible values are: MONITORED, the bucket is included in analyses; and, NOT_MONITORED, the bucket is excluded from analyses. If automated sensitive data discovery is disabled for your account, this value is NOT_MONITORED.</p>
+    pub fn automated_discovery_monitoring_status(&self) -> ::std::option::Option<&crate::types::AutomatedDiscoveryMonitoringStatus> {
+        self.automated_discovery_monitoring_status.as_ref()
+    }
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
         self.bucket_arn.as_deref()
@@ -128,11 +135,11 @@ impl BucketMetadata {
     pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
-    /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket, and, if so, the details of the job that ran most recently.</p>
+    /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze objects in the bucket, and, if so, the details of the job that ran most recently.</p>
     pub fn job_details(&self) -> ::std::option::Option<&crate::types::JobDetails> {
         self.job_details.as_ref()
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the bucket while performing automated sensitive data discovery for your account. This value is null if automated sensitive data discovery is currently disabled for your account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed objects in the bucket while performing automated sensitive data discovery. This value is null if automated sensitive data discovery is disabled for your account.</p>
     pub fn last_automated_discovery_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_automated_discovery_time.as_ref()
     }
@@ -160,7 +167,8 @@ impl BucketMetadata {
     pub fn replication_details(&self) -> ::std::option::Option<&crate::types::ReplicationDetails> {
         self.replication_details.as_ref()
     }
-    /// <p>The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is null if automated sensitive data discovery is currently disabled for your account.</p>
+    /// <p>The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive).</p>
+    /// <p>If automated sensitive data discovery has never been enabled for your account or it’s been disabled for your organization or your standalone account for more than 30 days, possible values are: 1, the bucket is empty; or, 50, the bucket stores objects but it’s been excluded from recent analyses.</p>
     pub fn sensitivity_score(&self) -> ::std::option::Option<i32> {
         self.sensitivity_score
     }
@@ -225,6 +233,7 @@ impl BucketMetadata {
 pub struct BucketMetadataBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) allows_unencrypted_object_uploads: ::std::option::Option<crate::types::AllowsUnencryptedObjectUploads>,
+    pub(crate) automated_discovery_monitoring_status: ::std::option::Option<crate::types::AutomatedDiscoveryMonitoringStatus>,
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
@@ -305,6 +314,23 @@ impl BucketMetadataBuilder {
     /// <p>Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
     pub fn get_allows_unencrypted_object_uploads(&self) -> &::std::option::Option<crate::types::AllowsUnencryptedObjectUploads> {
         &self.allows_unencrypted_object_uploads
+    }
+    /// <p>Specifies whether automated sensitive data discovery is currently configured to analyze objects in the bucket. Possible values are: MONITORED, the bucket is included in analyses; and, NOT_MONITORED, the bucket is excluded from analyses. If automated sensitive data discovery is disabled for your account, this value is NOT_MONITORED.</p>
+    pub fn automated_discovery_monitoring_status(mut self, input: crate::types::AutomatedDiscoveryMonitoringStatus) -> Self {
+        self.automated_discovery_monitoring_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether automated sensitive data discovery is currently configured to analyze objects in the bucket. Possible values are: MONITORED, the bucket is included in analyses; and, NOT_MONITORED, the bucket is excluded from analyses. If automated sensitive data discovery is disabled for your account, this value is NOT_MONITORED.</p>
+    pub fn set_automated_discovery_monitoring_status(
+        mut self,
+        input: ::std::option::Option<crate::types::AutomatedDiscoveryMonitoringStatus>,
+    ) -> Self {
+        self.automated_discovery_monitoring_status = input;
+        self
+    }
+    /// <p>Specifies whether automated sensitive data discovery is currently configured to analyze objects in the bucket. Possible values are: MONITORED, the bucket is included in analyses; and, NOT_MONITORED, the bucket is excluded from analyses. If automated sensitive data discovery is disabled for your account, this value is NOT_MONITORED.</p>
+    pub fn get_automated_discovery_monitoring_status(&self) -> &::std::option::Option<crate::types::AutomatedDiscoveryMonitoringStatus> {
+        &self.automated_discovery_monitoring_status
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -407,31 +433,31 @@ impl BucketMetadataBuilder {
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_message
     }
-    /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket, and, if so, the details of the job that ran most recently.</p>
+    /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze objects in the bucket, and, if so, the details of the job that ran most recently.</p>
     pub fn job_details(mut self, input: crate::types::JobDetails) -> Self {
         self.job_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket, and, if so, the details of the job that ran most recently.</p>
+    /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze objects in the bucket, and, if so, the details of the job that ran most recently.</p>
     pub fn set_job_details(mut self, input: ::std::option::Option<crate::types::JobDetails>) -> Self {
         self.job_details = input;
         self
     }
-    /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket, and, if so, the details of the job that ran most recently.</p>
+    /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze objects in the bucket, and, if so, the details of the job that ran most recently.</p>
     pub fn get_job_details(&self) -> &::std::option::Option<crate::types::JobDetails> {
         &self.job_details
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the bucket while performing automated sensitive data discovery for your account. This value is null if automated sensitive data discovery is currently disabled for your account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed objects in the bucket while performing automated sensitive data discovery. This value is null if automated sensitive data discovery is disabled for your account.</p>
     pub fn last_automated_discovery_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_automated_discovery_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the bucket while performing automated sensitive data discovery for your account. This value is null if automated sensitive data discovery is currently disabled for your account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed objects in the bucket while performing automated sensitive data discovery. This value is null if automated sensitive data discovery is disabled for your account.</p>
     pub fn set_last_automated_discovery_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_automated_discovery_time = input;
         self
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the bucket while performing automated sensitive data discovery for your account. This value is null if automated sensitive data discovery is currently disabled for your account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed objects in the bucket while performing automated sensitive data discovery. This value is null if automated sensitive data discovery is disabled for your account.</p>
     pub fn get_last_automated_discovery_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_automated_discovery_time
     }
@@ -519,17 +545,20 @@ impl BucketMetadataBuilder {
     pub fn get_replication_details(&self) -> &::std::option::Option<crate::types::ReplicationDetails> {
         &self.replication_details
     }
-    /// <p>The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is null if automated sensitive data discovery is currently disabled for your account.</p>
+    /// <p>The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive).</p>
+    /// <p>If automated sensitive data discovery has never been enabled for your account or it’s been disabled for your organization or your standalone account for more than 30 days, possible values are: 1, the bucket is empty; or, 50, the bucket stores objects but it’s been excluded from recent analyses.</p>
     pub fn sensitivity_score(mut self, input: i32) -> Self {
         self.sensitivity_score = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is null if automated sensitive data discovery is currently disabled for your account.</p>
+    /// <p>The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive).</p>
+    /// <p>If automated sensitive data discovery has never been enabled for your account or it’s been disabled for your organization or your standalone account for more than 30 days, possible values are: 1, the bucket is empty; or, 50, the bucket stores objects but it’s been excluded from recent analyses.</p>
     pub fn set_sensitivity_score(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sensitivity_score = input;
         self
     }
-    /// <p>The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is null if automated sensitive data discovery is currently disabled for your account.</p>
+    /// <p>The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive).</p>
+    /// <p>If automated sensitive data discovery has never been enabled for your account or it’s been disabled for your organization or your standalone account for more than 30 days, possible values are: 1, the bucket is empty; or, 50, the bucket stores objects but it’s been excluded from recent analyses.</p>
     pub fn get_sensitivity_score(&self) -> &::std::option::Option<i32> {
         &self.sensitivity_score
     }
@@ -695,6 +724,7 @@ impl BucketMetadataBuilder {
         crate::types::BucketMetadata {
             account_id: self.account_id,
             allows_unencrypted_object_uploads: self.allows_unencrypted_object_uploads,
+            automated_discovery_monitoring_status: self.automated_discovery_monitoring_status,
             bucket_arn: self.bucket_arn,
             bucket_created_at: self.bucket_created_at,
             bucket_name: self.bucket_name,

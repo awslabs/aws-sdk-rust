@@ -16,15 +16,15 @@ pub struct FleetCapacityReservation {
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The total number of instances for which the Capacity Reservation reserves capacity.</p>
     pub total_instance_count: ::std::option::Option<i32>,
-    /// <p>The number of capacity units fulfilled by the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity"> Total target capacity</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The number of capacity units fulfilled by the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fulfilled_capacity: ::std::option::Option<f64>,
     /// <p>Indicates whether the Capacity Reservation reserves capacity for EBS-optimized instance types.</p>
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>The date and time at which the Capacity Reservation was created.</p>
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The weight of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight"> Instance type weight</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The weight of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight">Instance type weight</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub weight: ::std::option::Option<f64>,
-    /// <p>The priority of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority"> Instance type priority</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The priority of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority">Instance type priority</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub priority: ::std::option::Option<i32>,
 }
 impl FleetCapacityReservation {
@@ -52,7 +52,7 @@ impl FleetCapacityReservation {
     pub fn total_instance_count(&self) -> ::std::option::Option<i32> {
         self.total_instance_count
     }
-    /// <p>The number of capacity units fulfilled by the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity"> Total target capacity</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The number of capacity units fulfilled by the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn fulfilled_capacity(&self) -> ::std::option::Option<f64> {
         self.fulfilled_capacity
     }
@@ -64,11 +64,11 @@ impl FleetCapacityReservation {
     pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
-    /// <p>The weight of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight"> Instance type weight</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The weight of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight">Instance type weight</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn weight(&self) -> ::std::option::Option<f64> {
         self.weight
     }
-    /// <p>The priority of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority"> Instance type priority</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The priority of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority">Instance type priority</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
@@ -181,17 +181,17 @@ impl FleetCapacityReservationBuilder {
     pub fn get_total_instance_count(&self) -> &::std::option::Option<i32> {
         &self.total_instance_count
     }
-    /// <p>The number of capacity units fulfilled by the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity"> Total target capacity</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The number of capacity units fulfilled by the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn fulfilled_capacity(mut self, input: f64) -> Self {
         self.fulfilled_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of capacity units fulfilled by the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity"> Total target capacity</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The number of capacity units fulfilled by the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_fulfilled_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.fulfilled_capacity = input;
         self
     }
-    /// <p>The number of capacity units fulfilled by the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity"> Total target capacity</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The number of capacity units fulfilled by the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_fulfilled_capacity(&self) -> &::std::option::Option<f64> {
         &self.fulfilled_capacity
     }
@@ -223,31 +223,31 @@ impl FleetCapacityReservationBuilder {
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_date
     }
-    /// <p>The weight of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight"> Instance type weight</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The weight of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight">Instance type weight</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn weight(mut self, input: f64) -> Self {
         self.weight = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The weight of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight"> Instance type weight</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The weight of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight">Instance type weight</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_weight(mut self, input: ::std::option::Option<f64>) -> Self {
         self.weight = input;
         self
     }
-    /// <p>The weight of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight"> Instance type weight</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The weight of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight">Instance type weight</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_weight(&self) -> &::std::option::Option<f64> {
         &self.weight
     }
-    /// <p>The priority of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority"> Instance type priority</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The priority of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority">Instance type priority</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The priority of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority"> Instance type priority</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The priority of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority">Instance type priority</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
-    /// <p>The priority of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority"> Instance type priority</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The priority of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority">Instance type priority</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }

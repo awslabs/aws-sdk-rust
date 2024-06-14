@@ -22,7 +22,7 @@ impl crate::operation::describe_egress_only_internet_gateways::builders::Describ
 }
 /// Fluent builder constructing a request to `DescribeEgressOnlyInternetGateways`.
 ///
-/// <p>Describes one or more of your egress-only internet gateways.</p>
+/// <p>Describes your egress-only internet gateways. The default is to describe all your egress-only internet gateways. Alternatively, you can specify specific egress-only internet gateway IDs or filter the results to include only the egress-only internet gateways that match specific criteria.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEgressOnlyInternetGatewaysFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

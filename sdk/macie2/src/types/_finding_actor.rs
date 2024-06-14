@@ -6,9 +6,9 @@
 pub struct FindingActor {
     /// <p>The domain name of the device that the entity used to perform the action on the affected resource.</p>
     pub domain_details: ::std::option::Option<crate::types::DomainDetails>,
-    /// <p>The IP address of the device that the entity used to perform the action on the affected resource. This object also provides information such as the owner and geographic location for the IP address.</p>
+    /// <p>The IP address and related details about the device that the entity used to perform the action on the affected resource. The details can include information such as the owner and geographic location of the IP address.</p>
     pub ip_address_details: ::std::option::Option<crate::types::IpAddressDetails>,
-    /// <p>The type and other characteristics of the entity that performed the action on the affected resource.</p>
+    /// <p>The type and other characteristics of the entity that performed the action on the affected resource. This value is null if the action was performed by an anonymous (unauthenticated) entity.</p>
     pub user_identity: ::std::option::Option<crate::types::UserIdentity>,
 }
 impl FindingActor {
@@ -16,11 +16,11 @@ impl FindingActor {
     pub fn domain_details(&self) -> ::std::option::Option<&crate::types::DomainDetails> {
         self.domain_details.as_ref()
     }
-    /// <p>The IP address of the device that the entity used to perform the action on the affected resource. This object also provides information such as the owner and geographic location for the IP address.</p>
+    /// <p>The IP address and related details about the device that the entity used to perform the action on the affected resource. The details can include information such as the owner and geographic location of the IP address.</p>
     pub fn ip_address_details(&self) -> ::std::option::Option<&crate::types::IpAddressDetails> {
         self.ip_address_details.as_ref()
     }
-    /// <p>The type and other characteristics of the entity that performed the action on the affected resource.</p>
+    /// <p>The type and other characteristics of the entity that performed the action on the affected resource. This value is null if the action was performed by an anonymous (unauthenticated) entity.</p>
     pub fn user_identity(&self) -> ::std::option::Option<&crate::types::UserIdentity> {
         self.user_identity.as_ref()
     }
@@ -55,31 +55,31 @@ impl FindingActorBuilder {
     pub fn get_domain_details(&self) -> &::std::option::Option<crate::types::DomainDetails> {
         &self.domain_details
     }
-    /// <p>The IP address of the device that the entity used to perform the action on the affected resource. This object also provides information such as the owner and geographic location for the IP address.</p>
+    /// <p>The IP address and related details about the device that the entity used to perform the action on the affected resource. The details can include information such as the owner and geographic location of the IP address.</p>
     pub fn ip_address_details(mut self, input: crate::types::IpAddressDetails) -> Self {
         self.ip_address_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The IP address of the device that the entity used to perform the action on the affected resource. This object also provides information such as the owner and geographic location for the IP address.</p>
+    /// <p>The IP address and related details about the device that the entity used to perform the action on the affected resource. The details can include information such as the owner and geographic location of the IP address.</p>
     pub fn set_ip_address_details(mut self, input: ::std::option::Option<crate::types::IpAddressDetails>) -> Self {
         self.ip_address_details = input;
         self
     }
-    /// <p>The IP address of the device that the entity used to perform the action on the affected resource. This object also provides information such as the owner and geographic location for the IP address.</p>
+    /// <p>The IP address and related details about the device that the entity used to perform the action on the affected resource. The details can include information such as the owner and geographic location of the IP address.</p>
     pub fn get_ip_address_details(&self) -> &::std::option::Option<crate::types::IpAddressDetails> {
         &self.ip_address_details
     }
-    /// <p>The type and other characteristics of the entity that performed the action on the affected resource.</p>
+    /// <p>The type and other characteristics of the entity that performed the action on the affected resource. This value is null if the action was performed by an anonymous (unauthenticated) entity.</p>
     pub fn user_identity(mut self, input: crate::types::UserIdentity) -> Self {
         self.user_identity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type and other characteristics of the entity that performed the action on the affected resource.</p>
+    /// <p>The type and other characteristics of the entity that performed the action on the affected resource. This value is null if the action was performed by an anonymous (unauthenticated) entity.</p>
     pub fn set_user_identity(mut self, input: ::std::option::Option<crate::types::UserIdentity>) -> Self {
         self.user_identity = input;
         self
     }
-    /// <p>The type and other characteristics of the entity that performed the action on the affected resource.</p>
+    /// <p>The type and other characteristics of the entity that performed the action on the affected resource. This value is null if the action was performed by an anonymous (unauthenticated) entity.</p>
     pub fn get_user_identity(&self) -> &::std::option::Option<crate::types::UserIdentity> {
         &self.user_identity
     }

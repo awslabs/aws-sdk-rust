@@ -27,6 +27,7 @@ impl super::Client {
     ///   - [`error_message(Option<DataSourceErrorMessage>)`](crate::operation::get_data_source::GetDataSourceOutput::error_message): <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_data_source::GetDataSourceOutput::created_at): <p>The timestamp of when the data source was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_data_source::GetDataSourceOutput::updated_at): <p>The timestamp of when the data source was updated.</p>
+    ///   - [`self_grant_status(Option<SelfGrantStatusOutput>)`](crate::operation::get_data_source::GetDataSourceOutput::self_grant_status): <p>Specifies the status of the self-granting functionality.</p>
     /// - On failure, responds with [`SdkError<GetDataSourceError>`](crate::operation::get_data_source::GetDataSourceError)
     pub fn get_data_source(&self) -> crate::operation::get_data_source::builders::GetDataSourceFluentBuilder {
         crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::new(self.handle.clone())

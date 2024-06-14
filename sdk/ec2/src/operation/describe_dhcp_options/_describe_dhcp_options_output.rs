@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDhcpOptionsOutput {
-    /// <p>Information about one or more DHCP options sets.</p>
+    /// <p>Information about the DHCP options sets.</p>
     pub dhcp_options: ::std::option::Option<::std::vec::Vec<crate::types::DhcpOptions>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeDhcpOptionsOutput {
-    /// <p>Information about one or more DHCP options sets.</p>
+    /// <p>Information about the DHCP options sets.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dhcp_options.is_none()`.
     pub fn dhcp_options(&self) -> &[crate::types::DhcpOptions] {
@@ -46,19 +46,19 @@ impl DescribeDhcpOptionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_dhcp_options`](Self::set_dhcp_options).
     ///
-    /// <p>Information about one or more DHCP options sets.</p>
+    /// <p>Information about the DHCP options sets.</p>
     pub fn dhcp_options(mut self, input: crate::types::DhcpOptions) -> Self {
         let mut v = self.dhcp_options.unwrap_or_default();
         v.push(input);
         self.dhcp_options = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about one or more DHCP options sets.</p>
+    /// <p>Information about the DHCP options sets.</p>
     pub fn set_dhcp_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DhcpOptions>>) -> Self {
         self.dhcp_options = input;
         self
     }
-    /// <p>Information about one or more DHCP options sets.</p>
+    /// <p>Information about the DHCP options sets.</p>
     pub fn get_dhcp_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DhcpOptions>> {
         &self.dhcp_options
     }

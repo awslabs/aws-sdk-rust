@@ -22,7 +22,7 @@ impl crate::operation::create_capacity_reservation_fleet::builders::CreateCapaci
 }
 /// Fluent builder constructing a request to `CreateCapacityReservationFleet`.
 ///
-/// <p>Creates a Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-cr-fleets.html#create-crfleet">Create a Capacity Reservation Fleet</a> in the Amazon EC2 User Guide.</p>
+/// <p>Creates a Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-cr-fleets.html#create-crfleet">Create a Capacity Reservation Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCapacityReservationFleetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,19 +108,19 @@ impl CreateCapacityReservationFleetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. Currently, only the <code>prioritized</code> allocation strategy is supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. Currently, only the <code>prioritized</code> allocation strategy is supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Valid values: <code>prioritized</code></p>
     pub fn allocation_strategy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allocation_strategy(input.into());
         self
     }
-    /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. Currently, only the <code>prioritized</code> allocation strategy is supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. Currently, only the <code>prioritized</code> allocation strategy is supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Valid values: <code>prioritized</code></p>
     pub fn set_allocation_strategy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_allocation_strategy(input);
         self
     }
-    /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. Currently, only the <code>prioritized</code> allocation strategy is supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. Currently, only the <code>prioritized</code> allocation strategy is supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Valid values: <code>prioritized</code></p>
     pub fn get_allocation_strategy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_allocation_strategy()
@@ -193,17 +193,17 @@ impl CreateCapacityReservationFleetFluentBuilder {
     pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::FleetCapacityReservationTenancy> {
         self.inner.get_tenancy()
     }
-    /// <p>The total number of capacity units to be reserved by the Capacity Reservation Fleet. This value, together with the instance type weights that you assign to each instance type used by the Fleet determine the number of instances for which the Fleet reserves capacity. Both values are based on units that make sense for your workload. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity"> Total target capacity</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The total number of capacity units to be reserved by the Capacity Reservation Fleet. This value, together with the instance type weights that you assign to each instance type used by the Fleet determine the number of instances for which the Fleet reserves capacity. Both values are based on units that make sense for your workload. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn total_target_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.total_target_capacity(input);
         self
     }
-    /// <p>The total number of capacity units to be reserved by the Capacity Reservation Fleet. This value, together with the instance type weights that you assign to each instance type used by the Fleet determine the number of instances for which the Fleet reserves capacity. Both values are based on units that make sense for your workload. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity"> Total target capacity</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The total number of capacity units to be reserved by the Capacity Reservation Fleet. This value, together with the instance type weights that you assign to each instance type used by the Fleet determine the number of instances for which the Fleet reserves capacity. Both values are based on units that make sense for your workload. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_total_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_total_target_capacity(input);
         self
     }
-    /// <p>The total number of capacity units to be reserved by the Capacity Reservation Fleet. This value, together with the instance type weights that you assign to each instance type used by the Fleet determine the number of instances for which the Fleet reserves capacity. Both values are based on units that make sense for your workload. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity"> Total target capacity</a> in the Amazon EC2 User Guide.</p>
+    /// <p>The total number of capacity units to be reserved by the Capacity Reservation Fleet. This value, together with the instance type weights that you assign to each instance type used by the Fleet determine the number of instances for which the Fleet reserves capacity. Both values are based on units that make sense for your workload. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_total_target_capacity(&self) -> &::std::option::Option<i32> {
         self.inner.get_total_target_capacity()
     }

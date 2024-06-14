@@ -22,8 +22,8 @@ impl crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsInput
 }
 /// Fluent builder constructing a request to `DescribeDhcpOptions`.
 ///
-/// <p>Describes one or more of your DHCP options sets.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the <i>Amazon VPC User Guide</i>.</p>
+/// <p>Describes your DHCP option sets. The default is to describe all your DHCP option sets. Alternatively, you can specify specific DHCP option set IDs or filter the results to include only the DHCP option sets that match specific criteria.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP option sets</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDhcpOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -120,20 +120,17 @@ impl DescribeDhcpOptionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_dhcp_options_ids`](Self::set_dhcp_options_ids).
     ///
-    /// <p>The IDs of one or more DHCP options sets.</p>
-    /// <p>Default: Describes all your DHCP options sets.</p>
+    /// <p>The IDs of DHCP option sets.</p>
     pub fn dhcp_options_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dhcp_options_ids(input.into());
         self
     }
-    /// <p>The IDs of one or more DHCP options sets.</p>
-    /// <p>Default: Describes all your DHCP options sets.</p>
+    /// <p>The IDs of DHCP option sets.</p>
     pub fn set_dhcp_options_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_dhcp_options_ids(input);
         self
     }
-    /// <p>The IDs of one or more DHCP options sets.</p>
-    /// <p>Default: Describes all your DHCP options sets.</p>
+    /// <p>The IDs of DHCP option sets.</p>
     pub fn get_dhcp_options_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_dhcp_options_ids()
     }

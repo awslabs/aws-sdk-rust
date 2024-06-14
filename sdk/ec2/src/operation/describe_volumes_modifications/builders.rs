@@ -24,7 +24,7 @@ impl crate::operation::describe_volumes_modifications::builders::DescribeVolumes
 ///
 /// <p>Describes the most recent volume modification request for the specified EBS volumes.</p>
 /// <p>If a volume has never been modified, some information in the output will be null. If a volume has been modified more than once, the output includes only the most recent modification request.</p>
-/// <p>You can also use CloudWatch Events to check the status of a modification to an EBS volume. For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon CloudWatch Events User Guide</a>. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor the progress of volume modifications</a> in the <i>Amazon EBS User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html"> Monitor the progress of volume modifications</a> in the <i>Amazon EBS User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVolumesModificationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -240,17 +240,17 @@ impl DescribeVolumesModificationsFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
-    /// <p>The token returned by a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token returned by a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token returned by a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

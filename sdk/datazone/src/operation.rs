@@ -7,6 +7,9 @@ pub mod accept_predictions;
 /// Types for the `AcceptSubscriptionRequest` operation.
 pub mod accept_subscription_request;
 
+/// Types for the `AssociateEnvironmentRole` operation.
+pub mod associate_environment_role;
+
 /// Types for the `CancelMetadataGenerationRun` operation.
 pub mod cancel_metadata_generation_run;
 
@@ -30,6 +33,9 @@ pub mod create_domain;
 
 /// Types for the `CreateEnvironment` operation.
 pub mod create_environment;
+
+/// Types for the `CreateEnvironmentAction` operation.
+pub mod create_environment_action;
 
 /// Types for the `CreateEnvironmentProfile` operation.
 pub mod create_environment_profile;
@@ -82,6 +88,9 @@ pub mod delete_domain;
 /// Types for the `DeleteEnvironment` operation.
 pub mod delete_environment;
 
+/// Types for the `DeleteEnvironmentAction` operation.
+pub mod delete_environment_action;
+
 /// Types for the `DeleteEnvironmentBlueprintConfiguration` operation.
 pub mod delete_environment_blueprint_configuration;
 
@@ -118,6 +127,9 @@ pub mod delete_subscription_target;
 /// Types for the `DeleteTimeSeriesDataPoints` operation.
 pub mod delete_time_series_data_points;
 
+/// Types for the `DisassociateEnvironmentRole` operation.
+pub mod disassociate_environment_role;
+
 /// Types for the `GetAsset` operation.
 pub mod get_asset;
 
@@ -135,6 +147,9 @@ pub mod get_domain;
 
 /// Types for the `GetEnvironment` operation.
 pub mod get_environment;
+
+/// Types for the `GetEnvironmentAction` operation.
+pub mod get_environment_action;
 
 /// Types for the `GetEnvironmentBlueprint` operation.
 pub mod get_environment_blueprint;
@@ -201,6 +216,9 @@ pub mod list_data_sources;
 
 /// Types for the `ListDomains` operation.
 pub mod list_domains;
+
+/// Types for the `ListEnvironmentActions` operation.
+pub mod list_environment_actions;
 
 /// Types for the `ListEnvironmentBlueprintConfigurations` operation.
 pub mod list_environment_blueprint_configurations;
@@ -294,6 +312,9 @@ pub mod update_domain;
 
 /// Types for the `UpdateEnvironment` operation.
 pub mod update_environment;
+
+/// Types for the `UpdateEnvironmentAction` operation.
+pub mod update_environment_action;
 
 /// Types for the `UpdateEnvironmentProfile` operation.
 pub mod update_environment_profile;

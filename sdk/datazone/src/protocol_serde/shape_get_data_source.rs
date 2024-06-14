@@ -268,6 +268,11 @@ pub(crate) fn de_get_data_source(
                 "schedule" => {
                     builder = builder.set_schedule(crate::protocol_serde::shape_schedule_configuration::de_schedule_configuration(tokens)?);
                 }
+                "selfGrantStatus" => {
+                    builder = builder.set_self_grant_status(crate::protocol_serde::shape_self_grant_status_output::de_self_grant_status_output(
+                        tokens,
+                    )?);
+                }
                 "status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

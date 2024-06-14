@@ -23,7 +23,7 @@ impl crate::operation::export_transit_gateway_routes::builders::ExportTransitGat
 /// Fluent builder constructing a request to `ExportTransitGatewayRoutes`.
 ///
 /// <p>Exports routes from the specified transit gateway route table to the specified S3 bucket. By default, all routes are exported. Alternatively, you can filter by CIDR range.</p>
-/// <p>The routes are saved to the specified bucket in a JSON file. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-route-tables.html#tgw-export-route-tables">Export Route Tables to Amazon S3</a> in <i>Transit Gateways</i>.</p>
+/// <p>The routes are saved to the specified bucket in a JSON file. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-route-tables.html#tgw-export-route-tables">Export route tables to Amazon S3</a> in the <i>Amazon Web Services Transit Gateways Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportTransitGatewayRoutesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

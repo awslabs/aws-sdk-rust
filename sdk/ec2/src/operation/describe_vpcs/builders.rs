@@ -22,7 +22,7 @@ impl crate::operation::describe_vpcs::builders::DescribeVpcsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeVpcs`.
 ///
-/// <p>Describes one or more of your VPCs.</p>
+/// <p>Describes your VPCs. The default is to describe all your VPCs. Alternatively, you can specify specific VPC IDs or filter the results to include only the VPCs that match specific criteria.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVpcsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -253,19 +253,16 @@ impl DescribeVpcsFluentBuilder {
     /// To override the contents of this collection use [`set_vpc_ids`](Self::set_vpc_ids).
     ///
     /// <p>The IDs of the VPCs.</p>
-    /// <p>Default: Describes all your VPCs.</p>
     pub fn vpc_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_ids(input.into());
         self
     }
     /// <p>The IDs of the VPCs.</p>
-    /// <p>Default: Describes all your VPCs.</p>
     pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_ids(input);
         self
     }
     /// <p>The IDs of the VPCs.</p>
-    /// <p>Default: Describes all your VPCs.</p>
     pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_ids()
     }

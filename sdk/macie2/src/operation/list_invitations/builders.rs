@@ -22,7 +22,7 @@ impl crate::operation::list_invitations::builders::ListInvitationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListInvitations`.
 ///
-/// <p>Retrieves information about the Amazon Macie membership invitations that were received by an account.</p>
+/// <p>Retrieves information about Amazon Macie membership invitations that were received by an account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInvitationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

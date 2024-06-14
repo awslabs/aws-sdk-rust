@@ -216,4 +216,46 @@ impl CreateEnvironmentFluentBuilder {
     pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_glossary_terms()
     }
+    /// <p>The ID of the account in which the environment is being created.</p>
+    pub fn environment_account_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.environment_account_identifier(input.into());
+        self
+    }
+    /// <p>The ID of the account in which the environment is being created.</p>
+    pub fn set_environment_account_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_environment_account_identifier(input);
+        self
+    }
+    /// <p>The ID of the account in which the environment is being created.</p>
+    pub fn get_environment_account_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_account_identifier()
+    }
+    /// <p>The region of the account in which the environment is being created.</p>
+    pub fn environment_account_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.environment_account_region(input.into());
+        self
+    }
+    /// <p>The region of the account in which the environment is being created.</p>
+    pub fn set_environment_account_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_environment_account_region(input);
+        self
+    }
+    /// <p>The region of the account in which the environment is being created.</p>
+    pub fn get_environment_account_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_account_region()
+    }
+    /// <p>The ID of the blueprint with which the environment is being created.</p>
+    pub fn environment_blueprint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.environment_blueprint_identifier(input.into());
+        self
+    }
+    /// <p>The ID of the blueprint with which the environment is being created.</p>
+    pub fn set_environment_blueprint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_environment_blueprint_identifier(input);
+        self
+    }
+    /// <p>The ID of the blueprint with which the environment is being created.</p>
+    pub fn get_environment_blueprint_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_blueprint_identifier()
+    }
 }

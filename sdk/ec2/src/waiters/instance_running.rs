@@ -321,7 +321,7 @@ impl InstanceRunningFluentBuilder {
     /// <li>
     /// <p><code>private-dns-name-options.hostname-type</code> - The type of hostname (<code>ip-name</code> | <code>resource-name</code>).</p></li>
     /// <li>
-    /// <p><code>private-ip-address</code> - The private IPv4 address of the instance.</p></li>
+    /// <p><code>private-ip-address</code> - The private IPv4 address of the instance. This can only be used to filter by the primary IP address of the network interface attached to the instance. To filter by additional IP addresses assigned to the network interface, use the filter <code>network-interface.addresses.private-ip-address</code>.</p></li>
     /// <li>
     /// <p><code>product-code</code> - The product code associated with the AMI used to launch the instance.</p></li>
     /// <li>
@@ -590,7 +590,7 @@ impl InstanceRunningFluentBuilder {
     /// <li>
     /// <p><code>private-dns-name-options.hostname-type</code> - The type of hostname (<code>ip-name</code> | <code>resource-name</code>).</p></li>
     /// <li>
-    /// <p><code>private-ip-address</code> - The private IPv4 address of the instance.</p></li>
+    /// <p><code>private-ip-address</code> - The private IPv4 address of the instance. This can only be used to filter by the primary IP address of the network interface attached to the instance. To filter by additional IP addresses assigned to the network interface, use the filter <code>network-interface.addresses.private-ip-address</code>.</p></li>
     /// <li>
     /// <p><code>product-code</code> - The product code associated with the AMI used to launch the instance.</p></li>
     /// <li>
@@ -859,7 +859,7 @@ impl InstanceRunningFluentBuilder {
     /// <li>
     /// <p><code>private-dns-name-options.hostname-type</code> - The type of hostname (<code>ip-name</code> | <code>resource-name</code>).</p></li>
     /// <li>
-    /// <p><code>private-ip-address</code> - The private IPv4 address of the instance.</p></li>
+    /// <p><code>private-ip-address</code> - The private IPv4 address of the instance. This can only be used to filter by the primary IP address of the network interface attached to the instance. To filter by additional IP addresses assigned to the network interface, use the filter <code>network-interface.addresses.private-ip-address</code>.</p></li>
     /// <li>
     /// <p><code>product-code</code> - The product code associated with the AMI used to launch the instance.</p></li>
     /// <li>

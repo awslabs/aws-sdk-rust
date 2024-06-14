@@ -5,7 +5,7 @@
 pub struct ModifyAvailabilityZoneGroupInput {
     /// <p>The name of the Availability Zone group, Local Zone group, or Wavelength Zone group.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether you are opted in to the Local Zone group or Wavelength Zone group. The only valid value is <code>opted-in</code>. You must contact <a href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">Amazon Web Services Support</a> to opt out of a Local Zone or Wavelength Zone group.</p>
+    /// <p>Indicates whether to opt in to the zone group. The only valid value is <code>opted-in</code>. You must contact Amazon Web Services Support to opt out of a Local Zone or Wavelength Zone group.</p>
     pub opt_in_status: ::std::option::Option<crate::types::ModifyAvailabilityZoneOptInStatus>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
@@ -15,7 +15,7 @@ impl ModifyAvailabilityZoneGroupInput {
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
-    /// <p>Indicates whether you are opted in to the Local Zone group or Wavelength Zone group. The only valid value is <code>opted-in</code>. You must contact <a href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">Amazon Web Services Support</a> to opt out of a Local Zone or Wavelength Zone group.</p>
+    /// <p>Indicates whether to opt in to the zone group. The only valid value is <code>opted-in</code>. You must contact Amazon Web Services Support to opt out of a Local Zone or Wavelength Zone group.</p>
     pub fn opt_in_status(&self) -> ::std::option::Option<&crate::types::ModifyAvailabilityZoneOptInStatus> {
         self.opt_in_status.as_ref()
     }
@@ -55,18 +55,18 @@ impl ModifyAvailabilityZoneGroupInputBuilder {
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name
     }
-    /// <p>Indicates whether you are opted in to the Local Zone group or Wavelength Zone group. The only valid value is <code>opted-in</code>. You must contact <a href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">Amazon Web Services Support</a> to opt out of a Local Zone or Wavelength Zone group.</p>
+    /// <p>Indicates whether to opt in to the zone group. The only valid value is <code>opted-in</code>. You must contact Amazon Web Services Support to opt out of a Local Zone or Wavelength Zone group.</p>
     /// This field is required.
     pub fn opt_in_status(mut self, input: crate::types::ModifyAvailabilityZoneOptInStatus) -> Self {
         self.opt_in_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether you are opted in to the Local Zone group or Wavelength Zone group. The only valid value is <code>opted-in</code>. You must contact <a href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">Amazon Web Services Support</a> to opt out of a Local Zone or Wavelength Zone group.</p>
+    /// <p>Indicates whether to opt in to the zone group. The only valid value is <code>opted-in</code>. You must contact Amazon Web Services Support to opt out of a Local Zone or Wavelength Zone group.</p>
     pub fn set_opt_in_status(mut self, input: ::std::option::Option<crate::types::ModifyAvailabilityZoneOptInStatus>) -> Self {
         self.opt_in_status = input;
         self
     }
-    /// <p>Indicates whether you are opted in to the Local Zone group or Wavelength Zone group. The only valid value is <code>opted-in</code>. You must contact <a href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">Amazon Web Services Support</a> to opt out of a Local Zone or Wavelength Zone group.</p>
+    /// <p>Indicates whether to opt in to the zone group. The only valid value is <code>opted-in</code>. You must contact Amazon Web Services Support to opt out of a Local Zone or Wavelength Zone group.</p>
     pub fn get_opt_in_status(&self) -> &::std::option::Option<crate::types::ModifyAvailabilityZoneOptInStatus> {
         &self.opt_in_status
     }

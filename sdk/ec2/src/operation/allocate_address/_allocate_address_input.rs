@@ -10,7 +10,6 @@ pub struct AllocateAddressInput {
     /// <p>The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address pool. To specify a specific address from the address pool, use the <code>Address</code> parameter instead.</p>
     pub public_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>A unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between network border groups.</p>
-    /// <p>Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a> to view the network border groups.</p>
     pub network_border_group: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a customer-owned address pool. Use this parameter to let Amazon EC2 select an address from the address pool. Alternatively, specify a specific address from the address pool.</p>
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
@@ -33,7 +32,6 @@ impl AllocateAddressInput {
         self.public_ipv4_pool.as_deref()
     }
     /// <p>A unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between network border groups.</p>
-    /// <p>Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a> to view the network border groups.</p>
     pub fn network_border_group(&self) -> ::std::option::Option<&str> {
         self.network_border_group.as_deref()
     }
@@ -115,19 +113,16 @@ impl AllocateAddressInputBuilder {
         &self.public_ipv4_pool
     }
     /// <p>A unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between network border groups.</p>
-    /// <p>Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a> to view the network border groups.</p>
     pub fn network_border_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_border_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between network border groups.</p>
-    /// <p>Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a> to view the network border groups.</p>
     pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_border_group = input;
         self
     }
     /// <p>A unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between network border groups.</p>
-    /// <p>Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a> to view the network border groups.</p>
     pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_border_group
     }

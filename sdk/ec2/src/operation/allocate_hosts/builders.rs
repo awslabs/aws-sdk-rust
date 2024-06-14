@@ -109,19 +109,19 @@ impl AllocateHostsFluentBuilder {
         self
     }
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>Default: <code>on</code></p>
+    /// <p>Default: <code>off</code></p>
     pub fn auto_placement(mut self, input: crate::types::AutoPlacement) -> Self {
         self.inner = self.inner.auto_placement(input);
         self
     }
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>Default: <code>on</code></p>
+    /// <p>Default: <code>off</code></p>
     pub fn set_auto_placement(mut self, input: ::std::option::Option<crate::types::AutoPlacement>) -> Self {
         self.inner = self.inner.set_auto_placement(input);
         self
     }
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>Default: <code>on</code></p>
+    /// <p>Default: <code>off</code></p>
     pub fn get_auto_placement(&self) -> &::std::option::Option<crate::types::AutoPlacement> {
         self.inner.get_auto_placement()
     }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteTable {
-    /// <p>The associations between the route table and one or more subnets or a gateway.</p>
+    /// <p>The associations between the route table and your subnets or gateways.</p>
     pub associations: ::std::option::Option<::std::vec::Vec<crate::types::RouteTableAssociation>>,
     /// <p>Any virtual private gateway (VGW) propagating routes.</p>
     pub propagating_vgws: ::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgw>>,
@@ -20,7 +20,7 @@ pub struct RouteTable {
     pub owner_id: ::std::option::Option<::std::string::String>,
 }
 impl RouteTable {
-    /// <p>The associations between the route table and one or more subnets or a gateway.</p>
+    /// <p>The associations between the route table and your subnets or gateways.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
     pub fn associations(&self) -> &[crate::types::RouteTableAssociation] {
@@ -81,19 +81,19 @@ impl RouteTableBuilder {
     ///
     /// To override the contents of this collection use [`set_associations`](Self::set_associations).
     ///
-    /// <p>The associations between the route table and one or more subnets or a gateway.</p>
+    /// <p>The associations between the route table and your subnets or gateways.</p>
     pub fn associations(mut self, input: crate::types::RouteTableAssociation) -> Self {
         let mut v = self.associations.unwrap_or_default();
         v.push(input);
         self.associations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The associations between the route table and one or more subnets or a gateway.</p>
+    /// <p>The associations between the route table and your subnets or gateways.</p>
     pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteTableAssociation>>) -> Self {
         self.associations = input;
         self
     }
-    /// <p>The associations between the route table and one or more subnets or a gateway.</p>
+    /// <p>The associations between the route table and your subnets or gateways.</p>
     pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteTableAssociation>> {
         &self.associations
     }

@@ -22,7 +22,7 @@ impl crate::operation::create_spot_datafeed_subscription::builders::CreateSpotDa
 }
 /// Fluent builder constructing a request to `CreateSpotDatafeedSubscription`.
 ///
-/// <p>Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs. You can create one data feed per Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+/// <p>Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs. You can create one data feed per Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance data feed</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSpotDatafeedSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

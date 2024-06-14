@@ -1149,20 +1149,6 @@ pub use crate::types::_acceleration_settings::AccelerationSettings;
 
 pub use crate::types::_acceleration_mode::AccelerationMode;
 
-pub use crate::types::_policy::Policy;
-
-pub use crate::types::_input_policy::InputPolicy;
-
-pub use crate::types::_resource_tags::ResourceTags;
-
-pub use crate::types::_order::Order;
-
-pub use crate::types::_queue_list_by::QueueListBy;
-
-pub use crate::types::_preset_list_by::PresetListBy;
-
-pub use crate::types::_job_template_list_by::JobTemplateListBy;
-
 pub use crate::types::_job::Job;
 
 pub use crate::types::_warning_group::WarningGroup;
@@ -1198,6 +1184,20 @@ pub use crate::types::_job_phase::JobPhase;
 pub use crate::types::_billing_tags_source::BillingTagsSource;
 
 pub use crate::types::_acceleration_status::AccelerationStatus;
+
+pub use crate::types::_order::Order;
+
+pub use crate::types::_policy::Policy;
+
+pub use crate::types::_input_policy::InputPolicy;
+
+pub use crate::types::_resource_tags::ResourceTags;
+
+pub use crate::types::_queue_list_by::QueueListBy;
+
+pub use crate::types::_preset_list_by::PresetListBy;
+
+pub use crate::types::_job_template_list_by::JobTemplateListBy;
 
 pub use crate::types::_endpoint::Endpoint;
 

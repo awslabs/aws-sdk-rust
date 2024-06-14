@@ -253,7 +253,6 @@ impl EnvironmentSummaryBuilder {
         &self.description
     }
     /// <p>The identifier of the environment profile with which the environment was created.</p>
-    /// This field is required.
     pub fn environment_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -330,7 +329,6 @@ impl EnvironmentSummaryBuilder {
     /// - [`domain_id`](crate::types::builders::EnvironmentSummaryBuilder::domain_id)
     /// - [`created_by`](crate::types::builders::EnvironmentSummaryBuilder::created_by)
     /// - [`name`](crate::types::builders::EnvironmentSummaryBuilder::name)
-    /// - [`environment_profile_id`](crate::types::builders::EnvironmentSummaryBuilder::environment_profile_id)
     /// - [`provider`](crate::types::builders::EnvironmentSummaryBuilder::provider)
     pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EnvironmentSummary {
@@ -362,12 +360,7 @@ impl EnvironmentSummaryBuilder {
                 )
             })?,
             description: self.description,
-            environment_profile_id: self.environment_profile_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_profile_id",
-                    "environment_profile_id was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
+            environment_profile_id: self.environment_profile_id.unwrap_or_default(),
             aws_account_id: self.aws_account_id,
             aws_account_region: self.aws_account_region,
             provider: self.provider.ok_or_else(|| {

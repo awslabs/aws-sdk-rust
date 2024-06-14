@@ -6,7 +6,7 @@
 pub struct UsageRecord {
     /// <p>The unique identifier for the Amazon Web Services account that the data applies to.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery started for the account. If the account is a member account in an organization, this value is the same as the value for the organization's Amazon Macie administrator account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery started for the account. This value is null if automated sensitive data discovery hasn't been enabled for the account.</p>
     pub automated_discovery_free_trial_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for the account.</p>
     pub free_trial_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -18,7 +18,7 @@ impl UsageRecord {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery started for the account. If the account is a member account in an organization, this value is the same as the value for the organization's Amazon Macie administrator account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery started for the account. This value is null if automated sensitive data discovery hasn't been enabled for the account.</p>
     pub fn automated_discovery_free_trial_start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.automated_discovery_free_trial_start_date.as_ref()
     }
@@ -64,17 +64,17 @@ impl UsageRecordBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery started for the account. If the account is a member account in an organization, this value is the same as the value for the organization's Amazon Macie administrator account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery started for the account. This value is null if automated sensitive data discovery hasn't been enabled for the account.</p>
     pub fn automated_discovery_free_trial_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.automated_discovery_free_trial_start_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery started for the account. If the account is a member account in an organization, this value is the same as the value for the organization's Amazon Macie administrator account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery started for the account. This value is null if automated sensitive data discovery hasn't been enabled for the account.</p>
     pub fn set_automated_discovery_free_trial_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.automated_discovery_free_trial_start_date = input;
         self
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery started for the account. If the account is a member account in an organization, this value is the same as the value for the organization's Amazon Macie administrator account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery started for the account. This value is null if automated sensitive data discovery hasn't been enabled for the account.</p>
     pub fn get_automated_discovery_free_trial_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.automated_discovery_free_trial_start_date
     }

@@ -22,7 +22,7 @@ impl crate::operation::describe_network_acls::builders::DescribeNetworkAclsInput
 }
 /// Fluent builder constructing a request to `DescribeNetworkAcls`.
 ///
-/// <p>Describes one or more of your network ACLs.</p>
+/// <p>Describes your network ACLs. The default is to describe all your network ACLs. Alternatively, you can specify specific network ACL IDs or filter the results to include only the network ACLs that match specific criteria.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network ACLs</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeNetworkAclsFluentBuilder {
@@ -292,19 +292,16 @@ impl DescribeNetworkAclsFluentBuilder {
     /// To override the contents of this collection use [`set_network_acl_ids`](Self::set_network_acl_ids).
     ///
     /// <p>The IDs of the network ACLs.</p>
-    /// <p>Default: Describes all your network ACLs.</p>
     pub fn network_acl_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_acl_ids(input.into());
         self
     }
     /// <p>The IDs of the network ACLs.</p>
-    /// <p>Default: Describes all your network ACLs.</p>
     pub fn set_network_acl_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_network_acl_ids(input);
         self
     }
     /// <p>The IDs of the network ACLs.</p>
-    /// <p>Default: Describes all your network ACLs.</p>
     pub fn get_network_acl_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_network_acl_ids()
     }

@@ -41,7 +41,7 @@ pub struct InstanceNetworkInterface {
     pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv4Prefix>>,
     /// <p>The IPv6 delegated prefixes that are assigned to the network interface.</p>
     pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Prefix>>,
-    /// <p>A security group connection tracking configuration that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>A security group connection tracking configuration that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub connection_tracking_configuration: ::std::option::Option<crate::types::ConnectionTrackingSpecificationResponse>,
 }
 impl InstanceNetworkInterface {
@@ -128,7 +128,7 @@ impl InstanceNetworkInterface {
     pub fn ipv6_prefixes(&self) -> &[crate::types::InstanceIpv6Prefix] {
         self.ipv6_prefixes.as_deref().unwrap_or_default()
     }
-    /// <p>A security group connection tracking configuration that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>A security group connection tracking configuration that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn connection_tracking_configuration(&self) -> ::std::option::Option<&crate::types::ConnectionTrackingSpecificationResponse> {
         self.connection_tracking_configuration.as_ref()
     }
@@ -450,12 +450,12 @@ impl InstanceNetworkInterfaceBuilder {
     pub fn get_ipv6_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Prefix>> {
         &self.ipv6_prefixes
     }
-    /// <p>A security group connection tracking configuration that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>A security group connection tracking configuration that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn connection_tracking_configuration(mut self, input: crate::types::ConnectionTrackingSpecificationResponse) -> Self {
         self.connection_tracking_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A security group connection tracking configuration that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>A security group connection tracking configuration that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_connection_tracking_configuration(
         mut self,
         input: ::std::option::Option<crate::types::ConnectionTrackingSpecificationResponse>,
@@ -463,7 +463,7 @@ impl InstanceNetworkInterfaceBuilder {
         self.connection_tracking_configuration = input;
         self
     }
-    /// <p>A security group connection tracking configuration that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>A security group connection tracking configuration that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_connection_tracking_configuration(&self) -> &::std::option::Option<crate::types::ConnectionTrackingSpecificationResponse> {
         &self.connection_tracking_configuration
     }

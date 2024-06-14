@@ -25,7 +25,7 @@ impl crate::operation::describe_classic_link_instances::builders::DescribeClassi
 /// <note>
 /// <p>This action is deprecated.</p>
 /// </note>
-/// <p>Describes one or more of your linked EC2-Classic instances. This request only returns information about EC2-Classic instances linked to a VPC through ClassicLink. You cannot use this request to return information about other instances.</p>
+/// <p>Describes your linked EC2-Classic instances. This request only returns information about EC2-Classic instances linked to a VPC through ClassicLink. You cannot use this request to return information about other instances.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeClassicLinkInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

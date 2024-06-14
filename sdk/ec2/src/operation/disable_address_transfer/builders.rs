@@ -22,7 +22,7 @@ impl crate::operation::disable_address_transfer::builders::DisableAddressTransfe
 }
 /// Fluent builder constructing a request to `DisableAddressTransfer`.
 ///
-/// <p>Disables Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>Disables Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP addresses</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableAddressTransferFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

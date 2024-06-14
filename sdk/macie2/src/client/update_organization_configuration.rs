@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateOrganizationConfiguration`](crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`auto_enable(bool)`](crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder::auto_enable) / [`set_auto_enable(Option<bool>)`](crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder::set_auto_enable):<br>required: **true**<br><p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p><br>
+    ///   - [`auto_enable(bool)`](crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder::auto_enable) / [`set_auto_enable(Option<bool>)`](crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder::set_auto_enable):<br>required: **true**<br><p>Specifies whether to enable Amazon Macie automatically for accounts that are added to the organization in Organizations.</p><br>
     /// - On success, responds with [`UpdateOrganizationConfigurationOutput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateOrganizationConfigurationError>`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError)
     pub fn update_organization_configuration(

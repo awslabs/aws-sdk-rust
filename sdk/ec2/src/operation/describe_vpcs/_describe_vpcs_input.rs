@@ -44,7 +44,6 @@ pub struct DescribeVpcsInput {
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The IDs of the VPCs.</p>
-    /// <p>Default: Describes all your VPCs.</p>
     pub vpc_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
@@ -99,7 +98,6 @@ impl DescribeVpcsInput {
         self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the VPCs.</p>
-    /// <p>Default: Describes all your VPCs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_ids.is_none()`.
     pub fn vpc_ids(&self) -> &[::std::string::String] {
@@ -275,7 +273,6 @@ impl DescribeVpcsInputBuilder {
     /// To override the contents of this collection use [`set_vpc_ids`](Self::set_vpc_ids).
     ///
     /// <p>The IDs of the VPCs.</p>
-    /// <p>Default: Describes all your VPCs.</p>
     pub fn vpc_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_ids.unwrap_or_default();
         v.push(input.into());
@@ -283,13 +280,11 @@ impl DescribeVpcsInputBuilder {
         self
     }
     /// <p>The IDs of the VPCs.</p>
-    /// <p>Default: Describes all your VPCs.</p>
     pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_ids = input;
         self
     }
     /// <p>The IDs of the VPCs.</p>
-    /// <p>Default: Describes all your VPCs.</p>
     pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_ids
     }

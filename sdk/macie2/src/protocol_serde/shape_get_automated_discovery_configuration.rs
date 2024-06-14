@@ -126,6 +126,13 @@ pub(crate) fn de_get_automated_discovery_configuration(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "autoEnableOrganizationMembers" => {
+                    builder = builder.set_auto_enable_organization_members(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::AutoEnableMode::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "classificationScopeId" => {
                     builder = builder.set_classification_scope_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

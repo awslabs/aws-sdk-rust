@@ -155,6 +155,55 @@ impl From<crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDat
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_update_automated_discovery_accounts::BatchUpdateAutomatedDiscoveryAccountsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_update_automated_discovery_accounts::BatchUpdateAutomatedDiscoveryAccountsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_update_automated_discovery_accounts::BatchUpdateAutomatedDiscoveryAccountsError> for Error {
+    fn from(err: crate::operation::batch_update_automated_discovery_accounts::BatchUpdateAutomatedDiscoveryAccountsError) -> Self {
+        match err {
+            crate::operation::batch_update_automated_discovery_accounts::BatchUpdateAutomatedDiscoveryAccountsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_update_automated_discovery_accounts::BatchUpdateAutomatedDiscoveryAccountsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::batch_update_automated_discovery_accounts::BatchUpdateAutomatedDiscoveryAccountsError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::batch_update_automated_discovery_accounts::BatchUpdateAutomatedDiscoveryAccountsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_update_automated_discovery_accounts::BatchUpdateAutomatedDiscoveryAccountsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_update_automated_discovery_accounts::BatchUpdateAutomatedDiscoveryAccountsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_allow_list::CreateAllowListError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1850,6 +1899,53 @@ impl From<crate::operation::list_allow_lists::ListAllowListsError> for Error {
             crate::operation::list_allow_lists::ListAllowListsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_allow_lists::ListAllowListsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_allow_lists::ListAllowListsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_automated_discovery_accounts::ListAutomatedDiscoveryAccountsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_automated_discovery_accounts::ListAutomatedDiscoveryAccountsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_automated_discovery_accounts::ListAutomatedDiscoveryAccountsError> for Error {
+    fn from(err: crate::operation::list_automated_discovery_accounts::ListAutomatedDiscoveryAccountsError) -> Self {
+        match err {
+            crate::operation::list_automated_discovery_accounts::ListAutomatedDiscoveryAccountsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_automated_discovery_accounts::ListAutomatedDiscoveryAccountsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_automated_discovery_accounts::ListAutomatedDiscoveryAccountsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_automated_discovery_accounts::ListAutomatedDiscoveryAccountsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_automated_discovery_accounts::ListAutomatedDiscoveryAccountsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_automated_discovery_accounts::ListAutomatedDiscoveryAccountsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

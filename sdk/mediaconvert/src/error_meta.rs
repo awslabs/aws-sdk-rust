@@ -710,6 +710,33 @@ impl From<crate::operation::put_policy::PutPolicyError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_jobs::SearchJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_jobs::SearchJobsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_jobs::SearchJobsError> for Error {
+    fn from(err: crate::operation::search_jobs::SearchJobsError) -> Self {
+        match err {
+            crate::operation::search_jobs::SearchJobsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::search_jobs::SearchJobsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::search_jobs::SearchJobsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::search_jobs::SearchJobsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::search_jobs::SearchJobsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::search_jobs::SearchJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::search_jobs::SearchJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

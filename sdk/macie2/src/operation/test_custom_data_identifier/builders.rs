@@ -22,7 +22,7 @@ impl crate::operation::test_custom_data_identifier::builders::TestCustomDataIden
 }
 /// Fluent builder constructing a request to `TestCustomDataIdentifier`.
 ///
-/// <p>Tests a custom data identifier.</p>
+/// <p>Tests criteria for a custom data identifier.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestCustomDataIdentifierFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

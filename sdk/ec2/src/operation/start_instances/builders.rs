@@ -27,7 +27,7 @@ impl crate::operation::start_instances::builders::StartInstancesInputBuilder {
 /// <p>Before stopping an instance, make sure it is in a state from which it can be restarted. Stopping an instance does not preserve data stored in RAM.</p>
 /// <p>Performing this operation on an instance that uses an instance store as its root device returns an error.</p>
 /// <p>If you attempt to start a T3 instance with <code>host</code> tenancy and the <code>unlimited</code> CPU credit option, the request fails. The <code>unlimited</code> CPU credit option is not supported on Dedicated Hosts. Before you start the instance, either change its CPU credit option to <code>standard</code>, or change its tenancy to <code>default</code> or <code>dedicated</code>.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop and start your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop and start Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

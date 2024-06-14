@@ -187,7 +187,7 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
     /// <li>
     /// <p><code>spot-price</code> - The maximum hourly price for any Spot Instance launched to fulfill the request.</p></li>
     /// <li>
-    /// <p><code>state</code> - The state of the Spot Instance request (<code>open</code> | <code>active</code> | <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot request status information can help you track your Amazon EC2 Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p></li>
+    /// <p><code>state</code> - The state of the Spot Instance request (<code>open</code> | <code>active</code> | <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot request status information can help you track your Amazon EC2 Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide</i>.</p></li>
     /// <li>
     /// <p><code>status-code</code> - The short code describing the most recent evaluation of your Spot Instance request.</p></li>
     /// <li>
@@ -272,7 +272,7 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
     /// <li>
     /// <p><code>spot-price</code> - The maximum hourly price for any Spot Instance launched to fulfill the request.</p></li>
     /// <li>
-    /// <p><code>state</code> - The state of the Spot Instance request (<code>open</code> | <code>active</code> | <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot request status information can help you track your Amazon EC2 Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p></li>
+    /// <p><code>state</code> - The state of the Spot Instance request (<code>open</code> | <code>active</code> | <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot request status information can help you track your Amazon EC2 Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide</i>.</p></li>
     /// <li>
     /// <p><code>status-code</code> - The short code describing the most recent evaluation of your Spot Instance request.</p></li>
     /// <li>
@@ -357,7 +357,7 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
     /// <li>
     /// <p><code>spot-price</code> - The maximum hourly price for any Spot Instance launched to fulfill the request.</p></li>
     /// <li>
-    /// <p><code>state</code> - The state of the Spot Instance request (<code>open</code> | <code>active</code> | <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot request status information can help you track your Amazon EC2 Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p></li>
+    /// <p><code>state</code> - The state of the Spot Instance request (<code>open</code> | <code>active</code> | <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot request status information can help you track your Amazon EC2 Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide</i>.</p></li>
     /// <li>
     /// <p><code>status-code</code> - The short code describing the most recent evaluation of your Spot Instance request.</p></li>
     /// <li>

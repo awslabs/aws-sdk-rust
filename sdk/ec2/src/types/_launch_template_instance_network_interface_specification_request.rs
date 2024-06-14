@@ -18,7 +18,7 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     pub device_index: ::std::option::Option<i32>,
     /// <p>The IDs of one or more security groups.</p>
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
     pub interface_type: ::std::option::Option<::std::string::String>,
@@ -50,7 +50,7 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     pub primary_ipv6: ::std::option::Option<bool>,
     /// <p>Configure ENA Express settings for your launch template.</p>
     pub ena_srd_specification: ::std::option::Option<crate::types::EnaSrdSpecificationRequest>,
-    /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Idle connection tracking timeout</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub connection_tracking_specification: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
 }
 impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
@@ -82,7 +82,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     pub fn groups(&self) -> &[::std::string::String] {
         self.groups.as_deref().unwrap_or_default()
     }
-    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
     pub fn interface_type(&self) -> ::std::option::Option<&str> {
@@ -152,7 +152,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     pub fn ena_srd_specification(&self) -> ::std::option::Option<&crate::types::EnaSrdSpecificationRequest> {
         self.ena_srd_specification.as_ref()
     }
-    /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Idle connection tracking timeout</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn connection_tracking_specification(&self) -> ::std::option::Option<&crate::types::ConnectionTrackingSpecificationRequest> {
         self.connection_tracking_specification.as_ref()
     }
@@ -288,21 +288,21 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
     pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.groups
     }
-    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
     pub fn interface_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interface_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
     pub fn set_interface_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interface_type = input;
         self
     }
-    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
     pub fn get_interface_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -528,12 +528,12 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
     pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::EnaSrdSpecificationRequest> {
         &self.ena_srd_specification
     }
-    /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Idle connection tracking timeout</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn connection_tracking_specification(mut self, input: crate::types::ConnectionTrackingSpecificationRequest) -> Self {
         self.connection_tracking_specification = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Idle connection tracking timeout</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_connection_tracking_specification(
         mut self,
         input: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
@@ -541,7 +541,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
         self.connection_tracking_specification = input;
         self
     }
-    /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Idle connection tracking timeout</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_connection_tracking_specification(&self) -> &::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest> {
         &self.connection_tracking_specification
     }

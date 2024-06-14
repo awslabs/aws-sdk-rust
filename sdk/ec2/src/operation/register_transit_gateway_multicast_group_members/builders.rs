@@ -22,7 +22,7 @@ impl crate::operation::register_transit_gateway_multicast_group_members::builder
 }
 /// Fluent builder constructing a request to `RegisterTransitGatewayMulticastGroupMembers`.
 ///
-/// <p>Registers members (network interfaces) with the transit gateway multicast group. A member is a network interface associated with a supported EC2 instance that receives multicast traffic. For information about supported instances, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast Consideration</a> in <i>Amazon VPC Transit Gateways</i>.</p>
+/// <p>Registers members (network interfaces) with the transit gateway multicast group. A member is a network interface associated with a supported EC2 instance that receives multicast traffic. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-multicast-overview.html">Multicast on transit gateways</a> in the <i>Amazon Web Services Transit Gateways Guide</i>.</p>
 /// <p>After you add the members, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html">SearchTransitGatewayMulticastGroups</a> to verify that the members were added to the transit gateway multicast group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterTransitGatewayMulticastGroupMembersFluentBuilder {

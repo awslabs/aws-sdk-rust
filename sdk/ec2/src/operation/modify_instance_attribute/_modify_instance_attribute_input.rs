@@ -41,7 +41,7 @@ pub struct ModifyInstanceAttributeInput {
     pub user_data: ::std::option::Option<crate::types::BlobAttributeValue>,
     /// <p>A new value for the attribute. Use only with the <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
     pub value: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop Protection</a>.</p>
+    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a>.</p>
     /// <p></p>
     pub disable_api_stop: ::std::option::Option<crate::types::AttributeBooleanValue>,
 }
@@ -120,7 +120,7 @@ impl ModifyInstanceAttributeInput {
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop Protection</a>.</p>
+    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a>.</p>
     /// <p></p>
     pub fn disable_api_stop(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.disable_api_stop.as_ref()
@@ -414,19 +414,19 @@ impl ModifyInstanceAttributeInputBuilder {
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
-    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop Protection</a>.</p>
+    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a>.</p>
     /// <p></p>
     pub fn disable_api_stop(mut self, input: crate::types::AttributeBooleanValue) -> Self {
         self.disable_api_stop = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop Protection</a>.</p>
+    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a>.</p>
     /// <p></p>
     pub fn set_disable_api_stop(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.disable_api_stop = input;
         self
     }
-    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop Protection</a>.</p>
+    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a>.</p>
     /// <p></p>
     pub fn get_disable_api_stop(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.disable_api_stop

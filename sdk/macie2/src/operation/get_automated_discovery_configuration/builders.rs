@@ -22,7 +22,7 @@ impl crate::operation::get_automated_discovery_configuration::builders::GetAutom
 }
 /// Fluent builder constructing a request to `GetAutomatedDiscoveryConfiguration`.
 ///
-/// <p>Retrieves the configuration settings and status of automated sensitive data discovery for an account.</p>
+/// <p>Retrieves the configuration settings and status of automated sensitive data discovery for an organization or standalone account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAutomatedDiscoveryConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

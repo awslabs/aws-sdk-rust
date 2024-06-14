@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInternetGatewaysOutput {
-    /// <p>Information about one or more internet gateways.</p>
+    /// <p>Information about the internet gateways.</p>
     pub internet_gateways: ::std::option::Option<::std::vec::Vec<crate::types::InternetGateway>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeInternetGatewaysOutput {
-    /// <p>Information about one or more internet gateways.</p>
+    /// <p>Information about the internet gateways.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.internet_gateways.is_none()`.
     pub fn internet_gateways(&self) -> &[crate::types::InternetGateway] {
@@ -46,19 +46,19 @@ impl DescribeInternetGatewaysOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_internet_gateways`](Self::set_internet_gateways).
     ///
-    /// <p>Information about one or more internet gateways.</p>
+    /// <p>Information about the internet gateways.</p>
     pub fn internet_gateways(mut self, input: crate::types::InternetGateway) -> Self {
         let mut v = self.internet_gateways.unwrap_or_default();
         v.push(input);
         self.internet_gateways = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about one or more internet gateways.</p>
+    /// <p>Information about the internet gateways.</p>
     pub fn set_internet_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InternetGateway>>) -> Self {
         self.internet_gateways = input;
         self
     }
-    /// <p>Information about one or more internet gateways.</p>
+    /// <p>Information about the internet gateways.</p>
     pub fn get_internet_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InternetGateway>> {
         &self.internet_gateways
     }

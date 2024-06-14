@@ -28,6 +28,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "automatedDiscoveryMonitoringStatus" => {
+                            builder = builder.set_automated_discovery_monitoring_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::AutomatedDiscoveryMonitoringStatus::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
                         "bucketArn" => {
                             builder = builder.set_bucket_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

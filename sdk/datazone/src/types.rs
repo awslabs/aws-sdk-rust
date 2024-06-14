@@ -55,6 +55,16 @@ pub use crate::types::_data_source_run_status::DataSourceRunStatus;
 
 pub use crate::types::_data_source_run_summary::DataSourceRunSummary;
 
+pub use crate::types::_self_grant_status_output::SelfGrantStatusOutput;
+
+pub use crate::types::_redshift_self_grant_status_output::RedshiftSelfGrantStatusOutput;
+
+pub use crate::types::_self_grant_status_detail::SelfGrantStatusDetail;
+
+pub use crate::types::_self_grant_status::SelfGrantStatus;
+
+pub use crate::types::_glue_self_grant_status_output::GlueSelfGrantStatusOutput;
+
 pub use crate::types::_schedule_configuration::ScheduleConfiguration;
 
 pub use crate::types::_timezone::Timezone;
@@ -152,6 +162,10 @@ pub use crate::types::_group_profile_status::GroupProfileStatus;
 pub use crate::types::_custom_parameter::CustomParameter;
 
 pub use crate::types::_environment_parameter::EnvironmentParameter;
+
+pub use crate::types::_action_parameters::ActionParameters;
+
+pub use crate::types::_aws_console_link_parameters::AwsConsoleLinkParameters;
 
 pub use crate::types::_deployment_properties::DeploymentProperties;
 
@@ -285,6 +299,8 @@ pub use crate::types::_environment_profile_summary::EnvironmentProfileSummary;
 
 pub use crate::types::_environment_blueprint_summary::EnvironmentBlueprintSummary;
 
+pub use crate::types::_environment_action_summary::EnvironmentActionSummary;
+
 pub use crate::types::_data_source_run_activity::DataSourceRunActivity;
 
 pub use crate::types::_data_asset_activity_status::DataAssetActivityStatus;
@@ -323,6 +339,8 @@ mod _accept_rule;
 
 mod _accept_rule_behavior;
 
+mod _action_parameters;
+
 mod _asset_item;
 
 mod _asset_item_additional_attributes;
@@ -342,6 +360,8 @@ mod _asset_target_name_map;
 mod _asset_type_item;
 
 mod _auth_type;
+
+mod _aws_console_link_parameters;
 
 mod _business_name_generation_configuration;
 
@@ -401,6 +421,8 @@ mod _enable_setting;
 
 mod _entity_type;
 
+mod _environment_action_summary;
+
 mod _environment_blueprint_configuration_item;
 
 mod _environment_blueprint_summary;
@@ -448,6 +470,8 @@ mod _glossary_term_status;
 mod _glue_run_configuration_input;
 
 mod _glue_run_configuration_output;
+
+mod _glue_self_grant_status_output;
 
 mod _granted_entity;
 
@@ -523,6 +547,8 @@ mod _redshift_run_configuration_input;
 
 mod _redshift_run_configuration_output;
 
+mod _redshift_self_grant_status_output;
+
 mod _redshift_serverless_storage;
 
 mod _redshift_storage;
@@ -552,6 +578,12 @@ mod _search_result_item;
 mod _search_sort;
 
 mod _search_types_result_item;
+
+mod _self_grant_status;
+
+mod _self_grant_status_detail;
+
+mod _self_grant_status_output;
 
 mod _single_sign_on;
 

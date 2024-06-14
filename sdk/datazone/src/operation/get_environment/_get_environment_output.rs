@@ -332,7 +332,6 @@ impl GetEnvironmentOutputBuilder {
         &self.description
     }
     /// <p>The ID of the environment profile with which the environment is created.</p>
-    /// This field is required.
     pub fn environment_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -554,7 +553,6 @@ impl GetEnvironmentOutputBuilder {
     /// - [`domain_id`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::domain_id)
     /// - [`created_by`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::created_by)
     /// - [`name`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::name)
-    /// - [`environment_profile_id`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::environment_profile_id)
     /// - [`provider`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::provider)
     pub fn build(
         self,
@@ -588,12 +586,7 @@ impl GetEnvironmentOutputBuilder {
                 )
             })?,
             description: self.description,
-            environment_profile_id: self.environment_profile_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_profile_id",
-                    "environment_profile_id was not specified but it is required when building GetEnvironmentOutput",
-                )
-            })?,
+            environment_profile_id: self.environment_profile_id.unwrap_or_default(),
             aws_account_id: self.aws_account_id,
             aws_account_region: self.aws_account_region,
             provider: self.provider.ok_or_else(|| {

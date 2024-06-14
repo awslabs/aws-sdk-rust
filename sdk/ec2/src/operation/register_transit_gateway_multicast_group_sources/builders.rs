@@ -23,7 +23,7 @@ impl crate::operation::register_transit_gateway_multicast_group_sources::builder
 /// Fluent builder constructing a request to `RegisterTransitGatewayMulticastGroupSources`.
 ///
 /// <p>Registers sources (network interfaces) with the specified transit gateway multicast group.</p>
-/// <p>A multicast source is a network interface attached to a supported instance that sends multicast traffic. For information about supported instances, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast Considerations</a> in <i>Amazon VPC Transit Gateways</i>.</p>
+/// <p>A multicast source is a network interface attached to a supported instance that sends multicast traffic. For more information about supported instances, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-multicast-overview.html">Multicast on transit gateways</a> in the <i>Amazon Web Services Transit Gateways Guide</i>.</p>
 /// <p>After you add the source, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html">SearchTransitGatewayMulticastGroups</a> to verify that the source was added to the multicast group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterTransitGatewayMulticastGroupSourcesFluentBuilder {

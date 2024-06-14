@@ -5,7 +5,7 @@
 pub struct DescribeVolumesModificationsOutput {
     /// <p>Information about the volume modifications.</p>
     pub volumes_modifications: ::std::option::Option<::std::vec::Vec<crate::types::VolumeModification>>,
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> if there are no more items to return.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl DescribeVolumesModificationsOutput {
     pub fn volumes_modifications(&self) -> &[crate::types::VolumeModification] {
         self.volumes_modifications.as_deref().unwrap_or_default()
     }
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> if there are no more items to return.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -62,17 +62,17 @@ impl DescribeVolumesModificationsOutputBuilder {
     pub fn get_volumes_modifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeModification>> {
         &self.volumes_modifications
     }
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> if there are no more items to return.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> if there are no more items to return.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> if there are no more items to return.</p>
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

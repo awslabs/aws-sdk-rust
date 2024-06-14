@@ -169,6 +169,8 @@ mod accept_invitation;
 
 mod batch_get_custom_data_identifiers;
 
+mod batch_update_automated_discovery_accounts;
+
 mod create_allow_list;
 
 mod create_classification_job;
@@ -287,6 +289,8 @@ mod get_usage_statistics;
 mod get_usage_totals;
 
 mod list_allow_lists;
+
+mod list_automated_discovery_accounts;
 
 mod list_classification_jobs;
 

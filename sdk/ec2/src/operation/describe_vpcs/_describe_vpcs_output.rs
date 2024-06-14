@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcsOutput {
-    /// <p>Information about one or more VPCs.</p>
+    /// <p>Information about the VPCs.</p>
     pub vpcs: ::std::option::Option<::std::vec::Vec<crate::types::Vpc>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeVpcsOutput {
-    /// <p>Information about one or more VPCs.</p>
+    /// <p>Information about the VPCs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpcs.is_none()`.
     pub fn vpcs(&self) -> &[crate::types::Vpc] {
@@ -46,19 +46,19 @@ impl DescribeVpcsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_vpcs`](Self::set_vpcs).
     ///
-    /// <p>Information about one or more VPCs.</p>
+    /// <p>Information about the VPCs.</p>
     pub fn vpcs(mut self, input: crate::types::Vpc) -> Self {
         let mut v = self.vpcs.unwrap_or_default();
         v.push(input);
         self.vpcs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about one or more VPCs.</p>
+    /// <p>Information about the VPCs.</p>
     pub fn set_vpcs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Vpc>>) -> Self {
         self.vpcs = input;
         self
     }
-    /// <p>Information about one or more VPCs.</p>
+    /// <p>Information about the VPCs.</p>
     pub fn get_vpcs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Vpc>> {
         &self.vpcs
     }

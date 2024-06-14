@@ -331,10 +331,6 @@ pub use crate::types::_hop_destination::HopDestinationBuilder;
 
 pub use crate::types::_acceleration_settings::AccelerationSettingsBuilder;
 
-pub use crate::types::_policy::PolicyBuilder;
-
-pub use crate::types::_resource_tags::ResourceTagsBuilder;
-
 pub use crate::types::_job::JobBuilder;
 
 pub use crate::types::_warning_group::WarningGroupBuilder;
@@ -358,5 +354,9 @@ pub use crate::types::_output_detail::OutputDetailBuilder;
 pub use crate::types::_video_detail::VideoDetailBuilder;
 
 pub use crate::types::_job_messages::JobMessagesBuilder;
+
+pub use crate::types::_policy::PolicyBuilder;
+
+pub use crate::types::_resource_tags::ResourceTagsBuilder;
 
 pub use crate::types::_endpoint::EndpointBuilder;

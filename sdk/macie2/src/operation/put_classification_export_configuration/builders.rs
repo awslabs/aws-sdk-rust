@@ -22,7 +22,7 @@ impl crate::operation::put_classification_export_configuration::builders::PutCla
 }
 /// Fluent builder constructing a request to `PutClassificationExportConfiguration`.
 ///
-/// <p>Creates or updates the configuration settings for storing data classification results.</p>
+/// <p>Adds or updates the configuration settings for storing data classification results.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutClassificationExportConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

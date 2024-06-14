@@ -23,7 +23,7 @@ impl crate::operation::describe_availability_zones::builders::DescribeAvailabili
 /// Fluent builder constructing a request to `DescribeAvailabilityZones`.
 ///
 /// <p>Describes the Availability Zones, Local Zones, and Wavelength Zones that are available to you. If there is an event impacting a zone, you can use this request to view the state and any provided messages for that zone.</p>
-/// <p>For more information about Availability Zones, Local Zones, and Wavelength Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><note>
+/// <p>For more information about Availability Zones, Local Zones, and Wavelength Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and zones</a> in the <i>Amazon EC2 User Guide</i>.</p><note>
 /// <p>The order of the elements in the response, including those within nested structures, might vary. Applications should not assume the elements appear in a particular order.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

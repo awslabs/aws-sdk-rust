@@ -7,6 +7,9 @@ pub mod accept_invitation;
 /// Types for the `BatchGetCustomDataIdentifiers` operation.
 pub mod batch_get_custom_data_identifiers;
 
+/// Types for the `BatchUpdateAutomatedDiscoveryAccounts` operation.
+pub mod batch_update_automated_discovery_accounts;
+
 /// Types for the `CreateAllowList` operation.
 pub mod create_allow_list;
 
@@ -144,6 +147,9 @@ pub mod get_usage_totals;
 
 /// Types for the `ListAllowLists` operation.
 pub mod list_allow_lists;
+
+/// Types for the `ListAutomatedDiscoveryAccounts` operation.
+pub mod list_automated_discovery_accounts;
 
 /// Types for the `ListClassificationJobs` operation.
 pub mod list_classification_jobs;

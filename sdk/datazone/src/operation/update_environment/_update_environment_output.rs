@@ -332,7 +332,6 @@ impl UpdateEnvironmentOutputBuilder {
         &self.description
     }
     /// <p>The profile identifier of the environment.</p>
-    /// This field is required.
     pub fn environment_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -554,7 +553,6 @@ impl UpdateEnvironmentOutputBuilder {
     /// - [`domain_id`](crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::domain_id)
     /// - [`created_by`](crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::created_by)
     /// - [`name`](crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::name)
-    /// - [`environment_profile_id`](crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::environment_profile_id)
     /// - [`provider`](crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::provider)
     pub fn build(
         self,
@@ -588,12 +586,7 @@ impl UpdateEnvironmentOutputBuilder {
                 )
             })?,
             description: self.description,
-            environment_profile_id: self.environment_profile_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_profile_id",
-                    "environment_profile_id was not specified but it is required when building UpdateEnvironmentOutput",
-                )
-            })?,
+            environment_profile_id: self.environment_profile_id.unwrap_or_default(),
             aws_account_id: self.aws_account_id,
             aws_account_region: self.aws_account_region,
             provider: self.provider.ok_or_else(|| {

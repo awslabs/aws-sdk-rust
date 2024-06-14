@@ -23,6 +23,8 @@ pub struct UpdateDataSourceInput {
     pub configuration: ::std::option::Option<crate::types::DataSourceConfigurationInput>,
     /// <p>The recommendation to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub recommendation: ::std::option::Option<crate::types::RecommendationConfiguration>,
+    /// <p>Specifies that the granted permissions are retained in case of a self-subscribe functionality failure for a data source.</p>
+    pub retain_permissions_on_revoke_failure: ::std::option::Option<bool>,
 }
 impl UpdateDataSourceInput {
     /// <p>The identifier of the domain in which to update a data source.</p>
@@ -67,6 +69,10 @@ impl UpdateDataSourceInput {
     pub fn recommendation(&self) -> ::std::option::Option<&crate::types::RecommendationConfiguration> {
         self.recommendation.as_ref()
     }
+    /// <p>Specifies that the granted permissions are retained in case of a self-subscribe functionality failure for a data source.</p>
+    pub fn retain_permissions_on_revoke_failure(&self) -> ::std::option::Option<bool> {
+        self.retain_permissions_on_revoke_failure
+    }
 }
 impl ::std::fmt::Debug for UpdateDataSourceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -81,6 +87,7 @@ impl ::std::fmt::Debug for UpdateDataSourceInput {
         formatter.field("schedule", &"*** Sensitive Data Redacted ***");
         formatter.field("configuration", &self.configuration);
         formatter.field("recommendation", &self.recommendation);
+        formatter.field("retain_permissions_on_revoke_failure", &self.retain_permissions_on_revoke_failure);
         formatter.finish()
     }
 }
@@ -105,6 +112,7 @@ pub struct UpdateDataSourceInputBuilder {
     pub(crate) schedule: ::std::option::Option<crate::types::ScheduleConfiguration>,
     pub(crate) configuration: ::std::option::Option<crate::types::DataSourceConfigurationInput>,
     pub(crate) recommendation: ::std::option::Option<crate::types::RecommendationConfiguration>,
+    pub(crate) retain_permissions_on_revoke_failure: ::std::option::Option<bool>,
 }
 impl UpdateDataSourceInputBuilder {
     /// <p>The identifier of the domain in which to update a data source.</p>
@@ -255,6 +263,20 @@ impl UpdateDataSourceInputBuilder {
     pub fn get_recommendation(&self) -> &::std::option::Option<crate::types::RecommendationConfiguration> {
         &self.recommendation
     }
+    /// <p>Specifies that the granted permissions are retained in case of a self-subscribe functionality failure for a data source.</p>
+    pub fn retain_permissions_on_revoke_failure(mut self, input: bool) -> Self {
+        self.retain_permissions_on_revoke_failure = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies that the granted permissions are retained in case of a self-subscribe functionality failure for a data source.</p>
+    pub fn set_retain_permissions_on_revoke_failure(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.retain_permissions_on_revoke_failure = input;
+        self
+    }
+    /// <p>Specifies that the granted permissions are retained in case of a self-subscribe functionality failure for a data source.</p>
+    pub fn get_retain_permissions_on_revoke_failure(&self) -> &::std::option::Option<bool> {
+        &self.retain_permissions_on_revoke_failure
+    }
     /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
     pub fn build(
         self,
@@ -270,6 +292,7 @@ impl UpdateDataSourceInputBuilder {
             schedule: self.schedule,
             configuration: self.configuration,
             recommendation: self.recommendation,
+            retain_permissions_on_revoke_failure: self.retain_permissions_on_revoke_failure,
         })
     }
 }
@@ -286,6 +309,7 @@ impl ::std::fmt::Debug for UpdateDataSourceInputBuilder {
         formatter.field("schedule", &"*** Sensitive Data Redacted ***");
         formatter.field("configuration", &self.configuration);
         formatter.field("recommendation", &self.recommendation);
+        formatter.field("retain_permissions_on_revoke_failure", &self.retain_permissions_on_revoke_failure);
         formatter.finish()
     }
 }

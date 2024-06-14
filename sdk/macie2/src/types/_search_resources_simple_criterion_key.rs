@@ -13,6 +13,7 @@
 /// # let searchresourcessimplecriterionkey = unimplemented!();
 /// match searchresourcessimplecriterionkey {
 ///     SearchResourcesSimpleCriterionKey::AccountId => { /* ... */ },
+///     SearchResourcesSimpleCriterionKey::AutomatedDiscoveryMonitoringStatus => { /* ... */ },
 ///     SearchResourcesSimpleCriterionKey::S3BucketEffectivePermission => { /* ... */ },
 ///     SearchResourcesSimpleCriterionKey::S3BucketName => { /* ... */ },
 ///     SearchResourcesSimpleCriterionKey::S3BucketSharedAccess => { /* ... */ },
@@ -46,6 +47,8 @@ pub enum SearchResourcesSimpleCriterionKey {
     #[allow(missing_docs)] // documentation missing in model
     AccountId,
     #[allow(missing_docs)] // documentation missing in model
+    AutomatedDiscoveryMonitoringStatus,
+    #[allow(missing_docs)] // documentation missing in model
     S3BucketEffectivePermission,
     #[allow(missing_docs)] // documentation missing in model
     S3BucketName,
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for SearchResourcesSimpleCriterionKey {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_ID" => SearchResourcesSimpleCriterionKey::AccountId,
+            "AUTOMATED_DISCOVERY_MONITORING_STATUS" => SearchResourcesSimpleCriterionKey::AutomatedDiscoveryMonitoringStatus,
             "S3_BUCKET_EFFECTIVE_PERMISSION" => SearchResourcesSimpleCriterionKey::S3BucketEffectivePermission,
             "S3_BUCKET_NAME" => SearchResourcesSimpleCriterionKey::S3BucketName,
             "S3_BUCKET_SHARED_ACCESS" => SearchResourcesSimpleCriterionKey::S3BucketSharedAccess,
@@ -78,6 +82,7 @@ impl SearchResourcesSimpleCriterionKey {
     pub fn as_str(&self) -> &str {
         match self {
             SearchResourcesSimpleCriterionKey::AccountId => "ACCOUNT_ID",
+            SearchResourcesSimpleCriterionKey::AutomatedDiscoveryMonitoringStatus => "AUTOMATED_DISCOVERY_MONITORING_STATUS",
             SearchResourcesSimpleCriterionKey::S3BucketEffectivePermission => "S3_BUCKET_EFFECTIVE_PERMISSION",
             SearchResourcesSimpleCriterionKey::S3BucketName => "S3_BUCKET_NAME",
             SearchResourcesSimpleCriterionKey::S3BucketSharedAccess => "S3_BUCKET_SHARED_ACCESS",
@@ -88,6 +93,7 @@ impl SearchResourcesSimpleCriterionKey {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_ID",
+            "AUTOMATED_DISCOVERY_MONITORING_STATUS",
             "S3_BUCKET_EFFECTIVE_PERMISSION",
             "S3_BUCKET_NAME",
             "S3_BUCKET_SHARED_ACCESS",
@@ -115,6 +121,7 @@ impl ::std::fmt::Display for SearchResourcesSimpleCriterionKey {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SearchResourcesSimpleCriterionKey::AccountId => write!(f, "ACCOUNT_ID"),
+            SearchResourcesSimpleCriterionKey::AutomatedDiscoveryMonitoringStatus => write!(f, "AUTOMATED_DISCOVERY_MONITORING_STATUS"),
             SearchResourcesSimpleCriterionKey::S3BucketEffectivePermission => write!(f, "S3_BUCKET_EFFECTIVE_PERMISSION"),
             SearchResourcesSimpleCriterionKey::S3BucketName => write!(f, "S3_BUCKET_NAME"),
             SearchResourcesSimpleCriterionKey::S3BucketSharedAccess => write!(f, "S3_BUCKET_SHARED_ACCESS"),

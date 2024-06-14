@@ -23,7 +23,7 @@ impl crate::operation::create_dhcp_options::builders::CreateDhcpOptionsInputBuil
 /// Fluent builder constructing a request to `CreateDhcpOptions`.
 ///
 /// <p>Creates a custom set of DHCP options. After you create a DHCP option set, you associate it with a VPC. After you associate a DHCP option set with a VPC, all existing and newly launched instances in the VPC use this set of DHCP options.</p>
-/// <p>The following are the individual DHCP options you can specify. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the <i>Amazon VPC User Guide</i>.</p>
+/// <p>The following are the individual DHCP options you can specify. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP option sets</a> in the <i>Amazon VPC User Guide</i>.</p>
 /// <ul>
 /// <li>
 /// <p><code>domain-name</code> - If you're using AmazonProvidedDNS in <code>us-east-1</code>, specify <code>ec2.internal</code>. If you're using AmazonProvidedDNS in any other Region, specify <code>region.compute.internal</code>. Otherwise, specify a custom domain name. This value is used to complete unqualified DNS hostnames.</p>
@@ -35,7 +35,7 @@ impl crate::operation::create_dhcp_options::builders::CreateDhcpOptionsInputBuil
 /// <li>
 /// <p><code>netbios-name-servers</code> - The IP addresses of up to four NetBIOS name servers.</p></li>
 /// <li>
-/// <p><code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We recommend that you specify 2. Broadcast and multicast are not supported. For more information about NetBIOS node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p></li>
+/// <p><code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We recommend that you specify 2. Broadcast and multicast are not supported. For more information about NetBIOS node types, see <a href="https://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p></li>
 /// <li>
 /// <p><code>ipv6-address-preferred-lease-time</code> - A value (in seconds, minutes, hours, or years) for how frequently a running instance with an IPv6 assigned to it goes through DHCPv6 lease renewal. Acceptable values are between 140 and 2147483647 seconds (approximately 68 years). If no value is entered, the default lease time is 140 seconds. If you use long-term addressing for EC2 instances, you can increase the lease time and avoid frequent lease renewal requests. Lease renewal typically occurs when half of the lease time has elapsed.</p></li>
 /// </ul>

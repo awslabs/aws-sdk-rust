@@ -22,7 +22,7 @@ impl crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPe
 }
 /// Fluent builder constructing a request to `DescribeVpcPeeringConnections`.
 ///
-/// <p>Describes one or more of your VPC peering connections.</p>
+/// <p>Describes your VPC peering connections. The default is to describe all your VPC peering connections. Alternatively, you can specify specific VPC peering connection IDs or filter the results to include only the VPC peering connections that match specific criteria.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVpcPeeringConnectionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

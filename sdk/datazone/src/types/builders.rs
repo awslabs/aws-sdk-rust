@@ -25,6 +25,12 @@ pub use crate::types::_run_statistics_for_assets::RunStatisticsForAssetsBuilder;
 
 pub use crate::types::_data_source_run_summary::DataSourceRunSummaryBuilder;
 
+pub use crate::types::_redshift_self_grant_status_output::RedshiftSelfGrantStatusOutputBuilder;
+
+pub use crate::types::_self_grant_status_detail::SelfGrantStatusDetailBuilder;
+
+pub use crate::types::_glue_self_grant_status_output::GlueSelfGrantStatusOutputBuilder;
+
 pub use crate::types::_schedule_configuration::ScheduleConfigurationBuilder;
 
 pub use crate::types::_form_output::FormOutputBuilder;
@@ -86,6 +92,8 @@ pub use crate::types::_project_deletion_error::ProjectDeletionErrorBuilder;
 pub use crate::types::_custom_parameter::CustomParameterBuilder;
 
 pub use crate::types::_environment_parameter::EnvironmentParameterBuilder;
+
+pub use crate::types::_aws_console_link_parameters::AwsConsoleLinkParametersBuilder;
 
 pub use crate::types::_deployment_properties::DeploymentPropertiesBuilder;
 
@@ -166,6 +174,8 @@ pub use crate::types::_environment_summary::EnvironmentSummaryBuilder;
 pub use crate::types::_environment_profile_summary::EnvironmentProfileSummaryBuilder;
 
 pub use crate::types::_environment_blueprint_summary::EnvironmentBlueprintSummaryBuilder;
+
+pub use crate::types::_environment_action_summary::EnvironmentActionSummaryBuilder;
 
 pub use crate::types::_data_source_run_activity::DataSourceRunActivityBuilder;
 

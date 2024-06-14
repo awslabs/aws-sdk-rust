@@ -22,7 +22,7 @@ impl crate::operation::accept_address_transfer::builders::AcceptAddressTransferI
 }
 /// Fluent builder constructing a request to `AcceptAddressTransfer`.
 ///
-/// <p>Accepts an Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#using-instance-addressing-eips-transfer-accept">Accept a transferred Elastic IP address</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>Accepts an Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#using-instance-addressing-eips-transfer-accept">Accept a transferred Elastic IP address</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcceptAddressTransferFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

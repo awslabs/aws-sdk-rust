@@ -54,7 +54,6 @@ pub struct DescribeNetworkAclsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The IDs of the network ACLs.</p>
-    /// <p>Default: Describes all your network ACLs.</p>
     pub network_acl_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -119,7 +118,6 @@ impl DescribeNetworkAclsInput {
         self.dry_run
     }
     /// <p>The IDs of the network ACLs.</p>
-    /// <p>Default: Describes all your network ACLs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_acl_ids.is_none()`.
     pub fn network_acl_ids(&self) -> &[::std::string::String] {
@@ -329,7 +327,6 @@ impl DescribeNetworkAclsInputBuilder {
     /// To override the contents of this collection use [`set_network_acl_ids`](Self::set_network_acl_ids).
     ///
     /// <p>The IDs of the network ACLs.</p>
-    /// <p>Default: Describes all your network ACLs.</p>
     pub fn network_acl_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_acl_ids.unwrap_or_default();
         v.push(input.into());
@@ -337,13 +334,11 @@ impl DescribeNetworkAclsInputBuilder {
         self
     }
     /// <p>The IDs of the network ACLs.</p>
-    /// <p>Default: Describes all your network ACLs.</p>
     pub fn set_network_acl_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.network_acl_ids = input;
         self
     }
     /// <p>The IDs of the network ACLs.</p>
-    /// <p>Default: Describes all your network ACLs.</p>
     pub fn get_network_acl_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.network_acl_ids
     }

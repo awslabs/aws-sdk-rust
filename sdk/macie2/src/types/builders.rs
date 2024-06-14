@@ -101,6 +101,8 @@ pub use crate::types::_list_jobs_filter_criteria::ListJobsFilterCriteriaBuilder;
 
 pub use crate::types::_list_jobs_filter_term::ListJobsFilterTermBuilder;
 
+pub use crate::types::_automated_discovery_account::AutomatedDiscoveryAccountBuilder;
+
 pub use crate::types::_allow_list_summary::AllowListSummaryBuilder;
 
 pub use crate::types::_usage_total::UsageTotalBuilder;
@@ -274,5 +276,9 @@ pub use crate::types::_bucket_criteria_additional_properties::BucketCriteriaAddi
 pub use crate::types::_unprocessed_account::UnprocessedAccountBuilder;
 
 pub use crate::types::_account_detail::AccountDetailBuilder;
+
+pub use crate::types::_automated_discovery_account_update_error::AutomatedDiscoveryAccountUpdateErrorBuilder;
+
+pub use crate::types::_automated_discovery_account_update::AutomatedDiscoveryAccountUpdateBuilder;
 
 pub use crate::types::_batch_get_custom_data_identifier_summary::BatchGetCustomDataIdentifierSummaryBuilder;

@@ -22,7 +22,7 @@ impl crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsInp
 }
 /// Fluent builder constructing a request to `DescribeVpcEndpoints`.
 ///
-/// <p>Describes your VPC endpoints.</p>
+/// <p>Describes your VPC endpoints. The default is to describe all your VPC endpoints. Alternatively, you can specify specific VPC endpoint IDs or filter the results to include only the VPC endpoints that match specific criteria.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

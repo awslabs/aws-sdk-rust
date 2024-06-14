@@ -254,8 +254,17 @@ pub(crate) fn de_delete_data_source(
                 "publishOnImport" => {
                     builder = builder.set_publish_on_import(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "retainPermissionsOnRevokeFailure" => {
+                    builder =
+                        builder.set_retain_permissions_on_revoke_failure(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "schedule" => {
                     builder = builder.set_schedule(crate::protocol_serde::shape_schedule_configuration::de_schedule_configuration(tokens)?);
+                }
+                "selfGrantStatus" => {
+                    builder = builder.set_self_grant_status(crate::protocol_serde::shape_self_grant_status_output::de_self_grant_status_output(
+                        tokens,
+                    )?);
                 }
                 "status" => {
                     builder = builder.set_status(

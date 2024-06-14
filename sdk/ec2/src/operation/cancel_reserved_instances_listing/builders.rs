@@ -23,7 +23,7 @@ impl crate::operation::cancel_reserved_instances_listing::builders::CancelReserv
 /// Fluent builder constructing a request to `CancelReservedInstancesListing`.
 ///
 /// <p>Cancels the specified Reserved Instance listing in the Reserved Instance Marketplace.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Sell in the Reserved Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelReservedInstancesListingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

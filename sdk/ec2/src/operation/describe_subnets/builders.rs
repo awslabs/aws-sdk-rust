@@ -22,7 +22,7 @@ impl crate::operation::describe_subnets::builders::DescribeSubnetsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeSubnets`.
 ///
-/// <p>Describes one or more of your subnets.</p>
+/// <p>Describes your subnets. The default is to describe all your subnets. Alternatively, you can specify specific subnet IDs or filter the results to include only the subnets that match specific criteria.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSubnetsFluentBuilder {

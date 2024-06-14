@@ -24,7 +24,7 @@ impl crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScor
 ///
 /// <p>Calculates the Spot placement score for a Region or Availability Zone based on the specified target capacity and compute requirements.</p>
 /// <p>You can specify your compute requirements either by using <code>InstanceRequirementsWithMetadata</code> and letting Amazon EC2 choose the optimal instance types to fulfill your Spot request, or you can specify the instance types by using <code>InstanceTypes</code>.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot placement score</a> in the Amazon EC2 User Guide.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot placement score</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSpotPlacementScoresFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

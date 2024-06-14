@@ -24,7 +24,7 @@ impl crate::operation::run_scheduled_instances::builders::RunScheduledInstancesI
 ///
 /// <p>Launches the specified Scheduled Instances.</p>
 /// <p>Before you can launch a Scheduled Instance, you must purchase it and obtain an identifier using <code>PurchaseScheduledInstances</code>.</p>
-/// <p>You must launch a Scheduled Instance during its scheduled time period. You can't stop or reboot a Scheduled Instance, but you can terminate it as needed. If you terminate a Scheduled Instance before the current scheduled time period ends, you can launch it again after a few minutes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>You must launch a Scheduled Instance during its scheduled time period. You can't stop or reboot a Scheduled Instance, but you can terminate it as needed. If you terminate a Scheduled Instance before the current scheduled time period ends, you can launch it again after a few minutes.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RunScheduledInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

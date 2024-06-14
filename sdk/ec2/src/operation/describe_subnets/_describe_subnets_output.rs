@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSubnetsOutput {
-    /// <p>Information about one or more subnets.</p>
+    /// <p>Information about the subnets.</p>
     pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeSubnetsOutput {
-    /// <p>Information about one or more subnets.</p>
+    /// <p>Information about the subnets.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
     pub fn subnets(&self) -> &[crate::types::Subnet] {
@@ -46,19 +46,19 @@ impl DescribeSubnetsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
     ///
-    /// <p>Information about one or more subnets.</p>
+    /// <p>Information about the subnets.</p>
     pub fn subnets(mut self, input: crate::types::Subnet) -> Self {
         let mut v = self.subnets.unwrap_or_default();
         v.push(input);
         self.subnets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about one or more subnets.</p>
+    /// <p>Information about the subnets.</p>
     pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>) -> Self {
         self.subnets = input;
         self
     }
-    /// <p>Information about one or more subnets.</p>
+    /// <p>Information about the subnets.</p>
     pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subnet>> {
         &self.subnets
     }

@@ -30,7 +30,7 @@ pub struct NatGateway {
     pub nat_gateway_addresses: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
     /// <p>The ID of the NAT gateway.</p>
     pub nat_gateway_id: ::std::option::Option<::std::string::String>,
-    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-gateways">documented limits</a>, contact Amazon Web Services Support.</p>
     pub provisioned_bandwidth: ::std::option::Option<crate::types::ProvisionedBandwidth>,
     /// <p>The state of the NAT gateway.</p>
     /// <ul>
@@ -96,7 +96,7 @@ impl NatGateway {
     pub fn nat_gateway_id(&self) -> ::std::option::Option<&str> {
         self.nat_gateway_id.as_deref()
     }
-    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-gateways">documented limits</a>, contact Amazon Web Services Support.</p>
     pub fn provisioned_bandwidth(&self) -> ::std::option::Option<&crate::types::ProvisionedBandwidth> {
         self.provisioned_bandwidth.as_ref()
     }
@@ -292,17 +292,17 @@ impl NatGatewayBuilder {
     pub fn get_nat_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.nat_gateway_id
     }
-    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-gateways">documented limits</a>, contact Amazon Web Services Support.</p>
     pub fn provisioned_bandwidth(mut self, input: crate::types::ProvisionedBandwidth) -> Self {
         self.provisioned_bandwidth = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-gateways">documented limits</a>, contact Amazon Web Services Support.</p>
     pub fn set_provisioned_bandwidth(mut self, input: ::std::option::Option<crate::types::ProvisionedBandwidth>) -> Self {
         self.provisioned_bandwidth = input;
         self
     }
-    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-gateways">documented limits</a>, contact Amazon Web Services Support.</p>
     pub fn get_provisioned_bandwidth(&self) -> &::std::option::Option<crate::types::ProvisionedBandwidth> {
         &self.provisioned_bandwidth
     }

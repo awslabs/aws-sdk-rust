@@ -39,11 +39,14 @@ pub fn ser_update_data_source_input_input(
         crate::protocol_serde::shape_recommendation_configuration::ser_recommendation_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.schedule {
+    if let Some(var_13) = &input.retain_permissions_on_revoke_failure {
+        object.key("retainPermissionsOnRevokeFailure").boolean(*var_13);
+    }
+    if let Some(var_14) = &input.schedule {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("schedule").start_object();
-        crate::protocol_serde::shape_schedule_configuration::ser_schedule_configuration(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_15 = object.key("schedule").start_object();
+        crate::protocol_serde::shape_schedule_configuration::ser_schedule_configuration(&mut object_15, var_14)?;
+        object_15.finish();
     }
     Ok(())
 }

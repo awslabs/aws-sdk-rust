@@ -69,6 +69,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_put_policy;
 
+pub(crate) mod shape_search_jobs;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;

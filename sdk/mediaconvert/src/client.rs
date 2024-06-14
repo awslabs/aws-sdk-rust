@@ -209,6 +209,8 @@ mod list_tags_for_resource;
 
 mod put_policy;
 
+mod search_jobs;
+
 mod tag_resource;
 
 mod untag_resource;

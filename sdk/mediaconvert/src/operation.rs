@@ -70,6 +70,9 @@ pub mod list_tags_for_resource;
 /// Types for the `PutPolicy` operation.
 pub mod put_policy;
 
+/// Types for the `SearchJobs` operation.
+pub mod search_jobs;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOrganizationConfigurationInput {
-    /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
+    /// <p>Specifies whether to enable Amazon Macie automatically for accounts that are added to the organization in Organizations.</p>
     pub auto_enable: ::std::option::Option<bool>,
 }
 impl UpdateOrganizationConfigurationInput {
-    /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
+    /// <p>Specifies whether to enable Amazon Macie automatically for accounts that are added to the organization in Organizations.</p>
     pub fn auto_enable(&self) -> ::std::option::Option<bool> {
         self.auto_enable
     }
@@ -26,18 +26,18 @@ pub struct UpdateOrganizationConfigurationInputBuilder {
     pub(crate) auto_enable: ::std::option::Option<bool>,
 }
 impl UpdateOrganizationConfigurationInputBuilder {
-    /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
+    /// <p>Specifies whether to enable Amazon Macie automatically for accounts that are added to the organization in Organizations.</p>
     /// This field is required.
     pub fn auto_enable(mut self, input: bool) -> Self {
         self.auto_enable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
+    /// <p>Specifies whether to enable Amazon Macie automatically for accounts that are added to the organization in Organizations.</p>
     pub fn set_auto_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_enable = input;
         self
     }
-    /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
+    /// <p>Specifies whether to enable Amazon Macie automatically for accounts that are added to the organization in Organizations.</p>
     pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
         &self.auto_enable
     }

@@ -22,7 +22,7 @@ impl crate::operation::enable_address_transfer::builders::EnableAddressTransferI
 }
 /// Fluent builder constructing a request to `EnableAddressTransfer`.
 ///
-/// <p>Enables Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>Enables Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP addresses</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableAddressTransferFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllocateHostsInput {
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>Default: <code>on</code></p>
+    /// <p>Default: <code>off</code></p>
     pub auto_placement: ::std::option::Option<crate::types::AutoPlacement>,
     /// <p>The Availability Zone in which to allocate the Dedicated Host.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
@@ -39,7 +39,7 @@ pub struct AllocateHostsInput {
 }
 impl AllocateHostsInput {
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>Default: <code>on</code></p>
+    /// <p>Default: <code>off</code></p>
     pub fn auto_placement(&self) -> ::std::option::Option<&crate::types::AutoPlacement> {
         self.auto_placement.as_ref()
     }
@@ -123,19 +123,19 @@ pub struct AllocateHostsInputBuilder {
 }
 impl AllocateHostsInputBuilder {
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>Default: <code>on</code></p>
+    /// <p>Default: <code>off</code></p>
     pub fn auto_placement(mut self, input: crate::types::AutoPlacement) -> Self {
         self.auto_placement = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>Default: <code>on</code></p>
+    /// <p>Default: <code>off</code></p>
     pub fn set_auto_placement(mut self, input: ::std::option::Option<crate::types::AutoPlacement>) -> Self {
         self.auto_placement = input;
         self
     }
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>Default: <code>on</code></p>
+    /// <p>Default: <code>off</code></p>
     pub fn get_auto_placement(&self) -> &::std::option::Option<crate::types::AutoPlacement> {
         &self.auto_placement
     }

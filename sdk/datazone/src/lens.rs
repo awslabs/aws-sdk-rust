@@ -49,6 +49,16 @@ pub(crate) fn reflens_list_domains_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_environment_actions_output_output_next_token(
+    input: &crate::operation::list_environment_actions::ListEnvironmentActionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_environment_blueprint_configurations_output_output_next_token(
     input: &crate::operation::list_environment_blueprint_configurations::ListEnvironmentBlueprintConfigurationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -264,6 +274,16 @@ pub(crate) fn lens_list_domains_output_output_items(
     input: crate::operation::list_domains::ListDomainsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>> {
     let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_environment_actions_output_output_items(
+    input: crate::operation::list_environment_actions::ListEnvironmentActionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentActionSummary>> {
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
     ::std::option::Option::Some(input)
 }
 

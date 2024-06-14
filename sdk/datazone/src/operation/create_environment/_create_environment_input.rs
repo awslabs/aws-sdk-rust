@@ -17,6 +17,12 @@ pub struct CreateEnvironmentInput {
     pub user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
     /// <p>The glossary terms that can be used in this Amazon DataZone environment.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The ID of the account in which the environment is being created.</p>
+    pub environment_account_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The region of the account in which the environment is being created.</p>
+    pub environment_account_region: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the blueprint with which the environment is being created.</p>
+    pub environment_blueprint_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateEnvironmentInput {
     /// <p>The identifier of the Amazon DataZone project in which this environment is created.</p>
@@ -51,6 +57,18 @@ impl CreateEnvironmentInput {
     pub fn glossary_terms(&self) -> &[::std::string::String] {
         self.glossary_terms.as_deref().unwrap_or_default()
     }
+    /// <p>The ID of the account in which the environment is being created.</p>
+    pub fn environment_account_identifier(&self) -> ::std::option::Option<&str> {
+        self.environment_account_identifier.as_deref()
+    }
+    /// <p>The region of the account in which the environment is being created.</p>
+    pub fn environment_account_region(&self) -> ::std::option::Option<&str> {
+        self.environment_account_region.as_deref()
+    }
+    /// <p>The ID of the blueprint with which the environment is being created.</p>
+    pub fn environment_blueprint_identifier(&self) -> ::std::option::Option<&str> {
+        self.environment_blueprint_identifier.as_deref()
+    }
 }
 impl CreateEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
@@ -70,6 +88,9 @@ pub struct CreateEnvironmentInputBuilder {
     pub(crate) environment_profile_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) environment_account_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_account_region: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_blueprint_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The identifier of the Amazon DataZone project in which this environment is created.</p>
@@ -186,6 +207,48 @@ impl CreateEnvironmentInputBuilder {
     pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.glossary_terms
     }
+    /// <p>The ID of the account in which the environment is being created.</p>
+    pub fn environment_account_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.environment_account_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the account in which the environment is being created.</p>
+    pub fn set_environment_account_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_account_identifier = input;
+        self
+    }
+    /// <p>The ID of the account in which the environment is being created.</p>
+    pub fn get_environment_account_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_account_identifier
+    }
+    /// <p>The region of the account in which the environment is being created.</p>
+    pub fn environment_account_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.environment_account_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The region of the account in which the environment is being created.</p>
+    pub fn set_environment_account_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_account_region = input;
+        self
+    }
+    /// <p>The region of the account in which the environment is being created.</p>
+    pub fn get_environment_account_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_account_region
+    }
+    /// <p>The ID of the blueprint with which the environment is being created.</p>
+    pub fn environment_blueprint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.environment_blueprint_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the blueprint with which the environment is being created.</p>
+    pub fn set_environment_blueprint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_blueprint_identifier = input;
+        self
+    }
+    /// <p>The ID of the blueprint with which the environment is being created.</p>
+    pub fn get_environment_blueprint_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_blueprint_identifier
+    }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
     pub fn build(
         self,
@@ -198,6 +261,9 @@ impl CreateEnvironmentInputBuilder {
             environment_profile_identifier: self.environment_profile_identifier,
             user_parameters: self.user_parameters,
             glossary_terms: self.glossary_terms,
+            environment_account_identifier: self.environment_account_identifier,
+            environment_account_region: self.environment_account_region,
+            environment_blueprint_identifier: self.environment_blueprint_identifier,
         })
     }
 }

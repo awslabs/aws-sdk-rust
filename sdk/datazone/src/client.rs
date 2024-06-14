@@ -140,6 +140,8 @@ mod accept_predictions;
 
 mod accept_subscription_request;
 
+mod associate_environment_role;
+
 mod cancel_metadata_generation_run;
 
 mod cancel_subscription;
@@ -155,6 +157,8 @@ mod create_data_source;
 mod create_domain;
 
 mod create_environment;
+
+mod create_environment_action;
 
 mod create_environment_profile;
 
@@ -217,6 +221,8 @@ mod delete_domain;
 
 mod delete_environment;
 
+mod delete_environment_action;
+
 mod delete_environment_blueprint_configuration;
 
 mod delete_environment_profile;
@@ -241,6 +247,8 @@ mod delete_subscription_target;
 
 mod delete_time_series_data_points;
 
+mod disassociate_environment_role;
+
 mod get_asset;
 
 mod get_asset_type;
@@ -252,6 +260,8 @@ mod get_data_source_run;
 mod get_domain;
 
 mod get_environment;
+
+mod get_environment_action;
 
 mod get_environment_blueprint;
 
@@ -296,6 +306,8 @@ mod list_data_source_runs;
 mod list_data_sources;
 
 mod list_domains;
+
+mod list_environment_actions;
 
 mod list_environment_blueprint_configurations;
 
@@ -358,6 +370,8 @@ mod update_data_source;
 mod update_domain;
 
 mod update_environment;
+
+mod update_environment_action;
 
 mod update_environment_profile;
 

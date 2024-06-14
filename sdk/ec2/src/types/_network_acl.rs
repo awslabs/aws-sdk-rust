@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkAcl {
-    /// <p>Any associations between the network ACL and one or more subnets</p>
+    /// <p>Any associations between the network ACL and your subnets</p>
     pub associations: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclAssociation>>,
     /// <p>The entries (rules) in the network ACL.</p>
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>,
@@ -20,7 +20,7 @@ pub struct NetworkAcl {
     pub owner_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkAcl {
-    /// <p>Any associations between the network ACL and one or more subnets</p>
+    /// <p>Any associations between the network ACL and your subnets</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
     pub fn associations(&self) -> &[crate::types::NetworkAclAssociation] {
@@ -79,19 +79,19 @@ impl NetworkAclBuilder {
     ///
     /// To override the contents of this collection use [`set_associations`](Self::set_associations).
     ///
-    /// <p>Any associations between the network ACL and one or more subnets</p>
+    /// <p>Any associations between the network ACL and your subnets</p>
     pub fn associations(mut self, input: crate::types::NetworkAclAssociation) -> Self {
         let mut v = self.associations.unwrap_or_default();
         v.push(input);
         self.associations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Any associations between the network ACL and one or more subnets</p>
+    /// <p>Any associations between the network ACL and your subnets</p>
     pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclAssociation>>) -> Self {
         self.associations = input;
         self
     }
-    /// <p>Any associations between the network ACL and one or more subnets</p>
+    /// <p>Any associations between the network ACL and your subnets</p>
     pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkAclAssociation>> {
         &self.associations
     }

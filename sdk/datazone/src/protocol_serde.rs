@@ -27,6 +27,8 @@ pub(crate) mod shape_accept_predictions;
 
 pub(crate) mod shape_accept_subscription_request;
 
+pub(crate) mod shape_associate_environment_role;
+
 pub(crate) mod shape_cancel_metadata_generation_run;
 
 pub(crate) mod shape_cancel_subscription;
@@ -42,6 +44,8 @@ pub(crate) mod shape_create_data_source;
 pub(crate) mod shape_create_domain;
 
 pub(crate) mod shape_create_environment;
+
+pub(crate) mod shape_create_environment_action;
 
 pub(crate) mod shape_create_environment_profile;
 
@@ -77,6 +81,8 @@ pub(crate) mod shape_delete_domain;
 
 pub(crate) mod shape_delete_environment;
 
+pub(crate) mod shape_delete_environment_action;
+
 pub(crate) mod shape_delete_environment_blueprint_configuration;
 
 pub(crate) mod shape_delete_environment_profile;
@@ -101,6 +107,8 @@ pub(crate) mod shape_delete_subscription_target;
 
 pub(crate) mod shape_delete_time_series_data_points;
 
+pub(crate) mod shape_disassociate_environment_role;
+
 pub(crate) mod shape_get_asset;
 
 pub(crate) mod shape_get_asset_type;
@@ -112,6 +120,8 @@ pub(crate) mod shape_get_data_source_run;
 pub(crate) mod shape_get_domain;
 
 pub(crate) mod shape_get_environment;
+
+pub(crate) mod shape_get_environment_action;
 
 pub(crate) mod shape_get_environment_blueprint;
 
@@ -156,6 +166,8 @@ pub(crate) mod shape_list_data_source_runs;
 pub(crate) mod shape_list_data_sources;
 
 pub(crate) mod shape_list_domains;
+
+pub(crate) mod shape_list_environment_actions;
 
 pub(crate) mod shape_list_environment_blueprint_configurations;
 
@@ -219,6 +231,8 @@ pub(crate) mod shape_update_domain;
 
 pub(crate) mod shape_update_environment;
 
+pub(crate) mod shape_update_environment_action;
+
 pub(crate) mod shape_update_environment_profile;
 
 pub(crate) mod shape_update_glossary;
@@ -262,6 +276,8 @@ pub(crate) mod shape_create_asset_type_input;
 pub(crate) mod shape_create_data_source_input;
 
 pub(crate) mod shape_create_domain_input;
+
+pub(crate) mod shape_create_environment_action_input;
 
 pub(crate) mod shape_create_environment_input;
 
@@ -331,6 +347,8 @@ pub(crate) mod shape_update_data_source_input;
 
 pub(crate) mod shape_update_domain_input;
 
+pub(crate) mod shape_update_environment_action_input;
+
 pub(crate) mod shape_update_environment_input;
 
 pub(crate) mod shape_update_environment_profile_input;
@@ -356,6 +374,8 @@ pub(crate) mod shape_validation_exception;
 pub(crate) mod shape_accept_choice;
 
 pub(crate) mod shape_accept_rule;
+
+pub(crate) mod shape_action_parameters;
 
 pub(crate) mod shape_applicable_asset_types;
 
@@ -425,6 +445,8 @@ pub(crate) mod shape_group_profile_summaries;
 
 pub(crate) mod shape_import_list;
 
+pub(crate) mod shape_list_environment_action_summaries;
+
 pub(crate) mod shape_listing_item;
 
 pub(crate) mod shape_member;
@@ -468,6 +490,8 @@ pub(crate) mod shape_search_result_items;
 pub(crate) mod shape_search_sort;
 
 pub(crate) mod shape_search_types_result_items;
+
+pub(crate) mod shape_self_grant_status_output;
 
 pub(crate) mod shape_single_sign_on;
 
@@ -517,6 +541,8 @@ pub(crate) mod shape_asset_listing;
 
 pub(crate) mod shape_asset_revision;
 
+pub(crate) mod shape_aws_console_link_parameters;
+
 pub(crate) mod shape_business_name_generation_configuration;
 
 pub(crate) mod shape_cloud_formation_properties;
@@ -534,6 +560,8 @@ pub(crate) mod shape_data_source_summary;
 pub(crate) mod shape_deployment_messages_list;
 
 pub(crate) mod shape_domain_summary;
+
+pub(crate) mod shape_environment_action_summary;
 
 pub(crate) mod shape_environment_blueprint_configuration_item;
 
@@ -554,6 +582,8 @@ pub(crate) mod shape_form_output;
 pub(crate) mod shape_glue_run_configuration_input;
 
 pub(crate) mod shape_glue_run_configuration_output;
+
+pub(crate) mod shape_glue_self_grant_status_output;
 
 pub(crate) mod shape_group_profile_summary;
 
@@ -578,6 +608,8 @@ pub(crate) mod shape_project_summary;
 pub(crate) mod shape_redshift_run_configuration_input;
 
 pub(crate) mod shape_redshift_run_configuration_output;
+
+pub(crate) mod shape_redshift_self_grant_status_output;
 
 pub(crate) mod shape_regional_parameter;
 
@@ -641,6 +673,8 @@ pub(crate) mod shape_relational_filter_configuration;
 
 pub(crate) mod shape_relational_filter_configurations;
 
+pub(crate) mod shape_self_grant_status_details;
+
 pub(crate) mod shape_subscribed_asset_listing;
 
 pub(crate) mod shape_topic;
@@ -664,6 +698,8 @@ pub(crate) mod shape_notification_resource;
 pub(crate) mod shape_redshift_cluster_storage;
 
 pub(crate) mod shape_redshift_serverless_storage;
+
+pub(crate) mod shape_self_grant_status_detail;
 
 pub(crate) mod shape_user_details;
 

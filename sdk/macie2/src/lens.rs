@@ -29,6 +29,16 @@ pub(crate) fn reflens_list_allow_lists_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_automated_discovery_accounts_output_output_next_token(
+    input: &crate::operation::list_automated_discovery_accounts::ListAutomatedDiscoveryAccountsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_classification_jobs_output_output_next_token(
     input: &crate::operation::list_classification_jobs::ListClassificationJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -183,6 +193,16 @@ pub(crate) fn lens_list_allow_lists_output_output_allow_lists(
     input: crate::operation::list_allow_lists::ListAllowListsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AllowListSummary>> {
     let input = match input.allow_lists {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_automated_discovery_accounts_output_output_items(
+    input: crate::operation::list_automated_discovery_accounts::ListAutomatedDiscoveryAccountsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AutomatedDiscoveryAccount>> {
+    let input = match input.items {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

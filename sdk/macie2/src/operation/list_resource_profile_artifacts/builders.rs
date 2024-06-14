@@ -22,7 +22,7 @@ impl crate::operation::list_resource_profile_artifacts::builders::ListResourcePr
 }
 /// Fluent builder constructing a request to `ListResourceProfileArtifacts`.
 ///
-/// <p>Retrieves information about objects that were selected from an S3 bucket for automated sensitive data discovery.</p>
+/// <p>Retrieves information about objects that Amazon Macie selected from an S3 bucket for automated sensitive data discovery.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourceProfileArtifactsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

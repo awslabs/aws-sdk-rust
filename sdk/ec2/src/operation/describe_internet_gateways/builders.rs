@@ -22,7 +22,7 @@ impl crate::operation::describe_internet_gateways::builders::DescribeInternetGat
 }
 /// Fluent builder constructing a request to `DescribeInternetGateways`.
 ///
-/// <p>Describes one or more of your internet gateways.</p>
+/// <p>Describes your internet gateways. The default is to describe all your internet gateways. Alternatively, you can specify specific internet gateway IDs or filter the results to include only the internet gateways that match specific criteria.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInternetGatewaysFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Destination {
-    /// <p>The name of the bucket.</p>
+    /// <p>The name of the bucket. This must be the name of an existing general purpose bucket.</p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The path prefix to use in the path to the location in the bucket. This prefix specifies where to store classification results in the bucket.</p>
     pub key_prefix: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct S3Destination {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3Destination {
-    /// <p>The name of the bucket.</p>
+    /// <p>The name of the bucket. This must be the name of an existing general purpose bucket.</p>
     pub fn bucket_name(&self) -> ::std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
@@ -41,18 +41,18 @@ pub struct S3DestinationBuilder {
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3DestinationBuilder {
-    /// <p>The name of the bucket.</p>
+    /// <p>The name of the bucket. This must be the name of an existing general purpose bucket.</p>
     /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the bucket.</p>
+    /// <p>The name of the bucket. This must be the name of an existing general purpose bucket.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
     }
-    /// <p>The name of the bucket.</p>
+    /// <p>The name of the bucket. This must be the name of an existing general purpose bucket.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket_name
     }

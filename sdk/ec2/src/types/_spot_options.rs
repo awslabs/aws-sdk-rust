@@ -25,9 +25,12 @@ pub struct SpotOptions {
     /// <p>EC2 Fleet requests instances from all of the Spot Instance pools that you specify.</p>
     /// </dd>
     /// <dt>
-    /// lowest-price
+    /// lowest-price (not recommended)
     /// </dt>
     /// <dd>
+    /// <important>
+    /// <p>We don't recommend the <code>lowest-price</code> allocation strategy because it has the highest risk of interruption for your Spot Instances.</p>
+    /// </important>
     /// <p>EC2 Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the lowest priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced pool that has available capacity. If a pool runs out of capacity before fulfilling your desired capacity, EC2 Fleet will continue to fulfill your request by drawing from the next lowest priced pool. To ensure that your desired capacity is met, you might receive Spot Instances from several pools. Because this strategy only considers instance price and not capacity availability, it might lead to high interruption rates.</p>
     /// </dd>
     /// </dl>
@@ -47,14 +50,14 @@ pub struct SpotOptions {
     /// <p>Indicates that the fleet launches all Spot Instances into a single Availability Zone.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     pub single_availability_zone: ::std::option::Option<bool>,
-    /// <p>The minimum target capacity for Spot Instances in the fleet. If the minimum target capacity is not reached, the fleet launches no instances.</p>
-    /// <p>Supported only for fleets of type <code>instant</code>.</p>
+    /// <p>The minimum target capacity for Spot Instances in the fleet. If this minimum capacity isn't reached, no instances are launched.</p>
+    /// <p>Constraints: Maximum value of <code>1000</code>. Supported only for fleets of type <code>instant</code>.</p>
     /// <p>At least one of the following must be specified: <code>SingleAvailabilityZone</code> | <code>SingleInstanceType</code></p>
     pub min_target_capacity: ::std::option::Option<i32>,
     /// <p>The maximum amount per hour for Spot Instances that you're willing to pay. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important> <note>
-    /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>maxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>maxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
+    /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>maxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>maxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// </note>
     pub max_total_price: ::std::option::Option<::std::string::String>,
 }
@@ -80,9 +83,12 @@ impl SpotOptions {
     /// <p>EC2 Fleet requests instances from all of the Spot Instance pools that you specify.</p>
     /// </dd>
     /// <dt>
-    /// lowest-price
+    /// lowest-price (not recommended)
     /// </dt>
     /// <dd>
+    /// <important>
+    /// <p>We don't recommend the <code>lowest-price</code> allocation strategy because it has the highest risk of interruption for your Spot Instances.</p>
+    /// </important>
     /// <p>EC2 Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the lowest priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced pool that has available capacity. If a pool runs out of capacity before fulfilling your desired capacity, EC2 Fleet will continue to fulfill your request by drawing from the next lowest priced pool. To ensure that your desired capacity is met, you might receive Spot Instances from several pools. Because this strategy only considers instance price and not capacity availability, it might lead to high interruption rates.</p>
     /// </dd>
     /// </dl>
@@ -114,8 +120,8 @@ impl SpotOptions {
     pub fn single_availability_zone(&self) -> ::std::option::Option<bool> {
         self.single_availability_zone
     }
-    /// <p>The minimum target capacity for Spot Instances in the fleet. If the minimum target capacity is not reached, the fleet launches no instances.</p>
-    /// <p>Supported only for fleets of type <code>instant</code>.</p>
+    /// <p>The minimum target capacity for Spot Instances in the fleet. If this minimum capacity isn't reached, no instances are launched.</p>
+    /// <p>Constraints: Maximum value of <code>1000</code>. Supported only for fleets of type <code>instant</code>.</p>
     /// <p>At least one of the following must be specified: <code>SingleAvailabilityZone</code> | <code>SingleInstanceType</code></p>
     pub fn min_target_capacity(&self) -> ::std::option::Option<i32> {
         self.min_target_capacity
@@ -123,7 +129,7 @@ impl SpotOptions {
     /// <p>The maximum amount per hour for Spot Instances that you're willing to pay. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important> <note>
-    /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>maxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>maxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
+    /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>maxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>maxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// </note>
     pub fn max_total_price(&self) -> ::std::option::Option<&str> {
         self.max_total_price.as_deref()
@@ -171,9 +177,12 @@ impl SpotOptionsBuilder {
     /// <p>EC2 Fleet requests instances from all of the Spot Instance pools that you specify.</p>
     /// </dd>
     /// <dt>
-    /// lowest-price
+    /// lowest-price (not recommended)
     /// </dt>
     /// <dd>
+    /// <important>
+    /// <p>We don't recommend the <code>lowest-price</code> allocation strategy because it has the highest risk of interruption for your Spot Instances.</p>
+    /// </important>
     /// <p>EC2 Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the lowest priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced pool that has available capacity. If a pool runs out of capacity before fulfilling your desired capacity, EC2 Fleet will continue to fulfill your request by drawing from the next lowest priced pool. To ensure that your desired capacity is met, you might receive Spot Instances from several pools. Because this strategy only considers instance price and not capacity availability, it might lead to high interruption rates.</p>
     /// </dd>
     /// </dl>
@@ -203,9 +212,12 @@ impl SpotOptionsBuilder {
     /// <p>EC2 Fleet requests instances from all of the Spot Instance pools that you specify.</p>
     /// </dd>
     /// <dt>
-    /// lowest-price
+    /// lowest-price (not recommended)
     /// </dt>
     /// <dd>
+    /// <important>
+    /// <p>We don't recommend the <code>lowest-price</code> allocation strategy because it has the highest risk of interruption for your Spot Instances.</p>
+    /// </important>
     /// <p>EC2 Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the lowest priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced pool that has available capacity. If a pool runs out of capacity before fulfilling your desired capacity, EC2 Fleet will continue to fulfill your request by drawing from the next lowest priced pool. To ensure that your desired capacity is met, you might receive Spot Instances from several pools. Because this strategy only considers instance price and not capacity availability, it might lead to high interruption rates.</p>
     /// </dd>
     /// </dl>
@@ -235,9 +247,12 @@ impl SpotOptionsBuilder {
     /// <p>EC2 Fleet requests instances from all of the Spot Instance pools that you specify.</p>
     /// </dd>
     /// <dt>
-    /// lowest-price
+    /// lowest-price (not recommended)
     /// </dt>
     /// <dd>
+    /// <important>
+    /// <p>We don't recommend the <code>lowest-price</code> allocation strategy because it has the highest risk of interruption for your Spot Instances.</p>
+    /// </important>
     /// <p>EC2 Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the lowest priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced pool that has available capacity. If a pool runs out of capacity before fulfilling your desired capacity, EC2 Fleet will continue to fulfill your request by drawing from the next lowest priced pool. To ensure that your desired capacity is met, you might receive Spot Instances from several pools. Because this strategy only considers instance price and not capacity availability, it might lead to high interruption rates.</p>
     /// </dd>
     /// </dl>
@@ -327,22 +342,22 @@ impl SpotOptionsBuilder {
     pub fn get_single_availability_zone(&self) -> &::std::option::Option<bool> {
         &self.single_availability_zone
     }
-    /// <p>The minimum target capacity for Spot Instances in the fleet. If the minimum target capacity is not reached, the fleet launches no instances.</p>
-    /// <p>Supported only for fleets of type <code>instant</code>.</p>
+    /// <p>The minimum target capacity for Spot Instances in the fleet. If this minimum capacity isn't reached, no instances are launched.</p>
+    /// <p>Constraints: Maximum value of <code>1000</code>. Supported only for fleets of type <code>instant</code>.</p>
     /// <p>At least one of the following must be specified: <code>SingleAvailabilityZone</code> | <code>SingleInstanceType</code></p>
     pub fn min_target_capacity(mut self, input: i32) -> Self {
         self.min_target_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The minimum target capacity for Spot Instances in the fleet. If the minimum target capacity is not reached, the fleet launches no instances.</p>
-    /// <p>Supported only for fleets of type <code>instant</code>.</p>
+    /// <p>The minimum target capacity for Spot Instances in the fleet. If this minimum capacity isn't reached, no instances are launched.</p>
+    /// <p>Constraints: Maximum value of <code>1000</code>. Supported only for fleets of type <code>instant</code>.</p>
     /// <p>At least one of the following must be specified: <code>SingleAvailabilityZone</code> | <code>SingleInstanceType</code></p>
     pub fn set_min_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_target_capacity = input;
         self
     }
-    /// <p>The minimum target capacity for Spot Instances in the fleet. If the minimum target capacity is not reached, the fleet launches no instances.</p>
-    /// <p>Supported only for fleets of type <code>instant</code>.</p>
+    /// <p>The minimum target capacity for Spot Instances in the fleet. If this minimum capacity isn't reached, no instances are launched.</p>
+    /// <p>Constraints: Maximum value of <code>1000</code>. Supported only for fleets of type <code>instant</code>.</p>
     /// <p>At least one of the following must be specified: <code>SingleAvailabilityZone</code> | <code>SingleInstanceType</code></p>
     pub fn get_min_target_capacity(&self) -> &::std::option::Option<i32> {
         &self.min_target_capacity
@@ -350,7 +365,7 @@ impl SpotOptionsBuilder {
     /// <p>The maximum amount per hour for Spot Instances that you're willing to pay. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important> <note>
-    /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>maxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>maxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
+    /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>maxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>maxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// </note>
     pub fn max_total_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_total_price = ::std::option::Option::Some(input.into());
@@ -359,7 +374,7 @@ impl SpotOptionsBuilder {
     /// <p>The maximum amount per hour for Spot Instances that you're willing to pay. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important> <note>
-    /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>maxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>maxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
+    /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>maxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>maxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// </note>
     pub fn set_max_total_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_total_price = input;
@@ -368,7 +383,7 @@ impl SpotOptionsBuilder {
     /// <p>The maximum amount per hour for Spot Instances that you're willing to pay. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important> <note>
-    /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>maxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>maxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
+    /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>maxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>maxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// </note>
     pub fn get_max_total_price(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_total_price

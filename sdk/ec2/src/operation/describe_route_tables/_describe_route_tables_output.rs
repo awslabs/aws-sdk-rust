@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRouteTablesOutput {
-    /// <p>Information about one or more route tables.</p>
+    /// <p>Information about the route tables.</p>
     pub route_tables: ::std::option::Option<::std::vec::Vec<crate::types::RouteTable>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeRouteTablesOutput {
-    /// <p>Information about one or more route tables.</p>
+    /// <p>Information about the route tables.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.route_tables.is_none()`.
     pub fn route_tables(&self) -> &[crate::types::RouteTable] {
@@ -47,19 +47,19 @@ impl DescribeRouteTablesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_route_tables`](Self::set_route_tables).
     ///
-    /// <p>Information about one or more route tables.</p>
+    /// <p>Information about the route tables.</p>
     pub fn route_tables(mut self, input: crate::types::RouteTable) -> Self {
         let mut v = self.route_tables.unwrap_or_default();
         v.push(input);
         self.route_tables = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about one or more route tables.</p>
+    /// <p>Information about the route tables.</p>
     pub fn set_route_tables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteTable>>) -> Self {
         self.route_tables = input;
         self
     }
-    /// <p>Information about one or more route tables.</p>
+    /// <p>Information about the route tables.</p>
     pub fn get_route_tables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteTable>> {
         &self.route_tables
     }

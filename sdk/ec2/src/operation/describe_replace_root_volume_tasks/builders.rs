@@ -22,7 +22,7 @@ impl crate::operation::describe_replace_root_volume_tasks::builders::DescribeRep
 }
 /// Fluent builder constructing a request to `DescribeReplaceRootVolumeTasks`.
 ///
-/// <p>Describes a root volume replacement task. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>Describes a root volume replacement task. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace a root volume</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReplaceRootVolumeTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

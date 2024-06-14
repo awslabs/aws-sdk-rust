@@ -22,7 +22,7 @@ impl crate::operation::update_automated_discovery_configuration::builders::Updat
 }
 /// Fluent builder constructing a request to `UpdateAutomatedDiscoveryConfiguration`.
 ///
-/// <p>Enables or disables automated sensitive data discovery for an account.</p>
+/// <p>Changes the configuration settings and status of automated sensitive data discovery for an organization or standalone account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAutomatedDiscoveryConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,20 +111,37 @@ impl UpdateAutomatedDiscoveryConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The new status of automated sensitive data discovery for the account. Valid values are: ENABLED, start or resume automated sensitive data discovery activities for the account; and, DISABLED, stop performing automated sensitive data discovery activities for the account.</p>
-    /// <p>When you enable automated sensitive data discovery for the first time, Amazon Macie uses default configuration settings to determine which data sources to analyze and which managed data identifiers to use. To change these settings, use the UpdateClassificationScope and UpdateSensitivityInspectionTemplate operations, respectively. If you change the settings and subsequently disable the configuration, Amazon Macie retains your changes.</p>
+    /// <p>Specifies whether to automatically enable automated sensitive data discovery for accounts in the organization. Valid values are: ALL (default), enable it for all existing accounts and new member accounts; NEW, enable it only for new member accounts; and, NONE, don't enable it for any accounts.</p>
+    /// <p>If you specify NEW or NONE, automated sensitive data discovery continues to be enabled for any existing accounts that it's currently enabled for. To enable or disable it for individual member accounts, specify NEW or NONE, and then enable or disable it for each account by using the BatchUpdateAutomatedDiscoveryAccounts operation.</p>
+    pub fn auto_enable_organization_members(mut self, input: crate::types::AutoEnableMode) -> Self {
+        self.inner = self.inner.auto_enable_organization_members(input);
+        self
+    }
+    /// <p>Specifies whether to automatically enable automated sensitive data discovery for accounts in the organization. Valid values are: ALL (default), enable it for all existing accounts and new member accounts; NEW, enable it only for new member accounts; and, NONE, don't enable it for any accounts.</p>
+    /// <p>If you specify NEW or NONE, automated sensitive data discovery continues to be enabled for any existing accounts that it's currently enabled for. To enable or disable it for individual member accounts, specify NEW or NONE, and then enable or disable it for each account by using the BatchUpdateAutomatedDiscoveryAccounts operation.</p>
+    pub fn set_auto_enable_organization_members(mut self, input: ::std::option::Option<crate::types::AutoEnableMode>) -> Self {
+        self.inner = self.inner.set_auto_enable_organization_members(input);
+        self
+    }
+    /// <p>Specifies whether to automatically enable automated sensitive data discovery for accounts in the organization. Valid values are: ALL (default), enable it for all existing accounts and new member accounts; NEW, enable it only for new member accounts; and, NONE, don't enable it for any accounts.</p>
+    /// <p>If you specify NEW or NONE, automated sensitive data discovery continues to be enabled for any existing accounts that it's currently enabled for. To enable or disable it for individual member accounts, specify NEW or NONE, and then enable or disable it for each account by using the BatchUpdateAutomatedDiscoveryAccounts operation.</p>
+    pub fn get_auto_enable_organization_members(&self) -> &::std::option::Option<crate::types::AutoEnableMode> {
+        self.inner.get_auto_enable_organization_members()
+    }
+    /// <p>The new status of automated sensitive data discovery for the organization or account. Valid values are: ENABLED, start or resume all automated sensitive data discovery activities; and, DISABLED, stop performing all automated sensitive data discovery activities.</p>
+    /// <p>If you specify DISABLED for an administrator account, you also disable automated sensitive data discovery for all member accounts in the organization.</p>
     pub fn status(mut self, input: crate::types::AutomatedDiscoveryStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>The new status of automated sensitive data discovery for the account. Valid values are: ENABLED, start or resume automated sensitive data discovery activities for the account; and, DISABLED, stop performing automated sensitive data discovery activities for the account.</p>
-    /// <p>When you enable automated sensitive data discovery for the first time, Amazon Macie uses default configuration settings to determine which data sources to analyze and which managed data identifiers to use. To change these settings, use the UpdateClassificationScope and UpdateSensitivityInspectionTemplate operations, respectively. If you change the settings and subsequently disable the configuration, Amazon Macie retains your changes.</p>
+    /// <p>The new status of automated sensitive data discovery for the organization or account. Valid values are: ENABLED, start or resume all automated sensitive data discovery activities; and, DISABLED, stop performing all automated sensitive data discovery activities.</p>
+    /// <p>If you specify DISABLED for an administrator account, you also disable automated sensitive data discovery for all member accounts in the organization.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AutomatedDiscoveryStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>The new status of automated sensitive data discovery for the account. Valid values are: ENABLED, start or resume automated sensitive data discovery activities for the account; and, DISABLED, stop performing automated sensitive data discovery activities for the account.</p>
-    /// <p>When you enable automated sensitive data discovery for the first time, Amazon Macie uses default configuration settings to determine which data sources to analyze and which managed data identifiers to use. To change these settings, use the UpdateClassificationScope and UpdateSensitivityInspectionTemplate operations, respectively. If you change the settings and subsequently disable the configuration, Amazon Macie retains your changes.</p>
+    /// <p>The new status of automated sensitive data discovery for the organization or account. Valid values are: ENABLED, start or resume all automated sensitive data discovery activities; and, DISABLED, stop performing all automated sensitive data discovery activities.</p>
+    /// <p>If you specify DISABLED for an administrator account, you also disable automated sensitive data discovery for all member accounts in the organization.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AutomatedDiscoveryStatus> {
         self.inner.get_status()
     }

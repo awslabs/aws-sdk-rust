@@ -9,6 +9,8 @@ pub struct DeleteDataSourceInput {
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies that the granted permissions are retained in case of a self-subscribe functionality failure for a data source.</p>
+    pub retain_permissions_on_revoke_failure: ::std::option::Option<bool>,
 }
 impl DeleteDataSourceInput {
     /// <p>The ID of the Amazon DataZone domain in which the data source is deleted.</p>
@@ -22,6 +24,10 @@ impl DeleteDataSourceInput {
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>Specifies that the granted permissions are retained in case of a self-subscribe functionality failure for a data source.</p>
+    pub fn retain_permissions_on_revoke_failure(&self) -> ::std::option::Option<bool> {
+        self.retain_permissions_on_revoke_failure
     }
 }
 impl DeleteDataSourceInput {
@@ -38,6 +44,7 @@ pub struct DeleteDataSourceInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) retain_permissions_on_revoke_failure: ::std::option::Option<bool>,
 }
 impl DeleteDataSourceInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which the data source is deleted.</p>
@@ -84,6 +91,20 @@ impl DeleteDataSourceInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>Specifies that the granted permissions are retained in case of a self-subscribe functionality failure for a data source.</p>
+    pub fn retain_permissions_on_revoke_failure(mut self, input: bool) -> Self {
+        self.retain_permissions_on_revoke_failure = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies that the granted permissions are retained in case of a self-subscribe functionality failure for a data source.</p>
+    pub fn set_retain_permissions_on_revoke_failure(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.retain_permissions_on_revoke_failure = input;
+        self
+    }
+    /// <p>Specifies that the granted permissions are retained in case of a self-subscribe functionality failure for a data source.</p>
+    pub fn get_retain_permissions_on_revoke_failure(&self) -> &::std::option::Option<bool> {
+        &self.retain_permissions_on_revoke_failure
+    }
     /// Consumes the builder and constructs a [`DeleteDataSourceInput`](crate::operation::delete_data_source::DeleteDataSourceInput).
     pub fn build(
         self,
@@ -92,6 +113,7 @@ impl DeleteDataSourceInputBuilder {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,
             client_token: self.client_token,
+            retain_permissions_on_revoke_failure: self.retain_permissions_on_revoke_failure,
         })
     }
 }

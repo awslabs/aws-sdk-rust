@@ -10,7 +10,7 @@ pub struct Snapshot {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the snapshot is encrypted.</p>
     pub encrypted: ::std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the parent volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that was used to protect the volume encryption key for the parent volume.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ pub struct Snapshot {
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The snapshot state.</p>
     pub state: ::std::option::Option<crate::types::SnapshotState>,
-    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
+    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper KMS permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
     pub state_message: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
@@ -54,7 +54,7 @@ impl Snapshot {
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the parent volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that was used to protect the volume encryption key for the parent volume.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -78,7 +78,7 @@ impl Snapshot {
     pub fn state(&self) -> ::std::option::Option<&crate::types::SnapshotState> {
         self.state.as_ref()
     }
-    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
+    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper KMS permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
     pub fn state_message(&self) -> ::std::option::Option<&str> {
         self.state_message.as_deref()
     }
@@ -190,17 +190,17 @@ impl SnapshotBuilder {
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
         &self.encrypted
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the parent volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that was used to protect the volume encryption key for the parent volume.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the parent volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that was used to protect the volume encryption key for the parent volume.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the parent volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that was used to protect the volume encryption key for the parent volume.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
@@ -274,17 +274,17 @@ impl SnapshotBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::SnapshotState> {
         &self.state
     }
-    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
+    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper KMS permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
     pub fn state_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
+    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper KMS permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
     pub fn set_state_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_message = input;
         self
     }
-    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
+    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper KMS permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
     pub fn get_state_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_message
     }

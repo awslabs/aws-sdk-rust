@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNetworkAclsOutput {
-    /// <p>Information about one or more network ACLs.</p>
+    /// <p>Information about the network ACLs.</p>
     pub network_acls: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAcl>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeNetworkAclsOutput {
-    /// <p>Information about one or more network ACLs.</p>
+    /// <p>Information about the network ACLs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_acls.is_none()`.
     pub fn network_acls(&self) -> &[crate::types::NetworkAcl] {
@@ -46,19 +46,19 @@ impl DescribeNetworkAclsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_network_acls`](Self::set_network_acls).
     ///
-    /// <p>Information about one or more network ACLs.</p>
+    /// <p>Information about the network ACLs.</p>
     pub fn network_acls(mut self, input: crate::types::NetworkAcl) -> Self {
         let mut v = self.network_acls.unwrap_or_default();
         v.push(input);
         self.network_acls = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about one or more network ACLs.</p>
+    /// <p>Information about the network ACLs.</p>
     pub fn set_network_acls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAcl>>) -> Self {
         self.network_acls = input;
         self
     }
-    /// <p>Information about one or more network ACLs.</p>
+    /// <p>Information about the network ACLs.</p>
     pub fn get_network_acls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkAcl>> {
         &self.network_acls
     }
