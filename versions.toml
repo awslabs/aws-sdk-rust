@@ -2476,6 +2476,10 @@ source_hash = 'c799788ff6e3e38f9477faf779bacb94a9fa59070014a9482578142ebbb91046'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'f9324c0fe054ca9c79483155ccb1dd27b9e34f77095a232788c76e40dcaf6db6'
+
+[release]
+tag = 'release-2024-06-17'
+
 [release.crates]
 aws-sdk-acmpca = '1.32.1'
 aws-sdk-batch = '1.37.0'
