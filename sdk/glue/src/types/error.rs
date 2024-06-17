@@ -11,6 +11,8 @@ pub use crate::types::error::_concurrent_modification_exception::ConcurrentModif
 
 pub use crate::types::error::_glue_encryption_exception::GlueEncryptionException;
 
+pub use crate::types::error::_operation_not_supported_exception::OperationNotSupportedException;
+
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_resource_number_limit_exceeded_exception::ResourceNumberLimitExceededException;
@@ -120,6 +122,8 @@ mod _invalid_state_exception;
 mod _ml_transform_not_ready_exception;
 
 mod _no_schedule_exception;
+
+mod _operation_not_supported_exception;
 
 mod _operation_timeout_exception;
 

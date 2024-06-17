@@ -319,6 +319,8 @@ pub(crate) mod shape_reports;
 
 pub(crate) mod shape_scaling_configuration_input;
 
+pub(crate) mod shape_scope_configuration;
+
 pub(crate) mod shape_source_auth;
 
 pub(crate) mod shape_source_credentials_infos;

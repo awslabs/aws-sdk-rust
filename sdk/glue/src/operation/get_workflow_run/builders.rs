@@ -22,7 +22,7 @@ impl crate::operation::get_workflow_run::builders::GetWorkflowRunInputBuilder {
 }
 /// Fluent builder constructing a request to `GetWorkflowRun`.
 ///
-/// <p>Retrieves the metadata for a given workflow run.</p>
+/// <p>Retrieves the metadata for a given workflow run. Job run history is accessible for 90 days for your workflow and job run.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWorkflowRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

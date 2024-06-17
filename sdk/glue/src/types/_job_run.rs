@@ -102,6 +102,8 @@ pub struct JobRun {
     /// <p>This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.</p>
     /// <p>Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
     pub maintenance_window: ::std::option::Option<::std::string::String>,
+    /// <p>The name of an Glue usage profile associated with the job run.</p>
+    pub profile_name: ::std::option::Option<::std::string::String>,
 }
 impl JobRun {
     /// <p>The ID of this job run.</p>
@@ -256,6 +258,10 @@ impl JobRun {
     pub fn maintenance_window(&self) -> ::std::option::Option<&str> {
         self.maintenance_window.as_deref()
     }
+    /// <p>The name of an Glue usage profile associated with the job run.</p>
+    pub fn profile_name(&self) -> ::std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
 }
 impl JobRun {
     /// Creates a new builder-style object to manufacture [`JobRun`](crate::types::JobRun).
@@ -294,6 +300,7 @@ pub struct JobRunBuilder {
     pub(crate) dpu_seconds: ::std::option::Option<f64>,
     pub(crate) execution_class: ::std::option::Option<crate::types::ExecutionClass>,
     pub(crate) maintenance_window: ::std::option::Option<::std::string::String>,
+    pub(crate) profile_name: ::std::option::Option<::std::string::String>,
 }
 impl JobRunBuilder {
     /// <p>The ID of this job run.</p>
@@ -810,6 +817,20 @@ impl JobRunBuilder {
     pub fn get_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.maintenance_window
     }
+    /// <p>The name of an Glue usage profile associated with the job run.</p>
+    pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.profile_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of an Glue usage profile associated with the job run.</p>
+    pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.profile_name = input;
+        self
+    }
+    /// <p>The name of an Glue usage profile associated with the job run.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
+    }
     /// Consumes the builder and constructs a [`JobRun`](crate::types::JobRun).
     pub fn build(self) -> crate::types::JobRun {
         crate::types::JobRun {
@@ -839,6 +860,7 @@ impl JobRunBuilder {
             dpu_seconds: self.dpu_seconds,
             execution_class: self.execution_class,
             maintenance_window: self.maintenance_window,
+            profile_name: self.profile_name,
         }
     }
 }

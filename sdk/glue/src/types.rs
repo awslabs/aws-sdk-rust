@@ -7,6 +7,10 @@ pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_principal_type::PrincipalType;
 
+pub use crate::types::_profile_configuration::ProfileConfiguration;
+
+pub use crate::types::_configuration_object::ConfigurationObject;
+
 pub use crate::types::_trigger::Trigger;
 
 pub use crate::types::_event_batching_condition::EventBatchingCondition;
@@ -499,6 +503,8 @@ pub use crate::types::_encryption_at_rest::EncryptionAtRest;
 
 pub use crate::types::_catalog_encryption_mode::CatalogEncryptionMode;
 
+pub use crate::types::_usage_profile_definition::UsageProfileDefinition;
+
 pub use crate::types::_table_optimizer_run::TableOptimizerRun;
 
 pub use crate::types::_run_metrics::RunMetrics;
@@ -953,6 +959,8 @@ mod _compression_type;
 
 mod _condition;
 
+mod _configuration_object;
+
 mod _confusion_matrix;
 
 mod _connection;
@@ -1365,6 +1373,8 @@ mod _principal_permissions;
 
 mod _principal_type;
 
+mod _profile_configuration;
+
 mod _property_predicate;
 
 mod _query_session_context;
@@ -1620,6 +1630,8 @@ mod _update_json_classifier_request;
 mod _update_xml_classifier_request;
 
 mod _upsert_redshift_target_options;
+
+mod _usage_profile_definition;
 
 mod _user_defined_function;
 

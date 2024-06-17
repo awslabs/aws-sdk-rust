@@ -55,6 +55,8 @@ pub enum Error {
     MlTransformNotReadyException(crate::types::error::MlTransformNotReadyException),
     /// <p>There is no applicable schedule.</p>
     NoScheduleException(crate::types::error::NoScheduleException),
+    /// <p>The operation is not available in the region.</p>
+    OperationNotSupportedException(crate::types::error::OperationNotSupportedException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::types::error::OperationTimeoutException),
     /// <p>The operation timed out.</p>
@@ -111,6 +113,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidStateException(inner) => inner.fmt(f),
             Error::MlTransformNotReadyException(inner) => inner.fmt(f),
             Error::NoScheduleException(inner) => inner.fmt(f),
+            Error::OperationNotSupportedException(inner) => inner.fmt(f),
             Error::OperationTimeoutException(inner) => inner.fmt(f),
             Error::PermissionTypeMismatchException(inner) => inner.fmt(f),
             Error::ResourceNotReadyException(inner) => inner.fmt(f),
@@ -167,6 +170,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidStateException(inner) => inner.meta(),
             Self::MlTransformNotReadyException(inner) => inner.meta(),
             Self::NoScheduleException(inner) => inner.meta(),
+            Self::OperationNotSupportedException(inner) => inner.meta(),
             Self::OperationTimeoutException(inner) => inner.meta(),
             Self::PermissionTypeMismatchException(inner) => inner.meta(),
             Self::ResourceNotReadyException(inner) => inner.meta(),
@@ -1519,6 +1523,41 @@ impl From<crate::operation::create_trigger::CreateTriggerError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_usage_profile::CreateUsageProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_usage_profile::CreateUsageProfileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_usage_profile::CreateUsageProfileError> for Error {
+    fn from(err: crate::operation::create_usage_profile::CreateUsageProfileError) -> Self {
+        match err {
+            crate::operation::create_usage_profile::CreateUsageProfileError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+            crate::operation::create_usage_profile::CreateUsageProfileError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_usage_profile::CreateUsageProfileError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_usage_profile::CreateUsageProfileError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::create_usage_profile::CreateUsageProfileError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::create_usage_profile::CreateUsageProfileError::ResourceNumberLimitExceededException(inner) => {
+                Error::ResourceNumberLimitExceededException(inner)
+            }
+            crate::operation::create_usage_profile::CreateUsageProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_user_defined_function::CreateUserDefinedFunctionError, R>>
     for Error
 where
@@ -2320,6 +2359,37 @@ impl From<crate::operation::delete_trigger::DeleteTriggerError> for Error {
             crate::operation::delete_trigger::DeleteTriggerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::delete_trigger::DeleteTriggerError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
             crate::operation::delete_trigger::DeleteTriggerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_usage_profile::DeleteUsageProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_usage_profile::DeleteUsageProfileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_usage_profile::DeleteUsageProfileError> for Error {
+    fn from(err: crate::operation::delete_usage_profile::DeleteUsageProfileError) -> Self {
+        match err {
+            crate::operation::delete_usage_profile::DeleteUsageProfileError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_usage_profile::DeleteUsageProfileError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_usage_profile::DeleteUsageProfileError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::delete_usage_profile::DeleteUsageProfileError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::delete_usage_profile::DeleteUsageProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4237,6 +4307,34 @@ impl From<crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMet
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_usage_profile::GetUsageProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_usage_profile::GetUsageProfileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_usage_profile::GetUsageProfileError> for Error {
+    fn from(err: crate::operation::get_usage_profile::GetUsageProfileError) -> Self {
+        match err {
+            crate::operation::get_usage_profile::GetUsageProfileError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_usage_profile::GetUsageProfileError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_usage_profile::GetUsageProfileError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_usage_profile::GetUsageProfileError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::get_usage_profile::GetUsageProfileError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::get_usage_profile::GetUsageProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_user_defined_function::GetUserDefinedFunctionError, R>>
     for Error
 where
@@ -5002,6 +5100,35 @@ impl From<crate::operation::list_triggers::ListTriggersError> for Error {
             crate::operation::list_triggers::ListTriggersError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::list_triggers::ListTriggersError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
             crate::operation::list_triggers::ListTriggersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_usage_profiles::ListUsageProfilesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_usage_profiles::ListUsageProfilesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_usage_profiles::ListUsageProfilesError> for Error {
+    fn from(err: crate::operation::list_usage_profiles::ListUsageProfilesError) -> Self {
+        match err {
+            crate::operation::list_usage_profiles::ListUsageProfilesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::list_usage_profiles::ListUsageProfilesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_usage_profiles::ListUsageProfilesError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::list_usage_profiles::ListUsageProfilesError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::list_usage_profiles::ListUsageProfilesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6775,6 +6902,41 @@ impl From<crate::operation::update_trigger::UpdateTriggerError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_usage_profile::UpdateUsageProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_usage_profile::UpdateUsageProfileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_usage_profile::UpdateUsageProfileError> for Error {
+    fn from(err: crate::operation::update_usage_profile::UpdateUsageProfileError) -> Self {
+        match err {
+            crate::operation::update_usage_profile::UpdateUsageProfileError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::update_usage_profile::UpdateUsageProfileError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::update_usage_profile::UpdateUsageProfileError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_usage_profile::UpdateUsageProfileError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_usage_profile::UpdateUsageProfileError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::update_usage_profile::UpdateUsageProfileError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::update_usage_profile::UpdateUsageProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_user_defined_function::UpdateUserDefinedFunctionError, R>>
     for Error
 where
@@ -6871,6 +7033,7 @@ impl ::std::error::Error for Error {
             Error::InvalidStateException(inner) => inner.source(),
             Error::MlTransformNotReadyException(inner) => inner.source(),
             Error::NoScheduleException(inner) => inner.source(),
+            Error::OperationNotSupportedException(inner) => inner.source(),
             Error::OperationTimeoutException(inner) => inner.source(),
             Error::PermissionTypeMismatchException(inner) => inner.source(),
             Error::ResourceNotReadyException(inner) => inner.source(),
@@ -6913,6 +7076,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidStateException(e) => e.request_id(),
             Self::MlTransformNotReadyException(e) => e.request_id(),
             Self::NoScheduleException(e) => e.request_id(),
+            Self::OperationNotSupportedException(e) => e.request_id(),
             Self::OperationTimeoutException(e) => e.request_id(),
             Self::PermissionTypeMismatchException(e) => e.request_id(),
             Self::ResourceNotReadyException(e) => e.request_id(),

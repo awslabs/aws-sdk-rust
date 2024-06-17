@@ -69,6 +69,14 @@ pub struct WebhookFilter {
     /// </note></li>
     /// </ul></li>
     /// <li>
+    /// <p>REPOSITORY_NAME</p>
+    /// <ul>
+    /// <li>
+    /// <p>A webhook triggers a build when the repository name matches the regular expression pattern.</p><note>
+    /// <p>Works with GitHub global or organization webhooks only.</p>
+    /// </note></li>
+    /// </ul></li>
+    /// <li>
     /// <p>WORKFLOW_NAME</p>
     /// <ul>
     /// <li>
@@ -147,6 +155,14 @@ impl WebhookFilter {
     /// <li>
     /// <p>A webhook triggers a build when the release name matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with <code>RELEASED</code> and <code>PRERELEASED</code> events only.</p>
+    /// </note></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>REPOSITORY_NAME</p>
+    /// <ul>
+    /// <li>
+    /// <p>A webhook triggers a build when the repository name matches the regular expression pattern.</p><note>
+    /// <p>Works with GitHub global or organization webhooks only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -253,6 +269,14 @@ impl WebhookFilterBuilder {
     /// </note></li>
     /// </ul></li>
     /// <li>
+    /// <p>REPOSITORY_NAME</p>
+    /// <ul>
+    /// <li>
+    /// <p>A webhook triggers a build when the repository name matches the regular expression pattern.</p><note>
+    /// <p>Works with GitHub global or organization webhooks only.</p>
+    /// </note></li>
+    /// </ul></li>
+    /// <li>
     /// <p>WORKFLOW_NAME</p>
     /// <ul>
     /// <li>
@@ -331,6 +355,14 @@ impl WebhookFilterBuilder {
     /// </note></li>
     /// </ul></li>
     /// <li>
+    /// <p>REPOSITORY_NAME</p>
+    /// <ul>
+    /// <li>
+    /// <p>A webhook triggers a build when the repository name matches the regular expression pattern.</p><note>
+    /// <p>Works with GitHub global or organization webhooks only.</p>
+    /// </note></li>
+    /// </ul></li>
+    /// <li>
     /// <p>WORKFLOW_NAME</p>
     /// <ul>
     /// <li>
@@ -405,6 +437,14 @@ impl WebhookFilterBuilder {
     /// <li>
     /// <p>A webhook triggers a build when the release name matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with <code>RELEASED</code> and <code>PRERELEASED</code> events only.</p>
+    /// </note></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>REPOSITORY_NAME</p>
+    /// <ul>
+    /// <li>
+    /// <p>A webhook triggers a build when the repository name matches the regular expression pattern.</p><note>
+    /// <p>Works with GitHub global or organization webhooks only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>

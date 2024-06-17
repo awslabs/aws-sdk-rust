@@ -102,6 +102,8 @@ pub struct Job {
     /// <p>This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.</p>
     /// <p>Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
     pub maintenance_window: ::std::option::Option<::std::string::String>,
+    /// <p>The name of an Glue usage profile associated with the job.</p>
+    pub profile_name: ::std::option::Option<::std::string::String>,
 }
 impl Job {
     /// <p>The name you assign to this job definition.</p>
@@ -253,6 +255,10 @@ impl Job {
     pub fn maintenance_window(&self) -> ::std::option::Option<&str> {
         self.maintenance_window.as_deref()
     }
+    /// <p>The name of an Glue usage profile associated with the job.</p>
+    pub fn profile_name(&self) -> ::std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
 }
 impl ::std::fmt::Debug for Job {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -282,6 +288,7 @@ impl ::std::fmt::Debug for Job {
         formatter.field("execution_class", &self.execution_class);
         formatter.field("source_control_details", &self.source_control_details);
         formatter.field("maintenance_window", &self.maintenance_window);
+        formatter.field("profile_name", &self.profile_name);
         formatter.finish()
     }
 }
@@ -322,6 +329,7 @@ pub struct JobBuilder {
     pub(crate) execution_class: ::std::option::Option<crate::types::ExecutionClass>,
     pub(crate) source_control_details: ::std::option::Option<crate::types::SourceControlDetails>,
     pub(crate) maintenance_window: ::std::option::Option<::std::string::String>,
+    pub(crate) profile_name: ::std::option::Option<::std::string::String>,
 }
 impl JobBuilder {
     /// <p>The name you assign to this job definition.</p>
@@ -856,6 +864,20 @@ impl JobBuilder {
     pub fn get_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.maintenance_window
     }
+    /// <p>The name of an Glue usage profile associated with the job.</p>
+    pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.profile_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of an Glue usage profile associated with the job.</p>
+    pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.profile_name = input;
+        self
+    }
+    /// <p>The name of an Glue usage profile associated with the job.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
+    }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {
         crate::types::Job {
@@ -884,6 +906,7 @@ impl JobBuilder {
             execution_class: self.execution_class,
             source_control_details: self.source_control_details,
             maintenance_window: self.maintenance_window,
+            profile_name: self.profile_name,
         }
     }
 }
@@ -915,6 +938,7 @@ impl ::std::fmt::Debug for JobBuilder {
         formatter.field("execution_class", &self.execution_class);
         formatter.field("source_control_details", &self.source_control_details);
         formatter.field("maintenance_window", &self.maintenance_window);
+        formatter.field("profile_name", &self.profile_name);
         formatter.finish()
     }
 }

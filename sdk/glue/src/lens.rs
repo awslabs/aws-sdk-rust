@@ -389,6 +389,16 @@ pub(crate) fn reflens_list_triggers_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_usage_profiles_output_output_next_token(
+    input: &crate::operation::list_usage_profiles::ListUsageProfilesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_workflows_output_output_next_token(
     input: &crate::operation::list_workflows::ListWorkflowsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -463,6 +473,16 @@ pub(crate) fn lens_list_schemas_output_output_schemas(
     input: crate::operation::list_schemas::ListSchemasOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SchemaListItem>> {
     let input = match input.schemas {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_usage_profiles_output_output_profiles(
+    input: crate::operation::list_usage_profiles::ListUsageProfilesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::UsageProfileDefinition>> {
+    let input = match input.profiles {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

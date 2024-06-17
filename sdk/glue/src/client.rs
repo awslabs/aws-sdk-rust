@@ -220,6 +220,8 @@ mod create_table_optimizer;
 
 mod create_trigger;
 
+mod create_usage_profile;
+
 mod create_user_defined_function;
 
 mod create_workflow;
@@ -298,6 +300,8 @@ mod delete_table_optimizer;
 mod delete_table_version;
 
 mod delete_trigger;
+
+mod delete_usage_profile;
 
 mod delete_user_defined_function;
 
@@ -427,6 +431,8 @@ mod get_unfiltered_partitions_metadata;
 
 mod get_unfiltered_table_metadata;
 
+mod get_usage_profile;
+
 mod get_user_defined_function;
 
 mod get_user_defined_functions;
@@ -478,6 +484,8 @@ mod list_statements;
 mod list_table_optimizer_runs;
 
 mod list_triggers;
+
+mod list_usage_profiles;
 
 mod list_workflows;
 
@@ -584,6 +592,8 @@ mod update_table;
 mod update_table_optimizer;
 
 mod update_trigger;
+
+mod update_usage_profile;
 
 mod update_user_defined_function;
 

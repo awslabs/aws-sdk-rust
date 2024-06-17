@@ -12,6 +12,8 @@ pub struct CmafGroupSettings {
     pub client_cache: ::std::option::Option<crate::types::CmafClientCache>,
     /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
     pub codec_specification: ::std::option::Option<crate::types::CmafCodecSpecification>,
+    /// Specify whether MediaConvert generates I-frame only video segments for DASH trick play, also known as trick mode. When specified, the I-frame only video segments are included within an additional AdaptationSet in your DASH output manifest. To generate I-frame only video segments: Enter a name as a text string, up to 256 character long. This name is appended to the end of this output group's base filename, that you specify as part of your destination URI, and used for the I-frame only video segment files. You may also include format identifiers. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html#using-settings-variables-with-streaming-outputs To not generate I-frame only video segments: Leave blank.
+    pub dash_i_frame_trick_play_name_modifier: ::std::option::Option<::std::string::String>,
     /// Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To write a SegmentTimeline in each video Representation: Keep the default value, Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation that does not share a common timeline. To write a video AdaptationSet for each different output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct.
     pub dash_manifest_style: ::std::option::Option<crate::types::DashManifestStyle>,
     /// Use Destination to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
@@ -77,6 +79,10 @@ impl CmafGroupSettings {
     /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
     pub fn codec_specification(&self) -> ::std::option::Option<&crate::types::CmafCodecSpecification> {
         self.codec_specification.as_ref()
+    }
+    /// Specify whether MediaConvert generates I-frame only video segments for DASH trick play, also known as trick mode. When specified, the I-frame only video segments are included within an additional AdaptationSet in your DASH output manifest. To generate I-frame only video segments: Enter a name as a text string, up to 256 character long. This name is appended to the end of this output group's base filename, that you specify as part of your destination URI, and used for the I-frame only video segment files. You may also include format identifiers. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html#using-settings-variables-with-streaming-outputs To not generate I-frame only video segments: Leave blank.
+    pub fn dash_i_frame_trick_play_name_modifier(&self) -> ::std::option::Option<&str> {
+        self.dash_i_frame_trick_play_name_modifier.as_deref()
     }
     /// Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To write a SegmentTimeline in each video Representation: Keep the default value, Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation that does not share a common timeline. To write a video AdaptationSet for each different output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct.
     pub fn dash_manifest_style(&self) -> ::std::option::Option<&crate::types::DashManifestStyle> {
@@ -186,6 +192,7 @@ pub struct CmafGroupSettingsBuilder {
     pub(crate) base_url: ::std::option::Option<::std::string::String>,
     pub(crate) client_cache: ::std::option::Option<crate::types::CmafClientCache>,
     pub(crate) codec_specification: ::std::option::Option<crate::types::CmafCodecSpecification>,
+    pub(crate) dash_i_frame_trick_play_name_modifier: ::std::option::Option<::std::string::String>,
     pub(crate) dash_manifest_style: ::std::option::Option<crate::types::DashManifestStyle>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,
     pub(crate) destination_settings: ::std::option::Option<crate::types::DestinationSettings>,
@@ -272,6 +279,20 @@ impl CmafGroupSettingsBuilder {
     /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
     pub fn get_codec_specification(&self) -> &::std::option::Option<crate::types::CmafCodecSpecification> {
         &self.codec_specification
+    }
+    /// Specify whether MediaConvert generates I-frame only video segments for DASH trick play, also known as trick mode. When specified, the I-frame only video segments are included within an additional AdaptationSet in your DASH output manifest. To generate I-frame only video segments: Enter a name as a text string, up to 256 character long. This name is appended to the end of this output group's base filename, that you specify as part of your destination URI, and used for the I-frame only video segment files. You may also include format identifiers. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html#using-settings-variables-with-streaming-outputs To not generate I-frame only video segments: Leave blank.
+    pub fn dash_i_frame_trick_play_name_modifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dash_i_frame_trick_play_name_modifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Specify whether MediaConvert generates I-frame only video segments for DASH trick play, also known as trick mode. When specified, the I-frame only video segments are included within an additional AdaptationSet in your DASH output manifest. To generate I-frame only video segments: Enter a name as a text string, up to 256 character long. This name is appended to the end of this output group's base filename, that you specify as part of your destination URI, and used for the I-frame only video segment files. You may also include format identifiers. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html#using-settings-variables-with-streaming-outputs To not generate I-frame only video segments: Leave blank.
+    pub fn set_dash_i_frame_trick_play_name_modifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dash_i_frame_trick_play_name_modifier = input;
+        self
+    }
+    /// Specify whether MediaConvert generates I-frame only video segments for DASH trick play, also known as trick mode. When specified, the I-frame only video segments are included within an additional AdaptationSet in your DASH output manifest. To generate I-frame only video segments: Enter a name as a text string, up to 256 character long. This name is appended to the end of this output group's base filename, that you specify as part of your destination URI, and used for the I-frame only video segment files. You may also include format identifiers. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html#using-settings-variables-with-streaming-outputs To not generate I-frame only video segments: Leave blank.
+    pub fn get_dash_i_frame_trick_play_name_modifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dash_i_frame_trick_play_name_modifier
     }
     /// Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To write a SegmentTimeline in each video Representation: Keep the default value, Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation that does not share a common timeline. To write a video AdaptationSet for each different output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct.
     pub fn dash_manifest_style(mut self, input: crate::types::DashManifestStyle) -> Self {
@@ -605,6 +626,7 @@ impl CmafGroupSettingsBuilder {
             base_url: self.base_url,
             client_cache: self.client_cache,
             codec_specification: self.codec_specification,
+            dash_i_frame_trick_play_name_modifier: self.dash_i_frame_trick_play_name_modifier,
             dash_manifest_style: self.dash_manifest_style,
             destination: self.destination,
             destination_settings: self.destination_settings,

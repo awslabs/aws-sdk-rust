@@ -4,13 +4,37 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputVideoGenerator {
-    /// Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator.
+    /// Specify the number of audio channels to include in your video generator input. MediaConvert creates these audio channels as silent audio within a single audio track. Enter an integer from 1 to 32.
+    pub channels: ::std::option::Option<i32>,
+    /// Specify the duration, in milliseconds, for your video generator input. Enter an integer from 50 to 86400000.
     pub duration: ::std::option::Option<i32>,
+    /// Specify the denominator of the fraction that represents the frame rate for your video generator input. When you do, you must also specify a value for Frame rate numerator. MediaConvert uses a default frame rate of 29.97 when you leave Frame rate numerator and Frame rate denominator blank.
+    pub framerate_denominator: ::std::option::Option<i32>,
+    /// Specify the numerator of the fraction that represents the frame rate for your video generator input. When you do, you must also specify a value for Frame rate denominator. MediaConvert uses a default frame rate of 29.97 when you leave Frame rate numerator and Frame rate denominator blank.
+    pub framerate_numerator: ::std::option::Option<i32>,
+    /// Specify the audio sample rate, in Hz, for the silent audio in your video generator input. Enter an integer from 32000 to 48000.
+    pub sample_rate: ::std::option::Option<i32>,
 }
 impl InputVideoGenerator {
-    /// Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator.
+    /// Specify the number of audio channels to include in your video generator input. MediaConvert creates these audio channels as silent audio within a single audio track. Enter an integer from 1 to 32.
+    pub fn channels(&self) -> ::std::option::Option<i32> {
+        self.channels
+    }
+    /// Specify the duration, in milliseconds, for your video generator input. Enter an integer from 50 to 86400000.
     pub fn duration(&self) -> ::std::option::Option<i32> {
         self.duration
+    }
+    /// Specify the denominator of the fraction that represents the frame rate for your video generator input. When you do, you must also specify a value for Frame rate numerator. MediaConvert uses a default frame rate of 29.97 when you leave Frame rate numerator and Frame rate denominator blank.
+    pub fn framerate_denominator(&self) -> ::std::option::Option<i32> {
+        self.framerate_denominator
+    }
+    /// Specify the numerator of the fraction that represents the frame rate for your video generator input. When you do, you must also specify a value for Frame rate denominator. MediaConvert uses a default frame rate of 29.97 when you leave Frame rate numerator and Frame rate denominator blank.
+    pub fn framerate_numerator(&self) -> ::std::option::Option<i32> {
+        self.framerate_numerator
+    }
+    /// Specify the audio sample rate, in Hz, for the silent audio in your video generator input. Enter an integer from 32000 to 48000.
+    pub fn sample_rate(&self) -> ::std::option::Option<i32> {
+        self.sample_rate
     }
 }
 impl InputVideoGenerator {
@@ -24,25 +48,91 @@ impl InputVideoGenerator {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputVideoGeneratorBuilder {
+    pub(crate) channels: ::std::option::Option<i32>,
     pub(crate) duration: ::std::option::Option<i32>,
+    pub(crate) framerate_denominator: ::std::option::Option<i32>,
+    pub(crate) framerate_numerator: ::std::option::Option<i32>,
+    pub(crate) sample_rate: ::std::option::Option<i32>,
 }
 impl InputVideoGeneratorBuilder {
-    /// Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator.
+    /// Specify the number of audio channels to include in your video generator input. MediaConvert creates these audio channels as silent audio within a single audio track. Enter an integer from 1 to 32.
+    pub fn channels(mut self, input: i32) -> Self {
+        self.channels = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the number of audio channels to include in your video generator input. MediaConvert creates these audio channels as silent audio within a single audio track. Enter an integer from 1 to 32.
+    pub fn set_channels(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.channels = input;
+        self
+    }
+    /// Specify the number of audio channels to include in your video generator input. MediaConvert creates these audio channels as silent audio within a single audio track. Enter an integer from 1 to 32.
+    pub fn get_channels(&self) -> &::std::option::Option<i32> {
+        &self.channels
+    }
+    /// Specify the duration, in milliseconds, for your video generator input. Enter an integer from 50 to 86400000.
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = ::std::option::Option::Some(input);
         self
     }
-    /// Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator.
+    /// Specify the duration, in milliseconds, for your video generator input. Enter an integer from 50 to 86400000.
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration = input;
         self
     }
-    /// Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator.
+    /// Specify the duration, in milliseconds, for your video generator input. Enter an integer from 50 to 86400000.
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
         &self.duration
     }
+    /// Specify the denominator of the fraction that represents the frame rate for your video generator input. When you do, you must also specify a value for Frame rate numerator. MediaConvert uses a default frame rate of 29.97 when you leave Frame rate numerator and Frame rate denominator blank.
+    pub fn framerate_denominator(mut self, input: i32) -> Self {
+        self.framerate_denominator = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the denominator of the fraction that represents the frame rate for your video generator input. When you do, you must also specify a value for Frame rate numerator. MediaConvert uses a default frame rate of 29.97 when you leave Frame rate numerator and Frame rate denominator blank.
+    pub fn set_framerate_denominator(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.framerate_denominator = input;
+        self
+    }
+    /// Specify the denominator of the fraction that represents the frame rate for your video generator input. When you do, you must also specify a value for Frame rate numerator. MediaConvert uses a default frame rate of 29.97 when you leave Frame rate numerator and Frame rate denominator blank.
+    pub fn get_framerate_denominator(&self) -> &::std::option::Option<i32> {
+        &self.framerate_denominator
+    }
+    /// Specify the numerator of the fraction that represents the frame rate for your video generator input. When you do, you must also specify a value for Frame rate denominator. MediaConvert uses a default frame rate of 29.97 when you leave Frame rate numerator and Frame rate denominator blank.
+    pub fn framerate_numerator(mut self, input: i32) -> Self {
+        self.framerate_numerator = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the numerator of the fraction that represents the frame rate for your video generator input. When you do, you must also specify a value for Frame rate denominator. MediaConvert uses a default frame rate of 29.97 when you leave Frame rate numerator and Frame rate denominator blank.
+    pub fn set_framerate_numerator(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.framerate_numerator = input;
+        self
+    }
+    /// Specify the numerator of the fraction that represents the frame rate for your video generator input. When you do, you must also specify a value for Frame rate denominator. MediaConvert uses a default frame rate of 29.97 when you leave Frame rate numerator and Frame rate denominator blank.
+    pub fn get_framerate_numerator(&self) -> &::std::option::Option<i32> {
+        &self.framerate_numerator
+    }
+    /// Specify the audio sample rate, in Hz, for the silent audio in your video generator input. Enter an integer from 32000 to 48000.
+    pub fn sample_rate(mut self, input: i32) -> Self {
+        self.sample_rate = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the audio sample rate, in Hz, for the silent audio in your video generator input. Enter an integer from 32000 to 48000.
+    pub fn set_sample_rate(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.sample_rate = input;
+        self
+    }
+    /// Specify the audio sample rate, in Hz, for the silent audio in your video generator input. Enter an integer from 32000 to 48000.
+    pub fn get_sample_rate(&self) -> &::std::option::Option<i32> {
+        &self.sample_rate
+    }
     /// Consumes the builder and constructs a [`InputVideoGenerator`](crate::types::InputVideoGenerator).
     pub fn build(self) -> crate::types::InputVideoGenerator {
-        crate::types::InputVideoGenerator { duration: self.duration }
+        crate::types::InputVideoGenerator {
+            channels: self.channels,
+            duration: self.duration,
+            framerate_denominator: self.framerate_denominator,
+            framerate_numerator: self.framerate_numerator,
+            sample_rate: self.sample_rate,
+        }
     }
 }

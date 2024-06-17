@@ -53,7 +53,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-cognitoidentityprovider = "1.35.0"
+//! aws-sdk-cognitoidentityprovider = "1.36.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

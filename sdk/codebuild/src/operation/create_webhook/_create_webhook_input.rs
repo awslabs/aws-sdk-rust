@@ -18,6 +18,10 @@ pub struct CreateWebhookInput {
     /// <p><code>manualCreation</code> is only available for GitHub webhooks.</p>
     /// </note>
     pub manual_creation: ::std::option::Option<bool>,
+    /// <p>The scope configuration for global or organization webhooks.</p><note>
+    /// <p>Global or organization webhooks are only available for GitHub and Github Enterprise webhooks.</p>
+    /// </note>
+    pub scope_configuration: ::std::option::Option<crate::types::ScopeConfiguration>,
 }
 impl CreateWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
@@ -47,6 +51,12 @@ impl CreateWebhookInput {
     pub fn manual_creation(&self) -> ::std::option::Option<bool> {
         self.manual_creation
     }
+    /// <p>The scope configuration for global or organization webhooks.</p><note>
+    /// <p>Global or organization webhooks are only available for GitHub and Github Enterprise webhooks.</p>
+    /// </note>
+    pub fn scope_configuration(&self) -> ::std::option::Option<&crate::types::ScopeConfiguration> {
+        self.scope_configuration.as_ref()
+    }
 }
 impl CreateWebhookInput {
     /// Creates a new builder-style object to manufacture [`CreateWebhookInput`](crate::operation::create_webhook::CreateWebhookInput).
@@ -64,6 +74,7 @@ pub struct CreateWebhookInputBuilder {
     pub(crate) filter_groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
     pub(crate) build_type: ::std::option::Option<crate::types::WebhookBuildType>,
     pub(crate) manual_creation: ::std::option::Option<bool>,
+    pub(crate) scope_configuration: ::std::option::Option<crate::types::ScopeConfiguration>,
 }
 impl CreateWebhookInputBuilder {
     /// <p>The name of the CodeBuild project.</p>
@@ -158,6 +169,26 @@ impl CreateWebhookInputBuilder {
     pub fn get_manual_creation(&self) -> &::std::option::Option<bool> {
         &self.manual_creation
     }
+    /// <p>The scope configuration for global or organization webhooks.</p><note>
+    /// <p>Global or organization webhooks are only available for GitHub and Github Enterprise webhooks.</p>
+    /// </note>
+    pub fn scope_configuration(mut self, input: crate::types::ScopeConfiguration) -> Self {
+        self.scope_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scope configuration for global or organization webhooks.</p><note>
+    /// <p>Global or organization webhooks are only available for GitHub and Github Enterprise webhooks.</p>
+    /// </note>
+    pub fn set_scope_configuration(mut self, input: ::std::option::Option<crate::types::ScopeConfiguration>) -> Self {
+        self.scope_configuration = input;
+        self
+    }
+    /// <p>The scope configuration for global or organization webhooks.</p><note>
+    /// <p>Global or organization webhooks are only available for GitHub and Github Enterprise webhooks.</p>
+    /// </note>
+    pub fn get_scope_configuration(&self) -> &::std::option::Option<crate::types::ScopeConfiguration> {
+        &self.scope_configuration
+    }
     /// Consumes the builder and constructs a [`CreateWebhookInput`](crate::operation::create_webhook::CreateWebhookInput).
     pub fn build(
         self,
@@ -168,6 +199,7 @@ impl CreateWebhookInputBuilder {
             filter_groups: self.filter_groups,
             build_type: self.build_type,
             manual_creation: self.manual_creation,
+            scope_configuration: self.scope_configuration,
         })
     }
 }

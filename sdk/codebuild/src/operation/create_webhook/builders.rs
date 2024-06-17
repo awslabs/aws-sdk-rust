@@ -200,4 +200,24 @@ impl CreateWebhookFluentBuilder {
     pub fn get_manual_creation(&self) -> &::std::option::Option<bool> {
         self.inner.get_manual_creation()
     }
+    /// <p>The scope configuration for global or organization webhooks.</p><note>
+    /// <p>Global or organization webhooks are only available for GitHub and Github Enterprise webhooks.</p>
+    /// </note>
+    pub fn scope_configuration(mut self, input: crate::types::ScopeConfiguration) -> Self {
+        self.inner = self.inner.scope_configuration(input);
+        self
+    }
+    /// <p>The scope configuration for global or organization webhooks.</p><note>
+    /// <p>Global or organization webhooks are only available for GitHub and Github Enterprise webhooks.</p>
+    /// </note>
+    pub fn set_scope_configuration(mut self, input: ::std::option::Option<crate::types::ScopeConfiguration>) -> Self {
+        self.inner = self.inner.set_scope_configuration(input);
+        self
+    }
+    /// <p>The scope configuration for global or organization webhooks.</p><note>
+    /// <p>Global or organization webhooks are only available for GitHub and Github Enterprise webhooks.</p>
+    /// </note>
+    pub fn get_scope_configuration(&self) -> &::std::option::Option<crate::types::ScopeConfiguration> {
+        self.inner.get_scope_configuration()
+    }
 }

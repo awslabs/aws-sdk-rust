@@ -21,80 +21,83 @@ pub fn ser_dash_iso_group_settings(
     if let Some(var_6) = &input.base_url {
         object.key("baseUrl").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.dash_manifest_style {
-        object.key("dashManifestStyle").string(var_7.as_str());
+    if let Some(var_7) = &input.dash_i_frame_trick_play_name_modifier {
+        object.key("dashIFrameTrickPlayNameModifier").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.destination {
-        object.key("destination").string(var_8.as_str());
+    if let Some(var_8) = &input.dash_manifest_style {
+        object.key("dashManifestStyle").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.destination_settings {
+    if let Some(var_9) = &input.destination {
+        object.key("destination").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.destination_settings {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("destinationSettings").start_object();
-        crate::protocol_serde::shape_destination_settings::ser_destination_settings(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("destinationSettings").start_object();
+        crate::protocol_serde::shape_destination_settings::ser_destination_settings(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_11) = &input.encryption {
+    if let Some(var_12) = &input.encryption {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("encryption").start_object();
-        crate::protocol_serde::shape_dash_iso_encryption_settings::ser_dash_iso_encryption_settings(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_13 = object.key("encryption").start_object();
+        crate::protocol_serde::shape_dash_iso_encryption_settings::ser_dash_iso_encryption_settings(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_13) = &input.fragment_length {
+    if let Some(var_14) = &input.fragment_length {
         object.key("fragmentLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_14) = &input.hbbtv_compliance {
-        object.key("hbbtvCompliance").string(var_14.as_str());
+    if let Some(var_15) = &input.hbbtv_compliance {
+        object.key("hbbtvCompliance").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.image_based_trick_play {
-        object.key("imageBasedTrickPlay").string(var_15.as_str());
+    if let Some(var_16) = &input.image_based_trick_play {
+        object.key("imageBasedTrickPlay").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.image_based_trick_play_settings {
+    if let Some(var_17) = &input.image_based_trick_play_settings {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("imageBasedTrickPlaySettings").start_object();
-        crate::protocol_serde::shape_dash_iso_image_based_trick_play_settings::ser_dash_iso_image_based_trick_play_settings(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_18 = object.key("imageBasedTrickPlaySettings").start_object();
+        crate::protocol_serde::shape_dash_iso_image_based_trick_play_settings::ser_dash_iso_image_based_trick_play_settings(&mut object_18, var_17)?;
+        object_18.finish();
     }
-    if let Some(var_18) = &input.min_buffer_time {
+    if let Some(var_19) = &input.min_buffer_time {
         object.key("minBufferTime").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_18).into()),
+            ::aws_smithy_types::Number::NegInt((*var_19).into()),
         );
     }
-    if let Some(var_19) = &input.min_final_segment_length {
+    if let Some(var_20) = &input.min_final_segment_length {
         object.key("minFinalSegmentLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_19).into()),
+            ::aws_smithy_types::Number::Float((*var_20).into()),
         );
     }
-    if let Some(var_20) = &input.mpd_manifest_bandwidth_type {
-        object.key("mpdManifestBandwidthType").string(var_20.as_str());
+    if let Some(var_21) = &input.mpd_manifest_bandwidth_type {
+        object.key("mpdManifestBandwidthType").string(var_21.as_str());
     }
-    if let Some(var_21) = &input.mpd_profile {
-        object.key("mpdProfile").string(var_21.as_str());
+    if let Some(var_22) = &input.mpd_profile {
+        object.key("mpdProfile").string(var_22.as_str());
     }
-    if let Some(var_22) = &input.pts_offset_handling_for_b_frames {
-        object.key("ptsOffsetHandlingForBFrames").string(var_22.as_str());
+    if let Some(var_23) = &input.pts_offset_handling_for_b_frames {
+        object.key("ptsOffsetHandlingForBFrames").string(var_23.as_str());
     }
-    if let Some(var_23) = &input.segment_control {
-        object.key("segmentControl").string(var_23.as_str());
+    if let Some(var_24) = &input.segment_control {
+        object.key("segmentControl").string(var_24.as_str());
     }
-    if let Some(var_24) = &input.segment_length {
+    if let Some(var_25) = &input.segment_length {
         object.key("segmentLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_24).into()),
+            ::aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
-    if let Some(var_25) = &input.segment_length_control {
-        object.key("segmentLengthControl").string(var_25.as_str());
+    if let Some(var_26) = &input.segment_length_control {
+        object.key("segmentLengthControl").string(var_26.as_str());
     }
-    if let Some(var_26) = &input.video_composition_offsets {
-        object.key("videoCompositionOffsets").string(var_26.as_str());
+    if let Some(var_27) = &input.video_composition_offsets {
+        object.key("videoCompositionOffsets").string(var_27.as_str());
     }
-    if let Some(var_27) = &input.write_segment_timeline_in_representation {
-        object.key("writeSegmentTimelineInRepresentation").string(var_27.as_str());
+    if let Some(var_28) = &input.write_segment_timeline_in_representation {
+        object.key("writeSegmentTimelineInRepresentation").string(var_28.as_str());
     }
     Ok(())
 }
@@ -131,6 +134,13 @@ where
                         }
                         "baseUrl" => {
                             builder = builder.set_base_url(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "dashIFrameTrickPlayNameModifier" => {
+                            builder = builder.set_dash_i_frame_trick_play_name_modifier(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

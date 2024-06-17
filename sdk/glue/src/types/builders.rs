@@ -3,6 +3,10 @@ pub use crate::types::_user_defined_function_input::UserDefinedFunctionInputBuil
 
 pub use crate::types::_resource_uri::ResourceUriBuilder;
 
+pub use crate::types::_profile_configuration::ProfileConfigurationBuilder;
+
+pub use crate::types::_configuration_object::ConfigurationObjectBuilder;
+
 pub use crate::types::_trigger::TriggerBuilder;
 
 pub use crate::types::_event_batching_condition::EventBatchingConditionBuilder;
@@ -374,6 +378,8 @@ pub use crate::types::_data_catalog_encryption_settings::DataCatalogEncryptionSe
 pub use crate::types::_connection_password_encryption::ConnectionPasswordEncryptionBuilder;
 
 pub use crate::types::_encryption_at_rest::EncryptionAtRestBuilder;
+
+pub use crate::types::_usage_profile_definition::UsageProfileDefinitionBuilder;
 
 pub use crate::types::_table_optimizer_run::TableOptimizerRunBuilder;
 

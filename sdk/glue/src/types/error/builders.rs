@@ -11,6 +11,8 @@ pub use crate::types::error::_concurrent_modification_exception::ConcurrentModif
 
 pub use crate::types::error::_glue_encryption_exception::GlueEncryptionExceptionBuilder;
 
+pub use crate::types::error::_operation_not_supported_exception::OperationNotSupportedExceptionBuilder;
+
 pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
 
 pub use crate::types::error::_resource_number_limit_exceeded_exception::ResourceNumberLimitExceededExceptionBuilder;

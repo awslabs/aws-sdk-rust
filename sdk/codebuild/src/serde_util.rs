@@ -39,6 +39,18 @@ pub(crate) fn project_source_correct_errors(
     builder
 }
 
+pub(crate) fn scope_configuration_correct_errors(
+    mut builder: crate::types::builders::ScopeConfigurationBuilder,
+) -> crate::types::builders::ScopeConfigurationBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.scope.is_none() {
+        builder.scope = "no value was set".parse::<crate::types::WebhookScopeType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn cloud_watch_logs_config_correct_errors(
     mut builder: crate::types::builders::CloudWatchLogsConfigBuilder,
 ) -> crate::types::builders::CloudWatchLogsConfigBuilder {

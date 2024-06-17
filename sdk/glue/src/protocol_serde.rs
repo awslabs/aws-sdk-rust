@@ -107,6 +107,8 @@ pub(crate) mod shape_create_table_optimizer;
 
 pub(crate) mod shape_create_trigger;
 
+pub(crate) mod shape_create_usage_profile;
+
 pub(crate) mod shape_create_user_defined_function;
 
 pub(crate) mod shape_create_workflow;
@@ -158,6 +160,8 @@ pub(crate) mod shape_delete_table_optimizer;
 pub(crate) mod shape_delete_table_version;
 
 pub(crate) mod shape_delete_trigger;
+
+pub(crate) mod shape_delete_usage_profile;
 
 pub(crate) mod shape_delete_user_defined_function;
 
@@ -287,6 +291,8 @@ pub(crate) mod shape_get_unfiltered_partitions_metadata;
 
 pub(crate) mod shape_get_unfiltered_table_metadata;
 
+pub(crate) mod shape_get_usage_profile;
+
 pub(crate) mod shape_get_user_defined_function;
 
 pub(crate) mod shape_get_user_defined_functions;
@@ -338,6 +344,8 @@ pub(crate) mod shape_list_statements;
 pub(crate) mod shape_list_table_optimizer_runs;
 
 pub(crate) mod shape_list_triggers;
+
+pub(crate) mod shape_list_usage_profiles;
 
 pub(crate) mod shape_list_workflows;
 
@@ -444,6 +452,8 @@ pub(crate) mod shape_update_table;
 pub(crate) mod shape_update_table_optimizer;
 
 pub(crate) mod shape_update_trigger;
+
+pub(crate) mod shape_update_usage_profile;
 
 pub(crate) mod shape_update_user_defined_function;
 
@@ -565,6 +575,8 @@ pub(crate) mod shape_create_table_optimizer_input;
 
 pub(crate) mod shape_create_trigger_input;
 
+pub(crate) mod shape_create_usage_profile_input;
+
 pub(crate) mod shape_create_user_defined_function_input;
 
 pub(crate) mod shape_create_workflow_input;
@@ -616,6 +628,8 @@ pub(crate) mod shape_delete_table_optimizer_input;
 pub(crate) mod shape_delete_table_version_input;
 
 pub(crate) mod shape_delete_trigger_input;
+
+pub(crate) mod shape_delete_usage_profile_input;
 
 pub(crate) mod shape_delete_user_defined_function_input;
 
@@ -753,6 +767,8 @@ pub(crate) mod shape_get_unfiltered_partitions_metadata_input;
 
 pub(crate) mod shape_get_unfiltered_table_metadata_input;
 
+pub(crate) mod shape_get_usage_profile_input;
+
 pub(crate) mod shape_get_user_defined_function_input;
 
 pub(crate) mod shape_get_user_defined_functions_input;
@@ -821,11 +837,15 @@ pub(crate) mod shape_list_table_optimizer_runs_input;
 
 pub(crate) mod shape_list_triggers_input;
 
+pub(crate) mod shape_list_usage_profiles_input;
+
 pub(crate) mod shape_list_workflows_input;
 
 pub(crate) mod shape_ml_transform_not_ready_exception;
 
 pub(crate) mod shape_no_schedule_exception;
+
+pub(crate) mod shape_operation_not_supported_exception;
 
 pub(crate) mod shape_operation_timeout_exception;
 
@@ -944,6 +964,8 @@ pub(crate) mod shape_update_table_input;
 pub(crate) mod shape_update_table_optimizer_input;
 
 pub(crate) mod shape_update_trigger_input;
+
+pub(crate) mod shape_update_usage_profile_input;
 
 pub(crate) mod shape_update_user_defined_function_input;
 
@@ -1185,6 +1207,8 @@ pub(crate) mod shape_permission_list;
 
 pub(crate) mod shape_predicate;
 
+pub(crate) mod shape_profile_configuration;
+
 pub(crate) mod shape_property_predicate;
 
 pub(crate) mod shape_query_session_context;
@@ -1295,6 +1319,8 @@ pub(crate) mod shape_update_json_classifier_request;
 
 pub(crate) mod shape_update_xml_classifier_request;
 
+pub(crate) mod shape_usage_profile_definition_list;
+
 pub(crate) mod shape_user_defined_function;
 
 pub(crate) mod shape_user_defined_function_input;
@@ -1378,6 +1404,10 @@ pub(crate) mod shape_column_statistics_data;
 pub(crate) mod shape_column_statistics_error;
 
 pub(crate) mod shape_condition;
+
+pub(crate) mod shape_configuration_map;
+
+pub(crate) mod shape_configuration_object;
 
 pub(crate) mod shape_connection_password_encryption;
 
@@ -1641,6 +1671,8 @@ pub(crate) mod shape_unfiltered_partition;
 
 pub(crate) mod shape_union;
 
+pub(crate) mod shape_usage_profile_definition;
+
 pub(crate) mod shape_value_string_list;
 
 pub(crate) mod shape_view_definition;
@@ -1796,6 +1828,8 @@ pub(crate) mod shape_view_representation_input;
 pub(crate) mod shape_view_representation_list;
 
 pub(crate) mod shape_view_sub_objects_list;
+
+pub(crate) mod shape_allowed_values_string_list;
 
 pub(crate) mod shape_amazon_redshift_advanced_option;
 

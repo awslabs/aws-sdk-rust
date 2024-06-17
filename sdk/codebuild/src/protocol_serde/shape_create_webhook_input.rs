@@ -33,5 +33,11 @@ pub fn ser_create_webhook_input_input(
     if let Some(var_10) = &input.manual_creation {
         object.key("manualCreation").boolean(*var_10);
     }
+    if let Some(var_11) = &input.scope_configuration {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("scopeConfiguration").start_object();
+        crate::protocol_serde::shape_scope_configuration::ser_scope_configuration(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }

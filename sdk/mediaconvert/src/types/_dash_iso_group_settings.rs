@@ -10,6 +10,8 @@ pub struct DashIsoGroupSettings {
     pub audio_channel_config_scheme_id_uri: ::std::option::Option<crate::types::DashIsoGroupAudioChannelConfigSchemeIdUri>,
     /// A partial URI prefix that will be put in the manifest (.mpd) file at the top level BaseURL element. Can be used if streams are delivered from a different URL than the manifest file.
     pub base_url: ::std::option::Option<::std::string::String>,
+    /// Specify whether MediaConvert generates I-frame only video segments for DASH trick play, also known as trick mode. When specified, the I-frame only video segments are included within an additional AdaptationSet in your DASH output manifest. To generate I-frame only video segments: Enter a name as a text string, up to 256 character long. This name is appended to the end of this output group's base filename, that you specify as part of your destination URI, and used for the I-frame only video segment files. You may also include format identifiers. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html#using-settings-variables-with-streaming-outputs To not generate I-frame only video segments: Leave blank.
+    pub dash_i_frame_trick_play_name_modifier: ::std::option::Option<::std::string::String>,
     /// Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To write a SegmentTimeline in each video Representation: Keep the default value, Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation that does not share a common timeline. To write a video AdaptationSet for each different output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct.
     pub dash_manifest_style: ::std::option::Option<crate::types::DashManifestStyle>,
     /// Use Destination to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
@@ -61,6 +63,10 @@ impl DashIsoGroupSettings {
     /// A partial URI prefix that will be put in the manifest (.mpd) file at the top level BaseURL element. Can be used if streams are delivered from a different URL than the manifest file.
     pub fn base_url(&self) -> ::std::option::Option<&str> {
         self.base_url.as_deref()
+    }
+    /// Specify whether MediaConvert generates I-frame only video segments for DASH trick play, also known as trick mode. When specified, the I-frame only video segments are included within an additional AdaptationSet in your DASH output manifest. To generate I-frame only video segments: Enter a name as a text string, up to 256 character long. This name is appended to the end of this output group's base filename, that you specify as part of your destination URI, and used for the I-frame only video segment files. You may also include format identifiers. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html#using-settings-variables-with-streaming-outputs To not generate I-frame only video segments: Leave blank.
+    pub fn dash_i_frame_trick_play_name_modifier(&self) -> ::std::option::Option<&str> {
+        self.dash_i_frame_trick_play_name_modifier.as_deref()
     }
     /// Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To write a SegmentTimeline in each video Representation: Keep the default value, Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation that does not share a common timeline. To write a video AdaptationSet for each different output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct.
     pub fn dash_manifest_style(&self) -> ::std::option::Option<&crate::types::DashManifestStyle> {
@@ -149,6 +155,7 @@ pub struct DashIsoGroupSettingsBuilder {
     pub(crate) additional_manifests: ::std::option::Option<::std::vec::Vec<crate::types::DashAdditionalManifest>>,
     pub(crate) audio_channel_config_scheme_id_uri: ::std::option::Option<crate::types::DashIsoGroupAudioChannelConfigSchemeIdUri>,
     pub(crate) base_url: ::std::option::Option<::std::string::String>,
+    pub(crate) dash_i_frame_trick_play_name_modifier: ::std::option::Option<::std::string::String>,
     pub(crate) dash_manifest_style: ::std::option::Option<crate::types::DashManifestStyle>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,
     pub(crate) destination_settings: ::std::option::Option<crate::types::DestinationSettings>,
@@ -219,6 +226,20 @@ impl DashIsoGroupSettingsBuilder {
     /// A partial URI prefix that will be put in the manifest (.mpd) file at the top level BaseURL element. Can be used if streams are delivered from a different URL than the manifest file.
     pub fn get_base_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_url
+    }
+    /// Specify whether MediaConvert generates I-frame only video segments for DASH trick play, also known as trick mode. When specified, the I-frame only video segments are included within an additional AdaptationSet in your DASH output manifest. To generate I-frame only video segments: Enter a name as a text string, up to 256 character long. This name is appended to the end of this output group's base filename, that you specify as part of your destination URI, and used for the I-frame only video segment files. You may also include format identifiers. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html#using-settings-variables-with-streaming-outputs To not generate I-frame only video segments: Leave blank.
+    pub fn dash_i_frame_trick_play_name_modifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dash_i_frame_trick_play_name_modifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Specify whether MediaConvert generates I-frame only video segments for DASH trick play, also known as trick mode. When specified, the I-frame only video segments are included within an additional AdaptationSet in your DASH output manifest. To generate I-frame only video segments: Enter a name as a text string, up to 256 character long. This name is appended to the end of this output group's base filename, that you specify as part of your destination URI, and used for the I-frame only video segment files. You may also include format identifiers. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html#using-settings-variables-with-streaming-outputs To not generate I-frame only video segments: Leave blank.
+    pub fn set_dash_i_frame_trick_play_name_modifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dash_i_frame_trick_play_name_modifier = input;
+        self
+    }
+    /// Specify whether MediaConvert generates I-frame only video segments for DASH trick play, also known as trick mode. When specified, the I-frame only video segments are included within an additional AdaptationSet in your DASH output manifest. To generate I-frame only video segments: Enter a name as a text string, up to 256 character long. This name is appended to the end of this output group's base filename, that you specify as part of your destination URI, and used for the I-frame only video segment files. You may also include format identifiers. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html#using-settings-variables-with-streaming-outputs To not generate I-frame only video segments: Leave blank.
+    pub fn get_dash_i_frame_trick_play_name_modifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dash_i_frame_trick_play_name_modifier
     }
     /// Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To write a SegmentTimeline in each video Representation: Keep the default value, Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation that does not share a common timeline. To write a video AdaptationSet for each different output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct.
     pub fn dash_manifest_style(mut self, input: crate::types::DashManifestStyle) -> Self {
@@ -481,6 +502,7 @@ impl DashIsoGroupSettingsBuilder {
             additional_manifests: self.additional_manifests,
             audio_channel_config_scheme_id_uri: self.audio_channel_config_scheme_id_uri,
             base_url: self.base_url,
+            dash_i_frame_trick_play_name_modifier: self.dash_i_frame_trick_play_name_modifier,
             dash_manifest_style: self.dash_manifest_style,
             destination: self.destination,
             destination_settings: self.destination_settings,

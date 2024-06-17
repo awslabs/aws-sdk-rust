@@ -27,6 +27,10 @@ pub struct Webhook {
     pub manual_creation: ::std::option::Option<bool>,
     /// <p>A timestamp that indicates the last time a repository's secret token was modified.</p>
     pub last_modified_secret: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The scope configuration for global or organization webhooks.</p><note>
+    /// <p>Global or organization webhooks are only available for GitHub and Github Enterprise webhooks.</p>
+    /// </note>
+    pub scope_configuration: ::std::option::Option<crate::types::ScopeConfiguration>,
 }
 impl Webhook {
     /// <p>The URL to the webhook.</p>
@@ -70,6 +74,12 @@ impl Webhook {
     pub fn last_modified_secret(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_secret.as_ref()
     }
+    /// <p>The scope configuration for global or organization webhooks.</p><note>
+    /// <p>Global or organization webhooks are only available for GitHub and Github Enterprise webhooks.</p>
+    /// </note>
+    pub fn scope_configuration(&self) -> ::std::option::Option<&crate::types::ScopeConfiguration> {
+        self.scope_configuration.as_ref()
+    }
 }
 impl Webhook {
     /// Creates a new builder-style object to manufacture [`Webhook`](crate::types::Webhook).
@@ -90,6 +100,7 @@ pub struct WebhookBuilder {
     pub(crate) build_type: ::std::option::Option<crate::types::WebhookBuildType>,
     pub(crate) manual_creation: ::std::option::Option<bool>,
     pub(crate) last_modified_secret: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) scope_configuration: ::std::option::Option<crate::types::ScopeConfiguration>,
 }
 impl WebhookBuilder {
     /// <p>The URL to the webhook.</p>
@@ -231,6 +242,26 @@ impl WebhookBuilder {
     pub fn get_last_modified_secret(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_secret
     }
+    /// <p>The scope configuration for global or organization webhooks.</p><note>
+    /// <p>Global or organization webhooks are only available for GitHub and Github Enterprise webhooks.</p>
+    /// </note>
+    pub fn scope_configuration(mut self, input: crate::types::ScopeConfiguration) -> Self {
+        self.scope_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scope configuration for global or organization webhooks.</p><note>
+    /// <p>Global or organization webhooks are only available for GitHub and Github Enterprise webhooks.</p>
+    /// </note>
+    pub fn set_scope_configuration(mut self, input: ::std::option::Option<crate::types::ScopeConfiguration>) -> Self {
+        self.scope_configuration = input;
+        self
+    }
+    /// <p>The scope configuration for global or organization webhooks.</p><note>
+    /// <p>Global or organization webhooks are only available for GitHub and Github Enterprise webhooks.</p>
+    /// </note>
+    pub fn get_scope_configuration(&self) -> &::std::option::Option<crate::types::ScopeConfiguration> {
+        &self.scope_configuration
+    }
     /// Consumes the builder and constructs a [`Webhook`](crate::types::Webhook).
     pub fn build(self) -> crate::types::Webhook {
         crate::types::Webhook {
@@ -242,6 +273,7 @@ impl WebhookBuilder {
             build_type: self.build_type,
             manual_creation: self.manual_creation,
             last_modified_secret: self.last_modified_secret,
+            scope_configuration: self.scope_configuration,
         }
     }
 }

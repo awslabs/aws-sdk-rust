@@ -127,6 +127,9 @@ pub mod create_table_optimizer;
 /// Types for the `CreateTrigger` operation.
 pub mod create_trigger;
 
+/// Types for the `CreateUsageProfile` operation.
+pub mod create_usage_profile;
+
 /// Types for the `CreateUserDefinedFunction` operation.
 pub mod create_user_defined_function;
 
@@ -204,6 +207,9 @@ pub mod delete_table_version;
 
 /// Types for the `DeleteTrigger` operation.
 pub mod delete_trigger;
+
+/// Types for the `DeleteUsageProfile` operation.
+pub mod delete_usage_profile;
 
 /// Types for the `DeleteUserDefinedFunction` operation.
 pub mod delete_user_defined_function;
@@ -397,6 +403,9 @@ pub mod get_unfiltered_partitions_metadata;
 /// Types for the `GetUnfilteredTableMetadata` operation.
 pub mod get_unfiltered_table_metadata;
 
+/// Types for the `GetUsageProfile` operation.
+pub mod get_usage_profile;
+
 /// Types for the `GetUserDefinedFunction` operation.
 pub mod get_user_defined_function;
 
@@ -474,6 +483,9 @@ pub mod list_table_optimizer_runs;
 
 /// Types for the `ListTriggers` operation.
 pub mod list_triggers;
+
+/// Types for the `ListUsageProfiles` operation.
+pub mod list_usage_profiles;
 
 /// Types for the `ListWorkflows` operation.
 pub mod list_workflows;
@@ -633,6 +645,9 @@ pub mod update_table_optimizer;
 
 /// Types for the `UpdateTrigger` operation.
 pub mod update_trigger;
+
+/// Types for the `UpdateUsageProfile` operation.
+pub mod update_usage_profile;
 
 /// Types for the `UpdateUserDefinedFunction` operation.
 pub mod update_user_defined_function;
