@@ -18,6 +18,8 @@ pub struct ClusterNodeDetails {
     pub life_cycle_config: ::std::option::Option<crate::types::ClusterLifeCycleConfig>,
     /// <p>The number of threads per CPU core you specified under <code>CreateCluster</code>.</p>
     pub threads_per_core: ::std::option::Option<i32>,
+    /// <p>The configurations of additional storage specified to the instance group where the instance (node) is launched.</p>
+    pub instance_storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>,
     /// <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
     pub private_primary_ip: ::std::option::Option<::std::string::String>,
     /// <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
@@ -54,6 +56,12 @@ impl ClusterNodeDetails {
     pub fn threads_per_core(&self) -> ::std::option::Option<i32> {
         self.threads_per_core
     }
+    /// <p>The configurations of additional storage specified to the instance group where the instance (node) is launched.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_storage_configs.is_none()`.
+    pub fn instance_storage_configs(&self) -> &[crate::types::ClusterInstanceStorageConfig] {
+        self.instance_storage_configs.as_deref().unwrap_or_default()
+    }
     /// <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
     pub fn private_primary_ip(&self) -> ::std::option::Option<&str> {
         self.private_primary_ip.as_deref()
@@ -85,6 +93,7 @@ pub struct ClusterNodeDetailsBuilder {
     pub(crate) launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) life_cycle_config: ::std::option::Option<crate::types::ClusterLifeCycleConfig>,
     pub(crate) threads_per_core: ::std::option::Option<i32>,
+    pub(crate) instance_storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>,
     pub(crate) private_primary_ip: ::std::option::Option<::std::string::String>,
     pub(crate) private_dns_hostname: ::std::option::Option<::std::string::String>,
     pub(crate) placement: ::std::option::Option<crate::types::ClusterInstancePlacement>,
@@ -188,6 +197,26 @@ impl ClusterNodeDetailsBuilder {
     pub fn get_threads_per_core(&self) -> &::std::option::Option<i32> {
         &self.threads_per_core
     }
+    /// Appends an item to `instance_storage_configs`.
+    ///
+    /// To override the contents of this collection use [`set_instance_storage_configs`](Self::set_instance_storage_configs).
+    ///
+    /// <p>The configurations of additional storage specified to the instance group where the instance (node) is launched.</p>
+    pub fn instance_storage_configs(mut self, input: crate::types::ClusterInstanceStorageConfig) -> Self {
+        let mut v = self.instance_storage_configs.unwrap_or_default();
+        v.push(input);
+        self.instance_storage_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The configurations of additional storage specified to the instance group where the instance (node) is launched.</p>
+    pub fn set_instance_storage_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>) -> Self {
+        self.instance_storage_configs = input;
+        self
+    }
+    /// <p>The configurations of additional storage specified to the instance group where the instance (node) is launched.</p>
+    pub fn get_instance_storage_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>> {
+        &self.instance_storage_configs
+    }
     /// <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
     pub fn private_primary_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_primary_ip = ::std::option::Option::Some(input.into());
@@ -240,6 +269,7 @@ impl ClusterNodeDetailsBuilder {
             launch_time: self.launch_time,
             life_cycle_config: self.life_cycle_config,
             threads_per_core: self.threads_per_core,
+            instance_storage_configs: self.instance_storage_configs,
             private_primary_ip: self.private_primary_ip,
             private_dns_hostname: self.private_dns_hostname,
             placement: self.placement,

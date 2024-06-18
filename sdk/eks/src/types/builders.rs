@@ -109,6 +109,10 @@ pub use crate::types::_oidc_identity_provider_config::OidcIdentityProviderConfig
 
 pub use crate::types::_fargate_profile::FargateProfileBuilder;
 
+pub use crate::types::_fargate_profile_health::FargateProfileHealthBuilder;
+
+pub use crate::types::_fargate_profile_issue::FargateProfileIssueBuilder;
+
 pub use crate::types::_fargate_profile_selector::FargateProfileSelectorBuilder;
 
 pub use crate::types::_addon_info::AddonInfoBuilder;

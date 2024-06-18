@@ -13,6 +13,8 @@ pub struct ConverseOutput {
     pub metrics: ::std::option::Option<crate::types::ConverseMetrics>,
     /// <p>Additional fields in the response that are unique to the model.</p>
     pub additional_model_response_fields: ::std::option::Option<::aws_smithy_types::Document>,
+    /// <p>A trace object that contains information about the Guardrail behavior.</p>
+    pub trace: ::std::option::Option<crate::types::ConverseTrace>,
     _request_id: Option<String>,
 }
 impl ConverseOutput {
@@ -36,6 +38,10 @@ impl ConverseOutput {
     pub fn additional_model_response_fields(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.additional_model_response_fields.as_ref()
     }
+    /// <p>A trace object that contains information about the Guardrail behavior.</p>
+    pub fn trace(&self) -> ::std::option::Option<&crate::types::ConverseTrace> {
+        self.trace.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for ConverseOutput {
     fn request_id(&self) -> Option<&str> {
@@ -58,6 +64,7 @@ pub struct ConverseOutputBuilder {
     pub(crate) usage: ::std::option::Option<crate::types::TokenUsage>,
     pub(crate) metrics: ::std::option::Option<crate::types::ConverseMetrics>,
     pub(crate) additional_model_response_fields: ::std::option::Option<::aws_smithy_types::Document>,
+    pub(crate) trace: ::std::option::Option<crate::types::ConverseTrace>,
     _request_id: Option<String>,
 }
 impl ConverseOutputBuilder {
@@ -135,6 +142,20 @@ impl ConverseOutputBuilder {
     pub fn get_additional_model_response_fields(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.additional_model_response_fields
     }
+    /// <p>A trace object that contains information about the Guardrail behavior.</p>
+    pub fn trace(mut self, input: crate::types::ConverseTrace) -> Self {
+        self.trace = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A trace object that contains information about the Guardrail behavior.</p>
+    pub fn set_trace(mut self, input: ::std::option::Option<crate::types::ConverseTrace>) -> Self {
+        self.trace = input;
+        self
+    }
+    /// <p>A trace object that contains information about the Guardrail behavior.</p>
+    pub fn get_trace(&self) -> &::std::option::Option<crate::types::ConverseTrace> {
+        &self.trace
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -159,6 +180,7 @@ impl ConverseOutputBuilder {
             usage: self.usage,
             metrics: self.metrics,
             additional_model_response_fields: self.additional_model_response_fields,
+            trace: self.trace,
             _request_id: self._request_id,
         })
     }

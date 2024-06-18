@@ -106,6 +106,9 @@ pub mod create_inference_recommendations_job;
 /// Types for the `CreateLabelingJob` operation.
 pub mod create_labeling_job;
 
+/// Types for the `CreateMlflowTrackingServer` operation.
+pub mod create_mlflow_tracking_server;
+
 /// Types for the `CreateModel` operation.
 pub mod create_model;
 
@@ -144,6 +147,9 @@ pub mod create_pipeline;
 
 /// Types for the `CreatePresignedDomainUrl` operation.
 pub mod create_presigned_domain_url;
+
+/// Types for the `CreatePresignedMlflowTrackingServerUrl` operation.
+pub mod create_presigned_mlflow_tracking_server_url;
 
 /// Types for the `CreatePresignedNotebookInstanceUrl` operation.
 pub mod create_presigned_notebook_instance_url;
@@ -264,6 +270,9 @@ pub mod delete_inference_component;
 
 /// Types for the `DeleteInferenceExperiment` operation.
 pub mod delete_inference_experiment;
+
+/// Types for the `DeleteMlflowTrackingServer` operation.
+pub mod delete_mlflow_tracking_server;
 
 /// Types for the `DeleteModel` operation.
 pub mod delete_model;
@@ -435,6 +444,9 @@ pub mod describe_labeling_job;
 
 /// Types for the `DescribeLineageGroup` operation.
 pub mod describe_lineage_group;
+
+/// Types for the `DescribeMlflowTrackingServer` operation.
+pub mod describe_mlflow_tracking_server;
 
 /// Types for the `DescribeModel` operation.
 pub mod describe_model;
@@ -661,6 +673,9 @@ pub mod list_labeling_jobs_for_workteam;
 /// Types for the `ListLineageGroups` operation.
 pub mod list_lineage_groups;
 
+/// Types for the `ListMlflowTrackingServers` operation.
+pub mod list_mlflow_tracking_servers;
+
 /// Types for the `ListModelBiasJobDefinitions` operation.
 pub mod list_model_bias_job_definitions;
 
@@ -799,6 +814,9 @@ pub mod start_edge_deployment_stage;
 /// Types for the `StartInferenceExperiment` operation.
 pub mod start_inference_experiment;
 
+/// Types for the `StartMlflowTrackingServer` operation.
+pub mod start_mlflow_tracking_server;
+
 /// Types for the `StartMonitoringSchedule` operation.
 pub mod start_monitoring_schedule;
 
@@ -831,6 +849,9 @@ pub mod stop_inference_recommendations_job;
 
 /// Types for the `StopLabelingJob` operation.
 pub mod stop_labeling_job;
+
+/// Types for the `StopMlflowTrackingServer` operation.
+pub mod stop_mlflow_tracking_server;
 
 /// Types for the `StopMonitoringSchedule` operation.
 pub mod stop_monitoring_schedule;
@@ -912,6 +933,9 @@ pub mod update_inference_component_runtime_config;
 
 /// Types for the `UpdateInferenceExperiment` operation.
 pub mod update_inference_experiment;
+
+/// Types for the `UpdateMlflowTrackingServer` operation.
+pub mod update_mlflow_tracking_server;
 
 /// Types for the `UpdateModelCard` operation.
 pub mod update_model_card;

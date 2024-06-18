@@ -84,6 +84,12 @@ pub(crate) mod shape_converse_metrics;
 
 pub(crate) mod shape_converse_output;
 
+pub(crate) mod shape_converse_trace;
+
+pub(crate) mod shape_guardrail_configuration;
+
+pub(crate) mod shape_guardrail_stream_configuration;
+
 pub(crate) mod shape_inference_configuration;
 
 pub(crate) mod shape_message;
@@ -104,6 +110,10 @@ pub(crate) mod shape_content_block_stop_event;
 
 pub(crate) mod shape_converse_stream_metadata_event;
 
+pub(crate) mod shape_guardrail_converse_content_block;
+
+pub(crate) mod shape_guardrail_trace_assessment;
+
 pub(crate) mod shape_message_start_event;
 
 pub(crate) mod shape_message_stop_event;
@@ -120,7 +130,15 @@ pub(crate) mod shape_auto_tool_choice;
 
 pub(crate) mod shape_content_blocks;
 
+pub(crate) mod shape_guardrail_assessment_list_map;
+
+pub(crate) mod shape_guardrail_assessment_map;
+
+pub(crate) mod shape_guardrail_converse_text_block;
+
 pub(crate) mod shape_image_block;
+
+pub(crate) mod shape_model_outputs;
 
 pub(crate) mod shape_specific_tool_choice;
 
@@ -136,14 +154,52 @@ pub(crate) mod shape_content_block_start;
 
 pub(crate) mod shape_converse_stream_metrics;
 
+pub(crate) mod shape_converse_stream_trace;
+
+pub(crate) mod shape_guardrail_assessment;
+
+pub(crate) mod shape_guardrail_assessment_list;
+
 pub(crate) mod shape_image_source;
 
 pub(crate) mod shape_tool_input_schema;
 
 pub(crate) mod shape_tool_result_content_block;
 
+pub(crate) mod shape_guardrail_content_policy_assessment;
+
+pub(crate) mod shape_guardrail_sensitive_information_policy_assessment;
+
+pub(crate) mod shape_guardrail_topic_policy_assessment;
+
+pub(crate) mod shape_guardrail_word_policy_assessment;
+
 pub(crate) mod shape_tool_use_block_delta;
 
 pub(crate) mod shape_tool_use_block_start;
 
+pub(crate) mod shape_guardrail_content_filter_list;
+
+pub(crate) mod shape_guardrail_custom_word_list;
+
+pub(crate) mod shape_guardrail_managed_word_list;
+
+pub(crate) mod shape_guardrail_pii_entity_filter_list;
+
+pub(crate) mod shape_guardrail_regex_filter_list;
+
+pub(crate) mod shape_guardrail_topic_list;
+
 pub(crate) mod shape_tool_result_content_blocks;
+
+pub(crate) mod shape_guardrail_content_filter;
+
+pub(crate) mod shape_guardrail_custom_word;
+
+pub(crate) mod shape_guardrail_managed_word;
+
+pub(crate) mod shape_guardrail_pii_entity_filter;
+
+pub(crate) mod shape_guardrail_regex_filter;
+
+pub(crate) mod shape_guardrail_topic;

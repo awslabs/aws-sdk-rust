@@ -9,6 +9,50 @@ pub use crate::types::_converse_stream_output::ConverseStreamOutput;
 
 pub use crate::types::_converse_stream_metadata_event::ConverseStreamMetadataEvent;
 
+pub use crate::types::_converse_stream_trace::ConverseStreamTrace;
+
+pub use crate::types::_guardrail_trace_assessment::GuardrailTraceAssessment;
+
+pub use crate::types::_guardrail_assessment::GuardrailAssessment;
+
+pub use crate::types::_guardrail_sensitive_information_policy_assessment::GuardrailSensitiveInformationPolicyAssessment;
+
+pub use crate::types::_guardrail_regex_filter::GuardrailRegexFilter;
+
+pub use crate::types::_guardrail_sensitive_information_policy_action::GuardrailSensitiveInformationPolicyAction;
+
+pub use crate::types::_guardrail_pii_entity_filter::GuardrailPiiEntityFilter;
+
+pub use crate::types::_guardrail_pii_entity_type::GuardrailPiiEntityType;
+
+pub use crate::types::_guardrail_word_policy_assessment::GuardrailWordPolicyAssessment;
+
+pub use crate::types::_guardrail_managed_word::GuardrailManagedWord;
+
+pub use crate::types::_guardrail_word_policy_action::GuardrailWordPolicyAction;
+
+pub use crate::types::_guardrail_managed_word_type::GuardrailManagedWordType;
+
+pub use crate::types::_guardrail_custom_word::GuardrailCustomWord;
+
+pub use crate::types::_guardrail_content_policy_assessment::GuardrailContentPolicyAssessment;
+
+pub use crate::types::_guardrail_content_filter::GuardrailContentFilter;
+
+pub use crate::types::_guardrail_content_policy_action::GuardrailContentPolicyAction;
+
+pub use crate::types::_guardrail_content_filter_confidence::GuardrailContentFilterConfidence;
+
+pub use crate::types::_guardrail_content_filter_type::GuardrailContentFilterType;
+
+pub use crate::types::_guardrail_topic_policy_assessment::GuardrailTopicPolicyAssessment;
+
+pub use crate::types::_guardrail_topic::GuardrailTopic;
+
+pub use crate::types::_guardrail_topic_policy_action::GuardrailTopicPolicyAction;
+
+pub use crate::types::_guardrail_topic_type::GuardrailTopicType;
+
 pub use crate::types::_converse_stream_metrics::ConverseStreamMetrics;
 
 pub use crate::types::_token_usage::TokenUsage;
@@ -35,6 +79,12 @@ pub use crate::types::_message_start_event::MessageStartEvent;
 
 pub use crate::types::_conversation_role::ConversationRole;
 
+pub use crate::types::_guardrail_stream_configuration::GuardrailStreamConfiguration;
+
+pub use crate::types::_guardrail_stream_processing_mode::GuardrailStreamProcessingMode;
+
+pub use crate::types::_guardrail_trace::GuardrailTrace;
+
 pub use crate::types::_tool_configuration::ToolConfiguration;
 
 pub use crate::types::_tool_choice::ToolChoice;
@@ -55,6 +105,10 @@ pub use crate::types::_inference_configuration::InferenceConfiguration;
 
 pub use crate::types::_system_content_block::SystemContentBlock;
 
+pub use crate::types::_guardrail_converse_content_block::GuardrailConverseContentBlock;
+
+pub use crate::types::_guardrail_converse_text_block::GuardrailConverseTextBlock;
+
 pub use crate::types::_message::Message;
 
 pub use crate::types::_content_block::ContentBlock;
@@ -73,9 +127,13 @@ pub use crate::types::_image_format::ImageFormat;
 
 pub use crate::types::_tool_use_block::ToolUseBlock;
 
+pub use crate::types::_converse_trace::ConverseTrace;
+
 pub use crate::types::_converse_metrics::ConverseMetrics;
 
 pub use crate::types::_converse_output::ConverseOutput;
+
+pub use crate::types::_guardrail_configuration::GuardrailConfiguration;
 
 mod _any_tool_choice;
 
@@ -104,6 +162,64 @@ mod _converse_stream_metadata_event;
 mod _converse_stream_metrics;
 
 mod _converse_stream_output;
+
+mod _converse_stream_trace;
+
+mod _converse_trace;
+
+mod _guardrail_assessment;
+
+mod _guardrail_configuration;
+
+mod _guardrail_content_filter;
+
+mod _guardrail_content_filter_confidence;
+
+mod _guardrail_content_filter_type;
+
+mod _guardrail_content_policy_action;
+
+mod _guardrail_content_policy_assessment;
+
+mod _guardrail_converse_content_block;
+
+mod _guardrail_converse_text_block;
+
+mod _guardrail_custom_word;
+
+mod _guardrail_managed_word;
+
+mod _guardrail_managed_word_type;
+
+mod _guardrail_pii_entity_filter;
+
+mod _guardrail_pii_entity_type;
+
+mod _guardrail_regex_filter;
+
+mod _guardrail_sensitive_information_policy_action;
+
+mod _guardrail_sensitive_information_policy_assessment;
+
+mod _guardrail_stream_configuration;
+
+mod _guardrail_stream_processing_mode;
+
+mod _guardrail_topic;
+
+mod _guardrail_topic_policy_action;
+
+mod _guardrail_topic_policy_assessment;
+
+mod _guardrail_topic_type;
+
+mod _guardrail_trace;
+
+mod _guardrail_trace_assessment;
+
+mod _guardrail_word_policy_action;
+
+mod _guardrail_word_policy_assessment;
 
 mod _image_block;
 

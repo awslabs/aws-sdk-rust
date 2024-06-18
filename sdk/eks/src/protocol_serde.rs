@@ -325,6 +325,8 @@ pub(crate) mod shape_encryption_config_list;
 
 pub(crate) mod shape_error_details;
 
+pub(crate) mod shape_fargate_profile_health;
+
 pub(crate) mod shape_fargate_profile_selectors;
 
 pub(crate) mod shape_identity;
@@ -377,6 +379,8 @@ pub(crate) mod shape_deprecation_details;
 
 pub(crate) mod shape_error_detail;
 
+pub(crate) mod shape_fargate_profile_issue_list;
+
 pub(crate) mod shape_insight_resource_detail;
 
 pub(crate) mod shape_issue_list;
@@ -398,6 +402,8 @@ pub(crate) mod shape_auto_scaling_group;
 pub(crate) mod shape_cluster_issue;
 
 pub(crate) mod shape_deprecation_detail;
+
+pub(crate) mod shape_fargate_profile_issue;
 
 pub(crate) mod shape_fargate_profile_label;
 

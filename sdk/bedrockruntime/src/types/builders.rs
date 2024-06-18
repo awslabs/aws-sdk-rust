@@ -3,6 +3,32 @@ pub use crate::types::_payload_part::PayloadPartBuilder;
 
 pub use crate::types::_converse_stream_metadata_event::ConverseStreamMetadataEventBuilder;
 
+pub use crate::types::_converse_stream_trace::ConverseStreamTraceBuilder;
+
+pub use crate::types::_guardrail_trace_assessment::GuardrailTraceAssessmentBuilder;
+
+pub use crate::types::_guardrail_assessment::GuardrailAssessmentBuilder;
+
+pub use crate::types::_guardrail_sensitive_information_policy_assessment::GuardrailSensitiveInformationPolicyAssessmentBuilder;
+
+pub use crate::types::_guardrail_regex_filter::GuardrailRegexFilterBuilder;
+
+pub use crate::types::_guardrail_pii_entity_filter::GuardrailPiiEntityFilterBuilder;
+
+pub use crate::types::_guardrail_word_policy_assessment::GuardrailWordPolicyAssessmentBuilder;
+
+pub use crate::types::_guardrail_managed_word::GuardrailManagedWordBuilder;
+
+pub use crate::types::_guardrail_custom_word::GuardrailCustomWordBuilder;
+
+pub use crate::types::_guardrail_content_policy_assessment::GuardrailContentPolicyAssessmentBuilder;
+
+pub use crate::types::_guardrail_content_filter::GuardrailContentFilterBuilder;
+
+pub use crate::types::_guardrail_topic_policy_assessment::GuardrailTopicPolicyAssessmentBuilder;
+
+pub use crate::types::_guardrail_topic::GuardrailTopicBuilder;
+
 pub use crate::types::_converse_stream_metrics::ConverseStreamMetricsBuilder;
 
 pub use crate::types::_token_usage::TokenUsageBuilder;
@@ -21,6 +47,8 @@ pub use crate::types::_tool_use_block_start::ToolUseBlockStartBuilder;
 
 pub use crate::types::_message_start_event::MessageStartEventBuilder;
 
+pub use crate::types::_guardrail_stream_configuration::GuardrailStreamConfigurationBuilder;
+
 pub use crate::types::_tool_configuration::ToolConfigurationBuilder;
 
 pub use crate::types::_specific_tool_choice::SpecificToolChoiceBuilder;
@@ -33,6 +61,8 @@ pub use crate::types::_tool_specification::ToolSpecificationBuilder;
 
 pub use crate::types::_inference_configuration::InferenceConfigurationBuilder;
 
+pub use crate::types::_guardrail_converse_text_block::GuardrailConverseTextBlockBuilder;
+
 pub use crate::types::_message::MessageBuilder;
 
 pub use crate::types::_tool_result_block::ToolResultBlockBuilder;
@@ -41,4 +71,8 @@ pub use crate::types::_image_block::ImageBlockBuilder;
 
 pub use crate::types::_tool_use_block::ToolUseBlockBuilder;
 
+pub use crate::types::_converse_trace::ConverseTraceBuilder;
+
 pub use crate::types::_converse_metrics::ConverseMetricsBuilder;
+
+pub use crate::types::_guardrail_configuration::GuardrailConfigurationBuilder;

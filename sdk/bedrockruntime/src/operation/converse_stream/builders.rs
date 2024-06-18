@@ -22,9 +22,10 @@ impl crate::operation::converse_stream::builders::ConverseStreamInputBuilder {
 }
 /// Fluent builder constructing a request to `ConverseStream`.
 ///
-/// <p>Sends messages to the specified Amazon Bedrock model and returns the response in a stream. <code>ConverseStream</code> provides a consistent API that works with all Amazon Bedrock models that support messages. This allows you to write code once and use it with different models. Should a model have unique inference parameters, you can also pass those unique parameters to the model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the Bedrock User Guide.</p>
+/// <p>Sends messages to the specified Amazon Bedrock model and returns the response in a stream. <code>ConverseStream</code> provides a consistent API that works with all Amazon Bedrock models that support messages. This allows you to write code once and use it with different models. Should a model have unique inference parameters, you can also pass those unique parameters to the model.</p>
 /// <p>To find out if a model supports streaming, call <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetFoundationModel.html">GetFoundationModel</a> and check the <code>responseStreamingSupported</code> field in the response.</p>
-/// <p>For example code, see <i>Invoke model with streaming code example</i> in the <i>Amazon Bedrock User Guide</i>.</p>
+/// <p>For information about the Converse API, see <i>Use the Converse API</i> in the <i>Amazon Bedrock User Guide</i>. To use a guardrail, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon Bedrock User Guide</i>. To use a tool with a model, see <i>Tool use (Function calling)</i> in the <i>Amazon Bedrock User Guide</i></p>
+/// <p>For example code, see <i>Conversation streaming example</i> in the <i>Amazon Bedrock User Guide</i>.</p>
 /// <p>This operation requires permission for the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ConverseStreamFluentBuilder {
@@ -224,6 +225,20 @@ impl ConverseStreamFluentBuilder {
     pub fn get_tool_config(&self) -> &::std::option::Option<crate::types::ToolConfiguration> {
         self.inner.get_tool_config()
     }
+    /// <p>Configuration information for a guardrail that you want to use in the request.</p>
+    pub fn guardrail_config(mut self, input: crate::types::GuardrailStreamConfiguration) -> Self {
+        self.inner = self.inner.guardrail_config(input);
+        self
+    }
+    /// <p>Configuration information for a guardrail that you want to use in the request.</p>
+    pub fn set_guardrail_config(mut self, input: ::std::option::Option<crate::types::GuardrailStreamConfiguration>) -> Self {
+        self.inner = self.inner.set_guardrail_config(input);
+        self
+    }
+    /// <p>Configuration information for a guardrail that you want to use in the request.</p>
+    pub fn get_guardrail_config(&self) -> &::std::option::Option<crate::types::GuardrailStreamConfiguration> {
+        self.inner.get_guardrail_config()
+    }
     /// <p>Additional inference parameters that the model supports, beyond the base set of inference parameters that <code>ConverseStream</code> supports in the <code>inferenceConfig</code> field.</p>
     pub fn additional_model_request_fields(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.inner = self.inner.additional_model_request_fields(input);
@@ -243,7 +258,7 @@ impl ConverseStreamFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_model_response_field_paths`](Self::set_additional_model_response_field_paths).
     ///
-    /// <p>Additional model parameters field paths to return in the response. <code>ConverseStream</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResultFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
+    /// <p>Additional model parameters field paths to return in the response. <code>ConverseStream</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResponseFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
     /// <p><code>\[ "/stop_sequence" \]</code></p>
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
     /// <p><code>ConverseStream</code> rejects an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>ConverseStream</code>.</p>
@@ -251,7 +266,7 @@ impl ConverseStreamFluentBuilder {
         self.inner = self.inner.additional_model_response_field_paths(input.into());
         self
     }
-    /// <p>Additional model parameters field paths to return in the response. <code>ConverseStream</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResultFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
+    /// <p>Additional model parameters field paths to return in the response. <code>ConverseStream</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResponseFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
     /// <p><code>\[ "/stop_sequence" \]</code></p>
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
     /// <p><code>ConverseStream</code> rejects an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>ConverseStream</code>.</p>
@@ -259,7 +274,7 @@ impl ConverseStreamFluentBuilder {
         self.inner = self.inner.set_additional_model_response_field_paths(input);
         self
     }
-    /// <p>Additional model parameters field paths to return in the response. <code>ConverseStream</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResultFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
+    /// <p>Additional model parameters field paths to return in the response. <code>ConverseStream</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResponseFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
     /// <p><code>\[ "/stop_sequence" \]</code></p>
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
     /// <p><code>ConverseStream</code> rejects an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>ConverseStream</code>.</p>

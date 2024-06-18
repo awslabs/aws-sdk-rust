@@ -66,6 +66,9 @@ where
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                         }
+                        "health" => {
+                            builder = builder.set_health(crate::protocol_serde::shape_fargate_profile_health::de_fargate_profile_health(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

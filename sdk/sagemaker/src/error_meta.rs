@@ -925,6 +925,33 @@ impl From<crate::operation::create_labeling_job::CreateLabelingJobError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_mlflow_tracking_server::CreateMlflowTrackingServerError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_mlflow_tracking_server::CreateMlflowTrackingServerError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_mlflow_tracking_server::CreateMlflowTrackingServerError> for Error {
+    fn from(err: crate::operation::create_mlflow_tracking_server::CreateMlflowTrackingServerError) -> Self {
+        match err {
+            crate::operation::create_mlflow_tracking_server::CreateMlflowTrackingServerError::ResourceLimitExceeded(inner) => {
+                Error::ResourceLimitExceeded(inner)
+            }
+            crate::operation::create_mlflow_tracking_server::CreateMlflowTrackingServerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_model::CreateModelError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1300,6 +1327,43 @@ impl From<crate::operation::create_presigned_domain_url::CreatePresignedDomainUr
         match err {
             crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_presigned_mlflow_tracking_server_url::CreatePresignedMlflowTrackingServerUrlError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_presigned_mlflow_tracking_server_url::CreatePresignedMlflowTrackingServerUrlError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_presigned_mlflow_tracking_server_url::CreatePresignedMlflowTrackingServerUrlError> for Error {
+    fn from(err: crate::operation::create_presigned_mlflow_tracking_server_url::CreatePresignedMlflowTrackingServerUrlError) -> Self {
+        match err {
+            crate::operation::create_presigned_mlflow_tracking_server_url::CreatePresignedMlflowTrackingServerUrlError::ResourceNotFound(inner) => {
+                Error::ResourceNotFound(inner)
+            }
+            crate::operation::create_presigned_mlflow_tracking_server_url::CreatePresignedMlflowTrackingServerUrlError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -2252,6 +2316,33 @@ impl From<crate::operation::delete_inference_experiment::DeleteInferenceExperime
             }
             crate::operation::delete_inference_experiment::DeleteInferenceExperimentError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::delete_inference_experiment::DeleteInferenceExperimentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_mlflow_tracking_server::DeleteMlflowTrackingServerError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_mlflow_tracking_server::DeleteMlflowTrackingServerError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_mlflow_tracking_server::DeleteMlflowTrackingServerError> for Error {
+    fn from(err: crate::operation::delete_mlflow_tracking_server::DeleteMlflowTrackingServerError) -> Self {
+        match err {
+            crate::operation::delete_mlflow_tracking_server::DeleteMlflowTrackingServerError::ResourceNotFound(inner) => {
+                Error::ResourceNotFound(inner)
+            }
+            crate::operation::delete_mlflow_tracking_server::DeleteMlflowTrackingServerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3650,6 +3741,37 @@ impl From<crate::operation::describe_lineage_group::DescribeLineageGroupError> f
         match err {
             crate::operation::describe_lineage_group::DescribeLineageGroupError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::describe_lineage_group::DescribeLineageGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerError> for Error {
+    fn from(err: crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerError) -> Self {
+        match err {
+            crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerError::ResourceNotFound(inner) => {
+                Error::ResourceNotFound(inner)
+            }
+            crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5513,6 +5635,30 @@ impl From<crate::operation::list_lineage_groups::ListLineageGroupsError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mlflow_tracking_servers::ListMlflowTrackingServersError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mlflow_tracking_servers::ListMlflowTrackingServersError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_mlflow_tracking_servers::ListMlflowTrackingServersError> for Error {
+    fn from(err: crate::operation::list_mlflow_tracking_servers::ListMlflowTrackingServersError) -> Self {
+        match err {
+            crate::operation::list_mlflow_tracking_servers::ListMlflowTrackingServersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsError, R>>
     for Error
@@ -6661,6 +6807,34 @@ impl From<crate::operation::start_inference_experiment::StartInferenceExperiment
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_mlflow_tracking_server::StartMlflowTrackingServerError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_mlflow_tracking_server::StartMlflowTrackingServerError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_mlflow_tracking_server::StartMlflowTrackingServerError> for Error {
+    fn from(err: crate::operation::start_mlflow_tracking_server::StartMlflowTrackingServerError) -> Self {
+        match err {
+            crate::operation::start_mlflow_tracking_server::StartMlflowTrackingServerError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_mlflow_tracking_server::StartMlflowTrackingServerError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::start_mlflow_tracking_server::StartMlflowTrackingServerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_monitoring_schedule::StartMonitoringScheduleError, R>>
     for Error
 where
@@ -6942,6 +7116,32 @@ impl From<crate::operation::stop_labeling_job::StopLabelingJobError> for Error {
         match err {
             crate::operation::stop_labeling_job::StopLabelingJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::stop_labeling_job::StopLabelingJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_mlflow_tracking_server::StopMlflowTrackingServerError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_mlflow_tracking_server::StopMlflowTrackingServerError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_mlflow_tracking_server::StopMlflowTrackingServerError> for Error {
+    fn from(err: crate::operation::stop_mlflow_tracking_server::StopMlflowTrackingServerError) -> Self {
+        match err {
+            crate::operation::stop_mlflow_tracking_server::StopMlflowTrackingServerError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_mlflow_tracking_server::StopMlflowTrackingServerError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::stop_mlflow_tracking_server::StopMlflowTrackingServerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -7598,6 +7798,39 @@ impl From<crate::operation::update_inference_experiment::UpdateInferenceExperime
             }
             crate::operation::update_inference_experiment::UpdateInferenceExperimentError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::update_inference_experiment::UpdateInferenceExperimentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_mlflow_tracking_server::UpdateMlflowTrackingServerError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_mlflow_tracking_server::UpdateMlflowTrackingServerError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_mlflow_tracking_server::UpdateMlflowTrackingServerError> for Error {
+    fn from(err: crate::operation::update_mlflow_tracking_server::UpdateMlflowTrackingServerError) -> Self {
+        match err {
+            crate::operation::update_mlflow_tracking_server::UpdateMlflowTrackingServerError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_mlflow_tracking_server::UpdateMlflowTrackingServerError::ResourceLimitExceeded(inner) => {
+                Error::ResourceLimitExceeded(inner)
+            }
+            crate::operation::update_mlflow_tracking_server::UpdateMlflowTrackingServerError::ResourceNotFound(inner) => {
+                Error::ResourceNotFound(inner)
+            }
+            crate::operation::update_mlflow_tracking_server::UpdateMlflowTrackingServerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

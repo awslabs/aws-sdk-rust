@@ -5425,6 +5425,15 @@ pub(crate) fn clarify_text_config_correct_errors(
     builder
 }
 
+pub(crate) fn cluster_ebs_volume_config_correct_errors(
+    mut builder: crate::types::builders::ClusterEbsVolumeConfigBuilder,
+) -> crate::types::builders::ClusterEbsVolumeConfigBuilder {
+    if builder.volume_size_in_gb.is_none() {
+        builder.volume_size_in_gb = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn code_repository_correct_errors(
     mut builder: crate::types::builders::CodeRepositoryBuilder,
 ) -> crate::types::builders::CodeRepositoryBuilder {

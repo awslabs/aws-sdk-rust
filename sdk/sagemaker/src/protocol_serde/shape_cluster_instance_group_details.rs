@@ -61,6 +61,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "InstanceStorageConfigs" => {
+                            builder = builder.set_instance_storage_configs(
+                                crate::protocol_serde::shape_cluster_instance_storage_configs::de_cluster_instance_storage_configs(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

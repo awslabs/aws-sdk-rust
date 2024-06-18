@@ -22,7 +22,7 @@ impl crate::operation::describe_workteam::builders::DescribeWorkteamInputBuilder
 }
 /// Fluent builder constructing a request to `DescribeWorkteam`.
 ///
-/// <p>Gets information about a specific work team. You can see information such as the create date, the last updated date, membership information, and the work team's Amazon Resource Name (ARN).</p>
+/// <p>Gets information about a specific work team. You can see information such as the creation date, the last updated date, membership information, and the work team's Amazon Resource Name (ARN).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeWorkteamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

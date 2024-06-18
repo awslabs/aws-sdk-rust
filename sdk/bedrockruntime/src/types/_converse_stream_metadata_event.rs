@@ -8,6 +8,8 @@ pub struct ConverseStreamMetadataEvent {
     pub usage: ::std::option::Option<crate::types::TokenUsage>,
     /// <p>The metrics for the conversation stream metadata event.</p>
     pub metrics: ::std::option::Option<crate::types::ConverseStreamMetrics>,
+    /// <p>The trace object in the response from <code>ConverseStream</code> that contains information about the guardrail behavior.</p>
+    pub trace: ::std::option::Option<crate::types::ConverseStreamTrace>,
 }
 impl ConverseStreamMetadataEvent {
     /// <p>Usage information for the conversation stream event.</p>
@@ -17,6 +19,10 @@ impl ConverseStreamMetadataEvent {
     /// <p>The metrics for the conversation stream metadata event.</p>
     pub fn metrics(&self) -> ::std::option::Option<&crate::types::ConverseStreamMetrics> {
         self.metrics.as_ref()
+    }
+    /// <p>The trace object in the response from <code>ConverseStream</code> that contains information about the guardrail behavior.</p>
+    pub fn trace(&self) -> ::std::option::Option<&crate::types::ConverseStreamTrace> {
+        self.trace.as_ref()
     }
 }
 impl ConverseStreamMetadataEvent {
@@ -32,6 +38,7 @@ impl ConverseStreamMetadataEvent {
 pub struct ConverseStreamMetadataEventBuilder {
     pub(crate) usage: ::std::option::Option<crate::types::TokenUsage>,
     pub(crate) metrics: ::std::option::Option<crate::types::ConverseStreamMetrics>,
+    pub(crate) trace: ::std::option::Option<crate::types::ConverseStreamTrace>,
 }
 impl ConverseStreamMetadataEventBuilder {
     /// <p>Usage information for the conversation stream event.</p>
@@ -64,11 +71,26 @@ impl ConverseStreamMetadataEventBuilder {
     pub fn get_metrics(&self) -> &::std::option::Option<crate::types::ConverseStreamMetrics> {
         &self.metrics
     }
+    /// <p>The trace object in the response from <code>ConverseStream</code> that contains information about the guardrail behavior.</p>
+    pub fn trace(mut self, input: crate::types::ConverseStreamTrace) -> Self {
+        self.trace = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The trace object in the response from <code>ConverseStream</code> that contains information about the guardrail behavior.</p>
+    pub fn set_trace(mut self, input: ::std::option::Option<crate::types::ConverseStreamTrace>) -> Self {
+        self.trace = input;
+        self
+    }
+    /// <p>The trace object in the response from <code>ConverseStream</code> that contains information about the guardrail behavior.</p>
+    pub fn get_trace(&self) -> &::std::option::Option<crate::types::ConverseStreamTrace> {
+        &self.trace
+    }
     /// Consumes the builder and constructs a [`ConverseStreamMetadataEvent`](crate::types::ConverseStreamMetadataEvent).
     pub fn build(self) -> crate::types::ConverseStreamMetadataEvent {
         crate::types::ConverseStreamMetadataEvent {
             usage: self.usage,
             metrics: self.metrics,
+            trace: self.trace,
         }
     }
 }

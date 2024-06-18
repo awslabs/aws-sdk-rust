@@ -154,6 +154,48 @@ pub(crate) fn converse_stream_metrics_correct_errors(
     builder
 }
 
+pub(crate) fn guardrail_content_policy_assessment_correct_errors(
+    mut builder: crate::types::builders::GuardrailContentPolicyAssessmentBuilder,
+) -> crate::types::builders::GuardrailContentPolicyAssessmentBuilder {
+    if builder.filters.is_none() {
+        builder.filters = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn guardrail_sensitive_information_policy_assessment_correct_errors(
+    mut builder: crate::types::builders::GuardrailSensitiveInformationPolicyAssessmentBuilder,
+) -> crate::types::builders::GuardrailSensitiveInformationPolicyAssessmentBuilder {
+    if builder.pii_entities.is_none() {
+        builder.pii_entities = Some(Default::default())
+    }
+    if builder.regexes.is_none() {
+        builder.regexes = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn guardrail_topic_policy_assessment_correct_errors(
+    mut builder: crate::types::builders::GuardrailTopicPolicyAssessmentBuilder,
+) -> crate::types::builders::GuardrailTopicPolicyAssessmentBuilder {
+    if builder.topics.is_none() {
+        builder.topics = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn guardrail_word_policy_assessment_correct_errors(
+    mut builder: crate::types::builders::GuardrailWordPolicyAssessmentBuilder,
+) -> crate::types::builders::GuardrailWordPolicyAssessmentBuilder {
+    if builder.custom_words.is_none() {
+        builder.custom_words = Some(Default::default())
+    }
+    if builder.managed_word_lists.is_none() {
+        builder.managed_word_lists = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn image_block_correct_errors(mut builder: crate::types::builders::ImageBlockBuilder) -> crate::types::builders::ImageBlockBuilder {
     if builder.format.is_none() {
         builder.format = "no value was set".parse::<crate::types::ImageFormat>().ok()
@@ -206,6 +248,96 @@ pub(crate) fn tool_use_block_start_correct_errors(
     }
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn guardrail_converse_text_block_correct_errors(
+    mut builder: crate::types::builders::GuardrailConverseTextBlockBuilder,
+) -> crate::types::builders::GuardrailConverseTextBlockBuilder {
+    if builder.text.is_none() {
+        builder.text = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn guardrail_content_filter_correct_errors(
+    mut builder: crate::types::builders::GuardrailContentFilterBuilder,
+) -> crate::types::builders::GuardrailContentFilterBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::GuardrailContentFilterType>().ok()
+    }
+    if builder.confidence.is_none() {
+        builder.confidence = "no value was set".parse::<crate::types::GuardrailContentFilterConfidence>().ok()
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::GuardrailContentPolicyAction>().ok()
+    }
+    builder
+}
+
+pub(crate) fn guardrail_custom_word_correct_errors(
+    mut builder: crate::types::builders::GuardrailCustomWordBuilder,
+) -> crate::types::builders::GuardrailCustomWordBuilder {
+    if builder.r#match.is_none() {
+        builder.r#match = Some(Default::default())
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::GuardrailWordPolicyAction>().ok()
+    }
+    builder
+}
+
+pub(crate) fn guardrail_managed_word_correct_errors(
+    mut builder: crate::types::builders::GuardrailManagedWordBuilder,
+) -> crate::types::builders::GuardrailManagedWordBuilder {
+    if builder.r#match.is_none() {
+        builder.r#match = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::GuardrailManagedWordType>().ok()
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::GuardrailWordPolicyAction>().ok()
+    }
+    builder
+}
+
+pub(crate) fn guardrail_pii_entity_filter_correct_errors(
+    mut builder: crate::types::builders::GuardrailPiiEntityFilterBuilder,
+) -> crate::types::builders::GuardrailPiiEntityFilterBuilder {
+    if builder.r#match.is_none() {
+        builder.r#match = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::GuardrailPiiEntityType>().ok()
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::GuardrailSensitiveInformationPolicyAction>().ok()
+    }
+    builder
+}
+
+pub(crate) fn guardrail_regex_filter_correct_errors(
+    mut builder: crate::types::builders::GuardrailRegexFilterBuilder,
+) -> crate::types::builders::GuardrailRegexFilterBuilder {
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::GuardrailSensitiveInformationPolicyAction>().ok()
+    }
+    builder
+}
+
+pub(crate) fn guardrail_topic_correct_errors(
+    mut builder: crate::types::builders::GuardrailTopicBuilder,
+) -> crate::types::builders::GuardrailTopicBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::GuardrailTopicType>().ok()
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::GuardrailTopicPolicyAction>().ok()
     }
     builder
 }

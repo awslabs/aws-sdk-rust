@@ -25,6 +25,12 @@ pub fn ser_content_block(
             crate::protocol_serde::shape_tool_result_block::ser_tool_result_block(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::ContentBlock::GuardContent(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_3.key("guardContent").start_object();
+            crate::protocol_serde::shape_guardrail_converse_content_block::ser_guardrail_converse_content_block(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::ContentBlock::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("ContentBlock")),
     }
     Ok(())
@@ -79,6 +85,11 @@ where
                             crate::protocol_serde::shape_tool_result_block::de_tool_result_block(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolResult' cannot be null")
                             })?,
+                        )),
+                        "guardContent" => Some(crate::types::ContentBlock::GuardContent(
+                            crate::protocol_serde::shape_guardrail_converse_content_block::de_guardrail_converse_content_block(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'guardContent' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

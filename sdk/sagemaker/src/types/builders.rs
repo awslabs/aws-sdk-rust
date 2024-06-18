@@ -251,6 +251,8 @@ pub use crate::types::_git_config_for_update::GitConfigForUpdateBuilder;
 
 pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecificationBuilder;
 
+pub use crate::types::_cluster_ebs_volume_config::ClusterEbsVolumeConfigBuilder;
+
 pub use crate::types::_cluster_life_cycle_config::ClusterLifeCycleConfigBuilder;
 
 pub use crate::types::_code_editor_app_image_config::CodeEditorAppImageConfigBuilder;
@@ -698,6 +700,8 @@ pub use crate::types::_model_card_version_summary::ModelCardVersionSummaryBuilde
 pub use crate::types::_model_card_summary::ModelCardSummaryBuilder;
 
 pub use crate::types::_model_card_export_job_summary::ModelCardExportJobSummaryBuilder;
+
+pub use crate::types::_tracking_server_summary::TrackingServerSummaryBuilder;
 
 pub use crate::types::_lineage_group_summary::LineageGroupSummaryBuilder;
 

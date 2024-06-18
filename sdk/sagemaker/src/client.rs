@@ -307,6 +307,8 @@ mod create_inference_recommendations_job;
 
 mod create_labeling_job;
 
+mod create_mlflow_tracking_server;
+
 mod create_model;
 
 mod create_model_bias_job_definition;
@@ -332,6 +334,8 @@ mod create_notebook_instance_lifecycle_config;
 mod create_pipeline;
 
 mod create_presigned_domain_url;
+
+mod create_presigned_mlflow_tracking_server_url;
 
 mod create_presigned_notebook_instance_url;
 
@@ -439,6 +443,8 @@ mod delete_image_version;
 mod delete_inference_component;
 
 mod delete_inference_experiment;
+
+mod delete_mlflow_tracking_server;
 
 mod delete_model;
 
@@ -553,6 +559,8 @@ mod describe_inference_recommendations_job;
 mod describe_labeling_job;
 
 mod describe_lineage_group;
+
+mod describe_mlflow_tracking_server;
 
 mod describe_model;
 
@@ -704,6 +712,8 @@ mod list_labeling_jobs_for_workteam;
 
 mod list_lineage_groups;
 
+mod list_mlflow_tracking_servers;
+
 mod list_model_bias_job_definitions;
 
 mod list_model_card_export_jobs;
@@ -796,6 +806,8 @@ mod start_edge_deployment_stage;
 
 mod start_inference_experiment;
 
+mod start_mlflow_tracking_server;
+
 mod start_monitoring_schedule;
 
 mod start_notebook_instance;
@@ -817,6 +829,8 @@ mod stop_inference_experiment;
 mod stop_inference_recommendations_job;
 
 mod stop_labeling_job;
+
+mod stop_mlflow_tracking_server;
 
 mod stop_monitoring_schedule;
 
@@ -871,6 +885,8 @@ mod update_inference_component;
 mod update_inference_component_runtime_config;
 
 mod update_inference_experiment;
+
+mod update_mlflow_tracking_server;
 
 mod update_model_card;
 

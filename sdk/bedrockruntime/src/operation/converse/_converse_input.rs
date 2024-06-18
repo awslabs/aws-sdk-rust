@@ -24,9 +24,11 @@ pub struct ConverseInput {
     /// <p>This field is only supported by Anthropic Claude 3, Cohere Command R, Cohere Command R+, and Mistral Large models.</p>
     /// </note>
     pub tool_config: ::std::option::Option<crate::types::ToolConfiguration>,
+    /// <p>Configuration information for a guardrail that you want to use in the request.</p>
+    pub guardrail_config: ::std::option::Option<crate::types::GuardrailConfiguration>,
     /// <p>Additional inference parameters that the model supports, beyond the base set of inference parameters that <code>Converse</code> supports in the <code>inferenceConfig</code> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Model parameters</a>.</p>
     pub additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
-    /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResultFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
+    /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResponseFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
     /// <p><code>\[ "/stop_sequence" \]</code></p>
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
     /// <p><code>Converse</code> rejects an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>Converse</code>.</p>
@@ -68,11 +70,15 @@ impl ConverseInput {
     pub fn tool_config(&self) -> ::std::option::Option<&crate::types::ToolConfiguration> {
         self.tool_config.as_ref()
     }
+    /// <p>Configuration information for a guardrail that you want to use in the request.</p>
+    pub fn guardrail_config(&self) -> ::std::option::Option<&crate::types::GuardrailConfiguration> {
+        self.guardrail_config.as_ref()
+    }
     /// <p>Additional inference parameters that the model supports, beyond the base set of inference parameters that <code>Converse</code> supports in the <code>inferenceConfig</code> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Model parameters</a>.</p>
     pub fn additional_model_request_fields(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.additional_model_request_fields.as_ref()
     }
-    /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResultFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
+    /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResponseFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
     /// <p><code>\[ "/stop_sequence" \]</code></p>
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
     /// <p><code>Converse</code> rejects an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>Converse</code>.</p>
@@ -98,6 +104,7 @@ pub struct ConverseInputBuilder {
     pub(crate) system: ::std::option::Option<::std::vec::Vec<crate::types::SystemContentBlock>>,
     pub(crate) inference_config: ::std::option::Option<crate::types::InferenceConfiguration>,
     pub(crate) tool_config: ::std::option::Option<crate::types::ToolConfiguration>,
+    pub(crate) guardrail_config: ::std::option::Option<crate::types::GuardrailConfiguration>,
     pub(crate) additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) additional_model_response_field_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -218,6 +225,20 @@ impl ConverseInputBuilder {
     pub fn get_tool_config(&self) -> &::std::option::Option<crate::types::ToolConfiguration> {
         &self.tool_config
     }
+    /// <p>Configuration information for a guardrail that you want to use in the request.</p>
+    pub fn guardrail_config(mut self, input: crate::types::GuardrailConfiguration) -> Self {
+        self.guardrail_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration information for a guardrail that you want to use in the request.</p>
+    pub fn set_guardrail_config(mut self, input: ::std::option::Option<crate::types::GuardrailConfiguration>) -> Self {
+        self.guardrail_config = input;
+        self
+    }
+    /// <p>Configuration information for a guardrail that you want to use in the request.</p>
+    pub fn get_guardrail_config(&self) -> &::std::option::Option<crate::types::GuardrailConfiguration> {
+        &self.guardrail_config
+    }
     /// <p>Additional inference parameters that the model supports, beyond the base set of inference parameters that <code>Converse</code> supports in the <code>inferenceConfig</code> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Model parameters</a>.</p>
     pub fn additional_model_request_fields(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.additional_model_request_fields = ::std::option::Option::Some(input);
@@ -236,7 +257,7 @@ impl ConverseInputBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_model_response_field_paths`](Self::set_additional_model_response_field_paths).
     ///
-    /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResultFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
+    /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResponseFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
     /// <p><code>\[ "/stop_sequence" \]</code></p>
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
     /// <p><code>Converse</code> rejects an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>Converse</code>.</p>
@@ -246,7 +267,7 @@ impl ConverseInputBuilder {
         self.additional_model_response_field_paths = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResultFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
+    /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResponseFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
     /// <p><code>\[ "/stop_sequence" \]</code></p>
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
     /// <p><code>Converse</code> rejects an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>Converse</code>.</p>
@@ -254,7 +275,7 @@ impl ConverseInputBuilder {
         self.additional_model_response_field_paths = input;
         self
     }
-    /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResultFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
+    /// <p>Additional model parameters field paths to return in the response. <code>Converse</code> returns the requested fields as a JSON Pointer object in the <code>additionalModelResponseFields</code> field. The following is example JSON for <code>additionalModelResponseFieldPaths</code>.</p>
     /// <p><code>\[ "/stop_sequence" \]</code></p>
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
     /// <p><code>Converse</code> rejects an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>Converse</code>.</p>
@@ -269,6 +290,7 @@ impl ConverseInputBuilder {
             system: self.system,
             inference_config: self.inference_config,
             tool_config: self.tool_config,
+            guardrail_config: self.guardrail_config,
             additional_model_request_fields: self.additional_model_request_fields,
             additional_model_response_field_paths: self.additional_model_response_field_paths,
         })

@@ -58,6 +58,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "InstanceStorageConfigs" => {
+                            builder = builder.set_instance_storage_configs(
+                                crate::protocol_serde::shape_cluster_instance_storage_configs::de_cluster_instance_storage_configs(tokens)?,
+                            );
+                        }
                         "PrivatePrimaryIp" => {
                             builder = builder.set_private_primary_ip(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -15,41 +15,47 @@ pub fn ser_converse_stream_input_input(
         }
         array_3.finish();
     }
-    if let Some(var_5) = &input.inference_config {
+    if let Some(var_5) = &input.guardrail_config {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("inferenceConfig").start_object();
-        crate::protocol_serde::shape_inference_configuration::ser_inference_configuration(&mut object_6, var_5)?;
+        let mut object_6 = object.key("guardrailConfig").start_object();
+        crate::protocol_serde::shape_guardrail_stream_configuration::ser_guardrail_stream_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.messages {
-        let mut array_8 = object.key("messages").start_array();
-        for item_9 in var_7 {
-            {
-                #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_message::ser_message(&mut object_10, item_9)?;
-                object_10.finish();
-            }
-        }
-        array_8.finish();
-    }
-    if let Some(var_11) = &input.system {
-        let mut array_12 = object.key("system").start_array();
-        for item_13 in var_11 {
-            {
-                #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_system_content_block::ser_system_content_block(&mut object_14, item_13)?;
-                object_14.finish();
-            }
-        }
-        array_12.finish();
-    }
-    if let Some(var_15) = &input.tool_config {
+    if let Some(var_7) = &input.inference_config {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("toolConfig").start_object();
-        crate::protocol_serde::shape_tool_configuration::ser_tool_configuration(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_8 = object.key("inferenceConfig").start_object();
+        crate::protocol_serde::shape_inference_configuration::ser_inference_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.messages {
+        let mut array_10 = object.key("messages").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_message::ser_message(&mut object_12, item_11)?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
+    }
+    if let Some(var_13) = &input.system {
+        let mut array_14 = object.key("system").start_array();
+        for item_15 in var_13 {
+            {
+                #[allow(unused_mut)]
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_system_content_block::ser_system_content_block(&mut object_16, item_15)?;
+                object_16.finish();
+            }
+        }
+        array_14.finish();
+    }
+    if let Some(var_17) = &input.tool_config {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("toolConfig").start_object();
+        crate::protocol_serde::shape_tool_configuration::ser_tool_configuration(&mut object_18, var_17)?;
+        object_18.finish();
     }
     Ok(())
 }

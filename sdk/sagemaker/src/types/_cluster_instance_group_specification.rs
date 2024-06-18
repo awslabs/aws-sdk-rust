@@ -16,6 +16,8 @@ pub struct ClusterInstanceGroupSpecification {
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the value for <b>Threads per core</b>. For instance types that support multithreading, you can specify <code>1</code> for disabling multithreading and <code>2</code> for enabling multithreading. For instance types that doesn't support multithreading, specify <code>1</code>. For more information, see the reference table of <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cpu-options-supported-instances-values.html">CPU cores and threads per CPU core per instance type</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub threads_per_core: ::std::option::Option<i32>,
+    /// <p>Specifies the additional storage configurations for the instances in the SageMaker HyperPod cluster instance group.</p>
+    pub instance_storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>,
 }
 impl ClusterInstanceGroupSpecification {
     /// <p>Specifies the number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
@@ -42,6 +44,12 @@ impl ClusterInstanceGroupSpecification {
     pub fn threads_per_core(&self) -> ::std::option::Option<i32> {
         self.threads_per_core
     }
+    /// <p>Specifies the additional storage configurations for the instances in the SageMaker HyperPod cluster instance group.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_storage_configs.is_none()`.
+    pub fn instance_storage_configs(&self) -> &[crate::types::ClusterInstanceStorageConfig] {
+        self.instance_storage_configs.as_deref().unwrap_or_default()
+    }
 }
 impl ClusterInstanceGroupSpecification {
     /// Creates a new builder-style object to manufacture [`ClusterInstanceGroupSpecification`](crate::types::ClusterInstanceGroupSpecification).
@@ -60,6 +68,7 @@ pub struct ClusterInstanceGroupSpecificationBuilder {
     pub(crate) life_cycle_config: ::std::option::Option<crate::types::ClusterLifeCycleConfig>,
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) threads_per_core: ::std::option::Option<i32>,
+    pub(crate) instance_storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>,
 }
 impl ClusterInstanceGroupSpecificationBuilder {
     /// <p>Specifies the number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
@@ -151,6 +160,26 @@ impl ClusterInstanceGroupSpecificationBuilder {
     pub fn get_threads_per_core(&self) -> &::std::option::Option<i32> {
         &self.threads_per_core
     }
+    /// Appends an item to `instance_storage_configs`.
+    ///
+    /// To override the contents of this collection use [`set_instance_storage_configs`](Self::set_instance_storage_configs).
+    ///
+    /// <p>Specifies the additional storage configurations for the instances in the SageMaker HyperPod cluster instance group.</p>
+    pub fn instance_storage_configs(mut self, input: crate::types::ClusterInstanceStorageConfig) -> Self {
+        let mut v = self.instance_storage_configs.unwrap_or_default();
+        v.push(input);
+        self.instance_storage_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the additional storage configurations for the instances in the SageMaker HyperPod cluster instance group.</p>
+    pub fn set_instance_storage_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>) -> Self {
+        self.instance_storage_configs = input;
+        self
+    }
+    /// <p>Specifies the additional storage configurations for the instances in the SageMaker HyperPod cluster instance group.</p>
+    pub fn get_instance_storage_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>> {
+        &self.instance_storage_configs
+    }
     /// Consumes the builder and constructs a [`ClusterInstanceGroupSpecification`](crate::types::ClusterInstanceGroupSpecification).
     pub fn build(self) -> crate::types::ClusterInstanceGroupSpecification {
         crate::types::ClusterInstanceGroupSpecification {
@@ -160,6 +189,7 @@ impl ClusterInstanceGroupSpecificationBuilder {
             life_cycle_config: self.life_cycle_config,
             execution_role: self.execution_role,
             threads_per_core: self.threads_per_core,
+            instance_storage_configs: self.instance_storage_configs,
         }
     }
 }

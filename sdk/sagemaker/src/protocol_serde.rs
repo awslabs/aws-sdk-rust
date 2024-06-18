@@ -93,6 +93,8 @@ pub(crate) mod shape_create_inference_recommendations_job;
 
 pub(crate) mod shape_create_labeling_job;
 
+pub(crate) mod shape_create_mlflow_tracking_server;
+
 pub(crate) mod shape_create_model;
 
 pub(crate) mod shape_create_model_bias_job_definition;
@@ -118,6 +120,8 @@ pub(crate) mod shape_create_notebook_instance_lifecycle_config;
 pub(crate) mod shape_create_pipeline;
 
 pub(crate) mod shape_create_presigned_domain_url;
+
+pub(crate) mod shape_create_presigned_mlflow_tracking_server_url;
 
 pub(crate) mod shape_create_presigned_notebook_instance_url;
 
@@ -198,6 +202,8 @@ pub(crate) mod shape_delete_image_version;
 pub(crate) mod shape_delete_inference_component;
 
 pub(crate) mod shape_delete_inference_experiment;
+
+pub(crate) mod shape_delete_mlflow_tracking_server;
 
 pub(crate) mod shape_delete_model;
 
@@ -312,6 +318,8 @@ pub(crate) mod shape_describe_inference_recommendations_job;
 pub(crate) mod shape_describe_labeling_job;
 
 pub(crate) mod shape_describe_lineage_group;
+
+pub(crate) mod shape_describe_mlflow_tracking_server;
 
 pub(crate) mod shape_describe_model;
 
@@ -463,6 +471,8 @@ pub(crate) mod shape_list_labeling_jobs_for_workteam;
 
 pub(crate) mod shape_list_lineage_groups;
 
+pub(crate) mod shape_list_mlflow_tracking_servers;
+
 pub(crate) mod shape_list_model_bias_job_definitions;
 
 pub(crate) mod shape_list_model_card_export_jobs;
@@ -555,6 +565,8 @@ pub(crate) mod shape_start_edge_deployment_stage;
 
 pub(crate) mod shape_start_inference_experiment;
 
+pub(crate) mod shape_start_mlflow_tracking_server;
+
 pub(crate) mod shape_start_monitoring_schedule;
 
 pub(crate) mod shape_start_notebook_instance;
@@ -576,6 +588,8 @@ pub(crate) mod shape_stop_inference_experiment;
 pub(crate) mod shape_stop_inference_recommendations_job;
 
 pub(crate) mod shape_stop_labeling_job;
+
+pub(crate) mod shape_stop_mlflow_tracking_server;
 
 pub(crate) mod shape_stop_monitoring_schedule;
 
@@ -630,6 +644,8 @@ pub(crate) mod shape_update_inference_component;
 pub(crate) mod shape_update_inference_component_runtime_config;
 
 pub(crate) mod shape_update_inference_experiment;
+
+pub(crate) mod shape_update_mlflow_tracking_server;
 
 pub(crate) mod shape_update_model_card;
 
@@ -743,6 +759,8 @@ pub(crate) mod shape_create_inference_recommendations_job_input;
 
 pub(crate) mod shape_create_labeling_job_input;
 
+pub(crate) mod shape_create_mlflow_tracking_server_input;
+
 pub(crate) mod shape_create_model_bias_job_definition_input;
 
 pub(crate) mod shape_create_model_card_export_job_input;
@@ -768,6 +786,8 @@ pub(crate) mod shape_create_notebook_instance_lifecycle_config_input;
 pub(crate) mod shape_create_pipeline_input;
 
 pub(crate) mod shape_create_presigned_domain_url_input;
+
+pub(crate) mod shape_create_presigned_mlflow_tracking_server_url_input;
 
 pub(crate) mod shape_create_presigned_notebook_instance_url_input;
 
@@ -848,6 +868,8 @@ pub(crate) mod shape_delete_image_version_input;
 pub(crate) mod shape_delete_inference_component_input;
 
 pub(crate) mod shape_delete_inference_experiment_input;
+
+pub(crate) mod shape_delete_mlflow_tracking_server_input;
 
 pub(crate) mod shape_delete_model_bias_job_definition_input;
 
@@ -962,6 +984,8 @@ pub(crate) mod shape_describe_inference_recommendations_job_input;
 pub(crate) mod shape_describe_labeling_job_input;
 
 pub(crate) mod shape_describe_lineage_group_input;
+
+pub(crate) mod shape_describe_mlflow_tracking_server_input;
 
 pub(crate) mod shape_describe_model_bias_job_definition_input;
 
@@ -1107,6 +1131,8 @@ pub(crate) mod shape_list_labeling_jobs_input;
 
 pub(crate) mod shape_list_lineage_groups_input;
 
+pub(crate) mod shape_list_mlflow_tracking_servers_input;
+
 pub(crate) mod shape_list_model_bias_job_definitions_input;
 
 pub(crate) mod shape_list_model_card_export_jobs_input;
@@ -1205,6 +1231,8 @@ pub(crate) mod shape_start_edge_deployment_stage_input;
 
 pub(crate) mod shape_start_inference_experiment_input;
 
+pub(crate) mod shape_start_mlflow_tracking_server_input;
+
 pub(crate) mod shape_start_monitoring_schedule_input;
 
 pub(crate) mod shape_start_notebook_instance_input;
@@ -1226,6 +1254,8 @@ pub(crate) mod shape_stop_inference_experiment_input;
 pub(crate) mod shape_stop_inference_recommendations_job_input;
 
 pub(crate) mod shape_stop_labeling_job_input;
+
+pub(crate) mod shape_stop_mlflow_tracking_server_input;
 
 pub(crate) mod shape_stop_monitoring_schedule_input;
 
@@ -1280,6 +1310,8 @@ pub(crate) mod shape_update_inference_component_input;
 pub(crate) mod shape_update_inference_component_runtime_config_input;
 
 pub(crate) mod shape_update_inference_experiment_input;
+
+pub(crate) mod shape_update_mlflow_tracking_server_input;
 
 pub(crate) mod shape_update_model_card_input;
 
@@ -1901,6 +1933,8 @@ pub(crate) mod shape_throughput_config_description;
 
 pub(crate) mod shape_throughput_config_update;
 
+pub(crate) mod shape_tracking_server_summary_list;
+
 pub(crate) mod shape_training_environment_map;
 
 pub(crate) mod shape_training_job_status_counters;
@@ -2056,6 +2090,10 @@ pub(crate) mod shape_cluster_instance_group_details;
 pub(crate) mod shape_cluster_instance_placement;
 
 pub(crate) mod shape_cluster_instance_status_details;
+
+pub(crate) mod shape_cluster_instance_storage_config;
+
+pub(crate) mod shape_cluster_instance_storage_configs;
 
 pub(crate) mod shape_cluster_life_cycle_config;
 
@@ -2491,6 +2529,8 @@ pub(crate) mod shape_text_generation_job_config;
 
 pub(crate) mod shape_time_series_forecasting_job_config;
 
+pub(crate) mod shape_tracking_server_summary;
+
 pub(crate) mod shape_traffic_pattern;
 
 pub(crate) mod shape_training_container_arguments;
@@ -2574,6 +2614,8 @@ pub(crate) mod shape_cidrs;
 pub(crate) mod shape_clarify_inference_config;
 
 pub(crate) mod shape_clarify_shap_config;
+
+pub(crate) mod shape_cluster_ebs_volume_config;
 
 pub(crate) mod shape_code_repositories;
 

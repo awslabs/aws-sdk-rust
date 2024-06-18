@@ -196,6 +196,9 @@ pub(crate) fn de_converse(
                             .transpose()?,
                     );
                 }
+                "trace" => {
+                    builder = builder.set_trace(crate::protocol_serde::shape_converse_trace::de_converse_trace(tokens)?);
+                }
                 "usage" => {
                     builder = builder.set_usage(crate::protocol_serde::shape_token_usage::de_token_usage(tokens)?);
                 }

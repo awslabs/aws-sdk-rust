@@ -30,5 +30,17 @@ pub fn ser_cluster_instance_group_specification(
             ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
+    if let Some(var_8) = &input.instance_storage_configs {
+        let mut array_9 = object.key("InstanceStorageConfigs").start_array();
+        for item_10 in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_cluster_instance_storage_config::ser_cluster_instance_storage_config(&mut object_11, item_10)?;
+                object_11.finish();
+            }
+        }
+        array_9.finish();
+    }
     Ok(())
 }

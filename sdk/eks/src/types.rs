@@ -155,6 +155,12 @@ pub use crate::types::_config_status::ConfigStatus;
 
 pub use crate::types::_fargate_profile::FargateProfile;
 
+pub use crate::types::_fargate_profile_health::FargateProfileHealth;
+
+pub use crate::types::_fargate_profile_issue::FargateProfileIssue;
+
+pub use crate::types::_fargate_profile_issue_code::FargateProfileIssueCode;
+
 pub use crate::types::_fargate_profile_status::FargateProfileStatus;
 
 pub use crate::types::_fargate_profile_selector::FargateProfileSelector;
@@ -278,6 +284,12 @@ mod _error_code;
 mod _error_detail;
 
 mod _fargate_profile;
+
+mod _fargate_profile_health;
+
+mod _fargate_profile_issue;
+
+mod _fargate_profile_issue_code;
 
 mod _fargate_profile_selector;
 

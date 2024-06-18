@@ -35,6 +35,9 @@ where
                         "metrics" => {
                             builder = builder.set_metrics(crate::protocol_serde::shape_converse_stream_metrics::de_converse_stream_metrics(tokens)?);
                         }
+                        "trace" => {
+                            builder = builder.set_trace(crate::protocol_serde::shape_converse_stream_trace::de_converse_stream_trace(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

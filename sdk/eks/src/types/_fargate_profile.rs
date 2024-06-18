@@ -22,6 +22,8 @@ pub struct FargateProfile {
     pub status: ::std::option::Option<crate::types::FargateProfileStatus>,
     /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The health status of the Fargate profile. If there are issues with your Fargate profile's health, they are listed here.</p>
+    pub health: ::std::option::Option<crate::types::FargateProfileHealth>,
 }
 impl FargateProfile {
     /// <p>The name of the Fargate profile.</p>
@@ -64,6 +66,10 @@ impl FargateProfile {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The health status of the Fargate profile. If there are issues with your Fargate profile's health, they are listed here.</p>
+    pub fn health(&self) -> ::std::option::Option<&crate::types::FargateProfileHealth> {
+        self.health.as_ref()
+    }
 }
 impl FargateProfile {
     /// Creates a new builder-style object to manufacture [`FargateProfile`](crate::types::FargateProfile).
@@ -85,6 +91,7 @@ pub struct FargateProfileBuilder {
     pub(crate) selectors: ::std::option::Option<::std::vec::Vec<crate::types::FargateProfileSelector>>,
     pub(crate) status: ::std::option::Option<crate::types::FargateProfileStatus>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) health: ::std::option::Option<crate::types::FargateProfileHealth>,
 }
 impl FargateProfileBuilder {
     /// <p>The name of the Fargate profile.</p>
@@ -231,6 +238,20 @@ impl FargateProfileBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The health status of the Fargate profile. If there are issues with your Fargate profile's health, they are listed here.</p>
+    pub fn health(mut self, input: crate::types::FargateProfileHealth) -> Self {
+        self.health = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The health status of the Fargate profile. If there are issues with your Fargate profile's health, they are listed here.</p>
+    pub fn set_health(mut self, input: ::std::option::Option<crate::types::FargateProfileHealth>) -> Self {
+        self.health = input;
+        self
+    }
+    /// <p>The health status of the Fargate profile. If there are issues with your Fargate profile's health, they are listed here.</p>
+    pub fn get_health(&self) -> &::std::option::Option<crate::types::FargateProfileHealth> {
+        &self.health
+    }
     /// Consumes the builder and constructs a [`FargateProfile`](crate::types::FargateProfile).
     pub fn build(self) -> crate::types::FargateProfile {
         crate::types::FargateProfile {
@@ -243,6 +264,7 @@ impl FargateProfileBuilder {
             selectors: self.selectors,
             status: self.status,
             tags: self.tags,
+            health: self.health,
         }
     }
 }

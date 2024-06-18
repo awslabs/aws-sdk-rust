@@ -237,6 +237,8 @@ pub use crate::types::_additional_inference_specification_definition::Additional
 
 pub use crate::types::_model_approval_status::ModelApprovalStatus;
 
+pub use crate::types::_tracking_server_size::TrackingServerSize;
+
 pub use crate::types::_shadow_mode_config::ShadowModeConfig;
 
 pub use crate::types::_shadow_model_variant_config::ShadowModelVariantConfig;
@@ -342,6 +344,10 @@ pub use crate::types::_edge_preset_deployment_type::EdgePresetDeploymentType;
 pub use crate::types::_git_config_for_update::GitConfigForUpdate;
 
 pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecification;
+
+pub use crate::types::_cluster_instance_storage_config::ClusterInstanceStorageConfig;
+
+pub use crate::types::_cluster_ebs_volume_config::ClusterEbsVolumeConfig;
 
 pub use crate::types::_cluster_life_cycle_config::ClusterLifeCycleConfig;
 
@@ -1024,6 +1030,14 @@ pub use crate::types::_model_card_export_job_status::ModelCardExportJobStatus;
 pub use crate::types::_model_card_export_job_sort_order::ModelCardExportJobSortOrder;
 
 pub use crate::types::_model_card_export_job_sort_by::ModelCardExportJobSortBy;
+
+pub use crate::types::_tracking_server_summary::TrackingServerSummary;
+
+pub use crate::types::_is_tracking_server_active::IsTrackingServerActive;
+
+pub use crate::types::_tracking_server_status::TrackingServerStatus;
+
+pub use crate::types::_sort_tracking_server_by::SortTrackingServerBy;
 
 pub use crate::types::_lineage_group_summary::LineageGroupSummary;
 
@@ -1929,6 +1943,8 @@ mod _clarify_text_granularity;
 
 mod _clarify_text_language;
 
+mod _cluster_ebs_volume_config;
+
 mod _cluster_instance_group_details;
 
 mod _cluster_instance_group_specification;
@@ -1938,6 +1954,8 @@ mod _cluster_instance_placement;
 mod _cluster_instance_status;
 
 mod _cluster_instance_status_details;
+
+mod _cluster_instance_storage_config;
 
 mod _cluster_instance_type;
 
@@ -2420,6 +2438,8 @@ mod _instance_type;
 mod _integer_parameter_range;
 
 mod _integer_parameter_range_specification;
+
+mod _is_tracking_server_active;
 
 mod _job_type;
 
@@ -3121,6 +3141,8 @@ mod _sort_pipeline_executions_by;
 
 mod _sort_pipelines_by;
 
+mod _sort_tracking_server_by;
+
 mod _sort_trial_components_by;
 
 mod _sort_trials_by;
@@ -3222,6 +3244,12 @@ mod _time_series_forecasting_job_config;
 mod _time_series_forecasting_settings;
 
 mod _time_series_transformations;
+
+mod _tracking_server_size;
+
+mod _tracking_server_status;
+
+mod _tracking_server_summary;
 
 mod _traffic_pattern;
 

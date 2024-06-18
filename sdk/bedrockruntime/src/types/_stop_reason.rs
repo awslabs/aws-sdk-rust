@@ -14,6 +14,7 @@
 /// match stopreason {
 ///     StopReason::ContentFiltered => { /* ... */ },
 ///     StopReason::EndTurn => { /* ... */ },
+///     StopReason::GuardrailIntervened => { /* ... */ },
 ///     StopReason::MaxTokens => { /* ... */ },
 ///     StopReason::StopSequence => { /* ... */ },
 ///     StopReason::ToolUse => { /* ... */ },
@@ -49,6 +50,8 @@ pub enum StopReason {
     #[allow(missing_docs)] // documentation missing in model
     EndTurn,
     #[allow(missing_docs)] // documentation missing in model
+    GuardrailIntervened,
+    #[allow(missing_docs)] // documentation missing in model
     MaxTokens,
     #[allow(missing_docs)] // documentation missing in model
     StopSequence,
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for StopReason {
         match s {
             "content_filtered" => StopReason::ContentFiltered,
             "end_turn" => StopReason::EndTurn,
+            "guardrail_intervened" => StopReason::GuardrailIntervened,
             "max_tokens" => StopReason::MaxTokens,
             "stop_sequence" => StopReason::StopSequence,
             "tool_use" => StopReason::ToolUse,
@@ -83,6 +87,7 @@ impl StopReason {
         match self {
             StopReason::ContentFiltered => "content_filtered",
             StopReason::EndTurn => "end_turn",
+            StopReason::GuardrailIntervened => "guardrail_intervened",
             StopReason::MaxTokens => "max_tokens",
             StopReason::StopSequence => "stop_sequence",
             StopReason::ToolUse => "tool_use",
@@ -91,7 +96,14 @@ impl StopReason {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["content_filtered", "end_turn", "max_tokens", "stop_sequence", "tool_use"]
+        &[
+            "content_filtered",
+            "end_turn",
+            "guardrail_intervened",
+            "max_tokens",
+            "stop_sequence",
+            "tool_use",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for StopReason {
@@ -116,6 +128,7 @@ impl ::std::fmt::Display for StopReason {
         match self {
             StopReason::ContentFiltered => write!(f, "content_filtered"),
             StopReason::EndTurn => write!(f, "end_turn"),
+            StopReason::GuardrailIntervened => write!(f, "guardrail_intervened"),
             StopReason::MaxTokens => write!(f, "max_tokens"),
             StopReason::StopSequence => write!(f, "stop_sequence"),
             StopReason::ToolUse => write!(f, "tool_use"),
