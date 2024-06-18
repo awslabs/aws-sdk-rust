@@ -10,6 +10,7 @@ use aws_smithy_runtime_api::client::retries::classifiers::{
 };
 use aws_smithy_types::error::metadata::ProvideErrorMetadata;
 use aws_smithy_types::retry::ErrorKind;
+use std::borrow::Cow;
 use std::error::Error as StdError;
 use std::marker::PhantomData;
 
@@ -35,15 +36,62 @@ pub const THROTTLING_ERRORS: &[&str] = &[
 pub const TRANSIENT_ERRORS: &[&str] = &["RequestTimeout", "RequestTimeoutException"];
 
 /// A retry classifier for determining if the response sent by an AWS service requires a retry.
-#[derive(Debug, Default)]
+#[derive(Debug)]
 pub struct AwsErrorCodeClassifier<E> {
+    throttling_errors: Cow<'static, [&'static str]>,
+    transient_errors: Cow<'static, [&'static str]>,
     _inner: PhantomData<E>,
 }
 
-impl<E> AwsErrorCodeClassifier<E> {
-    /// Create a new AwsErrorCodeClassifier
-    pub fn new() -> Self {
+impl<E> Default for AwsErrorCodeClassifier<E> {
+    fn default() -> Self {
         Self {
+            throttling_errors: THROTTLING_ERRORS.into(),
+            transient_errors: TRANSIENT_ERRORS.into(),
+            _inner: PhantomData,
+        }
+    }
+}
+
+/// Builder for [`AwsErrorCodeClassifier`]
+#[derive(Debug)]
+pub struct AwsErrorCodeClassifierBuilder<E> {
+    throttling_errors: Option<Cow<'static, [&'static str]>>,
+    transient_errors: Option<Cow<'static, [&'static str]>>,
+    _inner: PhantomData<E>,
+}
+
+impl<E> AwsErrorCodeClassifierBuilder<E> {
+    /// Set `transient_errors` for the builder
+    pub fn transient_errors(
+        mut self,
+        transient_errors: impl Into<Cow<'static, [&'static str]>>,
+    ) -> Self {
+        self.transient_errors = Some(transient_errors.into());
+        self
+    }
+
+    /// Build a new [`AwsErrorCodeClassifier`]
+    pub fn build(self) -> AwsErrorCodeClassifier<E> {
+        AwsErrorCodeClassifier {
+            throttling_errors: self.throttling_errors.unwrap_or(THROTTLING_ERRORS.into()),
+            transient_errors: self.transient_errors.unwrap_or(TRANSIENT_ERRORS.into()),
+            _inner: self._inner,
+        }
+    }
+}
+
+impl<E> AwsErrorCodeClassifier<E> {
+    /// Create a new [`AwsErrorCodeClassifier`]
+    pub fn new() -> Self {
+        Self::default()
+    }
+
+    /// Return a builder that can create a new [`AwsErrorCodeClassifier`]
+    pub fn builder() -> AwsErrorCodeClassifierBuilder<E> {
+        AwsErrorCodeClassifierBuilder {
+            throttling_errors: None,
+            transient_errors: None,
             _inner: PhantomData,
         }
     }
@@ -73,13 +121,13 @@ where
             .and_then(|err| err.code());
 
         if let Some(error_code) = error_code {
-            if THROTTLING_ERRORS.contains(&error_code) {
+            if self.throttling_errors.contains(&error_code) {
                 return RetryAction::RetryIndicated(RetryReason::RetryableError {
                     kind: ErrorKind::ThrottlingError,
                     retry_after,
                 });
             }
-            if TRANSIENT_ERRORS.contains(&error_code) {
+            if self.transient_errors.contains(&error_code) {
                 return RetryAction::RetryIndicated(RetryReason::RetryableError {
                     kind: ErrorKind::TransientError,
                     retry_after,

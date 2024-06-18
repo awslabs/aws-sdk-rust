@@ -120,33 +120,29 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutPubl
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
-        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutPublicAccessBlock")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(PutPublicAccessBlockEndpointParamsInterceptor)
-            .with_interceptor(crate::http_request_checksum::RequestChecksumInterceptor::new(
-                |input: &::aws_smithy_runtime_api::client::interceptors::context::Input| {
-                    let input: &crate::operation::put_public_access_block::PutPublicAccessBlockInput = input.downcast_ref().expect("correct type");
-                    let checksum_algorithm = input.checksum_algorithm();
-                    let checksum_algorithm = checksum_algorithm.map(|algorithm| algorithm.as_str()).or(Some("md5"));
-                    let checksum_algorithm = match checksum_algorithm {
-                        Some(algo) => Some(
-                            algo.parse::<::aws_smithy_checksums::ChecksumAlgorithm>()
-                                .map_err(::aws_smithy_types::error::operation::BuildError::other)?,
-                        ),
-                        None => None,
-                    };
-                    ::std::result::Result::<_, ::aws_smithy_runtime_api::box_error::BoxError>::Ok(checksum_algorithm)
-                },
-            ))
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                crate::operation::put_public_access_block::PutPublicAccessBlockError,
-            >::new())
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                crate::operation::put_public_access_block::PutPublicAccessBlockError,
-            >::new())
-            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                crate::operation::put_public_access_block::PutPublicAccessBlockError,
-            >::new());
+                    let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutPublicAccessBlock")
+                            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
+.with_interceptor(PutPublicAccessBlockEndpointParamsInterceptor)
+.with_interceptor(crate::http_request_checksum::RequestChecksumInterceptor::new(|input: &::aws_smithy_runtime_api::client::interceptors::context::Input| {
+                                    let input: &crate::operation::put_public_access_block::PutPublicAccessBlockInput = input.downcast_ref().expect("correct type");
+                                    let checksum_algorithm = input.checksum_algorithm();
+                                    let checksum_algorithm = checksum_algorithm.map(|algorithm| algorithm.as_str()).or(Some("md5"));
+let checksum_algorithm = match checksum_algorithm {
+                Some(algo) => Some(
+                    algo.parse::<::aws_smithy_checksums::ChecksumAlgorithm>()
+                    .map_err(::aws_smithy_types::error::operation::BuildError::other)?
+                ),
+                None => None,
+            };
+                                    ::std::result::Result::<_, ::aws_smithy_runtime_api::box_error::BoxError>::Ok(checksum_algorithm)
+                                }))
+                            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<crate::operation::put_public_access_block::PutPublicAccessBlockError>::new())
+.with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<crate::operation::put_public_access_block::PutPublicAccessBlockError>::new())
+.with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<crate::operation::put_public_access_block::PutPublicAccessBlockError>::builder().transient_errors({
+                                            let mut transient_errors: Vec<&'static str> = ::aws_runtime::retries::classifiers::TRANSIENT_ERRORS.into();
+                                            transient_errors.push("InternalError");
+                                            ::std::borrow::Cow::Owned(transient_errors)
+                                            }).build());
 
         ::std::borrow::Cow::Owned(rcb)
     }

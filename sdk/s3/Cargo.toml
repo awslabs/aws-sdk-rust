@@ -25,7 +25,7 @@ version = "1.2.0"
 [dependencies.aws-runtime]
 path = "../aws-runtime"
 features = ["event-stream", "http-02x"]
-version = "1.2.3"
+version = "1.3.0"
 
 [dependencies.aws-sigv4]
 path = "../aws-sigv4"
@@ -89,8 +89,18 @@ version = "0.12"
 [dependencies.http]
 version = "0.2.9"
 
+[dependencies.http-1x]
+version = "1"
+optional = true
+package = "http"
+
 [dependencies.http-body]
 version = "0.4.4"
+
+[dependencies.http-body-1x]
+version = "1"
+optional = true
+package = "http-body"
 
 [dependencies.lru]
 version = "0.12.2"
@@ -128,7 +138,7 @@ version = "1.2.0"
 [dev-dependencies.aws-runtime]
 path = "../aws-runtime"
 features = ["test-util"]
-version = "1.2.3"
+version = "1.3.0"
 
 [dev-dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
@@ -199,6 +209,7 @@ features = ["no-env-filter"]
 
 [features]
 sigv4a = ["aws-runtime/sigv4a"]
+http-1x = ["dep:http-1x", "dep:http-body-1x", "aws-smithy-runtime-api/http-1x"]
 behavior-version-latest = []
 rustls = ["aws-smithy-runtime/tls-rustls"]
 test-util = ["aws-credential-types/test-util", "aws-smithy-runtime/test-util"]
