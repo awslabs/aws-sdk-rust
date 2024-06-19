@@ -55,6 +55,8 @@ pub use crate::types::_advanced_security_options_status::AdvancedSecurityOptions
 
 pub use crate::types::_advanced_security_options::AdvancedSecurityOptionsBuilder;
 
+pub use crate::types::_jwt_options_output::JwtOptionsOutputBuilder;
+
 pub use crate::types::_saml_options_output::SamlOptionsOutputBuilder;
 
 pub use crate::types::_saml_idp::SamlIdpBuilder;
@@ -106,6 +108,8 @@ pub use crate::types::_zone_awareness_config::ZoneAwarenessConfigBuilder;
 pub use crate::types::_version_status::VersionStatusBuilder;
 
 pub use crate::types::_advanced_security_options_input::AdvancedSecurityOptionsInputBuilder;
+
+pub use crate::types::_jwt_options_input::JwtOptionsInputBuilder;
 
 pub use crate::types::_saml_options_input::SamlOptionsInputBuilder;
 

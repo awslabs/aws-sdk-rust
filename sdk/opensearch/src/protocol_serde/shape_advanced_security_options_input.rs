@@ -21,8 +21,14 @@ pub fn ser_advanced_security_options_input(
         crate::protocol_serde::shape_saml_options_input::ser_saml_options_input(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.anonymous_auth_enabled {
-        object.key("AnonymousAuthEnabled").boolean(*var_7);
+    if let Some(var_7) = &input.jwt_options {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("JWTOptions").start_object();
+        crate::protocol_serde::shape_jwt_options_input::ser_jwt_options_input(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.anonymous_auth_enabled {
+        object.key("AnonymousAuthEnabled").boolean(*var_9);
     }
     Ok(())
 }

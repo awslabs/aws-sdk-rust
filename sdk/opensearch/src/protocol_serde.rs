@@ -425,6 +425,8 @@ pub(crate) mod shape_instance_type_details;
 
 pub(crate) mod shape_ip_address_type_status;
 
+pub(crate) mod shape_jwt_options_input;
+
 pub(crate) mod shape_limits;
 
 pub(crate) mod shape_log_publishing_options;
@@ -490,6 +492,8 @@ pub(crate) mod shape_duration;
 pub(crate) mod shape_instance_limits;
 
 pub(crate) mod shape_instance_role_list;
+
+pub(crate) mod shape_jwt_options_output;
 
 pub(crate) mod shape_modifying_properties;
 

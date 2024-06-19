@@ -32,6 +32,8 @@ pub struct ReportSummary {
     pub product_name: ::std::option::Option<::std::string::String>,
     /// <p>The message associated with the current upload state.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
+    /// <p>Acceptance type for report.</p>
+    pub acceptance_type: ::std::option::Option<crate::types::AcceptanceType>,
 }
 impl ReportSummary {
     /// <p>Unique resource ID for the report resource.</p>
@@ -90,6 +92,10 @@ impl ReportSummary {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
+    /// <p>Acceptance type for report.</p>
+    pub fn acceptance_type(&self) -> ::std::option::Option<&crate::types::AcceptanceType> {
+        self.acceptance_type.as_ref()
+    }
 }
 impl ReportSummary {
     /// Creates a new builder-style object to manufacture [`ReportSummary`](crate::types::ReportSummary).
@@ -116,6 +122,7 @@ pub struct ReportSummaryBuilder {
     pub(crate) company_name: ::std::option::Option<::std::string::String>,
     pub(crate) product_name: ::std::option::Option<::std::string::String>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) acceptance_type: ::std::option::Option<crate::types::AcceptanceType>,
 }
 impl ReportSummaryBuilder {
     /// <p>Unique resource ID for the report resource.</p>
@@ -314,6 +321,20 @@ impl ReportSummaryBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
+    /// <p>Acceptance type for report.</p>
+    pub fn acceptance_type(mut self, input: crate::types::AcceptanceType) -> Self {
+        self.acceptance_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Acceptance type for report.</p>
+    pub fn set_acceptance_type(mut self, input: ::std::option::Option<crate::types::AcceptanceType>) -> Self {
+        self.acceptance_type = input;
+        self
+    }
+    /// <p>Acceptance type for report.</p>
+    pub fn get_acceptance_type(&self) -> &::std::option::Option<crate::types::AcceptanceType> {
+        &self.acceptance_type
+    }
     /// Consumes the builder and constructs a [`ReportSummary`](crate::types::ReportSummary).
     pub fn build(self) -> crate::types::ReportSummary {
         crate::types::ReportSummary {
@@ -331,6 +352,7 @@ impl ReportSummaryBuilder {
             company_name: self.company_name,
             product_name: self.product_name,
             status_message: self.status_message,
+            acceptance_type: self.acceptance_type,
         }
     }
 }

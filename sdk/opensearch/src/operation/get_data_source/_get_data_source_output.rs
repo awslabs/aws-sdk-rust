@@ -10,7 +10,7 @@ pub struct GetDataSourceOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the data source.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the data source response.</p>
+    /// <p>The status of the data source.</p>
     pub status: ::std::option::Option<crate::types::DataSourceStatus>,
     _request_id: Option<String>,
 }
@@ -27,7 +27,7 @@ impl GetDataSourceOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The status of the data source response.</p>
+    /// <p>The status of the data source.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceStatus> {
         self.status.as_ref()
     }
@@ -97,17 +97,17 @@ impl GetDataSourceOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The status of the data source response.</p>
+    /// <p>The status of the data source.</p>
     pub fn status(mut self, input: crate::types::DataSourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the data source response.</p>
+    /// <p>The status of the data source.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the data source response.</p>
+    /// <p>The status of the data source.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
         &self.status
     }

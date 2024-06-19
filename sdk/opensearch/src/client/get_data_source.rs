@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`data_source_type(Option<DataSourceType>)`](crate::operation::get_data_source::GetDataSourceOutput::data_source_type): <p>The type of data source.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_data_source::GetDataSourceOutput::name): <p>The name of the data source.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_data_source::GetDataSourceOutput::description): <p>A description of the data source.</p>
-    ///   - [`status(Option<DataSourceStatus>)`](crate::operation::get_data_source::GetDataSourceOutput::status): <p>The status of the data source response.</p>
+    ///   - [`status(Option<DataSourceStatus>)`](crate::operation::get_data_source::GetDataSourceOutput::status): <p>The status of the data source.</p>
     /// - On failure, responds with [`SdkError<GetDataSourceError>`](crate::operation::get_data_source::GetDataSourceError)
     pub fn get_data_source(&self) -> crate::operation::get_data_source::builders::GetDataSourceFluentBuilder {
         crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::new(self.handle.clone())

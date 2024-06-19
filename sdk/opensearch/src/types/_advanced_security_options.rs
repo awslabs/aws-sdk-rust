@@ -10,6 +10,8 @@ pub struct AdvancedSecurityOptions {
     pub internal_user_database_enabled: ::std::option::Option<bool>,
     /// <p>Container for information about the SAML configuration for OpenSearch Dashboards.</p>
     pub saml_options: ::std::option::Option<crate::types::SamlOptionsOutput>,
+    /// <p>Container for information about the JWT configuration of the Amazon OpenSearch Service.</p>
+    pub jwt_options: ::std::option::Option<crate::types::JwtOptionsOutput>,
     /// <p>Date and time when the migration period will be disabled. Only necessary when <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling fine-grained access control on an existing domain</a>.</p>
     pub anonymous_auth_disable_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>True if a 30-day migration period is enabled, during which administrators can create role mappings. Only necessary when <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling fine-grained access control on an existing domain</a>.</p>
@@ -27,6 +29,10 @@ impl AdvancedSecurityOptions {
     /// <p>Container for information about the SAML configuration for OpenSearch Dashboards.</p>
     pub fn saml_options(&self) -> ::std::option::Option<&crate::types::SamlOptionsOutput> {
         self.saml_options.as_ref()
+    }
+    /// <p>Container for information about the JWT configuration of the Amazon OpenSearch Service.</p>
+    pub fn jwt_options(&self) -> ::std::option::Option<&crate::types::JwtOptionsOutput> {
+        self.jwt_options.as_ref()
     }
     /// <p>Date and time when the migration period will be disabled. Only necessary when <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling fine-grained access control on an existing domain</a>.</p>
     pub fn anonymous_auth_disable_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -51,6 +57,7 @@ pub struct AdvancedSecurityOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) internal_user_database_enabled: ::std::option::Option<bool>,
     pub(crate) saml_options: ::std::option::Option<crate::types::SamlOptionsOutput>,
+    pub(crate) jwt_options: ::std::option::Option<crate::types::JwtOptionsOutput>,
     pub(crate) anonymous_auth_disable_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) anonymous_auth_enabled: ::std::option::Option<bool>,
 }
@@ -97,6 +104,20 @@ impl AdvancedSecurityOptionsBuilder {
     pub fn get_saml_options(&self) -> &::std::option::Option<crate::types::SamlOptionsOutput> {
         &self.saml_options
     }
+    /// <p>Container for information about the JWT configuration of the Amazon OpenSearch Service.</p>
+    pub fn jwt_options(mut self, input: crate::types::JwtOptionsOutput) -> Self {
+        self.jwt_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Container for information about the JWT configuration of the Amazon OpenSearch Service.</p>
+    pub fn set_jwt_options(mut self, input: ::std::option::Option<crate::types::JwtOptionsOutput>) -> Self {
+        self.jwt_options = input;
+        self
+    }
+    /// <p>Container for information about the JWT configuration of the Amazon OpenSearch Service.</p>
+    pub fn get_jwt_options(&self) -> &::std::option::Option<crate::types::JwtOptionsOutput> {
+        &self.jwt_options
+    }
     /// <p>Date and time when the migration period will be disabled. Only necessary when <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling fine-grained access control on an existing domain</a>.</p>
     pub fn anonymous_auth_disable_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.anonymous_auth_disable_date = ::std::option::Option::Some(input);
@@ -131,6 +152,7 @@ impl AdvancedSecurityOptionsBuilder {
             enabled: self.enabled,
             internal_user_database_enabled: self.internal_user_database_enabled,
             saml_options: self.saml_options,
+            jwt_options: self.jwt_options,
             anonymous_auth_disable_date: self.anonymous_auth_disable_date,
             anonymous_auth_enabled: self.anonymous_auth_enabled,
         }

@@ -87,6 +87,8 @@ pub use crate::types::_advanced_security_options_status::AdvancedSecurityOptions
 
 pub use crate::types::_advanced_security_options::AdvancedSecurityOptions;
 
+pub use crate::types::_jwt_options_output::JwtOptionsOutput;
+
 pub use crate::types::_saml_options_output::SamlOptionsOutput;
 
 pub use crate::types::_saml_idp::SamlIdp;
@@ -152,6 +154,8 @@ pub use crate::types::_version_status::VersionStatus;
 pub use crate::types::_dry_run_mode::DryRunMode;
 
 pub use crate::types::_advanced_security_options_input::AdvancedSecurityOptionsInput;
+
+pub use crate::types::_jwt_options_input::JwtOptionsInput;
 
 pub use crate::types::_saml_options_input::SamlOptionsInput;
 
@@ -458,6 +462,10 @@ mod _instance_type_details;
 mod _ip_address_type;
 
 mod _ip_address_type_status;
+
+mod _jwt_options_input;
+
+mod _jwt_options_output;
 
 mod _limits;
 
