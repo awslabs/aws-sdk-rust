@@ -78,6 +78,7 @@ jobs:
           CARGO_COMPONENT_VERSION: 0.13.2
         run: |
           rustup toolchain install ${{ env.rust_nightly_version }}
+          rustup component add rustfmt
           cargo +${{ env.rust_nightly_version }} install cargo-component --locked --version ${CARGO_COMPONENT_VERSION}
       - name: Compile the canary runner
         working-directory: smithy-rs/tools/ci-cdk/canary-runner
