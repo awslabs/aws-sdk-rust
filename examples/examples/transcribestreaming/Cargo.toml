@@ -11,7 +11,7 @@ async-stream = "0.3"
 bytes = "1"
 hound = "3.4"
 aws-config= { version = "1.5.2", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-transcribestreaming= { version = "1.32.0", path = "../../../sdk/transcribestreaming" }
+aws-sdk-transcribestreaming= { version = "1.33.0", path = "../../../sdk/transcribestreaming" }
 
 [dependencies.clap]
 version = "~4.4"

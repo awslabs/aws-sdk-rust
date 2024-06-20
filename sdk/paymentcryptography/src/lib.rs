@@ -37,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-paymentcryptography = "1.34.0"
+//! aws-sdk-paymentcryptography = "1.35.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
