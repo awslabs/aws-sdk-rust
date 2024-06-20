@@ -8,7 +8,7 @@ publish = false
 
 [dependencies]
 thiserror = "1.0"
-aws-config= { version = "1.5.2", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-config= { version = "1.5.3", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-sdk-cognitosync= { version = "1.33.0", path = "../../../sdk/cognitosync" }
 aws-smithy-types-convert= { version = "0.60.8", path = "../../../sdk/aws-smithy-types-convert", features = ["convert-chrono"] }
 
