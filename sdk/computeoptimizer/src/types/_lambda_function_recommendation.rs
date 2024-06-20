@@ -52,10 +52,10 @@ pub struct LambdaFunctionRecommendation {
     pub memory_size_recommendation_options: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionMemoryRecommendationOption>>,
     /// <p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>
     pub current_performance_risk: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
-    /// <p>A list of tags assigned to your Lambda function recommendations.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Describes the effective recommendation preferences for Lambda functions.</p>
     pub effective_recommendation_preferences: ::std::option::Option<crate::types::LambdaEffectiveRecommendationPreferences>,
+    /// <p>A list of tags assigned to your Lambda function recommendations.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl LambdaFunctionRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current function.</p>
@@ -136,15 +136,15 @@ impl LambdaFunctionRecommendation {
     pub fn current_performance_risk(&self) -> ::std::option::Option<&crate::types::CurrentPerformanceRisk> {
         self.current_performance_risk.as_ref()
     }
+    /// <p>Describes the effective recommendation preferences for Lambda functions.</p>
+    pub fn effective_recommendation_preferences(&self) -> ::std::option::Option<&crate::types::LambdaEffectiveRecommendationPreferences> {
+        self.effective_recommendation_preferences.as_ref()
+    }
     /// <p>A list of tags assigned to your Lambda function recommendations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
-    }
-    /// <p>Describes the effective recommendation preferences for Lambda functions.</p>
-    pub fn effective_recommendation_preferences(&self) -> ::std::option::Option<&crate::types::LambdaEffectiveRecommendationPreferences> {
-        self.effective_recommendation_preferences.as_ref()
     }
 }
 impl LambdaFunctionRecommendation {
@@ -170,8 +170,8 @@ pub struct LambdaFunctionRecommendationBuilder {
     pub(crate) finding_reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendationFindingReasonCode>>,
     pub(crate) memory_size_recommendation_options: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionMemoryRecommendationOption>>,
     pub(crate) current_performance_risk: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) effective_recommendation_preferences: ::std::option::Option<crate::types::LambdaEffectiveRecommendationPreferences>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl LambdaFunctionRecommendationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the current function.</p>
@@ -440,6 +440,23 @@ impl LambdaFunctionRecommendationBuilder {
     pub fn get_current_performance_risk(&self) -> &::std::option::Option<crate::types::CurrentPerformanceRisk> {
         &self.current_performance_risk
     }
+    /// <p>Describes the effective recommendation preferences for Lambda functions.</p>
+    pub fn effective_recommendation_preferences(mut self, input: crate::types::LambdaEffectiveRecommendationPreferences) -> Self {
+        self.effective_recommendation_preferences = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the effective recommendation preferences for Lambda functions.</p>
+    pub fn set_effective_recommendation_preferences(
+        mut self,
+        input: ::std::option::Option<crate::types::LambdaEffectiveRecommendationPreferences>,
+    ) -> Self {
+        self.effective_recommendation_preferences = input;
+        self
+    }
+    /// <p>Describes the effective recommendation preferences for Lambda functions.</p>
+    pub fn get_effective_recommendation_preferences(&self) -> &::std::option::Option<crate::types::LambdaEffectiveRecommendationPreferences> {
+        &self.effective_recommendation_preferences
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -460,23 +477,6 @@ impl LambdaFunctionRecommendationBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>Describes the effective recommendation preferences for Lambda functions.</p>
-    pub fn effective_recommendation_preferences(mut self, input: crate::types::LambdaEffectiveRecommendationPreferences) -> Self {
-        self.effective_recommendation_preferences = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Describes the effective recommendation preferences for Lambda functions.</p>
-    pub fn set_effective_recommendation_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaEffectiveRecommendationPreferences>,
-    ) -> Self {
-        self.effective_recommendation_preferences = input;
-        self
-    }
-    /// <p>Describes the effective recommendation preferences for Lambda functions.</p>
-    pub fn get_effective_recommendation_preferences(&self) -> &::std::option::Option<crate::types::LambdaEffectiveRecommendationPreferences> {
-        &self.effective_recommendation_preferences
-    }
     /// Consumes the builder and constructs a [`LambdaFunctionRecommendation`](crate::types::LambdaFunctionRecommendation).
     pub fn build(self) -> crate::types::LambdaFunctionRecommendation {
         crate::types::LambdaFunctionRecommendation {
@@ -492,8 +492,8 @@ impl LambdaFunctionRecommendationBuilder {
             finding_reason_codes: self.finding_reason_codes,
             memory_size_recommendation_options: self.memory_size_recommendation_options,
             current_performance_risk: self.current_performance_risk,
-            tags: self.tags,
             effective_recommendation_preferences: self.effective_recommendation_preferences,
+            tags: self.tags,
         }
     }
 }

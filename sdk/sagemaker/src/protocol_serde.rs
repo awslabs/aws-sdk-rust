@@ -77,6 +77,8 @@ pub(crate) mod shape_create_flow_definition;
 
 pub(crate) mod shape_create_hub;
 
+pub(crate) mod shape_create_hub_content_reference;
+
 pub(crate) mod shape_create_human_task_ui;
 
 pub(crate) mod shape_create_hyper_parameter_tuning_job;
@@ -190,6 +192,8 @@ pub(crate) mod shape_delete_flow_definition;
 pub(crate) mod shape_delete_hub;
 
 pub(crate) mod shape_delete_hub_content;
+
+pub(crate) mod shape_delete_hub_content_reference;
 
 pub(crate) mod shape_delete_human_task_ui;
 
@@ -741,6 +745,8 @@ pub(crate) mod shape_create_feature_group_input;
 
 pub(crate) mod shape_create_flow_definition_input;
 
+pub(crate) mod shape_create_hub_content_reference_input;
+
 pub(crate) mod shape_create_hub_input;
 
 pub(crate) mod shape_create_human_task_ui_input;
@@ -854,6 +860,8 @@ pub(crate) mod shape_delete_feature_group_input;
 pub(crate) mod shape_delete_flow_definition_input;
 
 pub(crate) mod shape_delete_hub_content_input;
+
+pub(crate) mod shape_delete_hub_content_reference_input;
 
 pub(crate) mod shape_delete_hub_input;
 
@@ -2898,6 +2906,8 @@ pub(crate) mod shape_fail_step_metadata;
 pub(crate) mod shape_filling_transformations;
 
 pub(crate) mod shape_grouping_attribute_names;
+
+pub(crate) mod shape_inference_hub_access_config;
 
 pub(crate) mod shape_input_modes;
 

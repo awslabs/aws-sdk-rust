@@ -18,6 +18,8 @@
 ///     RecommendationSourceType::EcsService => { /* ... */ },
 ///     RecommendationSourceType::LambdaFunction => { /* ... */ },
 ///     RecommendationSourceType::License => { /* ... */ },
+///     RecommendationSourceType::RdsDbInstance => { /* ... */ },
+///     RecommendationSourceType::RdsDbInstanceStorage => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -57,6 +59,10 @@ pub enum RecommendationSourceType {
     LambdaFunction,
     #[allow(missing_docs)] // documentation missing in model
     License,
+    #[allow(missing_docs)] // documentation missing in model
+    RdsDbInstance,
+    #[allow(missing_docs)] // documentation missing in model
+    RdsDbInstanceStorage,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -70,6 +76,8 @@ impl ::std::convert::From<&str> for RecommendationSourceType {
             "EcsService" => RecommendationSourceType::EcsService,
             "LambdaFunction" => RecommendationSourceType::LambdaFunction,
             "License" => RecommendationSourceType::License,
+            "RdsDBInstance" => RecommendationSourceType::RdsDbInstance,
+            "RdsDBInstanceStorage" => RecommendationSourceType::RdsDbInstanceStorage,
             other => RecommendationSourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -91,12 +99,23 @@ impl RecommendationSourceType {
             RecommendationSourceType::EcsService => "EcsService",
             RecommendationSourceType::LambdaFunction => "LambdaFunction",
             RecommendationSourceType::License => "License",
+            RecommendationSourceType::RdsDbInstance => "RdsDBInstance",
+            RecommendationSourceType::RdsDbInstanceStorage => "RdsDBInstanceStorage",
             RecommendationSourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AutoScalingGroup", "EbsVolume", "Ec2Instance", "EcsService", "LambdaFunction", "License"]
+        &[
+            "AutoScalingGroup",
+            "EbsVolume",
+            "Ec2Instance",
+            "EcsService",
+            "LambdaFunction",
+            "License",
+            "RdsDBInstance",
+            "RdsDBInstanceStorage",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for RecommendationSourceType {
@@ -125,6 +144,8 @@ impl ::std::fmt::Display for RecommendationSourceType {
             RecommendationSourceType::EcsService => write!(f, "EcsService"),
             RecommendationSourceType::LambdaFunction => write!(f, "LambdaFunction"),
             RecommendationSourceType::License => write!(f, "License"),
+            RecommendationSourceType::RdsDbInstance => write!(f, "RdsDBInstance"),
+            RecommendationSourceType::RdsDbInstanceStorage => write!(f, "RdsDBInstanceStorage"),
             RecommendationSourceType::Unknown(value) => write!(f, "{}", value),
         }
     }

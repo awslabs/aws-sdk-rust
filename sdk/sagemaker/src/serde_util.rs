@@ -116,6 +116,18 @@ pub(crate) fn create_hub_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_hub_content_reference_output_output_correct_errors(
+    mut builder: crate::operation::create_hub_content_reference::builders::CreateHubContentReferenceOutputBuilder,
+) -> crate::operation::create_hub_content_reference::builders::CreateHubContentReferenceOutputBuilder {
+    if builder.hub_arn.is_none() {
+        builder.hub_arn = Some(Default::default())
+    }
+    if builder.hub_content_arn.is_none() {
+        builder.hub_content_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_human_task_ui_output_output_correct_errors(
     mut builder: crate::operation::create_human_task_ui::builders::CreateHumanTaskUiOutputBuilder,
 ) -> crate::operation::create_human_task_ui::builders::CreateHumanTaskUiOutputBuilder {
@@ -4004,12 +4016,6 @@ pub(crate) fn inference_experiment_summary_correct_errors(
 pub(crate) fn inference_recommendation_correct_errors(
     mut builder: crate::types::builders::InferenceRecommendationBuilder,
 ) -> crate::types::builders::InferenceRecommendationBuilder {
-    if builder.metrics.is_none() {
-        builder.metrics = {
-            let builder = crate::types::builders::RecommendationMetricsBuilder::default();
-            Some(crate::serde_util::recommendation_metrics_correct_errors(builder).build())
-        }
-    }
     if builder.endpoint_configuration.is_none() {
         builder.endpoint_configuration = {
             let builder = crate::types::builders::EndpointOutputConfigurationBuilder::default();
@@ -5232,24 +5238,6 @@ pub(crate) fn recommendation_job_inference_benchmark_correct_errors(
     builder
 }
 
-pub(crate) fn recommendation_metrics_correct_errors(
-    mut builder: crate::types::builders::RecommendationMetricsBuilder,
-) -> crate::types::builders::RecommendationMetricsBuilder {
-    if builder.cost_per_hour.is_none() {
-        builder.cost_per_hour = Some(Default::default())
-    }
-    if builder.cost_per_inference.is_none() {
-        builder.cost_per_inference = Some(Default::default())
-    }
-    if builder.max_invocations.is_none() {
-        builder.max_invocations = Some(Default::default())
-    }
-    if builder.model_latency.is_none() {
-        builder.model_latency = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn repository_auth_config_correct_errors(
     mut builder: crate::types::builders::RepositoryAuthConfigBuilder,
 ) -> crate::types::builders::RepositoryAuthConfigBuilder {
@@ -5542,6 +5530,15 @@ pub(crate) fn hyper_parameter_tuning_instance_config_correct_errors(
     }
     if builder.volume_size_in_gb.is_none() {
         builder.volume_size_in_gb = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn inference_hub_access_config_correct_errors(
+    mut builder: crate::types::builders::InferenceHubAccessConfigBuilder,
+) -> crate::types::builders::InferenceHubAccessConfigBuilder {
+    if builder.hub_content_arn.is_none() {
+        builder.hub_content_arn = Some(Default::default())
     }
     builder
 }

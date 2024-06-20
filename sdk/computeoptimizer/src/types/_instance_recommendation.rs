@@ -21,7 +21,9 @@ pub struct InstanceRecommendation {
     /// <p><b> <code>Overprovisioned</code> </b>—An instance is considered over-provisioned when at least one specification of your instance, such as CPU, memory, or network, can be sized down while still meeting the performance requirements of your workload, and no specification is under-provisioned. Over-provisioned instances may lead to unnecessary infrastructure cost.</p></li>
     /// <li>
     /// <p><b> <code>Optimized</code> </b>—An instance is considered optimized when all specifications of your instance, such as CPU, memory, and network, meet the performance requirements of your workload and is not over provisioned. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The valid values in your API responses appear as OVER_PROVISIONED, UNDER_PROVISIONED, or OPTIMIZED.</p>
+    /// </note>
     pub finding: ::std::option::Option<crate::types::Finding>,
     /// <p>The reason for the finding classification of the instance.</p>
     /// <p>Finding reason codes for instances include:</p>
@@ -138,7 +140,9 @@ impl InstanceRecommendation {
     /// <p><b> <code>Overprovisioned</code> </b>—An instance is considered over-provisioned when at least one specification of your instance, such as CPU, memory, or network, can be sized down while still meeting the performance requirements of your workload, and no specification is under-provisioned. Over-provisioned instances may lead to unnecessary infrastructure cost.</p></li>
     /// <li>
     /// <p><b> <code>Optimized</code> </b>—An instance is considered optimized when all specifications of your instance, such as CPU, memory, and network, meet the performance requirements of your workload and is not over provisioned. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The valid values in your API responses appear as OVER_PROVISIONED, UNDER_PROVISIONED, or OPTIMIZED.</p>
+    /// </note>
     pub fn finding(&self) -> ::std::option::Option<&crate::types::Finding> {
         self.finding.as_ref()
     }
@@ -368,7 +372,9 @@ impl InstanceRecommendationBuilder {
     /// <p><b> <code>Overprovisioned</code> </b>—An instance is considered over-provisioned when at least one specification of your instance, such as CPU, memory, or network, can be sized down while still meeting the performance requirements of your workload, and no specification is under-provisioned. Over-provisioned instances may lead to unnecessary infrastructure cost.</p></li>
     /// <li>
     /// <p><b> <code>Optimized</code> </b>—An instance is considered optimized when all specifications of your instance, such as CPU, memory, and network, meet the performance requirements of your workload and is not over provisioned. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The valid values in your API responses appear as OVER_PROVISIONED, UNDER_PROVISIONED, or OPTIMIZED.</p>
+    /// </note>
     pub fn finding(mut self, input: crate::types::Finding) -> Self {
         self.finding = ::std::option::Option::Some(input);
         self
@@ -382,7 +388,9 @@ impl InstanceRecommendationBuilder {
     /// <p><b> <code>Overprovisioned</code> </b>—An instance is considered over-provisioned when at least one specification of your instance, such as CPU, memory, or network, can be sized down while still meeting the performance requirements of your workload, and no specification is under-provisioned. Over-provisioned instances may lead to unnecessary infrastructure cost.</p></li>
     /// <li>
     /// <p><b> <code>Optimized</code> </b>—An instance is considered optimized when all specifications of your instance, such as CPU, memory, and network, meet the performance requirements of your workload and is not over provisioned. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The valid values in your API responses appear as OVER_PROVISIONED, UNDER_PROVISIONED, or OPTIMIZED.</p>
+    /// </note>
     pub fn set_finding(mut self, input: ::std::option::Option<crate::types::Finding>) -> Self {
         self.finding = input;
         self
@@ -396,7 +404,9 @@ impl InstanceRecommendationBuilder {
     /// <p><b> <code>Overprovisioned</code> </b>—An instance is considered over-provisioned when at least one specification of your instance, such as CPU, memory, or network, can be sized down while still meeting the performance requirements of your workload, and no specification is under-provisioned. Over-provisioned instances may lead to unnecessary infrastructure cost.</p></li>
     /// <li>
     /// <p><b> <code>Optimized</code> </b>—An instance is considered optimized when all specifications of your instance, such as CPU, memory, and network, meet the performance requirements of your workload and is not over provisioned. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The valid values in your API responses appear as OVER_PROVISIONED, UNDER_PROVISIONED, or OPTIMIZED.</p>
+    /// </note>
     pub fn get_finding(&self) -> &::std::option::Option<crate::types::Finding> {
         &self.finding
     }

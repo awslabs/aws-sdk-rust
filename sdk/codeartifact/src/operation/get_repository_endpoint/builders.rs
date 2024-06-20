@@ -25,6 +25,8 @@ impl crate::operation::get_repository_endpoint::builders::GetRepositoryEndpointI
 /// <p>Returns the endpoint of a repository for a specific package format. A repository has one endpoint for each package format:</p>
 /// <ul>
 /// <li>
+/// <p><code>cargo</code></p></li>
+/// <li>
 /// <p><code>generic</code></p></li>
 /// <li>
 /// <p><code>maven</code></p></li>

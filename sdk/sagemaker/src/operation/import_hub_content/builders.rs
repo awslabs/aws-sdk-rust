@@ -22,9 +22,7 @@ impl crate::operation::import_hub_content::builders::ImportHubContentInputBuilde
 }
 /// Fluent builder constructing a request to `ImportHubContent`.
 ///
-/// <p>Import hub content.</p><note>
-/// <p>Hub APIs are only callable through SageMaker Studio.</p>
-/// </note>
+/// <p>Import hub content.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportHubContentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

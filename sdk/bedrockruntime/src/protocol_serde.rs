@@ -130,6 +130,8 @@ pub(crate) mod shape_auto_tool_choice;
 
 pub(crate) mod shape_content_blocks;
 
+pub(crate) mod shape_document_block;
+
 pub(crate) mod shape_guardrail_assessment_list_map;
 
 pub(crate) mod shape_guardrail_assessment_map;
@@ -155,6 +157,8 @@ pub(crate) mod shape_content_block_start;
 pub(crate) mod shape_converse_stream_metrics;
 
 pub(crate) mod shape_converse_stream_trace;
+
+pub(crate) mod shape_document_source;
 
 pub(crate) mod shape_guardrail_assessment;
 

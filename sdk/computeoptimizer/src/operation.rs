@@ -25,6 +25,9 @@ pub mod export_lambda_function_recommendations;
 /// Types for the `ExportLicenseRecommendations` operation.
 pub mod export_license_recommendations;
 
+/// Types for the `ExportRDSDatabaseRecommendations` operation.
+pub mod export_rds_database_recommendations;
+
 /// Types for the `GetAutoScalingGroupRecommendations` operation.
 pub mod get_auto_scaling_group_recommendations;
 
@@ -57,6 +60,12 @@ pub mod get_lambda_function_recommendations;
 
 /// Types for the `GetLicenseRecommendations` operation.
 pub mod get_license_recommendations;
+
+/// Types for the `GetRDSDatabaseRecommendationProjectedMetrics` operation.
+pub mod get_rds_database_recommendation_projected_metrics;
+
+/// Types for the `GetRDSDatabaseRecommendations` operation.
+pub mod get_rds_database_recommendations;
 
 /// Types for the `GetRecommendationPreferences` operation.
 pub mod get_recommendation_preferences;

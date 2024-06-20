@@ -33,6 +33,24 @@ pub use crate::types::_account_enrollment_status::AccountEnrollmentStatus;
 
 pub use crate::types::_resource_details::ResourceDetails;
 
+pub use crate::types::_rds_db_instance_storage::RdsDbInstanceStorage;
+
+pub use crate::types::_resource_cost_calculation::ResourceCostCalculation;
+
+pub use crate::types::_resource_pricing::ResourcePricing;
+
+pub use crate::types::_estimated_discounts::EstimatedDiscounts;
+
+pub use crate::types::_usage::Usage;
+
+pub use crate::types::_rds_db_instance_storage_configuration::RdsDbInstanceStorageConfiguration;
+
+pub use crate::types::_rds_db_instance::RdsDbInstance;
+
+pub use crate::types::_rds_db_instance_configuration::RdsDbInstanceConfiguration;
+
+pub use crate::types::_db_instance_configuration::DbInstanceConfiguration;
+
 pub use crate::types::_sage_maker_savings_plans::SageMakerSavingsPlans;
 
 pub use crate::types::_savings_plans_cost_calculation::SavingsPlansCostCalculation;
@@ -75,14 +93,6 @@ pub use crate::types::_ec2_reserved_instances_configuration::Ec2ReservedInstance
 
 pub use crate::types::_ec2_auto_scaling_group::Ec2AutoScalingGroup;
 
-pub use crate::types::_resource_cost_calculation::ResourceCostCalculation;
-
-pub use crate::types::_resource_pricing::ResourcePricing;
-
-pub use crate::types::_estimated_discounts::EstimatedDiscounts;
-
-pub use crate::types::_usage::Usage;
-
 pub use crate::types::_ec2_auto_scaling_group_configuration::Ec2AutoScalingGroupConfiguration;
 
 pub use crate::types::_instance_configuration::InstanceConfiguration;
@@ -120,6 +130,8 @@ mod _compute_configuration;
 mod _compute_savings_plans;
 
 mod _compute_savings_plans_configuration;
+
+mod _db_instance_configuration;
 
 mod _ebs_volume;
 
@@ -172,6 +184,14 @@ mod _open_search_reserved_instances_configuration;
 mod _order;
 
 mod _order_by;
+
+mod _rds_db_instance;
+
+mod _rds_db_instance_configuration;
+
+mod _rds_db_instance_storage;
+
+mod _rds_db_instance_storage_configuration;
 
 mod _rds_reserved_instances;
 

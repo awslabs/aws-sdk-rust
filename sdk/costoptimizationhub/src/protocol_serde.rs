@@ -105,6 +105,10 @@ pub(crate) mod shape_lambda_function;
 
 pub(crate) mod shape_open_search_reserved_instances;
 
+pub(crate) mod shape_rds_db_instance;
+
+pub(crate) mod shape_rds_db_instance_storage;
+
 pub(crate) mod shape_rds_reserved_instances;
 
 pub(crate) mod shape_recommendation;
@@ -139,6 +143,10 @@ pub(crate) mod shape_lambda_function_configuration;
 
 pub(crate) mod shape_open_search_reserved_instances_configuration;
 
+pub(crate) mod shape_rds_db_instance_configuration;
+
+pub(crate) mod shape_rds_db_instance_storage_configuration;
+
 pub(crate) mod shape_rds_reserved_instances_configuration;
 
 pub(crate) mod shape_redshift_reserved_instances_configuration;
@@ -154,6 +162,8 @@ pub(crate) mod shape_savings_plans_cost_calculation;
 pub(crate) mod shape_block_storage_performance_configuration;
 
 pub(crate) mod shape_compute_configuration;
+
+pub(crate) mod shape_db_instance_configuration;
 
 pub(crate) mod shape_instance_configuration;
 

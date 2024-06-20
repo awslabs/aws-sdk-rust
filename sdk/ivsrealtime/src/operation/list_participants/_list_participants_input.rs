@@ -7,16 +7,18 @@ pub struct ListParticipantsInput {
     pub stage_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID of the session within the stage.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
-    /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
+    /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
     pub filter_by_user_id: ::std::option::Option<::std::string::String>,
-    /// <p>Filters the response list to only show participants who published during the stage session. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
+    /// <p>Filters the response list to only show participants who published during the stage session. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request.</p>
     pub filter_by_published: ::std::option::Option<bool>,
-    /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
+    /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request.</p>
     pub filter_by_state: ::std::option::Option<crate::types::ParticipantState>,
     /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to return. Default: 50.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>Filters the response list to only show participants with the specified recording state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request.</p>
+    pub filter_by_recording_state: ::std::option::Option<crate::types::ParticipantRecordingFilterByRecordingState>,
 }
 impl ListParticipantsInput {
     /// <p>Stage ARN.</p>
@@ -27,15 +29,15 @@ impl ListParticipantsInput {
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
+    /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
     pub fn filter_by_user_id(&self) -> ::std::option::Option<&str> {
         self.filter_by_user_id.as_deref()
     }
-    /// <p>Filters the response list to only show participants who published during the stage session. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
+    /// <p>Filters the response list to only show participants who published during the stage session. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request.</p>
     pub fn filter_by_published(&self) -> ::std::option::Option<bool> {
         self.filter_by_published
     }
-    /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
+    /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request.</p>
     pub fn filter_by_state(&self) -> ::std::option::Option<&crate::types::ParticipantState> {
         self.filter_by_state.as_ref()
     }
@@ -46,6 +48,10 @@ impl ListParticipantsInput {
     /// <p>Maximum number of results to return. Default: 50.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>Filters the response list to only show participants with the specified recording state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request.</p>
+    pub fn filter_by_recording_state(&self) -> ::std::option::Option<&crate::types::ParticipantRecordingFilterByRecordingState> {
+        self.filter_by_recording_state.as_ref()
     }
 }
 impl ListParticipantsInput {
@@ -66,6 +72,7 @@ pub struct ListParticipantsInputBuilder {
     pub(crate) filter_by_state: ::std::option::Option<crate::types::ParticipantState>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) filter_by_recording_state: ::std::option::Option<crate::types::ParticipantRecordingFilterByRecordingState>,
 }
 impl ListParticipantsInputBuilder {
     /// <p>Stage ARN.</p>
@@ -98,45 +105,45 @@ impl ListParticipantsInputBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
-    /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
+    /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
     pub fn filter_by_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_by_user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
+    /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
     pub fn set_filter_by_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_by_user_id = input;
         self
     }
-    /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
+    /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
     pub fn get_filter_by_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.filter_by_user_id
     }
-    /// <p>Filters the response list to only show participants who published during the stage session. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
+    /// <p>Filters the response list to only show participants who published during the stage session. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request.</p>
     pub fn filter_by_published(mut self, input: bool) -> Self {
         self.filter_by_published = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filters the response list to only show participants who published during the stage session. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
+    /// <p>Filters the response list to only show participants who published during the stage session. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request.</p>
     pub fn set_filter_by_published(mut self, input: ::std::option::Option<bool>) -> Self {
         self.filter_by_published = input;
         self
     }
-    /// <p>Filters the response list to only show participants who published during the stage session. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
+    /// <p>Filters the response list to only show participants who published during the stage session. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request.</p>
     pub fn get_filter_by_published(&self) -> &::std::option::Option<bool> {
         &self.filter_by_published
     }
-    /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
+    /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request.</p>
     pub fn filter_by_state(mut self, input: crate::types::ParticipantState) -> Self {
         self.filter_by_state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
+    /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request.</p>
     pub fn set_filter_by_state(mut self, input: ::std::option::Option<crate::types::ParticipantState>) -> Self {
         self.filter_by_state = input;
         self
     }
-    /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
+    /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request.</p>
     pub fn get_filter_by_state(&self) -> &::std::option::Option<crate::types::ParticipantState> {
         &self.filter_by_state
     }
@@ -168,6 +175,20 @@ impl ListParticipantsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>Filters the response list to only show participants with the specified recording state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request.</p>
+    pub fn filter_by_recording_state(mut self, input: crate::types::ParticipantRecordingFilterByRecordingState) -> Self {
+        self.filter_by_recording_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filters the response list to only show participants with the specified recording state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request.</p>
+    pub fn set_filter_by_recording_state(mut self, input: ::std::option::Option<crate::types::ParticipantRecordingFilterByRecordingState>) -> Self {
+        self.filter_by_recording_state = input;
+        self
+    }
+    /// <p>Filters the response list to only show participants with the specified recording state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, <code>filterByState</code>, or <code>filterByRecordingState</code> can be provided per request.</p>
+    pub fn get_filter_by_recording_state(&self) -> &::std::option::Option<crate::types::ParticipantRecordingFilterByRecordingState> {
+        &self.filter_by_recording_state
+    }
     /// Consumes the builder and constructs a [`ListParticipantsInput`](crate::operation::list_participants::ListParticipantsInput).
     pub fn build(
         self,
@@ -180,6 +201,7 @@ impl ListParticipantsInputBuilder {
             filter_by_state: self.filter_by_state,
             next_token: self.next_token,
             max_results: self.max_results,
+            filter_by_recording_state: self.filter_by_recording_state,
         })
     }
 }

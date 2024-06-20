@@ -33,6 +33,13 @@ where
                                 builder = builder
                                     .set_savings_opportunity(crate::protocol_serde::shape_savings_opportunity::de_savings_opportunity(tokens)?);
                             }
+                            "savingsOpportunityAfterDiscounts" => {
+                                builder = builder.set_savings_opportunity_after_discounts(
+                                    crate::protocol_serde::shape_ecs_savings_opportunity_after_discounts::de_ecs_savings_opportunity_after_discounts(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             "projectedUtilizationMetrics" => {
                                 builder = builder.set_projected_utilization_metrics(
                                     crate::protocol_serde::shape_ecs_service_projected_utilization_metrics::de_ecs_service_projected_utilization_metrics(tokens)?
@@ -41,13 +48,6 @@ where
                             "containerRecommendations" => {
                                 builder = builder.set_container_recommendations(
                                     crate::protocol_serde::shape_container_recommendations::de_container_recommendations(tokens)?,
-                                );
-                            }
-                            "savingsOpportunityAfterDiscounts" => {
-                                builder = builder.set_savings_opportunity_after_discounts(
-                                    crate::protocol_serde::shape_ecs_savings_opportunity_after_discounts::de_ecs_savings_opportunity_after_discounts(
-                                        tokens,
-                                    )?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

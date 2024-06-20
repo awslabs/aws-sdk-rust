@@ -119,6 +119,12 @@ pub use crate::types::_tool_result_status::ToolResultStatus;
 
 pub use crate::types::_tool_result_content_block::ToolResultContentBlock;
 
+pub use crate::types::_document_block::DocumentBlock;
+
+pub use crate::types::_document_source::DocumentSource;
+
+pub use crate::types::_document_format::DocumentFormat;
+
 pub use crate::types::_image_block::ImageBlock;
 
 pub use crate::types::_image_source::ImageSource;
@@ -166,6 +172,12 @@ mod _converse_stream_output;
 mod _converse_stream_trace;
 
 mod _converse_trace;
+
+mod _document_block;
+
+mod _document_format;
+
+mod _document_source;
 
 mod _guardrail_assessment;
 

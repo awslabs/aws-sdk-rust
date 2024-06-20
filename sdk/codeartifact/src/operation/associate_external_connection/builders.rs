@@ -170,6 +170,10 @@ impl AssociateExternalConnectionFluentBuilder {
     /// <p><code>public:maven-commonsware</code> - for the CommonsWare Android repository.</p></li>
     /// <li>
     /// <p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
+    /// <li>
+    /// <p><code>public:ruby-gems-org</code> - for RubyGems.org.</p></li>
+    /// <li>
+    /// <p><code>public:crates-io</code> - for Crates.io.</p></li>
     /// </ul>
     pub fn external_connection(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_connection(input.into());
@@ -193,6 +197,10 @@ impl AssociateExternalConnectionFluentBuilder {
     /// <p><code>public:maven-commonsware</code> - for the CommonsWare Android repository.</p></li>
     /// <li>
     /// <p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
+    /// <li>
+    /// <p><code>public:ruby-gems-org</code> - for RubyGems.org.</p></li>
+    /// <li>
+    /// <p><code>public:crates-io</code> - for Crates.io.</p></li>
     /// </ul>
     pub fn set_external_connection(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_connection(input);
@@ -216,6 +224,10 @@ impl AssociateExternalConnectionFluentBuilder {
     /// <p><code>public:maven-commonsware</code> - for the CommonsWare Android repository.</p></li>
     /// <li>
     /// <p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
+    /// <li>
+    /// <p><code>public:ruby-gems-org</code> - for RubyGems.org.</p></li>
+    /// <li>
+    /// <p><code>public:crates-io</code> - for Crates.io.</p></li>
     /// </ul>
     pub fn get_external_connection(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_external_connection()

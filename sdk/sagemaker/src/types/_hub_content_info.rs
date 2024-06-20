@@ -8,6 +8,8 @@ pub struct HubContentInfo {
     pub hub_content_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
     pub hub_content_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the public hub content.</p>
+    pub sage_maker_public_hub_content_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the hub content.</p>
     pub hub_content_version: ::std::option::Option<::std::string::String>,
     /// <p>The type of hub content.</p>
@@ -18,12 +20,16 @@ pub struct HubContentInfo {
     pub hub_content_display_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the hub content.</p>
     pub hub_content_description: ::std::option::Option<::std::string::String>,
+    /// <p>The support status of the hub content.</p>
+    pub support_status: ::std::option::Option<crate::types::HubContentSupportStatus>,
     /// <p>The searchable keywords for the hub content.</p>
     pub hub_content_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the hub content.</p>
     pub hub_content_status: ::std::option::Option<crate::types::HubContentStatus>,
     /// <p>The date and time that the hub content was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The date and time when the hub content was originally created, before any updates or revisions.</p>
+    pub original_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl HubContentInfo {
     /// <p>The name of the hub content.</p>
@@ -33,6 +39,10 @@ impl HubContentInfo {
     /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
     pub fn hub_content_arn(&self) -> ::std::option::Option<&str> {
         self.hub_content_arn.as_deref()
+    }
+    /// <p>The ARN of the public hub content.</p>
+    pub fn sage_maker_public_hub_content_arn(&self) -> ::std::option::Option<&str> {
+        self.sage_maker_public_hub_content_arn.as_deref()
     }
     /// <p>The version of the hub content.</p>
     pub fn hub_content_version(&self) -> ::std::option::Option<&str> {
@@ -54,6 +64,10 @@ impl HubContentInfo {
     pub fn hub_content_description(&self) -> ::std::option::Option<&str> {
         self.hub_content_description.as_deref()
     }
+    /// <p>The support status of the hub content.</p>
+    pub fn support_status(&self) -> ::std::option::Option<&crate::types::HubContentSupportStatus> {
+        self.support_status.as_ref()
+    }
     /// <p>The searchable keywords for the hub content.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hub_content_search_keywords.is_none()`.
@@ -67,6 +81,10 @@ impl HubContentInfo {
     /// <p>The date and time that the hub content was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
+    }
+    /// <p>The date and time when the hub content was originally created, before any updates or revisions.</p>
+    pub fn original_creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.original_creation_time.as_ref()
     }
 }
 impl HubContentInfo {
@@ -82,14 +100,17 @@ impl HubContentInfo {
 pub struct HubContentInfoBuilder {
     pub(crate) hub_content_name: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sage_maker_public_hub_content_arn: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_version: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_type: ::std::option::Option<crate::types::HubContentType>,
     pub(crate) document_schema_version: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_description: ::std::option::Option<::std::string::String>,
+    pub(crate) support_status: ::std::option::Option<crate::types::HubContentSupportStatus>,
     pub(crate) hub_content_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) hub_content_status: ::std::option::Option<crate::types::HubContentStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) original_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl HubContentInfoBuilder {
     /// <p>The name of the hub content.</p>
@@ -121,6 +142,20 @@ impl HubContentInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
     pub fn get_hub_content_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.hub_content_arn
+    }
+    /// <p>The ARN of the public hub content.</p>
+    pub fn sage_maker_public_hub_content_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sage_maker_public_hub_content_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the public hub content.</p>
+    pub fn set_sage_maker_public_hub_content_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sage_maker_public_hub_content_arn = input;
+        self
+    }
+    /// <p>The ARN of the public hub content.</p>
+    pub fn get_sage_maker_public_hub_content_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sage_maker_public_hub_content_arn
     }
     /// <p>The version of the hub content.</p>
     /// This field is required.
@@ -195,6 +230,20 @@ impl HubContentInfoBuilder {
     pub fn get_hub_content_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.hub_content_description
     }
+    /// <p>The support status of the hub content.</p>
+    pub fn support_status(mut self, input: crate::types::HubContentSupportStatus) -> Self {
+        self.support_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The support status of the hub content.</p>
+    pub fn set_support_status(mut self, input: ::std::option::Option<crate::types::HubContentSupportStatus>) -> Self {
+        self.support_status = input;
+        self
+    }
+    /// <p>The support status of the hub content.</p>
+    pub fn get_support_status(&self) -> &::std::option::Option<crate::types::HubContentSupportStatus> {
+        &self.support_status
+    }
     /// Appends an item to `hub_content_search_keywords`.
     ///
     /// To override the contents of this collection use [`set_hub_content_search_keywords`](Self::set_hub_content_search_keywords).
@@ -245,19 +294,36 @@ impl HubContentInfoBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
+    /// <p>The date and time when the hub content was originally created, before any updates or revisions.</p>
+    pub fn original_creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.original_creation_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time when the hub content was originally created, before any updates or revisions.</p>
+    pub fn set_original_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.original_creation_time = input;
+        self
+    }
+    /// <p>The date and time when the hub content was originally created, before any updates or revisions.</p>
+    pub fn get_original_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.original_creation_time
+    }
     /// Consumes the builder and constructs a [`HubContentInfo`](crate::types::HubContentInfo).
     pub fn build(self) -> crate::types::HubContentInfo {
         crate::types::HubContentInfo {
             hub_content_name: self.hub_content_name,
             hub_content_arn: self.hub_content_arn,
+            sage_maker_public_hub_content_arn: self.sage_maker_public_hub_content_arn,
             hub_content_version: self.hub_content_version,
             hub_content_type: self.hub_content_type,
             document_schema_version: self.document_schema_version,
             hub_content_display_name: self.hub_content_display_name,
             hub_content_description: self.hub_content_description,
+            support_status: self.support_status,
             hub_content_search_keywords: self.hub_content_search_keywords,
             hub_content_status: self.hub_content_status,
             creation_time: self.creation_time,
+            original_creation_time: self.original_creation_time,
         }
     }
 }

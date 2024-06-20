@@ -13,6 +13,24 @@ pub use crate::types::_order_by::OrderByBuilder;
 
 pub use crate::types::_account_enrollment_status::AccountEnrollmentStatusBuilder;
 
+pub use crate::types::_rds_db_instance_storage::RdsDbInstanceStorageBuilder;
+
+pub use crate::types::_resource_cost_calculation::ResourceCostCalculationBuilder;
+
+pub use crate::types::_resource_pricing::ResourcePricingBuilder;
+
+pub use crate::types::_estimated_discounts::EstimatedDiscountsBuilder;
+
+pub use crate::types::_usage::UsageBuilder;
+
+pub use crate::types::_rds_db_instance_storage_configuration::RdsDbInstanceStorageConfigurationBuilder;
+
+pub use crate::types::_rds_db_instance::RdsDbInstanceBuilder;
+
+pub use crate::types::_rds_db_instance_configuration::RdsDbInstanceConfigurationBuilder;
+
+pub use crate::types::_db_instance_configuration::DbInstanceConfigurationBuilder;
+
 pub use crate::types::_sage_maker_savings_plans::SageMakerSavingsPlansBuilder;
 
 pub use crate::types::_savings_plans_cost_calculation::SavingsPlansCostCalculationBuilder;
@@ -54,14 +72,6 @@ pub use crate::types::_ec2_reserved_instances::Ec2ReservedInstancesBuilder;
 pub use crate::types::_ec2_reserved_instances_configuration::Ec2ReservedInstancesConfigurationBuilder;
 
 pub use crate::types::_ec2_auto_scaling_group::Ec2AutoScalingGroupBuilder;
-
-pub use crate::types::_resource_cost_calculation::ResourceCostCalculationBuilder;
-
-pub use crate::types::_resource_pricing::ResourcePricingBuilder;
-
-pub use crate::types::_estimated_discounts::EstimatedDiscountsBuilder;
-
-pub use crate::types::_usage::UsageBuilder;
 
 pub use crate::types::_ec2_auto_scaling_group_configuration::Ec2AutoScalingGroupConfigurationBuilder;
 

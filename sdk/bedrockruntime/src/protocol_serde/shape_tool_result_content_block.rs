@@ -16,6 +16,12 @@ pub fn ser_tool_result_content_block(
             crate::protocol_serde::shape_image_block::ser_image_block(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::ToolResultContentBlock::Document(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_3.key("document").start_object();
+            crate::protocol_serde::shape_document_block::ser_document_block(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::ToolResultContentBlock::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ToolResultContentBlock",
@@ -68,6 +74,11 @@ where
                         "image" => Some(crate::types::ToolResultContentBlock::Image(
                             crate::protocol_serde::shape_image_block::de_image_block(tokens)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'image' cannot be null"))?,
+                        )),
+                        "document" => Some(crate::types::ToolResultContentBlock::Document(
+                            crate::protocol_serde::shape_document_block::de_document_block(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'document' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

@@ -21,7 +21,7 @@ pub struct ListPackagesInput {
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// <li>
-    /// <p>Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <p>Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned.</p>
@@ -62,7 +62,7 @@ impl ListPackagesInput {
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// <li>
-    /// <p>Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <p>Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
@@ -179,7 +179,7 @@ impl ListPackagesInputBuilder {
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// <li>
-    /// <p>Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <p>Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -195,7 +195,7 @@ impl ListPackagesInputBuilder {
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// <li>
-    /// <p>Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <p>Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
@@ -211,7 +211,7 @@ impl ListPackagesInputBuilder {
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// <li>
-    /// <p>Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <p>Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace

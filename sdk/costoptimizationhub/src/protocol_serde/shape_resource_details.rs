@@ -104,6 +104,16 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sageMakerSavingsPlans' cannot be null")
                             })?,
                         )),
+                        "rdsDbInstance" => Some(crate::types::ResourceDetails::RdsDbInstance(
+                            crate::protocol_serde::shape_rds_db_instance::de_rds_db_instance(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rdsDbInstance' cannot be null")
+                            })?,
+                        )),
+                        "rdsDbInstanceStorage" => Some(crate::types::ResourceDetails::RdsDbInstanceStorage(
+                            crate::protocol_serde::shape_rds_db_instance_storage::de_rds_db_instance_storage(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rdsDbInstanceStorage' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ResourceDetails::Unknown)

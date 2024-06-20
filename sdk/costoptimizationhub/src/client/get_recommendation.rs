@@ -20,7 +20,7 @@ impl super::Client {
     ///   - [`source(Option<Source>)`](crate::operation::get_recommendation::GetRecommendationOutput::source): <p>The source of the recommendation.</p>
     ///   - [`last_refresh_timestamp(Option<DateTime>)`](crate::operation::get_recommendation::GetRecommendationOutput::last_refresh_timestamp): <p>The time when the recommendation was last generated.</p>
     ///   - [`estimated_monthly_savings(Option<f64>)`](crate::operation::get_recommendation::GetRecommendationOutput::estimated_monthly_savings): <p>The estimated monthly savings amount for the recommendation.</p>
-    ///   - [`estimated_monthly_cost(Option<f64>)`](crate::operation::get_recommendation::GetRecommendationOutput::estimated_monthly_cost): <p>The estimated monthly cost of the recommendation.</p>
+    ///   - [`estimated_monthly_cost(Option<f64>)`](crate::operation::get_recommendation::GetRecommendationOutput::estimated_monthly_cost): <p>The estimated monthly cost of the current resource. For Reserved Instances and Savings Plans, it refers to the cost for eligible usage.</p>
     ///   - [`implementation_effort(Option<ImplementationEffort>)`](crate::operation::get_recommendation::GetRecommendationOutput::implementation_effort): <p>The effort required to implement the recommendation.</p>
     ///   - [`restart_needed(Option<bool>)`](crate::operation::get_recommendation::GetRecommendationOutput::restart_needed): <p>Whether or not implementing the recommendation requires a restart.</p>
     ///   - [`action_type(Option<ActionType>)`](crate::operation::get_recommendation::GetRecommendationOutput::action_type): <p>The type of action you can take by adopting the recommendation.</p>

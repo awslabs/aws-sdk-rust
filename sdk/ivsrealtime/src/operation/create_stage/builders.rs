@@ -163,4 +163,21 @@ impl CreateStageFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>Auto participant recording configuration object attached to the stage.</p>
+    pub fn auto_participant_recording_configuration(mut self, input: crate::types::AutoParticipantRecordingConfiguration) -> Self {
+        self.inner = self.inner.auto_participant_recording_configuration(input);
+        self
+    }
+    /// <p>Auto participant recording configuration object attached to the stage.</p>
+    pub fn set_auto_participant_recording_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::AutoParticipantRecordingConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_auto_participant_recording_configuration(input);
+        self
+    }
+    /// <p>Auto participant recording configuration object attached to the stage.</p>
+    pub fn get_auto_participant_recording_configuration(&self) -> &::std::option::Option<crate::types::AutoParticipantRecordingConfiguration> {
+        self.inner.get_auto_participant_recording_configuration()
+    }
 }

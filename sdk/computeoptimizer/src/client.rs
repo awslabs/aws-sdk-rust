@@ -179,6 +179,8 @@ mod export_lambda_function_recommendations;
 
 mod export_license_recommendations;
 
+mod export_rds_database_recommendations;
+
 mod get_auto_scaling_group_recommendations;
 
 mod get_ebs_volume_recommendations;
@@ -200,6 +202,10 @@ mod get_enrollment_statuses_for_organization;
 mod get_lambda_function_recommendations;
 
 mod get_license_recommendations;
+
+mod get_rds_database_recommendation_projected_metrics;
+
+mod get_rds_database_recommendations;
 
 mod get_recommendation_preferences;
 

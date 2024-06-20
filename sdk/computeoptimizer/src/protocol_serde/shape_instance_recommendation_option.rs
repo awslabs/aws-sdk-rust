@@ -21,6 +21,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "instanceGpuInfo" => {
+                            builder = builder.set_instance_gpu_info(crate::protocol_serde::shape_gpu_info::de_gpu_info(tokens)?);
+                        }
                         "projectedUtilizationMetrics" => {
                             builder = builder.set_projected_utilization_metrics(
                                 crate::protocol_serde::shape_projected_utilization_metrics::de_projected_utilization_metrics(tokens)?,
@@ -46,20 +49,17 @@ where
                             builder =
                                 builder.set_savings_opportunity(crate::protocol_serde::shape_savings_opportunity::de_savings_opportunity(tokens)?);
                         }
+                        "savingsOpportunityAfterDiscounts" => {
+                            builder = builder.set_savings_opportunity_after_discounts(
+                                    crate::protocol_serde::shape_instance_savings_opportunity_after_discounts::de_instance_savings_opportunity_after_discounts(tokens)?
+                                );
+                        }
                         "migrationEffort" => {
                             builder = builder.set_migration_effort(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::MigrationEffort::from(u.as_ref())))
                                     .transpose()?,
                             );
-                        }
-                        "instanceGpuInfo" => {
-                            builder = builder.set_instance_gpu_info(crate::protocol_serde::shape_gpu_info::de_gpu_info(tokens)?);
-                        }
-                        "savingsOpportunityAfterDiscounts" => {
-                            builder = builder.set_savings_opportunity_after_discounts(
-                                    crate::protocol_serde::shape_instance_savings_opportunity_after_discounts::de_instance_savings_opportunity_after_discounts(tokens)?
-                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

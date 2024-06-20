@@ -149,6 +149,8 @@ pub(crate) mod shape_update_stage_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_auto_participant_recording_configuration;
+
 pub(crate) mod shape_composition;
 
 pub(crate) mod shape_composition_summary_list;
@@ -224,6 +226,8 @@ pub(crate) mod shape_storage_configuration_summary;
 pub(crate) mod shape_destination;
 
 pub(crate) mod shape_destination_summary_list;
+
+pub(crate) mod shape_participant_recording_media_type_list;
 
 pub(crate) mod shape_recording_configuration;
 

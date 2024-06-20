@@ -154,6 +154,21 @@ pub(crate) fn converse_stream_metrics_correct_errors(
     builder
 }
 
+pub(crate) fn document_block_correct_errors(
+    mut builder: crate::types::builders::DocumentBlockBuilder,
+) -> crate::types::builders::DocumentBlockBuilder {
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::DocumentFormat>().ok()
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.source.is_none() {
+        builder.source = Some(crate::types::DocumentSource::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn guardrail_content_policy_assessment_correct_errors(
     mut builder: crate::types::builders::GuardrailContentPolicyAssessmentBuilder,
 ) -> crate::types::builders::GuardrailContentPolicyAssessmentBuilder {

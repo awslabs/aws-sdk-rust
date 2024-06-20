@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ToolResultContentBlock {
+    /// <p>A tool result that is a document.</p>
+    Document(crate::types::DocumentBlock),
     /// <p>A tool result that is an image.</p><note>
     /// <p>This field is only supported by Anthropic Claude 3 models.</p>
     /// </note>
@@ -23,6 +25,19 @@ pub enum ToolResultContentBlock {
     Unknown,
 }
 impl ToolResultContentBlock {
+    /// Tries to convert the enum instance into [`Document`](crate::types::ToolResultContentBlock::Document), extracting the inner [`DocumentBlock`](crate::types::DocumentBlock).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_document(&self) -> ::std::result::Result<&crate::types::DocumentBlock, &Self> {
+        if let ToolResultContentBlock::Document(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Document`](crate::types::ToolResultContentBlock::Document).
+    pub fn is_document(&self) -> bool {
+        self.as_document().is_ok()
+    }
     /// Tries to convert the enum instance into [`Image`](crate::types::ToolResultContentBlock::Image), extracting the inner [`ImageBlock`](crate::types::ImageBlock).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_image(&self) -> ::std::result::Result<&crate::types::ImageBlock, &Self> {

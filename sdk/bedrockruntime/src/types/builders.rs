@@ -67,6 +67,8 @@ pub use crate::types::_message::MessageBuilder;
 
 pub use crate::types::_tool_result_block::ToolResultBlockBuilder;
 
+pub use crate::types::_document_block::DocumentBlockBuilder;
+
 pub use crate::types::_image_block::ImageBlockBuilder;
 
 pub use crate::types::_tool_use_block::ToolUseBlockBuilder;

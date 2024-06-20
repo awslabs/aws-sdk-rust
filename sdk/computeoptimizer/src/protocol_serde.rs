@@ -39,6 +39,8 @@ pub(crate) mod shape_export_lambda_function_recommendations;
 
 pub(crate) mod shape_export_license_recommendations;
 
+pub(crate) mod shape_export_rds_database_recommendations;
+
 pub(crate) mod shape_get_auto_scaling_group_recommendations;
 
 pub(crate) mod shape_get_ebs_volume_recommendations;
@@ -60,6 +62,10 @@ pub(crate) mod shape_get_enrollment_statuses_for_organization;
 pub(crate) mod shape_get_lambda_function_recommendations;
 
 pub(crate) mod shape_get_license_recommendations;
+
+pub(crate) mod shape_get_rds_database_recommendation_projected_metrics;
+
+pub(crate) mod shape_get_rds_database_recommendations;
 
 pub(crate) mod shape_get_recommendation_preferences;
 
@@ -95,6 +101,8 @@ pub(crate) mod shape_export_lambda_function_recommendations_input;
 
 pub(crate) mod shape_export_license_recommendations_input;
 
+pub(crate) mod shape_export_rds_database_recommendations_input;
+
 pub(crate) mod shape_get_auto_scaling_group_recommendations_input;
 
 pub(crate) mod shape_get_ebs_volume_recommendations_input;
@@ -114,6 +122,10 @@ pub(crate) mod shape_get_enrollment_statuses_for_organization_input;
 pub(crate) mod shape_get_lambda_function_recommendations_input;
 
 pub(crate) mod shape_get_license_recommendations_input;
+
+pub(crate) mod shape_get_rds_database_recommendation_projected_metrics_input;
+
+pub(crate) mod shape_get_rds_database_recommendations_input;
 
 pub(crate) mod shape_get_recommendation_preferences_input;
 
@@ -175,6 +187,12 @@ pub(crate) mod shape_license_recommendations;
 
 pub(crate) mod shape_preferred_resource;
 
+pub(crate) mod shape_rds_database_recommended_option_projected_metrics;
+
+pub(crate) mod shape_rdsdb_recommendation_filter;
+
+pub(crate) mod shape_rdsdb_recommendations;
+
 pub(crate) mod shape_recommendation_export_jobs;
 
 pub(crate) mod shape_recommendation_preferences;
@@ -217,6 +235,10 @@ pub(crate) mod shape_lambda_function_recommendation;
 
 pub(crate) mod shape_license_recommendation;
 
+pub(crate) mod shape_rds_database_recommended_option_projected_metric;
+
+pub(crate) mod shape_rdsdb_recommendation;
+
 pub(crate) mod shape_recommendation_export_job;
 
 pub(crate) mod shape_recommendation_preferences_detail;
@@ -232,6 +254,8 @@ pub(crate) mod shape_auto_scaling_group_configuration;
 pub(crate) mod shape_auto_scaling_group_recommendation_options;
 
 pub(crate) mod shape_current_performance_risk_ratings;
+
+pub(crate) mod shape_db_storage_configuration;
 
 pub(crate) mod shape_ebs_effective_recommendation_preferences;
 
@@ -278,6 +302,20 @@ pub(crate) mod shape_license_recommendation_options;
 pub(crate) mod shape_preferred_resource_values;
 
 pub(crate) mod shape_projected_metrics;
+
+pub(crate) mod shape_rds_database_projected_metrics;
+
+pub(crate) mod shape_rds_effective_recommendation_preferences;
+
+pub(crate) mod shape_rds_instance_finding_reason_codes;
+
+pub(crate) mod shape_rds_storage_finding_reason_codes;
+
+pub(crate) mod shape_rdsdb_instance_recommendation_options;
+
+pub(crate) mod shape_rdsdb_storage_recommendation_options;
+
+pub(crate) mod shape_rdsdb_utilization_metrics;
 
 pub(crate) mod shape_recommendation_options;
 
@@ -337,6 +375,16 @@ pub(crate) mod shape_metrics_source;
 
 pub(crate) mod shape_projected_metric;
 
+pub(crate) mod shape_rds_database_projected_metric;
+
+pub(crate) mod shape_rds_savings_estimation_mode;
+
+pub(crate) mod shape_rdsdb_instance_recommendation_option;
+
+pub(crate) mod shape_rdsdb_storage_recommendation_option;
+
+pub(crate) mod shape_rdsdb_utilization_metric;
+
 pub(crate) mod shape_recommendation_source;
 
 pub(crate) mod shape_summary;
@@ -375,6 +423,12 @@ pub(crate) mod shape_platform_differences;
 
 pub(crate) mod shape_projected_utilization_metrics;
 
+pub(crate) mod shape_rds_instance_savings_opportunity_after_discounts;
+
+pub(crate) mod shape_rds_storage_savings_opportunity_after_discounts;
+
+pub(crate) mod shape_rdsdb_projected_utilization_metrics;
+
 pub(crate) mod shape_reason_code_summaries;
 
 pub(crate) mod shape_timestamps;
@@ -396,5 +450,9 @@ pub(crate) mod shape_lambda_estimated_monthly_savings;
 pub(crate) mod shape_lambda_function_memory_projected_metric;
 
 pub(crate) mod shape_memory_size_configuration;
+
+pub(crate) mod shape_rds_instance_estimated_monthly_savings;
+
+pub(crate) mod shape_rds_storage_estimated_monthly_savings;
 
 pub(crate) mod shape_reason_code_summary;

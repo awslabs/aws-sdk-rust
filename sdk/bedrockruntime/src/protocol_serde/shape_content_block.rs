@@ -13,23 +13,29 @@ pub fn ser_content_block(
             crate::protocol_serde::shape_image_block::ser_image_block(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::ContentBlock::Document(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_3.key("document").start_object();
+            crate::protocol_serde::shape_document_block::ser_document_block(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::ContentBlock::ToolUse(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_3.key("toolUse").start_object();
-            crate::protocol_serde::shape_tool_use_block::ser_tool_use_block(&mut object_2, inner)?;
-            object_2.finish();
+            let mut object_3 = object_3.key("toolUse").start_object();
+            crate::protocol_serde::shape_tool_use_block::ser_tool_use_block(&mut object_3, inner)?;
+            object_3.finish();
         }
         crate::types::ContentBlock::ToolResult(inner) => {
             #[allow(unused_mut)]
-            let mut object_3 = object_3.key("toolResult").start_object();
-            crate::protocol_serde::shape_tool_result_block::ser_tool_result_block(&mut object_3, inner)?;
-            object_3.finish();
+            let mut object_4 = object_3.key("toolResult").start_object();
+            crate::protocol_serde::shape_tool_result_block::ser_tool_result_block(&mut object_4, inner)?;
+            object_4.finish();
         }
         crate::types::ContentBlock::GuardContent(inner) => {
             #[allow(unused_mut)]
-            let mut object_4 = object_3.key("guardContent").start_object();
-            crate::protocol_serde::shape_guardrail_converse_content_block::ser_guardrail_converse_content_block(&mut object_4, inner)?;
-            object_4.finish();
+            let mut object_5 = object_3.key("guardContent").start_object();
+            crate::protocol_serde::shape_guardrail_converse_content_block::ser_guardrail_converse_content_block(&mut object_5, inner)?;
+            object_5.finish();
         }
         crate::types::ContentBlock::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("ContentBlock")),
     }
@@ -75,6 +81,11 @@ where
                         "image" => Some(crate::types::ContentBlock::Image(
                             crate::protocol_serde::shape_image_block::de_image_block(tokens)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'image' cannot be null"))?,
+                        )),
+                        "document" => Some(crate::types::ContentBlock::Document(
+                            crate::protocol_serde::shape_document_block::de_document_block(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'document' cannot be null")
+                            })?,
                         )),
                         "toolUse" => Some(crate::types::ContentBlock::ToolUse(
                             crate::protocol_serde::shape_tool_use_block::de_tool_use_block(tokens)?.ok_or_else(|| {

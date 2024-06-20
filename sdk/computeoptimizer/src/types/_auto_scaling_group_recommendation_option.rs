@@ -6,6 +6,8 @@
 pub struct AutoScalingGroupRecommendationOption {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
     pub configuration: ::std::option::Option<crate::types::AutoScalingGroupConfiguration>,
+    /// <p>Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.</p>
+    pub instance_gpu_info: ::std::option::Option<crate::types::GpuInfo>,
     /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p><note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
@@ -19,18 +21,20 @@ pub struct AutoScalingGroupRecommendationOption {
     pub rank: i32,
     /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
+    /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
+    pub savings_opportunity_after_discounts: ::std::option::Option<crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts>,
     /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
     /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
     pub migration_effort: ::std::option::Option<crate::types::MigrationEffort>,
-    /// <p>Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.</p>
-    pub instance_gpu_info: ::std::option::Option<crate::types::GpuInfo>,
-    /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
-    pub savings_opportunity_after_discounts: ::std::option::Option<crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts>,
 }
 impl AutoScalingGroupRecommendationOption {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::AutoScalingGroupConfiguration> {
         self.configuration.as_ref()
+    }
+    /// <p>Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.</p>
+    pub fn instance_gpu_info(&self) -> ::std::option::Option<&crate::types::GpuInfo> {
+        self.instance_gpu_info.as_ref()
     }
     /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p><note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
@@ -55,18 +59,14 @@ impl AutoScalingGroupRecommendationOption {
     pub fn savings_opportunity(&self) -> ::std::option::Option<&crate::types::SavingsOpportunity> {
         self.savings_opportunity.as_ref()
     }
+    /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
+    pub fn savings_opportunity_after_discounts(&self) -> ::std::option::Option<&crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts> {
+        self.savings_opportunity_after_discounts.as_ref()
+    }
     /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
     /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
     pub fn migration_effort(&self) -> ::std::option::Option<&crate::types::MigrationEffort> {
         self.migration_effort.as_ref()
-    }
-    /// <p>Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.</p>
-    pub fn instance_gpu_info(&self) -> ::std::option::Option<&crate::types::GpuInfo> {
-        self.instance_gpu_info.as_ref()
-    }
-    /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
-    pub fn savings_opportunity_after_discounts(&self) -> ::std::option::Option<&crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts> {
-        self.savings_opportunity_after_discounts.as_ref()
     }
 }
 impl AutoScalingGroupRecommendationOption {
@@ -81,13 +81,13 @@ impl AutoScalingGroupRecommendationOption {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoScalingGroupRecommendationOptionBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::AutoScalingGroupConfiguration>,
+    pub(crate) instance_gpu_info: ::std::option::Option<crate::types::GpuInfo>,
     pub(crate) projected_utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
     pub(crate) performance_risk: ::std::option::Option<f64>,
     pub(crate) rank: ::std::option::Option<i32>,
     pub(crate) savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
-    pub(crate) migration_effort: ::std::option::Option<crate::types::MigrationEffort>,
-    pub(crate) instance_gpu_info: ::std::option::Option<crate::types::GpuInfo>,
     pub(crate) savings_opportunity_after_discounts: ::std::option::Option<crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts>,
+    pub(crate) migration_effort: ::std::option::Option<crate::types::MigrationEffort>,
 }
 impl AutoScalingGroupRecommendationOptionBuilder {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
@@ -103,6 +103,20 @@ impl AutoScalingGroupRecommendationOptionBuilder {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AutoScalingGroupConfiguration> {
         &self.configuration
+    }
+    /// <p>Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.</p>
+    pub fn instance_gpu_info(mut self, input: crate::types::GpuInfo) -> Self {
+        self.instance_gpu_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.</p>
+    pub fn set_instance_gpu_info(mut self, input: ::std::option::Option<crate::types::GpuInfo>) -> Self {
+        self.instance_gpu_info = input;
+        self
+    }
+    /// <p>Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.</p>
+    pub fn get_instance_gpu_info(&self) -> &::std::option::Option<crate::types::GpuInfo> {
+        &self.instance_gpu_info
     }
     /// Appends an item to `projected_utilization_metrics`.
     ///
@@ -181,37 +195,6 @@ impl AutoScalingGroupRecommendationOptionBuilder {
     pub fn get_savings_opportunity(&self) -> &::std::option::Option<crate::types::SavingsOpportunity> {
         &self.savings_opportunity
     }
-    /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
-    /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
-    pub fn migration_effort(mut self, input: crate::types::MigrationEffort) -> Self {
-        self.migration_effort = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
-    /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
-    pub fn set_migration_effort(mut self, input: ::std::option::Option<crate::types::MigrationEffort>) -> Self {
-        self.migration_effort = input;
-        self
-    }
-    /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
-    /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
-    pub fn get_migration_effort(&self) -> &::std::option::Option<crate::types::MigrationEffort> {
-        &self.migration_effort
-    }
-    /// <p>Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.</p>
-    pub fn instance_gpu_info(mut self, input: crate::types::GpuInfo) -> Self {
-        self.instance_gpu_info = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.</p>
-    pub fn set_instance_gpu_info(mut self, input: ::std::option::Option<crate::types::GpuInfo>) -> Self {
-        self.instance_gpu_info = input;
-        self
-    }
-    /// <p>Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group.</p>
-    pub fn get_instance_gpu_info(&self) -> &::std::option::Option<crate::types::GpuInfo> {
-        &self.instance_gpu_info
-    }
     /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
     pub fn savings_opportunity_after_discounts(mut self, input: crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts) -> Self {
         self.savings_opportunity_after_discounts = ::std::option::Option::Some(input);
@@ -229,17 +212,34 @@ impl AutoScalingGroupRecommendationOptionBuilder {
     pub fn get_savings_opportunity_after_discounts(&self) -> &::std::option::Option<crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts> {
         &self.savings_opportunity_after_discounts
     }
+    /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
+    /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
+    pub fn migration_effort(mut self, input: crate::types::MigrationEffort) -> Self {
+        self.migration_effort = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
+    /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
+    pub fn set_migration_effort(mut self, input: ::std::option::Option<crate::types::MigrationEffort>) -> Self {
+        self.migration_effort = input;
+        self
+    }
+    /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
+    /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
+    pub fn get_migration_effort(&self) -> &::std::option::Option<crate::types::MigrationEffort> {
+        &self.migration_effort
+    }
     /// Consumes the builder and constructs a [`AutoScalingGroupRecommendationOption`](crate::types::AutoScalingGroupRecommendationOption).
     pub fn build(self) -> crate::types::AutoScalingGroupRecommendationOption {
         crate::types::AutoScalingGroupRecommendationOption {
             configuration: self.configuration,
+            instance_gpu_info: self.instance_gpu_info,
             projected_utilization_metrics: self.projected_utilization_metrics,
             performance_risk: self.performance_risk.unwrap_or_default(),
             rank: self.rank.unwrap_or_default(),
             savings_opportunity: self.savings_opportunity,
-            migration_effort: self.migration_effort,
-            instance_gpu_info: self.instance_gpu_info,
             savings_opportunity_after_discounts: self.savings_opportunity_after_discounts,
+            migration_effort: self.migration_effort,
         }
     }
 }

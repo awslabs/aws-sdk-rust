@@ -227,6 +227,8 @@ pub use crate::types::_model_data_source::ModelDataSource;
 
 pub use crate::types::_s3_model_data_source::S3ModelDataSource;
 
+pub use crate::types::_inference_hub_access_config::InferenceHubAccessConfig;
+
 pub use crate::types::_model_access_config::ModelAccessConfig;
 
 pub use crate::types::_model_compression_type::ModelCompressionType;
@@ -1138,6 +1140,8 @@ pub use crate::types::_hub_sort_by::HubSortBy;
 pub use crate::types::_hub_content_info::HubContentInfo;
 
 pub use crate::types::_hub_content_status::HubContentStatus;
+
+pub use crate::types::_hub_content_support_status::HubContentSupportStatus;
 
 pub use crate::types::_hub_content_type::HubContentType;
 
@@ -2281,6 +2285,8 @@ mod _hub_content_sort_by;
 
 mod _hub_content_status;
 
+mod _hub_content_support_status;
+
 mod _hub_content_type;
 
 mod _hub_info;
@@ -2412,6 +2418,8 @@ mod _inference_experiment_stop_desired_state;
 mod _inference_experiment_summary;
 
 mod _inference_experiment_type;
+
+mod _inference_hub_access_config;
 
 mod _inference_metrics;
 

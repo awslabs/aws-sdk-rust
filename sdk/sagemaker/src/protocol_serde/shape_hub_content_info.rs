@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SageMakerPublicHubContentArn" => {
+                            builder = builder.set_sage_maker_public_hub_content_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "HubContentVersion" => {
                             builder = builder.set_hub_content_version(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -63,6 +70,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SupportStatus" => {
+                            builder = builder.set_support_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::HubContentSupportStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "HubContentSearchKeywords" => {
                             builder = builder.set_hub_content_search_keywords(
                                 crate::protocol_serde::shape_hub_content_search_keyword_list::de_hub_content_search_keyword_list(tokens)?,
@@ -77,6 +91,12 @@ where
                         }
                         "CreationTime" => {
                             builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "OriginalCreationTime" => {
+                            builder = builder.set_original_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);

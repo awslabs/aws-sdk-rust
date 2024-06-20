@@ -22,6 +22,8 @@
 ///     ResourceType::ElastiCacheReservedInstances => { /* ... */ },
 ///     ResourceType::LambdaFunction => { /* ... */ },
 ///     ResourceType::OpenSearchReservedInstances => { /* ... */ },
+///     ResourceType::RdsDbInstance => { /* ... */ },
+///     ResourceType::RdsDbInstanceStorage => { /* ... */ },
 ///     ResourceType::RdsReservedInstances => { /* ... */ },
 ///     ResourceType::RedshiftReservedInstances => { /* ... */ },
 ///     ResourceType::SageMakerSavingsPlans => { /* ... */ },
@@ -73,6 +75,10 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     OpenSearchReservedInstances,
     #[allow(missing_docs)] // documentation missing in model
+    RdsDbInstance,
+    #[allow(missing_docs)] // documentation missing in model
+    RdsDbInstanceStorage,
+    #[allow(missing_docs)] // documentation missing in model
     RdsReservedInstances,
     #[allow(missing_docs)] // documentation missing in model
     RedshiftReservedInstances,
@@ -95,6 +101,8 @@ impl ::std::convert::From<&str> for ResourceType {
             "ElastiCacheReservedInstances" => ResourceType::ElastiCacheReservedInstances,
             "LambdaFunction" => ResourceType::LambdaFunction,
             "OpenSearchReservedInstances" => ResourceType::OpenSearchReservedInstances,
+            "RdsDbInstance" => ResourceType::RdsDbInstance,
+            "RdsDbInstanceStorage" => ResourceType::RdsDbInstanceStorage,
             "RdsReservedInstances" => ResourceType::RdsReservedInstances,
             "RedshiftReservedInstances" => ResourceType::RedshiftReservedInstances,
             "SageMakerSavingsPlans" => ResourceType::SageMakerSavingsPlans,
@@ -123,6 +131,8 @@ impl ResourceType {
             ResourceType::ElastiCacheReservedInstances => "ElastiCacheReservedInstances",
             ResourceType::LambdaFunction => "LambdaFunction",
             ResourceType::OpenSearchReservedInstances => "OpenSearchReservedInstances",
+            ResourceType::RdsDbInstance => "RdsDbInstance",
+            ResourceType::RdsDbInstanceStorage => "RdsDbInstanceStorage",
             ResourceType::RdsReservedInstances => "RdsReservedInstances",
             ResourceType::RedshiftReservedInstances => "RedshiftReservedInstances",
             ResourceType::SageMakerSavingsPlans => "SageMakerSavingsPlans",
@@ -142,6 +152,8 @@ impl ResourceType {
             "ElastiCacheReservedInstances",
             "LambdaFunction",
             "OpenSearchReservedInstances",
+            "RdsDbInstance",
+            "RdsDbInstanceStorage",
             "RdsReservedInstances",
             "RedshiftReservedInstances",
             "SageMakerSavingsPlans",
@@ -178,6 +190,8 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::ElastiCacheReservedInstances => write!(f, "ElastiCacheReservedInstances"),
             ResourceType::LambdaFunction => write!(f, "LambdaFunction"),
             ResourceType::OpenSearchReservedInstances => write!(f, "OpenSearchReservedInstances"),
+            ResourceType::RdsDbInstance => write!(f, "RdsDbInstance"),
+            ResourceType::RdsDbInstanceStorage => write!(f, "RdsDbInstanceStorage"),
             ResourceType::RdsReservedInstances => write!(f, "RdsReservedInstances"),
             ResourceType::RedshiftReservedInstances => write!(f, "RedshiftReservedInstances"),
             ResourceType::SageMakerSavingsPlans => write!(f, "SageMakerSavingsPlans"),

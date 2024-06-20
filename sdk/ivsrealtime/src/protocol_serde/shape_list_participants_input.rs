@@ -6,26 +6,29 @@ pub fn ser_list_participants_input_input(
     if let Some(var_1) = &input.filter_by_published {
         object.key("filterByPublished").boolean(*var_1);
     }
-    if let Some(var_2) = &input.filter_by_state {
-        object.key("filterByState").string(var_2.as_str());
+    if let Some(var_2) = &input.filter_by_recording_state {
+        object.key("filterByRecordingState").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.filter_by_user_id {
-        object.key("filterByUserId").string(var_3.as_str());
+    if let Some(var_3) = &input.filter_by_state {
+        object.key("filterByState").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.max_results {
+    if let Some(var_4) = &input.filter_by_user_id {
+        object.key("filterByUserId").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.next_token {
-        object.key("nextToken").string(var_5.as_str());
+    if let Some(var_6) = &input.next_token {
+        object.key("nextToken").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.session_id {
-        object.key("sessionId").string(var_6.as_str());
+    if let Some(var_7) = &input.session_id {
+        object.key("sessionId").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.stage_arn {
-        object.key("stageArn").string(var_7.as_str());
+    if let Some(var_8) = &input.stage_arn {
+        object.key("stageArn").string(var_8.as_str());
     }
     Ok(())
 }

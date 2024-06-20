@@ -24,6 +24,14 @@ impl ListJobsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `job_names`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::list_jobs::paginator::ListJobsPaginatorItems {
+        crate::operation::list_jobs::paginator::ListJobsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -101,5 +109,33 @@ impl ListJobsPaginator {
                 })
             },
         ))
+    }
+}
+
+/// Flattened paginator for `ListJobsPaginator`
+///
+/// This is created with [`.items()`](ListJobsPaginator::items)
+pub struct ListJobsPaginatorItems(ListJobsPaginator);
+
+impl ListJobsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note_: No requests will be dispatched until the stream is used
+    /// (e.g. with the [`.next().await`](aws_smithy_async::future::pagination_stream::PaginationStream::next) method).
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](aws_smithy_async::future::pagination_stream::PaginationStream::collect).
+    pub fn send(
+        self,
+    ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
+        ::std::result::Result<
+            ::std::string::String,
+            ::aws_smithy_runtime_api::client::result::SdkError<
+                crate::operation::list_jobs::ListJobsError,
+                ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+            >,
+        >,
+    > {
+        ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send())
+            .flat_map(|page| crate::lens::lens_list_jobs_output_output_job_names(page).unwrap_or_default().into_iter())
     }
 }

@@ -3,30 +3,36 @@ pub fn ser_create_stage_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_stage::CreateStageInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    if let Some(var_1) = &input.auto_participant_recording_configuration {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("autoParticipantRecordingConfiguration").start_object();
+        crate::protocol_serde::shape_auto_participant_recording_configuration::ser_auto_participant_recording_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_2) = &input.participant_token_configurations {
-        let mut array_3 = object.key("participantTokenConfigurations").start_array();
-        for item_4 in var_2 {
+    if let Some(var_3) = &input.name {
+        object.key("name").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.participant_token_configurations {
+        let mut array_5 = object.key("participantTokenConfigurations").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_participant_token_configuration::ser_participant_token_configuration(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_participant_token_configuration::ser_participant_token_configuration(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_3.finish();
+        array_5.finish();
     }
-    if let Some(var_6) = &input.tags {
+    if let Some(var_8) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("tags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_9 = object.key("tags").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
-        object_7.finish();
+        object_9.finish();
     }
     Ok(())
 }

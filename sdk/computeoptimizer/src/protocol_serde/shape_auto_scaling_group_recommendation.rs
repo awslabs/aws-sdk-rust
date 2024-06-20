@@ -56,6 +56,9 @@ where
                                 crate::protocol_serde::shape_auto_scaling_group_configuration::de_auto_scaling_group_configuration(tokens)?,
                             );
                         }
+                        "currentInstanceGpuInfo" => {
+                            builder = builder.set_current_instance_gpu_info(crate::protocol_serde::shape_gpu_info::de_gpu_info(tokens)?);
+                        }
                         "recommendationOptions" => {
                             builder = builder.set_recommendation_options(
                                 crate::protocol_serde::shape_auto_scaling_group_recommendation_options::de_auto_scaling_group_recommendation_options(
@@ -85,9 +88,6 @@ where
                             builder = builder.set_inferred_workload_types(
                                 crate::protocol_serde::shape_inferred_workload_types::de_inferred_workload_types(tokens)?,
                             );
-                        }
-                        "currentInstanceGpuInfo" => {
-                            builder = builder.set_current_instance_gpu_info(crate::protocol_serde::shape_gpu_info::de_gpu_info(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

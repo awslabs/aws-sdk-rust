@@ -27,6 +27,10 @@ pub struct AssociateExternalConnectionInput {
     /// <p><code>public:maven-commonsware</code> - for the CommonsWare Android repository.</p></li>
     /// <li>
     /// <p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
+    /// <li>
+    /// <p><code>public:ruby-gems-org</code> - for RubyGems.org.</p></li>
+    /// <li>
+    /// <p><code>public:crates-io</code> - for Crates.io.</p></li>
     /// </ul>
     pub external_connection: ::std::option::Option<::std::string::String>,
 }
@@ -61,6 +65,10 @@ impl AssociateExternalConnectionInput {
     /// <p><code>public:maven-commonsware</code> - for the CommonsWare Android repository.</p></li>
     /// <li>
     /// <p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
+    /// <li>
+    /// <p><code>public:ruby-gems-org</code> - for RubyGems.org.</p></li>
+    /// <li>
+    /// <p><code>public:crates-io</code> - for Crates.io.</p></li>
     /// </ul>
     pub fn external_connection(&self) -> ::std::option::Option<&str> {
         self.external_connection.as_deref()
@@ -145,6 +153,10 @@ impl AssociateExternalConnectionInputBuilder {
     /// <p><code>public:maven-commonsware</code> - for the CommonsWare Android repository.</p></li>
     /// <li>
     /// <p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
+    /// <li>
+    /// <p><code>public:ruby-gems-org</code> - for RubyGems.org.</p></li>
+    /// <li>
+    /// <p><code>public:crates-io</code> - for Crates.io.</p></li>
     /// </ul>
     /// This field is required.
     pub fn external_connection(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -169,6 +181,10 @@ impl AssociateExternalConnectionInputBuilder {
     /// <p><code>public:maven-commonsware</code> - for the CommonsWare Android repository.</p></li>
     /// <li>
     /// <p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
+    /// <li>
+    /// <p><code>public:ruby-gems-org</code> - for RubyGems.org.</p></li>
+    /// <li>
+    /// <p><code>public:crates-io</code> - for Crates.io.</p></li>
     /// </ul>
     pub fn set_external_connection(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_connection = input;
@@ -192,6 +208,10 @@ impl AssociateExternalConnectionInputBuilder {
     /// <p><code>public:maven-commonsware</code> - for the CommonsWare Android repository.</p></li>
     /// <li>
     /// <p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
+    /// <li>
+    /// <p><code>public:ruby-gems-org</code> - for RubyGems.org.</p></li>
+    /// <li>
+    /// <p><code>public:crates-io</code> - for Crates.io.</p></li>
     /// </ul>
     pub fn get_external_connection(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_connection

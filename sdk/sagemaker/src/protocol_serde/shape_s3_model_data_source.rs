@@ -18,6 +18,12 @@ pub fn ser_s3_model_data_source(
         crate::protocol_serde::shape_model_access_config::ser_model_access_config(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.hub_access_config {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("HubAccessConfig").start_object();
+        crate::protocol_serde::shape_inference_hub_access_config::ser_inference_hub_access_config(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -60,6 +66,11 @@ where
                         "ModelAccessConfig" => {
                             builder =
                                 builder.set_model_access_config(crate::protocol_serde::shape_model_access_config::de_model_access_config(tokens)?);
+                        }
+                        "HubAccessConfig" => {
+                            builder = builder.set_hub_access_config(
+                                crate::protocol_serde::shape_inference_hub_access_config::de_inference_hub_access_config(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

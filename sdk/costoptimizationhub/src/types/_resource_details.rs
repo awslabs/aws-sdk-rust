@@ -24,6 +24,10 @@ pub enum ResourceDetails {
     LambdaFunction(crate::types::LambdaFunction),
     /// <p>The OpenSearch reserved instances recommendation details.</p>
     OpenSearchReservedInstances(crate::types::OpenSearchReservedInstances),
+    /// <p>The DB instance recommendation details.</p>
+    RdsDbInstance(crate::types::RdsDbInstance),
+    /// <p>The DB instance storage recommendation details.</p>
+    RdsDbInstanceStorage(crate::types::RdsDbInstanceStorage),
     /// <p>The RDS reserved instances recommendation details.</p>
     RdsReservedInstances(crate::types::RdsReservedInstances),
     /// <p>The Redshift reserved instances recommendation details.</p>
@@ -170,6 +174,32 @@ impl ResourceDetails {
     /// Returns true if this is a [`OpenSearchReservedInstances`](crate::types::ResourceDetails::OpenSearchReservedInstances).
     pub fn is_open_search_reserved_instances(&self) -> bool {
         self.as_open_search_reserved_instances().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RdsDbInstance`](crate::types::ResourceDetails::RdsDbInstance), extracting the inner [`RdsDbInstance`](crate::types::RdsDbInstance).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_rds_db_instance(&self) -> ::std::result::Result<&crate::types::RdsDbInstance, &Self> {
+        if let ResourceDetails::RdsDbInstance(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`RdsDbInstance`](crate::types::ResourceDetails::RdsDbInstance).
+    pub fn is_rds_db_instance(&self) -> bool {
+        self.as_rds_db_instance().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RdsDbInstanceStorage`](crate::types::ResourceDetails::RdsDbInstanceStorage), extracting the inner [`RdsDbInstanceStorage`](crate::types::RdsDbInstanceStorage).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_rds_db_instance_storage(&self) -> ::std::result::Result<&crate::types::RdsDbInstanceStorage, &Self> {
+        if let ResourceDetails::RdsDbInstanceStorage(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`RdsDbInstanceStorage`](crate::types::ResourceDetails::RdsDbInstanceStorage).
+    pub fn is_rds_db_instance_storage(&self) -> bool {
+        self.as_rds_db_instance_storage().is_ok()
     }
     /// Tries to convert the enum instance into [`RdsReservedInstances`](crate::types::ResourceDetails::RdsReservedInstances), extracting the inner [`RdsReservedInstances`](crate::types::RdsReservedInstances).
     /// Returns `Err(&Self)` if it can't be converted.

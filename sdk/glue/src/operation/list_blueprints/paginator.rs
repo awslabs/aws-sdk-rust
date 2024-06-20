@@ -27,6 +27,14 @@ impl ListBlueprintsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `blueprints`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::list_blueprints::paginator::ListBlueprintsPaginatorItems {
+        crate::operation::list_blueprints::paginator::ListBlueprintsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -104,5 +112,36 @@ impl ListBlueprintsPaginator {
                 })
             },
         ))
+    }
+}
+
+/// Flattened paginator for `ListBlueprintsPaginator`
+///
+/// This is created with [`.items()`](ListBlueprintsPaginator::items)
+pub struct ListBlueprintsPaginatorItems(ListBlueprintsPaginator);
+
+impl ListBlueprintsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note_: No requests will be dispatched until the stream is used
+    /// (e.g. with the [`.next().await`](aws_smithy_async::future::pagination_stream::PaginationStream::next) method).
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](aws_smithy_async::future::pagination_stream::PaginationStream::collect).
+    pub fn send(
+        self,
+    ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
+        ::std::result::Result<
+            ::std::string::String,
+            ::aws_smithy_runtime_api::client::result::SdkError<
+                crate::operation::list_blueprints::ListBlueprintsError,
+                ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+            >,
+        >,
+    > {
+        ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_blueprints_output_output_blueprints(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

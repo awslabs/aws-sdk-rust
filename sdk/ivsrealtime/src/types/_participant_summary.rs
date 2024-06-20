@@ -14,6 +14,8 @@ pub struct ParticipantSummary {
     pub first_join_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Whether the participant ever published to the stage session.</p>
     pub published: bool,
+    /// <p>Participant’s recording state.</p>
+    pub recording_state: ::std::option::Option<crate::types::ParticipantRecordingState>,
 }
 impl ParticipantSummary {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
@@ -36,6 +38,10 @@ impl ParticipantSummary {
     pub fn published(&self) -> bool {
         self.published
     }
+    /// <p>Participant’s recording state.</p>
+    pub fn recording_state(&self) -> ::std::option::Option<&crate::types::ParticipantRecordingState> {
+        self.recording_state.as_ref()
+    }
 }
 impl ParticipantSummary {
     /// Creates a new builder-style object to manufacture [`ParticipantSummary`](crate::types::ParticipantSummary).
@@ -53,6 +59,7 @@ pub struct ParticipantSummaryBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ParticipantState>,
     pub(crate) first_join_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) published: ::std::option::Option<bool>,
+    pub(crate) recording_state: ::std::option::Option<crate::types::ParticipantRecordingState>,
 }
 impl ParticipantSummaryBuilder {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
@@ -125,6 +132,20 @@ impl ParticipantSummaryBuilder {
     pub fn get_published(&self) -> &::std::option::Option<bool> {
         &self.published
     }
+    /// <p>Participant’s recording state.</p>
+    pub fn recording_state(mut self, input: crate::types::ParticipantRecordingState) -> Self {
+        self.recording_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Participant’s recording state.</p>
+    pub fn set_recording_state(mut self, input: ::std::option::Option<crate::types::ParticipantRecordingState>) -> Self {
+        self.recording_state = input;
+        self
+    }
+    /// <p>Participant’s recording state.</p>
+    pub fn get_recording_state(&self) -> &::std::option::Option<crate::types::ParticipantRecordingState> {
+        &self.recording_state
+    }
     /// Consumes the builder and constructs a [`ParticipantSummary`](crate::types::ParticipantSummary).
     pub fn build(self) -> crate::types::ParticipantSummary {
         crate::types::ParticipantSummary {
@@ -133,6 +154,7 @@ impl ParticipantSummaryBuilder {
             state: self.state,
             first_join_time: self.first_join_time,
             published: self.published.unwrap_or_default(),
+            recording_state: self.recording_state,
         }
     }
 }

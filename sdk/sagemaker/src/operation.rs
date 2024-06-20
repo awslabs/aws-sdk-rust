@@ -82,6 +82,9 @@ pub mod create_flow_definition;
 /// Types for the `CreateHub` operation.
 pub mod create_hub;
 
+/// Types for the `CreateHubContentReference` operation.
+pub mod create_hub_content_reference;
+
 /// Types for the `CreateHumanTaskUi` operation.
 pub mod create_human_task_ui;
 
@@ -252,6 +255,9 @@ pub mod delete_hub;
 
 /// Types for the `DeleteHubContent` operation.
 pub mod delete_hub_content;
+
+/// Types for the `DeleteHubContentReference` operation.
+pub mod delete_hub_content_reference;
 
 /// Types for the `DeleteHumanTaskUi` operation.
 pub mod delete_human_task_ui;

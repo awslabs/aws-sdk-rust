@@ -29,9 +29,39 @@ pub use crate::types::_effective_preferred_resource::EffectivePreferredResourceB
 
 pub use crate::types::_get_recommendation_error::GetRecommendationErrorBuilder;
 
-pub use crate::types::_license_recommendation::LicenseRecommendationBuilder;
+pub use crate::types::_rdsdb_recommendation::RdsdbRecommendationBuilder;
 
 pub use crate::types::_tag::TagBuilder;
+
+pub use crate::types::_rds_effective_recommendation_preferences::RdsEffectiveRecommendationPreferencesBuilder;
+
+pub use crate::types::_rds_savings_estimation_mode::RdsSavingsEstimationModeBuilder;
+
+pub use crate::types::_rdsdb_utilization_metric::RdsdbUtilizationMetricBuilder;
+
+pub use crate::types::_rdsdb_storage_recommendation_option::RdsdbStorageRecommendationOptionBuilder;
+
+pub use crate::types::_rds_storage_savings_opportunity_after_discounts::RdsStorageSavingsOpportunityAfterDiscountsBuilder;
+
+pub use crate::types::_rds_storage_estimated_monthly_savings::RdsStorageEstimatedMonthlySavingsBuilder;
+
+pub use crate::types::_db_storage_configuration::DbStorageConfigurationBuilder;
+
+pub use crate::types::_rdsdb_instance_recommendation_option::RdsdbInstanceRecommendationOptionBuilder;
+
+pub use crate::types::_rds_instance_savings_opportunity_after_discounts::RdsInstanceSavingsOpportunityAfterDiscountsBuilder;
+
+pub use crate::types::_rds_instance_estimated_monthly_savings::RdsInstanceEstimatedMonthlySavingsBuilder;
+
+pub use crate::types::_recommendation_preferences::RecommendationPreferencesBuilder;
+
+pub use crate::types::_rdsdb_recommendation_filter::RdsdbRecommendationFilterBuilder;
+
+pub use crate::types::_rds_database_recommended_option_projected_metric::RdsDatabaseRecommendedOptionProjectedMetricBuilder;
+
+pub use crate::types::_rds_database_projected_metric::RdsDatabaseProjectedMetricBuilder;
+
+pub use crate::types::_license_recommendation::LicenseRecommendationBuilder;
 
 pub use crate::types::_license_recommendation_option::LicenseRecommendationOptionBuilder;
 
@@ -71,15 +101,15 @@ pub use crate::types::_ecs_savings_estimation_mode::EcsSavingsEstimationModeBuil
 
 pub use crate::types::_ecs_service_recommendation_option::EcsServiceRecommendationOptionBuilder;
 
-pub use crate::types::_ecs_savings_opportunity_after_discounts::EcsSavingsOpportunityAfterDiscountsBuilder;
-
-pub use crate::types::_ecs_estimated_monthly_savings::EcsEstimatedMonthlySavingsBuilder;
-
 pub use crate::types::_container_recommendation::ContainerRecommendationBuilder;
 
 pub use crate::types::_memory_size_configuration::MemorySizeConfigurationBuilder;
 
 pub use crate::types::_ecs_service_projected_utilization_metric::EcsServiceProjectedUtilizationMetricBuilder;
+
+pub use crate::types::_ecs_savings_opportunity_after_discounts::EcsSavingsOpportunityAfterDiscountsBuilder;
+
+pub use crate::types::_ecs_estimated_monthly_savings::EcsEstimatedMonthlySavingsBuilder;
 
 pub use crate::types::_ecs_service_utilization_metric::EcsServiceUtilizationMetricBuilder;
 
@@ -96,8 +126,6 @@ pub use crate::types::_ecs_service_projected_metric::EcsServiceProjectedMetricBu
 pub use crate::types::_recommended_option_projected_metric::RecommendedOptionProjectedMetricBuilder;
 
 pub use crate::types::_projected_metric::ProjectedMetricBuilder;
-
-pub use crate::types::_recommendation_preferences::RecommendationPreferencesBuilder;
 
 pub use crate::types::_instance_recommendation::InstanceRecommendationBuilder;
 

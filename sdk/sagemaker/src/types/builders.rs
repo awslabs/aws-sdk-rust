@@ -173,6 +173,8 @@ pub use crate::types::_model_data_source::ModelDataSourceBuilder;
 
 pub use crate::types::_s3_model_data_source::S3ModelDataSourceBuilder;
 
+pub use crate::types::_inference_hub_access_config::InferenceHubAccessConfigBuilder;
+
 pub use crate::types::_model_access_config::ModelAccessConfigBuilder;
 
 pub use crate::types::_additional_inference_specification_definition::AdditionalInferenceSpecificationDefinitionBuilder;

@@ -22,9 +22,7 @@ impl crate::operation::create_hub::builders::CreateHubInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateHub`.
 ///
-/// <p>Create a hub.</p><note>
-/// <p>Hub APIs are only callable through SageMaker Studio.</p>
-/// </note>
+/// <p>Create a hub.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateHubFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

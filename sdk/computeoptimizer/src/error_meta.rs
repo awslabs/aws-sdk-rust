@@ -509,6 +509,62 @@ impl From<crate::operation::export_license_recommendations::ExportLicenseRecomme
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::export_rds_database_recommendations::ExportRDSDatabaseRecommendationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::export_rds_database_recommendations::ExportRDSDatabaseRecommendationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::export_rds_database_recommendations::ExportRDSDatabaseRecommendationsError> for Error {
+    fn from(err: crate::operation::export_rds_database_recommendations::ExportRDSDatabaseRecommendationsError) -> Self {
+        match err {
+            crate::operation::export_rds_database_recommendations::ExportRDSDatabaseRecommendationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::export_rds_database_recommendations::ExportRDSDatabaseRecommendationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::export_rds_database_recommendations::ExportRDSDatabaseRecommendationsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::export_rds_database_recommendations::ExportRDSDatabaseRecommendationsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::export_rds_database_recommendations::ExportRDSDatabaseRecommendationsError::MissingAuthenticationToken(inner) => {
+                Error::MissingAuthenticationToken(inner)
+            }
+            crate::operation::export_rds_database_recommendations::ExportRDSDatabaseRecommendationsError::OptInRequiredException(inner) => {
+                Error::OptInRequiredException(inner)
+            }
+            crate::operation::export_rds_database_recommendations::ExportRDSDatabaseRecommendationsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::export_rds_database_recommendations::ExportRDSDatabaseRecommendationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::export_rds_database_recommendations::ExportRDSDatabaseRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError,
             R,
         >,
@@ -1047,6 +1103,99 @@ impl From<crate::operation::get_license_recommendations::GetLicenseRecommendatio
                 Error::ThrottlingException(inner)
             }
             crate::operation::get_license_recommendations::GetLicenseRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_rds_database_recommendation_projected_metrics::GetRDSDatabaseRecommendationProjectedMetricsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_rds_database_recommendation_projected_metrics::GetRDSDatabaseRecommendationProjectedMetricsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_rds_database_recommendation_projected_metrics::GetRDSDatabaseRecommendationProjectedMetricsError> for Error {
+    fn from(err: crate::operation::get_rds_database_recommendation_projected_metrics::GetRDSDatabaseRecommendationProjectedMetricsError) -> Self {
+        match err {
+            crate::operation::get_rds_database_recommendation_projected_metrics::GetRDSDatabaseRecommendationProjectedMetricsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_rds_database_recommendation_projected_metrics::GetRDSDatabaseRecommendationProjectedMetricsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_rds_database_recommendation_projected_metrics::GetRDSDatabaseRecommendationProjectedMetricsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_rds_database_recommendation_projected_metrics::GetRDSDatabaseRecommendationProjectedMetricsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::get_rds_database_recommendation_projected_metrics::GetRDSDatabaseRecommendationProjectedMetricsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::get_rds_database_recommendation_projected_metrics::GetRDSDatabaseRecommendationProjectedMetricsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_rds_database_recommendation_projected_metrics::GetRDSDatabaseRecommendationProjectedMetricsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_rds_database_recommendation_projected_metrics::GetRDSDatabaseRecommendationProjectedMetricsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_rds_database_recommendation_projected_metrics::GetRDSDatabaseRecommendationProjectedMetricsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rds_database_recommendations::GetRDSDatabaseRecommendationsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_rds_database_recommendations::GetRDSDatabaseRecommendationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_rds_database_recommendations::GetRDSDatabaseRecommendationsError> for Error {
+    fn from(err: crate::operation::get_rds_database_recommendations::GetRDSDatabaseRecommendationsError) -> Self {
+        match err {
+            crate::operation::get_rds_database_recommendations::GetRDSDatabaseRecommendationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_rds_database_recommendations::GetRDSDatabaseRecommendationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_rds_database_recommendations::GetRDSDatabaseRecommendationsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_rds_database_recommendations::GetRDSDatabaseRecommendationsError::MissingAuthenticationToken(inner) => {
+                Error::MissingAuthenticationToken(inner)
+            }
+            crate::operation::get_rds_database_recommendations::GetRDSDatabaseRecommendationsError::OptInRequiredException(inner) => {
+                Error::OptInRequiredException(inner)
+            }
+            crate::operation::get_rds_database_recommendations::GetRDSDatabaseRecommendationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_rds_database_recommendations::GetRDSDatabaseRecommendationsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_rds_database_recommendations::GetRDSDatabaseRecommendationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_rds_database_recommendations::GetRDSDatabaseRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

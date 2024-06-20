@@ -50,10 +50,10 @@ pub struct EcsServiceRecommendation {
     pub service_recommendation_options: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationOption>>,
     /// <p>The risk of the current Amazon ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload.</p>
     pub current_performance_risk: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
-    /// <p>A list of tags assigned to your Amazon ECS service recommendations.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Describes the effective recommendation preferences for Amazon ECS services.</p>
     pub effective_recommendation_preferences: ::std::option::Option<crate::types::EcsEffectiveRecommendationPreferences>,
+    /// <p>A list of tags assigned to your Amazon ECS service recommendations.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl EcsServiceRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current Amazon ECS service.</p>
@@ -130,15 +130,15 @@ impl EcsServiceRecommendation {
     pub fn current_performance_risk(&self) -> ::std::option::Option<&crate::types::CurrentPerformanceRisk> {
         self.current_performance_risk.as_ref()
     }
+    /// <p>Describes the effective recommendation preferences for Amazon ECS services.</p>
+    pub fn effective_recommendation_preferences(&self) -> ::std::option::Option<&crate::types::EcsEffectiveRecommendationPreferences> {
+        self.effective_recommendation_preferences.as_ref()
+    }
     /// <p>A list of tags assigned to your Amazon ECS service recommendations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
-    }
-    /// <p>Describes the effective recommendation preferences for Amazon ECS services.</p>
-    pub fn effective_recommendation_preferences(&self) -> ::std::option::Option<&crate::types::EcsEffectiveRecommendationPreferences> {
-        self.effective_recommendation_preferences.as_ref()
     }
 }
 impl EcsServiceRecommendation {
@@ -163,8 +163,8 @@ pub struct EcsServiceRecommendationBuilder {
     pub(crate) finding_reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFindingReasonCode>>,
     pub(crate) service_recommendation_options: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationOption>>,
     pub(crate) current_performance_risk: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) effective_recommendation_preferences: ::std::option::Option<crate::types::EcsEffectiveRecommendationPreferences>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl EcsServiceRecommendationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the current Amazon ECS service.</p>
@@ -417,6 +417,23 @@ impl EcsServiceRecommendationBuilder {
     pub fn get_current_performance_risk(&self) -> &::std::option::Option<crate::types::CurrentPerformanceRisk> {
         &self.current_performance_risk
     }
+    /// <p>Describes the effective recommendation preferences for Amazon ECS services.</p>
+    pub fn effective_recommendation_preferences(mut self, input: crate::types::EcsEffectiveRecommendationPreferences) -> Self {
+        self.effective_recommendation_preferences = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the effective recommendation preferences for Amazon ECS services.</p>
+    pub fn set_effective_recommendation_preferences(
+        mut self,
+        input: ::std::option::Option<crate::types::EcsEffectiveRecommendationPreferences>,
+    ) -> Self {
+        self.effective_recommendation_preferences = input;
+        self
+    }
+    /// <p>Describes the effective recommendation preferences for Amazon ECS services.</p>
+    pub fn get_effective_recommendation_preferences(&self) -> &::std::option::Option<crate::types::EcsEffectiveRecommendationPreferences> {
+        &self.effective_recommendation_preferences
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -437,23 +454,6 @@ impl EcsServiceRecommendationBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>Describes the effective recommendation preferences for Amazon ECS services.</p>
-    pub fn effective_recommendation_preferences(mut self, input: crate::types::EcsEffectiveRecommendationPreferences) -> Self {
-        self.effective_recommendation_preferences = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Describes the effective recommendation preferences for Amazon ECS services.</p>
-    pub fn set_effective_recommendation_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::EcsEffectiveRecommendationPreferences>,
-    ) -> Self {
-        self.effective_recommendation_preferences = input;
-        self
-    }
-    /// <p>Describes the effective recommendation preferences for Amazon ECS services.</p>
-    pub fn get_effective_recommendation_preferences(&self) -> &::std::option::Option<crate::types::EcsEffectiveRecommendationPreferences> {
-        &self.effective_recommendation_preferences
-    }
     /// Consumes the builder and constructs a [`EcsServiceRecommendation`](crate::types::EcsServiceRecommendation).
     pub fn build(self) -> crate::types::EcsServiceRecommendation {
         crate::types::EcsServiceRecommendation {
@@ -468,8 +468,8 @@ impl EcsServiceRecommendationBuilder {
             finding_reason_codes: self.finding_reason_codes,
             service_recommendation_options: self.service_recommendation_options,
             current_performance_risk: self.current_performance_risk,
-            tags: self.tags,
             effective_recommendation_preferences: self.effective_recommendation_preferences,
+            tags: self.tags,
         }
     }
 }

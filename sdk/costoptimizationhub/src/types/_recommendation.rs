@@ -22,7 +22,7 @@ pub struct Recommendation {
     pub estimated_monthly_savings: ::std::option::Option<f64>,
     /// <p>The estimated savings percentage relative to the total cost over the cost calculation lookback period.</p>
     pub estimated_savings_percentage: ::std::option::Option<f64>,
-    /// <p>The estimated monthly cost for the recommendation.</p>
+    /// <p>The estimated monthly cost of the current resource. For Reserved Instances and Savings Plans, it refers to the cost for eligible usage.</p>
     pub estimated_monthly_cost: ::std::option::Option<f64>,
     /// <p>The currency code used for the recommendation.</p>
     pub currency_code: ::std::option::Option<::std::string::String>,
@@ -84,7 +84,7 @@ impl Recommendation {
     pub fn estimated_savings_percentage(&self) -> ::std::option::Option<f64> {
         self.estimated_savings_percentage
     }
-    /// <p>The estimated monthly cost for the recommendation.</p>
+    /// <p>The estimated monthly cost of the current resource. For Reserved Instances and Savings Plans, it refers to the cost for eligible usage.</p>
     pub fn estimated_monthly_cost(&self) -> ::std::option::Option<f64> {
         self.estimated_monthly_cost
     }
@@ -295,17 +295,17 @@ impl RecommendationBuilder {
     pub fn get_estimated_savings_percentage(&self) -> &::std::option::Option<f64> {
         &self.estimated_savings_percentage
     }
-    /// <p>The estimated monthly cost for the recommendation.</p>
+    /// <p>The estimated monthly cost of the current resource. For Reserved Instances and Savings Plans, it refers to the cost for eligible usage.</p>
     pub fn estimated_monthly_cost(mut self, input: f64) -> Self {
         self.estimated_monthly_cost = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The estimated monthly cost for the recommendation.</p>
+    /// <p>The estimated monthly cost of the current resource. For Reserved Instances and Savings Plans, it refers to the cost for eligible usage.</p>
     pub fn set_estimated_monthly_cost(mut self, input: ::std::option::Option<f64>) -> Self {
         self.estimated_monthly_cost = input;
         self
     }
-    /// <p>The estimated monthly cost for the recommendation.</p>
+    /// <p>The estimated monthly cost of the current resource. For Reserved Instances and Savings Plans, it refers to the cost for eligible usage.</p>
     pub fn get_estimated_monthly_cost(&self) -> &::std::option::Option<f64> {
         &self.estimated_monthly_cost
     }

@@ -291,6 +291,8 @@ mod create_flow_definition;
 
 mod create_hub;
 
+mod create_hub_content_reference;
+
 mod create_human_task_ui;
 
 mod create_hyper_parameter_tuning_job;
@@ -431,6 +433,8 @@ mod delete_flow_definition;
 mod delete_hub;
 
 mod delete_hub_content;
+
+mod delete_hub_content_reference;
 
 mod delete_human_task_ui;
 

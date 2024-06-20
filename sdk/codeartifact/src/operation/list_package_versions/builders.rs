@@ -189,7 +189,7 @@ impl ListPackageVersionsFluentBuilder {
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// <li>
-    /// <p>Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <p>Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -214,7 +214,7 @@ impl ListPackageVersionsFluentBuilder {
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// <li>
-    /// <p>Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <p>Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
@@ -239,7 +239,7 @@ impl ListPackageVersionsFluentBuilder {
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// <li>
-    /// <p>Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <p>Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()

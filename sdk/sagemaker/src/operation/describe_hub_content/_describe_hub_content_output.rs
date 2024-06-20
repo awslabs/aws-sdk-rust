@@ -25,6 +25,12 @@ pub struct DescribeHubContentOutput {
     pub hub_content_markdown: ::std::option::Option<::std::string::String>,
     /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
     pub hub_content_document: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the public hub content.</p>
+    pub sage_maker_public_hub_content_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The minimum version of the hub content.</p>
+    pub reference_min_version: ::std::option::Option<::std::string::String>,
+    /// <p>The support status of the hub content.</p>
+    pub support_status: ::std::option::Option<crate::types::HubContentSupportStatus>,
     /// <p>The searchable keywords for the hub content.</p>
     pub hub_content_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The location of any dependencies that the hub content has, such as scripts, model artifacts, datasets, or notebooks.</p>
@@ -82,6 +88,18 @@ impl DescribeHubContentOutput {
     pub fn hub_content_document(&self) -> ::std::option::Option<&str> {
         self.hub_content_document.as_deref()
     }
+    /// <p>The ARN of the public hub content.</p>
+    pub fn sage_maker_public_hub_content_arn(&self) -> ::std::option::Option<&str> {
+        self.sage_maker_public_hub_content_arn.as_deref()
+    }
+    /// <p>The minimum version of the hub content.</p>
+    pub fn reference_min_version(&self) -> ::std::option::Option<&str> {
+        self.reference_min_version.as_deref()
+    }
+    /// <p>The support status of the hub content.</p>
+    pub fn support_status(&self) -> ::std::option::Option<&crate::types::HubContentSupportStatus> {
+        self.support_status.as_ref()
+    }
     /// <p>The searchable keywords for the hub content.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hub_content_search_keywords.is_none()`.
@@ -134,6 +152,9 @@ pub struct DescribeHubContentOutputBuilder {
     pub(crate) hub_content_description: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_markdown: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_document: ::std::option::Option<::std::string::String>,
+    pub(crate) sage_maker_public_hub_content_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) reference_min_version: ::std::option::Option<::std::string::String>,
+    pub(crate) support_status: ::std::option::Option<crate::types::HubContentSupportStatus>,
     pub(crate) hub_content_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) hub_content_dependencies: ::std::option::Option<::std::vec::Vec<crate::types::HubContentDependency>>,
     pub(crate) hub_content_status: ::std::option::Option<crate::types::HubContentStatus>,
@@ -304,6 +325,48 @@ impl DescribeHubContentOutputBuilder {
     pub fn get_hub_content_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.hub_content_document
     }
+    /// <p>The ARN of the public hub content.</p>
+    pub fn sage_maker_public_hub_content_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sage_maker_public_hub_content_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the public hub content.</p>
+    pub fn set_sage_maker_public_hub_content_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sage_maker_public_hub_content_arn = input;
+        self
+    }
+    /// <p>The ARN of the public hub content.</p>
+    pub fn get_sage_maker_public_hub_content_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sage_maker_public_hub_content_arn
+    }
+    /// <p>The minimum version of the hub content.</p>
+    pub fn reference_min_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reference_min_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The minimum version of the hub content.</p>
+    pub fn set_reference_min_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.reference_min_version = input;
+        self
+    }
+    /// <p>The minimum version of the hub content.</p>
+    pub fn get_reference_min_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_min_version
+    }
+    /// <p>The support status of the hub content.</p>
+    pub fn support_status(mut self, input: crate::types::HubContentSupportStatus) -> Self {
+        self.support_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The support status of the hub content.</p>
+    pub fn set_support_status(mut self, input: ::std::option::Option<crate::types::HubContentSupportStatus>) -> Self {
+        self.support_status = input;
+        self
+    }
+    /// <p>The support status of the hub content.</p>
+    pub fn get_support_status(&self) -> &::std::option::Option<crate::types::HubContentSupportStatus> {
+        &self.support_status
+    }
     /// Appends an item to `hub_content_search_keywords`.
     ///
     /// To override the contents of this collection use [`set_hub_content_search_keywords`](Self::set_hub_content_search_keywords).
@@ -411,6 +474,9 @@ impl DescribeHubContentOutputBuilder {
             hub_content_description: self.hub_content_description,
             hub_content_markdown: self.hub_content_markdown,
             hub_content_document: self.hub_content_document,
+            sage_maker_public_hub_content_arn: self.sage_maker_public_hub_content_arn,
+            reference_min_version: self.reference_min_version,
+            support_status: self.support_status,
             hub_content_search_keywords: self.hub_content_search_keywords,
             hub_content_dependencies: self.hub_content_dependencies,
             hub_content_status: self.hub_content_status,

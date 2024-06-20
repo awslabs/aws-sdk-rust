@@ -22,9 +22,7 @@ impl crate::operation::update_hub::builders::UpdateHubInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateHub`.
 ///
-/// <p>Update a hub.</p><note>
-/// <p>Hub APIs are only callable through SageMaker Studio.</p>
-/// </note>
+/// <p>Update a hub.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateHubFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

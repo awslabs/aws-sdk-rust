@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ContentBlock {
+    /// <p>A document to include in the message.</p>
+    Document(crate::types::DocumentBlock),
     /// <p>Contains the content to assess with the guardrail. If you don't specify <code>guardContent</code> in a call to the Converse API, the guardrail (if passed in the Converse API) assesses the entire message.</p>
     /// <p>For more information, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon Bedrock User Guide</i>.</p>
     GuardContent(crate::types::GuardrailConverseContentBlock),
@@ -28,6 +30,19 @@ pub enum ContentBlock {
     Unknown,
 }
 impl ContentBlock {
+    /// Tries to convert the enum instance into [`Document`](crate::types::ContentBlock::Document), extracting the inner [`DocumentBlock`](crate::types::DocumentBlock).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_document(&self) -> ::std::result::Result<&crate::types::DocumentBlock, &Self> {
+        if let ContentBlock::Document(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Document`](crate::types::ContentBlock::Document).
+    pub fn is_document(&self) -> bool {
+        self.as_document().is_ok()
+    }
     /// Tries to convert the enum instance into [`GuardContent`](crate::types::ContentBlock::GuardContent), extracting the inner [`GuardrailConverseContentBlock`](crate::types::GuardrailConverseContentBlock).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_guard_content(&self) -> ::std::result::Result<&crate::types::GuardrailConverseContentBlock, &Self> {

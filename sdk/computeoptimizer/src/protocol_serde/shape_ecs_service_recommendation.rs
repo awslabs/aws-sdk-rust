@@ -81,13 +81,13 @@ where
                                         .transpose()?,
                                 );
                             }
-                            "tags" => {
-                                builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
-                            }
                             "effectiveRecommendationPreferences" => {
                                 builder = builder.set_effective_recommendation_preferences(
                                     crate::protocol_serde::shape_ecs_effective_recommendation_preferences::de_ecs_effective_recommendation_preferences(tokens)?
                                 );
+                            }
+                            "tags" => {
+                                builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }

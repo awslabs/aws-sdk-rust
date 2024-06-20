@@ -63,9 +63,61 @@ pub use crate::types::_effective_preferred_resource::EffectivePreferredResource;
 
 pub use crate::types::_get_recommendation_error::GetRecommendationError;
 
-pub use crate::types::_license_recommendation::LicenseRecommendation;
+pub use crate::types::_rdsdb_recommendation::RdsdbRecommendation;
 
 pub use crate::types::_tag::Tag;
+
+pub use crate::types::_rds_effective_recommendation_preferences::RdsEffectiveRecommendationPreferences;
+
+pub use crate::types::_rds_savings_estimation_mode::RdsSavingsEstimationMode;
+
+pub use crate::types::_rds_savings_estimation_mode_source::RdsSavingsEstimationModeSource;
+
+pub use crate::types::_cpu_vendor_architecture::CpuVendorArchitecture;
+
+pub use crate::types::_rdsdb_utilization_metric::RdsdbUtilizationMetric;
+
+pub use crate::types::_rdsdb_metric_statistic::RdsdbMetricStatistic;
+
+pub use crate::types::_rdsdb_metric_name::RdsdbMetricName;
+
+pub use crate::types::_rdsdb_storage_recommendation_option::RdsdbStorageRecommendationOption;
+
+pub use crate::types::_rds_storage_savings_opportunity_after_discounts::RdsStorageSavingsOpportunityAfterDiscounts;
+
+pub use crate::types::_rds_storage_estimated_monthly_savings::RdsStorageEstimatedMonthlySavings;
+
+pub use crate::types::_db_storage_configuration::DbStorageConfiguration;
+
+pub use crate::types::_rdsdb_instance_recommendation_option::RdsdbInstanceRecommendationOption;
+
+pub use crate::types::_rds_instance_savings_opportunity_after_discounts::RdsInstanceSavingsOpportunityAfterDiscounts;
+
+pub use crate::types::_rds_instance_estimated_monthly_savings::RdsInstanceEstimatedMonthlySavings;
+
+pub use crate::types::_rds_storage_finding_reason_code::RdsStorageFindingReasonCode;
+
+pub use crate::types::_rds_instance_finding_reason_code::RdsInstanceFindingReasonCode;
+
+pub use crate::types::_rds_storage_finding::RdsStorageFinding;
+
+pub use crate::types::_rds_instance_finding::RdsInstanceFinding;
+
+pub use crate::types::_idle::Idle;
+
+pub use crate::types::_recommendation_preferences::RecommendationPreferences;
+
+pub use crate::types::_rdsdb_recommendation_filter::RdsdbRecommendationFilter;
+
+pub use crate::types::_rdsdb_recommendation_filter_name::RdsdbRecommendationFilterName;
+
+pub use crate::types::_rds_database_recommended_option_projected_metric::RdsDatabaseRecommendedOptionProjectedMetric;
+
+pub use crate::types::_rds_database_projected_metric::RdsDatabaseProjectedMetric;
+
+pub use crate::types::_metric_statistic::MetricStatistic;
+
+pub use crate::types::_license_recommendation::LicenseRecommendation;
 
 pub use crate::types::_license_recommendation_option::LicenseRecommendationOption;
 
@@ -141,10 +193,6 @@ pub use crate::types::_ecs_savings_estimation_mode_source::EcsSavingsEstimationM
 
 pub use crate::types::_ecs_service_recommendation_option::EcsServiceRecommendationOption;
 
-pub use crate::types::_ecs_savings_opportunity_after_discounts::EcsSavingsOpportunityAfterDiscounts;
-
-pub use crate::types::_ecs_estimated_monthly_savings::EcsEstimatedMonthlySavings;
-
 pub use crate::types::_container_recommendation::ContainerRecommendation;
 
 pub use crate::types::_memory_size_configuration::MemorySizeConfiguration;
@@ -154,6 +202,10 @@ pub use crate::types::_ecs_service_projected_utilization_metric::EcsServiceProje
 pub use crate::types::_ecs_service_metric_statistic::EcsServiceMetricStatistic;
 
 pub use crate::types::_ecs_service_metric_name::EcsServiceMetricName;
+
+pub use crate::types::_ecs_savings_opportunity_after_discounts::EcsSavingsOpportunityAfterDiscounts;
+
+pub use crate::types::_ecs_estimated_monthly_savings::EcsEstimatedMonthlySavings;
 
 pub use crate::types::_ecs_service_recommendation_finding_reason_code::EcsServiceRecommendationFindingReasonCode;
 
@@ -177,17 +229,11 @@ pub use crate::types::_ecs_service_recommended_option_projected_metric::EcsServi
 
 pub use crate::types::_ecs_service_projected_metric::EcsServiceProjectedMetric;
 
-pub use crate::types::_metric_statistic::MetricStatistic;
-
 pub use crate::types::_recommended_option_projected_metric::RecommendedOptionProjectedMetric;
 
 pub use crate::types::_projected_metric::ProjectedMetric;
 
 pub use crate::types::_metric_name::MetricName;
-
-pub use crate::types::_recommendation_preferences::RecommendationPreferences;
-
-pub use crate::types::_cpu_vendor_architecture::CpuVendorArchitecture;
 
 pub use crate::types::_instance_recommendation::InstanceRecommendation;
 
@@ -213,11 +259,11 @@ pub use crate::types::_recommendation_source::RecommendationSource;
 
 pub use crate::types::_instance_recommendation_option::InstanceRecommendationOption;
 
+pub use crate::types::_migration_effort::MigrationEffort;
+
 pub use crate::types::_instance_savings_opportunity_after_discounts::InstanceSavingsOpportunityAfterDiscounts;
 
 pub use crate::types::_instance_estimated_monthly_savings::InstanceEstimatedMonthlySavings;
-
-pub use crate::types::_migration_effort::MigrationEffort;
 
 pub use crate::types::_platform_difference::PlatformDifference;
 
@@ -270,6 +316,8 @@ pub use crate::types::_s3_destination::S3Destination;
 pub use crate::types::_file_format::FileFormat;
 
 pub use crate::types::_s3_destination_config::S3DestinationConfig;
+
+pub use crate::types::_exportable_rdsdb_field::ExportableRdsdbField;
 
 pub use crate::types::_exportable_license_field::ExportableLicenseField;
 
@@ -328,6 +376,8 @@ mod _customizable_metric_name;
 mod _customizable_metric_parameters;
 
 mod _customizable_metric_threshold;
+
+mod _db_storage_configuration;
 
 mod _ebs_effective_recommendation_preferences;
 
@@ -409,6 +459,8 @@ mod _exportable_lambda_function_field;
 
 mod _exportable_license_field;
 
+mod _exportable_rdsdb_field;
+
 mod _exportable_volume_field;
 
 mod _external_metric_status;
@@ -434,6 +486,8 @@ mod _get_recommendation_error;
 mod _gpu;
 
 mod _gpu_info;
+
+mod _idle;
 
 mod _inferred_workload_saving;
 
@@ -540,6 +594,48 @@ mod _preferred_resource;
 mod _preferred_resource_name;
 
 mod _projected_metric;
+
+mod _rds_database_projected_metric;
+
+mod _rds_database_recommended_option_projected_metric;
+
+mod _rds_effective_recommendation_preferences;
+
+mod _rds_instance_estimated_monthly_savings;
+
+mod _rds_instance_finding;
+
+mod _rds_instance_finding_reason_code;
+
+mod _rds_instance_savings_opportunity_after_discounts;
+
+mod _rds_savings_estimation_mode;
+
+mod _rds_savings_estimation_mode_source;
+
+mod _rds_storage_estimated_monthly_savings;
+
+mod _rds_storage_finding;
+
+mod _rds_storage_finding_reason_code;
+
+mod _rds_storage_savings_opportunity_after_discounts;
+
+mod _rdsdb_instance_recommendation_option;
+
+mod _rdsdb_metric_name;
+
+mod _rdsdb_metric_statistic;
+
+mod _rdsdb_recommendation;
+
+mod _rdsdb_recommendation_filter;
+
+mod _rdsdb_recommendation_filter_name;
+
+mod _rdsdb_storage_recommendation_option;
+
+mod _rdsdb_utilization_metric;
 
 mod _reason_code_summary;
 

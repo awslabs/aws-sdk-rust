@@ -699,6 +699,35 @@ impl From<crate::operation::create_hub::CreateHubError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_hub_content_reference::CreateHubContentReferenceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_hub_content_reference::CreateHubContentReferenceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_hub_content_reference::CreateHubContentReferenceError> for Error {
+    fn from(err: crate::operation::create_hub_content_reference::CreateHubContentReferenceError) -> Self {
+        match err {
+            crate::operation::create_hub_content_reference::CreateHubContentReferenceError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::create_hub_content_reference::CreateHubContentReferenceError::ResourceLimitExceeded(inner) => {
+                Error::ResourceLimitExceeded(inner)
+            }
+            crate::operation::create_hub_content_reference::CreateHubContentReferenceError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::create_hub_content_reference::CreateHubContentReferenceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_human_task_ui::CreateHumanTaskUiError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2164,6 +2193,31 @@ impl From<crate::operation::delete_hub_content::DeleteHubContentError> for Error
             crate::operation::delete_hub_content::DeleteHubContentError::ResourceInUse(inner) => Error::ResourceInUse(inner),
             crate::operation::delete_hub_content::DeleteHubContentError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::delete_hub_content::DeleteHubContentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_hub_content_reference::DeleteHubContentReferenceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_hub_content_reference::DeleteHubContentReferenceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_hub_content_reference::DeleteHubContentReferenceError> for Error {
+    fn from(err: crate::operation::delete_hub_content_reference::DeleteHubContentReferenceError) -> Self {
+        match err {
+            crate::operation::delete_hub_content_reference::DeleteHubContentReferenceError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::delete_hub_content_reference::DeleteHubContentReferenceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

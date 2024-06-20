@@ -118,6 +118,15 @@ pub(crate) fn storage_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn auto_participant_recording_configuration_correct_errors(
+    mut builder: crate::types::builders::AutoParticipantRecordingConfigurationBuilder,
+) -> crate::types::builders::AutoParticipantRecordingConfigurationBuilder {
+    if builder.storage_configuration_arn.is_none() {
+        builder.storage_configuration_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn composition_summary_correct_errors(
     mut builder: crate::types::builders::CompositionSummaryBuilder,
 ) -> crate::types::builders::CompositionSummaryBuilder {

@@ -6,8 +6,14 @@ pub fn ser_update_stage_input_input(
     if let Some(var_1) = &input.arn {
         object.key("arn").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    if let Some(var_2) = &input.auto_participant_recording_configuration {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("autoParticipantRecordingConfiguration").start_object();
+        crate::protocol_serde::shape_auto_participant_recording_configuration::ser_auto_participant_recording_configuration(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
     }
     Ok(())
 }

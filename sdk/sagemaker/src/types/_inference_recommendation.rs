@@ -77,7 +77,6 @@ impl InferenceRecommendationBuilder {
         &self.recommendation_id
     }
     /// <p>The metrics used to decide what recommendation to make.</p>
-    /// This field is required.
     pub fn metrics(mut self, input: crate::types::RecommendationMetrics) -> Self {
         self.metrics = ::std::option::Option::Some(input);
         self
