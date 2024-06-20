@@ -72,9 +72,12 @@ pub fn apply_request_id(builder: ErrorMetadataBuilder, headers: &Headers) -> Err
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use crate::request_id::{apply_request_id, RequestId, AWS_REQUEST_ID};
     use aws_smithy_runtime_api::client::orchestrator::HttpResponse;
+    use aws_smithy_runtime_api::client::result::SdkError;
+    use aws_smithy_runtime_api::http::Headers;
     use aws_smithy_types::body::SdkBody;
+    use aws_smithy_types::error::ErrorMetadata;
     use http::{HeaderValue, Response};
 
     #[test]
