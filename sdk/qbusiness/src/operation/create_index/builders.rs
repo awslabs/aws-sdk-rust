@@ -138,17 +138,17 @@ impl CreateIndexFluentBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
-    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index or index tier, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon Q Business tiers</a>.</p>
+    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
     pub fn r#type(mut self, input: crate::types::IndexType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index or index tier, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon Q Business tiers</a>.</p>
+    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::IndexType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index or index tier, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon Q Business tiers</a>.</p>
+    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::IndexType> {
         self.inner.get_type()
     }

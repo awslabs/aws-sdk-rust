@@ -15,6 +15,8 @@ pub struct UpdateApplicationInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An option to allow end users to upload files directly during chat.</p>
     pub attachments_configuration: ::std::option::Option<crate::types::AttachmentsConfiguration>,
+    /// <p>An option to allow end users to create and use Amazon Q Apps in the web experience.</p>
+    pub q_apps_configuration: ::std::option::Option<crate::types::QAppsConfiguration>,
 }
 impl UpdateApplicationInput {
     /// <p>The identifier of the Amazon Q Business application.</p>
@@ -41,6 +43,10 @@ impl UpdateApplicationInput {
     pub fn attachments_configuration(&self) -> ::std::option::Option<&crate::types::AttachmentsConfiguration> {
         self.attachments_configuration.as_ref()
     }
+    /// <p>An option to allow end users to create and use Amazon Q Apps in the web experience.</p>
+    pub fn q_apps_configuration(&self) -> ::std::option::Option<&crate::types::QAppsConfiguration> {
+        self.q_apps_configuration.as_ref()
+    }
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
@@ -59,6 +65,7 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) attachments_configuration: ::std::option::Option<crate::types::AttachmentsConfiguration>,
+    pub(crate) q_apps_configuration: ::std::option::Option<crate::types::QAppsConfiguration>,
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The identifier of the Amazon Q Business application.</p>
@@ -146,6 +153,20 @@ impl UpdateApplicationInputBuilder {
     pub fn get_attachments_configuration(&self) -> &::std::option::Option<crate::types::AttachmentsConfiguration> {
         &self.attachments_configuration
     }
+    /// <p>An option to allow end users to create and use Amazon Q Apps in the web experience.</p>
+    pub fn q_apps_configuration(mut self, input: crate::types::QAppsConfiguration) -> Self {
+        self.q_apps_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An option to allow end users to create and use Amazon Q Apps in the web experience.</p>
+    pub fn set_q_apps_configuration(mut self, input: ::std::option::Option<crate::types::QAppsConfiguration>) -> Self {
+        self.q_apps_configuration = input;
+        self
+    }
+    /// <p>An option to allow end users to create and use Amazon Q Apps in the web experience.</p>
+    pub fn get_q_apps_configuration(&self) -> &::std::option::Option<crate::types::QAppsConfiguration> {
+        &self.q_apps_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
@@ -157,6 +178,7 @@ impl UpdateApplicationInputBuilder {
             description: self.description,
             role_arn: self.role_arn,
             attachments_configuration: self.attachments_configuration,
+            q_apps_configuration: self.q_apps_configuration,
         })
     }
 }

@@ -302,6 +302,8 @@ pub(crate) mod shape_plugin_auth_configuration;
 
 pub(crate) mod shape_plugins;
 
+pub(crate) mod shape_q_apps_configuration;
+
 pub(crate) mod shape_retriever_configuration;
 
 pub(crate) mod shape_retrievers;

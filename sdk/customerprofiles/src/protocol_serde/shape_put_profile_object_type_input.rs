@@ -50,21 +50,27 @@ pub fn ser_put_profile_object_type_input_input(
         }
         object_11.finish();
     }
-    if let Some(var_17) = &input.source_last_updated_timestamp_format {
-        object.key("SourceLastUpdatedTimestampFormat").string(var_17.as_str());
+    if let Some(var_17) = &input.max_profile_object_count {
+        object.key("MaxProfileObjectCount").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
+        );
     }
-    if let Some(var_18) = &input.tags {
+    if let Some(var_18) = &input.source_last_updated_timestamp_format {
+        object.key("SourceLastUpdatedTimestampFormat").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("Tags").start_object();
-        for (key_20, value_21) in var_18 {
+        let mut object_20 = object.key("Tags").start_object();
+        for (key_21, value_22) in var_19 {
             {
-                object_19.key(key_20.as_str()).string(value_21.as_str());
+                object_20.key(key_21.as_str()).string(value_22.as_str());
             }
         }
-        object_19.finish();
+        object_20.finish();
     }
-    if let Some(var_22) = &input.template_id {
-        object.key("TemplateId").string(var_22.as_str());
+    if let Some(var_23) = &input.template_id {
+        object.key("TemplateId").string(var_23.as_str());
     }
     Ok(())
 }

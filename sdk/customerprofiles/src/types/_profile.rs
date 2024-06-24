@@ -6,7 +6,7 @@
 pub struct Profile {
     /// <p>The unique identifier of a customer profile.</p>
     pub profile_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique account number that you have given to the customer.</p>
+    /// <p>An account number that you have given to the customer.</p>
     pub account_number: ::std::option::Option<::std::string::String>,
     /// <p>Any additional information relevant to the customer’s profile.</p>
     pub additional_information: ::std::option::Option<::std::string::String>,
@@ -68,7 +68,7 @@ impl Profile {
     pub fn profile_id(&self) -> ::std::option::Option<&str> {
         self.profile_id.as_deref()
     }
-    /// <p>A unique account number that you have given to the customer.</p>
+    /// <p>An account number that you have given to the customer.</p>
     pub fn account_number(&self) -> ::std::option::Option<&str> {
         self.account_number.as_deref()
     }
@@ -258,17 +258,17 @@ impl ProfileBuilder {
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_id
     }
-    /// <p>A unique account number that you have given to the customer.</p>
+    /// <p>An account number that you have given to the customer.</p>
     pub fn account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique account number that you have given to the customer.</p>
+    /// <p>An account number that you have given to the customer.</p>
     pub fn set_account_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_number = input;
         self
     }
-    /// <p>A unique account number that you have given to the customer.</p>
+    /// <p>An account number that you have given to the customer.</p>
     pub fn get_account_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_number
     }

@@ -25,5 +25,17 @@ pub fn ser_create_identity_provider_input_input(
     if let Some(var_8) = &input.portal_arn {
         object.key("portalArn").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.tags {
+        let mut array_10 = object.key("tags").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
+    }
     Ok(())
 }

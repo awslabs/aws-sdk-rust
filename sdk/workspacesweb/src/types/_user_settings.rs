@@ -28,6 +28,8 @@ pub struct UserSettings {
     pub customer_managed_key: ::std::option::Option<::std::string::String>,
     /// <p>The additional encryption context of the user settings.</p>
     pub additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub deep_link_allowed: ::std::option::Option<crate::types::EnabledType>,
 }
 impl UserSettings {
     /// <p>The ARN of the user settings.</p>
@@ -81,6 +83,10 @@ impl UserSettings {
     pub fn additional_encryption_context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_encryption_context.as_ref()
     }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn deep_link_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
+        self.deep_link_allowed.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UserSettings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -97,6 +103,7 @@ impl ::std::fmt::Debug for UserSettings {
         formatter.field("cookie_synchronization_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("customer_managed_key", &self.customer_managed_key);
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
+        formatter.field("deep_link_allowed", &self.deep_link_allowed);
         formatter.finish()
     }
 }
@@ -123,6 +130,7 @@ pub struct UserSettingsBuilder {
     pub(crate) cookie_synchronization_configuration: ::std::option::Option<crate::types::CookieSynchronizationConfiguration>,
     pub(crate) customer_managed_key: ::std::option::Option<::std::string::String>,
     pub(crate) additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) deep_link_allowed: ::std::option::Option<crate::types::EnabledType>,
 }
 impl UserSettingsBuilder {
     /// <p>The ARN of the user settings.</p>
@@ -318,6 +326,20 @@ impl UserSettingsBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.additional_encryption_context
     }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn deep_link_allowed(mut self, input: crate::types::EnabledType) -> Self {
+        self.deep_link_allowed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn set_deep_link_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
+        self.deep_link_allowed = input;
+        self
+    }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn get_deep_link_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
+        &self.deep_link_allowed
+    }
     /// Consumes the builder and constructs a [`UserSettings`](crate::types::UserSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_settings_arn`](crate::types::builders::UserSettingsBuilder::user_settings_arn)
@@ -340,6 +362,7 @@ impl UserSettingsBuilder {
             cookie_synchronization_configuration: self.cookie_synchronization_configuration,
             customer_managed_key: self.customer_managed_key,
             additional_encryption_context: self.additional_encryption_context,
+            deep_link_allowed: self.deep_link_allowed,
         })
     }
 }
@@ -358,6 +381,7 @@ impl ::std::fmt::Debug for UserSettingsBuilder {
         formatter.field("cookie_synchronization_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("customer_managed_key", &self.customer_managed_key);
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
+        formatter.field("deep_link_allowed", &self.deep_link_allowed);
         formatter.finish()
     }
 }

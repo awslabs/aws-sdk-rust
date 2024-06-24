@@ -2,7 +2,7 @@
 
 /// <p>Describes a filter for a specific list of managed nodes.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InstanceInformation {
     /// <p>The managed node ID.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
@@ -137,6 +137,36 @@ impl InstanceInformation {
         self.source_type.as_ref()
     }
 }
+impl ::std::fmt::Debug for InstanceInformation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceInformation");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("ping_status", &self.ping_status);
+        formatter.field("last_ping_date_time", &self.last_ping_date_time);
+        formatter.field("agent_version", &self.agent_version);
+        formatter.field("is_latest_version", &self.is_latest_version);
+        formatter.field("platform_type", &self.platform_type);
+        formatter.field("platform_name", &self.platform_name);
+        formatter.field("platform_version", &self.platform_version);
+        formatter.field("activation_id", &self.activation_id);
+        formatter.field("iam_role", &self.iam_role);
+        formatter.field("registration_date", &self.registration_date);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("name", &self.name);
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("computer_name", &self.computer_name);
+        formatter.field("association_status", &self.association_status);
+        formatter.field("last_association_execution_date", &self.last_association_execution_date);
+        formatter.field(
+            "last_successful_association_execution_date",
+            &self.last_successful_association_execution_date,
+        );
+        formatter.field("association_overview", &self.association_overview);
+        formatter.field("source_id", &self.source_id);
+        formatter.field("source_type", &self.source_type);
+        formatter.finish()
+    }
+}
 impl InstanceInformation {
     /// Creates a new builder-style object to manufacture [`InstanceInformation`](crate::types::InstanceInformation).
     pub fn builder() -> crate::types::builders::InstanceInformationBuilder {
@@ -146,7 +176,7 @@ impl InstanceInformation {
 
 /// A builder for [`InstanceInformation`](crate::types::InstanceInformation).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct InstanceInformationBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) ping_status: ::std::option::Option<crate::types::PingStatus>,
@@ -496,5 +526,35 @@ impl InstanceInformationBuilder {
             source_id: self.source_id,
             source_type: self.source_type,
         }
+    }
+}
+impl ::std::fmt::Debug for InstanceInformationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceInformationBuilder");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("ping_status", &self.ping_status);
+        formatter.field("last_ping_date_time", &self.last_ping_date_time);
+        formatter.field("agent_version", &self.agent_version);
+        formatter.field("is_latest_version", &self.is_latest_version);
+        formatter.field("platform_type", &self.platform_type);
+        formatter.field("platform_name", &self.platform_name);
+        formatter.field("platform_version", &self.platform_version);
+        formatter.field("activation_id", &self.activation_id);
+        formatter.field("iam_role", &self.iam_role);
+        formatter.field("registration_date", &self.registration_date);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("name", &self.name);
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("computer_name", &self.computer_name);
+        formatter.field("association_status", &self.association_status);
+        formatter.field("last_association_execution_date", &self.last_association_execution_date);
+        formatter.field(
+            "last_successful_association_execution_date",
+            &self.last_successful_association_execution_date,
+        );
+        formatter.field("association_overview", &self.association_overview);
+        formatter.field("source_id", &self.source_id);
+        formatter.field("source_type", &self.source_type);
+        formatter.finish()
     }
 }

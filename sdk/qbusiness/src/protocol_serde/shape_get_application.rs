@@ -172,6 +172,9 @@ pub(crate) fn de_get_application(
                             .transpose()?,
                     );
                 }
+                "qAppsConfiguration" => {
+                    builder = builder.set_q_apps_configuration(crate::protocol_serde::shape_q_apps_configuration::de_q_apps_configuration(tokens)?);
+                }
                 "roleArn" => {
                     builder = builder.set_role_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -39,6 +39,21 @@ pub fn de_disassociate_user_settings_http_error(
             }
             tmp
         }),
+        "ConflictException" => crate::operation::disassociate_user_settings::DisassociateUserSettingsError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::disassociate_user_settings::DisassociateUserSettingsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalServerException" => crate::operation::disassociate_user_settings::DisassociateUserSettingsError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {

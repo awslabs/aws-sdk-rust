@@ -192,4 +192,18 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_attachments_configuration(&self) -> &::std::option::Option<crate::types::AttachmentsConfiguration> {
         self.inner.get_attachments_configuration()
     }
+    /// <p>An option to allow end users to create and use Amazon Q Apps in the web experience.</p>
+    pub fn q_apps_configuration(mut self, input: crate::types::QAppsConfiguration) -> Self {
+        self.inner = self.inner.q_apps_configuration(input);
+        self
+    }
+    /// <p>An option to allow end users to create and use Amazon Q Apps in the web experience.</p>
+    pub fn set_q_apps_configuration(mut self, input: ::std::option::Option<crate::types::QAppsConfiguration>) -> Self {
+        self.inner = self.inner.set_q_apps_configuration(input);
+        self
+    }
+    /// <p>An option to allow end users to create and use Amazon Q Apps in the web experience.</p>
+    pub fn get_q_apps_configuration(&self) -> &::std::option::Option<crate::types::QAppsConfiguration> {
+        self.inner.get_q_apps_configuration()
+    }
 }

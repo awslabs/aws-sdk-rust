@@ -75,6 +75,13 @@ where
                                 crate::protocol_serde::shape_cookie_synchronization_configuration::de_cookie_synchronization_configuration(tokens)?,
                             );
                         }
+                        "deepLinkAllowed" => {
+                            builder = builder.set_deep_link_allowed(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EnabledType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

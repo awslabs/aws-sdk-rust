@@ -28,41 +28,44 @@ pub fn ser_create_user_settings_input_input(
     if let Some(var_9) = &input.customer_managed_key {
         object.key("customerManagedKey").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.disconnect_timeout_in_minutes {
+    if let Some(var_10) = &input.deep_link_allowed {
+        object.key("deepLinkAllowed").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.disconnect_timeout_in_minutes {
         object.key("disconnectTimeoutInMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_11) = &input.download_allowed {
-        object.key("downloadAllowed").string(var_11.as_str());
+    if let Some(var_12) = &input.download_allowed {
+        object.key("downloadAllowed").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.idle_disconnect_timeout_in_minutes {
+    if let Some(var_13) = &input.idle_disconnect_timeout_in_minutes {
         object.key("idleDisconnectTimeoutInMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_13) = &input.paste_allowed {
-        object.key("pasteAllowed").string(var_13.as_str());
+    if let Some(var_14) = &input.paste_allowed {
+        object.key("pasteAllowed").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.print_allowed {
-        object.key("printAllowed").string(var_14.as_str());
+    if let Some(var_15) = &input.print_allowed {
+        object.key("printAllowed").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.tags {
-        let mut array_16 = object.key("tags").start_array();
-        for item_17 in var_15 {
+    if let Some(var_16) = &input.tags {
+        let mut array_17 = object.key("tags").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_18, item_17)?;
-                object_18.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_16.finish();
+        array_17.finish();
     }
-    if let Some(var_19) = &input.upload_allowed {
-        object.key("uploadAllowed").string(var_19.as_str());
+    if let Some(var_20) = &input.upload_allowed {
+        object.key("uploadAllowed").string(var_20.as_str());
     }
     Ok(())
 }

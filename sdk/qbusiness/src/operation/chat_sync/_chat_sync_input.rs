@@ -19,7 +19,7 @@ pub struct ChatSyncInput {
     pub auth_challenge_response: ::std::option::Option<crate::types::AuthChallengeResponse>,
     /// <p>The identifier of the Amazon Q Business conversation.</p>
     pub conversation_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the previous end user text input message in a conversation.</p>
+    /// <p>The identifier of the previous system message in a conversation.</p>
     pub parent_message_id: ::std::option::Option<::std::string::String>,
     /// <p>Enables filtering of Amazon Q Business web experience responses based on document attributes or metadata fields.</p>
     pub attribute_filter: ::std::option::Option<crate::types::AttributeFilter>,
@@ -76,7 +76,7 @@ impl ChatSyncInput {
     pub fn conversation_id(&self) -> ::std::option::Option<&str> {
         self.conversation_id.as_deref()
     }
-    /// <p>The identifier of the previous end user text input message in a conversation.</p>
+    /// <p>The identifier of the previous system message in a conversation.</p>
     pub fn parent_message_id(&self) -> ::std::option::Option<&str> {
         self.parent_message_id.as_deref()
     }
@@ -257,17 +257,17 @@ impl ChatSyncInputBuilder {
     pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.conversation_id
     }
-    /// <p>The identifier of the previous end user text input message in a conversation.</p>
+    /// <p>The identifier of the previous system message in a conversation.</p>
     pub fn parent_message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_message_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the previous end user text input message in a conversation.</p>
+    /// <p>The identifier of the previous system message in a conversation.</p>
     pub fn set_parent_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_message_id = input;
         self
     }
-    /// <p>The identifier of the previous end user text input message in a conversation.</p>
+    /// <p>The identifier of the previous system message in a conversation.</p>
     pub fn get_parent_message_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_message_id
     }

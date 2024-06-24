@@ -3,6 +3,10 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_q_apps_configuration::QAppsConfiguration;
+
+pub use crate::types::_q_apps_control_mode::QAppsControlMode;
+
 pub use crate::types::_attachments_configuration::AttachmentsConfiguration;
 
 pub use crate::types::_attachments_control_mode::AttachmentsControlMode;
@@ -496,6 +500,10 @@ mod _principal;
 mod _principal_group;
 
 mod _principal_user;
+
+mod _q_apps_configuration;
+
+mod _q_apps_control_mode;
 
 mod _read_access_type;
 

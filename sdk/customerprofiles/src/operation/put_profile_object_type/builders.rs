@@ -221,6 +221,20 @@ impl PutProfileObjectTypeFluentBuilder {
     pub fn get_source_last_updated_timestamp_format(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_last_updated_timestamp_format()
     }
+    /// <p>The amount of profile object max count assigned to the object type</p>
+    pub fn max_profile_object_count(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_profile_object_count(input);
+        self
+    }
+    /// <p>The amount of profile object max count assigned to the object type</p>
+    pub fn set_max_profile_object_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_profile_object_count(input);
+        self
+    }
+    /// <p>The amount of profile object max count assigned to the object type</p>
+    pub fn get_max_profile_object_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_profile_object_count()
+    }
     ///
     /// Adds a key-value pair to `Fields`.
     ///

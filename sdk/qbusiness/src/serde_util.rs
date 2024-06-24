@@ -137,6 +137,15 @@ pub(crate) fn data_source_vpc_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn q_apps_configuration_correct_errors(
+    mut builder: crate::types::builders::QAppsConfigurationBuilder,
+) -> crate::types::builders::QAppsConfigurationBuilder {
+    if builder.q_apps_control_mode.is_none() {
+        builder.q_apps_control_mode = "no value was set".parse::<crate::types::QAppsControlMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn basic_auth_configuration_correct_errors(
     mut builder: crate::types::builders::BasicAuthConfigurationBuilder,
 ) -> crate::types::builders::BasicAuthConfigurationBuilder {

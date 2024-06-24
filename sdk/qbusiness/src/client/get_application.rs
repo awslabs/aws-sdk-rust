@@ -17,6 +17,7 @@ impl super::Client {
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::updated_at): <p>The Unix timestamp when the Amazon Q Business application was last updated.</p>
     ///   - [`error(Option<ErrorDetail>)`](crate::operation::get_application::GetApplicationOutput::error): <p>If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the synchronization to fail.</p>
     ///   - [`attachments_configuration(Option<AppliedAttachmentsConfiguration>)`](crate::operation::get_application::GetApplicationOutput::attachments_configuration): <p>Settings for whether end users can upload files directly during chat.</p>
+    ///   - [`q_apps_configuration(Option<QAppsConfiguration>)`](crate::operation::get_application::GetApplicationOutput::q_apps_configuration): <p>Settings for whether end users can create and use Amazon Q Apps in the web experience.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
     pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
         crate::operation::get_application::builders::GetApplicationFluentBuilder::new(self.handle.clone())

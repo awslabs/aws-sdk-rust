@@ -2,7 +2,7 @@
 
 /// <p>An object containing various properties of a managed node.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InstanceProperty {
     /// <p>The value of the EC2 <code>Name</code> tag associated with the node. If a <code>Name</code> tag hasn't been applied to the node, this value is blank.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -163,6 +163,41 @@ impl InstanceProperty {
         self.source_type.as_ref()
     }
 }
+impl ::std::fmt::Debug for InstanceProperty {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceProperty");
+        formatter.field("name", &self.name);
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("instance_role", &self.instance_role);
+        formatter.field("key_name", &self.key_name);
+        formatter.field("instance_state", &self.instance_state);
+        formatter.field("architecture", &self.architecture);
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("launch_time", &self.launch_time);
+        formatter.field("ping_status", &self.ping_status);
+        formatter.field("last_ping_date_time", &self.last_ping_date_time);
+        formatter.field("agent_version", &self.agent_version);
+        formatter.field("platform_type", &self.platform_type);
+        formatter.field("platform_name", &self.platform_name);
+        formatter.field("platform_version", &self.platform_version);
+        formatter.field("activation_id", &self.activation_id);
+        formatter.field("iam_role", &self.iam_role);
+        formatter.field("registration_date", &self.registration_date);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("computer_name", &self.computer_name);
+        formatter.field("association_status", &self.association_status);
+        formatter.field("last_association_execution_date", &self.last_association_execution_date);
+        formatter.field(
+            "last_successful_association_execution_date",
+            &self.last_successful_association_execution_date,
+        );
+        formatter.field("association_overview", &self.association_overview);
+        formatter.field("source_id", &self.source_id);
+        formatter.field("source_type", &self.source_type);
+        formatter.finish()
+    }
+}
 impl InstanceProperty {
     /// Creates a new builder-style object to manufacture [`InstanceProperty`](crate::types::InstanceProperty).
     pub fn builder() -> crate::types::builders::InstancePropertyBuilder {
@@ -172,7 +207,7 @@ impl InstanceProperty {
 
 /// A builder for [`InstanceProperty`](crate::types::InstanceProperty).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct InstancePropertyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -596,5 +631,40 @@ impl InstancePropertyBuilder {
             source_id: self.source_id,
             source_type: self.source_type,
         }
+    }
+}
+impl ::std::fmt::Debug for InstancePropertyBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("InstancePropertyBuilder");
+        formatter.field("name", &self.name);
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("instance_role", &self.instance_role);
+        formatter.field("key_name", &self.key_name);
+        formatter.field("instance_state", &self.instance_state);
+        formatter.field("architecture", &self.architecture);
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("launch_time", &self.launch_time);
+        formatter.field("ping_status", &self.ping_status);
+        formatter.field("last_ping_date_time", &self.last_ping_date_time);
+        formatter.field("agent_version", &self.agent_version);
+        formatter.field("platform_type", &self.platform_type);
+        formatter.field("platform_name", &self.platform_name);
+        formatter.field("platform_version", &self.platform_version);
+        formatter.field("activation_id", &self.activation_id);
+        formatter.field("iam_role", &self.iam_role);
+        formatter.field("registration_date", &self.registration_date);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("computer_name", &self.computer_name);
+        formatter.field("association_status", &self.association_status);
+        formatter.field("last_association_execution_date", &self.last_association_execution_date);
+        formatter.field(
+            "last_successful_association_execution_date",
+            &self.last_successful_association_execution_date,
+        );
+        formatter.field("association_overview", &self.association_overview);
+        formatter.field("source_id", &self.source_id);
+        formatter.field("source_type", &self.source_type);
+        formatter.finish()
     }
 }

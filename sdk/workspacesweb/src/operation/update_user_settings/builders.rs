@@ -257,4 +257,18 @@ impl UpdateUserSettingsFluentBuilder {
     pub fn get_cookie_synchronization_configuration(&self) -> &::std::option::Option<crate::types::CookieSynchronizationConfiguration> {
         self.inner.get_cookie_synchronization_configuration()
     }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn deep_link_allowed(mut self, input: crate::types::EnabledType) -> Self {
+        self.inner = self.inner.deep_link_allowed(input);
+        self
+    }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn set_deep_link_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
+        self.inner = self.inner.set_deep_link_allowed(input);
+        self
+    }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn get_deep_link_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
+        self.inner.get_deep_link_allowed()
+    }
 }

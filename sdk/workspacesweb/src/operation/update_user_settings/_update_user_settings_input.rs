@@ -25,6 +25,8 @@ pub struct UpdateUserSettingsInput {
     /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
     /// <p>If the allowlist and blocklist are empty, the configuration becomes null.</p>
     pub cookie_synchronization_configuration: ::std::option::Option<crate::types::CookieSynchronizationConfiguration>,
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub deep_link_allowed: ::std::option::Option<crate::types::EnabledType>,
 }
 impl UpdateUserSettingsInput {
     /// <p>The ARN of the user settings.</p>
@@ -69,6 +71,10 @@ impl UpdateUserSettingsInput {
     pub fn cookie_synchronization_configuration(&self) -> ::std::option::Option<&crate::types::CookieSynchronizationConfiguration> {
         self.cookie_synchronization_configuration.as_ref()
     }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn deep_link_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
+        self.deep_link_allowed.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateUserSettingsInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -83,6 +89,7 @@ impl ::std::fmt::Debug for UpdateUserSettingsInput {
         formatter.field("idle_disconnect_timeout_in_minutes", &self.idle_disconnect_timeout_in_minutes);
         formatter.field("client_token", &self.client_token);
         formatter.field("cookie_synchronization_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("deep_link_allowed", &self.deep_link_allowed);
         formatter.finish()
     }
 }
@@ -107,6 +114,7 @@ pub struct UpdateUserSettingsInputBuilder {
     pub(crate) idle_disconnect_timeout_in_minutes: ::std::option::Option<i32>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) cookie_synchronization_configuration: ::std::option::Option<crate::types::CookieSynchronizationConfiguration>,
+    pub(crate) deep_link_allowed: ::std::option::Option<crate::types::EnabledType>,
 }
 impl UpdateUserSettingsInputBuilder {
     /// <p>The ARN of the user settings.</p>
@@ -259,6 +267,20 @@ impl UpdateUserSettingsInputBuilder {
     pub fn get_cookie_synchronization_configuration(&self) -> &::std::option::Option<crate::types::CookieSynchronizationConfiguration> {
         &self.cookie_synchronization_configuration
     }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn deep_link_allowed(mut self, input: crate::types::EnabledType) -> Self {
+        self.deep_link_allowed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn set_deep_link_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
+        self.deep_link_allowed = input;
+        self
+    }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn get_deep_link_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
+        &self.deep_link_allowed
+    }
     /// Consumes the builder and constructs a [`UpdateUserSettingsInput`](crate::operation::update_user_settings::UpdateUserSettingsInput).
     pub fn build(
         self,
@@ -275,6 +297,7 @@ impl UpdateUserSettingsInputBuilder {
             idle_disconnect_timeout_in_minutes: self.idle_disconnect_timeout_in_minutes,
             client_token: self.client_token,
             cookie_synchronization_configuration: self.cookie_synchronization_configuration,
+            deep_link_allowed: self.deep_link_allowed,
         })
     }
 }
@@ -291,6 +314,7 @@ impl ::std::fmt::Debug for UpdateUserSettingsInputBuilder {
         formatter.field("idle_disconnect_timeout_in_minutes", &self.idle_disconnect_timeout_in_minutes);
         formatter.field("client_token", &self.client_token);
         formatter.field("cookie_synchronization_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("deep_link_allowed", &self.deep_link_allowed);
         formatter.finish()
     }
 }

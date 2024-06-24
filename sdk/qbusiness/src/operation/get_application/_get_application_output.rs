@@ -27,6 +27,8 @@ pub struct GetApplicationOutput {
     pub error: ::std::option::Option<crate::types::ErrorDetail>,
     /// <p>Settings for whether end users can upload files directly during chat.</p>
     pub attachments_configuration: ::std::option::Option<crate::types::AppliedAttachmentsConfiguration>,
+    /// <p>Settings for whether end users can create and use Amazon Q Apps in the web experience.</p>
+    pub q_apps_configuration: ::std::option::Option<crate::types::QAppsConfiguration>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutput {
@@ -78,6 +80,10 @@ impl GetApplicationOutput {
     pub fn attachments_configuration(&self) -> ::std::option::Option<&crate::types::AppliedAttachmentsConfiguration> {
         self.attachments_configuration.as_ref()
     }
+    /// <p>Settings for whether end users can create and use Amazon Q Apps in the web experience.</p>
+    pub fn q_apps_configuration(&self) -> ::std::option::Option<&crate::types::QAppsConfiguration> {
+        self.q_apps_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetApplicationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -107,6 +113,7 @@ pub struct GetApplicationOutputBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetail>,
     pub(crate) attachments_configuration: ::std::option::Option<crate::types::AppliedAttachmentsConfiguration>,
+    pub(crate) q_apps_configuration: ::std::option::Option<crate::types::QAppsConfiguration>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutputBuilder {
@@ -278,6 +285,20 @@ impl GetApplicationOutputBuilder {
     pub fn get_attachments_configuration(&self) -> &::std::option::Option<crate::types::AppliedAttachmentsConfiguration> {
         &self.attachments_configuration
     }
+    /// <p>Settings for whether end users can create and use Amazon Q Apps in the web experience.</p>
+    pub fn q_apps_configuration(mut self, input: crate::types::QAppsConfiguration) -> Self {
+        self.q_apps_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings for whether end users can create and use Amazon Q Apps in the web experience.</p>
+    pub fn set_q_apps_configuration(mut self, input: ::std::option::Option<crate::types::QAppsConfiguration>) -> Self {
+        self.q_apps_configuration = input;
+        self
+    }
+    /// <p>Settings for whether end users can create and use Amazon Q Apps in the web experience.</p>
+    pub fn get_q_apps_configuration(&self) -> &::std::option::Option<crate::types::QAppsConfiguration> {
+        &self.q_apps_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -302,6 +323,7 @@ impl GetApplicationOutputBuilder {
             updated_at: self.updated_at,
             error: self.error,
             attachments_configuration: self.attachments_configuration,
+            q_apps_configuration: self.q_apps_configuration,
             _request_id: self._request_id,
         }
     }

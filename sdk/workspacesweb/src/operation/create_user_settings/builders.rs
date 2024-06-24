@@ -301,4 +301,18 @@ impl CreateUserSettingsFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_additional_encryption_context()
     }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn deep_link_allowed(mut self, input: crate::types::EnabledType) -> Self {
+        self.inner = self.inner.deep_link_allowed(input);
+        self
+    }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn set_deep_link_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
+        self.inner = self.inner.set_deep_link_allowed(input);
+        self
+    }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn get_deep_link_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
+        self.inner.get_deep_link_allowed()
+    }
 }

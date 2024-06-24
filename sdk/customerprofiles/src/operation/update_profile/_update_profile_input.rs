@@ -9,7 +9,7 @@ pub struct UpdateProfileInput {
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>Any additional information relevant to the customer’s profile.</p>
     pub additional_information: ::std::option::Option<::std::string::String>,
-    /// <p>A unique account number that you have given to the customer.</p>
+    /// <p>An account number that you have given to the customer.</p>
     pub account_number: ::std::option::Option<::std::string::String>,
     /// <p>The type of profile used to describe the customer.</p>
     pub party_type: ::std::option::Option<crate::types::PartyType>,
@@ -67,7 +67,7 @@ impl UpdateProfileInput {
     pub fn additional_information(&self) -> ::std::option::Option<&str> {
         self.additional_information.as_deref()
     }
-    /// <p>A unique account number that you have given to the customer.</p>
+    /// <p>An account number that you have given to the customer.</p>
     pub fn account_number(&self) -> ::std::option::Option<&str> {
         self.account_number.as_deref()
     }
@@ -269,17 +269,17 @@ impl UpdateProfileInputBuilder {
     pub fn get_additional_information(&self) -> &::std::option::Option<::std::string::String> {
         &self.additional_information
     }
-    /// <p>A unique account number that you have given to the customer.</p>
+    /// <p>An account number that you have given to the customer.</p>
     pub fn account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique account number that you have given to the customer.</p>
+    /// <p>An account number that you have given to the customer.</p>
     pub fn set_account_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_number = input;
         self
     }
-    /// <p>A unique account number that you have given to the customer.</p>
+    /// <p>An account number that you have given to the customer.</p>
     pub fn get_account_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_number
     }

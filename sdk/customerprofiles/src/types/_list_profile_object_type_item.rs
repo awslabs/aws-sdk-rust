@@ -12,6 +12,10 @@ pub struct ListProfileObjectTypeItem {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The amount of profile object max count assigned to the object type.</p>
+    pub max_profile_object_count: ::std::option::Option<i32>,
+    /// <p>The amount of provisioned profile object max count available.</p>
+    pub max_available_profile_object_count: ::std::option::Option<i32>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -34,6 +38,14 @@ impl ListProfileObjectTypeItem {
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
+    /// <p>The amount of profile object max count assigned to the object type.</p>
+    pub fn max_profile_object_count(&self) -> ::std::option::Option<i32> {
+        self.max_profile_object_count
+    }
+    /// <p>The amount of provisioned profile object max count available.</p>
+    pub fn max_available_profile_object_count(&self) -> ::std::option::Option<i32> {
+        self.max_available_profile_object_count
+    }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -54,6 +66,8 @@ pub struct ListProfileObjectTypeItemBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) max_profile_object_count: ::std::option::Option<i32>,
+    pub(crate) max_available_profile_object_count: ::std::option::Option<i32>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListProfileObjectTypeItemBuilder {
@@ -115,6 +129,34 @@ impl ListProfileObjectTypeItemBuilder {
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
+    /// <p>The amount of profile object max count assigned to the object type.</p>
+    pub fn max_profile_object_count(mut self, input: i32) -> Self {
+        self.max_profile_object_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The amount of profile object max count assigned to the object type.</p>
+    pub fn set_max_profile_object_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_profile_object_count = input;
+        self
+    }
+    /// <p>The amount of profile object max count assigned to the object type.</p>
+    pub fn get_max_profile_object_count(&self) -> &::std::option::Option<i32> {
+        &self.max_profile_object_count
+    }
+    /// <p>The amount of provisioned profile object max count available.</p>
+    pub fn max_available_profile_object_count(mut self, input: i32) -> Self {
+        self.max_available_profile_object_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The amount of provisioned profile object max count available.</p>
+    pub fn set_max_available_profile_object_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_available_profile_object_count = input;
+        self
+    }
+    /// <p>The amount of provisioned profile object max count available.</p>
+    pub fn get_max_available_profile_object_count(&self) -> &::std::option::Option<i32> {
+        &self.max_available_profile_object_count
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -155,6 +197,8 @@ impl ListProfileObjectTypeItemBuilder {
             })?,
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,
+            max_profile_object_count: self.max_profile_object_count,
+            max_available_profile_object_count: self.max_available_profile_object_count,
             tags: self.tags,
         })
     }

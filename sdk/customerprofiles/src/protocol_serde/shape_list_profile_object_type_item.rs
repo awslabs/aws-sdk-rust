@@ -40,6 +40,20 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "MaxProfileObjectCount" => {
+                            builder = builder.set_max_profile_object_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "MaxAvailableProfileObjectCount" => {
+                            builder = builder.set_max_available_profile_object_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                         }

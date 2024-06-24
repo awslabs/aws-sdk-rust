@@ -23,7 +23,7 @@ impl crate::operation::create_application::builders::CreateApplicationInputBuild
 /// Fluent builder constructing a request to `CreateApplication`.
 ///
 /// <p>Creates an Amazon Q Business application.</p><note>
-/// <p>There are new tiers for Amazon Q Business. Not all features in Amazon Q Business Pro are also available in Amazon Q Business Lite. For information on what's included in Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon Q Business tiers</a>. You must use the Amazon Q Business console to assign subscription tiers to users.</p>
+/// <p>There are new tiers for Amazon Q Business. Not all features in Amazon Q Business Pro are also available in Amazon Q Business Lite. For information on what's included in Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#user-sub-tiers">Amazon Q Business tiers</a>. You must use the Amazon Q Business console to assign subscription tiers to users.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateApplicationFluentBuilder {
@@ -226,5 +226,19 @@ impl CreateApplicationFluentBuilder {
     /// <p>An option to allow end users to upload files directly during chat.</p>
     pub fn get_attachments_configuration(&self) -> &::std::option::Option<crate::types::AttachmentsConfiguration> {
         self.inner.get_attachments_configuration()
+    }
+    /// <p>An option to allow end users to create and use Amazon Q Apps in the web experience.</p>
+    pub fn q_apps_configuration(mut self, input: crate::types::QAppsConfiguration) -> Self {
+        self.inner = self.inner.q_apps_configuration(input);
+        self
+    }
+    /// <p>An option to allow end users to create and use Amazon Q Apps in the web experience.</p>
+    pub fn set_q_apps_configuration(mut self, input: ::std::option::Option<crate::types::QAppsConfiguration>) -> Self {
+        self.inner = self.inner.set_q_apps_configuration(input);
+        self
+    }
+    /// <p>An option to allow end users to create and use Amazon Q Apps in the web experience.</p>
+    pub fn get_q_apps_configuration(&self) -> &::std::option::Option<crate::types::QAppsConfiguration> {
+        self.inner.get_q_apps_configuration()
     }
 }

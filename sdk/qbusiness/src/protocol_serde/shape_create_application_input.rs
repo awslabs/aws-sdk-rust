@@ -27,20 +27,26 @@ pub fn ser_create_application_input_input(
     if let Some(var_8) = &input.identity_center_instance_arn {
         object.key("identityCenterInstanceArn").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.role_arn {
-        object.key("roleArn").string(var_9.as_str());
+    if let Some(var_9) = &input.q_apps_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("qAppsConfiguration").start_object();
+        crate::protocol_serde::shape_q_apps_configuration::ser_q_apps_configuration(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_10) = &input.tags {
-        let mut array_11 = object.key("tags").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.role_arn {
+        object.key("roleArn").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.tags {
+        let mut array_13 = object.key("tags").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_11.finish();
+        array_13.finish();
     }
     Ok(())
 }

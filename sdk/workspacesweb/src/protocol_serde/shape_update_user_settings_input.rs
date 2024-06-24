@@ -15,29 +15,32 @@ pub fn ser_update_user_settings_input_input(
     if let Some(var_4) = &input.copy_allowed {
         object.key("copyAllowed").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.disconnect_timeout_in_minutes {
+    if let Some(var_5) = &input.deep_link_allowed {
+        object.key("deepLinkAllowed").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.disconnect_timeout_in_minutes {
         object.key("disconnectTimeoutInMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.download_allowed {
-        object.key("downloadAllowed").string(var_6.as_str());
+    if let Some(var_7) = &input.download_allowed {
+        object.key("downloadAllowed").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.idle_disconnect_timeout_in_minutes {
+    if let Some(var_8) = &input.idle_disconnect_timeout_in_minutes {
         object.key("idleDisconnectTimeoutInMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_8) = &input.paste_allowed {
-        object.key("pasteAllowed").string(var_8.as_str());
+    if let Some(var_9) = &input.paste_allowed {
+        object.key("pasteAllowed").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.print_allowed {
-        object.key("printAllowed").string(var_9.as_str());
+    if let Some(var_10) = &input.print_allowed {
+        object.key("printAllowed").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.upload_allowed {
-        object.key("uploadAllowed").string(var_10.as_str());
+    if let Some(var_11) = &input.upload_allowed {
+        object.key("uploadAllowed").string(var_11.as_str());
     }
     Ok(())
 }

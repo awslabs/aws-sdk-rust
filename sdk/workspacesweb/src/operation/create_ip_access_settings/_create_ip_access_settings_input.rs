@@ -7,7 +7,7 @@ pub struct CreateIpAccessSettingsInput {
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the IP access settings.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The tags to add to the browser settings resource. A tag is a key-value pair.</p>
+    /// <p>The tags to add to the IP access settings resource. A tag is a key-value pair.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The custom managed key of the IP access settings.</p>
     pub customer_managed_key: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ impl CreateIpAccessSettingsInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The tags to add to the browser settings resource. A tag is a key-value pair.</p>
+    /// <p>The tags to add to the IP access settings resource. A tag is a key-value pair.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -119,19 +119,19 @@ impl CreateIpAccessSettingsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to add to the browser settings resource. A tag is a key-value pair.</p>
+    /// <p>The tags to add to the IP access settings resource. A tag is a key-value pair.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The tags to add to the browser settings resource. A tag is a key-value pair.</p>
+    /// <p>The tags to add to the IP access settings resource. A tag is a key-value pair.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags to add to the browser settings resource. A tag is a key-value pair.</p>
+    /// <p>The tags to add to the IP access settings resource. A tag is a key-value pair.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

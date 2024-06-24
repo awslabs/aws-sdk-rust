@@ -22,6 +22,8 @@ pub struct UserSettingsSummary {
     pub idle_disconnect_timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
     pub cookie_synchronization_configuration: ::std::option::Option<crate::types::CookieSynchronizationConfiguration>,
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub deep_link_allowed: ::std::option::Option<crate::types::EnabledType>,
 }
 impl UserSettingsSummary {
     /// <p>The ARN of the user settings.</p>
@@ -61,6 +63,10 @@ impl UserSettingsSummary {
     pub fn cookie_synchronization_configuration(&self) -> ::std::option::Option<&crate::types::CookieSynchronizationConfiguration> {
         self.cookie_synchronization_configuration.as_ref()
     }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn deep_link_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
+        self.deep_link_allowed.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UserSettingsSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -74,6 +80,7 @@ impl ::std::fmt::Debug for UserSettingsSummary {
         formatter.field("disconnect_timeout_in_minutes", &self.disconnect_timeout_in_minutes);
         formatter.field("idle_disconnect_timeout_in_minutes", &self.idle_disconnect_timeout_in_minutes);
         formatter.field("cookie_synchronization_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("deep_link_allowed", &self.deep_link_allowed);
         formatter.finish()
     }
 }
@@ -97,6 +104,7 @@ pub struct UserSettingsSummaryBuilder {
     pub(crate) disconnect_timeout_in_minutes: ::std::option::Option<i32>,
     pub(crate) idle_disconnect_timeout_in_minutes: ::std::option::Option<i32>,
     pub(crate) cookie_synchronization_configuration: ::std::option::Option<crate::types::CookieSynchronizationConfiguration>,
+    pub(crate) deep_link_allowed: ::std::option::Option<crate::types::EnabledType>,
 }
 impl UserSettingsSummaryBuilder {
     /// <p>The ARN of the user settings.</p>
@@ -229,6 +237,20 @@ impl UserSettingsSummaryBuilder {
     pub fn get_cookie_synchronization_configuration(&self) -> &::std::option::Option<crate::types::CookieSynchronizationConfiguration> {
         &self.cookie_synchronization_configuration
     }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn deep_link_allowed(mut self, input: crate::types::EnabledType) -> Self {
+        self.deep_link_allowed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn set_deep_link_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
+        self.deep_link_allowed = input;
+        self
+    }
+    /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
+    pub fn get_deep_link_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
+        &self.deep_link_allowed
+    }
     /// Consumes the builder and constructs a [`UserSettingsSummary`](crate::types::UserSettingsSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_settings_arn`](crate::types::builders::UserSettingsSummaryBuilder::user_settings_arn)
@@ -248,6 +270,7 @@ impl UserSettingsSummaryBuilder {
             disconnect_timeout_in_minutes: self.disconnect_timeout_in_minutes,
             idle_disconnect_timeout_in_minutes: self.idle_disconnect_timeout_in_minutes,
             cookie_synchronization_configuration: self.cookie_synchronization_configuration,
+            deep_link_allowed: self.deep_link_allowed,
         })
     }
 }
@@ -263,6 +286,7 @@ impl ::std::fmt::Debug for UserSettingsSummaryBuilder {
         formatter.field("disconnect_timeout_in_minutes", &self.disconnect_timeout_in_minutes);
         formatter.field("idle_disconnect_timeout_in_minutes", &self.idle_disconnect_timeout_in_minutes);
         formatter.field("cookie_synchronization_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("deep_link_allowed", &self.deep_link_allowed);
         formatter.finish()
     }
 }

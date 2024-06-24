@@ -5,11 +5,11 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_user_settings::UserSettings;
 
+pub use crate::types::_enabled_type::EnabledType;
+
 pub use crate::types::_cookie_synchronization_configuration::CookieSynchronizationConfiguration;
 
 pub use crate::types::_cookie_specification::CookieSpecification;
-
-pub use crate::types::_enabled_type::EnabledType;
 
 pub use crate::types::_tag::Tag;
 

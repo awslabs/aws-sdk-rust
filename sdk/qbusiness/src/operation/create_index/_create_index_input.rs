@@ -7,7 +7,7 @@ pub struct CreateIndexInput {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the Amazon Q Business index.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index or index tier, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon Q Business tiers</a>.</p>
+    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
     pub r#type: ::std::option::Option<crate::types::IndexType>,
     /// <p>A description for the Amazon Q Business index.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl CreateIndexInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index or index tier, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon Q Business tiers</a>.</p>
+    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::IndexType> {
         self.r#type.as_ref()
     }
@@ -100,17 +100,17 @@ impl CreateIndexInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index or index tier, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon Q Business tiers</a>.</p>
+    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
     pub fn r#type(mut self, input: crate::types::IndexType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index or index tier, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon Q Business tiers</a>.</p>
+    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::IndexType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index or index tier, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon Q Business tiers</a>.</p>
+    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::IndexType> {
         &self.r#type
     }

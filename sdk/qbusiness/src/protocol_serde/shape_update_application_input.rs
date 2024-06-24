@@ -18,8 +18,14 @@ pub fn ser_update_application_input_input(
     if let Some(var_5) = &input.identity_center_instance_arn {
         object.key("identityCenterInstanceArn").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.role_arn {
-        object.key("roleArn").string(var_6.as_str());
+    if let Some(var_6) = &input.q_apps_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("qAppsConfiguration").start_object();
+        crate::protocol_serde::shape_q_apps_configuration::ser_q_apps_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.role_arn {
+        object.key("roleArn").string(var_8.as_str());
     }
     Ok(())
 }

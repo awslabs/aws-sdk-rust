@@ -14,7 +14,7 @@ pub struct AttributeFilter {
     pub equals_to: ::std::option::Option<crate::types::DocumentAttribute>,
     /// <p>Returns <code>true</code> when a document contains all the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>stringListValue</code>.</p>
     pub contains_all: ::std::option::Option<crate::types::DocumentAttribute>,
-    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and <code>stringValue</code>.</p>
+    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>stringListValue</code>.</p>
     pub contains_any: ::std::option::Option<crate::types::DocumentAttribute>,
     /// <p>Performs a greater than operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub greater_than: ::std::option::Option<crate::types::DocumentAttribute>,
@@ -50,7 +50,7 @@ impl AttributeFilter {
     pub fn contains_all(&self) -> ::std::option::Option<&crate::types::DocumentAttribute> {
         self.contains_all.as_ref()
     }
-    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and <code>stringValue</code>.</p>
+    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>stringListValue</code>.</p>
     pub fn contains_any(&self) -> ::std::option::Option<&crate::types::DocumentAttribute> {
         self.contains_any.as_ref()
     }
@@ -176,17 +176,17 @@ impl AttributeFilterBuilder {
     pub fn get_contains_all(&self) -> &::std::option::Option<crate::types::DocumentAttribute> {
         &self.contains_all
     }
-    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and <code>stringValue</code>.</p>
+    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>stringListValue</code>.</p>
     pub fn contains_any(mut self, input: crate::types::DocumentAttribute) -> Self {
         self.contains_any = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and <code>stringValue</code>.</p>
+    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>stringListValue</code>.</p>
     pub fn set_contains_any(mut self, input: ::std::option::Option<crate::types::DocumentAttribute>) -> Self {
         self.contains_any = input;
         self
     }
-    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and <code>stringValue</code>.</p>
+    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>stringListValue</code>.</p>
     pub fn get_contains_any(&self) -> &::std::option::Option<crate::types::DocumentAttribute> {
         &self.contains_any
     }

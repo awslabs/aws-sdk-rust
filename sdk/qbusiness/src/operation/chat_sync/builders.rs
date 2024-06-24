@@ -221,17 +221,17 @@ impl ChatSyncFluentBuilder {
     pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_conversation_id()
     }
-    /// <p>The identifier of the previous end user text input message in a conversation.</p>
+    /// <p>The identifier of the previous system message in a conversation.</p>
     pub fn parent_message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_message_id(input.into());
         self
     }
-    /// <p>The identifier of the previous end user text input message in a conversation.</p>
+    /// <p>The identifier of the previous system message in a conversation.</p>
     pub fn set_parent_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_message_id(input);
         self
     }
-    /// <p>The identifier of the previous end user text input message in a conversation.</p>
+    /// <p>The identifier of the previous system message in a conversation.</p>
     pub fn get_parent_message_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_parent_message_id()
     }

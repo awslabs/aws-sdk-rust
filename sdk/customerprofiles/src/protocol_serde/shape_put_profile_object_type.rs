@@ -186,6 +186,20 @@ pub(crate) fn de_put_profile_object_type(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "MaxAvailableProfileObjectCount" => {
+                    builder = builder.set_max_available_profile_object_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
+                "MaxProfileObjectCount" => {
+                    builder = builder.set_max_profile_object_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 "ObjectTypeName" => {
                     builder = builder.set_object_type_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

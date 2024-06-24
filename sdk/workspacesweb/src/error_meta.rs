@@ -212,6 +212,7 @@ impl From<crate::operation::associate_trust_store::AssociateTrustStoreError> for
     fn from(err: crate::operation::associate_trust_store::AssociateTrustStoreError) -> Self {
         match err {
             crate::operation::associate_trust_store::AssociateTrustStoreError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_trust_store::AssociateTrustStoreError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::associate_trust_store::AssociateTrustStoreError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -871,6 +872,9 @@ impl From<crate::operation::disassociate_browser_settings::DisassociateBrowserSe
             crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -914,6 +918,9 @@ impl From<crate::operation::disassociate_ip_access_settings::DisassociateIpAcces
             crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -953,6 +960,9 @@ impl From<crate::operation::disassociate_network_settings::DisassociateNetworkSe
             crate::operation::disassociate_network_settings::DisassociateNetworkSettingsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::disassociate_network_settings::DisassociateNetworkSettingsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::disassociate_network_settings::DisassociateNetworkSettingsError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -991,6 +1001,7 @@ impl From<crate::operation::disassociate_trust_store::DisassociateTrustStoreErro
             crate::operation::disassociate_trust_store::DisassociateTrustStoreError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::disassociate_trust_store::DisassociateTrustStoreError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::disassociate_trust_store::DisassociateTrustStoreError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -1034,6 +1045,9 @@ impl From<crate::operation::disassociate_user_access_logging_settings::Disassoci
             crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
@@ -1075,6 +1089,7 @@ impl From<crate::operation::disassociate_user_settings::DisassociateUserSettings
             crate::operation::disassociate_user_settings::DisassociateUserSettingsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::disassociate_user_settings::DisassociateUserSettingsError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::disassociate_user_settings::DisassociateUserSettingsError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
