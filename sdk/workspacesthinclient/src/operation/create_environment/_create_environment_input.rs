@@ -25,6 +25,8 @@ pub struct CreateEnvironmentInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>A map of the key-value pairs of the tag or tags to assign to the newly created devices for this environment.</p>
+    pub device_creation_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateEnvironmentInput {
     /// <p>The name for the environment.</p>
@@ -69,6 +71,10 @@ impl CreateEnvironmentInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>A map of the key-value pairs of the tag or tags to assign to the newly created devices for this environment.</p>
+    pub fn device_creation_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.device_creation_tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateEnvironmentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -83,6 +89,7 @@ impl ::std::fmt::Debug for CreateEnvironmentInput {
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("device_creation_tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -107,6 +114,7 @@ pub struct CreateEnvironmentInputBuilder {
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) device_creation_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The name for the environment.</p>
@@ -262,6 +270,33 @@ impl CreateEnvironmentInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Adds a key-value pair to `device_creation_tags`.
+    ///
+    /// To override the contents of this collection use [`set_device_creation_tags`](Self::set_device_creation_tags).
+    ///
+    /// <p>A map of the key-value pairs of the tag or tags to assign to the newly created devices for this environment.</p>
+    pub fn device_creation_tags(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.device_creation_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.device_creation_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of the key-value pairs of the tag or tags to assign to the newly created devices for this environment.</p>
+    pub fn set_device_creation_tags(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.device_creation_tags = input;
+        self
+    }
+    /// <p>A map of the key-value pairs of the tag or tags to assign to the newly created devices for this environment.</p>
+    pub fn get_device_creation_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.device_creation_tags
+    }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
     pub fn build(
         self,
@@ -277,6 +312,7 @@ impl CreateEnvironmentInputBuilder {
             kms_key_arn: self.kms_key_arn,
             client_token: self.client_token,
             tags: self.tags,
+            device_creation_tags: self.device_creation_tags,
         })
     }
 }
@@ -293,6 +329,7 @@ impl ::std::fmt::Debug for CreateEnvironmentInputBuilder {
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("device_creation_tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

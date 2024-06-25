@@ -220,4 +220,30 @@ impl UpdateEnvironmentFluentBuilder {
     pub fn get_desired_software_set_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_desired_software_set_id()
     }
+    ///
+    /// Adds a key-value pair to `deviceCreationTags`.
+    ///
+    /// To override the contents of this collection use [`set_device_creation_tags`](Self::set_device_creation_tags).
+    ///
+    /// <p>A map of the key-value pairs of the tag or tags to assign to the newly created devices for this environment.</p>
+    pub fn device_creation_tags(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.device_creation_tags(k.into(), v.into());
+        self
+    }
+    /// <p>A map of the key-value pairs of the tag or tags to assign to the newly created devices for this environment.</p>
+    pub fn set_device_creation_tags(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_device_creation_tags(input);
+        self
+    }
+    /// <p>A map of the key-value pairs of the tag or tags to assign to the newly created devices for this environment.</p>
+    pub fn get_device_creation_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_device_creation_tags()
+    }
 }

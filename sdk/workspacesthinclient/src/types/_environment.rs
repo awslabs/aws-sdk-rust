@@ -42,6 +42,8 @@ pub struct Environment {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys and optional values for the resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>"The tag keys and optional values for the newly created devices for this environment."</p>
+    pub device_creation_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Environment {
     /// <p>The ID of the environment.</p>
@@ -120,6 +122,10 @@ impl Environment {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>"The tag keys and optional values for the newly created devices for this environment."</p>
+    pub fn device_creation_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.device_creation_tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for Environment {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -143,6 +149,7 @@ impl ::std::fmt::Debug for Environment {
         formatter.field("arn", &self.arn);
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("device_creation_tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -176,6 +183,7 @@ pub struct EnvironmentBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) device_creation_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl EnvironmentBuilder {
     /// <p>The ID of the environment.</p>
@@ -450,6 +458,33 @@ impl EnvironmentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Adds a key-value pair to `device_creation_tags`.
+    ///
+    /// To override the contents of this collection use [`set_device_creation_tags`](Self::set_device_creation_tags).
+    ///
+    /// <p>"The tag keys and optional values for the newly created devices for this environment."</p>
+    pub fn device_creation_tags(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.device_creation_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.device_creation_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>"The tag keys and optional values for the newly created devices for this environment."</p>
+    pub fn set_device_creation_tags(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.device_creation_tags = input;
+        self
+    }
+    /// <p>"The tag keys and optional values for the newly created devices for this environment."</p>
+    pub fn get_device_creation_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.device_creation_tags
+    }
     /// Consumes the builder and constructs a [`Environment`](crate::types::Environment).
     pub fn build(self) -> crate::types::Environment {
         crate::types::Environment {
@@ -472,6 +507,7 @@ impl EnvironmentBuilder {
             arn: self.arn,
             kms_key_arn: self.kms_key_arn,
             tags: self.tags,
+            device_creation_tags: self.device_creation_tags,
         }
     }
 }
@@ -497,6 +533,7 @@ impl ::std::fmt::Debug for EnvironmentBuilder {
         formatter.field("arn", &self.arn);
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("device_creation_tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

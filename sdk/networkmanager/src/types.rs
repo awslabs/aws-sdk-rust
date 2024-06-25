@@ -9,6 +9,10 @@ pub use crate::types::_vpc_options::VpcOptions;
 
 pub use crate::types::_attachment::Attachment;
 
+pub use crate::types::_attachment_error::AttachmentError;
+
+pub use crate::types::_attachment_error_code::AttachmentErrorCode;
+
 pub use crate::types::_proposed_network_function_group_change::ProposedNetworkFunctionGroupChange;
 
 pub use crate::types::_tag::Tag;
@@ -96,6 +100,12 @@ pub use crate::types::_transit_gateway_registration_state_reason::TransitGateway
 pub use crate::types::_transit_gateway_registration_state::TransitGatewayRegistrationState;
 
 pub use crate::types::_peering::Peering;
+
+pub use crate::types::_peering_error::PeeringError;
+
+pub use crate::types::_permissions_error_context::PermissionsErrorContext;
+
+pub use crate::types::_peering_error_code::PeeringErrorCode;
 
 pub use crate::types::_peering_state::PeeringState;
 
@@ -191,6 +201,10 @@ pub use crate::types::_connect_peer_association_state::ConnectPeerAssociationSta
 
 pub use crate::types::_connect_peer::ConnectPeer;
 
+pub use crate::types::_connect_peer_error::ConnectPeerError;
+
+pub use crate::types::_connect_peer_error_code::ConnectPeerErrorCode;
+
 pub use crate::types::_connect_peer_configuration::ConnectPeerConfiguration;
 
 pub use crate::types::_connect_peer_bgp_configuration::ConnectPeerBgpConfiguration;
@@ -206,6 +220,10 @@ pub use crate::types::_bgp_options::BgpOptions;
 mod _account_status;
 
 mod _attachment;
+
+mod _attachment_error;
+
+mod _attachment_error_code;
 
 mod _attachment_state;
 
@@ -238,6 +256,10 @@ mod _connect_peer_association_state;
 mod _connect_peer_bgp_configuration;
 
 mod _connect_peer_configuration;
+
+mod _connect_peer_error;
+
+mod _connect_peer_error_code;
 
 mod _connect_peer_state;
 
@@ -329,9 +351,15 @@ mod _path_component;
 
 mod _peering;
 
+mod _peering_error;
+
+mod _peering_error_code;
+
 mod _peering_state;
 
 mod _peering_type;
+
+mod _permissions_error_context;
 
 mod _proposed_network_function_group_change;
 

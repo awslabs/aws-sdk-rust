@@ -16,10 +16,12 @@ pub struct PredictiveScalingConfiguration {
     /// <p>The following are possible values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>HonorMaxCapacity</code> - Amazon EC2 Auto Scaling cannot scale out capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit.</p></li>
+    /// <p><code>HonorMaxCapacity</code> - Amazon EC2 Auto Scaling can't increase the maximum capacity of the group when the forecast capacity is close to or exceeds the maximum capacity.</p></li>
     /// <li>
-    /// <p><code>IncreaseMaxCapacity</code> - Amazon EC2 Auto Scaling can scale out capacity higher than the maximum capacity when the forecast capacity is close to or exceeds the maximum capacity. The upper limit is determined by the forecasted capacity and the value for <code>MaxCapacityBuffer</code>.</p></li>
-    /// </ul>
+    /// <p><code>IncreaseMaxCapacity</code> - Amazon EC2 Auto Scaling can increase the maximum capacity of the group when the forecast capacity is close to or exceeds the maximum capacity. The upper limit is determined by the forecasted capacity and the value for <code>MaxCapacityBuffer</code>.</p></li>
+    /// </ul><important>
+    /// <p>Use caution when allowing the maximum capacity to be automatically increased. This can lead to more instances being launched than intended if the increased maximum capacity is not monitored and managed. The increased maximum capacity then becomes the new normal maximum capacity for the Auto Scaling group until you manually update it. The maximum capacity does not automatically decrease back to the original maximum.</p>
+    /// </important>
     pub max_capacity_breach_behavior: ::std::option::Option<crate::types::PredictiveScalingMaxCapacityBreachBehavior>,
     /// <p>The size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity. The value is specified as a percentage relative to the forecast capacity. For example, if the buffer is 10, this means a 10 percent buffer, such that if the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum capacity is 55.</p>
     /// <p>If set to 0, Amazon EC2 Auto Scaling may scale capacity higher than the maximum capacity to equal but not exceed forecast capacity.</p>
@@ -47,10 +49,12 @@ impl PredictiveScalingConfiguration {
     /// <p>The following are possible values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>HonorMaxCapacity</code> - Amazon EC2 Auto Scaling cannot scale out capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit.</p></li>
+    /// <p><code>HonorMaxCapacity</code> - Amazon EC2 Auto Scaling can't increase the maximum capacity of the group when the forecast capacity is close to or exceeds the maximum capacity.</p></li>
     /// <li>
-    /// <p><code>IncreaseMaxCapacity</code> - Amazon EC2 Auto Scaling can scale out capacity higher than the maximum capacity when the forecast capacity is close to or exceeds the maximum capacity. The upper limit is determined by the forecasted capacity and the value for <code>MaxCapacityBuffer</code>.</p></li>
-    /// </ul>
+    /// <p><code>IncreaseMaxCapacity</code> - Amazon EC2 Auto Scaling can increase the maximum capacity of the group when the forecast capacity is close to or exceeds the maximum capacity. The upper limit is determined by the forecasted capacity and the value for <code>MaxCapacityBuffer</code>.</p></li>
+    /// </ul><important>
+    /// <p>Use caution when allowing the maximum capacity to be automatically increased. This can lead to more instances being launched than intended if the increased maximum capacity is not monitored and managed. The increased maximum capacity then becomes the new normal maximum capacity for the Auto Scaling group until you manually update it. The maximum capacity does not automatically decrease back to the original maximum.</p>
+    /// </important>
     pub fn max_capacity_breach_behavior(&self) -> ::std::option::Option<&crate::types::PredictiveScalingMaxCapacityBreachBehavior> {
         self.max_capacity_breach_behavior.as_ref()
     }
@@ -140,10 +144,12 @@ impl PredictiveScalingConfigurationBuilder {
     /// <p>The following are possible values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>HonorMaxCapacity</code> - Amazon EC2 Auto Scaling cannot scale out capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit.</p></li>
+    /// <p><code>HonorMaxCapacity</code> - Amazon EC2 Auto Scaling can't increase the maximum capacity of the group when the forecast capacity is close to or exceeds the maximum capacity.</p></li>
     /// <li>
-    /// <p><code>IncreaseMaxCapacity</code> - Amazon EC2 Auto Scaling can scale out capacity higher than the maximum capacity when the forecast capacity is close to or exceeds the maximum capacity. The upper limit is determined by the forecasted capacity and the value for <code>MaxCapacityBuffer</code>.</p></li>
-    /// </ul>
+    /// <p><code>IncreaseMaxCapacity</code> - Amazon EC2 Auto Scaling can increase the maximum capacity of the group when the forecast capacity is close to or exceeds the maximum capacity. The upper limit is determined by the forecasted capacity and the value for <code>MaxCapacityBuffer</code>.</p></li>
+    /// </ul><important>
+    /// <p>Use caution when allowing the maximum capacity to be automatically increased. This can lead to more instances being launched than intended if the increased maximum capacity is not monitored and managed. The increased maximum capacity then becomes the new normal maximum capacity for the Auto Scaling group until you manually update it. The maximum capacity does not automatically decrease back to the original maximum.</p>
+    /// </important>
     pub fn max_capacity_breach_behavior(mut self, input: crate::types::PredictiveScalingMaxCapacityBreachBehavior) -> Self {
         self.max_capacity_breach_behavior = ::std::option::Option::Some(input);
         self
@@ -152,10 +158,12 @@ impl PredictiveScalingConfigurationBuilder {
     /// <p>The following are possible values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>HonorMaxCapacity</code> - Amazon EC2 Auto Scaling cannot scale out capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit.</p></li>
+    /// <p><code>HonorMaxCapacity</code> - Amazon EC2 Auto Scaling can't increase the maximum capacity of the group when the forecast capacity is close to or exceeds the maximum capacity.</p></li>
     /// <li>
-    /// <p><code>IncreaseMaxCapacity</code> - Amazon EC2 Auto Scaling can scale out capacity higher than the maximum capacity when the forecast capacity is close to or exceeds the maximum capacity. The upper limit is determined by the forecasted capacity and the value for <code>MaxCapacityBuffer</code>.</p></li>
-    /// </ul>
+    /// <p><code>IncreaseMaxCapacity</code> - Amazon EC2 Auto Scaling can increase the maximum capacity of the group when the forecast capacity is close to or exceeds the maximum capacity. The upper limit is determined by the forecasted capacity and the value for <code>MaxCapacityBuffer</code>.</p></li>
+    /// </ul><important>
+    /// <p>Use caution when allowing the maximum capacity to be automatically increased. This can lead to more instances being launched than intended if the increased maximum capacity is not monitored and managed. The increased maximum capacity then becomes the new normal maximum capacity for the Auto Scaling group until you manually update it. The maximum capacity does not automatically decrease back to the original maximum.</p>
+    /// </important>
     pub fn set_max_capacity_breach_behavior(
         mut self,
         input: ::std::option::Option<crate::types::PredictiveScalingMaxCapacityBreachBehavior>,
@@ -167,10 +175,12 @@ impl PredictiveScalingConfigurationBuilder {
     /// <p>The following are possible values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>HonorMaxCapacity</code> - Amazon EC2 Auto Scaling cannot scale out capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit.</p></li>
+    /// <p><code>HonorMaxCapacity</code> - Amazon EC2 Auto Scaling can't increase the maximum capacity of the group when the forecast capacity is close to or exceeds the maximum capacity.</p></li>
     /// <li>
-    /// <p><code>IncreaseMaxCapacity</code> - Amazon EC2 Auto Scaling can scale out capacity higher than the maximum capacity when the forecast capacity is close to or exceeds the maximum capacity. The upper limit is determined by the forecasted capacity and the value for <code>MaxCapacityBuffer</code>.</p></li>
-    /// </ul>
+    /// <p><code>IncreaseMaxCapacity</code> - Amazon EC2 Auto Scaling can increase the maximum capacity of the group when the forecast capacity is close to or exceeds the maximum capacity. The upper limit is determined by the forecasted capacity and the value for <code>MaxCapacityBuffer</code>.</p></li>
+    /// </ul><important>
+    /// <p>Use caution when allowing the maximum capacity to be automatically increased. This can lead to more instances being launched than intended if the increased maximum capacity is not monitored and managed. The increased maximum capacity then becomes the new normal maximum capacity for the Auto Scaling group until you manually update it. The maximum capacity does not automatically decrease back to the original maximum.</p>
+    /// </important>
     pub fn get_max_capacity_breach_behavior(&self) -> &::std::option::Option<crate::types::PredictiveScalingMaxCapacityBreachBehavior> {
         &self.max_capacity_breach_behavior
     }

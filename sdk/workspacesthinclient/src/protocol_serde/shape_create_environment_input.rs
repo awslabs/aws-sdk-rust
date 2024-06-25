@@ -15,33 +15,43 @@ pub fn ser_create_environment_input_input(
     if let Some(var_4) = &input.desktop_endpoint {
         object.key("desktopEndpoint").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.kms_key_arn {
-        object.key("kmsKeyArn").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.maintenance_window {
+    if let Some(var_5) = &input.device_creation_tags {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("maintenanceWindow").start_object();
-        crate::protocol_serde::shape_maintenance_window::ser_maintenance_window(&mut object_7, var_6)?;
-        object_7.finish();
-    }
-    if let Some(var_8) = &input.name {
-        object.key("name").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.software_set_update_mode {
-        object.key("softwareSetUpdateMode").string(var_9.as_str());
-    }
-    if let Some(var_10) = &input.software_set_update_schedule {
-        object.key("softwareSetUpdateSchedule").string(var_10.as_str());
-    }
-    if let Some(var_11) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_12 = object.key("tags").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_6 = object.key("deviceCreationTags").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_12.finish();
+        object_6.finish();
+    }
+    if let Some(var_9) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.maintenance_window {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("maintenanceWindow").start_object();
+        crate::protocol_serde::shape_maintenance_window::ser_maintenance_window(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.name {
+        object.key("name").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.software_set_update_mode {
+        object.key("softwareSetUpdateMode").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.software_set_update_schedule {
+        object.key("softwareSetUpdateSchedule").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("tags").start_object();
+        for (key_17, value_18) in var_15 {
+            {
+                object_16.key(key_17.as_str()).string(value_18.as_str());
+            }
+        }
+        object_16.finish();
     }
     Ok(())
 }

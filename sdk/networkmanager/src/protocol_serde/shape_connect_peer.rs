@@ -70,6 +70,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "LastModificationErrors" => {
+                            builder = builder.set_last_modification_errors(
+                                crate::protocol_serde::shape_connect_peer_error_list::de_connect_peer_error_list(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

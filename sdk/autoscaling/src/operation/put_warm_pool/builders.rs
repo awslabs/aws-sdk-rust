@@ -22,9 +22,10 @@ impl crate::operation::put_warm_pool::builders::PutWarmPoolInputBuilder {
 }
 /// Fluent builder constructing a request to `PutWarmPool`.
 ///
-/// <p>Creates or updates a warm pool for the specified Auto Scaling group. A warm pool is a pool of pre-initialized EC2 instances that sits alongside the Auto Scaling group. Whenever your application needs to scale out, the Auto Scaling group can draw on the warm pool to meet its new desired capacity. For more information and example configurations, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-/// <p>This operation must be called from the Region in which the Auto Scaling group was created. This operation cannot be called on an Auto Scaling group that has a mixed instances policy or a launch template or launch configuration that requests Spot Instances.</p>
+/// <p>Creates or updates a warm pool for the specified Auto Scaling group. A warm pool is a pool of pre-initialized EC2 instances that sits alongside the Auto Scaling group. Whenever your application needs to scale out, the Auto Scaling group can draw on the warm pool to meet its new desired capacity.</p>
+/// <p>This operation must be called from the Region in which the Auto Scaling group was created.</p>
 /// <p>You can view the instances in the warm pool using the <code>DescribeWarmPool</code> API call. If you are no longer using a warm pool, you can delete it by calling the <code>DeleteWarmPool</code> API.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutWarmPoolFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

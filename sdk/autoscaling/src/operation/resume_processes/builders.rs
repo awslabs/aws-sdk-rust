@@ -23,7 +23,7 @@ impl crate::operation::resume_processes::builders::ResumeProcessesInputBuilder {
 /// Fluent builder constructing a request to `ResumeProcesses`.
 ///
 /// <p>Resumes the specified suspended auto scaling processes, or all suspended process, for the specified Auto Scaling group.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending and resuming scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspend and resume Amazon EC2 Auto Scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResumeProcessesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

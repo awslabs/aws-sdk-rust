@@ -12,20 +12,30 @@ pub fn ser_update_environment_input_input(
     if let Some(var_3) = &input.desktop_endpoint {
         object.key("desktopEndpoint").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.maintenance_window {
+    if let Some(var_4) = &input.device_creation_tags {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("maintenanceWindow").start_object();
-        crate::protocol_serde::shape_maintenance_window::ser_maintenance_window(&mut object_5, var_4)?;
+        let mut object_5 = object.key("deviceCreationTags").start_object();
+        for (key_6, value_7) in var_4 {
+            {
+                object_5.key(key_6.as_str()).string(value_7.as_str());
+            }
+        }
         object_5.finish();
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
+    if let Some(var_8) = &input.maintenance_window {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("maintenanceWindow").start_object();
+        crate::protocol_serde::shape_maintenance_window::ser_maintenance_window(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_7) = &input.software_set_update_mode {
-        object.key("softwareSetUpdateMode").string(var_7.as_str());
+    if let Some(var_10) = &input.name {
+        object.key("name").string(var_10.as_str());
     }
-    if let Some(var_8) = &input.software_set_update_schedule {
-        object.key("softwareSetUpdateSchedule").string(var_8.as_str());
+    if let Some(var_11) = &input.software_set_update_mode {
+        object.key("softwareSetUpdateMode").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.software_set_update_schedule {
+        object.key("softwareSetUpdateSchedule").string(var_12.as_str());
     }
     Ok(())
 }

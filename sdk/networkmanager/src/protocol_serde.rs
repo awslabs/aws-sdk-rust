@@ -399,7 +399,11 @@ pub(crate) mod shape_vpc_options;
 
 pub(crate) mod shape_account_status_list;
 
+pub(crate) mod shape_attachment_error_list;
+
 pub(crate) mod shape_connect_peer_configuration;
+
+pub(crate) mod shape_connect_peer_error_list;
 
 pub(crate) mod shape_connect_peer_summary;
 
@@ -429,6 +433,8 @@ pub(crate) mod shape_network_route;
 
 pub(crate) mod shape_network_telemetry;
 
+pub(crate) mod shape_peering_error_list;
+
 pub(crate) mod shape_proposed_network_function_group_change;
 
 pub(crate) mod shape_proposed_segment_change;
@@ -447,7 +453,11 @@ pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_account_status;
 
+pub(crate) mod shape_attachment_error;
+
 pub(crate) mod shape_connect_peer_bgp_configuration_list;
+
+pub(crate) mod shape_connect_peer_error;
 
 pub(crate) mod shape_connection_health;
 
@@ -467,6 +477,8 @@ pub(crate) mod shape_network_route_destination_list;
 
 pub(crate) mod shape_path_component_list;
 
+pub(crate) mod shape_peering_error;
+
 pub(crate) mod shape_route_analysis_completion;
 
 pub(crate) mod shape_connect_peer_bgp_configuration;
@@ -476,6 +488,8 @@ pub(crate) mod shape_external_region_code_list;
 pub(crate) mod shape_network_route_destination;
 
 pub(crate) mod shape_path_component;
+
+pub(crate) mod shape_permissions_error_context;
 
 pub(crate) mod shape_reason_context_map;
 

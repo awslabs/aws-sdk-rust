@@ -24,6 +24,8 @@ pub struct Peering {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The timestamp when the attachment peer was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Describes the error associated with the Connect peer request.</p>
+    pub last_modification_errors: ::std::option::Option<::std::vec::Vec<crate::types::PeeringError>>,
 }
 impl Peering {
     /// <p>The ID of the core network for the peering request.</p>
@@ -68,6 +70,12 @@ impl Peering {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
+    /// <p>Describes the error associated with the Connect peer request.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_modification_errors.is_none()`.
+    pub fn last_modification_errors(&self) -> &[crate::types::PeeringError] {
+        self.last_modification_errors.as_deref().unwrap_or_default()
+    }
 }
 impl Peering {
     /// Creates a new builder-style object to manufacture [`Peering`](crate::types::Peering).
@@ -90,6 +98,7 @@ pub struct PeeringBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modification_errors: ::std::option::Option<::std::vec::Vec<crate::types::PeeringError>>,
 }
 impl PeeringBuilder {
     /// <p>The ID of the core network for the peering request.</p>
@@ -238,6 +247,26 @@ impl PeeringBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
+    /// Appends an item to `last_modification_errors`.
+    ///
+    /// To override the contents of this collection use [`set_last_modification_errors`](Self::set_last_modification_errors).
+    ///
+    /// <p>Describes the error associated with the Connect peer request.</p>
+    pub fn last_modification_errors(mut self, input: crate::types::PeeringError) -> Self {
+        let mut v = self.last_modification_errors.unwrap_or_default();
+        v.push(input);
+        self.last_modification_errors = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Describes the error associated with the Connect peer request.</p>
+    pub fn set_last_modification_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PeeringError>>) -> Self {
+        self.last_modification_errors = input;
+        self
+    }
+    /// <p>Describes the error associated with the Connect peer request.</p>
+    pub fn get_last_modification_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PeeringError>> {
+        &self.last_modification_errors
+    }
     /// Consumes the builder and constructs a [`Peering`](crate::types::Peering).
     pub fn build(self) -> crate::types::Peering {
         crate::types::Peering {
@@ -251,6 +280,7 @@ impl PeeringBuilder {
             resource_arn: self.resource_arn,
             tags: self.tags,
             created_at: self.created_at,
+            last_modification_errors: self.last_modification_errors,
         }
     }
 }

@@ -7,6 +7,8 @@ pub use crate::types::_vpc_options::VpcOptionsBuilder;
 
 pub use crate::types::_attachment::AttachmentBuilder;
 
+pub use crate::types::_attachment_error::AttachmentErrorBuilder;
+
 pub use crate::types::_proposed_network_function_group_change::ProposedNetworkFunctionGroupChangeBuilder;
 
 pub use crate::types::_tag::TagBuilder;
@@ -67,6 +69,10 @@ pub use crate::types::_transit_gateway_registration_state_reason::TransitGateway
 
 pub use crate::types::_peering::PeeringBuilder;
 
+pub use crate::types::_peering_error::PeeringErrorBuilder;
+
+pub use crate::types::_permissions_error_context::PermissionsErrorContextBuilder;
+
 pub use crate::types::_core_network_summary::CoreNetworkSummaryBuilder;
 
 pub use crate::types::_core_network_policy_version::CoreNetworkPolicyVersionBuilder;
@@ -126,6 +132,8 @@ pub use crate::types::_core_network_change_event_values::CoreNetworkChangeEventV
 pub use crate::types::_connect_peer_association::ConnectPeerAssociationBuilder;
 
 pub use crate::types::_connect_peer::ConnectPeerBuilder;
+
+pub use crate::types::_connect_peer_error::ConnectPeerErrorBuilder;
 
 pub use crate::types::_connect_peer_configuration::ConnectPeerConfigurationBuilder;
 

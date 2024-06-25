@@ -111,6 +111,8 @@ pub(crate) mod shape_tags_map;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_device_creation_tags_map;
+
 pub(crate) mod shape_software_list;
 
 pub(crate) mod shape_software_set_summary;

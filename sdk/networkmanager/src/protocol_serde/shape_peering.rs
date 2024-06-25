@@ -79,6 +79,10 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "LastModificationErrors" => {
+                            builder =
+                                builder.set_last_modification_errors(crate::protocol_serde::shape_peering_error_list::de_peering_error_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

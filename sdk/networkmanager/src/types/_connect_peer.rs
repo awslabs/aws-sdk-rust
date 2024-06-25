@@ -22,6 +22,8 @@ pub struct ConnectPeer {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.</p>
     pub subnet_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Describes the error associated with the attachment request.</p>
+    pub last_modification_errors: ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerError>>,
 }
 impl ConnectPeer {
     /// <p>The ID of a core network.</p>
@@ -62,6 +64,12 @@ impl ConnectPeer {
     pub fn subnet_arn(&self) -> ::std::option::Option<&str> {
         self.subnet_arn.as_deref()
     }
+    /// <p>Describes the error associated with the attachment request.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_modification_errors.is_none()`.
+    pub fn last_modification_errors(&self) -> &[crate::types::ConnectPeerError] {
+        self.last_modification_errors.as_deref().unwrap_or_default()
+    }
 }
 impl ConnectPeer {
     /// Creates a new builder-style object to manufacture [`ConnectPeer`](crate::types::ConnectPeer).
@@ -83,6 +91,7 @@ pub struct ConnectPeerBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::ConnectPeerConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) subnet_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modification_errors: ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerError>>,
 }
 impl ConnectPeerBuilder {
     /// <p>The ID of a core network.</p>
@@ -217,6 +226,26 @@ impl ConnectPeerBuilder {
     pub fn get_subnet_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_arn
     }
+    /// Appends an item to `last_modification_errors`.
+    ///
+    /// To override the contents of this collection use [`set_last_modification_errors`](Self::set_last_modification_errors).
+    ///
+    /// <p>Describes the error associated with the attachment request.</p>
+    pub fn last_modification_errors(mut self, input: crate::types::ConnectPeerError) -> Self {
+        let mut v = self.last_modification_errors.unwrap_or_default();
+        v.push(input);
+        self.last_modification_errors = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Describes the error associated with the attachment request.</p>
+    pub fn set_last_modification_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerError>>) -> Self {
+        self.last_modification_errors = input;
+        self
+    }
+    /// <p>Describes the error associated with the attachment request.</p>
+    pub fn get_last_modification_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerError>> {
+        &self.last_modification_errors
+    }
     /// Consumes the builder and constructs a [`ConnectPeer`](crate::types::ConnectPeer).
     pub fn build(self) -> crate::types::ConnectPeer {
         crate::types::ConnectPeer {
@@ -229,6 +258,7 @@ impl ConnectPeerBuilder {
             configuration: self.configuration,
             tags: self.tags,
             subnet_arn: self.subnet_arn,
+            last_modification_errors: self.last_modification_errors,
         }
     }
 }

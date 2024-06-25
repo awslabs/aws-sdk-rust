@@ -36,6 +36,8 @@ pub struct Attachment {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the attachment was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Describes the error associated with the attachment request.</p>
+    pub last_modification_errors: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentError>>,
 }
 impl Attachment {
     /// <p>The ID of a core network.</p>
@@ -104,6 +106,12 @@ impl Attachment {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>Describes the error associated with the attachment request.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_modification_errors.is_none()`.
+    pub fn last_modification_errors(&self) -> &[crate::types::AttachmentError] {
+        self.last_modification_errors.as_deref().unwrap_or_default()
+    }
 }
 impl Attachment {
     /// Creates a new builder-style object to manufacture [`Attachment`](crate::types::Attachment).
@@ -132,6 +140,7 @@ pub struct AttachmentBuilder {
     pub(crate) proposed_network_function_group_change: ::std::option::Option<crate::types::ProposedNetworkFunctionGroupChange>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modification_errors: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentError>>,
 }
 impl AttachmentBuilder {
     /// <p>The ID of a core network.</p>
@@ -367,6 +376,26 @@ impl AttachmentBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// Appends an item to `last_modification_errors`.
+    ///
+    /// To override the contents of this collection use [`set_last_modification_errors`](Self::set_last_modification_errors).
+    ///
+    /// <p>Describes the error associated with the attachment request.</p>
+    pub fn last_modification_errors(mut self, input: crate::types::AttachmentError) -> Self {
+        let mut v = self.last_modification_errors.unwrap_or_default();
+        v.push(input);
+        self.last_modification_errors = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Describes the error associated with the attachment request.</p>
+    pub fn set_last_modification_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentError>>) -> Self {
+        self.last_modification_errors = input;
+        self
+    }
+    /// <p>Describes the error associated with the attachment request.</p>
+    pub fn get_last_modification_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentError>> {
+        &self.last_modification_errors
+    }
     /// Consumes the builder and constructs a [`Attachment`](crate::types::Attachment).
     pub fn build(self) -> crate::types::Attachment {
         crate::types::Attachment {
@@ -386,6 +415,7 @@ impl AttachmentBuilder {
             proposed_network_function_group_change: self.proposed_network_function_group_change,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            last_modification_errors: self.last_modification_errors,
         }
     }
 }

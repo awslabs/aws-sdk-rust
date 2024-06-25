@@ -19,6 +19,8 @@ pub struct UpdateEnvironmentInput {
     pub software_set_update_mode: ::std::option::Option<crate::types::SoftwareSetUpdateMode>,
     /// <p>The ID of the software set to apply.</p>
     pub desired_software_set_id: ::std::option::Option<::std::string::String>,
+    /// <p>A map of the key-value pairs of the tag or tags to assign to the newly created devices for this environment.</p>
+    pub device_creation_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateEnvironmentInput {
     /// <p>The ID of the environment to update.</p>
@@ -53,6 +55,10 @@ impl UpdateEnvironmentInput {
     pub fn desired_software_set_id(&self) -> ::std::option::Option<&str> {
         self.desired_software_set_id.as_deref()
     }
+    /// <p>A map of the key-value pairs of the tag or tags to assign to the newly created devices for this environment.</p>
+    pub fn device_creation_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.device_creation_tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateEnvironmentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -65,6 +71,7 @@ impl ::std::fmt::Debug for UpdateEnvironmentInput {
         formatter.field("maintenance_window", &self.maintenance_window);
         formatter.field("software_set_update_mode", &self.software_set_update_mode);
         formatter.field("desired_software_set_id", &self.desired_software_set_id);
+        formatter.field("device_creation_tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -87,6 +94,7 @@ pub struct UpdateEnvironmentInputBuilder {
     pub(crate) maintenance_window: ::std::option::Option<crate::types::MaintenanceWindow>,
     pub(crate) software_set_update_mode: ::std::option::Option<crate::types::SoftwareSetUpdateMode>,
     pub(crate) desired_software_set_id: ::std::option::Option<::std::string::String>,
+    pub(crate) device_creation_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateEnvironmentInputBuilder {
     /// <p>The ID of the environment to update.</p>
@@ -202,6 +210,33 @@ impl UpdateEnvironmentInputBuilder {
     pub fn get_desired_software_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.desired_software_set_id
     }
+    /// Adds a key-value pair to `device_creation_tags`.
+    ///
+    /// To override the contents of this collection use [`set_device_creation_tags`](Self::set_device_creation_tags).
+    ///
+    /// <p>A map of the key-value pairs of the tag or tags to assign to the newly created devices for this environment.</p>
+    pub fn device_creation_tags(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.device_creation_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.device_creation_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of the key-value pairs of the tag or tags to assign to the newly created devices for this environment.</p>
+    pub fn set_device_creation_tags(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.device_creation_tags = input;
+        self
+    }
+    /// <p>A map of the key-value pairs of the tag or tags to assign to the newly created devices for this environment.</p>
+    pub fn get_device_creation_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.device_creation_tags
+    }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
     pub fn build(
         self,
@@ -215,6 +250,7 @@ impl UpdateEnvironmentInputBuilder {
             maintenance_window: self.maintenance_window,
             software_set_update_mode: self.software_set_update_mode,
             desired_software_set_id: self.desired_software_set_id,
+            device_creation_tags: self.device_creation_tags,
         })
     }
 }
@@ -229,6 +265,7 @@ impl ::std::fmt::Debug for UpdateEnvironmentInputBuilder {
         formatter.field("maintenance_window", &self.maintenance_window);
         formatter.field("software_set_update_mode", &self.software_set_update_mode);
         formatter.field("desired_software_set_id", &self.desired_software_set_id);
+        formatter.field("device_creation_tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
