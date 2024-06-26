@@ -194,6 +194,13 @@ pub(crate) fn de_delete_application_cloud_watch_logging_option(
                         crate::protocol_serde::shape_cloud_watch_logging_option_descriptions::de_cloud_watch_logging_option_descriptions(tokens)?,
                     );
                 }
+                "OperationId" => {
+                    builder = builder.set_operation_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

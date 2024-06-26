@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipConfiguration {
-    /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot.</p>
+    /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot. Default: <code>""</code> (no featured participant).</p>
     pub featured_participant_attribute: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether to omit participants with stopped video in the composition. Default: <code>false</code>.</p>
     pub omit_stopped_video: bool,
-    /// <p>Defines how video fits within the participant tile. Default: <code>COVER</code>.</p>
+    /// <p>Defines how video content fits within the participant tile: <code>FILL</code> (stretched), <code>COVER</code> (cropped), or <code>CONTAIN</code> (letterboxed). Default: <code>COVER</code>.</p>
     pub video_fill_mode: ::std::option::Option<crate::types::VideoFillMode>,
     /// <p>Specifies the spacing between participant tiles in pixels. Default: <code>0</code>.</p>
     pub grid_gap: i32,
-    /// <p>Identifies the PiP slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the PiP slot.</p>
+    /// <p>Specifies the participant for the PiP window. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the PiP slot. Default: <code>""</code> (no PiP participant).</p>
     pub pip_participant_attribute: ::std::option::Option<::std::string::String>,
-    /// <p>Defines PiP behavior when all participants have left. Default: <code>STATIC</code>.</p>
+    /// <p>Defines PiP behavior when all participants have left: <code>STATIC</code> (maintains original position/size) or <code>DYNAMIC</code> (expands to full composition). Default: <code>STATIC</code>.</p>
     pub pip_behavior: ::std::option::Option<crate::types::PipBehavior>,
     /// <p>Sets the PiP window’s offset position in pixels from the closest edges determined by <code>PipPosition</code>. Default: <code>0</code>.</p>
     pub pip_offset: i32,
@@ -26,7 +26,7 @@ pub struct PipConfiguration {
     pub pip_height: ::std::option::Option<i32>,
 }
 impl PipConfiguration {
-    /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot.</p>
+    /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot. Default: <code>""</code> (no featured participant).</p>
     pub fn featured_participant_attribute(&self) -> ::std::option::Option<&str> {
         self.featured_participant_attribute.as_deref()
     }
@@ -34,7 +34,7 @@ impl PipConfiguration {
     pub fn omit_stopped_video(&self) -> bool {
         self.omit_stopped_video
     }
-    /// <p>Defines how video fits within the participant tile. Default: <code>COVER</code>.</p>
+    /// <p>Defines how video content fits within the participant tile: <code>FILL</code> (stretched), <code>COVER</code> (cropped), or <code>CONTAIN</code> (letterboxed). Default: <code>COVER</code>.</p>
     pub fn video_fill_mode(&self) -> ::std::option::Option<&crate::types::VideoFillMode> {
         self.video_fill_mode.as_ref()
     }
@@ -42,11 +42,11 @@ impl PipConfiguration {
     pub fn grid_gap(&self) -> i32 {
         self.grid_gap
     }
-    /// <p>Identifies the PiP slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the PiP slot.</p>
+    /// <p>Specifies the participant for the PiP window. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the PiP slot. Default: <code>""</code> (no PiP participant).</p>
     pub fn pip_participant_attribute(&self) -> ::std::option::Option<&str> {
         self.pip_participant_attribute.as_deref()
     }
-    /// <p>Defines PiP behavior when all participants have left. Default: <code>STATIC</code>.</p>
+    /// <p>Defines PiP behavior when all participants have left: <code>STATIC</code> (maintains original position/size) or <code>DYNAMIC</code> (expands to full composition). Default: <code>STATIC</code>.</p>
     pub fn pip_behavior(&self) -> ::std::option::Option<&crate::types::PipBehavior> {
         self.pip_behavior.as_ref()
     }
@@ -90,17 +90,17 @@ pub struct PipConfigurationBuilder {
     pub(crate) pip_height: ::std::option::Option<i32>,
 }
 impl PipConfigurationBuilder {
-    /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot.</p>
+    /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot. Default: <code>""</code> (no featured participant).</p>
     pub fn featured_participant_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.featured_participant_attribute = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot.</p>
+    /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot. Default: <code>""</code> (no featured participant).</p>
     pub fn set_featured_participant_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.featured_participant_attribute = input;
         self
     }
-    /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot.</p>
+    /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot. Default: <code>""</code> (no featured participant).</p>
     pub fn get_featured_participant_attribute(&self) -> &::std::option::Option<::std::string::String> {
         &self.featured_participant_attribute
     }
@@ -118,17 +118,17 @@ impl PipConfigurationBuilder {
     pub fn get_omit_stopped_video(&self) -> &::std::option::Option<bool> {
         &self.omit_stopped_video
     }
-    /// <p>Defines how video fits within the participant tile. Default: <code>COVER</code>.</p>
+    /// <p>Defines how video content fits within the participant tile: <code>FILL</code> (stretched), <code>COVER</code> (cropped), or <code>CONTAIN</code> (letterboxed). Default: <code>COVER</code>.</p>
     pub fn video_fill_mode(mut self, input: crate::types::VideoFillMode) -> Self {
         self.video_fill_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines how video fits within the participant tile. Default: <code>COVER</code>.</p>
+    /// <p>Defines how video content fits within the participant tile: <code>FILL</code> (stretched), <code>COVER</code> (cropped), or <code>CONTAIN</code> (letterboxed). Default: <code>COVER</code>.</p>
     pub fn set_video_fill_mode(mut self, input: ::std::option::Option<crate::types::VideoFillMode>) -> Self {
         self.video_fill_mode = input;
         self
     }
-    /// <p>Defines how video fits within the participant tile. Default: <code>COVER</code>.</p>
+    /// <p>Defines how video content fits within the participant tile: <code>FILL</code> (stretched), <code>COVER</code> (cropped), or <code>CONTAIN</code> (letterboxed). Default: <code>COVER</code>.</p>
     pub fn get_video_fill_mode(&self) -> &::std::option::Option<crate::types::VideoFillMode> {
         &self.video_fill_mode
     }
@@ -146,31 +146,31 @@ impl PipConfigurationBuilder {
     pub fn get_grid_gap(&self) -> &::std::option::Option<i32> {
         &self.grid_gap
     }
-    /// <p>Identifies the PiP slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the PiP slot.</p>
+    /// <p>Specifies the participant for the PiP window. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the PiP slot. Default: <code>""</code> (no PiP participant).</p>
     pub fn pip_participant_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pip_participant_attribute = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifies the PiP slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the PiP slot.</p>
+    /// <p>Specifies the participant for the PiP window. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the PiP slot. Default: <code>""</code> (no PiP participant).</p>
     pub fn set_pip_participant_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pip_participant_attribute = input;
         self
     }
-    /// <p>Identifies the PiP slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the PiP slot.</p>
+    /// <p>Specifies the participant for the PiP window. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the PiP slot. Default: <code>""</code> (no PiP participant).</p>
     pub fn get_pip_participant_attribute(&self) -> &::std::option::Option<::std::string::String> {
         &self.pip_participant_attribute
     }
-    /// <p>Defines PiP behavior when all participants have left. Default: <code>STATIC</code>.</p>
+    /// <p>Defines PiP behavior when all participants have left: <code>STATIC</code> (maintains original position/size) or <code>DYNAMIC</code> (expands to full composition). Default: <code>STATIC</code>.</p>
     pub fn pip_behavior(mut self, input: crate::types::PipBehavior) -> Self {
         self.pip_behavior = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines PiP behavior when all participants have left. Default: <code>STATIC</code>.</p>
+    /// <p>Defines PiP behavior when all participants have left: <code>STATIC</code> (maintains original position/size) or <code>DYNAMIC</code> (expands to full composition). Default: <code>STATIC</code>.</p>
     pub fn set_pip_behavior(mut self, input: ::std::option::Option<crate::types::PipBehavior>) -> Self {
         self.pip_behavior = input;
         self
     }
-    /// <p>Defines PiP behavior when all participants have left. Default: <code>STATIC</code>.</p>
+    /// <p>Defines PiP behavior when all participants have left: <code>STATIC</code> (maintains original position/size) or <code>DYNAMIC</code> (expands to full composition). Default: <code>STATIC</code>.</p>
     pub fn get_pip_behavior(&self) -> &::std::option::Option<crate::types::PipBehavior> {
         &self.pip_behavior
     }

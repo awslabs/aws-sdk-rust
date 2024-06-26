@@ -35,6 +35,8 @@ pub use crate::types::_log_level::LogLevel;
 
 pub use crate::types::_vpc_configuration_description::VpcConfigurationDescription;
 
+pub use crate::types::_application_system_rollback_configuration_description::ApplicationSystemRollbackConfigurationDescription;
+
 pub use crate::types::_application_snapshot_configuration_description::ApplicationSnapshotConfigurationDescription;
 
 pub use crate::types::_environment_property_descriptions::EnvironmentPropertyDescriptions;
@@ -141,6 +143,8 @@ pub use crate::types::_zeppelin_monitoring_configuration_update::ZeppelinMonitor
 
 pub use crate::types::_vpc_configuration_update::VpcConfigurationUpdate;
 
+pub use crate::types::_application_system_rollback_configuration_update::ApplicationSystemRollbackConfigurationUpdate;
+
 pub use crate::types::_application_snapshot_configuration_update::ApplicationSnapshotConfigurationUpdate;
 
 pub use crate::types::_environment_property_updates::EnvironmentPropertyUpdates;
@@ -201,11 +205,23 @@ pub use crate::types::_snapshot_status::SnapshotStatus;
 
 pub use crate::types::_application_summary::ApplicationSummary;
 
+pub use crate::types::_application_operation_info::ApplicationOperationInfo;
+
+pub use crate::types::_operation_status::OperationStatus;
+
 pub use crate::types::_input_processing_configuration::InputProcessingConfiguration;
 
 pub use crate::types::_input_lambda_processor::InputLambdaProcessor;
 
 pub use crate::types::_s3_configuration::S3Configuration;
+
+pub use crate::types::_application_operation_info_details::ApplicationOperationInfoDetails;
+
+pub use crate::types::_operation_failure_details::OperationFailureDetails;
+
+pub use crate::types::_error_info::ErrorInfo;
+
+pub use crate::types::_application_version_change_details::ApplicationVersionChangeDetails;
 
 pub use crate::types::_url_type::UrlType;
 
@@ -226,6 +242,8 @@ pub use crate::types::_glue_data_catalog_configuration::GlueDataCatalogConfigura
 pub use crate::types::_zeppelin_monitoring_configuration::ZeppelinMonitoringConfiguration;
 
 pub use crate::types::_vpc_configuration::VpcConfiguration;
+
+pub use crate::types::_application_system_rollback_configuration::ApplicationSystemRollbackConfiguration;
 
 pub use crate::types::_application_snapshot_configuration::ApplicationSnapshotConfiguration;
 
@@ -283,6 +301,10 @@ mod _application_maintenance_configuration_update;
 
 mod _application_mode;
 
+mod _application_operation_info;
+
+mod _application_operation_info_details;
+
 mod _application_restore_configuration;
 
 mod _application_restore_type;
@@ -296,6 +318,14 @@ mod _application_snapshot_configuration_update;
 mod _application_status;
 
 mod _application_summary;
+
+mod _application_system_rollback_configuration;
+
+mod _application_system_rollback_configuration_description;
+
+mod _application_system_rollback_configuration_update;
+
+mod _application_version_change_details;
 
 mod _application_version_summary;
 
@@ -348,6 +378,8 @@ mod _environment_properties;
 mod _environment_property_descriptions;
 
 mod _environment_property_updates;
+
+mod _error_info;
 
 mod _flink_application_configuration;
 
@@ -436,6 +468,10 @@ mod _monitoring_configuration;
 mod _monitoring_configuration_description;
 
 mod _monitoring_configuration_update;
+
+mod _operation_failure_details;
+
+mod _operation_status;
 
 mod _output;
 

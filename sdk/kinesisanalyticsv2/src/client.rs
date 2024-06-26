@@ -197,11 +197,15 @@ mod delete_application_vpc_configuration;
 
 mod describe_application;
 
+mod describe_application_operation;
+
 mod describe_application_snapshot;
 
 mod describe_application_version;
 
 mod discover_input_schema;
+
+mod list_application_operations;
 
 mod list_application_snapshots;
 

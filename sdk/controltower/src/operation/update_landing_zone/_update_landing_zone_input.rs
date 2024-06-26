@@ -5,7 +5,7 @@
 pub struct UpdateLandingZoneInput {
     /// <p>The landing zone version, for example, 3.2.</p>
     pub version: ::std::option::Option<::std::string::String>,
-    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
+    /// <p>The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>. The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.</p>
     pub manifest: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>The unique identifier of the landing zone.</p>
     pub landing_zone_identifier: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl UpdateLandingZoneInput {
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
+    /// <p>The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>. The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.</p>
     pub fn manifest(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.manifest.as_ref()
     }
@@ -55,18 +55,18 @@ impl UpdateLandingZoneInputBuilder {
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
-    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
+    /// <p>The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>. The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.</p>
     /// This field is required.
     pub fn manifest(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.manifest = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
+    /// <p>The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>. The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.</p>
     pub fn set_manifest(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.manifest = input;
         self
     }
-    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
+    /// <p>The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>. The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.</p>
     pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.manifest
     }

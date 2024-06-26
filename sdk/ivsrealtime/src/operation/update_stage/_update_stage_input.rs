@@ -7,7 +7,7 @@ pub struct UpdateStageInput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the stage to be updated.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Auto-participant-recording configuration object to attach to the stage. Auto-participant-recording configuration cannot be updated while recording is active.</p>
+    /// <p>Configuration object for individual participant recording, to attach to the stage. Note that this cannot be updated while recording is active.</p>
     pub auto_participant_recording_configuration: ::std::option::Option<crate::types::AutoParticipantRecordingConfiguration>,
 }
 impl UpdateStageInput {
@@ -19,7 +19,7 @@ impl UpdateStageInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Auto-participant-recording configuration object to attach to the stage. Auto-participant-recording configuration cannot be updated while recording is active.</p>
+    /// <p>Configuration object for individual participant recording, to attach to the stage. Note that this cannot be updated while recording is active.</p>
     pub fn auto_participant_recording_configuration(&self) -> ::std::option::Option<&crate::types::AutoParticipantRecordingConfiguration> {
         self.auto_participant_recording_configuration.as_ref()
     }
@@ -69,12 +69,12 @@ impl UpdateStageInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Auto-participant-recording configuration object to attach to the stage. Auto-participant-recording configuration cannot be updated while recording is active.</p>
+    /// <p>Configuration object for individual participant recording, to attach to the stage. Note that this cannot be updated while recording is active.</p>
     pub fn auto_participant_recording_configuration(mut self, input: crate::types::AutoParticipantRecordingConfiguration) -> Self {
         self.auto_participant_recording_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Auto-participant-recording configuration object to attach to the stage. Auto-participant-recording configuration cannot be updated while recording is active.</p>
+    /// <p>Configuration object for individual participant recording, to attach to the stage. Note that this cannot be updated while recording is active.</p>
     pub fn set_auto_participant_recording_configuration(
         mut self,
         input: ::std::option::Option<crate::types::AutoParticipantRecordingConfiguration>,
@@ -82,7 +82,7 @@ impl UpdateStageInputBuilder {
         self.auto_participant_recording_configuration = input;
         self
     }
-    /// <p>Auto-participant-recording configuration object to attach to the stage. Auto-participant-recording configuration cannot be updated while recording is active.</p>
+    /// <p>Configuration object for individual participant recording, to attach to the stage. Note that this cannot be updated while recording is active.</p>
     pub fn get_auto_participant_recording_configuration(&self) -> &::std::option::Option<crate::types::AutoParticipantRecordingConfiguration> {
         &self.auto_participant_recording_configuration
     }

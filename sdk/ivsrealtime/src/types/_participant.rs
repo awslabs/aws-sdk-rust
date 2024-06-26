@@ -28,11 +28,11 @@ pub struct Participant {
     pub browser_version: ::std::option::Option<::std::string::String>,
     /// <p>The participant’s SDK version.</p>
     pub sdk_version: ::std::option::Option<::std::string::String>,
-    /// <p>Name of the S3 bucket to where the participant is being recorded, if individual participant recording is enabled, or "" (empty string), if recording is not enabled.</p>
+    /// <p>Name of the S3 bucket to where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
     pub recording_s3_bucket_name: ::std::option::Option<::std::string::String>,
-    /// <p>S3 prefix of the S3 bucket to where the participant is being recorded, if individual participant recording is enabled, or "" (empty string), if recording is not enabled.</p>
+    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
     pub recording_s3_prefix: ::std::option::Option<::std::string::String>,
-    /// <p>Participant’s recording state.</p>
+    /// <p>The participant’s recording state.</p>
     pub recording_state: ::std::option::Option<crate::types::ParticipantRecordingState>,
 }
 impl Participant {
@@ -84,15 +84,15 @@ impl Participant {
     pub fn sdk_version(&self) -> ::std::option::Option<&str> {
         self.sdk_version.as_deref()
     }
-    /// <p>Name of the S3 bucket to where the participant is being recorded, if individual participant recording is enabled, or "" (empty string), if recording is not enabled.</p>
+    /// <p>Name of the S3 bucket to where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
     pub fn recording_s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.recording_s3_bucket_name.as_deref()
     }
-    /// <p>S3 prefix of the S3 bucket to where the participant is being recorded, if individual participant recording is enabled, or "" (empty string), if recording is not enabled.</p>
+    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
     pub fn recording_s3_prefix(&self) -> ::std::option::Option<&str> {
         self.recording_s3_prefix.as_deref()
     }
-    /// <p>Participant’s recording state.</p>
+    /// <p>The participant’s recording state.</p>
     pub fn recording_state(&self) -> ::std::option::Option<&crate::types::ParticipantRecordingState> {
         self.recording_state.as_ref()
     }
@@ -299,45 +299,45 @@ impl ParticipantBuilder {
     pub fn get_sdk_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.sdk_version
     }
-    /// <p>Name of the S3 bucket to where the participant is being recorded, if individual participant recording is enabled, or "" (empty string), if recording is not enabled.</p>
+    /// <p>Name of the S3 bucket to where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
     pub fn recording_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recording_s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the S3 bucket to where the participant is being recorded, if individual participant recording is enabled, or "" (empty string), if recording is not enabled.</p>
+    /// <p>Name of the S3 bucket to where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
     pub fn set_recording_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recording_s3_bucket_name = input;
         self
     }
-    /// <p>Name of the S3 bucket to where the participant is being recorded, if individual participant recording is enabled, or "" (empty string), if recording is not enabled.</p>
+    /// <p>Name of the S3 bucket to where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
     pub fn get_recording_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.recording_s3_bucket_name
     }
-    /// <p>S3 prefix of the S3 bucket to where the participant is being recorded, if individual participant recording is enabled, or "" (empty string), if recording is not enabled.</p>
+    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
     pub fn recording_s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recording_s3_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>S3 prefix of the S3 bucket to where the participant is being recorded, if individual participant recording is enabled, or "" (empty string), if recording is not enabled.</p>
+    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
     pub fn set_recording_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recording_s3_prefix = input;
         self
     }
-    /// <p>S3 prefix of the S3 bucket to where the participant is being recorded, if individual participant recording is enabled, or "" (empty string), if recording is not enabled.</p>
+    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
     pub fn get_recording_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.recording_s3_prefix
     }
-    /// <p>Participant’s recording state.</p>
+    /// <p>The participant’s recording state.</p>
     pub fn recording_state(mut self, input: crate::types::ParticipantRecordingState) -> Self {
         self.recording_state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Participant’s recording state.</p>
+    /// <p>The participant’s recording state.</p>
     pub fn set_recording_state(mut self, input: ::std::option::Option<crate::types::ParticipantRecordingState>) -> Self {
         self.recording_state = input;
         self
     }
-    /// <p>Participant’s recording state.</p>
+    /// <p>The participant’s recording state.</p>
     pub fn get_recording_state(&self) -> &::std::option::Option<crate::types::ParticipantRecordingState> {
         &self.recording_state
     }

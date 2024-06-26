@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListControlOperationsOutput {
-    /// <p>Returns a list of output from control operations. PLACEHOLDER</p>
+    /// <p>Returns a list of output from control operations.</p>
     pub control_operations: ::std::vec::Vec<crate::types::ControlOperationSummary>,
     /// <p>A pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListControlOperationsOutput {
-    /// <p>Returns a list of output from control operations. PLACEHOLDER</p>
+    /// <p>Returns a list of output from control operations.</p>
     pub fn control_operations(&self) -> &[crate::types::ControlOperationSummary] {
         use std::ops::Deref;
         self.control_operations.deref()
@@ -45,19 +45,19 @@ impl ListControlOperationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_control_operations`](Self::set_control_operations).
     ///
-    /// <p>Returns a list of output from control operations. PLACEHOLDER</p>
+    /// <p>Returns a list of output from control operations.</p>
     pub fn control_operations(mut self, input: crate::types::ControlOperationSummary) -> Self {
         let mut v = self.control_operations.unwrap_or_default();
         v.push(input);
         self.control_operations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns a list of output from control operations. PLACEHOLDER</p>
+    /// <p>Returns a list of output from control operations.</p>
     pub fn set_control_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlOperationSummary>>) -> Self {
         self.control_operations = input;
         self
     }
-    /// <p>Returns a list of output from control operations. PLACEHOLDER</p>
+    /// <p>Returns a list of output from control operations.</p>
     pub fn get_control_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlOperationSummary>> {
         &self.control_operations
     }

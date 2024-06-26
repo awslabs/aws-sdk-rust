@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`application_arn(Option<String>)`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput::application_arn): <p>The application's ARN.</p>
     ///   - [`application_version_id(Option<i64>)`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput::application_version_id): <p>The new version ID of the SQL-based Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
     ///   - [`cloud_watch_logging_option_descriptions(Option<Vec::<CloudWatchLoggingOptionDescription>>)`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput::cloud_watch_logging_option_descriptions): <p>The descriptions of the current CloudWatch logging options for the SQL-based Kinesis Data Analytics application.</p>
+    ///   - [`operation_id(Option<String>)`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput::operation_id): Operation ID for tracking AddApplicationCloudWatchLoggingOption request
     /// - On failure, responds with [`SdkError<AddApplicationCloudWatchLoggingOptionError>`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError)
     pub fn add_application_cloud_watch_logging_option(
         &self,

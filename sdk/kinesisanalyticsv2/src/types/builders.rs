@@ -29,6 +29,8 @@ pub use crate::types::_zeppelin_monitoring_configuration_description::ZeppelinMo
 
 pub use crate::types::_vpc_configuration_description::VpcConfigurationDescriptionBuilder;
 
+pub use crate::types::_application_system_rollback_configuration_description::ApplicationSystemRollbackConfigurationDescriptionBuilder;
+
 pub use crate::types::_application_snapshot_configuration_description::ApplicationSnapshotConfigurationDescriptionBuilder;
 
 pub use crate::types::_environment_property_descriptions::EnvironmentPropertyDescriptionsBuilder;
@@ -119,6 +121,8 @@ pub use crate::types::_zeppelin_monitoring_configuration_update::ZeppelinMonitor
 
 pub use crate::types::_vpc_configuration_update::VpcConfigurationUpdateBuilder;
 
+pub use crate::types::_application_system_rollback_configuration_update::ApplicationSystemRollbackConfigurationUpdateBuilder;
+
 pub use crate::types::_application_snapshot_configuration_update::ApplicationSnapshotConfigurationUpdateBuilder;
 
 pub use crate::types::_environment_property_updates::EnvironmentPropertyUpdatesBuilder;
@@ -177,11 +181,21 @@ pub use crate::types::_snapshot_details::SnapshotDetailsBuilder;
 
 pub use crate::types::_application_summary::ApplicationSummaryBuilder;
 
+pub use crate::types::_application_operation_info::ApplicationOperationInfoBuilder;
+
 pub use crate::types::_input_processing_configuration::InputProcessingConfigurationBuilder;
 
 pub use crate::types::_input_lambda_processor::InputLambdaProcessorBuilder;
 
 pub use crate::types::_s3_configuration::S3ConfigurationBuilder;
+
+pub use crate::types::_application_operation_info_details::ApplicationOperationInfoDetailsBuilder;
+
+pub use crate::types::_operation_failure_details::OperationFailureDetailsBuilder;
+
+pub use crate::types::_error_info::ErrorInfoBuilder;
+
+pub use crate::types::_application_version_change_details::ApplicationVersionChangeDetailsBuilder;
 
 pub use crate::types::_cloud_watch_logging_option::CloudWatchLoggingOptionBuilder;
 
@@ -200,6 +214,8 @@ pub use crate::types::_glue_data_catalog_configuration::GlueDataCatalogConfigura
 pub use crate::types::_zeppelin_monitoring_configuration::ZeppelinMonitoringConfigurationBuilder;
 
 pub use crate::types::_vpc_configuration::VpcConfigurationBuilder;
+
+pub use crate::types::_application_system_rollback_configuration::ApplicationSystemRollbackConfigurationBuilder;
 
 pub use crate::types::_application_snapshot_configuration::ApplicationSnapshotConfigurationBuilder;
 

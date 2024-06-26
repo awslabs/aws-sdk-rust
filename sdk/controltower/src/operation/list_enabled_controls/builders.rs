@@ -22,7 +22,7 @@ impl crate::operation::list_enabled_controls::builders::ListEnabledControlsInput
 }
 /// Fluent builder constructing a request to `ListEnabledControls`.
 ///
-/// <p>Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the accounts it contains. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the Amazon Web Services Control Tower User Guide</i> </a>.</p>
+/// <p>Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the accounts it contains. For usage examples, see the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html"> <i>Controls Reference Guide</i> </a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnabledControlsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -156,17 +156,17 @@ impl ListEnabledControlsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control operations to view.</p>
+    /// <p>An input filter for the <code>ListEnabledControls</code> API that lets you select the types of control operations to view.</p>
     pub fn filter(mut self, input: crate::types::EnabledControlFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control operations to view.</p>
+    /// <p>An input filter for the <code>ListEnabledControls</code> API that lets you select the types of control operations to view.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::EnabledControlFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p>An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control operations to view.</p>
+    /// <p>An input filter for the <code>ListEnabledControls</code> API that lets you select the types of control operations to view.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::EnabledControlFilter> {
         self.inner.get_filter()
     }

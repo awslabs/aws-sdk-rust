@@ -111,6 +111,12 @@ impl ListApplicationVersionsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_application_versions::paginator::ListApplicationVersionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_application_versions::paginator::ListApplicationVersionsPaginator {
+        crate::operation::list_application_versions::paginator::ListApplicationVersionsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The name of the application for which you want to list all versions.</p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());

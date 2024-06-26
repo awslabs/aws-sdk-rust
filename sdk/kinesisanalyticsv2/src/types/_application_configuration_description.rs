@@ -16,6 +16,8 @@ pub struct ApplicationConfigurationDescription {
     pub environment_property_descriptions: ::std::option::Option<crate::types::EnvironmentPropertyDescriptions>,
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub application_snapshot_configuration_description: ::std::option::Option<crate::types::ApplicationSnapshotConfigurationDescription>,
+    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    pub application_system_rollback_configuration_description: ::std::option::Option<crate::types::ApplicationSystemRollbackConfigurationDescription>,
     /// <p>The array of descriptions of VPC configurations available to the application.</p>
     pub vpc_configuration_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfigurationDescription>>,
     /// <p>The configuration parameters for a Managed Service for Apache Flink Studio notebook.</p>
@@ -48,6 +50,12 @@ impl ApplicationConfigurationDescription {
     ) -> ::std::option::Option<&crate::types::ApplicationSnapshotConfigurationDescription> {
         self.application_snapshot_configuration_description.as_ref()
     }
+    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    pub fn application_system_rollback_configuration_description(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ApplicationSystemRollbackConfigurationDescription> {
+        self.application_system_rollback_configuration_description.as_ref()
+    }
     /// <p>The array of descriptions of VPC configurations available to the application.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_configuration_descriptions.is_none()`.
@@ -78,6 +86,8 @@ pub struct ApplicationConfigurationDescriptionBuilder {
     pub(crate) flink_application_configuration_description: ::std::option::Option<crate::types::FlinkApplicationConfigurationDescription>,
     pub(crate) environment_property_descriptions: ::std::option::Option<crate::types::EnvironmentPropertyDescriptions>,
     pub(crate) application_snapshot_configuration_description: ::std::option::Option<crate::types::ApplicationSnapshotConfigurationDescription>,
+    pub(crate) application_system_rollback_configuration_description:
+        ::std::option::Option<crate::types::ApplicationSystemRollbackConfigurationDescription>,
     pub(crate) vpc_configuration_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfigurationDescription>>,
     pub(crate) zeppelin_application_configuration_description: ::std::option::Option<crate::types::ZeppelinApplicationConfigurationDescription>,
 }
@@ -180,6 +190,28 @@ impl ApplicationConfigurationDescriptionBuilder {
     ) -> &::std::option::Option<crate::types::ApplicationSnapshotConfigurationDescription> {
         &self.application_snapshot_configuration_description
     }
+    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    pub fn application_system_rollback_configuration_description(
+        mut self,
+        input: crate::types::ApplicationSystemRollbackConfigurationDescription,
+    ) -> Self {
+        self.application_system_rollback_configuration_description = ::std::option::Option::Some(input);
+        self
+    }
+    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    pub fn set_application_system_rollback_configuration_description(
+        mut self,
+        input: ::std::option::Option<crate::types::ApplicationSystemRollbackConfigurationDescription>,
+    ) -> Self {
+        self.application_system_rollback_configuration_description = input;
+        self
+    }
+    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    pub fn get_application_system_rollback_configuration_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationSystemRollbackConfigurationDescription> {
+        &self.application_system_rollback_configuration_description
+    }
     /// Appends an item to `vpc_configuration_descriptions`.
     ///
     /// To override the contents of this collection use [`set_vpc_configuration_descriptions`](Self::set_vpc_configuration_descriptions).
@@ -231,6 +263,7 @@ impl ApplicationConfigurationDescriptionBuilder {
             flink_application_configuration_description: self.flink_application_configuration_description,
             environment_property_descriptions: self.environment_property_descriptions,
             application_snapshot_configuration_description: self.application_snapshot_configuration_description,
+            application_system_rollback_configuration_description: self.application_system_rollback_configuration_description,
             vpc_configuration_descriptions: self.vpc_configuration_descriptions,
             zeppelin_application_configuration_description: self.zeppelin_application_configuration_description,
         }

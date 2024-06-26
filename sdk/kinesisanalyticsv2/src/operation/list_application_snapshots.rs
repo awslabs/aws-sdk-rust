@@ -372,3 +372,6 @@ mod _list_application_snapshots_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

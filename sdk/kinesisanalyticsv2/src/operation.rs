@@ -52,6 +52,9 @@ pub mod delete_application_vpc_configuration;
 /// Types for the `DescribeApplication` operation.
 pub mod describe_application;
 
+/// Types for the `DescribeApplicationOperation` operation.
+pub mod describe_application_operation;
+
 /// Types for the `DescribeApplicationSnapshot` operation.
 pub mod describe_application_snapshot;
 
@@ -60,6 +63,9 @@ pub mod describe_application_version;
 
 /// Types for the `DiscoverInputSchema` operation.
 pub mod discover_input_schema;
+
+/// Types for the `ListApplicationOperations` operation.
+pub mod list_application_operations;
 
 /// Types for the `ListApplicationSnapshots` operation.
 pub mod list_application_snapshots;

@@ -29,6 +29,10 @@ pub struct CreateClusterInput {
     pub outpost_config: ::std::option::Option<crate::types::OutpostConfigRequest>,
     /// <p>The access configuration for the cluster.</p>
     pub access_config: ::std::option::Option<crate::types::CreateAccessConfigRequest>,
+    /// <p>If you set this value to <code>False</code> when creating a cluster, the default networking add-ons will not be installed.</p>
+    /// <p>The default networking addons include vpc-cni, coredns, and kube-proxy.</p>
+    /// <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>
+    pub bootstrap_self_managed_addons: ::std::option::Option<bool>,
 }
 impl CreateClusterInput {
     /// <p>The unique name to give to your cluster.</p>
@@ -81,6 +85,12 @@ impl CreateClusterInput {
     pub fn access_config(&self) -> ::std::option::Option<&crate::types::CreateAccessConfigRequest> {
         self.access_config.as_ref()
     }
+    /// <p>If you set this value to <code>False</code> when creating a cluster, the default networking add-ons will not be installed.</p>
+    /// <p>The default networking addons include vpc-cni, coredns, and kube-proxy.</p>
+    /// <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>
+    pub fn bootstrap_self_managed_addons(&self) -> ::std::option::Option<bool> {
+        self.bootstrap_self_managed_addons
+    }
 }
 impl CreateClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
@@ -104,6 +114,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) encryption_config: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
     pub(crate) outpost_config: ::std::option::Option<crate::types::OutpostConfigRequest>,
     pub(crate) access_config: ::std::option::Option<crate::types::CreateAccessConfigRequest>,
+    pub(crate) bootstrap_self_managed_addons: ::std::option::Option<bool>,
 }
 impl CreateClusterInputBuilder {
     /// <p>The unique name to give to your cluster.</p>
@@ -287,6 +298,26 @@ impl CreateClusterInputBuilder {
     pub fn get_access_config(&self) -> &::std::option::Option<crate::types::CreateAccessConfigRequest> {
         &self.access_config
     }
+    /// <p>If you set this value to <code>False</code> when creating a cluster, the default networking add-ons will not be installed.</p>
+    /// <p>The default networking addons include vpc-cni, coredns, and kube-proxy.</p>
+    /// <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>
+    pub fn bootstrap_self_managed_addons(mut self, input: bool) -> Self {
+        self.bootstrap_self_managed_addons = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If you set this value to <code>False</code> when creating a cluster, the default networking add-ons will not be installed.</p>
+    /// <p>The default networking addons include vpc-cni, coredns, and kube-proxy.</p>
+    /// <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>
+    pub fn set_bootstrap_self_managed_addons(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.bootstrap_self_managed_addons = input;
+        self
+    }
+    /// <p>If you set this value to <code>False</code> when creating a cluster, the default networking add-ons will not be installed.</p>
+    /// <p>The default networking addons include vpc-cni, coredns, and kube-proxy.</p>
+    /// <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>
+    pub fn get_bootstrap_self_managed_addons(&self) -> &::std::option::Option<bool> {
+        &self.bootstrap_self_managed_addons
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -303,6 +334,7 @@ impl CreateClusterInputBuilder {
             encryption_config: self.encryption_config,
             outpost_config: self.outpost_config,
             access_config: self.access_config,
+            bootstrap_self_managed_addons: self.bootstrap_self_managed_addons,
         })
     }
 }

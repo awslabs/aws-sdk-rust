@@ -12,8 +12,10 @@ pub struct Stage {
     pub active_session_id: ::std::option::Option<::std::string::String>,
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Auto-participant-recording configuration object attached to the stage.</p>
+    /// <p>Configuration object for individual participant recording, attached to the stage.</p>
     pub auto_participant_recording_configuration: ::std::option::Option<crate::types::AutoParticipantRecordingConfiguration>,
+    /// <p>Summary information about various endpoints for a stage.</p>
+    pub endpoints: ::std::option::Option<crate::types::StageEndpoints>,
 }
 impl Stage {
     /// <p>Stage ARN.</p>
@@ -33,9 +35,13 @@ impl Stage {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>Auto-participant-recording configuration object attached to the stage.</p>
+    /// <p>Configuration object for individual participant recording, attached to the stage.</p>
     pub fn auto_participant_recording_configuration(&self) -> ::std::option::Option<&crate::types::AutoParticipantRecordingConfiguration> {
         self.auto_participant_recording_configuration.as_ref()
+    }
+    /// <p>Summary information about various endpoints for a stage.</p>
+    pub fn endpoints(&self) -> ::std::option::Option<&crate::types::StageEndpoints> {
+        self.endpoints.as_ref()
     }
 }
 impl Stage {
@@ -54,6 +60,7 @@ pub struct StageBuilder {
     pub(crate) active_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) auto_participant_recording_configuration: ::std::option::Option<crate::types::AutoParticipantRecordingConfiguration>,
+    pub(crate) endpoints: ::std::option::Option<crate::types::StageEndpoints>,
 }
 impl StageBuilder {
     /// <p>Stage ARN.</p>
@@ -119,12 +126,12 @@ impl StageBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>Auto-participant-recording configuration object attached to the stage.</p>
+    /// <p>Configuration object for individual participant recording, attached to the stage.</p>
     pub fn auto_participant_recording_configuration(mut self, input: crate::types::AutoParticipantRecordingConfiguration) -> Self {
         self.auto_participant_recording_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Auto-participant-recording configuration object attached to the stage.</p>
+    /// <p>Configuration object for individual participant recording, attached to the stage.</p>
     pub fn set_auto_participant_recording_configuration(
         mut self,
         input: ::std::option::Option<crate::types::AutoParticipantRecordingConfiguration>,
@@ -132,9 +139,23 @@ impl StageBuilder {
         self.auto_participant_recording_configuration = input;
         self
     }
-    /// <p>Auto-participant-recording configuration object attached to the stage.</p>
+    /// <p>Configuration object for individual participant recording, attached to the stage.</p>
     pub fn get_auto_participant_recording_configuration(&self) -> &::std::option::Option<crate::types::AutoParticipantRecordingConfiguration> {
         &self.auto_participant_recording_configuration
+    }
+    /// <p>Summary information about various endpoints for a stage.</p>
+    pub fn endpoints(mut self, input: crate::types::StageEndpoints) -> Self {
+        self.endpoints = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Summary information about various endpoints for a stage.</p>
+    pub fn set_endpoints(mut self, input: ::std::option::Option<crate::types::StageEndpoints>) -> Self {
+        self.endpoints = input;
+        self
+    }
+    /// <p>Summary information about various endpoints for a stage.</p>
+    pub fn get_endpoints(&self) -> &::std::option::Option<crate::types::StageEndpoints> {
+        &self.endpoints
     }
     /// Consumes the builder and constructs a [`Stage`](crate::types::Stage).
     /// This method will fail if any of the following fields are not set:
@@ -148,6 +169,7 @@ impl StageBuilder {
             active_session_id: self.active_session_id,
             tags: self.tags,
             auto_participant_recording_configuration: self.auto_participant_recording_configuration,
+            endpoints: self.endpoints,
         })
     }
 }

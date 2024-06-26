@@ -14,6 +14,8 @@ pub struct ApplicationConfigurationUpdate {
     pub environment_property_updates: ::std::option::Option<crate::types::EnvironmentPropertyUpdates>,
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub application_snapshot_configuration_update: ::std::option::Option<crate::types::ApplicationSnapshotConfigurationUpdate>,
+    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    pub application_system_rollback_configuration_update: ::std::option::Option<crate::types::ApplicationSystemRollbackConfigurationUpdate>,
     /// <p>Updates to the array of descriptions of VPC configurations available to the application.</p>
     pub vpc_configuration_updates: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfigurationUpdate>>,
     /// <p>Updates to the configuration of a Managed Service for Apache Flink Studio notebook.</p>
@@ -39,6 +41,12 @@ impl ApplicationConfigurationUpdate {
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub fn application_snapshot_configuration_update(&self) -> ::std::option::Option<&crate::types::ApplicationSnapshotConfigurationUpdate> {
         self.application_snapshot_configuration_update.as_ref()
+    }
+    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    pub fn application_system_rollback_configuration_update(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ApplicationSystemRollbackConfigurationUpdate> {
+        self.application_system_rollback_configuration_update.as_ref()
     }
     /// <p>Updates to the array of descriptions of VPC configurations available to the application.</p>
     ///
@@ -67,6 +75,7 @@ pub struct ApplicationConfigurationUpdateBuilder {
     pub(crate) flink_application_configuration_update: ::std::option::Option<crate::types::FlinkApplicationConfigurationUpdate>,
     pub(crate) environment_property_updates: ::std::option::Option<crate::types::EnvironmentPropertyUpdates>,
     pub(crate) application_snapshot_configuration_update: ::std::option::Option<crate::types::ApplicationSnapshotConfigurationUpdate>,
+    pub(crate) application_system_rollback_configuration_update: ::std::option::Option<crate::types::ApplicationSystemRollbackConfigurationUpdate>,
     pub(crate) vpc_configuration_updates: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfigurationUpdate>>,
     pub(crate) zeppelin_application_configuration_update: ::std::option::Option<crate::types::ZeppelinApplicationConfigurationUpdate>,
 }
@@ -150,6 +159,25 @@ impl ApplicationConfigurationUpdateBuilder {
     pub fn get_application_snapshot_configuration_update(&self) -> &::std::option::Option<crate::types::ApplicationSnapshotConfigurationUpdate> {
         &self.application_snapshot_configuration_update
     }
+    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    pub fn application_system_rollback_configuration_update(mut self, input: crate::types::ApplicationSystemRollbackConfigurationUpdate) -> Self {
+        self.application_system_rollback_configuration_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    pub fn set_application_system_rollback_configuration_update(
+        mut self,
+        input: ::std::option::Option<crate::types::ApplicationSystemRollbackConfigurationUpdate>,
+    ) -> Self {
+        self.application_system_rollback_configuration_update = input;
+        self
+    }
+    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    pub fn get_application_system_rollback_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationSystemRollbackConfigurationUpdate> {
+        &self.application_system_rollback_configuration_update
+    }
     /// Appends an item to `vpc_configuration_updates`.
     ///
     /// To override the contents of this collection use [`set_vpc_configuration_updates`](Self::set_vpc_configuration_updates).
@@ -195,6 +223,7 @@ impl ApplicationConfigurationUpdateBuilder {
             flink_application_configuration_update: self.flink_application_configuration_update,
             environment_property_updates: self.environment_property_updates,
             application_snapshot_configuration_update: self.application_snapshot_configuration_update,
+            application_system_rollback_configuration_update: self.application_system_rollback_configuration_update,
             vpc_configuration_updates: self.vpc_configuration_updates,
             zeppelin_application_configuration_update: self.zeppelin_application_configuration_update,
         }

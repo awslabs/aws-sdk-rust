@@ -3,7 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartApplicationOutput {
+    /// Operation ID for tracking StartApplication request
+    pub operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
+}
+impl StartApplicationOutput {
+    /// Operation ID for tracking StartApplication request
+    pub fn operation_id(&self) -> ::std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for StartApplicationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +29,24 @@ impl StartApplicationOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartApplicationOutputBuilder {
+    pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartApplicationOutputBuilder {
+    /// Operation ID for tracking StartApplication request
+    pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Operation ID for tracking StartApplication request
+    pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.operation_id = input;
+        self
+    }
+    /// Operation ID for tracking StartApplication request
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +59,7 @@ impl StartApplicationOutputBuilder {
     /// Consumes the builder and constructs a [`StartApplicationOutput`](crate::operation::start_application::StartApplicationOutput).
     pub fn build(self) -> crate::operation::start_application::StartApplicationOutput {
         crate::operation::start_application::StartApplicationOutput {
+            operation_id: self.operation_id,
             _request_id: self._request_id,
         }
     }

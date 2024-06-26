@@ -44,6 +44,9 @@ where
                                     crate::protocol_serde::shape_auto_participant_recording_configuration::de_auto_participant_recording_configuration(tokens)?
                                 );
                             }
+                            "endpoints" => {
+                                builder = builder.set_endpoints(crate::protocol_serde::shape_stage_endpoints::de_stage_endpoints(tokens)?);
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

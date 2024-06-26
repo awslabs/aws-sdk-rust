@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_control_operations::builders::ListControlOperationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_control_operations::builders::ListControlOperationsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_control_operations::builders::ListControlOperationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_control_operations::builders::ListControlOperationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be shown.</p><br>
     /// - On success, responds with [`ListControlOperationsOutput`](crate::operation::list_control_operations::ListControlOperationsOutput) with field(s):
-    ///   - [`control_operations(Vec::<ControlOperationSummary>)`](crate::operation::list_control_operations::ListControlOperationsOutput::control_operations): <p>Returns a list of output from control operations. PLACEHOLDER</p>
+    ///   - [`control_operations(Vec::<ControlOperationSummary>)`](crate::operation::list_control_operations::ListControlOperationsOutput::control_operations): <p>Returns a list of output from control operations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_control_operations::ListControlOperationsOutput::next_token): <p>A pagination token.</p>
     /// - On failure, responds with [`SdkError<ListControlOperationsError>`](crate::operation::list_control_operations::ListControlOperationsError)
     pub fn list_control_operations(&self) -> crate::operation::list_control_operations::builders::ListControlOperationsFluentBuilder {

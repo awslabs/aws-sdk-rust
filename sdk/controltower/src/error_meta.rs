@@ -561,6 +561,42 @@ impl From<crate::operation::list_enabled_controls::ListEnabledControlsError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_landing_zone_operations::ListLandingZoneOperationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_landing_zone_operations::ListLandingZoneOperationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_landing_zone_operations::ListLandingZoneOperationsError> for Error {
+    fn from(err: crate::operation::list_landing_zone_operations::ListLandingZoneOperationsError) -> Self {
+        match err {
+            crate::operation::list_landing_zone_operations::ListLandingZoneOperationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_landing_zone_operations::ListLandingZoneOperationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_landing_zone_operations::ListLandingZoneOperationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_landing_zone_operations::ListLandingZoneOperationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_landing_zone_operations::ListLandingZoneOperationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_landing_zones::ListLandingZonesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

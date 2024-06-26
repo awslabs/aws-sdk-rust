@@ -109,6 +109,12 @@ impl ListApplicationsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_applications::paginator::ListApplicationsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_applications::paginator::ListApplicationsPaginator {
+        crate::operation::list_applications::paginator::ListApplicationsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The maximum number of applications to list.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);

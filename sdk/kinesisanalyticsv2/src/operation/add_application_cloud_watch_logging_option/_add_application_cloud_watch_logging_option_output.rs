@@ -9,6 +9,8 @@ pub struct AddApplicationCloudWatchLoggingOptionOutput {
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>The descriptions of the current CloudWatch logging options for the SQL-based Kinesis Data Analytics application.</p>
     pub cloud_watch_logging_option_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
+    /// Operation ID for tracking AddApplicationCloudWatchLoggingOption request
+    pub operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AddApplicationCloudWatchLoggingOptionOutput {
@@ -25,6 +27,10 @@ impl AddApplicationCloudWatchLoggingOptionOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_logging_option_descriptions.is_none()`.
     pub fn cloud_watch_logging_option_descriptions(&self) -> &[crate::types::CloudWatchLoggingOptionDescription] {
         self.cloud_watch_logging_option_descriptions.as_deref().unwrap_or_default()
+    }
+    /// Operation ID for tracking AddApplicationCloudWatchLoggingOption request
+    pub fn operation_id(&self) -> ::std::option::Option<&str> {
+        self.operation_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AddApplicationCloudWatchLoggingOptionOutput {
@@ -46,6 +52,7 @@ pub struct AddApplicationCloudWatchLoggingOptionOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_version_id: ::std::option::Option<i64>,
     pub(crate) cloud_watch_logging_option_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
+    pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AddApplicationCloudWatchLoggingOptionOutputBuilder {
@@ -102,6 +109,20 @@ impl AddApplicationCloudWatchLoggingOptionOutputBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>> {
         &self.cloud_watch_logging_option_descriptions
     }
+    /// Operation ID for tracking AddApplicationCloudWatchLoggingOption request
+    pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Operation ID for tracking AddApplicationCloudWatchLoggingOption request
+    pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.operation_id = input;
+        self
+    }
+    /// Operation ID for tracking AddApplicationCloudWatchLoggingOption request
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -117,6 +138,7 @@ impl AddApplicationCloudWatchLoggingOptionOutputBuilder {
             application_arn: self.application_arn,
             application_version_id: self.application_version_id,
             cloud_watch_logging_option_descriptions: self.cloud_watch_logging_option_descriptions,
+            operation_id: self.operation_id,
             _request_id: self._request_id,
         }
     }

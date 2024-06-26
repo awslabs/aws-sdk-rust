@@ -239,6 +239,8 @@ pub(crate) mod shape_advanced_options;
 
 pub(crate) mod shape_advanced_security_options_input;
 
+pub(crate) mod shape_aiml_options_input;
+
 pub(crate) mod shape_authorized_principal;
 
 pub(crate) mod shape_authorized_principal_list;
@@ -375,6 +377,10 @@ pub(crate) mod shape_advanced_security_options;
 
 pub(crate) mod shape_advanced_security_options_status;
 
+pub(crate) mod shape_aiml_options_output;
+
+pub(crate) mod shape_aiml_options_status;
+
 pub(crate) mod shape_auto_tune;
 
 pub(crate) mod shape_auto_tune_maintenance_schedule;
@@ -437,6 +443,8 @@ pub(crate) mod shape_master_user_options;
 
 pub(crate) mod shape_modifying_properties_list;
 
+pub(crate) mod shape_natural_language_query_generation_options_input;
+
 pub(crate) mod shape_node_to_node_encryption_options_status;
 
 pub(crate) mod shape_off_peak_window;
@@ -496,6 +504,8 @@ pub(crate) mod shape_instance_role_list;
 pub(crate) mod shape_jwt_options_output;
 
 pub(crate) mod shape_modifying_properties;
+
+pub(crate) mod shape_natural_language_query_generation_options_output;
 
 pub(crate) mod shape_option_status;
 

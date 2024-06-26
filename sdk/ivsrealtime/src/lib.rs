@@ -17,21 +17,18 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! __Introduction__
-//!
 //! The Amazon Interactive Video Service (IVS) real-time API is REST compatible, using a standard HTTP API and an AWS EventBridge event stream for responses. JSON is used for both requests and responses, including errors.
 //!
-//! Terminology:
-//!   - A _stage_ is a virtual space where participants can exchange video in real time.
-//!   - A _participant token_ is a token that authenticates a participant when they join a stage.
-//!   - A _participant object_ represents participants (people) in the stage and contains information about them. When a token is created, it includes a participant ID; when a participant uses that token to join a stage, the participant is associated with that participant ID. There is a 1:1 mapping between participant tokens and participants.
-//!   - Server-side composition: The _composition_ process composites participants of a stage into a single video and forwards it to a set of outputs (e.g., IVS channels). Composition endpoints support this process.
-//!   - Server-side composition: A _composition_ controls the look of the outputs, including how participants are positioned in the video.
+//! __Key Concepts__
+//!   - __Stage__ — A virtual space where participants can exchange video in real time.
+//!   - __Participant token__ — A token that authenticates a participant when they join a stage.
+//!   - __Participant object__ — Represents participants (people) in the stage and contains information about them. When a token is created, it includes a participant ID; when a participant uses that token to join a stage, the participant is associated with that participant ID. There is a 1:1 mapping between participant tokens and participants.
 //!
-//! __Resources__
+//! For server-side composition:
+//!   - __Composition process__ — Composites participants of a stage into a single video and forwards it to a set of outputs (e.g., IVS channels). Composition endpoints support this process.
+//!   - __Composition__ — Controls the look of the outputs, including how participants are positioned in the video.
 //!
-//! The following resources contain information about your IVS live stream (see [Getting Started with Amazon IVS Real-Time Streaming](https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html)):
-//!   - __Stage__ — A stage is a virtual space where participants can exchange video in real time.
+//! For more information about your IVS live stream, also see [Getting Started with Amazon IVS Real-Time Streaming](https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html).
 //!
 //! __Tagging__
 //!
@@ -42,43 +39,6 @@
 //! The Amazon IVS real-time API has these tag-related endpoints: TagResource, UntagResource, and ListTagsForResource. The following resource supports tagging: Stage.
 //!
 //! At most 50 tags can be applied to a resource.
-//!
-//! __Stages Endpoints__
-//!   - CreateParticipantToken — Creates an additional token for a specified stage. This can be done after stage creation or when tokens expire.
-//!   - CreateStage — Creates a new stage (and optionally participant tokens).
-//!   - DeleteStage — Shuts down and deletes the specified stage (disconnecting all participants).
-//!   - DisconnectParticipant — Disconnects a specified participant and revokes the participant permanently from a specified stage.
-//!   - GetParticipant — Gets information about the specified participant token.
-//!   - GetStage — Gets information for the specified stage.
-//!   - GetStageSession — Gets information for the specified stage session.
-//!   - ListParticipantEvents — Lists events for a specified participant that occurred during a specified stage session.
-//!   - ListParticipants — Lists all participants in a specified stage session.
-//!   - ListStages — Gets summary information about all stages in your account, in the AWS region where the API request is processed.
-//!   - ListStageSessions — Gets all sessions for a specified stage.
-//!   - UpdateStage — Updates a stage’s configuration.
-//!
-//! __Composition Endpoints__
-//!   - GetComposition — Gets information about the specified Composition resource.
-//!   - ListCompositions — Gets summary information about all Compositions in your account, in the AWS region where the API request is processed.
-//!   - StartComposition — Starts a Composition from a stage based on the configuration provided in the request.
-//!   - StopComposition — Stops and deletes a Composition resource. Any broadcast from the Composition resource is stopped.
-//!
-//! __EncoderConfiguration Endpoints__
-//!   - CreateEncoderConfiguration — Creates an EncoderConfiguration object.
-//!   - DeleteEncoderConfiguration — Deletes an EncoderConfiguration resource. Ensures that no Compositions are using this template; otherwise, returns an error.
-//!   - GetEncoderConfiguration — Gets information about the specified EncoderConfiguration resource.
-//!   - ListEncoderConfigurations — Gets summary information about all EncoderConfigurations in your account, in the AWS region where the API request is processed.
-//!
-//! __StorageConfiguration Endpoints__
-//!   - CreateStorageConfiguration — Creates a new storage configuration, used to enable recording to Amazon S3.
-//!   - DeleteStorageConfiguration — Deletes the storage configuration for the specified ARN.
-//!   - GetStorageConfiguration — Gets the storage configuration for the specified ARN.
-//!   - ListStorageConfigurations — Gets summary information about all storage configurations in your account, in the AWS region where the API request is processed.
-//!
-//! __Tags Endpoints__
-//!   - ListTagsForResource — Gets information about AWS tags for the specified ARN.
-//!   - TagResource — Adds or updates tags for the AWS resource with the specified ARN.
-//!   - UntagResource — Removes tags from the resource with the specified ARN.
 //!
 //! ## Getting Started
 //!
@@ -92,7 +52,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-ivsrealtime = "1.34.0"
+//! aws-sdk-ivsrealtime = "1.35.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

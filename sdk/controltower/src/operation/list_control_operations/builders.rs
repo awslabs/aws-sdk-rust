@@ -22,7 +22,7 @@ impl crate::operation::list_control_operations::builders::ListControlOperationsI
 }
 /// Fluent builder constructing a request to `ListControlOperations`.
 ///
-/// <p>Provides a list of operations in progress or queued.</p>
+/// <p>Provides a list of operations in progress or queued. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html#list-control-operations-api-examples">ListControlOperation examples</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListControlOperationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

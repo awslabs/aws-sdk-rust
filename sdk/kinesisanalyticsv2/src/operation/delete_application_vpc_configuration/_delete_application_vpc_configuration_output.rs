@@ -7,6 +7,8 @@ pub struct DeleteApplicationVpcConfigurationOutput {
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated version ID of the application.</p>
     pub application_version_id: ::std::option::Option<i64>,
+    /// Operation ID for tracking DeleteApplicationVpcConfiguration request
+    pub operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteApplicationVpcConfigurationOutput {
@@ -17,6 +19,10 @@ impl DeleteApplicationVpcConfigurationOutput {
     /// <p>The updated version ID of the application.</p>
     pub fn application_version_id(&self) -> ::std::option::Option<i64> {
         self.application_version_id
+    }
+    /// Operation ID for tracking DeleteApplicationVpcConfiguration request
+    pub fn operation_id(&self) -> ::std::option::Option<&str> {
+        self.operation_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteApplicationVpcConfigurationOutput {
@@ -37,6 +43,7 @@ impl DeleteApplicationVpcConfigurationOutput {
 pub struct DeleteApplicationVpcConfigurationOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_version_id: ::std::option::Option<i64>,
+    pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteApplicationVpcConfigurationOutputBuilder {
@@ -68,6 +75,20 @@ impl DeleteApplicationVpcConfigurationOutputBuilder {
     pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
         &self.application_version_id
     }
+    /// Operation ID for tracking DeleteApplicationVpcConfiguration request
+    pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Operation ID for tracking DeleteApplicationVpcConfiguration request
+    pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.operation_id = input;
+        self
+    }
+    /// Operation ID for tracking DeleteApplicationVpcConfiguration request
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +103,7 @@ impl DeleteApplicationVpcConfigurationOutputBuilder {
         crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput {
             application_arn: self.application_arn,
             application_version_id: self.application_version_id,
+            operation_id: self.operation_id,
             _request_id: self._request_id,
         }
     }

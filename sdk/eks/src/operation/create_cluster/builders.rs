@@ -292,4 +292,24 @@ impl CreateClusterFluentBuilder {
     pub fn get_access_config(&self) -> &::std::option::Option<crate::types::CreateAccessConfigRequest> {
         self.inner.get_access_config()
     }
+    /// <p>If you set this value to <code>False</code> when creating a cluster, the default networking add-ons will not be installed.</p>
+    /// <p>The default networking addons include vpc-cni, coredns, and kube-proxy.</p>
+    /// <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>
+    pub fn bootstrap_self_managed_addons(mut self, input: bool) -> Self {
+        self.inner = self.inner.bootstrap_self_managed_addons(input);
+        self
+    }
+    /// <p>If you set this value to <code>False</code> when creating a cluster, the default networking add-ons will not be installed.</p>
+    /// <p>The default networking addons include vpc-cni, coredns, and kube-proxy.</p>
+    /// <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>
+    pub fn set_bootstrap_self_managed_addons(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_bootstrap_self_managed_addons(input);
+        self
+    }
+    /// <p>If you set this value to <code>False</code> when creating a cluster, the default networking add-ons will not be installed.</p>
+    /// <p>The default networking addons include vpc-cni, coredns, and kube-proxy.</p>
+    /// <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>
+    pub fn get_bootstrap_self_managed_addons(&self) -> &::std::option::Option<bool> {
+        self.inner.get_bootstrap_self_managed_addons()
+    }
 }

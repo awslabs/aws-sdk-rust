@@ -74,6 +74,8 @@ pub struct DomainStatus {
     pub domain_processing_status: ::std::option::Option<crate::types::DomainProcessingStatusType>,
     /// <p>Information about the domain properties that are currently being modified.</p>
     pub modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
+    /// <p>Container for parameters required to enable all machine learning features.</p>
+    pub aiml_options: ::std::option::Option<crate::types::AimlOptionsOutput>,
 }
 impl DomainStatus {
     /// <p>Unique identifier for the domain.</p>
@@ -217,6 +219,10 @@ impl DomainStatus {
     pub fn modifying_properties(&self) -> &[crate::types::ModifyingProperties] {
         self.modifying_properties.as_deref().unwrap_or_default()
     }
+    /// <p>Container for parameters required to enable all machine learning features.</p>
+    pub fn aiml_options(&self) -> ::std::option::Option<&crate::types::AimlOptionsOutput> {
+        self.aiml_options.as_ref()
+    }
 }
 impl DomainStatus {
     /// Creates a new builder-style object to manufacture [`DomainStatus`](crate::types::DomainStatus).
@@ -261,6 +267,7 @@ pub struct DomainStatusBuilder {
     pub(crate) software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
     pub(crate) domain_processing_status: ::std::option::Option<crate::types::DomainProcessingStatusType>,
     pub(crate) modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
+    pub(crate) aiml_options: ::std::option::Option<crate::types::AimlOptionsOutput>,
 }
 impl DomainStatusBuilder {
     /// <p>Unique identifier for the domain.</p>
@@ -769,6 +776,20 @@ impl DomainStatusBuilder {
     pub fn get_modifying_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>> {
         &self.modifying_properties
     }
+    /// <p>Container for parameters required to enable all machine learning features.</p>
+    pub fn aiml_options(mut self, input: crate::types::AimlOptionsOutput) -> Self {
+        self.aiml_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Container for parameters required to enable all machine learning features.</p>
+    pub fn set_aiml_options(mut self, input: ::std::option::Option<crate::types::AimlOptionsOutput>) -> Self {
+        self.aiml_options = input;
+        self
+    }
+    /// <p>Container for parameters required to enable all machine learning features.</p>
+    pub fn get_aiml_options(&self) -> &::std::option::Option<crate::types::AimlOptionsOutput> {
+        &self.aiml_options
+    }
     /// Consumes the builder and constructs a [`DomainStatus`](crate::types::DomainStatus).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_id`](crate::types::builders::DomainStatusBuilder::domain_id)
@@ -823,6 +844,7 @@ impl DomainStatusBuilder {
             software_update_options: self.software_update_options,
             domain_processing_status: self.domain_processing_status,
             modifying_properties: self.modifying_properties,
+            aiml_options: self.aiml_options,
         })
     }
 }

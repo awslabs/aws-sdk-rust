@@ -9,7 +9,7 @@ pub struct ListEnabledControlsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>How many results to return per API call.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control operations to view.</p>
+    /// <p>An input filter for the <code>ListEnabledControls</code> API that lets you select the types of control operations to view.</p>
     pub filter: ::std::option::Option<crate::types::EnabledControlFilter>,
 }
 impl ListEnabledControlsInput {
@@ -25,7 +25,7 @@ impl ListEnabledControlsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control operations to view.</p>
+    /// <p>An input filter for the <code>ListEnabledControls</code> API that lets you select the types of control operations to view.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::EnabledControlFilter> {
         self.filter.as_ref()
     }
@@ -89,17 +89,17 @@ impl ListEnabledControlsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control operations to view.</p>
+    /// <p>An input filter for the <code>ListEnabledControls</code> API that lets you select the types of control operations to view.</p>
     pub fn filter(mut self, input: crate::types::EnabledControlFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control operations to view.</p>
+    /// <p>An input filter for the <code>ListEnabledControls</code> API that lets you select the types of control operations to view.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::EnabledControlFilter>) -> Self {
         self.filter = input;
         self
     }
-    /// <p>An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control operations to view.</p>
+    /// <p>An input filter for the <code>ListEnabledControls</code> API that lets you select the types of control operations to view.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::EnabledControlFilter> {
         &self.filter
     }

@@ -35,6 +35,15 @@ pub(crate) fn list_participants_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_public_keys_output_output_correct_errors(
+    mut builder: crate::operation::list_public_keys::builders::ListPublicKeysOutputBuilder,
+) -> crate::operation::list_public_keys::builders::ListPublicKeysOutputBuilder {
+    if builder.public_keys.is_none() {
+        builder.public_keys = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_stage_sessions_output_output_correct_errors(
     mut builder: crate::operation::list_stage_sessions::builders::ListStageSessionsOutputBuilder,
 ) -> crate::operation::list_stage_sessions::builders::ListStageSessionsOutputBuilder {

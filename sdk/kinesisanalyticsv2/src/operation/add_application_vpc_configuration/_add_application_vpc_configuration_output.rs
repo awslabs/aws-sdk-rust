@@ -9,6 +9,8 @@ pub struct AddApplicationVpcConfigurationOutput {
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>The parameters of the new VPC configuration.</p>
     pub vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
+    /// Operation ID for tracking AddApplicationVpcConfiguration request
+    pub operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AddApplicationVpcConfigurationOutput {
@@ -23,6 +25,10 @@ impl AddApplicationVpcConfigurationOutput {
     /// <p>The parameters of the new VPC configuration.</p>
     pub fn vpc_configuration_description(&self) -> ::std::option::Option<&crate::types::VpcConfigurationDescription> {
         self.vpc_configuration_description.as_ref()
+    }
+    /// Operation ID for tracking AddApplicationVpcConfiguration request
+    pub fn operation_id(&self) -> ::std::option::Option<&str> {
+        self.operation_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AddApplicationVpcConfigurationOutput {
@@ -44,6 +50,7 @@ pub struct AddApplicationVpcConfigurationOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_version_id: ::std::option::Option<i64>,
     pub(crate) vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
+    pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AddApplicationVpcConfigurationOutputBuilder {
@@ -89,6 +96,20 @@ impl AddApplicationVpcConfigurationOutputBuilder {
     pub fn get_vpc_configuration_description(&self) -> &::std::option::Option<crate::types::VpcConfigurationDescription> {
         &self.vpc_configuration_description
     }
+    /// Operation ID for tracking AddApplicationVpcConfiguration request
+    pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Operation ID for tracking AddApplicationVpcConfiguration request
+    pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.operation_id = input;
+        self
+    }
+    /// Operation ID for tracking AddApplicationVpcConfiguration request
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -104,6 +125,7 @@ impl AddApplicationVpcConfigurationOutputBuilder {
             application_arn: self.application_arn,
             application_version_id: self.application_version_id,
             vpc_configuration_description: self.vpc_configuration_description,
+            operation_id: self.operation_id,
             _request_id: self._request_id,
         }
     }

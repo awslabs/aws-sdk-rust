@@ -17,10 +17,8 @@ pub struct LandingZoneOperationDetail {
     /// <p><code>RESET</code>: The <code>ResetLandingZone</code> operation.</p></li>
     /// </ul>
     pub operation_type: ::std::option::Option<crate::types::LandingZoneOperationType>,
-    /// <p>The landing zone operation start time.</p>
-    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The landing zone operation end time.</p>
-    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The <code>operationIdentifier</code> of the landing zone operation.</p>
+    pub operation_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
@@ -31,6 +29,10 @@ pub struct LandingZoneOperationDetail {
     /// <p><code>FAILED</code>: The landing zone operation failed.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::LandingZoneOperationStatus>,
+    /// <p>The landing zone operation start time.</p>
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The landing zone operation end time.</p>
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the operation result is FAILED, this string contains a message explaining why the operation failed.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
@@ -50,13 +52,9 @@ impl LandingZoneOperationDetail {
     pub fn operation_type(&self) -> ::std::option::Option<&crate::types::LandingZoneOperationType> {
         self.operation_type.as_ref()
     }
-    /// <p>The landing zone operation start time.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_time.as_ref()
-    }
-    /// <p>The landing zone operation end time.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_time.as_ref()
+    /// <p>The <code>operationIdentifier</code> of the landing zone operation.</p>
+    pub fn operation_identifier(&self) -> ::std::option::Option<&str> {
+        self.operation_identifier.as_deref()
     }
     /// <p>Valid values:</p>
     /// <ul>
@@ -69,6 +67,14 @@ impl LandingZoneOperationDetail {
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::LandingZoneOperationStatus> {
         self.status.as_ref()
+    }
+    /// <p>The landing zone operation start time.</p>
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p>The landing zone operation end time.</p>
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
     }
     /// <p>If the operation result is FAILED, this string contains a message explaining why the operation failed.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
@@ -87,9 +93,10 @@ impl LandingZoneOperationDetail {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LandingZoneOperationDetailBuilder {
     pub(crate) operation_type: ::std::option::Option<crate::types::LandingZoneOperationType>,
+    pub(crate) operation_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::LandingZoneOperationStatus>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) status: ::std::option::Option<crate::types::LandingZoneOperationStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl LandingZoneOperationDetailBuilder {
@@ -140,33 +147,19 @@ impl LandingZoneOperationDetailBuilder {
     pub fn get_operation_type(&self) -> &::std::option::Option<crate::types::LandingZoneOperationType> {
         &self.operation_type
     }
-    /// <p>The landing zone operation start time.</p>
-    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.start_time = ::std::option::Option::Some(input);
+    /// <p>The <code>operationIdentifier</code> of the landing zone operation.</p>
+    pub fn operation_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operation_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The landing zone operation start time.</p>
-    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
+    /// <p>The <code>operationIdentifier</code> of the landing zone operation.</p>
+    pub fn set_operation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.operation_identifier = input;
         self
     }
-    /// <p>The landing zone operation start time.</p>
-    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        &self.start_time
-    }
-    /// <p>The landing zone operation end time.</p>
-    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.end_time = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The landing zone operation end time.</p>
-    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
-    }
-    /// <p>The landing zone operation end time.</p>
-    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        &self.end_time
+    /// <p>The <code>operationIdentifier</code> of the landing zone operation.</p>
+    pub fn get_operation_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_identifier
     }
     /// <p>Valid values:</p>
     /// <ul>
@@ -206,6 +199,34 @@ impl LandingZoneOperationDetailBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LandingZoneOperationStatus> {
         &self.status
     }
+    /// <p>The landing zone operation start time.</p>
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The landing zone operation start time.</p>
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input;
+        self
+    }
+    /// <p>The landing zone operation start time.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
+    /// <p>The landing zone operation end time.</p>
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The landing zone operation end time.</p>
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_time = input;
+        self
+    }
+    /// <p>The landing zone operation end time.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>If the operation result is FAILED, this string contains a message explaining why the operation failed.</p>
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
@@ -224,9 +245,10 @@ impl LandingZoneOperationDetailBuilder {
     pub fn build(self) -> crate::types::LandingZoneOperationDetail {
         crate::types::LandingZoneOperationDetail {
             operation_type: self.operation_type,
+            operation_identifier: self.operation_identifier,
+            status: self.status,
             start_time: self.start_time,
             end_time: self.end_time,
-            status: self.status,
             status_message: self.status_message,
         }
     }

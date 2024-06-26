@@ -108,6 +108,12 @@ impl ListApplicationSnapshotsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_application_snapshots::paginator::ListApplicationSnapshotsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_application_snapshots::paginator::ListApplicationSnapshotsPaginator {
+        crate::operation::list_application_snapshots::paginator::ListApplicationSnapshotsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The name of an existing application.</p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());

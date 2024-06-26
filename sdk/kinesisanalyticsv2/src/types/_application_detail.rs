@@ -32,6 +32,8 @@ pub struct ApplicationDetail {
     pub application_version_updated_from: ::std::option::Option<i64>,
     /// <p>If you reverted the application using <code>RollbackApplication</code>, the application version when <code>RollbackApplication</code> was called.</p>
     pub application_version_rolled_back_from: ::std::option::Option<i64>,
+    /// The current timestamp when the application version was created.
+    pub application_version_create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A value you use to implement strong concurrency for application updates.</p>
     pub conditional_token: ::std::option::Option<::std::string::String>,
     /// <p>The version to which you want to roll back the application.</p>
@@ -102,6 +104,10 @@ impl ApplicationDetail {
     pub fn application_version_rolled_back_from(&self) -> ::std::option::Option<i64> {
         self.application_version_rolled_back_from
     }
+    /// The current timestamp when the application version was created.
+    pub fn application_version_create_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.application_version_create_timestamp.as_ref()
+    }
     /// <p>A value you use to implement strong concurrency for application updates.</p>
     pub fn conditional_token(&self) -> ::std::option::Option<&str> {
         self.conditional_token.as_deref()
@@ -140,6 +146,7 @@ pub struct ApplicationDetailBuilder {
     pub(crate) application_maintenance_configuration_description: ::std::option::Option<crate::types::ApplicationMaintenanceConfigurationDescription>,
     pub(crate) application_version_updated_from: ::std::option::Option<i64>,
     pub(crate) application_version_rolled_back_from: ::std::option::Option<i64>,
+    pub(crate) application_version_create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) conditional_token: ::std::option::Option<::std::string::String>,
     pub(crate) application_version_rolled_back_to: ::std::option::Option<i64>,
     pub(crate) application_mode: ::std::option::Option<crate::types::ApplicationMode>,
@@ -365,6 +372,20 @@ impl ApplicationDetailBuilder {
     pub fn get_application_version_rolled_back_from(&self) -> &::std::option::Option<i64> {
         &self.application_version_rolled_back_from
     }
+    /// The current timestamp when the application version was created.
+    pub fn application_version_create_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.application_version_create_timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// The current timestamp when the application version was created.
+    pub fn set_application_version_create_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.application_version_create_timestamp = input;
+        self
+    }
+    /// The current timestamp when the application version was created.
+    pub fn get_application_version_create_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.application_version_create_timestamp
+    }
     /// <p>A value you use to implement strong concurrency for application updates.</p>
     pub fn conditional_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conditional_token = ::std::option::Option::Some(input.into());
@@ -455,6 +476,7 @@ impl ApplicationDetailBuilder {
             application_maintenance_configuration_description: self.application_maintenance_configuration_description,
             application_version_updated_from: self.application_version_updated_from,
             application_version_rolled_back_from: self.application_version_rolled_back_from,
+            application_version_create_timestamp: self.application_version_create_timestamp,
             conditional_token: self.conditional_token,
             application_version_rolled_back_to: self.application_version_rolled_back_to,
             application_mode: self.application_mode,

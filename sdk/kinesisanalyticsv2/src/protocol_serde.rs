@@ -57,11 +57,15 @@ pub(crate) mod shape_delete_application_vpc_configuration;
 
 pub(crate) mod shape_describe_application;
 
+pub(crate) mod shape_describe_application_operation;
+
 pub(crate) mod shape_describe_application_snapshot;
 
 pub(crate) mod shape_describe_application_version;
 
 pub(crate) mod shape_discover_input_schema;
+
+pub(crate) mod shape_list_application_operations;
 
 pub(crate) mod shape_list_application_snapshots;
 
@@ -131,6 +135,8 @@ pub(crate) mod shape_delete_application_vpc_configuration_input;
 
 pub(crate) mod shape_describe_application_input;
 
+pub(crate) mod shape_describe_application_operation_input;
+
 pub(crate) mod shape_describe_application_snapshot_input;
 
 pub(crate) mod shape_describe_application_version_input;
@@ -144,6 +150,8 @@ pub(crate) mod shape_invalid_argument_exception;
 pub(crate) mod shape_invalid_request_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
+
+pub(crate) mod shape_list_application_operations_input;
 
 pub(crate) mod shape_list_application_snapshots_input;
 
@@ -190,6 +198,10 @@ pub(crate) mod shape_application_detail;
 pub(crate) mod shape_application_maintenance_configuration_description;
 
 pub(crate) mod shape_application_maintenance_configuration_update;
+
+pub(crate) mod shape_application_operation_info_details;
+
+pub(crate) mod shape_application_operation_info_list;
 
 pub(crate) mod shape_application_summaries;
 
@@ -251,6 +263,8 @@ pub(crate) mod shape_application_code_configuration_update;
 
 pub(crate) mod shape_application_configuration_description;
 
+pub(crate) mod shape_application_operation_info;
+
 pub(crate) mod shape_application_restore_configuration;
 
 pub(crate) mod shape_application_snapshot_configuration;
@@ -258,6 +272,12 @@ pub(crate) mod shape_application_snapshot_configuration;
 pub(crate) mod shape_application_snapshot_configuration_update;
 
 pub(crate) mod shape_application_summary;
+
+pub(crate) mod shape_application_system_rollback_configuration;
+
+pub(crate) mod shape_application_system_rollback_configuration_update;
+
+pub(crate) mod shape_application_version_change_details;
 
 pub(crate) mod shape_application_version_summary;
 
@@ -293,6 +313,8 @@ pub(crate) mod shape_kinesis_streams_output;
 
 pub(crate) mod shape_lambda_output;
 
+pub(crate) mod shape_operation_failure_details;
+
 pub(crate) mod shape_output_description;
 
 pub(crate) mod shape_parsed_input_record;
@@ -325,6 +347,8 @@ pub(crate) mod shape_application_code_configuration_description;
 
 pub(crate) mod shape_application_snapshot_configuration_description;
 
+pub(crate) mod shape_application_system_rollback_configuration_description;
+
 pub(crate) mod shape_catalog_configuration;
 
 pub(crate) mod shape_catalog_configuration_update;
@@ -344,6 +368,8 @@ pub(crate) mod shape_deploy_as_application_configuration;
 pub(crate) mod shape_deploy_as_application_configuration_update;
 
 pub(crate) mod shape_environment_property_descriptions;
+
+pub(crate) mod shape_error_info;
 
 pub(crate) mod shape_flink_application_configuration_description;
 

@@ -57,6 +57,8 @@ pub(crate) mod shape_list_enabled_baselines;
 
 pub(crate) mod shape_list_enabled_controls;
 
+pub(crate) mod shape_list_landing_zone_operations;
+
 pub(crate) mod shape_list_landing_zones;
 
 pub(crate) mod shape_list_tags_for_resource;
@@ -123,6 +125,8 @@ pub(crate) mod shape_list_enabled_baselines_input;
 
 pub(crate) mod shape_list_enabled_controls_input;
 
+pub(crate) mod shape_list_landing_zone_operations_input;
+
 pub(crate) mod shape_list_landing_zones_input;
 
 pub(crate) mod shape_reset_enabled_baseline_input;
@@ -175,6 +179,10 @@ pub(crate) mod shape_landing_zone_detail;
 
 pub(crate) mod shape_landing_zone_operation_detail;
 
+pub(crate) mod shape_landing_zone_operation_filter;
+
+pub(crate) mod shape_landing_zone_operations;
+
 pub(crate) mod shape_landing_zone_summaries;
 
 pub(crate) mod shape_tag_map;
@@ -196,6 +204,8 @@ pub(crate) mod shape_enabled_control_summary;
 pub(crate) mod shape_enablement_status_summary;
 
 pub(crate) mod shape_landing_zone_drift_status_summary;
+
+pub(crate) mod shape_landing_zone_operation_summary;
 
 pub(crate) mod shape_landing_zone_summary;
 

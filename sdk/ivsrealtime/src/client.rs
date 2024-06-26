@@ -173,6 +173,8 @@ pub mod customize;
 
 mod delete_encoder_configuration;
 
+mod delete_public_key;
+
 mod delete_stage;
 
 mod delete_storage_configuration;
@@ -185,11 +187,15 @@ mod get_encoder_configuration;
 
 mod get_participant;
 
+mod get_public_key;
+
 mod get_stage;
 
 mod get_stage_session;
 
 mod get_storage_configuration;
+
+mod import_public_key;
 
 mod list_compositions;
 
@@ -198,6 +204,8 @@ mod list_encoder_configurations;
 mod list_participant_events;
 
 mod list_participants;
+
+mod list_public_keys;
 
 mod list_stage_sessions;
 

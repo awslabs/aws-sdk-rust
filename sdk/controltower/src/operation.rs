@@ -52,6 +52,9 @@ pub mod list_enabled_baselines;
 /// Types for the `ListEnabledControls` operation.
 pub mod list_enabled_controls;
 
+/// Types for the `ListLandingZoneOperations` operation.
+pub mod list_landing_zone_operations;
+
 /// Types for the `ListLandingZones` operation.
 pub mod list_landing_zones;
 

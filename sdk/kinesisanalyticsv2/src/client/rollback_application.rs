@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`current_application_version_id(i64)`](crate::operation::rollback_application::builders::RollbackApplicationFluentBuilder::current_application_version_id) / [`set_current_application_version_id(Option<i64>)`](crate::operation::rollback_application::builders::RollbackApplicationFluentBuilder::set_current_application_version_id):<br>required: **true**<br><p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p><br>
     /// - On success, responds with [`RollbackApplicationOutput`](crate::operation::rollback_application::RollbackApplicationOutput) with field(s):
     ///   - [`application_detail(Option<ApplicationDetail>)`](crate::operation::rollback_application::RollbackApplicationOutput::application_detail): <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
+    ///   - [`operation_id(Option<String>)`](crate::operation::rollback_application::RollbackApplicationOutput::operation_id): Operation ID for tracking RollbackApplication request
     /// - On failure, responds with [`SdkError<RollbackApplicationError>`](crate::operation::rollback_application::RollbackApplicationError)
     pub fn rollback_application(&self) -> crate::operation::rollback_application::builders::RollbackApplicationFluentBuilder {
         crate::operation::rollback_application::builders::RollbackApplicationFluentBuilder::new(self.handle.clone())

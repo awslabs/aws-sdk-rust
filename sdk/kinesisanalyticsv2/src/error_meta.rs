@@ -741,6 +741,43 @@ impl From<crate::operation::describe_application::DescribeApplicationError> for 
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_application_operation::DescribeApplicationOperationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_application_operation::DescribeApplicationOperationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_application_operation::DescribeApplicationOperationError> for Error {
+    fn from(err: crate::operation::describe_application_operation::DescribeApplicationOperationError) -> Self {
+        match err {
+            crate::operation::describe_application_operation::DescribeApplicationOperationError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::describe_application_operation::DescribeApplicationOperationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_application_operation::DescribeApplicationOperationError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::describe_application_operation::DescribeApplicationOperationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_application_snapshot::DescribeApplicationSnapshotError, R>>
     for Error
 where
@@ -843,6 +880,39 @@ impl From<crate::operation::discover_input_schema::DiscoverInputSchemaError> for
                 Error::UnsupportedOperationException(inner)
             }
             crate::operation::discover_input_schema::DiscoverInputSchemaError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_application_operations::ListApplicationOperationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_application_operations::ListApplicationOperationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_application_operations::ListApplicationOperationsError> for Error {
+    fn from(err: crate::operation::list_application_operations::ListApplicationOperationsError) -> Self {
+        match err {
+            crate::operation::list_application_operations::ListApplicationOperationsError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::list_application_operations::ListApplicationOperationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_application_operations::ListApplicationOperationsError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::list_application_operations::ListApplicationOperationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

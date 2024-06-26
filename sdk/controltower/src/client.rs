@@ -197,6 +197,8 @@ mod list_enabled_baselines;
 
 mod list_enabled_controls;
 
+mod list_landing_zone_operations;
+
 mod list_landing_zones;
 
 mod list_tags_for_resource;

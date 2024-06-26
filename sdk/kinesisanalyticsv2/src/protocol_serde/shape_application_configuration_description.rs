@@ -45,6 +45,11 @@ where
                                     crate::protocol_serde::shape_application_snapshot_configuration_description::de_application_snapshot_configuration_description(tokens)?
                                 );
                             }
+                            "ApplicationSystemRollbackConfigurationDescription" => {
+                                builder = builder.set_application_system_rollback_configuration_description(
+                                    crate::protocol_serde::shape_application_system_rollback_configuration_description::de_application_system_rollback_configuration_description(tokens)?
+                                );
+                            }
                             "VpcConfigurationDescriptions" => {
                                 builder = builder.set_vpc_configuration_descriptions(
                                     crate::protocol_serde::shape_vpc_configuration_descriptions::de_vpc_configuration_descriptions(tokens)?,

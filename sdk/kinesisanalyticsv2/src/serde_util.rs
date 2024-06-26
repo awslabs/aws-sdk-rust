@@ -116,6 +116,24 @@ pub(crate) fn application_maintenance_configuration_description_correct_errors(
     builder
 }
 
+pub(crate) fn application_operation_info_details_correct_errors(
+    mut builder: crate::types::builders::ApplicationOperationInfoDetailsBuilder,
+) -> crate::types::builders::ApplicationOperationInfoDetailsBuilder {
+    if builder.operation.is_none() {
+        builder.operation = Some(Default::default())
+    }
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.end_time.is_none() {
+        builder.end_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.operation_status.is_none() {
+        builder.operation_status = "no value was set".parse::<crate::types::OperationStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn source_schema_correct_errors(mut builder: crate::types::builders::SourceSchemaBuilder) -> crate::types::builders::SourceSchemaBuilder {
     if builder.record_format.is_none() {
         builder.record_format = {
@@ -164,6 +182,18 @@ pub(crate) fn application_summary_correct_errors(
     }
     if builder.runtime_environment.is_none() {
         builder.runtime_environment = "no value was set".parse::<crate::types::RuntimeEnvironment>().ok()
+    }
+    builder
+}
+
+pub(crate) fn application_version_change_details_correct_errors(
+    mut builder: crate::types::builders::ApplicationVersionChangeDetailsBuilder,
+) -> crate::types::builders::ApplicationVersionChangeDetailsBuilder {
+    if builder.application_version_updated_from.is_none() {
+        builder.application_version_updated_from = Some(Default::default())
+    }
+    if builder.application_version_updated_to.is_none() {
+        builder.application_version_updated_to = Some(Default::default())
     }
     builder
 }
@@ -246,6 +276,15 @@ pub(crate) fn application_snapshot_configuration_description_correct_errors(
 ) -> crate::types::builders::ApplicationSnapshotConfigurationDescriptionBuilder {
     if builder.snapshots_enabled.is_none() {
         builder.snapshots_enabled = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn application_system_rollback_configuration_description_correct_errors(
+    mut builder: crate::types::builders::ApplicationSystemRollbackConfigurationDescriptionBuilder,
+) -> crate::types::builders::ApplicationSystemRollbackConfigurationDescriptionBuilder {
+    if builder.rollback_enabled.is_none() {
+        builder.rollback_enabled = Some(Default::default())
     }
     builder
 }

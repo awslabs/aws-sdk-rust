@@ -39,6 +39,16 @@ pub(crate) fn reflens_list_participants_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_public_keys_output_output_next_token(
+    input: &crate::operation::list_public_keys::ListPublicKeysOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_stage_sessions_output_output_next_token(
     input: &crate::operation::list_stage_sessions::ListStageSessionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -66,5 +76,12 @@ pub(crate) fn reflens_list_storage_configurations_output_output_next_token(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_public_keys_output_output_public_keys(
+    input: crate::operation::list_public_keys::ListPublicKeysOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PublicKeySummary>> {
+    let input = input.public_keys;
     ::std::option::Option::Some(input)
 }

@@ -230,6 +230,15 @@ pub(crate) fn list_enabled_controls_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_landing_zone_operations_output_output_correct_errors(
+    mut builder: crate::operation::list_landing_zone_operations::builders::ListLandingZoneOperationsOutputBuilder,
+) -> crate::operation::list_landing_zone_operations::builders::ListLandingZoneOperationsOutputBuilder {
+    if builder.landing_zone_operations.is_none() {
+        builder.landing_zone_operations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_landing_zones_output_output_correct_errors(
     mut builder: crate::operation::list_landing_zones::builders::ListLandingZonesOutputBuilder,
 ) -> crate::operation::list_landing_zones::builders::ListLandingZonesOutputBuilder {

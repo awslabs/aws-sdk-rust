@@ -259,6 +259,32 @@ impl From<crate::operation::delete_encoder_configuration::DeleteEncoderConfigura
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_public_key::DeletePublicKeyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_public_key::DeletePublicKeyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_public_key::DeletePublicKeyError> for Error {
+    fn from(err: crate::operation::delete_public_key::DeletePublicKeyError) -> Self {
+        match err {
+            crate::operation::delete_public_key::DeletePublicKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_public_key::DeletePublicKeyError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_public_key::DeletePublicKeyError::PendingVerification(inner) => Error::PendingVerification(inner),
+            crate::operation::delete_public_key::DeletePublicKeyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_public_key::DeletePublicKeyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_public_key::DeletePublicKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_stage::DeleteStageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -449,6 +475,30 @@ impl From<crate::operation::get_participant::GetParticipantError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_public_key::GetPublicKeyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_public_key::GetPublicKeyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_public_key::GetPublicKeyError> for Error {
+    fn from(err: crate::operation::get_public_key::GetPublicKeyError) -> Self {
+        match err {
+            crate::operation::get_public_key::GetPublicKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_public_key::GetPublicKeyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_public_key::GetPublicKeyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_public_key::GetPublicKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_stage::GetStageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -534,6 +584,34 @@ impl From<crate::operation::get_storage_configuration::GetStorageConfigurationEr
                 Error::ValidationException(inner)
             }
             crate::operation::get_storage_configuration::GetStorageConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::import_public_key::ImportPublicKeyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::import_public_key::ImportPublicKeyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::import_public_key::ImportPublicKeyError> for Error {
+    fn from(err: crate::operation::import_public_key::ImportPublicKeyError) -> Self {
+        match err {
+            crate::operation::import_public_key::ImportPublicKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::import_public_key::ImportPublicKeyError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::import_public_key::ImportPublicKeyError::PendingVerification(inner) => Error::PendingVerification(inner),
+            crate::operation::import_public_key::ImportPublicKeyError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::import_public_key::ImportPublicKeyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::import_public_key::ImportPublicKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -651,6 +729,29 @@ impl From<crate::operation::list_participants::ListParticipantsError> for Error 
             crate::operation::list_participants::ListParticipantsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_participants::ListParticipantsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_participants::ListParticipantsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_public_keys::ListPublicKeysError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_public_keys::ListPublicKeysError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_public_keys::ListPublicKeysError> for Error {
+    fn from(err: crate::operation::list_public_keys::ListPublicKeysError) -> Self {
+        match err {
+            crate::operation::list_public_keys::ListPublicKeysError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_public_keys::ListPublicKeysError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_public_keys::ListPublicKeysError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

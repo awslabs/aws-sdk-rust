@@ -21,6 +21,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "operationIdentifier" => {
+                            builder = builder.set_operation_identifier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::LandingZoneOperationStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "startTime" => {
                             builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
@@ -32,13 +46,6 @@ where
                                 tokens.next(),
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
-                        }
-                        "status" => {
-                            builder = builder.set_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::LandingZoneOperationStatus::from(u.as_ref())))
-                                    .transpose()?,
-                            );
                         }
                         "statusMessage" => {
                             builder = builder.set_status_message(

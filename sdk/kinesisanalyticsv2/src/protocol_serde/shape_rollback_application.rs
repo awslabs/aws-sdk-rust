@@ -162,6 +162,13 @@ pub(crate) fn de_rollback_application(
                 "ApplicationDetail" => {
                     builder = builder.set_application_detail(crate::protocol_serde::shape_application_detail::de_application_detail(tokens)?);
                 }
+                "OperationId" => {
+                    builder = builder.set_operation_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

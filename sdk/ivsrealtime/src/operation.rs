@@ -16,6 +16,9 @@ pub mod create_storage_configuration;
 /// Types for the `DeleteEncoderConfiguration` operation.
 pub mod delete_encoder_configuration;
 
+/// Types for the `DeletePublicKey` operation.
+pub mod delete_public_key;
+
 /// Types for the `DeleteStage` operation.
 pub mod delete_stage;
 
@@ -34,6 +37,9 @@ pub mod get_encoder_configuration;
 /// Types for the `GetParticipant` operation.
 pub mod get_participant;
 
+/// Types for the `GetPublicKey` operation.
+pub mod get_public_key;
+
 /// Types for the `GetStage` operation.
 pub mod get_stage;
 
@@ -42,6 +48,9 @@ pub mod get_stage_session;
 
 /// Types for the `GetStorageConfiguration` operation.
 pub mod get_storage_configuration;
+
+/// Types for the `ImportPublicKey` operation.
+pub mod import_public_key;
 
 /// Types for the `ListCompositions` operation.
 pub mod list_compositions;
@@ -54,6 +63,9 @@ pub mod list_participant_events;
 
 /// Types for the `ListParticipants` operation.
 pub mod list_participants;
+
+/// Types for the `ListPublicKeys` operation.
+pub mod list_public_keys;
 
 /// Types for the `ListStageSessions` operation.
 pub mod list_stage_sessions;

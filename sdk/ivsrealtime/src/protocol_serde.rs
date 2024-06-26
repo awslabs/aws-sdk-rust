@@ -33,6 +33,8 @@ pub(crate) mod shape_create_storage_configuration;
 
 pub(crate) mod shape_delete_encoder_configuration;
 
+pub(crate) mod shape_delete_public_key;
+
 pub(crate) mod shape_delete_stage;
 
 pub(crate) mod shape_delete_storage_configuration;
@@ -45,11 +47,15 @@ pub(crate) mod shape_get_encoder_configuration;
 
 pub(crate) mod shape_get_participant;
 
+pub(crate) mod shape_get_public_key;
+
 pub(crate) mod shape_get_stage;
 
 pub(crate) mod shape_get_stage_session;
 
 pub(crate) mod shape_get_storage_configuration;
+
+pub(crate) mod shape_import_public_key;
 
 pub(crate) mod shape_list_compositions;
 
@@ -58,6 +64,8 @@ pub(crate) mod shape_list_encoder_configurations;
 pub(crate) mod shape_list_participant_events;
 
 pub(crate) mod shape_list_participants;
+
+pub(crate) mod shape_list_public_keys;
 
 pub(crate) mod shape_list_stage_sessions;
 
@@ -99,6 +107,8 @@ pub(crate) mod shape_create_storage_configuration_input;
 
 pub(crate) mod shape_delete_encoder_configuration_input;
 
+pub(crate) mod shape_delete_public_key_input;
+
 pub(crate) mod shape_delete_stage_input;
 
 pub(crate) mod shape_delete_storage_configuration_input;
@@ -111,11 +121,15 @@ pub(crate) mod shape_get_encoder_configuration_input;
 
 pub(crate) mod shape_get_participant_input;
 
+pub(crate) mod shape_get_public_key_input;
+
 pub(crate) mod shape_get_stage_input;
 
 pub(crate) mod shape_get_stage_session_input;
 
 pub(crate) mod shape_get_storage_configuration_input;
+
+pub(crate) mod shape_import_public_key_input;
 
 pub(crate) mod shape_internal_server_exception;
 
@@ -126,6 +140,8 @@ pub(crate) mod shape_list_encoder_configurations_input;
 pub(crate) mod shape_list_participant_events_input;
 
 pub(crate) mod shape_list_participants_input;
+
+pub(crate) mod shape_list_public_keys_input;
 
 pub(crate) mod shape_list_stage_sessions_input;
 
@@ -175,6 +191,10 @@ pub(crate) mod shape_participant_token_configuration;
 
 pub(crate) mod shape_participant_token_list;
 
+pub(crate) mod shape_public_key;
+
+pub(crate) mod shape_public_key_list;
+
 pub(crate) mod shape_s3_storage_configuration;
 
 pub(crate) mod shape_stage;
@@ -215,7 +235,11 @@ pub(crate) mod shape_participant_token_capabilities;
 
 pub(crate) mod shape_pip_configuration;
 
+pub(crate) mod shape_public_key_summary;
+
 pub(crate) mod shape_s3_destination_configuration;
+
+pub(crate) mod shape_stage_endpoints;
 
 pub(crate) mod shape_stage_session_summary;
 

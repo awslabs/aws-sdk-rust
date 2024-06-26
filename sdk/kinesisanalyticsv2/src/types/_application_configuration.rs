@@ -14,6 +14,8 @@ pub struct ApplicationConfiguration {
     pub application_code_configuration: ::std::option::Option<crate::types::ApplicationCodeConfiguration>,
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub application_snapshot_configuration: ::std::option::Option<crate::types::ApplicationSnapshotConfiguration>,
+    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    pub application_system_rollback_configuration: ::std::option::Option<crate::types::ApplicationSystemRollbackConfiguration>,
     /// <p>The array of descriptions of VPC configurations available to the application.</p>
     pub vpc_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfiguration>>,
     /// <p>The configuration parameters for a Managed Service for Apache Flink Studio notebook.</p>
@@ -39,6 +41,10 @@ impl ApplicationConfiguration {
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub fn application_snapshot_configuration(&self) -> ::std::option::Option<&crate::types::ApplicationSnapshotConfiguration> {
         self.application_snapshot_configuration.as_ref()
+    }
+    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    pub fn application_system_rollback_configuration(&self) -> ::std::option::Option<&crate::types::ApplicationSystemRollbackConfiguration> {
+        self.application_system_rollback_configuration.as_ref()
     }
     /// <p>The array of descriptions of VPC configurations available to the application.</p>
     ///
@@ -67,6 +73,7 @@ pub struct ApplicationConfigurationBuilder {
     pub(crate) environment_properties: ::std::option::Option<crate::types::EnvironmentProperties>,
     pub(crate) application_code_configuration: ::std::option::Option<crate::types::ApplicationCodeConfiguration>,
     pub(crate) application_snapshot_configuration: ::std::option::Option<crate::types::ApplicationSnapshotConfiguration>,
+    pub(crate) application_system_rollback_configuration: ::std::option::Option<crate::types::ApplicationSystemRollbackConfiguration>,
     pub(crate) vpc_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfiguration>>,
     pub(crate) zeppelin_application_configuration: ::std::option::Option<crate::types::ZeppelinApplicationConfiguration>,
 }
@@ -141,6 +148,23 @@ impl ApplicationConfigurationBuilder {
     pub fn get_application_snapshot_configuration(&self) -> &::std::option::Option<crate::types::ApplicationSnapshotConfiguration> {
         &self.application_snapshot_configuration
     }
+    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    pub fn application_system_rollback_configuration(mut self, input: crate::types::ApplicationSystemRollbackConfiguration) -> Self {
+        self.application_system_rollback_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    pub fn set_application_system_rollback_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::ApplicationSystemRollbackConfiguration>,
+    ) -> Self {
+        self.application_system_rollback_configuration = input;
+        self
+    }
+    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    pub fn get_application_system_rollback_configuration(&self) -> &::std::option::Option<crate::types::ApplicationSystemRollbackConfiguration> {
+        &self.application_system_rollback_configuration
+    }
     /// Appends an item to `vpc_configurations`.
     ///
     /// To override the contents of this collection use [`set_vpc_configurations`](Self::set_vpc_configurations).
@@ -183,6 +207,7 @@ impl ApplicationConfigurationBuilder {
             environment_properties: self.environment_properties,
             application_code_configuration: self.application_code_configuration,
             application_snapshot_configuration: self.application_snapshot_configuration,
+            application_system_rollback_configuration: self.application_system_rollback_configuration,
             vpc_configurations: self.vpc_configurations,
             zeppelin_application_configuration: self.zeppelin_application_configuration,
         }

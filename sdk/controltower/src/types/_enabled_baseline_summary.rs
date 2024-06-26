@@ -12,7 +12,7 @@ pub struct EnabledBaselineSummary {
     pub baseline_version: ::std::option::Option<::std::string::String>,
     /// <p>The target upon which the baseline is enabled.</p>
     pub target_identifier: ::std::string::String,
-    /// <p>The deployment summary of the enabled control.</p>
+    /// <p>The deployment summary of an <code>EnabledControl</code> or <code>EnabledBaseline</code> resource.</p>
     pub status_summary: ::std::option::Option<crate::types::EnablementStatusSummary>,
 }
 impl EnabledBaselineSummary {
@@ -35,7 +35,7 @@ impl EnabledBaselineSummary {
         use std::ops::Deref;
         self.target_identifier.deref()
     }
-    /// <p>The deployment summary of the enabled control.</p>
+    /// <p>The deployment summary of an <code>EnabledControl</code> or <code>EnabledBaseline</code> resource.</p>
     pub fn status_summary(&self) -> ::std::option::Option<&crate::types::EnablementStatusSummary> {
         self.status_summary.as_ref()
     }
@@ -117,18 +117,18 @@ impl EnabledBaselineSummaryBuilder {
     pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_identifier
     }
-    /// <p>The deployment summary of the enabled control.</p>
+    /// <p>The deployment summary of an <code>EnabledControl</code> or <code>EnabledBaseline</code> resource.</p>
     /// This field is required.
     pub fn status_summary(mut self, input: crate::types::EnablementStatusSummary) -> Self {
         self.status_summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The deployment summary of the enabled control.</p>
+    /// <p>The deployment summary of an <code>EnabledControl</code> or <code>EnabledBaseline</code> resource.</p>
     pub fn set_status_summary(mut self, input: ::std::option::Option<crate::types::EnablementStatusSummary>) -> Self {
         self.status_summary = input;
         self
     }
-    /// <p>The deployment summary of the enabled control.</p>
+    /// <p>The deployment summary of an <code>EnabledControl</code> or <code>EnabledBaseline</code> resource.</p>
     pub fn get_status_summary(&self) -> &::std::option::Option<crate::types::EnablementStatusSummary> {
         &self.status_summary
     }

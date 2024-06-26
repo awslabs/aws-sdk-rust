@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-kinesisanalyticsv2 = "1.34.0"
+//! aws-sdk-kinesisanalyticsv2 = "1.35.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -192,6 +192,8 @@ pub(crate) mod protocol_serde;
 mod serialization_settings;
 
 mod endpoint_lib;
+
+mod lens;
 
 mod serde_util;
 

@@ -42,6 +42,8 @@ pub struct DomainConfig {
     pub software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptionsStatus>,
     /// <p>Information about the domain properties that are currently being modified.</p>
     pub modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
+    /// <p>Container for parameters required to enable all machine learning features.</p>
+    pub aiml_options: ::std::option::Option<crate::types::AimlOptionsStatus>,
 }
 impl DomainConfig {
     /// <p>The OpenSearch or Elasticsearch version that the domain is running.</p>
@@ -122,6 +124,10 @@ impl DomainConfig {
     pub fn modifying_properties(&self) -> &[crate::types::ModifyingProperties] {
         self.modifying_properties.as_deref().unwrap_or_default()
     }
+    /// <p>Container for parameters required to enable all machine learning features.</p>
+    pub fn aiml_options(&self) -> ::std::option::Option<&crate::types::AimlOptionsStatus> {
+        self.aiml_options.as_ref()
+    }
 }
 impl DomainConfig {
     /// Creates a new builder-style object to manufacture [`DomainConfig`](crate::types::DomainConfig).
@@ -153,6 +159,7 @@ pub struct DomainConfigBuilder {
     pub(crate) off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptionsStatus>,
     pub(crate) software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptionsStatus>,
     pub(crate) modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
+    pub(crate) aiml_options: ::std::option::Option<crate::types::AimlOptionsStatus>,
 }
 impl DomainConfigBuilder {
     /// <p>The OpenSearch or Elasticsearch version that the domain is running.</p>
@@ -427,6 +434,20 @@ impl DomainConfigBuilder {
     pub fn get_modifying_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>> {
         &self.modifying_properties
     }
+    /// <p>Container for parameters required to enable all machine learning features.</p>
+    pub fn aiml_options(mut self, input: crate::types::AimlOptionsStatus) -> Self {
+        self.aiml_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Container for parameters required to enable all machine learning features.</p>
+    pub fn set_aiml_options(mut self, input: ::std::option::Option<crate::types::AimlOptionsStatus>) -> Self {
+        self.aiml_options = input;
+        self
+    }
+    /// <p>Container for parameters required to enable all machine learning features.</p>
+    pub fn get_aiml_options(&self) -> &::std::option::Option<crate::types::AimlOptionsStatus> {
+        &self.aiml_options
+    }
     /// Consumes the builder and constructs a [`DomainConfig`](crate::types::DomainConfig).
     pub fn build(self) -> crate::types::DomainConfig {
         crate::types::DomainConfig {
@@ -449,6 +470,7 @@ impl DomainConfigBuilder {
             off_peak_window_options: self.off_peak_window_options,
             software_update_options: self.software_update_options,
             modifying_properties: self.modifying_properties,
+            aiml_options: self.aiml_options,
         }
     }
 }

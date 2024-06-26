@@ -106,6 +106,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ApplicationVersionCreateTimestamp" => {
+                            builder =
+                                builder.set_application_version_create_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?);
+                        }
                         "ConditionalToken" => {
                             builder = builder.set_conditional_token(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

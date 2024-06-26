@@ -5,12 +5,18 @@
 pub struct UpdateApplicationOutput {
     /// <p>Describes application updates.</p>
     pub application_detail: ::std::option::Option<crate::types::ApplicationDetail>,
+    /// Operation ID for tracking UpdateApplication request
+    pub operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateApplicationOutput {
     /// <p>Describes application updates.</p>
     pub fn application_detail(&self) -> ::std::option::Option<&crate::types::ApplicationDetail> {
         self.application_detail.as_ref()
+    }
+    /// Operation ID for tracking UpdateApplication request
+    pub fn operation_id(&self) -> ::std::option::Option<&str> {
+        self.operation_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateApplicationOutput {
@@ -30,6 +36,7 @@ impl UpdateApplicationOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationOutputBuilder {
     pub(crate) application_detail: ::std::option::Option<crate::types::ApplicationDetail>,
+    pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateApplicationOutputBuilder {
@@ -48,6 +55,20 @@ impl UpdateApplicationOutputBuilder {
     pub fn get_application_detail(&self) -> &::std::option::Option<crate::types::ApplicationDetail> {
         &self.application_detail
     }
+    /// Operation ID for tracking UpdateApplication request
+    pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Operation ID for tracking UpdateApplication request
+    pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.operation_id = input;
+        self
+    }
+    /// Operation ID for tracking UpdateApplication request
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -61,6 +82,7 @@ impl UpdateApplicationOutputBuilder {
     pub fn build(self) -> crate::operation::update_application::UpdateApplicationOutput {
         crate::operation::update_application::UpdateApplicationOutput {
             application_detail: self.application_detail,
+            operation_id: self.operation_id,
             _request_id: self._request_id,
         }
     }

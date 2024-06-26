@@ -22,7 +22,7 @@ impl crate::operation::get_control_operation::builders::GetControlOperationInput
 }
 /// Fluent builder constructing a request to `GetControlOperation`.
 ///
-/// <p>Returns the status of a particular <code>EnableControl</code> or <code>DisableControl</code> operation. Displays a message in case of error. Details for an operation are available for 90 days. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the Amazon Web Services Control Tower User Guide</i> </a>.</p>
+/// <p>Returns the status of a particular <code>EnableControl</code> or <code>DisableControl</code> operation. Displays a message in case of error. Details for an operation are available for 90 days. For usage examples, see the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html"> <i>Controls Reference Guide</i> </a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetControlOperationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
