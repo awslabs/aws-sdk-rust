@@ -1469,6 +1469,8 @@ pub(crate) mod shape_margin_style;
 
 pub(crate) mod shape_named_entity_definition;
 
+pub(crate) mod shape_nested_filter;
+
 pub(crate) mod shape_new_default_values;
 
 pub(crate) mod shape_number_format_configuration;
@@ -1653,6 +1655,8 @@ pub(crate) mod shape_heat_map_configuration;
 
 pub(crate) mod shape_histogram_configuration;
 
+pub(crate) mod shape_inner_filter;
+
 pub(crate) mod shape_input_column_list;
 
 pub(crate) mod shape_insight_configuration;
@@ -1756,6 +1760,8 @@ pub(crate) mod shape_box_plot_options;
 pub(crate) mod shape_box_plot_sort_configuration;
 
 pub(crate) mod shape_cascading_control_source;
+
+pub(crate) mod shape_category_inner_filter;
 
 pub(crate) mod shape_cell_value_synonyms;
 
@@ -2019,6 +2025,8 @@ pub(crate) mod shape_bin_width_options;
 
 pub(crate) mod shape_body_section_content;
 
+pub(crate) mod shape_body_section_repeat_configuration;
+
 pub(crate) mod shape_box_plot_aggregated_field_wells;
 
 pub(crate) mod shape_box_plot_style_options;
@@ -2273,6 +2281,10 @@ pub(crate) mod shape_axis_label_reference_options;
 
 pub(crate) mod shape_body_section_configuration_list;
 
+pub(crate) mod shape_body_section_repeat_dimension_configuration;
+
+pub(crate) mod shape_body_section_repeat_page_break_configuration;
+
 pub(crate) mod shape_calculated_measure_field;
 
 pub(crate) mod shape_cascading_control_source_list;
@@ -2435,6 +2447,10 @@ pub(crate) mod shape_axis_label_options_list;
 
 pub(crate) mod shape_axis_scale;
 
+pub(crate) mod shape_body_section_dynamic_category_dimension_configuration;
+
+pub(crate) mod shape_body_section_dynamic_numeric_dimension_configuration;
+
 pub(crate) mod shape_category_value_list;
 
 pub(crate) mod shape_color_scale_color_list;
@@ -2585,6 +2601,8 @@ pub(crate) mod shape_word_cloud_dimension_field_list;
 
 pub(crate) mod shape_word_cloud_measure_field_list;
 
+pub(crate) mod shape_body_section_repeat_dimension_configuration_list;
+
 pub(crate) mod shape_custom_parameter_values;
 
 pub(crate) mod shape_data_path_value_list;
@@ -2592,6 +2610,8 @@ pub(crate) mod shape_data_path_value_list;
 pub(crate) mod shape_geospatial_heatmap_data_color_list;
 
 pub(crate) mod shape_gradient_stop;
+
+pub(crate) mod shape_non_repeating_visuals_list;
 
 pub(crate) mod shape_pivot_table_conditional_formatting_scope_list;
 
@@ -2604,6 +2624,8 @@ pub(crate) mod shape_set_parameter_value_configuration_list;
 pub(crate) mod shape_custom_action_column_list;
 
 pub(crate) mod shape_selected_field_list;
+
+pub(crate) mod shape_body_section_dynamic_dimension_sort_configuration_list;
 
 pub(crate) mod shape_gradient_stop_list;
 

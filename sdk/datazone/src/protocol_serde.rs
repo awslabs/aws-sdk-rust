@@ -139,6 +139,8 @@ pub(crate) mod shape_get_group_profile;
 
 pub(crate) mod shape_get_iam_portal_login_url;
 
+pub(crate) mod shape_get_lineage_node;
+
 pub(crate) mod shape_get_listing;
 
 pub(crate) mod shape_get_metadata_generation_run;
@@ -177,6 +179,8 @@ pub(crate) mod shape_list_environment_profiles;
 
 pub(crate) mod shape_list_environments;
 
+pub(crate) mod shape_list_lineage_node_history;
+
 pub(crate) mod shape_list_metadata_generation_runs;
 
 pub(crate) mod shape_list_notifications;
@@ -196,6 +200,10 @@ pub(crate) mod shape_list_subscriptions;
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_time_series_data_points;
+
+pub(crate) mod shape_post_lineage_event;
+
+pub(crate) mod shape_post_lineage_event_input;
 
 pub(crate) mod shape_post_time_series_data_points;
 
@@ -445,6 +453,10 @@ pub(crate) mod shape_group_profile_summaries;
 
 pub(crate) mod shape_import_list;
 
+pub(crate) mod shape_lineage_node_reference_list;
+
+pub(crate) mod shape_lineage_node_summaries;
+
 pub(crate) mod shape_list_environment_action_summaries;
 
 pub(crate) mod shape_listing_item;
@@ -591,6 +603,10 @@ pub(crate) mod shape_iam_user_profile_details;
 
 pub(crate) mod shape_import;
 
+pub(crate) mod shape_lineage_node_reference;
+
+pub(crate) mod shape_lineage_node_summary;
+
 pub(crate) mod shape_listing_revision;
 
 pub(crate) mod shape_listing_revision_input;
@@ -660,6 +676,8 @@ pub(crate) mod shape_form_type_data;
 pub(crate) mod shape_glossary_item;
 
 pub(crate) mod shape_glossary_term_item;
+
+pub(crate) mod shape_lineage_node_type_item;
 
 pub(crate) mod shape_member_details;
 

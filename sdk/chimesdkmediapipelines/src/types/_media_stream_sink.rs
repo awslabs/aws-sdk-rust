@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MediaStreamSink {
-    /// <p>The ARN of the media stream sink.</p>
+    /// <p>The ARN of the Kinesis Video Stream pool returned by the <code>CreateMediaPipelineKinesisVideoStreamPool</code> API.</p>
     pub sink_arn: ::std::string::String,
     /// <p>The media stream sink's type.</p>
     pub sink_type: crate::types::MediaStreamPipelineSinkType,
@@ -14,7 +14,7 @@ pub struct MediaStreamSink {
     pub media_stream_type: crate::types::MediaStreamType,
 }
 impl MediaStreamSink {
-    /// <p>The ARN of the media stream sink.</p>
+    /// <p>The ARN of the Kinesis Video Stream pool returned by the <code>CreateMediaPipelineKinesisVideoStreamPool</code> API.</p>
     pub fn sink_arn(&self) -> &str {
         use std::ops::Deref;
         self.sink_arn.deref()
@@ -59,18 +59,18 @@ pub struct MediaStreamSinkBuilder {
     pub(crate) media_stream_type: ::std::option::Option<crate::types::MediaStreamType>,
 }
 impl MediaStreamSinkBuilder {
-    /// <p>The ARN of the media stream sink.</p>
+    /// <p>The ARN of the Kinesis Video Stream pool returned by the <code>CreateMediaPipelineKinesisVideoStreamPool</code> API.</p>
     /// This field is required.
     pub fn sink_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sink_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the media stream sink.</p>
+    /// <p>The ARN of the Kinesis Video Stream pool returned by the <code>CreateMediaPipelineKinesisVideoStreamPool</code> API.</p>
     pub fn set_sink_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sink_arn = input;
         self
     }
-    /// <p>The ARN of the media stream sink.</p>
+    /// <p>The ARN of the Kinesis Video Stream pool returned by the <code>CreateMediaPipelineKinesisVideoStreamPool</code> API.</p>
     pub fn get_sink_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.sink_arn
     }

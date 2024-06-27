@@ -77,6 +77,16 @@ pub use crate::types::_quick_response_summary::QuickResponseSummary;
 
 pub use crate::types::_content_data::ContentData;
 
+pub use crate::types::_content_association_data::ContentAssociationData;
+
+pub use crate::types::_content_association_contents::ContentAssociationContents;
+
+pub use crate::types::_amazon_connect_guide_association_data::AmazonConnectGuideAssociationData;
+
+pub use crate::types::_content_association_type::ContentAssociationType;
+
+pub use crate::types::_content_association_summary::ContentAssociationSummary;
+
 pub use crate::types::_session_summary::SessionSummary;
 
 pub use crate::types::_result_data::ResultData;
@@ -181,6 +191,8 @@ pub use crate::types::_assistant_association_input_data::AssistantAssociationInp
 
 pub use crate::types::_assistant_association_summary::AssistantAssociationSummary;
 
+mod _amazon_connect_guide_association_data;
+
 mod _app_integrations_configuration;
 
 mod _assistant_association_data;
@@ -210,6 +222,14 @@ mod _association_type;
 mod _configuration;
 
 mod _connect_configuration;
+
+mod _content_association_contents;
+
+mod _content_association_data;
+
+mod _content_association_summary;
+
+mod _content_association_type;
 
 mod _content_data;
 

@@ -279,6 +279,8 @@ mod get_group_profile;
 
 mod get_iam_portal_login_url;
 
+mod get_lineage_node;
+
 mod get_listing;
 
 mod get_metadata_generation_run;
@@ -317,6 +319,8 @@ mod list_environment_profiles;
 
 mod list_environments;
 
+mod list_lineage_node_history;
+
 mod list_metadata_generation_runs;
 
 mod list_notifications;
@@ -336,6 +340,8 @@ mod list_subscriptions;
 mod list_tags_for_resource;
 
 mod list_time_series_data_points;
+
+mod post_lineage_event;
 
 mod post_time_series_data_points;
 

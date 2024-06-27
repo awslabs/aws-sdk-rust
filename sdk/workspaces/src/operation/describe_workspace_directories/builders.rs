@@ -133,6 +133,25 @@ impl DescribeWorkspaceDirectoriesFluentBuilder {
     pub fn get_directory_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_directory_ids()
     }
+    ///
+    /// Appends an item to `WorkspaceDirectoryNames`.
+    ///
+    /// To override the contents of this collection use [`set_workspace_directory_names`](Self::set_workspace_directory_names).
+    ///
+    /// <p>The names of the WorkSpace directories.</p>
+    pub fn workspace_directory_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.workspace_directory_names(input.into());
+        self
+    }
+    /// <p>The names of the WorkSpace directories.</p>
+    pub fn set_workspace_directory_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_workspace_directory_names(input);
+        self
+    }
+    /// <p>The names of the WorkSpace directories.</p>
+    pub fn get_workspace_directory_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_workspace_directory_names()
+    }
     /// <p>The maximum number of directories to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);

@@ -15,6 +15,8 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You've exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use service quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>Amazon Q in Connect throws this exception if you have too many tags in your tag set.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// <p>The input fails to satisfy the constraints specified by a service.</p>
@@ -37,6 +39,7 @@ impl ::std::fmt::Display for Error {
             Error::RequestTimeoutException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -66,6 +69,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::RequestTimeoutException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
             Self::TooManyTagsException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -161,6 +165,46 @@ impl From<crate::operation::create_content::CreateContentError> for Error {
             crate::operation::create_content::CreateContentError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_content::CreateContentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_content::CreateContentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_content_association::CreateContentAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_content_association::CreateContentAssociationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_content_association::CreateContentAssociationError> for Error {
+    fn from(err: crate::operation::create_content_association::CreateContentAssociationError) -> Self {
+        match err {
+            crate::operation::create_content_association::CreateContentAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_content_association::CreateContentAssociationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_content_association::CreateContentAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_content_association::CreateContentAssociationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_content_association::CreateContentAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_content_association::CreateContentAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_content_association::CreateContentAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -327,6 +371,39 @@ impl From<crate::operation::delete_content::DeleteContentError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_content_association::DeleteContentAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_content_association::DeleteContentAssociationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_content_association::DeleteContentAssociationError> for Error {
+    fn from(err: crate::operation::delete_content_association::DeleteContentAssociationError) -> Self {
+        match err {
+            crate::operation::delete_content_association::DeleteContentAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_content_association::DeleteContentAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_content_association::DeleteContentAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_content_association::DeleteContentAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_import_job::DeleteImportJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -483,6 +560,36 @@ impl From<crate::operation::get_content::GetContentError> for Error {
             crate::operation::get_content::GetContentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_content::GetContentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_content::GetContentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_content_association::GetContentAssociationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_content_association::GetContentAssociationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_content_association::GetContentAssociationError> for Error {
+    fn from(err: crate::operation::get_content_association::GetContentAssociationError) -> Self {
+        match err {
+            crate::operation::get_content_association::GetContentAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_content_association::GetContentAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_content_association::GetContentAssociationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_content_association::GetContentAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -687,6 +794,39 @@ impl From<crate::operation::list_assistants::ListAssistantsError> for Error {
             crate::operation::list_assistants::ListAssistantsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_assistants::ListAssistantsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_assistants::ListAssistantsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_content_associations::ListContentAssociationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_content_associations::ListContentAssociationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_content_associations::ListContentAssociationsError> for Error {
+    fn from(err: crate::operation::list_content_associations::ListContentAssociationsError) -> Self {
+        match err {
+            crate::operation::list_content_associations::ListContentAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_content_associations::ListContentAssociationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_content_associations::ListContentAssociationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_content_associations::ListContentAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1242,6 +1382,7 @@ impl ::std::error::Error for Error {
             Error::RequestTimeoutException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -1257,6 +1398,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::RequestTimeoutException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
             Self::TooManyTagsException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

@@ -99,6 +99,12 @@ pub fn ser_user_settings(
         }
         array_30.finish();
     }
+    if let Some(var_33) = &input.studio_web_portal_settings {
+        #[allow(unused_mut)]
+        let mut object_34 = object.key("StudioWebPortalSettings").start_object();
+        crate::protocol_serde::shape_studio_web_portal_settings::ser_studio_web_portal_settings(&mut object_34, var_33)?;
+        object_34.finish();
+    }
     Ok(())
 }
 
@@ -195,6 +201,11 @@ where
                         "CustomFileSystemConfigs" => {
                             builder = builder.set_custom_file_system_configs(
                                 crate::protocol_serde::shape_custom_file_system_configs::de_custom_file_system_configs(tokens)?,
+                            );
+                        }
+                        "StudioWebPortalSettings" => {
+                            builder = builder.set_studio_web_portal_settings(
+                                crate::protocol_serde::shape_studio_web_portal_settings::de_studio_web_portal_settings(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

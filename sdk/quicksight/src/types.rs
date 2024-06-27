@@ -245,7 +245,11 @@ pub use crate::types::_filter_visual_scope::FilterVisualScope;
 
 pub use crate::types::_filter::Filter;
 
-pub use crate::types::_top_bottom_filter::TopBottomFilter;
+pub use crate::types::_nested_filter::NestedFilter;
+
+pub use crate::types::_inner_filter::InnerFilter;
+
+pub use crate::types::_category_inner_filter::CategoryInnerFilter;
 
 pub use crate::types::_default_filter_control_configuration::DefaultFilterControlConfiguration;
 
@@ -311,6 +315,22 @@ pub use crate::types::_date_time_picker_control_display_options::DateTimePickerC
 
 pub use crate::types::_sheet_control_date_time_picker_type::SheetControlDateTimePickerType;
 
+pub use crate::types::_category_filter_configuration::CategoryFilterConfiguration;
+
+pub use crate::types::_custom_filter_configuration::CustomFilterConfiguration;
+
+pub use crate::types::_filter_null_option::FilterNullOption;
+
+pub use crate::types::_category_filter_select_all_options::CategoryFilterSelectAllOptions;
+
+pub use crate::types::_category_filter_match_operator::CategoryFilterMatchOperator;
+
+pub use crate::types::_custom_filter_list_configuration::CustomFilterListConfiguration;
+
+pub use crate::types::_filter_list_configuration::FilterListConfiguration;
+
+pub use crate::types::_top_bottom_filter::TopBottomFilter;
+
 pub use crate::types::_time_granularity::TimeGranularity;
 
 pub use crate::types::_aggregation_sort_configuration::AggregationSortConfiguration;
@@ -337,8 +357,6 @@ pub use crate::types::_relative_dates_filter::RelativeDatesFilter;
 
 pub use crate::types::_exclude_period_configuration::ExcludePeriodConfiguration;
 
-pub use crate::types::_filter_null_option::FilterNullOption;
-
 pub use crate::types::_relative_date_type::RelativeDateType;
 
 pub use crate::types::_anchor_date_configuration::AnchorDateConfiguration;
@@ -364,18 +382,6 @@ pub use crate::types::_numeric_range_filter::NumericRangeFilter;
 pub use crate::types::_numeric_range_filter_value::NumericRangeFilterValue;
 
 pub use crate::types::_category_filter::CategoryFilter;
-
-pub use crate::types::_category_filter_configuration::CategoryFilterConfiguration;
-
-pub use crate::types::_custom_filter_configuration::CustomFilterConfiguration;
-
-pub use crate::types::_category_filter_select_all_options::CategoryFilterSelectAllOptions;
-
-pub use crate::types::_category_filter_match_operator::CategoryFilterMatchOperator;
-
-pub use crate::types::_custom_filter_list_configuration::CustomFilterListConfiguration;
-
-pub use crate::types::_filter_list_configuration::FilterListConfiguration;
 
 pub use crate::types::_parameter_declaration::ParameterDeclaration;
 
@@ -453,11 +459,23 @@ pub use crate::types::_sheet_element_configuration_overrides::SheetElementConfig
 
 pub use crate::types::_body_section_configuration::BodySectionConfiguration;
 
-pub use crate::types::_section_page_break_configuration::SectionPageBreakConfiguration;
+pub use crate::types::_body_section_repeat_configuration::BodySectionRepeatConfiguration;
+
+pub use crate::types::_body_section_repeat_page_break_configuration::BodySectionRepeatPageBreakConfiguration;
 
 pub use crate::types::_section_after_page_break::SectionAfterPageBreak;
 
 pub use crate::types::_section_page_break_status::SectionPageBreakStatus;
+
+pub use crate::types::_body_section_repeat_dimension_configuration::BodySectionRepeatDimensionConfiguration;
+
+pub use crate::types::_body_section_dynamic_numeric_dimension_configuration::BodySectionDynamicNumericDimensionConfiguration;
+
+pub use crate::types::_column_sort::ColumnSort;
+
+pub use crate::types::_body_section_dynamic_category_dimension_configuration::BodySectionDynamicCategoryDimensionConfiguration;
+
+pub use crate::types::_section_page_break_configuration::SectionPageBreakConfiguration;
 
 pub use crate::types::_body_section_content::BodySectionContent;
 
@@ -596,8 +614,6 @@ pub use crate::types::_items_limit_configuration::ItemsLimitConfiguration;
 pub use crate::types::_other_categories::OtherCategories;
 
 pub use crate::types::_field_sort_options::FieldSortOptions;
-
-pub use crate::types::_column_sort::ColumnSort;
 
 pub use crate::types::_field_sort::FieldSort;
 
@@ -2223,6 +2239,16 @@ mod _body_section_configuration;
 
 mod _body_section_content;
 
+mod _body_section_dynamic_category_dimension_configuration;
+
+mod _body_section_dynamic_numeric_dimension_configuration;
+
+mod _body_section_repeat_configuration;
+
+mod _body_section_repeat_dimension_configuration;
+
+mod _body_section_repeat_page_break_configuration;
+
 mod _bookmarks_configurations;
 
 mod _border_style;
@@ -2274,6 +2300,8 @@ mod _category_filter_match_operator;
 mod _category_filter_select_all_options;
 
 mod _category_filter_type;
+
+mod _category_inner_filter;
 
 mod _cell_value_synonym;
 
@@ -2915,6 +2943,8 @@ mod _ingestion_status;
 
 mod _ingestion_type;
 
+mod _inner_filter;
+
 mod _input_column;
 
 mod _input_column_data_type;
@@ -3094,6 +3124,8 @@ mod _negative_format;
 mod _negative_value_configuration;
 
 mod _negative_value_display_mode;
+
+mod _nested_filter;
 
 mod _network_interface;
 

@@ -22,7 +22,11 @@ impl crate::operation::create_media_pipeline_kinesis_video_stream_pool::builders
 }
 /// Fluent builder constructing a request to `CreateMediaPipelineKinesisVideoStreamPool`.
 ///
-/// <p>Creates an Kinesis video stream pool for the media pipeline.</p>
+/// <p>Creates an Amazon Kinesis Video Stream pool for use with media stream pipelines.</p><note>
+/// <p>If a meeting uses an opt-in Region as its <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html#chimesdk-meeting-chime_CreateMeeting-request-MediaRegion">MediaRegion</a>, the KVS stream must be in that same Region. For example, if a meeting uses the <code>af-south-1</code> Region, the KVS stream must also be in <code>af-south-1</code>. However, if the meeting uses a Region that AWS turns on by default, the KVS stream can be in any available Region, including an opt-in Region. For example, if the meeting uses <code>ca-central-1</code>, the KVS stream can be in <code>eu-west-2</code>, <code>us-east-1</code>, <code>af-south-1</code>, or any other Region that the Amazon Chime SDK supports.</p>
+/// <p>To learn which AWS Region a meeting uses, call the <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_GetMeeting.html">GetMeeting</a> API and use the <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html#chimesdk-meeting-chime_CreateMeeting-request-MediaRegion">MediaRegion</a> parameter from the response.</p>
+/// <p>For more information about opt-in Regions, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/sdk-available-regions.html">Available Regions</a> in the <i>Amazon Chime SDK Developer Guide</i>, and <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html#rande-manage-enable.html">Specify which AWS Regions your account can use</a>, in the <i>AWS Account Management Reference Guide</i>.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMediaPipelineKinesisVideoStreamPoolFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,31 +119,31 @@ impl CreateMediaPipelineKinesisVideoStreamPoolFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The configuration settings for the video stream.</p>
+    /// <p>The configuration settings for the stream.</p>
     pub fn stream_configuration(mut self, input: crate::types::KinesisVideoStreamConfiguration) -> Self {
         self.inner = self.inner.stream_configuration(input);
         self
     }
-    /// <p>The configuration settings for the video stream.</p>
+    /// <p>The configuration settings for the stream.</p>
     pub fn set_stream_configuration(mut self, input: ::std::option::Option<crate::types::KinesisVideoStreamConfiguration>) -> Self {
         self.inner = self.inner.set_stream_configuration(input);
         self
     }
-    /// <p>The configuration settings for the video stream.</p>
+    /// <p>The configuration settings for the stream.</p>
     pub fn get_stream_configuration(&self) -> &::std::option::Option<crate::types::KinesisVideoStreamConfiguration> {
         self.inner.get_stream_configuration()
     }
-    /// <p>The name of the video stream pool.</p>
+    /// <p>The name of the pool.</p>
     pub fn pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_name(input.into());
         self
     }
-    /// <p>The name of the video stream pool.</p>
+    /// <p>The name of the pool.</p>
     pub fn set_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pool_name(input);
         self
     }
-    /// <p>The name of the video stream pool.</p>
+    /// <p>The name of the pool.</p>
     pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pool_name()
     }
@@ -162,17 +166,17 @@ impl CreateMediaPipelineKinesisVideoStreamPoolFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags assigned to the video stream pool.</p>
+    /// <p>The tags assigned to the stream pool.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>The tags assigned to the video stream pool.</p>
+    /// <p>The tags assigned to the stream pool.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The tags assigned to the video stream pool.</p>
+    /// <p>The tags assigned to the stream pool.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }

@@ -8,7 +8,7 @@ pub struct RegisterScalableTargetInput {
     /// <p>The identifier of the resource that is associated with the scalable target. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li>
-    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/my-cluster/my-service</code>.</p></li>
     /// <li>
     /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
     /// <li>
@@ -40,21 +40,23 @@ pub struct RegisterScalableTargetInput {
     /// <li>
     /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
+    /// <p>SageMaker serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
+    /// <li>
+    /// <p>Amazon WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
     /// </ul>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <p><code>ecs:service:DesiredCount</code> - The task count of an ECS service.</p></li>
     /// <li>
     /// <p><code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p></li>
     /// <li>
     /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p></li>
     /// <li>
-    /// <p><code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.</p></li>
+    /// <p><code>appstream:fleet:DesiredCapacity</code> - The capacity of an AppStream 2.0 fleet.</p></li>
     /// <li>
     /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
     /// <li>
@@ -88,9 +90,11 @@ pub struct RegisterScalableTargetInput {
     /// <li>
     /// <p><code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p></li>
     /// <li>
-    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p></li>
+    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker serverless endpoint.</p></li>
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
+    /// <li>
+    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The capacity of a WorkSpaces pool.</p></li>
     /// </ul>
     pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
     /// <p>The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto Scaling can scale in (contract) as needed to the minimum capacity limit in response to changing demand. This property is required when registering a new scalable target.</p>
@@ -109,7 +113,9 @@ pub struct RegisterScalableTargetInput {
     /// <li>
     /// <p>SageMaker endpoint variants</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint provisioned concurrency</p></li>
+    /// <p>SageMaker inference components</p></li>
+    /// <li>
+    /// <p>SageMaker serverless endpoint provisioned concurrency</p></li>
     /// <li>
     /// <p>Spot Fleets</p></li>
     /// <li>
@@ -122,7 +128,7 @@ pub struct RegisterScalableTargetInput {
     /// <p>Although you can specify a large maximum capacity, note that service quotas might impose lower limits. Each service has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you can request an increase. For more information, consult the documentation for that service. For information about the default quotas for each service, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub max_capacity: ::std::option::Option<i32>,
     /// <p>This parameter is required for services that do not support service-linked roles (such as Amazon EMR), and it must specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
-    /// <p>If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it creates if it does not yet exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles">Application Auto Scaling IAM roles</a>.</p>
+    /// <p>If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it creates if it does not yet exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html">How Application Auto Scaling works with IAM</a>.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An embedded object that contains attributes and attribute values that are used to suspend and resume automatic scaling. Setting the value of an attribute to <code>true</code> suspends the specified scaling activities. Setting it to <code>false</code> (default) resumes the specified scaling activities.</p>
     /// <p><b>Suspension Outcomes</b></p>
@@ -134,7 +140,7 @@ pub struct RegisterScalableTargetInput {
     /// <li>
     /// <p>For <code>ScheduledScalingSuspended</code>, while a suspension is in effect, all scaling activities that involve scheduled actions are suspended.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspend and resume scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub suspended_state: ::std::option::Option<crate::types::SuspendedState>,
     /// <p>Assigns one or more tags to the scalable target. Use this parameter to tag the scalable target when it is created. To tag an existing scalable target, use the <code>TagResource</code> operation.</p>
     /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required. You cannot have more than one tag on a scalable target with the same tag key.</p>
@@ -149,7 +155,7 @@ impl RegisterScalableTargetInput {
     /// <p>The identifier of the resource that is associated with the scalable target. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li>
-    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/my-cluster/my-service</code>.</p></li>
     /// <li>
     /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
     /// <li>
@@ -181,9 +187,11 @@ impl RegisterScalableTargetInput {
     /// <li>
     /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
+    /// <p>SageMaker serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
+    /// <li>
+    /// <p>Amazon WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
     /// </ul>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
@@ -191,13 +199,13 @@ impl RegisterScalableTargetInput {
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <p><code>ecs:service:DesiredCount</code> - The task count of an ECS service.</p></li>
     /// <li>
     /// <p><code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p></li>
     /// <li>
     /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p></li>
     /// <li>
-    /// <p><code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.</p></li>
+    /// <p><code>appstream:fleet:DesiredCapacity</code> - The capacity of an AppStream 2.0 fleet.</p></li>
     /// <li>
     /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
     /// <li>
@@ -231,9 +239,11 @@ impl RegisterScalableTargetInput {
     /// <li>
     /// <p><code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p></li>
     /// <li>
-    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p></li>
+    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker serverless endpoint.</p></li>
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
+    /// <li>
+    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The capacity of a WorkSpaces pool.</p></li>
     /// </ul>
     pub fn scalable_dimension(&self) -> ::std::option::Option<&crate::types::ScalableDimension> {
         self.scalable_dimension.as_ref()
@@ -254,7 +264,9 @@ impl RegisterScalableTargetInput {
     /// <li>
     /// <p>SageMaker endpoint variants</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint provisioned concurrency</p></li>
+    /// <p>SageMaker inference components</p></li>
+    /// <li>
+    /// <p>SageMaker serverless endpoint provisioned concurrency</p></li>
     /// <li>
     /// <p>Spot Fleets</p></li>
     /// <li>
@@ -271,7 +283,7 @@ impl RegisterScalableTargetInput {
         self.max_capacity
     }
     /// <p>This parameter is required for services that do not support service-linked roles (such as Amazon EMR), and it must specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
-    /// <p>If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it creates if it does not yet exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles">Application Auto Scaling IAM roles</a>.</p>
+    /// <p>If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it creates if it does not yet exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html">How Application Auto Scaling works with IAM</a>.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -285,7 +297,7 @@ impl RegisterScalableTargetInput {
     /// <li>
     /// <p>For <code>ScheduledScalingSuspended</code>, while a suspension is in effect, all scaling activities that involve scheduled actions are suspended.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspend and resume scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn suspended_state(&self) -> ::std::option::Option<&crate::types::SuspendedState> {
         self.suspended_state.as_ref()
     }
@@ -335,7 +347,7 @@ impl RegisterScalableTargetInputBuilder {
     /// <p>The identifier of the resource that is associated with the scalable target. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li>
-    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/my-cluster/my-service</code>.</p></li>
     /// <li>
     /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
     /// <li>
@@ -367,9 +379,11 @@ impl RegisterScalableTargetInputBuilder {
     /// <li>
     /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
+    /// <p>SageMaker serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
+    /// <li>
+    /// <p>Amazon WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -379,7 +393,7 @@ impl RegisterScalableTargetInputBuilder {
     /// <p>The identifier of the resource that is associated with the scalable target. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li>
-    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/my-cluster/my-service</code>.</p></li>
     /// <li>
     /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
     /// <li>
@@ -411,9 +425,11 @@ impl RegisterScalableTargetInputBuilder {
     /// <li>
     /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
+    /// <p>SageMaker serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
+    /// <li>
+    /// <p>Amazon WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
@@ -422,7 +438,7 @@ impl RegisterScalableTargetInputBuilder {
     /// <p>The identifier of the resource that is associated with the scalable target. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li>
-    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/my-cluster/my-service</code>.</p></li>
     /// <li>
     /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
     /// <li>
@@ -454,9 +470,11 @@ impl RegisterScalableTargetInputBuilder {
     /// <li>
     /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
+    /// <p>SageMaker serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
+    /// <li>
+    /// <p>Amazon WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
     /// </ul>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
@@ -464,13 +482,13 @@ impl RegisterScalableTargetInputBuilder {
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <p><code>ecs:service:DesiredCount</code> - The task count of an ECS service.</p></li>
     /// <li>
     /// <p><code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p></li>
     /// <li>
     /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p></li>
     /// <li>
-    /// <p><code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.</p></li>
+    /// <p><code>appstream:fleet:DesiredCapacity</code> - The capacity of an AppStream 2.0 fleet.</p></li>
     /// <li>
     /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
     /// <li>
@@ -504,9 +522,11 @@ impl RegisterScalableTargetInputBuilder {
     /// <li>
     /// <p><code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p></li>
     /// <li>
-    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p></li>
+    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker serverless endpoint.</p></li>
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
+    /// <li>
+    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The capacity of a WorkSpaces pool.</p></li>
     /// </ul>
     /// This field is required.
     pub fn scalable_dimension(mut self, input: crate::types::ScalableDimension) -> Self {
@@ -516,13 +536,13 @@ impl RegisterScalableTargetInputBuilder {
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <p><code>ecs:service:DesiredCount</code> - The task count of an ECS service.</p></li>
     /// <li>
     /// <p><code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p></li>
     /// <li>
     /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p></li>
     /// <li>
-    /// <p><code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.</p></li>
+    /// <p><code>appstream:fleet:DesiredCapacity</code> - The capacity of an AppStream 2.0 fleet.</p></li>
     /// <li>
     /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
     /// <li>
@@ -556,9 +576,11 @@ impl RegisterScalableTargetInputBuilder {
     /// <li>
     /// <p><code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p></li>
     /// <li>
-    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p></li>
+    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker serverless endpoint.</p></li>
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
+    /// <li>
+    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The capacity of a WorkSpaces pool.</p></li>
     /// </ul>
     pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.scalable_dimension = input;
@@ -567,13 +589,13 @@ impl RegisterScalableTargetInputBuilder {
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <p><code>ecs:service:DesiredCount</code> - The task count of an ECS service.</p></li>
     /// <li>
     /// <p><code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p></li>
     /// <li>
     /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p></li>
     /// <li>
-    /// <p><code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.</p></li>
+    /// <p><code>appstream:fleet:DesiredCapacity</code> - The capacity of an AppStream 2.0 fleet.</p></li>
     /// <li>
     /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
     /// <li>
@@ -607,9 +629,11 @@ impl RegisterScalableTargetInputBuilder {
     /// <li>
     /// <p><code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p></li>
     /// <li>
-    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p></li>
+    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker serverless endpoint.</p></li>
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
+    /// <li>
+    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The capacity of a WorkSpaces pool.</p></li>
     /// </ul>
     pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         &self.scalable_dimension
@@ -630,7 +654,9 @@ impl RegisterScalableTargetInputBuilder {
     /// <li>
     /// <p>SageMaker endpoint variants</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint provisioned concurrency</p></li>
+    /// <p>SageMaker inference components</p></li>
+    /// <li>
+    /// <p>SageMaker serverless endpoint provisioned concurrency</p></li>
     /// <li>
     /// <p>Spot Fleets</p></li>
     /// <li>
@@ -658,7 +684,9 @@ impl RegisterScalableTargetInputBuilder {
     /// <li>
     /// <p>SageMaker endpoint variants</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint provisioned concurrency</p></li>
+    /// <p>SageMaker inference components</p></li>
+    /// <li>
+    /// <p>SageMaker serverless endpoint provisioned concurrency</p></li>
     /// <li>
     /// <p>Spot Fleets</p></li>
     /// <li>
@@ -686,7 +714,9 @@ impl RegisterScalableTargetInputBuilder {
     /// <li>
     /// <p>SageMaker endpoint variants</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint provisioned concurrency</p></li>
+    /// <p>SageMaker inference components</p></li>
+    /// <li>
+    /// <p>SageMaker serverless endpoint provisioned concurrency</p></li>
     /// <li>
     /// <p>Spot Fleets</p></li>
     /// <li>
@@ -715,19 +745,19 @@ impl RegisterScalableTargetInputBuilder {
         &self.max_capacity
     }
     /// <p>This parameter is required for services that do not support service-linked roles (such as Amazon EMR), and it must specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
-    /// <p>If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it creates if it does not yet exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles">Application Auto Scaling IAM roles</a>.</p>
+    /// <p>If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it creates if it does not yet exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html">How Application Auto Scaling works with IAM</a>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This parameter is required for services that do not support service-linked roles (such as Amazon EMR), and it must specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
-    /// <p>If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it creates if it does not yet exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles">Application Auto Scaling IAM roles</a>.</p>
+    /// <p>If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it creates if it does not yet exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html">How Application Auto Scaling works with IAM</a>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>This parameter is required for services that do not support service-linked roles (such as Amazon EMR), and it must specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
-    /// <p>If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it creates if it does not yet exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles">Application Auto Scaling IAM roles</a>.</p>
+    /// <p>If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it creates if it does not yet exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html">How Application Auto Scaling works with IAM</a>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
@@ -741,7 +771,7 @@ impl RegisterScalableTargetInputBuilder {
     /// <li>
     /// <p>For <code>ScheduledScalingSuspended</code>, while a suspension is in effect, all scaling activities that involve scheduled actions are suspended.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspend and resume scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn suspended_state(mut self, input: crate::types::SuspendedState) -> Self {
         self.suspended_state = ::std::option::Option::Some(input);
         self
@@ -756,7 +786,7 @@ impl RegisterScalableTargetInputBuilder {
     /// <li>
     /// <p>For <code>ScheduledScalingSuspended</code>, while a suspension is in effect, all scaling activities that involve scheduled actions are suspended.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspend and resume scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn set_suspended_state(mut self, input: ::std::option::Option<crate::types::SuspendedState>) -> Self {
         self.suspended_state = input;
         self
@@ -771,7 +801,7 @@ impl RegisterScalableTargetInputBuilder {
     /// <li>
     /// <p>For <code>ScheduledScalingSuspended</code>, while a suspension is in effect, all scaling activities that involve scheduled actions are suspended.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspend and resume scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn get_suspended_state(&self) -> &::std::option::Option<crate::types::SuspendedState> {
         &self.suspended_state
     }

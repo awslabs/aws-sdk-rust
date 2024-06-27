@@ -13,7 +13,7 @@
 pub struct CachedMethods {
     /// <p>The number of HTTP methods for which you want CloudFront to cache responses. Valid values are <code>2</code> (for caching responses to <code>GET</code> and <code>HEAD</code> requests) and <code>3</code> (for caching responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
     pub quantity: i32,
-    /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to.</p>
+    /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to. Valid values for <code>CachedMethods</code> include <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code>, depending on which caching option you choose. For more information, see the preceding section.</p>
     pub items: ::std::vec::Vec<crate::types::Method>,
 }
 impl CachedMethods {
@@ -21,7 +21,7 @@ impl CachedMethods {
     pub fn quantity(&self) -> i32 {
         self.quantity
     }
-    /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to.</p>
+    /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to. Valid values for <code>CachedMethods</code> include <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code>, depending on which caching option you choose. For more information, see the preceding section.</p>
     pub fn items(&self) -> &[crate::types::Method] {
         use std::ops::Deref;
         self.items.deref()
@@ -61,19 +61,19 @@ impl CachedMethodsBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to.</p>
+    /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to. Valid values for <code>CachedMethods</code> include <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code>, depending on which caching option you choose. For more information, see the preceding section.</p>
     pub fn items(mut self, input: crate::types::Method) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to.</p>
+    /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to. Valid values for <code>CachedMethods</code> include <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code>, depending on which caching option you choose. For more information, see the preceding section.</p>
     pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Method>>) -> Self {
         self.items = input;
         self
     }
-    /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to.</p>
+    /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to. Valid values for <code>CachedMethods</code> include <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code>, depending on which caching option you choose. For more information, see the preceding section.</p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Method>> {
         &self.items
     }

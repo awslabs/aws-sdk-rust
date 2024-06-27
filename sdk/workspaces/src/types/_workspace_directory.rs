@@ -40,6 +40,20 @@ pub struct WorkspaceDirectory {
     pub saml_properties: ::std::option::Option<crate::types::SamlProperties>,
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory for WorkSpaces login.</p>
     pub certificate_based_auth_properties: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
+    /// <p>The name fo the WorkSpace directory.</p>
+    pub workspace_directory_name: ::std::option::Option<::std::string::String>,
+    /// <p>The description of the WorkSpace directory</p>
+    pub workspace_directory_description: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates the identity type of the specifired user.</p>
+    pub user_identity_type: ::std::option::Option<crate::types::UserIdentityType>,
+    /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
+    pub workspace_type: ::std::option::Option<crate::types::WorkspaceType>,
+    /// <p>Information about the Active Directory config.</p>
+    pub active_directory_config: ::std::option::Option<crate::types::ActiveDirectoryConfig>,
+    /// <p>The streaming properties to configure.</p>
+    pub streaming_properties: ::std::option::Option<crate::types::StreamingProperties>,
+    /// <p>The error message returned.</p>
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceDirectory {
     /// <p>The directory identifier.</p>
@@ -120,6 +134,34 @@ impl WorkspaceDirectory {
     pub fn certificate_based_auth_properties(&self) -> ::std::option::Option<&crate::types::CertificateBasedAuthProperties> {
         self.certificate_based_auth_properties.as_ref()
     }
+    /// <p>The name fo the WorkSpace directory.</p>
+    pub fn workspace_directory_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_directory_name.as_deref()
+    }
+    /// <p>The description of the WorkSpace directory</p>
+    pub fn workspace_directory_description(&self) -> ::std::option::Option<&str> {
+        self.workspace_directory_description.as_deref()
+    }
+    /// <p>Indicates the identity type of the specifired user.</p>
+    pub fn user_identity_type(&self) -> ::std::option::Option<&crate::types::UserIdentityType> {
+        self.user_identity_type.as_ref()
+    }
+    /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
+    pub fn workspace_type(&self) -> ::std::option::Option<&crate::types::WorkspaceType> {
+        self.workspace_type.as_ref()
+    }
+    /// <p>Information about the Active Directory config.</p>
+    pub fn active_directory_config(&self) -> ::std::option::Option<&crate::types::ActiveDirectoryConfig> {
+        self.active_directory_config.as_ref()
+    }
+    /// <p>The streaming properties to configure.</p>
+    pub fn streaming_properties(&self) -> ::std::option::Option<&crate::types::StreamingProperties> {
+        self.streaming_properties.as_ref()
+    }
+    /// <p>The error message returned.</p>
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl WorkspaceDirectory {
     /// Creates a new builder-style object to manufacture [`WorkspaceDirectory`](crate::types::WorkspaceDirectory).
@@ -150,6 +192,13 @@ pub struct WorkspaceDirectoryBuilder {
     pub(crate) selfservice_permissions: ::std::option::Option<crate::types::SelfservicePermissions>,
     pub(crate) saml_properties: ::std::option::Option<crate::types::SamlProperties>,
     pub(crate) certificate_based_auth_properties: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
+    pub(crate) workspace_directory_name: ::std::option::Option<::std::string::String>,
+    pub(crate) workspace_directory_description: ::std::option::Option<::std::string::String>,
+    pub(crate) user_identity_type: ::std::option::Option<crate::types::UserIdentityType>,
+    pub(crate) workspace_type: ::std::option::Option<crate::types::WorkspaceType>,
+    pub(crate) active_directory_config: ::std::option::Option<crate::types::ActiveDirectoryConfig>,
+    pub(crate) streaming_properties: ::std::option::Option<crate::types::StreamingProperties>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceDirectoryBuilder {
     /// <p>The directory identifier.</p>
@@ -422,6 +471,104 @@ impl WorkspaceDirectoryBuilder {
     pub fn get_certificate_based_auth_properties(&self) -> &::std::option::Option<crate::types::CertificateBasedAuthProperties> {
         &self.certificate_based_auth_properties
     }
+    /// <p>The name fo the WorkSpace directory.</p>
+    pub fn workspace_directory_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_directory_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name fo the WorkSpace directory.</p>
+    pub fn set_workspace_directory_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_directory_name = input;
+        self
+    }
+    /// <p>The name fo the WorkSpace directory.</p>
+    pub fn get_workspace_directory_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_directory_name
+    }
+    /// <p>The description of the WorkSpace directory</p>
+    pub fn workspace_directory_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_directory_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The description of the WorkSpace directory</p>
+    pub fn set_workspace_directory_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_directory_description = input;
+        self
+    }
+    /// <p>The description of the WorkSpace directory</p>
+    pub fn get_workspace_directory_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_directory_description
+    }
+    /// <p>Indicates the identity type of the specifired user.</p>
+    pub fn user_identity_type(mut self, input: crate::types::UserIdentityType) -> Self {
+        self.user_identity_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the identity type of the specifired user.</p>
+    pub fn set_user_identity_type(mut self, input: ::std::option::Option<crate::types::UserIdentityType>) -> Self {
+        self.user_identity_type = input;
+        self
+    }
+    /// <p>Indicates the identity type of the specifired user.</p>
+    pub fn get_user_identity_type(&self) -> &::std::option::Option<crate::types::UserIdentityType> {
+        &self.user_identity_type
+    }
+    /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
+    pub fn workspace_type(mut self, input: crate::types::WorkspaceType) -> Self {
+        self.workspace_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
+    pub fn set_workspace_type(mut self, input: ::std::option::Option<crate::types::WorkspaceType>) -> Self {
+        self.workspace_type = input;
+        self
+    }
+    /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
+    pub fn get_workspace_type(&self) -> &::std::option::Option<crate::types::WorkspaceType> {
+        &self.workspace_type
+    }
+    /// <p>Information about the Active Directory config.</p>
+    pub fn active_directory_config(mut self, input: crate::types::ActiveDirectoryConfig) -> Self {
+        self.active_directory_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the Active Directory config.</p>
+    pub fn set_active_directory_config(mut self, input: ::std::option::Option<crate::types::ActiveDirectoryConfig>) -> Self {
+        self.active_directory_config = input;
+        self
+    }
+    /// <p>Information about the Active Directory config.</p>
+    pub fn get_active_directory_config(&self) -> &::std::option::Option<crate::types::ActiveDirectoryConfig> {
+        &self.active_directory_config
+    }
+    /// <p>The streaming properties to configure.</p>
+    pub fn streaming_properties(mut self, input: crate::types::StreamingProperties) -> Self {
+        self.streaming_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The streaming properties to configure.</p>
+    pub fn set_streaming_properties(mut self, input: ::std::option::Option<crate::types::StreamingProperties>) -> Self {
+        self.streaming_properties = input;
+        self
+    }
+    /// <p>The streaming properties to configure.</p>
+    pub fn get_streaming_properties(&self) -> &::std::option::Option<crate::types::StreamingProperties> {
+        &self.streaming_properties
+    }
+    /// <p>The error message returned.</p>
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The error message returned.</p>
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error_message = input;
+        self
+    }
+    /// <p>The error message returned.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// Consumes the builder and constructs a [`WorkspaceDirectory`](crate::types::WorkspaceDirectory).
     pub fn build(self) -> crate::types::WorkspaceDirectory {
         crate::types::WorkspaceDirectory {
@@ -443,6 +590,13 @@ impl WorkspaceDirectoryBuilder {
             selfservice_permissions: self.selfservice_permissions,
             saml_properties: self.saml_properties,
             certificate_based_auth_properties: self.certificate_based_auth_properties,
+            workspace_directory_name: self.workspace_directory_name,
+            workspace_directory_description: self.workspace_directory_description,
+            user_identity_type: self.user_identity_type,
+            workspace_type: self.workspace_type,
+            active_directory_config: self.active_directory_config,
+            streaming_properties: self.streaming_properties,
+            error_message: self.error_message,
         }
     }
 }

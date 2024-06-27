@@ -15,6 +15,16 @@ pub struct RegisterWorkspaceDirectoryInput {
     pub tenancy: ::std::option::Option<crate::types::Tenancy>,
     /// <p>The tags associated with the directory.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The name of the directory to register.</p>
+    pub workspace_directory_name: ::std::option::Option<::std::string::String>,
+    /// <p>Description of the directory to register.</p>
+    pub workspace_directory_description: ::std::option::Option<::std::string::String>,
+    /// <p>The type of identity management the user is using.</p>
+    pub user_identity_type: ::std::option::Option<crate::types::UserIdentityType>,
+    /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
+    pub workspace_type: ::std::option::Option<crate::types::WorkspaceType>,
+    /// <p>The active directory config of the directory.</p>
+    pub active_directory_config: ::std::option::Option<crate::types::ActiveDirectoryConfig>,
 }
 impl RegisterWorkspaceDirectoryInput {
     /// <p>The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.</p>
@@ -45,6 +55,26 @@ impl RegisterWorkspaceDirectoryInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The name of the directory to register.</p>
+    pub fn workspace_directory_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_directory_name.as_deref()
+    }
+    /// <p>Description of the directory to register.</p>
+    pub fn workspace_directory_description(&self) -> ::std::option::Option<&str> {
+        self.workspace_directory_description.as_deref()
+    }
+    /// <p>The type of identity management the user is using.</p>
+    pub fn user_identity_type(&self) -> ::std::option::Option<&crate::types::UserIdentityType> {
+        self.user_identity_type.as_ref()
+    }
+    /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
+    pub fn workspace_type(&self) -> ::std::option::Option<&crate::types::WorkspaceType> {
+        self.workspace_type.as_ref()
+    }
+    /// <p>The active directory config of the directory.</p>
+    pub fn active_directory_config(&self) -> ::std::option::Option<&crate::types::ActiveDirectoryConfig> {
+        self.active_directory_config.as_ref()
+    }
 }
 impl RegisterWorkspaceDirectoryInput {
     /// Creates a new builder-style object to manufacture [`RegisterWorkspaceDirectoryInput`](crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryInput).
@@ -63,10 +93,14 @@ pub struct RegisterWorkspaceDirectoryInputBuilder {
     pub(crate) enable_self_service: ::std::option::Option<bool>,
     pub(crate) tenancy: ::std::option::Option<crate::types::Tenancy>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) workspace_directory_name: ::std::option::Option<::std::string::String>,
+    pub(crate) workspace_directory_description: ::std::option::Option<::std::string::String>,
+    pub(crate) user_identity_type: ::std::option::Option<crate::types::UserIdentityType>,
+    pub(crate) workspace_type: ::std::option::Option<crate::types::WorkspaceType>,
+    pub(crate) active_directory_config: ::std::option::Option<crate::types::ActiveDirectoryConfig>,
 }
 impl RegisterWorkspaceDirectoryInputBuilder {
     /// <p>The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.</p>
-    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -101,7 +135,6 @@ impl RegisterWorkspaceDirectoryInputBuilder {
         &self.subnet_ids
     }
     /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
-    /// This field is required.
     pub fn enable_work_docs(mut self, input: bool) -> Self {
         self.enable_work_docs = ::std::option::Option::Some(input);
         self
@@ -163,6 +196,76 @@ impl RegisterWorkspaceDirectoryInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The name of the directory to register.</p>
+    pub fn workspace_directory_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_directory_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the directory to register.</p>
+    pub fn set_workspace_directory_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_directory_name = input;
+        self
+    }
+    /// <p>The name of the directory to register.</p>
+    pub fn get_workspace_directory_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_directory_name
+    }
+    /// <p>Description of the directory to register.</p>
+    pub fn workspace_directory_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_directory_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Description of the directory to register.</p>
+    pub fn set_workspace_directory_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_directory_description = input;
+        self
+    }
+    /// <p>Description of the directory to register.</p>
+    pub fn get_workspace_directory_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_directory_description
+    }
+    /// <p>The type of identity management the user is using.</p>
+    pub fn user_identity_type(mut self, input: crate::types::UserIdentityType) -> Self {
+        self.user_identity_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of identity management the user is using.</p>
+    pub fn set_user_identity_type(mut self, input: ::std::option::Option<crate::types::UserIdentityType>) -> Self {
+        self.user_identity_type = input;
+        self
+    }
+    /// <p>The type of identity management the user is using.</p>
+    pub fn get_user_identity_type(&self) -> &::std::option::Option<crate::types::UserIdentityType> {
+        &self.user_identity_type
+    }
+    /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
+    pub fn workspace_type(mut self, input: crate::types::WorkspaceType) -> Self {
+        self.workspace_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
+    pub fn set_workspace_type(mut self, input: ::std::option::Option<crate::types::WorkspaceType>) -> Self {
+        self.workspace_type = input;
+        self
+    }
+    /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
+    pub fn get_workspace_type(&self) -> &::std::option::Option<crate::types::WorkspaceType> {
+        &self.workspace_type
+    }
+    /// <p>The active directory config of the directory.</p>
+    pub fn active_directory_config(mut self, input: crate::types::ActiveDirectoryConfig) -> Self {
+        self.active_directory_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The active directory config of the directory.</p>
+    pub fn set_active_directory_config(mut self, input: ::std::option::Option<crate::types::ActiveDirectoryConfig>) -> Self {
+        self.active_directory_config = input;
+        self
+    }
+    /// <p>The active directory config of the directory.</p>
+    pub fn get_active_directory_config(&self) -> &::std::option::Option<crate::types::ActiveDirectoryConfig> {
+        &self.active_directory_config
+    }
     /// Consumes the builder and constructs a [`RegisterWorkspaceDirectoryInput`](crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryInput).
     pub fn build(
         self,
@@ -177,6 +280,11 @@ impl RegisterWorkspaceDirectoryInputBuilder {
             enable_self_service: self.enable_self_service,
             tenancy: self.tenancy,
             tags: self.tags,
+            workspace_directory_name: self.workspace_directory_name,
+            workspace_directory_description: self.workspace_directory_description,
+            user_identity_type: self.user_identity_type,
+            workspace_type: self.workspace_type,
+            active_directory_config: self.active_directory_config,
         })
     }
 }

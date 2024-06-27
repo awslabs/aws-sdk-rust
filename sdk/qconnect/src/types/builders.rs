@@ -43,6 +43,12 @@ pub use crate::types::_quick_response_summary::QuickResponseSummaryBuilder;
 
 pub use crate::types::_content_data::ContentDataBuilder;
 
+pub use crate::types::_content_association_data::ContentAssociationDataBuilder;
+
+pub use crate::types::_amazon_connect_guide_association_data::AmazonConnectGuideAssociationDataBuilder;
+
+pub use crate::types::_content_association_summary::ContentAssociationSummaryBuilder;
+
 pub use crate::types::_session_summary::SessionSummaryBuilder;
 
 pub use crate::types::_result_data::ResultDataBuilder;

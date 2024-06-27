@@ -21,5 +21,8 @@ pub fn ser_workspace_creation_properties(
     if let Some(var_6) = &input.enable_maintenance_mode {
         object.key("EnableMaintenanceMode").boolean(*var_6);
     }
+    if let Some(var_7) = &input.instance_iam_role_arn {
+        object.key("InstanceIamRoleArn").string(var_7.as_str());
+    }
     Ok(())
 }

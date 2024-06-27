@@ -23,14 +23,14 @@ pub struct ScheduledAction {
     /// <p>At and cron expressions use Universal Coordinated Time (UTC) by default.</p>
     /// <p>The cron format consists of six fields separated by white spaces: \[Minutes\] \[Hours\] \[Day_of_Month\] \[Month\] \[Day_of_Week\] \[Year\].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
-    /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-using-cron-expressions.html">Schedule recurring scaling actions using cron expressions</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub schedule: ::std::string::String,
     /// <p>The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an at or cron expression.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li>
-    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/my-cluster/my-service</code>.</p></li>
     /// <li>
     /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
     /// <li>
@@ -62,21 +62,23 @@ pub struct ScheduledAction {
     /// <li>
     /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
+    /// <p>SageMaker serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
+    /// <li>
+    /// <p>Amazon WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
     /// </ul>
     pub resource_id: ::std::string::String,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <p><code>ecs:service:DesiredCount</code> - The task count of an ECS service.</p></li>
     /// <li>
     /// <p><code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p></li>
     /// <li>
     /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p></li>
     /// <li>
-    /// <p><code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.</p></li>
+    /// <p><code>appstream:fleet:DesiredCapacity</code> - The capacity of an AppStream 2.0 fleet.</p></li>
     /// <li>
     /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
     /// <li>
@@ -110,9 +112,11 @@ pub struct ScheduledAction {
     /// <li>
     /// <p><code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p></li>
     /// <li>
-    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p></li>
+    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker serverless endpoint.</p></li>
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
+    /// <li>
+    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The capacity of a WorkSpaces pool.</p></li>
     /// </ul>
     pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
     /// <p>The date and time that the action is scheduled to begin, in UTC.</p>
@@ -152,7 +156,7 @@ impl ScheduledAction {
     /// <p>At and cron expressions use Universal Coordinated Time (UTC) by default.</p>
     /// <p>The cron format consists of six fields separated by white spaces: \[Minutes\] \[Hours\] \[Day_of_Month\] \[Month\] \[Day_of_Week\] \[Year\].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
-    /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-using-cron-expressions.html">Schedule recurring scaling actions using cron expressions</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn schedule(&self) -> &str {
         use std::ops::Deref;
         self.schedule.deref()
@@ -164,7 +168,7 @@ impl ScheduledAction {
     /// <p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li>
-    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/my-cluster/my-service</code>.</p></li>
     /// <li>
     /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
     /// <li>
@@ -196,9 +200,11 @@ impl ScheduledAction {
     /// <li>
     /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
+    /// <p>SageMaker serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
+    /// <li>
+    /// <p>Amazon WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
     /// </ul>
     pub fn resource_id(&self) -> &str {
         use std::ops::Deref;
@@ -207,13 +213,13 @@ impl ScheduledAction {
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <p><code>ecs:service:DesiredCount</code> - The task count of an ECS service.</p></li>
     /// <li>
     /// <p><code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p></li>
     /// <li>
     /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p></li>
     /// <li>
-    /// <p><code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.</p></li>
+    /// <p><code>appstream:fleet:DesiredCapacity</code> - The capacity of an AppStream 2.0 fleet.</p></li>
     /// <li>
     /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
     /// <li>
@@ -247,9 +253,11 @@ impl ScheduledAction {
     /// <li>
     /// <p><code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p></li>
     /// <li>
-    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p></li>
+    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker serverless endpoint.</p></li>
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
+    /// <li>
+    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The capacity of a WorkSpaces pool.</p></li>
     /// </ul>
     pub fn scalable_dimension(&self) -> ::std::option::Option<&crate::types::ScalableDimension> {
         self.scalable_dimension.as_ref()
@@ -353,7 +361,7 @@ impl ScheduledActionBuilder {
     /// <p>At and cron expressions use Universal Coordinated Time (UTC) by default.</p>
     /// <p>The cron format consists of six fields separated by white spaces: \[Minutes\] \[Hours\] \[Day_of_Month\] \[Month\] \[Day_of_Week\] \[Year\].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
-    /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-using-cron-expressions.html">Schedule recurring scaling actions using cron expressions</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     /// This field is required.
     pub fn schedule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule = ::std::option::Option::Some(input.into());
@@ -372,7 +380,7 @@ impl ScheduledActionBuilder {
     /// <p>At and cron expressions use Universal Coordinated Time (UTC) by default.</p>
     /// <p>The cron format consists of six fields separated by white spaces: \[Minutes\] \[Hours\] \[Day_of_Month\] \[Month\] \[Day_of_Week\] \[Year\].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
-    /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-using-cron-expressions.html">Schedule recurring scaling actions using cron expressions</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule = input;
         self
@@ -390,7 +398,7 @@ impl ScheduledActionBuilder {
     /// <p>At and cron expressions use Universal Coordinated Time (UTC) by default.</p>
     /// <p>The cron format consists of six fields separated by white spaces: \[Minutes\] \[Hours\] \[Day_of_Month\] \[Month\] \[Day_of_Week\] \[Year\].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
-    /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-using-cron-expressions.html">Schedule recurring scaling actions using cron expressions</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule
     }
@@ -411,7 +419,7 @@ impl ScheduledActionBuilder {
     /// <p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li>
-    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/my-cluster/my-service</code>.</p></li>
     /// <li>
     /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
     /// <li>
@@ -443,9 +451,11 @@ impl ScheduledActionBuilder {
     /// <li>
     /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
+    /// <p>SageMaker serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
+    /// <li>
+    /// <p>Amazon WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -455,7 +465,7 @@ impl ScheduledActionBuilder {
     /// <p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li>
-    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/my-cluster/my-service</code>.</p></li>
     /// <li>
     /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
     /// <li>
@@ -487,9 +497,11 @@ impl ScheduledActionBuilder {
     /// <li>
     /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
+    /// <p>SageMaker serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
+    /// <li>
+    /// <p>Amazon WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
@@ -498,7 +510,7 @@ impl ScheduledActionBuilder {
     /// <p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li>
-    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/my-cluster/my-service</code>.</p></li>
     /// <li>
     /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
     /// <li>
@@ -530,9 +542,11 @@ impl ScheduledActionBuilder {
     /// <li>
     /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
+    /// <p>SageMaker serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
+    /// <li>
+    /// <p>Amazon WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
     /// </ul>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
@@ -540,13 +554,13 @@ impl ScheduledActionBuilder {
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <p><code>ecs:service:DesiredCount</code> - The task count of an ECS service.</p></li>
     /// <li>
     /// <p><code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p></li>
     /// <li>
     /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p></li>
     /// <li>
-    /// <p><code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.</p></li>
+    /// <p><code>appstream:fleet:DesiredCapacity</code> - The capacity of an AppStream 2.0 fleet.</p></li>
     /// <li>
     /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
     /// <li>
@@ -580,9 +594,11 @@ impl ScheduledActionBuilder {
     /// <li>
     /// <p><code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p></li>
     /// <li>
-    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p></li>
+    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker serverless endpoint.</p></li>
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
+    /// <li>
+    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The capacity of a WorkSpaces pool.</p></li>
     /// </ul>
     pub fn scalable_dimension(mut self, input: crate::types::ScalableDimension) -> Self {
         self.scalable_dimension = ::std::option::Option::Some(input);
@@ -591,13 +607,13 @@ impl ScheduledActionBuilder {
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <p><code>ecs:service:DesiredCount</code> - The task count of an ECS service.</p></li>
     /// <li>
     /// <p><code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p></li>
     /// <li>
     /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p></li>
     /// <li>
-    /// <p><code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.</p></li>
+    /// <p><code>appstream:fleet:DesiredCapacity</code> - The capacity of an AppStream 2.0 fleet.</p></li>
     /// <li>
     /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
     /// <li>
@@ -631,9 +647,11 @@ impl ScheduledActionBuilder {
     /// <li>
     /// <p><code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p></li>
     /// <li>
-    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p></li>
+    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker serverless endpoint.</p></li>
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
+    /// <li>
+    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The capacity of a WorkSpaces pool.</p></li>
     /// </ul>
     pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.scalable_dimension = input;
@@ -642,13 +660,13 @@ impl ScheduledActionBuilder {
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <p><code>ecs:service:DesiredCount</code> - The task count of an ECS service.</p></li>
     /// <li>
     /// <p><code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p></li>
     /// <li>
     /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p></li>
     /// <li>
-    /// <p><code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.</p></li>
+    /// <p><code>appstream:fleet:DesiredCapacity</code> - The capacity of an AppStream 2.0 fleet.</p></li>
     /// <li>
     /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
     /// <li>
@@ -682,9 +700,11 @@ impl ScheduledActionBuilder {
     /// <li>
     /// <p><code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p></li>
     /// <li>
-    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p></li>
+    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker serverless endpoint.</p></li>
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
+    /// <li>
+    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The capacity of a WorkSpaces pool.</p></li>
     /// </ul>
     pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         &self.scalable_dimension

@@ -13,6 +13,8 @@ pub use crate::types::error::_request_timeout_exception::RequestTimeoutException
 
 pub use crate::types::error::_precondition_failed_exception::PreconditionFailedException;
 
+pub use crate::types::error::_throttling_exception::ThrottlingException;
+
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
 
 mod _access_denied_exception;
@@ -26,6 +28,8 @@ mod _request_timeout_exception;
 mod _resource_not_found_exception;
 
 mod _service_quota_exceeded_exception;
+
+mod _throttling_exception;
 
 mod _too_many_tags_exception;
 

@@ -1747,6 +1747,28 @@ pub(crate) fn mapped_data_set_parameter_correct_errors(
     builder
 }
 
+pub(crate) fn nested_filter_correct_errors(mut builder: crate::types::builders::NestedFilterBuilder) -> crate::types::builders::NestedFilterBuilder {
+    if builder.filter_id.is_none() {
+        builder.filter_id = Some(Default::default())
+    }
+    if builder.column.is_none() {
+        builder.column = {
+            let builder = crate::types::builders::ColumnIdentifierBuilder::default();
+            crate::serde_util::column_identifier_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.include_inner_set.is_none() {
+        builder.include_inner_set = Some(Default::default())
+    }
+    if builder.inner_filter.is_none() {
+        builder.inner_filter = {
+            let builder = crate::types::builders::InnerFilterBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn null_value_format_configuration_correct_errors(
     mut builder: crate::types::builders::NullValueFormatConfigurationBuilder,
 ) -> crate::types::builders::NullValueFormatConfigurationBuilder {
@@ -2260,6 +2282,24 @@ pub(crate) fn calculated_column_correct_errors(
     }
     if builder.expression.is_none() {
         builder.expression = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn category_inner_filter_correct_errors(
+    mut builder: crate::types::builders::CategoryInnerFilterBuilder,
+) -> crate::types::builders::CategoryInnerFilterBuilder {
+    if builder.column.is_none() {
+        builder.column = {
+            let builder = crate::types::builders::ColumnIdentifierBuilder::default();
+            crate::serde_util::column_identifier_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = {
+            let builder = crate::types::builders::CategoryFilterConfigurationBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }
@@ -3283,6 +3323,30 @@ pub(crate) fn time_range_drill_down_filter_correct_errors(
     }
     if builder.time_granularity.is_none() {
         builder.time_granularity = "no value was set".parse::<crate::types::TimeGranularity>().ok()
+    }
+    builder
+}
+
+pub(crate) fn body_section_dynamic_category_dimension_configuration_correct_errors(
+    mut builder: crate::types::builders::BodySectionDynamicCategoryDimensionConfigurationBuilder,
+) -> crate::types::builders::BodySectionDynamicCategoryDimensionConfigurationBuilder {
+    if builder.column.is_none() {
+        builder.column = {
+            let builder = crate::types::builders::ColumnIdentifierBuilder::default();
+            crate::serde_util::column_identifier_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn body_section_dynamic_numeric_dimension_configuration_correct_errors(
+    mut builder: crate::types::builders::BodySectionDynamicNumericDimensionConfigurationBuilder,
+) -> crate::types::builders::BodySectionDynamicNumericDimensionConfigurationBuilder {
+    if builder.column.is_none() {
+        builder.column = {
+            let builder = crate::types::builders::ColumnIdentifierBuilder::default();
+            crate::serde_util::column_identifier_correct_errors(builder).build().ok()
+        }
     }
     builder
 }

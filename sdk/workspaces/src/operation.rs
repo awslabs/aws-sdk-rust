@@ -49,6 +49,9 @@ pub mod create_workspace_image;
 /// Types for the `CreateWorkspaces` operation.
 pub mod create_workspaces;
 
+/// Types for the `CreateWorkspacesPool` operation.
+pub mod create_workspaces_pool;
+
 /// Types for the `DeleteAccountLinkInvitation` operation.
 pub mod delete_account_link_invitation;
 
@@ -142,6 +145,12 @@ pub mod describe_workspaces;
 /// Types for the `DescribeWorkspacesConnectionStatus` operation.
 pub mod describe_workspaces_connection_status;
 
+/// Types for the `DescribeWorkspacesPoolSessions` operation.
+pub mod describe_workspaces_pool_sessions;
+
+/// Types for the `DescribeWorkspacesPools` operation.
+pub mod describe_workspaces_pools;
+
 /// Types for the `DisassociateConnectionAlias` operation.
 pub mod disassociate_connection_alias;
 
@@ -184,6 +193,9 @@ pub mod modify_saml_properties;
 /// Types for the `ModifySelfservicePermissions` operation.
 pub mod modify_selfservice_permissions;
 
+/// Types for the `ModifyStreamingProperties` operation.
+pub mod modify_streaming_properties;
+
 /// Types for the `ModifyWorkspaceAccessProperties` operation.
 pub mod modify_workspace_access_properties;
 
@@ -217,11 +229,23 @@ pub mod revoke_ip_rules;
 /// Types for the `StartWorkspaces` operation.
 pub mod start_workspaces;
 
+/// Types for the `StartWorkspacesPool` operation.
+pub mod start_workspaces_pool;
+
 /// Types for the `StopWorkspaces` operation.
 pub mod stop_workspaces;
 
+/// Types for the `StopWorkspacesPool` operation.
+pub mod stop_workspaces_pool;
+
 /// Types for the `TerminateWorkspaces` operation.
 pub mod terminate_workspaces;
+
+/// Types for the `TerminateWorkspacesPool` operation.
+pub mod terminate_workspaces_pool;
+
+/// Types for the `TerminateWorkspacesPoolSession` operation.
+pub mod terminate_workspaces_pool_session;
 
 /// Types for the `UpdateConnectClientAddIn` operation.
 pub mod update_connect_client_add_in;
@@ -237,3 +261,6 @@ pub mod update_workspace_bundle;
 
 /// Types for the `UpdateWorkspaceImagePermission` operation.
 pub mod update_workspace_image_permission;
+
+/// Types for the `UpdateWorkspacesPool` operation.
+pub mod update_workspaces_pool;

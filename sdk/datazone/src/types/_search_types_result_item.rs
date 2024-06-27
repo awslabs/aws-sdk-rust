@@ -8,6 +8,8 @@ pub enum SearchTypesResultItem {
     AssetTypeItem(crate::types::AssetTypeItem),
     /// <p>The form type included in the results of the <code>SearchTypes</code> action.</p>
     FormTypeItem(crate::types::FormTypeData),
+    /// <p>The details of a data lineage node type.</p>
+    LineageNodeTypeItem(crate::types::LineageNodeTypeItem),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -44,6 +46,19 @@ impl SearchTypesResultItem {
     /// Returns true if this is a [`FormTypeItem`](crate::types::SearchTypesResultItem::FormTypeItem).
     pub fn is_form_type_item(&self) -> bool {
         self.as_form_type_item().is_ok()
+    }
+    /// Tries to convert the enum instance into [`LineageNodeTypeItem`](crate::types::SearchTypesResultItem::LineageNodeTypeItem), extracting the inner [`LineageNodeTypeItem`](crate::types::LineageNodeTypeItem).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_lineage_node_type_item(&self) -> ::std::result::Result<&crate::types::LineageNodeTypeItem, &Self> {
+        if let SearchTypesResultItem::LineageNodeTypeItem(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`LineageNodeTypeItem`](crate::types::SearchTypesResultItem::LineageNodeTypeItem).
+    pub fn is_lineage_node_type_item(&self) -> bool {
+        self.as_lineage_node_type_item().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

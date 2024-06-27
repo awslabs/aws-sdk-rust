@@ -35,6 +35,12 @@ pub use crate::types::_oidc_config::OidcConfig;
 
 pub use crate::types::_user_settings::UserSettings;
 
+pub use crate::types::_studio_web_portal_settings::StudioWebPortalSettings;
+
+pub use crate::types::_app_type::AppType;
+
+pub use crate::types::_ml_tools::MlTools;
+
 pub use crate::types::_custom_file_system_config::CustomFileSystemConfig;
 
 pub use crate::types::_efs_file_system_config::EfsFileSystemConfig;
@@ -124,8 +130,6 @@ pub use crate::types::_efs_file_system::EfsFileSystem;
 pub use crate::types::_space_storage_settings::SpaceStorageSettings;
 
 pub use crate::types::_ebs_storage_settings::EbsStorageSettings;
-
-pub use crate::types::_app_type::AppType;
 
 pub use crate::types::_space_jupyter_lab_app_settings::SpaceJupyterLabAppSettings;
 
@@ -2541,6 +2545,8 @@ mod _metric_specification;
 
 mod _metrics_source;
 
+mod _ml_tools;
+
 mod _model;
 
 mod _model_access_config;
@@ -3202,6 +3208,8 @@ mod _studio_lifecycle_config_details;
 mod _studio_lifecycle_config_sort_key;
 
 mod _studio_web_portal;
+
+mod _studio_web_portal_settings;
 
 mod _subscribed_workteam;
 

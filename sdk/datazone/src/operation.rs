@@ -175,6 +175,9 @@ pub mod get_group_profile;
 /// Types for the `GetIamPortalLoginUrl` operation.
 pub mod get_iam_portal_login_url;
 
+/// Types for the `GetLineageNode` operation.
+pub mod get_lineage_node;
+
 /// Types for the `GetListing` operation.
 pub mod get_listing;
 
@@ -232,6 +235,9 @@ pub mod list_environment_profiles;
 /// Types for the `ListEnvironments` operation.
 pub mod list_environments;
 
+/// Types for the `ListLineageNodeHistory` operation.
+pub mod list_lineage_node_history;
+
 /// Types for the `ListMetadataGenerationRuns` operation.
 pub mod list_metadata_generation_runs;
 
@@ -261,6 +267,9 @@ pub mod list_tags_for_resource;
 
 /// Types for the `ListTimeSeriesDataPoints` operation.
 pub mod list_time_series_data_points;
+
+/// Types for the `PostLineageEvent` operation.
+pub mod post_lineage_event;
 
 /// Types for the `PostTimeSeriesDataPoints` operation.
 pub mod post_time_series_data_points;

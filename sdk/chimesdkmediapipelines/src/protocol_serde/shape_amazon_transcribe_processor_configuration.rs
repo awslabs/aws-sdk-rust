@@ -44,6 +44,9 @@ pub fn ser_amazon_transcribe_processor_configuration(
     if input.identify_language {
         object.key("IdentifyLanguage").boolean(input.identify_language);
     }
+    if input.identify_multiple_languages {
+        object.key("IdentifyMultipleLanguages").boolean(input.identify_multiple_languages);
+    }
     if let Some(var_10) = &input.language_options {
         object.key("LanguageOptions").string(var_10.as_str());
     }
@@ -149,6 +152,10 @@ where
                         }
                         "IdentifyLanguage" => {
                             builder = builder.set_identify_language(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "IdentifyMultipleLanguages" => {
+                            builder =
+                                builder.set_identify_multiple_languages(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "LanguageOptions" => {
                             builder = builder.set_language_options(

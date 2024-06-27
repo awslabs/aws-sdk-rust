@@ -261,6 +261,8 @@ pub enum RegisterWorkspaceDirectoryError {
     InvalidResourceStateException(crate::types::error::InvalidResourceStateException),
     /// <p>This operation is not supported.</p>
     OperationNotSupportedException(crate::types::error::OperationNotSupportedException),
+    /// <p>The specified resource already exists.</p>
+    ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
     /// <p>Your resource limits have been exceeded.</p>
     ResourceLimitExceededException(crate::types::error::ResourceLimitExceededException),
     /// <p>The resource could not be found.</p>
@@ -306,6 +308,7 @@ impl RegisterWorkspaceDirectoryError {
             Self::InvalidParameterValuesException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidResourceStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OperationNotSupportedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceAlreadyExistsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedNetworkConfigurationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -328,6 +331,10 @@ impl RegisterWorkspaceDirectoryError {
     /// Returns `true` if the error kind is `RegisterWorkspaceDirectoryError::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(self, Self::OperationNotSupportedException(_))
+    }
+    /// Returns `true` if the error kind is `RegisterWorkspaceDirectoryError::ResourceAlreadyExistsException`.
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(self, Self::ResourceAlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `RegisterWorkspaceDirectoryError::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
@@ -353,6 +360,7 @@ impl ::std::error::Error for RegisterWorkspaceDirectoryError {
             Self::InvalidParameterValuesException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidResourceStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::OperationNotSupportedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceAlreadyExistsException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedNetworkConfigurationException(_inner) => ::std::option::Option::Some(_inner),
@@ -368,6 +376,7 @@ impl ::std::fmt::Display for RegisterWorkspaceDirectoryError {
             Self::InvalidParameterValuesException(_inner) => _inner.fmt(f),
             Self::InvalidResourceStateException(_inner) => _inner.fmt(f),
             Self::OperationNotSupportedException(_inner) => _inner.fmt(f),
+            Self::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
             Self::ResourceLimitExceededException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::UnsupportedNetworkConfigurationException(_inner) => _inner.fmt(f),
@@ -397,6 +406,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RegisterWorks
             Self::InvalidParameterValuesException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidResourceStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OperationNotSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceAlreadyExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedNetworkConfigurationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

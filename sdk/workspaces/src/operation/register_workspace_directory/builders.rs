@@ -202,4 +202,74 @@ impl RegisterWorkspaceDirectoryFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>The name of the directory to register.</p>
+    pub fn workspace_directory_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.workspace_directory_name(input.into());
+        self
+    }
+    /// <p>The name of the directory to register.</p>
+    pub fn set_workspace_directory_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_workspace_directory_name(input);
+        self
+    }
+    /// <p>The name of the directory to register.</p>
+    pub fn get_workspace_directory_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_directory_name()
+    }
+    /// <p>Description of the directory to register.</p>
+    pub fn workspace_directory_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.workspace_directory_description(input.into());
+        self
+    }
+    /// <p>Description of the directory to register.</p>
+    pub fn set_workspace_directory_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_workspace_directory_description(input);
+        self
+    }
+    /// <p>Description of the directory to register.</p>
+    pub fn get_workspace_directory_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_directory_description()
+    }
+    /// <p>The type of identity management the user is using.</p>
+    pub fn user_identity_type(mut self, input: crate::types::UserIdentityType) -> Self {
+        self.inner = self.inner.user_identity_type(input);
+        self
+    }
+    /// <p>The type of identity management the user is using.</p>
+    pub fn set_user_identity_type(mut self, input: ::std::option::Option<crate::types::UserIdentityType>) -> Self {
+        self.inner = self.inner.set_user_identity_type(input);
+        self
+    }
+    /// <p>The type of identity management the user is using.</p>
+    pub fn get_user_identity_type(&self) -> &::std::option::Option<crate::types::UserIdentityType> {
+        self.inner.get_user_identity_type()
+    }
+    /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
+    pub fn workspace_type(mut self, input: crate::types::WorkspaceType) -> Self {
+        self.inner = self.inner.workspace_type(input);
+        self
+    }
+    /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
+    pub fn set_workspace_type(mut self, input: ::std::option::Option<crate::types::WorkspaceType>) -> Self {
+        self.inner = self.inner.set_workspace_type(input);
+        self
+    }
+    /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
+    pub fn get_workspace_type(&self) -> &::std::option::Option<crate::types::WorkspaceType> {
+        self.inner.get_workspace_type()
+    }
+    /// <p>The active directory config of the directory.</p>
+    pub fn active_directory_config(mut self, input: crate::types::ActiveDirectoryConfig) -> Self {
+        self.inner = self.inner.active_directory_config(input);
+        self
+    }
+    /// <p>The active directory config of the directory.</p>
+    pub fn set_active_directory_config(mut self, input: ::std::option::Option<crate::types::ActiveDirectoryConfig>) -> Self {
+        self.inner = self.inner.set_active_directory_config(input);
+        self
+    }
+    /// <p>The active directory config of the directory.</p>
+    pub fn get_active_directory_config(&self) -> &::std::option::Option<crate::types::ActiveDirectoryConfig> {
+        self.inner.get_active_directory_config()
+    }
 }

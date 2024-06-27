@@ -14,6 +14,7 @@
 /// match typessearchscope {
 ///     TypesSearchScope::AssetType => { /* ... */ },
 ///     TypesSearchScope::FormType => { /* ... */ },
+///     TypesSearchScope::LineageNodeType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum TypesSearchScope {
     AssetType,
     #[allow(missing_docs)] // documentation missing in model
     FormType,
+    #[allow(missing_docs)] // documentation missing in model
+    LineageNodeType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for TypesSearchScope {
         match s {
             "ASSET_TYPE" => TypesSearchScope::AssetType,
             "FORM_TYPE" => TypesSearchScope::FormType,
+            "LINEAGE_NODE_TYPE" => TypesSearchScope::LineageNodeType,
             other => TypesSearchScope::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl TypesSearchScope {
         match self {
             TypesSearchScope::AssetType => "ASSET_TYPE",
             TypesSearchScope::FormType => "FORM_TYPE",
+            TypesSearchScope::LineageNodeType => "LINEAGE_NODE_TYPE",
             TypesSearchScope::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASSET_TYPE", "FORM_TYPE"]
+        &["ASSET_TYPE", "FORM_TYPE", "LINEAGE_NODE_TYPE"]
     }
 }
 impl ::std::convert::AsRef<str> for TypesSearchScope {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for TypesSearchScope {
         match self {
             TypesSearchScope::AssetType => write!(f, "ASSET_TYPE"),
             TypesSearchScope::FormType => write!(f, "FORM_TYPE"),
+            TypesSearchScope::LineageNodeType => write!(f, "LINEAGE_NODE_TYPE"),
             TypesSearchScope::Unknown(value) => write!(f, "{}", value),
         }
     }

@@ -16,6 +16,8 @@ pub struct DefaultWorkspaceCreationProperties {
     pub user_enabled_as_local_administrator: ::std::option::Option<bool>,
     /// <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>.</p>
     pub enable_maintenance_mode: ::std::option::Option<bool>,
+    /// <p>Indicates the IAM role ARN of the instance.</p>
+    pub instance_iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl DefaultWorkspaceCreationProperties {
     /// <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
@@ -42,6 +44,10 @@ impl DefaultWorkspaceCreationProperties {
     pub fn enable_maintenance_mode(&self) -> ::std::option::Option<bool> {
         self.enable_maintenance_mode
     }
+    /// <p>Indicates the IAM role ARN of the instance.</p>
+    pub fn instance_iam_role_arn(&self) -> ::std::option::Option<&str> {
+        self.instance_iam_role_arn.as_deref()
+    }
 }
 impl DefaultWorkspaceCreationProperties {
     /// Creates a new builder-style object to manufacture [`DefaultWorkspaceCreationProperties`](crate::types::DefaultWorkspaceCreationProperties).
@@ -60,6 +66,7 @@ pub struct DefaultWorkspaceCreationPropertiesBuilder {
     pub(crate) custom_security_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_enabled_as_local_administrator: ::std::option::Option<bool>,
     pub(crate) enable_maintenance_mode: ::std::option::Option<bool>,
+    pub(crate) instance_iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl DefaultWorkspaceCreationPropertiesBuilder {
     /// <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
@@ -146,6 +153,20 @@ impl DefaultWorkspaceCreationPropertiesBuilder {
     pub fn get_enable_maintenance_mode(&self) -> &::std::option::Option<bool> {
         &self.enable_maintenance_mode
     }
+    /// <p>Indicates the IAM role ARN of the instance.</p>
+    pub fn instance_iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_iam_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Indicates the IAM role ARN of the instance.</p>
+    pub fn set_instance_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_iam_role_arn = input;
+        self
+    }
+    /// <p>Indicates the IAM role ARN of the instance.</p>
+    pub fn get_instance_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_iam_role_arn
+    }
     /// Consumes the builder and constructs a [`DefaultWorkspaceCreationProperties`](crate::types::DefaultWorkspaceCreationProperties).
     pub fn build(self) -> crate::types::DefaultWorkspaceCreationProperties {
         crate::types::DefaultWorkspaceCreationProperties {
@@ -155,6 +176,7 @@ impl DefaultWorkspaceCreationPropertiesBuilder {
             custom_security_group_id: self.custom_security_group_id,
             user_enabled_as_local_administrator: self.user_enabled_as_local_administrator,
             enable_maintenance_mode: self.enable_maintenance_mode,
+            instance_iam_role_arn: self.instance_iam_role_arn,
         }
     }
 }

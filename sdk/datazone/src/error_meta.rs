@@ -2088,6 +2088,33 @@ impl From<crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_lineage_node::GetLineageNodeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_lineage_node::GetLineageNodeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_lineage_node::GetLineageNodeError> for Error {
+    fn from(err: crate::operation::get_lineage_node::GetLineageNodeError) -> Self {
+        match err {
+            crate::operation::get_lineage_node::GetLineageNodeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_lineage_node::GetLineageNodeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_lineage_node::GetLineageNodeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_lineage_node::GetLineageNodeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_lineage_node::GetLineageNodeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_lineage_node::GetLineageNodeError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_lineage_node::GetLineageNodeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_listing::GetListingError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2762,6 +2789,44 @@ impl From<crate::operation::list_environments::ListEnvironmentsError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_lineage_node_history::ListLineageNodeHistoryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_lineage_node_history::ListLineageNodeHistoryError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_lineage_node_history::ListLineageNodeHistoryError> for Error {
+    fn from(err: crate::operation::list_lineage_node_history::ListLineageNodeHistoryError) -> Self {
+        match err {
+            crate::operation::list_lineage_node_history::ListLineageNodeHistoryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_lineage_node_history::ListLineageNodeHistoryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_lineage_node_history::ListLineageNodeHistoryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_lineage_node_history::ListLineageNodeHistoryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_lineage_node_history::ListLineageNodeHistoryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_lineage_node_history::ListLineageNodeHistoryError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_lineage_node_history::ListLineageNodeHistoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsError, R>>
     for Error
 where
@@ -3112,6 +3177,37 @@ impl From<crate::operation::list_time_series_data_points::ListTimeSeriesDataPoin
                 Error::UnauthorizedException(inner)
             }
             crate::operation::list_time_series_data_points::ListTimeSeriesDataPointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::post_lineage_event::PostLineageEventError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::post_lineage_event::PostLineageEventError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::post_lineage_event::PostLineageEventError> for Error {
+    fn from(err: crate::operation::post_lineage_event::PostLineageEventError) -> Self {
+        match err {
+            crate::operation::post_lineage_event::PostLineageEventError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::post_lineage_event::PostLineageEventError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::post_lineage_event::PostLineageEventError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::post_lineage_event::PostLineageEventError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::post_lineage_event::PostLineageEventError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::post_lineage_event::PostLineageEventError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::post_lineage_event::PostLineageEventError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::post_lineage_event::PostLineageEventError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::post_lineage_event::PostLineageEventError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

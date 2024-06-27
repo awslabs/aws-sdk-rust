@@ -253,6 +253,8 @@ pub enum DisassociateIpGroupsError {
     InvalidParameterValuesException(crate::types::error::InvalidParameterValuesException),
     /// <p>The state of the resource is not valid for this operation.</p>
     InvalidResourceStateException(crate::types::error::InvalidResourceStateException),
+    /// <p>This operation is not supported.</p>
+    OperationNotSupportedException(crate::types::error::OperationNotSupportedException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -291,6 +293,7 @@ impl DisassociateIpGroupsError {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValuesException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidResourceStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OperationNotSupportedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -307,6 +310,10 @@ impl DisassociateIpGroupsError {
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(self, Self::InvalidResourceStateException(_))
     }
+    /// Returns `true` if the error kind is `DisassociateIpGroupsError::OperationNotSupportedException`.
+    pub fn is_operation_not_supported_exception(&self) -> bool {
+        matches!(self, Self::OperationNotSupportedException(_))
+    }
     /// Returns `true` if the error kind is `DisassociateIpGroupsError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
@@ -318,6 +325,7 @@ impl ::std::error::Error for DisassociateIpGroupsError {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValuesException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidResourceStateException(_inner) => ::std::option::Option::Some(_inner),
+            Self::OperationNotSupportedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -329,6 +337,7 @@ impl ::std::fmt::Display for DisassociateIpGroupsError {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValuesException(_inner) => _inner.fmt(f),
             Self::InvalidResourceStateException(_inner) => _inner.fmt(f),
+            Self::OperationNotSupportedException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -354,6 +363,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DisassociateI
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValuesException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidResourceStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::OperationNotSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

@@ -26,6 +26,15 @@ pub(crate) fn list_assistants_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_content_associations_output_output_correct_errors(
+    mut builder: crate::operation::list_content_associations::builders::ListContentAssociationsOutputBuilder,
+) -> crate::operation::list_content_associations::builders::ListContentAssociationsOutputBuilder {
+    if builder.content_association_summaries.is_none() {
+        builder.content_association_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_contents_output_output_correct_errors(
     mut builder: crate::operation::list_contents::builders::ListContentsOutputBuilder,
 ) -> crate::operation::list_contents::builders::ListContentsOutputBuilder {
@@ -178,6 +187,36 @@ pub(crate) fn assistant_data_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::AssistantStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn content_association_data_correct_errors(
+    mut builder: crate::types::builders::ContentAssociationDataBuilder,
+) -> crate::types::builders::ContentAssociationDataBuilder {
+    if builder.knowledge_base_id.is_none() {
+        builder.knowledge_base_id = Some(Default::default())
+    }
+    if builder.knowledge_base_arn.is_none() {
+        builder.knowledge_base_arn = Some(Default::default())
+    }
+    if builder.content_id.is_none() {
+        builder.content_id = Some(Default::default())
+    }
+    if builder.content_arn.is_none() {
+        builder.content_arn = Some(Default::default())
+    }
+    if builder.content_association_id.is_none() {
+        builder.content_association_id = Some(Default::default())
+    }
+    if builder.content_association_arn.is_none() {
+        builder.content_association_arn = Some(Default::default())
+    }
+    if builder.association_type.is_none() {
+        builder.association_type = "no value was set".parse::<crate::types::ContentAssociationType>().ok()
+    }
+    if builder.association_data.is_none() {
+        builder.association_data = Some(crate::types::ContentAssociationContents::Unknown)
     }
     builder
 }
@@ -402,6 +441,36 @@ pub(crate) fn assistant_summary_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::AssistantStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn content_association_summary_correct_errors(
+    mut builder: crate::types::builders::ContentAssociationSummaryBuilder,
+) -> crate::types::builders::ContentAssociationSummaryBuilder {
+    if builder.knowledge_base_id.is_none() {
+        builder.knowledge_base_id = Some(Default::default())
+    }
+    if builder.knowledge_base_arn.is_none() {
+        builder.knowledge_base_arn = Some(Default::default())
+    }
+    if builder.content_id.is_none() {
+        builder.content_id = Some(Default::default())
+    }
+    if builder.content_arn.is_none() {
+        builder.content_arn = Some(Default::default())
+    }
+    if builder.content_association_id.is_none() {
+        builder.content_association_id = Some(Default::default())
+    }
+    if builder.content_association_arn.is_none() {
+        builder.content_association_arn = Some(Default::default())
+    }
+    if builder.association_type.is_none() {
+        builder.association_type = "no value was set".parse::<crate::types::ContentAssociationType>().ok()
+    }
+    if builder.association_data.is_none() {
+        builder.association_data = Some(crate::types::ContentAssociationContents::Unknown)
     }
     builder
 }

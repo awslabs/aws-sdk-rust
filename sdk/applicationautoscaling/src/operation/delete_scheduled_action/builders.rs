@@ -140,7 +140,7 @@ impl DeleteScheduledActionFluentBuilder {
     /// <p>The identifier of the resource associated with the scheduled action. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li>
-    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/my-cluster/my-service</code>.</p></li>
     /// <li>
     /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
     /// <li>
@@ -172,9 +172,11 @@ impl DeleteScheduledActionFluentBuilder {
     /// <li>
     /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
+    /// <p>SageMaker serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
+    /// <li>
+    /// <p>Amazon WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
     /// </ul>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -183,7 +185,7 @@ impl DeleteScheduledActionFluentBuilder {
     /// <p>The identifier of the resource associated with the scheduled action. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li>
-    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/my-cluster/my-service</code>.</p></li>
     /// <li>
     /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
     /// <li>
@@ -215,9 +217,11 @@ impl DeleteScheduledActionFluentBuilder {
     /// <li>
     /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
+    /// <p>SageMaker serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
+    /// <li>
+    /// <p>Amazon WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
@@ -226,7 +230,7 @@ impl DeleteScheduledActionFluentBuilder {
     /// <p>The identifier of the resource associated with the scheduled action. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li>
-    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/my-cluster/my-service</code>.</p></li>
     /// <li>
     /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
     /// <li>
@@ -258,9 +262,11 @@ impl DeleteScheduledActionFluentBuilder {
     /// <li>
     /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p></li>
     /// <li>
-    /// <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
+    /// <p>SageMaker serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
+    /// <li>
+    /// <p>Amazon WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
     /// </ul>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_id()
@@ -268,13 +274,13 @@ impl DeleteScheduledActionFluentBuilder {
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <p><code>ecs:service:DesiredCount</code> - The task count of an ECS service.</p></li>
     /// <li>
     /// <p><code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p></li>
     /// <li>
     /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p></li>
     /// <li>
-    /// <p><code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.</p></li>
+    /// <p><code>appstream:fleet:DesiredCapacity</code> - The capacity of an AppStream 2.0 fleet.</p></li>
     /// <li>
     /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
     /// <li>
@@ -308,9 +314,11 @@ impl DeleteScheduledActionFluentBuilder {
     /// <li>
     /// <p><code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p></li>
     /// <li>
-    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p></li>
+    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker serverless endpoint.</p></li>
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
+    /// <li>
+    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The capacity of a WorkSpaces pool.</p></li>
     /// </ul>
     pub fn scalable_dimension(mut self, input: crate::types::ScalableDimension) -> Self {
         self.inner = self.inner.scalable_dimension(input);
@@ -319,13 +327,13 @@ impl DeleteScheduledActionFluentBuilder {
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <p><code>ecs:service:DesiredCount</code> - The task count of an ECS service.</p></li>
     /// <li>
     /// <p><code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p></li>
     /// <li>
     /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p></li>
     /// <li>
-    /// <p><code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.</p></li>
+    /// <p><code>appstream:fleet:DesiredCapacity</code> - The capacity of an AppStream 2.0 fleet.</p></li>
     /// <li>
     /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
     /// <li>
@@ -359,9 +367,11 @@ impl DeleteScheduledActionFluentBuilder {
     /// <li>
     /// <p><code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p></li>
     /// <li>
-    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p></li>
+    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker serverless endpoint.</p></li>
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
+    /// <li>
+    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The capacity of a WorkSpaces pool.</p></li>
     /// </ul>
     pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.inner = self.inner.set_scalable_dimension(input);
@@ -370,13 +380,13 @@ impl DeleteScheduledActionFluentBuilder {
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <p><code>ecs:service:DesiredCount</code> - The task count of an ECS service.</p></li>
     /// <li>
     /// <p><code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p></li>
     /// <li>
     /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p></li>
     /// <li>
-    /// <p><code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.</p></li>
+    /// <p><code>appstream:fleet:DesiredCapacity</code> - The capacity of an AppStream 2.0 fleet.</p></li>
     /// <li>
     /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
     /// <li>
@@ -410,9 +420,11 @@ impl DeleteScheduledActionFluentBuilder {
     /// <li>
     /// <p><code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p></li>
     /// <li>
-    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p></li>
+    /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker serverless endpoint.</p></li>
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
+    /// <li>
+    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The capacity of a WorkSpaces pool.</p></li>
     /// </ul>
     pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         self.inner.get_scalable_dimension()

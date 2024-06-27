@@ -22,7 +22,7 @@ impl crate::operation::delete_media_pipeline_kinesis_video_stream_pool::builders
 }
 /// Fluent builder constructing a request to `DeleteMediaPipelineKinesisVideoStreamPool`.
 ///
-/// <p>Deletes an Kinesis video stream pool.</p>
+/// <p>Deletes an Amazon Kinesis Video Stream pool.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMediaPipelineKinesisVideoStreamPoolFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,17 +115,17 @@ impl DeleteMediaPipelineKinesisVideoStreamPoolFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the pool being deleted.</p>
+    /// <p>The unique identifier of the requested resource. Valid values include the name and ARN of the media pipeline Kinesis Video Stream pool.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>The ID of the pool being deleted.</p>
+    /// <p>The unique identifier of the requested resource. Valid values include the name and ARN of the media pipeline Kinesis Video Stream pool.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>The ID of the pool being deleted.</p>
+    /// <p>The unique identifier of the requested resource. Valid values include the name and ARN of the media pipeline Kinesis Video Stream pool.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

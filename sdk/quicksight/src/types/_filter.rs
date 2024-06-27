@@ -20,6 +20,8 @@ pub struct Filter {
     pub relative_dates_filter: ::std::option::Option<crate::types::RelativeDatesFilter>,
     /// <p>A <code>TopBottomFilter</code> filters data to the top or bottom values for a given column.</p>
     pub top_bottom_filter: ::std::option::Option<crate::types::TopBottomFilter>,
+    /// <p>A <code>NestedFilter</code> filters data with a subset of data that is defined by the nested inner filter.</p>
+    pub nested_filter: ::std::option::Option<crate::types::NestedFilter>,
 }
 impl Filter {
     /// <p>A <code>CategoryFilter</code> filters text values.</p>
@@ -51,6 +53,10 @@ impl Filter {
     pub fn top_bottom_filter(&self) -> ::std::option::Option<&crate::types::TopBottomFilter> {
         self.top_bottom_filter.as_ref()
     }
+    /// <p>A <code>NestedFilter</code> filters data with a subset of data that is defined by the nested inner filter.</p>
+    pub fn nested_filter(&self) -> ::std::option::Option<&crate::types::NestedFilter> {
+        self.nested_filter.as_ref()
+    }
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::types::Filter).
@@ -70,6 +76,7 @@ pub struct FilterBuilder {
     pub(crate) time_range_filter: ::std::option::Option<crate::types::TimeRangeFilter>,
     pub(crate) relative_dates_filter: ::std::option::Option<crate::types::RelativeDatesFilter>,
     pub(crate) top_bottom_filter: ::std::option::Option<crate::types::TopBottomFilter>,
+    pub(crate) nested_filter: ::std::option::Option<crate::types::NestedFilter>,
 }
 impl FilterBuilder {
     /// <p>A <code>CategoryFilter</code> filters text values.</p>
@@ -173,6 +180,20 @@ impl FilterBuilder {
     pub fn get_top_bottom_filter(&self) -> &::std::option::Option<crate::types::TopBottomFilter> {
         &self.top_bottom_filter
     }
+    /// <p>A <code>NestedFilter</code> filters data with a subset of data that is defined by the nested inner filter.</p>
+    pub fn nested_filter(mut self, input: crate::types::NestedFilter) -> Self {
+        self.nested_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A <code>NestedFilter</code> filters data with a subset of data that is defined by the nested inner filter.</p>
+    pub fn set_nested_filter(mut self, input: ::std::option::Option<crate::types::NestedFilter>) -> Self {
+        self.nested_filter = input;
+        self
+    }
+    /// <p>A <code>NestedFilter</code> filters data with a subset of data that is defined by the nested inner filter.</p>
+    pub fn get_nested_filter(&self) -> &::std::option::Option<crate::types::NestedFilter> {
+        &self.nested_filter
+    }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
@@ -183,6 +204,7 @@ impl FilterBuilder {
             time_range_filter: self.time_range_filter,
             relative_dates_filter: self.relative_dates_filter,
             top_bottom_filter: self.top_bottom_filter,
+            nested_filter: self.nested_filter,
         }
     }
 }

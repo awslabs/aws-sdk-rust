@@ -251,6 +251,8 @@ pub enum ModifyClientPropertiesError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValuesException(crate::types::error::InvalidParameterValuesException),
+    /// <p>This operation is not supported.</p>
+    OperationNotSupportedException(crate::types::error::OperationNotSupportedException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -288,6 +290,7 @@ impl ModifyClientPropertiesError {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValuesException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OperationNotSupportedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -300,6 +303,10 @@ impl ModifyClientPropertiesError {
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterValuesException(_))
     }
+    /// Returns `true` if the error kind is `ModifyClientPropertiesError::OperationNotSupportedException`.
+    pub fn is_operation_not_supported_exception(&self) -> bool {
+        matches!(self, Self::OperationNotSupportedException(_))
+    }
     /// Returns `true` if the error kind is `ModifyClientPropertiesError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
@@ -310,6 +317,7 @@ impl ::std::error::Error for ModifyClientPropertiesError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValuesException(_inner) => ::std::option::Option::Some(_inner),
+            Self::OperationNotSupportedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -320,6 +328,7 @@ impl ::std::fmt::Display for ModifyClientPropertiesError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValuesException(_inner) => _inner.fmt(f),
+            Self::OperationNotSupportedException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -344,6 +353,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyClientP
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValuesException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::OperationNotSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

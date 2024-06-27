@@ -30,9 +30,10 @@
 //!   - Amazon Managed Streaming for Apache Kafka broker storage
 //!   - Amazon Neptune clusters
 //!   - Amazon SageMaker endpoint variants
-//!   - Amazon SageMaker Serverless endpoint provisioned concurrency
 //!   - Amazon SageMaker inference components
+//!   - Amazon SageMaker serverless endpoint provisioned concurrency
 //!   - Spot Fleets (Amazon EC2)
+//!   - WorkSpaces pools
 //!   - Custom resources provided by your own applications or services
 //!
 //! To learn more about Application Auto Scaling, see the [Application Auto Scaling User Guide](https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html).
@@ -56,7 +57,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-applicationautoscaling = "1.35.0"
+//! aws-sdk-applicationautoscaling = "1.36.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

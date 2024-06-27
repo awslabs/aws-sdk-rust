@@ -29,6 +29,8 @@ pub(crate) mod shape_create_assistant_association;
 
 pub(crate) mod shape_create_content;
 
+pub(crate) mod shape_create_content_association;
+
 pub(crate) mod shape_create_knowledge_base;
 
 pub(crate) mod shape_create_quick_response;
@@ -41,6 +43,8 @@ pub(crate) mod shape_delete_assistant_association;
 
 pub(crate) mod shape_delete_content;
 
+pub(crate) mod shape_delete_content_association;
+
 pub(crate) mod shape_delete_import_job;
 
 pub(crate) mod shape_delete_knowledge_base;
@@ -52,6 +56,8 @@ pub(crate) mod shape_get_assistant;
 pub(crate) mod shape_get_assistant_association;
 
 pub(crate) mod shape_get_content;
+
+pub(crate) mod shape_get_content_association;
 
 pub(crate) mod shape_get_content_summary;
 
@@ -68,6 +74,8 @@ pub(crate) mod shape_get_session;
 pub(crate) mod shape_list_assistant_associations;
 
 pub(crate) mod shape_list_assistants;
+
+pub(crate) mod shape_list_content_associations;
 
 pub(crate) mod shape_list_contents;
 
@@ -125,6 +133,8 @@ pub(crate) mod shape_create_assistant_association_input;
 
 pub(crate) mod shape_create_assistant_input;
 
+pub(crate) mod shape_create_content_association_input;
+
 pub(crate) mod shape_create_content_input;
 
 pub(crate) mod shape_create_knowledge_base_input;
@@ -159,6 +169,8 @@ pub(crate) mod shape_start_import_job_input;
 
 pub(crate) mod shape_tag_resource_input;
 
+pub(crate) mod shape_throttling_exception;
+
 pub(crate) mod shape_too_many_tags_exception;
 
 pub(crate) mod shape_update_content_input;
@@ -180,6 +192,12 @@ pub(crate) mod shape_assistant_association_summary_list;
 pub(crate) mod shape_assistant_data;
 
 pub(crate) mod shape_assistant_list;
+
+pub(crate) mod shape_content_association_contents;
+
+pub(crate) mod shape_content_association_data;
+
+pub(crate) mod shape_content_association_summary_list;
 
 pub(crate) mod shape_content_data;
 
@@ -241,6 +259,8 @@ pub(crate) mod shape_tag_filter;
 
 pub(crate) mod shape_tags;
 
+pub(crate) mod shape_amazon_connect_guide_association_data;
+
 pub(crate) mod shape_app_integrations_configuration;
 
 pub(crate) mod shape_assistant_association_output_data;
@@ -256,6 +276,8 @@ pub(crate) mod shape_assistant_summary;
 pub(crate) mod shape_channels;
 
 pub(crate) mod shape_configuration;
+
+pub(crate) mod shape_content_association_summary;
 
 pub(crate) mod shape_content_metadata;
 

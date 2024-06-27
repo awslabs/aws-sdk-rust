@@ -857,6 +857,21 @@ pub(crate) fn get_iam_portal_login_url_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_lineage_node_output_output_correct_errors(
+    mut builder: crate::operation::get_lineage_node::builders::GetLineageNodeOutputBuilder,
+) -> crate::operation::get_lineage_node::builders::GetLineageNodeOutputBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.type_name.is_none() {
+        builder.type_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_listing_output_output_correct_errors(
     mut builder: crate::operation::get_listing::builders::GetListingOutputBuilder,
 ) -> crate::operation::get_listing::builders::GetListingOutputBuilder {
@@ -1900,6 +1915,21 @@ pub(crate) fn import_correct_errors(mut builder: crate::types::builders::ImportB
     builder
 }
 
+pub(crate) fn lineage_node_summary_correct_errors(
+    mut builder: crate::types::builders::LineageNodeSummaryBuilder,
+) -> crate::types::builders::LineageNodeSummaryBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.type_name.is_none() {
+        builder.type_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn listing_revision_correct_errors(
     mut builder: crate::types::builders::ListingRevisionBuilder,
 ) -> crate::types::builders::ListingRevisionBuilder {
@@ -2323,6 +2353,21 @@ pub(crate) fn glossary_term_item_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::GlossaryTermStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn lineage_node_type_item_correct_errors(
+    mut builder: crate::types::builders::LineageNodeTypeItemBuilder,
+) -> crate::types::builders::LineageNodeTypeItemBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
+    }
+    if builder.forms_output.is_none() {
+        builder.forms_output = Some(Default::default())
     }
     builder
 }

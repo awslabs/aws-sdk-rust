@@ -45,6 +45,12 @@ pub fn ser_filter(
         crate::protocol_serde::shape_top_bottom_filter::ser_top_bottom_filter(&mut object_14, var_13)?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.nested_filter {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("NestedFilter").start_object();
+        crate::protocol_serde::shape_nested_filter::ser_nested_filter(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }
 
@@ -88,6 +94,9 @@ where
                         }
                         "TopBottomFilter" => {
                             builder = builder.set_top_bottom_filter(crate::protocol_serde::shape_top_bottom_filter::de_top_bottom_filter(tokens)?);
+                        }
+                        "NestedFilter" => {
+                            builder = builder.set_nested_filter(crate::protocol_serde::shape_nested_filter::de_nested_filter(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

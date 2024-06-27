@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_assistants_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_content_associations_output_output_next_token(
+    input: &crate::operation::list_content_associations::ListContentAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_contents_output_output_next_token(
     input: &crate::operation::list_contents::ListContentsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -110,6 +120,13 @@ pub(crate) fn lens_list_assistants_output_output_assistant_summaries(
     input: crate::operation::list_assistants::ListAssistantsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssistantSummary>> {
     let input = input.assistant_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_content_associations_output_output_content_association_summaries(
+    input: crate::operation::list_content_associations::ListContentAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ContentAssociationSummary>> {
+    let input = input.content_association_summaries;
     ::std::option::Option::Some(input)
 }
 

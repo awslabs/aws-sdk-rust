@@ -111,6 +111,8 @@ pub use crate::types::_resource::ResourceBuilder;
 
 pub use crate::types::_user_profile_summary::UserProfileSummaryBuilder;
 
+pub use crate::types::_lineage_node_type_item::LineageNodeTypeItemBuilder;
+
 pub use crate::types::_form_type_data::FormTypeDataBuilder;
 
 pub use crate::types::_asset_type_item::AssetTypeItemBuilder;
@@ -169,6 +171,8 @@ pub use crate::types::_topic::TopicBuilder;
 
 pub use crate::types::_notification_resource::NotificationResourceBuilder;
 
+pub use crate::types::_lineage_node_summary::LineageNodeSummaryBuilder;
+
 pub use crate::types::_environment_summary::EnvironmentSummaryBuilder;
 
 pub use crate::types::_environment_profile_summary::EnvironmentProfileSummaryBuilder;
@@ -180,6 +184,8 @@ pub use crate::types::_environment_action_summary::EnvironmentActionSummaryBuild
 pub use crate::types::_data_source_run_activity::DataSourceRunActivityBuilder;
 
 pub use crate::types::_asset_revision::AssetRevisionBuilder;
+
+pub use crate::types::_lineage_node_reference::LineageNodeReferenceBuilder;
 
 pub use crate::types::_subscribed_listing_input::SubscribedListingInputBuilder;
 

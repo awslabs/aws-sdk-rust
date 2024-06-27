@@ -46,6 +46,8 @@ pub struct UserSettings {
     pub custom_posix_user_config: ::std::option::Option<crate::types::CustomPosixUserConfig>,
     /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
     pub custom_file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>,
+    /// <p>Studio settings. If these settings are applied on a user level, they take priority over the settings applied on a domain level.</p>
+    pub studio_web_portal_settings: ::std::option::Option<crate::types::StudioWebPortalSettings>,
 }
 impl UserSettings {
     /// <p>The execution role for the user.</p>
@@ -125,6 +127,10 @@ impl UserSettings {
     pub fn custom_file_system_configs(&self) -> &[crate::types::CustomFileSystemConfig] {
         self.custom_file_system_configs.as_deref().unwrap_or_default()
     }
+    /// <p>Studio settings. If these settings are applied on a user level, they take priority over the settings applied on a domain level.</p>
+    pub fn studio_web_portal_settings(&self) -> ::std::option::Option<&crate::types::StudioWebPortalSettings> {
+        self.studio_web_portal_settings.as_ref()
+    }
 }
 impl UserSettings {
     /// Creates a new builder-style object to manufacture [`UserSettings`](crate::types::UserSettings).
@@ -153,6 +159,7 @@ pub struct UserSettingsBuilder {
     pub(crate) studio_web_portal: ::std::option::Option<crate::types::StudioWebPortal>,
     pub(crate) custom_posix_user_config: ::std::option::Option<crate::types::CustomPosixUserConfig>,
     pub(crate) custom_file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>,
+    pub(crate) studio_web_portal_settings: ::std::option::Option<crate::types::StudioWebPortalSettings>,
 }
 impl UserSettingsBuilder {
     /// <p>The execution role for the user.</p>
@@ -418,6 +425,20 @@ impl UserSettingsBuilder {
     pub fn get_custom_file_system_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>> {
         &self.custom_file_system_configs
     }
+    /// <p>Studio settings. If these settings are applied on a user level, they take priority over the settings applied on a domain level.</p>
+    pub fn studio_web_portal_settings(mut self, input: crate::types::StudioWebPortalSettings) -> Self {
+        self.studio_web_portal_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Studio settings. If these settings are applied on a user level, they take priority over the settings applied on a domain level.</p>
+    pub fn set_studio_web_portal_settings(mut self, input: ::std::option::Option<crate::types::StudioWebPortalSettings>) -> Self {
+        self.studio_web_portal_settings = input;
+        self
+    }
+    /// <p>Studio settings. If these settings are applied on a user level, they take priority over the settings applied on a domain level.</p>
+    pub fn get_studio_web_portal_settings(&self) -> &::std::option::Option<crate::types::StudioWebPortalSettings> {
+        &self.studio_web_portal_settings
+    }
     /// Consumes the builder and constructs a [`UserSettings`](crate::types::UserSettings).
     pub fn build(self) -> crate::types::UserSettings {
         crate::types::UserSettings {
@@ -437,6 +458,7 @@ impl UserSettingsBuilder {
             studio_web_portal: self.studio_web_portal,
             custom_posix_user_config: self.custom_posix_user_config,
             custom_file_system_configs: self.custom_file_system_configs,
+            studio_web_portal_settings: self.studio_web_portal_settings,
         }
     }
 }

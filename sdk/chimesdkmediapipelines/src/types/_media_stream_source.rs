@@ -6,7 +6,7 @@
 pub struct MediaStreamSource {
     /// <p>The type of media stream source.</p>
     pub source_type: crate::types::MediaPipelineSourceType,
-    /// <p>The ARN of the media stream source.</p>
+    /// <p>The ARN of the meeting.</p>
     pub source_arn: ::std::string::String,
 }
 impl MediaStreamSource {
@@ -14,7 +14,7 @@ impl MediaStreamSource {
     pub fn source_type(&self) -> &crate::types::MediaPipelineSourceType {
         &self.source_type
     }
-    /// <p>The ARN of the media stream source.</p>
+    /// <p>The ARN of the meeting.</p>
     pub fn source_arn(&self) -> &str {
         use std::ops::Deref;
         self.source_arn.deref()
@@ -58,18 +58,18 @@ impl MediaStreamSourceBuilder {
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::MediaPipelineSourceType> {
         &self.source_type
     }
-    /// <p>The ARN of the media stream source.</p>
+    /// <p>The ARN of the meeting.</p>
     /// This field is required.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the media stream source.</p>
+    /// <p>The ARN of the meeting.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_arn = input;
         self
     }
-    /// <p>The ARN of the media stream source.</p>
+    /// <p>The ARN of the meeting.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_arn
     }

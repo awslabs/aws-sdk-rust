@@ -31,6 +31,8 @@ pub use crate::types::_oidc_config::OidcConfigBuilder;
 
 pub use crate::types::_user_settings::UserSettingsBuilder;
 
+pub use crate::types::_studio_web_portal_settings::StudioWebPortalSettingsBuilder;
+
 pub use crate::types::_efs_file_system_config::EfsFileSystemConfigBuilder;
 
 pub use crate::types::_custom_posix_user_config::CustomPosixUserConfigBuilder;

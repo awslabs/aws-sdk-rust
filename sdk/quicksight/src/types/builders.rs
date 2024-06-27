@@ -163,7 +163,11 @@ pub use crate::types::_sheet_visual_scoping_configuration::SheetVisualScopingCon
 
 pub use crate::types::_filter::FilterBuilder;
 
-pub use crate::types::_top_bottom_filter::TopBottomFilterBuilder;
+pub use crate::types::_nested_filter::NestedFilterBuilder;
+
+pub use crate::types::_inner_filter::InnerFilterBuilder;
+
+pub use crate::types::_category_inner_filter::CategoryInnerFilterBuilder;
 
 pub use crate::types::_default_filter_control_configuration::DefaultFilterControlConfigurationBuilder;
 
@@ -215,6 +219,16 @@ pub use crate::types::_default_date_time_picker_control_options::DefaultDateTime
 
 pub use crate::types::_date_time_picker_control_display_options::DateTimePickerControlDisplayOptionsBuilder;
 
+pub use crate::types::_category_filter_configuration::CategoryFilterConfigurationBuilder;
+
+pub use crate::types::_custom_filter_configuration::CustomFilterConfigurationBuilder;
+
+pub use crate::types::_custom_filter_list_configuration::CustomFilterListConfigurationBuilder;
+
+pub use crate::types::_filter_list_configuration::FilterListConfigurationBuilder;
+
+pub use crate::types::_top_bottom_filter::TopBottomFilterBuilder;
+
 pub use crate::types::_aggregation_sort_configuration::AggregationSortConfigurationBuilder;
 
 pub use crate::types::_aggregation_function::AggregationFunctionBuilder;
@@ -246,14 +260,6 @@ pub use crate::types::_numeric_range_filter::NumericRangeFilterBuilder;
 pub use crate::types::_numeric_range_filter_value::NumericRangeFilterValueBuilder;
 
 pub use crate::types::_category_filter::CategoryFilterBuilder;
-
-pub use crate::types::_category_filter_configuration::CategoryFilterConfigurationBuilder;
-
-pub use crate::types::_custom_filter_configuration::CustomFilterConfigurationBuilder;
-
-pub use crate::types::_custom_filter_list_configuration::CustomFilterListConfigurationBuilder;
-
-pub use crate::types::_filter_list_configuration::FilterListConfigurationBuilder;
 
 pub use crate::types::_parameter_declaration::ParameterDeclarationBuilder;
 
@@ -325,9 +331,21 @@ pub use crate::types::_sheet_element_configuration_overrides::SheetElementConfig
 
 pub use crate::types::_body_section_configuration::BodySectionConfigurationBuilder;
 
-pub use crate::types::_section_page_break_configuration::SectionPageBreakConfigurationBuilder;
+pub use crate::types::_body_section_repeat_configuration::BodySectionRepeatConfigurationBuilder;
+
+pub use crate::types::_body_section_repeat_page_break_configuration::BodySectionRepeatPageBreakConfigurationBuilder;
 
 pub use crate::types::_section_after_page_break::SectionAfterPageBreakBuilder;
+
+pub use crate::types::_body_section_repeat_dimension_configuration::BodySectionRepeatDimensionConfigurationBuilder;
+
+pub use crate::types::_body_section_dynamic_numeric_dimension_configuration::BodySectionDynamicNumericDimensionConfigurationBuilder;
+
+pub use crate::types::_column_sort::ColumnSortBuilder;
+
+pub use crate::types::_body_section_dynamic_category_dimension_configuration::BodySectionDynamicCategoryDimensionConfigurationBuilder;
+
+pub use crate::types::_section_page_break_configuration::SectionPageBreakConfigurationBuilder;
 
 pub use crate::types::_body_section_content::BodySectionContentBuilder;
 
@@ -444,8 +462,6 @@ pub use crate::types::_radar_chart_sort_configuration::RadarChartSortConfigurati
 pub use crate::types::_items_limit_configuration::ItemsLimitConfigurationBuilder;
 
 pub use crate::types::_field_sort_options::FieldSortOptionsBuilder;
-
-pub use crate::types::_column_sort::ColumnSortBuilder;
 
 pub use crate::types::_field_sort::FieldSortBuilder;
 

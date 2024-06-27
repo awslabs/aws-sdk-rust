@@ -34,6 +34,7 @@
 ///     ScalableDimension::SageMakerInferenceComponentDesiredCopyCount => { /* ... */ },
 ///     ScalableDimension::SageMakerVariantDesiredInstanceCount => { /* ... */ },
 ///     ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency => { /* ... */ },
+///     ScalableDimension::WorkSpacesWorkSpacesPoolDesiredUserSessions => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -105,6 +106,8 @@ pub enum ScalableDimension {
     SageMakerVariantDesiredInstanceCount,
     #[allow(missing_docs)] // documentation missing in model
     SageMakerVariantDesiredProvisionedConcurrency,
+    #[allow(missing_docs)] // documentation missing in model
+    WorkSpacesWorkSpacesPoolDesiredUserSessions,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -134,6 +137,7 @@ impl ::std::convert::From<&str> for ScalableDimension {
             "sagemaker:inference-component:DesiredCopyCount" => ScalableDimension::SageMakerInferenceComponentDesiredCopyCount,
             "sagemaker:variant:DesiredInstanceCount" => ScalableDimension::SageMakerVariantDesiredInstanceCount,
             "sagemaker:variant:DesiredProvisionedConcurrency" => ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency,
+            "workspaces:workspacespool:DesiredUserSessions" => ScalableDimension::WorkSpacesWorkSpacesPoolDesiredUserSessions,
             other => ScalableDimension::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -171,6 +175,7 @@ impl ScalableDimension {
             ScalableDimension::SageMakerInferenceComponentDesiredCopyCount => "sagemaker:inference-component:DesiredCopyCount",
             ScalableDimension::SageMakerVariantDesiredInstanceCount => "sagemaker:variant:DesiredInstanceCount",
             ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency => "sagemaker:variant:DesiredProvisionedConcurrency",
+            ScalableDimension::WorkSpacesWorkSpacesPoolDesiredUserSessions => "workspaces:workspacespool:DesiredUserSessions",
             ScalableDimension::Unknown(value) => value.as_str(),
         }
     }
@@ -199,6 +204,7 @@ impl ScalableDimension {
             "sagemaker:inference-component:DesiredCopyCount",
             "sagemaker:variant:DesiredInstanceCount",
             "sagemaker:variant:DesiredProvisionedConcurrency",
+            "workspaces:workspacespool:DesiredUserSessions",
         ]
     }
 }
@@ -248,6 +254,7 @@ impl ::std::fmt::Display for ScalableDimension {
             ScalableDimension::SageMakerInferenceComponentDesiredCopyCount => write!(f, "sagemaker:inference-component:DesiredCopyCount"),
             ScalableDimension::SageMakerVariantDesiredInstanceCount => write!(f, "sagemaker:variant:DesiredInstanceCount"),
             ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency => write!(f, "sagemaker:variant:DesiredProvisionedConcurrency"),
+            ScalableDimension::WorkSpacesWorkSpacesPoolDesiredUserSessions => write!(f, "workspaces:workspacespool:DesiredUserSessions"),
             ScalableDimension::Unknown(value) => write!(f, "{}", value),
         }
     }

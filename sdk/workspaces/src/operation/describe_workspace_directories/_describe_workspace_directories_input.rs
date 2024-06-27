@@ -5,6 +5,8 @@
 pub struct DescribeWorkspaceDirectoriesInput {
     /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
     pub directory_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The names of the WorkSpace directories.</p>
+    pub workspace_directory_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of directories to return.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
@@ -16,6 +18,12 @@ impl DescribeWorkspaceDirectoriesInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.directory_ids.is_none()`.
     pub fn directory_ids(&self) -> &[::std::string::String] {
         self.directory_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The names of the WorkSpace directories.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workspace_directory_names.is_none()`.
+    pub fn workspace_directory_names(&self) -> &[::std::string::String] {
+        self.workspace_directory_names.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of directories to return.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -38,6 +46,7 @@ impl DescribeWorkspaceDirectoriesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceDirectoriesInputBuilder {
     pub(crate) directory_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) workspace_directory_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -61,6 +70,26 @@ impl DescribeWorkspaceDirectoriesInputBuilder {
     /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
     pub fn get_directory_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.directory_ids
+    }
+    /// Appends an item to `workspace_directory_names`.
+    ///
+    /// To override the contents of this collection use [`set_workspace_directory_names`](Self::set_workspace_directory_names).
+    ///
+    /// <p>The names of the WorkSpace directories.</p>
+    pub fn workspace_directory_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.workspace_directory_names.unwrap_or_default();
+        v.push(input.into());
+        self.workspace_directory_names = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The names of the WorkSpace directories.</p>
+    pub fn set_workspace_directory_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.workspace_directory_names = input;
+        self
+    }
+    /// <p>The names of the WorkSpace directories.</p>
+    pub fn get_workspace_directory_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.workspace_directory_names
     }
     /// <p>The maximum number of directories to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -99,6 +128,7 @@ impl DescribeWorkspaceDirectoriesInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesInput {
             directory_ids: self.directory_ids,
+            workspace_directory_names: self.workspace_directory_names,
             limit: self.limit,
             next_token: self.next_token,
         })

@@ -168,6 +168,8 @@ mod create_workspace_image;
 
 mod create_workspaces;
 
+mod create_workspaces_pool;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -257,6 +259,10 @@ mod describe_workspaces;
 
 mod describe_workspaces_connection_status;
 
+mod describe_workspaces_pool_sessions;
+
+mod describe_workspaces_pools;
+
 mod disassociate_connection_alias;
 
 mod disassociate_ip_groups;
@@ -285,6 +291,8 @@ mod modify_saml_properties;
 
 mod modify_selfservice_permissions;
 
+mod modify_streaming_properties;
+
 mod modify_workspace_access_properties;
 
 mod modify_workspace_creation_properties;
@@ -307,9 +315,17 @@ mod revoke_ip_rules;
 
 mod start_workspaces;
 
+mod start_workspaces_pool;
+
 mod stop_workspaces;
 
+mod stop_workspaces_pool;
+
 mod terminate_workspaces;
+
+mod terminate_workspaces_pool;
+
+mod terminate_workspaces_pool_session;
 
 mod update_connect_client_add_in;
 
@@ -320,3 +336,5 @@ mod update_rules_of_ip_group;
 mod update_workspace_bundle;
 
 mod update_workspace_image_permission;
+
+mod update_workspaces_pool;

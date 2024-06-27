@@ -24,7 +24,7 @@ pub struct ClusterPendingModifiedValues {
     pub iops: ::std::option::Option<i32>,
     /// <p>The storage type for the DB cluster.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
-    /// <p>Returns the details of the DB instance’s server certificate.</p>
+    /// <p>The details of the DB instance’s server certificate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
 }
@@ -69,7 +69,7 @@ impl ClusterPendingModifiedValues {
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
-    /// <p>Returns the details of the DB instance’s server certificate.</p>
+    /// <p>The details of the DB instance’s server certificate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn certificate_details(&self) -> ::std::option::Option<&crate::types::CertificateDetails> {
         self.certificate_details.as_ref()
@@ -239,19 +239,19 @@ impl ClusterPendingModifiedValuesBuilder {
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
-    /// <p>Returns the details of the DB instance’s server certificate.</p>
+    /// <p>The details of the DB instance’s server certificate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn certificate_details(mut self, input: crate::types::CertificateDetails) -> Self {
         self.certificate_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns the details of the DB instance’s server certificate.</p>
+    /// <p>The details of the DB instance’s server certificate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn set_certificate_details(mut self, input: ::std::option::Option<crate::types::CertificateDetails>) -> Self {
         self.certificate_details = input;
         self
     }
-    /// <p>Returns the details of the DB instance’s server certificate.</p>
+    /// <p>The details of the DB instance’s server certificate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn get_certificate_details(&self) -> &::std::option::Option<crate::types::CertificateDetails> {
         &self.certificate_details

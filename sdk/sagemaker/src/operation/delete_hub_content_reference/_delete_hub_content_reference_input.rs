@@ -5,7 +5,7 @@
 pub struct DeleteHubContentReferenceInput {
     /// <p>The name of the hub to delete the hub content reference from.</p>
     pub hub_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of hub content to delete.</p>
+    /// <p>The type of hub content reference to delete. The only supported type of hub content reference to delete is <code>ModelReference</code>.</p>
     pub hub_content_type: ::std::option::Option<crate::types::HubContentType>,
     /// <p>The name of the hub content to delete.</p>
     pub hub_content_name: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl DeleteHubContentReferenceInput {
     pub fn hub_name(&self) -> ::std::option::Option<&str> {
         self.hub_name.as_deref()
     }
-    /// <p>The type of hub content to delete.</p>
+    /// <p>The type of hub content reference to delete. The only supported type of hub content reference to delete is <code>ModelReference</code>.</p>
     pub fn hub_content_type(&self) -> ::std::option::Option<&crate::types::HubContentType> {
         self.hub_content_type.as_ref()
     }
@@ -55,18 +55,18 @@ impl DeleteHubContentReferenceInputBuilder {
     pub fn get_hub_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.hub_name
     }
-    /// <p>The type of hub content to delete.</p>
+    /// <p>The type of hub content reference to delete. The only supported type of hub content reference to delete is <code>ModelReference</code>.</p>
     /// This field is required.
     pub fn hub_content_type(mut self, input: crate::types::HubContentType) -> Self {
         self.hub_content_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of hub content to delete.</p>
+    /// <p>The type of hub content reference to delete. The only supported type of hub content reference to delete is <code>ModelReference</code>.</p>
     pub fn set_hub_content_type(mut self, input: ::std::option::Option<crate::types::HubContentType>) -> Self {
         self.hub_content_type = input;
         self
     }
-    /// <p>The type of hub content to delete.</p>
+    /// <p>The type of hub content reference to delete. The only supported type of hub content reference to delete is <code>ModelReference</code>.</p>
     pub fn get_hub_content_type(&self) -> &::std::option::Option<crate::types::HubContentType> {
         &self.hub_content_type
     }

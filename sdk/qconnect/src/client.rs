@@ -142,6 +142,8 @@ mod create_assistant_association;
 
 mod create_content;
 
+mod create_content_association;
+
 mod create_knowledge_base;
 
 mod create_quick_response;
@@ -181,6 +183,8 @@ mod delete_assistant_association;
 
 mod delete_content;
 
+mod delete_content_association;
+
 mod delete_import_job;
 
 mod delete_knowledge_base;
@@ -192,6 +196,8 @@ mod get_assistant;
 mod get_assistant_association;
 
 mod get_content;
+
+mod get_content_association;
 
 mod get_content_summary;
 
@@ -208,6 +214,8 @@ mod get_session;
 mod list_assistant_associations;
 
 mod list_assistants;
+
+mod list_content_associations;
 
 mod list_contents;
 

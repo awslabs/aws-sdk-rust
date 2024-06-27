@@ -116,6 +116,50 @@ where
                                 crate::protocol_serde::shape_certificate_based_auth_properties::de_certificate_based_auth_properties(tokens)?,
                             );
                         }
+                        "WorkspaceDirectoryName" => {
+                            builder = builder.set_workspace_directory_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "WorkspaceDirectoryDescription" => {
+                            builder = builder.set_workspace_directory_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "UserIdentityType" => {
+                            builder = builder.set_user_identity_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::UserIdentityType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "WorkspaceType" => {
+                            builder = builder.set_workspace_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::WorkspaceType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ActiveDirectoryConfig" => {
+                            builder = builder.set_active_directory_config(
+                                crate::protocol_serde::shape_active_directory_config::de_active_directory_config(tokens)?,
+                            );
+                        }
+                        "StreamingProperties" => {
+                            builder =
+                                builder.set_streaming_properties(crate::protocol_serde::shape_streaming_properties::de_streaming_properties(tokens)?);
+                        }
+                        "ErrorMessage" => {
+                            builder = builder.set_error_message(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

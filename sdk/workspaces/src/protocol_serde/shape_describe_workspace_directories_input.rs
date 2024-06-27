@@ -12,14 +12,23 @@ pub fn ser_describe_workspace_directories_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.limit {
+    if let Some(var_4) = &input.workspace_directory_names {
+        let mut array_5 = object.key("WorkspaceDirectoryNames").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
+    }
+    if let Some(var_7) = &input.limit {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_5) = &input.next_token {
-        object.key("NextToken").string(var_5.as_str());
+    if let Some(var_8) = &input.next_token {
+        object.key("NextToken").string(var_8.as_str());
     }
     Ok(())
 }

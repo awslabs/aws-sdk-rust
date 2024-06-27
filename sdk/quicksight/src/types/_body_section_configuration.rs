@@ -12,6 +12,8 @@ pub struct BodySectionConfiguration {
     pub style: ::std::option::Option<crate::types::SectionStyle>,
     /// <p>The configuration of a page break for a section.</p>
     pub page_break_configuration: ::std::option::Option<crate::types::SectionPageBreakConfiguration>,
+    /// <p>Describes the configurations that are required to declare a section as repeating.</p>
+    pub repeat_configuration: ::std::option::Option<crate::types::BodySectionRepeatConfiguration>,
 }
 impl BodySectionConfiguration {
     /// <p>The unique identifier of a body section.</p>
@@ -31,6 +33,10 @@ impl BodySectionConfiguration {
     pub fn page_break_configuration(&self) -> ::std::option::Option<&crate::types::SectionPageBreakConfiguration> {
         self.page_break_configuration.as_ref()
     }
+    /// <p>Describes the configurations that are required to declare a section as repeating.</p>
+    pub fn repeat_configuration(&self) -> ::std::option::Option<&crate::types::BodySectionRepeatConfiguration> {
+        self.repeat_configuration.as_ref()
+    }
 }
 impl BodySectionConfiguration {
     /// Creates a new builder-style object to manufacture [`BodySectionConfiguration`](crate::types::BodySectionConfiguration).
@@ -47,6 +53,7 @@ pub struct BodySectionConfigurationBuilder {
     pub(crate) content: ::std::option::Option<crate::types::BodySectionContent>,
     pub(crate) style: ::std::option::Option<crate::types::SectionStyle>,
     pub(crate) page_break_configuration: ::std::option::Option<crate::types::SectionPageBreakConfiguration>,
+    pub(crate) repeat_configuration: ::std::option::Option<crate::types::BodySectionRepeatConfiguration>,
 }
 impl BodySectionConfigurationBuilder {
     /// <p>The unique identifier of a body section.</p>
@@ -107,6 +114,20 @@ impl BodySectionConfigurationBuilder {
     pub fn get_page_break_configuration(&self) -> &::std::option::Option<crate::types::SectionPageBreakConfiguration> {
         &self.page_break_configuration
     }
+    /// <p>Describes the configurations that are required to declare a section as repeating.</p>
+    pub fn repeat_configuration(mut self, input: crate::types::BodySectionRepeatConfiguration) -> Self {
+        self.repeat_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the configurations that are required to declare a section as repeating.</p>
+    pub fn set_repeat_configuration(mut self, input: ::std::option::Option<crate::types::BodySectionRepeatConfiguration>) -> Self {
+        self.repeat_configuration = input;
+        self
+    }
+    /// <p>Describes the configurations that are required to declare a section as repeating.</p>
+    pub fn get_repeat_configuration(&self) -> &::std::option::Option<crate::types::BodySectionRepeatConfiguration> {
+        &self.repeat_configuration
+    }
     /// Consumes the builder and constructs a [`BodySectionConfiguration`](crate::types::BodySectionConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`section_id`](crate::types::builders::BodySectionConfigurationBuilder::section_id)
@@ -121,6 +142,7 @@ impl BodySectionConfigurationBuilder {
             content: self.content,
             style: self.style,
             page_break_configuration: self.page_break_configuration,
+            repeat_configuration: self.repeat_configuration,
         })
     }
 }

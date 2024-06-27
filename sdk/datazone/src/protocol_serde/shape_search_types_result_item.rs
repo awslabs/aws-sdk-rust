@@ -39,6 +39,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'formTypeItem' cannot be null")
                             })?,
                         )),
+                        "lineageNodeTypeItem" => Some(crate::types::SearchTypesResultItem::LineageNodeTypeItem(
+                            crate::protocol_serde::shape_lineage_node_type_item::de_lineage_node_type_item(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lineageNodeTypeItem' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::SearchTypesResultItem::Unknown)

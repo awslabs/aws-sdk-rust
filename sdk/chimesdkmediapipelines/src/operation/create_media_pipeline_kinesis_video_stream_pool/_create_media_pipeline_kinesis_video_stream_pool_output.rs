@@ -3,12 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMediaPipelineKinesisVideoStreamPoolOutput {
-    /// <p>The configuration for the Kinesis video stream pool.</p>
+    /// <p>The configuration for applying the streams to the pool.</p><note>
+    /// <p></p>
+    /// </note>
     pub kinesis_video_stream_pool_configuration: ::std::option::Option<crate::types::KinesisVideoStreamPoolConfiguration>,
     _request_id: Option<String>,
 }
 impl CreateMediaPipelineKinesisVideoStreamPoolOutput {
-    /// <p>The configuration for the Kinesis video stream pool.</p>
+    /// <p>The configuration for applying the streams to the pool.</p><note>
+    /// <p></p>
+    /// </note>
     pub fn kinesis_video_stream_pool_configuration(&self) -> ::std::option::Option<&crate::types::KinesisVideoStreamPoolConfiguration> {
         self.kinesis_video_stream_pool_configuration.as_ref()
     }
@@ -34,12 +38,16 @@ pub struct CreateMediaPipelineKinesisVideoStreamPoolOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateMediaPipelineKinesisVideoStreamPoolOutputBuilder {
-    /// <p>The configuration for the Kinesis video stream pool.</p>
+    /// <p>The configuration for applying the streams to the pool.</p><note>
+    /// <p></p>
+    /// </note>
     pub fn kinesis_video_stream_pool_configuration(mut self, input: crate::types::KinesisVideoStreamPoolConfiguration) -> Self {
         self.kinesis_video_stream_pool_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration for the Kinesis video stream pool.</p>
+    /// <p>The configuration for applying the streams to the pool.</p><note>
+    /// <p></p>
+    /// </note>
     pub fn set_kinesis_video_stream_pool_configuration(
         mut self,
         input: ::std::option::Option<crate::types::KinesisVideoStreamPoolConfiguration>,
@@ -47,7 +55,9 @@ impl CreateMediaPipelineKinesisVideoStreamPoolOutputBuilder {
         self.kinesis_video_stream_pool_configuration = input;
         self
     }
-    /// <p>The configuration for the Kinesis video stream pool.</p>
+    /// <p>The configuration for applying the streams to the pool.</p><note>
+    /// <p></p>
+    /// </note>
     pub fn get_kinesis_video_stream_pool_configuration(&self) -> &::std::option::Option<crate::types::KinesisVideoStreamPoolConfiguration> {
         &self.kinesis_video_stream_pool_configuration
     }

@@ -197,6 +197,8 @@ pub use crate::types::_user_search_type::UserSearchType;
 
 pub use crate::types::_search_types_result_item::SearchTypesResultItem;
 
+pub use crate::types::_lineage_node_type_item::LineageNodeTypeItem;
+
 pub use crate::types::_form_type_data::FormTypeData;
 
 pub use crate::types::_asset_type_item::AssetTypeItem;
@@ -293,6 +295,10 @@ pub use crate::types::_notification_resource_type::NotificationResourceType;
 
 pub use crate::types::_notification_type::NotificationType;
 
+pub use crate::types::_lineage_node_summary::LineageNodeSummary;
+
+pub use crate::types::_edge_direction::EdgeDirection;
+
 pub use crate::types::_environment_summary::EnvironmentSummary;
 
 pub use crate::types::_environment_profile_summary::EnvironmentProfileSummary;
@@ -306,6 +312,8 @@ pub use crate::types::_data_source_run_activity::DataSourceRunActivity;
 pub use crate::types::_data_asset_activity_status::DataAssetActivityStatus;
 
 pub use crate::types::_asset_revision::AssetRevision;
+
+pub use crate::types::_lineage_node_reference::LineageNodeReference;
 
 pub use crate::types::_member::Member;
 
@@ -417,6 +425,8 @@ mod _domain_status;
 
 mod _domain_summary;
 
+mod _edge_direction;
+
 mod _enable_setting;
 
 mod _entity_type;
@@ -490,6 +500,12 @@ mod _iam_user_profile_details;
 mod _import;
 
 mod _inventory_search_scope;
+
+mod _lineage_node_reference;
+
+mod _lineage_node_summary;
+
+mod _lineage_node_type_item;
 
 mod _listing_item;
 

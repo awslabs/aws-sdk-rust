@@ -10,6 +10,9 @@ pub mod create_assistant_association;
 /// Types for the `CreateContent` operation.
 pub mod create_content;
 
+/// Types for the `CreateContentAssociation` operation.
+pub mod create_content_association;
+
 /// Types for the `CreateKnowledgeBase` operation.
 pub mod create_knowledge_base;
 
@@ -28,6 +31,9 @@ pub mod delete_assistant_association;
 /// Types for the `DeleteContent` operation.
 pub mod delete_content;
 
+/// Types for the `DeleteContentAssociation` operation.
+pub mod delete_content_association;
+
 /// Types for the `DeleteImportJob` operation.
 pub mod delete_import_job;
 
@@ -45,6 +51,9 @@ pub mod get_assistant_association;
 
 /// Types for the `GetContent` operation.
 pub mod get_content;
+
+/// Types for the `GetContentAssociation` operation.
+pub mod get_content_association;
 
 /// Types for the `GetContentSummary` operation.
 pub mod get_content_summary;
@@ -69,6 +78,9 @@ pub mod list_assistant_associations;
 
 /// Types for the `ListAssistants` operation.
 pub mod list_assistants;
+
+/// Types for the `ListContentAssociations` operation.
+pub mod list_content_associations;
 
 /// Types for the `ListContents` operation.
 pub mod list_contents;

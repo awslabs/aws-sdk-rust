@@ -71,6 +71,24 @@ pub fn de_disassociate_ip_groups_http_error(
             }
             tmp
         }),
+        "OperationNotSupportedException" => crate::operation::disassociate_ip_groups::DisassociateIpGroupsError::OperationNotSupportedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OperationNotSupportedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_operation_not_supported_exception::de_operation_not_supported_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::disassociate_ip_groups::DisassociateIpGroupsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::disassociate_ip_groups::DisassociateIpGroupsError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

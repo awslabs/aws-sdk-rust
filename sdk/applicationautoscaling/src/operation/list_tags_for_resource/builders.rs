@@ -23,7 +23,7 @@ impl crate::operation::list_tags_for_resource::builders::ListTagsForResourceInpu
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
 /// <p>Returns all the tags on the specified Application Auto Scaling scalable target.</p>
-/// <p>For general information about tags, including the format and syntax, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+/// <p>For general information about tags, including the format and syntax, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging your Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

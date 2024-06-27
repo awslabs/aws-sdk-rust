@@ -2523,6 +2523,8 @@ pub(crate) mod shape_space_storage_settings;
 
 pub(crate) mod shape_studio_lifecycle_config_details;
 
+pub(crate) mod shape_studio_web_portal_settings;
+
 pub(crate) mod shape_tabular_job_config;
 
 pub(crate) mod shape_target_platform;
@@ -2686,6 +2688,10 @@ pub(crate) mod shape_file_system_data_source;
 pub(crate) mod shape_forecast_quantiles;
 
 pub(crate) mod shape_generative_ai_settings;
+
+pub(crate) mod shape_hidden_app_types_list;
+
+pub(crate) mod shape_hidden_ml_tools_list;
 
 pub(crate) mod shape_holiday_config;
 

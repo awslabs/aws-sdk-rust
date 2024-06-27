@@ -3,21 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateMediaPipelineKinesisVideoStreamPoolInput {
-    /// <p>The configuration settings for the video stream.</p>
+    /// <p>The configuration settings for the stream.</p>
     pub stream_configuration: ::std::option::Option<crate::types::KinesisVideoStreamConfiguration>,
-    /// <p>The name of the video stream pool.</p>
+    /// <p>The name of the pool.</p>
     pub pool_name: ::std::option::Option<::std::string::String>,
     /// <p>The token assigned to the client making the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
-    /// <p>The tags assigned to the video stream pool.</p>
+    /// <p>The tags assigned to the stream pool.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMediaPipelineKinesisVideoStreamPoolInput {
-    /// <p>The configuration settings for the video stream.</p>
+    /// <p>The configuration settings for the stream.</p>
     pub fn stream_configuration(&self) -> ::std::option::Option<&crate::types::KinesisVideoStreamConfiguration> {
         self.stream_configuration.as_ref()
     }
-    /// <p>The name of the video stream pool.</p>
+    /// <p>The name of the pool.</p>
     pub fn pool_name(&self) -> ::std::option::Option<&str> {
         self.pool_name.as_deref()
     }
@@ -25,7 +25,7 @@ impl CreateMediaPipelineKinesisVideoStreamPoolInput {
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The tags assigned to the video stream pool.</p>
+    /// <p>The tags assigned to the stream pool.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -60,33 +60,33 @@ pub struct CreateMediaPipelineKinesisVideoStreamPoolInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMediaPipelineKinesisVideoStreamPoolInputBuilder {
-    /// <p>The configuration settings for the video stream.</p>
+    /// <p>The configuration settings for the stream.</p>
     /// This field is required.
     pub fn stream_configuration(mut self, input: crate::types::KinesisVideoStreamConfiguration) -> Self {
         self.stream_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration settings for the video stream.</p>
+    /// <p>The configuration settings for the stream.</p>
     pub fn set_stream_configuration(mut self, input: ::std::option::Option<crate::types::KinesisVideoStreamConfiguration>) -> Self {
         self.stream_configuration = input;
         self
     }
-    /// <p>The configuration settings for the video stream.</p>
+    /// <p>The configuration settings for the stream.</p>
     pub fn get_stream_configuration(&self) -> &::std::option::Option<crate::types::KinesisVideoStreamConfiguration> {
         &self.stream_configuration
     }
-    /// <p>The name of the video stream pool.</p>
+    /// <p>The name of the pool.</p>
     /// This field is required.
     pub fn pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the video stream pool.</p>
+    /// <p>The name of the pool.</p>
     pub fn set_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_name = input;
         self
     }
-    /// <p>The name of the video stream pool.</p>
+    /// <p>The name of the pool.</p>
     pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_name
     }
@@ -108,19 +108,19 @@ impl CreateMediaPipelineKinesisVideoStreamPoolInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags assigned to the video stream pool.</p>
+    /// <p>The tags assigned to the stream pool.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The tags assigned to the video stream pool.</p>
+    /// <p>The tags assigned to the stream pool.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags assigned to the video stream pool.</p>
+    /// <p>The tags assigned to the stream pool.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

@@ -18,7 +18,7 @@ pub struct ImportJobData {
     pub status: crate::types::ImportJobStatus,
     /// <p>The download link to the resource file that is uploaded to the import job.</p>
     pub url: ::std::string::String,
-    /// <p>The link to donwload the information of resource data that failed to be imported.</p>
+    /// <p>The link to download the information of resource data that failed to be imported.</p>
     pub failed_record_report: ::std::option::Option<::std::string::String>,
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
     pub url_expiry: ::aws_smithy_types::DateTime,
@@ -65,7 +65,7 @@ impl ImportJobData {
         use std::ops::Deref;
         self.url.deref()
     }
-    /// <p>The link to donwload the information of resource data that failed to be imported.</p>
+    /// <p>The link to download the information of resource data that failed to be imported.</p>
     pub fn failed_record_report(&self) -> ::std::option::Option<&str> {
         self.failed_record_report.as_deref()
     }
@@ -240,17 +240,17 @@ impl ImportJobDataBuilder {
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }
-    /// <p>The link to donwload the information of resource data that failed to be imported.</p>
+    /// <p>The link to download the information of resource data that failed to be imported.</p>
     pub fn failed_record_report(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failed_record_report = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The link to donwload the information of resource data that failed to be imported.</p>
+    /// <p>The link to download the information of resource data that failed to be imported.</p>
     pub fn set_failed_record_report(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failed_record_report = input;
         self
     }
-    /// <p>The link to donwload the information of resource data that failed to be imported.</p>
+    /// <p>The link to download the information of resource data that failed to be imported.</p>
     pub fn get_failed_record_report(&self) -> &::std::option::Option<::std::string::String> {
         &self.failed_record_report
     }

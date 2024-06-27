@@ -24,6 +24,12 @@ pub fn ser_body_section_configuration(
         crate::protocol_serde::shape_section_page_break_configuration::ser_section_page_break_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.repeat_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("RepeatConfiguration").start_object();
+        crate::protocol_serde::shape_body_section_repeat_configuration::ser_body_section_repeat_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -58,6 +64,11 @@ where
                         "PageBreakConfiguration" => {
                             builder = builder.set_page_break_configuration(
                                 crate::protocol_serde::shape_section_page_break_configuration::de_section_page_break_configuration(tokens)?,
+                            );
+                        }
+                        "RepeatConfiguration" => {
+                            builder = builder.set_repeat_configuration(
+                                crate::protocol_serde::shape_body_section_repeat_configuration::de_body_section_repeat_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

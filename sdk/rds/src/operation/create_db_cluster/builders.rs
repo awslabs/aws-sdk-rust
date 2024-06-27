@@ -328,8 +328,6 @@ impl CreateDBClusterFluentBuilder {
     /// <ul>
     /// <li>
     /// <p>Must match the name of an existing DB subnet group.</p></li>
-    /// <li>
-    /// <p>Must not be <code>default</code>.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -343,8 +341,6 @@ impl CreateDBClusterFluentBuilder {
     /// <ul>
     /// <li>
     /// <p>Must match the name of an existing DB subnet group.</p></li>
-    /// <li>
-    /// <p>Must not be <code>default</code>.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -358,8 +354,6 @@ impl CreateDBClusterFluentBuilder {
     /// <ul>
     /// <li>
     /// <p>Must match the name of an existing DB subnet group.</p></li>
-    /// <li>
-    /// <p>Must not be <code>default</code>.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {

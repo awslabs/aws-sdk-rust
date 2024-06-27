@@ -3,7 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterWorkspaceDirectoryOutput {
+    /// <p>The identifier of the directory.</p>
+    pub directory_id: ::std::option::Option<::std::string::String>,
+    /// <p>The registration status of the WorkSpace directory.</p>
+    pub state: ::std::option::Option<crate::types::WorkspaceDirectoryState>,
     _request_id: Option<String>,
+}
+impl RegisterWorkspaceDirectoryOutput {
+    /// <p>The identifier of the directory.</p>
+    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The registration status of the WorkSpace directory.</p>
+    pub fn state(&self) -> ::std::option::Option<&crate::types::WorkspaceDirectoryState> {
+        self.state.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for RegisterWorkspaceDirectoryOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +35,39 @@ impl RegisterWorkspaceDirectoryOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterWorkspaceDirectoryOutputBuilder {
+    pub(crate) directory_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::WorkspaceDirectoryState>,
     _request_id: Option<String>,
 }
 impl RegisterWorkspaceDirectoryOutputBuilder {
+    /// <p>The identifier of the directory.</p>
+    pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.directory_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the directory.</p>
+    pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.directory_id = input;
+        self
+    }
+    /// <p>The identifier of the directory.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
+    /// <p>The registration status of the WorkSpace directory.</p>
+    pub fn state(mut self, input: crate::types::WorkspaceDirectoryState) -> Self {
+        self.state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The registration status of the WorkSpace directory.</p>
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkspaceDirectoryState>) -> Self {
+        self.state = input;
+        self
+    }
+    /// <p>The registration status of the WorkSpace directory.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::WorkspaceDirectoryState> {
+        &self.state
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +80,8 @@ impl RegisterWorkspaceDirectoryOutputBuilder {
     /// Consumes the builder and constructs a [`RegisterWorkspaceDirectoryOutput`](crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput).
     pub fn build(self) -> crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput {
         crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput {
+            directory_id: self.directory_id,
+            state: self.state,
             _request_id: self._request_id,
         }
     }

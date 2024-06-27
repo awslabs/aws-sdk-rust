@@ -26,6 +26,7 @@
 ///     ServiceNamespace::Neptune => { /* ... */ },
 ///     ServiceNamespace::Rds => { /* ... */ },
 ///     ServiceNamespace::Sagemaker => { /* ... */ },
+///     ServiceNamespace::Workspaces => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -81,6 +82,8 @@ pub enum ServiceNamespace {
     Rds,
     #[allow(missing_docs)] // documentation missing in model
     Sagemaker,
+    #[allow(missing_docs)] // documentation missing in model
+    Workspaces,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -102,6 +105,7 @@ impl ::std::convert::From<&str> for ServiceNamespace {
             "neptune" => ServiceNamespace::Neptune,
             "rds" => ServiceNamespace::Rds,
             "sagemaker" => ServiceNamespace::Sagemaker,
+            "workspaces" => ServiceNamespace::Workspaces,
             other => ServiceNamespace::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -131,6 +135,7 @@ impl ServiceNamespace {
             ServiceNamespace::Neptune => "neptune",
             ServiceNamespace::Rds => "rds",
             ServiceNamespace::Sagemaker => "sagemaker",
+            ServiceNamespace::Workspaces => "workspaces",
             ServiceNamespace::Unknown(value) => value.as_str(),
         }
     }
@@ -151,6 +156,7 @@ impl ServiceNamespace {
             "neptune",
             "rds",
             "sagemaker",
+            "workspaces",
         ]
     }
 }
@@ -188,6 +194,7 @@ impl ::std::fmt::Display for ServiceNamespace {
             ServiceNamespace::Neptune => write!(f, "neptune"),
             ServiceNamespace::Rds => write!(f, "rds"),
             ServiceNamespace::Sagemaker => write!(f, "sagemaker"),
+            ServiceNamespace::Workspaces => write!(f, "workspaces"),
             ServiceNamespace::Unknown(value) => write!(f, "{}", value),
         }
     }
