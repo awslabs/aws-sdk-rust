@@ -16,7 +16,7 @@ pub struct SearchCriteria {
     pub initiation_methods: ::std::option::Option<::std::vec::Vec<crate::types::ContactInitiationMethod>>,
     /// <p>The list of queue IDs associated with contacts.</p>
     pub queue_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The search criteria based on user-defined contact attributes that have been configured for contact search. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search by customer contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.</p><important>
+    /// <p>The search criteria based on user-defined contact attributes that have been configured for contact search. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search by custom contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.</p><important>
     /// <p>To use <code>SearchableContactAttributes</code> in a search request, the <code>GetContactAttributes</code> action is required to perform an API request. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions</a>Actions defined by Amazon Connect.</p>
     /// </important>
     pub searchable_contact_attributes: ::std::option::Option<crate::types::SearchableContactAttributes>,
@@ -54,7 +54,7 @@ impl SearchCriteria {
     pub fn queue_ids(&self) -> &[::std::string::String] {
         self.queue_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The search criteria based on user-defined contact attributes that have been configured for contact search. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search by customer contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.</p><important>
+    /// <p>The search criteria based on user-defined contact attributes that have been configured for contact search. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search by custom contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.</p><important>
     /// <p>To use <code>SearchableContactAttributes</code> in a search request, the <code>GetContactAttributes</code> action is required to perform an API request. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions</a>Actions defined by Amazon Connect.</p>
     /// </important>
     pub fn searchable_contact_attributes(&self) -> ::std::option::Option<&crate::types::SearchableContactAttributes> {
@@ -189,21 +189,21 @@ impl SearchCriteriaBuilder {
     pub fn get_queue_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.queue_ids
     }
-    /// <p>The search criteria based on user-defined contact attributes that have been configured for contact search. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search by customer contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.</p><important>
+    /// <p>The search criteria based on user-defined contact attributes that have been configured for contact search. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search by custom contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.</p><important>
     /// <p>To use <code>SearchableContactAttributes</code> in a search request, the <code>GetContactAttributes</code> action is required to perform an API request. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions</a>Actions defined by Amazon Connect.</p>
     /// </important>
     pub fn searchable_contact_attributes(mut self, input: crate::types::SearchableContactAttributes) -> Self {
         self.searchable_contact_attributes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The search criteria based on user-defined contact attributes that have been configured for contact search. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search by customer contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.</p><important>
+    /// <p>The search criteria based on user-defined contact attributes that have been configured for contact search. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search by custom contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.</p><important>
     /// <p>To use <code>SearchableContactAttributes</code> in a search request, the <code>GetContactAttributes</code> action is required to perform an API request. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions</a>Actions defined by Amazon Connect.</p>
     /// </important>
     pub fn set_searchable_contact_attributes(mut self, input: ::std::option::Option<crate::types::SearchableContactAttributes>) -> Self {
         self.searchable_contact_attributes = input;
         self
     }
-    /// <p>The search criteria based on user-defined contact attributes that have been configured for contact search. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search by customer contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.</p><important>
+    /// <p>The search criteria based on user-defined contact attributes that have been configured for contact search. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search by custom contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.</p><important>
     /// <p>To use <code>SearchableContactAttributes</code> in a search request, the <code>GetContactAttributes</code> action is required to perform an API request. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions</a>Actions defined by Amazon Connect.</p>
     /// </important>
     pub fn get_searchable_contact_attributes(&self) -> &::std::option::Option<crate::types::SearchableContactAttributes> {

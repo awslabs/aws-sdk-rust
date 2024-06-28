@@ -737,6 +737,8 @@ pub use crate::types::_code_gen_node::CodeGenNode;
 
 pub use crate::types::_database::Database;
 
+pub use crate::types::_database_attributes::DatabaseAttributes;
+
 pub use crate::types::_crawler::Crawler;
 
 pub use crate::types::_last_crawl_info::LastCrawlInfo;
@@ -1062,6 +1064,8 @@ mod _data_quality_target_table;
 mod _data_source;
 
 mod _database;
+
+mod _database_attributes;
 
 mod _database_identifier;
 

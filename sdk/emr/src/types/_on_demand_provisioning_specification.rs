@@ -6,13 +6,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnDemandProvisioningSpecification {
-    /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
+    /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Available options are <code>lowest-price</code> and <code>prioritized</code>. <code>lowest-price</code> specifies to launch the instances with the lowest price first, and <code>prioritized</code> specifies that Amazon EMR should launch the instances with the highest priority first. The default is <code>lowest-price</code>.</p>
     pub allocation_strategy: ::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy>,
     /// <p>The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.</p>
     pub capacity_reservation_options: ::std::option::Option<crate::types::OnDemandCapacityReservationOptions>,
 }
 impl OnDemandProvisioningSpecification {
-    /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
+    /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Available options are <code>lowest-price</code> and <code>prioritized</code>. <code>lowest-price</code> specifies to launch the instances with the lowest price first, and <code>prioritized</code> specifies that Amazon EMR should launch the instances with the highest priority first. The default is <code>lowest-price</code>.</p>
     pub fn allocation_strategy(&self) -> ::std::option::Option<&crate::types::OnDemandProvisioningAllocationStrategy> {
         self.allocation_strategy.as_ref()
     }
@@ -36,18 +36,18 @@ pub struct OnDemandProvisioningSpecificationBuilder {
     pub(crate) capacity_reservation_options: ::std::option::Option<crate::types::OnDemandCapacityReservationOptions>,
 }
 impl OnDemandProvisioningSpecificationBuilder {
-    /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
+    /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Available options are <code>lowest-price</code> and <code>prioritized</code>. <code>lowest-price</code> specifies to launch the instances with the lowest price first, and <code>prioritized</code> specifies that Amazon EMR should launch the instances with the highest priority first. The default is <code>lowest-price</code>.</p>
     /// This field is required.
     pub fn allocation_strategy(mut self, input: crate::types::OnDemandProvisioningAllocationStrategy) -> Self {
         self.allocation_strategy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
+    /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Available options are <code>lowest-price</code> and <code>prioritized</code>. <code>lowest-price</code> specifies to launch the instances with the lowest price first, and <code>prioritized</code> specifies that Amazon EMR should launch the instances with the highest priority first. The default is <code>lowest-price</code>.</p>
     pub fn set_allocation_strategy(mut self, input: ::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy>) -> Self {
         self.allocation_strategy = input;
         self
     }
-    /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
+    /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Available options are <code>lowest-price</code> and <code>prioritized</code>. <code>lowest-price</code> specifies to launch the instances with the lowest price first, and <code>prioritized</code> specifies that Amazon EMR should launch the instances with the highest priority first. The default is <code>lowest-price</code>.</p>
     pub fn get_allocation_strategy(&self) -> &::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy> {
         &self.allocation_strategy
     }

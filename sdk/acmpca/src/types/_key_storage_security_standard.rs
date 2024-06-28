@@ -12,6 +12,7 @@
 /// ```text
 /// # let keystoragesecuritystandard = unimplemented!();
 /// match keystoragesecuritystandard {
+///     KeyStorageSecurityStandard::CcpcLevel1OrHigher => { /* ... */ },
 ///     KeyStorageSecurityStandard::Fips1402Level2OrHigher => { /* ... */ },
 ///     KeyStorageSecurityStandard::Fips1402Level3OrHigher => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum KeyStorageSecurityStandard {
     #[allow(missing_docs)] // documentation missing in model
+    CcpcLevel1OrHigher,
+    #[allow(missing_docs)] // documentation missing in model
     Fips1402Level2OrHigher,
     #[allow(missing_docs)] // documentation missing in model
     Fips1402Level3OrHigher,
@@ -52,6 +55,7 @@ pub enum KeyStorageSecurityStandard {
 impl ::std::convert::From<&str> for KeyStorageSecurityStandard {
     fn from(s: &str) -> Self {
         match s {
+            "CCPC_LEVEL_1_OR_HIGHER" => KeyStorageSecurityStandard::CcpcLevel1OrHigher,
             "FIPS_140_2_LEVEL_2_OR_HIGHER" => KeyStorageSecurityStandard::Fips1402Level2OrHigher,
             "FIPS_140_2_LEVEL_3_OR_HIGHER" => KeyStorageSecurityStandard::Fips1402Level3OrHigher,
             other => KeyStorageSecurityStandard::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +73,7 @@ impl KeyStorageSecurityStandard {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            KeyStorageSecurityStandard::CcpcLevel1OrHigher => "CCPC_LEVEL_1_OR_HIGHER",
             KeyStorageSecurityStandard::Fips1402Level2OrHigher => "FIPS_140_2_LEVEL_2_OR_HIGHER",
             KeyStorageSecurityStandard::Fips1402Level3OrHigher => "FIPS_140_2_LEVEL_3_OR_HIGHER",
             KeyStorageSecurityStandard::Unknown(value) => value.as_str(),
@@ -76,7 +81,7 @@ impl KeyStorageSecurityStandard {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FIPS_140_2_LEVEL_2_OR_HIGHER", "FIPS_140_2_LEVEL_3_OR_HIGHER"]
+        &["CCPC_LEVEL_1_OR_HIGHER", "FIPS_140_2_LEVEL_2_OR_HIGHER", "FIPS_140_2_LEVEL_3_OR_HIGHER"]
     }
 }
 impl ::std::convert::AsRef<str> for KeyStorageSecurityStandard {
@@ -99,6 +104,7 @@ impl KeyStorageSecurityStandard {
 impl ::std::fmt::Display for KeyStorageSecurityStandard {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            KeyStorageSecurityStandard::CcpcLevel1OrHigher => write!(f, "CCPC_LEVEL_1_OR_HIGHER"),
             KeyStorageSecurityStandard::Fips1402Level2OrHigher => write!(f, "FIPS_140_2_LEVEL_2_OR_HIGHER"),
             KeyStorageSecurityStandard::Fips1402Level3OrHigher => write!(f, "FIPS_140_2_LEVEL_3_OR_HIGHER"),
             KeyStorageSecurityStandard::Unknown(value) => write!(f, "{}", value),

@@ -42,5 +42,11 @@ pub fn ser_instance_type_config(
     if let Some(var_11) = &input.custom_ami_id {
         object.key("CustomAmiId").string(var_11.as_str());
     }
+    if let Some(var_12) = &input.priority {
+        object.key("Priority").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_12).into()),
+        );
+    }
     Ok(())
 }

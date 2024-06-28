@@ -20,6 +20,8 @@ pub struct InstanceTypeConfig {
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The custom AMI ID to use for the instance type.</p>
     pub custom_ami_id: ::std::option::Option<::std::string::String>,
+    /// <p>The priority at which Amazon EMR launches the Amazon EC2 instances with this instance type. Priority starts at 0, which is the highest priority. Amazon EMR considers the highest priority first.</p>
+    pub priority: ::std::option::Option<f64>,
 }
 impl InstanceTypeConfig {
     /// <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>.</p>
@@ -52,6 +54,10 @@ impl InstanceTypeConfig {
     pub fn custom_ami_id(&self) -> ::std::option::Option<&str> {
         self.custom_ami_id.as_deref()
     }
+    /// <p>The priority at which Amazon EMR launches the Amazon EC2 instances with this instance type. Priority starts at 0, which is the highest priority. Amazon EMR considers the highest priority first.</p>
+    pub fn priority(&self) -> ::std::option::Option<f64> {
+        self.priority
+    }
 }
 impl InstanceTypeConfig {
     /// Creates a new builder-style object to manufacture [`InstanceTypeConfig`](crate::types::InstanceTypeConfig).
@@ -71,6 +77,7 @@ pub struct InstanceTypeConfigBuilder {
     pub(crate) ebs_configuration: ::std::option::Option<crate::types::EbsConfiguration>,
     pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) custom_ami_id: ::std::option::Option<::std::string::String>,
+    pub(crate) priority: ::std::option::Option<f64>,
 }
 impl InstanceTypeConfigBuilder {
     /// <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>.</p>
@@ -178,6 +185,20 @@ impl InstanceTypeConfigBuilder {
     pub fn get_custom_ami_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_ami_id
     }
+    /// <p>The priority at which Amazon EMR launches the Amazon EC2 instances with this instance type. Priority starts at 0, which is the highest priority. Amazon EMR considers the highest priority first.</p>
+    pub fn priority(mut self, input: f64) -> Self {
+        self.priority = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The priority at which Amazon EMR launches the Amazon EC2 instances with this instance type. Priority starts at 0, which is the highest priority. Amazon EMR considers the highest priority first.</p>
+    pub fn set_priority(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.priority = input;
+        self
+    }
+    /// <p>The priority at which Amazon EMR launches the Amazon EC2 instances with this instance type. Priority starts at 0, which is the highest priority. Amazon EMR considers the highest priority first.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<f64> {
+        &self.priority
+    }
     /// Consumes the builder and constructs a [`InstanceTypeConfig`](crate::types::InstanceTypeConfig).
     pub fn build(self) -> crate::types::InstanceTypeConfig {
         crate::types::InstanceTypeConfig {
@@ -188,6 +209,7 @@ impl InstanceTypeConfigBuilder {
             ebs_configuration: self.ebs_configuration,
             configurations: self.configurations,
             custom_ami_id: self.custom_ami_id,
+            priority: self.priority,
         }
     }
 }

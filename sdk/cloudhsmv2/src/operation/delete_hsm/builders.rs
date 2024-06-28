@@ -23,6 +23,7 @@ impl crate::operation::delete_hsm::builders::DeleteHsmInputBuilder {
 /// Fluent builder constructing a request to `DeleteHsm`.
 ///
 /// <p>Deletes the specified HSM. To specify an HSM, you can use its identifier (ID), the IP address of the HSM's elastic network interface (ENI), or the ID of the HSM's ENI. You need to specify only one of these values. To find these values, use <code>DescribeClusters</code>.</p>
+/// <p><b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM hsm in a different Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteHsmFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

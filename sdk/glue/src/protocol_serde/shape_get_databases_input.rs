@@ -18,5 +18,14 @@ pub fn ser_get_databases_input_input(
     if let Some(var_4) = &input.resource_share_type {
         object.key("ResourceShareType").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.attributes_to_get {
+        let mut array_6 = object.key("AttributesToGet").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
+    }
     Ok(())
 }

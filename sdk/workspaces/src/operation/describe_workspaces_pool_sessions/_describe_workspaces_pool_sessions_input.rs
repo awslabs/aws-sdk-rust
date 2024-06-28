@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkspacesPoolSessionsInput {
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the pool.</p>
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct DescribeWorkspacesPoolSessionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkspacesPoolSessionsInput {
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the pool.</p>
     pub fn pool_id(&self) -> ::std::option::Option<&str> {
         self.pool_id.as_deref()
     }
@@ -47,18 +47,18 @@ pub struct DescribeWorkspacesPoolSessionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkspacesPoolSessionsInputBuilder {
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the pool.</p>
     /// This field is required.
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the pool.</p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
     }
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the pool.</p>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_id
     }

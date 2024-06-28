@@ -33,6 +33,9 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()),
                             );
                         }
+                        "MatchCriteria" => {
+                            builder = builder.set_match_criteria(crate::protocol_serde::shape_match_criteria::de_match_criteria(tokens)?);
+                        }
                         "ComparisonOperator" => {
                             builder = builder.set_comparison_operator(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

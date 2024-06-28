@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyClusterOutput {
-    /// <p>Contains information about an AWS CloudHSM cluster.</p>
+    /// <p>Contains information about an CloudHSM cluster.</p>
     pub cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,
 }
 impl ModifyClusterOutput {
-    /// <p>Contains information about an AWS CloudHSM cluster.</p>
+    /// <p>Contains information about an CloudHSM cluster.</p>
     pub fn cluster(&self) -> ::std::option::Option<&crate::types::Cluster> {
         self.cluster.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct ModifyClusterOutputBuilder {
     _request_id: Option<String>,
 }
 impl ModifyClusterOutputBuilder {
-    /// <p>Contains information about an AWS CloudHSM cluster.</p>
+    /// <p>Contains information about an CloudHSM cluster.</p>
     pub fn cluster(mut self, input: crate::types::Cluster) -> Self {
         self.cluster = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains information about an AWS CloudHSM cluster.</p>
+    /// <p>Contains information about an CloudHSM cluster.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<crate::types::Cluster>) -> Self {
         self.cluster = input;
         self
     }
-    /// <p>Contains information about an AWS CloudHSM cluster.</p>
+    /// <p>Contains information about an CloudHSM cluster.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<crate::types::Cluster> {
         &self.cluster
     }

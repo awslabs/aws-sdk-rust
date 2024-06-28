@@ -22,7 +22,8 @@ impl crate::operation::copy_backup_to_region::builders::CopyBackupToRegionInputB
 }
 /// Fluent builder constructing a request to `CopyBackupToRegion`.
 ///
-/// <p>Copy an AWS CloudHSM cluster backup to a different region.</p>
+/// <p>Copy an CloudHSM cluster backup to a different region.</p>
+/// <p><b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM backup in a different Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CopyBackupToRegionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

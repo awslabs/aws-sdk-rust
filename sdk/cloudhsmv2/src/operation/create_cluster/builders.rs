@@ -22,7 +22,8 @@ impl crate::operation::create_cluster::builders::CreateClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateCluster`.
 ///
-/// <p>Creates a new AWS CloudHSM cluster.</p>
+/// <p>Creates a new CloudHSM cluster.</p>
+/// <p><b>Cross-account use:</b> Yes. To perform this operation with an CloudHSM backup in a different AWS account, specify the full backup ARN in the value of the SourceBackupId parameter.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +137,17 @@ impl CreateClusterFluentBuilder {
     pub fn get_hsm_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hsm_type()
     }
-    /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
+    /// <p>The identifier (ID) or the Amazon Resource Name (ARN) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID or ARN, use <code>DescribeBackups</code>. <i>If using a backup in another account, the full ARN must be supplied.</i></p>
     pub fn source_backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_backup_id(input.into());
         self
     }
-    /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
+    /// <p>The identifier (ID) or the Amazon Resource Name (ARN) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID or ARN, use <code>DescribeBackups</code>. <i>If using a backup in another account, the full ARN must be supplied.</i></p>
     pub fn set_source_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_backup_id(input);
         self
     }
-    /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
+    /// <p>The identifier (ID) or the Amazon Resource Name (ARN) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID or ARN, use <code>DescribeBackups</code>. <i>If using a backup in another account, the full ARN must be supplied.</i></p>
     pub fn get_source_backup_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_backup_id()
     }

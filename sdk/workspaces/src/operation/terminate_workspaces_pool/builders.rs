@@ -22,7 +22,7 @@ impl crate::operation::terminate_workspaces_pool::builders::TerminateWorkspacesP
 }
 /// Fluent builder constructing a request to `TerminateWorkspacesPool`.
 ///
-/// <p>Terminates the specified WorkSpaces pool.</p>
+/// <p>Terminates the specified pool.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TerminateWorkspacesPoolFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl TerminateWorkspacesPoolFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the pool.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_id(input.into());
         self
     }
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the pool.</p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pool_id(input);
         self
     }
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the pool.</p>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pool_id()
     }

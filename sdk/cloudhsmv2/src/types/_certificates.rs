@@ -8,7 +8,7 @@ pub struct Certificates {
     pub cluster_csr: ::std::option::Option<::std::string::String>,
     /// <p>The HSM certificate issued (signed) by the HSM hardware.</p>
     pub hsm_certificate: ::std::option::Option<::std::string::String>,
-    /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
+    /// <p>The HSM hardware certificate issued (signed) by CloudHSM.</p>
     pub aws_hardware_certificate: ::std::option::Option<::std::string::String>,
     /// <p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>
     pub manufacturer_hardware_certificate: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl Certificates {
     pub fn hsm_certificate(&self) -> ::std::option::Option<&str> {
         self.hsm_certificate.as_deref()
     }
-    /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
+    /// <p>The HSM hardware certificate issued (signed) by CloudHSM.</p>
     pub fn aws_hardware_certificate(&self) -> ::std::option::Option<&str> {
         self.aws_hardware_certificate.as_deref()
     }
@@ -83,17 +83,17 @@ impl CertificatesBuilder {
     pub fn get_hsm_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.hsm_certificate
     }
-    /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
+    /// <p>The HSM hardware certificate issued (signed) by CloudHSM.</p>
     pub fn aws_hardware_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_hardware_certificate = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
+    /// <p>The HSM hardware certificate issued (signed) by CloudHSM.</p>
     pub fn set_aws_hardware_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_hardware_certificate = input;
         self
     }
-    /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
+    /// <p>The HSM hardware certificate issued (signed) by CloudHSM.</p>
     pub fn get_aws_hardware_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_hardware_certificate
     }

@@ -22,7 +22,7 @@ impl crate::operation::describe_workspaces_pools::builders::DescribeWorkspacesPo
 }
 /// Fluent builder constructing a request to `DescribeWorkspacesPools`.
 ///
-/// <p>Describes the specified WorkSpaces pool.</p>
+/// <p>Describes the specified WorkSpaces Pools.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeWorkspacesPoolsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,17 +113,17 @@ impl DescribeWorkspacesPoolsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_pool_ids`](Self::set_pool_ids).
     ///
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the WorkSpaces Pools.</p>
     pub fn pool_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_ids(input.into());
         self
     }
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the WorkSpaces Pools.</p>
     pub fn set_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_pool_ids(input);
         self
     }
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the WorkSpaces Pools.</p>
     pub fn get_pool_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_pool_ids()
     }
@@ -132,17 +132,17 @@ impl DescribeWorkspacesPoolsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filter conditions for the WorkSpaces pool to return.</p>
+    /// <p>The filter conditions for the WorkSpaces Pool to return.</p>
     pub fn filters(mut self, input: crate::types::DescribeWorkspacesPoolsFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>The filter conditions for the WorkSpaces pool to return.</p>
+    /// <p>The filter conditions for the WorkSpaces Pool to return.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DescribeWorkspacesPoolsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>The filter conditions for the WorkSpaces pool to return.</p>
+    /// <p>The filter conditions for the WorkSpaces Pool to return.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeWorkspacesPoolsFilter>> {
         self.inner.get_filters()
     }

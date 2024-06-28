@@ -1679,16 +1679,22 @@ pub(crate) mod shape_evaluation_form_numeric_question_option_list;
 
 pub(crate) mod shape_evaluation_form_single_select_question_option_list;
 
+pub(crate) mod shape_match_criteria;
+
 pub(crate) mod shape_real_time_contact_analysis_point_of_interest;
 
 pub(crate) mod shape_real_time_contact_analysis_transcript_item_with_content;
 
 pub(crate) mod shape_single_select_question_rule_category_automation;
 
+pub(crate) mod shape_agents_criteria;
+
 pub(crate) mod shape_evaluation_form_single_select_question_automation_option_list;
 
 pub(crate) mod shape_metric_filter_value_list;
 
 pub(crate) mod shape_real_time_contact_analysis_transcript_items_with_character_offsets;
+
+pub(crate) mod shape_agent_ids;
 
 pub(crate) mod shape_real_time_contact_analysis_transcript_item_with_character_offsets;

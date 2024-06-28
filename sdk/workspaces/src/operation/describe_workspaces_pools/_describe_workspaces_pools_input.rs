@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkspacesPoolsInput {
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the WorkSpaces Pools.</p>
     pub pool_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The filter conditions for the WorkSpaces pool to return.</p>
+    /// <p>The filter conditions for the WorkSpaces Pool to return.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::DescribeWorkspacesPoolsFilter>>,
     /// <p>The maximum number of items to return.</p>
     pub limit: ::std::option::Option<i32>,
@@ -13,13 +13,13 @@ pub struct DescribeWorkspacesPoolsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkspacesPoolsInput {
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the WorkSpaces Pools.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pool_ids.is_none()`.
     pub fn pool_ids(&self) -> &[::std::string::String] {
         self.pool_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The filter conditions for the WorkSpaces pool to return.</p>
+    /// <p>The filter conditions for the WorkSpaces Pool to return.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::DescribeWorkspacesPoolsFilter] {
@@ -55,19 +55,19 @@ impl DescribeWorkspacesPoolsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_pool_ids`](Self::set_pool_ids).
     ///
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the WorkSpaces Pools.</p>
     pub fn pool_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pool_ids.unwrap_or_default();
         v.push(input.into());
         self.pool_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the WorkSpaces Pools.</p>
     pub fn set_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pool_ids = input;
         self
     }
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the WorkSpaces Pools.</p>
     pub fn get_pool_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.pool_ids
     }
@@ -75,19 +75,19 @@ impl DescribeWorkspacesPoolsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filter conditions for the WorkSpaces pool to return.</p>
+    /// <p>The filter conditions for the WorkSpaces Pool to return.</p>
     pub fn filters(mut self, input: crate::types::DescribeWorkspacesPoolsFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The filter conditions for the WorkSpaces pool to return.</p>
+    /// <p>The filter conditions for the WorkSpaces Pool to return.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DescribeWorkspacesPoolsFilter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>The filter conditions for the WorkSpaces pool to return.</p>
+    /// <p>The filter conditions for the WorkSpaces Pool to return.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeWorkspacesPoolsFilter>> {
         &self.filters
     }

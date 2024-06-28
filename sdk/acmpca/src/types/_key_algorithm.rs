@@ -16,6 +16,7 @@
 ///     KeyAlgorithm::EcSecp384r1 => { /* ... */ },
 ///     KeyAlgorithm::Rsa2048 => { /* ... */ },
 ///     KeyAlgorithm::Rsa4096 => { /* ... */ },
+///     KeyAlgorithm::Sm2 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum KeyAlgorithm {
     Rsa2048,
     #[allow(missing_docs)] // documentation missing in model
     Rsa4096,
+    #[allow(missing_docs)] // documentation missing in model
+    Sm2,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for KeyAlgorithm {
             "EC_secp384r1" => KeyAlgorithm::EcSecp384r1,
             "RSA_2048" => KeyAlgorithm::Rsa2048,
             "RSA_4096" => KeyAlgorithm::Rsa4096,
+            "SM2" => KeyAlgorithm::Sm2,
             other => KeyAlgorithm::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -81,12 +85,13 @@ impl KeyAlgorithm {
             KeyAlgorithm::EcSecp384r1 => "EC_secp384r1",
             KeyAlgorithm::Rsa2048 => "RSA_2048",
             KeyAlgorithm::Rsa4096 => "RSA_4096",
+            KeyAlgorithm::Sm2 => "SM2",
             KeyAlgorithm::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EC_prime256v1", "EC_secp384r1", "RSA_2048", "RSA_4096"]
+        &["EC_prime256v1", "EC_secp384r1", "RSA_2048", "RSA_4096", "SM2"]
     }
 }
 impl ::std::convert::AsRef<str> for KeyAlgorithm {
@@ -113,6 +118,7 @@ impl ::std::fmt::Display for KeyAlgorithm {
             KeyAlgorithm::EcSecp384r1 => write!(f, "EC_secp384r1"),
             KeyAlgorithm::Rsa2048 => write!(f, "RSA_2048"),
             KeyAlgorithm::Rsa4096 => write!(f, "RSA_4096"),
+            KeyAlgorithm::Sm2 => write!(f, "SM2"),
             KeyAlgorithm::Unknown(value) => write!(f, "{}", value),
         }
     }

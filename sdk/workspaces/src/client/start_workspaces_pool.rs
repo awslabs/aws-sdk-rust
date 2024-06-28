@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartWorkspacesPool`](crate::operation::start_workspaces_pool::builders::StartWorkspacesPoolFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pool_id(impl Into<String>)`](crate::operation::start_workspaces_pool::builders::StartWorkspacesPoolFluentBuilder::pool_id) / [`set_pool_id(Option<String>)`](crate::operation::start_workspaces_pool::builders::StartWorkspacesPoolFluentBuilder::set_pool_id):<br>required: **true**<br><p>The identifier of the WorkSpaces pool.</p><br>
+    ///   - [`pool_id(impl Into<String>)`](crate::operation::start_workspaces_pool::builders::StartWorkspacesPoolFluentBuilder::pool_id) / [`set_pool_id(Option<String>)`](crate::operation::start_workspaces_pool::builders::StartWorkspacesPoolFluentBuilder::set_pool_id):<br>required: **true**<br><p>The identifier of the pool.</p><br>
     /// - On success, responds with [`StartWorkspacesPoolOutput`](crate::operation::start_workspaces_pool::StartWorkspacesPoolOutput)
     /// - On failure, responds with [`SdkError<StartWorkspacesPoolError>`](crate::operation::start_workspaces_pool::StartWorkspacesPoolError)
     pub fn start_workspaces_pool(&self) -> crate::operation::start_workspaces_pool::builders::StartWorkspacesPoolFluentBuilder {

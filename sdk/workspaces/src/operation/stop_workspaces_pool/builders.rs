@@ -22,7 +22,7 @@ impl crate::operation::stop_workspaces_pool::builders::StopWorkspacesPoolInputBu
 }
 /// Fluent builder constructing a request to `StopWorkspacesPool`.
 ///
-/// <p>Stops the specifiedWorkSpaces pool.</p>
+/// <p>Stops the specified pool.</p>
 /// <p>You cannot stop a WorkSpace pool unless it has a running mode of <code>AutoStop</code> and a state of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or <code>ERROR</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopWorkspacesPoolFluentBuilder {
@@ -109,17 +109,17 @@ impl StopWorkspacesPoolFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the pool.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_id(input.into());
         self
     }
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the pool.</p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pool_id(input);
         self
     }
-    /// <p>The identifier of the WorkSpaces pool.</p>
+    /// <p>The identifier of the pool.</p>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pool_id()
     }

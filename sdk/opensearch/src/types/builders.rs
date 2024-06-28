@@ -25,17 +25,11 @@ pub use crate::types::_dry_run_results::DryRunResultsBuilder;
 
 pub use crate::types::_domain_config::DomainConfigBuilder;
 
-pub use crate::types::_aiml_options_status::AimlOptionsStatusBuilder;
-
-pub use crate::types::_option_status::OptionStatusBuilder;
-
-pub use crate::types::_aiml_options_output::AimlOptionsOutputBuilder;
-
-pub use crate::types::_natural_language_query_generation_options_output::NaturalLanguageQueryGenerationOptionsOutputBuilder;
-
 pub use crate::types::_modifying_properties::ModifyingPropertiesBuilder;
 
 pub use crate::types::_software_update_options_status::SoftwareUpdateOptionsStatusBuilder;
+
+pub use crate::types::_option_status::OptionStatusBuilder;
 
 pub use crate::types::_software_update_options::SoftwareUpdateOptionsBuilder;
 
@@ -112,10 +106,6 @@ pub use crate::types::_cold_storage_options::ColdStorageOptionsBuilder;
 pub use crate::types::_zone_awareness_config::ZoneAwarenessConfigBuilder;
 
 pub use crate::types::_version_status::VersionStatusBuilder;
-
-pub use crate::types::_aiml_options_input::AimlOptionsInputBuilder;
-
-pub use crate::types::_natural_language_query_generation_options_input::NaturalLanguageQueryGenerationOptionsInputBuilder;
 
 pub use crate::types::_advanced_security_options_input::AdvancedSecurityOptionsInputBuilder;
 

@@ -10,6 +10,8 @@ pub struct AttributeCondition {
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The proficiency level of the condition.</p>
     pub proficiency_level: ::std::option::Option<f32>,
+    /// <p>An object to define <code>AgentsCriteria</code>.</p>
+    pub match_criteria: ::std::option::Option<crate::types::MatchCriteria>,
     /// <p>The operator of the condition.</p>
     pub comparison_operator: ::std::option::Option<::std::string::String>,
 }
@@ -25,6 +27,10 @@ impl AttributeCondition {
     /// <p>The proficiency level of the condition.</p>
     pub fn proficiency_level(&self) -> ::std::option::Option<f32> {
         self.proficiency_level
+    }
+    /// <p>An object to define <code>AgentsCriteria</code>.</p>
+    pub fn match_criteria(&self) -> ::std::option::Option<&crate::types::MatchCriteria> {
+        self.match_criteria.as_ref()
     }
     /// <p>The operator of the condition.</p>
     pub fn comparison_operator(&self) -> ::std::option::Option<&str> {
@@ -45,6 +51,7 @@ pub struct AttributeConditionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) proficiency_level: ::std::option::Option<f32>,
+    pub(crate) match_criteria: ::std::option::Option<crate::types::MatchCriteria>,
     pub(crate) comparison_operator: ::std::option::Option<::std::string::String>,
 }
 impl AttributeConditionBuilder {
@@ -90,6 +97,20 @@ impl AttributeConditionBuilder {
     pub fn get_proficiency_level(&self) -> &::std::option::Option<f32> {
         &self.proficiency_level
     }
+    /// <p>An object to define <code>AgentsCriteria</code>.</p>
+    pub fn match_criteria(mut self, input: crate::types::MatchCriteria) -> Self {
+        self.match_criteria = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object to define <code>AgentsCriteria</code>.</p>
+    pub fn set_match_criteria(mut self, input: ::std::option::Option<crate::types::MatchCriteria>) -> Self {
+        self.match_criteria = input;
+        self
+    }
+    /// <p>An object to define <code>AgentsCriteria</code>.</p>
+    pub fn get_match_criteria(&self) -> &::std::option::Option<crate::types::MatchCriteria> {
+        &self.match_criteria
+    }
     /// <p>The operator of the condition.</p>
     pub fn comparison_operator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input.into());
@@ -110,6 +131,7 @@ impl AttributeConditionBuilder {
             name: self.name,
             value: self.value,
             proficiency_level: self.proficiency_level,
+            match_criteria: self.match_criteria,
             comparison_operator: self.comparison_operator,
         }
     }

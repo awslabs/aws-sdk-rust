@@ -100,9 +100,6 @@ where
                                 crate::protocol_serde::shape_modifying_properties_list::de_modifying_properties_list(tokens)?,
                             );
                         }
-                        "AIMLOptions" => {
-                            builder = builder.set_aiml_options(crate::protocol_serde::shape_aiml_options_status::de_aiml_options_status(tokens)?);
-                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

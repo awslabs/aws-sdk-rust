@@ -57,7 +57,9 @@ pub struct DescribeDimensionKeysInput {
     /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p></li>
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>db.sql.db_id</code> filter isn't available for RDS for SQL Server DB instances.</p>
+    /// </note>
     pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -139,7 +141,9 @@ impl DescribeDimensionKeysInput {
     /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p></li>
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>db.sql.db_id</code> filter isn't available for RDS for SQL Server DB instances.</p>
+    /// </note>
     pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.filter.as_ref()
     }
@@ -415,7 +419,9 @@ impl DescribeDimensionKeysInputBuilder {
     /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p></li>
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>db.sql.db_id</code> filter isn't available for RDS for SQL Server DB instances.</p>
+    /// </note>
     pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
@@ -428,7 +434,9 @@ impl DescribeDimensionKeysInputBuilder {
     /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p></li>
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>db.sql.db_id</code> filter isn't available for RDS for SQL Server DB instances.</p>
+    /// </note>
     pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.filter = input;
         self
@@ -439,7 +447,9 @@ impl DescribeDimensionKeysInputBuilder {
     /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p></li>
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>db.sql.db_id</code> filter isn't available for RDS for SQL Server DB instances.</p>
+    /// </note>
     pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.filter
     }

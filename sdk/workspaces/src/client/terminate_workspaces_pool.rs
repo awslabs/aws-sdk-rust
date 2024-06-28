@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TerminateWorkspacesPool`](crate::operation::terminate_workspaces_pool::builders::TerminateWorkspacesPoolFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pool_id(impl Into<String>)`](crate::operation::terminate_workspaces_pool::builders::TerminateWorkspacesPoolFluentBuilder::pool_id) / [`set_pool_id(Option<String>)`](crate::operation::terminate_workspaces_pool::builders::TerminateWorkspacesPoolFluentBuilder::set_pool_id):<br>required: **true**<br><p>The identifier of the WorkSpaces pool.</p><br>
+    ///   - [`pool_id(impl Into<String>)`](crate::operation::terminate_workspaces_pool::builders::TerminateWorkspacesPoolFluentBuilder::pool_id) / [`set_pool_id(Option<String>)`](crate::operation::terminate_workspaces_pool::builders::TerminateWorkspacesPoolFluentBuilder::set_pool_id):<br>required: **true**<br><p>The identifier of the pool.</p><br>
     /// - On success, responds with [`TerminateWorkspacesPoolOutput`](crate::operation::terminate_workspaces_pool::TerminateWorkspacesPoolOutput)
     /// - On failure, responds with [`SdkError<TerminateWorkspacesPoolError>`](crate::operation::terminate_workspaces_pool::TerminateWorkspacesPoolError)
     pub fn terminate_workspaces_pool(&self) -> crate::operation::terminate_workspaces_pool::builders::TerminateWorkspacesPoolFluentBuilder {

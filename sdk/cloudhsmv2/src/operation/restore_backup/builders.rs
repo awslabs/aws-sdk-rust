@@ -22,7 +22,8 @@ impl crate::operation::restore_backup::builders::RestoreBackupInputBuilder {
 }
 /// Fluent builder constructing a request to `RestoreBackup`.
 ///
-/// <p>Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code> state. For mor information on deleting a backup, see <code>DeleteBackup</code>.</p>
+/// <p>Restores a specified CloudHSM backup that is in the <code>PENDING_DELETION</code> state. For more information on deleting a backup, see <code>DeleteBackup</code>.</p>
+/// <p><b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM backup in a different Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreBackupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

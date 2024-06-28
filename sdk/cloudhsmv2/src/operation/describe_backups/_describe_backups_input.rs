@@ -14,6 +14,10 @@ pub struct DescribeBackupsInput {
     /// <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>
     /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
     pub filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    /// <p>Describe backups that are shared with you.</p><note>
+    /// <p>By default when using this option, the command returns backups that have been shared using a standard Resource Access Manager resource share. In order for a backup that was shared using the PutResourcePolicy command to be returned, the share must be promoted to a standard resource share using the RAM <a href="https://docs.aws.amazon.com/cli/latest/reference/ram/promote-resource-share-created-from-policy.html">PromoteResourceShareCreatedFromPolicy</a> API operation. For more information about sharing backups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html"> Working with shared backups</a> in the CloudHSM User Guide.</p>
+    /// </note>
+    pub shared: ::std::option::Option<bool>,
     /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
     pub sort_ascending: ::std::option::Option<bool>,
 }
@@ -35,6 +39,12 @@ impl DescribeBackupsInput {
     pub fn filters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.filters.as_ref()
     }
+    /// <p>Describe backups that are shared with you.</p><note>
+    /// <p>By default when using this option, the command returns backups that have been shared using a standard Resource Access Manager resource share. In order for a backup that was shared using the PutResourcePolicy command to be returned, the share must be promoted to a standard resource share using the RAM <a href="https://docs.aws.amazon.com/cli/latest/reference/ram/promote-resource-share-created-from-policy.html">PromoteResourceShareCreatedFromPolicy</a> API operation. For more information about sharing backups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html"> Working with shared backups</a> in the CloudHSM User Guide.</p>
+    /// </note>
+    pub fn shared(&self) -> ::std::option::Option<bool> {
+        self.shared
+    }
     /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
     pub fn sort_ascending(&self) -> ::std::option::Option<bool> {
         self.sort_ascending
@@ -54,6 +64,7 @@ pub struct DescribeBackupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) shared: ::std::option::Option<bool>,
     pub(crate) sort_ascending: ::std::option::Option<bool>,
 }
 impl DescribeBackupsInputBuilder {
@@ -123,6 +134,26 @@ impl DescribeBackupsInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.filters
     }
+    /// <p>Describe backups that are shared with you.</p><note>
+    /// <p>By default when using this option, the command returns backups that have been shared using a standard Resource Access Manager resource share. In order for a backup that was shared using the PutResourcePolicy command to be returned, the share must be promoted to a standard resource share using the RAM <a href="https://docs.aws.amazon.com/cli/latest/reference/ram/promote-resource-share-created-from-policy.html">PromoteResourceShareCreatedFromPolicy</a> API operation. For more information about sharing backups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html"> Working with shared backups</a> in the CloudHSM User Guide.</p>
+    /// </note>
+    pub fn shared(mut self, input: bool) -> Self {
+        self.shared = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describe backups that are shared with you.</p><note>
+    /// <p>By default when using this option, the command returns backups that have been shared using a standard Resource Access Manager resource share. In order for a backup that was shared using the PutResourcePolicy command to be returned, the share must be promoted to a standard resource share using the RAM <a href="https://docs.aws.amazon.com/cli/latest/reference/ram/promote-resource-share-created-from-policy.html">PromoteResourceShareCreatedFromPolicy</a> API operation. For more information about sharing backups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html"> Working with shared backups</a> in the CloudHSM User Guide.</p>
+    /// </note>
+    pub fn set_shared(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.shared = input;
+        self
+    }
+    /// <p>Describe backups that are shared with you.</p><note>
+    /// <p>By default when using this option, the command returns backups that have been shared using a standard Resource Access Manager resource share. In order for a backup that was shared using the PutResourcePolicy command to be returned, the share must be promoted to a standard resource share using the RAM <a href="https://docs.aws.amazon.com/cli/latest/reference/ram/promote-resource-share-created-from-policy.html">PromoteResourceShareCreatedFromPolicy</a> API operation. For more information about sharing backups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html"> Working with shared backups</a> in the CloudHSM User Guide.</p>
+    /// </note>
+    pub fn get_shared(&self) -> &::std::option::Option<bool> {
+        &self.shared
+    }
     /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
     pub fn sort_ascending(mut self, input: bool) -> Self {
         self.sort_ascending = ::std::option::Option::Some(input);
@@ -145,6 +176,7 @@ impl DescribeBackupsInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             filters: self.filters,
+            shared: self.shared,
             sort_ascending: self.sort_ascending,
         })
     }

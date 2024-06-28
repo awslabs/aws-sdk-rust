@@ -35,9 +35,13 @@ pub(crate) mod shape_delete_cluster;
 
 pub(crate) mod shape_delete_hsm;
 
+pub(crate) mod shape_delete_resource_policy;
+
 pub(crate) mod shape_describe_backups;
 
 pub(crate) mod shape_describe_clusters;
+
+pub(crate) mod shape_get_resource_policy;
 
 pub(crate) mod shape_initialize_cluster;
 
@@ -46,6 +50,8 @@ pub(crate) mod shape_list_tags;
 pub(crate) mod shape_modify_backup_attributes;
 
 pub(crate) mod shape_modify_cluster;
+
+pub(crate) mod shape_put_resource_policy;
 
 pub(crate) mod shape_restore_backup;
 
@@ -85,9 +91,13 @@ pub(crate) mod shape_delete_cluster_input;
 
 pub(crate) mod shape_delete_hsm_input;
 
+pub(crate) mod shape_delete_resource_policy_input;
+
 pub(crate) mod shape_describe_backups_input;
 
 pub(crate) mod shape_describe_clusters_input;
+
+pub(crate) mod shape_get_resource_policy_input;
 
 pub(crate) mod shape_initialize_cluster_input;
 
@@ -96,6 +106,8 @@ pub(crate) mod shape_list_tags_input;
 pub(crate) mod shape_modify_backup_attributes_input;
 
 pub(crate) mod shape_modify_cluster_input;
+
+pub(crate) mod shape_put_resource_policy_input;
 
 pub(crate) mod shape_restore_backup_input;
 

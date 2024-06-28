@@ -22,8 +22,9 @@ impl crate::operation::describe_backups::builders::DescribeBackupsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeBackups`.
 ///
-/// <p>Gets information about backups of AWS CloudHSM clusters.</p>
+/// <p>Gets information about backups of CloudHSM clusters. Lists either the backups you own or the backups shared with you when the Shared parameter is true.</p>
 /// <p>This is a paginated operation, which means that each response might contain only a subset of all the backups. When the response contains only a subset of backups, it includes a <code>NextToken</code> value. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups. When you receive a response with no <code>NextToken</code> (or an empty or null value), that means there are no more backups to get.</p>
+/// <p><b>Cross-account use:</b> Yes. Customers can describe backups in other Amazon Web Services accounts that are shared with them.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBackupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -179,6 +180,26 @@ impl DescribeBackupsFluentBuilder {
     /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_filters()
+    }
+    /// <p>Describe backups that are shared with you.</p><note>
+    /// <p>By default when using this option, the command returns backups that have been shared using a standard Resource Access Manager resource share. In order for a backup that was shared using the PutResourcePolicy command to be returned, the share must be promoted to a standard resource share using the RAM <a href="https://docs.aws.amazon.com/cli/latest/reference/ram/promote-resource-share-created-from-policy.html">PromoteResourceShareCreatedFromPolicy</a> API operation. For more information about sharing backups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html"> Working with shared backups</a> in the CloudHSM User Guide.</p>
+    /// </note>
+    pub fn shared(mut self, input: bool) -> Self {
+        self.inner = self.inner.shared(input);
+        self
+    }
+    /// <p>Describe backups that are shared with you.</p><note>
+    /// <p>By default when using this option, the command returns backups that have been shared using a standard Resource Access Manager resource share. In order for a backup that was shared using the PutResourcePolicy command to be returned, the share must be promoted to a standard resource share using the RAM <a href="https://docs.aws.amazon.com/cli/latest/reference/ram/promote-resource-share-created-from-policy.html">PromoteResourceShareCreatedFromPolicy</a> API operation. For more information about sharing backups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html"> Working with shared backups</a> in the CloudHSM User Guide.</p>
+    /// </note>
+    pub fn set_shared(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_shared(input);
+        self
+    }
+    /// <p>Describe backups that are shared with you.</p><note>
+    /// <p>By default when using this option, the command returns backups that have been shared using a standard Resource Access Manager resource share. In order for a backup that was shared using the PutResourcePolicy command to be returned, the share must be promoted to a standard resource share using the RAM <a href="https://docs.aws.amazon.com/cli/latest/reference/ram/promote-resource-share-created-from-policy.html">PromoteResourceShareCreatedFromPolicy</a> API operation. For more information about sharing backups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html"> Working with shared backups</a> in the CloudHSM User Guide.</p>
+    /// </note>
+    pub fn get_shared(&self) -> &::std::option::Option<bool> {
+        self.inner.get_shared()
     }
     /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
     pub fn sort_ascending(mut self, input: bool) -> Self {

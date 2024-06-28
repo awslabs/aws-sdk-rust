@@ -22,7 +22,8 @@ impl crate::operation::delete_backup::builders::DeleteBackupInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteBackup`.
 ///
-/// <p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request is made. For more information on restoring a backup, see <code>RestoreBackup</code>.</p>
+/// <p>Deletes a specified CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request is made. For more information on restoring a backup, see <code>RestoreBackup</code>.</p>
+/// <p><b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM backup in a different Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBackupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

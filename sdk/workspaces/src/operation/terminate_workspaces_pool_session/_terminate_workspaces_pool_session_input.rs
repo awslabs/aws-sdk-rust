@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateWorkspacesPoolSessionInput {
-    /// <p>The identifier of the WorkSpaces pool session.</p>
+    /// <p>The identifier of the pool session.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
 }
 impl TerminateWorkspacesPoolSessionInput {
-    /// <p>The identifier of the WorkSpaces pool session.</p>
+    /// <p>The identifier of the pool session.</p>
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct TerminateWorkspacesPoolSessionInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
 }
 impl TerminateWorkspacesPoolSessionInputBuilder {
-    /// <p>The identifier of the WorkSpaces pool session.</p>
+    /// <p>The identifier of the pool session.</p>
     /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the WorkSpaces pool session.</p>
+    /// <p>The identifier of the pool session.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
     }
-    /// <p>The identifier of the WorkSpaces pool session.</p>
+    /// <p>The identifier of the pool session.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }

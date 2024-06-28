@@ -16,7 +16,7 @@ pub struct SpotProvisioningSpecification {
     /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022.</p>
     /// </note>
     pub block_duration_minutes: ::std::option::Option<i32>,
-    /// <p>Specifies one of the following strategies to launch Spot Instance fleets: <code>price-capacity-optimized</code>, <code>capacity-optimized</code>, <code>lowest-price</code>, or <code>diversified</code>. For more information on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p><note>
+    /// <p>Specifies one of the following strategies to launch Spot Instance fleets: <code>capacity-optimized</code>, <code>price-capacity-optimized</code>, <code>lowest-price</code>, or <code>diversified</code>, and <code>capacity-optimized-prioritized</code>. For more information on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p><note>
     /// <p>When you launch a Spot Instance fleet with the old console, it automatically launches with the <code>capacity-optimized</code> strategy. You can't change the allocation strategy from the old console.</p>
     /// </note>
     pub allocation_strategy: ::std::option::Option<crate::types::SpotProvisioningAllocationStrategy>,
@@ -36,7 +36,7 @@ impl SpotProvisioningSpecification {
     pub fn block_duration_minutes(&self) -> ::std::option::Option<i32> {
         self.block_duration_minutes
     }
-    /// <p>Specifies one of the following strategies to launch Spot Instance fleets: <code>price-capacity-optimized</code>, <code>capacity-optimized</code>, <code>lowest-price</code>, or <code>diversified</code>. For more information on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p><note>
+    /// <p>Specifies one of the following strategies to launch Spot Instance fleets: <code>capacity-optimized</code>, <code>price-capacity-optimized</code>, <code>lowest-price</code>, or <code>diversified</code>, and <code>capacity-optimized-prioritized</code>. For more information on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p><note>
     /// <p>When you launch a Spot Instance fleet with the old console, it automatically launches with the <code>capacity-optimized</code> strategy. You can't change the allocation strategy from the old console.</p>
     /// </note>
     pub fn allocation_strategy(&self) -> ::std::option::Option<&crate::types::SpotProvisioningAllocationStrategy> {
@@ -110,21 +110,21 @@ impl SpotProvisioningSpecificationBuilder {
     pub fn get_block_duration_minutes(&self) -> &::std::option::Option<i32> {
         &self.block_duration_minutes
     }
-    /// <p>Specifies one of the following strategies to launch Spot Instance fleets: <code>price-capacity-optimized</code>, <code>capacity-optimized</code>, <code>lowest-price</code>, or <code>diversified</code>. For more information on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p><note>
+    /// <p>Specifies one of the following strategies to launch Spot Instance fleets: <code>capacity-optimized</code>, <code>price-capacity-optimized</code>, <code>lowest-price</code>, or <code>diversified</code>, and <code>capacity-optimized-prioritized</code>. For more information on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p><note>
     /// <p>When you launch a Spot Instance fleet with the old console, it automatically launches with the <code>capacity-optimized</code> strategy. You can't change the allocation strategy from the old console.</p>
     /// </note>
     pub fn allocation_strategy(mut self, input: crate::types::SpotProvisioningAllocationStrategy) -> Self {
         self.allocation_strategy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies one of the following strategies to launch Spot Instance fleets: <code>price-capacity-optimized</code>, <code>capacity-optimized</code>, <code>lowest-price</code>, or <code>diversified</code>. For more information on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p><note>
+    /// <p>Specifies one of the following strategies to launch Spot Instance fleets: <code>capacity-optimized</code>, <code>price-capacity-optimized</code>, <code>lowest-price</code>, or <code>diversified</code>, and <code>capacity-optimized-prioritized</code>. For more information on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p><note>
     /// <p>When you launch a Spot Instance fleet with the old console, it automatically launches with the <code>capacity-optimized</code> strategy. You can't change the allocation strategy from the old console.</p>
     /// </note>
     pub fn set_allocation_strategy(mut self, input: ::std::option::Option<crate::types::SpotProvisioningAllocationStrategy>) -> Self {
         self.allocation_strategy = input;
         self
     }
-    /// <p>Specifies one of the following strategies to launch Spot Instance fleets: <code>price-capacity-optimized</code>, <code>capacity-optimized</code>, <code>lowest-price</code>, or <code>diversified</code>. For more information on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p><note>
+    /// <p>Specifies one of the following strategies to launch Spot Instance fleets: <code>capacity-optimized</code>, <code>price-capacity-optimized</code>, <code>lowest-price</code>, or <code>diversified</code>, and <code>capacity-optimized-prioritized</code>. For more information on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p><note>
     /// <p>When you launch a Spot Instance fleet with the old console, it automatically launches with the <code>capacity-optimized</code> strategy. You can't change the allocation strategy from the old console.</p>
     /// </note>
     pub fn get_allocation_strategy(&self) -> &::std::option::Option<crate::types::SpotProvisioningAllocationStrategy> {

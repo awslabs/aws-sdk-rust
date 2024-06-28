@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkspacesPoolOutput {
-    /// <p>Indicates the WorkSpaces pool to create.</p>
+    /// <p>Indicates the pool to create.</p>
     pub workspaces_pool: ::std::option::Option<crate::types::WorkspacesPool>,
     _request_id: Option<String>,
 }
 impl CreateWorkspacesPoolOutput {
-    /// <p>Indicates the WorkSpaces pool to create.</p>
+    /// <p>Indicates the pool to create.</p>
     pub fn workspaces_pool(&self) -> ::std::option::Option<&crate::types::WorkspacesPool> {
         self.workspaces_pool.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateWorkspacesPoolOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateWorkspacesPoolOutputBuilder {
-    /// <p>Indicates the WorkSpaces pool to create.</p>
+    /// <p>Indicates the pool to create.</p>
     pub fn workspaces_pool(mut self, input: crate::types::WorkspacesPool) -> Self {
         self.workspaces_pool = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the WorkSpaces pool to create.</p>
+    /// <p>Indicates the pool to create.</p>
     pub fn set_workspaces_pool(mut self, input: ::std::option::Option<crate::types::WorkspacesPool>) -> Self {
         self.workspaces_pool = input;
         self
     }
-    /// <p>Indicates the WorkSpaces pool to create.</p>
+    /// <p>Indicates the pool to create.</p>
     pub fn get_workspaces_pool(&self) -> &::std::option::Option<crate::types::WorkspacesPool> {
         &self.workspaces_pool
     }

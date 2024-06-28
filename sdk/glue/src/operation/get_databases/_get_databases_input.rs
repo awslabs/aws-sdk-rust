@@ -19,6 +19,8 @@ pub struct GetDatabasesInput {
     /// <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account.</p></li>
     /// </ul>
     pub resource_share_type: ::std::option::Option<crate::types::ResourceShareType>,
+    /// <p>Specifies the database fields returned by the <code>GetDatabases</code> call. This parameter doesn’t accept an empty list. The request must include the <code>NAME</code>.</p>
+    pub attributes_to_get: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseAttributes>>,
 }
 impl GetDatabasesInput {
     /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -45,6 +47,12 @@ impl GetDatabasesInput {
     pub fn resource_share_type(&self) -> ::std::option::Option<&crate::types::ResourceShareType> {
         self.resource_share_type.as_ref()
     }
+    /// <p>Specifies the database fields returned by the <code>GetDatabases</code> call. This parameter doesn’t accept an empty list. The request must include the <code>NAME</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes_to_get.is_none()`.
+    pub fn attributes_to_get(&self) -> &[crate::types::DatabaseAttributes] {
+        self.attributes_to_get.as_deref().unwrap_or_default()
+    }
 }
 impl GetDatabasesInput {
     /// Creates a new builder-style object to manufacture [`GetDatabasesInput`](crate::operation::get_databases::GetDatabasesInput).
@@ -61,6 +69,7 @@ pub struct GetDatabasesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) resource_share_type: ::std::option::Option<crate::types::ResourceShareType>,
+    pub(crate) attributes_to_get: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseAttributes>>,
 }
 impl GetDatabasesInputBuilder {
     /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -143,6 +152,26 @@ impl GetDatabasesInputBuilder {
     pub fn get_resource_share_type(&self) -> &::std::option::Option<crate::types::ResourceShareType> {
         &self.resource_share_type
     }
+    /// Appends an item to `attributes_to_get`.
+    ///
+    /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
+    ///
+    /// <p>Specifies the database fields returned by the <code>GetDatabases</code> call. This parameter doesn’t accept an empty list. The request must include the <code>NAME</code>.</p>
+    pub fn attributes_to_get(mut self, input: crate::types::DatabaseAttributes) -> Self {
+        let mut v = self.attributes_to_get.unwrap_or_default();
+        v.push(input);
+        self.attributes_to_get = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the database fields returned by the <code>GetDatabases</code> call. This parameter doesn’t accept an empty list. The request must include the <code>NAME</code>.</p>
+    pub fn set_attributes_to_get(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseAttributes>>) -> Self {
+        self.attributes_to_get = input;
+        self
+    }
+    /// <p>Specifies the database fields returned by the <code>GetDatabases</code> call. This parameter doesn’t accept an empty list. The request must include the <code>NAME</code>.</p>
+    pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseAttributes>> {
+        &self.attributes_to_get
+    }
     /// Consumes the builder and constructs a [`GetDatabasesInput`](crate::operation::get_databases::GetDatabasesInput).
     pub fn build(
         self,
@@ -152,6 +181,7 @@ impl GetDatabasesInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             resource_share_type: self.resource_share_type,
+            attributes_to_get: self.attributes_to_get,
         })
     }
 }

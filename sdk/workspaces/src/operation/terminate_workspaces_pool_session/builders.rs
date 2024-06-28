@@ -22,7 +22,7 @@ impl crate::operation::terminate_workspaces_pool_session::builders::TerminateWor
 }
 /// Fluent builder constructing a request to `TerminateWorkspacesPoolSession`.
 ///
-/// <p>Terminates the WorkSpaces pool session.</p>
+/// <p>Terminates the pool session.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TerminateWorkspacesPoolSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl TerminateWorkspacesPoolSessionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the WorkSpaces pool session.</p>
+    /// <p>The identifier of the pool session.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
         self
     }
-    /// <p>The identifier of the WorkSpaces pool session.</p>
+    /// <p>The identifier of the pool session.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
     }
-    /// <p>The identifier of the WorkSpaces pool session.</p>
+    /// <p>The identifier of the pool session.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session_id()
     }

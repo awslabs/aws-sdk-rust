@@ -24,6 +24,13 @@ impl crate::operation::start_contact_streaming::builders::StartContactStreamingI
 ///
 /// <p>Initiates real-time message streaming for a new chat contact.</p>
 /// <p>For more information about message streaming, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable real-time chat message streaming</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+/// <p>For more information about chat, see the following topics in the <i>Amazon Connect Administrator Guide</i>:</p>
+/// <ul>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts: Web and mobile messaging capabilities in Amazon Connect</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon Connect Chat security best practices</a></p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartContactStreamingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

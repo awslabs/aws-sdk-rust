@@ -13,6 +13,7 @@
 /// # let ondemandprovisioningallocationstrategy = unimplemented!();
 /// match ondemandprovisioningallocationstrategy {
 ///     OnDemandProvisioningAllocationStrategy::LowestPrice => { /* ... */ },
+///     OnDemandProvisioningAllocationStrategy::Prioritized => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +43,8 @@
 pub enum OnDemandProvisioningAllocationStrategy {
     #[allow(missing_docs)] // documentation missing in model
     LowestPrice,
+    #[allow(missing_docs)] // documentation missing in model
+    Prioritized,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,6 +53,7 @@ impl ::std::convert::From<&str> for OnDemandProvisioningAllocationStrategy {
     fn from(s: &str) -> Self {
         match s {
             "lowest-price" => OnDemandProvisioningAllocationStrategy::LowestPrice,
+            "prioritized" => OnDemandProvisioningAllocationStrategy::Prioritized,
             other => OnDemandProvisioningAllocationStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,12 +70,13 @@ impl OnDemandProvisioningAllocationStrategy {
     pub fn as_str(&self) -> &str {
         match self {
             OnDemandProvisioningAllocationStrategy::LowestPrice => "lowest-price",
+            OnDemandProvisioningAllocationStrategy::Prioritized => "prioritized",
             OnDemandProvisioningAllocationStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["lowest-price"]
+        &["lowest-price", "prioritized"]
     }
 }
 impl ::std::convert::AsRef<str> for OnDemandProvisioningAllocationStrategy {
@@ -95,6 +100,7 @@ impl ::std::fmt::Display for OnDemandProvisioningAllocationStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OnDemandProvisioningAllocationStrategy::LowestPrice => write!(f, "lowest-price"),
+            OnDemandProvisioningAllocationStrategy::Prioritized => write!(f, "prioritized"),
             OnDemandProvisioningAllocationStrategy::Unknown(value) => write!(f, "{}", value),
         }
     }

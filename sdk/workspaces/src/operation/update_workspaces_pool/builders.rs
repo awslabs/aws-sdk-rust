@@ -22,7 +22,7 @@ impl crate::operation::update_workspaces_pool::builders::UpdateWorkspacesPoolInp
 }
 /// Fluent builder constructing a request to `UpdateWorkspacesPool`.
 ///
-/// <p>Updates the specified WorkSpaces pool.</p>
+/// <p>Updates the specified pool.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWorkspacesPoolFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl UpdateWorkspacesPoolFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the specified WorkSpaces pool to update.</p>
+    /// <p>The identifier of the specified pool to update.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_id(input.into());
         self
     }
-    /// <p>The identifier of the specified WorkSpaces pool to update.</p>
+    /// <p>The identifier of the specified pool to update.</p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pool_id(input);
         self
     }
-    /// <p>The identifier of the specified WorkSpaces pool to update.</p>
+    /// <p>The identifier of the specified pool to update.</p>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pool_id()
     }
-    /// <p>Describes the specified WorkSpaces pool to update.</p>
+    /// <p>Describes the specified pool to update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>Describes the specified WorkSpaces pool to update.</p>
+    /// <p>Describes the specified pool to update.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>Describes the specified WorkSpaces pool to update.</p>
+    /// <p>Describes the specified pool to update.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -164,17 +164,17 @@ impl UpdateWorkspacesPoolFluentBuilder {
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_directory_id()
     }
-    /// <p>The desired capacity for the WorkSpaces pool.</p>
+    /// <p>The desired capacity for the pool.</p>
     pub fn capacity(mut self, input: crate::types::Capacity) -> Self {
         self.inner = self.inner.capacity(input);
         self
     }
-    /// <p>The desired capacity for the WorkSpaces pool.</p>
+    /// <p>The desired capacity for the pool.</p>
     pub fn set_capacity(mut self, input: ::std::option::Option<crate::types::Capacity>) -> Self {
         self.inner = self.inner.set_capacity(input);
         self
     }
-    /// <p>The desired capacity for the WorkSpaces pool.</p>
+    /// <p>The desired capacity for the pool.</p>
     pub fn get_capacity(&self) -> &::std::option::Option<crate::types::Capacity> {
         self.inner.get_capacity()
     }
@@ -192,17 +192,17 @@ impl UpdateWorkspacesPoolFluentBuilder {
     pub fn get_application_settings(&self) -> &::std::option::Option<crate::types::ApplicationSettingsRequest> {
         self.inner.get_application_settings()
     }
-    /// <p>Indicates the timeout settings of the specified WorkSpaces pool.</p>
+    /// <p>Indicates the timeout settings of the specified pool.</p>
     pub fn timeout_settings(mut self, input: crate::types::TimeoutSettings) -> Self {
         self.inner = self.inner.timeout_settings(input);
         self
     }
-    /// <p>Indicates the timeout settings of the specified WorkSpaces pool.</p>
+    /// <p>Indicates the timeout settings of the specified pool.</p>
     pub fn set_timeout_settings(mut self, input: ::std::option::Option<crate::types::TimeoutSettings>) -> Self {
         self.inner = self.inner.set_timeout_settings(input);
         self
     }
-    /// <p>Indicates the timeout settings of the specified WorkSpaces pool.</p>
+    /// <p>Indicates the timeout settings of the specified pool.</p>
     pub fn get_timeout_settings(&self) -> &::std::option::Option<crate::types::TimeoutSettings> {
         self.inner.get_timeout_settings()
     }

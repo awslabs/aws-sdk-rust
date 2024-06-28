@@ -22,7 +22,8 @@ impl crate::operation::modify_cluster::builders::ModifyClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `ModifyCluster`.
 ///
-/// <p>Modifies AWS CloudHSM cluster.</p>
+/// <p>Modifies CloudHSM cluster.</p>
+/// <p><b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM cluster in a different Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

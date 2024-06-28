@@ -13,6 +13,7 @@
 /// # let spotprovisioningallocationstrategy = unimplemented!();
 /// match spotprovisioningallocationstrategy {
 ///     SpotProvisioningAllocationStrategy::CapacityOptimized => { /* ... */ },
+///     SpotProvisioningAllocationStrategy::CapacityOptimizedPrioritized => { /* ... */ },
 ///     SpotProvisioningAllocationStrategy::Diversified => { /* ... */ },
 ///     SpotProvisioningAllocationStrategy::LowestPrice => { /* ... */ },
 ///     SpotProvisioningAllocationStrategy::PriceCapacityOptimized => { /* ... */ },
@@ -46,6 +47,8 @@ pub enum SpotProvisioningAllocationStrategy {
     #[allow(missing_docs)] // documentation missing in model
     CapacityOptimized,
     #[allow(missing_docs)] // documentation missing in model
+    CapacityOptimizedPrioritized,
+    #[allow(missing_docs)] // documentation missing in model
     Diversified,
     #[allow(missing_docs)] // documentation missing in model
     LowestPrice,
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for SpotProvisioningAllocationStrategy {
     fn from(s: &str) -> Self {
         match s {
             "capacity-optimized" => SpotProvisioningAllocationStrategy::CapacityOptimized,
+            "capacity-optimized-prioritized" => SpotProvisioningAllocationStrategy::CapacityOptimizedPrioritized,
             "diversified" => SpotProvisioningAllocationStrategy::Diversified,
             "lowest-price" => SpotProvisioningAllocationStrategy::LowestPrice,
             "price-capacity-optimized" => SpotProvisioningAllocationStrategy::PriceCapacityOptimized,
@@ -78,6 +82,7 @@ impl SpotProvisioningAllocationStrategy {
     pub fn as_str(&self) -> &str {
         match self {
             SpotProvisioningAllocationStrategy::CapacityOptimized => "capacity-optimized",
+            SpotProvisioningAllocationStrategy::CapacityOptimizedPrioritized => "capacity-optimized-prioritized",
             SpotProvisioningAllocationStrategy::Diversified => "diversified",
             SpotProvisioningAllocationStrategy::LowestPrice => "lowest-price",
             SpotProvisioningAllocationStrategy::PriceCapacityOptimized => "price-capacity-optimized",
@@ -86,7 +91,13 @@ impl SpotProvisioningAllocationStrategy {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["capacity-optimized", "diversified", "lowest-price", "price-capacity-optimized"]
+        &[
+            "capacity-optimized",
+            "capacity-optimized-prioritized",
+            "diversified",
+            "lowest-price",
+            "price-capacity-optimized",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for SpotProvisioningAllocationStrategy {
@@ -110,6 +121,7 @@ impl ::std::fmt::Display for SpotProvisioningAllocationStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SpotProvisioningAllocationStrategy::CapacityOptimized => write!(f, "capacity-optimized"),
+            SpotProvisioningAllocationStrategy::CapacityOptimizedPrioritized => write!(f, "capacity-optimized-prioritized"),
             SpotProvisioningAllocationStrategy::Diversified => write!(f, "diversified"),
             SpotProvisioningAllocationStrategy::LowestPrice => write!(f, "lowest-price"),
             SpotProvisioningAllocationStrategy::PriceCapacityOptimized => write!(f, "price-capacity-optimized"),

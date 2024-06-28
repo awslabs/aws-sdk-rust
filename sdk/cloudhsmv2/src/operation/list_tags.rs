@@ -237,7 +237,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTagsEndpo
 pub enum ListTagsError {
     /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
     CloudHsmAccessDeniedException(crate::types::error::CloudHsmAccessDeniedException),
-    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
+    /// <p>The request was rejected because of an CloudHSM internal failure. The request can be retried.</p>
     CloudHsmInternalFailureException(crate::types::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::types::error::CloudHsmInvalidRequestException),

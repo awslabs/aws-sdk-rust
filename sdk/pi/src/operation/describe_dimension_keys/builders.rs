@@ -348,7 +348,9 @@ impl DescribeDimensionKeysFluentBuilder {
     /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p></li>
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>db.sql.db_id</code> filter isn't available for RDS for SQL Server DB instances.</p>
+    /// </note>
     pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter(k.into(), v.into());
         self
@@ -359,7 +361,9 @@ impl DescribeDimensionKeysFluentBuilder {
     /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p></li>
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>db.sql.db_id</code> filter isn't available for RDS for SQL Server DB instances.</p>
+    /// </note>
     pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
@@ -370,7 +374,9 @@ impl DescribeDimensionKeysFluentBuilder {
     /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p></li>
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>db.sql.db_id</code> filter isn't available for RDS for SQL Server DB instances.</p>
+    /// </note>
     pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_filter()
     }

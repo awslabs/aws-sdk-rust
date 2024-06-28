@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkspacesPoolsOutput {
-    /// <p>Information about the WorkSpaces pools.</p>
+    /// <p>Information about the WorkSpaces Pools.</p>
     pub workspaces_pools: ::std::option::Option<::std::vec::Vec<crate::types::WorkspacesPool>>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeWorkspacesPoolsOutput {
-    /// <p>Information about the WorkSpaces pools.</p>
+    /// <p>Information about the WorkSpaces Pools.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workspaces_pools.is_none()`.
     pub fn workspaces_pools(&self) -> &[crate::types::WorkspacesPool] {
@@ -46,19 +46,19 @@ impl DescribeWorkspacesPoolsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_workspaces_pools`](Self::set_workspaces_pools).
     ///
-    /// <p>Information about the WorkSpaces pools.</p>
+    /// <p>Information about the WorkSpaces Pools.</p>
     pub fn workspaces_pools(mut self, input: crate::types::WorkspacesPool) -> Self {
         let mut v = self.workspaces_pools.unwrap_or_default();
         v.push(input);
         self.workspaces_pools = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the WorkSpaces pools.</p>
+    /// <p>Information about the WorkSpaces Pools.</p>
     pub fn set_workspaces_pools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspacesPool>>) -> Self {
         self.workspaces_pools = input;
         self
     }
-    /// <p>Information about the WorkSpaces pools.</p>
+    /// <p>Information about the WorkSpaces Pools.</p>
     pub fn get_workspaces_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspacesPool>> {
         &self.workspaces_pools
     }

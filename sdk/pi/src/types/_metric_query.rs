@@ -26,7 +26,9 @@ pub struct MetricQuery {
     /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p></li>
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>db.sql.db_id</code> filter isn't available for RDS for SQL Server DB instances.</p>
+    /// </note>
     pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl MetricQuery {
@@ -57,7 +59,9 @@ impl MetricQuery {
     /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p></li>
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>db.sql.db_id</code> filter isn't available for RDS for SQL Server DB instances.</p>
+    /// </note>
     pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.filter.as_ref()
     }
@@ -153,7 +157,9 @@ impl MetricQueryBuilder {
     /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p></li>
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>db.sql.db_id</code> filter isn't available for RDS for SQL Server DB instances.</p>
+    /// </note>
     pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
@@ -166,7 +172,9 @@ impl MetricQueryBuilder {
     /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p></li>
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>db.sql.db_id</code> filter isn't available for RDS for SQL Server DB instances.</p>
+    /// </note>
     pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.filter = input;
         self
@@ -177,7 +185,9 @@ impl MetricQueryBuilder {
     /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p></li>
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>db.sql.db_id</code> filter isn't available for RDS for SQL Server DB instances.</p>
+    /// </note>
     pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.filter
     }

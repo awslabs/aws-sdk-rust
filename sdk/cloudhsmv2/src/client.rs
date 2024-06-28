@@ -175,9 +175,13 @@ mod delete_cluster;
 
 mod delete_hsm;
 
+mod delete_resource_policy;
+
 mod describe_backups;
 
 mod describe_clusters;
+
+mod get_resource_policy;
 
 mod initialize_cluster;
 
@@ -186,6 +190,8 @@ mod list_tags;
 mod modify_backup_attributes;
 
 mod modify_cluster;
+
+mod put_resource_policy;
 
 mod restore_backup;
 

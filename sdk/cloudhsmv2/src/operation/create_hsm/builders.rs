@@ -22,7 +22,8 @@ impl crate::operation::create_hsm::builders::CreateHsmInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateHsm`.
 ///
-/// <p>Creates a new hardware security module (HSM) in the specified AWS CloudHSM cluster.</p>
+/// <p>Creates a new hardware security module (HSM) in the specified CloudHSM cluster.</p>
+/// <p><b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM cluster in a different Amazon Web Service account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateHsmFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

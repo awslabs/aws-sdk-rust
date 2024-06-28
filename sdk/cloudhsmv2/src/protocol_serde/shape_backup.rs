@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "BackupArn" => {
+                            builder = builder.set_backup_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "BackupState" => {
                             builder = builder.set_backup_state(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkspacesPoolSessionsOutput {
-    /// <p>Describes the WorkSpaces pool sessions.</p>
+    /// <p>Describes the pool sessions.</p>
     pub sessions: ::std::option::Option<::std::vec::Vec<crate::types::WorkspacesPoolSession>>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeWorkspacesPoolSessionsOutput {
-    /// <p>Describes the WorkSpaces pool sessions.</p>
+    /// <p>Describes the pool sessions.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sessions.is_none()`.
     pub fn sessions(&self) -> &[crate::types::WorkspacesPoolSession] {
@@ -46,19 +46,19 @@ impl DescribeWorkspacesPoolSessionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_sessions`](Self::set_sessions).
     ///
-    /// <p>Describes the WorkSpaces pool sessions.</p>
+    /// <p>Describes the pool sessions.</p>
     pub fn sessions(mut self, input: crate::types::WorkspacesPoolSession) -> Self {
         let mut v = self.sessions.unwrap_or_default();
         v.push(input);
         self.sessions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Describes the WorkSpaces pool sessions.</p>
+    /// <p>Describes the pool sessions.</p>
     pub fn set_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspacesPoolSession>>) -> Self {
         self.sessions = input;
         self
     }
-    /// <p>Describes the WorkSpaces pool sessions.</p>
+    /// <p>Describes the pool sessions.</p>
     pub fn get_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspacesPoolSession>> {
         &self.sessions
     }

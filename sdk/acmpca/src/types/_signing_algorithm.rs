@@ -18,6 +18,7 @@
 ///     SigningAlgorithm::Sha384Withrsa => { /* ... */ },
 ///     SigningAlgorithm::Sha512Withecdsa => { /* ... */ },
 ///     SigningAlgorithm::Sha512Withrsa => { /* ... */ },
+///     SigningAlgorithm::Sm3Withsm2 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -57,6 +58,8 @@ pub enum SigningAlgorithm {
     Sha512Withecdsa,
     #[allow(missing_docs)] // documentation missing in model
     Sha512Withrsa,
+    #[allow(missing_docs)] // documentation missing in model
+    Sm3Withsm2,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -70,6 +73,7 @@ impl ::std::convert::From<&str> for SigningAlgorithm {
             "SHA384WITHRSA" => SigningAlgorithm::Sha384Withrsa,
             "SHA512WITHECDSA" => SigningAlgorithm::Sha512Withecdsa,
             "SHA512WITHRSA" => SigningAlgorithm::Sha512Withrsa,
+            "SM3WITHSM2" => SigningAlgorithm::Sm3Withsm2,
             other => SigningAlgorithm::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -91,6 +95,7 @@ impl SigningAlgorithm {
             SigningAlgorithm::Sha384Withrsa => "SHA384WITHRSA",
             SigningAlgorithm::Sha512Withecdsa => "SHA512WITHECDSA",
             SigningAlgorithm::Sha512Withrsa => "SHA512WITHRSA",
+            SigningAlgorithm::Sm3Withsm2 => "SM3WITHSM2",
             SigningAlgorithm::Unknown(value) => value.as_str(),
         }
     }
@@ -103,6 +108,7 @@ impl SigningAlgorithm {
             "SHA384WITHRSA",
             "SHA512WITHECDSA",
             "SHA512WITHRSA",
+            "SM3WITHSM2",
         ]
     }
 }
@@ -132,6 +138,7 @@ impl ::std::fmt::Display for SigningAlgorithm {
             SigningAlgorithm::Sha384Withrsa => write!(f, "SHA384WITHRSA"),
             SigningAlgorithm::Sha512Withecdsa => write!(f, "SHA512WITHECDSA"),
             SigningAlgorithm::Sha512Withrsa => write!(f, "SHA512WITHRSA"),
+            SigningAlgorithm::Sm3Withsm2 => write!(f, "SM3WITHSM2"),
             SigningAlgorithm::Unknown(value) => write!(f, "{}", value),
         }
     }

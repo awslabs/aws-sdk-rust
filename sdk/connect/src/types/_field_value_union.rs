@@ -6,7 +6,7 @@
 pub struct FieldValueUnion {
     /// <p>A Boolean number value type.</p>
     pub boolean_value: bool,
-    /// <p>a Double number value type.</p>
+    /// <p>A Double number value type.</p>
     pub double_value: ::std::option::Option<f64>,
     /// <p>An empty value.</p>
     pub empty_value: ::std::option::Option<crate::types::EmptyFieldValue>,
@@ -18,7 +18,7 @@ impl FieldValueUnion {
     pub fn boolean_value(&self) -> bool {
         self.boolean_value
     }
-    /// <p>a Double number value type.</p>
+    /// <p>A Double number value type.</p>
     pub fn double_value(&self) -> ::std::option::Option<f64> {
         self.double_value
     }
@@ -62,17 +62,17 @@ impl FieldValueUnionBuilder {
     pub fn get_boolean_value(&self) -> &::std::option::Option<bool> {
         &self.boolean_value
     }
-    /// <p>a Double number value type.</p>
+    /// <p>A Double number value type.</p>
     pub fn double_value(mut self, input: f64) -> Self {
         self.double_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>a Double number value type.</p>
+    /// <p>A Double number value type.</p>
     pub fn set_double_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.double_value = input;
         self
     }
-    /// <p>a Double number value type.</p>
+    /// <p>A Double number value type.</p>
     pub fn get_double_value(&self) -> &::std::option::Option<f64> {
         &self.double_value
     }

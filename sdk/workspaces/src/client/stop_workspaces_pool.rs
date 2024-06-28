@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopWorkspacesPool`](crate::operation::stop_workspaces_pool::builders::StopWorkspacesPoolFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pool_id(impl Into<String>)`](crate::operation::stop_workspaces_pool::builders::StopWorkspacesPoolFluentBuilder::pool_id) / [`set_pool_id(Option<String>)`](crate::operation::stop_workspaces_pool::builders::StopWorkspacesPoolFluentBuilder::set_pool_id):<br>required: **true**<br><p>The identifier of the WorkSpaces pool.</p><br>
+    ///   - [`pool_id(impl Into<String>)`](crate::operation::stop_workspaces_pool::builders::StopWorkspacesPoolFluentBuilder::pool_id) / [`set_pool_id(Option<String>)`](crate::operation::stop_workspaces_pool::builders::StopWorkspacesPoolFluentBuilder::set_pool_id):<br>required: **true**<br><p>The identifier of the pool.</p><br>
     /// - On success, responds with [`StopWorkspacesPoolOutput`](crate::operation::stop_workspaces_pool::StopWorkspacesPoolOutput)
     /// - On failure, responds with [`SdkError<StopWorkspacesPoolError>`](crate::operation::stop_workspaces_pool::StopWorkspacesPoolError)
     pub fn stop_workspaces_pool(&self) -> crate::operation::stop_workspaces_pool::builders::StopWorkspacesPoolFluentBuilder {

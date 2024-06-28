@@ -22,7 +22,8 @@ impl crate::operation::modify_backup_attributes::builders::ModifyBackupAttribute
 }
 /// Fluent builder constructing a request to `ModifyBackupAttributes`.
 ///
-/// <p>Modifies attributes for AWS CloudHSM backup.</p>
+/// <p>Modifies attributes for CloudHSM backup.</p>
+/// <p><b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM backup in a different Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyBackupAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

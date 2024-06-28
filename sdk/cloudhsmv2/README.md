@@ -1,6 +1,6 @@
 # aws-sdk-cloudhsmv2
 
-For more information about AWS CloudHSM, see [AWS CloudHSM](http://aws.amazon.com/cloudhsm/) and the [AWS CloudHSM User Guide](https://docs.aws.amazon.com/cloudhsm/latest/userguide/).
+For more information about CloudHSM, see [CloudHSM](http://aws.amazon.com/cloudhsm/) and the [CloudHSM User Guide](https://docs.aws.amazon.com/cloudhsm/latest/userguide/).
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-cloudhsmv2 = "1.33.0"
+aws-sdk-cloudhsmv2 = "1.34.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

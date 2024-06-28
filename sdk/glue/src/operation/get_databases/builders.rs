@@ -194,4 +194,23 @@ impl GetDatabasesFluentBuilder {
     pub fn get_resource_share_type(&self) -> &::std::option::Option<crate::types::ResourceShareType> {
         self.inner.get_resource_share_type()
     }
+    ///
+    /// Appends an item to `AttributesToGet`.
+    ///
+    /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
+    ///
+    /// <p>Specifies the database fields returned by the <code>GetDatabases</code> call. This parameter doesn’t accept an empty list. The request must include the <code>NAME</code>.</p>
+    pub fn attributes_to_get(mut self, input: crate::types::DatabaseAttributes) -> Self {
+        self.inner = self.inner.attributes_to_get(input);
+        self
+    }
+    /// <p>Specifies the database fields returned by the <code>GetDatabases</code> call. This parameter doesn’t accept an empty list. The request must include the <code>NAME</code>.</p>
+    pub fn set_attributes_to_get(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseAttributes>>) -> Self {
+        self.inner = self.inner.set_attributes_to_get(input);
+        self
+    }
+    /// <p>Specifies the database fields returned by the <code>GetDatabases</code> call. This parameter doesn’t accept an empty list. The request must include the <code>NAME</code>.</p>
+    pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseAttributes>> {
+        self.inner.get_attributes_to_get()
+    }
 }

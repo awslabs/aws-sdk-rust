@@ -731,6 +731,10 @@ pub use crate::types::_expression::Expression;
 
 pub use crate::types::_attribute_condition::AttributeCondition;
 
+pub use crate::types::_match_criteria::MatchCriteria;
+
+pub use crate::types::_agents_criteria::AgentsCriteria;
+
 pub use crate::types::_expiry::Expiry;
 
 pub use crate::types::_wisdom_info::WisdomInfo;
@@ -794,6 +798,8 @@ mod _agent_status_state;
 mod _agent_status_summary;
 
 mod _agent_status_type;
+
+mod _agents_criteria;
 
 mod _allowed_capabilities;
 
@@ -1138,6 +1144,8 @@ mod _lex_version;
 mod _list_flow_association_resource_type;
 
 mod _list_phone_numbers_summary;
+
+mod _match_criteria;
 
 mod _media_concurrency;
 

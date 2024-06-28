@@ -19,11 +19,17 @@ pub mod delete_cluster;
 /// Types for the `DeleteHsm` operation.
 pub mod delete_hsm;
 
+/// Types for the `DeleteResourcePolicy` operation.
+pub mod delete_resource_policy;
+
 /// Types for the `DescribeBackups` operation.
 pub mod describe_backups;
 
 /// Types for the `DescribeClusters` operation.
 pub mod describe_clusters;
+
+/// Types for the `GetResourcePolicy` operation.
+pub mod get_resource_policy;
 
 /// Types for the `InitializeCluster` operation.
 pub mod initialize_cluster;
@@ -36,6 +42,9 @@ pub mod modify_backup_attributes;
 
 /// Types for the `ModifyCluster` operation.
 pub mod modify_cluster;
+
+/// Types for the `PutResourcePolicy` operation.
+pub mod put_resource_policy;
 
 /// Types for the `RestoreBackup` operation.
 pub mod restore_backup;

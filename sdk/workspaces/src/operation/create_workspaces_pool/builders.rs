@@ -108,73 +108,73 @@ impl CreateWorkspacesPoolFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the WorkSpaces pool.</p>
+    /// <p>The name of the pool.</p>
     pub fn pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_name(input.into());
         self
     }
-    /// <p>The name of the WorkSpaces pool.</p>
+    /// <p>The name of the pool.</p>
     pub fn set_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pool_name(input);
         self
     }
-    /// <p>The name of the WorkSpaces pool.</p>
+    /// <p>The name of the pool.</p>
     pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pool_name()
     }
-    /// <p>The WorkSpaces pool description.</p>
+    /// <p>The pool description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The WorkSpaces pool description.</p>
+    /// <p>The pool description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The WorkSpaces pool description.</p>
+    /// <p>The pool description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The identifier of the bundle for the WorkSpaces pool.</p>
+    /// <p>The identifier of the bundle for the pool.</p>
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bundle_id(input.into());
         self
     }
-    /// <p>The identifier of the bundle for the WorkSpaces pool.</p>
+    /// <p>The identifier of the bundle for the pool.</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bundle_id(input);
         self
     }
-    /// <p>The identifier of the bundle for the WorkSpaces pool.</p>
+    /// <p>The identifier of the bundle for the pool.</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bundle_id()
     }
-    /// <p>The identifier of the directory for the WorkSpaces pool.</p>
+    /// <p>The identifier of the directory for the pool.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_id(input.into());
         self
     }
-    /// <p>The identifier of the directory for the WorkSpaces pool.</p>
+    /// <p>The identifier of the directory for the pool.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_id(input);
         self
     }
-    /// <p>The identifier of the directory for the WorkSpaces pool.</p>
+    /// <p>The identifier of the directory for the pool.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_directory_id()
     }
-    /// <p>The user capacity of the WorkSpaces pool.</p>
+    /// <p>The user capacity of the pool.</p>
     pub fn capacity(mut self, input: crate::types::Capacity) -> Self {
         self.inner = self.inner.capacity(input);
         self
     }
-    /// <p>The user capacity of the WorkSpaces pool.</p>
+    /// <p>The user capacity of the pool.</p>
     pub fn set_capacity(mut self, input: ::std::option::Option<crate::types::Capacity>) -> Self {
         self.inner = self.inner.set_capacity(input);
         self
     }
-    /// <p>The user capacity of the WorkSpaces pool.</p>
+    /// <p>The user capacity of the pool.</p>
     pub fn get_capacity(&self) -> &::std::option::Option<crate::types::Capacity> {
         self.inner.get_capacity()
     }
@@ -183,45 +183,45 @@ impl CreateWorkspacesPoolFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags for the WorkSpaces pool.</p>
+    /// <p>The tags for the pool.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>The tags for the WorkSpaces pool.</p>
+    /// <p>The tags for the pool.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The tags for the WorkSpaces pool.</p>
+    /// <p>The tags for the pool.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>Indicates the application settings of the WorkSpaces pool.</p>
+    /// <p>Indicates the application settings of the pool.</p>
     pub fn application_settings(mut self, input: crate::types::ApplicationSettingsRequest) -> Self {
         self.inner = self.inner.application_settings(input);
         self
     }
-    /// <p>Indicates the application settings of the WorkSpaces pool.</p>
+    /// <p>Indicates the application settings of the pool.</p>
     pub fn set_application_settings(mut self, input: ::std::option::Option<crate::types::ApplicationSettingsRequest>) -> Self {
         self.inner = self.inner.set_application_settings(input);
         self
     }
-    /// <p>Indicates the application settings of the WorkSpaces pool.</p>
+    /// <p>Indicates the application settings of the pool.</p>
     pub fn get_application_settings(&self) -> &::std::option::Option<crate::types::ApplicationSettingsRequest> {
         self.inner.get_application_settings()
     }
-    /// <p>Indicates the timeout settings of the WorkSpaces pool.</p>
+    /// <p>Indicates the timeout settings of the pool.</p>
     pub fn timeout_settings(mut self, input: crate::types::TimeoutSettings) -> Self {
         self.inner = self.inner.timeout_settings(input);
         self
     }
-    /// <p>Indicates the timeout settings of the WorkSpaces pool.</p>
+    /// <p>Indicates the timeout settings of the pool.</p>
     pub fn set_timeout_settings(mut self, input: ::std::option::Option<crate::types::TimeoutSettings>) -> Self {
         self.inner = self.inner.set_timeout_settings(input);
         self
     }
-    /// <p>Indicates the timeout settings of the WorkSpaces pool.</p>
+    /// <p>Indicates the timeout settings of the pool.</p>
     pub fn get_timeout_settings(&self) -> &::std::option::Option<crate::types::TimeoutSettings> {
         self.inner.get_timeout_settings()
     }

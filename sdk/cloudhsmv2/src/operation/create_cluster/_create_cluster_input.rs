@@ -7,7 +7,7 @@ pub struct CreateClusterInput {
     pub backup_retention_policy: ::std::option::Option<crate::types::BackupRetentionPolicy>,
     /// <p>The type of HSM to use in the cluster. The allowed values are <code>hsm1.medium</code> and <code>hsm2m.medium</code>.</p>
     pub hsm_type: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
+    /// <p>The identifier (ID) or the Amazon Resource Name (ARN) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID or ARN, use <code>DescribeBackups</code>. <i>If using a backup in another account, the full ARN must be supplied.</i></p>
     pub source_backup_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
     /// <ul>
@@ -31,7 +31,7 @@ impl CreateClusterInput {
     pub fn hsm_type(&self) -> ::std::option::Option<&str> {
         self.hsm_type.as_deref()
     }
-    /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
+    /// <p>The identifier (ID) or the Amazon Resource Name (ARN) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID or ARN, use <code>DescribeBackups</code>. <i>If using a backup in another account, the full ARN must be supplied.</i></p>
     pub fn source_backup_id(&self) -> ::std::option::Option<&str> {
         self.source_backup_id.as_deref()
     }
@@ -106,17 +106,17 @@ impl CreateClusterInputBuilder {
     pub fn get_hsm_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.hsm_type
     }
-    /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
+    /// <p>The identifier (ID) or the Amazon Resource Name (ARN) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID or ARN, use <code>DescribeBackups</code>. <i>If using a backup in another account, the full ARN must be supplied.</i></p>
     pub fn source_backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_backup_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
+    /// <p>The identifier (ID) or the Amazon Resource Name (ARN) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID or ARN, use <code>DescribeBackups</code>. <i>If using a backup in another account, the full ARN must be supplied.</i></p>
     pub fn set_source_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_backup_id = input;
         self
     }
-    /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
+    /// <p>The identifier (ID) or the Amazon Resource Name (ARN) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID or ARN, use <code>DescribeBackups</code>. <i>If using a backup in another account, the full ARN must be supplied.</i></p>
     pub fn get_source_backup_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_backup_id
     }

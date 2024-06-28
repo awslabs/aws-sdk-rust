@@ -22,7 +22,8 @@ impl crate::operation::tag_resource::builders::TagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// <p>Adds or overwrites one or more tags for the specified AWS CloudHSM cluster.</p>
+/// <p>Adds or overwrites one or more tags for the specified CloudHSM cluster.</p>
+/// <p><b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM resource in a different Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

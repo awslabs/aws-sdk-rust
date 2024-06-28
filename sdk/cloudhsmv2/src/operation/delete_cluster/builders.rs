@@ -22,7 +22,8 @@ impl crate::operation::delete_cluster::builders::DeleteClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCluster`.
 ///
-/// <p>Deletes the specified AWS CloudHSM cluster. Before you can delete a cluster, you must delete all HSMs in the cluster. To see if the cluster contains any HSMs, use <code>DescribeClusters</code>. To delete an HSM, use <code>DeleteHsm</code>.</p>
+/// <p>Deletes the specified CloudHSM cluster. Before you can delete a cluster, you must delete all HSMs in the cluster. To see if the cluster contains any HSMs, use <code>DescribeClusters</code>. To delete an HSM, use <code>DeleteHsm</code>.</p>
+/// <p><b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM cluster in a different Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

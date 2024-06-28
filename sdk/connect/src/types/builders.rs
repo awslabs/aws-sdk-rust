@@ -521,6 +521,10 @@ pub use crate::types::_expression::ExpressionBuilder;
 
 pub use crate::types::_attribute_condition::AttributeConditionBuilder;
 
+pub use crate::types::_match_criteria::MatchCriteriaBuilder;
+
+pub use crate::types::_agents_criteria::AgentsCriteriaBuilder;
+
 pub use crate::types::_expiry::ExpiryBuilder;
 
 pub use crate::types::_wisdom_info::WisdomInfoBuilder;

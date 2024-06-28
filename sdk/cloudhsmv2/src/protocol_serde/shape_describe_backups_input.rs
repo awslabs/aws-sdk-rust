@@ -28,8 +28,11 @@ pub fn ser_describe_backups_input_input(
         }
         object_4.finish();
     }
-    if let Some(var_9) = &input.sort_ascending {
-        object.key("SortAscending").boolean(*var_9);
+    if let Some(var_9) = &input.shared {
+        object.key("Shared").boolean(*var_9);
+    }
+    if let Some(var_10) = &input.sort_ascending {
+        object.key("SortAscending").boolean(*var_10);
     }
     Ok(())
 }
