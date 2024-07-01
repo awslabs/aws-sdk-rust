@@ -67,6 +67,12 @@ pub use crate::types::_session_key_mastercard::SessionKeyMastercard;
 
 pub use crate::types::_session_key_emv_common::SessionKeyEmvCommon;
 
+pub use crate::types::_wrapped_key::WrappedKey;
+
+pub use crate::types::_key_check_value_algorithm::KeyCheckValueAlgorithm;
+
+pub use crate::types::_wrapped_key_material::WrappedKeyMaterial;
+
 pub use crate::types::_dukpt_derivation_attributes::DukptDerivationAttributes;
 
 pub use crate::types::_translation_iso_formats::TranslationIsoFormats;
@@ -175,6 +181,8 @@ mod _ibm3624_pin_verification;
 
 mod _ibm3624_random_pin;
 
+mod _key_check_value_algorithm;
+
 mod _mac_algorithm;
 
 mod _mac_algorithm_dukpt;
@@ -230,6 +238,10 @@ mod _visa_pin;
 mod _visa_pin_verification;
 
 mod _visa_pin_verification_value;
+
+mod _wrapped_key;
+
+mod _wrapped_key_material;
 
 /// Builders
 pub mod builders;

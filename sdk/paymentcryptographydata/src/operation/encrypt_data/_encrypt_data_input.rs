@@ -4,6 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EncryptDataInput {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.</p>
     pub key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The plaintext to be encrypted.</p><note>
     /// <p>For encryption using asymmetric keys, plaintext data length is constrained by encryption key strength that you define in <code>KeyAlgorithm</code> and padding type that you define in <code>AsymmetricEncryptionAttributes</code>. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
@@ -11,9 +12,12 @@ pub struct EncryptDataInput {
     pub plain_text: ::std::option::Option<::std::string::String>,
     /// <p>The encryption key type and attributes for plaintext encryption.</p>
     pub encryption_attributes: ::std::option::Option<crate::types::EncryptionDecryptionAttributes>,
+    /// <p>The WrappedKeyBlock containing the encryption key for plaintext encryption.</p>
+    pub wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
 }
 impl EncryptDataInput {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.</p>
     pub fn key_identifier(&self) -> ::std::option::Option<&str> {
         self.key_identifier.as_deref()
     }
@@ -27,6 +31,10 @@ impl EncryptDataInput {
     pub fn encryption_attributes(&self) -> ::std::option::Option<&crate::types::EncryptionDecryptionAttributes> {
         self.encryption_attributes.as_ref()
     }
+    /// <p>The WrappedKeyBlock containing the encryption key for plaintext encryption.</p>
+    pub fn wrapped_key(&self) -> ::std::option::Option<&crate::types::WrappedKey> {
+        self.wrapped_key.as_ref()
+    }
 }
 impl ::std::fmt::Debug for EncryptDataInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -34,6 +42,7 @@ impl ::std::fmt::Debug for EncryptDataInput {
         formatter.field("key_identifier", &self.key_identifier);
         formatter.field("plain_text", &"*** Sensitive Data Redacted ***");
         formatter.field("encryption_attributes", &self.encryption_attributes);
+        formatter.field("wrapped_key", &self.wrapped_key);
         formatter.finish()
     }
 }
@@ -51,20 +60,24 @@ pub struct EncryptDataInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) plain_text: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_attributes: ::std::option::Option<crate::types::EncryptionDecryptionAttributes>,
+    pub(crate) wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
 }
 impl EncryptDataInputBuilder {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.</p>
     /// This field is required.
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.</p>
     pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_identifier = input;
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.</p>
     pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_identifier
     }
@@ -104,12 +117,27 @@ impl EncryptDataInputBuilder {
     pub fn get_encryption_attributes(&self) -> &::std::option::Option<crate::types::EncryptionDecryptionAttributes> {
         &self.encryption_attributes
     }
+    /// <p>The WrappedKeyBlock containing the encryption key for plaintext encryption.</p>
+    pub fn wrapped_key(mut self, input: crate::types::WrappedKey) -> Self {
+        self.wrapped_key = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key for plaintext encryption.</p>
+    pub fn set_wrapped_key(mut self, input: ::std::option::Option<crate::types::WrappedKey>) -> Self {
+        self.wrapped_key = input;
+        self
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key for plaintext encryption.</p>
+    pub fn get_wrapped_key(&self) -> &::std::option::Option<crate::types::WrappedKey> {
+        &self.wrapped_key
+    }
     /// Consumes the builder and constructs a [`EncryptDataInput`](crate::operation::encrypt_data::EncryptDataInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::encrypt_data::EncryptDataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::encrypt_data::EncryptDataInput {
             key_identifier: self.key_identifier,
             plain_text: self.plain_text,
             encryption_attributes: self.encryption_attributes,
+            wrapped_key: self.wrapped_key,
         })
     }
 }
@@ -119,6 +147,7 @@ impl ::std::fmt::Debug for EncryptDataInputBuilder {
         formatter.field("key_identifier", &self.key_identifier);
         formatter.field("plain_text", &"*** Sensitive Data Redacted ***");
         formatter.field("encryption_attributes", &self.encryption_attributes);
+        formatter.field("wrapped_key", &self.wrapped_key);
         formatter.finish()
     }
 }

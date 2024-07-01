@@ -573,6 +573,8 @@ pub use crate::types::_lex_v2_bot::LexV2Bot;
 
 pub use crate::types::_lex_version::LexVersion;
 
+pub use crate::types::_authentication_profile_summary::AuthenticationProfileSummary;
+
 pub use crate::types::_analytics_data_association_result::AnalyticsDataAssociationResult;
 
 pub use crate::types::_agent_status_summary::AgentStatusSummary;
@@ -747,6 +749,8 @@ pub use crate::types::_agent_hierarchy_group::AgentHierarchyGroup;
 
 pub use crate::types::_queue_info::QueueInfo;
 
+pub use crate::types::_authentication_profile::AuthenticationProfile;
+
 pub use crate::types::_agent_status::AgentStatus;
 
 pub use crate::types::_participant_token_credentials::ParticipantTokenCredentials;
@@ -834,6 +838,10 @@ mod _attribute_condition;
 mod _audio_features;
 
 mod _audio_quality_metrics_info;
+
+mod _authentication_profile;
+
+mod _authentication_profile_summary;
 
 mod _available_number_summary;
 

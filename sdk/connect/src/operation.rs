@@ -214,6 +214,9 @@ pub mod delete_vocabulary;
 /// Types for the `DescribeAgentStatus` operation.
 pub mod describe_agent_status;
 
+/// Types for the `DescribeAuthenticationProfile` operation.
+pub mod describe_authentication_profile;
+
 /// Types for the `DescribeContact` operation.
 pub mod describe_contact;
 
@@ -369,6 +372,9 @@ pub mod list_analytics_data_associations;
 
 /// Types for the `ListApprovedOrigins` operation.
 pub mod list_approved_origins;
+
+/// Types for the `ListAuthenticationProfiles` operation.
+pub mod list_authentication_profiles;
 
 /// Types for the `ListBots` operation.
 pub mod list_bots;
@@ -615,6 +621,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateAgentStatus` operation.
 pub mod update_agent_status;
+
+/// Types for the `UpdateAuthenticationProfile` operation.
+pub mod update_authentication_profile;
 
 /// Types for the `UpdateContact` operation.
 pub mod update_contact;

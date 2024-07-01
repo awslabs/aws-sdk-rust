@@ -165,6 +165,8 @@ pub(crate) mod shape_delete_vocabulary;
 
 pub(crate) mod shape_describe_agent_status;
 
+pub(crate) mod shape_describe_authentication_profile;
+
 pub(crate) mod shape_describe_contact;
 
 pub(crate) mod shape_describe_contact_evaluation;
@@ -268,6 +270,8 @@ pub(crate) mod shape_list_agent_statuses;
 pub(crate) mod shape_list_analytics_data_associations;
 
 pub(crate) mod shape_list_approved_origins;
+
+pub(crate) mod shape_list_authentication_profiles;
 
 pub(crate) mod shape_list_bots;
 
@@ -432,6 +436,8 @@ pub(crate) mod shape_untag_contact;
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_agent_status;
+
+pub(crate) mod shape_update_authentication_profile;
 
 pub(crate) mod shape_update_contact;
 
@@ -775,6 +781,8 @@ pub(crate) mod shape_transfer_contact_input;
 
 pub(crate) mod shape_update_agent_status_input;
 
+pub(crate) mod shape_update_authentication_profile_input;
+
 pub(crate) mod shape_update_contact_attributes_input;
 
 pub(crate) mod shape_update_contact_evaluation_input;
@@ -892,6 +900,10 @@ pub(crate) mod shape_attribute;
 pub(crate) mod shape_attributes;
 
 pub(crate) mod shape_attributes_list;
+
+pub(crate) mod shape_authentication_profile;
+
+pub(crate) mod shape_authentication_profile_summary_list;
 
 pub(crate) mod shape_available_numbers_list;
 
@@ -1241,6 +1253,8 @@ pub(crate) mod shape_attached_file_error;
 
 pub(crate) mod shape_attendee;
 
+pub(crate) mod shape_authentication_profile_summary;
+
 pub(crate) mod shape_available_number_summary;
 
 pub(crate) mod shape_campaign;
@@ -1344,6 +1358,8 @@ pub(crate) mod shape_integration_association_summary;
 pub(crate) mod shape_invisible_field_info;
 
 pub(crate) mod shape_invisible_task_template_fields;
+
+pub(crate) mod shape_ip_cidr_list;
 
 pub(crate) mod shape_kinesis_firehose_config;
 

@@ -305,6 +305,8 @@ mod delete_vocabulary;
 
 mod describe_agent_status;
 
+mod describe_authentication_profile;
+
 mod describe_contact;
 
 mod describe_contact_evaluation;
@@ -408,6 +410,8 @@ mod list_agent_statuses;
 mod list_analytics_data_associations;
 
 mod list_approved_origins;
+
+mod list_authentication_profiles;
 
 mod list_bots;
 
@@ -572,6 +576,8 @@ mod untag_contact;
 mod untag_resource;
 
 mod update_agent_status;
+
+mod update_authentication_profile;
 
 mod update_contact;
 

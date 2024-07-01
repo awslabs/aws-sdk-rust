@@ -115,6 +115,8 @@ pub(crate) mod shape_translation_iso_formats;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_wrapped_key;
+
 pub(crate) mod shape_amex_card_security_code_version1;
 
 pub(crate) mod shape_amex_card_security_code_version2;
@@ -178,5 +180,7 @@ pub(crate) mod shape_visa_pin;
 pub(crate) mod shape_visa_pin_verification;
 
 pub(crate) mod shape_visa_pin_verification_value;
+
+pub(crate) mod shape_wrapped_key_material;
 
 pub(crate) mod shape_session_key_derivation_value;

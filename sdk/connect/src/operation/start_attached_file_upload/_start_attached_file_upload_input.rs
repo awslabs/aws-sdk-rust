@@ -5,7 +5,7 @@
 pub struct StartAttachedFileUploadInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A case-sensitive name of the attached file being uploaded.</p>
     pub file_name: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl StartAttachedFileUploadInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -100,18 +100,18 @@ impl StartAttachedFileUploadInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }

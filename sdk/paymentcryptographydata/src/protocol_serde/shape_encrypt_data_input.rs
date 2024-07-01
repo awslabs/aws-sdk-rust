@@ -12,5 +12,11 @@ pub fn ser_encrypt_data_input_input(
     if let Some(var_3) = &input.plain_text {
         object.key("PlainText").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.wrapped_key {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("WrappedKey").start_object();
+        crate::protocol_serde::shape_wrapped_key::ser_wrapped_key(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

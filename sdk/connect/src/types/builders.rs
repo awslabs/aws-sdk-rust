@@ -389,6 +389,8 @@ pub use crate::types::_lex_bot_config::LexBotConfigBuilder;
 
 pub use crate::types::_lex_v2_bot::LexV2BotBuilder;
 
+pub use crate::types::_authentication_profile_summary::AuthenticationProfileSummaryBuilder;
+
 pub use crate::types::_analytics_data_association_result::AnalyticsDataAssociationResultBuilder;
 
 pub use crate::types::_agent_status_summary::AgentStatusSummaryBuilder;
@@ -536,6 +538,8 @@ pub use crate::types::_hierarchy_groups::HierarchyGroupsBuilder;
 pub use crate::types::_agent_hierarchy_group::AgentHierarchyGroupBuilder;
 
 pub use crate::types::_queue_info::QueueInfoBuilder;
+
+pub use crate::types::_authentication_profile::AuthenticationProfileBuilder;
 
 pub use crate::types::_agent_status::AgentStatusBuilder;
 

@@ -59,6 +59,16 @@ pub(crate) fn reflens_list_approved_origins_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_authentication_profiles_output_output_next_token(
+    input: &crate::operation::list_authentication_profiles::ListAuthenticationProfilesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_bots_output_output_next_token(
     input: &crate::operation::list_bots::ListBotsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -613,6 +623,16 @@ pub(crate) fn lens_list_approved_origins_output_output_origins(
     input: crate::operation::list_approved_origins::ListApprovedOriginsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = match input.origins {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_authentication_profiles_output_output_authentication_profile_summary_list(
+    input: crate::operation::list_authentication_profiles::ListAuthenticationProfilesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProfileSummary>> {
+    let input = match input.authentication_profile_summary_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

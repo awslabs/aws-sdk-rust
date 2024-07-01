@@ -2751,6 +2751,49 @@ impl From<crate::operation::describe_agent_status::DescribeAgentStatusError> for
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_authentication_profile::DescribeAuthenticationProfileError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_authentication_profile::DescribeAuthenticationProfileError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_authentication_profile::DescribeAuthenticationProfileError> for Error {
+    fn from(err: crate::operation::describe_authentication_profile::DescribeAuthenticationProfileError) -> Self {
+        match err {
+            crate::operation::describe_authentication_profile::DescribeAuthenticationProfileError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::describe_authentication_profile::DescribeAuthenticationProfileError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_authentication_profile::DescribeAuthenticationProfileError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_authentication_profile::DescribeAuthenticationProfileError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_authentication_profile::DescribeAuthenticationProfileError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_authentication_profile::DescribeAuthenticationProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_contact::DescribeContactError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4561,6 +4604,45 @@ impl From<crate::operation::list_approved_origins::ListApprovedOriginsError> for
             }
             crate::operation::list_approved_origins::ListApprovedOriginsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_approved_origins::ListApprovedOriginsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_authentication_profiles::ListAuthenticationProfilesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_authentication_profiles::ListAuthenticationProfilesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_authentication_profiles::ListAuthenticationProfilesError> for Error {
+    fn from(err: crate::operation::list_authentication_profiles::ListAuthenticationProfilesError) -> Self {
+        match err {
+            crate::operation::list_authentication_profiles::ListAuthenticationProfilesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_authentication_profiles::ListAuthenticationProfilesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_authentication_profiles::ListAuthenticationProfilesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_authentication_profiles::ListAuthenticationProfilesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_authentication_profiles::ListAuthenticationProfilesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_authentication_profiles::ListAuthenticationProfilesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -7268,6 +7350,45 @@ impl From<crate::operation::update_agent_status::UpdateAgentStatusError> for Err
             }
             crate::operation::update_agent_status::UpdateAgentStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_agent_status::UpdateAgentStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_authentication_profile::UpdateAuthenticationProfileError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_authentication_profile::UpdateAuthenticationProfileError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_authentication_profile::UpdateAuthenticationProfileError> for Error {
+    fn from(err: crate::operation::update_authentication_profile::UpdateAuthenticationProfileError) -> Self {
+        match err {
+            crate::operation::update_authentication_profile::UpdateAuthenticationProfileError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_authentication_profile::UpdateAuthenticationProfileError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_authentication_profile::UpdateAuthenticationProfileError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_authentication_profile::UpdateAuthenticationProfileError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_authentication_profile::UpdateAuthenticationProfileError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_authentication_profile::UpdateAuthenticationProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

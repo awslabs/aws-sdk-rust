@@ -21,20 +21,32 @@ pub fn ser_translate_pin_data_input_input(
         crate::protocol_serde::shape_translation_iso_formats::ser_translation_iso_formats(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.outgoing_dukpt_attributes {
+    if let Some(var_7) = &input.incoming_wrapped_key {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("OutgoingDukptAttributes").start_object();
-        crate::protocol_serde::shape_dukpt_derivation_attributes::ser_dukpt_derivation_attributes(&mut object_8, var_7)?;
+        let mut object_8 = object.key("IncomingWrappedKey").start_object();
+        crate::protocol_serde::shape_wrapped_key::ser_wrapped_key(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.outgoing_key_identifier {
-        object.key("OutgoingKeyIdentifier").string(var_9.as_str());
-    }
-    if let Some(var_10) = &input.outgoing_translation_attributes {
+    if let Some(var_9) = &input.outgoing_dukpt_attributes {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("OutgoingTranslationAttributes").start_object();
-        crate::protocol_serde::shape_translation_iso_formats::ser_translation_iso_formats(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("OutgoingDukptAttributes").start_object();
+        crate::protocol_serde::shape_dukpt_derivation_attributes::ser_dukpt_derivation_attributes(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.outgoing_key_identifier {
+        object.key("OutgoingKeyIdentifier").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.outgoing_translation_attributes {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("OutgoingTranslationAttributes").start_object();
+        crate::protocol_serde::shape_translation_iso_formats::ser_translation_iso_formats(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.outgoing_wrapped_key {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("OutgoingWrappedKey").start_object();
+        crate::protocol_serde::shape_wrapped_key::ser_wrapped_key(&mut object_15, var_14)?;
+        object_15.finish();
     }
     Ok(())
 }

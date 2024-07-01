@@ -23,7 +23,7 @@ impl crate::operation::start_attached_file_upload::builders::StartAttachedFileUp
 /// Fluent builder constructing a request to `StartAttachedFileUpload`.
 ///
 /// <p>Provides a pre-signed Amazon S3 URL in response for uploading your content.</p><important>
-/// <p>You may only use this API to upload attachments to a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect Case</a>.</p>
+/// <p>You may only use this API to upload attachments to an <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Amazon Connect Case</a>.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartAttachedFileUploadFluentBuilder {
@@ -124,17 +124,17 @@ impl StartAttachedFileUploadFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }

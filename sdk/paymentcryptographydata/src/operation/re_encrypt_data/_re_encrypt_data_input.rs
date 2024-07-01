@@ -4,6 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ReEncryptDataInput {
     /// <p>The <code>keyARN</code> of the encryption key of incoming ciphertext data.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.</p>
     pub incoming_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The <code>keyARN</code> of the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
     pub outgoing_key_identifier: ::std::option::Option<::std::string::String>,
@@ -13,9 +14,14 @@ pub struct ReEncryptDataInput {
     pub incoming_encryption_attributes: ::std::option::Option<crate::types::ReEncryptionAttributes>,
     /// <p>The attributes and values for outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
     pub outgoing_encryption_attributes: ::std::option::Option<crate::types::ReEncryptionAttributes>,
+    /// <p>The WrappedKeyBlock containing the encryption key of incoming ciphertext data.</p>
+    pub incoming_wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
+    /// <p>The WrappedKeyBlock containing the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
+    pub outgoing_wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
 }
 impl ReEncryptDataInput {
     /// <p>The <code>keyARN</code> of the encryption key of incoming ciphertext data.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.</p>
     pub fn incoming_key_identifier(&self) -> ::std::option::Option<&str> {
         self.incoming_key_identifier.as_deref()
     }
@@ -35,6 +41,14 @@ impl ReEncryptDataInput {
     pub fn outgoing_encryption_attributes(&self) -> ::std::option::Option<&crate::types::ReEncryptionAttributes> {
         self.outgoing_encryption_attributes.as_ref()
     }
+    /// <p>The WrappedKeyBlock containing the encryption key of incoming ciphertext data.</p>
+    pub fn incoming_wrapped_key(&self) -> ::std::option::Option<&crate::types::WrappedKey> {
+        self.incoming_wrapped_key.as_ref()
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
+    pub fn outgoing_wrapped_key(&self) -> ::std::option::Option<&crate::types::WrappedKey> {
+        self.outgoing_wrapped_key.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ReEncryptDataInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -44,6 +58,8 @@ impl ::std::fmt::Debug for ReEncryptDataInput {
         formatter.field("cipher_text", &"*** Sensitive Data Redacted ***");
         formatter.field("incoming_encryption_attributes", &self.incoming_encryption_attributes);
         formatter.field("outgoing_encryption_attributes", &self.outgoing_encryption_attributes);
+        formatter.field("incoming_wrapped_key", &self.incoming_wrapped_key);
+        formatter.field("outgoing_wrapped_key", &self.outgoing_wrapped_key);
         formatter.finish()
     }
 }
@@ -63,20 +79,25 @@ pub struct ReEncryptDataInputBuilder {
     pub(crate) cipher_text: ::std::option::Option<::std::string::String>,
     pub(crate) incoming_encryption_attributes: ::std::option::Option<crate::types::ReEncryptionAttributes>,
     pub(crate) outgoing_encryption_attributes: ::std::option::Option<crate::types::ReEncryptionAttributes>,
+    pub(crate) incoming_wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
+    pub(crate) outgoing_wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
 }
 impl ReEncryptDataInputBuilder {
     /// <p>The <code>keyARN</code> of the encryption key of incoming ciphertext data.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.</p>
     /// This field is required.
     pub fn incoming_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incoming_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key of incoming ciphertext data.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.</p>
     pub fn set_incoming_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.incoming_key_identifier = input;
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key of incoming ciphertext data.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.</p>
     pub fn get_incoming_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.incoming_key_identifier
     }
@@ -140,6 +161,34 @@ impl ReEncryptDataInputBuilder {
     pub fn get_outgoing_encryption_attributes(&self) -> &::std::option::Option<crate::types::ReEncryptionAttributes> {
         &self.outgoing_encryption_attributes
     }
+    /// <p>The WrappedKeyBlock containing the encryption key of incoming ciphertext data.</p>
+    pub fn incoming_wrapped_key(mut self, input: crate::types::WrappedKey) -> Self {
+        self.incoming_wrapped_key = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key of incoming ciphertext data.</p>
+    pub fn set_incoming_wrapped_key(mut self, input: ::std::option::Option<crate::types::WrappedKey>) -> Self {
+        self.incoming_wrapped_key = input;
+        self
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key of incoming ciphertext data.</p>
+    pub fn get_incoming_wrapped_key(&self) -> &::std::option::Option<crate::types::WrappedKey> {
+        &self.incoming_wrapped_key
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
+    pub fn outgoing_wrapped_key(mut self, input: crate::types::WrappedKey) -> Self {
+        self.outgoing_wrapped_key = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
+    pub fn set_outgoing_wrapped_key(mut self, input: ::std::option::Option<crate::types::WrappedKey>) -> Self {
+        self.outgoing_wrapped_key = input;
+        self
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
+    pub fn get_outgoing_wrapped_key(&self) -> &::std::option::Option<crate::types::WrappedKey> {
+        &self.outgoing_wrapped_key
+    }
     /// Consumes the builder and constructs a [`ReEncryptDataInput`](crate::operation::re_encrypt_data::ReEncryptDataInput).
     pub fn build(
         self,
@@ -150,6 +199,8 @@ impl ReEncryptDataInputBuilder {
             cipher_text: self.cipher_text,
             incoming_encryption_attributes: self.incoming_encryption_attributes,
             outgoing_encryption_attributes: self.outgoing_encryption_attributes,
+            incoming_wrapped_key: self.incoming_wrapped_key,
+            outgoing_wrapped_key: self.outgoing_wrapped_key,
         })
     }
 }
@@ -161,6 +212,8 @@ impl ::std::fmt::Debug for ReEncryptDataInputBuilder {
         formatter.field("cipher_text", &"*** Sensitive Data Redacted ***");
         formatter.field("incoming_encryption_attributes", &self.incoming_encryption_attributes);
         formatter.field("outgoing_encryption_attributes", &self.outgoing_encryption_attributes);
+        formatter.field("incoming_wrapped_key", &self.incoming_wrapped_key);
+        formatter.field("outgoing_wrapped_key", &self.outgoing_wrapped_key);
         formatter.finish()
     }
 }

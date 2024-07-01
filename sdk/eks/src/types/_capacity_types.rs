@@ -12,6 +12,7 @@
 /// ```text
 /// # let capacitytypes = unimplemented!();
 /// match capacitytypes {
+///     CapacityTypes::CapacityBlock => { /* ... */ },
 ///     CapacityTypes::OnDemand => { /* ... */ },
 ///     CapacityTypes::Spot => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum CapacityTypes {
     #[allow(missing_docs)] // documentation missing in model
+    CapacityBlock,
+    #[allow(missing_docs)] // documentation missing in model
     OnDemand,
     #[allow(missing_docs)] // documentation missing in model
     Spot,
@@ -52,6 +55,7 @@ pub enum CapacityTypes {
 impl ::std::convert::From<&str> for CapacityTypes {
     fn from(s: &str) -> Self {
         match s {
+            "CAPACITY_BLOCK" => CapacityTypes::CapacityBlock,
             "ON_DEMAND" => CapacityTypes::OnDemand,
             "SPOT" => CapacityTypes::Spot,
             other => CapacityTypes::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +73,7 @@ impl CapacityTypes {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            CapacityTypes::CapacityBlock => "CAPACITY_BLOCK",
             CapacityTypes::OnDemand => "ON_DEMAND",
             CapacityTypes::Spot => "SPOT",
             CapacityTypes::Unknown(value) => value.as_str(),
@@ -76,7 +81,7 @@ impl CapacityTypes {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ON_DEMAND", "SPOT"]
+        &["CAPACITY_BLOCK", "ON_DEMAND", "SPOT"]
     }
 }
 impl ::std::convert::AsRef<str> for CapacityTypes {
@@ -99,6 +104,7 @@ impl CapacityTypes {
 impl ::std::fmt::Display for CapacityTypes {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            CapacityTypes::CapacityBlock => write!(f, "CAPACITY_BLOCK"),
             CapacityTypes::OnDemand => write!(f, "ON_DEMAND"),
             CapacityTypes::Spot => write!(f, "SPOT"),
             CapacityTypes::Unknown(value) => write!(f, "{}", value),

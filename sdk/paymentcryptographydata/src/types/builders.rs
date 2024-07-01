@@ -41,6 +41,8 @@ pub use crate::types::_session_key_mastercard::SessionKeyMastercardBuilder;
 
 pub use crate::types::_session_key_emv_common::SessionKeyEmvCommonBuilder;
 
+pub use crate::types::_wrapped_key::WrappedKeyBuilder;
+
 pub use crate::types::_dukpt_derivation_attributes::DukptDerivationAttributesBuilder;
 
 pub use crate::types::_translation_pin_data_iso_format034::TranslationPinDataIsoFormat034Builder;

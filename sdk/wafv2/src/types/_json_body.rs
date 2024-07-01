@@ -4,6 +4,7 @@
 /// <p>This is used to indicate the web request component to inspect, in the <code>FieldToMatch</code> specification.</p>
 /// <p>Use the specifications in this object to indicate which parts of the JSON body to inspect using the rule's inspection criteria. WAF inspects only the parts of the JSON that result from the matches that you indicate.</p>
 /// <p>Example JSON: <code>"JsonBody": { "MatchPattern": { "All": {} }, "MatchScope": "ALL" }</code></p>
+/// <p>For additional information about this request component option, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-fields-list.html#waf-rule-statement-request-component-json-body">JSON body</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JsonBody {
@@ -21,17 +22,9 @@ pub struct JsonBody {
     /// <li>
     /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
-    /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters.</p>
-    /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.</p>
-    /// <p>WAF parses the JSON in the following examples as two valid key, value pairs:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code></p></li>
-    /// <li>
-    /// <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code></p></li>
-    /// <li>
-    /// <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
-    /// </ul>
+    /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters.</p><note>
+    /// <p>WAF parsing doesn't fully validate the input JSON string, so parsing can succeed even for invalid JSON. When parsing succeeds, WAF doesn't apply the fallback behavior. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-fields-list.html#waf-rule-statement-request-component-json-body">JSON body</a> in the <i>WAF Developer Guide</i>.</p>
+    /// </note>
     pub invalid_fallback_behavior: ::std::option::Option<crate::types::BodyParsingFallbackBehavior>,
     /// <p>What WAF should do if the body is larger than WAF can inspect.</p>
     /// <p>WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. When a web request body is larger than the limit, the underlying host service only forwards the contents that are within the limit to WAF for inspection.</p>
@@ -73,17 +66,9 @@ impl JsonBody {
     /// <li>
     /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
-    /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters.</p>
-    /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.</p>
-    /// <p>WAF parses the JSON in the following examples as two valid key, value pairs:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code></p></li>
-    /// <li>
-    /// <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code></p></li>
-    /// <li>
-    /// <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
-    /// </ul>
+    /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters.</p><note>
+    /// <p>WAF parsing doesn't fully validate the input JSON string, so parsing can succeed even for invalid JSON. When parsing succeeds, WAF doesn't apply the fallback behavior. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-fields-list.html#waf-rule-statement-request-component-json-body">JSON body</a> in the <i>WAF Developer Guide</i>.</p>
+    /// </note>
     pub fn invalid_fallback_behavior(&self) -> ::std::option::Option<&crate::types::BodyParsingFallbackBehavior> {
         self.invalid_fallback_behavior.as_ref()
     }
@@ -169,17 +154,9 @@ impl JsonBodyBuilder {
     /// <li>
     /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
-    /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters.</p>
-    /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.</p>
-    /// <p>WAF parses the JSON in the following examples as two valid key, value pairs:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code></p></li>
-    /// <li>
-    /// <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code></p></li>
-    /// <li>
-    /// <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
-    /// </ul>
+    /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters.</p><note>
+    /// <p>WAF parsing doesn't fully validate the input JSON string, so parsing can succeed even for invalid JSON. When parsing succeeds, WAF doesn't apply the fallback behavior. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-fields-list.html#waf-rule-statement-request-component-json-body">JSON body</a> in the <i>WAF Developer Guide</i>.</p>
+    /// </note>
     pub fn invalid_fallback_behavior(mut self, input: crate::types::BodyParsingFallbackBehavior) -> Self {
         self.invalid_fallback_behavior = ::std::option::Option::Some(input);
         self
@@ -193,17 +170,9 @@ impl JsonBodyBuilder {
     /// <li>
     /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
-    /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters.</p>
-    /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.</p>
-    /// <p>WAF parses the JSON in the following examples as two valid key, value pairs:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code></p></li>
-    /// <li>
-    /// <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code></p></li>
-    /// <li>
-    /// <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
-    /// </ul>
+    /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters.</p><note>
+    /// <p>WAF parsing doesn't fully validate the input JSON string, so parsing can succeed even for invalid JSON. When parsing succeeds, WAF doesn't apply the fallback behavior. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-fields-list.html#waf-rule-statement-request-component-json-body">JSON body</a> in the <i>WAF Developer Guide</i>.</p>
+    /// </note>
     pub fn set_invalid_fallback_behavior(mut self, input: ::std::option::Option<crate::types::BodyParsingFallbackBehavior>) -> Self {
         self.invalid_fallback_behavior = input;
         self
@@ -217,17 +186,9 @@ impl JsonBodyBuilder {
     /// <li>
     /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
-    /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters.</p>
-    /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.</p>
-    /// <p>WAF parses the JSON in the following examples as two valid key, value pairs:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code></p></li>
-    /// <li>
-    /// <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code></p></li>
-    /// <li>
-    /// <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
-    /// </ul>
+    /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters.</p><note>
+    /// <p>WAF parsing doesn't fully validate the input JSON string, so parsing can succeed even for invalid JSON. When parsing succeeds, WAF doesn't apply the fallback behavior. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-fields-list.html#waf-rule-statement-request-component-json-body">JSON body</a> in the <i>WAF Developer Guide</i>.</p>
+    /// </note>
     pub fn get_invalid_fallback_behavior(&self) -> &::std::option::Option<crate::types::BodyParsingFallbackBehavior> {
         &self.invalid_fallback_behavior
     }

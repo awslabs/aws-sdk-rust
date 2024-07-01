@@ -2,7 +2,7 @@
 
 /// <p>Parameter information for key material import using symmetric TR-31 key exchange method.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportTr31KeyBlock {
     /// <p>The <code>KeyARN</code> of the key that will decrypt or unwrap a TR-31 key block during import.</p>
     pub wrapping_key_identifier: ::std::string::String,
@@ -21,6 +21,14 @@ impl ImportTr31KeyBlock {
         self.wrapped_key_block.deref()
     }
 }
+impl ::std::fmt::Debug for ImportTr31KeyBlock {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportTr31KeyBlock");
+        formatter.field("wrapping_key_identifier", &self.wrapping_key_identifier);
+        formatter.field("wrapped_key_block", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ImportTr31KeyBlock {
     /// Creates a new builder-style object to manufacture [`ImportTr31KeyBlock`](crate::types::ImportTr31KeyBlock).
     pub fn builder() -> crate::types::builders::ImportTr31KeyBlockBuilder {
@@ -30,7 +38,7 @@ impl ImportTr31KeyBlock {
 
 /// A builder for [`ImportTr31KeyBlock`](crate::types::ImportTr31KeyBlock).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ImportTr31KeyBlockBuilder {
     pub(crate) wrapping_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) wrapped_key_block: ::std::option::Option<::std::string::String>,
@@ -85,5 +93,13 @@ impl ImportTr31KeyBlockBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for ImportTr31KeyBlockBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportTr31KeyBlockBuilder");
+        formatter.field("wrapping_key_identifier", &self.wrapping_key_identifier);
+        formatter.field("wrapped_key_block", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

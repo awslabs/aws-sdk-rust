@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompleteAttachedFileUploadInput {
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the attached file resource.</p>
     pub file_id: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct CompleteAttachedFileUploadInput {
     pub associated_resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl CompleteAttachedFileUploadInput {
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -45,18 +45,18 @@ pub struct CompleteAttachedFileUploadInputBuilder {
     pub(crate) associated_resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl CompleteAttachedFileUploadInputBuilder {
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }

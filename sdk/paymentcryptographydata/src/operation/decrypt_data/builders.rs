@@ -123,16 +123,19 @@ impl DecryptDataFluentBuilder {
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.</p>
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_identifier(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.</p>
     pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_identifier(input);
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.</p>
     pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_identifier()
     }
@@ -163,5 +166,19 @@ impl DecryptDataFluentBuilder {
     /// <p>The encryption key type and attributes for ciphertext decryption.</p>
     pub fn get_decryption_attributes(&self) -> &::std::option::Option<crate::types::EncryptionDecryptionAttributes> {
         self.inner.get_decryption_attributes()
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key for ciphertext decryption.</p>
+    pub fn wrapped_key(mut self, input: crate::types::WrappedKey) -> Self {
+        self.inner = self.inner.wrapped_key(input);
+        self
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key for ciphertext decryption.</p>
+    pub fn set_wrapped_key(mut self, input: ::std::option::Option<crate::types::WrappedKey>) -> Self {
+        self.inner = self.inner.set_wrapped_key(input);
+        self
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key for ciphertext decryption.</p>
+    pub fn get_wrapped_key(&self) -> &::std::option::Option<crate::types::WrappedKey> {
+        self.inner.get_wrapped_key()
     }
 }

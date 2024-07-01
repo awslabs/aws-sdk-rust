@@ -4,6 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TranslatePinDataInput {
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key for PIN block. Otherwise, it is the key identifier used to perform the operation.</p>
     pub incoming_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.</p>
     pub outgoing_key_identifier: ::std::option::Option<::std::string::String>,
@@ -17,9 +18,14 @@ pub struct TranslatePinDataInput {
     pub incoming_dukpt_attributes: ::std::option::Option<crate::types::DukptDerivationAttributes>,
     /// <p>The attributes and values to use for outgoing DUKPT encryption key after PIN block translation.</p>
     pub outgoing_dukpt_attributes: ::std::option::Option<crate::types::DukptDerivationAttributes>,
+    /// <p>The WrappedKeyBlock containing the encryption key under which incoming PIN block data is encrypted.</p>
+    pub incoming_wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
+    /// <p>The WrappedKeyBlock containing the encryption key for encrypting outgoing PIN block data.</p>
+    pub outgoing_wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
 }
 impl TranslatePinDataInput {
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key for PIN block. Otherwise, it is the key identifier used to perform the operation.</p>
     pub fn incoming_key_identifier(&self) -> ::std::option::Option<&str> {
         self.incoming_key_identifier.as_deref()
     }
@@ -47,6 +53,14 @@ impl TranslatePinDataInput {
     pub fn outgoing_dukpt_attributes(&self) -> ::std::option::Option<&crate::types::DukptDerivationAttributes> {
         self.outgoing_dukpt_attributes.as_ref()
     }
+    /// <p>The WrappedKeyBlock containing the encryption key under which incoming PIN block data is encrypted.</p>
+    pub fn incoming_wrapped_key(&self) -> ::std::option::Option<&crate::types::WrappedKey> {
+        self.incoming_wrapped_key.as_ref()
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key for encrypting outgoing PIN block data.</p>
+    pub fn outgoing_wrapped_key(&self) -> ::std::option::Option<&crate::types::WrappedKey> {
+        self.outgoing_wrapped_key.as_ref()
+    }
 }
 impl ::std::fmt::Debug for TranslatePinDataInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -58,6 +72,8 @@ impl ::std::fmt::Debug for TranslatePinDataInput {
         formatter.field("encrypted_pin_block", &"*** Sensitive Data Redacted ***");
         formatter.field("incoming_dukpt_attributes", &self.incoming_dukpt_attributes);
         formatter.field("outgoing_dukpt_attributes", &self.outgoing_dukpt_attributes);
+        formatter.field("incoming_wrapped_key", &self.incoming_wrapped_key);
+        formatter.field("outgoing_wrapped_key", &self.outgoing_wrapped_key);
         formatter.finish()
     }
 }
@@ -79,20 +95,25 @@ pub struct TranslatePinDataInputBuilder {
     pub(crate) encrypted_pin_block: ::std::option::Option<::std::string::String>,
     pub(crate) incoming_dukpt_attributes: ::std::option::Option<crate::types::DukptDerivationAttributes>,
     pub(crate) outgoing_dukpt_attributes: ::std::option::Option<crate::types::DukptDerivationAttributes>,
+    pub(crate) incoming_wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
+    pub(crate) outgoing_wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
 }
 impl TranslatePinDataInputBuilder {
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key for PIN block. Otherwise, it is the key identifier used to perform the operation.</p>
     /// This field is required.
     pub fn incoming_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incoming_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key for PIN block. Otherwise, it is the key identifier used to perform the operation.</p>
     pub fn set_incoming_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.incoming_key_identifier = input;
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key for PIN block. Otherwise, it is the key identifier used to perform the operation.</p>
     pub fn get_incoming_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.incoming_key_identifier
     }
@@ -184,6 +205,34 @@ impl TranslatePinDataInputBuilder {
     pub fn get_outgoing_dukpt_attributes(&self) -> &::std::option::Option<crate::types::DukptDerivationAttributes> {
         &self.outgoing_dukpt_attributes
     }
+    /// <p>The WrappedKeyBlock containing the encryption key under which incoming PIN block data is encrypted.</p>
+    pub fn incoming_wrapped_key(mut self, input: crate::types::WrappedKey) -> Self {
+        self.incoming_wrapped_key = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key under which incoming PIN block data is encrypted.</p>
+    pub fn set_incoming_wrapped_key(mut self, input: ::std::option::Option<crate::types::WrappedKey>) -> Self {
+        self.incoming_wrapped_key = input;
+        self
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key under which incoming PIN block data is encrypted.</p>
+    pub fn get_incoming_wrapped_key(&self) -> &::std::option::Option<crate::types::WrappedKey> {
+        &self.incoming_wrapped_key
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key for encrypting outgoing PIN block data.</p>
+    pub fn outgoing_wrapped_key(mut self, input: crate::types::WrappedKey) -> Self {
+        self.outgoing_wrapped_key = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key for encrypting outgoing PIN block data.</p>
+    pub fn set_outgoing_wrapped_key(mut self, input: ::std::option::Option<crate::types::WrappedKey>) -> Self {
+        self.outgoing_wrapped_key = input;
+        self
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key for encrypting outgoing PIN block data.</p>
+    pub fn get_outgoing_wrapped_key(&self) -> &::std::option::Option<crate::types::WrappedKey> {
+        &self.outgoing_wrapped_key
+    }
     /// Consumes the builder and constructs a [`TranslatePinDataInput`](crate::operation::translate_pin_data::TranslatePinDataInput).
     pub fn build(
         self,
@@ -196,6 +245,8 @@ impl TranslatePinDataInputBuilder {
             encrypted_pin_block: self.encrypted_pin_block,
             incoming_dukpt_attributes: self.incoming_dukpt_attributes,
             outgoing_dukpt_attributes: self.outgoing_dukpt_attributes,
+            incoming_wrapped_key: self.incoming_wrapped_key,
+            outgoing_wrapped_key: self.outgoing_wrapped_key,
         })
     }
 }
@@ -209,6 +260,8 @@ impl ::std::fmt::Debug for TranslatePinDataInputBuilder {
         formatter.field("encrypted_pin_block", &"*** Sensitive Data Redacted ***");
         formatter.field("incoming_dukpt_attributes", &self.incoming_dukpt_attributes);
         formatter.field("outgoing_dukpt_attributes", &self.outgoing_dukpt_attributes);
+        formatter.field("incoming_wrapped_key", &self.incoming_wrapped_key);
+        formatter.field("outgoing_wrapped_key", &self.outgoing_wrapped_key);
         formatter.finish()
     }
 }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchContactFlowsOutput {
-    /// <p>Information about the contact flows.</p>
+    /// <p>Information about the flows.</p>
     pub contact_flows: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlow>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct SearchContactFlowsOutput {
     _request_id: Option<String>,
 }
 impl SearchContactFlowsOutput {
-    /// <p>Information about the contact flows.</p>
+    /// <p>Information about the flows.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_flows.is_none()`.
     pub fn contact_flows(&self) -> &[crate::types::ContactFlow] {
@@ -53,19 +53,19 @@ impl SearchContactFlowsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_contact_flows`](Self::set_contact_flows).
     ///
-    /// <p>Information about the contact flows.</p>
+    /// <p>Information about the flows.</p>
     pub fn contact_flows(mut self, input: crate::types::ContactFlow) -> Self {
         let mut v = self.contact_flows.unwrap_or_default();
         v.push(input);
         self.contact_flows = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the contact flows.</p>
+    /// <p>Information about the flows.</p>
     pub fn set_contact_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlow>>) -> Self {
         self.contact_flows = input;
         self
     }
-    /// <p>Information about the contact flows.</p>
+    /// <p>Information about the flows.</p>
     pub fn get_contact_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactFlow>> {
         &self.contact_flows
     }

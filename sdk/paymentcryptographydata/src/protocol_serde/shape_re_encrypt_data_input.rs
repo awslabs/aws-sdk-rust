@@ -12,14 +12,26 @@ pub fn ser_re_encrypt_data_input_input(
         crate::protocol_serde::shape_re_encryption_attributes::ser_re_encryption_attributes(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.outgoing_encryption_attributes {
+    if let Some(var_4) = &input.incoming_wrapped_key {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("OutgoingEncryptionAttributes").start_object();
-        crate::protocol_serde::shape_re_encryption_attributes::ser_re_encryption_attributes(&mut object_5, var_4)?;
+        let mut object_5 = object.key("IncomingWrappedKey").start_object();
+        crate::protocol_serde::shape_wrapped_key::ser_wrapped_key(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.outgoing_key_identifier {
-        object.key("OutgoingKeyIdentifier").string(var_6.as_str());
+    if let Some(var_6) = &input.outgoing_encryption_attributes {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("OutgoingEncryptionAttributes").start_object();
+        crate::protocol_serde::shape_re_encryption_attributes::ser_re_encryption_attributes(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.outgoing_key_identifier {
+        object.key("OutgoingKeyIdentifier").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.outgoing_wrapped_key {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("OutgoingWrappedKey").start_object();
+        crate::protocol_serde::shape_wrapped_key::ser_wrapped_key(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

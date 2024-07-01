@@ -122,16 +122,19 @@ impl TranslatePinDataFluentBuilder {
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key for PIN block. Otherwise, it is the key identifier used to perform the operation.</p>
     pub fn incoming_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.incoming_key_identifier(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key for PIN block. Otherwise, it is the key identifier used to perform the operation.</p>
     pub fn set_incoming_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_incoming_key_identifier(input);
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
+    /// <p>When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key for PIN block. Otherwise, it is the key identifier used to perform the operation.</p>
     pub fn get_incoming_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_incoming_key_identifier()
     }
@@ -218,5 +221,33 @@ impl TranslatePinDataFluentBuilder {
     /// <p>The attributes and values to use for outgoing DUKPT encryption key after PIN block translation.</p>
     pub fn get_outgoing_dukpt_attributes(&self) -> &::std::option::Option<crate::types::DukptDerivationAttributes> {
         self.inner.get_outgoing_dukpt_attributes()
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key under which incoming PIN block data is encrypted.</p>
+    pub fn incoming_wrapped_key(mut self, input: crate::types::WrappedKey) -> Self {
+        self.inner = self.inner.incoming_wrapped_key(input);
+        self
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key under which incoming PIN block data is encrypted.</p>
+    pub fn set_incoming_wrapped_key(mut self, input: ::std::option::Option<crate::types::WrappedKey>) -> Self {
+        self.inner = self.inner.set_incoming_wrapped_key(input);
+        self
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key under which incoming PIN block data is encrypted.</p>
+    pub fn get_incoming_wrapped_key(&self) -> &::std::option::Option<crate::types::WrappedKey> {
+        self.inner.get_incoming_wrapped_key()
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key for encrypting outgoing PIN block data.</p>
+    pub fn outgoing_wrapped_key(mut self, input: crate::types::WrappedKey) -> Self {
+        self.inner = self.inner.outgoing_wrapped_key(input);
+        self
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key for encrypting outgoing PIN block data.</p>
+    pub fn set_outgoing_wrapped_key(mut self, input: ::std::option::Option<crate::types::WrappedKey>) -> Self {
+        self.inner = self.inner.set_outgoing_wrapped_key(input);
+        self
+    }
+    /// <p>The WrappedKeyBlock containing the encryption key for encrypting outgoing PIN block data.</p>
+    pub fn get_outgoing_wrapped_key(&self) -> &::std::option::Option<crate::types::WrappedKey> {
+        self.inner.get_outgoing_wrapped_key()
     }
 }
