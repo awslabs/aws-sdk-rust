@@ -58,6 +58,18 @@ pub struct HeadObjectInput {
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>HeadObject returns only the metadata for an object. If the Range is satisfiable, only the <code>ContentLength</code> is affected in the response. If the Range is not satisfiable, S3 returns a <code>416 - Requested Range Not Satisfiable</code> error.</p>
     pub range: ::std::option::Option<::std::string::String>,
+    /// <p>Sets the <code>Cache-Control</code> header of the response.</p>
+    pub response_cache_control: ::std::option::Option<::std::string::String>,
+    /// <p>Sets the <code>Content-Disposition</code> header of the response.</p>
+    pub response_content_disposition: ::std::option::Option<::std::string::String>,
+    /// <p>Sets the <code>Content-Encoding</code> header of the response.</p>
+    pub response_content_encoding: ::std::option::Option<::std::string::String>,
+    /// <p>Sets the <code>Content-Language</code> header of the response.</p>
+    pub response_content_language: ::std::option::Option<::std::string::String>,
+    /// <p>Sets the <code>Content-Type</code> header of the response.</p>
+    pub response_content_type: ::std::option::Option<::std::string::String>,
+    /// <p>Sets the <code>Expires</code> header of the response.</p>
+    pub response_expires: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Version ID used to reference a specific version of the object.</p><note>
     /// <p>For directory buckets in this API operation, only the <code>null</code> value of the version ID is supported.</p>
     /// </note>
@@ -156,6 +168,30 @@ impl HeadObjectInput {
     pub fn range(&self) -> ::std::option::Option<&str> {
         self.range.as_deref()
     }
+    /// <p>Sets the <code>Cache-Control</code> header of the response.</p>
+    pub fn response_cache_control(&self) -> ::std::option::Option<&str> {
+        self.response_cache_control.as_deref()
+    }
+    /// <p>Sets the <code>Content-Disposition</code> header of the response.</p>
+    pub fn response_content_disposition(&self) -> ::std::option::Option<&str> {
+        self.response_content_disposition.as_deref()
+    }
+    /// <p>Sets the <code>Content-Encoding</code> header of the response.</p>
+    pub fn response_content_encoding(&self) -> ::std::option::Option<&str> {
+        self.response_content_encoding.as_deref()
+    }
+    /// <p>Sets the <code>Content-Language</code> header of the response.</p>
+    pub fn response_content_language(&self) -> ::std::option::Option<&str> {
+        self.response_content_language.as_deref()
+    }
+    /// <p>Sets the <code>Content-Type</code> header of the response.</p>
+    pub fn response_content_type(&self) -> ::std::option::Option<&str> {
+        self.response_content_type.as_deref()
+    }
+    /// <p>Sets the <code>Expires</code> header of the response.</p>
+    pub fn response_expires(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.response_expires.as_ref()
+    }
     /// <p>Version ID used to reference a specific version of the object.</p><note>
     /// <p>For directory buckets in this API operation, only the <code>null</code> value of the version ID is supported.</p>
     /// </note>
@@ -210,6 +246,12 @@ impl ::std::fmt::Debug for HeadObjectInput {
         formatter.field("if_unmodified_since", &self.if_unmodified_since);
         formatter.field("key", &self.key);
         formatter.field("range", &self.range);
+        formatter.field("response_cache_control", &self.response_cache_control);
+        formatter.field("response_content_disposition", &self.response_content_disposition);
+        formatter.field("response_content_encoding", &self.response_content_encoding);
+        formatter.field("response_content_language", &self.response_content_language);
+        formatter.field("response_content_type", &self.response_content_type);
+        formatter.field("response_expires", &self.response_expires);
         formatter.field("version_id", &self.version_id);
         formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
         formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
@@ -239,6 +281,12 @@ pub struct HeadObjectInputBuilder {
     pub(crate) if_unmodified_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) range: ::std::option::Option<::std::string::String>,
+    pub(crate) response_cache_control: ::std::option::Option<::std::string::String>,
+    pub(crate) response_content_disposition: ::std::option::Option<::std::string::String>,
+    pub(crate) response_content_encoding: ::std::option::Option<::std::string::String>,
+    pub(crate) response_content_language: ::std::option::Option<::std::string::String>,
+    pub(crate) response_content_type: ::std::option::Option<::std::string::String>,
+    pub(crate) response_expires: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
     pub(crate) sse_customer_algorithm: ::std::option::Option<::std::string::String>,
     pub(crate) sse_customer_key: ::std::option::Option<::std::string::String>,
@@ -472,6 +520,90 @@ impl HeadObjectInputBuilder {
     pub fn get_range(&self) -> &::std::option::Option<::std::string::String> {
         &self.range
     }
+    /// <p>Sets the <code>Cache-Control</code> header of the response.</p>
+    pub fn response_cache_control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.response_cache_control = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Sets the <code>Cache-Control</code> header of the response.</p>
+    pub fn set_response_cache_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.response_cache_control = input;
+        self
+    }
+    /// <p>Sets the <code>Cache-Control</code> header of the response.</p>
+    pub fn get_response_cache_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_cache_control
+    }
+    /// <p>Sets the <code>Content-Disposition</code> header of the response.</p>
+    pub fn response_content_disposition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.response_content_disposition = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Sets the <code>Content-Disposition</code> header of the response.</p>
+    pub fn set_response_content_disposition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.response_content_disposition = input;
+        self
+    }
+    /// <p>Sets the <code>Content-Disposition</code> header of the response.</p>
+    pub fn get_response_content_disposition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_content_disposition
+    }
+    /// <p>Sets the <code>Content-Encoding</code> header of the response.</p>
+    pub fn response_content_encoding(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.response_content_encoding = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Sets the <code>Content-Encoding</code> header of the response.</p>
+    pub fn set_response_content_encoding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.response_content_encoding = input;
+        self
+    }
+    /// <p>Sets the <code>Content-Encoding</code> header of the response.</p>
+    pub fn get_response_content_encoding(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_content_encoding
+    }
+    /// <p>Sets the <code>Content-Language</code> header of the response.</p>
+    pub fn response_content_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.response_content_language = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Sets the <code>Content-Language</code> header of the response.</p>
+    pub fn set_response_content_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.response_content_language = input;
+        self
+    }
+    /// <p>Sets the <code>Content-Language</code> header of the response.</p>
+    pub fn get_response_content_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_content_language
+    }
+    /// <p>Sets the <code>Content-Type</code> header of the response.</p>
+    pub fn response_content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.response_content_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Sets the <code>Content-Type</code> header of the response.</p>
+    pub fn set_response_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.response_content_type = input;
+        self
+    }
+    /// <p>Sets the <code>Content-Type</code> header of the response.</p>
+    pub fn get_response_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_content_type
+    }
+    /// <p>Sets the <code>Expires</code> header of the response.</p>
+    pub fn response_expires(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.response_expires = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Sets the <code>Expires</code> header of the response.</p>
+    pub fn set_response_expires(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.response_expires = input;
+        self
+    }
+    /// <p>Sets the <code>Expires</code> header of the response.</p>
+    pub fn get_response_expires(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.response_expires
+    }
     /// <p>Version ID used to reference a specific version of the object.</p><note>
     /// <p>For directory buckets in this API operation, only the <code>null</code> value of the version ID is supported.</p>
     /// </note>
@@ -627,6 +759,12 @@ impl HeadObjectInputBuilder {
             if_unmodified_since: self.if_unmodified_since,
             key: self.key,
             range: self.range,
+            response_cache_control: self.response_cache_control,
+            response_content_disposition: self.response_content_disposition,
+            response_content_encoding: self.response_content_encoding,
+            response_content_language: self.response_content_language,
+            response_content_type: self.response_content_type,
+            response_expires: self.response_expires,
             version_id: self.version_id,
             sse_customer_algorithm: self.sse_customer_algorithm,
             sse_customer_key: self.sse_customer_key,
@@ -648,6 +786,12 @@ impl ::std::fmt::Debug for HeadObjectInputBuilder {
         formatter.field("if_unmodified_since", &self.if_unmodified_since);
         formatter.field("key", &self.key);
         formatter.field("range", &self.range);
+        formatter.field("response_cache_control", &self.response_cache_control);
+        formatter.field("response_content_disposition", &self.response_content_disposition);
+        formatter.field("response_content_encoding", &self.response_content_encoding);
+        formatter.field("response_content_language", &self.response_content_language);
+        formatter.field("response_content_type", &self.response_content_type);
+        formatter.field("response_expires", &self.response_expires);
         formatter.field("version_id", &self.version_id);
         formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
         formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");

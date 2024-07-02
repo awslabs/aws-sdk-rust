@@ -240,17 +240,20 @@ impl CreateVolumeFluentBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the volume.</p>
+    /// <p>If you intend to use a volume with an instance running on an outpost, then you must create the volume on the same outpost as the instance. You can't use a volume created in an Amazon Web Services Region with an instance on an Amazon Web Services outpost, or the other way around.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.outpost_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the volume.</p>
+    /// <p>If you intend to use a volume with an instance running on an outpost, then you must create the volume on the same outpost as the instance. You can't use a volume created in an Amazon Web Services Region with an instance on an Amazon Web Services outpost, or the other way around.</p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_outpost_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the volume.</p>
+    /// <p>If you intend to use a volume with an instance running on an outpost, then you must create the volume on the same outpost as the instance. You can't use a volume created in an Amazon Web Services Region with an instance on an Amazon Web Services outpost, or the other way around.</p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_outpost_arn()
     }

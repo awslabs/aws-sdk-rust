@@ -12,7 +12,25 @@ pub struct ByoipCidr {
     pub asn_associations: ::std::option::Option<::std::vec::Vec<crate::types::AsnAssociation>>,
     /// <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
-    /// <p>The state of the address pool.</p>
+    /// <p>The state of the address range.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>advertised</code>: The address range is being advertised to the internet by Amazon Web Services.</p></li>
+    /// <li>
+    /// <p><code>deprovisioned</code>: The address range is deprovisioned.</p></li>
+    /// <li>
+    /// <p><code>failed-deprovision</code>: The request to deprovision the address range was unsuccessful. Ensure that all EIPs from the range have been deallocated and try again.</p></li>
+    /// <li>
+    /// <p><code>failed-provision</code>: The request to provision the address range was unsuccessful.</p></li>
+    /// <li>
+    /// <p><code>pending-deprovision</code>: You’ve submitted a request to deprovision an address range and it's pending.</p></li>
+    /// <li>
+    /// <p><code>pending-provision</code>: You’ve submitted a request to provision an address range and it's pending.</p></li>
+    /// <li>
+    /// <p><code>provisioned</code>: The address range is provisioned and can be advertised. The range is not currently advertised.</p></li>
+    /// <li>
+    /// <p><code>provisioned-not-publicly-advertisable</code>: The address range is provisioned and cannot be advertised.</p></li>
+    /// </ul>
     pub state: ::std::option::Option<crate::types::ByoipCidrState>,
     /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
     /// <p>You can provision BYOIP address ranges to and advertise them in the following Local Zone network border groups:</p>
@@ -47,7 +65,25 @@ impl ByoipCidr {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>The state of the address pool.</p>
+    /// <p>The state of the address range.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>advertised</code>: The address range is being advertised to the internet by Amazon Web Services.</p></li>
+    /// <li>
+    /// <p><code>deprovisioned</code>: The address range is deprovisioned.</p></li>
+    /// <li>
+    /// <p><code>failed-deprovision</code>: The request to deprovision the address range was unsuccessful. Ensure that all EIPs from the range have been deallocated and try again.</p></li>
+    /// <li>
+    /// <p><code>failed-provision</code>: The request to provision the address range was unsuccessful.</p></li>
+    /// <li>
+    /// <p><code>pending-deprovision</code>: You’ve submitted a request to deprovision an address range and it's pending.</p></li>
+    /// <li>
+    /// <p><code>pending-provision</code>: You’ve submitted a request to provision an address range and it's pending.</p></li>
+    /// <li>
+    /// <p><code>provisioned</code>: The address range is provisioned and can be advertised. The range is not currently advertised.</p></li>
+    /// <li>
+    /// <p><code>provisioned-not-publicly-advertisable</code>: The address range is provisioned and cannot be advertised.</p></li>
+    /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ByoipCidrState> {
         self.state.as_ref()
     }
@@ -148,17 +184,71 @@ impl ByoipCidrBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
-    /// <p>The state of the address pool.</p>
+    /// <p>The state of the address range.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>advertised</code>: The address range is being advertised to the internet by Amazon Web Services.</p></li>
+    /// <li>
+    /// <p><code>deprovisioned</code>: The address range is deprovisioned.</p></li>
+    /// <li>
+    /// <p><code>failed-deprovision</code>: The request to deprovision the address range was unsuccessful. Ensure that all EIPs from the range have been deallocated and try again.</p></li>
+    /// <li>
+    /// <p><code>failed-provision</code>: The request to provision the address range was unsuccessful.</p></li>
+    /// <li>
+    /// <p><code>pending-deprovision</code>: You’ve submitted a request to deprovision an address range and it's pending.</p></li>
+    /// <li>
+    /// <p><code>pending-provision</code>: You’ve submitted a request to provision an address range and it's pending.</p></li>
+    /// <li>
+    /// <p><code>provisioned</code>: The address range is provisioned and can be advertised. The range is not currently advertised.</p></li>
+    /// <li>
+    /// <p><code>provisioned-not-publicly-advertisable</code>: The address range is provisioned and cannot be advertised.</p></li>
+    /// </ul>
     pub fn state(mut self, input: crate::types::ByoipCidrState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state of the address pool.</p>
+    /// <p>The state of the address range.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>advertised</code>: The address range is being advertised to the internet by Amazon Web Services.</p></li>
+    /// <li>
+    /// <p><code>deprovisioned</code>: The address range is deprovisioned.</p></li>
+    /// <li>
+    /// <p><code>failed-deprovision</code>: The request to deprovision the address range was unsuccessful. Ensure that all EIPs from the range have been deallocated and try again.</p></li>
+    /// <li>
+    /// <p><code>failed-provision</code>: The request to provision the address range was unsuccessful.</p></li>
+    /// <li>
+    /// <p><code>pending-deprovision</code>: You’ve submitted a request to deprovision an address range and it's pending.</p></li>
+    /// <li>
+    /// <p><code>pending-provision</code>: You’ve submitted a request to provision an address range and it's pending.</p></li>
+    /// <li>
+    /// <p><code>provisioned</code>: The address range is provisioned and can be advertised. The range is not currently advertised.</p></li>
+    /// <li>
+    /// <p><code>provisioned-not-publicly-advertisable</code>: The address range is provisioned and cannot be advertised.</p></li>
+    /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ByoipCidrState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The state of the address pool.</p>
+    /// <p>The state of the address range.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>advertised</code>: The address range is being advertised to the internet by Amazon Web Services.</p></li>
+    /// <li>
+    /// <p><code>deprovisioned</code>: The address range is deprovisioned.</p></li>
+    /// <li>
+    /// <p><code>failed-deprovision</code>: The request to deprovision the address range was unsuccessful. Ensure that all EIPs from the range have been deallocated and try again.</p></li>
+    /// <li>
+    /// <p><code>failed-provision</code>: The request to provision the address range was unsuccessful.</p></li>
+    /// <li>
+    /// <p><code>pending-deprovision</code>: You’ve submitted a request to deprovision an address range and it's pending.</p></li>
+    /// <li>
+    /// <p><code>pending-provision</code>: You’ve submitted a request to provision an address range and it's pending.</p></li>
+    /// <li>
+    /// <p><code>provisioned</code>: The address range is provisioned and can be advertised. The range is not currently advertised.</p></li>
+    /// <li>
+    /// <p><code>provisioned-not-publicly-advertisable</code>: The address range is provisioned and cannot be advertised.</p></li>
+    /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ByoipCidrState> {
         &self.state
     }

@@ -37,7 +37,7 @@ pub struct ModifyInstanceAttributeInput {
     /// <p>There is no way to disable enhanced networking with the Intel 82599 Virtual Function interface at this time.</p>
     /// <p>This option is supported only for HVM instances. Specifying this option with a PV instance can make it unreachable.</p>
     pub sriov_net_support: ::std::option::Option<crate::types::AttributeValue>,
-    /// <p>Changes the instance's user data to the specified value. If you are using an Amazon Web Services SDK or command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+    /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
     pub user_data: ::std::option::Option<crate::types::BlobAttributeValue>,
     /// <p>A new value for the attribute. Use only with the <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
     pub value: ::std::option::Option<::std::string::String>,
@@ -112,7 +112,7 @@ impl ModifyInstanceAttributeInput {
     pub fn sriov_net_support(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
         self.sriov_net_support.as_ref()
     }
-    /// <p>Changes the instance's user data to the specified value. If you are using an Amazon Web Services SDK or command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+    /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
     pub fn user_data(&self) -> ::std::option::Option<&crate::types::BlobAttributeValue> {
         self.user_data.as_ref()
     }
@@ -386,17 +386,17 @@ impl ModifyInstanceAttributeInputBuilder {
     pub fn get_sriov_net_support(&self) -> &::std::option::Option<crate::types::AttributeValue> {
         &self.sriov_net_support
     }
-    /// <p>Changes the instance's user data to the specified value. If you are using an Amazon Web Services SDK or command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+    /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
     pub fn user_data(mut self, input: crate::types::BlobAttributeValue) -> Self {
         self.user_data = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Changes the instance's user data to the specified value. If you are using an Amazon Web Services SDK or command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+    /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
     pub fn set_user_data(mut self, input: ::std::option::Option<crate::types::BlobAttributeValue>) -> Self {
         self.user_data = input;
         self
     }
-    /// <p>Changes the instance's user data to the specified value. If you are using an Amazon Web Services SDK or command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+    /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
     pub fn get_user_data(&self) -> &::std::option::Option<crate::types::BlobAttributeValue> {
         &self.user_data
     }

@@ -204,14 +204,47 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for HeadObjectRe
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if let ::std::option::Option::Some(inner_2) = &_input.version_id {
+                if let ::std::option::Option::Some(inner_2) = &_input.response_cache_control {
                     {
-                        query.push_kv("versionId", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("response-cache-control", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
-                if let ::std::option::Option::Some(inner_3) = &_input.part_number {
+                if let ::std::option::Option::Some(inner_3) = &_input.response_content_disposition {
                     {
-                        query.push_kv("partNumber", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
+                        query.push_kv("response-content-disposition", &::aws_smithy_http::query::fmt_string(inner_3));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_4) = &_input.response_content_encoding {
+                    {
+                        query.push_kv("response-content-encoding", &::aws_smithy_http::query::fmt_string(inner_4));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_5) = &_input.response_content_language {
+                    {
+                        query.push_kv("response-content-language", &::aws_smithy_http::query::fmt_string(inner_5));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_6) = &_input.response_content_type {
+                    {
+                        query.push_kv("response-content-type", &::aws_smithy_http::query::fmt_string(inner_6));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_7) = &_input.response_expires {
+                    {
+                        query.push_kv(
+                            "response-expires",
+                            &::aws_smithy_http::query::fmt_timestamp(inner_7, ::aws_smithy_types::date_time::Format::HttpDate)?,
+                        );
+                    }
+                }
+                if let ::std::option::Option::Some(inner_8) = &_input.version_id {
+                    {
+                        query.push_kv("versionId", &::aws_smithy_http::query::fmt_string(inner_8));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_9) = &_input.part_number {
+                    {
+                        query.push_kv("partNumber", ::aws_smithy_types::primitive::Encoder::from(*inner_9).encode());
                     }
                 }
                 ::std::result::Result::Ok(())

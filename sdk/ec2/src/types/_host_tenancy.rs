@@ -13,6 +13,7 @@
 /// # let hosttenancy = unimplemented!();
 /// match hosttenancy {
 ///     HostTenancy::Dedicated => { /* ... */ },
+///     HostTenancy::Default => { /* ... */ },
 ///     HostTenancy::Host => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum HostTenancy {
     #[allow(missing_docs)] // documentation missing in model
     Dedicated,
     #[allow(missing_docs)] // documentation missing in model
+    Default,
+    #[allow(missing_docs)] // documentation missing in model
     Host,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -53,6 +56,7 @@ impl ::std::convert::From<&str> for HostTenancy {
     fn from(s: &str) -> Self {
         match s {
             "dedicated" => HostTenancy::Dedicated,
+            "default" => HostTenancy::Default,
             "host" => HostTenancy::Host,
             other => HostTenancy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,13 +74,14 @@ impl HostTenancy {
     pub fn as_str(&self) -> &str {
         match self {
             HostTenancy::Dedicated => "dedicated",
+            HostTenancy::Default => "default",
             HostTenancy::Host => "host",
             HostTenancy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["dedicated", "host"]
+        &["dedicated", "default", "host"]
     }
 }
 impl ::std::convert::AsRef<str> for HostTenancy {
@@ -100,6 +105,7 @@ impl ::std::fmt::Display for HostTenancy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             HostTenancy::Dedicated => write!(f, "dedicated"),
+            HostTenancy::Default => write!(f, "default"),
             HostTenancy::Host => write!(f, "host"),
             HostTenancy::Unknown(value) => write!(f, "{}", value),
         }

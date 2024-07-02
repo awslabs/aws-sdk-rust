@@ -754,9 +754,9 @@ model_hash = '5ec7004d46e2bb30c8d974da3846e960c6d52a00307ee4cc8a62b95566a1fc84'
 
 [crates.aws-sdk-ec2]
 category = 'AwsSdk'
-version = '1.55.0'
-source_hash = '1e307361fbff4e0476fb7f0108484e0350cb936f708a18861d34afffb3e9ef6e'
-model_hash = 'd527f7a346643569509cb2a8ac004ffae1cd5f93012ad08a02c588017d7b004b'
+version = '1.56.0'
+source_hash = 'b5a58e621a41e5fbff8e9ba11bf3a83653eb0bf5dea6d55f22279abc496cf435'
+model_hash = 'fdc17377e6d237d48594b754408438f86124553cbcbd174eb785d22a672c0fad'
 
 [crates.aws-sdk-ec2instanceconnect]
 category = 'AwsSdk'
@@ -904,9 +904,9 @@ model_hash = 'f7f6b7be638071a5734d7c563cc13bf0fdc673fddf5213612bffb3036fe1e4f1'
 
 [crates.aws-sdk-fms]
 category = 'AwsSdk'
-version = '1.35.0'
-source_hash = '0a826539812dc7a5e3bddfecba7529c2562ac7ba982385f37b68581ffd2bc15f'
-model_hash = '753437344872b405858f3c2602c6302f947828e638e077f96521420e79b6ed99'
+version = '1.36.0'
+source_hash = 'c9a83701b43cef2ab144f85affdacf09fc9e858278be04bea070cdb2e8dd2164'
+model_hash = 'edc54c706580be596c972acfce9e5157489f466b37233ee977d721b9c6fa2103'
 
 [crates.aws-sdk-forecast]
 category = 'AwsSdk'
@@ -1906,9 +1906,9 @@ model_hash = '34648839402316ab9da4bef0fe11beb9bc3ec1d05b3ff7d09664ab74c0cb3d2b'
 
 [crates.aws-sdk-s3]
 category = 'AwsSdk'
-version = '1.38.0'
-source_hash = '131ca72938175c16c8d0d19e813152f23e82757a812c9525ae3ba16d0e1218ec'
-model_hash = 'b130999adae31ab9ff2bad926fc6add400fa9215b9118c0bf46113f9e63cda11'
+version = '1.39.0'
+source_hash = 'd10b1089f7b11310685fb87244f1b923317e2c0477ef31dcb4ff70cf26b70c95'
+model_hash = '293342d7470282c36811353a98677b2a6eeb0eb7ef74b50cd8f6ddfb07de5055'
 
 [crates.aws-sdk-s3control]
 category = 'AwsSdk'
@@ -2476,18 +2476,7 @@ source_hash = 'c96f643f855603c01745b7bbb8f71a05d445600b40a79525c89ce74a626d0156'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '1a9e496989c4826ca7cde4d9f7c43545e566c67e2c3b7d247dd3ca87d1085949'
-
-[release]
-tag = 'release-2024-07-01'
-
 [release.crates]
-aws-sdk-apigateway = '1.34.0'
-aws-sdk-cognitoidentity = '1.34.0'
-aws-sdk-connect = '1.49.0'
-aws-sdk-docdb = '1.36.0'
-aws-sdk-eks = '1.38.0'
-aws-sdk-paymentcryptography = '1.36.0'
-aws-sdk-paymentcryptographydata = '1.35.0'
-aws-sdk-sfn = '1.35.0'
-aws-sdk-swf = '1.35.0'
-aws-sdk-wafv2 = '1.37.1'
+aws-sdk-ec2 = '1.56.0'
+aws-sdk-fms = '1.36.0'
+aws-sdk-s3 = '1.39.0'

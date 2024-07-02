@@ -47,7 +47,7 @@ impl crate::operation::delete_objects::builders::DeleteObjectsInputBuilder {
 /// <li>
 /// <p><b> <code>s3:DeleteObject</code> </b> - To delete an object from a bucket, you must always specify the <code>s3:DeleteObject</code> permission.</p></li>
 /// <li>
-/// <p><b> <code>s3:DeleteObjectVersion</code> </b> - To delete a specific version of an object from a versiong-enabled bucket, you must specify the <code>s3:DeleteObjectVersion</code> permission.</p></li>
+/// <p><b> <code>s3:DeleteObjectVersion</code> </b> - To delete a specific version of an object from a versioning-enabled bucket, you must specify the <code>s3:DeleteObjectVersion</code> permission.</p></li>
 /// </ul></li>
 /// <li>
 /// <p><b>Directory bucket permissions</b> - To grant access to this API operation on a directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html"> <code>CreateSession</code> </a> API operation for session-based authorization. Specifically, you grant the <code>s3express:CreateSession</code> permission to the directory bucket in a bucket policy or an IAM identity-based policy. Then, you make the <code>CreateSession</code> API call on the bucket to obtain a session token. With the session token in your request header, you can make API requests to this operation. After the session token expires, you make another <code>CreateSession</code> API call to generate a new session token for use. Amazon Web Services CLI or SDKs create session and refresh the session token automatically to avoid service interruptions when a session expires. For more information about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html"> <code>CreateSession</code> </a>.</p></li>

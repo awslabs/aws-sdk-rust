@@ -53,12 +53,12 @@ impl crate::operation::upload_part_copy::builders::UploadPartCopyInputBuilder {
 /// <li>
 /// <p>If the destination bucket is a general purpose bucket, you must have the <b> <code>s3:PutObject</code> </b> permission to write the object copy to the destination bucket.</p></li>
 /// </ul>
-/// <p>For information about permissions required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.</p></li>
+/// <p>For information about permissions required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.</p></li>
 /// <li>
 /// <p><b>Directory bucket permissions</b> - You must have permissions in a bucket policy or an IAM identity-based policy based on the source and destination bucket types in an <code>UploadPartCopy</code> operation.</p>
 /// <ul>
 /// <li>
-/// <p>If the source object that you want to copy is in a directory bucket, you must have the <b> <code>s3express:CreateSession</code> </b> permission in the <code>Action</code> element of a policy to read the object . By default, the session is in the <code>ReadWrite</code> mode. If you want to restrict the access, you can explicitly set the <code>s3express:SessionMode</code> condition key to <code>ReadOnly</code> on the copy source bucket.</p></li>
+/// <p>If the source object that you want to copy is in a directory bucket, you must have the <b> <code>s3express:CreateSession</code> </b> permission in the <code>Action</code> element of a policy to read the object. By default, the session is in the <code>ReadWrite</code> mode. If you want to restrict the access, you can explicitly set the <code>s3express:SessionMode</code> condition key to <code>ReadOnly</code> on the copy source bucket.</p></li>
 /// <li>
 /// <p>If the copy destination is a directory bucket, you must have the <b> <code>s3express:CreateSession</code> </b> permission in the <code>Action</code> element of a policy to write the object to the destination. The <code>s3express:SessionMode</code> condition key cannot be set to <code>ReadOnly</code> on the copy destination.</p></li>
 /// </ul>

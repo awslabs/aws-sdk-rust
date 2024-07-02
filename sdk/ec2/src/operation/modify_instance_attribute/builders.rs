@@ -337,17 +337,17 @@ impl ModifyInstanceAttributeFluentBuilder {
     pub fn get_sriov_net_support(&self) -> &::std::option::Option<crate::types::AttributeValue> {
         self.inner.get_sriov_net_support()
     }
-    /// <p>Changes the instance's user data to the specified value. If you are using an Amazon Web Services SDK or command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+    /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
     pub fn user_data(mut self, input: crate::types::BlobAttributeValue) -> Self {
         self.inner = self.inner.user_data(input);
         self
     }
-    /// <p>Changes the instance's user data to the specified value. If you are using an Amazon Web Services SDK or command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+    /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
     pub fn set_user_data(mut self, input: ::std::option::Option<crate::types::BlobAttributeValue>) -> Self {
         self.inner = self.inner.set_user_data(input);
         self
     }
-    /// <p>Changes the instance's user data to the specified value. If you are using an Amazon Web Services SDK or command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+    /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
     pub fn get_user_data(&self) -> &::std::option::Option<crate::types::BlobAttributeValue> {
         self.inner.get_user_data()
     }

@@ -301,6 +301,90 @@ impl ObjectExistsFluentBuilder {
     pub fn get_range(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_range()
     }
+    /// <p>Sets the <code>Cache-Control</code> header of the response.</p>
+    pub fn response_cache_control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.response_cache_control(input.into());
+        self
+    }
+    /// <p>Sets the <code>Cache-Control</code> header of the response.</p>
+    pub fn set_response_cache_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_response_cache_control(input);
+        self
+    }
+    /// <p>Sets the <code>Cache-Control</code> header of the response.</p>
+    pub fn get_response_cache_control(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_response_cache_control()
+    }
+    /// <p>Sets the <code>Content-Disposition</code> header of the response.</p>
+    pub fn response_content_disposition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.response_content_disposition(input.into());
+        self
+    }
+    /// <p>Sets the <code>Content-Disposition</code> header of the response.</p>
+    pub fn set_response_content_disposition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_response_content_disposition(input);
+        self
+    }
+    /// <p>Sets the <code>Content-Disposition</code> header of the response.</p>
+    pub fn get_response_content_disposition(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_response_content_disposition()
+    }
+    /// <p>Sets the <code>Content-Encoding</code> header of the response.</p>
+    pub fn response_content_encoding(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.response_content_encoding(input.into());
+        self
+    }
+    /// <p>Sets the <code>Content-Encoding</code> header of the response.</p>
+    pub fn set_response_content_encoding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_response_content_encoding(input);
+        self
+    }
+    /// <p>Sets the <code>Content-Encoding</code> header of the response.</p>
+    pub fn get_response_content_encoding(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_response_content_encoding()
+    }
+    /// <p>Sets the <code>Content-Language</code> header of the response.</p>
+    pub fn response_content_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.response_content_language(input.into());
+        self
+    }
+    /// <p>Sets the <code>Content-Language</code> header of the response.</p>
+    pub fn set_response_content_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_response_content_language(input);
+        self
+    }
+    /// <p>Sets the <code>Content-Language</code> header of the response.</p>
+    pub fn get_response_content_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_response_content_language()
+    }
+    /// <p>Sets the <code>Content-Type</code> header of the response.</p>
+    pub fn response_content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.response_content_type(input.into());
+        self
+    }
+    /// <p>Sets the <code>Content-Type</code> header of the response.</p>
+    pub fn set_response_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_response_content_type(input);
+        self
+    }
+    /// <p>Sets the <code>Content-Type</code> header of the response.</p>
+    pub fn get_response_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_response_content_type()
+    }
+    /// <p>Sets the <code>Expires</code> header of the response.</p>
+    pub fn response_expires(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.inner = self.inner.response_expires(input);
+        self
+    }
+    /// <p>Sets the <code>Expires</code> header of the response.</p>
+    pub fn set_response_expires(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.inner = self.inner.set_response_expires(input);
+        self
+    }
+    /// <p>Sets the <code>Expires</code> header of the response.</p>
+    pub fn get_response_expires(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_response_expires()
+    }
     /// <p>Version ID used to reference a specific version of the object.</p><note>
     /// <p>For directory buckets in this API operation, only the <code>null</code> value of the version ID is supported.</p>
     /// </note>

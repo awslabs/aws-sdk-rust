@@ -218,17 +218,17 @@ impl ListObjectsV2FluentBuilder {
     pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_delimiter()
     }
-    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object test_file(3).png will appear as test_file%283%29.png.</p>
+    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object <code>test_file(3).png</code> will appear as <code>test_file%283%29.png</code>.</p>
     pub fn encoding_type(mut self, input: crate::types::EncodingType) -> Self {
         self.inner = self.inner.encoding_type(input);
         self
     }
-    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object test_file(3).png will appear as test_file%283%29.png.</p>
+    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object <code>test_file(3).png</code> will appear as <code>test_file%283%29.png</code>.</p>
     pub fn set_encoding_type(mut self, input: ::std::option::Option<crate::types::EncodingType>) -> Self {
         self.inner = self.inner.set_encoding_type(input);
         self
     }
-    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object test_file(3).png will appear as test_file%283%29.png.</p>
+    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object <code>test_file(3).png</code> will appear as <code>test_file%283%29.png</code>.</p>
     pub fn get_encoding_type(&self) -> &::std::option::Option<crate::types::EncodingType> {
         self.inner.get_encoding_type()
     }

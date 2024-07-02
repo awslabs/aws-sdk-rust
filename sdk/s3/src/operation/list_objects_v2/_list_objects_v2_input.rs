@@ -18,7 +18,7 @@ pub struct ListObjectsV2Input {
     /// </ul>
     /// </note>
     pub delimiter: ::std::option::Option<::std::string::String>,
-    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object test_file(3).png will appear as test_file%283%29.png.</p>
+    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object <code>test_file(3).png</code> will appear as <code>test_file%283%29.png</code>.</p>
     pub encoding_type: ::std::option::Option<crate::types::EncodingType>,
     /// <p>Sets the maximum number of keys returned in the response. By default, the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
     pub max_keys: ::std::option::Option<i32>,
@@ -67,7 +67,7 @@ impl ListObjectsV2Input {
     pub fn delimiter(&self) -> ::std::option::Option<&str> {
         self.delimiter.as_deref()
     }
-    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object test_file(3).png will appear as test_file%283%29.png.</p>
+    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object <code>test_file(3).png</code> will appear as <code>test_file%283%29.png</code>.</p>
     pub fn encoding_type(&self) -> ::std::option::Option<&crate::types::EncodingType> {
         self.encoding_type.as_ref()
     }
@@ -202,17 +202,17 @@ impl ListObjectsV2InputBuilder {
     pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
         &self.delimiter
     }
-    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object test_file(3).png will appear as test_file%283%29.png.</p>
+    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object <code>test_file(3).png</code> will appear as <code>test_file%283%29.png</code>.</p>
     pub fn encoding_type(mut self, input: crate::types::EncodingType) -> Self {
         self.encoding_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object test_file(3).png will appear as test_file%283%29.png.</p>
+    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object <code>test_file(3).png</code> will appear as <code>test_file%283%29.png</code>.</p>
     pub fn set_encoding_type(mut self, input: ::std::option::Option<crate::types::EncodingType>) -> Self {
         self.encoding_type = input;
         self
     }
-    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object test_file(3).png will appear as test_file%283%29.png.</p>
+    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object <code>test_file(3).png</code> will appear as <code>test_file%283%29.png</code>.</p>
     pub fn get_encoding_type(&self) -> &::std::option::Option<crate::types::EncodingType> {
         &self.encoding_type
     }

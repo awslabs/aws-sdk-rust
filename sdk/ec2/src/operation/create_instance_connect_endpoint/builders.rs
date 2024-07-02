@@ -156,38 +156,38 @@ impl CreateInstanceConnectEndpointFluentBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
-    /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
+    /// <p>Indicates whether the client IP address is preserved as the source. The following are the possible values.</p>
     /// <ul>
     /// <li>
-    /// <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p></li>
+    /// <p><code>true</code> - Use the client IP address as the source.</p></li>
     /// <li>
-    /// <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p></li>
+    /// <p><code>false</code> - Use the network interface IP address as the source.</p></li>
     /// </ul>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>false</code></p>
     pub fn preserve_client_ip(mut self, input: bool) -> Self {
         self.inner = self.inner.preserve_client_ip(input);
         self
     }
-    /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
+    /// <p>Indicates whether the client IP address is preserved as the source. The following are the possible values.</p>
     /// <ul>
     /// <li>
-    /// <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p></li>
+    /// <p><code>true</code> - Use the client IP address as the source.</p></li>
     /// <li>
-    /// <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p></li>
+    /// <p><code>false</code> - Use the network interface IP address as the source.</p></li>
     /// </ul>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>false</code></p>
     pub fn set_preserve_client_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_preserve_client_ip(input);
         self
     }
-    /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
+    /// <p>Indicates whether the client IP address is preserved as the source. The following are the possible values.</p>
     /// <ul>
     /// <li>
-    /// <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p></li>
+    /// <p><code>true</code> - Use the client IP address as the source.</p></li>
     /// <li>
-    /// <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p></li>
+    /// <p><code>false</code> - Use the network interface IP address as the source.</p></li>
     /// </ul>
-    /// <p>Default: <code>true</code></p>
+    /// <p>Default: <code>false</code></p>
     pub fn get_preserve_client_ip(&self) -> &::std::option::Option<bool> {
         self.inner.get_preserve_client_ip()
     }

@@ -47,7 +47,7 @@ pub struct DescribeVolumesInput {
     /// <p><code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> | <code>io1</code> | <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>The volume IDs.</p>
+    /// <p>The volume IDs. If not specified, then all volumes are included in the response.</p>
     pub volume_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
@@ -105,7 +105,7 @@ impl DescribeVolumesInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>The volume IDs.</p>
+    /// <p>The volume IDs. If not specified, then all volumes are included in the response.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_ids.is_none()`.
     pub fn volume_ids(&self) -> &[::std::string::String] {
@@ -292,19 +292,19 @@ impl DescribeVolumesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_volume_ids`](Self::set_volume_ids).
     ///
-    /// <p>The volume IDs.</p>
+    /// <p>The volume IDs. If not specified, then all volumes are included in the response.</p>
     pub fn volume_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.volume_ids.unwrap_or_default();
         v.push(input.into());
         self.volume_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The volume IDs.</p>
+    /// <p>The volume IDs. If not specified, then all volumes are included in the response.</p>
     pub fn set_volume_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.volume_ids = input;
         self
     }
-    /// <p>The volume IDs.</p>
+    /// <p>The volume IDs. If not specified, then all volumes are included in the response.</p>
     pub fn get_volume_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.volume_ids
     }

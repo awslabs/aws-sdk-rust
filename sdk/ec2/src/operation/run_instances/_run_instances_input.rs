@@ -47,7 +47,7 @@ pub struct RunInstancesInput {
     /// <p>The ID of the subnet to launch the instance into.</p>
     /// <p>If you specify a network interface, you must specify any subnets as part of the network interface instead of using this parameter.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The user data script to make available to the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Amazon EC2 instance at launch</a> in the <i>Amazon EC2 User Guide</i>. If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
+    /// <p>The user data to make available to the instance. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
     pub user_data: ::std::option::Option<::std::string::String>,
     /// <p>Reserved.</p>
     pub additional_info: ::std::option::Option<::std::string::String>,
@@ -211,7 +211,7 @@ impl RunInstancesInput {
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>The user data script to make available to the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Amazon EC2 instance at launch</a> in the <i>Amazon EC2 User Guide</i>. If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
+    /// <p>The user data to make available to the instance. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
     pub fn user_data(&self) -> ::std::option::Option<&str> {
         self.user_data.as_deref()
     }
@@ -733,17 +733,17 @@ impl RunInstancesInputBuilder {
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }
-    /// <p>The user data script to make available to the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Amazon EC2 instance at launch</a> in the <i>Amazon EC2 User Guide</i>. If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
+    /// <p>The user data to make available to the instance. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
     pub fn user_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user data script to make available to the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Amazon EC2 instance at launch</a> in the <i>Amazon EC2 User Guide</i>. If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
+    /// <p>The user data to make available to the instance. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
     pub fn set_user_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_data = input;
         self
     }
-    /// <p>The user data script to make available to the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Amazon EC2 instance at launch</a> in the <i>Amazon EC2 User Guide</i>. If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
+    /// <p>The user data to make available to the instance. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
     pub fn get_user_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_data
     }

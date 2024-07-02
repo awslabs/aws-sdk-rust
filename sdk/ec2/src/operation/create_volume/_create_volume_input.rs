@@ -35,7 +35,8 @@ pub struct CreateVolumeInput {
     /// </ul>
     /// <p>Amazon Web Services authenticates the KMS key asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid, the action can appear to complete, but eventually fails.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the volume.</p>
+    /// <p>If you intend to use a volume with an instance running on an outpost, then you must create the volume on the same outpost as the instance. You can't use a volume created in an Amazon Web Services Region with an instance on an Amazon Web Services outpost, or the other way around.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size.</p>
     /// <p>The following are the supported volumes sizes for each volume type:</p>
@@ -126,7 +127,8 @@ impl CreateVolumeInput {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the volume.</p>
+    /// <p>If you intend to use a volume with an instance running on an outpost, then you must create the volume on the same outpost as the instance. You can't use a volume created in an Amazon Web Services Region with an instance on an Amazon Web Services outpost, or the other way around.</p>
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
@@ -351,17 +353,20 @@ impl CreateVolumeInputBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the volume.</p>
+    /// <p>If you intend to use a volume with an instance running on an outpost, then you must create the volume on the same outpost as the instance. You can't use a volume created in an Amazon Web Services Region with an instance on an Amazon Web Services outpost, or the other way around.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the volume.</p>
+    /// <p>If you intend to use a volume with an instance running on an outpost, then you must create the volume on the same outpost as the instance. You can't use a volume created in an Amazon Web Services Region with an instance on an Amazon Web Services outpost, or the other way around.</p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the volume.</p>
+    /// <p>If you intend to use a volume with an instance running on an outpost, then you must create the volume on the same outpost as the instance. You can't use a volume created in an Amazon Web Services Region with an instance on an Amazon Web Services outpost, or the other way around.</p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_arn
     }

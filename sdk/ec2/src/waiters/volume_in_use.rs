@@ -230,17 +230,17 @@ impl VolumeInUseFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_volume_ids`](Self::set_volume_ids).
     ///
-    /// <p>The volume IDs.</p>
+    /// <p>The volume IDs. If not specified, then all volumes are included in the response.</p>
     pub fn volume_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.volume_ids(input.into());
         self
     }
-    /// <p>The volume IDs.</p>
+    /// <p>The volume IDs. If not specified, then all volumes are included in the response.</p>
     pub fn set_volume_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_volume_ids(input);
         self
     }
-    /// <p>The volume IDs.</p>
+    /// <p>The volume IDs. If not specified, then all volumes are included in the response.</p>
     pub fn get_volume_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_volume_ids()
     }
