@@ -2476,6 +2476,10 @@ source_hash = 'c96f643f855603c01745b7bbb8f71a05d445600b40a79525c89ce74a626d0156'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '1a9e496989c4826ca7cde4d9f7c43545e566c67e2c3b7d247dd3ca87d1085949'
+
+[release]
+tag = 'release-2024-07-02'
+
 [release.crates]
 aws-sdk-ec2 = '1.56.0'
 aws-sdk-fms = '1.36.0'
