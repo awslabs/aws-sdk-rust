@@ -127,17 +127,17 @@ impl CreateInterconnectFluentBuilder {
     pub fn get_interconnect_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_interconnect_name()
     }
-    /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
+    /// <p>The port bandwidth, in Gbps. The possible values are 1, 10, and 100.</p>
     pub fn bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bandwidth(input.into());
         self
     }
-    /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
+    /// <p>The port bandwidth, in Gbps. The possible values are 1, 10, and 100.</p>
     pub fn set_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bandwidth(input);
         self
     }
-    /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
+    /// <p>The port bandwidth, in Gbps. The possible values are 1, 10, and 100.</p>
     pub fn get_bandwidth(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bandwidth()
     }

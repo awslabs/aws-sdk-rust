@@ -5,8 +5,8 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`lag_id(impl Into<String>)`](crate::operation::delete_lag::builders::DeleteLagFluentBuilder::lag_id) / [`set_lag_id(Option<String>)`](crate::operation::delete_lag::builders::DeleteLagFluentBuilder::set_lag_id):<br>required: **true**<br><p>The ID of the LAG.</p><br>
     /// - On success, responds with [`DeleteLagOutput`](crate::operation::delete_lag::DeleteLagOutput) with field(s):
-    ///   - [`connections_bandwidth(Option<String>)`](crate::operation::delete_lag::DeleteLagOutput::connections_bandwidth): <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
-    ///   - [`number_of_connections(i32)`](crate::operation::delete_lag::DeleteLagOutput::number_of_connections): <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
+    ///   - [`connections_bandwidth(Option<String>)`](crate::operation::delete_lag::DeleteLagOutput::connections_bandwidth): <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps, 10Gbps, 100Gbps, or 400 Gbps..</p>
+    ///   - [`number_of_connections(i32)`](crate::operation::delete_lag::DeleteLagOutput::number_of_connections): <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1 Gbps or 10 Gbps, or two when the port speed is 100 Gbps or 400 Gbps.</p>
     ///   - [`lag_id(Option<String>)`](crate::operation::delete_lag::DeleteLagOutput::lag_id): <p>The ID of the LAG.</p>
     ///   - [`owner_account(Option<String>)`](crate::operation::delete_lag::DeleteLagOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the LAG.</p>
     ///   - [`lag_name(Option<String>)`](crate::operation::delete_lag::DeleteLagOutput::lag_name): <p>The name of the LAG.</p>

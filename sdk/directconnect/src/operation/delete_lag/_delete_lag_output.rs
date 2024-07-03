@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLagOutput {
-    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
+    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps, 10Gbps, 100Gbps, or 400 Gbps..</p>
     pub connections_bandwidth: ::std::option::Option<::std::string::String>,
-    /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1 Gbps or 10 Gbps, or two when the port speed is 100 Gbps or 400 Gbps.</p>
     pub number_of_connections: i32,
     /// <p>The ID of the LAG.</p>
     pub lag_id: ::std::option::Option<::std::string::String>,
@@ -66,11 +66,11 @@ pub struct DeleteLagOutput {
     _request_id: Option<String>,
 }
 impl DeleteLagOutput {
-    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
+    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps, 10Gbps, 100Gbps, or 400 Gbps..</p>
     pub fn connections_bandwidth(&self) -> ::std::option::Option<&str> {
         self.connections_bandwidth.as_deref()
     }
-    /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1 Gbps or 10 Gbps, or two when the port speed is 100 Gbps or 400 Gbps.</p>
     pub fn number_of_connections(&self) -> i32 {
         self.number_of_connections
     }
@@ -214,31 +214,31 @@ pub struct DeleteLagOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteLagOutputBuilder {
-    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
+    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps, 10Gbps, 100Gbps, or 400 Gbps..</p>
     pub fn connections_bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connections_bandwidth = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
+    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps, 10Gbps, 100Gbps, or 400 Gbps..</p>
     pub fn set_connections_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connections_bandwidth = input;
         self
     }
-    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
+    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps, 10Gbps, 100Gbps, or 400 Gbps..</p>
     pub fn get_connections_bandwidth(&self) -> &::std::option::Option<::std::string::String> {
         &self.connections_bandwidth
     }
-    /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1 Gbps or 10 Gbps, or two when the port speed is 100 Gbps or 400 Gbps.</p>
     pub fn number_of_connections(mut self, input: i32) -> Self {
         self.number_of_connections = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1 Gbps or 10 Gbps, or two when the port speed is 100 Gbps or 400 Gbps.</p>
     pub fn set_number_of_connections(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_connections = input;
         self
     }
-    /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1 Gbps or 10 Gbps, or two when the port speed is 100 Gbps or 400 Gbps.</p>
     pub fn get_number_of_connections(&self) -> &::std::option::Option<i32> {
         &self.number_of_connections
     }

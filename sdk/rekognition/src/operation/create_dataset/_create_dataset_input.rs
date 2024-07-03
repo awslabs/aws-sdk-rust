@@ -9,6 +9,8 @@ pub struct CreateDatasetInput {
     pub dataset_type: ::std::option::Option<crate::types::DatasetType>,
     /// <p>The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.</p>
     pub project_arn: ::std::option::Option<::std::string::String>,
+    /// <p>A set of tags (key-value pairs) that you want to attach to the dataset.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDatasetInput {
     /// <p>The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>.</p>
@@ -22,6 +24,10 @@ impl CreateDatasetInput {
     /// <p>The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.</p>
     pub fn project_arn(&self) -> ::std::option::Option<&str> {
         self.project_arn.as_deref()
+    }
+    /// <p>A set of tags (key-value pairs) that you want to attach to the dataset.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
     }
 }
 impl CreateDatasetInput {
@@ -38,6 +44,7 @@ pub struct CreateDatasetInputBuilder {
     pub(crate) dataset_source: ::std::option::Option<crate::types::DatasetSource>,
     pub(crate) dataset_type: ::std::option::Option<crate::types::DatasetType>,
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDatasetInputBuilder {
     /// <p>The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>.</p>
@@ -84,6 +91,26 @@ impl CreateDatasetInputBuilder {
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_arn
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A set of tags (key-value pairs) that you want to attach to the dataset.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A set of tags (key-value pairs) that you want to attach to the dataset.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A set of tags (key-value pairs) that you want to attach to the dataset.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
     pub fn build(
         self,
@@ -92,6 +119,7 @@ impl CreateDatasetInputBuilder {
             dataset_source: self.dataset_source,
             dataset_type: self.dataset_type,
             project_arn: self.project_arn,
+            tags: self.tags,
         })
     }
 }

@@ -5,7 +5,7 @@
 pub struct UpdateVirtualInterfaceAttributesInput {
     /// <p>The ID of the virtual private interface.</p>
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.</p>
     pub mtu: ::std::option::Option<i32>,
     /// <p>Indicates whether to enable or disable SiteLink.</p>
     pub enable_site_link: ::std::option::Option<bool>,
@@ -17,7 +17,7 @@ impl UpdateVirtualInterfaceAttributesInput {
     pub fn virtual_interface_id(&self) -> ::std::option::Option<&str> {
         self.virtual_interface_id.as_deref()
     }
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.</p>
     pub fn mtu(&self) -> ::std::option::Option<i32> {
         self.mtu
     }
@@ -62,17 +62,17 @@ impl UpdateVirtualInterfaceAttributesInputBuilder {
     pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtual_interface_id
     }
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.</p>
     pub fn mtu(mut self, input: i32) -> Self {
         self.mtu = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.</p>
     pub fn set_mtu(mut self, input: ::std::option::Option<i32>) -> Self {
         self.mtu = input;
         self
     }
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.</p>
     pub fn get_mtu(&self) -> &::std::option::Option<i32> {
         &self.mtu
     }

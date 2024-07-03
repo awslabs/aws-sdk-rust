@@ -48,6 +48,7 @@ impl crate::operation::get_label_detection::builders::GetLabelDetectionInputBuil
 /// <p>The version of the label model used for the detection is also returned.</p>
 /// <p><b>Note <code>DominantColors</code> isn't returned for <code>Instances</code>, although it is shown as part of the response in the sample seen below.</b></p>
 /// <p>Use <code>MaxResults</code> parameter to limit the number of labels returned. If there are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call <code>GetlabelDetection</code> and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to <code>GetLabelDetection</code>.</p>
+/// <p>If you are retrieving results while using the Amazon Simple Notification Service, note that you will receive an "ERROR" notification if the job encounters an issue.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLabelDetectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

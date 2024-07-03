@@ -22,7 +22,9 @@ impl crate::operation::describe_connections_on_interconnect::builders::DescribeC
 }
 /// Fluent builder constructing a request to `DescribeConnectionsOnInterconnect`.
 ///
+/// <note>
 /// <p>Deprecated. Use <code>DescribeHostedConnections</code> instead.</p>
+/// </note>
 /// <p>Lists the connections that have been provisioned on the specified interconnect.</p><note>
 /// <p>Intended for use by Direct Connect Partners only.</p>
 /// </note>

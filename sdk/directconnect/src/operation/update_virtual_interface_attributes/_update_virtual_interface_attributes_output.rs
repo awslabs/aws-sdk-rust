@@ -12,7 +12,7 @@ pub struct UpdateVirtualInterfaceAttributesOutput {
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
+    /// <p>The type of virtual interface. The possible values are <code>private</code>, <code>public</code> and <code>transit</code>.</p>
     pub virtual_interface_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
     pub virtual_interface_name: ::std::option::Option<::std::string::String>,
@@ -96,7 +96,7 @@ impl UpdateVirtualInterfaceAttributesOutput {
     pub fn connection_id(&self) -> ::std::option::Option<&str> {
         self.connection_id.as_deref()
     }
-    /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
+    /// <p>The type of virtual interface. The possible values are <code>private</code>, <code>public</code> and <code>transit</code>.</p>
     pub fn virtual_interface_type(&self) -> ::std::option::Option<&str> {
         self.virtual_interface_type.as_deref()
     }
@@ -313,17 +313,17 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_id
     }
-    /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
+    /// <p>The type of virtual interface. The possible values are <code>private</code>, <code>public</code> and <code>transit</code>.</p>
     pub fn virtual_interface_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
+    /// <p>The type of virtual interface. The possible values are <code>private</code>, <code>public</code> and <code>transit</code>.</p>
     pub fn set_virtual_interface_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_interface_type = input;
         self
     }
-    /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
+    /// <p>The type of virtual interface. The possible values are <code>private</code>, <code>public</code> and <code>transit</code>.</p>
     pub fn get_virtual_interface_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtual_interface_type
     }

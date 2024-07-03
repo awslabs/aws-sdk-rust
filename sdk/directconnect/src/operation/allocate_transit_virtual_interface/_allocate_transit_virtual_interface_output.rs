@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllocateTransitVirtualInterfaceOutput {
-    /// <p>Information about a virtual interface.</p>
+    /// <p>Information about the transit virtual interface.</p>
     pub virtual_interface: ::std::option::Option<crate::types::VirtualInterface>,
     _request_id: Option<String>,
 }
 impl AllocateTransitVirtualInterfaceOutput {
-    /// <p>Information about a virtual interface.</p>
+    /// <p>Information about the transit virtual interface.</p>
     pub fn virtual_interface(&self) -> ::std::option::Option<&crate::types::VirtualInterface> {
         self.virtual_interface.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct AllocateTransitVirtualInterfaceOutputBuilder {
     _request_id: Option<String>,
 }
 impl AllocateTransitVirtualInterfaceOutputBuilder {
-    /// <p>Information about a virtual interface.</p>
+    /// <p>Information about the transit virtual interface.</p>
     pub fn virtual_interface(mut self, input: crate::types::VirtualInterface) -> Self {
         self.virtual_interface = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about a virtual interface.</p>
+    /// <p>Information about the transit virtual interface.</p>
     pub fn set_virtual_interface(mut self, input: ::std::option::Option<crate::types::VirtualInterface>) -> Self {
         self.virtual_interface = input;
         self
     }
-    /// <p>Information about a virtual interface.</p>
+    /// <p>Information about the transit virtual interface.</p>
     pub fn get_virtual_interface(&self) -> &::std::option::Option<crate::types::VirtualInterface> {
         &self.virtual_interface
     }

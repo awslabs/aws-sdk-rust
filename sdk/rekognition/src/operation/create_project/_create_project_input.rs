@@ -9,6 +9,8 @@ pub struct CreateProjectInput {
     pub feature: ::std::option::Option<crate::types::CustomizationFeature>,
     /// <p>Specifies whether automatic retraining should be attempted for the versions of the project. Automatic retraining is done as a best effort. Required argument for Content Moderation. Applicable only to adapters.</p>
     pub auto_update: ::std::option::Option<crate::types::ProjectAutoUpdate>,
+    /// <p>A set of tags (key-value pairs) that you want to attach to the project.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateProjectInput {
     /// <p>The name of the project to create.</p>
@@ -22,6 +24,10 @@ impl CreateProjectInput {
     /// <p>Specifies whether automatic retraining should be attempted for the versions of the project. Automatic retraining is done as a best effort. Required argument for Content Moderation. Applicable only to adapters.</p>
     pub fn auto_update(&self) -> ::std::option::Option<&crate::types::ProjectAutoUpdate> {
         self.auto_update.as_ref()
+    }
+    /// <p>A set of tags (key-value pairs) that you want to attach to the project.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
     }
 }
 impl CreateProjectInput {
@@ -38,6 +44,7 @@ pub struct CreateProjectInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) feature: ::std::option::Option<crate::types::CustomizationFeature>,
     pub(crate) auto_update: ::std::option::Option<crate::types::ProjectAutoUpdate>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateProjectInputBuilder {
     /// <p>The name of the project to create.</p>
@@ -83,6 +90,26 @@ impl CreateProjectInputBuilder {
     pub fn get_auto_update(&self) -> &::std::option::Option<crate::types::ProjectAutoUpdate> {
         &self.auto_update
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A set of tags (key-value pairs) that you want to attach to the project.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A set of tags (key-value pairs) that you want to attach to the project.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A set of tags (key-value pairs) that you want to attach to the project.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(
         self,
@@ -91,6 +118,7 @@ impl CreateProjectInputBuilder {
             project_name: self.project_name,
             feature: self.feature,
             auto_update: self.auto_update,
+            tags: self.tags,
         })
     }
 }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDirectConnectGatewayOutput {
-    /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
+    /// <p>Informaiton about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateways or transit gateways.</p>
     pub direct_connect_gateway: ::std::option::Option<crate::types::DirectConnectGateway>,
     _request_id: Option<String>,
 }
 impl UpdateDirectConnectGatewayOutput {
-    /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
+    /// <p>Informaiton about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateways or transit gateways.</p>
     pub fn direct_connect_gateway(&self) -> ::std::option::Option<&crate::types::DirectConnectGateway> {
         self.direct_connect_gateway.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateDirectConnectGatewayOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateDirectConnectGatewayOutputBuilder {
-    /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
+    /// <p>Informaiton about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateways or transit gateways.</p>
     pub fn direct_connect_gateway(mut self, input: crate::types::DirectConnectGateway) -> Self {
         self.direct_connect_gateway = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
+    /// <p>Informaiton about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateways or transit gateways.</p>
     pub fn set_direct_connect_gateway(mut self, input: ::std::option::Option<crate::types::DirectConnectGateway>) -> Self {
         self.direct_connect_gateway = input;
         self
     }
-    /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
+    /// <p>Informaiton about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateways or transit gateways.</p>
     pub fn get_direct_connect_gateway(&self) -> &::std::option::Option<crate::types::DirectConnectGateway> {
         &self.direct_connect_gateway
     }

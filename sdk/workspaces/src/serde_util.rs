@@ -71,9 +71,23 @@ pub(crate) fn connection_alias_permission_correct_errors(
     builder
 }
 
+pub(crate) fn root_storage_correct_errors(mut builder: crate::types::builders::RootStorageBuilder) -> crate::types::builders::RootStorageBuilder {
+    if builder.capacity.is_none() {
+        builder.capacity = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn user_storage_correct_errors(mut builder: crate::types::builders::UserStorageBuilder) -> crate::types::builders::UserStorageBuilder {
+    if builder.capacity.is_none() {
+        builder.capacity = Some(Default::default())
     }
     builder
 }

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RootStorage {
     /// <p>The size of the root volume.</p>
-    pub capacity: ::std::option::Option<::std::string::String>,
+    pub capacity: ::std::string::String,
 }
 impl RootStorage {
     /// <p>The size of the root volume.</p>
-    pub fn capacity(&self) -> ::std::option::Option<&str> {
-        self.capacity.as_deref()
+    pub fn capacity(&self) -> &str {
+        use std::ops::Deref;
+        self.capacity.deref()
     }
 }
 impl RootStorage {
@@ -28,6 +29,7 @@ pub struct RootStorageBuilder {
 }
 impl RootStorageBuilder {
     /// <p>The size of the root volume.</p>
+    /// This field is required.
     pub fn capacity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl RootStorageBuilder {
         &self.capacity
     }
     /// Consumes the builder and constructs a [`RootStorage`](crate::types::RootStorage).
-    pub fn build(self) -> crate::types::RootStorage {
-        crate::types::RootStorage { capacity: self.capacity }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`capacity`](crate::types::builders::RootStorageBuilder::capacity)
+    pub fn build(self) -> ::std::result::Result<crate::types::RootStorage, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::RootStorage {
+            capacity: self.capacity.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "capacity",
+                    "capacity was not specified but it is required when building RootStorage",
+                )
+            })?,
+        })
     }
 }

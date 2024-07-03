@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLagInput {
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1Gbps or 10Gbps, or two when the port speed is 100Gbps or 400Gbps.</p>
     pub number_of_connections: ::std::option::Option<i32>,
     /// <p>The location for the LAG.</p>
     pub location: ::std::option::Option<::std::string::String>,
-    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
+    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps,10Gbps, 100Gbps, and 400Gbps.</p>
     pub connections_bandwidth: ::std::option::Option<::std::string::String>,
     /// <p>The name of the LAG.</p>
     pub lag_name: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ pub struct CreateLagInput {
     pub request_mac_sec: ::std::option::Option<bool>,
 }
 impl CreateLagInput {
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1Gbps or 10Gbps, or two when the port speed is 100Gbps or 400Gbps.</p>
     pub fn number_of_connections(&self) -> ::std::option::Option<i32> {
         self.number_of_connections
     }
@@ -33,7 +33,7 @@ impl CreateLagInput {
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
-    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
+    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps,10Gbps, 100Gbps, and 400Gbps.</p>
     pub fn connections_bandwidth(&self) -> ::std::option::Option<&str> {
         self.connections_bandwidth.as_deref()
     }
@@ -90,18 +90,18 @@ pub struct CreateLagInputBuilder {
     pub(crate) request_mac_sec: ::std::option::Option<bool>,
 }
 impl CreateLagInputBuilder {
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1Gbps or 10Gbps, or two when the port speed is 100Gbps or 400Gbps.</p>
     /// This field is required.
     pub fn number_of_connections(mut self, input: i32) -> Self {
         self.number_of_connections = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1Gbps or 10Gbps, or two when the port speed is 100Gbps or 400Gbps.</p>
     pub fn set_number_of_connections(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_connections = input;
         self
     }
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1Gbps or 10Gbps, or two when the port speed is 100Gbps or 400Gbps.</p>
     pub fn get_number_of_connections(&self) -> &::std::option::Option<i32> {
         &self.number_of_connections
     }
@@ -120,18 +120,18 @@ impl CreateLagInputBuilder {
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
-    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
+    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps,10Gbps, 100Gbps, and 400Gbps.</p>
     /// This field is required.
     pub fn connections_bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connections_bandwidth = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
+    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps,10Gbps, 100Gbps, and 400Gbps.</p>
     pub fn set_connections_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connections_bandwidth = input;
         self
     }
-    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
+    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps,10Gbps, 100Gbps, and 400Gbps.</p>
     pub fn get_connections_bandwidth(&self) -> &::std::option::Option<::std::string::String> {
         &self.connections_bandwidth
     }

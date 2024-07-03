@@ -20,6 +20,7 @@
 ///     ConstraintViolationExceptionReason::AccountNumberLimitExceeded => { /* ... */ },
 ///     ConstraintViolationExceptionReason::CannotCloseManagementAccount => { /* ... */ },
 ///     ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator => { /* ... */ },
+///     ConstraintViolationExceptionReason::CannotRegisterSuspendedAccountAsDelegatedAdministrator => { /* ... */ },
 ///     ConstraintViolationExceptionReason::CannotRemoveDelegatedAdministratorFromOrg => { /* ... */ },
 ///     ConstraintViolationExceptionReason::CloseAccountQuotaExceeded => { /* ... */ },
 ///     ConstraintViolationExceptionReason::CloseAccountRequestsLimitExceeded => { /* ... */ },
@@ -90,6 +91,8 @@ pub enum ConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotRegisterMasterAsDelegatedAdministrator,
     #[allow(missing_docs)] // documentation missing in model
+    CannotRegisterSuspendedAccountAsDelegatedAdministrator,
+    #[allow(missing_docs)] // documentation missing in model
     CannotRemoveDelegatedAdministratorFromOrg,
     #[allow(missing_docs)] // documentation missing in model
     CloseAccountQuotaExceeded,
@@ -156,6 +159,9 @@ impl ::std::convert::From<&str> for ConstraintViolationExceptionReason {
             "ACCOUNT_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountNumberLimitExceeded,
             "CANNOT_CLOSE_MANAGEMENT_ACCOUNT" => ConstraintViolationExceptionReason::CannotCloseManagementAccount,
             "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR" => ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator,
+            "CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR" => {
+                ConstraintViolationExceptionReason::CannotRegisterSuspendedAccountAsDelegatedAdministrator
+            }
             "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG" => ConstraintViolationExceptionReason::CannotRemoveDelegatedAdministratorFromOrg,
             "CLOSE_ACCOUNT_QUOTA_EXCEEDED" => ConstraintViolationExceptionReason::CloseAccountQuotaExceeded,
             "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::CloseAccountRequestsLimitExceeded,
@@ -209,6 +215,9 @@ impl ConstraintViolationExceptionReason {
             ConstraintViolationExceptionReason::AccountNumberLimitExceeded => "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
             ConstraintViolationExceptionReason::CannotCloseManagementAccount => "CANNOT_CLOSE_MANAGEMENT_ACCOUNT",
             ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator => "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR",
+            ConstraintViolationExceptionReason::CannotRegisterSuspendedAccountAsDelegatedAdministrator => {
+                "CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR"
+            }
             ConstraintViolationExceptionReason::CannotRemoveDelegatedAdministratorFromOrg => "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG",
             ConstraintViolationExceptionReason::CloseAccountQuotaExceeded => "CLOSE_ACCOUNT_QUOTA_EXCEEDED",
             ConstraintViolationExceptionReason::CloseAccountRequestsLimitExceeded => "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED",
@@ -253,6 +262,7 @@ impl ConstraintViolationExceptionReason {
             "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
             "CANNOT_CLOSE_MANAGEMENT_ACCOUNT",
             "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR",
+            "CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR",
             "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG",
             "CLOSE_ACCOUNT_QUOTA_EXCEEDED",
             "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED",
@@ -313,6 +323,9 @@ impl ::std::fmt::Display for ConstraintViolationExceptionReason {
             ConstraintViolationExceptionReason::CannotCloseManagementAccount => write!(f, "CANNOT_CLOSE_MANAGEMENT_ACCOUNT"),
             ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator => {
                 write!(f, "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR")
+            }
+            ConstraintViolationExceptionReason::CannotRegisterSuspendedAccountAsDelegatedAdministrator => {
+                write!(f, "CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR")
             }
             ConstraintViolationExceptionReason::CannotRemoveDelegatedAdministratorFromOrg => {
                 write!(f, "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG")

@@ -23,8 +23,8 @@ impl crate::operation::create_lag::builders::CreateLagInputBuilder {
 /// Fluent builder constructing a request to `CreateLag`.
 ///
 /// <p>Creates a link aggregation group (LAG) with the specified number of bundled physical dedicated connections between the customer network and a specific Direct Connect location. A LAG is a logical interface that uses the Link Aggregation Control Protocol (LACP) to aggregate multiple interfaces, enabling you to treat them as a single interface.</p>
-/// <p>All connections in a LAG must use the same bandwidth (either 1Gbps or 10Gbps) and must terminate at the same Direct Connect endpoint.</p>
-/// <p>You can have up to 10 dedicated connections per LAG. Regardless of this limit, if you request more connections for the LAG than Direct Connect can allocate on a single endpoint, no LAG is created.</p>
+/// <p>All connections in a LAG must use the same bandwidth (either 1Gbps, 10Gbps, 100Gbps, or 400Gbps) and must terminate at the same Direct Connect endpoint.</p>
+/// <p>You can have up to 10 dedicated connections per location. Regardless of this limit, if you request more connections for the LAG than Direct Connect can allocate on a single endpoint, no LAG is created..</p>
 /// <p>You can specify an existing physical dedicated connection or interconnect to include in the LAG (which counts towards the total number of connections). Doing so interrupts the current physical dedicated connection, and re-establishes them as a member of the LAG. The LAG will be created on the same Direct Connect endpoint to which the dedicated connection terminates. Any virtual interfaces associated with the dedicated connection are automatically disassociated and re-associated with the LAG. The connection ID does not change.</p>
 /// <p>If the Amazon Web Services account used to create a LAG is a registered Direct Connect Partner, the LAG is automatically enabled to host sub-connections. For a LAG owned by a partner, any associated virtual interfaces cannot be directly configured.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -106,17 +106,17 @@ impl CreateLagFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1Gbps or 10Gbps, or two when the port speed is 100Gbps or 400Gbps.</p>
     pub fn number_of_connections(mut self, input: i32) -> Self {
         self.inner = self.inner.number_of_connections(input);
         self
     }
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1Gbps or 10Gbps, or two when the port speed is 100Gbps or 400Gbps.</p>
     pub fn set_number_of_connections(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_number_of_connections(input);
         self
     }
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1Gbps or 10Gbps, or two when the port speed is 100Gbps or 400Gbps.</p>
     pub fn get_number_of_connections(&self) -> &::std::option::Option<i32> {
         self.inner.get_number_of_connections()
     }
@@ -134,17 +134,17 @@ impl CreateLagFluentBuilder {
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_location()
     }
-    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
+    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps,10Gbps, 100Gbps, and 400Gbps.</p>
     pub fn connections_bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connections_bandwidth(input.into());
         self
     }
-    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
+    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps,10Gbps, 100Gbps, and 400Gbps.</p>
     pub fn set_connections_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connections_bandwidth(input);
         self
     }
-    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
+    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps,10Gbps, 100Gbps, and 400Gbps.</p>
     pub fn get_connections_bandwidth(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connections_bandwidth()
     }

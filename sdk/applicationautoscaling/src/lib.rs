@@ -33,7 +33,7 @@
 //!   - Amazon SageMaker inference components
 //!   - Amazon SageMaker serverless endpoint provisioned concurrency
 //!   - Spot Fleets (Amazon EC2)
-//!   - WorkSpaces pools
+//!   - Pool of WorkSpaces
 //!   - Custom resources provided by your own applications or services
 //!
 //! To learn more about Application Auto Scaling, see the [Application Auto Scaling User Guide](https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html).
@@ -57,7 +57,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-applicationautoscaling = "1.36.0"
+//! aws-sdk-applicationautoscaling = "1.36.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

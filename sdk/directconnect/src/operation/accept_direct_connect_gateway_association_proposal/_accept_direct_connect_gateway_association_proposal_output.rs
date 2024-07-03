@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptDirectConnectGatewayAssociationProposalOutput {
-    /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
+    /// <p>Information about an association between a Direct Connect gateway and a virtual gateway or transit gateway.</p>
     pub direct_connect_gateway_association: ::std::option::Option<crate::types::DirectConnectGatewayAssociation>,
     _request_id: Option<String>,
 }
 impl AcceptDirectConnectGatewayAssociationProposalOutput {
-    /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
+    /// <p>Information about an association between a Direct Connect gateway and a virtual gateway or transit gateway.</p>
     pub fn direct_connect_gateway_association(&self) -> ::std::option::Option<&crate::types::DirectConnectGatewayAssociation> {
         self.direct_connect_gateway_association.as_ref()
     }
@@ -35,17 +35,17 @@ pub struct AcceptDirectConnectGatewayAssociationProposalOutputBuilder {
     _request_id: Option<String>,
 }
 impl AcceptDirectConnectGatewayAssociationProposalOutputBuilder {
-    /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
+    /// <p>Information about an association between a Direct Connect gateway and a virtual gateway or transit gateway.</p>
     pub fn direct_connect_gateway_association(mut self, input: crate::types::DirectConnectGatewayAssociation) -> Self {
         self.direct_connect_gateway_association = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
+    /// <p>Information about an association between a Direct Connect gateway and a virtual gateway or transit gateway.</p>
     pub fn set_direct_connect_gateway_association(mut self, input: ::std::option::Option<crate::types::DirectConnectGatewayAssociation>) -> Self {
         self.direct_connect_gateway_association = input;
         self
     }
-    /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
+    /// <p>Information about an association between a Direct Connect gateway and a virtual gateway or transit gateway.</p>
     pub fn get_direct_connect_gateway_association(&self) -> &::std::option::Option<crate::types::DirectConnectGatewayAssociation> {
         &self.direct_connect_gateway_association
     }

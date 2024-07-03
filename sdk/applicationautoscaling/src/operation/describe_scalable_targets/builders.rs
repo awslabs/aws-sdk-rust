@@ -173,7 +173,7 @@ impl DescribeScalableTargetsFluentBuilder {
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// <li>
-    /// <p>Amazon WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
+    /// <p>Pool of WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
     /// </ul>
     pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_ids(input.into());
@@ -218,7 +218,7 @@ impl DescribeScalableTargetsFluentBuilder {
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// <li>
-    /// <p>Amazon WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
+    /// <p>Pool of WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
     /// </ul>
     pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_ids(input);
@@ -263,7 +263,7 @@ impl DescribeScalableTargetsFluentBuilder {
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// <li>
-    /// <p>Amazon WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
+    /// <p>Pool of WorkSpaces - The resource type is <code>workspacespool</code> and the unique identifier is the pool ID. Example: <code>workspacespool/wspool-123456</code>.</p></li>
     /// </ul>
     pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_ids()
@@ -315,7 +315,7 @@ impl DescribeScalableTargetsFluentBuilder {
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// <li>
-    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The capacity of a WorkSpaces pool.</p></li>
+    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The number of user sessions for the WorkSpaces in the pool.</p></li>
     /// </ul>
     pub fn scalable_dimension(mut self, input: crate::types::ScalableDimension) -> Self {
         self.inner = self.inner.scalable_dimension(input);
@@ -368,7 +368,7 @@ impl DescribeScalableTargetsFluentBuilder {
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// <li>
-    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The capacity of a WorkSpaces pool.</p></li>
+    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The number of user sessions for the WorkSpaces in the pool.</p></li>
     /// </ul>
     pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.inner = self.inner.set_scalable_dimension(input);
@@ -421,7 +421,7 @@ impl DescribeScalableTargetsFluentBuilder {
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// <li>
-    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The capacity of a WorkSpaces pool.</p></li>
+    /// <p><code>workspaces:workspacespool:DesiredUserSessions</code> - The number of user sessions for the WorkSpaces in the pool.</p></li>
     /// </ul>
     pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         self.inner.get_scalable_dimension()

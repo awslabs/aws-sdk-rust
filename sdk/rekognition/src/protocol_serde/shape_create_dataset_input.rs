@@ -15,5 +15,15 @@ pub fn ser_create_dataset_input_input(
     if let Some(var_4) = &input.project_arn {
         object.key("ProjectArn").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("Tags").start_object();
+        for (key_7, value_8) in var_5 {
+            {
+                object_6.key(key_7.as_str()).string(value_8.as_str());
+            }
+        }
+        object_6.finish();
+    }
     Ok(())
 }

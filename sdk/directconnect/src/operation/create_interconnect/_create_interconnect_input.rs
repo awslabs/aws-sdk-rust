@@ -5,7 +5,7 @@
 pub struct CreateInterconnectInput {
     /// <p>The name of the interconnect.</p>
     pub interconnect_name: ::std::option::Option<::std::string::String>,
-    /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
+    /// <p>The port bandwidth, in Gbps. The possible values are 1, 10, and 100.</p>
     pub bandwidth: ::std::option::Option<::std::string::String>,
     /// <p>The location of the interconnect.</p>
     pub location: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl CreateInterconnectInput {
     pub fn interconnect_name(&self) -> ::std::option::Option<&str> {
         self.interconnect_name.as_deref()
     }
-    /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
+    /// <p>The port bandwidth, in Gbps. The possible values are 1, 10, and 100.</p>
     pub fn bandwidth(&self) -> ::std::option::Option<&str> {
         self.bandwidth.as_deref()
     }
@@ -78,18 +78,18 @@ impl CreateInterconnectInputBuilder {
     pub fn get_interconnect_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.interconnect_name
     }
-    /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
+    /// <p>The port bandwidth, in Gbps. The possible values are 1, 10, and 100.</p>
     /// This field is required.
     pub fn bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bandwidth = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
+    /// <p>The port bandwidth, in Gbps. The possible values are 1, 10, and 100.</p>
     pub fn set_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bandwidth = input;
         self
     }
-    /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
+    /// <p>The port bandwidth, in Gbps. The possible values are 1, 10, and 100.</p>
     pub fn get_bandwidth(&self) -> &::std::option::Option<::std::string::String> {
         &self.bandwidth
     }

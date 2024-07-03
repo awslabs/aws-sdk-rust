@@ -22,7 +22,9 @@ impl crate::operation::describe_interconnect_loa::builders::DescribeInterconnect
 }
 /// Fluent builder constructing a request to `DescribeInterconnectLoa`.
 ///
+/// <note>
 /// <p>Deprecated. Use <code>DescribeLoa</code> instead.</p>
+/// </note>
 /// <p>Gets the LOA-CFA for the specified interconnect.</p>
 /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that is used when establishing your cross connect to Amazon Web Services at the colocation facility. For more information, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at Direct Connect Locations</a> in the <i>Direct Connect User Guide</i>.</p>
 #[deprecated]

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectModerationLabelsOutput {
-    /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
+    /// <p>Array of detected Moderation labels. For video operations, this includes the time, in milliseconds from the start of the video, they were detected.</p>
     pub moderation_labels: ::std::option::Option<::std::vec::Vec<crate::types::ModerationLabel>>,
     /// <p>Version number of the base moderation detection model that was used to detect unsafe content.</p>
     pub moderation_model_version: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct DetectModerationLabelsOutput {
     _request_id: Option<String>,
 }
 impl DetectModerationLabelsOutput {
-    /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
+    /// <p>Array of detected Moderation labels. For video operations, this includes the time, in milliseconds from the start of the video, they were detected.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.moderation_labels.is_none()`.
     pub fn moderation_labels(&self) -> &[crate::types::ModerationLabel] {
@@ -69,19 +69,19 @@ impl DetectModerationLabelsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_moderation_labels`](Self::set_moderation_labels).
     ///
-    /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
+    /// <p>Array of detected Moderation labels. For video operations, this includes the time, in milliseconds from the start of the video, they were detected.</p>
     pub fn moderation_labels(mut self, input: crate::types::ModerationLabel) -> Self {
         let mut v = self.moderation_labels.unwrap_or_default();
         v.push(input);
         self.moderation_labels = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
+    /// <p>Array of detected Moderation labels. For video operations, this includes the time, in milliseconds from the start of the video, they were detected.</p>
     pub fn set_moderation_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModerationLabel>>) -> Self {
         self.moderation_labels = input;
         self
     }
-    /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
+    /// <p>Array of detected Moderation labels. For video operations, this includes the time, in milliseconds from the start of the video, they were detected.</p>
     pub fn get_moderation_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModerationLabel>> {
         &self.moderation_labels
     }

@@ -23,7 +23,7 @@ impl crate::operation::update_virtual_interface_attributes::builders::UpdateVirt
 /// Fluent builder constructing a request to `UpdateVirtualInterfaceAttributes`.
 ///
 /// <p>Updates the specified attributes of the specified virtual private interface.</p>
-/// <p>Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection supports jumbo frames, call <code>DescribeConnections</code>. To check whether your virtual interface supports jumbo frames, call <code>DescribeVirtualInterfaces</code>.</p>
+/// <p>Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update to the underlying physical connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection supports jumbo frames, call <code>DescribeConnections</code>. To check whether your virtual interface supports jumbo frames, call <code>DescribeVirtualInterfaces</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateVirtualInterfaceAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -123,17 +123,17 @@ impl UpdateVirtualInterfaceAttributesFluentBuilder {
     pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_virtual_interface_id()
     }
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.</p>
     pub fn mtu(mut self, input: i32) -> Self {
         self.inner = self.inner.mtu(input);
         self
     }
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.</p>
     pub fn set_mtu(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_mtu(input);
         self
     }
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.</p>
     pub fn get_mtu(&self) -> &::std::option::Option<i32> {
         self.inner.get_mtu()
     }
