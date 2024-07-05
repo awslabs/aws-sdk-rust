@@ -120,6 +120,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for HeadObj
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("HeadObject")
             .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
             .with_interceptor(HeadObjectEndpointParamsInterceptor)
+            .with_interceptor(crate::s3_expires_interceptor::S3ExpiresInterceptor)
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::head_object::HeadObjectError,
             >::new())
@@ -353,6 +354,7 @@ mod head_object_test {
         ::pretty_assertions::assert_eq!(http_request.method(), "HEAD", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/%3C%3E%20%60%3F%F0%9F%90%B1", "path was incorrect");
     }
+
     /// This test case validates https://github.com/smithy-lang/smithy-rs/issues/456
     /// Test ID: HeadObjectEmptyBody
     #[::tokio::test]

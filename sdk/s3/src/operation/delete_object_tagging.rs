@@ -312,6 +312,7 @@ mod delete_object_tagging_test {
         ::pretty_assertions::assert_eq!(uri.path(), "/my%20key.txt", "path was incorrect");
         ::pretty_assertions::assert_eq!(uri.host().expect("host should be set"), "mybucket.s3.us-west-2.amazonaws.com");
     }
+
     /// S3 clients should preserve an Object Key representing a path
     /// when the Object Key is used as a URI label binding, but still
     /// escape special characters.

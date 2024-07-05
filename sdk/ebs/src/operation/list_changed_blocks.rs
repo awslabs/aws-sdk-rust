@@ -326,6 +326,7 @@ mod list_changed_blocks_test {
             panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
         }
     }
+
     /// This test case validates case insensitive parsing of `message`
     /// Test ID: UppercaseMessage
     #[::tokio::test]

@@ -154,6 +154,13 @@ pub(crate) fn de_expires_header(
     }
 }
 
+pub(crate) fn de_expires_string_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("ExpiresString");
+    ::aws_smithy_http::header::one_or_none(headers)
+}
+
 pub(crate) fn de_last_modified_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::aws_smithy_types::DateTime>, ::aws_smithy_http::header::ParseError> {

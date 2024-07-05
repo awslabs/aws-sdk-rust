@@ -218,6 +218,9 @@ pub(crate) mod protocol_serde;
 mod rest_xml_unwrapped_errors;
 
 ///
+mod s3_expires_interceptor;
+
+///
 mod s3_express;
 
 ///

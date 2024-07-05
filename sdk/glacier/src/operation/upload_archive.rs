@@ -298,6 +298,7 @@ mod upload_archive_test {
         ::pretty_assertions::assert_eq!(http_request.method(), "POST", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/foo/vaults/bar/archives", "path was incorrect");
     }
+
     /// Glacier requires checksum headers that are cumbersome to provide.
     /// Test ID: GlacierChecksums
     #[::tokio::test]
@@ -341,6 +342,7 @@ mod upload_archive_test {
         ::pretty_assertions::assert_eq!(http_request.method(), "POST", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/foo/vaults/bar/archives", "path was incorrect");
     }
+
     /// Glacier requires that the account id be set, but you can just use a
     /// hyphen (-) to indicate the current account. This should be default
     /// behavior if the customer provides a null or empty string.
@@ -373,6 +375,7 @@ mod upload_archive_test {
         ::pretty_assertions::assert_eq!(http_request.method(), "POST", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/-/vaults/bar/archives", "path was incorrect");
     }
+
     /// Glacier requires that the account id be set, but you can just use a
     /// hyphen (-) to indicate the current account. This should be default
     /// behavior if the customer provides a null or empty string.

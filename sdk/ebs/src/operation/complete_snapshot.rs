@@ -293,6 +293,7 @@ mod complete_snapshot_test {
             panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
         }
     }
+
     /// This test case validates case insensitive parsing of `message`
     /// Test ID: UppercaseMessage
     #[::tokio::test]

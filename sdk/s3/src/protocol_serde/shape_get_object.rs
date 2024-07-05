@@ -92,6 +92,10 @@ pub fn de_get_object_http_response(
             crate::protocol_serde::shape_get_object_output::de_expires_header(_response_headers)
                 .map_err(|_| crate::operation::get_object::GetObjectError::unhandled("Failed to parse Expires from header `Expires"))?,
         );
+        output = output.set_expires_string(
+            crate::protocol_serde::shape_get_object_output::de_expires_string_header(_response_headers)
+                .map_err(|_| crate::operation::get_object::GetObjectError::unhandled("Failed to parse ExpiresString from header `ExpiresString"))?,
+        );
         output = output.set_last_modified(
             crate::protocol_serde::shape_get_object_output::de_last_modified_header(_response_headers)
                 .map_err(|_| crate::operation::get_object::GetObjectError::unhandled("Failed to parse LastModified from header `Last-Modified"))?,

@@ -58,8 +58,6 @@ pub struct GetObjectOutput {
     pub content_range: ::std::option::Option<::std::string::String>,
     /// <p>A standard MIME type describing the format of the object data.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time at which the object is no longer cacheable.</p>
-    pub expires: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
@@ -117,6 +115,11 @@ pub struct GetObjectOutput {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub object_lock_legal_hold_status: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
+    /// <p>The date and time at which the object is no longer cacheable.</p>
+    #[deprecated(note = "Please use `expires_string` which contains the raw, unparsed value of this field.")]
+    pub expires: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The date and time at which the object is no longer cacheable.</p>
+    pub expires_string: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -217,10 +220,6 @@ impl GetObjectOutput {
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
-    /// <p>The date and time at which the object is no longer cacheable.</p>
-    pub fn expires(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.expires.as_ref()
-    }
     /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
@@ -308,6 +307,15 @@ impl GetObjectOutput {
     pub fn object_lock_legal_hold_status(&self) -> ::std::option::Option<&crate::types::ObjectLockLegalHoldStatus> {
         self.object_lock_legal_hold_status.as_ref()
     }
+    /// <p>The date and time at which the object is no longer cacheable.</p>
+    #[deprecated(note = "Please use `expires_string` which contains the raw, unparsed value of this field.")]
+    pub fn expires(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.expires.as_ref()
+    }
+    /// <p>The date and time at which the object is no longer cacheable.</p>
+    pub fn expires_string(&self) -> ::std::option::Option<&str> {
+        self.expires_string.as_deref()
+    }
 }
 impl ::std::fmt::Debug for GetObjectOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -332,7 +340,6 @@ impl ::std::fmt::Debug for GetObjectOutput {
         formatter.field("content_language", &self.content_language);
         formatter.field("content_range", &self.content_range);
         formatter.field("content_type", &self.content_type);
-        formatter.field("expires", &self.expires);
         formatter.field("website_redirect_location", &self.website_redirect_location);
         formatter.field("server_side_encryption", &self.server_side_encryption);
         formatter.field("metadata", &self.metadata);
@@ -348,6 +355,8 @@ impl ::std::fmt::Debug for GetObjectOutput {
         formatter.field("object_lock_mode", &self.object_lock_mode);
         formatter.field("object_lock_retain_until_date", &self.object_lock_retain_until_date);
         formatter.field("object_lock_legal_hold_status", &self.object_lock_legal_hold_status);
+        formatter.field("expires", &self.expires);
+        formatter.field("expires_string", &self.expires_string);
         formatter.field("_extended_request_id", &self._extended_request_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -394,7 +403,6 @@ pub struct GetObjectOutputBuilder {
     pub(crate) content_language: ::std::option::Option<::std::string::String>,
     pub(crate) content_range: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
-    pub(crate) expires: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) website_redirect_location: ::std::option::Option<::std::string::String>,
     pub(crate) server_side_encryption: ::std::option::Option<crate::types::ServerSideEncryption>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -410,6 +418,8 @@ pub struct GetObjectOutputBuilder {
     pub(crate) object_lock_mode: ::std::option::Option<crate::types::ObjectLockMode>,
     pub(crate) object_lock_retain_until_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) object_lock_legal_hold_status: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
+    pub(crate) expires: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) expires_string: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -742,20 +752,6 @@ impl GetObjectOutputBuilder {
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
     }
-    /// <p>The date and time at which the object is no longer cacheable.</p>
-    pub fn expires(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.expires = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The date and time at which the object is no longer cacheable.</p>
-    pub fn set_expires(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expires = input;
-        self
-    }
-    /// <p>The date and time at which the object is no longer cacheable.</p>
-    pub fn get_expires(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        &self.expires
-    }
     /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
@@ -1053,6 +1049,37 @@ impl GetObjectOutputBuilder {
     pub fn get_object_lock_legal_hold_status(&self) -> &::std::option::Option<crate::types::ObjectLockLegalHoldStatus> {
         &self.object_lock_legal_hold_status
     }
+    /// <p>The date and time at which the object is no longer cacheable.</p>
+    #[deprecated(note = "Please use `expires_string` which contains the raw, unparsed value of this field.")]
+    pub fn expires(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.expires = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time at which the object is no longer cacheable.</p>
+    #[deprecated(note = "Please use `expires_string` which contains the raw, unparsed value of this field.")]
+    pub fn set_expires(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.expires = input;
+        self
+    }
+    /// <p>The date and time at which the object is no longer cacheable.</p>
+    #[deprecated(note = "Please use `expires_string` which contains the raw, unparsed value of this field.")]
+    pub fn get_expires(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expires
+    }
+    /// <p>The date and time at which the object is no longer cacheable.</p>
+    pub fn expires_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expires_string = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The date and time at which the object is no longer cacheable.</p>
+    pub fn set_expires_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expires_string = input;
+        self
+    }
+    /// <p>The date and time at which the object is no longer cacheable.</p>
+    pub fn get_expires_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expires_string
+    }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());
         self
@@ -1094,7 +1121,6 @@ impl GetObjectOutputBuilder {
             content_language: self.content_language,
             content_range: self.content_range,
             content_type: self.content_type,
-            expires: self.expires,
             website_redirect_location: self.website_redirect_location,
             server_side_encryption: self.server_side_encryption,
             metadata: self.metadata,
@@ -1110,6 +1136,8 @@ impl GetObjectOutputBuilder {
             object_lock_mode: self.object_lock_mode,
             object_lock_retain_until_date: self.object_lock_retain_until_date,
             object_lock_legal_hold_status: self.object_lock_legal_hold_status,
+            expires: self.expires,
+            expires_string: self.expires_string,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
@@ -1138,7 +1166,6 @@ impl ::std::fmt::Debug for GetObjectOutputBuilder {
         formatter.field("content_language", &self.content_language);
         formatter.field("content_range", &self.content_range);
         formatter.field("content_type", &self.content_type);
-        formatter.field("expires", &self.expires);
         formatter.field("website_redirect_location", &self.website_redirect_location);
         formatter.field("server_side_encryption", &self.server_side_encryption);
         formatter.field("metadata", &self.metadata);
@@ -1154,6 +1181,8 @@ impl ::std::fmt::Debug for GetObjectOutputBuilder {
         formatter.field("object_lock_mode", &self.object_lock_mode);
         formatter.field("object_lock_retain_until_date", &self.object_lock_retain_until_date);
         formatter.field("object_lock_legal_hold_status", &self.object_lock_legal_hold_status);
+        formatter.field("expires", &self.expires);
+        formatter.field("expires_string", &self.expires_string);
         formatter.field("_extended_request_id", &self._extended_request_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

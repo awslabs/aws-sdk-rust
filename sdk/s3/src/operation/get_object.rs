@@ -120,6 +120,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetObje
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetObject")
             .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
             .with_interceptor(GetObjectEndpointParamsInterceptor)
+            .with_interceptor(crate::s3_expires_interceptor::S3ExpiresInterceptor)
             .with_interceptor(crate::http_response_checksum::ResponseChecksumInterceptor::new(
                 ["crc32", "crc32c", "sha256", "sha1"].as_slice(),
                 |input: &::aws_smithy_runtime_api::client::interceptors::context::Input| {
@@ -375,6 +376,7 @@ mod get_object_test {
         ::pretty_assertions::assert_eq!(http_request.method(), "GET", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/object.txt", "path was incorrect");
     }
+
     /// S3 clients should not remove dot segments from request paths.
     ///
     /// Test ID: S3PreservesLeadingDotSegmentInUriLabel
@@ -407,6 +409,7 @@ mod get_object_test {
         ::pretty_assertions::assert_eq!(uri.path(), "/../key.txt", "path was incorrect");
         ::pretty_assertions::assert_eq!(uri.host().expect("host should be set"), "mybucket.s3.us-west-2.amazonaws.com");
     }
+
     /// S3 clients should not remove dot segments from request paths.
     ///
     /// Test ID: S3PreservesEmbeddedDotSegmentInUriLabel

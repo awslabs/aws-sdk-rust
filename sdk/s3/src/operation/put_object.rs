@@ -333,6 +333,7 @@ mod put_object_test {
         ::pretty_assertions::assert_eq!(http_request.method(), "PUT", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/test-key", "path was incorrect");
     }
+
     /// This test validates that if a content-length is specified, that only one content-length header is sent
     /// Test ID: DontSendDuplicateContentLength
     #[::tokio::test]
