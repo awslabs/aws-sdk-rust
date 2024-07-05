@@ -239,11 +239,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeCompu
 }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
-mod describe_compute_environments_request_test {
+mod describe_compute_environments_test {
+
     /// This test case validates a bug where unboxed primitives were incorrectly marked as required
     /// Test ID: DeserializeDescribeCompute
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn deserialize_describe_compute_response() {
         let expected_output = crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput::builder()
             .set_compute_environments(::std::option::Option::Some(vec![crate::types::ComputeEnvironmentDetail::builder()

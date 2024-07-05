@@ -308,11 +308,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutBucketLife
 }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
-mod put_bucket_lifecycle_configuration_request_test {
+mod put_bucket_lifecycle_configuration_test {
+
     /// This test validates that the content md5 header is set correctly
     /// Test ID: PutBucketLifecycleConfiguration
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn put_bucket_lifecycle_configuration_request() {
         let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");

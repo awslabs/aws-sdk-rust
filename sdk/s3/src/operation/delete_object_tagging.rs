@@ -275,13 +275,14 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteObjectT
 }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
-mod delete_object_tagging_request_test {
-    ///     S3 clients should escape special characters in Object Keys
-    ///     when the Object Key is used as a URI label binding.
+mod delete_object_tagging_test {
+
+    /// S3 clients should escape special characters in Object Keys
+    /// when the Object Key is used as a URI label binding.
     ///
     /// Test ID: S3EscapeObjectKeyInUriLabel
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn s3_escape_object_key_in_uri_label_request() {
         let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder()
@@ -311,13 +312,13 @@ mod delete_object_tagging_request_test {
         ::pretty_assertions::assert_eq!(uri.path(), "/my%20key.txt", "path was incorrect");
         ::pretty_assertions::assert_eq!(uri.host().expect("host should be set"), "mybucket.s3.us-west-2.amazonaws.com");
     }
-    ///     S3 clients should preserve an Object Key representing a path
-    ///     when the Object Key is used as a URI label binding, but still
-    ///     escape special characters.
+    /// S3 clients should preserve an Object Key representing a path
+    /// when the Object Key is used as a URI label binding, but still
+    /// escape special characters.
     ///
     /// Test ID: S3EscapePathObjectKeyInUriLabel
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn s3_escape_path_object_key_in_uri_label_request() {
         let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder()

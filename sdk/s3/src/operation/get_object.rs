@@ -343,11 +343,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetObjectEndp
 }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
-mod get_object_request_test {
+mod get_object_test {
+
     /// https://github.com/awslabs/aws-sdk-rust/issues/818
     /// Test ID: GetObjectIfModifiedSince
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn get_object_if_modified_since_request() {
         let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");
@@ -374,11 +375,11 @@ mod get_object_request_test {
         ::pretty_assertions::assert_eq!(http_request.method(), "GET", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/object.txt", "path was incorrect");
     }
-    ///     S3 clients should not remove dot segments from request paths.
+    /// S3 clients should not remove dot segments from request paths.
     ///
     /// Test ID: S3PreservesLeadingDotSegmentInUriLabel
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn s3_preserves_leading_dot_segment_in_uri_label_request() {
         let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder()
@@ -406,11 +407,11 @@ mod get_object_request_test {
         ::pretty_assertions::assert_eq!(uri.path(), "/../key.txt", "path was incorrect");
         ::pretty_assertions::assert_eq!(uri.host().expect("host should be set"), "mybucket.s3.us-west-2.amazonaws.com");
     }
-    ///     S3 clients should not remove dot segments from request paths.
+    /// S3 clients should not remove dot segments from request paths.
     ///
     /// Test ID: S3PreservesEmbeddedDotSegmentInUriLabel
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn s3_preserves_embedded_dot_segment_in_uri_label_request() {
         let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder()

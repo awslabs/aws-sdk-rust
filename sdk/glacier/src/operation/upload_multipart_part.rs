@@ -281,11 +281,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UploadMultipa
 }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
-mod upload_multipart_part_request_test {
+mod upload_multipart_part_test {
+
     /// Glacier requires checksum headers that are cumbersome to provide.
     /// Test ID: GlacierMultipartChecksums
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn glacier_multipart_checksums_request() {
         let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");

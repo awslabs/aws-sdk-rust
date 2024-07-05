@@ -247,11 +247,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetReusableDe
 }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
-mod get_reusable_delegation_set_request_test {
+mod get_reusable_delegation_set_test {
+
     /// This test validates that delegation set id is correctly trimmed
     /// Test ID: GetReusableDelegationSetTrimDelegationSetId
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn get_reusable_delegation_set_trim_delegation_set_id_request() {
         let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");

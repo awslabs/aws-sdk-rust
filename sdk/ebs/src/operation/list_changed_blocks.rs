@@ -274,11 +274,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListChangedBl
 }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
-mod list_changed_blocks_request_test {
+mod list_changed_blocks_test {
+
     /// This test case validates case insensitive parsing of `message`
     /// Test ID: LowercaseMessage
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn lowercase_message_response() {
         let expected_output = crate::types::error::ValidationException::builder()
             .set_message(::std::option::Option::Some("1 validation error detected".to_owned()))
@@ -328,7 +329,7 @@ mod list_changed_blocks_request_test {
     /// This test case validates case insensitive parsing of `message`
     /// Test ID: UppercaseMessage
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn uppercase_message_response() {
         let expected_output = crate::types::error::ValidationException::builder()
             .set_message(::std::option::Option::Some("Invalid volume size: 99999999999".to_owned()))

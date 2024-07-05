@@ -276,11 +276,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListResourceR
 }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
-mod list_resource_record_sets_request_test {
+mod list_resource_record_sets_test {
+
     /// This test validates that hosted zone is correctly trimmed
     /// Test ID: ListResourceRecordSetsTrimHostedZone
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn list_resource_record_sets_trim_hosted_zone_request() {
         let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");

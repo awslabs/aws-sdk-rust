@@ -266,11 +266,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UploadArchive
 }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
-mod upload_archive_request_test {
+mod upload_archive_test {
+
     /// Glacier requires that a version header be set on all requests.
     /// Test ID: GlacierVersionHeader
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn glacier_version_header_request() {
         let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");
@@ -300,7 +301,7 @@ mod upload_archive_request_test {
     /// Glacier requires checksum headers that are cumbersome to provide.
     /// Test ID: GlacierChecksums
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn glacier_checksums_request() {
         let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");
@@ -345,7 +346,7 @@ mod upload_archive_request_test {
     /// behavior if the customer provides a null or empty string.
     /// Test ID: GlacierAccountIdEmpty
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn glacier_account_id_empty_request() {
         let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");
@@ -377,7 +378,7 @@ mod upload_archive_request_test {
     /// behavior if the customer provides a null or empty string.
     /// Test ID: GlacierAccountIdUnset
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn glacier_account_id_unset_request() {
         let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");

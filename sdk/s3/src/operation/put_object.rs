@@ -303,11 +303,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutObjectEndp
 }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
-mod put_object_request_test {
+mod put_object_test {
+
     /// This test validates that if a content-type is specified, that only one content-type header is sent
     /// Test ID: DontSendDuplicateContentType
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn dont_send_duplicate_content_type_request() {
         let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");
@@ -335,7 +336,7 @@ mod put_object_request_test {
     /// This test validates that if a content-length is specified, that only one content-length header is sent
     /// Test ID: DontSendDuplicateContentLength
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn dont_send_duplicate_content_length_request() {
         let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");

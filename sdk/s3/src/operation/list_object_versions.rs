@@ -290,11 +290,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListObjectVer
 }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
-mod list_object_versions_request_test {
+mod list_object_versions_test {
+
     /// Verify that interleaving list elements (DeleteMarker and Version) from different lists works
     /// Test ID: OutOfOrderVersions
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn out_of_order_versions_response() {
         let expected_output = crate::operation::list_object_versions::ListObjectVersionsOutput::builder()
             .set_name(::std::option::Option::Some("sdk-obj-versions-test".to_owned()))

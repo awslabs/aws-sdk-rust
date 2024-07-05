@@ -292,11 +292,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateMultipa
 }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
-mod create_multipart_upload_request_test {
+mod create_multipart_upload_test {
+
     /// This test validates that the URI for CreateMultipartUpload is created correctly
     /// Test ID: CreateMultipartUploadUriConstruction
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn create_multipart_upload_uri_construction_request() {
         let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");

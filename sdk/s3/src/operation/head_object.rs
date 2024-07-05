@@ -326,11 +326,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for HeadObjectEnd
 }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
-mod head_object_request_test {
+mod head_object_test {
+
     /// https://github.com/awslabs/aws-sdk-rust/issues/331
     /// Test ID: HeadObjectUriEncoding
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn head_object_uri_encoding_request() {
         let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");
@@ -355,7 +356,7 @@ mod head_object_request_test {
     /// This test case validates https://github.com/smithy-lang/smithy-rs/issues/456
     /// Test ID: HeadObjectEmptyBody
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn head_object_empty_body_response() {
         let expected_output = crate::types::error::NotFound::builder().build();
         let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(

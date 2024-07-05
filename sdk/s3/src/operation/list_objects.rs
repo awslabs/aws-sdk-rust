@@ -292,11 +292,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListObjectsEn
 }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
-mod list_objects_request_test {
+mod list_objects_test {
+
     /// This test validates that parsing respects whitespace
     /// Test ID: KeysWithWhitespace
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn keys_with_whitespace_response() {
         let expected_output = crate::operation::list_objects::ListObjectsOutput::builder()
             .set_max_keys(::std::option::Option::Some(1000))

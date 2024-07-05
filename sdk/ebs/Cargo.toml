@@ -89,6 +89,10 @@ version = "1.3.0"
 version = "1.23.1"
 features = ["macros", "test-util", "rt-multi-thread"]
 
+[dev-dependencies.tracing-test]
+version = "0.2.5"
+features = ["no-env-filter"]
+
 [features]
 behavior-version-latest = []
 rustls = ["aws-smithy-runtime/tls-rustls"]

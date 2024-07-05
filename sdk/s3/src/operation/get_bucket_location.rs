@@ -260,11 +260,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetBucketLoca
 }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
-mod get_bucket_location_request_test {
+mod get_bucket_location_test {
+
     /// This test case validates https://github.com/awslabs/aws-sdk-rust/issues/116
     /// Test ID: GetBucketLocation
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn get_bucket_location_response() {
         let expected_output = crate::operation::get_bucket_location::GetBucketLocationOutput::builder()
             .set_location_constraint(::std::option::Option::Some(

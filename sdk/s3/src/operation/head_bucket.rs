@@ -256,11 +256,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for HeadBucketEnd
 }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
-mod head_bucket_request_test {
+mod head_bucket_test {
+
     /// This test case validates https://github.com/smithy-lang/smithy-rs/issues/456
     /// Test ID: HeadObjectEmptyBody
     #[::tokio::test]
-    #[allow(unused_mut)]
+    #[::tracing_test::traced_test]
     async fn head_object_empty_body_response() {
         let expected_output = crate::types::error::NotFound::builder().build();
         let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(
