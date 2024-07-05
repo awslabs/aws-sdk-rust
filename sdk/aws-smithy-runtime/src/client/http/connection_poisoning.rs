@@ -81,14 +81,14 @@ impl Intercept for ConnectionPoisoningInterceptor {
             reconnect_mode == ReconnectMode::ReconnectOnTransientError;
 
         if error_is_transient && connection_poisoning_is_enabled {
-            debug!("received a transient error, poisoning the connection...");
+            debug!("received a transient error, marking the connection for closure...");
 
             if let Some(captured_connection) = captured_connection.and_then(|conn| conn.get()) {
                 captured_connection.poison();
-                debug!("the connection was poisoned")
+                debug!("the connection was marked for closure")
             } else {
                 error!(
-                    "unable to poison the connection because no connection was found! The underlying HTTP connector never set a connection."
+                    "unable to mark the connection for closure because no connection was found! The underlying HTTP connector never set a connection."
                 );
             }
         }

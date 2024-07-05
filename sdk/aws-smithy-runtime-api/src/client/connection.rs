@@ -21,7 +21,10 @@ pub struct ConnectionMetadata {
 impl ConnectionMetadata {
     /// Poison this connection, ensuring that it won't be reused.
     pub fn poison(&self) {
-        tracing::info!("smithy connection was poisoned");
+        tracing::info!(
+            see_for_more_info = "https://smithy-lang.github.io/smithy-rs/design/client/detailed_error_explanations.html",
+            "Connection encountered an issue and should not be re-used. Marking it for closure"
+        );
         (self.poison_fn)()
     }
 
