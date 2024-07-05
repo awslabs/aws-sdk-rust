@@ -27,7 +27,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-wafv2 = "1.37.1"
+aws-sdk-wafv2 = "1.38.0"
 tokio = { version = "1", features = ["full"] }
 ```
 
