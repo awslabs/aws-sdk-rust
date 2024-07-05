@@ -2,7 +2,7 @@
 
 /// <p>Card data parameters that are required to generate a Card Security Code (CSC2) for an AMEX payment card.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AmexCardSecurityCodeVersion2 {
     /// <p>The expiry date of a payment card.</p>
     pub card_expiry_date: ::std::string::String,
@@ -21,6 +21,14 @@ impl AmexCardSecurityCodeVersion2 {
         self.service_code.deref()
     }
 }
+impl ::std::fmt::Debug for AmexCardSecurityCodeVersion2 {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AmexCardSecurityCodeVersion2");
+        formatter.field("card_expiry_date", &"*** Sensitive Data Redacted ***");
+        formatter.field("service_code", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl AmexCardSecurityCodeVersion2 {
     /// Creates a new builder-style object to manufacture [`AmexCardSecurityCodeVersion2`](crate::types::AmexCardSecurityCodeVersion2).
     pub fn builder() -> crate::types::builders::AmexCardSecurityCodeVersion2Builder {
@@ -30,7 +38,7 @@ impl AmexCardSecurityCodeVersion2 {
 
 /// A builder for [`AmexCardSecurityCodeVersion2`](crate::types::AmexCardSecurityCodeVersion2).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AmexCardSecurityCodeVersion2Builder {
     pub(crate) card_expiry_date: ::std::option::Option<::std::string::String>,
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
@@ -85,5 +93,13 @@ impl AmexCardSecurityCodeVersion2Builder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for AmexCardSecurityCodeVersion2Builder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AmexCardSecurityCodeVersion2Builder");
+        formatter.field("card_expiry_date", &"*** Sensitive Data Redacted ***");
+        formatter.field("service_code", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

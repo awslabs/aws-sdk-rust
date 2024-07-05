@@ -2,7 +2,7 @@
 
 /// <p>Parameters that are required to generate or verify Dynamic Card Verification Value (dCVV).</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DynamicCardVerificationValue {
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
     pub pan_sequence_number: ::std::string::String,
@@ -35,6 +35,16 @@ impl DynamicCardVerificationValue {
         self.application_transaction_counter.deref()
     }
 }
+impl ::std::fmt::Debug for DynamicCardVerificationValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DynamicCardVerificationValue");
+        formatter.field("pan_sequence_number", &self.pan_sequence_number);
+        formatter.field("card_expiry_date", &"*** Sensitive Data Redacted ***");
+        formatter.field("service_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("application_transaction_counter", &self.application_transaction_counter);
+        formatter.finish()
+    }
+}
 impl DynamicCardVerificationValue {
     /// Creates a new builder-style object to manufacture [`DynamicCardVerificationValue`](crate::types::DynamicCardVerificationValue).
     pub fn builder() -> crate::types::builders::DynamicCardVerificationValueBuilder {
@@ -44,7 +54,7 @@ impl DynamicCardVerificationValue {
 
 /// A builder for [`DynamicCardVerificationValue`](crate::types::DynamicCardVerificationValue).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DynamicCardVerificationValueBuilder {
     pub(crate) pan_sequence_number: ::std::option::Option<::std::string::String>,
     pub(crate) card_expiry_date: ::std::option::Option<::std::string::String>,
@@ -145,5 +155,15 @@ impl DynamicCardVerificationValueBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for DynamicCardVerificationValueBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DynamicCardVerificationValueBuilder");
+        formatter.field("pan_sequence_number", &self.pan_sequence_number);
+        formatter.field("card_expiry_date", &"*** Sensitive Data Redacted ***");
+        formatter.field("service_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("application_transaction_counter", &self.application_transaction_counter);
+        formatter.finish()
     }
 }

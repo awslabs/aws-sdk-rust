@@ -27,26 +27,32 @@ pub fn ser_create_application_input_input(
     if let Some(var_8) = &input.identity_center_instance_arn {
         object.key("identityCenterInstanceArn").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.q_apps_configuration {
+    if let Some(var_9) = &input.personalization_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("qAppsConfiguration").start_object();
-        crate::protocol_serde::shape_q_apps_configuration::ser_q_apps_configuration(&mut object_10, var_9)?;
+        let mut object_10 = object.key("personalizationConfiguration").start_object();
+        crate::protocol_serde::shape_personalization_configuration::ser_personalization_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.role_arn {
-        object.key("roleArn").string(var_11.as_str());
+    if let Some(var_11) = &input.q_apps_configuration {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("qAppsConfiguration").start_object();
+        crate::protocol_serde::shape_q_apps_configuration::ser_q_apps_configuration(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_12) = &input.tags {
-        let mut array_13 = object.key("tags").start_array();
-        for item_14 in var_12 {
+    if let Some(var_13) = &input.role_arn {
+        object.key("roleArn").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.tags {
+        let mut array_15 = object.key("tags").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_13.finish();
+        array_15.finish();
     }
     Ok(())
 }

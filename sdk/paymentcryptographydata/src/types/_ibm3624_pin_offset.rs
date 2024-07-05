@@ -2,7 +2,7 @@
 
 /// <p>Pparameters that are required to generate or verify Ibm3624 PIN offset PIN.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Ibm3624PinOffset {
     /// <p>The encrypted PIN block data. According to ISO 9564 standard, a PIN Block is an encoded representation of a payment card Personal Account Number (PAN) and the cardholder Personal Identification Number (PIN).</p>
     pub encrypted_pin_block: ::std::string::String,
@@ -35,6 +35,16 @@ impl Ibm3624PinOffset {
         self.pin_validation_data.deref()
     }
 }
+impl ::std::fmt::Debug for Ibm3624PinOffset {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Ibm3624PinOffset");
+        formatter.field("encrypted_pin_block", &"*** Sensitive Data Redacted ***");
+        formatter.field("decimalization_table", &"*** Sensitive Data Redacted ***");
+        formatter.field("pin_validation_data_pad_character", &self.pin_validation_data_pad_character);
+        formatter.field("pin_validation_data", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Ibm3624PinOffset {
     /// Creates a new builder-style object to manufacture [`Ibm3624PinOffset`](crate::types::Ibm3624PinOffset).
     pub fn builder() -> crate::types::builders::Ibm3624PinOffsetBuilder {
@@ -44,7 +54,7 @@ impl Ibm3624PinOffset {
 
 /// A builder for [`Ibm3624PinOffset`](crate::types::Ibm3624PinOffset).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct Ibm3624PinOffsetBuilder {
     pub(crate) encrypted_pin_block: ::std::option::Option<::std::string::String>,
     pub(crate) decimalization_table: ::std::option::Option<::std::string::String>,
@@ -145,5 +155,15 @@ impl Ibm3624PinOffsetBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for Ibm3624PinOffsetBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Ibm3624PinOffsetBuilder");
+        formatter.field("encrypted_pin_block", &"*** Sensitive Data Redacted ***");
+        formatter.field("decimalization_table", &"*** Sensitive Data Redacted ***");
+        formatter.field("pin_validation_data_pad_character", &self.pin_validation_data_pad_character);
+        formatter.field("pin_validation_data", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

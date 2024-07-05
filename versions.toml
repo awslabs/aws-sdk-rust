@@ -53,8 +53,8 @@ model_hash = 'e053c02604629231c91529fefa603be657a56e45e1b3bb1af76c165721070ec9'
 [crates.aws-sdk-acm]
 category = 'AwsSdk'
 version = '1.35.0'
-source_hash = 'ffc511423f667aeeb1dfea17f20f6e0bf6a2728ec5e3698137f3dc687a8ff150'
-model_hash = 'a52f41f035e8cf2cc9aac09ea7e3a576d128a4ef6946acb21c5f0ab416d2b9b0'
+source_hash = 'e5e600a9061071137416883daa69e198808badf1cd82992eec2c0eb02d172d85'
+model_hash = '707cde7caa30133c4d1e401decfb9815af0805b744e956c8cc125119a3691f83'
 
 [crates.aws-sdk-acmpca]
 category = 'AwsSdk'
@@ -768,7 +768,7 @@ model_hash = '98c64ac19e5b1b6d648e7f1555abd77e32558f86abd1a37ba610fed06c0e7ca4'
 category = 'AwsSdk'
 version = '1.34.0'
 source_hash = '96d8f55c21f921846e88810616856119b44372c21108a2d9996175bb09006125'
-model_hash = 'c89e947d4222067e94cefa5ad46958fc24f82211f1b0d3f0451eb6462ca64b2a'
+model_hash = '92210c4383c70525bd3c5d6f0b278a58c2761cde7a86d65ebf91155158fc5c15'
 
 [crates.aws-sdk-ecrpublic]
 category = 'AwsSdk'
@@ -1643,8 +1643,8 @@ model_hash = 'a5416e406d0f0ba22fc39bb3564e3a32be6b24b68e737bb7d1347b66c545b51b'
 [crates.aws-sdk-paymentcryptographydata]
 category = 'AwsSdk'
 version = '1.36.0'
-source_hash = '7f90371bd7026e81517538c481291208a9dbf76afb80171fffa74eb5cdfcae59'
-model_hash = '1ada06fd0354d36164fcd972fcd71e5218a8e999c47dd786e9dd7fb68c871dc4'
+source_hash = '6ad4616a2df5e214cc81c92d6118c004353545f8154f03742915f0677a98f487'
+model_hash = 'ab7bcf531ac90cd0587e87e0439ef031e6bbcd69482b584151869f5ec9f155d3'
 
 [crates.aws-sdk-pcaconnectorad]
 category = 'AwsSdk'
@@ -1739,8 +1739,8 @@ model_hash = '70d8c095cad5fe369c404229900eba9fbc267d4db2cfd7fb925fe0bc65181dcb'
 [crates.aws-sdk-qbusiness]
 category = 'AwsSdk'
 version = '1.35.0'
-source_hash = '78f3df30163e536e3b813ee9ce24750fd2229dac1035c51470033ce7ed5899da'
-model_hash = 'f26f8be17913c587dbfc7dd92647056df5fb9e9a001c50c5f376a180a12408ad'
+source_hash = 'eb200011285c0fa9244ced5e1238a64fb67f3301c2589b44a0ba24743717698d'
+model_hash = 'cb09e8cf9a33c5b6564001b0d9367c10c12c9999cf10217d5392d6dacc452b1c'
 
 [crates.aws-sdk-qconnect]
 category = 'AwsSdk'

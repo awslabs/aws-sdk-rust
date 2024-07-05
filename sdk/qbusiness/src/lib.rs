@@ -23,15 +23,6 @@
 //!
 //! For information about the IAM access control permissions you need to use this API, see [IAM roles for Amazon Q Business](https://docs.aws.amazon.com/amazonq/latest/business-use-dg/iam-roles.html) in the _Amazon Q Business User Guide_.
 //!
-//! You can use the following AWS SDKs to access Amazon Q Business APIs:
-//!   - [AWS SDK for C++](https://docs.aws.amazon.com/sdk-for-cpp)
-//!   - [AWS SDK for Go](https://docs.aws.amazon.com/sdk-for-go)
-//!   - [AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java)
-//!   - [AWS SDK for JavaScript](https://docs.aws.amazon.com/sdk-for-javascript)
-//!   - [AWS SDK for .NET](https://docs.aws.amazon.com/sdk-for-net)
-//!   - [AWS SDK for Python (Boto3)](https://docs.aws.amazon.com/pythonsdk)
-//!   - [AWS SDK for Ruby](https://docs.aws.amazon.com/sdk-for-ruby)
-//!
 //! The following resources provide additional information about using the Amazon Q Business API:
 //!   - _ [Setting up for Amazon Q Business](https://docs.aws.amazon.com/amazonq/latest/business-use-dg/setting-up.html) _
 //!   - _ [Amazon Q Business CLI Reference](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/qbusiness/index.html) _

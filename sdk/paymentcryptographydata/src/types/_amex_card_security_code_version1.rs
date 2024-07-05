@@ -2,7 +2,7 @@
 
 /// <p>Card data parameters that are required to generate a Card Security Code (CSC2) for an AMEX payment card.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AmexCardSecurityCodeVersion1 {
     /// <p>The expiry date of a payment card.</p>
     pub card_expiry_date: ::std::string::String,
@@ -14,6 +14,13 @@ impl AmexCardSecurityCodeVersion1 {
         self.card_expiry_date.deref()
     }
 }
+impl ::std::fmt::Debug for AmexCardSecurityCodeVersion1 {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AmexCardSecurityCodeVersion1");
+        formatter.field("card_expiry_date", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl AmexCardSecurityCodeVersion1 {
     /// Creates a new builder-style object to manufacture [`AmexCardSecurityCodeVersion1`](crate::types::AmexCardSecurityCodeVersion1).
     pub fn builder() -> crate::types::builders::AmexCardSecurityCodeVersion1Builder {
@@ -23,7 +30,7 @@ impl AmexCardSecurityCodeVersion1 {
 
 /// A builder for [`AmexCardSecurityCodeVersion1`](crate::types::AmexCardSecurityCodeVersion1).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AmexCardSecurityCodeVersion1Builder {
     pub(crate) card_expiry_date: ::std::option::Option<::std::string::String>,
 }
@@ -55,5 +62,12 @@ impl AmexCardSecurityCodeVersion1Builder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for AmexCardSecurityCodeVersion1Builder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AmexCardSecurityCodeVersion1Builder");
+        formatter.field("card_expiry_date", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

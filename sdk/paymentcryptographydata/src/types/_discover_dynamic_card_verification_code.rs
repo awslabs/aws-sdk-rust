@@ -2,7 +2,7 @@
 
 /// <p>Parameters that are required to generate or verify dCVC (Dynamic Card Verification Code).</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DiscoverDynamicCardVerificationCode {
     /// <p>The expiry date of a payment card.</p>
     pub card_expiry_date: ::std::string::String,
@@ -28,6 +28,15 @@ impl DiscoverDynamicCardVerificationCode {
         self.application_transaction_counter.deref()
     }
 }
+impl ::std::fmt::Debug for DiscoverDynamicCardVerificationCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DiscoverDynamicCardVerificationCode");
+        formatter.field("card_expiry_date", &"*** Sensitive Data Redacted ***");
+        formatter.field("unpredictable_number", &self.unpredictable_number);
+        formatter.field("application_transaction_counter", &self.application_transaction_counter);
+        formatter.finish()
+    }
+}
 impl DiscoverDynamicCardVerificationCode {
     /// Creates a new builder-style object to manufacture [`DiscoverDynamicCardVerificationCode`](crate::types::DiscoverDynamicCardVerificationCode).
     pub fn builder() -> crate::types::builders::DiscoverDynamicCardVerificationCodeBuilder {
@@ -37,7 +46,7 @@ impl DiscoverDynamicCardVerificationCode {
 
 /// A builder for [`DiscoverDynamicCardVerificationCode`](crate::types::DiscoverDynamicCardVerificationCode).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DiscoverDynamicCardVerificationCodeBuilder {
     pub(crate) card_expiry_date: ::std::option::Option<::std::string::String>,
     pub(crate) unpredictable_number: ::std::option::Option<::std::string::String>,
@@ -115,5 +124,14 @@ impl DiscoverDynamicCardVerificationCodeBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for DiscoverDynamicCardVerificationCodeBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DiscoverDynamicCardVerificationCodeBuilder");
+        formatter.field("card_expiry_date", &"*** Sensitive Data Redacted ***");
+        formatter.field("unpredictable_number", &self.unpredictable_number);
+        formatter.field("application_transaction_counter", &self.application_transaction_counter);
+        formatter.finish()
     }
 }

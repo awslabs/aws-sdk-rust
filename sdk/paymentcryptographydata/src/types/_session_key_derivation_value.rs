@@ -2,7 +2,7 @@
 
 /// <p>Parameters to derive session key value using a MAC EMV algorithm.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum SessionKeyDerivationValue {
     /// <p>The cryptogram provided by the terminal during transaction processing.</p>
     ApplicationCryptogram(::std::string::String),
@@ -48,5 +48,14 @@ impl SessionKeyDerivationValue {
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
         matches!(self, Self::Unknown)
+    }
+}
+impl ::std::fmt::Debug for SessionKeyDerivationValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            SessionKeyDerivationValue::ApplicationCryptogram(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            SessionKeyDerivationValue::ApplicationTransactionCounter(val) => f.debug_tuple("ApplicationTransactionCounter").field(&val).finish(),
+            SessionKeyDerivationValue::Unknown => f.debug_tuple("Unknown").finish(),
+        }
     }
 }

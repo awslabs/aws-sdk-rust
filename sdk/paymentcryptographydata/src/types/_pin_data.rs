@@ -2,7 +2,7 @@
 
 /// <p>Parameters that are required to generate, translate, or verify PIN data.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum PinData {
     /// <p>The PIN offset value.</p>
     PinOffset(::std::string::String),
@@ -48,5 +48,14 @@ impl PinData {
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
         matches!(self, Self::Unknown)
+    }
+}
+impl ::std::fmt::Debug for PinData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            PinData::PinOffset(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            PinData::VerificationValue(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            PinData::Unknown => f.debug_tuple("Unknown").finish(),
+        }
     }
 }

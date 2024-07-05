@@ -2,7 +2,7 @@
 
 /// <p>Parameters that are required to generate or verify Visa PVV (PIN Verification Value).</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VisaPinVerificationValue {
     /// <p>The encrypted PIN block data to verify.</p>
     pub encrypted_pin_block: ::std::string::String,
@@ -20,6 +20,14 @@ impl VisaPinVerificationValue {
         self.pin_verification_key_index
     }
 }
+impl ::std::fmt::Debug for VisaPinVerificationValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("VisaPinVerificationValue");
+        formatter.field("encrypted_pin_block", &"*** Sensitive Data Redacted ***");
+        formatter.field("pin_verification_key_index", &self.pin_verification_key_index);
+        formatter.finish()
+    }
+}
 impl VisaPinVerificationValue {
     /// Creates a new builder-style object to manufacture [`VisaPinVerificationValue`](crate::types::VisaPinVerificationValue).
     pub fn builder() -> crate::types::builders::VisaPinVerificationValueBuilder {
@@ -29,7 +37,7 @@ impl VisaPinVerificationValue {
 
 /// A builder for [`VisaPinVerificationValue`](crate::types::VisaPinVerificationValue).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct VisaPinVerificationValueBuilder {
     pub(crate) encrypted_pin_block: ::std::option::Option<::std::string::String>,
     pub(crate) pin_verification_key_index: ::std::option::Option<i32>,
@@ -84,5 +92,13 @@ impl VisaPinVerificationValueBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for VisaPinVerificationValueBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("VisaPinVerificationValueBuilder");
+        formatter.field("encrypted_pin_block", &"*** Sensitive Data Redacted ***");
+        formatter.field("pin_verification_key_index", &self.pin_verification_key_index);
+        formatter.finish()
     }
 }

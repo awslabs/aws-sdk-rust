@@ -15,9 +15,9 @@ pub struct DomainValidation {
     /// <li>
     /// <p><code>PENDING_VALIDATION</code></p></li>
     /// <li>
-    /// <p><code></code>SUCCESS</p></li>
+    /// <p><code>SUCCESS</code></p></li>
     /// <li>
-    /// <p><code></code>FAILED</p></li>
+    /// <p><code>FAILED</code></p></li>
     /// </ul>
     pub validation_status: ::std::option::Option<crate::types::DomainStatus>,
     /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
@@ -47,9 +47,9 @@ impl DomainValidation {
     /// <li>
     /// <p><code>PENDING_VALIDATION</code></p></li>
     /// <li>
-    /// <p><code></code>SUCCESS</p></li>
+    /// <p><code>SUCCESS</code></p></li>
     /// <li>
-    /// <p><code></code>FAILED</p></li>
+    /// <p><code>FAILED</code></p></li>
     /// </ul>
     pub fn validation_status(&self) -> ::std::option::Option<&crate::types::DomainStatus> {
         self.validation_status.as_ref()
@@ -137,9 +137,9 @@ impl DomainValidationBuilder {
     /// <li>
     /// <p><code>PENDING_VALIDATION</code></p></li>
     /// <li>
-    /// <p><code></code>SUCCESS</p></li>
+    /// <p><code>SUCCESS</code></p></li>
     /// <li>
-    /// <p><code></code>FAILED</p></li>
+    /// <p><code>FAILED</code></p></li>
     /// </ul>
     pub fn validation_status(mut self, input: crate::types::DomainStatus) -> Self {
         self.validation_status = ::std::option::Option::Some(input);
@@ -150,9 +150,9 @@ impl DomainValidationBuilder {
     /// <li>
     /// <p><code>PENDING_VALIDATION</code></p></li>
     /// <li>
-    /// <p><code></code>SUCCESS</p></li>
+    /// <p><code>SUCCESS</code></p></li>
     /// <li>
-    /// <p><code></code>FAILED</p></li>
+    /// <p><code>FAILED</code></p></li>
     /// </ul>
     pub fn set_validation_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
         self.validation_status = input;
@@ -163,9 +163,9 @@ impl DomainValidationBuilder {
     /// <li>
     /// <p><code>PENDING_VALIDATION</code></p></li>
     /// <li>
-    /// <p><code></code>SUCCESS</p></li>
+    /// <p><code>SUCCESS</code></p></li>
     /// <li>
-    /// <p><code></code>FAILED</p></li>
+    /// <p><code>FAILED</code></p></li>
     /// </ul>
     pub fn get_validation_status(&self) -> &::std::option::Option<crate::types::DomainStatus> {
         &self.validation_status

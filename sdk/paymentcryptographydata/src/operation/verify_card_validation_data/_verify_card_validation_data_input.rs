@@ -36,7 +36,7 @@ impl ::std::fmt::Debug for VerifyCardValidationDataInput {
         formatter.field("key_identifier", &self.key_identifier);
         formatter.field("primary_account_number", &"*** Sensitive Data Redacted ***");
         formatter.field("verification_attributes", &self.verification_attributes);
-        formatter.field("validation_data", &self.validation_data);
+        formatter.field("validation_data", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -138,7 +138,7 @@ impl ::std::fmt::Debug for VerifyCardValidationDataInputBuilder {
         formatter.field("key_identifier", &self.key_identifier);
         formatter.field("primary_account_number", &"*** Sensitive Data Redacted ***");
         formatter.field("verification_attributes", &self.verification_attributes);
-        formatter.field("validation_data", &self.validation_data);
+        formatter.field("validation_data", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

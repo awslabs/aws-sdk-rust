@@ -30,7 +30,20 @@ pub struct RequestCertificateInput {
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// <p>One or more resource tags to associate with the certificate.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the AWS service where you plan to deploy your certificate.</p>
+    /// <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some Amazon Web Services services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the Amazon Web Services service where you plan to deploy your certificate. For more information about selecting an algorithm, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-certificate.html#algorithms">Key algorithms</a>.</p><note>
+    /// <p>Algorithms supported for an ACM certificate request include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RSA_2048</code></p></li>
+    /// <li>
+    /// <p><code>EC_prime256v1</code></p></li>
+    /// <li>
+    /// <p><code>EC_secp384r1</code></p></li>
+    /// </ul>
+    /// <p>Other listed algorithms are for imported certificates only.</p>
+    /// </note> <note>
+    /// <p>When you request a private PKI certificate signed by a CA from Amazon Web Services Private CA, the specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.</p>
+    /// </note>
     /// <p>Default: RSA_2048</p>
     pub key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
 }
@@ -84,7 +97,20 @@ impl RequestCertificateInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the AWS service where you plan to deploy your certificate.</p>
+    /// <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some Amazon Web Services services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the Amazon Web Services service where you plan to deploy your certificate. For more information about selecting an algorithm, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-certificate.html#algorithms">Key algorithms</a>.</p><note>
+    /// <p>Algorithms supported for an ACM certificate request include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RSA_2048</code></p></li>
+    /// <li>
+    /// <p><code>EC_prime256v1</code></p></li>
+    /// <li>
+    /// <p><code>EC_secp384r1</code></p></li>
+    /// </ul>
+    /// <p>Other listed algorithms are for imported certificates only.</p>
+    /// </note> <note>
+    /// <p>When you request a private PKI certificate signed by a CA from Amazon Web Services Private CA, the specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.</p>
+    /// </note>
     /// <p>Default: RSA_2048</p>
     pub fn key_algorithm(&self) -> ::std::option::Option<&crate::types::KeyAlgorithm> {
         self.key_algorithm.as_ref()
@@ -276,19 +302,58 @@ impl RequestCertificateInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the AWS service where you plan to deploy your certificate.</p>
+    /// <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some Amazon Web Services services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the Amazon Web Services service where you plan to deploy your certificate. For more information about selecting an algorithm, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-certificate.html#algorithms">Key algorithms</a>.</p><note>
+    /// <p>Algorithms supported for an ACM certificate request include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RSA_2048</code></p></li>
+    /// <li>
+    /// <p><code>EC_prime256v1</code></p></li>
+    /// <li>
+    /// <p><code>EC_secp384r1</code></p></li>
+    /// </ul>
+    /// <p>Other listed algorithms are for imported certificates only.</p>
+    /// </note> <note>
+    /// <p>When you request a private PKI certificate signed by a CA from Amazon Web Services Private CA, the specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.</p>
+    /// </note>
     /// <p>Default: RSA_2048</p>
     pub fn key_algorithm(mut self, input: crate::types::KeyAlgorithm) -> Self {
         self.key_algorithm = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the AWS service where you plan to deploy your certificate.</p>
+    /// <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some Amazon Web Services services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the Amazon Web Services service where you plan to deploy your certificate. For more information about selecting an algorithm, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-certificate.html#algorithms">Key algorithms</a>.</p><note>
+    /// <p>Algorithms supported for an ACM certificate request include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RSA_2048</code></p></li>
+    /// <li>
+    /// <p><code>EC_prime256v1</code></p></li>
+    /// <li>
+    /// <p><code>EC_secp384r1</code></p></li>
+    /// </ul>
+    /// <p>Other listed algorithms are for imported certificates only.</p>
+    /// </note> <note>
+    /// <p>When you request a private PKI certificate signed by a CA from Amazon Web Services Private CA, the specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.</p>
+    /// </note>
     /// <p>Default: RSA_2048</p>
     pub fn set_key_algorithm(mut self, input: ::std::option::Option<crate::types::KeyAlgorithm>) -> Self {
         self.key_algorithm = input;
         self
     }
-    /// <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the AWS service where you plan to deploy your certificate.</p>
+    /// <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some Amazon Web Services services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the Amazon Web Services service where you plan to deploy your certificate. For more information about selecting an algorithm, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-certificate.html#algorithms">Key algorithms</a>.</p><note>
+    /// <p>Algorithms supported for an ACM certificate request include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RSA_2048</code></p></li>
+    /// <li>
+    /// <p><code>EC_prime256v1</code></p></li>
+    /// <li>
+    /// <p><code>EC_secp384r1</code></p></li>
+    /// </ul>
+    /// <p>Other listed algorithms are for imported certificates only.</p>
+    /// </note> <note>
+    /// <p>When you request a private PKI certificate signed by a CA from Amazon Web Services Private CA, the specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.</p>
+    /// </note>
     /// <p>Default: RSA_2048</p>
     pub fn get_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
         &self.key_algorithm

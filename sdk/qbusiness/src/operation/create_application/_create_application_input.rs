@@ -21,6 +21,8 @@ pub struct CreateApplicationInput {
     pub attachments_configuration: ::std::option::Option<crate::types::AttachmentsConfiguration>,
     /// <p>An option to allow end users to create and use Amazon Q Apps in the web experience.</p>
     pub q_apps_configuration: ::std::option::Option<crate::types::QAppsConfiguration>,
+    /// <p>Configuration information about chat response personalization. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/personalizing-chat-responses.html">Personalizing chat responses</a></p>
+    pub personalization_configuration: ::std::option::Option<crate::types::PersonalizationConfiguration>,
 }
 impl CreateApplicationInput {
     /// <p>A name for the Amazon Q Business application.</p>
@@ -61,6 +63,10 @@ impl CreateApplicationInput {
     pub fn q_apps_configuration(&self) -> ::std::option::Option<&crate::types::QAppsConfiguration> {
         self.q_apps_configuration.as_ref()
     }
+    /// <p>Configuration information about chat response personalization. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/personalizing-chat-responses.html">Personalizing chat responses</a></p>
+    pub fn personalization_configuration(&self) -> ::std::option::Option<&crate::types::PersonalizationConfiguration> {
+        self.personalization_configuration.as_ref()
+    }
 }
 impl CreateApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
@@ -82,6 +88,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) attachments_configuration: ::std::option::Option<crate::types::AttachmentsConfiguration>,
     pub(crate) q_apps_configuration: ::std::option::Option<crate::types::QAppsConfiguration>,
+    pub(crate) personalization_configuration: ::std::option::Option<crate::types::PersonalizationConfiguration>,
 }
 impl CreateApplicationInputBuilder {
     /// <p>A name for the Amazon Q Business application.</p>
@@ -217,6 +224,20 @@ impl CreateApplicationInputBuilder {
     pub fn get_q_apps_configuration(&self) -> &::std::option::Option<crate::types::QAppsConfiguration> {
         &self.q_apps_configuration
     }
+    /// <p>Configuration information about chat response personalization. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/personalizing-chat-responses.html">Personalizing chat responses</a></p>
+    pub fn personalization_configuration(mut self, input: crate::types::PersonalizationConfiguration) -> Self {
+        self.personalization_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration information about chat response personalization. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/personalizing-chat-responses.html">Personalizing chat responses</a></p>
+    pub fn set_personalization_configuration(mut self, input: ::std::option::Option<crate::types::PersonalizationConfiguration>) -> Self {
+        self.personalization_configuration = input;
+        self
+    }
+    /// <p>Configuration information about chat response personalization. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/personalizing-chat-responses.html">Personalizing chat responses</a></p>
+    pub fn get_personalization_configuration(&self) -> &::std::option::Option<crate::types::PersonalizationConfiguration> {
+        &self.personalization_configuration
+    }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
@@ -231,6 +252,7 @@ impl CreateApplicationInputBuilder {
             client_token: self.client_token,
             attachments_configuration: self.attachments_configuration,
             q_apps_configuration: self.q_apps_configuration,
+            personalization_configuration: self.personalization_configuration,
         })
     }
 }

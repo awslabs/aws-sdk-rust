@@ -298,6 +298,8 @@ pub(crate) mod shape_message_usefulness_feedback;
 
 pub(crate) mod shape_messages;
 
+pub(crate) mod shape_personalization_configuration;
+
 pub(crate) mod shape_plugin_auth_configuration;
 
 pub(crate) mod shape_plugins;

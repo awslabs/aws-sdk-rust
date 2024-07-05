@@ -64,7 +64,7 @@ impl ::std::fmt::Debug for VerifyPinDataInput {
         formatter.field("verification_key_identifier", &self.verification_key_identifier);
         formatter.field("encryption_key_identifier", &self.encryption_key_identifier);
         formatter.field("verification_attributes", &self.verification_attributes);
-        formatter.field("encrypted_pin_block", &self.encrypted_pin_block);
+        formatter.field("encrypted_pin_block", &"*** Sensitive Data Redacted ***");
         formatter.field("primary_account_number", &"*** Sensitive Data Redacted ***");
         formatter.field("pin_block_format", &self.pin_block_format);
         formatter.field("pin_data_length", &self.pin_data_length);
@@ -239,7 +239,7 @@ impl ::std::fmt::Debug for VerifyPinDataInputBuilder {
         formatter.field("verification_key_identifier", &self.verification_key_identifier);
         formatter.field("encryption_key_identifier", &self.encryption_key_identifier);
         formatter.field("verification_attributes", &self.verification_attributes);
-        formatter.field("encrypted_pin_block", &self.encrypted_pin_block);
+        formatter.field("encrypted_pin_block", &"*** Sensitive Data Redacted ***");
         formatter.field("primary_account_number", &"*** Sensitive Data Redacted ***");
         formatter.field("pin_block_format", &self.pin_block_format);
         formatter.field("pin_data_length", &self.pin_data_length);

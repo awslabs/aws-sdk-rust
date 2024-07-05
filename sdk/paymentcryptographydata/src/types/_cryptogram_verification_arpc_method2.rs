@@ -2,7 +2,7 @@
 
 /// <p>Parameters that are required for ARPC response generation using method2 after ARQC verification is successful.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CryptogramVerificationArpcMethod2 {
     /// <p>The data indicating whether the issuer approves or declines an online transaction using an EMV chip card.</p>
     pub card_status_update: ::std::string::String,
@@ -20,6 +20,14 @@ impl CryptogramVerificationArpcMethod2 {
         self.proprietary_authentication_data.as_deref()
     }
 }
+impl ::std::fmt::Debug for CryptogramVerificationArpcMethod2 {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CryptogramVerificationArpcMethod2");
+        formatter.field("card_status_update", &self.card_status_update);
+        formatter.field("proprietary_authentication_data", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl CryptogramVerificationArpcMethod2 {
     /// Creates a new builder-style object to manufacture [`CryptogramVerificationArpcMethod2`](crate::types::CryptogramVerificationArpcMethod2).
     pub fn builder() -> crate::types::builders::CryptogramVerificationArpcMethod2Builder {
@@ -29,7 +37,7 @@ impl CryptogramVerificationArpcMethod2 {
 
 /// A builder for [`CryptogramVerificationArpcMethod2`](crate::types::CryptogramVerificationArpcMethod2).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CryptogramVerificationArpcMethod2Builder {
     pub(crate) card_status_update: ::std::option::Option<::std::string::String>,
     pub(crate) proprietary_authentication_data: ::std::option::Option<::std::string::String>,
@@ -77,5 +85,13 @@ impl CryptogramVerificationArpcMethod2Builder {
             })?,
             proprietary_authentication_data: self.proprietary_authentication_data,
         })
+    }
+}
+impl ::std::fmt::Debug for CryptogramVerificationArpcMethod2Builder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CryptogramVerificationArpcMethod2Builder");
+        formatter.field("card_status_update", &self.card_status_update);
+        formatter.field("proprietary_authentication_data", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

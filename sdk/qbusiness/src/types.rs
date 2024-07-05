@@ -3,6 +3,10 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_personalization_configuration::PersonalizationConfiguration;
+
+pub use crate::types::_personalization_control_mode::PersonalizationControlMode;
+
 pub use crate::types::_q_apps_configuration::QAppsConfiguration;
 
 pub use crate::types::_q_apps_control_mode::QAppsControlMode;
@@ -482,6 +486,10 @@ mod _number_attribute_boosting_configuration;
 mod _number_attribute_boosting_type;
 
 mod _o_auth2_client_credential_configuration;
+
+mod _personalization_configuration;
+
+mod _personalization_control_mode;
 
 mod _plugin;
 

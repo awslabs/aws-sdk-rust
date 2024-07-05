@@ -52,7 +52,7 @@ impl ::std::fmt::Debug for EmvEncryptionAttributes {
         formatter.field("major_key_derivation_mode", &self.major_key_derivation_mode);
         formatter.field("primary_account_number", &"*** Sensitive Data Redacted ***");
         formatter.field("pan_sequence_number", &self.pan_sequence_number);
-        formatter.field("session_derivation_data", &self.session_derivation_data);
+        formatter.field("session_derivation_data", &"*** Sensitive Data Redacted ***");
         formatter.field("mode", &self.mode);
         formatter.field("initialization_vector", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -208,7 +208,7 @@ impl ::std::fmt::Debug for EmvEncryptionAttributesBuilder {
         formatter.field("major_key_derivation_mode", &self.major_key_derivation_mode);
         formatter.field("primary_account_number", &"*** Sensitive Data Redacted ***");
         formatter.field("pan_sequence_number", &self.pan_sequence_number);
-        formatter.field("session_derivation_data", &self.session_derivation_data);
+        formatter.field("session_derivation_data", &"*** Sensitive Data Redacted ***");
         formatter.field("mode", &self.mode);
         formatter.field("initialization_vector", &"*** Sensitive Data Redacted ***");
         formatter.finish()

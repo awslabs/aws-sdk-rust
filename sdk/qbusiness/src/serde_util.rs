@@ -137,6 +137,15 @@ pub(crate) fn data_source_vpc_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn personalization_configuration_correct_errors(
+    mut builder: crate::types::builders::PersonalizationConfigurationBuilder,
+) -> crate::types::builders::PersonalizationConfigurationBuilder {
+    if builder.personalization_control_mode.is_none() {
+        builder.personalization_control_mode = "no value was set".parse::<crate::types::PersonalizationControlMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn q_apps_configuration_correct_errors(
     mut builder: crate::types::builders::QAppsConfigurationBuilder,
 ) -> crate::types::builders::QAppsConfigurationBuilder {

@@ -2,7 +2,7 @@
 
 /// <p>Parameters that are required to generate or verify Ibm3624 random PIN.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Ibm3624RandomPin {
     /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
     pub decimalization_table: ::std::string::String,
@@ -28,6 +28,15 @@ impl Ibm3624RandomPin {
         self.pin_validation_data.deref()
     }
 }
+impl ::std::fmt::Debug for Ibm3624RandomPin {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Ibm3624RandomPin");
+        formatter.field("decimalization_table", &"*** Sensitive Data Redacted ***");
+        formatter.field("pin_validation_data_pad_character", &self.pin_validation_data_pad_character);
+        formatter.field("pin_validation_data", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Ibm3624RandomPin {
     /// Creates a new builder-style object to manufacture [`Ibm3624RandomPin`](crate::types::Ibm3624RandomPin).
     pub fn builder() -> crate::types::builders::Ibm3624RandomPinBuilder {
@@ -37,7 +46,7 @@ impl Ibm3624RandomPin {
 
 /// A builder for [`Ibm3624RandomPin`](crate::types::Ibm3624RandomPin).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct Ibm3624RandomPinBuilder {
     pub(crate) decimalization_table: ::std::option::Option<::std::string::String>,
     pub(crate) pin_validation_data_pad_character: ::std::option::Option<::std::string::String>,
@@ -115,5 +124,14 @@ impl Ibm3624RandomPinBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for Ibm3624RandomPinBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Ibm3624RandomPinBuilder");
+        formatter.field("decimalization_table", &"*** Sensitive Data Redacted ***");
+        formatter.field("pin_validation_data_pad_character", &self.pin_validation_data_pad_character);
+        formatter.field("pin_validation_data", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

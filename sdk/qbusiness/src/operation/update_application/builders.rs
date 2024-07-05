@@ -206,4 +206,18 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_q_apps_configuration(&self) -> &::std::option::Option<crate::types::QAppsConfiguration> {
         self.inner.get_q_apps_configuration()
     }
+    /// <p>Configuration information about chat response personalization. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/personalizing-chat-responses.html">Personalizing chat responses</a>.</p>
+    pub fn personalization_configuration(mut self, input: crate::types::PersonalizationConfiguration) -> Self {
+        self.inner = self.inner.personalization_configuration(input);
+        self
+    }
+    /// <p>Configuration information about chat response personalization. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/personalizing-chat-responses.html">Personalizing chat responses</a>.</p>
+    pub fn set_personalization_configuration(mut self, input: ::std::option::Option<crate::types::PersonalizationConfiguration>) -> Self {
+        self.inner = self.inner.set_personalization_configuration(input);
+        self
+    }
+    /// <p>Configuration information about chat response personalization. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/personalizing-chat-responses.html">Personalizing chat responses</a>.</p>
+    pub fn get_personalization_configuration(&self) -> &::std::option::Option<crate::types::PersonalizationConfiguration> {
+        self.inner.get_personalization_configuration()
+    }
 }

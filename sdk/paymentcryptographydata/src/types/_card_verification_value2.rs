@@ -2,7 +2,7 @@
 
 /// <p>Card data parameters that are required to verify Card Verification Value (CVV2) for the payment card.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CardVerificationValue2 {
     /// <p>The expiry date of a payment card.</p>
     pub card_expiry_date: ::std::string::String,
@@ -14,6 +14,13 @@ impl CardVerificationValue2 {
         self.card_expiry_date.deref()
     }
 }
+impl ::std::fmt::Debug for CardVerificationValue2 {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CardVerificationValue2");
+        formatter.field("card_expiry_date", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl CardVerificationValue2 {
     /// Creates a new builder-style object to manufacture [`CardVerificationValue2`](crate::types::CardVerificationValue2).
     pub fn builder() -> crate::types::builders::CardVerificationValue2Builder {
@@ -23,7 +30,7 @@ impl CardVerificationValue2 {
 
 /// A builder for [`CardVerificationValue2`](crate::types::CardVerificationValue2).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CardVerificationValue2Builder {
     pub(crate) card_expiry_date: ::std::option::Option<::std::string::String>,
 }
@@ -55,5 +62,12 @@ impl CardVerificationValue2Builder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for CardVerificationValue2Builder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CardVerificationValue2Builder");
+        formatter.field("card_expiry_date", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

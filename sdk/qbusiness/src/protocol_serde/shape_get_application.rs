@@ -172,6 +172,11 @@ pub(crate) fn de_get_application(
                             .transpose()?,
                     );
                 }
+                "personalizationConfiguration" => {
+                    builder = builder.set_personalization_configuration(
+                        crate::protocol_serde::shape_personalization_configuration::de_personalization_configuration(tokens)?,
+                    );
+                }
                 "qAppsConfiguration" => {
                     builder = builder.set_q_apps_configuration(crate::protocol_serde::shape_q_apps_configuration::de_q_apps_configuration(tokens)?);
                 }
