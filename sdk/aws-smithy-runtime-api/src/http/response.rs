@@ -8,8 +8,6 @@
 use crate::http::extensions::Extensions;
 use crate::http::{Headers, HttpError};
 use aws_smithy_types::body::SdkBody;
-#[allow(unused)]
-use http as http0;
 use std::fmt;
 
 /// HTTP response status code
@@ -51,28 +49,28 @@ impl TryFrom<u16> for StatusCode {
 }
 
 #[cfg(feature = "http-02x")]
-impl From<http0::StatusCode> for StatusCode {
-    fn from(value: http0::StatusCode) -> Self {
+impl From<http_02x::StatusCode> for StatusCode {
+    fn from(value: http_02x::StatusCode) -> Self {
         Self(value.as_u16())
     }
 }
 
 #[cfg(feature = "http-02x")]
-impl From<StatusCode> for http0::StatusCode {
+impl From<StatusCode> for http_02x::StatusCode {
     fn from(value: StatusCode) -> Self {
         Self::from_u16(value.0).unwrap()
     }
 }
 
 #[cfg(feature = "http-1x")]
-impl From<http1::StatusCode> for StatusCode {
-    fn from(value: http1::StatusCode) -> Self {
+impl From<http_1x::StatusCode> for StatusCode {
+    fn from(value: http_1x::StatusCode) -> Self {
         Self(value.as_u16())
     }
 }
 
 #[cfg(feature = "http-1x")]
-impl From<StatusCode> for http1::StatusCode {
+impl From<StatusCode> for http_1x::StatusCode {
     fn from(value: StatusCode) -> Self {
         Self::from_u16(value.0).unwrap()
     }
@@ -105,10 +103,10 @@ impl<B> Response<B> {
     /// Depending on the internal storage type, this operation may be free or it may have an internal
     /// cost.
     #[cfg(feature = "http-02x")]
-    pub fn try_into_http02x(self) -> Result<http0::Response<B>, HttpError> {
-        let mut res = http::Response::builder()
+    pub fn try_into_http02x(self) -> Result<http_02x::Response<B>, HttpError> {
+        let mut res = http_02x::Response::builder()
             .status(
-                http0::StatusCode::from_u16(self.status.into())
+                http_02x::StatusCode::from_u16(self.status.into())
                     .expect("validated upon construction"),
             )
             .body(self.body)
@@ -123,10 +121,10 @@ impl<B> Response<B> {
     /// Depending on the internal storage type, this operation may be free or it may have an internal
     /// cost.
     #[cfg(feature = "http-1x")]
-    pub fn try_into_http1x(self) -> Result<http1::Response<B>, HttpError> {
-        let mut res = http1::Response::builder()
+    pub fn try_into_http1x(self) -> Result<http_1x::Response<B>, HttpError> {
+        let mut res = http_1x::Response::builder()
             .status(
-                http1::StatusCode::from_u16(self.status.into())
+                http_1x::StatusCode::from_u16(self.status.into())
                     .expect("validated upon construction"),
             )
             .body(self.body)
@@ -205,10 +203,10 @@ impl Response<SdkBody> {
 }
 
 #[cfg(feature = "http-02x")]
-impl<B> TryFrom<http0::Response<B>> for Response<B> {
+impl<B> TryFrom<http_02x::Response<B>> for Response<B> {
     type Error = HttpError;
 
-    fn try_from(value: http0::Response<B>) -> Result<Self, Self::Error> {
+    fn try_from(value: http_02x::Response<B>) -> Result<Self, Self::Error> {
         let (parts, body) = value.into_parts();
         let headers = Headers::try_from(parts.headers)?;
         Ok(Self {
@@ -221,10 +219,10 @@ impl<B> TryFrom<http0::Response<B>> for Response<B> {
 }
 
 #[cfg(feature = "http-1x")]
-impl<B> TryFrom<http1::Response<B>> for Response<B> {
+impl<B> TryFrom<http_1x::Response<B>> for Response<B> {
     type Error = HttpError;
 
-    fn try_from(value: http1::Response<B>) -> Result<Self, Self::Error> {
+    fn try_from(value: http_1x::Response<B>) -> Result<Self, Self::Error> {
         let (parts, body) = value.into_parts();
         let headers = Headers::try_from(parts.headers)?;
         Ok(Self {
@@ -243,7 +241,7 @@ mod test {
 
     #[test]
     fn non_ascii_responses() {
-        let response = http::Response::builder()
+        let response = http_02x::Response::builder()
             .status(200)
             .header("k", "😹")
             .body(SdkBody::empty())
@@ -256,7 +254,7 @@ mod test {
 
     #[test]
     fn response_can_be_created() {
-        let req = http::Response::builder()
+        let req = http_02x::Response::builder()
             .status(200)
             .body(SdkBody::from("hello"))
             .unwrap();
@@ -283,12 +281,12 @@ mod test {
     }
 
     #[track_caller]
-    fn check_roundtrip(req: impl Fn() -> http0::Response<SdkBody>) {
+    fn check_roundtrip(req: impl Fn() -> http_02x::Response<SdkBody>) {
         let mut container = super::Response::try_from(req()).unwrap();
         container.add_extension(5_u32);
         let mut h1 = container
             .try_into_http1x()
-            .expect("failed converting to http1x");
+            .expect("failed converting to http_1x");
         assert_eq!(h1.extensions().get::<u32>(), Some(&5));
         h1.extensions_mut().remove::<u32>();
 
@@ -296,7 +294,7 @@ mod test {
         container.add_extension(5_u32);
         let mut h0 = container
             .try_into_http02x()
-            .expect("failed converting back to http0x");
+            .expect("failed converting back to http_02x");
         assert_eq!(h0.extensions().get::<u32>(), Some(&5));
         h0.extensions_mut().remove::<u32>();
         resp_eq!(h0, req());
@@ -305,7 +303,7 @@ mod test {
     #[test]
     fn valid_round_trips() {
         let response = || {
-            http::Response::builder()
+            http_02x::Response::builder()
                 .status(200)
                 .header("k", "v")
                 .header("multi", "v1")
@@ -319,7 +317,7 @@ mod test {
     #[test]
     #[should_panic]
     fn header_panics() {
-        let res = http::Response::builder()
+        let res = http_02x::Response::builder()
             .status(200)
             .body(SdkBody::from("hello"))
             .unwrap();
@@ -334,7 +332,7 @@ mod test {
     #[test]
     fn cant_cross_convert_with_extensions_h0_h1() {
         let resp_h0 = || {
-            http::Response::builder()
+            http_02x::Response::builder()
                 .status(200)
                 .extension(5_u32)
                 .body(SdkBody::from("hello"))
@@ -355,7 +353,7 @@ mod test {
     #[test]
     fn cant_cross_convert_with_extensions_h1_h0() {
         let resp_h1 = || {
-            http1::Response::builder()
+            http_1x::Response::builder()
                 .status(200)
                 .extension(5_u32)
                 .body(SdkBody::from("hello"))

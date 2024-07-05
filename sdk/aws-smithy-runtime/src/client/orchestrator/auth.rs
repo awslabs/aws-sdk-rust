@@ -325,7 +325,7 @@ mod tests {
             ) -> Result<(), BoxError> {
                 request
                     .headers_mut()
-                    .insert(http::header::AUTHORIZATION, "success!");
+                    .insert(http_02x::header::AUTHORIZATION, "success!");
                 Ok(())
             }
         }
@@ -565,7 +565,7 @@ mod tests {
         let mut ctx = InterceptorContext::new(Input::doesnt_matter());
         ctx.enter_serialization_phase();
         ctx.set_request(
-            http::Request::builder()
+            http_02x::Request::builder()
                 .body(SdkBody::empty())
                 .unwrap()
                 .try_into()

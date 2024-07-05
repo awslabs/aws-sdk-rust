@@ -6,8 +6,7 @@
 use std::borrow::Cow;
 use std::fmt;
 
-use http::header::{InvalidHeaderValue, USER_AGENT};
-use http::{HeaderName, HeaderValue};
+use http_02x::header::{HeaderName, HeaderValue, InvalidHeaderValue, USER_AGENT};
 
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::http::HttpClient;

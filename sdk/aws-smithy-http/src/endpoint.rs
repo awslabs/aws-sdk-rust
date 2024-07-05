@@ -8,7 +8,7 @@
 #![allow(deprecated)]
 
 use crate::endpoint::error::InvalidEndpointError;
-use http::uri::{Authority, Uri};
+use http_02x::uri::{Authority, Uri};
 use std::borrow::Cow;
 use std::result::Result as StdResult;
 use std::str::FromStr;

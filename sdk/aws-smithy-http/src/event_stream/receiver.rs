@@ -12,7 +12,6 @@ use aws_smithy_types::event_stream::{Message, RawMessage};
 use bytes::Buf;
 use bytes::Bytes;
 use bytes_utils::SegmentedBuf;
-use http_body::Body;
 use std::error::Error as StdError;
 use std::fmt;
 use std::marker::PhantomData;
@@ -153,6 +152,8 @@ impl<T, E> Receiver<T, E> {
     }
 
     async fn buffer_next_chunk(&mut self) -> Result<(), SdkError<E, RawMessage>> {
+        use http_body_04x::Body;
+
         if !self.buffer.is_eos() {
             let next_chunk = self
                 .body

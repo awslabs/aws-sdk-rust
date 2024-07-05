@@ -20,7 +20,6 @@ use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::client::runtime_components::{GetIdentityResolver, RuntimeComponents};
 use aws_smithy_types::base64::encode;
 use aws_smithy_types::config_bag::ConfigBag;
-use http::HeaderValue;
 
 /// Destination for the API key
 #[derive(Copy, Clone, Debug)]
@@ -163,8 +162,8 @@ impl Sign for BasicAuthSigner {
             .data::<Login>()
             .ok_or("HTTP basic auth requires a `Login` identity")?;
         request.headers_mut().insert(
-            http::header::AUTHORIZATION,
-            HeaderValue::from_str(&format!(
+            http_02x::header::AUTHORIZATION,
+            http_02x::HeaderValue::from_str(&format!(
                 "Basic {}",
                 encode(format!("{}:{}", login.user(), login.password()))
             ))
@@ -222,10 +221,10 @@ impl Sign for BearerAuthSigner {
             .data::<Token>()
             .ok_or("HTTP bearer auth requires a `Token` identity")?;
         request.headers_mut().insert(
-            http::header::AUTHORIZATION,
-            HeaderValue::from_str(&format!("Bearer {}", token.token())).map_err(|_| {
-                "Bearer token contains characters that can't be included in a HTTP header"
-            })?,
+            http_02x::header::AUTHORIZATION,
+            http_02x::HeaderValue::from_str(&format!("Bearer {}", token.token())).map_err(
+                |_| "Bearer token contains characters that can't be included in a HTTP header",
+            )?,
         );
         Ok(())
     }
@@ -298,7 +297,7 @@ mod tests {
         let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let config_bag = ConfigBag::base();
         let identity = Identity::new(Token::new("some-token", None), None);
-        let mut request: HttpRequest = http::Request::builder()
+        let mut request: HttpRequest = http_02x::Request::builder()
             .uri("http://example.com/Foobaz")
             .body(SdkBody::empty())
             .unwrap()
@@ -330,7 +329,7 @@ mod tests {
         let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let config_bag = ConfigBag::base();
         let identity = Identity::new(Token::new("some-token", None), None);
-        let mut request: HttpRequest = http::Request::builder()
+        let mut request: HttpRequest = http_02x::Request::builder()
             .uri("http://example.com/Foobaz")
             .body(SdkBody::empty())
             .unwrap()
@@ -358,7 +357,7 @@ mod tests {
         let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let config_bag = ConfigBag::base();
         let identity = Identity::new(Login::new("Aladdin", "open sesame", None), None);
-        let mut request = http::Request::builder()
+        let mut request = http_02x::Request::builder()
             .body(SdkBody::empty())
             .unwrap()
             .try_into()
@@ -386,7 +385,7 @@ mod tests {
         let config_bag = ConfigBag::base();
         let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let identity = Identity::new(Token::new("some-token", None), None);
-        let mut request = http::Request::builder()
+        let mut request = http_02x::Request::builder()
             .body(SdkBody::empty())
             .unwrap()
             .try_into()
@@ -413,7 +412,7 @@ mod tests {
         let config_bag = ConfigBag::base();
         let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let identity = Identity::new(Token::new("some-token", None), None);
-        let mut request = http::Request::builder()
+        let mut request = http_02x::Request::builder()
             .header("Authorization", "wrong")
             .body(SdkBody::empty())
             .unwrap()

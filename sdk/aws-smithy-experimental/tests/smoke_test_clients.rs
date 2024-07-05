@@ -3,6 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#![cfg(any(
+    feature = "crypto-ring",
+    feature = "crypto-aws-lc",
+    feature = "crypto-aws-lc-fips"
+))]
+
 use aws_smithy_async::time::SystemTimeSource;
 use aws_smithy_experimental::hyper_1_0::{CryptoMode, HyperClientBuilder};
 use aws_smithy_runtime_api::client::dns::{DnsFuture, ResolveDns, ResolveDnsError};
@@ -77,6 +83,7 @@ async fn custom_dns_client() {
     assert_eq!(resolver.count.load(Ordering::Relaxed), 1);
 }
 
+#[cfg(feature = "crypto-ring")]
 async fn smoke_test_client(client: &dyn HttpClient) -> Result<(), Box<dyn Error>> {
     let connector_settings = HttpConnectorSettings::builder().build();
     let runtime_components = RuntimeComponentsBuilder::for_tests()

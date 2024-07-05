@@ -34,7 +34,7 @@ version = "1.2.0"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "http-auth"]
-version = "1.7.0"
+version = "1.7.1"
 
 [dev-dependencies]
 async-trait = "0.1.74"

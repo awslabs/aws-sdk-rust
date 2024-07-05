@@ -13,7 +13,6 @@ use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse};
 use aws_smithy_runtime_api::http::Headers;
 use aws_smithy_types::base64;
 use bytes::Bytes;
-use http::HeaderMap;
 use indexmap::IndexMap;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
@@ -129,9 +128,9 @@ pub struct Response {
     headers: IndexMap<String, Vec<String>>,
 }
 
-impl From<&Request> for http::Request<()> {
+impl From<&Request> for http_02x::Request<()> {
     fn from(request: &Request) -> Self {
-        let mut builder = http::Request::builder().uri(request.uri.as_str());
+        let mut builder = http_02x::Request::builder().uri(request.uri.as_str());
         for (k, values) in request.headers.iter() {
             for v in values {
                 builder = builder.header(k, v);
@@ -163,7 +162,7 @@ fn headers_to_map_http(headers: &Headers) -> IndexMap<String, Vec<String>> {
     out
 }
 
-fn headers_to_map_02x(headers: &HeaderMap) -> IndexMap<String, Vec<String>> {
+fn headers_to_map_02x(headers: &http_02x::HeaderMap) -> IndexMap<String, Vec<String>> {
     let mut out: IndexMap<_, Vec<_>> = IndexMap::new();
     for (header_name, header_value) in headers.iter() {
         let entry = out.entry(header_name.to_string()).or_default();
@@ -189,8 +188,8 @@ fn headers_to_map(headers: &Headers) -> IndexMap<String, Vec<String>> {
     out
 }
 
-impl<'a, B> From<&'a http::Response<B>> for Response {
-    fn from(resp: &'a http::Response<B>) -> Self {
+impl<'a, B> From<&'a http_02x::Response<B>> for Response {
+    fn from(resp: &'a http_02x::Response<B>) -> Self {
         let status = resp.status().as_u16();
         let headers = headers_to_map_02x(resp.headers());
         Self { status, headers }
@@ -312,7 +311,6 @@ mod tests {
     use aws_smithy_types::body::SdkBody;
     use aws_smithy_types::byte_stream::ByteStream;
     use bytes::Bytes;
-    use http::Uri;
     use std::error::Error;
     use std::fs;
 
@@ -354,7 +352,7 @@ mod tests {
         network_traffic.correct_content_lengths();
         let inner = ReplayingClient::new(network_traffic.events.clone());
         let connection = RecordingClient::new(SharedHttpConnector::new(inner.clone()));
-        let req = http::Request::post("https://www.example.com")
+        let req = http_02x::Request::post("https://www.example.com")
             .body(SdkBody::from("hello world"))
             .unwrap();
         let mut resp = connection.call(req.try_into().unwrap()).await.expect("ok");
@@ -371,7 +369,7 @@ mod tests {
         let requests = inner.take_requests().await;
         assert_eq!(
             requests[0].uri(),
-            &Uri::from_static("https://www.example.com")
+            &http_02x::Uri::from_static("https://www.example.com")
         );
         assert_eq!(
             requests[0].body(),

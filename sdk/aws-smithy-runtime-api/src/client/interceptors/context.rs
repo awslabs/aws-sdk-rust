@@ -485,8 +485,8 @@ impl fmt::Display for RewindResult {
 mod tests {
     use super::*;
     use aws_smithy_types::body::SdkBody;
-    use http::header::{AUTHORIZATION, CONTENT_LENGTH};
-    use http::{HeaderValue, Uri};
+    use http_02x::header::{AUTHORIZATION, CONTENT_LENGTH};
+    use http_02x::{HeaderValue, Uri};
 
     #[test]
     fn test_success_transitions() {
@@ -508,7 +508,7 @@ mod tests {
         context.enter_transmit_phase();
         let _ = context.take_request();
         context.set_response(
-            http::Response::builder()
+            http_02x::Response::builder()
                 .body(SdkBody::empty())
                 .unwrap()
                 .try_into()
@@ -547,7 +547,7 @@ mod tests {
         context.enter_serialization_phase();
         let _ = context.take_input();
         context.set_request(
-            http::Request::builder()
+            http_02x::Request::builder()
                 .header("test", "the-original-un-mutated-request")
                 .body(SdkBody::empty())
                 .unwrap()
@@ -571,7 +571,7 @@ mod tests {
             request.headers().get("test").unwrap()
         );
         context.set_response(
-            http::Response::builder()
+            http_02x::Response::builder()
                 .body(SdkBody::empty())
                 .unwrap()
                 .try_into()
@@ -593,7 +593,7 @@ mod tests {
         context.enter_transmit_phase();
         let _ = context.take_request();
         context.set_response(
-            http::Response::builder()
+            http_02x::Response::builder()
                 .body(SdkBody::empty())
                 .unwrap()
                 .try_into()
@@ -612,7 +612,7 @@ mod tests {
 
     #[test]
     fn try_clone_clones_all_data() {
-        let request: HttpRequest = http::Request::builder()
+        let request: HttpRequest = http_02x::Request::builder()
             .uri(Uri::from_static("https://www.amazon.com"))
             .method("POST")
             .header(CONTENT_LENGTH, 456)

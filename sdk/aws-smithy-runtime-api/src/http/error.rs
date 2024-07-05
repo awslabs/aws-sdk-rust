@@ -6,8 +6,8 @@
 //! Error types for HTTP requests/responses.
 
 use crate::box_error::BoxError;
-use http::header::{InvalidHeaderName, InvalidHeaderValue};
-use http::uri::InvalidUri;
+use http_02x::header::{InvalidHeaderName, InvalidHeaderValue};
+use http_02x::uri::InvalidUri;
 use std::error::Error;
 use std::fmt::{Debug, Display, Formatter};
 use std::str::Utf8Error;

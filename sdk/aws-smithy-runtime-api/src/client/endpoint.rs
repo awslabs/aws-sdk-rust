@@ -12,7 +12,7 @@ use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use aws_smithy_types::endpoint::Endpoint;
 use aws_smithy_types::type_erasure::TypeErasedBox;
 use error::InvalidEndpointError;
-use http::uri::Authority;
+use http_02x::uri::Authority;
 use std::fmt;
 use std::str::FromStr;
 use std::sync::Arc;

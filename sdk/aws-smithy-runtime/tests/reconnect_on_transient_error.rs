@@ -147,7 +147,7 @@ async fn wire_level_test(
         .serializer({
             let endpoint_url = mock.endpoint_url();
             move |_| {
-                let request = http::Request::builder()
+                let request = http_02x::Request::builder()
                     .uri(endpoint_url.clone())
                     // Make the body non-replayable since we don't actually want to retry
                     .body(SdkBody::from_body_0_4(SdkBody::from("body")))

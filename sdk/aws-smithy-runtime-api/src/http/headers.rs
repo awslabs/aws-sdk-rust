@@ -6,9 +6,6 @@
 //! Types for HTTP headers
 
 use crate::http::error::HttpError;
-use http as http0;
-use http0::header::Iter;
-use http0::HeaderMap;
 use std::borrow::Cow;
 use std::fmt::Debug;
 use std::str::FromStr;
@@ -16,7 +13,7 @@ use std::str::FromStr;
 /// An immutable view of headers
 #[derive(Clone, Default, Debug)]
 pub struct Headers {
-    pub(super) headers: HeaderMap<HeaderValue>,
+    pub(super) headers: http_02x::HeaderMap<HeaderValue>,
 }
 
 impl<'a> IntoIterator for &'a Headers {
@@ -32,7 +29,7 @@ impl<'a> IntoIterator for &'a Headers {
 
 /// An Iterator over headers
 pub struct HeadersIter<'a> {
-    inner: Iter<'a, HeaderValue>,
+    inner: http_02x::header::Iter<'a, HeaderValue>,
 }
 
 impl<'a> Iterator for HeadersIter<'a> {
@@ -50,13 +47,13 @@ impl Headers {
     }
 
     #[cfg(feature = "http-1x")]
-    pub(crate) fn http1_headermap(self) -> http1::HeaderMap {
-        let mut headers = http1::HeaderMap::new();
+    pub(crate) fn http1_headermap(self) -> http_1x::HeaderMap {
+        let mut headers = http_1x::HeaderMap::new();
         headers.reserve(self.headers.len());
         headers.extend(self.headers.into_iter().map(|(k, v)| {
             (
                 k.map(|n| {
-                    http1::HeaderName::from_bytes(n.as_str().as_bytes()).expect("proven valid")
+                    http_1x::HeaderName::from_bytes(n.as_str().as_bytes()).expect("proven valid")
                 }),
                 v.into_http1x(),
             )
@@ -65,8 +62,8 @@ impl Headers {
     }
 
     #[cfg(feature = "http-02x")]
-    pub(crate) fn http0_headermap(self) -> http0::HeaderMap {
-        let mut headers = http0::HeaderMap::new();
+    pub(crate) fn http0_headermap(self) -> http_02x::HeaderMap {
+        let mut headers = http_02x::HeaderMap::new();
         headers.reserve(self.headers.len());
         headers.extend(self.headers.into_iter().map(|(k, v)| (k, v.into_http02x())));
         headers
@@ -75,7 +72,7 @@ impl Headers {
     /// Returns the value for a given key
     ///
     /// If multiple values are associated, the first value is returned
-    /// See [HeaderMap::get]
+    /// See [HeaderMap::get](http_02x::HeaderMap::get)
     pub fn get(&self, key: impl AsRef<str>) -> Option<&str> {
         self.headers.get(key.as_ref()).map(|v| v.as_ref())
     }
@@ -180,10 +177,10 @@ impl Headers {
 }
 
 #[cfg(feature = "http-02x")]
-impl TryFrom<HeaderMap> for Headers {
+impl TryFrom<http_02x::HeaderMap> for Headers {
     type Error = HttpError;
 
-    fn try_from(value: HeaderMap) -> Result<Self, Self::Error> {
+    fn try_from(value: http_02x::HeaderMap) -> Result<Self, Self::Error> {
         if let Some(e) = value
             .values()
             .filter_map(|value| std::str::from_utf8(value.as_bytes()).err())
@@ -191,7 +188,7 @@ impl TryFrom<HeaderMap> for Headers {
         {
             Err(HttpError::header_was_not_a_string(e))
         } else {
-            let mut string_safe_headers: HeaderMap<HeaderValue> = Default::default();
+            let mut string_safe_headers: http_02x::HeaderMap<HeaderValue> = Default::default();
             string_safe_headers.extend(
                 value
                     .into_iter()
@@ -205,10 +202,10 @@ impl TryFrom<HeaderMap> for Headers {
 }
 
 #[cfg(feature = "http-1x")]
-impl TryFrom<http1::HeaderMap> for Headers {
+impl TryFrom<http_1x::HeaderMap> for Headers {
     type Error = HttpError;
 
-    fn try_from(value: http1::HeaderMap) -> Result<Self, Self::Error> {
+    fn try_from(value: http_1x::HeaderMap) -> Result<Self, Self::Error> {
         if let Some(e) = value
             .values()
             .filter_map(|value| std::str::from_utf8(value.as_bytes()).err())
@@ -216,11 +213,12 @@ impl TryFrom<http1::HeaderMap> for Headers {
         {
             Err(HttpError::header_was_not_a_string(e))
         } else {
-            let mut string_safe_headers: http0::HeaderMap<HeaderValue> = Default::default();
+            let mut string_safe_headers: http_02x::HeaderMap<HeaderValue> = Default::default();
             string_safe_headers.extend(value.into_iter().map(|(k, v)| {
                 (
                     k.map(|v| {
-                        http0::HeaderName::from_bytes(v.as_str().as_bytes()).expect("known valid")
+                        http_02x::HeaderName::from_bytes(v.as_str().as_bytes())
+                            .expect("known valid")
                     }),
                     HeaderValue::from_http1x(v).expect("validated above"),
                 )
@@ -245,7 +243,7 @@ mod sealed {
         fn as_str(&self) -> Result<&str, HttpError>;
 
         /// If a component is already internally represented as a `http02x::HeaderName`, return it
-        fn repr_as_http02x_header_name(self) -> Result<http0::HeaderName, Self>
+        fn repr_as_http02x_header_name(self) -> Result<http_02x::HeaderName, Self>
         where
             Self: Sized,
         {
@@ -283,7 +281,7 @@ mod sealed {
         }
     }
 
-    impl AsHeaderComponent for http0::HeaderValue {
+    impl AsHeaderComponent for http_02x::HeaderValue {
         fn into_maybe_static(self) -> Result<MaybeStatic, HttpError> {
             Ok(Cow::Owned(
                 std::str::from_utf8(self.as_bytes())
@@ -297,7 +295,7 @@ mod sealed {
         }
     }
 
-    impl AsHeaderComponent for http0::HeaderName {
+    impl AsHeaderComponent for http_02x::HeaderName {
         fn into_maybe_static(self) -> Result<MaybeStatic, HttpError> {
             Ok(self.to_string().into())
         }
@@ -306,7 +304,7 @@ mod sealed {
             Ok(self.as_ref())
         }
 
-        fn repr_as_http02x_header_name(self) -> Result<http0::HeaderName, Self>
+        fn repr_as_http02x_header_name(self) -> Result<http_02x::HeaderName, Self>
         where
             Self: Sized,
         {
@@ -329,14 +327,14 @@ mod header_value {
 
     #[derive(Debug, Clone)]
     enum Inner {
-        H0(http0::HeaderValue),
+        H0(http_02x::HeaderValue),
         #[allow(dead_code)]
-        H1(http1::HeaderValue),
+        H1(http_1x::HeaderValue),
     }
 
     impl HeaderValue {
         #[allow(dead_code)]
-        pub(crate) fn from_http02x(value: http0::HeaderValue) -> Result<Self, Utf8Error> {
+        pub(crate) fn from_http02x(value: http_02x::HeaderValue) -> Result<Self, Utf8Error> {
             let _ = std::str::from_utf8(value.as_bytes())?;
             Ok(Self {
                 _private: Inner::H0(value),
@@ -344,7 +342,7 @@ mod header_value {
         }
 
         #[allow(dead_code)]
-        pub(crate) fn from_http1x(value: http1::HeaderValue) -> Result<Self, Utf8Error> {
+        pub(crate) fn from_http1x(value: http_1x::HeaderValue) -> Result<Self, Utf8Error> {
             let _ = std::str::from_utf8(value.as_bytes())?;
             Ok(Self {
                 _private: Inner::H1(value),
@@ -352,18 +350,18 @@ mod header_value {
         }
 
         #[allow(dead_code)]
-        pub(crate) fn into_http02x(self) -> http0::HeaderValue {
+        pub(crate) fn into_http02x(self) -> http_02x::HeaderValue {
             match self._private {
                 Inner::H0(v) => v,
-                Inner::H1(v) => http0::HeaderValue::from_maybe_shared(v).expect("unreachable"),
+                Inner::H1(v) => http_02x::HeaderValue::from_maybe_shared(v).expect("unreachable"),
             }
         }
 
         #[allow(dead_code)]
-        pub(crate) fn into_http1x(self) -> http1::HeaderValue {
+        pub(crate) fn into_http1x(self) -> http_1x::HeaderValue {
             match self._private {
                 Inner::H1(v) => v,
-                Inner::H0(v) => http1::HeaderValue::from_maybe_shared(v).expect("unreachable"),
+                Inner::H0(v) => http_1x::HeaderValue::from_maybe_shared(v).expect("unreachable"),
             }
         }
     }
@@ -404,7 +402,7 @@ mod header_value {
 
         fn try_from(value: String) -> Result<Self, Self::Error> {
             Ok(HeaderValue::from_http02x(
-                http0::HeaderValue::try_from(value).map_err(HttpError::invalid_header_value)?,
+                http_02x::HeaderValue::try_from(value).map_err(HttpError::invalid_header_value)?,
             )
             .expect("input was a string"))
         }
@@ -418,7 +416,7 @@ type MaybeStatic = Cow<'static, str>;
 fn header_name(
     name: impl AsHeaderComponent,
     panic_safe: bool,
-) -> Result<http0::HeaderName, HttpError> {
+) -> Result<http_02x::HeaderName, HttpError> {
     name.repr_as_http02x_header_name().or_else(|name| {
         name.into_maybe_static().and_then(|mut cow| {
             if cow.chars().any(|c| c.is_ascii_uppercase()) {
@@ -426,11 +424,11 @@ fn header_name(
             }
             match cow {
                 Cow::Borrowed(s) if panic_safe => {
-                    http0::HeaderName::try_from(s).map_err(HttpError::invalid_header_name)
+                    http_02x::HeaderName::try_from(s).map_err(HttpError::invalid_header_name)
                 }
-                Cow::Borrowed(staticc) => Ok(http0::HeaderName::from_static(staticc)),
+                Cow::Borrowed(staticc) => Ok(http_02x::HeaderName::from_static(staticc)),
                 Cow::Owned(s) => {
-                    http0::HeaderName::try_from(s).map_err(HttpError::invalid_header_name)
+                    http_02x::HeaderName::try_from(s).map_err(HttpError::invalid_header_name)
                 }
             }
         })
@@ -440,11 +438,11 @@ fn header_name(
 fn header_value(value: MaybeStatic, panic_safe: bool) -> Result<HeaderValue, HttpError> {
     let header = match value {
         Cow::Borrowed(b) if panic_safe => {
-            http0::HeaderValue::try_from(b).map_err(HttpError::invalid_header_value)?
+            http_02x::HeaderValue::try_from(b).map_err(HttpError::invalid_header_value)?
         }
-        Cow::Borrowed(b) => http0::HeaderValue::from_static(b),
+        Cow::Borrowed(b) => http_02x::HeaderValue::from_static(b),
         Cow::Owned(s) => {
-            http0::HeaderValue::try_from(s).map_err(HttpError::invalid_header_value)?
+            http_02x::HeaderValue::try_from(s).map_err(HttpError::invalid_header_value)?
         }
     };
     HeaderValue::from_http02x(header).map_err(HttpError::new)
@@ -511,7 +509,7 @@ mod tests {
             .try_insert(
                 "foo",
                 // Valid header value with invalid UTF-8
-                http0::HeaderValue::from_bytes(&[0xC0, 0x80]).unwrap()
+                http_02x::HeaderValue::from_bytes(&[0xC0, 0x80]).unwrap()
             )
             .is_err());
     }
@@ -527,7 +525,7 @@ mod tests {
             .try_insert(
                 "foo",
                 // Valid header value with invalid UTF-8
-                http0::HeaderValue::from_bytes(&[0xC0, 0x80]).unwrap()
+                http_02x::HeaderValue::from_bytes(&[0xC0, 0x80]).unwrap()
             )
             .is_err());
     }

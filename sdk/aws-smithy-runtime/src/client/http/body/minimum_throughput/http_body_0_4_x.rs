@@ -8,14 +8,14 @@ use crate::client::http::body::minimum_throughput::{
     throughput::ThroughputReport, Throughput, ThroughputReadingBody,
 };
 use aws_smithy_async::rt::sleep::AsyncSleep;
-use http_body_0_4::Body;
+use http_body_04x::Body;
 use std::future::Future;
 use std::pin::{pin, Pin};
 use std::task::{Context, Poll};
 
 const ZERO_THROUGHPUT: Throughput = Throughput::new_bytes_per_second(0);
 
-// Helper trait for interpretting the throughput report.
+// Helper trait for interpreting the throughput report.
 trait DownloadReport {
     fn minimum_throughput_violated(self, minimum_throughput: Throughput) -> (bool, Throughput);
 }
@@ -140,17 +140,17 @@ where
     fn poll_trailers(
         mut self: Pin<&mut Self>,
         cx: &mut Context<'_>,
-    ) -> Poll<Result<Option<http::HeaderMap>, Self::Error>> {
+    ) -> Poll<Result<Option<http_02x::HeaderMap>, Self::Error>> {
         let this = self.as_mut().project();
         this.inner.poll_trailers(cx)
     }
 
-    fn size_hint(&self) -> http_body_0_4::SizeHint {
-        self.inner.size_hint()
-    }
-
     fn is_end_stream(&self) -> bool {
         self.inner.is_end_stream()
+    }
+
+    fn size_hint(&self) -> http_body_04x::SizeHint {
+        self.inner.size_hint()
     }
 }
 
@@ -208,16 +208,16 @@ where
     fn poll_trailers(
         mut self: Pin<&mut Self>,
         cx: &mut Context<'_>,
-    ) -> Poll<Result<Option<http::HeaderMap>, Self::Error>> {
+    ) -> Poll<Result<Option<http_02x::HeaderMap>, Self::Error>> {
         let this = self.as_mut().project();
         this.inner.poll_trailers(cx)
     }
 
-    fn size_hint(&self) -> http_body_0_4::SizeHint {
-        self.inner.size_hint()
-    }
-
     fn is_end_stream(&self) -> bool {
         self.inner.is_end_stream()
+    }
+
+    fn size_hint(&self) -> http_body_04x::SizeHint {
+        self.inner.size_hint()
     }
 }

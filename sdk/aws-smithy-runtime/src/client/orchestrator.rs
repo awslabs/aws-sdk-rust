@@ -198,7 +198,7 @@ fn apply_configuration(
     // do that without a breaking change. By overwriting the value in the config bag with a merged
     // version, we can achieve a very similar behavior. `MergeTimeoutConfig`
     let resolved_timeout_config = cfg.load::<MergeTimeoutConfig>();
-    tracing::debug!(
+    debug!(
         "timeout settings for this operation: {:?}",
         resolved_timeout_config
     );
@@ -464,15 +464,15 @@ async fn finally_op(
 
 #[cfg(all(test, feature = "test-util"))]
 mod tests {
-    use super::*;
     use crate::client::auth::no_auth::{NoAuthRuntimePlugin, NO_AUTH_SCHEME_ID};
     use crate::client::http::test_util::NeverClient;
     use crate::client::orchestrator::endpoints::StaticUriEndpointResolver;
+    use crate::client::orchestrator::{invoke, invoke_with_stop_point, StopPoint};
     use crate::client::retries::strategy::NeverRetryStrategy;
     use crate::client::test_util::{
         deserializer::CannedResponseDeserializer, serializer::CannedRequestSerializer,
     };
-    use ::http::{Response, StatusCode};
+    use aws_smithy_runtime_api::box_error::BoxError;
     use aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver;
     use aws_smithy_runtime_api::client::auth::{
         AuthSchemeOptionResolverParams, SharedAuthSchemeOptionResolver,
@@ -488,15 +488,23 @@ mod tests {
         BeforeDeserializationInterceptorContextRef, BeforeSerializationInterceptorContextMut,
         BeforeSerializationInterceptorContextRef, BeforeTransmitInterceptorContextMut,
         BeforeTransmitInterceptorContextRef, FinalizerInterceptorContextMut,
-        FinalizerInterceptorContextRef,
+        FinalizerInterceptorContextRef, Input, Output,
     };
     use aws_smithy_runtime_api::client::interceptors::{Intercept, SharedInterceptor};
-    use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+    use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, OrchestratorError};
     use aws_smithy_runtime_api::client::retries::SharedRetryStrategy;
-    use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
+    use aws_smithy_runtime_api::client::runtime_components::{
+        RuntimeComponents, RuntimeComponentsBuilder,
+    };
     use aws_smithy_runtime_api::client::runtime_plugin::{RuntimePlugin, RuntimePlugins};
+    use aws_smithy_runtime_api::client::ser_de::{
+        SharedRequestSerializer, SharedResponseDeserializer,
+    };
     use aws_smithy_runtime_api::shared::IntoShared;
+    use aws_smithy_types::body::SdkBody;
     use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer, Layer};
+    use aws_smithy_types::timeout::TimeoutConfig;
+    use http_02x::{Response, StatusCode};
     use std::borrow::Cow;
     use std::sync::atomic::{AtomicBool, Ordering};
     use std::sync::Arc;
@@ -527,7 +535,7 @@ mod tests {
 
     impl HttpConnector for OkConnector {
         fn call(&self, _request: HttpRequest) -> HttpConnectorFuture {
-            HttpConnectorFuture::ready(Ok(::http::Response::builder()
+            HttpConnectorFuture::ready(Ok(http_02x::Response::builder()
                 .status(200)
                 .body(SdkBody::empty())
                 .expect("OK response is valid")

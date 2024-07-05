@@ -12,9 +12,9 @@ use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_runtime_api::{box_error::BoxError, client::endpoint::EndpointPrefix};
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::endpoint::Endpoint;
-use http::header::HeaderName;
-use http::uri::PathAndQuery;
-use http::{HeaderValue, Uri};
+use http_02x::header::HeaderName;
+use http_02x::uri::PathAndQuery;
+use http_02x::{HeaderValue, Uri};
 use std::borrow::Cow;
 use std::fmt::Debug;
 use std::str::FromStr;
@@ -147,7 +147,9 @@ fn apply_endpoint(
 
 #[cfg(test)]
 mod test {
-    use super::*;
+    use aws_smithy_runtime_api::client::endpoint::EndpointPrefix;
+    use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+    use aws_smithy_types::endpoint::Endpoint;
 
     #[test]
     fn test_apply_endpoint() {

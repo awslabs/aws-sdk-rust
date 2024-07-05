@@ -14,7 +14,7 @@ use aws_smithy_types::byte_stream::ByteStream;
 use bytes::{BufMut, Bytes, BytesMut};
 use hyper_0_14::server::conn::AddrStream;
 use hyper_0_14::service::{make_service_fn, service_fn, Service};
-use hyper_0_14::{Body, Server};
+use hyper_0_14::Server;
 use std::convert::Infallible;
 use std::net::TcpListener;
 use std::time::Duration;
@@ -39,7 +39,7 @@ async fn stalled_stream_performance() {
     let listener = TcpListener::bind("127.0.0.1:0").unwrap();
     let make_service = make_service_fn(move |_connection: &AddrStream| async move {
         Ok::<_, Infallible>(service_fn(
-            move |_: http::Request<hyper_0_14::Body>| async move {
+            move |_: http_02x::Request<hyper_0_14::Body>| async move {
                 let (mut sender, body) = hyper_0_14::Body::channel();
                 tokio::task::spawn(async move {
                     for _i in 0..(data_size / block_size) {
@@ -49,7 +49,7 @@ async fn stalled_stream_performance() {
                             .expect("failed to write data");
                     }
                 });
-                Ok::<_, Infallible>(http::Response::new(body))
+                Ok::<_, Infallible>(http_02x::Response::new(body))
             },
         ))
     });
@@ -80,9 +80,9 @@ async fn stalled_stream_performance() {
 
 async fn make_request(address: &str, wrap_body: bool) -> Duration {
     let mut client = hyper_0_14::Client::new();
-    let req = ::http::Request::builder()
+    let req = ::http_02x::Request::builder()
         .uri(address)
-        .body(Body::empty())
+        .body(hyper_0_14::Body::empty())
         .unwrap();
     let resp = client.call(req).await;
     let body = resp.unwrap().into_body();

@@ -4,8 +4,8 @@
  */
 
 use bytes::{Bytes, BytesMut};
-use http::{HeaderMap, HeaderValue};
-use http_body::{Body, SizeHint};
+use http_02x::{HeaderMap, HeaderValue};
+use http_body_04x::{Body, SizeHint};
 use pin_project_lite::pin_project;
 
 use std::pin::Pin;
@@ -357,8 +357,8 @@ mod tests {
     use aws_smithy_types::body::SdkBody;
     use bytes::{Buf, Bytes};
     use bytes_utils::SegmentedBuf;
-    use http::{HeaderMap, HeaderValue};
-    use http_body::{Body, SizeHint};
+    use http_02x::{HeaderMap, HeaderValue};
+    use http_body_04x::{Body, SizeHint};
     use pin_project_lite::pin_project;
 
     use std::io::Read;

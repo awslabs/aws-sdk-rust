@@ -42,7 +42,7 @@ version = "1.2.1"
 
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
-version = "0.60.8"
+version = "0.60.9"
 
 [dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"
@@ -51,7 +51,7 @@ version = "0.60.7"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
-version = "1.7.0"
+version = "1.7.1"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
@@ -63,14 +63,15 @@ version = "0.3"
 default-features = false
 optional = true
 
-[dependencies.http]
+[dependencies.http-02x]
+package = "http"
 version = "0.2.8"
 
-[dependencies.http-body-0-4]
+[dependencies.http-body-04x]
 package = "http-body"
 version = "0.4.4"
 
-[dependencies.http-body-1]
+[dependencies.http-body-1x]
 package = "http-body"
 version = "1"
 
@@ -128,7 +129,7 @@ version = "1.2.1"
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["test-util"]
-version = "1.7.0"
+version = "1.7.1"
 
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"

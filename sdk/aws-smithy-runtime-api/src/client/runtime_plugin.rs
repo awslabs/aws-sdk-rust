@@ -309,7 +309,7 @@ mod tests {
     use crate::shared::IntoShared;
     use aws_smithy_types::body::SdkBody;
     use aws_smithy_types::config_bag::ConfigBag;
-    use http::HeaderValue;
+    use http_02x::HeaderValue;
     use std::borrow::Cow;
 
     #[derive(Debug)]
@@ -389,7 +389,7 @@ mod tests {
         impl HttpConnector for Connector1 {
             fn call(&self, _: HttpRequest) -> HttpConnectorFuture {
                 HttpConnectorFuture::new(async {
-                    Ok(http::Response::builder()
+                    Ok(http_02x::Response::builder()
                         .status(200)
                         .header("rp1", "1")
                         .body(SdkBody::empty())

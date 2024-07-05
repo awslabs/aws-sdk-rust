@@ -8,7 +8,7 @@
 use aws_smithy_types::date_time::Format;
 use aws_smithy_types::primitive::Parse;
 use aws_smithy_types::DateTime;
-use http::header::{HeaderMap, HeaderName, HeaderValue};
+use http_02x::header::{HeaderMap, HeaderName, HeaderValue};
 use std::borrow::Cow;
 use std::convert::TryFrom;
 use std::error::Error;
@@ -152,13 +152,13 @@ where
 
 /// Given an HTTP request, set a request header if that header was not already set.
 pub fn set_request_header_if_absent<V>(
-    request: http::request::Builder,
+    request: http_02x::request::Builder,
     key: HeaderName,
     value: V,
-) -> http::request::Builder
+) -> http_02x::request::Builder
 where
     HeaderValue: TryFrom<V>,
-    <HeaderValue as TryFrom<V>>::Error: Into<http::Error>,
+    <HeaderValue as TryFrom<V>>::Error: Into<http_02x::Error>,
 {
     if !request
         .headers_ref()
@@ -173,13 +173,13 @@ where
 
 /// Given an HTTP response, set a response header if that header was not already set.
 pub fn set_response_header_if_absent<V>(
-    response: http::response::Builder,
+    response: http_02x::response::Builder,
     key: HeaderName,
     value: V,
-) -> http::response::Builder
+) -> http_02x::response::Builder
 where
     HeaderValue: TryFrom<V>,
-    <HeaderValue as TryFrom<V>>::Error: Into<http::Error>,
+    <HeaderValue as TryFrom<V>>::Error: Into<http_02x::Error>,
 {
     if !response
         .headers_ref()
@@ -332,24 +332,21 @@ pub fn append_merge_header_maps(
 
 #[cfg(test)]
 mod test {
-    use std::collections::HashMap;
-
-    use aws_smithy_types::{date_time::Format, DateTime};
-    use http::header::{HeaderMap, HeaderName, HeaderValue};
-
+    use super::quote_header_value;
     use crate::header::{
         append_merge_header_maps, headers_for_prefix, many_dates, read_many_from_str,
         read_many_primitive, set_request_header_if_absent, set_response_header_if_absent,
         ParseError,
     };
-
-    use super::quote_header_value;
     use aws_smithy_runtime_api::http::Request;
     use aws_smithy_types::error::display::DisplayErrorContext;
+    use aws_smithy_types::{date_time::Format, DateTime};
+    use http_02x::header::{HeaderMap, HeaderName, HeaderValue};
+    use std::collections::HashMap;
 
     #[test]
     fn put_on_request_if_absent() {
-        let builder = http::Request::builder().header("foo", "bar");
+        let builder = http_02x::Request::builder().header("foo", "bar");
         let builder = set_request_header_if_absent(builder, HeaderName::from_static("foo"), "baz");
         let builder =
             set_request_header_if_absent(builder, HeaderName::from_static("other"), "value");
@@ -366,7 +363,7 @@ mod test {
 
     #[test]
     fn put_on_response_if_absent() {
-        let builder = http::Response::builder().header("foo", "bar");
+        let builder = http_02x::Response::builder().header("foo", "bar");
         let builder = set_response_header_if_absent(builder, HeaderName::from_static("foo"), "baz");
         let builder =
             set_response_header_if_absent(builder, HeaderName::from_static("other"), "value");
@@ -387,7 +384,7 @@ mod test {
 
     #[test]
     fn parse_floats() {
-        let test_request = http::Request::builder()
+        let test_request = http_02x::Request::builder()
             .header("X-Float-Multi", "0.0,Infinity,-Infinity,5555.5")
             .header("X-Float-Error", "notafloat")
             .body(())
@@ -425,7 +422,7 @@ mod test {
 
     #[test]
     fn test_many_dates() {
-        let test_request = http::Request::builder()
+        let test_request = http_02x::Request::builder()
             .header("Empty", "")
             .header("SingleHttpDate", "Wed, 21 Oct 2015 07:28:00 GMT")
             .header(
@@ -477,7 +474,7 @@ mod test {
 
     #[test]
     fn read_many_strings() {
-        let test_request = http::Request::builder()
+        let test_request = http_02x::Request::builder()
             .header("Empty", "")
             .header("Foo", "  foo")
             .header("FooTrailing", "foo   ")
@@ -528,7 +525,7 @@ mod test {
 
     #[test]
     fn read_many_bools() {
-        let test_request = http::Request::builder()
+        let test_request = http_02x::Request::builder()
             .header("X-Bool-Multi", "true,false")
             .header("X-Bool-Multi", "true")
             .header("X-Bool", "true")
@@ -594,7 +591,7 @@ mod test {
 
     #[test]
     fn check_read_many_i16() {
-        let test_request = http::Request::builder()
+        let test_request = http_02x::Request::builder()
             .header("X-Multi", "123,456")
             .header("X-Multi", "789")
             .header("X-Num", "777")
@@ -661,7 +658,7 @@ mod test {
     #[test]
     fn test_prefix_headers() {
         let test_request = Request::try_from(
-            http::Request::builder()
+            http_02x::Request::builder()
                 .header("X-Prefix-A", "123,456")
                 .header("X-Prefix-B", "789")
                 .header("X-Prefix-C", "777")

@@ -34,7 +34,7 @@ async fn download_success() {
     let result = eagerly_consume(response_body).await;
     server.await.unwrap();
 
-    result.ok().expect("response MUST NOT timeout");
+    result.expect("response MUST NOT timeout");
 }
 
 /// Scenario: Download takes a some time to start, but then goes normally.
@@ -62,7 +62,7 @@ async fn download_slow_start() {
     let result = eagerly_consume(response_body).await;
     server.await.unwrap();
 
-    result.ok().expect("response MUST NOT timeout");
+    result.expect("response MUST NOT timeout");
 }
 
 /// Scenario: Download starts fine, and then slowly falls below minimum throughput.
@@ -166,7 +166,7 @@ async fn download_stall_recovery_in_grace_period() {
     let result = eagerly_consume(response_body).await;
     server.await.unwrap();
 
-    result.ok().expect("response MUST NOT timeout");
+    result.expect("response MUST NOT timeout");
 }
 
 /// Scenario: The server sends data fast enough, but the customer doesn't consume the
@@ -191,7 +191,7 @@ async fn user_downloads_data_too_slowly() {
     let result = slowly_consume(time, response_body).await;
     server.await.unwrap();
 
-    result.ok().expect("response MUST NOT timeout");
+    result.expect("response MUST NOT timeout");
 }
 
 use download_test_tools::*;
@@ -200,7 +200,13 @@ mod download_test_tools {
     use crate::stalled_stream_common::*;
 
     fn response(body: SdkBody) -> HttpResponse {
-        HttpResponse::try_from(http::Response::builder().status(200).body(body).unwrap()).unwrap()
+        HttpResponse::try_from(
+            http_02x::Response::builder()
+                .status(200)
+                .body(body)
+                .unwrap(),
+        )
+        .unwrap()
     }
 
     pub fn operation(
@@ -228,7 +234,7 @@ mod download_test_tools {
             }
         }
 
-        let operation = Operation::builder()
+        Operation::builder()
             .service_name("test")
             .operation_name("test")
             .http_client(FakeServer(http_connector.into_shared()))
@@ -246,8 +252,7 @@ mod download_test_tools {
             .interceptor(StalledStreamProtectionInterceptor::default())
             .sleep_impl(sleep)
             .time_source(time)
-            .build();
-        operation
+            .build()
     }
 
     /// Fake server/connector that responds with a channel body.
@@ -280,7 +285,7 @@ mod download_test_tools {
             if let Err(err) = result {
                 return Err(err);
             } else {
-                tracing::info!("consumed bytes from the response body");
+                info!("consumed bytes from the response body");
             }
         }
         Ok(())
@@ -296,7 +301,7 @@ mod download_test_tools {
             if let Err(err) = result {
                 return Err(err);
             } else {
-                tracing::info!("consumed bytes from the response body");
+                info!("consumed bytes from the response body");
                 tick!(time, Duration::from_secs(10));
             }
         }

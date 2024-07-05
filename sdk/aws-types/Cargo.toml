@@ -44,7 +44,7 @@ version = "1.6.1"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client"]
-version = "1.7.0"
+version = "1.7.1"
 
 [dependencies.hyper-rustls]
 version = "0.24"
@@ -63,7 +63,7 @@ features = ["rt", "macros"]
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["http-02x"]
-version = "1.7.0"
+version = "1.7.1"
 
 [build-dependencies]
 rustc_version = "0.4.0"

@@ -25,14 +25,11 @@ use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::retry::ErrorKind;
 use h2::Reason;
-use http::{Extensions, Uri};
 use hyper_0_14::client::connect::{capture_connection, CaptureConnection, Connection, HttpInfo};
-use hyper_0_14::service::Service;
 use std::borrow::Cow;
 use std::collections::HashMap;
 use std::error::Error;
 use std::fmt;
-use std::fmt::Debug;
 use std::sync::RwLock;
 use std::time::Duration;
 use tokio::io::{AsyncRead, AsyncWrite};
@@ -41,8 +38,6 @@ use tokio::io::{AsyncRead, AsyncWrite};
 mod default_connector {
     use aws_smithy_async::rt::sleep::SharedAsyncSleep;
     use aws_smithy_runtime_api::client::http::HttpConnectorSettings;
-    use hyper_0_14::client::HttpConnector;
-    use hyper_rustls::HttpsConnector;
 
     // Creating a `with_native_roots` HTTP client takes 300ms on OS X. Cache this so that we
     // don't need to repeatedly incur that cost.
@@ -50,7 +45,7 @@ mod default_connector {
         hyper_rustls::HttpsConnector<hyper_0_14::client::HttpConnector>,
     > = once_cell::sync::Lazy::new(default_tls);
 
-    fn default_tls() -> HttpsConnector<HttpConnector> {
+    fn default_tls() -> hyper_rustls::HttpsConnector<hyper_0_14::client::HttpConnector> {
         use hyper_rustls::ConfigBuilderExt;
         hyper_rustls::HttpsConnectorBuilder::new()
                .with_tls_config(
@@ -168,7 +163,7 @@ impl HyperConnectorBuilder {
     pub fn build<C>(self, tcp_connector: C) -> HyperConnector
     where
         C: Clone + Send + Sync + 'static,
-        C: Service<Uri>,
+        C: hyper_0_14::service::Service<http_02x::Uri>,
         C::Response: Connection + AsyncRead + AsyncWrite + Send + Unpin + 'static,
         C::Future: Unpin + Send + 'static,
         C::Error: Into<BoxError>,
@@ -286,7 +281,7 @@ impl<C> fmt::Debug for Adapter<C> {
 fn extract_smithy_connection(capture_conn: &CaptureConnection) -> Option<ConnectionMetadata> {
     let capture_conn = capture_conn.clone();
     if let Some(conn) = capture_conn.clone().connection_metadata().as_ref() {
-        let mut extensions = Extensions::new();
+        let mut extensions = http_02x::Extensions::new();
         conn.get_extras(&mut extensions);
         let http_info = extensions.get::<HttpInfo>();
         let mut builder = ConnectionMetadata::builder()
@@ -311,12 +306,14 @@ fn extract_smithy_connection(capture_conn: &CaptureConnection) -> Option<Connect
 impl<C> HttpConnector for Adapter<C>
 where
     C: Clone + Send + Sync + 'static,
-    C: hyper_0_14::service::Service<Uri>,
+    C: hyper_0_14::service::Service<http_02x::Uri>,
     C::Response: Connection + AsyncRead + AsyncWrite + Send + Unpin + 'static,
     C::Future: Unpin + Send + 'static,
     C::Error: Into<BoxError>,
 {
     fn call(&self, request: HttpRequest) -> HttpConnectorFuture {
+        use hyper_0_14::service::Service;
+
         let mut request = match request.try_into_http02x() {
             Ok(request) => request,
             Err(err) => {
@@ -439,25 +436,11 @@ impl<C, F> HttpClient for HyperClient<F>
 where
     F: Fn() -> C + Send + Sync,
     C: Clone + Send + Sync + 'static,
-    C: Service<Uri>,
+    C: hyper_0_14::service::Service<http_02x::Uri>,
     C::Response: Connection + AsyncRead + AsyncWrite + Send + Unpin + 'static,
     C::Future: Unpin + Send + 'static,
     C::Error: Into<BoxError>,
 {
-    fn validate_base_client_config(
-        &self,
-        _: &RuntimeComponentsBuilder,
-        _: &ConfigBag,
-    ) -> Result<(), BoxError> {
-        // Initialize the TCP connector at this point so that native certs load
-        // at client initialization time instead of upon first request. We do it
-        // here rather than at construction so that it won't run if this is not
-        // the selected HTTP client for the base config (for example, if this was
-        // the default HTTP client, and it was overridden by a later plugin).
-        let _ = (self.tcp_connector_fn)();
-        Ok(())
-    }
-
     fn http_connector(
         &self,
         settings: &HttpConnectorSettings,
@@ -489,6 +472,20 @@ where
         }
 
         connector.expect("cache populated above")
+    }
+
+    fn validate_base_client_config(
+        &self,
+        _: &RuntimeComponentsBuilder,
+        _: &ConfigBag,
+    ) -> Result<(), BoxError> {
+        // Initialize the TCP connector at this point so that native certs load
+        // at client initialization time instead of upon first request. We do it
+        // here rather than at construction so that it won't run if this is not
+        // the selected HTTP client for the base config (for example, if this was
+        // the default HTTP client, and it was overridden by a later plugin).
+        let _ = (self.tcp_connector_fn)();
+        Ok(())
     }
 
     fn connector_metadata(&self) -> Option<ConnectorMetadata> {
@@ -597,7 +594,7 @@ impl HyperClientBuilder {
     pub fn build<C>(self, tcp_connector: C) -> SharedHttpClient
     where
         C: Clone + Send + Sync + 'static,
-        C: Service<Uri>,
+        C: hyper_0_14::service::Service<http_02x::Uri>,
         C::Response: Connection + AsyncRead + AsyncWrite + Send + Unpin + 'static,
         C::Future: Unpin + Send + 'static,
         C::Error: Into<BoxError>,
@@ -609,7 +606,7 @@ impl HyperClientBuilder {
     where
         F: Fn() -> C + Send + Sync + 'static,
         C: Clone + Send + Sync + 'static,
-        C: Service<Uri>,
+        C: hyper_0_14::service::Service<http_02x::Uri>,
         C::Response: Connection + AsyncRead + AsyncWrite + Send + Unpin + 'static,
         C::Future: Unpin + Send + 'static,
         C::Error: Into<BoxError>,
@@ -627,7 +624,6 @@ mod timeout_middleware {
     use aws_smithy_async::rt::sleep::Sleep;
     use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep};
     use aws_smithy_runtime_api::box_error::BoxError;
-    use http::Uri;
     use pin_project_lite::pin_project;
     use std::error::Error;
     use std::fmt::Formatter;
@@ -763,9 +759,9 @@ mod timeout_middleware {
         }
     }
 
-    impl<I> hyper_0_14::service::Service<Uri> for ConnectTimeout<I>
+    impl<I> hyper_0_14::service::Service<http_02x::Uri> for ConnectTimeout<I>
     where
-        I: hyper_0_14::service::Service<Uri>,
+        I: hyper_0_14::service::Service<http_02x::Uri>,
         I::Error: Into<BoxError>,
     {
         type Response = I::Response;
@@ -776,7 +772,7 @@ mod timeout_middleware {
             self.inner.poll_ready(cx).map_err(|err| err.into())
         }
 
-        fn call(&mut self, req: Uri) -> Self::Future {
+        fn call(&mut self, req: http_02x::Uri) -> Self::Future {
             match &self.timeout {
                 Some((sleep, duration)) => {
                     let sleep = sleep.sleep(*duration);
@@ -793,9 +789,9 @@ mod timeout_middleware {
         }
     }
 
-    impl<I, B> hyper_0_14::service::Service<http::Request<B>> for HttpReadTimeout<I>
+    impl<I, B> hyper_0_14::service::Service<http_02x::Request<B>> for HttpReadTimeout<I>
     where
-        I: hyper_0_14::service::Service<http::Request<B>, Error = hyper_0_14::Error>,
+        I: hyper_0_14::service::Service<http_02x::Request<B>, Error = hyper_0_14::Error>,
     {
         type Response = I::Response;
         type Error = BoxError;
@@ -805,7 +801,7 @@ mod timeout_middleware {
             self.inner.poll_ready(cx).map_err(|err| err.into())
         }
 
-        fn call(&mut self, req: http::Request<B>) -> Self::Future {
+        fn call(&mut self, req: http_02x::Request<B>) -> Self::Future {
             match &self.timeout {
                 Some((sleep, duration)) => {
                     let sleep = sleep.sleep(*duration);
@@ -824,15 +820,22 @@ mod timeout_middleware {
 
     #[cfg(test)]
     mod test {
-        use super::super::*;
-        use super::*;
+        use crate::client::http::hyper_014::HyperConnector;
         use aws_smithy_async::assert_elapsed;
         use aws_smithy_async::future::never::Never;
         use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
+        use aws_smithy_runtime_api::box_error::BoxError;
+        use aws_smithy_runtime_api::client::http::HttpConnectorSettings;
+        use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+        use aws_smithy_runtime_api::client::result::ConnectorError;
         use aws_smithy_types::error::display::DisplayErrorContext;
-        use hyper_0_14::client::connect::Connected;
+        use hyper_0_14::client::connect::{Connected, Connection};
+        use std::future::Future;
+        use std::pin::Pin;
+        use std::task::{Context, Poll};
         use std::time::Duration;
         use tokio::io::ReadBuf;
+        use tokio::io::{AsyncRead, AsyncWrite};
         use tokio::net::TcpStream;
 
         #[allow(unused)]
@@ -849,7 +852,7 @@ mod timeout_middleware {
         #[non_exhaustive]
         #[derive(Clone, Default, Debug)]
         struct NeverConnects;
-        impl hyper_0_14::service::Service<Uri> for NeverConnects {
+        impl hyper_0_14::service::Service<http_02x::Uri> for NeverConnects {
             type Response = TcpStream;
             type Error = ConnectorError;
             type Future = Pin<Box<dyn Future<Output = Result<Self::Response, Self::Error>> + Send>>;
@@ -858,7 +861,7 @@ mod timeout_middleware {
                 Poll::Ready(Ok(()))
             }
 
-            fn call(&mut self, _uri: Uri) -> Self::Future {
+            fn call(&mut self, _uri: http_02x::Uri) -> Self::Future {
                 Box::pin(async move {
                     Never::new().await;
                     unreachable!()
@@ -869,7 +872,7 @@ mod timeout_middleware {
         /// A service that will connect but never send any data
         #[derive(Clone, Debug, Default)]
         struct NeverReplies;
-        impl hyper_0_14::service::Service<Uri> for NeverReplies {
+        impl hyper_0_14::service::Service<http_02x::Uri> for NeverReplies {
             type Response = EmptyStream;
             type Error = BoxError;
             type Future = std::future::Ready<Result<Self::Response, Self::Error>>;
@@ -878,7 +881,7 @@ mod timeout_middleware {
                 Poll::Ready(Ok(()))
             }
 
-            fn call(&mut self, _req: Uri) -> Self::Future {
+            fn call(&mut self, _req: http_02x::Uri) -> Self::Future {
                 std::future::ready(Ok(EmptyStream))
             }
         }
@@ -992,17 +995,20 @@ mod timeout_middleware {
 
 #[cfg(all(test, feature = "test-util"))]
 mod test {
-    use super::*;
+    use crate::client::http::hyper_014::{HyperClientBuilder, HyperConnector};
     use crate::client::http::test_util::NeverTcpConnector;
     use aws_smithy_async::time::SystemTimeSource;
+    use aws_smithy_runtime_api::box_error::BoxError;
+    use aws_smithy_runtime_api::client::http::{HttpClient, HttpConnectorSettings};
+    use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
-    use http::Uri;
     use hyper_0_14::client::connect::{Connected, Connection};
     use std::io::{Error, ErrorKind};
     use std::pin::Pin;
     use std::sync::atomic::{AtomicU32, Ordering};
     use std::sync::Arc;
     use std::task::{Context, Poll};
+    use std::time::Duration;
     use tokio::io::{AsyncRead, AsyncWrite, ReadBuf};
 
     #[tokio::test]
@@ -1120,7 +1126,7 @@ mod test {
         inner: T,
     }
 
-    impl<T> hyper_0_14::service::Service<Uri> for TestConnection<T>
+    impl<T> hyper_0_14::service::Service<http_02x::Uri> for TestConnection<T>
     where
         T: Clone + Connection,
     {
@@ -1132,7 +1138,7 @@ mod test {
             Poll::Ready(Ok(()))
         }
 
-        fn call(&mut self, _req: Uri) -> Self::Future {
+        fn call(&mut self, _req: http_02x::Uri) -> Self::Future {
             std::future::ready(Ok(self.inner.clone()))
         }
     }

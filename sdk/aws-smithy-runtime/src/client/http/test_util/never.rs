@@ -75,7 +75,7 @@ impl NeverTcpConnector {
 }
 
 #[cfg(feature = "connector-hyper-0-14-x")]
-impl hyper_0_14::service::Service<http::Uri> for NeverTcpConnector {
+impl hyper_0_14::service::Service<http_02x::Uri> for NeverTcpConnector {
     type Response = connection::NeverTcpConnection;
     type Error = aws_smithy_runtime_api::box_error::BoxError;
     type Future = std::pin::Pin<
@@ -89,7 +89,7 @@ impl hyper_0_14::service::Service<http::Uri> for NeverTcpConnector {
         std::task::Poll::Ready(Ok(()))
     }
 
-    fn call(&mut self, _: http::Uri) -> Self::Future {
+    fn call(&mut self, _: http_02x::Uri) -> Self::Future {
         Box::pin(async {
             Never::new().await;
             unreachable!()
@@ -148,7 +148,6 @@ mod connection {
 #[cfg(all(test, feature = "connector-hyper-0-14-x"))]
 #[tokio::test]
 async fn never_tcp_connector_plugs_into_hyper_014() {
-    use super::*;
     use crate::client::http::hyper_014::HyperClientBuilder;
     use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_async::time::SystemTimeSource;

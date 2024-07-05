@@ -4,12 +4,11 @@
  */
 
 use crate::http::HttpError;
-use http as http0;
 
 #[derive(Default, Debug)]
 pub(crate) struct Extensions {
-    extensions_02x: http0::Extensions,
-    extensions_1x: http1::Extensions,
+    extensions_02x: http_02x::Extensions,
+    extensions_1x: http_1x::Extensions,
 }
 
 impl Extensions {
@@ -24,8 +23,8 @@ impl Extensions {
     }
 }
 
-impl From<http0::Extensions> for Extensions {
-    fn from(value: http0::Extensions) -> Self {
+impl From<http_02x::Extensions> for Extensions {
+    fn from(value: http_02x::Extensions) -> Self {
         Self {
             extensions_02x: value,
             extensions_1x: Default::default(),
@@ -33,8 +32,8 @@ impl From<http0::Extensions> for Extensions {
     }
 }
 
-impl From<http1::Extensions> for Extensions {
-    fn from(value: http1::Extensions) -> Self {
+impl From<http_1x::Extensions> for Extensions {
+    fn from(value: http_1x::Extensions) -> Self {
         Self {
             extensions_02x: Default::default(),
             extensions_1x: value,
@@ -42,7 +41,7 @@ impl From<http1::Extensions> for Extensions {
     }
 }
 
-impl TryFrom<Extensions> for http0::Extensions {
+impl TryFrom<Extensions> for http_02x::Extensions {
     type Error = HttpError;
 
     fn try_from(value: Extensions) -> Result<Self, Self::Error> {
@@ -54,7 +53,7 @@ impl TryFrom<Extensions> for http0::Extensions {
     }
 }
 
-impl TryFrom<Extensions> for http1::Extensions {
+impl TryFrom<Extensions> for http_1x::Extensions {
     type Error = HttpError;
 
     fn try_from(value: Extensions) -> Result<Self, Self::Error> {

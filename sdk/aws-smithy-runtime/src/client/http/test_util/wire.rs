@@ -45,11 +45,9 @@ use aws_smithy_async::future::BoxFuture;
 use aws_smithy_runtime_api::client::http::SharedHttpClient;
 use aws_smithy_runtime_api::shared::IntoShared;
 use bytes::Bytes;
-use http::{Request, Response};
 use hyper_0_14::client::connect::dns::Name;
 use hyper_0_14::server::conn::AddrStream;
 use hyper_0_14::service::{make_service_fn, service_fn, Service};
-use hyper_0_14::{Body, Server};
 use std::collections::HashSet;
 use std::convert::Infallible;
 use std::error::Error;
@@ -220,7 +218,7 @@ impl WireMockServer {
             tracing::info!("established connection: {:?}", connection);
             wire_log.lock().unwrap().push(RecordedEvent::NewConnection);
             async move {
-                Ok::<_, Infallible>(service_fn(move |_: Request<hyper_0_14::Body>| {
+                Ok::<_, Infallible>(service_fn(move |_: http_02x::Request<hyper_0_14::Body>| {
                     if poisoned_conns.lock().unwrap().contains(&remote_addr) {
                         tracing::error!("poisoned connection {:?} was reused!", &remote_addr);
                         panic!("poisoned connection was reused!");
@@ -246,7 +244,7 @@ impl WireMockServer {
                 }))
             }
         });
-        let server = Server::from_tcp(listener)
+        let server = hyper_0_14::Server::from_tcp(listener)
             .unwrap()
             .serve(make_service)
             .with_graceful_shutdown(async {
@@ -306,9 +304,11 @@ impl WireMockServer {
     }
 }
 
-async fn generate_response_event(event: ReplayedEvent) -> Result<Response<Body>, Infallible> {
+async fn generate_response_event(
+    event: ReplayedEvent,
+) -> Result<http_02x::Response<hyper_0_14::Body>, Infallible> {
     let resp = match event {
-        ReplayedEvent::HttpResponse { status, body } => http::Response::builder()
+        ReplayedEvent::HttpResponse { status, body } => http_02x::Response::builder()
             .status(status)
             .body(hyper_0_14::Body::from(body))
             .unwrap(),

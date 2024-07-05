@@ -254,7 +254,7 @@ mod upload_test_tools {
 
     pub fn successful_response() -> HttpResponse {
         HttpResponse::try_from(
-            http::Response::builder()
+            http_02x::Response::builder()
                 .status(200)
                 .body(SdkBody::empty())
                 .unwrap(),
@@ -267,7 +267,7 @@ mod upload_test_tools {
         time: TickAdvanceTime,
         sleep: TickAdvanceSleep,
     ) -> Operation<SdkBody, StatusCode, Infallible> {
-        let operation = Operation::builder()
+        Operation::builder()
             .service_name("test")
             .operation_name("test")
             .http_client(FakeServer(http_connector.into_shared()))
@@ -285,8 +285,7 @@ mod upload_test_tools {
             .interceptor(StalledStreamProtectionInterceptor::default())
             .sleep_impl(sleep)
             .time_source(time)
-            .build();
-        operation
+            .build()
     }
 
     /// Creates a fake HttpConnector implementation that calls the given async $body_fn
