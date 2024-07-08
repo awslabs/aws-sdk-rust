@@ -32,7 +32,7 @@ xlsxwriter = "0.6.0"
 aws-config= { version = "1.5.4", path = "../../../sdk/aws-config" }
 aws-sdk-cloudwatchlogs= { version = "1.37.0", path = "../../../sdk/cloudwatchlogs" }
 aws-sdk-rdsdata= { version = "1.34.0", path = "../../../sdk/rdsdata" }
-aws-sdk-ses= { version = "1.34.0", path = "../../../sdk/ses" }
+aws-sdk-ses= { version = "1.35.0", path = "../../../sdk/ses" }
 aws-smithy-types= { version = "1.2.0", path = "../../../sdk/aws-smithy-types" }
 aws-smithy-runtime= { version = "1.6.1", path = "../../../sdk/aws-smithy-runtime" }
 
