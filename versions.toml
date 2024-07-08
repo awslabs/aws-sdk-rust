@@ -2482,6 +2482,10 @@ source_hash = '731923fc7374d6b2df1e9bdfd52a9f047358fec1f91118e37d67eb7e4b5d389c'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '61439a7640fb5dfb476544cc23a37cc6781b09e3cfd6bc92f36063d572f6eb8e'
+
+[release]
+tag = 'release-2024-07-08'
+
 [release.crates]
 aws-sdk-codedeploy = '1.36.0'
 aws-sdk-databasemigration = '1.35.0'
