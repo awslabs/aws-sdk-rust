@@ -7,6 +7,7 @@ pub enum SearchInventoryResultItem {
     /// <p>The asset item included in the search results.</p>
     AssetItem(crate::types::AssetItem),
     /// <p>The data product item included in the search results.</p>
+    #[deprecated(note = "This field is deprecated.")]
     DataProductItem(crate::types::DataProductSummary),
     /// <p>The glossary item included in the search results.</p>
     GlossaryItem(crate::types::GlossaryItem),

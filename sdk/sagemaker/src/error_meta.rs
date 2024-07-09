@@ -1310,6 +1310,33 @@ impl From<crate::operation::create_notebook_instance_lifecycle_config::CreateNot
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_optimization_job::CreateOptimizationJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_optimization_job::CreateOptimizationJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_optimization_job::CreateOptimizationJobError> for Error {
+    fn from(err: crate::operation::create_optimization_job::CreateOptimizationJobError) -> Self {
+        match err {
+            crate::operation::create_optimization_job::CreateOptimizationJobError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::create_optimization_job::CreateOptimizationJobError::ResourceLimitExceeded(inner) => {
+                Error::ResourceLimitExceeded(inner)
+            }
+            crate::operation::create_optimization_job::CreateOptimizationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_pipeline::CreatePipelineError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2705,6 +2732,30 @@ impl From<crate::operation::delete_notebook_instance_lifecycle_config::DeleteNot
             crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_optimization_job::DeleteOptimizationJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_optimization_job::DeleteOptimizationJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_optimization_job::DeleteOptimizationJobError> for Error {
+    fn from(err: crate::operation::delete_optimization_job::DeleteOptimizationJobError) -> Self {
+        match err {
+            crate::operation::delete_optimization_job::DeleteOptimizationJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::delete_optimization_job::DeleteOptimizationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4135,6 +4186,31 @@ impl From<crate::operation::describe_notebook_instance_lifecycle_config::Describ
             crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_optimization_job::DescribeOptimizationJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_optimization_job::DescribeOptimizationJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_optimization_job::DescribeOptimizationJobError> for Error {
+    fn from(err: crate::operation::describe_optimization_job::DescribeOptimizationJobError) -> Self {
+        match err {
+            crate::operation::describe_optimization_job::DescribeOptimizationJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::describe_optimization_job::DescribeOptimizationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6117,6 +6193,27 @@ impl From<crate::operation::list_notebook_instances::ListNotebookInstancesError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_optimization_jobs::ListOptimizationJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_optimization_jobs::ListOptimizationJobsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_optimization_jobs::ListOptimizationJobsError> for Error {
+    fn from(err: crate::operation::list_optimization_jobs::ListOptimizationJobsError) -> Self {
+        match err {
+            crate::operation::list_optimization_jobs::ListOptimizationJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_pipeline_executions::ListPipelineExecutionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -7241,6 +7338,28 @@ impl From<crate::operation::stop_notebook_instance::StopNotebookInstanceError> f
     fn from(err: crate::operation::stop_notebook_instance::StopNotebookInstanceError) -> Self {
         match err {
             crate::operation::stop_notebook_instance::StopNotebookInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_optimization_job::StopOptimizationJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_optimization_job::StopOptimizationJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_optimization_job::StopOptimizationJobError> for Error {
+    fn from(err: crate::operation::stop_optimization_job::StopOptimizationJobError) -> Self {
+        match err {
+            crate::operation::stop_optimization_job::StopOptimizationJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::stop_optimization_job::StopOptimizationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

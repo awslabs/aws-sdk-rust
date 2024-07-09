@@ -27,6 +27,12 @@ pub fn ser_domain_settings(
         crate::protocol_serde::shape_docker_settings::ser_docker_settings(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.amazon_q_settings {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("AmazonQSettings").start_object();
+        crate::protocol_serde::shape_amazon_q_settings::ser_amazon_q_settings(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }
 
@@ -64,6 +70,9 @@ where
                         }
                         "DockerSettings" => {
                             builder = builder.set_docker_settings(crate::protocol_serde::shape_docker_settings::de_docker_settings(tokens)?);
+                        }
+                        "AmazonQSettings" => {
+                            builder = builder.set_amazon_q_settings(crate::protocol_serde::shape_amazon_q_settings::de_amazon_q_settings(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

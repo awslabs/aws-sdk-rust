@@ -263,6 +263,15 @@ pub(crate) fn create_monitoring_schedule_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_optimization_job_output_output_correct_errors(
+    mut builder: crate::operation::create_optimization_job::builders::CreateOptimizationJobOutputBuilder,
+) -> crate::operation::create_optimization_job::builders::CreateOptimizationJobOutputBuilder {
+    if builder.optimization_job_arn.is_none() {
+        builder.optimization_job_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_processing_job_output_output_correct_errors(
     mut builder: crate::operation::create_processing_job::builders::CreateProcessingJobOutputBuilder,
 ) -> crate::operation::create_processing_job::builders::CreateProcessingJobOutputBuilder {
@@ -1298,6 +1307,54 @@ pub(crate) fn describe_monitoring_schedule_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_optimization_job_output_output_correct_errors(
+    mut builder: crate::operation::describe_optimization_job::builders::DescribeOptimizationJobOutputBuilder,
+) -> crate::operation::describe_optimization_job::builders::DescribeOptimizationJobOutputBuilder {
+    if builder.optimization_job_arn.is_none() {
+        builder.optimization_job_arn = Some(Default::default())
+    }
+    if builder.optimization_job_status.is_none() {
+        builder.optimization_job_status = "no value was set".parse::<crate::types::OptimizationJobStatus>().ok()
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.optimization_job_name.is_none() {
+        builder.optimization_job_name = Some(Default::default())
+    }
+    if builder.model_source.is_none() {
+        builder.model_source = {
+            let builder = crate::types::builders::OptimizationJobModelSourceBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.deployment_instance_type.is_none() {
+        builder.deployment_instance_type = "no value was set".parse::<crate::types::OptimizationJobDeploymentInstanceType>().ok()
+    }
+    if builder.optimization_configs.is_none() {
+        builder.optimization_configs = Some(Default::default())
+    }
+    if builder.output_config.is_none() {
+        builder.output_config = {
+            let builder = crate::types::builders::OptimizationJobOutputConfigBuilder::default();
+            Some(crate::serde_util::optimization_job_output_config_correct_errors(builder).build())
+        }
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.stopping_condition.is_none() {
+        builder.stopping_condition = {
+            let builder = crate::types::builders::StoppingConditionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn describe_processing_job_output_output_correct_errors(
     mut builder: crate::operation::describe_processing_job::builders::DescribeProcessingJobOutputBuilder,
 ) -> crate::operation::describe_processing_job::builders::DescribeProcessingJobOutputBuilder {
@@ -1828,6 +1885,15 @@ pub(crate) fn list_monitoring_schedules_output_output_correct_errors(
 ) -> crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesOutputBuilder {
     if builder.monitoring_schedule_summaries.is_none() {
         builder.monitoring_schedule_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_optimization_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_optimization_jobs::builders::ListOptimizationJobsOutputBuilder,
+) -> crate::operation::list_optimization_jobs::builders::ListOptimizationJobsOutputBuilder {
+    if builder.optimization_job_summaries.is_none() {
+        builder.optimization_job_summaries = Some(Default::default())
     }
     builder
 }
@@ -2370,6 +2436,15 @@ pub(crate) fn model_quality_job_input_correct_errors(
             let builder = crate::types::builders::MonitoringGroundTruthS3InputBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn optimization_job_output_config_correct_errors(
+    mut builder: crate::types::builders::OptimizationJobOutputConfigBuilder,
+) -> crate::types::builders::OptimizationJobOutputConfigBuilder {
+    if builder.s3_output_location.is_none() {
+        builder.s3_output_location = Some(Default::default())
     }
     builder
 }
@@ -2938,6 +3013,18 @@ pub(crate) fn offline_store_status_correct_errors(
 ) -> crate::types::builders::OfflineStoreStatusBuilder {
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::OfflineStoreStatusValue>().ok()
+    }
+    builder
+}
+
+pub(crate) fn optimization_vpc_config_correct_errors(
+    mut builder: crate::types::builders::OptimizationVpcConfigBuilder,
+) -> crate::types::builders::OptimizationVpcConfigBuilder {
+    if builder.security_group_ids.is_none() {
+        builder.security_group_ids = Some(Default::default())
+    }
+    if builder.subnets.is_none() {
+        builder.subnets = Some(Default::default())
     }
     builder
 }
@@ -4419,6 +4506,30 @@ pub(crate) fn notebook_instance_summary_correct_errors(
     builder
 }
 
+pub(crate) fn optimization_job_summary_correct_errors(
+    mut builder: crate::types::builders::OptimizationJobSummaryBuilder,
+) -> crate::types::builders::OptimizationJobSummaryBuilder {
+    if builder.optimization_job_name.is_none() {
+        builder.optimization_job_name = Some(Default::default())
+    }
+    if builder.optimization_job_arn.is_none() {
+        builder.optimization_job_arn = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.optimization_job_status.is_none() {
+        builder.optimization_job_status = "no value was set".parse::<crate::types::OptimizationJobStatus>().ok()
+    }
+    if builder.deployment_instance_type.is_none() {
+        builder.deployment_instance_type = "no value was set".parse::<crate::types::OptimizationJobDeploymentInstanceType>().ok()
+    }
+    if builder.optimization_types.is_none() {
+        builder.optimization_types = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn parameter_correct_errors(mut builder: crate::types::builders::ParameterBuilder) -> crate::types::builders::ParameterBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
@@ -4750,6 +4861,21 @@ pub(crate) fn transform_s3_data_source_correct_errors(
     }
     if builder.s3_uri.is_none() {
         builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn additional_model_data_source_correct_errors(
+    mut builder: crate::types::builders::AdditionalModelDataSourceBuilder,
+) -> crate::types::builders::AdditionalModelDataSourceBuilder {
+    if builder.channel_name.is_none() {
+        builder.channel_name = Some(Default::default())
+    }
+    if builder.s3_data_source.is_none() {
+        builder.s3_data_source = {
+            let builder = crate::types::builders::S3ModelDataSourceBuilder::default();
+            Some(crate::serde_util::s3_model_data_source_correct_errors(builder).build())
+        }
     }
     builder
 }
@@ -5150,6 +5276,15 @@ pub(crate) fn monitoring_output_correct_errors(
             let builder = crate::types::builders::MonitoringS3OutputBuilder::default();
             Some(crate::serde_util::monitoring_s3_output_correct_errors(builder).build())
         }
+    }
+    builder
+}
+
+pub(crate) fn optimization_model_access_config_correct_errors(
+    mut builder: crate::types::builders::OptimizationModelAccessConfigBuilder,
+) -> crate::types::builders::OptimizationModelAccessConfigBuilder {
+    if builder.accept_eula.is_none() {
+        builder.accept_eula = Some(Default::default())
     }
     builder
 }

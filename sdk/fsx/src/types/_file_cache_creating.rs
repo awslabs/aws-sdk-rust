@@ -28,7 +28,7 @@ pub struct FileCacheCreating {
     /// <p><code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p></li>
     /// </ul>
     pub lifecycle: ::std::option::Option<crate::types::FileCacheLifecycle>,
-    /// <p>A structure providing details of any failures that occurred.</p>
+    /// <p>A structure providing details of any failures that occurred in creating a cache.</p>
     pub failure_details: ::std::option::Option<crate::types::FileCacheFailureDetails>,
     /// <p>The storage capacity of the cache in gibibytes (GiB).</p>
     pub storage_capacity: ::std::option::Option<i32>,
@@ -90,7 +90,7 @@ impl FileCacheCreating {
     pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::FileCacheLifecycle> {
         self.lifecycle.as_ref()
     }
-    /// <p>A structure providing details of any failures that occurred.</p>
+    /// <p>A structure providing details of any failures that occurred in creating a cache.</p>
     pub fn failure_details(&self) -> ::std::option::Option<&crate::types::FileCacheFailureDetails> {
         self.failure_details.as_ref()
     }
@@ -298,17 +298,17 @@ impl FileCacheCreatingBuilder {
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::FileCacheLifecycle> {
         &self.lifecycle
     }
-    /// <p>A structure providing details of any failures that occurred.</p>
+    /// <p>A structure providing details of any failures that occurred in creating a cache.</p>
     pub fn failure_details(mut self, input: crate::types::FileCacheFailureDetails) -> Self {
         self.failure_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure providing details of any failures that occurred.</p>
+    /// <p>A structure providing details of any failures that occurred in creating a cache.</p>
     pub fn set_failure_details(mut self, input: ::std::option::Option<crate::types::FileCacheFailureDetails>) -> Self {
         self.failure_details = input;
         self
     }
-    /// <p>A structure providing details of any failures that occurred.</p>
+    /// <p>A structure providing details of any failures that occurred in creating a cache.</p>
     pub fn get_failure_details(&self) -> &::std::option::Option<crate::types::FileCacheFailureDetails> {
         &self.failure_details
     }

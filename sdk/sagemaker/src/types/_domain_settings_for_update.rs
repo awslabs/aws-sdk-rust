@@ -12,6 +12,8 @@ pub struct DomainSettingsForUpdate {
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A collection of settings that configure the domain's Docker interaction.</p>
     pub docker_settings: ::std::option::Option<crate::types::DockerSettings>,
+    /// <p>A collection of settings that configure the Amazon Q experience within the domain.</p>
+    pub amazon_q_settings: ::std::option::Option<crate::types::AmazonQSettings>,
 }
 impl DomainSettingsForUpdate {
     /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
@@ -32,6 +34,10 @@ impl DomainSettingsForUpdate {
     pub fn docker_settings(&self) -> ::std::option::Option<&crate::types::DockerSettings> {
         self.docker_settings.as_ref()
     }
+    /// <p>A collection of settings that configure the Amazon Q experience within the domain.</p>
+    pub fn amazon_q_settings(&self) -> ::std::option::Option<&crate::types::AmazonQSettings> {
+        self.amazon_q_settings.as_ref()
+    }
 }
 impl DomainSettingsForUpdate {
     /// Creates a new builder-style object to manufacture [`DomainSettingsForUpdate`](crate::types::DomainSettingsForUpdate).
@@ -48,6 +54,7 @@ pub struct DomainSettingsForUpdateBuilder {
     pub(crate) execution_role_identity_config: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) docker_settings: ::std::option::Option<crate::types::DockerSettings>,
+    pub(crate) amazon_q_settings: ::std::option::Option<crate::types::AmazonQSettings>,
 }
 impl DomainSettingsForUpdateBuilder {
     /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
@@ -117,6 +124,20 @@ impl DomainSettingsForUpdateBuilder {
     pub fn get_docker_settings(&self) -> &::std::option::Option<crate::types::DockerSettings> {
         &self.docker_settings
     }
+    /// <p>A collection of settings that configure the Amazon Q experience within the domain.</p>
+    pub fn amazon_q_settings(mut self, input: crate::types::AmazonQSettings) -> Self {
+        self.amazon_q_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A collection of settings that configure the Amazon Q experience within the domain.</p>
+    pub fn set_amazon_q_settings(mut self, input: ::std::option::Option<crate::types::AmazonQSettings>) -> Self {
+        self.amazon_q_settings = input;
+        self
+    }
+    /// <p>A collection of settings that configure the Amazon Q experience within the domain.</p>
+    pub fn get_amazon_q_settings(&self) -> &::std::option::Option<crate::types::AmazonQSettings> {
+        &self.amazon_q_settings
+    }
     /// Consumes the builder and constructs a [`DomainSettingsForUpdate`](crate::types::DomainSettingsForUpdate).
     pub fn build(self) -> crate::types::DomainSettingsForUpdate {
         crate::types::DomainSettingsForUpdate {
@@ -124,6 +145,7 @@ impl DomainSettingsForUpdateBuilder {
             execution_role_identity_config: self.execution_role_identity_config,
             security_group_ids: self.security_group_ids,
             docker_settings: self.docker_settings,
+            amazon_q_settings: self.amazon_q_settings,
         }
     }
 }

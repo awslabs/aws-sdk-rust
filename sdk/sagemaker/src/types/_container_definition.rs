@@ -28,6 +28,8 @@ pub struct ContainerDefinition {
     /// <p>Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.</p>
     /// </note>
     pub model_data_source: ::std::option::Option<crate::types::ModelDataSource>,
+    /// <p>Data sources that are available to your model in addition to the one that you specify for <code>ModelDataSource</code> when you use the <code>CreateModel</code> action.</p>
+    pub additional_model_data_sources: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalModelDataSource>>,
     /// <p>The environment variables to set in the Docker container.</p>
     /// <p>The maximum length of each key and value in the <code>Environment</code> map is 1024 bytes. The maximum length of all keys and values in the map, combined, is 32 KB. If you pass multiple containers to a <code>CreateModel</code> request, then the maximum length of all of their maps, combined, is also 32 KB.</p>
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -75,6 +77,12 @@ impl ContainerDefinition {
     pub fn model_data_source(&self) -> ::std::option::Option<&crate::types::ModelDataSource> {
         self.model_data_source.as_ref()
     }
+    /// <p>Data sources that are available to your model in addition to the one that you specify for <code>ModelDataSource</code> when you use the <code>CreateModel</code> action.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_model_data_sources.is_none()`.
+    pub fn additional_model_data_sources(&self) -> &[crate::types::AdditionalModelDataSource] {
+        self.additional_model_data_sources.as_deref().unwrap_or_default()
+    }
     /// <p>The environment variables to set in the Docker container.</p>
     /// <p>The maximum length of each key and value in the <code>Environment</code> map is 1024 bytes. The maximum length of all keys and values in the map, combined, is 32 KB. If you pass multiple containers to a <code>CreateModel</code> request, then the maximum length of all of their maps, combined, is also 32 KB.</p>
     pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -110,6 +118,7 @@ pub struct ContainerDefinitionBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::ContainerMode>,
     pub(crate) model_data_url: ::std::option::Option<::std::string::String>,
     pub(crate) model_data_source: ::std::option::Option<crate::types::ModelDataSource>,
+    pub(crate) additional_model_data_sources: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalModelDataSource>>,
     pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) model_package_name: ::std::option::Option<::std::string::String>,
     pub(crate) inference_specification_name: ::std::option::Option<::std::string::String>,
@@ -236,6 +245,29 @@ impl ContainerDefinitionBuilder {
     pub fn get_model_data_source(&self) -> &::std::option::Option<crate::types::ModelDataSource> {
         &self.model_data_source
     }
+    /// Appends an item to `additional_model_data_sources`.
+    ///
+    /// To override the contents of this collection use [`set_additional_model_data_sources`](Self::set_additional_model_data_sources).
+    ///
+    /// <p>Data sources that are available to your model in addition to the one that you specify for <code>ModelDataSource</code> when you use the <code>CreateModel</code> action.</p>
+    pub fn additional_model_data_sources(mut self, input: crate::types::AdditionalModelDataSource) -> Self {
+        let mut v = self.additional_model_data_sources.unwrap_or_default();
+        v.push(input);
+        self.additional_model_data_sources = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Data sources that are available to your model in addition to the one that you specify for <code>ModelDataSource</code> when you use the <code>CreateModel</code> action.</p>
+    pub fn set_additional_model_data_sources(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalModelDataSource>>,
+    ) -> Self {
+        self.additional_model_data_sources = input;
+        self
+    }
+    /// <p>Data sources that are available to your model in addition to the one that you specify for <code>ModelDataSource</code> when you use the <code>CreateModel</code> action.</p>
+    pub fn get_additional_model_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalModelDataSource>> {
+        &self.additional_model_data_sources
+    }
     /// Adds a key-value pair to `environment`.
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
@@ -313,6 +345,7 @@ impl ContainerDefinitionBuilder {
             mode: self.mode,
             model_data_url: self.model_data_url,
             model_data_source: self.model_data_source,
+            additional_model_data_sources: self.additional_model_data_sources,
             environment: self.environment,
             model_package_name: self.model_package_name,
             inference_specification_name: self.inference_specification_name,

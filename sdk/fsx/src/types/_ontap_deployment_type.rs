@@ -13,6 +13,7 @@
 /// # let ontapdeploymenttype = unimplemented!();
 /// match ontapdeploymenttype {
 ///     OntapDeploymentType::MultiAz1 => { /* ... */ },
+///     OntapDeploymentType::MultiAz2 => { /* ... */ },
 ///     OntapDeploymentType::SingleAz1 => { /* ... */ },
 ///     OntapDeploymentType::SingleAz2 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum OntapDeploymentType {
     #[allow(missing_docs)] // documentation missing in model
     MultiAz1,
     #[allow(missing_docs)] // documentation missing in model
+    MultiAz2,
+    #[allow(missing_docs)] // documentation missing in model
     SingleAz1,
     #[allow(missing_docs)] // documentation missing in model
     SingleAz2,
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for OntapDeploymentType {
     fn from(s: &str) -> Self {
         match s {
             "MULTI_AZ_1" => OntapDeploymentType::MultiAz1,
+            "MULTI_AZ_2" => OntapDeploymentType::MultiAz2,
             "SINGLE_AZ_1" => OntapDeploymentType::SingleAz1,
             "SINGLE_AZ_2" => OntapDeploymentType::SingleAz2,
             other => OntapDeploymentType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl OntapDeploymentType {
     pub fn as_str(&self) -> &str {
         match self {
             OntapDeploymentType::MultiAz1 => "MULTI_AZ_1",
+            OntapDeploymentType::MultiAz2 => "MULTI_AZ_2",
             OntapDeploymentType::SingleAz1 => "SINGLE_AZ_1",
             OntapDeploymentType::SingleAz2 => "SINGLE_AZ_2",
             OntapDeploymentType::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl OntapDeploymentType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MULTI_AZ_1", "SINGLE_AZ_1", "SINGLE_AZ_2"]
+        &["MULTI_AZ_1", "MULTI_AZ_2", "SINGLE_AZ_1", "SINGLE_AZ_2"]
     }
 }
 impl ::std::convert::AsRef<str> for OntapDeploymentType {
@@ -105,6 +110,7 @@ impl ::std::fmt::Display for OntapDeploymentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OntapDeploymentType::MultiAz1 => write!(f, "MULTI_AZ_1"),
+            OntapDeploymentType::MultiAz2 => write!(f, "MULTI_AZ_2"),
             OntapDeploymentType::SingleAz1 => write!(f, "SINGLE_AZ_1"),
             OntapDeploymentType::SingleAz2 => write!(f, "SINGLE_AZ_2"),
             OntapDeploymentType::Unknown(value) => write!(f, "{}", value),

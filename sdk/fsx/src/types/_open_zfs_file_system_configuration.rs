@@ -12,7 +12,7 @@ pub struct OpenZfsFileSystemConfiguration {
     pub copy_tags_to_volumes: ::std::option::Option<bool>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
     pub daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.</p>
+    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_HA_2</code>, <code>SINGLE_AZ_HA_1</code>, <code>SINGLE_AZ_2</code>, and <code>SINGLE_AZ_1</code>.</p>
     pub deployment_type: ::std::option::Option<crate::types::OpenZfsDeploymentType>,
     /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).</p>
     pub throughput_capacity: ::std::option::Option<i32>,
@@ -51,7 +51,7 @@ impl OpenZfsFileSystemConfiguration {
     pub fn daily_automatic_backup_start_time(&self) -> ::std::option::Option<&str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
-    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.</p>
+    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_HA_2</code>, <code>SINGLE_AZ_HA_1</code>, <code>SINGLE_AZ_2</code>, and <code>SINGLE_AZ_1</code>.</p>
     pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::OpenZfsDeploymentType> {
         self.deployment_type.as_ref()
     }
@@ -175,17 +175,17 @@ impl OpenZfsFileSystemConfigurationBuilder {
     pub fn get_daily_automatic_backup_start_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.daily_automatic_backup_start_time
     }
-    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.</p>
+    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_HA_2</code>, <code>SINGLE_AZ_HA_1</code>, <code>SINGLE_AZ_2</code>, and <code>SINGLE_AZ_1</code>.</p>
     pub fn deployment_type(mut self, input: crate::types::OpenZfsDeploymentType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.</p>
+    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_HA_2</code>, <code>SINGLE_AZ_HA_1</code>, <code>SINGLE_AZ_2</code>, and <code>SINGLE_AZ_1</code>.</p>
     pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::OpenZfsDeploymentType>) -> Self {
         self.deployment_type = input;
         self
     }
-    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.</p>
+    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_HA_2</code>, <code>SINGLE_AZ_HA_1</code>, <code>SINGLE_AZ_2</code>, and <code>SINGLE_AZ_1</code>.</p>
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::OpenZfsDeploymentType> {
         &self.deployment_type
     }

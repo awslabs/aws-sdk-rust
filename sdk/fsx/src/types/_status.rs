@@ -15,6 +15,7 @@
 ///     Status::Completed => { /* ... */ },
 ///     Status::Failed => { /* ... */ },
 ///     Status::InProgress => { /* ... */ },
+///     Status::Optimizing => { /* ... */ },
 ///     Status::Pending => { /* ... */ },
 ///     Status::UpdatedOptimizing => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -51,6 +52,8 @@ pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
+    Optimizing,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     UpdatedOptimizing,
@@ -64,6 +67,7 @@ impl ::std::convert::From<&str> for Status {
             "COMPLETED" => Status::Completed,
             "FAILED" => Status::Failed,
             "IN_PROGRESS" => Status::InProgress,
+            "OPTIMIZING" => Status::Optimizing,
             "PENDING" => Status::Pending,
             "UPDATED_OPTIMIZING" => Status::UpdatedOptimizing,
             other => Status::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -84,6 +88,7 @@ impl Status {
             Status::Completed => "COMPLETED",
             Status::Failed => "FAILED",
             Status::InProgress => "IN_PROGRESS",
+            Status::Optimizing => "OPTIMIZING",
             Status::Pending => "PENDING",
             Status::UpdatedOptimizing => "UPDATED_OPTIMIZING",
             Status::Unknown(value) => value.as_str(),
@@ -91,7 +96,7 @@ impl Status {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "FAILED", "IN_PROGRESS", "PENDING", "UPDATED_OPTIMIZING"]
+        &["COMPLETED", "FAILED", "IN_PROGRESS", "OPTIMIZING", "PENDING", "UPDATED_OPTIMIZING"]
     }
 }
 impl ::std::convert::AsRef<str> for Status {
@@ -117,6 +122,7 @@ impl ::std::fmt::Display for Status {
             Status::Completed => write!(f, "COMPLETED"),
             Status::Failed => write!(f, "FAILED"),
             Status::InProgress => write!(f, "IN_PROGRESS"),
+            Status::Optimizing => write!(f, "OPTIMIZING"),
             Status::Pending => write!(f, "PENDING"),
             Status::UpdatedOptimizing => write!(f, "UPDATED_OPTIMIZING"),
             Status::Unknown(value) => write!(f, "{}", value),

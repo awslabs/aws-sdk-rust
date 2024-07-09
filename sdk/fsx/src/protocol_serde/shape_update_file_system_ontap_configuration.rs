@@ -54,5 +54,11 @@ pub fn ser_update_file_system_ontap_configuration(
             ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
+    if let Some(var_15) = &input.ha_pairs {
+        object.key("HAPairs").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+        );
+    }
     Ok(())
 }

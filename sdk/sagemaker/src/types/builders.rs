@@ -243,6 +243,8 @@ pub use crate::types::_default_space_settings::DefaultSpaceSettingsBuilder;
 
 pub use crate::types::_domain_settings_for_update::DomainSettingsForUpdateBuilder;
 
+pub use crate::types::_amazon_q_settings::AmazonQSettingsBuilder;
+
 pub use crate::types::_docker_settings::DockerSettingsBuilder;
 
 pub use crate::types::_r_studio_server_pro_domain_settings_for_update::RStudioServerProDomainSettingsForUpdateBuilder;
@@ -334,6 +336,8 @@ pub use crate::types::_inference_execution_config::InferenceExecutionConfigBuild
 pub use crate::types::_container_definition::ContainerDefinitionBuilder;
 
 pub use crate::types::_multi_model_config::MultiModelConfigBuilder;
+
+pub use crate::types::_additional_model_data_source::AdditionalModelDataSourceBuilder;
 
 pub use crate::types::_image_config::ImageConfigBuilder;
 
@@ -677,6 +681,8 @@ pub use crate::types::_cache_hit_result::CacheHitResultBuilder;
 
 pub use crate::types::_pipeline_execution_summary::PipelineExecutionSummaryBuilder;
 
+pub use crate::types::_optimization_job_summary::OptimizationJobSummaryBuilder;
+
 pub use crate::types::_notebook_instance_summary::NotebookInstanceSummaryBuilder;
 
 pub use crate::types::_notebook_instance_lifecycle_config_summary::NotebookInstanceLifecycleConfigSummaryBuilder;
@@ -868,6 +874,22 @@ pub use crate::types::_profiler_rule_evaluation_status::ProfilerRuleEvaluationSt
 pub use crate::types::_space_sharing_settings::SpaceSharingSettingsBuilder;
 
 pub use crate::types::_ownership_settings::OwnershipSettingsBuilder;
+
+pub use crate::types::_optimization_vpc_config::OptimizationVpcConfigBuilder;
+
+pub use crate::types::_optimization_output::OptimizationOutputBuilder;
+
+pub use crate::types::_optimization_job_output_config::OptimizationJobOutputConfigBuilder;
+
+pub use crate::types::_model_compilation_config::ModelCompilationConfigBuilder;
+
+pub use crate::types::_model_quantization_config::ModelQuantizationConfigBuilder;
+
+pub use crate::types::_optimization_job_model_source::OptimizationJobModelSourceBuilder;
+
+pub use crate::types::_optimization_job_model_source_s3::OptimizationJobModelSourceS3Builder;
+
+pub use crate::types::_optimization_model_access_config::OptimizationModelAccessConfigBuilder;
 
 pub use crate::types::_monitoring_network_config::MonitoringNetworkConfigBuilder;
 

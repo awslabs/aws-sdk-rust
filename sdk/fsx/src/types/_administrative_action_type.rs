@@ -12,6 +12,7 @@
 /// ```text
 /// # let administrativeactiontype = unimplemented!();
 /// match administrativeactiontype {
+///     AdministrativeActionType::DownloadDataFromBackup => { /* ... */ },
 ///     AdministrativeActionType::FileSystemAliasAssociation => { /* ... */ },
 ///     AdministrativeActionType::FileSystemAliasDisassociation => { /* ... */ },
 ///     AdministrativeActionType::FileSystemUpdate => { /* ... */ },
@@ -72,7 +73,7 @@
 /// <li>
 /// <p>
 /// <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code>
-/// task to increase a file system's storage capacity has been completed
+/// task to increase a file system's storage capacity has completed
 /// successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. </p>
 /// <ul>
 /// <li>
@@ -157,6 +158,13 @@
 /// </li>
 /// <li>
 /// <p>
+/// <code>DOWNLOAD_DATA_FROM_BACKUP</code> - An FSx for ONTAP backup is
+/// being restored to a new volume on a second-generation file system. Once the all the file
+/// metadata is loaded onto the volume, you can mount the volume with read-only access.
+/// during this process.</p>
+/// </li>
+/// <li>
+/// <p>
 /// <code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from
 /// a snapshot on a different FSx for OpenZFS file system. You can
 /// initiate this from the Amazon FSx console, API
@@ -177,6 +185,8 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AdministrativeActionType {
+    #[allow(missing_docs)] // documentation missing in model
+    DownloadDataFromBackup,
     #[allow(missing_docs)] // documentation missing in model
     FileSystemAliasAssociation,
     #[allow(missing_docs)] // documentation missing in model
@@ -212,6 +222,7 @@ pub enum AdministrativeActionType {
 impl ::std::convert::From<&str> for AdministrativeActionType {
     fn from(s: &str) -> Self {
         match s {
+            "DOWNLOAD_DATA_FROM_BACKUP" => AdministrativeActionType::DownloadDataFromBackup,
             "FILE_SYSTEM_ALIAS_ASSOCIATION" => AdministrativeActionType::FileSystemAliasAssociation,
             "FILE_SYSTEM_ALIAS_DISASSOCIATION" => AdministrativeActionType::FileSystemAliasDisassociation,
             "FILE_SYSTEM_UPDATE" => AdministrativeActionType::FileSystemUpdate,
@@ -241,6 +252,7 @@ impl AdministrativeActionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AdministrativeActionType::DownloadDataFromBackup => "DOWNLOAD_DATA_FROM_BACKUP",
             AdministrativeActionType::FileSystemAliasAssociation => "FILE_SYSTEM_ALIAS_ASSOCIATION",
             AdministrativeActionType::FileSystemAliasDisassociation => "FILE_SYSTEM_ALIAS_DISASSOCIATION",
             AdministrativeActionType::FileSystemUpdate => "FILE_SYSTEM_UPDATE",
@@ -261,6 +273,7 @@ impl AdministrativeActionType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "DOWNLOAD_DATA_FROM_BACKUP",
             "FILE_SYSTEM_ALIAS_ASSOCIATION",
             "FILE_SYSTEM_ALIAS_DISASSOCIATION",
             "FILE_SYSTEM_UPDATE",
@@ -298,6 +311,7 @@ impl AdministrativeActionType {
 impl ::std::fmt::Display for AdministrativeActionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AdministrativeActionType::DownloadDataFromBackup => write!(f, "DOWNLOAD_DATA_FROM_BACKUP"),
             AdministrativeActionType::FileSystemAliasAssociation => write!(f, "FILE_SYSTEM_ALIAS_ASSOCIATION"),
             AdministrativeActionType::FileSystemAliasDisassociation => write!(f, "FILE_SYSTEM_ALIAS_DISASSOCIATION"),
             AdministrativeActionType::FileSystemUpdate => write!(f, "FILE_SYSTEM_UPDATE"),

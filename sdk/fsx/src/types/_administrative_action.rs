@@ -12,7 +12,7 @@ pub struct AdministrativeAction {
     /// <p><code>THROUGHPUT_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's throughput capacity has been completed successfully, a <code>THROUGHPUT_OPTIMIZATION</code> task starts.</p>
     /// <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>THROUGHPUT_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>.</p></li>
     /// <li>
-    /// <p><code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts.</p>
+    /// <p><code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts.</p>
     /// <ul>
     /// <li>
     /// <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p></li>
@@ -39,12 +39,14 @@ pub struct AdministrativeAction {
     /// <li>
     /// <p><code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p></li>
     /// <li>
+    /// <p><code>DOWNLOAD_DATA_FROM_BACKUP</code> - An FSx for ONTAP backup is being restored to a new volume on a second-generation file system. Once the all the file metadata is loaded onto the volume, you can mount the volume with read-only access. during this process.</p></li>
+    /// <li>
     /// <p><code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CreateVolume</code>), or CLI (<code>create-volume</code>) when using the using the <code>FULL_COPY</code> strategy.</p></li>
     /// <li>
     /// <p><code>VOLUME_UPDATE_WITH_SNAPSHOT</code> - A volume is being updated from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CopySnapshotAndUpdateVolume</code>), or CLI (<code>copy-snapshot-and-update-volume</code>).</p></li>
     /// </ul>
     pub administrative_action_type: ::std::option::Option<crate::types::AdministrativeActionType>,
-    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
+    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> or <code>DOWNLOAD_DATA_FROM_BACKUP</code> administrative action. Does not apply to any other administrative action type.</p>
     pub progress_percent: ::std::option::Option<i32>,
     /// <p>The time that the administrative action request was received.</p>
     pub request_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -57,9 +59,14 @@ pub struct AdministrativeAction {
     /// <li>
     /// <p><code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p></li>
     /// <li>
-    /// <p><code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p></li>
+    /// <p><code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p>
+    /// <p>For a backup restore to a second-generation FSx for ONTAP file system, indicates that all data has been downloaded to the volume, and clients now have read-write access to volume.</p></li>
     /// <li>
     /// <p><code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that the file metadata is being downloaded onto the volume. The volume's Lifecycle state is CREATING.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that all metadata has been downloaded to the new volume and client can access data with read-only access while Amazon FSx downloads the file data to the volume. Track the progress of this process with the <code>ProgressPercent</code> element.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.</p>
@@ -84,7 +91,7 @@ impl AdministrativeAction {
     /// <p><code>THROUGHPUT_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's throughput capacity has been completed successfully, a <code>THROUGHPUT_OPTIMIZATION</code> task starts.</p>
     /// <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>THROUGHPUT_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>.</p></li>
     /// <li>
-    /// <p><code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts.</p>
+    /// <p><code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts.</p>
     /// <ul>
     /// <li>
     /// <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p></li>
@@ -111,6 +118,8 @@ impl AdministrativeAction {
     /// <li>
     /// <p><code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p></li>
     /// <li>
+    /// <p><code>DOWNLOAD_DATA_FROM_BACKUP</code> - An FSx for ONTAP backup is being restored to a new volume on a second-generation file system. Once the all the file metadata is loaded onto the volume, you can mount the volume with read-only access. during this process.</p></li>
+    /// <li>
     /// <p><code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CreateVolume</code>), or CLI (<code>create-volume</code>) when using the using the <code>FULL_COPY</code> strategy.</p></li>
     /// <li>
     /// <p><code>VOLUME_UPDATE_WITH_SNAPSHOT</code> - A volume is being updated from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CopySnapshotAndUpdateVolume</code>), or CLI (<code>copy-snapshot-and-update-volume</code>).</p></li>
@@ -118,7 +127,7 @@ impl AdministrativeAction {
     pub fn administrative_action_type(&self) -> ::std::option::Option<&crate::types::AdministrativeActionType> {
         self.administrative_action_type.as_ref()
     }
-    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
+    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> or <code>DOWNLOAD_DATA_FROM_BACKUP</code> administrative action. Does not apply to any other administrative action type.</p>
     pub fn progress_percent(&self) -> ::std::option::Option<i32> {
         self.progress_percent
     }
@@ -135,9 +144,14 @@ impl AdministrativeAction {
     /// <li>
     /// <p><code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p></li>
     /// <li>
-    /// <p><code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p></li>
+    /// <p><code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p>
+    /// <p>For a backup restore to a second-generation FSx for ONTAP file system, indicates that all data has been downloaded to the volume, and clients now have read-write access to volume.</p></li>
     /// <li>
     /// <p><code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that the file metadata is being downloaded onto the volume. The volume's Lifecycle state is CREATING.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that all metadata has been downloaded to the new volume and client can access data with read-only access while Amazon FSx downloads the file data to the volume. Track the progress of this process with the <code>ProgressPercent</code> element.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
@@ -198,7 +212,7 @@ impl AdministrativeActionBuilder {
     /// <p><code>THROUGHPUT_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's throughput capacity has been completed successfully, a <code>THROUGHPUT_OPTIMIZATION</code> task starts.</p>
     /// <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>THROUGHPUT_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>.</p></li>
     /// <li>
-    /// <p><code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts.</p>
+    /// <p><code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts.</p>
     /// <ul>
     /// <li>
     /// <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p></li>
@@ -224,6 +238,8 @@ impl AdministrativeActionBuilder {
     /// <p><code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p></li>
     /// <li>
     /// <p><code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p></li>
+    /// <li>
+    /// <p><code>DOWNLOAD_DATA_FROM_BACKUP</code> - An FSx for ONTAP backup is being restored to a new volume on a second-generation file system. Once the all the file metadata is loaded onto the volume, you can mount the volume with read-only access. during this process.</p></li>
     /// <li>
     /// <p><code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CreateVolume</code>), or CLI (<code>create-volume</code>) when using the using the <code>FULL_COPY</code> strategy.</p></li>
     /// <li>
@@ -241,7 +257,7 @@ impl AdministrativeActionBuilder {
     /// <p><code>THROUGHPUT_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's throughput capacity has been completed successfully, a <code>THROUGHPUT_OPTIMIZATION</code> task starts.</p>
     /// <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>THROUGHPUT_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>.</p></li>
     /// <li>
-    /// <p><code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts.</p>
+    /// <p><code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts.</p>
     /// <ul>
     /// <li>
     /// <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p></li>
@@ -267,6 +283,8 @@ impl AdministrativeActionBuilder {
     /// <p><code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p></li>
     /// <li>
     /// <p><code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p></li>
+    /// <li>
+    /// <p><code>DOWNLOAD_DATA_FROM_BACKUP</code> - An FSx for ONTAP backup is being restored to a new volume on a second-generation file system. Once the all the file metadata is loaded onto the volume, you can mount the volume with read-only access. during this process.</p></li>
     /// <li>
     /// <p><code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CreateVolume</code>), or CLI (<code>create-volume</code>) when using the using the <code>FULL_COPY</code> strategy.</p></li>
     /// <li>
@@ -284,7 +302,7 @@ impl AdministrativeActionBuilder {
     /// <p><code>THROUGHPUT_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's throughput capacity has been completed successfully, a <code>THROUGHPUT_OPTIMIZATION</code> task starts.</p>
     /// <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>THROUGHPUT_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>.</p></li>
     /// <li>
-    /// <p><code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts.</p>
+    /// <p><code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts.</p>
     /// <ul>
     /// <li>
     /// <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p></li>
@@ -311,6 +329,8 @@ impl AdministrativeActionBuilder {
     /// <li>
     /// <p><code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p></li>
     /// <li>
+    /// <p><code>DOWNLOAD_DATA_FROM_BACKUP</code> - An FSx for ONTAP backup is being restored to a new volume on a second-generation file system. Once the all the file metadata is loaded onto the volume, you can mount the volume with read-only access. during this process.</p></li>
+    /// <li>
     /// <p><code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CreateVolume</code>), or CLI (<code>create-volume</code>) when using the using the <code>FULL_COPY</code> strategy.</p></li>
     /// <li>
     /// <p><code>VOLUME_UPDATE_WITH_SNAPSHOT</code> - A volume is being updated from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CopySnapshotAndUpdateVolume</code>), or CLI (<code>copy-snapshot-and-update-volume</code>).</p></li>
@@ -318,17 +338,17 @@ impl AdministrativeActionBuilder {
     pub fn get_administrative_action_type(&self) -> &::std::option::Option<crate::types::AdministrativeActionType> {
         &self.administrative_action_type
     }
-    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
+    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> or <code>DOWNLOAD_DATA_FROM_BACKUP</code> administrative action. Does not apply to any other administrative action type.</p>
     pub fn progress_percent(mut self, input: i32) -> Self {
         self.progress_percent = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
+    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> or <code>DOWNLOAD_DATA_FROM_BACKUP</code> administrative action. Does not apply to any other administrative action type.</p>
     pub fn set_progress_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.progress_percent = input;
         self
     }
-    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
+    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> or <code>DOWNLOAD_DATA_FROM_BACKUP</code> administrative action. Does not apply to any other administrative action type.</p>
     pub fn get_progress_percent(&self) -> &::std::option::Option<i32> {
         &self.progress_percent
     }
@@ -355,9 +375,14 @@ impl AdministrativeActionBuilder {
     /// <li>
     /// <p><code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p></li>
     /// <li>
-    /// <p><code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p></li>
+    /// <p><code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p>
+    /// <p>For a backup restore to a second-generation FSx for ONTAP file system, indicates that all data has been downloaded to the volume, and clients now have read-write access to volume.</p></li>
     /// <li>
     /// <p><code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that the file metadata is being downloaded onto the volume. The volume's Lifecycle state is CREATING.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that all metadata has been downloaded to the new volume and client can access data with read-only access while Amazon FSx downloads the file data to the volume. Track the progress of this process with the <code>ProgressPercent</code> element.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -372,9 +397,14 @@ impl AdministrativeActionBuilder {
     /// <li>
     /// <p><code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p></li>
     /// <li>
-    /// <p><code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p></li>
+    /// <p><code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p>
+    /// <p>For a backup restore to a second-generation FSx for ONTAP file system, indicates that all data has been downloaded to the volume, and clients now have read-write access to volume.</p></li>
     /// <li>
     /// <p><code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that the file metadata is being downloaded onto the volume. The volume's Lifecycle state is CREATING.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that all metadata has been downloaded to the new volume and client can access data with read-only access while Amazon FSx downloads the file data to the volume. Track the progress of this process with the <code>ProgressPercent</code> element.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
@@ -389,9 +419,14 @@ impl AdministrativeActionBuilder {
     /// <li>
     /// <p><code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p></li>
     /// <li>
-    /// <p><code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p></li>
+    /// <p><code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p>
+    /// <p>For a backup restore to a second-generation FSx for ONTAP file system, indicates that all data has been downloaded to the volume, and clients now have read-write access to volume.</p></li>
     /// <li>
     /// <p><code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that the file metadata is being downloaded onto the volume. The volume's Lifecycle state is CREATING.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that all metadata has been downloaded to the new volume and client can access data with read-only access while Amazon FSx downloads the file data to the volume. Track the progress of this process with the <code>ProgressPercent</code> element.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
         &self.status

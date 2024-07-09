@@ -119,6 +119,8 @@ pub(crate) mod shape_create_notebook_instance;
 
 pub(crate) mod shape_create_notebook_instance_lifecycle_config;
 
+pub(crate) mod shape_create_optimization_job;
+
 pub(crate) mod shape_create_pipeline;
 
 pub(crate) mod shape_create_presigned_domain_url;
@@ -230,6 +232,8 @@ pub(crate) mod shape_delete_monitoring_schedule;
 pub(crate) mod shape_delete_notebook_instance;
 
 pub(crate) mod shape_delete_notebook_instance_lifecycle_config;
+
+pub(crate) mod shape_delete_optimization_job;
 
 pub(crate) mod shape_delete_pipeline;
 
@@ -346,6 +350,8 @@ pub(crate) mod shape_describe_monitoring_schedule;
 pub(crate) mod shape_describe_notebook_instance;
 
 pub(crate) mod shape_describe_notebook_instance_lifecycle_config;
+
+pub(crate) mod shape_describe_optimization_job;
 
 pub(crate) mod shape_describe_pipeline;
 
@@ -509,6 +515,8 @@ pub(crate) mod shape_list_notebook_instance_lifecycle_configs;
 
 pub(crate) mod shape_list_notebook_instances;
 
+pub(crate) mod shape_list_optimization_jobs;
+
 pub(crate) mod shape_list_pipeline_execution_steps;
 
 pub(crate) mod shape_list_pipeline_executions;
@@ -598,6 +606,8 @@ pub(crate) mod shape_stop_mlflow_tracking_server;
 pub(crate) mod shape_stop_monitoring_schedule;
 
 pub(crate) mod shape_stop_notebook_instance;
+
+pub(crate) mod shape_stop_optimization_job;
 
 pub(crate) mod shape_stop_pipeline_execution;
 
@@ -789,6 +799,8 @@ pub(crate) mod shape_create_notebook_instance_input;
 
 pub(crate) mod shape_create_notebook_instance_lifecycle_config_input;
 
+pub(crate) mod shape_create_optimization_job_input;
+
 pub(crate) mod shape_create_pipeline_input;
 
 pub(crate) mod shape_create_presigned_domain_url_input;
@@ -900,6 +912,8 @@ pub(crate) mod shape_delete_monitoring_schedule_input;
 pub(crate) mod shape_delete_notebook_instance_input;
 
 pub(crate) mod shape_delete_notebook_instance_lifecycle_config_input;
+
+pub(crate) mod shape_delete_optimization_job_input;
 
 pub(crate) mod shape_delete_pipeline_input;
 
@@ -1016,6 +1030,8 @@ pub(crate) mod shape_describe_monitoring_schedule_input;
 pub(crate) mod shape_describe_notebook_instance_input;
 
 pub(crate) mod shape_describe_notebook_instance_lifecycle_config_input;
+
+pub(crate) mod shape_describe_optimization_job_input;
 
 pub(crate) mod shape_describe_pipeline_definition_for_execution_input;
 
@@ -1173,6 +1189,8 @@ pub(crate) mod shape_list_notebook_instance_lifecycle_configs_input;
 
 pub(crate) mod shape_list_notebook_instances_input;
 
+pub(crate) mod shape_list_optimization_jobs_input;
+
 pub(crate) mod shape_list_pipeline_execution_steps_input;
 
 pub(crate) mod shape_list_pipeline_executions_input;
@@ -1268,6 +1286,8 @@ pub(crate) mod shape_stop_mlflow_tracking_server_input;
 pub(crate) mod shape_stop_monitoring_schedule_input;
 
 pub(crate) mod shape_stop_notebook_instance_input;
+
+pub(crate) mod shape_stop_optimization_job_input;
 
 pub(crate) mod shape_stop_pipeline_execution_input;
 
@@ -1791,6 +1811,22 @@ pub(crate) mod shape_online_store_config;
 
 pub(crate) mod shape_online_store_config_update;
 
+pub(crate) mod shape_optimization_config;
+
+pub(crate) mod shape_optimization_configs;
+
+pub(crate) mod shape_optimization_job_environment_variables;
+
+pub(crate) mod shape_optimization_job_model_source;
+
+pub(crate) mod shape_optimization_job_output_config;
+
+pub(crate) mod shape_optimization_job_summaries;
+
+pub(crate) mod shape_optimization_output;
+
+pub(crate) mod shape_optimization_vpc_config;
+
 pub(crate) mod shape_output_config;
 
 pub(crate) mod shape_output_data_config;
@@ -2017,6 +2053,10 @@ pub(crate) mod shape_workteams;
 
 pub(crate) mod shape_action_summary;
 
+pub(crate) mod shape_additional_model_data_source;
+
+pub(crate) mod shape_additional_model_data_sources;
+
 pub(crate) mod shape_additional_s3_data_source;
 
 pub(crate) mod shape_agent_version;
@@ -2028,6 +2068,8 @@ pub(crate) mod shape_algorithm_summary;
 pub(crate) mod shape_algorithm_validation_profile;
 
 pub(crate) mod shape_algorithm_validation_profiles;
+
+pub(crate) mod shape_amazon_q_settings;
 
 pub(crate) mod shape_annotation_consolidation_config;
 
@@ -2323,6 +2365,8 @@ pub(crate) mod shape_model_card_summary;
 
 pub(crate) mod shape_model_card_version_summary;
 
+pub(crate) mod shape_model_compilation_config;
+
 pub(crate) mod shape_model_data_quality;
 
 pub(crate) mod shape_model_data_source;
@@ -2352,6 +2396,8 @@ pub(crate) mod shape_model_package_validation_profile;
 pub(crate) mod shape_model_package_validation_profiles;
 
 pub(crate) mod shape_model_quality;
+
+pub(crate) mod shape_model_quantization_config;
 
 pub(crate) mod shape_model_summary;
 
@@ -2400,6 +2446,14 @@ pub(crate) mod shape_oidc_config_for_response;
 pub(crate) mod shape_oidc_member_definition;
 
 pub(crate) mod shape_online_store_security_config;
+
+pub(crate) mod shape_optimization_job_model_source_s3;
+
+pub(crate) mod shape_optimization_job_summary;
+
+pub(crate) mod shape_optimization_vpc_security_group_ids;
+
+pub(crate) mod shape_optimization_vpc_subnets;
 
 pub(crate) mod shape_parameter_ranges;
 
@@ -2764,6 +2818,10 @@ pub(crate) mod shape_monitoring_input;
 pub(crate) mod shape_monitoring_inputs;
 
 pub(crate) mod shape_monitoring_s3_output;
+
+pub(crate) mod shape_optimization_model_access_config;
+
+pub(crate) mod shape_optimization_types;
 
 pub(crate) mod shape_ownership_settings_summary;
 

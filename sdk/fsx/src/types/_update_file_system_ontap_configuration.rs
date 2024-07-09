@@ -35,20 +35,24 @@ pub struct UpdateFileSystemOntapConfiguration {
     /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
     /// <ul>
     /// <li>
-    /// <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p></li>
+    /// <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code> file systems, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p></li>
     /// <li>
-    /// <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p></li>
+    /// <p>For <code>SINGLE_AZ_2</code>, valid values are 1536, 3072, or 6144 MBps.</p></li>
+    /// <li>
+    /// <p>For <code>MULTI_AZ_2</code>, valid values are 384, 768, 1536, 3072, or 6144 MBps.</p></li>
     /// </ul>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value for file systems with one HA pair.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is not a valid HA pair (a value between 1 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
     pub throughput_capacity_per_ha_pair: ::std::option::Option<i32>,
+    /// <p>Use to update the number of high-availability (HA) pairs for a second-generation single-AZ file system. If you increase the number of HA pairs for your file system, you must specify proportional increases for <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability (HA) pairs</a> in the FSx for ONTAP user guide. Block storage protocol support (iSCSI and NVMe over TCP) is disabled on file systems with more than 6 HA pairs. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/supported-fsx-clients.html#using-block-storage">Using block storage protocols</a>.</p>
+    pub ha_pairs: ::std::option::Option<i32>,
 }
 impl UpdateFileSystemOntapConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -102,21 +106,27 @@ impl UpdateFileSystemOntapConfiguration {
     /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
     /// <ul>
     /// <li>
-    /// <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p></li>
+    /// <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code> file systems, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p></li>
     /// <li>
-    /// <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p></li>
+    /// <p>For <code>SINGLE_AZ_2</code>, valid values are 1536, 3072, or 6144 MBps.</p></li>
+    /// <li>
+    /// <p>For <code>MULTI_AZ_2</code>, valid values are 384, 768, 1536, 3072, or 6144 MBps.</p></li>
     /// </ul>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value for file systems with one HA pair.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is not a valid HA pair (a value between 1 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
     pub fn throughput_capacity_per_ha_pair(&self) -> ::std::option::Option<i32> {
         self.throughput_capacity_per_ha_pair
+    }
+    /// <p>Use to update the number of high-availability (HA) pairs for a second-generation single-AZ file system. If you increase the number of HA pairs for your file system, you must specify proportional increases for <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability (HA) pairs</a> in the FSx for ONTAP user guide. Block storage protocol support (iSCSI and NVMe over TCP) is disabled on file systems with more than 6 HA pairs. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/supported-fsx-clients.html#using-block-storage">Using block storage protocols</a>.</p>
+    pub fn ha_pairs(&self) -> ::std::option::Option<i32> {
+        self.ha_pairs
     }
 }
 impl ::std::fmt::Debug for UpdateFileSystemOntapConfiguration {
@@ -131,6 +141,7 @@ impl ::std::fmt::Debug for UpdateFileSystemOntapConfiguration {
         formatter.field("add_route_table_ids", &self.add_route_table_ids);
         formatter.field("remove_route_table_ids", &self.remove_route_table_ids);
         formatter.field("throughput_capacity_per_ha_pair", &self.throughput_capacity_per_ha_pair);
+        formatter.field("ha_pairs", &self.ha_pairs);
         formatter.finish()
     }
 }
@@ -154,6 +165,7 @@ pub struct UpdateFileSystemOntapConfigurationBuilder {
     pub(crate) add_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) remove_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) throughput_capacity_per_ha_pair: ::std::option::Option<i32>,
+    pub(crate) ha_pairs: ::std::option::Option<i32>,
 }
 impl UpdateFileSystemOntapConfigurationBuilder {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -315,16 +327,18 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
     /// <ul>
     /// <li>
-    /// <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p></li>
+    /// <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code> file systems, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p></li>
     /// <li>
-    /// <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p></li>
+    /// <p>For <code>SINGLE_AZ_2</code>, valid values are 1536, 3072, or 6144 MBps.</p></li>
+    /// <li>
+    /// <p>For <code>MULTI_AZ_2</code>, valid values are 384, 768, 1536, 3072, or 6144 MBps.</p></li>
     /// </ul>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value for file systems with one HA pair.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is not a valid HA pair (a value between 1 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -337,16 +351,18 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
     /// <ul>
     /// <li>
-    /// <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p></li>
+    /// <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code> file systems, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p></li>
     /// <li>
-    /// <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p></li>
+    /// <p>For <code>SINGLE_AZ_2</code>, valid values are 1536, 3072, or 6144 MBps.</p></li>
+    /// <li>
+    /// <p>For <code>MULTI_AZ_2</code>, valid values are 384, 768, 1536, 3072, or 6144 MBps.</p></li>
     /// </ul>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value for file systems with one HA pair.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is not a valid HA pair (a value between 1 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -359,21 +375,37 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
     /// <ul>
     /// <li>
-    /// <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p></li>
+    /// <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code> file systems, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p></li>
     /// <li>
-    /// <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p></li>
+    /// <p>For <code>SINGLE_AZ_2</code>, valid values are 1536, 3072, or 6144 MBps.</p></li>
+    /// <li>
+    /// <p>For <code>MULTI_AZ_2</code>, valid values are 384, 768, 1536, 3072, or 6144 MBps.</p></li>
     /// </ul>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value for file systems with one HA pair.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is not a valid HA pair (a value between 1 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
     pub fn get_throughput_capacity_per_ha_pair(&self) -> &::std::option::Option<i32> {
         &self.throughput_capacity_per_ha_pair
+    }
+    /// <p>Use to update the number of high-availability (HA) pairs for a second-generation single-AZ file system. If you increase the number of HA pairs for your file system, you must specify proportional increases for <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability (HA) pairs</a> in the FSx for ONTAP user guide. Block storage protocol support (iSCSI and NVMe over TCP) is disabled on file systems with more than 6 HA pairs. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/supported-fsx-clients.html#using-block-storage">Using block storage protocols</a>.</p>
+    pub fn ha_pairs(mut self, input: i32) -> Self {
+        self.ha_pairs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use to update the number of high-availability (HA) pairs for a second-generation single-AZ file system. If you increase the number of HA pairs for your file system, you must specify proportional increases for <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability (HA) pairs</a> in the FSx for ONTAP user guide. Block storage protocol support (iSCSI and NVMe over TCP) is disabled on file systems with more than 6 HA pairs. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/supported-fsx-clients.html#using-block-storage">Using block storage protocols</a>.</p>
+    pub fn set_ha_pairs(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ha_pairs = input;
+        self
+    }
+    /// <p>Use to update the number of high-availability (HA) pairs for a second-generation single-AZ file system. If you increase the number of HA pairs for your file system, you must specify proportional increases for <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability (HA) pairs</a> in the FSx for ONTAP user guide. Block storage protocol support (iSCSI and NVMe over TCP) is disabled on file systems with more than 6 HA pairs. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/supported-fsx-clients.html#using-block-storage">Using block storage protocols</a>.</p>
+    pub fn get_ha_pairs(&self) -> &::std::option::Option<i32> {
+        &self.ha_pairs
     }
     /// Consumes the builder and constructs a [`UpdateFileSystemOntapConfiguration`](crate::types::UpdateFileSystemOntapConfiguration).
     pub fn build(self) -> crate::types::UpdateFileSystemOntapConfiguration {
@@ -387,6 +419,7 @@ impl UpdateFileSystemOntapConfigurationBuilder {
             add_route_table_ids: self.add_route_table_ids,
             remove_route_table_ids: self.remove_route_table_ids,
             throughput_capacity_per_ha_pair: self.throughput_capacity_per_ha_pair,
+            ha_pairs: self.ha_pairs,
         }
     }
 }
@@ -402,6 +435,7 @@ impl ::std::fmt::Debug for UpdateFileSystemOntapConfigurationBuilder {
         formatter.field("add_route_table_ids", &self.add_route_table_ids);
         formatter.field("remove_route_table_ids", &self.remove_route_table_ids);
         formatter.field("throughput_capacity_per_ha_pair", &self.throughput_capacity_per_ha_pair);
+        formatter.field("ha_pairs", &self.ha_pairs);
         formatter.finish()
     }
 }

@@ -145,6 +145,9 @@ pub mod create_notebook_instance;
 /// Types for the `CreateNotebookInstanceLifecycleConfig` operation.
 pub mod create_notebook_instance_lifecycle_config;
 
+/// Types for the `CreateOptimizationJob` operation.
+pub mod create_optimization_job;
+
 /// Types for the `CreatePipeline` operation.
 pub mod create_pipeline;
 
@@ -312,6 +315,9 @@ pub mod delete_notebook_instance;
 
 /// Types for the `DeleteNotebookInstanceLifecycleConfig` operation.
 pub mod delete_notebook_instance_lifecycle_config;
+
+/// Types for the `DeleteOptimizationJob` operation.
+pub mod delete_optimization_job;
 
 /// Types for the `DeletePipeline` operation.
 pub mod delete_pipeline;
@@ -486,6 +492,9 @@ pub mod describe_notebook_instance;
 
 /// Types for the `DescribeNotebookInstanceLifecycleConfig` operation.
 pub mod describe_notebook_instance_lifecycle_config;
+
+/// Types for the `DescribeOptimizationJob` operation.
+pub mod describe_optimization_job;
 
 /// Types for the `DescribePipeline` operation.
 pub mod describe_pipeline;
@@ -730,6 +739,9 @@ pub mod list_notebook_instance_lifecycle_configs;
 /// Types for the `ListNotebookInstances` operation.
 pub mod list_notebook_instances;
 
+/// Types for the `ListOptimizationJobs` operation.
+pub mod list_optimization_jobs;
+
 /// Types for the `ListPipelineExecutionSteps` operation.
 pub mod list_pipeline_execution_steps;
 
@@ -864,6 +876,9 @@ pub mod stop_monitoring_schedule;
 
 /// Types for the `StopNotebookInstance` operation.
 pub mod stop_notebook_instance;
+
+/// Types for the `StopOptimizationJob` operation.
+pub mod stop_optimization_job;
 
 /// Types for the `StopPipelineExecution` operation.
 pub mod stop_pipeline_execution;

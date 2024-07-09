@@ -333,6 +333,8 @@ mod create_notebook_instance;
 
 mod create_notebook_instance_lifecycle_config;
 
+mod create_optimization_job;
+
 mod create_pipeline;
 
 mod create_presigned_domain_url;
@@ -472,6 +474,8 @@ mod delete_notebook_instance;
 
 mod delete_notebook_instance_lifecycle_config;
 
+mod delete_optimization_job;
+
 mod delete_pipeline;
 
 mod delete_project;
@@ -587,6 +591,8 @@ mod describe_monitoring_schedule;
 mod describe_notebook_instance;
 
 mod describe_notebook_instance_lifecycle_config;
+
+mod describe_optimization_job;
 
 mod describe_pipeline;
 
@@ -750,6 +756,8 @@ mod list_notebook_instance_lifecycle_configs;
 
 mod list_notebook_instances;
 
+mod list_optimization_jobs;
+
 mod list_pipeline_execution_steps;
 
 mod list_pipeline_executions;
@@ -839,6 +847,8 @@ mod stop_mlflow_tracking_server;
 mod stop_monitoring_schedule;
 
 mod stop_notebook_instance;
+
+mod stop_optimization_job;
 
 mod stop_pipeline_execution;
 

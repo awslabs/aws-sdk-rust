@@ -27,27 +27,39 @@ pub fn ser_container_definition(
         crate::protocol_serde::shape_model_data_source::ser_model_data_source(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.environment {
-        #[allow(unused_mut)]
-        let mut object_10 = object.key("Environment").start_object();
-        for (key_11, value_12) in var_9 {
+    if let Some(var_9) = &input.additional_model_data_sources {
+        let mut array_10 = object.key("AdditionalModelDataSources").start_array();
+        for item_11 in var_9 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_additional_model_data_source::ser_additional_model_data_source(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        object_10.finish();
+        array_10.finish();
     }
-    if let Some(var_13) = &input.model_package_name {
-        object.key("ModelPackageName").string(var_13.as_str());
-    }
-    if let Some(var_14) = &input.inference_specification_name {
-        object.key("InferenceSpecificationName").string(var_14.as_str());
-    }
-    if let Some(var_15) = &input.multi_model_config {
+    if let Some(var_13) = &input.environment {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("MultiModelConfig").start_object();
-        crate::protocol_serde::shape_multi_model_config::ser_multi_model_config(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_14 = object.key("Environment").start_object();
+        for (key_15, value_16) in var_13 {
+            {
+                object_14.key(key_15.as_str()).string(value_16.as_str());
+            }
+        }
+        object_14.finish();
+    }
+    if let Some(var_17) = &input.model_package_name {
+        object.key("ModelPackageName").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.inference_specification_name {
+        object.key("InferenceSpecificationName").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.multi_model_config {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("MultiModelConfig").start_object();
+        crate::protocol_serde::shape_multi_model_config::ser_multi_model_config(&mut object_20, var_19)?;
+        object_20.finish();
     }
     Ok(())
 }
@@ -100,6 +112,11 @@ where
                         }
                         "ModelDataSource" => {
                             builder = builder.set_model_data_source(crate::protocol_serde::shape_model_data_source::de_model_data_source(tokens)?);
+                        }
+                        "AdditionalModelDataSources" => {
+                            builder = builder.set_additional_model_data_sources(
+                                crate::protocol_serde::shape_additional_model_data_sources::de_additional_model_data_sources(tokens)?,
+                            );
                         }
                         "Environment" => {
                             builder = builder.set_environment(crate::protocol_serde::shape_environment_map::de_environment_map(tokens)?);

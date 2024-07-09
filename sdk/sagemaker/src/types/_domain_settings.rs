@@ -12,6 +12,8 @@ pub struct DomainSettings {
     pub execution_role_identity_config: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
     /// <p>A collection of settings that configure the domain's Docker interaction.</p>
     pub docker_settings: ::std::option::Option<crate::types::DockerSettings>,
+    /// <p>A collection of settings that configure the Amazon Q experience within the domain. The <code>AuthMode</code> that you use to create the domain must be <code>SSO</code>.</p>
+    pub amazon_q_settings: ::std::option::Option<crate::types::AmazonQSettings>,
 }
 impl DomainSettings {
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
@@ -32,6 +34,10 @@ impl DomainSettings {
     pub fn docker_settings(&self) -> ::std::option::Option<&crate::types::DockerSettings> {
         self.docker_settings.as_ref()
     }
+    /// <p>A collection of settings that configure the Amazon Q experience within the domain. The <code>AuthMode</code> that you use to create the domain must be <code>SSO</code>.</p>
+    pub fn amazon_q_settings(&self) -> ::std::option::Option<&crate::types::AmazonQSettings> {
+        self.amazon_q_settings.as_ref()
+    }
 }
 impl DomainSettings {
     /// Creates a new builder-style object to manufacture [`DomainSettings`](crate::types::DomainSettings).
@@ -48,6 +54,7 @@ pub struct DomainSettingsBuilder {
     pub(crate) r_studio_server_pro_domain_settings: ::std::option::Option<crate::types::RStudioServerProDomainSettings>,
     pub(crate) execution_role_identity_config: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
     pub(crate) docker_settings: ::std::option::Option<crate::types::DockerSettings>,
+    pub(crate) amazon_q_settings: ::std::option::Option<crate::types::AmazonQSettings>,
 }
 impl DomainSettingsBuilder {
     /// Appends an item to `security_group_ids`.
@@ -112,6 +119,20 @@ impl DomainSettingsBuilder {
     pub fn get_docker_settings(&self) -> &::std::option::Option<crate::types::DockerSettings> {
         &self.docker_settings
     }
+    /// <p>A collection of settings that configure the Amazon Q experience within the domain. The <code>AuthMode</code> that you use to create the domain must be <code>SSO</code>.</p>
+    pub fn amazon_q_settings(mut self, input: crate::types::AmazonQSettings) -> Self {
+        self.amazon_q_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A collection of settings that configure the Amazon Q experience within the domain. The <code>AuthMode</code> that you use to create the domain must be <code>SSO</code>.</p>
+    pub fn set_amazon_q_settings(mut self, input: ::std::option::Option<crate::types::AmazonQSettings>) -> Self {
+        self.amazon_q_settings = input;
+        self
+    }
+    /// <p>A collection of settings that configure the Amazon Q experience within the domain. The <code>AuthMode</code> that you use to create the domain must be <code>SSO</code>.</p>
+    pub fn get_amazon_q_settings(&self) -> &::std::option::Option<crate::types::AmazonQSettings> {
+        &self.amazon_q_settings
+    }
     /// Consumes the builder and constructs a [`DomainSettings`](crate::types::DomainSettings).
     pub fn build(self) -> crate::types::DomainSettings {
         crate::types::DomainSettings {
@@ -119,6 +140,7 @@ impl DomainSettingsBuilder {
             r_studio_server_pro_domain_settings: self.r_studio_server_pro_domain_settings,
             execution_role_identity_config: self.execution_role_identity_config,
             docker_settings: self.docker_settings,
+            amazon_q_settings: self.amazon_q_settings,
         }
     }
 }

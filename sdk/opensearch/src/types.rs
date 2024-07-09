@@ -45,15 +45,25 @@ pub use crate::types::_dry_run_results::DryRunResults;
 
 pub use crate::types::_domain_config::DomainConfig;
 
+pub use crate::types::_aiml_options_status::AimlOptionsStatus;
+
+pub use crate::types::_option_status::OptionStatus;
+
+pub use crate::types::_option_state::OptionState;
+
+pub use crate::types::_aiml_options_output::AimlOptionsOutput;
+
+pub use crate::types::_natural_language_query_generation_options_output::NaturalLanguageQueryGenerationOptionsOutput;
+
+pub use crate::types::_natural_language_query_generation_current_state::NaturalLanguageQueryGenerationCurrentState;
+
+pub use crate::types::_natural_language_query_generation_desired_state::NaturalLanguageQueryGenerationDesiredState;
+
 pub use crate::types::_modifying_properties::ModifyingProperties;
 
 pub use crate::types::_property_value_type::PropertyValueType;
 
 pub use crate::types::_software_update_options_status::SoftwareUpdateOptionsStatus;
-
-pub use crate::types::_option_status::OptionStatus;
-
-pub use crate::types::_option_state::OptionState;
 
 pub use crate::types::_software_update_options::SoftwareUpdateOptions;
 
@@ -150,6 +160,10 @@ pub use crate::types::_open_search_partition_instance_type::OpenSearchPartitionI
 pub use crate::types::_zone_awareness_config::ZoneAwarenessConfig;
 
 pub use crate::types::_version_status::VersionStatus;
+
+pub use crate::types::_aiml_options_input::AimlOptionsInput;
+
+pub use crate::types::_natural_language_query_generation_options_input::NaturalLanguageQueryGenerationOptionsInput;
 
 pub use crate::types::_dry_run_mode::DryRunMode;
 
@@ -327,6 +341,12 @@ mod _advanced_security_options_input;
 
 mod _advanced_security_options_status;
 
+mod _aiml_options_input;
+
+mod _aiml_options_output;
+
+mod _aiml_options_status;
+
 mod _authorized_principal;
 
 mod _auto_tune;
@@ -484,6 +504,14 @@ mod _master_node_status;
 mod _master_user_options;
 
 mod _modifying_properties;
+
+mod _natural_language_query_generation_current_state;
+
+mod _natural_language_query_generation_desired_state;
+
+mod _natural_language_query_generation_options_input;
+
+mod _natural_language_query_generation_options_output;
 
 mod _node_status;
 

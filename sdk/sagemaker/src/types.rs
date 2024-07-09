@@ -335,6 +335,8 @@ pub use crate::types::_app_security_group_management::AppSecurityGroupManagement
 
 pub use crate::types::_domain_settings_for_update::DomainSettingsForUpdate;
 
+pub use crate::types::_amazon_q_settings::AmazonQSettings;
+
 pub use crate::types::_docker_settings::DockerSettings;
 
 pub use crate::types::_execution_role_identity_config::ExecutionRoleIdentityConfig;
@@ -466,6 +468,8 @@ pub use crate::types::_container_definition::ContainerDefinition;
 pub use crate::types::_multi_model_config::MultiModelConfig;
 
 pub use crate::types::_model_cache_setting::ModelCacheSetting;
+
+pub use crate::types::_additional_model_data_source::AdditionalModelDataSource;
 
 pub use crate::types::_container_mode::ContainerMode;
 
@@ -967,6 +971,14 @@ pub use crate::types::_pipeline_execution_summary::PipelineExecutionSummary;
 
 pub use crate::types::_sort_pipeline_executions_by::SortPipelineExecutionsBy;
 
+pub use crate::types::_optimization_job_summary::OptimizationJobSummary;
+
+pub use crate::types::_optimization_job_deployment_instance_type::OptimizationJobDeploymentInstanceType;
+
+pub use crate::types::_optimization_job_status::OptimizationJobStatus;
+
+pub use crate::types::_list_optimization_jobs_sort_by::ListOptimizationJobsSortBy;
+
 pub use crate::types::_notebook_instance_summary::NotebookInstanceSummary;
 
 pub use crate::types::_notebook_instance_status::NotebookInstanceStatus;
@@ -1357,6 +1369,24 @@ pub use crate::types::_space_sharing_settings::SpaceSharingSettings;
 
 pub use crate::types::_ownership_settings::OwnershipSettings;
 
+pub use crate::types::_optimization_vpc_config::OptimizationVpcConfig;
+
+pub use crate::types::_optimization_output::OptimizationOutput;
+
+pub use crate::types::_optimization_job_output_config::OptimizationJobOutputConfig;
+
+pub use crate::types::_optimization_config::OptimizationConfig;
+
+pub use crate::types::_model_compilation_config::ModelCompilationConfig;
+
+pub use crate::types::_model_quantization_config::ModelQuantizationConfig;
+
+pub use crate::types::_optimization_job_model_source::OptimizationJobModelSource;
+
+pub use crate::types::_optimization_job_model_source_s3::OptimizationJobModelSourceS3;
+
+pub use crate::types::_optimization_model_access_config::OptimizationModelAccessConfig;
+
 pub use crate::types::_direct_internet_access::DirectInternetAccess;
 
 pub use crate::types::_monitoring_network_config::MonitoringNetworkConfig;
@@ -1713,6 +1743,8 @@ mod _action_summary;
 
 mod _additional_inference_specification_definition;
 
+mod _additional_model_data_source;
+
 mod _additional_s3_data_source;
 
 mod _additional_s3_data_source_data_type;
@@ -1738,6 +1770,8 @@ mod _algorithm_summary;
 mod _algorithm_validation_profile;
 
 mod _algorithm_validation_specification;
+
+mod _amazon_q_settings;
 
 mod _annotation_consolidation_config;
 
@@ -2523,6 +2557,8 @@ mod _list_inference_recommendations_jobs_sort_by;
 
 mod _list_labeling_jobs_for_workteam_sort_by_options;
 
+mod _list_optimization_jobs_sort_by;
+
 mod _list_workforces_sort_by_options;
 
 mod _list_workteams_sort_by_options;
@@ -2594,6 +2630,8 @@ mod _model_card_version_sort_by;
 mod _model_card_version_summary;
 
 mod _model_client_config;
+
+mod _model_compilation_config;
 
 mod _model_compression_type;
 
@@ -2682,6 +2720,8 @@ mod _model_quality_app_specification;
 mod _model_quality_baseline_config;
 
 mod _model_quality_job_input;
+
+mod _model_quantization_config;
 
 mod _model_register_settings;
 
@@ -2818,6 +2858,26 @@ mod _online_store_config_update;
 mod _online_store_security_config;
 
 mod _operator;
+
+mod _optimization_config;
+
+mod _optimization_job_deployment_instance_type;
+
+mod _optimization_job_model_source;
+
+mod _optimization_job_model_source_s3;
+
+mod _optimization_job_output_config;
+
+mod _optimization_job_status;
+
+mod _optimization_job_summary;
+
+mod _optimization_model_access_config;
+
+mod _optimization_output;
+
+mod _optimization_vpc_config;
 
 mod _order_key;
 

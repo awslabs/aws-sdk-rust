@@ -57,6 +57,8 @@ pub struct UpdateDomainConfigInput {
     pub off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
     /// <p>Service software update options for the domain.</p>
     pub software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
+    /// <p>Options for all machine learning features for the specified domain.</p>
+    pub aiml_options: ::std::option::Option<crate::types::AimlOptionsInput>,
 }
 impl UpdateDomainConfigInput {
     /// <p>The name of the domain that you're updating.</p>
@@ -152,6 +154,10 @@ impl UpdateDomainConfigInput {
     pub fn software_update_options(&self) -> ::std::option::Option<&crate::types::SoftwareUpdateOptions> {
         self.software_update_options.as_ref()
     }
+    /// <p>Options for all machine learning features for the specified domain.</p>
+    pub fn aiml_options(&self) -> ::std::option::Option<&crate::types::AimlOptionsInput> {
+        self.aiml_options.as_ref()
+    }
 }
 impl UpdateDomainConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainConfigInput`](crate::operation::update_domain_config::UpdateDomainConfigInput).
@@ -183,6 +189,7 @@ pub struct UpdateDomainConfigInputBuilder {
     pub(crate) dry_run_mode: ::std::option::Option<crate::types::DryRunMode>,
     pub(crate) off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
     pub(crate) software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
+    pub(crate) aiml_options: ::std::option::Option<crate::types::AimlOptionsInput>,
 }
 impl UpdateDomainConfigInputBuilder {
     /// <p>The name of the domain that you're updating.</p>
@@ -521,6 +528,20 @@ impl UpdateDomainConfigInputBuilder {
     pub fn get_software_update_options(&self) -> &::std::option::Option<crate::types::SoftwareUpdateOptions> {
         &self.software_update_options
     }
+    /// <p>Options for all machine learning features for the specified domain.</p>
+    pub fn aiml_options(mut self, input: crate::types::AimlOptionsInput) -> Self {
+        self.aiml_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Options for all machine learning features for the specified domain.</p>
+    pub fn set_aiml_options(mut self, input: ::std::option::Option<crate::types::AimlOptionsInput>) -> Self {
+        self.aiml_options = input;
+        self
+    }
+    /// <p>Options for all machine learning features for the specified domain.</p>
+    pub fn get_aiml_options(&self) -> &::std::option::Option<crate::types::AimlOptionsInput> {
+        &self.aiml_options
+    }
     /// Consumes the builder and constructs a [`UpdateDomainConfigInput`](crate::operation::update_domain_config::UpdateDomainConfigInput).
     pub fn build(
         self,
@@ -546,6 +567,7 @@ impl UpdateDomainConfigInputBuilder {
             dry_run_mode: self.dry_run_mode,
             off_peak_window_options: self.off_peak_window_options,
             software_update_options: self.software_update_options,
+            aiml_options: self.aiml_options,
         })
     }
 }

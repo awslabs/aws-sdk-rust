@@ -434,4 +434,18 @@ impl CreateDomainFluentBuilder {
     pub fn get_software_update_options(&self) -> &::std::option::Option<crate::types::SoftwareUpdateOptions> {
         self.inner.get_software_update_options()
     }
+    /// <p>Options for all machine learning features for the specified domain.</p>
+    pub fn aiml_options(mut self, input: crate::types::AimlOptionsInput) -> Self {
+        self.inner = self.inner.aiml_options(input);
+        self
+    }
+    /// <p>Options for all machine learning features for the specified domain.</p>
+    pub fn set_aiml_options(mut self, input: ::std::option::Option<crate::types::AimlOptionsInput>) -> Self {
+        self.inner = self.inner.set_aiml_options(input);
+        self
+    }
+    /// <p>Options for all machine learning features for the specified domain.</p>
+    pub fn get_aiml_options(&self) -> &::std::option::Option<crate::types::AimlOptionsInput> {
+        self.inner.get_aiml_options()
+    }
 }
