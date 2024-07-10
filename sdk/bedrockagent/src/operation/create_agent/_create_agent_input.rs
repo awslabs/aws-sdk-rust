@@ -26,6 +26,8 @@ pub struct CreateAgentInput {
     pub prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
     /// <p>The unique Guardrail configuration assigned to the agent when it is created.</p>
     pub guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
+    /// <p>Contains the details of the memory configured for the agent.</p>
+    pub memory_configuration: ::std::option::Option<crate::types::MemoryConfiguration>,
 }
 impl CreateAgentInput {
     /// <p>A name for the agent that you create.</p>
@@ -73,6 +75,10 @@ impl CreateAgentInput {
     pub fn guardrail_configuration(&self) -> ::std::option::Option<&crate::types::GuardrailConfiguration> {
         self.guardrail_configuration.as_ref()
     }
+    /// <p>Contains the details of the memory configured for the agent.</p>
+    pub fn memory_configuration(&self) -> ::std::option::Option<&crate::types::MemoryConfiguration> {
+        self.memory_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateAgentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -88,6 +94,7 @@ impl ::std::fmt::Debug for CreateAgentInput {
         formatter.field("tags", &self.tags);
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("guardrail_configuration", &self.guardrail_configuration);
+        formatter.field("memory_configuration", &self.memory_configuration);
         formatter.finish()
     }
 }
@@ -113,6 +120,7 @@ pub struct CreateAgentInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
     pub(crate) guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
+    pub(crate) memory_configuration: ::std::option::Option<crate::types::MemoryConfiguration>,
 }
 impl CreateAgentInputBuilder {
     /// <p>A name for the agent that you create.</p>
@@ -279,6 +287,20 @@ impl CreateAgentInputBuilder {
     pub fn get_guardrail_configuration(&self) -> &::std::option::Option<crate::types::GuardrailConfiguration> {
         &self.guardrail_configuration
     }
+    /// <p>Contains the details of the memory configured for the agent.</p>
+    pub fn memory_configuration(mut self, input: crate::types::MemoryConfiguration) -> Self {
+        self.memory_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the details of the memory configured for the agent.</p>
+    pub fn set_memory_configuration(mut self, input: ::std::option::Option<crate::types::MemoryConfiguration>) -> Self {
+        self.memory_configuration = input;
+        self
+    }
+    /// <p>Contains the details of the memory configured for the agent.</p>
+    pub fn get_memory_configuration(&self) -> &::std::option::Option<crate::types::MemoryConfiguration> {
+        &self.memory_configuration
+    }
     /// Consumes the builder and constructs a [`CreateAgentInput`](crate::operation::create_agent::CreateAgentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_agent::CreateAgentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_agent::CreateAgentInput {
@@ -293,6 +315,7 @@ impl CreateAgentInputBuilder {
             tags: self.tags,
             prompt_override_configuration: self.prompt_override_configuration,
             guardrail_configuration: self.guardrail_configuration,
+            memory_configuration: self.memory_configuration,
         })
     }
 }
@@ -310,6 +333,7 @@ impl ::std::fmt::Debug for CreateAgentInputBuilder {
         formatter.field("tags", &self.tags);
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("guardrail_configuration", &self.guardrail_configuration);
+        formatter.field("memory_configuration", &self.memory_configuration);
         formatter.finish()
     }
 }

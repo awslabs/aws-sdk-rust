@@ -79,6 +79,12 @@ pub use crate::types::_snowflake_source::SnowflakeSourceBuilder;
 
 pub use crate::types::_recipe::RecipeBuilder;
 
+pub use crate::types::_recipe_step::RecipeStepBuilder;
+
+pub use crate::types::_condition_expression::ConditionExpressionBuilder;
+
+pub use crate::types::_recipe_action::RecipeActionBuilder;
+
 pub use crate::types::_recipe_reference::RecipeReferenceBuilder;
 
 pub use crate::types::_evaluate_data_quality_multi_frame::EvaluateDataQualityMultiFrameBuilder;

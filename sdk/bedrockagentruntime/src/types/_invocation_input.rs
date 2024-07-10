@@ -12,6 +12,8 @@ pub struct InvocationInput {
     pub action_group_invocation_input: ::std::option::Option<crate::types::ActionGroupInvocationInput>,
     /// <p>Contains details about the knowledge base to look up and the query to be made.</p>
     pub knowledge_base_lookup_input: ::std::option::Option<crate::types::KnowledgeBaseLookupInput>,
+    /// <p>Contains information about the code interpreter to be invoked.</p>
+    pub code_interpreter_invocation_input: ::std::option::Option<crate::types::CodeInterpreterInvocationInput>,
 }
 impl InvocationInput {
     /// <p>The unique identifier of the trace.</p>
@@ -30,6 +32,10 @@ impl InvocationInput {
     pub fn knowledge_base_lookup_input(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseLookupInput> {
         self.knowledge_base_lookup_input.as_ref()
     }
+    /// <p>Contains information about the code interpreter to be invoked.</p>
+    pub fn code_interpreter_invocation_input(&self) -> ::std::option::Option<&crate::types::CodeInterpreterInvocationInput> {
+        self.code_interpreter_invocation_input.as_ref()
+    }
 }
 impl ::std::fmt::Debug for InvocationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -38,6 +44,7 @@ impl ::std::fmt::Debug for InvocationInput {
         formatter.field("invocation_type", &"*** Sensitive Data Redacted ***");
         formatter.field("action_group_invocation_input", &"*** Sensitive Data Redacted ***");
         formatter.field("knowledge_base_lookup_input", &"*** Sensitive Data Redacted ***");
+        formatter.field("code_interpreter_invocation_input", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -56,6 +63,7 @@ pub struct InvocationInputBuilder {
     pub(crate) invocation_type: ::std::option::Option<crate::types::InvocationType>,
     pub(crate) action_group_invocation_input: ::std::option::Option<crate::types::ActionGroupInvocationInput>,
     pub(crate) knowledge_base_lookup_input: ::std::option::Option<crate::types::KnowledgeBaseLookupInput>,
+    pub(crate) code_interpreter_invocation_input: ::std::option::Option<crate::types::CodeInterpreterInvocationInput>,
 }
 impl InvocationInputBuilder {
     /// <p>The unique identifier of the trace.</p>
@@ -114,6 +122,20 @@ impl InvocationInputBuilder {
     pub fn get_knowledge_base_lookup_input(&self) -> &::std::option::Option<crate::types::KnowledgeBaseLookupInput> {
         &self.knowledge_base_lookup_input
     }
+    /// <p>Contains information about the code interpreter to be invoked.</p>
+    pub fn code_interpreter_invocation_input(mut self, input: crate::types::CodeInterpreterInvocationInput) -> Self {
+        self.code_interpreter_invocation_input = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the code interpreter to be invoked.</p>
+    pub fn set_code_interpreter_invocation_input(mut self, input: ::std::option::Option<crate::types::CodeInterpreterInvocationInput>) -> Self {
+        self.code_interpreter_invocation_input = input;
+        self
+    }
+    /// <p>Contains information about the code interpreter to be invoked.</p>
+    pub fn get_code_interpreter_invocation_input(&self) -> &::std::option::Option<crate::types::CodeInterpreterInvocationInput> {
+        &self.code_interpreter_invocation_input
+    }
     /// Consumes the builder and constructs a [`InvocationInput`](crate::types::InvocationInput).
     pub fn build(self) -> crate::types::InvocationInput {
         crate::types::InvocationInput {
@@ -121,6 +143,7 @@ impl InvocationInputBuilder {
             invocation_type: self.invocation_type,
             action_group_invocation_input: self.action_group_invocation_input,
             knowledge_base_lookup_input: self.knowledge_base_lookup_input,
+            code_interpreter_invocation_input: self.code_interpreter_invocation_input,
         }
     }
 }
@@ -131,6 +154,7 @@ impl ::std::fmt::Debug for InvocationInputBuilder {
         formatter.field("invocation_type", &"*** Sensitive Data Redacted ***");
         formatter.field("action_group_invocation_input", &"*** Sensitive Data Redacted ***");
         formatter.field("knowledge_base_lookup_input", &"*** Sensitive Data Redacted ***");
+        formatter.field("code_interpreter_invocation_input", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

@@ -16,8 +16,23 @@ pub mod create_agent_alias;
 /// Types for the `CreateDataSource` operation.
 pub mod create_data_source;
 
+/// Types for the `CreateFlow` operation.
+pub mod create_flow;
+
+/// Types for the `CreateFlowAlias` operation.
+pub mod create_flow_alias;
+
+/// Types for the `CreateFlowVersion` operation.
+pub mod create_flow_version;
+
 /// Types for the `CreateKnowledgeBase` operation.
 pub mod create_knowledge_base;
+
+/// Types for the `CreatePrompt` operation.
+pub mod create_prompt;
+
+/// Types for the `CreatePromptVersion` operation.
+pub mod create_prompt_version;
 
 /// Types for the `DeleteAgent` operation.
 pub mod delete_agent;
@@ -34,8 +49,20 @@ pub mod delete_agent_version;
 /// Types for the `DeleteDataSource` operation.
 pub mod delete_data_source;
 
+/// Types for the `DeleteFlow` operation.
+pub mod delete_flow;
+
+/// Types for the `DeleteFlowAlias` operation.
+pub mod delete_flow_alias;
+
+/// Types for the `DeleteFlowVersion` operation.
+pub mod delete_flow_version;
+
 /// Types for the `DeleteKnowledgeBase` operation.
 pub mod delete_knowledge_base;
+
+/// Types for the `DeletePrompt` operation.
+pub mod delete_prompt;
 
 /// Types for the `DisassociateAgentKnowledgeBase` operation.
 pub mod disassociate_agent_knowledge_base;
@@ -58,11 +85,23 @@ pub mod get_agent_version;
 /// Types for the `GetDataSource` operation.
 pub mod get_data_source;
 
+/// Types for the `GetFlow` operation.
+pub mod get_flow;
+
+/// Types for the `GetFlowAlias` operation.
+pub mod get_flow_alias;
+
+/// Types for the `GetFlowVersion` operation.
+pub mod get_flow_version;
+
 /// Types for the `GetIngestionJob` operation.
 pub mod get_ingestion_job;
 
 /// Types for the `GetKnowledgeBase` operation.
 pub mod get_knowledge_base;
+
+/// Types for the `GetPrompt` operation.
+pub mod get_prompt;
 
 /// Types for the `ListAgentActionGroups` operation.
 pub mod list_agent_action_groups;
@@ -82,17 +121,32 @@ pub mod list_agents;
 /// Types for the `ListDataSources` operation.
 pub mod list_data_sources;
 
+/// Types for the `ListFlowAliases` operation.
+pub mod list_flow_aliases;
+
+/// Types for the `ListFlowVersions` operation.
+pub mod list_flow_versions;
+
+/// Types for the `ListFlows` operation.
+pub mod list_flows;
+
 /// Types for the `ListIngestionJobs` operation.
 pub mod list_ingestion_jobs;
 
 /// Types for the `ListKnowledgeBases` operation.
 pub mod list_knowledge_bases;
 
+/// Types for the `ListPrompts` operation.
+pub mod list_prompts;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
 /// Types for the `PrepareAgent` operation.
 pub mod prepare_agent;
+
+/// Types for the `PrepareFlow` operation.
+pub mod prepare_flow;
 
 /// Types for the `StartIngestionJob` operation.
 pub mod start_ingestion_job;
@@ -118,5 +172,14 @@ pub mod update_agent_knowledge_base;
 /// Types for the `UpdateDataSource` operation.
 pub mod update_data_source;
 
+/// Types for the `UpdateFlow` operation.
+pub mod update_flow;
+
+/// Types for the `UpdateFlowAlias` operation.
+pub mod update_flow_alias;
+
 /// Types for the `UpdateKnowledgeBase` operation.
 pub mod update_knowledge_base;
+
+/// Types for the `UpdatePrompt` operation.
+pub mod update_prompt;

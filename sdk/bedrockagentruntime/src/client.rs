@@ -122,7 +122,13 @@ impl Client {
 ///
 pub mod customize;
 
+mod delete_agent_memory;
+
+mod get_agent_memory;
+
 mod invoke_agent;
+
+mod invoke_flow;
 
 mod retrieve;
 

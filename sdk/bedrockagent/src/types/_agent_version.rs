@@ -37,8 +37,10 @@ pub struct AgentVersion {
     pub recommended_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains configurations to override prompt templates in different parts of an agent sequence. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced prompts</a>.</p>
     pub prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
-    /// <p>The guardrails configuration assigned to the agent version.</p>
+    /// <p>Details about the guardrail associated with the agent.</p>
     pub guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
+    /// <p>Contains details of the memory configuration on the version of the agent.</p>
+    pub memory_configuration: ::std::option::Option<crate::types::MemoryConfiguration>,
 }
 impl AgentVersion {
     /// <p>The unique identifier of the agent that the version belongs to.</p>
@@ -115,9 +117,13 @@ impl AgentVersion {
     pub fn prompt_override_configuration(&self) -> ::std::option::Option<&crate::types::PromptOverrideConfiguration> {
         self.prompt_override_configuration.as_ref()
     }
-    /// <p>The guardrails configuration assigned to the agent version.</p>
+    /// <p>Details about the guardrail associated with the agent.</p>
     pub fn guardrail_configuration(&self) -> ::std::option::Option<&crate::types::GuardrailConfiguration> {
         self.guardrail_configuration.as_ref()
+    }
+    /// <p>Contains details of the memory configuration on the version of the agent.</p>
+    pub fn memory_configuration(&self) -> ::std::option::Option<&crate::types::MemoryConfiguration> {
+        self.memory_configuration.as_ref()
     }
 }
 impl ::std::fmt::Debug for AgentVersion {
@@ -140,6 +146,7 @@ impl ::std::fmt::Debug for AgentVersion {
         formatter.field("recommended_actions", &self.recommended_actions);
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("guardrail_configuration", &self.guardrail_configuration);
+        formatter.field("memory_configuration", &self.memory_configuration);
         formatter.finish()
     }
 }
@@ -171,6 +178,7 @@ pub struct AgentVersionBuilder {
     pub(crate) recommended_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
     pub(crate) guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
+    pub(crate) memory_configuration: ::std::option::Option<crate::types::MemoryConfiguration>,
 }
 impl AgentVersionBuilder {
     /// <p>The unique identifier of the agent that the version belongs to.</p>
@@ -421,19 +429,33 @@ impl AgentVersionBuilder {
     pub fn get_prompt_override_configuration(&self) -> &::std::option::Option<crate::types::PromptOverrideConfiguration> {
         &self.prompt_override_configuration
     }
-    /// <p>The guardrails configuration assigned to the agent version.</p>
+    /// <p>Details about the guardrail associated with the agent.</p>
     pub fn guardrail_configuration(mut self, input: crate::types::GuardrailConfiguration) -> Self {
         self.guardrail_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The guardrails configuration assigned to the agent version.</p>
+    /// <p>Details about the guardrail associated with the agent.</p>
     pub fn set_guardrail_configuration(mut self, input: ::std::option::Option<crate::types::GuardrailConfiguration>) -> Self {
         self.guardrail_configuration = input;
         self
     }
-    /// <p>The guardrails configuration assigned to the agent version.</p>
+    /// <p>Details about the guardrail associated with the agent.</p>
     pub fn get_guardrail_configuration(&self) -> &::std::option::Option<crate::types::GuardrailConfiguration> {
         &self.guardrail_configuration
+    }
+    /// <p>Contains details of the memory configuration on the version of the agent.</p>
+    pub fn memory_configuration(mut self, input: crate::types::MemoryConfiguration) -> Self {
+        self.memory_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details of the memory configuration on the version of the agent.</p>
+    pub fn set_memory_configuration(mut self, input: ::std::option::Option<crate::types::MemoryConfiguration>) -> Self {
+        self.memory_configuration = input;
+        self
+    }
+    /// <p>Contains details of the memory configuration on the version of the agent.</p>
+    pub fn get_memory_configuration(&self) -> &::std::option::Option<crate::types::MemoryConfiguration> {
+        &self.memory_configuration
     }
     /// Consumes the builder and constructs a [`AgentVersion`](crate::types::AgentVersion).
     /// This method will fail if any of the following fields are not set:
@@ -510,6 +532,7 @@ impl AgentVersionBuilder {
             recommended_actions: self.recommended_actions,
             prompt_override_configuration: self.prompt_override_configuration,
             guardrail_configuration: self.guardrail_configuration,
+            memory_configuration: self.memory_configuration,
         })
     }
 }
@@ -533,6 +556,7 @@ impl ::std::fmt::Debug for AgentVersionBuilder {
         formatter.field("recommended_actions", &self.recommended_actions);
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("guardrail_configuration", &self.guardrail_configuration);
+        formatter.field("memory_configuration", &self.memory_configuration);
         formatter.finish()
     }
 }

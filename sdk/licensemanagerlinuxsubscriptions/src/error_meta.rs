@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>An exception occurred with the service.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>Unable to find the requested Amazon Web Services resource.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The provided input is not valid. Try your request again.</p>
@@ -22,6 +24,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -46,9 +49,100 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::InternalServerException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::deregister_subscription_provider::DeregisterSubscriptionProviderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::deregister_subscription_provider::DeregisterSubscriptionProviderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::deregister_subscription_provider::DeregisterSubscriptionProviderError> for Error {
+    fn from(err: crate::operation::deregister_subscription_provider::DeregisterSubscriptionProviderError) -> Self {
+        match err {
+            crate::operation::deregister_subscription_provider::DeregisterSubscriptionProviderError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::deregister_subscription_provider::DeregisterSubscriptionProviderError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::deregister_subscription_provider::DeregisterSubscriptionProviderError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::deregister_subscription_provider::DeregisterSubscriptionProviderError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::deregister_subscription_provider::DeregisterSubscriptionProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_registered_subscription_provider::GetRegisteredSubscriptionProviderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_registered_subscription_provider::GetRegisteredSubscriptionProviderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_registered_subscription_provider::GetRegisteredSubscriptionProviderError> for Error {
+    fn from(err: crate::operation::get_registered_subscription_provider::GetRegisteredSubscriptionProviderError) -> Self {
+        match err {
+            crate::operation::get_registered_subscription_provider::GetRegisteredSubscriptionProviderError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_registered_subscription_provider::GetRegisteredSubscriptionProviderError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_registered_subscription_provider::GetRegisteredSubscriptionProviderError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_registered_subscription_provider::GetRegisteredSubscriptionProviderError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_registered_subscription_provider::GetRegisteredSubscriptionProviderError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -145,6 +239,161 @@ impl From<crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsErro
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_registered_subscription_providers::ListRegisteredSubscriptionProvidersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_registered_subscription_providers::ListRegisteredSubscriptionProvidersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_registered_subscription_providers::ListRegisteredSubscriptionProvidersError> for Error {
+    fn from(err: crate::operation::list_registered_subscription_providers::ListRegisteredSubscriptionProvidersError) -> Self {
+        match err {
+            crate::operation::list_registered_subscription_providers::ListRegisteredSubscriptionProvidersError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_registered_subscription_providers::ListRegisteredSubscriptionProvidersError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_registered_subscription_providers::ListRegisteredSubscriptionProvidersError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_registered_subscription_providers::ListRegisteredSubscriptionProvidersError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_subscription_provider::RegisterSubscriptionProviderError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::register_subscription_provider::RegisterSubscriptionProviderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::register_subscription_provider::RegisterSubscriptionProviderError> for Error {
+    fn from(err: crate::operation::register_subscription_provider::RegisterSubscriptionProviderError) -> Self {
+        match err {
+            crate::operation::register_subscription_provider::RegisterSubscriptionProviderError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::register_subscription_provider::RegisterSubscriptionProviderError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::register_subscription_provider::RegisterSubscriptionProviderError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::register_subscription_provider::RegisterSubscriptionProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -177,6 +426,7 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::InternalServerException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -187,6 +437,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::InternalServerException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

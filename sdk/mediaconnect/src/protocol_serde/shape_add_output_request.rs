@@ -87,5 +87,8 @@ pub fn ser_add_output_request(
         crate::protocol_serde::shape_vpc_interface_attachment::ser_vpc_interface_attachment(&mut object_22, var_21)?;
         object_22.finish();
     }
+    if let Some(var_23) = &input.output_status {
+        object.key("outputStatus").string(var_23.as_str());
+    }
     Ok(())
 }

@@ -6,7 +6,17 @@
 pub struct Message {
     /// <p>The role that the message plays in the message.</p>
     pub role: crate::types::ConversationRole,
-    /// <p>The message content.</p>
+    /// <p>The message content. Note the following restrictions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can include up to 20 images. Each image's size, height, and width must be no more than 3.75 MB, 8000 px, and 8000 px, respectively.</p></li>
+    /// <li>
+    /// <p>You can include up to five documents. Each document's size must be no more than 4.5 MB.</p></li>
+    /// <li>
+    /// <p>If you include a <code>ContentBlock</code> with a <code>document</code> field in the array, you must also include a <code>ContentBlock</code> with a <code>text</code> field.</p></li>
+    /// <li>
+    /// <p>You can only include images and documents if the <code>role</code> is <code>user</code>.</p></li>
+    /// </ul>
     pub content: ::std::vec::Vec<crate::types::ContentBlock>,
 }
 impl Message {
@@ -14,7 +24,17 @@ impl Message {
     pub fn role(&self) -> &crate::types::ConversationRole {
         &self.role
     }
-    /// <p>The message content.</p>
+    /// <p>The message content. Note the following restrictions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can include up to 20 images. Each image's size, height, and width must be no more than 3.75 MB, 8000 px, and 8000 px, respectively.</p></li>
+    /// <li>
+    /// <p>You can include up to five documents. Each document's size must be no more than 4.5 MB.</p></li>
+    /// <li>
+    /// <p>If you include a <code>ContentBlock</code> with a <code>document</code> field in the array, you must also include a <code>ContentBlock</code> with a <code>text</code> field.</p></li>
+    /// <li>
+    /// <p>You can only include images and documents if the <code>role</code> is <code>user</code>.</p></li>
+    /// </ul>
     pub fn content(&self) -> &[crate::types::ContentBlock] {
         use std::ops::Deref;
         self.content.deref()
@@ -54,19 +74,49 @@ impl MessageBuilder {
     ///
     /// To override the contents of this collection use [`set_content`](Self::set_content).
     ///
-    /// <p>The message content.</p>
+    /// <p>The message content. Note the following restrictions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can include up to 20 images. Each image's size, height, and width must be no more than 3.75 MB, 8000 px, and 8000 px, respectively.</p></li>
+    /// <li>
+    /// <p>You can include up to five documents. Each document's size must be no more than 4.5 MB.</p></li>
+    /// <li>
+    /// <p>If you include a <code>ContentBlock</code> with a <code>document</code> field in the array, you must also include a <code>ContentBlock</code> with a <code>text</code> field.</p></li>
+    /// <li>
+    /// <p>You can only include images and documents if the <code>role</code> is <code>user</code>.</p></li>
+    /// </ul>
     pub fn content(mut self, input: crate::types::ContentBlock) -> Self {
         let mut v = self.content.unwrap_or_default();
         v.push(input);
         self.content = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The message content.</p>
+    /// <p>The message content. Note the following restrictions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can include up to 20 images. Each image's size, height, and width must be no more than 3.75 MB, 8000 px, and 8000 px, respectively.</p></li>
+    /// <li>
+    /// <p>You can include up to five documents. Each document's size must be no more than 4.5 MB.</p></li>
+    /// <li>
+    /// <p>If you include a <code>ContentBlock</code> with a <code>document</code> field in the array, you must also include a <code>ContentBlock</code> with a <code>text</code> field.</p></li>
+    /// <li>
+    /// <p>You can only include images and documents if the <code>role</code> is <code>user</code>.</p></li>
+    /// </ul>
     pub fn set_content(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContentBlock>>) -> Self {
         self.content = input;
         self
     }
-    /// <p>The message content.</p>
+    /// <p>The message content. Note the following restrictions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can include up to 20 images. Each image's size, height, and width must be no more than 3.75 MB, 8000 px, and 8000 px, respectively.</p></li>
+    /// <li>
+    /// <p>You can include up to five documents. Each document's size must be no more than 4.5 MB.</p></li>
+    /// <li>
+    /// <p>If you include a <code>ContentBlock</code> with a <code>document</code> field in the array, you must also include a <code>ContentBlock</code> with a <code>text</code> field.</p></li>
+    /// <li>
+    /// <p>You can only include images and documents if the <code>role</code> is <code>user</code>.</p></li>
+    /// </ul>
     pub fn get_content(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentBlock>> {
         &self.content
     }

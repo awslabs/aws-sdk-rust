@@ -34,6 +34,8 @@ pub struct Output {
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     /// The bridge output ports currently in use.
     pub bridge_ports: ::std::option::Option<::std::vec::Vec<i32>>,
+    /// An indication of whether the output is transmitting data or not.
+    pub output_status: ::std::option::Option<crate::types::OutputStatus>,
 }
 impl Output {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
@@ -100,6 +102,10 @@ impl Output {
     pub fn bridge_ports(&self) -> &[i32] {
         self.bridge_ports.as_deref().unwrap_or_default()
     }
+    /// An indication of whether the output is transmitting data or not.
+    pub fn output_status(&self) -> ::std::option::Option<&crate::types::OutputStatus> {
+        self.output_status.as_ref()
+    }
 }
 impl Output {
     /// Creates a new builder-style object to manufacture [`Output`](crate::types::Output).
@@ -127,6 +133,7 @@ pub struct OutputBuilder {
     pub(crate) vpc_interface_attachment: ::std::option::Option<crate::types::VpcInterfaceAttachment>,
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bridge_ports: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) output_status: ::std::option::Option<crate::types::OutputStatus>,
 }
 impl OutputBuilder {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
@@ -356,6 +363,20 @@ impl OutputBuilder {
     pub fn get_bridge_ports(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.bridge_ports
     }
+    /// An indication of whether the output is transmitting data or not.
+    pub fn output_status(mut self, input: crate::types::OutputStatus) -> Self {
+        self.output_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// An indication of whether the output is transmitting data or not.
+    pub fn set_output_status(mut self, input: ::std::option::Option<crate::types::OutputStatus>) -> Self {
+        self.output_status = input;
+        self
+    }
+    /// An indication of whether the output is transmitting data or not.
+    pub fn get_output_status(&self) -> &::std::option::Option<crate::types::OutputStatus> {
+        &self.output_status
+    }
     /// Consumes the builder and constructs a [`Output`](crate::types::Output).
     pub fn build(self) -> crate::types::Output {
         crate::types::Output {
@@ -374,6 +395,7 @@ impl OutputBuilder {
             vpc_interface_attachment: self.vpc_interface_attachment,
             bridge_arn: self.bridge_arn,
             bridge_ports: self.bridge_ports,
+            output_status: self.output_status,
         }
     }
 }

@@ -314,6 +314,15 @@ pub(crate) fn foundation_model_details_correct_errors(
     builder
 }
 
+pub(crate) fn guardrail_contextual_grounding_policy_correct_errors(
+    mut builder: crate::types::builders::GuardrailContextualGroundingPolicyBuilder,
+) -> crate::types::builders::GuardrailContextualGroundingPolicyBuilder {
+    if builder.filters.is_none() {
+        builder.filters = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn guardrail_topic_policy_correct_errors(
     mut builder: crate::types::builders::GuardrailTopicPolicyBuilder,
 ) -> crate::types::builders::GuardrailTopicPolicyBuilder {
@@ -544,6 +553,18 @@ pub(crate) fn guardrail_content_filter_correct_errors(
     }
     if builder.output_strength.is_none() {
         builder.output_strength = "no value was set".parse::<crate::types::GuardrailFilterStrength>().ok()
+    }
+    builder
+}
+
+pub(crate) fn guardrail_contextual_grounding_filter_correct_errors(
+    mut builder: crate::types::builders::GuardrailContextualGroundingFilterBuilder,
+) -> crate::types::builders::GuardrailContextualGroundingFilterBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::GuardrailContextualGroundingFilterType>().ok()
+    }
+    if builder.threshold.is_none() {
+        builder.threshold = Some(Default::default())
     }
     builder
 }

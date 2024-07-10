@@ -5,9 +5,9 @@
 pub struct CreateGuardrailOutput {
     /// <p>The unique identifier of the guardrail that was created.</p>
     pub guardrail_id: ::std::string::String,
-    /// <p>The ARN of the guardrail that was created.</p>
+    /// <p>The ARN of the guardrail.</p>
     pub guardrail_arn: ::std::string::String,
-    /// <p>The version of the guardrail that was created. This value should be 1.</p>
+    /// <p>The version of the guardrail that was created. This value will always be <code>DRAFT</code>.</p>
     pub version: ::std::string::String,
     /// <p>The time at which the guardrail was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -19,12 +19,12 @@ impl CreateGuardrailOutput {
         use std::ops::Deref;
         self.guardrail_id.deref()
     }
-    /// <p>The ARN of the guardrail that was created.</p>
+    /// <p>The ARN of the guardrail.</p>
     pub fn guardrail_arn(&self) -> &str {
         use std::ops::Deref;
         self.guardrail_arn.deref()
     }
-    /// <p>The version of the guardrail that was created. This value should be 1.</p>
+    /// <p>The version of the guardrail that was created. This value will always be <code>DRAFT</code>.</p>
     pub fn version(&self) -> &str {
         use std::ops::Deref;
         self.version.deref()
@@ -72,33 +72,33 @@ impl CreateGuardrailOutputBuilder {
     pub fn get_guardrail_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.guardrail_id
     }
-    /// <p>The ARN of the guardrail that was created.</p>
+    /// <p>The ARN of the guardrail.</p>
     /// This field is required.
     pub fn guardrail_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.guardrail_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the guardrail that was created.</p>
+    /// <p>The ARN of the guardrail.</p>
     pub fn set_guardrail_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.guardrail_arn = input;
         self
     }
-    /// <p>The ARN of the guardrail that was created.</p>
+    /// <p>The ARN of the guardrail.</p>
     pub fn get_guardrail_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.guardrail_arn
     }
-    /// <p>The version of the guardrail that was created. This value should be 1.</p>
+    /// <p>The version of the guardrail that was created. This value will always be <code>DRAFT</code>.</p>
     /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the guardrail that was created. This value should be 1.</p>
+    /// <p>The version of the guardrail that was created. This value will always be <code>DRAFT</code>.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
-    /// <p>The version of the guardrail that was created. This value should be 1.</p>
+    /// <p>The version of the guardrail that was created. This value will always be <code>DRAFT</code>.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }

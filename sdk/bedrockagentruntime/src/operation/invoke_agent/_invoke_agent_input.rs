@@ -21,6 +21,8 @@ pub struct InvokeAgentInput {
     /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
     /// </note>
     pub input_text: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the agent memory.</p>
+    pub memory_id: ::std::option::Option<::std::string::String>,
 }
 impl InvokeAgentInput {
     /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
@@ -55,6 +57,10 @@ impl InvokeAgentInput {
     pub fn input_text(&self) -> ::std::option::Option<&str> {
         self.input_text.as_deref()
     }
+    /// <p>The unique identifier of the agent memory.</p>
+    pub fn memory_id(&self) -> ::std::option::Option<&str> {
+        self.memory_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for InvokeAgentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -66,6 +72,7 @@ impl ::std::fmt::Debug for InvokeAgentInput {
         formatter.field("end_session", &self.end_session);
         formatter.field("enable_trace", &self.enable_trace);
         formatter.field("input_text", &"*** Sensitive Data Redacted ***");
+        formatter.field("memory_id", &self.memory_id);
         formatter.finish()
     }
 }
@@ -87,6 +94,7 @@ pub struct InvokeAgentInputBuilder {
     pub(crate) end_session: ::std::option::Option<bool>,
     pub(crate) enable_trace: ::std::option::Option<bool>,
     pub(crate) input_text: ::std::option::Option<::std::string::String>,
+    pub(crate) memory_id: ::std::option::Option<::std::string::String>,
 }
 impl InvokeAgentInputBuilder {
     /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
@@ -202,6 +210,20 @@ impl InvokeAgentInputBuilder {
     pub fn get_input_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_text
     }
+    /// <p>The unique identifier of the agent memory.</p>
+    pub fn memory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.memory_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the agent memory.</p>
+    pub fn set_memory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.memory_id = input;
+        self
+    }
+    /// <p>The unique identifier of the agent memory.</p>
+    pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.memory_id
+    }
     /// Consumes the builder and constructs a [`InvokeAgentInput`](crate::operation::invoke_agent::InvokeAgentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::invoke_agent::InvokeAgentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invoke_agent::InvokeAgentInput {
@@ -212,6 +234,7 @@ impl InvokeAgentInputBuilder {
             end_session: self.end_session,
             enable_trace: self.enable_trace,
             input_text: self.input_text,
+            memory_id: self.memory_id,
         })
     }
 }
@@ -225,6 +248,7 @@ impl ::std::fmt::Debug for InvokeAgentInputBuilder {
         formatter.field("end_session", &self.end_session);
         formatter.field("enable_trace", &self.enable_trace);
         formatter.field("input_text", &"*** Sensitive Data Redacted ***");
+        formatter.field("memory_id", &self.memory_id);
         formatter.finish()
     }
 }

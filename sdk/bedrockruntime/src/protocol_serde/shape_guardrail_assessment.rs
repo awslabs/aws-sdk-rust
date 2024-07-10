@@ -34,6 +34,11 @@ where
                                     crate::protocol_serde::shape_guardrail_sensitive_information_policy_assessment::de_guardrail_sensitive_information_policy_assessment(tokens)?
                                 );
                         }
+                        "contextualGroundingPolicy" => {
+                            builder = builder.set_contextual_grounding_policy(
+                                    crate::protocol_serde::shape_guardrail_contextual_grounding_policy_assessment::de_guardrail_contextual_grounding_policy_assessment(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

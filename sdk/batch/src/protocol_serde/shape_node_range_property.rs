@@ -27,6 +27,12 @@ pub fn ser_node_range_property(
         crate::protocol_serde::shape_ecs_properties::ser_ecs_properties(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.eks_properties {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("eksProperties").start_object();
+        crate::protocol_serde::shape_eks_properties::ser_eks_properties(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }
 
@@ -60,6 +66,9 @@ where
                         }
                         "ecsProperties" => {
                             builder = builder.set_ecs_properties(crate::protocol_serde::shape_ecs_properties::de_ecs_properties(tokens)?);
+                        }
+                        "eksProperties" => {
+                            builder = builder.set_eks_properties(crate::protocol_serde::shape_eks_properties::de_eks_properties(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

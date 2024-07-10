@@ -33,11 +33,17 @@ pub fn ser_update_agent_input_input(
     if let Some(var_9) = &input.instruction {
         object.key("instruction").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.prompt_override_configuration {
+    if let Some(var_10) = &input.memory_configuration {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("promptOverrideConfiguration").start_object();
-        crate::protocol_serde::shape_prompt_override_configuration::ser_prompt_override_configuration(&mut object_11, var_10)?;
+        let mut object_11 = object.key("memoryConfiguration").start_object();
+        crate::protocol_serde::shape_memory_configuration::ser_memory_configuration(&mut object_11, var_10)?;
         object_11.finish();
+    }
+    if let Some(var_12) = &input.prompt_override_configuration {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("promptOverrideConfiguration").start_object();
+        crate::protocol_serde::shape_prompt_override_configuration::ser_prompt_override_configuration(&mut object_13, var_12)?;
+        object_13.finish();
     }
     Ok(())
 }

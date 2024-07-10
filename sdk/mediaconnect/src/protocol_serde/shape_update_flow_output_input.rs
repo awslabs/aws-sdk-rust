@@ -51,41 +51,44 @@ pub fn ser_update_flow_output_input_input(
             ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_14) = &input.port {
+    if let Some(var_14) = &input.output_status {
+        object.key("outputStatus").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.port {
         object.key("port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_14).into()),
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_15) = &input.protocol {
-        object.key("protocol").string(var_15.as_str());
+    if let Some(var_16) = &input.protocol {
+        object.key("protocol").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.remote_id {
-        object.key("remoteId").string(var_16.as_str());
+    if let Some(var_17) = &input.remote_id {
+        object.key("remoteId").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.sender_control_port {
+    if let Some(var_18) = &input.sender_control_port {
         object.key("senderControlPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_17).into()),
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
-    if let Some(var_18) = &input.sender_ip_address {
-        object.key("senderIpAddress").string(var_18.as_str());
+    if let Some(var_19) = &input.sender_ip_address {
+        object.key("senderIpAddress").string(var_19.as_str());
     }
-    if let Some(var_19) = &input.smoothing_latency {
+    if let Some(var_20) = &input.smoothing_latency {
         object.key("smoothingLatency").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+            ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_20) = &input.stream_id {
-        object.key("streamId").string(var_20.as_str());
+    if let Some(var_21) = &input.stream_id {
+        object.key("streamId").string(var_21.as_str());
     }
-    if let Some(var_21) = &input.vpc_interface_attachment {
+    if let Some(var_22) = &input.vpc_interface_attachment {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("vpcInterfaceAttachment").start_object();
-        crate::protocol_serde::shape_vpc_interface_attachment::ser_vpc_interface_attachment(&mut object_22, var_21)?;
-        object_22.finish();
+        let mut object_23 = object.key("vpcInterfaceAttachment").start_object();
+        crate::protocol_serde::shape_vpc_interface_attachment::ser_vpc_interface_attachment(&mut object_23, var_22)?;
+        object_23.finish();
     }
     Ok(())
 }

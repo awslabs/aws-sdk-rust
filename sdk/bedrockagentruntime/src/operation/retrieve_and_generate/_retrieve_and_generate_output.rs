@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RetrieveAndGenerateOutput {
-    /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
+    /// <p>The unique identifier of the session. When you first make a <code>RetrieveAndGenerate</code> request, Amazon Bedrock automatically generates this value. You must reuse this value for all subsequent requests in the same conversational session. This value allows Amazon Bedrock to maintain context and knowledge from previous interactions. You can't explicitly set the <code>sessionId</code> yourself.</p>
     pub session_id: ::std::string::String,
     /// <p>Contains the response generated from querying the knowledge base.</p>
     pub output: ::std::option::Option<crate::types::RetrieveAndGenerateOutput>,
@@ -14,7 +14,7 @@ pub struct RetrieveAndGenerateOutput {
     _request_id: Option<String>,
 }
 impl RetrieveAndGenerateOutput {
-    /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
+    /// <p>The unique identifier of the session. When you first make a <code>RetrieveAndGenerate</code> request, Amazon Bedrock automatically generates this value. You must reuse this value for all subsequent requests in the same conversational session. This value allows Amazon Bedrock to maintain context and knowledge from previous interactions. You can't explicitly set the <code>sessionId</code> yourself.</p>
     pub fn session_id(&self) -> &str {
         use std::ops::Deref;
         self.session_id.deref()
@@ -68,18 +68,18 @@ pub struct RetrieveAndGenerateOutputBuilder {
     _request_id: Option<String>,
 }
 impl RetrieveAndGenerateOutputBuilder {
-    /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
+    /// <p>The unique identifier of the session. When you first make a <code>RetrieveAndGenerate</code> request, Amazon Bedrock automatically generates this value. You must reuse this value for all subsequent requests in the same conversational session. This value allows Amazon Bedrock to maintain context and knowledge from previous interactions. You can't explicitly set the <code>sessionId</code> yourself.</p>
     /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
+    /// <p>The unique identifier of the session. When you first make a <code>RetrieveAndGenerate</code> request, Amazon Bedrock automatically generates this value. You must reuse this value for all subsequent requests in the same conversational session. This value allows Amazon Bedrock to maintain context and knowledge from previous interactions. You can't explicitly set the <code>sessionId</code> yourself.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
     }
-    /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
+    /// <p>The unique identifier of the session. When you first make a <code>RetrieveAndGenerate</code> request, Amazon Bedrock automatically generates this value. You must reuse this value for all subsequent requests in the same conversational session. This value allows Amazon Bedrock to maintain context and knowledge from previous interactions. You can't explicitly set the <code>sessionId</code> yourself.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }

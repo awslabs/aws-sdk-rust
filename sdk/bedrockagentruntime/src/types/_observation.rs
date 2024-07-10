@@ -28,6 +28,8 @@ pub struct Observation {
     pub final_response: ::std::option::Option<crate::types::FinalResponse>,
     /// <p>Contains details about the response to reprompt the input.</p>
     pub reprompt_response: ::std::option::Option<crate::types::RepromptResponse>,
+    /// <p>Contains the JSON-formatted string returned by the API invoked by the code interpreter.</p>
+    pub code_interpreter_invocation_output: ::std::option::Option<crate::types::CodeInterpreterInvocationOutput>,
 }
 impl Observation {
     /// <p>The unique identifier of the trace.</p>
@@ -66,6 +68,10 @@ impl Observation {
     pub fn reprompt_response(&self) -> ::std::option::Option<&crate::types::RepromptResponse> {
         self.reprompt_response.as_ref()
     }
+    /// <p>Contains the JSON-formatted string returned by the API invoked by the code interpreter.</p>
+    pub fn code_interpreter_invocation_output(&self) -> ::std::option::Option<&crate::types::CodeInterpreterInvocationOutput> {
+        self.code_interpreter_invocation_output.as_ref()
+    }
 }
 impl ::std::fmt::Debug for Observation {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -76,6 +82,7 @@ impl ::std::fmt::Debug for Observation {
         formatter.field("knowledge_base_lookup_output", &"*** Sensitive Data Redacted ***");
         formatter.field("final_response", &"*** Sensitive Data Redacted ***");
         formatter.field("reprompt_response", &"*** Sensitive Data Redacted ***");
+        formatter.field("code_interpreter_invocation_output", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -96,6 +103,7 @@ pub struct ObservationBuilder {
     pub(crate) knowledge_base_lookup_output: ::std::option::Option<crate::types::KnowledgeBaseLookupOutput>,
     pub(crate) final_response: ::std::option::Option<crate::types::FinalResponse>,
     pub(crate) reprompt_response: ::std::option::Option<crate::types::RepromptResponse>,
+    pub(crate) code_interpreter_invocation_output: ::std::option::Option<crate::types::CodeInterpreterInvocationOutput>,
 }
 impl ObservationBuilder {
     /// <p>The unique identifier of the trace.</p>
@@ -218,6 +226,20 @@ impl ObservationBuilder {
     pub fn get_reprompt_response(&self) -> &::std::option::Option<crate::types::RepromptResponse> {
         &self.reprompt_response
     }
+    /// <p>Contains the JSON-formatted string returned by the API invoked by the code interpreter.</p>
+    pub fn code_interpreter_invocation_output(mut self, input: crate::types::CodeInterpreterInvocationOutput) -> Self {
+        self.code_interpreter_invocation_output = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the JSON-formatted string returned by the API invoked by the code interpreter.</p>
+    pub fn set_code_interpreter_invocation_output(mut self, input: ::std::option::Option<crate::types::CodeInterpreterInvocationOutput>) -> Self {
+        self.code_interpreter_invocation_output = input;
+        self
+    }
+    /// <p>Contains the JSON-formatted string returned by the API invoked by the code interpreter.</p>
+    pub fn get_code_interpreter_invocation_output(&self) -> &::std::option::Option<crate::types::CodeInterpreterInvocationOutput> {
+        &self.code_interpreter_invocation_output
+    }
     /// Consumes the builder and constructs a [`Observation`](crate::types::Observation).
     pub fn build(self) -> crate::types::Observation {
         crate::types::Observation {
@@ -227,6 +249,7 @@ impl ObservationBuilder {
             knowledge_base_lookup_output: self.knowledge_base_lookup_output,
             final_response: self.final_response,
             reprompt_response: self.reprompt_response,
+            code_interpreter_invocation_output: self.code_interpreter_invocation_output,
         }
     }
 }
@@ -239,6 +262,7 @@ impl ::std::fmt::Debug for ObservationBuilder {
         formatter.field("knowledge_base_lookup_output", &"*** Sensitive Data Redacted ***");
         formatter.field("final_response", &"*** Sensitive Data Redacted ***");
         formatter.field("reprompt_response", &"*** Sensitive Data Redacted ***");
+        formatter.field("code_interpreter_invocation_output", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

@@ -104,6 +104,13 @@ where
                             "bridgePorts" => {
                                 builder = builder.set_bridge_ports(crate::protocol_serde::shape_list_of_integer::de_list_of_integer(tokens)?);
                             }
+                            "outputStatus" => {
+                                builder = builder.set_output_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::OutputStatus::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

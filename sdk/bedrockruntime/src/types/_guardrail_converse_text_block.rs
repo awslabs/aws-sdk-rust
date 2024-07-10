@@ -6,12 +6,20 @@
 pub struct GuardrailConverseTextBlock {
     /// <p>The text that you want to guard.</p>
     pub text: ::std::string::String,
+    /// <p>The qualifier details for the guardrails contextual grounding filter.</p>
+    pub qualifiers: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailConverseContentQualifier>>,
 }
 impl GuardrailConverseTextBlock {
     /// <p>The text that you want to guard.</p>
     pub fn text(&self) -> &str {
         use std::ops::Deref;
         self.text.deref()
+    }
+    /// <p>The qualifier details for the guardrails contextual grounding filter.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.qualifiers.is_none()`.
+    pub fn qualifiers(&self) -> &[crate::types::GuardrailConverseContentQualifier] {
+        self.qualifiers.as_deref().unwrap_or_default()
     }
 }
 impl GuardrailConverseTextBlock {
@@ -26,6 +34,7 @@ impl GuardrailConverseTextBlock {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GuardrailConverseTextBlockBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) qualifiers: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailConverseContentQualifier>>,
 }
 impl GuardrailConverseTextBlockBuilder {
     /// <p>The text that you want to guard.</p>
@@ -43,6 +52,26 @@ impl GuardrailConverseTextBlockBuilder {
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.text
     }
+    /// Appends an item to `qualifiers`.
+    ///
+    /// To override the contents of this collection use [`set_qualifiers`](Self::set_qualifiers).
+    ///
+    /// <p>The qualifier details for the guardrails contextual grounding filter.</p>
+    pub fn qualifiers(mut self, input: crate::types::GuardrailConverseContentQualifier) -> Self {
+        let mut v = self.qualifiers.unwrap_or_default();
+        v.push(input);
+        self.qualifiers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The qualifier details for the guardrails contextual grounding filter.</p>
+    pub fn set_qualifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailConverseContentQualifier>>) -> Self {
+        self.qualifiers = input;
+        self
+    }
+    /// <p>The qualifier details for the guardrails contextual grounding filter.</p>
+    pub fn get_qualifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GuardrailConverseContentQualifier>> {
+        &self.qualifiers
+    }
     /// Consumes the builder and constructs a [`GuardrailConverseTextBlock`](crate::types::GuardrailConverseTextBlock).
     /// This method will fail if any of the following fields are not set:
     /// - [`text`](crate::types::builders::GuardrailConverseTextBlockBuilder::text)
@@ -54,6 +83,7 @@ impl GuardrailConverseTextBlockBuilder {
                     "text was not specified but it is required when building GuardrailConverseTextBlock",
                 )
             })?,
+            qualifiers: self.qualifiers,
         })
     }
 }

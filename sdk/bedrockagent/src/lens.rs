@@ -59,6 +59,36 @@ pub(crate) fn reflens_list_data_sources_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_flow_aliases_output_output_next_token(
+    input: &crate::operation::list_flow_aliases::ListFlowAliasesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_flow_versions_output_output_next_token(
+    input: &crate::operation::list_flow_versions::ListFlowVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_flows_output_output_next_token(
+    input: &crate::operation::list_flows::ListFlowsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_ingestion_jobs_output_output_next_token(
     input: &crate::operation::list_ingestion_jobs::ListIngestionJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -71,6 +101,16 @@ pub(crate) fn reflens_list_ingestion_jobs_output_output_next_token(
 
 pub(crate) fn reflens_list_knowledge_bases_output_output_next_token(
     input: &crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_prompts_output_output_next_token(
+    input: &crate::operation::list_prompts::ListPromptsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -121,6 +161,27 @@ pub(crate) fn lens_list_data_sources_output_output_data_source_summaries(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_flow_aliases_output_output_flow_alias_summaries(
+    input: crate::operation::list_flow_aliases::ListFlowAliasesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowAliasSummary>> {
+    let input = input.flow_alias_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_flow_versions_output_output_flow_version_summaries(
+    input: crate::operation::list_flow_versions::ListFlowVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowVersionSummary>> {
+    let input = input.flow_version_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_flows_output_output_flow_summaries(
+    input: crate::operation::list_flows::ListFlowsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowSummary>> {
+    let input = input.flow_summaries;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_ingestion_jobs_output_output_ingestion_job_summaries(
     input: crate::operation::list_ingestion_jobs::ListIngestionJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IngestionJobSummary>> {
@@ -132,5 +193,12 @@ pub(crate) fn lens_list_knowledge_bases_output_output_knowledge_base_summaries(
     input: crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>> {
     let input = input.knowledge_base_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_prompts_output_output_prompt_summaries(
+    input: crate::operation::list_prompts::ListPromptsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PromptSummary>> {
+    let input = input.prompt_summaries;
     ::std::option::Option::Some(input)
 }

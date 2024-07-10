@@ -361,4 +361,18 @@ impl UpdateFlowOutputFluentBuilder {
     pub fn get_vpc_interface_attachment(&self) -> &::std::option::Option<crate::types::VpcInterfaceAttachment> {
         self.inner.get_vpc_interface_attachment()
     }
+    /// An indication of whether the output should transmit data or not. If you don't specify the outputStatus field in your request, MediaConnect leaves the value unchanged.
+    pub fn output_status(mut self, input: crate::types::OutputStatus) -> Self {
+        self.inner = self.inner.output_status(input);
+        self
+    }
+    /// An indication of whether the output should transmit data or not. If you don't specify the outputStatus field in your request, MediaConnect leaves the value unchanged.
+    pub fn set_output_status(mut self, input: ::std::option::Option<crate::types::OutputStatus>) -> Self {
+        self.inner = self.inner.set_output_status(input);
+        self
+    }
+    /// An indication of whether the output should transmit data or not. If you don't specify the outputStatus field in your request, MediaConnect leaves the value unchanged.
+    pub fn get_output_status(&self) -> &::std::option::Option<crate::types::OutputStatus> {
+        self.inner.get_output_status()
+    }
 }

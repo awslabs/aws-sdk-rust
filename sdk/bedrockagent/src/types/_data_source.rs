@@ -20,13 +20,13 @@ pub struct DataSource {
     pub status: crate::types::DataSourceStatus,
     /// <p>The description of the data source.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Contains details about how the data source is stored.</p>
+    /// <p>The connection configuration for the data source.</p>
     pub data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
     /// <p>Contains details about the configuration of the server-side encryption.</p>
     pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>Contains details about how to ingest the documents in the data source.</p>
     pub vector_ingestion_configuration: ::std::option::Option<crate::types::VectorIngestionConfiguration>,
-    /// <p>The data deletion policy for a data source.</p>
+    /// <p>The data deletion policy for the data source.</p>
     pub data_deletion_policy: ::std::option::Option<crate::types::DataDeletionPolicy>,
     /// <p>The time at which the data source was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -65,7 +65,7 @@ impl DataSource {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Contains details about how the data source is stored.</p>
+    /// <p>The connection configuration for the data source.</p>
     pub fn data_source_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfiguration> {
         self.data_source_configuration.as_ref()
     }
@@ -77,7 +77,7 @@ impl DataSource {
     pub fn vector_ingestion_configuration(&self) -> ::std::option::Option<&crate::types::VectorIngestionConfiguration> {
         self.vector_ingestion_configuration.as_ref()
     }
-    /// <p>The data deletion policy for a data source.</p>
+    /// <p>The data deletion policy for the data source.</p>
     pub fn data_deletion_policy(&self) -> ::std::option::Option<&crate::types::DataDeletionPolicy> {
         self.data_deletion_policy.as_ref()
     }
@@ -213,18 +213,18 @@ impl DataSourceBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>Contains details about how the data source is stored.</p>
+    /// <p>The connection configuration for the data source.</p>
     /// This field is required.
     pub fn data_source_configuration(mut self, input: crate::types::DataSourceConfiguration) -> Self {
         self.data_source_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains details about how the data source is stored.</p>
+    /// <p>The connection configuration for the data source.</p>
     pub fn set_data_source_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfiguration>) -> Self {
         self.data_source_configuration = input;
         self
     }
-    /// <p>Contains details about how the data source is stored.</p>
+    /// <p>The connection configuration for the data source.</p>
     pub fn get_data_source_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
         &self.data_source_configuration
     }
@@ -256,17 +256,17 @@ impl DataSourceBuilder {
     pub fn get_vector_ingestion_configuration(&self) -> &::std::option::Option<crate::types::VectorIngestionConfiguration> {
         &self.vector_ingestion_configuration
     }
-    /// <p>The data deletion policy for a data source.</p>
+    /// <p>The data deletion policy for the data source.</p>
     pub fn data_deletion_policy(mut self, input: crate::types::DataDeletionPolicy) -> Self {
         self.data_deletion_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The data deletion policy for a data source.</p>
+    /// <p>The data deletion policy for the data source.</p>
     pub fn set_data_deletion_policy(mut self, input: ::std::option::Option<crate::types::DataDeletionPolicy>) -> Self {
         self.data_deletion_policy = input;
         self
     }
-    /// <p>The data deletion policy for a data source.</p>
+    /// <p>The data deletion policy for the data source.</p>
     pub fn get_data_deletion_policy(&self) -> &::std::option::Option<crate::types::DataDeletionPolicy> {
         &self.data_deletion_policy
     }

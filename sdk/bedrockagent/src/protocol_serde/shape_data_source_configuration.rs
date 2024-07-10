@@ -12,6 +12,30 @@ pub fn ser_data_source_configuration(
         crate::protocol_serde::shape_s3_data_source_configuration::ser_s3_data_source_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.web_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("webConfiguration").start_object();
+        crate::protocol_serde::shape_web_data_source_configuration::ser_web_data_source_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.confluence_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("confluenceConfiguration").start_object();
+        crate::protocol_serde::shape_confluence_data_source_configuration::ser_confluence_data_source_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.salesforce_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("salesforceConfiguration").start_object();
+        crate::protocol_serde::shape_salesforce_data_source_configuration::ser_salesforce_data_source_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.share_point_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("sharePointConfiguration").start_object();
+        crate::protocol_serde::shape_share_point_data_source_configuration::ser_share_point_data_source_configuration(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }
 
@@ -40,6 +64,26 @@ where
                         "s3Configuration" => {
                             builder = builder.set_s3_configuration(
                                 crate::protocol_serde::shape_s3_data_source_configuration::de_s3_data_source_configuration(tokens)?,
+                            );
+                        }
+                        "webConfiguration" => {
+                            builder = builder.set_web_configuration(
+                                crate::protocol_serde::shape_web_data_source_configuration::de_web_data_source_configuration(tokens)?,
+                            );
+                        }
+                        "confluenceConfiguration" => {
+                            builder = builder.set_confluence_configuration(
+                                crate::protocol_serde::shape_confluence_data_source_configuration::de_confluence_data_source_configuration(tokens)?,
+                            );
+                        }
+                        "salesforceConfiguration" => {
+                            builder = builder.set_salesforce_configuration(
+                                crate::protocol_serde::shape_salesforce_data_source_configuration::de_salesforce_data_source_configuration(tokens)?,
+                            );
+                        }
+                        "sharePointConfiguration" => {
+                            builder = builder.set_share_point_configuration(
+                                crate::protocol_serde::shape_share_point_data_source_configuration::de_share_point_data_source_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

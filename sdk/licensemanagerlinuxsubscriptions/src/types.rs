@@ -7,6 +7,12 @@ pub use crate::types::_organization_integration::OrganizationIntegration;
 
 pub use crate::types::_linux_subscriptions_discovery::LinuxSubscriptionsDiscovery;
 
+pub use crate::types::_subscription_provider_status::SubscriptionProviderStatus;
+
+pub use crate::types::_subscription_provider_source::SubscriptionProviderSource;
+
+pub use crate::types::_registered_subscription_provider::RegisteredSubscriptionProvider;
+
 pub use crate::types::_subscription::Subscription;
 
 pub use crate::types::_filter::Filter;
@@ -27,9 +33,15 @@ mod _operator;
 
 mod _organization_integration;
 
+mod _registered_subscription_provider;
+
 mod _status;
 
 mod _subscription;
+
+mod _subscription_provider_source;
+
+mod _subscription_provider_status;
 
 /// Builders
 pub mod builders;

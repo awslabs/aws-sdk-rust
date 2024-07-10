@@ -1113,6 +1113,8 @@ pub use crate::types::_ipam_pool_allocation_resource_type::IpamPoolAllocationRes
 
 pub use crate::types::_ipam_discovered_resource_cidr::IpamDiscoveredResourceCidr;
 
+pub use crate::types::_ipam_network_interface_attachment_status::IpamNetworkInterfaceAttachmentStatus;
+
 pub use crate::types::_ipam_discovered_public_address::IpamDiscoveredPublicAddress;
 
 pub use crate::types::_ipam_public_address_security_group::IpamPublicAddressSecurityGroup;
@@ -3080,6 +3082,8 @@ mod _ipam_discovery_failure_code;
 mod _ipam_discovery_failure_reason;
 
 mod _ipam_management_state;
+
+mod _ipam_network_interface_attachment_status;
 
 mod _ipam_operating_region;
 

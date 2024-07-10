@@ -9,6 +9,8 @@ pub struct InvokeAgentOutput {
     pub content_type: ::std::string::String,
     /// <p>The unique identifier of the session with the agent.</p>
     pub session_id: ::std::string::String,
+    /// <p>The unique identifier of the agent memory.</p>
+    pub memory_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl InvokeAgentOutput {
@@ -25,6 +27,10 @@ impl InvokeAgentOutput {
     pub fn session_id(&self) -> &str {
         use std::ops::Deref;
         self.session_id.deref()
+    }
+    /// <p>The unique identifier of the agent memory.</p>
+    pub fn memory_id(&self) -> ::std::option::Option<&str> {
+        self.memory_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for InvokeAgentOutput {
@@ -47,6 +53,7 @@ pub struct InvokeAgentOutputBuilder {
         ::std::option::Option<crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
+    pub(crate) memory_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl InvokeAgentOutputBuilder {
@@ -103,6 +110,20 @@ impl InvokeAgentOutputBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
+    /// <p>The unique identifier of the agent memory.</p>
+    pub fn memory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.memory_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the agent memory.</p>
+    pub fn set_memory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.memory_id = input;
+        self
+    }
+    /// <p>The unique identifier of the agent memory.</p>
+    pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.memory_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -137,6 +158,7 @@ impl InvokeAgentOutputBuilder {
                     "session_id was not specified but it is required when building InvokeAgentOutput",
                 )
             })?,
+            memory_id: self.memory_id,
             _request_id: self._request_id,
         })
     }

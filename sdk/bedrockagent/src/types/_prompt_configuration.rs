@@ -2,7 +2,7 @@
 
 /// <p>Contains configurations to override a prompt template in one part of an agent sequence. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced prompts</a>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PromptConfiguration {
     /// <p>The step in the agent sequence that this prompt configuration applies to.</p>
     pub prompt_type: ::std::option::Option<crate::types::PromptType>,
@@ -63,6 +63,18 @@ impl PromptConfiguration {
         self.parser_mode.as_ref()
     }
 }
+impl ::std::fmt::Debug for PromptConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PromptConfiguration");
+        formatter.field("prompt_type", &self.prompt_type);
+        formatter.field("prompt_creation_mode", &self.prompt_creation_mode);
+        formatter.field("prompt_state", &self.prompt_state);
+        formatter.field("base_prompt_template", &"*** Sensitive Data Redacted ***");
+        formatter.field("inference_configuration", &self.inference_configuration);
+        formatter.field("parser_mode", &self.parser_mode);
+        formatter.finish()
+    }
+}
 impl PromptConfiguration {
     /// Creates a new builder-style object to manufacture [`PromptConfiguration`](crate::types::PromptConfiguration).
     pub fn builder() -> crate::types::builders::PromptConfigurationBuilder {
@@ -72,7 +84,7 @@ impl PromptConfiguration {
 
 /// A builder for [`PromptConfiguration`](crate::types::PromptConfiguration).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PromptConfigurationBuilder {
     pub(crate) prompt_type: ::std::option::Option<crate::types::PromptType>,
     pub(crate) prompt_creation_mode: ::std::option::Option<crate::types::CreationMode>,
@@ -206,5 +218,17 @@ impl PromptConfigurationBuilder {
             inference_configuration: self.inference_configuration,
             parser_mode: self.parser_mode,
         }
+    }
+}
+impl ::std::fmt::Debug for PromptConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PromptConfigurationBuilder");
+        formatter.field("prompt_type", &self.prompt_type);
+        formatter.field("prompt_creation_mode", &self.prompt_creation_mode);
+        formatter.field("prompt_state", &self.prompt_state);
+        formatter.field("base_prompt_template", &"*** Sensitive Data Redacted ***");
+        formatter.field("inference_configuration", &self.inference_configuration);
+        formatter.field("parser_mode", &self.parser_mode);
+        formatter.finish()
     }
 }

@@ -15,6 +15,8 @@ pub struct NodeRangeProperty {
     pub instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>This is an object that represents the properties of the node range for a multi-node parallel job.</p>
     pub ecs_properties: ::std::option::Option<crate::types::EcsProperties>,
+    /// <p>This is an object that represents the properties of the node range for a multi-node parallel job.</p>
+    pub eks_properties: ::std::option::Option<crate::types::EksProperties>,
 }
 impl NodeRangeProperty {
     /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
@@ -38,6 +40,10 @@ impl NodeRangeProperty {
     pub fn ecs_properties(&self) -> ::std::option::Option<&crate::types::EcsProperties> {
         self.ecs_properties.as_ref()
     }
+    /// <p>This is an object that represents the properties of the node range for a multi-node parallel job.</p>
+    pub fn eks_properties(&self) -> ::std::option::Option<&crate::types::EksProperties> {
+        self.eks_properties.as_ref()
+    }
 }
 impl NodeRangeProperty {
     /// Creates a new builder-style object to manufacture [`NodeRangeProperty`](crate::types::NodeRangeProperty).
@@ -54,6 +60,7 @@ pub struct NodeRangePropertyBuilder {
     pub(crate) container: ::std::option::Option<crate::types::ContainerProperties>,
     pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ecs_properties: ::std::option::Option<crate::types::EcsProperties>,
+    pub(crate) eks_properties: ::std::option::Option<crate::types::EksProperties>,
 }
 impl NodeRangePropertyBuilder {
     /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
@@ -128,6 +135,20 @@ impl NodeRangePropertyBuilder {
     pub fn get_ecs_properties(&self) -> &::std::option::Option<crate::types::EcsProperties> {
         &self.ecs_properties
     }
+    /// <p>This is an object that represents the properties of the node range for a multi-node parallel job.</p>
+    pub fn eks_properties(mut self, input: crate::types::EksProperties) -> Self {
+        self.eks_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This is an object that represents the properties of the node range for a multi-node parallel job.</p>
+    pub fn set_eks_properties(mut self, input: ::std::option::Option<crate::types::EksProperties>) -> Self {
+        self.eks_properties = input;
+        self
+    }
+    /// <p>This is an object that represents the properties of the node range for a multi-node parallel job.</p>
+    pub fn get_eks_properties(&self) -> &::std::option::Option<crate::types::EksProperties> {
+        &self.eks_properties
+    }
     /// Consumes the builder and constructs a [`NodeRangeProperty`](crate::types::NodeRangeProperty).
     pub fn build(self) -> crate::types::NodeRangeProperty {
         crate::types::NodeRangeProperty {
@@ -135,6 +156,7 @@ impl NodeRangePropertyBuilder {
             container: self.container,
             instance_types: self.instance_types,
             ecs_properties: self.ecs_properties,
+            eks_properties: self.eks_properties,
         }
     }
 }

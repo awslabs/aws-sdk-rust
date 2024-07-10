@@ -1045,12 +1045,6 @@ pub(crate) fn recipe_correct_errors(mut builder: crate::types::builders::RecipeB
     if builder.inputs.is_none() {
         builder.inputs = Some(Default::default())
     }
-    if builder.recipe_reference.is_none() {
-        builder.recipe_reference = {
-            let builder = crate::types::builders::RecipeReferenceBuilder::default();
-            crate::serde_util::recipe_reference_correct_errors(builder).build().ok()
-        }
-    }
     builder
 }
 
@@ -1601,6 +1595,16 @@ pub(crate) fn null_value_field_correct_errors(
     builder
 }
 
+pub(crate) fn recipe_step_correct_errors(mut builder: crate::types::builders::RecipeStepBuilder) -> crate::types::builders::RecipeStepBuilder {
+    if builder.action.is_none() {
+        builder.action = {
+            let builder = crate::types::builders::RecipeActionBuilder::default();
+            crate::serde_util::recipe_action_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn sql_alias_correct_errors(mut builder: crate::types::builders::SqlAliasBuilder) -> crate::types::builders::SqlAliasBuilder {
     if builder.from.is_none() {
         builder.from = Some(Default::default())
@@ -1629,6 +1633,25 @@ pub(crate) fn datatype_correct_errors(mut builder: crate::types::builders::Datat
     }
     if builder.label.is_none() {
         builder.label = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn recipe_action_correct_errors(mut builder: crate::types::builders::RecipeActionBuilder) -> crate::types::builders::RecipeActionBuilder {
+    if builder.operation.is_none() {
+        builder.operation = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn condition_expression_correct_errors(
+    mut builder: crate::types::builders::ConditionExpressionBuilder,
+) -> crate::types::builders::ConditionExpressionBuilder {
+    if builder.condition.is_none() {
+        builder.condition = Some(Default::default())
+    }
+    if builder.target_column.is_none() {
+        builder.target_column = Some(Default::default())
     }
     builder
 }

@@ -9,7 +9,7 @@ pub struct GetGuardrailOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the guardrail.</p>
     pub guardrail_id: ::std::string::String,
-    /// <p>The ARN of the guardrail that was created.</p>
+    /// <p>The ARN of the guardrail.</p>
     pub guardrail_arn: ::std::string::String,
     /// <p>The version of the guardrail.</p>
     pub version: ::std::string::String,
@@ -23,6 +23,8 @@ pub struct GetGuardrailOutput {
     pub word_policy: ::std::option::Option<crate::types::GuardrailWordPolicy>,
     /// <p>The sensitive information policy that was configured for the guardrail.</p>
     pub sensitive_information_policy: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicy>,
+    /// <p>The contextual grounding policy used in the guardrail.</p>
+    pub contextual_grounding_policy: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicy>,
     /// <p>The date and time at which the guardrail was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time at which the guardrail was updated.</p>
@@ -54,7 +56,7 @@ impl GetGuardrailOutput {
         use std::ops::Deref;
         self.guardrail_id.deref()
     }
-    /// <p>The ARN of the guardrail that was created.</p>
+    /// <p>The ARN of the guardrail.</p>
     pub fn guardrail_arn(&self) -> &str {
         use std::ops::Deref;
         self.guardrail_arn.deref()
@@ -83,6 +85,10 @@ impl GetGuardrailOutput {
     /// <p>The sensitive information policy that was configured for the guardrail.</p>
     pub fn sensitive_information_policy(&self) -> ::std::option::Option<&crate::types::GuardrailSensitiveInformationPolicy> {
         self.sensitive_information_policy.as_ref()
+    }
+    /// <p>The contextual grounding policy used in the guardrail.</p>
+    pub fn contextual_grounding_policy(&self) -> ::std::option::Option<&crate::types::GuardrailContextualGroundingPolicy> {
+        self.contextual_grounding_policy.as_ref()
     }
     /// <p>The date and time at which the guardrail was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
@@ -132,6 +138,7 @@ impl ::std::fmt::Debug for GetGuardrailOutput {
         formatter.field("content_policy", &self.content_policy);
         formatter.field("word_policy", &self.word_policy);
         formatter.field("sensitive_information_policy", &self.sensitive_information_policy);
+        formatter.field("contextual_grounding_policy", &self.contextual_grounding_policy);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("status_reasons", &self.status_reasons);
@@ -169,6 +176,7 @@ pub struct GetGuardrailOutputBuilder {
     pub(crate) content_policy: ::std::option::Option<crate::types::GuardrailContentPolicy>,
     pub(crate) word_policy: ::std::option::Option<crate::types::GuardrailWordPolicy>,
     pub(crate) sensitive_information_policy: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicy>,
+    pub(crate) contextual_grounding_policy: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicy>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -223,18 +231,18 @@ impl GetGuardrailOutputBuilder {
     pub fn get_guardrail_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.guardrail_id
     }
-    /// <p>The ARN of the guardrail that was created.</p>
+    /// <p>The ARN of the guardrail.</p>
     /// This field is required.
     pub fn guardrail_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.guardrail_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the guardrail that was created.</p>
+    /// <p>The ARN of the guardrail.</p>
     pub fn set_guardrail_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.guardrail_arn = input;
         self
     }
-    /// <p>The ARN of the guardrail that was created.</p>
+    /// <p>The ARN of the guardrail.</p>
     pub fn get_guardrail_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.guardrail_arn
     }
@@ -323,6 +331,20 @@ impl GetGuardrailOutputBuilder {
     /// <p>The sensitive information policy that was configured for the guardrail.</p>
     pub fn get_sensitive_information_policy(&self) -> &::std::option::Option<crate::types::GuardrailSensitiveInformationPolicy> {
         &self.sensitive_information_policy
+    }
+    /// <p>The contextual grounding policy used in the guardrail.</p>
+    pub fn contextual_grounding_policy(mut self, input: crate::types::GuardrailContextualGroundingPolicy) -> Self {
+        self.contextual_grounding_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The contextual grounding policy used in the guardrail.</p>
+    pub fn set_contextual_grounding_policy(mut self, input: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicy>) -> Self {
+        self.contextual_grounding_policy = input;
+        self
+    }
+    /// <p>The contextual grounding policy used in the guardrail.</p>
+    pub fn get_contextual_grounding_policy(&self) -> &::std::option::Option<crate::types::GuardrailContextualGroundingPolicy> {
+        &self.contextual_grounding_policy
     }
     /// <p>The date and time at which the guardrail was created.</p>
     /// This field is required.
@@ -497,6 +519,7 @@ impl GetGuardrailOutputBuilder {
             content_policy: self.content_policy,
             word_policy: self.word_policy,
             sensitive_information_policy: self.sensitive_information_policy,
+            contextual_grounding_policy: self.contextual_grounding_policy,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
@@ -541,6 +564,7 @@ impl ::std::fmt::Debug for GetGuardrailOutputBuilder {
         formatter.field("content_policy", &self.content_policy);
         formatter.field("word_policy", &self.word_policy);
         formatter.field("sensitive_information_policy", &self.sensitive_information_policy);
+        formatter.field("contextual_grounding_policy", &self.contextual_grounding_policy);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("status_reasons", &self.status_reasons);

@@ -15,6 +15,11 @@ pub fn ser_delete_public_ipv4_pool_input_input_input(
     if let Some(var_4) = &input.pool_id {
         scope_3.string(var_4);
     }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("NetworkBorderGroup");
+    if let Some(var_6) = &input.network_border_group {
+        scope_5.string(var_6);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

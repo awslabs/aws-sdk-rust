@@ -8,6 +8,8 @@ pub struct EksAttemptDetail {
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>>,
     /// <p>The details for the init containers.</p>
     pub init_containers: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>>,
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EKS cluster.</p>
+    pub eks_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the pod for this job attempt.</p>
     pub pod_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the node for this job attempt.</p>
@@ -31,6 +33,10 @@ impl EksAttemptDetail {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.init_containers.is_none()`.
     pub fn init_containers(&self) -> &[crate::types::EksAttemptContainerDetail] {
         self.init_containers.as_deref().unwrap_or_default()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EKS cluster.</p>
+    pub fn eks_cluster_arn(&self) -> ::std::option::Option<&str> {
+        self.eks_cluster_arn.as_deref()
     }
     /// <p>The name of the pod for this job attempt.</p>
     pub fn pod_name(&self) -> ::std::option::Option<&str> {
@@ -66,6 +72,7 @@ impl EksAttemptDetail {
 pub struct EksAttemptDetailBuilder {
     pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>>,
     pub(crate) init_containers: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>>,
+    pub(crate) eks_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) pod_name: ::std::option::Option<::std::string::String>,
     pub(crate) node_name: ::std::option::Option<::std::string::String>,
     pub(crate) started_at: ::std::option::Option<i64>,
@@ -112,6 +119,20 @@ impl EksAttemptDetailBuilder {
     /// <p>The details for the init containers.</p>
     pub fn get_init_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>> {
         &self.init_containers
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EKS cluster.</p>
+    pub fn eks_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.eks_cluster_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EKS cluster.</p>
+    pub fn set_eks_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.eks_cluster_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EKS cluster.</p>
+    pub fn get_eks_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eks_cluster_arn
     }
     /// <p>The name of the pod for this job attempt.</p>
     pub fn pod_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -188,6 +209,7 @@ impl EksAttemptDetailBuilder {
         crate::types::EksAttemptDetail {
             containers: self.containers,
             init_containers: self.init_containers,
+            eks_cluster_arn: self.eks_cluster_arn,
             pod_name: self.pod_name,
             node_name: self.node_name,
             started_at: self.started_at,

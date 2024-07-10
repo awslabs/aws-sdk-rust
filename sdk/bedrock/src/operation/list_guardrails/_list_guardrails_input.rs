@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGuardrailsInput {
-    /// <p>The unique identifier of the guardrail.</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub guardrail_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct ListGuardrailsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListGuardrailsInput {
-    /// <p>The unique identifier of the guardrail.</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub fn guardrail_identifier(&self) -> ::std::option::Option<&str> {
         self.guardrail_identifier.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct ListGuardrailsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListGuardrailsInputBuilder {
-    /// <p>The unique identifier of the guardrail.</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub fn guardrail_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.guardrail_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the guardrail.</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub fn set_guardrail_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.guardrail_identifier = input;
         self
     }
-    /// <p>The unique identifier of the guardrail.</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub fn get_guardrail_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.guardrail_identifier
     }

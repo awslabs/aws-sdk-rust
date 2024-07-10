@@ -24,6 +24,8 @@ pub struct UpdateAgentInput {
     pub prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
     /// <p>The unique Guardrail configuration assigned to the agent when it is updated.</p>
     pub guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
+    /// <p>Specifies the new memory configuration for the agent.</p>
+    pub memory_configuration: ::std::option::Option<crate::types::MemoryConfiguration>,
 }
 impl UpdateAgentInput {
     /// <p>The unique identifier of the agent.</p>
@@ -67,6 +69,10 @@ impl UpdateAgentInput {
     pub fn guardrail_configuration(&self) -> ::std::option::Option<&crate::types::GuardrailConfiguration> {
         self.guardrail_configuration.as_ref()
     }
+    /// <p>Specifies the new memory configuration for the agent.</p>
+    pub fn memory_configuration(&self) -> ::std::option::Option<&crate::types::MemoryConfiguration> {
+        self.memory_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateAgentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -81,6 +87,7 @@ impl ::std::fmt::Debug for UpdateAgentInput {
         formatter.field("customer_encryption_key_arn", &self.customer_encryption_key_arn);
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("guardrail_configuration", &self.guardrail_configuration);
+        formatter.field("memory_configuration", &self.memory_configuration);
         formatter.finish()
     }
 }
@@ -105,6 +112,7 @@ pub struct UpdateAgentInputBuilder {
     pub(crate) customer_encryption_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
     pub(crate) guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
+    pub(crate) memory_configuration: ::std::option::Option<crate::types::MemoryConfiguration>,
 }
 impl UpdateAgentInputBuilder {
     /// <p>The unique identifier of the agent.</p>
@@ -254,6 +262,20 @@ impl UpdateAgentInputBuilder {
     pub fn get_guardrail_configuration(&self) -> &::std::option::Option<crate::types::GuardrailConfiguration> {
         &self.guardrail_configuration
     }
+    /// <p>Specifies the new memory configuration for the agent.</p>
+    pub fn memory_configuration(mut self, input: crate::types::MemoryConfiguration) -> Self {
+        self.memory_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the new memory configuration for the agent.</p>
+    pub fn set_memory_configuration(mut self, input: ::std::option::Option<crate::types::MemoryConfiguration>) -> Self {
+        self.memory_configuration = input;
+        self
+    }
+    /// <p>Specifies the new memory configuration for the agent.</p>
+    pub fn get_memory_configuration(&self) -> &::std::option::Option<crate::types::MemoryConfiguration> {
+        &self.memory_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateAgentInput`](crate::operation::update_agent::UpdateAgentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_agent::UpdateAgentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_agent::UpdateAgentInput {
@@ -267,6 +289,7 @@ impl UpdateAgentInputBuilder {
             customer_encryption_key_arn: self.customer_encryption_key_arn,
             prompt_override_configuration: self.prompt_override_configuration,
             guardrail_configuration: self.guardrail_configuration,
+            memory_configuration: self.memory_configuration,
         })
     }
 }
@@ -283,6 +306,7 @@ impl ::std::fmt::Debug for UpdateAgentInputBuilder {
         formatter.field("customer_encryption_key_arn", &self.customer_encryption_key_arn);
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("guardrail_configuration", &self.guardrail_configuration);
+        formatter.field("memory_configuration", &self.memory_configuration);
         formatter.finish()
     }
 }

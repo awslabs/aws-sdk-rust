@@ -108,17 +108,17 @@ impl RetrieveAndGenerateFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
+    /// <p>The unique identifier of the session. When you first make a <code>RetrieveAndGenerate</code> request, Amazon Bedrock automatically generates this value. You must reuse this value for all subsequent requests in the same conversational session. This value allows Amazon Bedrock to maintain context and knowledge from previous interactions. You can't explicitly set the <code>sessionId</code> yourself.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
         self
     }
-    /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
+    /// <p>The unique identifier of the session. When you first make a <code>RetrieveAndGenerate</code> request, Amazon Bedrock automatically generates this value. You must reuse this value for all subsequent requests in the same conversational session. This value allows Amazon Bedrock to maintain context and knowledge from previous interactions. You can't explicitly set the <code>sessionId</code> yourself.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
     }
-    /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
+    /// <p>The unique identifier of the session. When you first make a <code>RetrieveAndGenerate</code> request, Amazon Bedrock automatically generates this value. You must reuse this value for all subsequent requests in the same conversational session. This value allows Amazon Bedrock to maintain context and knowledge from previous interactions. You can't explicitly set the <code>sessionId</code> yourself.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session_id()
     }

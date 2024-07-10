@@ -9,6 +9,18 @@ pub fn ser_vector_ingestion_configuration(
         crate::protocol_serde::shape_chunking_configuration::ser_chunking_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.custom_transformation_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("customTransformationConfiguration").start_object();
+        crate::protocol_serde::shape_custom_transformation_configuration::ser_custom_transformation_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.parsing_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("parsingConfiguration").start_object();
+        crate::protocol_serde::shape_parsing_configuration::ser_parsing_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +42,15 @@ where
                         "chunkingConfiguration" => {
                             builder = builder
                                 .set_chunking_configuration(crate::protocol_serde::shape_chunking_configuration::de_chunking_configuration(tokens)?);
+                        }
+                        "customTransformationConfiguration" => {
+                            builder = builder.set_custom_transformation_configuration(
+                                crate::protocol_serde::shape_custom_transformation_configuration::de_custom_transformation_configuration(tokens)?,
+                            );
+                        }
+                        "parsingConfiguration" => {
+                            builder = builder
+                                .set_parsing_configuration(crate::protocol_serde::shape_parsing_configuration::de_parsing_configuration(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

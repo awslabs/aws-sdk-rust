@@ -251,4 +251,18 @@ impl UpdateAgentFluentBuilder {
     pub fn get_guardrail_configuration(&self) -> &::std::option::Option<crate::types::GuardrailConfiguration> {
         self.inner.get_guardrail_configuration()
     }
+    /// <p>Specifies the new memory configuration for the agent.</p>
+    pub fn memory_configuration(mut self, input: crate::types::MemoryConfiguration) -> Self {
+        self.inner = self.inner.memory_configuration(input);
+        self
+    }
+    /// <p>Specifies the new memory configuration for the agent.</p>
+    pub fn set_memory_configuration(mut self, input: ::std::option::Option<crate::types::MemoryConfiguration>) -> Self {
+        self.inner = self.inner.set_memory_configuration(input);
+        self
+    }
+    /// <p>Specifies the new memory configuration for the agent.</p>
+    pub fn get_memory_configuration(&self) -> &::std::option::Option<crate::types::MemoryConfiguration> {
+        self.inner.get_memory_configuration()
+    }
 }

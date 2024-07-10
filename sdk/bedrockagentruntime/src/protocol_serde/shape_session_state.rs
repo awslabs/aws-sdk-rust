@@ -38,5 +38,29 @@ pub fn ser_session_state(
     if let Some(var_13) = &input.invocation_id {
         object.key("invocationId").string(var_13.as_str());
     }
+    if let Some(var_14) = &input.files {
+        let mut array_15 = object.key("files").start_array();
+        for item_16 in var_14 {
+            {
+                #[allow(unused_mut)]
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_input_file::ser_input_file(&mut object_17, item_16)?;
+                object_17.finish();
+            }
+        }
+        array_15.finish();
+    }
+    if let Some(var_18) = &input.knowledge_base_configurations {
+        let mut array_19 = object.key("knowledgeBaseConfigurations").start_array();
+        for item_20 in var_18 {
+            {
+                #[allow(unused_mut)]
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_knowledge_base_configuration::ser_knowledge_base_configuration(&mut object_21, item_20)?;
+                object_21.finish();
+            }
+        }
+        array_19.finish();
+    }
     Ok(())
 }

@@ -13,6 +13,7 @@
 /// # let invocationtype = unimplemented!();
 /// match invocationtype {
 ///     InvocationType::ActionGroup => { /* ... */ },
+///     InvocationType::ActionGroupCodeInterpreter => { /* ... */ },
 ///     InvocationType::Finish => { /* ... */ },
 ///     InvocationType::KnowledgeBase => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum InvocationType {
     #[allow(missing_docs)] // documentation missing in model
     ActionGroup,
     #[allow(missing_docs)] // documentation missing in model
+    ActionGroupCodeInterpreter,
+    #[allow(missing_docs)] // documentation missing in model
     Finish,
     #[allow(missing_docs)] // documentation missing in model
     KnowledgeBase,
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for InvocationType {
     fn from(s: &str) -> Self {
         match s {
             "ACTION_GROUP" => InvocationType::ActionGroup,
+            "ACTION_GROUP_CODE_INTERPRETER" => InvocationType::ActionGroupCodeInterpreter,
             "FINISH" => InvocationType::Finish,
             "KNOWLEDGE_BASE" => InvocationType::KnowledgeBase,
             other => InvocationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl InvocationType {
     pub fn as_str(&self) -> &str {
         match self {
             InvocationType::ActionGroup => "ACTION_GROUP",
+            InvocationType::ActionGroupCodeInterpreter => "ACTION_GROUP_CODE_INTERPRETER",
             InvocationType::Finish => "FINISH",
             InvocationType::KnowledgeBase => "KNOWLEDGE_BASE",
             InvocationType::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl InvocationType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTION_GROUP", "FINISH", "KNOWLEDGE_BASE"]
+        &["ACTION_GROUP", "ACTION_GROUP_CODE_INTERPRETER", "FINISH", "KNOWLEDGE_BASE"]
     }
 }
 impl ::std::convert::AsRef<str> for InvocationType {
@@ -105,6 +110,7 @@ impl ::std::fmt::Display for InvocationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             InvocationType::ActionGroup => write!(f, "ACTION_GROUP"),
+            InvocationType::ActionGroupCodeInterpreter => write!(f, "ACTION_GROUP_CODE_INTERPRETER"),
             InvocationType::Finish => write!(f, "FINISH"),
             InvocationType::KnowledgeBase => write!(f, "KNOWLEDGE_BASE"),
             InvocationType::Unknown(value) => write!(f, "{}", value),

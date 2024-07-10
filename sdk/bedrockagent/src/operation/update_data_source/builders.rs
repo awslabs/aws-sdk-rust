@@ -22,8 +22,8 @@ impl crate::operation::update_data_source::builders::UpdateDataSourceInputBuilde
 }
 /// Fluent builder constructing a request to `UpdateDataSource`.
 ///
-/// <p>Updates configurations for a data source.</p><important>
-/// <p>You can't change the <code>chunkingConfiguration</code> after you create the data source. Specify the existing <code>chunkingConfiguration</code>.</p>
+/// <p>Updates the configurations for a data source connector.</p><important>
+/// <p>You can't change the <code>chunkingConfiguration</code> after you create the data source connector. Specify the existing <code>chunkingConfiguration</code>.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDataSourceFluentBuilder {
@@ -110,17 +110,17 @@ impl UpdateDataSourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the knowledge base to which the data source belongs.</p>
+    /// <p>The unique identifier of the knowledge base for the data source.</p>
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
         self
     }
-    /// <p>The unique identifier of the knowledge base to which the data source belongs.</p>
+    /// <p>The unique identifier of the knowledge base for the data source.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
-    /// <p>The unique identifier of the knowledge base to which the data source belongs.</p>
+    /// <p>The unique identifier of the knowledge base for the data source.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_knowledge_base_id()
     }
@@ -166,31 +166,31 @@ impl UpdateDataSourceFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>Contains details about the storage configuration of the data source.</p>
+    /// <p>The connection configuration for the data source that you want to update.</p>
     pub fn data_source_configuration(mut self, input: crate::types::DataSourceConfiguration) -> Self {
         self.inner = self.inner.data_source_configuration(input);
         self
     }
-    /// <p>Contains details about the storage configuration of the data source.</p>
+    /// <p>The connection configuration for the data source that you want to update.</p>
     pub fn set_data_source_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfiguration>) -> Self {
         self.inner = self.inner.set_data_source_configuration(input);
         self
     }
-    /// <p>Contains details about the storage configuration of the data source.</p>
+    /// <p>The connection configuration for the data source that you want to update.</p>
     pub fn get_data_source_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
         self.inner.get_data_source_configuration()
     }
-    /// <p>The data deletion policy of the updated data source.</p>
+    /// <p>The data deletion policy for the data source that you want to update.</p>
     pub fn data_deletion_policy(mut self, input: crate::types::DataDeletionPolicy) -> Self {
         self.inner = self.inner.data_deletion_policy(input);
         self
     }
-    /// <p>The data deletion policy of the updated data source.</p>
+    /// <p>The data deletion policy for the data source that you want to update.</p>
     pub fn set_data_deletion_policy(mut self, input: ::std::option::Option<crate::types::DataDeletionPolicy>) -> Self {
         self.inner = self.inner.set_data_deletion_policy(input);
         self
     }
-    /// <p>The data deletion policy of the updated data source.</p>
+    /// <p>The data deletion policy for the data source that you want to update.</p>
     pub fn get_data_deletion_policy(&self) -> &::std::option::Option<crate::types::DataDeletionPolicy> {
         self.inner.get_data_deletion_policy()
     }

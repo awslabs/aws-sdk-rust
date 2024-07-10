@@ -7,6 +7,8 @@ pub struct DeletePublicIpv4PoolInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the public IPv4 pool you want to delete.</p>
     pub pool_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub network_border_group: ::std::option::Option<::std::string::String>,
 }
 impl DeletePublicIpv4PoolInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -16,6 +18,10 @@ impl DeletePublicIpv4PoolInput {
     /// <p>The ID of the public IPv4 pool you want to delete.</p>
     pub fn pool_id(&self) -> ::std::option::Option<&str> {
         self.pool_id.as_deref()
+    }
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn network_border_group(&self) -> ::std::option::Option<&str> {
+        self.network_border_group.as_deref()
     }
 }
 impl DeletePublicIpv4PoolInput {
@@ -31,6 +37,7 @@ impl DeletePublicIpv4PoolInput {
 pub struct DeletePublicIpv4PoolInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) network_border_group: ::std::option::Option<::std::string::String>,
 }
 impl DeletePublicIpv4PoolInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -62,6 +69,20 @@ impl DeletePublicIpv4PoolInputBuilder {
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_id
     }
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn network_border_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_border_group = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_border_group = input;
+        self
+    }
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_border_group
+    }
     /// Consumes the builder and constructs a [`DeletePublicIpv4PoolInput`](crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput).
     pub fn build(
         self,
@@ -70,6 +91,7 @@ impl DeletePublicIpv4PoolInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput {
             dry_run: self.dry_run,
             pool_id: self.pool_id,
+            network_border_group: self.network_border_group,
         })
     }
 }

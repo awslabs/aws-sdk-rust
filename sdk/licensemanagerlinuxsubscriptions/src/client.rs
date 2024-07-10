@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListLinuxSubscriptionInstances`](crate::operation::list_linux_subscription_instances) operation has
-/// a [`Client::list_linux_subscription_instances`], function which returns a builder for that operation.
+/// For example, the [`DeregisterSubscriptionProvider`](crate::operation::deregister_subscription_provider) operation has
+/// a [`Client::deregister_subscription_provider`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_linux_subscription_instances()
-///     .next_token("example")
+/// let result = client.deregister_subscription_provider()
+///     .subscription_provider_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -147,7 +147,7 @@ impl Client {
 /// # let client: aws_sdk_licensemanagerlinuxsubscriptions::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.get_service_settings()
+/// let result = client.deregister_subscription_provider()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -163,10 +163,24 @@ impl Client {
 /// ```
 pub mod customize;
 
+mod deregister_subscription_provider;
+
+mod get_registered_subscription_provider;
+
 mod get_service_settings;
 
 mod list_linux_subscription_instances;
 
 mod list_linux_subscriptions;
+
+mod list_registered_subscription_providers;
+
+mod list_tags_for_resource;
+
+mod register_subscription_provider;
+
+mod tag_resource;
+
+mod untag_resource;
 
 mod update_service_settings;

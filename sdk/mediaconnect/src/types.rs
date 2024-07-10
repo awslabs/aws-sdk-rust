@@ -37,6 +37,8 @@ pub use crate::types::_update_encryption::UpdateEncryption;
 
 pub use crate::types::_output::Output;
 
+pub use crate::types::_output_status::OutputStatus;
+
 pub use crate::types::_media_stream_output_configuration::MediaStreamOutputConfiguration;
 
 pub use crate::types::_encoding_parameters::EncodingParameters;
@@ -354,6 +356,8 @@ mod _network_interface_type;
 mod _offering;
 
 mod _output;
+
+mod _output_status;
 
 mod _price_units;
 

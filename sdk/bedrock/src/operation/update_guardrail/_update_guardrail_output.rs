@@ -5,7 +5,7 @@
 pub struct UpdateGuardrailOutput {
     /// <p>The unique identifier of the guardrail</p>
     pub guardrail_id: ::std::string::String,
-    /// <p>The ARN of the guardrail that was created.</p>
+    /// <p>The ARN of the guardrail.</p>
     pub guardrail_arn: ::std::string::String,
     /// <p>The version of the guardrail.</p>
     pub version: ::std::string::String,
@@ -19,7 +19,7 @@ impl UpdateGuardrailOutput {
         use std::ops::Deref;
         self.guardrail_id.deref()
     }
-    /// <p>The ARN of the guardrail that was created.</p>
+    /// <p>The ARN of the guardrail.</p>
     pub fn guardrail_arn(&self) -> &str {
         use std::ops::Deref;
         self.guardrail_arn.deref()
@@ -72,18 +72,18 @@ impl UpdateGuardrailOutputBuilder {
     pub fn get_guardrail_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.guardrail_id
     }
-    /// <p>The ARN of the guardrail that was created.</p>
+    /// <p>The ARN of the guardrail.</p>
     /// This field is required.
     pub fn guardrail_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.guardrail_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the guardrail that was created.</p>
+    /// <p>The ARN of the guardrail.</p>
     pub fn set_guardrail_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.guardrail_arn = input;
         self
     }
-    /// <p>The ARN of the guardrail that was created.</p>
+    /// <p>The ARN of the guardrail.</p>
     pub fn get_guardrail_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.guardrail_arn
     }

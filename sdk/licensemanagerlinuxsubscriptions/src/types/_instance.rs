@@ -22,8 +22,18 @@ pub struct Instance {
     pub product_code: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time in which the last discovery updated the instance details.</p>
     pub last_updated_time: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the subscription being used by the instance.</p>
+    /// <p>The name of the license subscription that the instance uses.</p>
     pub subscription_name: ::std::option::Option<::std::string::String>,
+    /// <p>The operating system software version that runs on your instance.</p>
+    pub os_version: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp when you registered the third-party Linux subscription provider for the subscription that the instance uses.</p>
+    pub subscription_provider_create_time: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp from the last time that the instance synced with the registered third-party Linux subscription provider.</p>
+    pub subscription_provider_update_time: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates that you have two different license subscriptions for the same software on your instance.</p>
+    pub dual_subscription: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates that your instance uses a BYOL license subscription from a third-party Linux subscription provider that you've registered with License Manager.</p>
+    pub registered_with_subscription_provider: ::std::option::Option<::std::string::String>,
 }
 impl Instance {
     /// <p>The AMI ID used to launch the instance.</p>
@@ -64,9 +74,29 @@ impl Instance {
     pub fn last_updated_time(&self) -> ::std::option::Option<&str> {
         self.last_updated_time.as_deref()
     }
-    /// <p>The name of the subscription being used by the instance.</p>
+    /// <p>The name of the license subscription that the instance uses.</p>
     pub fn subscription_name(&self) -> ::std::option::Option<&str> {
         self.subscription_name.as_deref()
+    }
+    /// <p>The operating system software version that runs on your instance.</p>
+    pub fn os_version(&self) -> ::std::option::Option<&str> {
+        self.os_version.as_deref()
+    }
+    /// <p>The timestamp when you registered the third-party Linux subscription provider for the subscription that the instance uses.</p>
+    pub fn subscription_provider_create_time(&self) -> ::std::option::Option<&str> {
+        self.subscription_provider_create_time.as_deref()
+    }
+    /// <p>The timestamp from the last time that the instance synced with the registered third-party Linux subscription provider.</p>
+    pub fn subscription_provider_update_time(&self) -> ::std::option::Option<&str> {
+        self.subscription_provider_update_time.as_deref()
+    }
+    /// <p>Indicates that you have two different license subscriptions for the same software on your instance.</p>
+    pub fn dual_subscription(&self) -> ::std::option::Option<&str> {
+        self.dual_subscription.as_deref()
+    }
+    /// <p>Indicates that your instance uses a BYOL license subscription from a third-party Linux subscription provider that you've registered with License Manager.</p>
+    pub fn registered_with_subscription_provider(&self) -> ::std::option::Option<&str> {
+        self.registered_with_subscription_provider.as_deref()
     }
 }
 impl Instance {
@@ -90,6 +120,11 @@ pub struct InstanceBuilder {
     pub(crate) product_code: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) last_updated_time: ::std::option::Option<::std::string::String>,
     pub(crate) subscription_name: ::std::option::Option<::std::string::String>,
+    pub(crate) os_version: ::std::option::Option<::std::string::String>,
+    pub(crate) subscription_provider_create_time: ::std::option::Option<::std::string::String>,
+    pub(crate) subscription_provider_update_time: ::std::option::Option<::std::string::String>,
+    pub(crate) dual_subscription: ::std::option::Option<::std::string::String>,
+    pub(crate) registered_with_subscription_provider: ::std::option::Option<::std::string::String>,
 }
 impl InstanceBuilder {
     /// <p>The AMI ID used to launch the instance.</p>
@@ -224,19 +259,89 @@ impl InstanceBuilder {
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_updated_time
     }
-    /// <p>The name of the subscription being used by the instance.</p>
+    /// <p>The name of the license subscription that the instance uses.</p>
     pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the subscription being used by the instance.</p>
+    /// <p>The name of the license subscription that the instance uses.</p>
     pub fn set_subscription_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_name = input;
         self
     }
-    /// <p>The name of the subscription being used by the instance.</p>
+    /// <p>The name of the license subscription that the instance uses.</p>
     pub fn get_subscription_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscription_name
+    }
+    /// <p>The operating system software version that runs on your instance.</p>
+    pub fn os_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.os_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The operating system software version that runs on your instance.</p>
+    pub fn set_os_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.os_version = input;
+        self
+    }
+    /// <p>The operating system software version that runs on your instance.</p>
+    pub fn get_os_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.os_version
+    }
+    /// <p>The timestamp when you registered the third-party Linux subscription provider for the subscription that the instance uses.</p>
+    pub fn subscription_provider_create_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subscription_provider_create_time = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The timestamp when you registered the third-party Linux subscription provider for the subscription that the instance uses.</p>
+    pub fn set_subscription_provider_create_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subscription_provider_create_time = input;
+        self
+    }
+    /// <p>The timestamp when you registered the third-party Linux subscription provider for the subscription that the instance uses.</p>
+    pub fn get_subscription_provider_create_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_provider_create_time
+    }
+    /// <p>The timestamp from the last time that the instance synced with the registered third-party Linux subscription provider.</p>
+    pub fn subscription_provider_update_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subscription_provider_update_time = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The timestamp from the last time that the instance synced with the registered third-party Linux subscription provider.</p>
+    pub fn set_subscription_provider_update_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subscription_provider_update_time = input;
+        self
+    }
+    /// <p>The timestamp from the last time that the instance synced with the registered third-party Linux subscription provider.</p>
+    pub fn get_subscription_provider_update_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_provider_update_time
+    }
+    /// <p>Indicates that you have two different license subscriptions for the same software on your instance.</p>
+    pub fn dual_subscription(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dual_subscription = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Indicates that you have two different license subscriptions for the same software on your instance.</p>
+    pub fn set_dual_subscription(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dual_subscription = input;
+        self
+    }
+    /// <p>Indicates that you have two different license subscriptions for the same software on your instance.</p>
+    pub fn get_dual_subscription(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dual_subscription
+    }
+    /// <p>Indicates that your instance uses a BYOL license subscription from a third-party Linux subscription provider that you've registered with License Manager.</p>
+    pub fn registered_with_subscription_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.registered_with_subscription_provider = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Indicates that your instance uses a BYOL license subscription from a third-party Linux subscription provider that you've registered with License Manager.</p>
+    pub fn set_registered_with_subscription_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.registered_with_subscription_provider = input;
+        self
+    }
+    /// <p>Indicates that your instance uses a BYOL license subscription from a third-party Linux subscription provider that you've registered with License Manager.</p>
+    pub fn get_registered_with_subscription_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registered_with_subscription_provider
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {
@@ -251,6 +356,11 @@ impl InstanceBuilder {
             product_code: self.product_code,
             last_updated_time: self.last_updated_time,
             subscription_name: self.subscription_name,
+            os_version: self.os_version,
+            subscription_provider_create_time: self.subscription_provider_create_time,
+            subscription_provider_update_time: self.subscription_provider_update_time,
+            dual_subscription: self.dual_subscription,
+            registered_with_subscription_provider: self.registered_with_subscription_provider,
         }
     }
 }

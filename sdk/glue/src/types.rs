@@ -113,6 +113,12 @@ pub use crate::types::_snowflake_source::SnowflakeSource;
 
 pub use crate::types::_recipe::Recipe;
 
+pub use crate::types::_recipe_step::RecipeStep;
+
+pub use crate::types::_condition_expression::ConditionExpression;
+
+pub use crate::types::_recipe_action::RecipeAction;
+
 pub use crate::types::_recipe_reference::RecipeReference;
 
 pub use crate::types::_evaluate_data_quality_multi_frame::EvaluateDataQualityMultiFrame;
@@ -961,6 +967,8 @@ mod _compression_type;
 
 mod _condition;
 
+mod _condition_expression;
+
 mod _configuration_object;
 
 mod _confusion_matrix;
@@ -1387,7 +1395,11 @@ mod _quote_char;
 
 mod _recipe;
 
+mod _recipe_action;
+
 mod _recipe_reference;
+
+mod _recipe_step;
 
 mod _recrawl_behavior;
 

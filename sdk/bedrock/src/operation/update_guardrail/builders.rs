@@ -39,7 +39,7 @@ impl crate::operation::update_guardrail::builders::UpdateGuardrailInputBuilder {
 /// <p>(Optional) Provide up to five prompts that you would categorize as belonging to the topic in the <code>examples</code> list.</p></li>
 /// </ul></li>
 /// <li>
-/// <p>Specify filter strengths for the harmful categories defined in Amazon Bedrock in the <code>contentPolicyConfig</code> object. Each <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a> object in the <code>filtersConfig</code> list pertains to a harmful category. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-filters">Content filters</a>. For more information about the fields in a content filter, see <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>.</p>
+/// <p>Specify filter strengths for the harmful categories defined in Amazon Bedrock in the <code>contentPolicyConfig</code> object. Each <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a> object in the <code>filtersConfig</code> list pertains to a harmful category. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-content-filters">Content filters</a>. For more information about the fields in a content filter, see <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>.</p>
 /// <ul>
 /// <li>
 /// <p>Specify the category in the <code>type</code> field.</p></li>
@@ -48,8 +48,6 @@ impl crate::operation::update_guardrail::builders::UpdateGuardrailInputBuilder {
 /// </ul></li>
 /// <li>
 /// <p>(Optional) For security, include the ARN of a KMS key in the <code>kmsKeyId</code> field.</p></li>
-/// <li>
-/// <p>(Optional) Attach any tags to the guardrail in the <code>tags</code> object. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging">Tag resources</a>.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGuardrailFluentBuilder {
@@ -136,17 +134,17 @@ impl UpdateGuardrailFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the guardrail</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub fn guardrail_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.guardrail_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the guardrail</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub fn set_guardrail_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_guardrail_identifier(input);
         self
     }
-    /// <p>The unique identifier of the guardrail</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub fn get_guardrail_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_guardrail_identifier()
     }
@@ -236,6 +234,23 @@ impl UpdateGuardrailFluentBuilder {
     /// <p>The sensitive information policy to configure for the guardrail.</p>
     pub fn get_sensitive_information_policy_config(&self) -> &::std::option::Option<crate::types::GuardrailSensitiveInformationPolicyConfig> {
         self.inner.get_sensitive_information_policy_config()
+    }
+    /// <p>The contextual grounding policy configuration used to update a guardrail.</p>
+    pub fn contextual_grounding_policy_config(mut self, input: crate::types::GuardrailContextualGroundingPolicyConfig) -> Self {
+        self.inner = self.inner.contextual_grounding_policy_config(input);
+        self
+    }
+    /// <p>The contextual grounding policy configuration used to update a guardrail.</p>
+    pub fn set_contextual_grounding_policy_config(
+        mut self,
+        input: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicyConfig>,
+    ) -> Self {
+        self.inner = self.inner.set_contextual_grounding_policy_config(input);
+        self
+    }
+    /// <p>The contextual grounding policy configuration used to update a guardrail.</p>
+    pub fn get_contextual_grounding_policy_config(&self) -> &::std::option::Option<crate::types::GuardrailContextualGroundingPolicyConfig> {
+        self.inner.get_contextual_grounding_policy_config()
     }
     /// <p>The message to return when the guardrail blocks a prompt.</p>
     pub fn blocked_input_messaging(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

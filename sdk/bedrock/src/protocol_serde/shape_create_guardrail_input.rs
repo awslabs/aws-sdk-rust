@@ -18,47 +18,56 @@ pub fn ser_create_guardrail_input_input(
         crate::protocol_serde::shape_guardrail_content_policy_config::ser_guardrail_content_policy_config(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.description {
-        object.key("description").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.kms_key_id {
-        object.key("kmsKeyId").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.name {
-        object.key("name").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.sensitive_information_policy_config {
+    if let Some(var_6) = &input.contextual_grounding_policy_config {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("sensitiveInformationPolicyConfig").start_object();
-        crate::protocol_serde::shape_guardrail_sensitive_information_policy_config::ser_guardrail_sensitive_information_policy_config(
-            &mut object_10,
-            var_9,
+        let mut object_7 = object.key("contextualGroundingPolicyConfig").start_object();
+        crate::protocol_serde::shape_guardrail_contextual_grounding_policy_config::ser_guardrail_contextual_grounding_policy_config(
+            &mut object_7,
+            var_6,
         )?;
-        object_10.finish();
+        object_7.finish();
     }
-    if let Some(var_11) = &input.tags {
-        let mut array_12 = object.key("tags").start_array();
-        for item_13 in var_11 {
+    if let Some(var_8) = &input.description {
+        object.key("description").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.kms_key_id {
+        object.key("kmsKeyId").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.name {
+        object.key("name").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.sensitive_information_policy_config {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("sensitiveInformationPolicyConfig").start_object();
+        crate::protocol_serde::shape_guardrail_sensitive_information_policy_config::ser_guardrail_sensitive_information_policy_config(
+            &mut object_12,
+            var_11,
+        )?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.tags {
+        let mut array_14 = object.key("tags").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_12.finish();
+        array_14.finish();
     }
-    if let Some(var_15) = &input.topic_policy_config {
+    if let Some(var_17) = &input.topic_policy_config {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("topicPolicyConfig").start_object();
-        crate::protocol_serde::shape_guardrail_topic_policy_config::ser_guardrail_topic_policy_config(&mut object_16, var_15)?;
-        object_16.finish();
-    }
-    if let Some(var_17) = &input.word_policy_config {
-        #[allow(unused_mut)]
-        let mut object_18 = object.key("wordPolicyConfig").start_object();
-        crate::protocol_serde::shape_guardrail_word_policy_config::ser_guardrail_word_policy_config(&mut object_18, var_17)?;
+        let mut object_18 = object.key("topicPolicyConfig").start_object();
+        crate::protocol_serde::shape_guardrail_topic_policy_config::ser_guardrail_topic_policy_config(&mut object_18, var_17)?;
         object_18.finish();
+    }
+    if let Some(var_19) = &input.word_policy_config {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("wordPolicyConfig").start_object();
+        crate::protocol_serde::shape_guardrail_word_policy_config::ser_guardrail_word_policy_config(&mut object_20, var_19)?;
+        object_20.finish();
     }
     Ok(())
 }

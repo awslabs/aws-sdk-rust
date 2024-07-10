@@ -120,6 +120,10 @@ where
                                 crate::protocol_serde::shape_guardrail_configuration::de_guardrail_configuration(tokens)?,
                             );
                         }
+                        "memoryConfiguration" => {
+                            builder =
+                                builder.set_memory_configuration(crate::protocol_serde::shape_memory_configuration::de_memory_configuration(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

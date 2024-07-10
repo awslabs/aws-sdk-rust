@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGuardrailInput {
-    /// <p>The unique identifier of the guardrail.</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub guardrail_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The version of the guardrail.</p>
     pub guardrail_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGuardrailInput {
-    /// <p>The unique identifier of the guardrail.</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub fn guardrail_identifier(&self) -> ::std::option::Option<&str> {
         self.guardrail_identifier.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct DeleteGuardrailInputBuilder {
     pub(crate) guardrail_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGuardrailInputBuilder {
-    /// <p>The unique identifier of the guardrail.</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     /// This field is required.
     pub fn guardrail_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.guardrail_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the guardrail.</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub fn set_guardrail_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.guardrail_identifier = input;
         self
     }
-    /// <p>The unique identifier of the guardrail.</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub fn get_guardrail_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.guardrail_identifier
     }

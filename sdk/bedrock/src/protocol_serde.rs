@@ -149,6 +149,10 @@ pub(crate) mod shape_guardrail_content_policy;
 
 pub(crate) mod shape_guardrail_content_policy_config;
 
+pub(crate) mod shape_guardrail_contextual_grounding_policy;
+
+pub(crate) mod shape_guardrail_contextual_grounding_policy_config;
+
 pub(crate) mod shape_guardrail_failure_recommendations;
 
 pub(crate) mod shape_guardrail_sensitive_information_policy;
@@ -211,6 +215,10 @@ pub(crate) mod shape_guardrail_content_filter_config;
 
 pub(crate) mod shape_guardrail_content_filters;
 
+pub(crate) mod shape_guardrail_contextual_grounding_filter_config;
+
+pub(crate) mod shape_guardrail_contextual_grounding_filters;
+
 pub(crate) mod shape_guardrail_managed_word_lists;
 
 pub(crate) mod shape_guardrail_managed_words_config;
@@ -268,6 +276,8 @@ pub(crate) mod shape_evaluation_model_identifiers;
 pub(crate) mod shape_evaluation_task_types;
 
 pub(crate) mod shape_guardrail_content_filter;
+
+pub(crate) mod shape_guardrail_contextual_grounding_filter;
 
 pub(crate) mod shape_guardrail_managed_words;
 

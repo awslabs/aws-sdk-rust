@@ -33,6 +33,10 @@ pub use crate::types::_s3_config::S3ConfigBuilder;
 
 pub use crate::types::_cloud_watch_config::CloudWatchConfigBuilder;
 
+pub use crate::types::_guardrail_contextual_grounding_policy_config::GuardrailContextualGroundingPolicyConfigBuilder;
+
+pub use crate::types::_guardrail_contextual_grounding_filter_config::GuardrailContextualGroundingFilterConfigBuilder;
+
 pub use crate::types::_guardrail_sensitive_information_policy_config::GuardrailSensitiveInformationPolicyConfigBuilder;
 
 pub use crate::types::_guardrail_regex_config::GuardrailRegexConfigBuilder;
@@ -52,6 +56,10 @@ pub use crate::types::_guardrail_content_filter_config::GuardrailContentFilterCo
 pub use crate::types::_guardrail_topic_policy_config::GuardrailTopicPolicyConfigBuilder;
 
 pub use crate::types::_guardrail_topic_config::GuardrailTopicConfigBuilder;
+
+pub use crate::types::_guardrail_contextual_grounding_policy::GuardrailContextualGroundingPolicyBuilder;
+
+pub use crate::types::_guardrail_contextual_grounding_filter::GuardrailContextualGroundingFilterBuilder;
 
 pub use crate::types::_guardrail_sensitive_information_policy::GuardrailSensitiveInformationPolicyBuilder;
 

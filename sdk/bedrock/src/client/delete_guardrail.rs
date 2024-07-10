@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteGuardrail`](crate::operation::delete_guardrail::builders::DeleteGuardrailFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`guardrail_identifier(impl Into<String>)`](crate::operation::delete_guardrail::builders::DeleteGuardrailFluentBuilder::guardrail_identifier) / [`set_guardrail_identifier(Option<String>)`](crate::operation::delete_guardrail::builders::DeleteGuardrailFluentBuilder::set_guardrail_identifier):<br>required: **true**<br><p>The unique identifier of the guardrail.</p><br>
+    ///   - [`guardrail_identifier(impl Into<String>)`](crate::operation::delete_guardrail::builders::DeleteGuardrailFluentBuilder::guardrail_identifier) / [`set_guardrail_identifier(Option<String>)`](crate::operation::delete_guardrail::builders::DeleteGuardrailFluentBuilder::set_guardrail_identifier):<br>required: **true**<br><p>The unique identifier of the guardrail. This can be an ID or the ARN.</p><br>
     ///   - [`guardrail_version(impl Into<String>)`](crate::operation::delete_guardrail::builders::DeleteGuardrailFluentBuilder::guardrail_version) / [`set_guardrail_version(Option<String>)`](crate::operation::delete_guardrail::builders::DeleteGuardrailFluentBuilder::set_guardrail_version):<br>required: **false**<br><p>The version of the guardrail.</p><br>
     /// - On success, responds with [`DeleteGuardrailOutput`](crate::operation::delete_guardrail::DeleteGuardrailOutput)
     /// - On failure, responds with [`SdkError<DeleteGuardrailError>`](crate::operation::delete_guardrail::DeleteGuardrailError)

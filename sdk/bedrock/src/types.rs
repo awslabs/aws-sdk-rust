@@ -59,6 +59,12 @@ pub use crate::types::_s3_config::S3Config;
 
 pub use crate::types::_cloud_watch_config::CloudWatchConfig;
 
+pub use crate::types::_guardrail_contextual_grounding_policy_config::GuardrailContextualGroundingPolicyConfig;
+
+pub use crate::types::_guardrail_contextual_grounding_filter_config::GuardrailContextualGroundingFilterConfig;
+
+pub use crate::types::_guardrail_contextual_grounding_filter_type::GuardrailContextualGroundingFilterType;
+
 pub use crate::types::_guardrail_sensitive_information_policy_config::GuardrailSensitiveInformationPolicyConfig;
 
 pub use crate::types::_guardrail_regex_config::GuardrailRegexConfig;
@@ -90,6 +96,10 @@ pub use crate::types::_guardrail_topic_policy_config::GuardrailTopicPolicyConfig
 pub use crate::types::_guardrail_topic_config::GuardrailTopicConfig;
 
 pub use crate::types::_guardrail_topic_type::GuardrailTopicType;
+
+pub use crate::types::_guardrail_contextual_grounding_policy::GuardrailContextualGroundingPolicy;
+
+pub use crate::types::_guardrail_contextual_grounding_filter::GuardrailContextualGroundingFilter;
 
 pub use crate::types::_guardrail_sensitive_information_policy::GuardrailSensitiveInformationPolicy;
 
@@ -200,6 +210,16 @@ mod _guardrail_content_filter_type;
 mod _guardrail_content_policy;
 
 mod _guardrail_content_policy_config;
+
+mod _guardrail_contextual_grounding_filter;
+
+mod _guardrail_contextual_grounding_filter_config;
+
+mod _guardrail_contextual_grounding_filter_type;
+
+mod _guardrail_contextual_grounding_policy;
+
+mod _guardrail_contextual_grounding_policy_config;
 
 mod _guardrail_filter_strength;
 

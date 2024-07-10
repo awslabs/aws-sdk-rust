@@ -30,8 +30,12 @@ pub struct IpamDiscoveredResourceCidr {
     pub ip_usage: ::std::option::Option<f64>,
     /// <p>The VPC ID.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
+    /// <p>For elastic IP addresses, this is the status of an attached network interface.</p>
+    pub network_interface_attachment_status: ::std::option::Option<crate::types::IpamNetworkInterfaceAttachmentStatus>,
     /// <p>The last successful resource discovery time.</p>
     pub sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Availability Zone ID.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl IpamDiscoveredResourceCidr {
     /// <p>The resource discovery ID.</p>
@@ -80,9 +84,17 @@ impl IpamDiscoveredResourceCidr {
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
+    /// <p>For elastic IP addresses, this is the status of an attached network interface.</p>
+    pub fn network_interface_attachment_status(&self) -> ::std::option::Option<&crate::types::IpamNetworkInterfaceAttachmentStatus> {
+        self.network_interface_attachment_status.as_ref()
+    }
     /// <p>The last successful resource discovery time.</p>
     pub fn sample_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
+    }
+    /// <p>The Availability Zone ID.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
     }
 }
 impl IpamDiscoveredResourceCidr {
@@ -105,7 +117,9 @@ pub struct IpamDiscoveredResourceCidrBuilder {
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceTag>>,
     pub(crate) ip_usage: ::std::option::Option<f64>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) network_interface_attachment_status: ::std::option::Option<crate::types::IpamNetworkInterfaceAttachmentStatus>,
     pub(crate) sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl IpamDiscoveredResourceCidrBuilder {
     /// <p>The resource discovery ID.</p>
@@ -264,6 +278,23 @@ impl IpamDiscoveredResourceCidrBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
+    /// <p>For elastic IP addresses, this is the status of an attached network interface.</p>
+    pub fn network_interface_attachment_status(mut self, input: crate::types::IpamNetworkInterfaceAttachmentStatus) -> Self {
+        self.network_interface_attachment_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>For elastic IP addresses, this is the status of an attached network interface.</p>
+    pub fn set_network_interface_attachment_status(
+        mut self,
+        input: ::std::option::Option<crate::types::IpamNetworkInterfaceAttachmentStatus>,
+    ) -> Self {
+        self.network_interface_attachment_status = input;
+        self
+    }
+    /// <p>For elastic IP addresses, this is the status of an attached network interface.</p>
+    pub fn get_network_interface_attachment_status(&self) -> &::std::option::Option<crate::types::IpamNetworkInterfaceAttachmentStatus> {
+        &self.network_interface_attachment_status
+    }
     /// <p>The last successful resource discovery time.</p>
     pub fn sample_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.sample_time = ::std::option::Option::Some(input);
@@ -278,6 +309,20 @@ impl IpamDiscoveredResourceCidrBuilder {
     pub fn get_sample_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.sample_time
     }
+    /// <p>The Availability Zone ID.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Availability Zone ID.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The Availability Zone ID.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// Consumes the builder and constructs a [`IpamDiscoveredResourceCidr`](crate::types::IpamDiscoveredResourceCidr).
     pub fn build(self) -> crate::types::IpamDiscoveredResourceCidr {
         crate::types::IpamDiscoveredResourceCidr {
@@ -290,7 +335,9 @@ impl IpamDiscoveredResourceCidrBuilder {
             resource_tags: self.resource_tags,
             ip_usage: self.ip_usage,
             vpc_id: self.vpc_id,
+            network_interface_attachment_status: self.network_interface_attachment_status,
             sample_time: self.sample_time,
+            availability_zone_id: self.availability_zone_id,
         }
     }
 }

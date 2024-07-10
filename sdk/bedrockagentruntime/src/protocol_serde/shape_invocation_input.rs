@@ -38,6 +38,11 @@ where
                                 crate::protocol_serde::shape_knowledge_base_lookup_input::de_knowledge_base_lookup_input(tokens)?,
                             );
                         }
+                        "codeInterpreterInvocationInput" => {
+                            builder = builder.set_code_interpreter_invocation_input(
+                                crate::protocol_serde::shape_code_interpreter_invocation_input::de_code_interpreter_invocation_input(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

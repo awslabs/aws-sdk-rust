@@ -10,6 +10,8 @@ pub struct Recipe {
     pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>A reference to the DataBrew recipe used by the node.</p>
     pub recipe_reference: ::std::option::Option<crate::types::RecipeReference>,
+    /// <p>Transform steps used in the recipe node.</p>
+    pub recipe_steps: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>,
 }
 impl Recipe {
     /// <p>The name of the Glue Studio node.</p>
@@ -26,6 +28,12 @@ impl Recipe {
     pub fn recipe_reference(&self) -> ::std::option::Option<&crate::types::RecipeReference> {
         self.recipe_reference.as_ref()
     }
+    /// <p>Transform steps used in the recipe node.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recipe_steps.is_none()`.
+    pub fn recipe_steps(&self) -> &[crate::types::RecipeStep] {
+        self.recipe_steps.as_deref().unwrap_or_default()
+    }
 }
 impl Recipe {
     /// Creates a new builder-style object to manufacture [`Recipe`](crate::types::Recipe).
@@ -41,6 +49,7 @@ pub struct RecipeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) recipe_reference: ::std::option::Option<crate::types::RecipeReference>,
+    pub(crate) recipe_steps: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>,
 }
 impl RecipeBuilder {
     /// <p>The name of the Glue Studio node.</p>
@@ -79,7 +88,6 @@ impl RecipeBuilder {
         &self.inputs
     }
     /// <p>A reference to the DataBrew recipe used by the node.</p>
-    /// This field is required.
     pub fn recipe_reference(mut self, input: crate::types::RecipeReference) -> Self {
         self.recipe_reference = ::std::option::Option::Some(input);
         self
@@ -92,6 +100,26 @@ impl RecipeBuilder {
     /// <p>A reference to the DataBrew recipe used by the node.</p>
     pub fn get_recipe_reference(&self) -> &::std::option::Option<crate::types::RecipeReference> {
         &self.recipe_reference
+    }
+    /// Appends an item to `recipe_steps`.
+    ///
+    /// To override the contents of this collection use [`set_recipe_steps`](Self::set_recipe_steps).
+    ///
+    /// <p>Transform steps used in the recipe node.</p>
+    pub fn recipe_steps(mut self, input: crate::types::RecipeStep) -> Self {
+        let mut v = self.recipe_steps.unwrap_or_default();
+        v.push(input);
+        self.recipe_steps = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Transform steps used in the recipe node.</p>
+    pub fn set_recipe_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>) -> Self {
+        self.recipe_steps = input;
+        self
+    }
+    /// <p>Transform steps used in the recipe node.</p>
+    pub fn get_recipe_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>> {
+        &self.recipe_steps
     }
     /// Consumes the builder and constructs a [`Recipe`](crate::types::Recipe).
     /// This method will fail if any of the following fields are not set:
@@ -112,6 +140,7 @@ impl RecipeBuilder {
                 )
             })?,
             recipe_reference: self.recipe_reference,
+            recipe_steps: self.recipe_steps,
         })
     }
 }

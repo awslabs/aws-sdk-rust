@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum SystemContentBlock {
-    /// <p>A content block to assess with the guardrail. Use with the Converse API (<code>Converse</code> and <code>ConverseStream</code>).</p>
+    /// <p>A content block to assess with the guardrail. Use with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a> or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a> API operations.</p>
     /// <p>For more information, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon Bedrock User Guide</i>.</p>
     GuardContent(crate::types::GuardrailConverseContentBlock),
     /// <p>A system prompt for the model.</p>

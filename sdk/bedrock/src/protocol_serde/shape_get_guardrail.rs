@@ -144,6 +144,11 @@ pub(crate) fn de_get_guardrail(
                         tokens,
                     )?);
                 }
+                "contextualGroundingPolicy" => {
+                    builder = builder.set_contextual_grounding_policy(
+                        crate::protocol_serde::shape_guardrail_contextual_grounding_policy::de_guardrail_contextual_grounding_policy(tokens)?,
+                    );
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

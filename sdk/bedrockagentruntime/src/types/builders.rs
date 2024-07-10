@@ -3,6 +3,14 @@ pub use crate::types::_knowledge_base_retrieval_result::KnowledgeBaseRetrievalRe
 
 pub use crate::types::_retrieval_result_location::RetrievalResultLocationBuilder;
 
+pub use crate::types::_retrieval_result_share_point_location::RetrievalResultSharePointLocationBuilder;
+
+pub use crate::types::_retrieval_result_salesforce_location::RetrievalResultSalesforceLocationBuilder;
+
+pub use crate::types::_retrieval_result_confluence_location::RetrievalResultConfluenceLocationBuilder;
+
+pub use crate::types::_retrieval_result_web_location::RetrievalResultWebLocationBuilder;
+
 pub use crate::types::_retrieval_result_s3_location::RetrievalResultS3LocationBuilder;
 
 pub use crate::types::_retrieval_result_content::RetrievalResultContentBuilder;
@@ -51,9 +59,19 @@ pub use crate::types::_s3_object_doc::S3ObjectDocBuilder;
 
 pub use crate::types::_knowledge_base_retrieve_and_generate_configuration::KnowledgeBaseRetrieveAndGenerateConfigurationBuilder;
 
+pub use crate::types::_orchestration_configuration::OrchestrationConfigurationBuilder;
+
+pub use crate::types::_query_transformation_configuration::QueryTransformationConfigurationBuilder;
+
 pub use crate::types::_generation_configuration::GenerationConfigurationBuilder;
 
 pub use crate::types::_retrieve_and_generate_input::RetrieveAndGenerateInputBuilder;
+
+pub use crate::types::_memory_session_summary::MemorySessionSummaryBuilder;
+
+pub use crate::types::_file_part::FilePartBuilder;
+
+pub use crate::types::_output_file::OutputFileBuilder;
 
 pub use crate::types::_return_control_payload::ReturnControlPayloadBuilder;
 
@@ -85,6 +103,8 @@ pub use crate::types::_inference_configuration::InferenceConfigurationBuilder;
 
 pub use crate::types::_observation::ObservationBuilder;
 
+pub use crate::types::_code_interpreter_invocation_output::CodeInterpreterInvocationOutputBuilder;
+
 pub use crate::types::_reprompt_response::RepromptResponseBuilder;
 
 pub use crate::types::_final_response::FinalResponseBuilder;
@@ -94,6 +114,8 @@ pub use crate::types::_knowledge_base_lookup_output::KnowledgeBaseLookupOutputBu
 pub use crate::types::_action_group_invocation_output::ActionGroupInvocationOutputBuilder;
 
 pub use crate::types::_invocation_input::InvocationInputBuilder;
+
+pub use crate::types::_code_interpreter_invocation_input::CodeInterpreterInvocationInputBuilder;
 
 pub use crate::types::_knowledge_base_lookup_input::KnowledgeBaseLookupInputBuilder;
 
@@ -137,8 +159,24 @@ pub use crate::types::_attribution::AttributionBuilder;
 
 pub use crate::types::_session_state::SessionStateBuilder;
 
+pub use crate::types::_knowledge_base_configuration::KnowledgeBaseConfigurationBuilder;
+
+pub use crate::types::_input_file::InputFileBuilder;
+
+pub use crate::types::_file_source::FileSourceBuilder;
+
+pub use crate::types::_byte_content_file::ByteContentFileBuilder;
+
+pub use crate::types::_s3_object_file::S3ObjectFileBuilder;
+
 pub use crate::types::_function_result::FunctionResultBuilder;
 
 pub use crate::types::_content_body::ContentBodyBuilder;
 
 pub use crate::types::_api_result::ApiResultBuilder;
+
+pub use crate::types::_flow_completion_event::FlowCompletionEventBuilder;
+
+pub use crate::types::_flow_output_event::FlowOutputEventBuilder;
+
+pub use crate::types::_flow_input::FlowInputBuilder;

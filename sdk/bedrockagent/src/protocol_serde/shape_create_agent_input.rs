@@ -36,21 +36,27 @@ pub fn ser_create_agent_input_input(
     if let Some(var_10) = &input.instruction {
         object.key("instruction").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.prompt_override_configuration {
+    if let Some(var_11) = &input.memory_configuration {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("promptOverrideConfiguration").start_object();
-        crate::protocol_serde::shape_prompt_override_configuration::ser_prompt_override_configuration(&mut object_12, var_11)?;
+        let mut object_12 = object.key("memoryConfiguration").start_object();
+        crate::protocol_serde::shape_memory_configuration::ser_memory_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.tags {
+    if let Some(var_13) = &input.prompt_override_configuration {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("tags").start_object();
-        for (key_15, value_16) in var_13 {
+        let mut object_14 = object.key("promptOverrideConfiguration").start_object();
+        crate::protocol_serde::shape_prompt_override_configuration::ser_prompt_override_configuration(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("tags").start_object();
+        for (key_17, value_18) in var_15 {
             {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
+                object_16.key(key_17.as_str()).string(value_18.as_str());
             }
         }
-        object_14.finish();
+        object_16.finish();
     }
     Ok(())
 }

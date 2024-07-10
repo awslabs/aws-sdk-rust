@@ -27,5 +27,11 @@ pub fn ser_node_property_override(
         }
         array_7.finish();
     }
+    if let Some(var_9) = &input.eks_properties_override {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("eksPropertiesOverride").start_object();
+        crate::protocol_serde::shape_eks_properties_override::ser_eks_properties_override(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }

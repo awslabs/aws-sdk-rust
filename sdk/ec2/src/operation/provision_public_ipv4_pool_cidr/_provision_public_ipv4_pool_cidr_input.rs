@@ -11,6 +11,8 @@ pub struct ProvisionPublicIpv4PoolCidrInput {
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
     pub netmask_length: ::std::option::Option<i32>,
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub network_border_group: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionPublicIpv4PoolCidrInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -29,6 +31,10 @@ impl ProvisionPublicIpv4PoolCidrInput {
     pub fn netmask_length(&self) -> ::std::option::Option<i32> {
         self.netmask_length
     }
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn network_border_group(&self) -> ::std::option::Option<&str> {
+        self.network_border_group.as_deref()
+    }
 }
 impl ProvisionPublicIpv4PoolCidrInput {
     /// Creates a new builder-style object to manufacture [`ProvisionPublicIpv4PoolCidrInput`](crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrInput).
@@ -45,6 +51,7 @@ pub struct ProvisionPublicIpv4PoolCidrInputBuilder {
     pub(crate) ipam_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) netmask_length: ::std::option::Option<i32>,
+    pub(crate) network_border_group: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionPublicIpv4PoolCidrInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -106,6 +113,20 @@ impl ProvisionPublicIpv4PoolCidrInputBuilder {
     pub fn get_netmask_length(&self) -> &::std::option::Option<i32> {
         &self.netmask_length
     }
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn network_border_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_border_group = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_border_group = input;
+        self
+    }
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_border_group
+    }
     /// Consumes the builder and constructs a [`ProvisionPublicIpv4PoolCidrInput`](crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrInput).
     pub fn build(
         self,
@@ -118,6 +139,7 @@ impl ProvisionPublicIpv4PoolCidrInputBuilder {
             ipam_pool_id: self.ipam_pool_id,
             pool_id: self.pool_id,
             netmask_length: self.netmask_length,
+            network_border_group: self.network_border_group,
         })
     }
 }

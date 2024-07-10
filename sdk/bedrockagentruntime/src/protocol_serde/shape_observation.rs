@@ -44,6 +44,11 @@ where
                         "repromptResponse" => {
                             builder = builder.set_reprompt_response(crate::protocol_serde::shape_reprompt_response::de_reprompt_response(tokens)?);
                         }
+                        "codeInterpreterInvocationOutput" => {
+                            builder = builder.set_code_interpreter_invocation_output(
+                                crate::protocol_serde::shape_code_interpreter_invocation_output::de_code_interpreter_invocation_output(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -124,8 +124,22 @@ pub fn de_ipam_discovered_resource_cidr(
                 builder = builder.set_vpc_id(var_9);
             }
             ,
-            s if s.matches("sampleTime") /* SampleTime com.amazonaws.ec2#IpamDiscoveredResourceCidr$SampleTime */ =>  {
+            s if s.matches("networkInterfaceAttachmentStatus") /* NetworkInterfaceAttachmentStatus com.amazonaws.ec2#IpamDiscoveredResourceCidr$NetworkInterfaceAttachmentStatus */ =>  {
                 let var_10 =
+                    Some(
+                        Result::<crate::types::IpamNetworkInterfaceAttachmentStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::IpamNetworkInterfaceAttachmentStatus::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_network_interface_attachment_status(var_10);
+            }
+            ,
+            s if s.matches("sampleTime") /* SampleTime com.amazonaws.ec2#IpamDiscoveredResourceCidr$SampleTime */ =>  {
+                let var_11 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -135,7 +149,20 @@ pub fn de_ipam_discovered_resource_cidr(
                         ?
                     )
                 ;
-                builder = builder.set_sample_time(var_10);
+                builder = builder.set_sample_time(var_11);
+            }
+            ,
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#IpamDiscoveredResourceCidr$AvailabilityZoneId */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_id(var_12);
             }
             ,
             _ => {}

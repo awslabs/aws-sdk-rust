@@ -13,7 +13,9 @@
 /// # let chunkingstrategy = unimplemented!();
 /// match chunkingstrategy {
 ///     ChunkingStrategy::FixedSize => { /* ... */ },
+///     ChunkingStrategy::Hierarchical => { /* ... */ },
 ///     ChunkingStrategy::None => { /* ... */ },
+///     ChunkingStrategy::Semantic => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -44,7 +46,11 @@ pub enum ChunkingStrategy {
     #[allow(missing_docs)] // documentation missing in model
     FixedSize,
     #[allow(missing_docs)] // documentation missing in model
+    Hierarchical,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
+    Semantic,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -53,7 +59,9 @@ impl ::std::convert::From<&str> for ChunkingStrategy {
     fn from(s: &str) -> Self {
         match s {
             "FIXED_SIZE" => ChunkingStrategy::FixedSize,
+            "HIERARCHICAL" => ChunkingStrategy::Hierarchical,
             "NONE" => ChunkingStrategy::None,
+            "SEMANTIC" => ChunkingStrategy::Semantic,
             other => ChunkingStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -70,13 +78,15 @@ impl ChunkingStrategy {
     pub fn as_str(&self) -> &str {
         match self {
             ChunkingStrategy::FixedSize => "FIXED_SIZE",
+            ChunkingStrategy::Hierarchical => "HIERARCHICAL",
             ChunkingStrategy::None => "NONE",
+            ChunkingStrategy::Semantic => "SEMANTIC",
             ChunkingStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FIXED_SIZE", "NONE"]
+        &["FIXED_SIZE", "HIERARCHICAL", "NONE", "SEMANTIC"]
     }
 }
 impl ::std::convert::AsRef<str> for ChunkingStrategy {
@@ -100,7 +110,9 @@ impl ::std::fmt::Display for ChunkingStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ChunkingStrategy::FixedSize => write!(f, "FIXED_SIZE"),
+            ChunkingStrategy::Hierarchical => write!(f, "HIERARCHICAL"),
             ChunkingStrategy::None => write!(f, "NONE"),
+            ChunkingStrategy::Semantic => write!(f, "SEMANTIC"),
             ChunkingStrategy::Unknown(value) => write!(f, "{}", value),
         }
     }

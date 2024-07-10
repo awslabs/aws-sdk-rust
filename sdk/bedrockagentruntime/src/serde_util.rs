@@ -56,6 +56,30 @@ pub(crate) fn knowledge_base_retrieval_result_correct_errors(
     builder
 }
 
+pub(crate) fn flow_completion_event_correct_errors(
+    mut builder: crate::types::builders::FlowCompletionEventBuilder,
+) -> crate::types::builders::FlowCompletionEventBuilder {
+    if builder.completion_reason.is_none() {
+        builder.completion_reason = "no value was set".parse::<crate::types::FlowCompletionReason>().ok()
+    }
+    builder
+}
+
+pub(crate) fn flow_output_event_correct_errors(
+    mut builder: crate::types::builders::FlowOutputEventBuilder,
+) -> crate::types::builders::FlowOutputEventBuilder {
+    if builder.node_name.is_none() {
+        builder.node_name = Some(Default::default())
+    }
+    if builder.node_type.is_none() {
+        builder.node_type = "no value was set".parse::<crate::types::NodeType>().ok()
+    }
+    if builder.content.is_none() {
+        builder.content = Some(crate::types::FlowOutputContent::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn retrieval_result_content_correct_errors(
     mut builder: crate::types::builders::RetrievalResultContentBuilder,
 ) -> crate::types::builders::RetrievalResultContentBuilder {

@@ -16,6 +16,10 @@ pub struct ActionGroupInvocationInput {
     pub request_body: ::std::option::Option<crate::types::RequestBody>,
     /// <p>The function in the action group to call.</p>
     pub function: ::std::option::Option<::std::string::String>,
+    /// <p>How fulfillment of the action is handled. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/action-handle.html">Handling fulfillment of the action</a>.</p>
+    pub execution_type: ::std::option::Option<crate::types::ExecutionType>,
+    /// <p>The unique identifier of the invocation. Only returned if the <code>executionType</code> is <code>RETURN_CONTROL</code>.</p>
+    pub invocation_id: ::std::option::Option<::std::string::String>,
 }
 impl ActionGroupInvocationInput {
     /// <p>The name of the action group.</p>
@@ -44,6 +48,14 @@ impl ActionGroupInvocationInput {
     pub fn function(&self) -> ::std::option::Option<&str> {
         self.function.as_deref()
     }
+    /// <p>How fulfillment of the action is handled. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/action-handle.html">Handling fulfillment of the action</a>.</p>
+    pub fn execution_type(&self) -> ::std::option::Option<&crate::types::ExecutionType> {
+        self.execution_type.as_ref()
+    }
+    /// <p>The unique identifier of the invocation. Only returned if the <code>executionType</code> is <code>RETURN_CONTROL</code>.</p>
+    pub fn invocation_id(&self) -> ::std::option::Option<&str> {
+        self.invocation_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ActionGroupInvocationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -54,6 +66,8 @@ impl ::std::fmt::Debug for ActionGroupInvocationInput {
         formatter.field("parameters", &self.parameters);
         formatter.field("request_body", &self.request_body);
         formatter.field("function", &"*** Sensitive Data Redacted ***");
+        formatter.field("execution_type", &self.execution_type);
+        formatter.field("invocation_id", &self.invocation_id);
         formatter.finish()
     }
 }
@@ -74,6 +88,8 @@ pub struct ActionGroupInvocationInputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     pub(crate) request_body: ::std::option::Option<crate::types::RequestBody>,
     pub(crate) function: ::std::option::Option<::std::string::String>,
+    pub(crate) execution_type: ::std::option::Option<crate::types::ExecutionType>,
+    pub(crate) invocation_id: ::std::option::Option<::std::string::String>,
 }
 impl ActionGroupInvocationInputBuilder {
     /// <p>The name of the action group.</p>
@@ -166,6 +182,34 @@ impl ActionGroupInvocationInputBuilder {
     pub fn get_function(&self) -> &::std::option::Option<::std::string::String> {
         &self.function
     }
+    /// <p>How fulfillment of the action is handled. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/action-handle.html">Handling fulfillment of the action</a>.</p>
+    pub fn execution_type(mut self, input: crate::types::ExecutionType) -> Self {
+        self.execution_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>How fulfillment of the action is handled. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/action-handle.html">Handling fulfillment of the action</a>.</p>
+    pub fn set_execution_type(mut self, input: ::std::option::Option<crate::types::ExecutionType>) -> Self {
+        self.execution_type = input;
+        self
+    }
+    /// <p>How fulfillment of the action is handled. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/action-handle.html">Handling fulfillment of the action</a>.</p>
+    pub fn get_execution_type(&self) -> &::std::option::Option<crate::types::ExecutionType> {
+        &self.execution_type
+    }
+    /// <p>The unique identifier of the invocation. Only returned if the <code>executionType</code> is <code>RETURN_CONTROL</code>.</p>
+    pub fn invocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.invocation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the invocation. Only returned if the <code>executionType</code> is <code>RETURN_CONTROL</code>.</p>
+    pub fn set_invocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.invocation_id = input;
+        self
+    }
+    /// <p>The unique identifier of the invocation. Only returned if the <code>executionType</code> is <code>RETURN_CONTROL</code>.</p>
+    pub fn get_invocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invocation_id
+    }
     /// Consumes the builder and constructs a [`ActionGroupInvocationInput`](crate::types::ActionGroupInvocationInput).
     pub fn build(self) -> crate::types::ActionGroupInvocationInput {
         crate::types::ActionGroupInvocationInput {
@@ -175,6 +219,8 @@ impl ActionGroupInvocationInputBuilder {
             parameters: self.parameters,
             request_body: self.request_body,
             function: self.function,
+            execution_type: self.execution_type,
+            invocation_id: self.invocation_id,
         }
     }
 }
@@ -187,6 +233,8 @@ impl ::std::fmt::Debug for ActionGroupInvocationInputBuilder {
         formatter.field("parameters", &self.parameters);
         formatter.field("request_body", &self.request_body);
         formatter.field("function", &"*** Sensitive Data Redacted ***");
+        formatter.field("execution_type", &self.execution_type);
+        formatter.field("invocation_id", &self.invocation_id);
         formatter.finish()
     }
 }

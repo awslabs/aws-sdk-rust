@@ -118,6 +118,8 @@ impl Client {
     }
 }
 
+mod apply_guardrail;
+
 mod converse;
 
 mod converse_stream;

@@ -12,6 +12,8 @@ pub struct GuardrailAssessment {
     pub word_policy: ::std::option::Option<crate::types::GuardrailWordPolicyAssessment>,
     /// <p>The sensitive information policy.</p>
     pub sensitive_information_policy: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicyAssessment>,
+    /// <p>The contextual grounding policy used for the guardrail assessment.</p>
+    pub contextual_grounding_policy: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicyAssessment>,
 }
 impl GuardrailAssessment {
     /// <p>The topic policy.</p>
@@ -30,6 +32,10 @@ impl GuardrailAssessment {
     pub fn sensitive_information_policy(&self) -> ::std::option::Option<&crate::types::GuardrailSensitiveInformationPolicyAssessment> {
         self.sensitive_information_policy.as_ref()
     }
+    /// <p>The contextual grounding policy used for the guardrail assessment.</p>
+    pub fn contextual_grounding_policy(&self) -> ::std::option::Option<&crate::types::GuardrailContextualGroundingPolicyAssessment> {
+        self.contextual_grounding_policy.as_ref()
+    }
 }
 impl GuardrailAssessment {
     /// Creates a new builder-style object to manufacture [`GuardrailAssessment`](crate::types::GuardrailAssessment).
@@ -46,6 +52,7 @@ pub struct GuardrailAssessmentBuilder {
     pub(crate) content_policy: ::std::option::Option<crate::types::GuardrailContentPolicyAssessment>,
     pub(crate) word_policy: ::std::option::Option<crate::types::GuardrailWordPolicyAssessment>,
     pub(crate) sensitive_information_policy: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicyAssessment>,
+    pub(crate) contextual_grounding_policy: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicyAssessment>,
 }
 impl GuardrailAssessmentBuilder {
     /// <p>The topic policy.</p>
@@ -107,6 +114,23 @@ impl GuardrailAssessmentBuilder {
     pub fn get_sensitive_information_policy(&self) -> &::std::option::Option<crate::types::GuardrailSensitiveInformationPolicyAssessment> {
         &self.sensitive_information_policy
     }
+    /// <p>The contextual grounding policy used for the guardrail assessment.</p>
+    pub fn contextual_grounding_policy(mut self, input: crate::types::GuardrailContextualGroundingPolicyAssessment) -> Self {
+        self.contextual_grounding_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The contextual grounding policy used for the guardrail assessment.</p>
+    pub fn set_contextual_grounding_policy(
+        mut self,
+        input: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicyAssessment>,
+    ) -> Self {
+        self.contextual_grounding_policy = input;
+        self
+    }
+    /// <p>The contextual grounding policy used for the guardrail assessment.</p>
+    pub fn get_contextual_grounding_policy(&self) -> &::std::option::Option<crate::types::GuardrailContextualGroundingPolicyAssessment> {
+        &self.contextual_grounding_policy
+    }
     /// Consumes the builder and constructs a [`GuardrailAssessment`](crate::types::GuardrailAssessment).
     pub fn build(self) -> crate::types::GuardrailAssessment {
         crate::types::GuardrailAssessment {
@@ -114,6 +138,7 @@ impl GuardrailAssessmentBuilder {
             content_policy: self.content_policy,
             word_policy: self.word_policy,
             sensitive_information_policy: self.sensitive_information_policy,
+            contextual_grounding_policy: self.contextual_grounding_policy,
         }
     }
 }

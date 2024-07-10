@@ -12,6 +12,18 @@ pub fn ser_chunking_configuration(
         crate::protocol_serde::shape_fixed_size_chunking_configuration::ser_fixed_size_chunking_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.hierarchical_chunking_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("hierarchicalChunkingConfiguration").start_object();
+        crate::protocol_serde::shape_hierarchical_chunking_configuration::ser_hierarchical_chunking_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.semantic_chunking_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("semanticChunkingConfiguration").start_object();
+        crate::protocol_serde::shape_semantic_chunking_configuration::ser_semantic_chunking_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -40,6 +52,16 @@ where
                         "fixedSizeChunkingConfiguration" => {
                             builder = builder.set_fixed_size_chunking_configuration(
                                 crate::protocol_serde::shape_fixed_size_chunking_configuration::de_fixed_size_chunking_configuration(tokens)?,
+                            );
+                        }
+                        "hierarchicalChunkingConfiguration" => {
+                            builder = builder.set_hierarchical_chunking_configuration(
+                                crate::protocol_serde::shape_hierarchical_chunking_configuration::de_hierarchical_chunking_configuration(tokens)?,
+                            );
+                        }
+                        "semanticChunkingConfiguration" => {
+                            builder = builder.set_semantic_chunking_configuration(
+                                crate::protocol_serde::shape_semantic_chunking_configuration::de_semantic_chunking_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

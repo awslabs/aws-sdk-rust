@@ -12,6 +12,8 @@ pub struct NodePropertyOverride {
     pub ecs_properties_override: ::std::option::Option<crate::types::EcsPropertiesOverride>,
     /// <p>An object that contains the instance types that you want to replace for the existing resources of a job.</p>
     pub instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>An object that contains the properties that you want to replace for the existing Amazon EKS resources of a job.</p>
+    pub eks_properties_override: ::std::option::Option<crate::types::EksPropertiesOverride>,
 }
 impl NodePropertyOverride {
     /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range.</p>
@@ -32,6 +34,10 @@ impl NodePropertyOverride {
     pub fn instance_types(&self) -> &[::std::string::String] {
         self.instance_types.as_deref().unwrap_or_default()
     }
+    /// <p>An object that contains the properties that you want to replace for the existing Amazon EKS resources of a job.</p>
+    pub fn eks_properties_override(&self) -> ::std::option::Option<&crate::types::EksPropertiesOverride> {
+        self.eks_properties_override.as_ref()
+    }
 }
 impl NodePropertyOverride {
     /// Creates a new builder-style object to manufacture [`NodePropertyOverride`](crate::types::NodePropertyOverride).
@@ -48,6 +54,7 @@ pub struct NodePropertyOverrideBuilder {
     pub(crate) container_overrides: ::std::option::Option<crate::types::ContainerOverrides>,
     pub(crate) ecs_properties_override: ::std::option::Option<crate::types::EcsPropertiesOverride>,
     pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) eks_properties_override: ::std::option::Option<crate::types::EksPropertiesOverride>,
 }
 impl NodePropertyOverrideBuilder {
     /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range.</p>
@@ -113,6 +120,20 @@ impl NodePropertyOverrideBuilder {
     pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_types
     }
+    /// <p>An object that contains the properties that you want to replace for the existing Amazon EKS resources of a job.</p>
+    pub fn eks_properties_override(mut self, input: crate::types::EksPropertiesOverride) -> Self {
+        self.eks_properties_override = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains the properties that you want to replace for the existing Amazon EKS resources of a job.</p>
+    pub fn set_eks_properties_override(mut self, input: ::std::option::Option<crate::types::EksPropertiesOverride>) -> Self {
+        self.eks_properties_override = input;
+        self
+    }
+    /// <p>An object that contains the properties that you want to replace for the existing Amazon EKS resources of a job.</p>
+    pub fn get_eks_properties_override(&self) -> &::std::option::Option<crate::types::EksPropertiesOverride> {
+        &self.eks_properties_override
+    }
     /// Consumes the builder and constructs a [`NodePropertyOverride`](crate::types::NodePropertyOverride).
     pub fn build(self) -> crate::types::NodePropertyOverride {
         crate::types::NodePropertyOverride {
@@ -120,6 +141,7 @@ impl NodePropertyOverrideBuilder {
             container_overrides: self.container_overrides,
             ecs_properties_override: self.ecs_properties_override,
             instance_types: self.instance_types,
+            eks_properties_override: self.eks_properties_override,
         }
     }
 }

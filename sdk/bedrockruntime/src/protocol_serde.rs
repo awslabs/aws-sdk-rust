@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_apply_guardrail;
+
 pub(crate) mod shape_converse;
 
 pub(crate) mod shape_converse_stream;
@@ -44,6 +46,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_apply_guardrail_input;
 
 pub(crate) mod shape_converse_input;
 
@@ -86,9 +90,17 @@ pub(crate) mod shape_converse_output;
 
 pub(crate) mod shape_converse_trace;
 
+pub(crate) mod shape_guardrail_assessment_list;
+
 pub(crate) mod shape_guardrail_configuration;
 
+pub(crate) mod shape_guardrail_content_block;
+
+pub(crate) mod shape_guardrail_output_content_list;
+
 pub(crate) mod shape_guardrail_stream_configuration;
+
+pub(crate) mod shape_guardrail_usage;
 
 pub(crate) mod shape_inference_configuration;
 
@@ -110,7 +122,13 @@ pub(crate) mod shape_content_block_stop_event;
 
 pub(crate) mod shape_converse_stream_metadata_event;
 
+pub(crate) mod shape_guardrail_assessment;
+
 pub(crate) mod shape_guardrail_converse_content_block;
+
+pub(crate) mod shape_guardrail_output_content;
+
+pub(crate) mod shape_guardrail_text_block;
 
 pub(crate) mod shape_guardrail_trace_assessment;
 
@@ -136,7 +154,17 @@ pub(crate) mod shape_guardrail_assessment_list_map;
 
 pub(crate) mod shape_guardrail_assessment_map;
 
+pub(crate) mod shape_guardrail_content_policy_assessment;
+
+pub(crate) mod shape_guardrail_contextual_grounding_policy_assessment;
+
 pub(crate) mod shape_guardrail_converse_text_block;
+
+pub(crate) mod shape_guardrail_sensitive_information_policy_assessment;
+
+pub(crate) mod shape_guardrail_topic_policy_assessment;
+
+pub(crate) mod shape_guardrail_word_policy_assessment;
 
 pub(crate) mod shape_image_block;
 
@@ -160,29 +188,9 @@ pub(crate) mod shape_converse_stream_trace;
 
 pub(crate) mod shape_document_source;
 
-pub(crate) mod shape_guardrail_assessment;
-
-pub(crate) mod shape_guardrail_assessment_list;
-
-pub(crate) mod shape_image_source;
-
-pub(crate) mod shape_tool_input_schema;
-
-pub(crate) mod shape_tool_result_content_block;
-
-pub(crate) mod shape_guardrail_content_policy_assessment;
-
-pub(crate) mod shape_guardrail_sensitive_information_policy_assessment;
-
-pub(crate) mod shape_guardrail_topic_policy_assessment;
-
-pub(crate) mod shape_guardrail_word_policy_assessment;
-
-pub(crate) mod shape_tool_use_block_delta;
-
-pub(crate) mod shape_tool_use_block_start;
-
 pub(crate) mod shape_guardrail_content_filter_list;
+
+pub(crate) mod shape_guardrail_contextual_grounding_filters;
 
 pub(crate) mod shape_guardrail_custom_word_list;
 
@@ -194,9 +202,15 @@ pub(crate) mod shape_guardrail_regex_filter_list;
 
 pub(crate) mod shape_guardrail_topic_list;
 
-pub(crate) mod shape_tool_result_content_blocks;
+pub(crate) mod shape_image_source;
+
+pub(crate) mod shape_tool_input_schema;
+
+pub(crate) mod shape_tool_result_content_block;
 
 pub(crate) mod shape_guardrail_content_filter;
+
+pub(crate) mod shape_guardrail_contextual_grounding_filter;
 
 pub(crate) mod shape_guardrail_custom_word;
 
@@ -207,3 +221,11 @@ pub(crate) mod shape_guardrail_pii_entity_filter;
 pub(crate) mod shape_guardrail_regex_filter;
 
 pub(crate) mod shape_guardrail_topic;
+
+pub(crate) mod shape_tool_use_block_delta;
+
+pub(crate) mod shape_tool_use_block_start;
+
+pub(crate) mod shape_tool_result_content_blocks;
+
+pub(crate) mod shape_guardrail_converse_content_qualifier_list;

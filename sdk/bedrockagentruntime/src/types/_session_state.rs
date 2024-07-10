@@ -14,6 +14,10 @@ pub struct SessionState {
     pub return_control_invocation_results: ::std::option::Option<::std::vec::Vec<crate::types::InvocationResultMember>>,
     /// <p>The identifier of the invocation of an action. This value must match the <code>invocationId</code> returned in the <code>InvokeAgent</code> response for the action whose results are provided in the <code>returnControlInvocationResults</code> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return control to the agent developer</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p>
     pub invocation_id: ::std::option::Option<::std::string::String>,
+    /// <p>Contains information about the files used by code interpreter.</p>
+    pub files: ::std::option::Option<::std::vec::Vec<crate::types::InputFile>>,
+    /// <p>An array of configurations, each of which applies to a knowledge base attached to the agent.</p>
+    pub knowledge_base_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseConfiguration>>,
 }
 impl SessionState {
     /// <p>Contains attributes that persist across a session and the values of those attributes.</p>
@@ -36,6 +40,18 @@ impl SessionState {
     pub fn invocation_id(&self) -> ::std::option::Option<&str> {
         self.invocation_id.as_deref()
     }
+    /// <p>Contains information about the files used by code interpreter.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.files.is_none()`.
+    pub fn files(&self) -> &[crate::types::InputFile] {
+        self.files.as_deref().unwrap_or_default()
+    }
+    /// <p>An array of configurations, each of which applies to a knowledge base attached to the agent.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.knowledge_base_configurations.is_none()`.
+    pub fn knowledge_base_configurations(&self) -> &[crate::types::KnowledgeBaseConfiguration] {
+        self.knowledge_base_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl SessionState {
     /// Creates a new builder-style object to manufacture [`SessionState`](crate::types::SessionState).
@@ -52,6 +68,8 @@ pub struct SessionStateBuilder {
     pub(crate) prompt_session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) return_control_invocation_results: ::std::option::Option<::std::vec::Vec<crate::types::InvocationResultMember>>,
     pub(crate) invocation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) files: ::std::option::Option<::std::vec::Vec<crate::types::InputFile>>,
+    pub(crate) knowledge_base_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseConfiguration>>,
 }
 impl SessionStateBuilder {
     /// Adds a key-value pair to `session_attributes`.
@@ -151,6 +169,49 @@ impl SessionStateBuilder {
     pub fn get_invocation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.invocation_id
     }
+    /// Appends an item to `files`.
+    ///
+    /// To override the contents of this collection use [`set_files`](Self::set_files).
+    ///
+    /// <p>Contains information about the files used by code interpreter.</p>
+    pub fn files(mut self, input: crate::types::InputFile) -> Self {
+        let mut v = self.files.unwrap_or_default();
+        v.push(input);
+        self.files = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Contains information about the files used by code interpreter.</p>
+    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputFile>>) -> Self {
+        self.files = input;
+        self
+    }
+    /// <p>Contains information about the files used by code interpreter.</p>
+    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputFile>> {
+        &self.files
+    }
+    /// Appends an item to `knowledge_base_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_knowledge_base_configurations`](Self::set_knowledge_base_configurations).
+    ///
+    /// <p>An array of configurations, each of which applies to a knowledge base attached to the agent.</p>
+    pub fn knowledge_base_configurations(mut self, input: crate::types::KnowledgeBaseConfiguration) -> Self {
+        let mut v = self.knowledge_base_configurations.unwrap_or_default();
+        v.push(input);
+        self.knowledge_base_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of configurations, each of which applies to a knowledge base attached to the agent.</p>
+    pub fn set_knowledge_base_configurations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseConfiguration>>,
+    ) -> Self {
+        self.knowledge_base_configurations = input;
+        self
+    }
+    /// <p>An array of configurations, each of which applies to a knowledge base attached to the agent.</p>
+    pub fn get_knowledge_base_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseConfiguration>> {
+        &self.knowledge_base_configurations
+    }
     /// Consumes the builder and constructs a [`SessionState`](crate::types::SessionState).
     pub fn build(self) -> crate::types::SessionState {
         crate::types::SessionState {
@@ -158,6 +219,8 @@ impl SessionStateBuilder {
             prompt_session_attributes: self.prompt_session_attributes,
             return_control_invocation_results: self.return_control_invocation_results,
             invocation_id: self.invocation_id,
+            files: self.files,
+            knowledge_base_configurations: self.knowledge_base_configurations,
         }
     }
 }

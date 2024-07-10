@@ -9,6 +9,10 @@ pub use crate::types::_agent_status::AgentStatus;
 
 pub use crate::types::_agent_version::AgentVersion;
 
+pub use crate::types::_memory_configuration::MemoryConfiguration;
+
+pub use crate::types::_memory_type::MemoryType;
+
 pub use crate::types::_prompt_override_configuration::PromptOverrideConfiguration;
 
 pub use crate::types::_prompt_configuration::PromptConfiguration;
@@ -20,6 +24,22 @@ pub use crate::types::_inference_configuration::InferenceConfiguration;
 pub use crate::types::_prompt_state::PromptState;
 
 pub use crate::types::_prompt_type::PromptType;
+
+pub use crate::types::_prompt_variant::PromptVariant;
+
+pub use crate::types::_prompt_inference_configuration::PromptInferenceConfiguration;
+
+pub use crate::types::_prompt_model_inference_configuration::PromptModelInferenceConfiguration;
+
+pub use crate::types::_prompt_template_configuration::PromptTemplateConfiguration;
+
+pub use crate::types::_text_prompt_template_configuration::TextPromptTemplateConfiguration;
+
+pub use crate::types::_prompt_input_variable::PromptInputVariable;
+
+pub use crate::types::_prompt_template_type::PromptTemplateType;
+
+pub use crate::types::_prompt_summary::PromptSummary;
 
 pub use crate::types::_knowledge_base::KnowledgeBase;
 
@@ -87,13 +107,119 @@ pub use crate::types::_ingestion_job_filter_operator::IngestionJobFilterOperator
 
 pub use crate::types::_ingestion_job_filter_attribute::IngestionJobFilterAttribute;
 
+pub use crate::types::_flow_status::FlowStatus;
+
+pub use crate::types::_flow_definition::FlowDefinition;
+
+pub use crate::types::_flow_connection::FlowConnection;
+
+pub use crate::types::_flow_connection_configuration::FlowConnectionConfiguration;
+
+pub use crate::types::_flow_conditional_connection_configuration::FlowConditionalConnectionConfiguration;
+
+pub use crate::types::_flow_data_connection_configuration::FlowDataConnectionConfiguration;
+
+pub use crate::types::_flow_connection_type::FlowConnectionType;
+
+pub use crate::types::_flow_node::FlowNode;
+
+pub use crate::types::_flow_node_output::FlowNodeOutput;
+
+pub use crate::types::_flow_node_io_data_type::FlowNodeIoDataType;
+
+pub use crate::types::_flow_node_input::FlowNodeInput;
+
+pub use crate::types::_flow_node_configuration::FlowNodeConfiguration;
+
+pub use crate::types::_collector_flow_node_configuration::CollectorFlowNodeConfiguration;
+
+pub use crate::types::_iterator_flow_node_configuration::IteratorFlowNodeConfiguration;
+
+pub use crate::types::_retrieval_flow_node_configuration::RetrievalFlowNodeConfiguration;
+
+pub use crate::types::_retrieval_flow_node_service_configuration::RetrievalFlowNodeServiceConfiguration;
+
+pub use crate::types::_retrieval_flow_node_s3_configuration::RetrievalFlowNodeS3Configuration;
+
+pub use crate::types::_agent_flow_node_configuration::AgentFlowNodeConfiguration;
+
+pub use crate::types::_storage_flow_node_configuration::StorageFlowNodeConfiguration;
+
+pub use crate::types::_storage_flow_node_service_configuration::StorageFlowNodeServiceConfiguration;
+
+pub use crate::types::_storage_flow_node_s3_configuration::StorageFlowNodeS3Configuration;
+
+pub use crate::types::_lambda_function_flow_node_configuration::LambdaFunctionFlowNodeConfiguration;
+
+pub use crate::types::_prompt_flow_node_configuration::PromptFlowNodeConfiguration;
+
+pub use crate::types::_prompt_flow_node_source_configuration::PromptFlowNodeSourceConfiguration;
+
+pub use crate::types::_prompt_flow_node_inline_configuration::PromptFlowNodeInlineConfiguration;
+
+pub use crate::types::_prompt_flow_node_resource_configuration::PromptFlowNodeResourceConfiguration;
+
+pub use crate::types::_lex_flow_node_configuration::LexFlowNodeConfiguration;
+
+pub use crate::types::_condition_flow_node_configuration::ConditionFlowNodeConfiguration;
+
+pub use crate::types::_flow_condition::FlowCondition;
+
+pub use crate::types::_knowledge_base_flow_node_configuration::KnowledgeBaseFlowNodeConfiguration;
+
+pub use crate::types::_output_flow_node_configuration::OutputFlowNodeConfiguration;
+
+pub use crate::types::_input_flow_node_configuration::InputFlowNodeConfiguration;
+
+pub use crate::types::_flow_node_type::FlowNodeType;
+
+pub use crate::types::_flow_validation::FlowValidation;
+
+pub use crate::types::_flow_validation_severity::FlowValidationSeverity;
+
+pub use crate::types::_flow_summary::FlowSummary;
+
+pub use crate::types::_flow_version_summary::FlowVersionSummary;
+
+pub use crate::types::_flow_alias_routing_configuration_list_item::FlowAliasRoutingConfigurationListItem;
+
+pub use crate::types::_flow_alias_summary::FlowAliasSummary;
+
 pub use crate::types::_data_source::DataSource;
 
 pub use crate::types::_data_deletion_policy::DataDeletionPolicy;
 
 pub use crate::types::_vector_ingestion_configuration::VectorIngestionConfiguration;
 
+pub use crate::types::_parsing_configuration::ParsingConfiguration;
+
+pub use crate::types::_bedrock_foundation_model_configuration::BedrockFoundationModelConfiguration;
+
+pub use crate::types::_parsing_prompt::ParsingPrompt;
+
+pub use crate::types::_parsing_strategy::ParsingStrategy;
+
+pub use crate::types::_custom_transformation_configuration::CustomTransformationConfiguration;
+
+pub use crate::types::_transformation::Transformation;
+
+pub use crate::types::_step_type::StepType;
+
+pub use crate::types::_transformation_function::TransformationFunction;
+
+pub use crate::types::_transformation_lambda_configuration::TransformationLambdaConfiguration;
+
+pub use crate::types::_intermediate_storage::IntermediateStorage;
+
+pub use crate::types::_s3_location::S3Location;
+
 pub use crate::types::_chunking_configuration::ChunkingConfiguration;
+
+pub use crate::types::_semantic_chunking_configuration::SemanticChunkingConfiguration;
+
+pub use crate::types::_hierarchical_chunking_configuration::HierarchicalChunkingConfiguration;
+
+pub use crate::types::_hierarchical_chunking_level_configuration::HierarchicalChunkingLevelConfiguration;
 
 pub use crate::types::_fixed_size_chunking_configuration::FixedSizeChunkingConfiguration;
 
@@ -102,6 +228,56 @@ pub use crate::types::_chunking_strategy::ChunkingStrategy;
 pub use crate::types::_server_side_encryption_configuration::ServerSideEncryptionConfiguration;
 
 pub use crate::types::_data_source_configuration::DataSourceConfiguration;
+
+pub use crate::types::_share_point_data_source_configuration::SharePointDataSourceConfiguration;
+
+pub use crate::types::_share_point_crawler_configuration::SharePointCrawlerConfiguration;
+
+pub use crate::types::_crawl_filter_configuration::CrawlFilterConfiguration;
+
+pub use crate::types::_pattern_object_filter_configuration::PatternObjectFilterConfiguration;
+
+pub use crate::types::_pattern_object_filter::PatternObjectFilter;
+
+pub use crate::types::_crawl_filter_configuration_type::CrawlFilterConfigurationType;
+
+pub use crate::types::_share_point_source_configuration::SharePointSourceConfiguration;
+
+pub use crate::types::_share_point_auth_type::SharePointAuthType;
+
+pub use crate::types::_share_point_host_type::SharePointHostType;
+
+pub use crate::types::_salesforce_data_source_configuration::SalesforceDataSourceConfiguration;
+
+pub use crate::types::_salesforce_crawler_configuration::SalesforceCrawlerConfiguration;
+
+pub use crate::types::_salesforce_source_configuration::SalesforceSourceConfiguration;
+
+pub use crate::types::_salesforce_auth_type::SalesforceAuthType;
+
+pub use crate::types::_confluence_data_source_configuration::ConfluenceDataSourceConfiguration;
+
+pub use crate::types::_confluence_crawler_configuration::ConfluenceCrawlerConfiguration;
+
+pub use crate::types::_confluence_source_configuration::ConfluenceSourceConfiguration;
+
+pub use crate::types::_confluence_auth_type::ConfluenceAuthType;
+
+pub use crate::types::_confluence_host_type::ConfluenceHostType;
+
+pub use crate::types::_web_data_source_configuration::WebDataSourceConfiguration;
+
+pub use crate::types::_web_crawler_configuration::WebCrawlerConfiguration;
+
+pub use crate::types::_web_scope_type::WebScopeType;
+
+pub use crate::types::_web_crawler_limits::WebCrawlerLimits;
+
+pub use crate::types::_web_source_configuration::WebSourceConfiguration;
+
+pub use crate::types::_url_configuration::UrlConfiguration;
+
+pub use crate::types::_seed_url::SeedUrl;
 
 pub use crate::types::_s3_data_source_configuration::S3DataSourceConfiguration;
 
@@ -171,6 +347,8 @@ mod _agent_alias_status;
 
 mod _agent_alias_summary;
 
+mod _agent_flow_node_configuration;
+
 mod _agent_knowledge_base;
 
 mod _agent_knowledge_base_summary;
@@ -187,13 +365,35 @@ mod _api_schema;
 
 mod _bedrock_embedding_model_configuration;
 
+mod _bedrock_foundation_model_configuration;
+
 mod _chunking_configuration;
 
 mod _chunking_strategy;
 
+mod _collector_flow_node_configuration;
+
+mod _condition_flow_node_configuration;
+
+mod _confluence_auth_type;
+
+mod _confluence_crawler_configuration;
+
+mod _confluence_data_source_configuration;
+
+mod _confluence_host_type;
+
+mod _confluence_source_configuration;
+
+mod _crawl_filter_configuration;
+
+mod _crawl_filter_configuration_type;
+
 mod _creation_mode;
 
 mod _custom_control_method;
+
+mod _custom_transformation_configuration;
 
 mod _data_deletion_policy;
 
@@ -211,11 +411,55 @@ mod _embedding_model_configuration;
 
 mod _fixed_size_chunking_configuration;
 
+mod _flow_alias_routing_configuration_list_item;
+
+mod _flow_alias_summary;
+
+mod _flow_condition;
+
+mod _flow_conditional_connection_configuration;
+
+mod _flow_connection;
+
+mod _flow_connection_configuration;
+
+mod _flow_connection_type;
+
+mod _flow_data_connection_configuration;
+
+mod _flow_definition;
+
+mod _flow_node;
+
+mod _flow_node_configuration;
+
+mod _flow_node_input;
+
+mod _flow_node_io_data_type;
+
+mod _flow_node_output;
+
+mod _flow_node_type;
+
+mod _flow_status;
+
+mod _flow_summary;
+
+mod _flow_validation;
+
+mod _flow_validation_severity;
+
+mod _flow_version_summary;
+
 mod _function;
 
 mod _function_schema;
 
 mod _guardrail_configuration;
+
+mod _hierarchical_chunking_configuration;
+
+mod _hierarchical_chunking_level_configuration;
 
 mod _inference_configuration;
 
@@ -237,9 +481,17 @@ mod _ingestion_job_status;
 
 mod _ingestion_job_summary;
 
+mod _input_flow_node_configuration;
+
+mod _intermediate_storage;
+
+mod _iterator_flow_node_configuration;
+
 mod _knowledge_base;
 
 mod _knowledge_base_configuration;
+
+mod _knowledge_base_flow_node_configuration;
 
 mod _knowledge_base_state;
 
@@ -251,6 +503,14 @@ mod _knowledge_base_summary;
 
 mod _knowledge_base_type;
 
+mod _lambda_function_flow_node_configuration;
+
+mod _lex_flow_node_configuration;
+
+mod _memory_configuration;
+
+mod _memory_type;
+
 mod _mongo_db_atlas_configuration;
 
 mod _mongo_db_atlas_field_mapping;
@@ -259,7 +519,19 @@ mod _open_search_serverless_configuration;
 
 mod _open_search_serverless_field_mapping;
 
+mod _output_flow_node_configuration;
+
 mod _parameter_detail;
+
+mod _parsing_configuration;
+
+mod _parsing_prompt;
+
+mod _parsing_strategy;
+
+mod _pattern_object_filter;
+
+mod _pattern_object_filter_configuration;
 
 mod _pinecone_configuration;
 
@@ -267,11 +539,33 @@ mod _pinecone_field_mapping;
 
 mod _prompt_configuration;
 
+mod _prompt_flow_node_configuration;
+
+mod _prompt_flow_node_inline_configuration;
+
+mod _prompt_flow_node_resource_configuration;
+
+mod _prompt_flow_node_source_configuration;
+
+mod _prompt_inference_configuration;
+
+mod _prompt_input_variable;
+
+mod _prompt_model_inference_configuration;
+
 mod _prompt_override_configuration;
 
 mod _prompt_state;
 
+mod _prompt_summary;
+
+mod _prompt_template_configuration;
+
+mod _prompt_template_type;
+
 mod _prompt_type;
+
+mod _prompt_variant;
 
 mod _rds_configuration;
 
@@ -281,23 +575,81 @@ mod _redis_enterprise_cloud_configuration;
 
 mod _redis_enterprise_cloud_field_mapping;
 
+mod _retrieval_flow_node_configuration;
+
+mod _retrieval_flow_node_s3_configuration;
+
+mod _retrieval_flow_node_service_configuration;
+
 mod _s3_data_source_configuration;
 
 mod _s3_identifier;
 
+mod _s3_location;
+
+mod _salesforce_auth_type;
+
+mod _salesforce_crawler_configuration;
+
+mod _salesforce_data_source_configuration;
+
+mod _salesforce_source_configuration;
+
+mod _seed_url;
+
+mod _semantic_chunking_configuration;
+
 mod _server_side_encryption_configuration;
+
+mod _share_point_auth_type;
+
+mod _share_point_crawler_configuration;
+
+mod _share_point_data_source_configuration;
+
+mod _share_point_host_type;
+
+mod _share_point_source_configuration;
 
 mod _sort_order;
 
+mod _step_type;
+
 mod _storage_configuration;
 
+mod _storage_flow_node_configuration;
+
+mod _storage_flow_node_s3_configuration;
+
+mod _storage_flow_node_service_configuration;
+
+mod _text_prompt_template_configuration;
+
+mod _transformation;
+
+mod _transformation_function;
+
+mod _transformation_lambda_configuration;
+
 mod _type_;
+
+mod _url_configuration;
 
 mod _validation_exception_field;
 
 mod _vector_ingestion_configuration;
 
 mod _vector_knowledge_base_configuration;
+
+mod _web_crawler_configuration;
+
+mod _web_crawler_limits;
+
+mod _web_data_source_configuration;
+
+mod _web_scope_type;
+
+mod _web_source_configuration;
 
 /// Builders
 pub mod builders;

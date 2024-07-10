@@ -24,6 +24,13 @@ where
                                 crate::protocol_serde::shape_eks_attempt_container_details::de_eks_attempt_container_details(tokens)?,
                             );
                         }
+                        "eksClusterArn" => {
+                            builder = builder.set_eks_cluster_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "podName" => {
                             builder = builder.set_pod_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

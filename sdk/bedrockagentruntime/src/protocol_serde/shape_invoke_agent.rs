@@ -22,6 +22,11 @@ pub fn de_invoke_agent_http_response(
                 )
             })?,
         );
+        output = output.set_memory_id(
+            crate::protocol_serde::shape_invoke_agent_output::de_memory_id_header(_response_headers).map_err(|_| {
+                crate::operation::invoke_agent::InvokeAgentError::unhandled("Failed to parse memoryId from header `x-amz-bedrock-agent-memory-id")
+            })?,
+        );
         output = output.set_session_id(
             crate::protocol_serde::shape_invoke_agent_output::de_session_id_header(_response_headers).map_err(|_| {
                 crate::operation::invoke_agent::InvokeAgentError::unhandled("Failed to parse sessionId from header `x-amz-bedrock-agent-session-id")

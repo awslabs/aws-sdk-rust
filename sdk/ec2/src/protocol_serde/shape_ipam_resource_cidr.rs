@@ -205,6 +205,19 @@ pub fn de_ipam_resource_cidr(
                 builder = builder.set_vpc_id(var_15);
             }
             ,
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#IpamResourceCidr$AvailabilityZoneId */ =>  {
+                let var_16 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_id(var_16);
+            }
+            ,
             _ => {}
         }
     }

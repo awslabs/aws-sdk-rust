@@ -6,11 +6,23 @@
 pub struct VectorIngestionConfiguration {
     /// <p>Details about how to chunk the documents in the data source. A <i>chunk</i> refers to an excerpt from a data source that is returned when the knowledge base that it belongs to is queried.</p>
     pub chunking_configuration: ::std::option::Option<crate::types::ChunkingConfiguration>,
+    /// <p>A custom document transformer for parsed data source documents.</p>
+    pub custom_transformation_configuration: ::std::option::Option<crate::types::CustomTransformationConfiguration>,
+    /// <p>A custom parser for data source documents.</p>
+    pub parsing_configuration: ::std::option::Option<crate::types::ParsingConfiguration>,
 }
 impl VectorIngestionConfiguration {
     /// <p>Details about how to chunk the documents in the data source. A <i>chunk</i> refers to an excerpt from a data source that is returned when the knowledge base that it belongs to is queried.</p>
     pub fn chunking_configuration(&self) -> ::std::option::Option<&crate::types::ChunkingConfiguration> {
         self.chunking_configuration.as_ref()
+    }
+    /// <p>A custom document transformer for parsed data source documents.</p>
+    pub fn custom_transformation_configuration(&self) -> ::std::option::Option<&crate::types::CustomTransformationConfiguration> {
+        self.custom_transformation_configuration.as_ref()
+    }
+    /// <p>A custom parser for data source documents.</p>
+    pub fn parsing_configuration(&self) -> ::std::option::Option<&crate::types::ParsingConfiguration> {
+        self.parsing_configuration.as_ref()
     }
 }
 impl VectorIngestionConfiguration {
@@ -25,6 +37,8 @@ impl VectorIngestionConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VectorIngestionConfigurationBuilder {
     pub(crate) chunking_configuration: ::std::option::Option<crate::types::ChunkingConfiguration>,
+    pub(crate) custom_transformation_configuration: ::std::option::Option<crate::types::CustomTransformationConfiguration>,
+    pub(crate) parsing_configuration: ::std::option::Option<crate::types::ParsingConfiguration>,
 }
 impl VectorIngestionConfigurationBuilder {
     /// <p>Details about how to chunk the documents in the data source. A <i>chunk</i> refers to an excerpt from a data source that is returned when the knowledge base that it belongs to is queried.</p>
@@ -41,10 +55,40 @@ impl VectorIngestionConfigurationBuilder {
     pub fn get_chunking_configuration(&self) -> &::std::option::Option<crate::types::ChunkingConfiguration> {
         &self.chunking_configuration
     }
+    /// <p>A custom document transformer for parsed data source documents.</p>
+    pub fn custom_transformation_configuration(mut self, input: crate::types::CustomTransformationConfiguration) -> Self {
+        self.custom_transformation_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A custom document transformer for parsed data source documents.</p>
+    pub fn set_custom_transformation_configuration(mut self, input: ::std::option::Option<crate::types::CustomTransformationConfiguration>) -> Self {
+        self.custom_transformation_configuration = input;
+        self
+    }
+    /// <p>A custom document transformer for parsed data source documents.</p>
+    pub fn get_custom_transformation_configuration(&self) -> &::std::option::Option<crate::types::CustomTransformationConfiguration> {
+        &self.custom_transformation_configuration
+    }
+    /// <p>A custom parser for data source documents.</p>
+    pub fn parsing_configuration(mut self, input: crate::types::ParsingConfiguration) -> Self {
+        self.parsing_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A custom parser for data source documents.</p>
+    pub fn set_parsing_configuration(mut self, input: ::std::option::Option<crate::types::ParsingConfiguration>) -> Self {
+        self.parsing_configuration = input;
+        self
+    }
+    /// <p>A custom parser for data source documents.</p>
+    pub fn get_parsing_configuration(&self) -> &::std::option::Option<crate::types::ParsingConfiguration> {
+        &self.parsing_configuration
+    }
     /// Consumes the builder and constructs a [`VectorIngestionConfiguration`](crate::types::VectorIngestionConfiguration).
     pub fn build(self) -> crate::types::VectorIngestionConfiguration {
         crate::types::VectorIngestionConfiguration {
             chunking_configuration: self.chunking_configuration,
+            custom_transformation_configuration: self.custom_transformation_configuration,
+            parsing_configuration: self.parsing_configuration,
         }
     }
 }

@@ -23,6 +23,11 @@ pub fn ser_create_public_ipv4_pool_input_input_input(
             list_6.finish();
         }
     }
+    #[allow(unused_mut)]
+    let mut scope_8 = writer.prefix("NetworkBorderGroup");
+    if let Some(var_9) = &input.network_border_group {
+        scope_8.string(var_9);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

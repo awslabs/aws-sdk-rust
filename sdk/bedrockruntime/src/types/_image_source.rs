@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ImageSource {
-    /// <p>The raw image bytes for the image. If you use an AWS SDK, you don't need to base64 encode the image bytes.</p>
+    /// <p>The raw image bytes for the image. If you use an AWS SDK, you don't need to encode the image bytes in base64.</p>
     Bytes(::aws_smithy_types::Blob),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

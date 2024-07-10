@@ -7,6 +7,8 @@ pub struct CreatePublicIpv4PoolInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub network_border_group: ::std::option::Option<::std::string::String>,
 }
 impl CreatePublicIpv4PoolInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -18,6 +20,10 @@ impl CreatePublicIpv4PoolInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
+    }
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn network_border_group(&self) -> ::std::option::Option<&str> {
+        self.network_border_group.as_deref()
     }
 }
 impl CreatePublicIpv4PoolInput {
@@ -33,6 +39,7 @@ impl CreatePublicIpv4PoolInput {
 pub struct CreatePublicIpv4PoolInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) network_border_group: ::std::option::Option<::std::string::String>,
 }
 impl CreatePublicIpv4PoolInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -69,6 +76,20 @@ impl CreatePublicIpv4PoolInputBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn network_border_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_border_group = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_border_group = input;
+        self
+    }
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_border_group
+    }
     /// Consumes the builder and constructs a [`CreatePublicIpv4PoolInput`](crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolInput).
     pub fn build(
         self,
@@ -77,6 +98,7 @@ impl CreatePublicIpv4PoolInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolInput {
             dry_run: self.dry_run,
             tag_specifications: self.tag_specifications,
+            network_border_group: self.network_border_group,
         })
     }
 }

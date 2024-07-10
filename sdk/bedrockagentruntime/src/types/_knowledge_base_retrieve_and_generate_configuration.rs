@@ -17,8 +17,10 @@ pub struct KnowledgeBaseRetrieveAndGenerateConfiguration {
     pub model_arn: ::std::string::String,
     /// <p>Contains configurations for how to retrieve and return the knowledge base query.</p>
     pub retrieval_configuration: ::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration>,
-    /// <p>Contains configurations for response generation based on the knowwledge base query results.</p>
+    /// <p>Contains configurations for response generation based on the knowledge base query results.</p>
     pub generation_configuration: ::std::option::Option<crate::types::GenerationConfiguration>,
+    /// <p>Settings for how the model processes the prompt prior to retrieval and generation.</p>
+    pub orchestration_configuration: ::std::option::Option<crate::types::OrchestrationConfiguration>,
 }
 impl KnowledgeBaseRetrieveAndGenerateConfiguration {
     /// <p>The unique identifier of the knowledge base that is queried and the foundation model used for generation.</p>
@@ -35,9 +37,13 @@ impl KnowledgeBaseRetrieveAndGenerateConfiguration {
     pub fn retrieval_configuration(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseRetrievalConfiguration> {
         self.retrieval_configuration.as_ref()
     }
-    /// <p>Contains configurations for response generation based on the knowwledge base query results.</p>
+    /// <p>Contains configurations for response generation based on the knowledge base query results.</p>
     pub fn generation_configuration(&self) -> ::std::option::Option<&crate::types::GenerationConfiguration> {
         self.generation_configuration.as_ref()
+    }
+    /// <p>Settings for how the model processes the prompt prior to retrieval and generation.</p>
+    pub fn orchestration_configuration(&self) -> ::std::option::Option<&crate::types::OrchestrationConfiguration> {
+        self.orchestration_configuration.as_ref()
     }
 }
 impl KnowledgeBaseRetrieveAndGenerateConfiguration {
@@ -55,6 +61,7 @@ pub struct KnowledgeBaseRetrieveAndGenerateConfigurationBuilder {
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) retrieval_configuration: ::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration>,
     pub(crate) generation_configuration: ::std::option::Option<crate::types::GenerationConfiguration>,
+    pub(crate) orchestration_configuration: ::std::option::Option<crate::types::OrchestrationConfiguration>,
 }
 impl KnowledgeBaseRetrieveAndGenerateConfigurationBuilder {
     /// <p>The unique identifier of the knowledge base that is queried and the foundation model used for generation.</p>
@@ -101,19 +108,33 @@ impl KnowledgeBaseRetrieveAndGenerateConfigurationBuilder {
     pub fn get_retrieval_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration> {
         &self.retrieval_configuration
     }
-    /// <p>Contains configurations for response generation based on the knowwledge base query results.</p>
+    /// <p>Contains configurations for response generation based on the knowledge base query results.</p>
     pub fn generation_configuration(mut self, input: crate::types::GenerationConfiguration) -> Self {
         self.generation_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains configurations for response generation based on the knowwledge base query results.</p>
+    /// <p>Contains configurations for response generation based on the knowledge base query results.</p>
     pub fn set_generation_configuration(mut self, input: ::std::option::Option<crate::types::GenerationConfiguration>) -> Self {
         self.generation_configuration = input;
         self
     }
-    /// <p>Contains configurations for response generation based on the knowwledge base query results.</p>
+    /// <p>Contains configurations for response generation based on the knowledge base query results.</p>
     pub fn get_generation_configuration(&self) -> &::std::option::Option<crate::types::GenerationConfiguration> {
         &self.generation_configuration
+    }
+    /// <p>Settings for how the model processes the prompt prior to retrieval and generation.</p>
+    pub fn orchestration_configuration(mut self, input: crate::types::OrchestrationConfiguration) -> Self {
+        self.orchestration_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings for how the model processes the prompt prior to retrieval and generation.</p>
+    pub fn set_orchestration_configuration(mut self, input: ::std::option::Option<crate::types::OrchestrationConfiguration>) -> Self {
+        self.orchestration_configuration = input;
+        self
+    }
+    /// <p>Settings for how the model processes the prompt prior to retrieval and generation.</p>
+    pub fn get_orchestration_configuration(&self) -> &::std::option::Option<crate::types::OrchestrationConfiguration> {
+        &self.orchestration_configuration
     }
     /// Consumes the builder and constructs a [`KnowledgeBaseRetrieveAndGenerateConfiguration`](crate::types::KnowledgeBaseRetrieveAndGenerateConfiguration).
     /// This method will fail if any of the following fields are not set:
@@ -137,6 +158,7 @@ impl KnowledgeBaseRetrieveAndGenerateConfigurationBuilder {
             })?,
             retrieval_configuration: self.retrieval_configuration,
             generation_configuration: self.generation_configuration,
+            orchestration_configuration: self.orchestration_configuration,
         })
     }
 }

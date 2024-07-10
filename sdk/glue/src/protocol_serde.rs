@@ -1791,6 +1791,8 @@ pub(crate) mod shape_predecessor;
 
 pub(crate) mod shape_recipe_reference;
 
+pub(crate) mod shape_recipe_step;
+
 pub(crate) mod shape_run_metrics;
 
 pub(crate) mod shape_s3_direct_source_additional_options;
@@ -1841,6 +1843,8 @@ pub(crate) mod shape_column_importance;
 
 pub(crate) mod shape_column_value_string_list;
 
+pub(crate) mod shape_condition_expression;
+
 pub(crate) mod shape_data_quality_metric_values;
 
 pub(crate) mod shape_datatype;
@@ -1866,6 +1870,8 @@ pub(crate) mod shape_o_auth2_client_application;
 pub(crate) mod shape_option;
 
 pub(crate) mod shape_other_metadata_value_list_item;
+
+pub(crate) mod shape_recipe_action;
 
 pub(crate) mod shape_token_url_parameters_map;
 
@@ -1913,6 +1919,8 @@ pub(crate) mod shape_one_input;
 
 pub(crate) mod shape_path_list;
 
+pub(crate) mod shape_recipe_steps;
+
 pub(crate) mod shape_sql_aliases;
 
 pub(crate) mod shape_transform_config_parameter_list;
@@ -1933,8 +1941,12 @@ pub(crate) mod shape_limited_string_list;
 
 pub(crate) mod shape_option_list;
 
+pub(crate) mod shape_condition_expression_list;
+
 pub(crate) mod shape_crawl;
 
 pub(crate) mod shape_filter_values;
 
 pub(crate) mod shape_glue_studio_schema_column_list;
+
+pub(crate) mod shape_parameter_map;

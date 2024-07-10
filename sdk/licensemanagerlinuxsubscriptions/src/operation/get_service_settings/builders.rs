@@ -22,7 +22,7 @@ impl crate::operation::get_service_settings::builders::GetServiceSettingsInputBu
 }
 /// Fluent builder constructing a request to `GetServiceSettings`.
 ///
-/// <p>Lists the Linux subscriptions service settings.</p>
+/// <p>Lists the Linux subscriptions service settings for your account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -137,19 +137,19 @@ impl CreateIpamPoolFluentBuilder {
     pub fn get_ipam_scope_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ipam_scope_id()
     }
-    /// <p>In IPAM, the locale is the Amazon Web Services Region where you want to make an IPAM pool available for allocations. Only resources in the same Region as the locale of the pool can get IP address allocations from the pool. You can only allocate a CIDR for a VPC, for example, from an IPAM pool that shares a locale with the VPC’s Region. Note that once you choose a Locale for a pool, you cannot modify it. If you do not choose a locale, resources in Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
+    /// <p>In IPAM, the locale is the Amazon Web Services Region or, for IPAM IPv4 pools in the public scope, the network border group for an Amazon Web Services Local Zone where you want to make an IPAM pool available for allocations (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">supported Local Zones</a>). If you do not choose a locale, resources in Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
     /// <p>Possible values: Any Amazon Web Services Region, such as us-east-1.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale(input.into());
         self
     }
-    /// <p>In IPAM, the locale is the Amazon Web Services Region where you want to make an IPAM pool available for allocations. Only resources in the same Region as the locale of the pool can get IP address allocations from the pool. You can only allocate a CIDR for a VPC, for example, from an IPAM pool that shares a locale with the VPC’s Region. Note that once you choose a Locale for a pool, you cannot modify it. If you do not choose a locale, resources in Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
+    /// <p>In IPAM, the locale is the Amazon Web Services Region or, for IPAM IPv4 pools in the public scope, the network border group for an Amazon Web Services Local Zone where you want to make an IPAM pool available for allocations (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">supported Local Zones</a>). If you do not choose a locale, resources in Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
     /// <p>Possible values: Any Amazon Web Services Region, such as us-east-1.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
     }
-    /// <p>In IPAM, the locale is the Amazon Web Services Region where you want to make an IPAM pool available for allocations. Only resources in the same Region as the locale of the pool can get IP address allocations from the pool. You can only allocate a CIDR for a VPC, for example, from an IPAM pool that shares a locale with the VPC’s Region. Note that once you choose a Locale for a pool, you cannot modify it. If you do not choose a locale, resources in Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
+    /// <p>In IPAM, the locale is the Amazon Web Services Region or, for IPAM IPv4 pools in the public scope, the network border group for an Amazon Web Services Local Zone where you want to make an IPAM pool available for allocations (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">supported Local Zones</a>). If you do not choose a locale, resources in Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
     /// <p>Possible values: Any Amazon Web Services Region, such as us-east-1.</p>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_locale()

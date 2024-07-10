@@ -28,6 +28,11 @@ pub fn ser_provision_public_ipv4_pool_cidr_input_input_input(
             ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("NetworkBorderGroup");
+    if let Some(var_10) = &input.network_border_group {
+        scope_9.string(var_10);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

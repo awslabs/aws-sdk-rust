@@ -119,27 +119,29 @@ impl ListLinuxSubscriptionInstancesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p>
-    /// <p>The valid names for this filter are:</p>
+    /// <p>An array of structures that you can use to filter the results by your specified criteria. For example, you can specify <code>Region</code> in the <code>Name</code>, with the <code>contains</code> operator to list all subscriptions that match a partial string in the <code>Value</code>, such as <code>us-west</code>.</p>
+    /// <p>For each filter, you can specify one of the following values for the <code>Name</code> key to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AmiID</code></p></li>
-    /// <li>
-    /// <p><code>InstanceID</code></p></li>
     /// <li>
     /// <p><code>AccountID</code></p></li>
     /// <li>
-    /// <p><code>Status</code></p></li>
+    /// <p><code>AmiID</code></p></li>
     /// <li>
-    /// <p><code>Region</code></p></li>
+    /// <p><code>DualSubscription</code></p></li>
     /// <li>
-    /// <p><code>UsageOperation</code></p></li>
+    /// <p><code>InstanceID</code></p></li>
+    /// <li>
+    /// <p><code>InstanceType</code></p></li>
     /// <li>
     /// <p><code>ProductCode</code></p></li>
     /// <li>
-    /// <p><code>InstanceType</code></p></li>
+    /// <p><code>Region</code></p></li>
+    /// <li>
+    /// <p><code>Status</code></p></li>
+    /// <li>
+    /// <p><code>UsageOperation</code></p></li>
     /// </ul>
-    /// <p>The valid Operators for this filter are:</p>
+    /// <p>For each filter, you can use one of the following <code>Operator</code> values to define the behavior of the filter:</p>
     /// <ul>
     /// <li>
     /// <p><code>contains</code></p></li>
@@ -152,27 +154,29 @@ impl ListLinuxSubscriptionInstancesFluentBuilder {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p>
-    /// <p>The valid names for this filter are:</p>
+    /// <p>An array of structures that you can use to filter the results by your specified criteria. For example, you can specify <code>Region</code> in the <code>Name</code>, with the <code>contains</code> operator to list all subscriptions that match a partial string in the <code>Value</code>, such as <code>us-west</code>.</p>
+    /// <p>For each filter, you can specify one of the following values for the <code>Name</code> key to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AmiID</code></p></li>
-    /// <li>
-    /// <p><code>InstanceID</code></p></li>
     /// <li>
     /// <p><code>AccountID</code></p></li>
     /// <li>
-    /// <p><code>Status</code></p></li>
+    /// <p><code>AmiID</code></p></li>
     /// <li>
-    /// <p><code>Region</code></p></li>
+    /// <p><code>DualSubscription</code></p></li>
     /// <li>
-    /// <p><code>UsageOperation</code></p></li>
+    /// <p><code>InstanceID</code></p></li>
+    /// <li>
+    /// <p><code>InstanceType</code></p></li>
     /// <li>
     /// <p><code>ProductCode</code></p></li>
     /// <li>
-    /// <p><code>InstanceType</code></p></li>
+    /// <p><code>Region</code></p></li>
+    /// <li>
+    /// <p><code>Status</code></p></li>
+    /// <li>
+    /// <p><code>UsageOperation</code></p></li>
     /// </ul>
-    /// <p>The valid Operators for this filter are:</p>
+    /// <p>For each filter, you can use one of the following <code>Operator</code> values to define the behavior of the filter:</p>
     /// <ul>
     /// <li>
     /// <p><code>contains</code></p></li>
@@ -185,27 +189,29 @@ impl ListLinuxSubscriptionInstancesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p>
-    /// <p>The valid names for this filter are:</p>
+    /// <p>An array of structures that you can use to filter the results by your specified criteria. For example, you can specify <code>Region</code> in the <code>Name</code>, with the <code>contains</code> operator to list all subscriptions that match a partial string in the <code>Value</code>, such as <code>us-west</code>.</p>
+    /// <p>For each filter, you can specify one of the following values for the <code>Name</code> key to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p><code>AmiID</code></p></li>
-    /// <li>
-    /// <p><code>InstanceID</code></p></li>
     /// <li>
     /// <p><code>AccountID</code></p></li>
     /// <li>
-    /// <p><code>Status</code></p></li>
+    /// <p><code>AmiID</code></p></li>
     /// <li>
-    /// <p><code>Region</code></p></li>
+    /// <p><code>DualSubscription</code></p></li>
     /// <li>
-    /// <p><code>UsageOperation</code></p></li>
+    /// <p><code>InstanceID</code></p></li>
+    /// <li>
+    /// <p><code>InstanceType</code></p></li>
     /// <li>
     /// <p><code>ProductCode</code></p></li>
     /// <li>
-    /// <p><code>InstanceType</code></p></li>
+    /// <p><code>Region</code></p></li>
+    /// <li>
+    /// <p><code>Status</code></p></li>
+    /// <li>
+    /// <p><code>UsageOperation</code></p></li>
     /// </ul>
-    /// <p>The valid Operators for this filter are:</p>
+    /// <p>For each filter, you can use one of the following <code>Operator</code> values to define the behavior of the filter:</p>
     /// <ul>
     /// <li>
     /// <p><code>contains</code></p></li>
@@ -217,31 +223,31 @@ impl ListLinuxSubscriptionInstancesFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
-    /// <p>Maximum number of results to return in a single call.</p>
+    /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>Maximum number of results to return in a single call.</p>
+    /// <p>The maximum items to return in a request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Maximum number of results to return in a single call.</p>
+    /// <p>The maximum items to return in a request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>Token for the next set of results.</p>
+    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>Token for the next set of results.</p>
+    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>Token for the next set of results.</p>
+    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

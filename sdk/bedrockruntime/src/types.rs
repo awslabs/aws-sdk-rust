@@ -15,6 +15,14 @@ pub use crate::types::_guardrail_trace_assessment::GuardrailTraceAssessment;
 
 pub use crate::types::_guardrail_assessment::GuardrailAssessment;
 
+pub use crate::types::_guardrail_contextual_grounding_policy_assessment::GuardrailContextualGroundingPolicyAssessment;
+
+pub use crate::types::_guardrail_contextual_grounding_filter::GuardrailContextualGroundingFilter;
+
+pub use crate::types::_guardrail_contextual_grounding_policy_action::GuardrailContextualGroundingPolicyAction;
+
+pub use crate::types::_guardrail_contextual_grounding_filter_type::GuardrailContextualGroundingFilterType;
+
 pub use crate::types::_guardrail_sensitive_information_policy_assessment::GuardrailSensitiveInformationPolicyAssessment;
 
 pub use crate::types::_guardrail_regex_filter::GuardrailRegexFilter;
@@ -109,6 +117,8 @@ pub use crate::types::_guardrail_converse_content_block::GuardrailConverseConten
 
 pub use crate::types::_guardrail_converse_text_block::GuardrailConverseTextBlock;
 
+pub use crate::types::_guardrail_converse_content_qualifier::GuardrailConverseContentQualifier;
+
 pub use crate::types::_message::Message;
 
 pub use crate::types::_content_block::ContentBlock;
@@ -140,6 +150,20 @@ pub use crate::types::_converse_metrics::ConverseMetrics;
 pub use crate::types::_converse_output::ConverseOutput;
 
 pub use crate::types::_guardrail_configuration::GuardrailConfiguration;
+
+pub use crate::types::_guardrail_output_content::GuardrailOutputContent;
+
+pub use crate::types::_guardrail_action::GuardrailAction;
+
+pub use crate::types::_guardrail_usage::GuardrailUsage;
+
+pub use crate::types::_guardrail_content_block::GuardrailContentBlock;
+
+pub use crate::types::_guardrail_text_block::GuardrailTextBlock;
+
+pub use crate::types::_guardrail_content_qualifier::GuardrailContentQualifier;
+
+pub use crate::types::_guardrail_content_source::GuardrailContentSource;
 
 mod _any_tool_choice;
 
@@ -179,9 +203,13 @@ mod _document_format;
 
 mod _document_source;
 
+mod _guardrail_action;
+
 mod _guardrail_assessment;
 
 mod _guardrail_configuration;
+
+mod _guardrail_content_block;
 
 mod _guardrail_content_filter;
 
@@ -193,7 +221,21 @@ mod _guardrail_content_policy_action;
 
 mod _guardrail_content_policy_assessment;
 
+mod _guardrail_content_qualifier;
+
+mod _guardrail_content_source;
+
+mod _guardrail_contextual_grounding_filter;
+
+mod _guardrail_contextual_grounding_filter_type;
+
+mod _guardrail_contextual_grounding_policy_action;
+
+mod _guardrail_contextual_grounding_policy_assessment;
+
 mod _guardrail_converse_content_block;
+
+mod _guardrail_converse_content_qualifier;
 
 mod _guardrail_converse_text_block;
 
@@ -202,6 +244,8 @@ mod _guardrail_custom_word;
 mod _guardrail_managed_word;
 
 mod _guardrail_managed_word_type;
+
+mod _guardrail_output_content;
 
 mod _guardrail_pii_entity_filter;
 
@@ -217,6 +261,8 @@ mod _guardrail_stream_configuration;
 
 mod _guardrail_stream_processing_mode;
 
+mod _guardrail_text_block;
+
 mod _guardrail_topic;
 
 mod _guardrail_topic_policy_action;
@@ -228,6 +274,8 @@ mod _guardrail_topic_type;
 mod _guardrail_trace;
 
 mod _guardrail_trace_assessment;
+
+mod _guardrail_usage;
 
 mod _guardrail_word_policy_action;
 

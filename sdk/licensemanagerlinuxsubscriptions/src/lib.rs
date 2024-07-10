@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-licensemanagerlinuxsubscriptions = "1.34.0"
+//! aws-sdk-licensemanagerlinuxsubscriptions = "1.35.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -148,14 +148,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListLinuxSubscriptionInstances`](crate::operation::list_linux_subscription_instances) operation has
-/// a [`Client::list_linux_subscription_instances`], function which returns a builder for that operation.
+/// For example, the [`DeregisterSubscriptionProvider`](crate::operation::deregister_subscription_provider) operation has
+/// a [`Client::deregister_subscription_provider`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_linux_subscription_instances()
-///     .next_token("example")
+/// let result = client.deregister_subscription_provider()
+///     .subscription_provider_arn("example")
 ///     .send()
 ///     .await;
 /// ```

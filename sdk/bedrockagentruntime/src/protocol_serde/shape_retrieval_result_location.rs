@@ -25,6 +25,26 @@ where
                             builder = builder
                                 .set_s3_location(crate::protocol_serde::shape_retrieval_result_s3_location::de_retrieval_result_s3_location(tokens)?);
                         }
+                        "webLocation" => {
+                            builder = builder.set_web_location(
+                                crate::protocol_serde::shape_retrieval_result_web_location::de_retrieval_result_web_location(tokens)?,
+                            );
+                        }
+                        "confluenceLocation" => {
+                            builder = builder.set_confluence_location(
+                                crate::protocol_serde::shape_retrieval_result_confluence_location::de_retrieval_result_confluence_location(tokens)?,
+                            );
+                        }
+                        "salesforceLocation" => {
+                            builder = builder.set_salesforce_location(
+                                crate::protocol_serde::shape_retrieval_result_salesforce_location::de_retrieval_result_salesforce_location(tokens)?,
+                            );
+                        }
+                        "sharePointLocation" => {
+                            builder = builder.set_share_point_location(
+                                crate::protocol_serde::shape_retrieval_result_share_point_location::de_retrieval_result_share_point_location(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

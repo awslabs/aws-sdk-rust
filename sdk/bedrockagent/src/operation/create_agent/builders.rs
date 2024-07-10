@@ -35,6 +35,8 @@ impl crate::operation::create_agent::builders::CreateAgentInputBuilder {
 /// <p>(Optional) <code>idleSessionTTLinSeconds</code> – Specify the number of seconds for which the agent should maintain session information. After this time expires, the subsequent <code>InvokeAgent</code> request begins a new session.</p></li>
 /// </ul></li>
 /// <li>
+/// <p>To enable your agent to retain conversational context across multiple sessions, include a <code>memoryConfiguration</code> object. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-configure-memory.html">Configure memory</a>.</p></li>
+/// <li>
 /// <p>To override the default prompt behavior for agent orchestration and to use advanced prompts, include a <code>promptOverrideConfiguration</code> object. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced prompts</a>.</p></li>
 /// <li>
 /// <p>If you agent fails to be created, the response returns a list of <code>failureReasons</code> alongside a list of <code>recommendedActions</code> for you to troubleshoot.</p></li>
@@ -285,5 +287,19 @@ impl CreateAgentFluentBuilder {
     /// <p>The unique Guardrail configuration assigned to the agent when it is created.</p>
     pub fn get_guardrail_configuration(&self) -> &::std::option::Option<crate::types::GuardrailConfiguration> {
         self.inner.get_guardrail_configuration()
+    }
+    /// <p>Contains the details of the memory configured for the agent.</p>
+    pub fn memory_configuration(mut self, input: crate::types::MemoryConfiguration) -> Self {
+        self.inner = self.inner.memory_configuration(input);
+        self
+    }
+    /// <p>Contains the details of the memory configured for the agent.</p>
+    pub fn set_memory_configuration(mut self, input: ::std::option::Option<crate::types::MemoryConfiguration>) -> Self {
+        self.inner = self.inner.set_memory_configuration(input);
+        self
+    }
+    /// <p>Contains the details of the memory configured for the agent.</p>
+    pub fn get_memory_configuration(&self) -> &::std::option::Option<crate::types::MemoryConfiguration> {
+        self.inner.get_memory_configuration()
     }
 }

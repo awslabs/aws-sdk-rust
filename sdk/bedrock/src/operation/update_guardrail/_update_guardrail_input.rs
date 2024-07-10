@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateGuardrailInput {
-    /// <p>The unique identifier of the guardrail</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub guardrail_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A name for the guardrail.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -17,6 +17,8 @@ pub struct UpdateGuardrailInput {
     pub word_policy_config: ::std::option::Option<crate::types::GuardrailWordPolicyConfig>,
     /// <p>The sensitive information policy to configure for the guardrail.</p>
     pub sensitive_information_policy_config: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicyConfig>,
+    /// <p>The contextual grounding policy configuration used to update a guardrail.</p>
+    pub contextual_grounding_policy_config: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicyConfig>,
     /// <p>The message to return when the guardrail blocks a prompt.</p>
     pub blocked_input_messaging: ::std::option::Option<::std::string::String>,
     /// <p>The message to return when the guardrail blocks a model response.</p>
@@ -25,7 +27,7 @@ pub struct UpdateGuardrailInput {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGuardrailInput {
-    /// <p>The unique identifier of the guardrail</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub fn guardrail_identifier(&self) -> ::std::option::Option<&str> {
         self.guardrail_identifier.as_deref()
     }
@@ -53,6 +55,10 @@ impl UpdateGuardrailInput {
     pub fn sensitive_information_policy_config(&self) -> ::std::option::Option<&crate::types::GuardrailSensitiveInformationPolicyConfig> {
         self.sensitive_information_policy_config.as_ref()
     }
+    /// <p>The contextual grounding policy configuration used to update a guardrail.</p>
+    pub fn contextual_grounding_policy_config(&self) -> ::std::option::Option<&crate::types::GuardrailContextualGroundingPolicyConfig> {
+        self.contextual_grounding_policy_config.as_ref()
+    }
     /// <p>The message to return when the guardrail blocks a prompt.</p>
     pub fn blocked_input_messaging(&self) -> ::std::option::Option<&str> {
         self.blocked_input_messaging.as_deref()
@@ -76,6 +82,7 @@ impl ::std::fmt::Debug for UpdateGuardrailInput {
         formatter.field("content_policy_config", &self.content_policy_config);
         formatter.field("word_policy_config", &self.word_policy_config);
         formatter.field("sensitive_information_policy_config", &self.sensitive_information_policy_config);
+        formatter.field("contextual_grounding_policy_config", &self.contextual_grounding_policy_config);
         formatter.field("blocked_input_messaging", &"*** Sensitive Data Redacted ***");
         formatter.field("blocked_outputs_messaging", &"*** Sensitive Data Redacted ***");
         formatter.field("kms_key_id", &self.kms_key_id);
@@ -100,23 +107,24 @@ pub struct UpdateGuardrailInputBuilder {
     pub(crate) content_policy_config: ::std::option::Option<crate::types::GuardrailContentPolicyConfig>,
     pub(crate) word_policy_config: ::std::option::Option<crate::types::GuardrailWordPolicyConfig>,
     pub(crate) sensitive_information_policy_config: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicyConfig>,
+    pub(crate) contextual_grounding_policy_config: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicyConfig>,
     pub(crate) blocked_input_messaging: ::std::option::Option<::std::string::String>,
     pub(crate) blocked_outputs_messaging: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGuardrailInputBuilder {
-    /// <p>The unique identifier of the guardrail</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     /// This field is required.
     pub fn guardrail_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.guardrail_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the guardrail</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub fn set_guardrail_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.guardrail_identifier = input;
         self
     }
-    /// <p>The unique identifier of the guardrail</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub fn get_guardrail_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.guardrail_identifier
     }
@@ -208,6 +216,23 @@ impl UpdateGuardrailInputBuilder {
     pub fn get_sensitive_information_policy_config(&self) -> &::std::option::Option<crate::types::GuardrailSensitiveInformationPolicyConfig> {
         &self.sensitive_information_policy_config
     }
+    /// <p>The contextual grounding policy configuration used to update a guardrail.</p>
+    pub fn contextual_grounding_policy_config(mut self, input: crate::types::GuardrailContextualGroundingPolicyConfig) -> Self {
+        self.contextual_grounding_policy_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The contextual grounding policy configuration used to update a guardrail.</p>
+    pub fn set_contextual_grounding_policy_config(
+        mut self,
+        input: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicyConfig>,
+    ) -> Self {
+        self.contextual_grounding_policy_config = input;
+        self
+    }
+    /// <p>The contextual grounding policy configuration used to update a guardrail.</p>
+    pub fn get_contextual_grounding_policy_config(&self) -> &::std::option::Option<crate::types::GuardrailContextualGroundingPolicyConfig> {
+        &self.contextual_grounding_policy_config
+    }
     /// <p>The message to return when the guardrail blocks a prompt.</p>
     /// This field is required.
     pub fn blocked_input_messaging(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -264,6 +289,7 @@ impl UpdateGuardrailInputBuilder {
             content_policy_config: self.content_policy_config,
             word_policy_config: self.word_policy_config,
             sensitive_information_policy_config: self.sensitive_information_policy_config,
+            contextual_grounding_policy_config: self.contextual_grounding_policy_config,
             blocked_input_messaging: self.blocked_input_messaging,
             blocked_outputs_messaging: self.blocked_outputs_messaging,
             kms_key_id: self.kms_key_id,
@@ -280,6 +306,7 @@ impl ::std::fmt::Debug for UpdateGuardrailInputBuilder {
         formatter.field("content_policy_config", &self.content_policy_config);
         formatter.field("word_policy_config", &self.word_policy_config);
         formatter.field("sensitive_information_policy_config", &self.sensitive_information_policy_config);
+        formatter.field("contextual_grounding_policy_config", &self.contextual_grounding_policy_config);
         formatter.field("blocked_input_messaging", &"*** Sensitive Data Redacted ***");
         formatter.field("blocked_outputs_messaging", &"*** Sensitive Data Redacted ***");
         formatter.field("kms_key_id", &self.kms_key_id);

@@ -36,7 +36,7 @@ pub struct IpamDiscoveredPublicAddress {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Tags associated with the IP address.</p>
     pub tags: ::std::option::Option<crate::types::IpamPublicAddressTags>,
-    /// <p>The network border group that the resource that the IP address is assigned to is in.</p>
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub network_border_group: ::std::option::Option<::std::string::String>,
     /// <p>Security groups associated with the resource that the IP address is assigned to.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::IpamPublicAddressSecurityGroup>>,
@@ -108,7 +108,7 @@ impl IpamDiscoveredPublicAddress {
     pub fn tags(&self) -> ::std::option::Option<&crate::types::IpamPublicAddressTags> {
         self.tags.as_ref()
     }
-    /// <p>The network border group that the resource that the IP address is assigned to is in.</p>
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn network_border_group(&self) -> ::std::option::Option<&str> {
         self.network_border_group.as_deref()
     }
@@ -379,17 +379,17 @@ impl IpamDiscoveredPublicAddressBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<crate::types::IpamPublicAddressTags> {
         &self.tags
     }
-    /// <p>The network border group that the resource that the IP address is assigned to is in.</p>
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn network_border_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_border_group = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The network border group that the resource that the IP address is assigned to is in.</p>
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_border_group = input;
         self
     }
-    /// <p>The network border group that the resource that the IP address is assigned to is in.</p>
+    /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_border_group
     }

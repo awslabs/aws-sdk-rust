@@ -21,6 +21,18 @@ pub fn ser_recipe(
         crate::protocol_serde::shape_recipe_reference::ser_recipe_reference(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.recipe_steps {
+        let mut array_6 = object.key("RecipeSteps").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_recipe_step::ser_recipe_step(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
+    }
     Ok(())
 }
 
@@ -51,6 +63,9 @@ where
                         }
                         "RecipeReference" => {
                             builder = builder.set_recipe_reference(crate::protocol_serde::shape_recipe_reference::de_recipe_reference(tokens)?);
+                        }
+                        "RecipeSteps" => {
+                            builder = builder.set_recipe_steps(crate::protocol_serde::shape_recipe_steps::de_recipe_steps(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

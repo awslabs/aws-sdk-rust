@@ -42,6 +42,8 @@ pub struct IpamResourceCidr {
     pub overlap_status: ::std::option::Option<crate::types::IpamOverlapStatus>,
     /// <p>The ID of a VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Availability Zone ID.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl IpamResourceCidr {
     /// <p>The IPAM ID for an IPAM resource.</p>
@@ -114,6 +116,10 @@ impl IpamResourceCidr {
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
+    /// <p>The Availability Zone ID.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
 }
 impl IpamResourceCidr {
     /// Creates a new builder-style object to manufacture [`IpamResourceCidr`](crate::types::IpamResourceCidr).
@@ -141,6 +147,7 @@ pub struct IpamResourceCidrBuilder {
     pub(crate) management_state: ::std::option::Option<crate::types::IpamManagementState>,
     pub(crate) overlap_status: ::std::option::Option<crate::types::IpamOverlapStatus>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl IpamResourceCidrBuilder {
     /// <p>The IPAM ID for an IPAM resource.</p>
@@ -383,6 +390,20 @@ impl IpamResourceCidrBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
+    /// <p>The Availability Zone ID.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Availability Zone ID.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The Availability Zone ID.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// Consumes the builder and constructs a [`IpamResourceCidr`](crate::types::IpamResourceCidr).
     pub fn build(self) -> crate::types::IpamResourceCidr {
         crate::types::IpamResourceCidr {
@@ -401,6 +422,7 @@ impl IpamResourceCidrBuilder {
             management_state: self.management_state,
             overlap_status: self.overlap_status,
             vpc_id: self.vpc_id,
+            availability_zone_id: self.availability_zone_id,
         }
     }
 }

@@ -16,7 +16,7 @@ pub struct AgentVersionSummary {
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The description of the version of the agent.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The details of the guardrails configuration in the agent version summary.</p>
+    /// <p>Details about the guardrail associated with the agent.</p>
     pub guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
 }
 impl AgentVersionSummary {
@@ -46,7 +46,7 @@ impl AgentVersionSummary {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The details of the guardrails configuration in the agent version summary.</p>
+    /// <p>Details about the guardrail associated with the agent.</p>
     pub fn guardrail_configuration(&self) -> ::std::option::Option<&crate::types::GuardrailConfiguration> {
         self.guardrail_configuration.as_ref()
     }
@@ -160,17 +160,17 @@ impl AgentVersionSummaryBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The details of the guardrails configuration in the agent version summary.</p>
+    /// <p>Details about the guardrail associated with the agent.</p>
     pub fn guardrail_configuration(mut self, input: crate::types::GuardrailConfiguration) -> Self {
         self.guardrail_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details of the guardrails configuration in the agent version summary.</p>
+    /// <p>Details about the guardrail associated with the agent.</p>
     pub fn set_guardrail_configuration(mut self, input: ::std::option::Option<crate::types::GuardrailConfiguration>) -> Self {
         self.guardrail_configuration = input;
         self
     }
-    /// <p>The details of the guardrails configuration in the agent version summary.</p>
+    /// <p>Details about the guardrail associated with the agent.</p>
     pub fn get_guardrail_configuration(&self) -> &::std::option::Option<crate::types::GuardrailConfiguration> {
         &self.guardrail_configuration
     }

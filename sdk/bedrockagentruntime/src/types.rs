@@ -3,6 +3,14 @@ pub use crate::types::_knowledge_base_retrieval_result::KnowledgeBaseRetrievalRe
 
 pub use crate::types::_retrieval_result_location::RetrievalResultLocation;
 
+pub use crate::types::_retrieval_result_share_point_location::RetrievalResultSharePointLocation;
+
+pub use crate::types::_retrieval_result_salesforce_location::RetrievalResultSalesforceLocation;
+
+pub use crate::types::_retrieval_result_confluence_location::RetrievalResultConfluenceLocation;
+
+pub use crate::types::_retrieval_result_web_location::RetrievalResultWebLocation;
+
 pub use crate::types::_retrieval_result_s3_location::RetrievalResultS3Location;
 
 pub use crate::types::_retrieval_result_location_type::RetrievalResultLocationType;
@@ -61,13 +69,29 @@ pub use crate::types::_external_source_type::ExternalSourceType;
 
 pub use crate::types::_knowledge_base_retrieve_and_generate_configuration::KnowledgeBaseRetrieveAndGenerateConfiguration;
 
+pub use crate::types::_orchestration_configuration::OrchestrationConfiguration;
+
+pub use crate::types::_query_transformation_configuration::QueryTransformationConfiguration;
+
+pub use crate::types::_query_transformation_type::QueryTransformationType;
+
 pub use crate::types::_generation_configuration::GenerationConfiguration;
 
 pub use crate::types::_retrieve_and_generate_type::RetrieveAndGenerateType;
 
 pub use crate::types::_retrieve_and_generate_input::RetrieveAndGenerateInput;
 
+pub use crate::types::_memory::Memory;
+
+pub use crate::types::_memory_session_summary::MemorySessionSummary;
+
+pub use crate::types::_memory_type::MemoryType;
+
 pub use crate::types::_response_stream::ResponseStream;
+
+pub use crate::types::_file_part::FilePart;
+
+pub use crate::types::_output_file::OutputFile;
 
 pub use crate::types::_return_control_payload::ReturnControlPayload;
 
@@ -111,6 +135,8 @@ pub use crate::types::_orchestration_trace::OrchestrationTrace;
 
 pub use crate::types::_observation::Observation;
 
+pub use crate::types::_code_interpreter_invocation_output::CodeInterpreterInvocationOutput;
+
 pub use crate::types::_reprompt_response::RepromptResponse;
 
 pub use crate::types::_source::Source;
@@ -125,9 +151,13 @@ pub use crate::types::_type_::Type;
 
 pub use crate::types::_invocation_input::InvocationInput;
 
+pub use crate::types::_code_interpreter_invocation_input::CodeInterpreterInvocationInput;
+
 pub use crate::types::_knowledge_base_lookup_input::KnowledgeBaseLookupInput;
 
 pub use crate::types::_action_group_invocation_input::ActionGroupInvocationInput;
+
+pub use crate::types::_execution_type::ExecutionType;
 
 pub use crate::types::_request_body::RequestBody;
 
@@ -191,6 +221,20 @@ pub use crate::types::_attribution::Attribution;
 
 pub use crate::types::_session_state::SessionState;
 
+pub use crate::types::_knowledge_base_configuration::KnowledgeBaseConfiguration;
+
+pub use crate::types::_input_file::InputFile;
+
+pub use crate::types::_file_use_case::FileUseCase;
+
+pub use crate::types::_file_source::FileSource;
+
+pub use crate::types::_byte_content_file::ByteContentFile;
+
+pub use crate::types::_s3_object_file::S3ObjectFile;
+
+pub use crate::types::_file_source_type::FileSourceType;
+
 pub use crate::types::_invocation_result_member::InvocationResultMember;
 
 pub use crate::types::_function_result::FunctionResult;
@@ -200,6 +244,22 @@ pub use crate::types::_response_state::ResponseState;
 pub use crate::types::_content_body::ContentBody;
 
 pub use crate::types::_api_result::ApiResult;
+
+pub use crate::types::_flow_response_stream::FlowResponseStream;
+
+pub use crate::types::_flow_completion_event::FlowCompletionEvent;
+
+pub use crate::types::_flow_completion_reason::FlowCompletionReason;
+
+pub use crate::types::_flow_output_event::FlowOutputEvent;
+
+pub use crate::types::_flow_output_content::FlowOutputContent;
+
+pub use crate::types::_node_type::NodeType;
+
+pub use crate::types::_flow_input::FlowInput;
+
+pub use crate::types::_flow_input_content::FlowInputContent;
 
 mod _action_group_invocation_input;
 
@@ -217,11 +277,19 @@ mod _attribution;
 
 mod _byte_content_doc;
 
+mod _byte_content_file;
+
 mod _citation;
+
+mod _code_interpreter_invocation_input;
+
+mod _code_interpreter_invocation_output;
 
 mod _content_body;
 
 mod _creation_mode;
+
+mod _execution_type;
 
 mod _external_source;
 
@@ -233,9 +301,31 @@ mod _external_sources_retrieve_and_generate_configuration;
 
 mod _failure_trace;
 
+mod _file_part;
+
+mod _file_source;
+
+mod _file_source_type;
+
+mod _file_use_case;
+
 mod _filter_attribute;
 
 mod _final_response;
+
+mod _flow_completion_event;
+
+mod _flow_completion_reason;
+
+mod _flow_input;
+
+mod _flow_input_content;
+
+mod _flow_output_content;
+
+mod _flow_output_event;
+
+mod _flow_response_stream;
 
 mod _function_invocation_input;
 
@@ -299,6 +389,8 @@ mod _inference_config;
 
 mod _inference_configuration;
 
+mod _input_file;
+
 mod _invocation_input;
 
 mod _invocation_input_member;
@@ -306,6 +398,8 @@ mod _invocation_input_member;
 mod _invocation_result_member;
 
 mod _invocation_type;
+
+mod _knowledge_base_configuration;
 
 mod _knowledge_base_lookup_input;
 
@@ -321,11 +415,23 @@ mod _knowledge_base_retrieve_and_generate_configuration;
 
 mod _knowledge_base_vector_search_configuration;
 
+mod _memory;
+
+mod _memory_session_summary;
+
+mod _memory_type;
+
 mod _model_invocation_input;
+
+mod _node_type;
 
 mod _observation;
 
+mod _orchestration_configuration;
+
 mod _orchestration_trace;
+
+mod _output_file;
 
 mod _parameter;
 
@@ -349,6 +455,10 @@ mod _prompt_type;
 
 mod _property_parameters;
 
+mod _query_transformation_configuration;
+
+mod _query_transformation_type;
+
 mod _rationale;
 
 mod _reprompt_response;
@@ -361,6 +471,8 @@ mod _response_stream;
 
 mod _retrieval_filter;
 
+mod _retrieval_result_confluence_location;
+
 mod _retrieval_result_content;
 
 mod _retrieval_result_location;
@@ -368,6 +480,12 @@ mod _retrieval_result_location;
 mod _retrieval_result_location_type;
 
 mod _retrieval_result_s3_location;
+
+mod _retrieval_result_salesforce_location;
+
+mod _retrieval_result_share_point_location;
+
+mod _retrieval_result_web_location;
 
 mod _retrieve_and_generate_configuration;
 
@@ -384,6 +502,8 @@ mod _retrieved_reference;
 mod _return_control_payload;
 
 mod _s3_object_doc;
+
+mod _s3_object_file;
 
 mod _search_type;
 

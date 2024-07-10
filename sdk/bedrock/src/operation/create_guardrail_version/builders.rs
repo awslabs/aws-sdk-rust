@@ -108,17 +108,17 @@ impl CreateGuardrailVersionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the guardrail.</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub fn guardrail_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.guardrail_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the guardrail.</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub fn set_guardrail_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_guardrail_identifier(input);
         self
     }
-    /// <p>The unique identifier of the guardrail.</p>
+    /// <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
     pub fn get_guardrail_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_guardrail_identifier()
     }

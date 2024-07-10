@@ -23,7 +23,7 @@ impl crate::operation::invoke_agent::builders::InvokeAgentInputBuilder {
 /// Fluent builder constructing a request to `InvokeAgent`.
 ///
 /// <note>
-/// <p>The CLI doesn't support <code>InvokeAgent</code>.</p>
+/// <p>The CLI doesn't support streaming operations in Amazon Bedrock, including <code>InvokeAgent</code>.</p>
 /// </note>
 /// <p>Sends a prompt for the agent to process and respond to. Note the following fields for the request:</p>
 /// <ul>
@@ -241,5 +241,19 @@ impl InvokeAgentFluentBuilder {
     /// </note>
     pub fn get_input_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_input_text()
+    }
+    /// <p>The unique identifier of the agent memory.</p>
+    pub fn memory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.memory_id(input.into());
+        self
+    }
+    /// <p>The unique identifier of the agent memory.</p>
+    pub fn set_memory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_memory_id(input);
+        self
+    }
+    /// <p>The unique identifier of the agent memory.</p>
+    pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_memory_id()
     }
 }

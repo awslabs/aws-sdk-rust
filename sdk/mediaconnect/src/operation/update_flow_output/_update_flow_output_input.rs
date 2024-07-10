@@ -38,6 +38,8 @@ pub struct UpdateFlowOutputInput {
     pub stream_id: ::std::option::Option<::std::string::String>,
     /// The name of the VPC interface attachment to use for this output.
     pub vpc_interface_attachment: ::std::option::Option<crate::types::VpcInterfaceAttachment>,
+    /// An indication of whether the output should transmit data or not. If you don't specify the outputStatus field in your request, MediaConnect leaves the value unchanged.
+    pub output_status: ::std::option::Option<crate::types::OutputStatus>,
 }
 impl UpdateFlowOutputInput {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
@@ -112,6 +114,10 @@ impl UpdateFlowOutputInput {
     pub fn vpc_interface_attachment(&self) -> ::std::option::Option<&crate::types::VpcInterfaceAttachment> {
         self.vpc_interface_attachment.as_ref()
     }
+    /// An indication of whether the output should transmit data or not. If you don't specify the outputStatus field in your request, MediaConnect leaves the value unchanged.
+    pub fn output_status(&self) -> ::std::option::Option<&crate::types::OutputStatus> {
+        self.output_status.as_ref()
+    }
 }
 impl UpdateFlowOutputInput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowOutputInput`](crate::operation::update_flow_output::UpdateFlowOutputInput).
@@ -141,6 +147,7 @@ pub struct UpdateFlowOutputInputBuilder {
     pub(crate) smoothing_latency: ::std::option::Option<i32>,
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_interface_attachment: ::std::option::Option<crate::types::VpcInterfaceAttachment>,
+    pub(crate) output_status: ::std::option::Option<crate::types::OutputStatus>,
 }
 impl UpdateFlowOutputInputBuilder {
     /// Appends an item to `cidr_allow_list`.
@@ -400,6 +407,20 @@ impl UpdateFlowOutputInputBuilder {
     pub fn get_vpc_interface_attachment(&self) -> &::std::option::Option<crate::types::VpcInterfaceAttachment> {
         &self.vpc_interface_attachment
     }
+    /// An indication of whether the output should transmit data or not. If you don't specify the outputStatus field in your request, MediaConnect leaves the value unchanged.
+    pub fn output_status(mut self, input: crate::types::OutputStatus) -> Self {
+        self.output_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// An indication of whether the output should transmit data or not. If you don't specify the outputStatus field in your request, MediaConnect leaves the value unchanged.
+    pub fn set_output_status(mut self, input: ::std::option::Option<crate::types::OutputStatus>) -> Self {
+        self.output_status = input;
+        self
+    }
+    /// An indication of whether the output should transmit data or not. If you don't specify the outputStatus field in your request, MediaConnect leaves the value unchanged.
+    pub fn get_output_status(&self) -> &::std::option::Option<crate::types::OutputStatus> {
+        &self.output_status
+    }
     /// Consumes the builder and constructs a [`UpdateFlowOutputInput`](crate::operation::update_flow_output::UpdateFlowOutputInput).
     pub fn build(
         self,
@@ -422,6 +443,7 @@ impl UpdateFlowOutputInputBuilder {
             smoothing_latency: self.smoothing_latency,
             stream_id: self.stream_id,
             vpc_interface_attachment: self.vpc_interface_attachment,
+            output_status: self.output_status,
         })
     }
 }

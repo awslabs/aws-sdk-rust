@@ -23,13 +23,29 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_deregister_subscription_provider;
+
+pub(crate) mod shape_get_registered_subscription_provider;
+
 pub(crate) mod shape_get_service_settings;
 
 pub(crate) mod shape_list_linux_subscription_instances;
 
 pub(crate) mod shape_list_linux_subscriptions;
 
+pub(crate) mod shape_list_registered_subscription_providers;
+
+pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_register_subscription_provider;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
+
 pub(crate) mod shape_update_service_settings;
+
+pub(crate) mod shape_deregister_subscription_provider_input;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -39,11 +55,21 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_get_registered_subscription_provider_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_linux_subscription_instances_input;
 
 pub(crate) mod shape_list_linux_subscriptions_input;
+
+pub(crate) mod shape_list_registered_subscription_providers_input;
+
+pub(crate) mod shape_register_subscription_provider_input;
+
+pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
@@ -57,13 +83,19 @@ pub(crate) mod shape_instance_list;
 
 pub(crate) mod shape_linux_subscriptions_discovery_settings;
 
+pub(crate) mod shape_registered_subscription_provider_list;
+
 pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_string_map;
 
 pub(crate) mod shape_subscription_list;
 
+pub(crate) mod shape_tags;
+
 pub(crate) mod shape_instance;
+
+pub(crate) mod shape_registered_subscription_provider;
 
 pub(crate) mod shape_subscription;
 
