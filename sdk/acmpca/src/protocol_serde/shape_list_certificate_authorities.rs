@@ -82,16 +82,16 @@ pub(crate) fn de_list_certificate_authorities(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "CertificateAuthorities" => {
-                    builder = builder
-                        .set_certificate_authorities(crate::protocol_serde::shape_certificate_authorities::de_certificate_authorities(tokens)?);
-                }
                 "NextToken" => {
                     builder = builder.set_next_token(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "CertificateAuthorities" => {
+                    builder = builder
+                        .set_certificate_authorities(crate::protocol_serde::shape_certificate_authorities::de_certificate_authorities(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

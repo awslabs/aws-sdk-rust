@@ -128,6 +128,8 @@ pub mod customize;
 
 mod delete_practice_run_configuration;
 
+mod get_autoshift_observer_notification_status;
+
 mod get_managed_resource;
 
 mod list_autoshifts;
@@ -137,6 +139,8 @@ mod list_managed_resources;
 mod list_zonal_shifts;
 
 mod start_zonal_shift;
+
+mod update_autoshift_observer_notification_status;
 
 mod update_practice_run_configuration;
 

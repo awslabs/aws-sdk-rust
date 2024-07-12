@@ -236,6 +236,21 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     builder
 }
 
+pub(crate) fn topic_reviewed_answer_correct_errors(
+    mut builder: crate::types::builders::TopicReviewedAnswerBuilder,
+) -> crate::types::builders::TopicReviewedAnswerBuilder {
+    if builder.answer_id.is_none() {
+        builder.answer_id = Some(Default::default())
+    }
+    if builder.dataset_arn.is_none() {
+        builder.dataset_arn = Some(Default::default())
+    }
+    if builder.question.is_none() {
+        builder.question = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn vpc_connection_properties_correct_errors(
     mut builder: crate::types::builders::VpcConnectionPropertiesBuilder,
 ) -> crate::types::builders::VpcConnectionPropertiesBuilder {
@@ -1284,6 +1299,13 @@ pub(crate) fn default_section_based_layout_configuration_correct_errors(
             let builder = crate::types::builders::SectionBasedLayoutCanvasSizeOptionsBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn identifier_correct_errors(mut builder: crate::types::builders::IdentifierBuilder) -> crate::types::builders::IdentifierBuilder {
+    if builder.identity.is_none() {
+        builder.identity = Some(Default::default())
     }
     builder
 }

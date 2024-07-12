@@ -5,7 +5,7 @@
 pub struct UpdateZonalAutoshiftConfigurationInput {
     /// <p>The identifier for the resource that you want to update the zonal autoshift configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The zonal autoshift status for the resource that you want to update the zonal autoshift configuration for.</p>
+    /// <p>The zonal autoshift status for the resource that you want to update the zonal autoshift configuration for. Choose <code>ENABLED</code> to authorize Amazon Web Services to shift away resource traffic for an application from an Availability Zone during events, on your behalf, to help reduce time to recovery.</p>
     pub zonal_autoshift_status: ::std::option::Option<crate::types::ZonalAutoshiftStatus>,
 }
 impl UpdateZonalAutoshiftConfigurationInput {
@@ -13,7 +13,7 @@ impl UpdateZonalAutoshiftConfigurationInput {
     pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
-    /// <p>The zonal autoshift status for the resource that you want to update the zonal autoshift configuration for.</p>
+    /// <p>The zonal autoshift status for the resource that you want to update the zonal autoshift configuration for. Choose <code>ENABLED</code> to authorize Amazon Web Services to shift away resource traffic for an application from an Availability Zone during events, on your behalf, to help reduce time to recovery.</p>
     pub fn zonal_autoshift_status(&self) -> ::std::option::Option<&crate::types::ZonalAutoshiftStatus> {
         self.zonal_autoshift_status.as_ref()
     }
@@ -48,18 +48,18 @@ impl UpdateZonalAutoshiftConfigurationInputBuilder {
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_identifier
     }
-    /// <p>The zonal autoshift status for the resource that you want to update the zonal autoshift configuration for.</p>
+    /// <p>The zonal autoshift status for the resource that you want to update the zonal autoshift configuration for. Choose <code>ENABLED</code> to authorize Amazon Web Services to shift away resource traffic for an application from an Availability Zone during events, on your behalf, to help reduce time to recovery.</p>
     /// This field is required.
     pub fn zonal_autoshift_status(mut self, input: crate::types::ZonalAutoshiftStatus) -> Self {
         self.zonal_autoshift_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The zonal autoshift status for the resource that you want to update the zonal autoshift configuration for.</p>
+    /// <p>The zonal autoshift status for the resource that you want to update the zonal autoshift configuration for. Choose <code>ENABLED</code> to authorize Amazon Web Services to shift away resource traffic for an application from an Availability Zone during events, on your behalf, to help reduce time to recovery.</p>
     pub fn set_zonal_autoshift_status(mut self, input: ::std::option::Option<crate::types::ZonalAutoshiftStatus>) -> Self {
         self.zonal_autoshift_status = input;
         self
     }
-    /// <p>The zonal autoshift status for the resource that you want to update the zonal autoshift configuration for.</p>
+    /// <p>The zonal autoshift status for the resource that you want to update the zonal autoshift configuration for. Choose <code>ENABLED</code> to authorize Amazon Web Services to shift away resource traffic for an application from an Availability Zone during events, on your behalf, to help reduce time to recovery.</p>
     pub fn get_zonal_autoshift_status(&self) -> &::std::option::Option<crate::types::ZonalAutoshiftStatus> {
         &self.zonal_autoshift_status
     }

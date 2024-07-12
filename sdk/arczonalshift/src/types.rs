@@ -27,6 +27,8 @@ pub use crate::types::_applied_status::AppliedStatus;
 
 pub use crate::types::_managed_resource_summary::ManagedResourceSummary;
 
+pub use crate::types::_autoshift_observer_notification_status::AutoshiftObserverNotificationStatus;
+
 pub use crate::types::_autoshift_summary::AutoshiftSummary;
 
 pub use crate::types::_autoshift_execution_status::AutoshiftExecutionStatus;
@@ -38,6 +40,8 @@ mod _autoshift_applied_status;
 mod _autoshift_execution_status;
 
 mod _autoshift_in_resource;
+
+mod _autoshift_observer_notification_status;
 
 mod _autoshift_summary;
 

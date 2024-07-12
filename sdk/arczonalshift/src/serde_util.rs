@@ -95,6 +95,15 @@ pub(crate) fn delete_practice_run_configuration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_autoshift_observer_notification_status_output_output_correct_errors(
+    mut builder: crate::operation::get_autoshift_observer_notification_status::builders::GetAutoshiftObserverNotificationStatusOutputBuilder,
+) -> crate::operation::get_autoshift_observer_notification_status::builders::GetAutoshiftObserverNotificationStatusOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AutoshiftObserverNotificationStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_managed_resource_output_output_correct_errors(
     mut builder: crate::operation::get_managed_resource::builders::GetManagedResourceOutputBuilder,
 ) -> crate::operation::get_managed_resource::builders::GetManagedResourceOutputBuilder {
@@ -139,6 +148,15 @@ pub(crate) fn start_zonal_shift_output_output_correct_errors(
     }
     if builder.comment.is_none() {
         builder.comment = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_autoshift_observer_notification_status_output_output_correct_errors(
+    mut builder: crate::operation::update_autoshift_observer_notification_status::builders::UpdateAutoshiftObserverNotificationStatusOutputBuilder,
+) -> crate::operation::update_autoshift_observer_notification_status::builders::UpdateAutoshiftObserverNotificationStatusOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AutoshiftObserverNotificationStatus>().ok()
     }
     builder
 }

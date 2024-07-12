@@ -23,6 +23,10 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_batch_create_topic_reviewed_answer;
+
+pub(crate) mod shape_batch_delete_topic_reviewed_answer;
+
 pub(crate) mod shape_cancel_ingestion;
 
 pub(crate) mod shape_create_account_customization;
@@ -267,6 +271,8 @@ pub(crate) mod shape_list_themes;
 
 pub(crate) mod shape_list_topic_refresh_schedules;
 
+pub(crate) mod shape_list_topic_reviewed_answers;
+
 pub(crate) mod shape_list_topics;
 
 pub(crate) mod shape_list_user_groups;
@@ -380,6 +386,10 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_batch_create_topic_reviewed_answer_input;
+
+pub(crate) mod shape_batch_delete_topic_reviewed_answer_input;
 
 pub(crate) mod shape_concurrent_updating_exception;
 
@@ -607,6 +617,8 @@ pub(crate) mod shape_column_group;
 
 pub(crate) mod shape_column_level_permission_rule;
 
+pub(crate) mod shape_create_topic_reviewed_answer;
+
 pub(crate) mod shape_dashboard;
 
 pub(crate) mod shape_dashboard_error_list;
@@ -683,6 +695,8 @@ pub(crate) mod shape_ingestion;
 
 pub(crate) mod shape_ingestions;
 
+pub(crate) mod shape_invalid_topic_reviewed_answers;
+
 pub(crate) mod shape_ip_restriction_rule_map;
 
 pub(crate) mod shape_key_registration;
@@ -733,6 +747,8 @@ pub(crate) mod shape_snapshot_user_configuration_redacted;
 
 pub(crate) mod shape_ssl_properties;
 
+pub(crate) mod shape_succeeded_topic_reviewed_answers;
+
 pub(crate) mod shape_successful_key_registration_entries;
 
 pub(crate) mod shape_tag;
@@ -774,6 +790,8 @@ pub(crate) mod shape_topic_refresh_details;
 pub(crate) mod shape_topic_refresh_schedule;
 
 pub(crate) mod shape_topic_refresh_schedule_summaries;
+
+pub(crate) mod shape_topic_reviewed_answers;
 
 pub(crate) mod shape_topic_summaries;
 
@@ -1047,6 +1065,8 @@ pub(crate) mod shape_integer_dataset_parameter;
 
 pub(crate) mod shape_integer_parameter;
 
+pub(crate) mod shape_invalid_topic_reviewed_answer;
+
 pub(crate) mod shape_jira_parameters;
 
 pub(crate) mod shape_logical_table_map;
@@ -1149,6 +1169,8 @@ pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_string_parameter;
 
+pub(crate) mod shape_succeeded_topic_reviewed_answer;
+
 pub(crate) mod shape_successful_key_registration_entry;
 
 pub(crate) mod shape_template_error;
@@ -1171,9 +1193,17 @@ pub(crate) mod shape_theme_version;
 
 pub(crate) mod shape_theme_version_summary;
 
+pub(crate) mod shape_topic_ir;
+
 pub(crate) mod shape_topic_refresh_schedule_summary;
 
+pub(crate) mod shape_topic_reviewed_answer;
+
 pub(crate) mod shape_topic_summary;
+
+pub(crate) mod shape_topic_template;
+
+pub(crate) mod shape_topic_visual;
 
 pub(crate) mod shape_transform_operation;
 
@@ -1299,6 +1329,8 @@ pub(crate) mod shape_sheet_control_layout;
 
 pub(crate) mod shape_sheet_text_box;
 
+pub(crate) mod shape_slot;
+
 pub(crate) mod shape_snapshot_anonymous_user_redacted;
 
 pub(crate) mod shape_snapshot_file;
@@ -1327,7 +1359,17 @@ pub(crate) mod shape_topic_column;
 
 pub(crate) mod shape_topic_filter;
 
+pub(crate) mod shape_topic_ir_contribution_analysis;
+
+pub(crate) mod shape_topic_ir_filter_option;
+
+pub(crate) mod shape_topic_ir_group_by;
+
+pub(crate) mod shape_topic_ir_metric;
+
 pub(crate) mod shape_topic_named_entity;
+
+pub(crate) mod shape_topic_sort_clause;
 
 pub(crate) mod shape_untag_column_operation;
 
@@ -1335,7 +1377,15 @@ pub(crate) mod shape_upload_settings;
 
 pub(crate) mod shape_visual;
 
+pub(crate) mod shape_visual_options;
+
+pub(crate) mod shape_agg_function;
+
+pub(crate) mod shape_aggregation_partition_by;
+
 pub(crate) mod shape_all_sheets_filter_scope_configuration;
+
+pub(crate) mod shape_anchor;
 
 pub(crate) mod shape_asset_bundle_export_job_analysis_property_to_override_list;
 
@@ -1383,6 +1433,10 @@ pub(crate) mod shape_combo_chart_visual;
 
 pub(crate) mod shape_comparative_order;
 
+pub(crate) mod shape_contribution_analysis_factor;
+
+pub(crate) mod shape_contribution_analysis_time_ranges;
+
 pub(crate) mod shape_custom_color;
 
 pub(crate) mod shape_custom_content_visual;
@@ -1403,6 +1457,8 @@ pub(crate) mod shape_default_interactive_layout_configuration;
 
 pub(crate) mod shape_default_paginated_layout_configuration;
 
+pub(crate) mod shape_display_format_options;
+
 pub(crate) mod shape_dns_resolver_list;
 
 pub(crate) mod shape_empty_visual;
@@ -1410,6 +1466,8 @@ pub(crate) mod shape_empty_visual;
 pub(crate) mod shape_entity;
 
 pub(crate) mod shape_filled_map_visual;
+
+pub(crate) mod shape_filter_agg_metrics;
 
 pub(crate) mod shape_filter_control_list;
 
@@ -1445,6 +1503,8 @@ pub(crate) mod shape_heat_map_visual;
 
 pub(crate) mod shape_histogram_visual;
 
+pub(crate) mod shape_identifier;
+
 pub(crate) mod shape_insight_visual;
 
 pub(crate) mod shape_integer_default_values;
@@ -1468,6 +1528,8 @@ pub(crate) mod shape_mapped_data_set_parameter;
 pub(crate) mod shape_margin_style;
 
 pub(crate) mod shape_named_entity_definition;
+
+pub(crate) mod shape_named_entity_ref;
 
 pub(crate) mod shape_nested_filter;
 
@@ -1525,6 +1587,8 @@ pub(crate) mod shape_sheet_control_layout_list;
 
 pub(crate) mod shape_sheet_text_box_list;
 
+pub(crate) mod shape_slots;
+
 pub(crate) mod shape_snapshot_file_list;
 
 pub(crate) mod shape_snapshot_file_sheet_selection;
@@ -1557,9 +1621,19 @@ pub(crate) mod shape_topic_category_filter;
 
 pub(crate) mod shape_topic_columns;
 
+pub(crate) mod shape_topic_constant_value;
+
 pub(crate) mod shape_topic_date_range_filter;
 
 pub(crate) mod shape_topic_filters;
+
+pub(crate) mod shape_topic_ir_comparison_method;
+
+pub(crate) mod shape_topic_ir_filter_list;
+
+pub(crate) mod shape_topic_ir_group_by_list;
+
+pub(crate) mod shape_topic_ir_metric_list;
 
 pub(crate) mod shape_topic_named_entities;
 
@@ -1568,6 +1642,8 @@ pub(crate) mod shape_topic_numeric_equality_filter;
 pub(crate) mod shape_topic_numeric_range_filter;
 
 pub(crate) mod shape_topic_relative_date_filter;
+
+pub(crate) mod shape_topic_visuals;
 
 pub(crate) mod shape_transform_operation_list;
 
@@ -1595,6 +1671,8 @@ pub(crate) mod shape_cascading_control_configuration;
 
 pub(crate) mod shape_category_filter_configuration;
 
+pub(crate) mod shape_collective_constant_entry;
+
 pub(crate) mod shape_color_list;
 
 pub(crate) mod shape_column_description;
@@ -1606,6 +1684,8 @@ pub(crate) mod shape_column_list;
 pub(crate) mod shape_column_schema_list;
 
 pub(crate) mod shape_combo_chart_configuration;
+
+pub(crate) mod shape_contribution_analysis_factors_list;
 
 pub(crate) mod shape_custom_colors_list;
 
@@ -1622,8 +1702,6 @@ pub(crate) mod shape_default_free_form_layout_configuration;
 pub(crate) mod shape_default_grid_layout_configuration;
 
 pub(crate) mod shape_default_section_based_layout_configuration;
-
-pub(crate) mod shape_display_format_options;
 
 pub(crate) mod shape_drop_down_control_display_options;
 
@@ -1672,6 +1750,8 @@ pub(crate) mod shape_list_control_display_options;
 pub(crate) mod shape_mapped_data_set_parameters;
 
 pub(crate) mod shape_named_entity_definition_metric;
+
+pub(crate) mod shape_negative_format;
 
 pub(crate) mod shape_null_value_format_configuration;
 
@@ -1725,6 +1805,8 @@ pub(crate) mod shape_time_range_filter_value;
 
 pub(crate) mod shape_topic_category_filter_constant;
 
+pub(crate) mod shape_topic_ir_filter_entry;
+
 pub(crate) mod shape_topic_range_filter_constant;
 
 pub(crate) mod shape_topic_singular_filter_constant;
@@ -1758,6 +1840,8 @@ pub(crate) mod shape_box_plot_field_wells;
 pub(crate) mod shape_box_plot_options;
 
 pub(crate) mod shape_box_plot_sort_configuration;
+
+pub(crate) mod shape_calculated_field_reference_list;
 
 pub(crate) mod shape_cascading_control_source;
 
@@ -1889,11 +1973,11 @@ pub(crate) mod shape_long_format_text;
 
 pub(crate) mod shape_named_entity_definitions;
 
-pub(crate) mod shape_negative_format;
-
 pub(crate) mod shape_number_display_format_configuration;
 
 pub(crate) mod shape_numerical_aggregation_function;
+
+pub(crate) mod shape_operand_list;
 
 pub(crate) mod shape_percentage_display_format_configuration;
 
@@ -2003,6 +2087,10 @@ pub(crate) mod shape_word_cloud_options;
 
 pub(crate) mod shape_word_cloud_sort_configuration;
 
+pub(crate) mod shape_agg_function_param_map;
+
+pub(crate) mod shape_aggregation_partition_by_list;
+
 pub(crate) mod shape_aggregation_sort_configuration_list;
 
 pub(crate) mod shape_arc_axis_configuration;
@@ -2096,6 +2184,8 @@ pub(crate) mod shape_field_sort_options;
 pub(crate) mod shape_filled_map_aggregated_field_wells;
 
 pub(crate) mod shape_filled_map_shape_conditional_formatting;
+
+pub(crate) mod shape_filter_agg_metrics_list;
 
 pub(crate) mod shape_font_configuration;
 
@@ -2296,6 +2386,8 @@ pub(crate) mod shape_categorical_measure_field;
 pub(crate) mod shape_category_drill_down_filter;
 
 pub(crate) mod shape_cluster_marker;
+
+pub(crate) mod shape_collective_constant_entry_list;
 
 pub(crate) mod shape_column_sort;
 

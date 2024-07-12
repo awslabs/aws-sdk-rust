@@ -22,7 +22,7 @@ impl crate::operation::list_autoshifts::builders::ListAutoshiftsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAutoshifts`.
 ///
-/// <p>Returns the active autoshifts for a specified resource.</p>
+/// <p>Returns a list of autoshifts for an Amazon Web Services Region. By default, the call returns only <code>ACTIVE</code> autoshifts. Optionally, you can specify the <code>status</code> parameter to return <code>COMPLETED</code> autoshifts.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAutoshiftsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

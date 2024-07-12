@@ -117,6 +117,103 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_create_topic_reviewed_answer::BatchCreateTopicReviewedAnswerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_create_topic_reviewed_answer::BatchCreateTopicReviewedAnswerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_create_topic_reviewed_answer::BatchCreateTopicReviewedAnswerError> for Error {
+    fn from(err: crate::operation::batch_create_topic_reviewed_answer::BatchCreateTopicReviewedAnswerError) -> Self {
+        match err {
+            crate::operation::batch_create_topic_reviewed_answer::BatchCreateTopicReviewedAnswerError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_create_topic_reviewed_answer::BatchCreateTopicReviewedAnswerError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::batch_create_topic_reviewed_answer::BatchCreateTopicReviewedAnswerError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::batch_create_topic_reviewed_answer::BatchCreateTopicReviewedAnswerError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_create_topic_reviewed_answer::BatchCreateTopicReviewedAnswerError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_create_topic_reviewed_answer::BatchCreateTopicReviewedAnswerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_delete_topic_reviewed_answer::BatchDeleteTopicReviewedAnswerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_delete_topic_reviewed_answer::BatchDeleteTopicReviewedAnswerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_delete_topic_reviewed_answer::BatchDeleteTopicReviewedAnswerError> for Error {
+    fn from(err: crate::operation::batch_delete_topic_reviewed_answer::BatchDeleteTopicReviewedAnswerError) -> Self {
+        match err {
+            crate::operation::batch_delete_topic_reviewed_answer::BatchDeleteTopicReviewedAnswerError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_delete_topic_reviewed_answer::BatchDeleteTopicReviewedAnswerError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::batch_delete_topic_reviewed_answer::BatchDeleteTopicReviewedAnswerError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::batch_delete_topic_reviewed_answer::BatchDeleteTopicReviewedAnswerError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::batch_delete_topic_reviewed_answer::BatchDeleteTopicReviewedAnswerError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_delete_topic_reviewed_answer::BatchDeleteTopicReviewedAnswerError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_delete_topic_reviewed_answer::BatchDeleteTopicReviewedAnswerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_ingestion::CancelIngestionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4716,6 +4813,45 @@ impl From<crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedu
                 Error::ThrottlingException(inner)
             }
             crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_topic_reviewed_answers::ListTopicReviewedAnswersError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_topic_reviewed_answers::ListTopicReviewedAnswersError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_topic_reviewed_answers::ListTopicReviewedAnswersError> for Error {
+    fn from(err: crate::operation::list_topic_reviewed_answers::ListTopicReviewedAnswersError) -> Self {
+        match err {
+            crate::operation::list_topic_reviewed_answers::ListTopicReviewedAnswersError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_topic_reviewed_answers::ListTopicReviewedAnswersError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::list_topic_reviewed_answers::ListTopicReviewedAnswersError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_topic_reviewed_answers::ListTopicReviewedAnswersError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_topic_reviewed_answers::ListTopicReviewedAnswersError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_topic_reviewed_answers::ListTopicReviewedAnswersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

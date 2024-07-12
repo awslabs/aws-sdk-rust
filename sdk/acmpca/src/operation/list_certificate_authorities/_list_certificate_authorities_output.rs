@@ -3,22 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCertificateAuthoritiesOutput {
-    /// <p>Summary information about each certificate authority you have created.</p>
-    pub certificate_authorities: ::std::option::Option<::std::vec::Vec<crate::types::CertificateAuthority>>,
     /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Summary information about each certificate authority you have created.</p>
+    pub certificate_authorities: ::std::option::Option<::std::vec::Vec<crate::types::CertificateAuthority>>,
     _request_id: Option<String>,
 }
 impl ListCertificateAuthoritiesOutput {
+    /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
     /// <p>Summary information about each certificate authority you have created.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_authorities.is_none()`.
     pub fn certificate_authorities(&self) -> &[crate::types::CertificateAuthority] {
         self.certificate_authorities.as_deref().unwrap_or_default()
-    }
-    /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
-        self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCertificateAuthoritiesOutput {
@@ -37,11 +37,25 @@ impl ListCertificateAuthoritiesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListCertificateAuthoritiesOutputBuilder {
-    pub(crate) certificate_authorities: ::std::option::Option<::std::vec::Vec<crate::types::CertificateAuthority>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_authorities: ::std::option::Option<::std::vec::Vec<crate::types::CertificateAuthority>>,
     _request_id: Option<String>,
 }
 impl ListCertificateAuthoritiesOutputBuilder {
+    /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `certificate_authorities`.
     ///
     /// To override the contents of this collection use [`set_certificate_authorities`](Self::set_certificate_authorities).
@@ -62,20 +76,6 @@ impl ListCertificateAuthoritiesOutputBuilder {
     pub fn get_certificate_authorities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateAuthority>> {
         &self.certificate_authorities
     }
-    /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
-    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.next_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
-    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
-    }
-    /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
-    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.next_token
-    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -88,8 +88,8 @@ impl ListCertificateAuthoritiesOutputBuilder {
     /// Consumes the builder and constructs a [`ListCertificateAuthoritiesOutput`](crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput).
     pub fn build(self) -> crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput {
         crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput {
-            certificate_authorities: self.certificate_authorities,
             next_token: self.next_token,
+            certificate_authorities: self.certificate_authorities,
             _request_id: self._request_id,
         }
     }

@@ -191,6 +191,49 @@ impl From<crate::operation::delete_practice_run_configuration::DeletePracticeRun
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_autoshift_observer_notification_status::GetAutoshiftObserverNotificationStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_autoshift_observer_notification_status::GetAutoshiftObserverNotificationStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_autoshift_observer_notification_status::GetAutoshiftObserverNotificationStatusError> for Error {
+    fn from(err: crate::operation::get_autoshift_observer_notification_status::GetAutoshiftObserverNotificationStatusError) -> Self {
+        match err {
+            crate::operation::get_autoshift_observer_notification_status::GetAutoshiftObserverNotificationStatusError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::get_autoshift_observer_notification_status::GetAutoshiftObserverNotificationStatusError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::get_autoshift_observer_notification_status::GetAutoshiftObserverNotificationStatusError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_autoshift_observer_notification_status::GetAutoshiftObserverNotificationStatusError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_managed_resource::GetManagedResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -320,6 +363,42 @@ impl From<crate::operation::start_zonal_shift::StartZonalShiftError> for Error {
             crate::operation::start_zonal_shift::StartZonalShiftError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_zonal_shift::StartZonalShiftError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_zonal_shift::StartZonalShiftError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_autoshift_observer_notification_status::UpdateAutoshiftObserverNotificationStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_autoshift_observer_notification_status::UpdateAutoshiftObserverNotificationStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_autoshift_observer_notification_status::UpdateAutoshiftObserverNotificationStatusError> for Error {
+    fn from(err: crate::operation::update_autoshift_observer_notification_status::UpdateAutoshiftObserverNotificationStatusError) -> Self {
+        match err {
+            crate::operation::update_autoshift_observer_notification_status::UpdateAutoshiftObserverNotificationStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_autoshift_observer_notification_status::UpdateAutoshiftObserverNotificationStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_autoshift_observer_notification_status::UpdateAutoshiftObserverNotificationStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_autoshift_observer_notification_status::UpdateAutoshiftObserverNotificationStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_autoshift_observer_notification_status::UpdateAutoshiftObserverNotificationStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

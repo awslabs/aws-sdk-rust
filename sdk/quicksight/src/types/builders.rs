@@ -1417,6 +1417,50 @@ pub use crate::types::_network_interface::NetworkInterfaceBuilder;
 
 pub use crate::types::_topic_summary::TopicSummaryBuilder;
 
+pub use crate::types::_topic_reviewed_answer::TopicReviewedAnswerBuilder;
+
+pub use crate::types::_topic_template::TopicTemplateBuilder;
+
+pub use crate::types::_slot::SlotBuilder;
+
+pub use crate::types::_topic_visual::TopicVisualBuilder;
+
+pub use crate::types::_topic_ir::TopicIrBuilder;
+
+pub use crate::types::_visual_options::VisualOptionsBuilder;
+
+pub use crate::types::_topic_ir_contribution_analysis::TopicIrContributionAnalysisBuilder;
+
+pub use crate::types::_contribution_analysis_time_ranges::ContributionAnalysisTimeRangesBuilder;
+
+pub use crate::types::_topic_ir_filter_option::TopicIrFilterOptionBuilder;
+
+pub use crate::types::_anchor::AnchorBuilder;
+
+pub use crate::types::_topic_constant_value::TopicConstantValueBuilder;
+
+pub use crate::types::_collective_constant_entry::CollectiveConstantEntryBuilder;
+
+pub use crate::types::_filter_agg_metrics::FilterAggMetricsBuilder;
+
+pub use crate::types::_identifier::IdentifierBuilder;
+
+pub use crate::types::_aggregation_partition_by::AggregationPartitionByBuilder;
+
+pub use crate::types::_contribution_analysis_factor::ContributionAnalysisFactorBuilder;
+
+pub use crate::types::_topic_sort_clause::TopicSortClauseBuilder;
+
+pub use crate::types::_topic_ir_group_by::TopicIrGroupByBuilder;
+
+pub use crate::types::_named_entity_ref::NamedEntityRefBuilder;
+
+pub use crate::types::_topic_ir_metric::TopicIrMetricBuilder;
+
+pub use crate::types::_topic_ir_comparison_method::TopicIrComparisonMethodBuilder;
+
+pub use crate::types::_agg_function::AggFunctionBuilder;
+
 pub use crate::types::_topic_refresh_schedule_summary::TopicRefreshScheduleSummaryBuilder;
 
 pub use crate::types::_theme_version_summary::ThemeVersionSummaryBuilder;
@@ -1562,3 +1606,9 @@ pub use crate::types::_account_settings::AccountSettingsBuilder;
 pub use crate::types::_folder_member::FolderMemberBuilder;
 
 pub use crate::types::_signup_response::SignupResponseBuilder;
+
+pub use crate::types::_invalid_topic_reviewed_answer::InvalidTopicReviewedAnswerBuilder;
+
+pub use crate::types::_succeeded_topic_reviewed_answer::SucceededTopicReviewedAnswerBuilder;
+
+pub use crate::types::_create_topic_reviewed_answer::CreateTopicReviewedAnswerBuilder;

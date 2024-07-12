@@ -29,6 +29,8 @@ pub(crate) mod shape_create_practice_run_configuration;
 
 pub(crate) mod shape_delete_practice_run_configuration;
 
+pub(crate) mod shape_get_autoshift_observer_notification_status;
+
 pub(crate) mod shape_get_managed_resource;
 
 pub(crate) mod shape_list_autoshifts;
@@ -38,6 +40,8 @@ pub(crate) mod shape_list_managed_resources;
 pub(crate) mod shape_list_zonal_shifts;
 
 pub(crate) mod shape_start_zonal_shift;
+
+pub(crate) mod shape_update_autoshift_observer_notification_status;
 
 pub(crate) mod shape_update_practice_run_configuration;
 
@@ -66,6 +70,8 @@ pub(crate) mod shape_resource_not_found_exception;
 pub(crate) mod shape_start_zonal_shift_input;
 
 pub(crate) mod shape_throttling_exception;
+
+pub(crate) mod shape_update_autoshift_observer_notification_status_input;
 
 pub(crate) mod shape_update_practice_run_configuration_input;
 

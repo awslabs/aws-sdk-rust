@@ -7,7 +7,7 @@ pub struct CreatePracticeRunConfigurationOutput {
     pub arn: ::std::string::String,
     /// <p>The name of the resource that you configured the practice run for.</p>
     pub name: ::std::string::String,
-    /// <p>The status for zonal autoshift for a resource. When you specify the autoshift status as <code>ENABLED</code>, Amazon Web Services shifts traffic away from shifts away application resource traffic from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
+    /// <p>The status for zonal autoshift for a resource. When you specify <code>ENABLED</code> for the autoshift status, Amazon Web Services shifts traffic away from shifts away application resource traffic from an Availability Zone, on your behalf, when internal telemetry indicates that there is an Availability Zone impairment that could potentially impact customers.</p>
     /// <p>When you enable zonal autoshift, you must also configure practice runs for the resource.</p>
     pub zonal_autoshift_status: crate::types::ZonalAutoshiftStatus,
     /// <p>A practice run configuration for a resource. Configurations include the outcome alarm that you specify for practice runs, and, optionally, a blocking alarm and blocking dates and windows.</p>
@@ -25,7 +25,7 @@ impl CreatePracticeRunConfigurationOutput {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The status for zonal autoshift for a resource. When you specify the autoshift status as <code>ENABLED</code>, Amazon Web Services shifts traffic away from shifts away application resource traffic from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
+    /// <p>The status for zonal autoshift for a resource. When you specify <code>ENABLED</code> for the autoshift status, Amazon Web Services shifts traffic away from shifts away application resource traffic from an Availability Zone, on your behalf, when internal telemetry indicates that there is an Availability Zone impairment that could potentially impact customers.</p>
     /// <p>When you enable zonal autoshift, you must also configure practice runs for the resource.</p>
     pub fn zonal_autoshift_status(&self) -> &crate::types::ZonalAutoshiftStatus {
         &self.zonal_autoshift_status
@@ -88,20 +88,20 @@ impl CreatePracticeRunConfigurationOutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The status for zonal autoshift for a resource. When you specify the autoshift status as <code>ENABLED</code>, Amazon Web Services shifts traffic away from shifts away application resource traffic from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
+    /// <p>The status for zonal autoshift for a resource. When you specify <code>ENABLED</code> for the autoshift status, Amazon Web Services shifts traffic away from shifts away application resource traffic from an Availability Zone, on your behalf, when internal telemetry indicates that there is an Availability Zone impairment that could potentially impact customers.</p>
     /// <p>When you enable zonal autoshift, you must also configure practice runs for the resource.</p>
     /// This field is required.
     pub fn zonal_autoshift_status(mut self, input: crate::types::ZonalAutoshiftStatus) -> Self {
         self.zonal_autoshift_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status for zonal autoshift for a resource. When you specify the autoshift status as <code>ENABLED</code>, Amazon Web Services shifts traffic away from shifts away application resource traffic from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
+    /// <p>The status for zonal autoshift for a resource. When you specify <code>ENABLED</code> for the autoshift status, Amazon Web Services shifts traffic away from shifts away application resource traffic from an Availability Zone, on your behalf, when internal telemetry indicates that there is an Availability Zone impairment that could potentially impact customers.</p>
     /// <p>When you enable zonal autoshift, you must also configure practice runs for the resource.</p>
     pub fn set_zonal_autoshift_status(mut self, input: ::std::option::Option<crate::types::ZonalAutoshiftStatus>) -> Self {
         self.zonal_autoshift_status = input;
         self
     }
-    /// <p>The status for zonal autoshift for a resource. When you specify the autoshift status as <code>ENABLED</code>, Amazon Web Services shifts traffic away from shifts away application resource traffic from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
+    /// <p>The status for zonal autoshift for a resource. When you specify <code>ENABLED</code> for the autoshift status, Amazon Web Services shifts traffic away from shifts away application resource traffic from an Availability Zone, on your behalf, when internal telemetry indicates that there is an Availability Zone impairment that could potentially impact customers.</p>
     /// <p>When you enable zonal autoshift, you must also configure practice runs for the resource.</p>
     pub fn get_zonal_autoshift_status(&self) -> &::std::option::Option<crate::types::ZonalAutoshiftStatus> {
         &self.zonal_autoshift_status

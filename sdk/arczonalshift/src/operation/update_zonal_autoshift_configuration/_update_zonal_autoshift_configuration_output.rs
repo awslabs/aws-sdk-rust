@@ -5,7 +5,7 @@
 pub struct UpdateZonalAutoshiftConfigurationOutput {
     /// <p>The identifier for the resource that you updated the zonal autoshift configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     pub resource_identifier: ::std::string::String,
-    /// <p>The zonal autoshift status for the resource that you updated the zonal autoshift configuration for.</p>
+    /// <p>The updated zonal autoshift status for the resource.</p>
     pub zonal_autoshift_status: crate::types::ZonalAutoshiftStatus,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl UpdateZonalAutoshiftConfigurationOutput {
         use std::ops::Deref;
         self.resource_identifier.deref()
     }
-    /// <p>The zonal autoshift status for the resource that you updated the zonal autoshift configuration for.</p>
+    /// <p>The updated zonal autoshift status for the resource.</p>
     pub fn zonal_autoshift_status(&self) -> &crate::types::ZonalAutoshiftStatus {
         &self.zonal_autoshift_status
     }
@@ -56,18 +56,18 @@ impl UpdateZonalAutoshiftConfigurationOutputBuilder {
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_identifier
     }
-    /// <p>The zonal autoshift status for the resource that you updated the zonal autoshift configuration for.</p>
+    /// <p>The updated zonal autoshift status for the resource.</p>
     /// This field is required.
     pub fn zonal_autoshift_status(mut self, input: crate::types::ZonalAutoshiftStatus) -> Self {
         self.zonal_autoshift_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The zonal autoshift status for the resource that you updated the zonal autoshift configuration for.</p>
+    /// <p>The updated zonal autoshift status for the resource.</p>
     pub fn set_zonal_autoshift_status(mut self, input: ::std::option::Option<crate::types::ZonalAutoshiftStatus>) -> Self {
         self.zonal_autoshift_status = input;
         self
     }
-    /// <p>The zonal autoshift status for the resource that you updated the zonal autoshift configuration for.</p>
+    /// <p>The updated zonal autoshift status for the resource.</p>
     pub fn get_zonal_autoshift_status(&self) -> &::std::option::Option<crate::types::ZonalAutoshiftStatus> {
         &self.zonal_autoshift_status
     }

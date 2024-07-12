@@ -18,6 +18,12 @@ pub fn ser_date_time_picker_control_display_options(
         crate::protocol_serde::shape_sheet_control_info_icon_label_options::ser_sheet_control_info_icon_label_options(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.helper_text_visibility {
+        object.key("HelperTextVisibility").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.date_icon_visibility {
+        object.key("DateIconVisibility").string(var_7.as_str());
+    }
     Ok(())
 }
 
@@ -49,6 +55,20 @@ where
                         "InfoIconLabelOptions" => {
                             builder = builder.set_info_icon_label_options(
                                 crate::protocol_serde::shape_sheet_control_info_icon_label_options::de_sheet_control_info_icon_label_options(tokens)?,
+                            );
+                        }
+                        "HelperTextVisibility" => {
+                            builder = builder.set_helper_text_visibility(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "DateIconVisibility" => {
+                            builder = builder.set_date_icon_visibility(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

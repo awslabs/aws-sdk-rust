@@ -263,6 +263,8 @@ pub enum DeleteCustomRoutingAcceleratorError {
     InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
+    /// <p>There's already a transaction in progress. Another transaction can't be processed.</p>
+    TransactionInProgressException(crate::types::error::TransactionInProgressException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -301,6 +303,7 @@ impl DeleteCustomRoutingAcceleratorError {
             Self::AssociatedListenerFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServiceErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArgumentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TransactionInProgressException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -324,6 +327,10 @@ impl DeleteCustomRoutingAcceleratorError {
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(self, Self::InvalidArgumentException(_))
     }
+    /// Returns `true` if the error kind is `DeleteCustomRoutingAcceleratorError::TransactionInProgressException`.
+    pub fn is_transaction_in_progress_exception(&self) -> bool {
+        matches!(self, Self::TransactionInProgressException(_))
+    }
 }
 impl ::std::error::Error for DeleteCustomRoutingAcceleratorError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -333,6 +340,7 @@ impl ::std::error::Error for DeleteCustomRoutingAcceleratorError {
             Self::AssociatedListenerFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServiceErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArgumentException(_inner) => ::std::option::Option::Some(_inner),
+            Self::TransactionInProgressException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -345,6 +353,7 @@ impl ::std::fmt::Display for DeleteCustomRoutingAcceleratorError {
             Self::AssociatedListenerFoundException(_inner) => _inner.fmt(f),
             Self::InternalServiceErrorException(_inner) => _inner.fmt(f),
             Self::InvalidArgumentException(_inner) => _inner.fmt(f),
+            Self::TransactionInProgressException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -371,6 +380,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteCustomR
             Self::AssociatedListenerFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServiceErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArgumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TransactionInProgressException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

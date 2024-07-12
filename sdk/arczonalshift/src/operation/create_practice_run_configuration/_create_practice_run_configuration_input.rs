@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePracticeRunConfigurationInput {
-    /// <p>The identifier of the resource to shift away traffic for when a practice run starts a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    /// <p>The identifier of the resource that Amazon Web Services shifts traffic for with a practice run zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Optionally, you can block Route 53 ARC from starting practice runs for specific windows of days and times.</p>
@@ -21,7 +21,7 @@ pub struct CreatePracticeRunConfigurationInput {
     pub outcome_alarms: ::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>>,
 }
 impl CreatePracticeRunConfigurationInput {
-    /// <p>The identifier of the resource to shift away traffic for when a practice run starts a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    /// <p>The identifier of the resource that Amazon Web Services shifts traffic for with a practice run zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_identifier.as_deref()
@@ -74,20 +74,20 @@ pub struct CreatePracticeRunConfigurationInputBuilder {
     pub(crate) outcome_alarms: ::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>>,
 }
 impl CreatePracticeRunConfigurationInputBuilder {
-    /// <p>The identifier of the resource to shift away traffic for when a practice run starts a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    /// <p>The identifier of the resource that Amazon Web Services shifts traffic for with a practice run zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the resource to shift away traffic for when a practice run starts a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    /// <p>The identifier of the resource that Amazon Web Services shifts traffic for with a practice run zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
-    /// <p>The identifier of the resource to shift away traffic for when a practice run starts a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    /// <p>The identifier of the resource that Amazon Web Services shifts traffic for with a practice run zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_identifier

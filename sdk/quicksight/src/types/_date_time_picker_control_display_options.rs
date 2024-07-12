@@ -10,6 +10,10 @@ pub struct DateTimePickerControlDisplayOptions {
     pub date_time_format: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of info icon label options.</p>
     pub info_icon_label_options: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
+    /// <p>The helper text visibility of the <code>DateTimePickerControlDisplayOptions</code>.</p>
+    pub helper_text_visibility: ::std::option::Option<crate::types::Visibility>,
+    /// <p>The date icon visibility of the <code>DateTimePickerControlDisplayOptions</code>.</p>
+    pub date_icon_visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl DateTimePickerControlDisplayOptions {
     /// <p>The options to configure the title visibility, name, and font size.</p>
@@ -23,6 +27,14 @@ impl DateTimePickerControlDisplayOptions {
     /// <p>The configuration of info icon label options.</p>
     pub fn info_icon_label_options(&self) -> ::std::option::Option<&crate::types::SheetControlInfoIconLabelOptions> {
         self.info_icon_label_options.as_ref()
+    }
+    /// <p>The helper text visibility of the <code>DateTimePickerControlDisplayOptions</code>.</p>
+    pub fn helper_text_visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+        self.helper_text_visibility.as_ref()
+    }
+    /// <p>The date icon visibility of the <code>DateTimePickerControlDisplayOptions</code>.</p>
+    pub fn date_icon_visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+        self.date_icon_visibility.as_ref()
     }
 }
 impl DateTimePickerControlDisplayOptions {
@@ -39,6 +51,8 @@ pub struct DateTimePickerControlDisplayOptionsBuilder {
     pub(crate) title_options: ::std::option::Option<crate::types::LabelOptions>,
     pub(crate) date_time_format: ::std::option::Option<::std::string::String>,
     pub(crate) info_icon_label_options: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
+    pub(crate) helper_text_visibility: ::std::option::Option<crate::types::Visibility>,
+    pub(crate) date_icon_visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl DateTimePickerControlDisplayOptionsBuilder {
     /// <p>The options to configure the title visibility, name, and font size.</p>
@@ -83,12 +97,42 @@ impl DateTimePickerControlDisplayOptionsBuilder {
     pub fn get_info_icon_label_options(&self) -> &::std::option::Option<crate::types::SheetControlInfoIconLabelOptions> {
         &self.info_icon_label_options
     }
+    /// <p>The helper text visibility of the <code>DateTimePickerControlDisplayOptions</code>.</p>
+    pub fn helper_text_visibility(mut self, input: crate::types::Visibility) -> Self {
+        self.helper_text_visibility = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The helper text visibility of the <code>DateTimePickerControlDisplayOptions</code>.</p>
+    pub fn set_helper_text_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
+        self.helper_text_visibility = input;
+        self
+    }
+    /// <p>The helper text visibility of the <code>DateTimePickerControlDisplayOptions</code>.</p>
+    pub fn get_helper_text_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.helper_text_visibility
+    }
+    /// <p>The date icon visibility of the <code>DateTimePickerControlDisplayOptions</code>.</p>
+    pub fn date_icon_visibility(mut self, input: crate::types::Visibility) -> Self {
+        self.date_icon_visibility = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date icon visibility of the <code>DateTimePickerControlDisplayOptions</code>.</p>
+    pub fn set_date_icon_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
+        self.date_icon_visibility = input;
+        self
+    }
+    /// <p>The date icon visibility of the <code>DateTimePickerControlDisplayOptions</code>.</p>
+    pub fn get_date_icon_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.date_icon_visibility
+    }
     /// Consumes the builder and constructs a [`DateTimePickerControlDisplayOptions`](crate::types::DateTimePickerControlDisplayOptions).
     pub fn build(self) -> crate::types::DateTimePickerControlDisplayOptions {
         crate::types::DateTimePickerControlDisplayOptions {
             title_options: self.title_options,
             date_time_format: self.date_time_format,
             info_icon_label_options: self.info_icon_label_options,
+            helper_text_visibility: self.helper_text_visibility,
+            date_icon_visibility: self.date_icon_visibility,
         }
     }
 }

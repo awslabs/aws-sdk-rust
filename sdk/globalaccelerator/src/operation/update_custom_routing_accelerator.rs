@@ -255,10 +255,14 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateCustomR
 pub enum UpdateCustomRoutingAcceleratorError {
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::types::error::AcceleratorNotFoundException),
+    /// <p>You can't use both of those options.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
+    /// <p>There's already a transaction in progress. Another transaction can't be processed.</p>
+    TransactionInProgressException(crate::types::error::TransactionInProgressException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -293,14 +297,20 @@ impl UpdateCustomRoutingAcceleratorError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AcceleratorNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServiceErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArgumentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TransactionInProgressException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
     /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorError::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(self, Self::AcceleratorNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorError::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
@@ -310,13 +320,19 @@ impl UpdateCustomRoutingAcceleratorError {
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(self, Self::InvalidArgumentException(_))
     }
+    /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorError::TransactionInProgressException`.
+    pub fn is_transaction_in_progress_exception(&self) -> bool {
+        matches!(self, Self::TransactionInProgressException(_))
+    }
 }
 impl ::std::error::Error for UpdateCustomRoutingAcceleratorError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AcceleratorNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServiceErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArgumentException(_inner) => ::std::option::Option::Some(_inner),
+            Self::TransactionInProgressException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -325,8 +341,10 @@ impl ::std::fmt::Display for UpdateCustomRoutingAcceleratorError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AcceleratorNotFoundException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServiceErrorException(_inner) => _inner.fmt(f),
             Self::InvalidArgumentException(_inner) => _inner.fmt(f),
+            Self::TransactionInProgressException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -349,8 +367,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateCustomR
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AcceleratorNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServiceErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArgumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TransactionInProgressException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

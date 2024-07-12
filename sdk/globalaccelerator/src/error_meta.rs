@@ -276,11 +276,15 @@ where
 impl From<crate::operation::create_accelerator::CreateAcceleratorError> for Error {
     fn from(err: crate::operation::create_accelerator::CreateAcceleratorError) -> Self {
         match err {
+            crate::operation::create_accelerator::CreateAcceleratorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_accelerator::CreateAcceleratorError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
             crate::operation::create_accelerator::CreateAcceleratorError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::create_accelerator::CreateAcceleratorError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_accelerator::CreateAcceleratorError::TransactionInProgressException(inner) => {
+                Error::TransactionInProgressException(inner)
+            }
             crate::operation::create_accelerator::CreateAcceleratorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -367,6 +371,9 @@ impl From<crate::operation::create_custom_routing_accelerator::CreateCustomRouti
             }
             crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
+            }
+            crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorError::TransactionInProgressException(inner) => {
+                Error::TransactionInProgressException(inner)
             }
             crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -569,6 +576,9 @@ impl From<crate::operation::delete_accelerator::DeleteAcceleratorError> for Erro
                 Error::InternalServiceErrorException(inner)
             }
             crate::operation::delete_accelerator::DeleteAcceleratorError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::delete_accelerator::DeleteAcceleratorError::TransactionInProgressException(inner) => {
+                Error::TransactionInProgressException(inner)
+            }
             crate::operation::delete_accelerator::DeleteAcceleratorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -658,6 +668,9 @@ impl From<crate::operation::delete_custom_routing_accelerator::DeleteCustomRouti
             }
             crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
+            }
+            crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorError::TransactionInProgressException(inner) => {
+                Error::TransactionInProgressException(inner)
             }
             crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1649,11 +1662,20 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::AcceleratorNotFoundException(inner) => {
                 Error::AcceleratorNotFoundException(inner)
             }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::AttachmentNotFoundException(inner) => {
+                Error::AttachmentNotFoundException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::EndpointGroupNotFoundException(inner) => {
+                Error::EndpointGroupNotFoundException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ListenerNotFoundException(inner) => {
+                Error::ListenerNotFoundException(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1838,10 +1860,14 @@ impl From<crate::operation::update_accelerator::UpdateAcceleratorError> for Erro
                 Error::AcceleratorNotFoundException(inner)
             }
             crate::operation::update_accelerator::UpdateAcceleratorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_accelerator::UpdateAcceleratorError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_accelerator::UpdateAcceleratorError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
             crate::operation::update_accelerator::UpdateAcceleratorError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::update_accelerator::UpdateAcceleratorError::TransactionInProgressException(inner) => {
+                Error::TransactionInProgressException(inner)
+            }
             crate::operation::update_accelerator::UpdateAcceleratorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1877,6 +1903,9 @@ impl From<crate::operation::update_accelerator_attributes::UpdateAcceleratorAttr
             }
             crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
+            }
+            crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesError::TransactionInProgressException(inner) => {
+                Error::TransactionInProgressException(inner)
             }
             crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1959,11 +1988,17 @@ impl From<crate::operation::update_custom_routing_accelerator::UpdateCustomRouti
             crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorError::AcceleratorNotFoundException(inner) => {
                 Error::AcceleratorNotFoundException(inner)
             }
+            crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
             crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
+            }
+            crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorError::TransactionInProgressException(inner) => {
+                Error::TransactionInProgressException(inner)
             }
             crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2001,6 +2036,7 @@ impl From<crate::operation::update_custom_routing_accelerator_attributes::Update
             crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
             crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesError::TransactionInProgressException(inner) => Error::TransactionInProgressException(inner),
             crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

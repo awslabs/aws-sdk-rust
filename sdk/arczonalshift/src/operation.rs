@@ -10,6 +10,9 @@ pub mod create_practice_run_configuration;
 /// Types for the `DeletePracticeRunConfiguration` operation.
 pub mod delete_practice_run_configuration;
 
+/// Types for the `GetAutoshiftObserverNotificationStatus` operation.
+pub mod get_autoshift_observer_notification_status;
+
 /// Types for the `GetManagedResource` operation.
 pub mod get_managed_resource;
 
@@ -24,6 +27,9 @@ pub mod list_zonal_shifts;
 
 /// Types for the `StartZonalShift` operation.
 pub mod start_zonal_shift;
+
+/// Types for the `UpdateAutoshiftObserverNotificationStatus` operation.
+pub mod update_autoshift_observer_notification_status;
 
 /// Types for the `UpdatePracticeRunConfiguration` operation.
 pub mod update_practice_run_configuration;

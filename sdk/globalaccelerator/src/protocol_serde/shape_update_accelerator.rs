@@ -49,6 +49,21 @@ pub fn de_update_accelerator_http_error(
             }
             tmp
         }),
+        "ConflictException" => crate::operation::update_accelerator::UpdateAcceleratorError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_accelerator::UpdateAcceleratorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalServiceErrorException" => crate::operation::update_accelerator::UpdateAcceleratorError::InternalServiceErrorException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -74,6 +89,24 @@ pub fn de_update_accelerator_http_error(
                 let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
                 output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_accelerator::UpdateAcceleratorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TransactionInProgressException" => crate::operation::update_accelerator::UpdateAcceleratorError::TransactionInProgressException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TransactionInProgressExceptionBuilder::default();
+                output = crate::protocol_serde::shape_transaction_in_progress_exception::de_transaction_in_progress_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::update_accelerator::UpdateAcceleratorError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCertificateAuthoritiesInput {
-    /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
-    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
     /// <p>Although the maximum value is 1000, the action only returns a maximum of 100 items.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter to filter the returned set of certificate authorities based on their owner. The default is SELF.</p>
     pub resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
 }
 impl ListCertificateAuthoritiesInput {
-    /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
-        self.next_token.as_deref()
-    }
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
     /// <p>Although the maximum value is 1000, the action only returns a maximum of 100 items.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
     }
     /// <p>Use this parameter to filter the returned set of certificate authorities based on their owner. The default is SELF.</p>
     pub fn resource_owner(&self) -> ::std::option::Option<&crate::types::ResourceOwner> {
@@ -37,25 +37,11 @@ impl ListCertificateAuthoritiesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListCertificateAuthoritiesInputBuilder {
-    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
 }
 impl ListCertificateAuthoritiesInputBuilder {
-    /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
-    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.next_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
-    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
-    }
-    /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
-    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.next_token
-    }
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
     /// <p>Although the maximum value is 1000, the action only returns a maximum of 100 items.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -72,6 +58,20 @@ impl ListCertificateAuthoritiesInputBuilder {
     /// <p>Although the maximum value is 1000, the action only returns a maximum of 100 items.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
+    }
+    /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Use this parameter to filter the returned set of certificate authorities based on their owner. The default is SELF.</p>
     pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
@@ -95,8 +95,8 @@ impl ListCertificateAuthoritiesInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_certificate_authorities::ListCertificateAuthoritiesInput {
-            next_token: self.next_token,
             max_results: self.max_results,
+            next_token: self.next_token,
             resource_owner: self.resource_owner,
         })
     }

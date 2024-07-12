@@ -36,6 +36,40 @@ pub fn de_list_tags_for_resource_http_error(
             }
             tmp
         }),
+        "AttachmentNotFoundException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::AttachmentNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AttachmentNotFoundExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_attachment_not_found_exception::de_attachment_not_found_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "EndpointGroupNotFoundException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::EndpointGroupNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::EndpointGroupNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_endpoint_group_not_found_exception::de_endpoint_group_not_found_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalServiceErrorException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServiceErrorException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -60,6 +94,21 @@ pub fn de_list_tags_for_resource_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
                 output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ListenerNotFoundException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::ListenerNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ListenerNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_listener_not_found_exception::de_listener_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

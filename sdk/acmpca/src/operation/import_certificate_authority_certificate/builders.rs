@@ -63,44 +63,45 @@ impl crate::operation::import_certificate_authority_certificate::builders::Impor
 /// <p>Amazon Web Services Private CA allows the following extensions to be marked critical in the imported CA certificate or chain.</p>
 /// <ul>
 /// <li>
-/// <p>Authority key identifier</p></li>
-/// <li>
 /// <p>Basic constraints (<i>must</i> be marked critical)</p></li>
 /// <li>
-/// <p>Certificate policies</p></li>
-/// <li>
-/// <p>Extended key usage</p></li>
-/// <li>
-/// <p>Inhibit anyPolicy</p></li>
-/// <li>
-/// <p>Issuer alternative name</p></li>
+/// <p>Subject alternative names</p></li>
 /// <li>
 /// <p>Key usage</p></li>
 /// <li>
-/// <p>Name constraints</p></li>
+/// <p>Extended key usage</p></li>
 /// <li>
-/// <p>Policy mappings</p></li>
-/// <li>
-/// <p>Subject alternative name</p></li>
-/// <li>
-/// <p>Subject directory attributes</p></li>
+/// <p>Authority key identifier</p></li>
 /// <li>
 /// <p>Subject key identifier</p></li>
 /// <li>
+/// <p>Issuer alternative name</p></li>
+/// <li>
+/// <p>Subject directory attributes</p></li>
+/// <li>
 /// <p>Subject information access</p></li>
+/// <li>
+/// <p>Certificate policies</p></li>
+/// <li>
+/// <p>Policy mappings</p></li>
+/// <li>
+/// <p>Inhibit anyPolicy</p></li>
 /// </ul>
 /// <p>Amazon Web Services Private CA rejects the following extensions when they are marked critical in an imported CA certificate or chain.</p>
 /// <ul>
 /// <li>
-/// <p>Authority information access</p></li>
+/// <p>Name constraints</p></li>
+/// <li>
+/// <p>Policy constraints</p></li>
 /// <li>
 /// <p>CRL distribution points</p></li>
 /// <li>
+/// <p>Authority information access</p></li>
+/// <li>
 /// <p>Freshest CRL</p></li>
 /// <li>
-/// <p>Policy constraints</p></li>
+/// <p>Any other extension</p></li>
 /// </ul>
-/// <p>Amazon Web Services Private Certificate Authority will also reject any other extension marked as critical not contained on the preceding list of allowed extensions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportCertificateAuthorityCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -1801,6 +1801,70 @@ pub use crate::types::_network_interface_status::NetworkInterfaceStatus;
 
 pub use crate::types::_topic_summary::TopicSummary;
 
+pub use crate::types::_topic_reviewed_answer::TopicReviewedAnswer;
+
+pub use crate::types::_topic_template::TopicTemplate;
+
+pub use crate::types::_slot::Slot;
+
+pub use crate::types::_topic_visual::TopicVisual;
+
+pub use crate::types::_topic_ir::TopicIr;
+
+pub use crate::types::_visual_options::VisualOptions;
+
+pub use crate::types::_topic_ir_contribution_analysis::TopicIrContributionAnalysis;
+
+pub use crate::types::_contribution_analysis_sort_type::ContributionAnalysisSortType;
+
+pub use crate::types::_contribution_analysis_direction::ContributionAnalysisDirection;
+
+pub use crate::types::_contribution_analysis_time_ranges::ContributionAnalysisTimeRanges;
+
+pub use crate::types::_topic_ir_filter_option::TopicIrFilterOption;
+
+pub use crate::types::_anchor::Anchor;
+
+pub use crate::types::_anchor_type::AnchorType;
+
+pub use crate::types::_topic_sort_direction::TopicSortDirection;
+
+pub use crate::types::_topic_constant_value::TopicConstantValue;
+
+pub use crate::types::_collective_constant_entry::CollectiveConstantEntry;
+
+pub use crate::types::_filter_agg_metrics::FilterAggMetrics;
+
+pub use crate::types::_agg_type::AggType;
+
+pub use crate::types::_identifier::Identifier;
+
+pub use crate::types::_aggregation_partition_by::AggregationPartitionBy;
+
+pub use crate::types::_null_filter_option::NullFilterOption;
+
+pub use crate::types::_topic_ir_filter_function::TopicIrFilterFunction;
+
+pub use crate::types::_topic_ir_filter_type::TopicIrFilterType;
+
+pub use crate::types::_contribution_analysis_factor::ContributionAnalysisFactor;
+
+pub use crate::types::_topic_sort_clause::TopicSortClause;
+
+pub use crate::types::_topic_ir_group_by::TopicIrGroupBy;
+
+pub use crate::types::_named_entity_ref::NamedEntityRef;
+
+pub use crate::types::_topic_ir_metric::TopicIrMetric;
+
+pub use crate::types::_topic_ir_comparison_method::TopicIrComparisonMethod;
+
+pub use crate::types::_comparison_method_type::ComparisonMethodType;
+
+pub use crate::types::_agg_function::AggFunction;
+
+pub use crate::types::_visual_role::VisualRole;
+
 pub use crate::types::_topic_refresh_schedule_summary::TopicRefreshScheduleSummary;
 
 pub use crate::types::_theme_version_summary::ThemeVersionSummary;
@@ -1989,6 +2053,14 @@ pub use crate::types::_signup_response::SignupResponse;
 
 pub use crate::types::_authentication_method_option::AuthenticationMethodOption;
 
+pub use crate::types::_invalid_topic_reviewed_answer::InvalidTopicReviewedAnswer;
+
+pub use crate::types::_reviewed_answer_error_code::ReviewedAnswerErrorCode;
+
+pub use crate::types::_succeeded_topic_reviewed_answer::SucceededTopicReviewedAnswer;
+
+pub use crate::types::_create_topic_reviewed_answer::CreateTopicReviewedAnswer;
+
 mod _account_customization;
 
 mod _account_info;
@@ -1999,7 +2071,13 @@ mod _active_iam_policy_assignment;
 
 mod _ad_hoc_filtering_option;
 
+mod _agg_function;
+
+mod _agg_type;
+
 mod _aggregation_function;
+
+mod _aggregation_partition_by;
 
 mod _aggregation_sort_configuration;
 
@@ -2029,9 +2107,13 @@ mod _analysis_source_template;
 
 mod _analysis_summary;
 
+mod _anchor;
+
 mod _anchor_date_configuration;
 
 mod _anchor_option;
+
+mod _anchor_type;
 
 mod _anonymous_user_dashboard_embedding_configuration;
 
@@ -2313,6 +2395,8 @@ mod _cluster_marker_configuration;
 
 mod _collective_constant;
 
+mod _collective_constant_entry;
+
 mod _color_fill_type;
 
 mod _color_scale;
@@ -2373,6 +2457,8 @@ mod _comparison_format_configuration;
 
 mod _comparison_method;
 
+mod _comparison_method_type;
+
 mod _computation;
 
 mod _conditional_formatting_color;
@@ -2401,7 +2487,17 @@ mod _context_menu_option;
 
 mod _contribution_analysis_default;
 
+mod _contribution_analysis_direction;
+
+mod _contribution_analysis_factor;
+
+mod _contribution_analysis_sort_type;
+
+mod _contribution_analysis_time_ranges;
+
 mod _create_columns_operation;
+
+mod _create_topic_reviewed_answer;
 
 mod _credential_pair;
 
@@ -2711,6 +2807,8 @@ mod _filled_map_visual;
 
 mod _filter;
 
+mod _filter_agg_metrics;
+
 mod _filter_class;
 
 mod _filter_control;
@@ -2923,6 +3021,8 @@ mod _iam_policy_assignment_summary;
 
 mod _icon;
 
+mod _identifier;
+
 mod _identity_center_configuration;
 
 mod _identity_store;
@@ -2964,6 +3064,8 @@ mod _integer_parameter;
 mod _integer_parameter_declaration;
 
 mod _integer_value_when_unset_configuration;
+
+mod _invalid_topic_reviewed_answer;
 
 mod _items_limit_configuration;
 
@@ -3107,6 +3209,8 @@ mod _named_entity_definition;
 
 mod _named_entity_definition_metric;
 
+mod _named_entity_ref;
+
 mod _named_filter_agg_type;
 
 mod _named_filter_type;
@@ -3132,6 +3236,8 @@ mod _network_interface;
 mod _network_interface_status;
 
 mod _new_default_values;
+
+mod _null_filter_option;
 
 mod _null_value_format_configuration;
 
@@ -3405,6 +3511,8 @@ mod _resource_permission;
 
 mod _resource_status;
 
+mod _reviewed_answer_error_code;
+
 mod _role;
 
 mod _rolling_date_configuration;
@@ -3551,6 +3659,8 @@ mod _single_y_axis_option;
 
 mod _slider_control_display_options;
 
+mod _slot;
+
 mod _small_multiples_axis_placement;
 
 mod _small_multiples_axis_properties;
@@ -3634,6 +3744,8 @@ mod _string_value_when_unset_configuration;
 mod _styled_cell_type;
 
 mod _subtotal_options;
+
+mod _succeeded_topic_reviewed_answer;
 
 mod _successful_key_registration_entry;
 
@@ -3807,11 +3919,29 @@ mod _topic_category_filter_constant;
 
 mod _topic_column;
 
+mod _topic_constant_value;
+
 mod _topic_date_range_filter;
 
 mod _topic_details;
 
 mod _topic_filter;
+
+mod _topic_ir;
+
+mod _topic_ir_comparison_method;
+
+mod _topic_ir_contribution_analysis;
+
+mod _topic_ir_filter_function;
+
+mod _topic_ir_filter_option;
+
+mod _topic_ir_filter_type;
+
+mod _topic_ir_group_by;
+
+mod _topic_ir_metric;
 
 mod _topic_named_entity;
 
@@ -3835,15 +3965,25 @@ mod _topic_relative_date_filter;
 
 mod _topic_relative_date_filter_function;
 
+mod _topic_reviewed_answer;
+
 mod _topic_schedule_type;
 
 mod _topic_singular_filter_constant;
 
+mod _topic_sort_clause;
+
+mod _topic_sort_direction;
+
 mod _topic_summary;
+
+mod _topic_template;
 
 mod _topic_time_granularity;
 
 mod _topic_user_experience_version;
+
+mod _topic_visual;
 
 mod _total_aggregation_computation;
 
@@ -3917,7 +4057,11 @@ mod _visual_interaction_options;
 
 mod _visual_menu_option;
 
+mod _visual_options;
+
 mod _visual_palette;
+
+mod _visual_role;
 
 mod _visual_subtitle_label_options;
 

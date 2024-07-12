@@ -103,6 +103,24 @@ pub fn de_delete_accelerator_http_error(
             }
             tmp
         }),
+        "TransactionInProgressException" => crate::operation::delete_accelerator::DeleteAcceleratorError::TransactionInProgressException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TransactionInProgressExceptionBuilder::default();
+                output = crate::protocol_serde::shape_transaction_in_progress_exception::de_transaction_in_progress_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::delete_accelerator::DeleteAcceleratorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::delete_accelerator::DeleteAcceleratorError::generic(generic),
     })
 }

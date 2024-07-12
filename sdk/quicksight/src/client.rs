@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CancelIngestion`](crate::operation::cancel_ingestion) operation has
-/// a [`Client::cancel_ingestion`], function which returns a builder for that operation.
+/// For example, the [`BatchCreateTopicReviewedAnswer`](crate::operation::batch_create_topic_reviewed_answer) operation has
+/// a [`Client::batch_create_topic_reviewed_answer`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.cancel_ingestion()
+/// let result = client.batch_create_topic_reviewed_answer()
 ///     .aws_account_id("example")
 ///     .send()
 ///     .await;
@@ -136,6 +136,10 @@ impl Client {
     }
 }
 
+mod batch_create_topic_reviewed_answer;
+
+mod batch_delete_topic_reviewed_answer;
+
 mod cancel_ingestion;
 
 mod create_account_customization;
@@ -193,7 +197,7 @@ mod create_vpc_connection;
 /// # let client: aws_sdk_quicksight::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.cancel_ingestion()
+/// let result = client.batch_create_topic_reviewed_answer()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -406,6 +410,8 @@ mod list_theme_versions;
 mod list_themes;
 
 mod list_topic_refresh_schedules;
+
+mod list_topic_reviewed_answers;
 
 mod list_topics;
 
